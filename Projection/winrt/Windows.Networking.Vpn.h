@@ -24,6 +24,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnAppId> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -37,6 +38,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnAppId> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Type(value);
             return S_OK;
         }
@@ -50,6 +52,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnAppId> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -64,6 +67,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnAppId> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -81,6 +85,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnAppIdFactory> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(type, *reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
@@ -99,6 +104,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AssociateTransport(*reinterpret_cast<const Windows::IInspectable *>(&mainOuterTunnelTransport), *reinterpret_cast<const Windows::IInspectable *>(&optionalOuterTunnelTransport));
             return S_OK;
         }
@@ -112,6 +118,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv4list), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv6list), *reinterpret_cast<const Windows::Networking::Vpn::VpnInterfaceId *>(&vpnInterfaceId), *reinterpret_cast<const Windows::Networking::Vpn::VpnRouteAssignment *>(&routeScope), *reinterpret_cast<const Windows::Networking::Vpn::VpnNamespaceAssignment *>(&namespaceScope), mtuSize, maxFrameSize, optimizeForLowCostNetwork, *reinterpret_cast<const Windows::IInspectable *>(&mainOuterTunnelTransport), *reinterpret_cast<const Windows::IInspectable *>(&optionalOuterTunnelTransport));
             return S_OK;
         }
@@ -125,6 +132,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stop();
             return S_OK;
         }
@@ -138,6 +146,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *credential = detach(this->shim().RequestCredentials(credType, isRetry, isSingleSignOnCredential, *reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate)));
             return S_OK;
         }
@@ -152,6 +161,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RequestVpnPacketBuffer(type, *vpnPacketBuffer);
             return S_OK;
         }
@@ -166,6 +176,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LogDiagnosticMessage(*reinterpret_cast<const hstring *>(&message));
             return S_OK;
         }
@@ -179,6 +190,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -192,6 +204,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Configuration());
             return S_OK;
         }
@@ -206,6 +219,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ActivityChange(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -219,6 +233,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ActivityChange(token);
             return S_OK;
         }
@@ -232,6 +247,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PlugInContext(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
@@ -245,6 +261,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PlugInContext());
             return S_OK;
         }
@@ -259,6 +276,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SystemHealth());
             return S_OK;
         }
@@ -273,6 +291,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RequestCustomPrompt(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPrompt> *>(&customPrompt));
             return S_OK;
         }
@@ -286,6 +305,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetErrorMessage(*reinterpret_cast<const hstring *>(&message));
             return S_OK;
         }
@@ -299,6 +319,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetAllowedSslTlsVersions(*reinterpret_cast<const Windows::IInspectable *>(&tunnelTransport), useTls12);
             return S_OK;
         }
@@ -316,6 +337,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartWithMainTransport(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv4list), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv6list), *reinterpret_cast<const Windows::Networking::Vpn::VpnInterfaceId *>(&vpnInterfaceId), *reinterpret_cast<const Windows::Networking::Vpn::VpnRouteAssignment *>(&assignedRoutes), *reinterpret_cast<const Windows::Networking::Vpn::VpnDomainNameAssignment *>(&assignedDomainName), mtuSize, maxFrameSize, Reserved, *reinterpret_cast<const Windows::IInspectable *>(&mainOuterTunnelTransport));
             return S_OK;
         }
@@ -329,6 +351,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartExistingTransports(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv4list), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIPv6list), *reinterpret_cast<const Windows::Networking::Vpn::VpnInterfaceId *>(&vpnInterfaceId), *reinterpret_cast<const Windows::Networking::Vpn::VpnRouteAssignment *>(&assignedRoutes), *reinterpret_cast<const Windows::Networking::Vpn::VpnDomainNameAssignment *>(&assignedDomainName), mtuSize, maxFrameSize, Reserved);
             return S_OK;
         }
@@ -342,6 +365,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ActivityStateChange(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> *>(&handler)));
             return S_OK;
         }
@@ -355,6 +379,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ActivityStateChange(token);
             return S_OK;
         }
@@ -368,6 +393,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *vpnSendPacketBuffer = detach(this->shim().GetVpnSendPacketBuffer());
             return S_OK;
         }
@@ -382,6 +408,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *vpnReceivePacketBuffer = detach(this->shim().GetVpnReceivePacketBuffer());
             return S_OK;
         }
@@ -396,6 +423,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *action = detach(this->shim().RequestCustomPromptAsync(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPromptElement> *>(&customPromptElement)));
             return S_OK;
         }
@@ -410,6 +438,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *credential = detach(this->shim().RequestCredentialsAsync(credType, credOptions, *reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate)));
             return S_OK;
         }
@@ -424,6 +453,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *credential = detach(this->shim().RequestCredentialsAsync(credType, credOptions));
             return S_OK;
         }
@@ -438,6 +468,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *credential = detach(this->shim().RequestCredentialsAsync(credType));
             return S_OK;
         }
@@ -452,6 +483,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TerminateConnection(*reinterpret_cast<const hstring *>(&message));
             return S_OK;
         }
@@ -465,6 +497,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartWithTrafficFilter(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIpv4List), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> *>(&assignedClientIpv6List), *reinterpret_cast<const Windows::Networking::Vpn::VpnInterfaceId *>(&vpnInterfaceId), *reinterpret_cast<const Windows::Networking::Vpn::VpnRouteAssignment *>(&assignedRoutes), *reinterpret_cast<const Windows::Networking::Vpn::VpnDomainNameAssignment *>(&assignedNamespace), mtuSize, maxFrameSize, reserved, *reinterpret_cast<const Windows::IInspectable *>(&mainOuterTunnelTransport), *reinterpret_cast<const Windows::IInspectable *>(&optionalOuterTunnelTransport), *reinterpret_cast<const Windows::Networking::Vpn::VpnTrafficFilterAssignment *>(&assignedTrafficFilters));
             return S_OK;
         }
@@ -482,6 +515,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelActivityEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -499,6 +533,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelActivityStateChangedArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ActivityState());
             return S_OK;
         }
@@ -516,6 +551,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelConfiguration> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerServiceName());
             return S_OK;
         }
@@ -530,6 +566,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelConfiguration> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerHostNameList());
             return S_OK;
         }
@@ -544,6 +581,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelConfiguration> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CustomField());
             return S_OK;
         }
@@ -562,6 +600,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelConfiguration2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerUris());
             return S_OK;
         }
@@ -580,6 +619,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnChannelStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProcessEventAsync(*reinterpret_cast<const Windows::IInspectable *>(&thirdPartyPlugIn), *reinterpret_cast<const Windows::IInspectable *>(&event));
             return S_OK;
         }
@@ -597,6 +637,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCredential> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PasskeyCredential());
             return S_OK;
         }
@@ -611,6 +652,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCredential> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CertificateCredential());
             return S_OK;
         }
@@ -625,6 +667,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCredential> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AdditionalPin());
             return S_OK;
         }
@@ -639,6 +682,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCredential> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OldPasswordCredential());
             return S_OK;
         }
@@ -657,6 +701,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomCheckBox> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InitialCheckState(value);
             return S_OK;
         }
@@ -670,6 +715,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomCheckBox> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InitialCheckState());
             return S_OK;
         }
@@ -683,6 +729,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomCheckBox> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Checked());
             return S_OK;
         }
@@ -700,6 +747,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomComboBox> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OptionsText(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<hstring> *>(&value));
             return S_OK;
         }
@@ -713,6 +761,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomComboBox> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OptionsText());
             return S_OK;
         }
@@ -727,6 +776,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomComboBox> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Selected());
             return S_OK;
         }
@@ -744,6 +794,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomEditBox> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DefaultText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -757,6 +808,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomEditBox> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DefaultText());
             return S_OK;
         }
@@ -771,6 +823,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomEditBox> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NoEcho(value);
             return S_OK;
         }
@@ -784,6 +837,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomEditBox> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NoEcho());
             return S_OK;
         }
@@ -797,6 +851,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomEditBox> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -819,6 +874,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPrompt> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Label(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -832,6 +888,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPrompt> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Label());
             return S_OK;
         }
@@ -846,6 +903,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPrompt> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Compulsory(value);
             return S_OK;
         }
@@ -859,6 +917,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPrompt> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Compulsory());
             return S_OK;
         }
@@ -872,6 +931,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPrompt> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Bordered(value);
             return S_OK;
         }
@@ -885,6 +945,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPrompt> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bordered());
             return S_OK;
         }
@@ -902,6 +963,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptBooleanInput> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InitialValue(value);
             return S_OK;
         }
@@ -915,6 +977,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptBooleanInput> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InitialValue());
             return S_OK;
         }
@@ -928,6 +991,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptBooleanInput> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -945,6 +1009,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptElement> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -958,6 +1023,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptElement> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -972,6 +1038,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptElement> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Compulsory(value);
             return S_OK;
         }
@@ -985,6 +1052,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptElement> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Compulsory());
             return S_OK;
         }
@@ -998,6 +1066,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptElement> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Emphasized(value);
             return S_OK;
         }
@@ -1011,6 +1080,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptElement> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Emphasized());
             return S_OK;
         }
@@ -1028,6 +1098,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptOptionSelector> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Options());
             return S_OK;
         }
@@ -1042,6 +1113,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptOptionSelector> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SelectedIndex());
             return S_OK;
         }
@@ -1059,6 +1131,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptText> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Text(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1072,6 +1145,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptText> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -1090,6 +1164,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptTextInput> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PlaceholderText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1103,6 +1178,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptTextInput> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PlaceholderText());
             return S_OK;
         }
@@ -1117,6 +1193,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptTextInput> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsTextHidden(value);
             return S_OK;
         }
@@ -1130,6 +1207,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptTextInput> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTextHidden());
             return S_OK;
         }
@@ -1143,6 +1221,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptTextInput> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -1161,6 +1240,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomTextBox> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisplayText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1174,6 +1254,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomTextBox> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayText());
             return S_OK;
         }
@@ -1192,6 +1273,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameAssignment> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DomainNameList());
             return S_OK;
         }
@@ -1206,6 +1288,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameAssignment> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProxyAutoConfigurationUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -1219,6 +1302,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameAssignment> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProxyAutoConfigurationUri());
             return S_OK;
         }
@@ -1237,6 +1321,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DomainName(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
             return S_OK;
         }
@@ -1250,6 +1335,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DomainName());
             return S_OK;
         }
@@ -1264,6 +1350,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DomainNameType(value);
             return S_OK;
         }
@@ -1277,6 +1364,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DomainNameType());
             return S_OK;
         }
@@ -1290,6 +1378,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DnsServers());
             return S_OK;
         }
@@ -1304,6 +1393,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WebProxyServers());
             return S_OK;
         }
@@ -1322,6 +1412,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WebProxyUris());
             return S_OK;
         }
@@ -1340,6 +1431,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfoFactory> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *domainNameInfo = detach(this->shim().CreateVpnDomainNameInfo(*reinterpret_cast<const hstring *>(&name), nameType, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> *>(&dnsServerList), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> *>(&proxyServerList)));
             return S_OK;
         }
@@ -1358,6 +1450,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnInterfaceId> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetAddressInfo(detach<uint8_t>(__idSize, id));
             return S_OK;
         }
@@ -1377,6 +1470,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnInterfaceIdFactory> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *vpnInterfaceId = detach(this->shim().CreateVpnInterfaceId(array_ref<const uint8_t>(address, address + __addressSize)));
             return S_OK;
         }
@@ -1395,6 +1489,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().AddProfileFromXmlAsync(*reinterpret_cast<const hstring *>(&xml)));
             return S_OK;
         }
@@ -1409,6 +1504,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().AddProfileFromObjectAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
             return S_OK;
         }
@@ -1423,6 +1519,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().UpdateProfileFromXmlAsync(*reinterpret_cast<const hstring *>(&xml)));
             return S_OK;
         }
@@ -1437,6 +1534,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().UpdateProfileFromObjectAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
             return S_OK;
         }
@@ -1451,6 +1549,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetProfilesAsync());
             return S_OK;
         }
@@ -1465,6 +1564,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().DeleteProfileAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
             return S_OK;
         }
@@ -1479,6 +1579,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ConnectProfileAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
             return S_OK;
         }
@@ -1493,6 +1594,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ConnectProfileWithPasswordCredentialAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile), *reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&passwordCredential)));
             return S_OK;
         }
@@ -1507,6 +1609,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().DisconnectProfileAsync(*reinterpret_cast<const Windows::Networking::Vpn::IVpnProfile *>(&profile)));
             return S_OK;
         }
@@ -1525,6 +1628,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceAssignment> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NamespaceList(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo> *>(&value));
             return S_OK;
         }
@@ -1538,6 +1642,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceAssignment> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NamespaceList());
             return S_OK;
         }
@@ -1552,6 +1657,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceAssignment> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProxyAutoConfigUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -1565,6 +1671,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceAssignment> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProxyAutoConfigUri());
             return S_OK;
         }
@@ -1583,6 +1690,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Namespace(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1596,6 +1704,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Namespace());
             return S_OK;
         }
@@ -1610,6 +1719,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DnsServers(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> *>(&value));
             return S_OK;
         }
@@ -1623,6 +1733,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DnsServers());
             return S_OK;
         }
@@ -1637,6 +1748,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WebProxyServers(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> *>(&value));
             return S_OK;
         }
@@ -1650,6 +1762,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WebProxyServers());
             return S_OK;
         }
@@ -1668,6 +1781,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfoFactory> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *namespaceInfo = detach(this->shim().CreateVpnNamespaceInfo(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> *>(&dnsServerList), *reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> *>(&proxyServerList)));
             return S_OK;
         }
@@ -1686,6 +1800,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Servers());
             return S_OK;
         }
@@ -1700,6 +1815,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RoutingPolicyType());
             return S_OK;
         }
@@ -1713,6 +1829,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RoutingPolicyType(value);
             return S_OK;
         }
@@ -1726,6 +1843,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NativeProtocolType());
             return S_OK;
         }
@@ -1739,6 +1857,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NativeProtocolType(value);
             return S_OK;
         }
@@ -1752,6 +1871,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserAuthenticationMethod());
             return S_OK;
         }
@@ -1765,6 +1885,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UserAuthenticationMethod(value);
             return S_OK;
         }
@@ -1778,6 +1899,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TunnelAuthenticationMethod());
             return S_OK;
         }
@@ -1791,6 +1913,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TunnelAuthenticationMethod(value);
             return S_OK;
         }
@@ -1804,6 +1927,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *Value = detach(this->shim().EapConfiguration());
             return S_OK;
         }
@@ -1818,6 +1942,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EapConfiguration(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1835,6 +1960,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequireVpnClientAppUI());
             return S_OK;
         }
@@ -1848,6 +1974,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RequireVpnClientAppUI(value);
             return S_OK;
         }
@@ -1861,6 +1988,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConnectionStatus());
             return S_OK;
         }
@@ -1878,6 +2006,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Buffer());
             return S_OK;
         }
@@ -1892,6 +2021,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Status(value);
             return S_OK;
         }
@@ -1905,6 +2035,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -1918,6 +2049,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransportAffinity(value);
             return S_OK;
         }
@@ -1931,6 +2063,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TransportAffinity());
             return S_OK;
         }
@@ -1948,6 +2081,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer2> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppId());
             return S_OK;
         }
@@ -1966,6 +2100,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferFactory> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *vpnPacketBuffer = detach(this->shim().CreateVpnPacketBuffer(*reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&parentBuffer), offset, length));
             return S_OK;
         }
@@ -1984,6 +2119,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Append(*reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&nextVpnPacketBuffer));
             return S_OK;
         }
@@ -1997,6 +2133,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddAtBegin(*reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&nextVpnPacketBuffer));
             return S_OK;
         }
@@ -2010,6 +2147,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *nextVpnPacketBuffer = detach(this->shim().RemoveAtEnd());
             return S_OK;
         }
@@ -2024,6 +2162,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *nextVpnPacketBuffer = detach(this->shim().RemoveAtBegin());
             return S_OK;
         }
@@ -2038,6 +2177,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Clear();
             return S_OK;
         }
@@ -2051,6 +2191,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Status(value);
             return S_OK;
         }
@@ -2064,6 +2205,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -2077,6 +2219,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Size());
             return S_OK;
         }
@@ -2094,6 +2237,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddLeadingPacket(*reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&nextVpnPacketBuffer));
             return S_OK;
         }
@@ -2107,6 +2251,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *nextVpnPacketBuffer = detach(this->shim().RemoveLeadingPacket());
             return S_OK;
         }
@@ -2121,6 +2266,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddTrailingPacket(*reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&nextVpnPacketBuffer));
             return S_OK;
         }
@@ -2134,6 +2280,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *nextVpnPacketBuffer = detach(this->shim().RemoveTrailingPacket());
             return S_OK;
         }
@@ -2152,6 +2299,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPickedCredential> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PasskeyCredential());
             return S_OK;
         }
@@ -2166,6 +2314,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPickedCredential> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AdditionalPin());
             return S_OK;
         }
@@ -2180,6 +2329,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPickedCredential> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OldPasswordCredential());
             return S_OK;
         }
@@ -2198,6 +2348,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugIn> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Connect(*reinterpret_cast<const Windows::Networking::Vpn::VpnChannel *>(&channel));
             return S_OK;
         }
@@ -2211,6 +2362,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugIn> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Disconnect(*reinterpret_cast<const Windows::Networking::Vpn::VpnChannel *>(&channel));
             return S_OK;
         }
@@ -2224,6 +2376,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugIn> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetKeepAlivePayload(*reinterpret_cast<const Windows::Networking::Vpn::VpnChannel *>(&channel), *keepAlivePacket);
             return S_OK;
         }
@@ -2238,6 +2391,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugIn> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Encapsulate(*reinterpret_cast<const Windows::Networking::Vpn::VpnChannel *>(&channel), *reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBufferList *>(&packets), *reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBufferList *>(&encapulatedPackets));
             return S_OK;
         }
@@ -2251,6 +2405,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugIn> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Decapsulate(*reinterpret_cast<const Windows::Networking::Vpn::VpnChannel *>(&channel), *reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBuffer *>(&encapBuffer), *reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBufferList *>(&decapsulatedPackets), *reinterpret_cast<const Windows::Networking::Vpn::VpnPacketBufferList *>(&controlPacketsToSend));
             return S_OK;
         }
@@ -2268,6 +2423,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerUris());
             return S_OK;
         }
@@ -2282,6 +2438,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CustomConfiguration());
             return S_OK;
         }
@@ -2296,6 +2453,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CustomConfiguration(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2309,6 +2467,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VpnPluginPackageFamilyName());
             return S_OK;
         }
@@ -2323,6 +2482,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VpnPluginPackageFamilyName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2340,6 +2500,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequireVpnClientAppUI());
             return S_OK;
         }
@@ -2353,6 +2514,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RequireVpnClientAppUI(value);
             return S_OK;
         }
@@ -2366,6 +2528,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConnectionStatus());
             return S_OK;
         }
@@ -2383,6 +2546,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProfileName());
             return S_OK;
         }
@@ -2397,6 +2561,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProfileName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2410,6 +2575,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppTriggers());
             return S_OK;
         }
@@ -2424,6 +2590,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Routes());
             return S_OK;
         }
@@ -2438,6 +2605,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DomainNameInfoList());
             return S_OK;
         }
@@ -2452,6 +2620,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TrafficFilters());
             return S_OK;
         }
@@ -2466,6 +2635,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RememberCredentials());
             return S_OK;
         }
@@ -2479,6 +2649,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RememberCredentials(value);
             return S_OK;
         }
@@ -2492,6 +2663,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlwaysOn());
             return S_OK;
         }
@@ -2505,6 +2677,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AlwaysOn(value);
             return S_OK;
         }
@@ -2522,6 +2695,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRoute> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Address(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
             return S_OK;
         }
@@ -2535,6 +2709,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRoute> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Address());
             return S_OK;
         }
@@ -2549,6 +2724,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRoute> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PrefixSize(value);
             return S_OK;
         }
@@ -2562,6 +2738,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRoute> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PrefixSize());
             return S_OK;
         }
@@ -2579,6 +2756,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Ipv4InclusionRoutes(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> *>(&value));
             return S_OK;
         }
@@ -2592,6 +2770,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Ipv6InclusionRoutes(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> *>(&value));
             return S_OK;
         }
@@ -2605,6 +2784,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ipv4InclusionRoutes());
             return S_OK;
         }
@@ -2619,6 +2799,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ipv6InclusionRoutes());
             return S_OK;
         }
@@ -2633,6 +2814,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Ipv4ExclusionRoutes(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> *>(&value));
             return S_OK;
         }
@@ -2646,6 +2828,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Ipv6ExclusionRoutes(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> *>(&value));
             return S_OK;
         }
@@ -2659,6 +2842,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ipv4ExclusionRoutes());
             return S_OK;
         }
@@ -2673,6 +2857,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ipv6ExclusionRoutes());
             return S_OK;
         }
@@ -2687,6 +2872,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExcludeLocalSubnets(value);
             return S_OK;
         }
@@ -2700,6 +2886,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExcludeLocalSubnets());
             return S_OK;
         }
@@ -2717,6 +2904,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnRouteFactory> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *route = detach(this->shim().CreateVpnRoute(*reinterpret_cast<const Windows::Networking::HostName *>(&address), prefixSize));
             return S_OK;
         }
@@ -2735,6 +2923,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnSystemHealth> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StatementOfHealth());
             return S_OK;
         }
@@ -2753,6 +2942,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppId());
             return S_OK;
         }
@@ -2767,6 +2957,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AppId(*reinterpret_cast<const Windows::Networking::Vpn::VpnAppId *>(&value));
             return S_OK;
         }
@@ -2780,6 +2971,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppClaims());
             return S_OK;
         }
@@ -2794,6 +2986,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Protocol());
             return S_OK;
         }
@@ -2807,6 +3000,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Protocol(value);
             return S_OK;
         }
@@ -2820,6 +3014,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalPortRanges());
             return S_OK;
         }
@@ -2834,6 +3029,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemotePortRanges());
             return S_OK;
         }
@@ -2848,6 +3044,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalAddressRanges());
             return S_OK;
         }
@@ -2862,6 +3059,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteAddressRanges());
             return S_OK;
         }
@@ -2876,6 +3074,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RoutingPolicyType());
             return S_OK;
         }
@@ -2889,6 +3088,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RoutingPolicyType(value);
             return S_OK;
         }
@@ -2906,6 +3106,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterAssignment> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TrafficFilterList());
             return S_OK;
         }
@@ -2920,6 +3121,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterAssignment> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowOutbound());
             return S_OK;
         }
@@ -2933,6 +3135,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterAssignment> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowOutbound(value);
             return S_OK;
         }
@@ -2946,6 +3149,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterAssignment> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowInbound());
             return S_OK;
         }
@@ -2959,6 +3163,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterAssignment> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowInbound(value);
             return S_OK;
         }
@@ -2976,6 +3181,7 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterFactory> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Networking::Vpn::VpnAppId *>(&appId)));
             return S_OK;
         }

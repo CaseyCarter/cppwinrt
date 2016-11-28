@@ -19,6 +19,7 @@ struct produce<D, Windows::Devices::Gpio::Provider::IGpioControllerProvider> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PinCount());
             return S_OK;
         }
@@ -32,6 +33,7 @@ struct produce<D, Windows::Devices::Gpio::Provider::IGpioControllerProvider> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *gpioPinProvider = detach(this->shim().OpenPinProvider(pin, sharingMode));
             return S_OK;
         }
@@ -50,6 +52,7 @@ struct produce<D, Windows::Devices::Gpio::Provider::IGpioPinProvider> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ValueChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::Provider::IGpioPinProvider, Windows::Devices::Gpio::Provider::GpioPinProviderValueChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -63,6 +66,7 @@ struct produce<D, Windows::Devices::Gpio::Provider::IGpioPinProvider> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ValueChanged(token);
             return S_OK;
         }
@@ -76,6 +80,7 @@ struct produce<D, Windows::Devices::Gpio::Provider::IGpioPinProvider> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DebounceTimeout());
             return S_OK;
         }
@@ -89,6 +94,7 @@ struct produce<D, Windows::Devices::Gpio::Provider::IGpioPinProvider> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DebounceTimeout(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -102,6 +108,7 @@ struct produce<D, Windows::Devices::Gpio::Provider::IGpioPinProvider> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PinNumber());
             return S_OK;
         }
@@ -115,6 +122,7 @@ struct produce<D, Windows::Devices::Gpio::Provider::IGpioPinProvider> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SharingMode());
             return S_OK;
         }
@@ -128,6 +136,7 @@ struct produce<D, Windows::Devices::Gpio::Provider::IGpioPinProvider> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *supported = detach(this->shim().IsDriveModeSupported(driveMode));
             return S_OK;
         }
@@ -141,6 +150,7 @@ struct produce<D, Windows::Devices::Gpio::Provider::IGpioPinProvider> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDriveMode());
             return S_OK;
         }
@@ -154,6 +164,7 @@ struct produce<D, Windows::Devices::Gpio::Provider::IGpioPinProvider> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetDriveMode(value);
             return S_OK;
         }
@@ -167,6 +178,7 @@ struct produce<D, Windows::Devices::Gpio::Provider::IGpioPinProvider> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Write(value);
             return S_OK;
         }
@@ -180,6 +192,7 @@ struct produce<D, Windows::Devices::Gpio::Provider::IGpioPinProvider> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Read());
             return S_OK;
         }
@@ -197,6 +210,7 @@ struct produce<D, Windows::Devices::Gpio::Provider::IGpioPinProviderValueChanged
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Edge());
             return S_OK;
         }
@@ -214,6 +228,7 @@ struct produce<D, Windows::Devices::Gpio::Provider::IGpioPinProviderValueChanged
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Create(edge));
             return S_OK;
         }
@@ -232,6 +247,7 @@ struct produce<D, Windows::Devices::Gpio::Provider::IGpioProvider> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetControllers());
             return S_OK;
         }

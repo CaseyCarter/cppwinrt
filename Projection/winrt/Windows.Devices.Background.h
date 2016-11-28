@@ -18,6 +18,7 @@ struct produce<D, Windows::Devices::Background::IDeviceServicingDetails> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -32,6 +33,7 @@ struct produce<D, Windows::Devices::Background::IDeviceServicingDetails> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Arguments());
             return S_OK;
         }
@@ -46,6 +48,7 @@ struct produce<D, Windows::Devices::Background::IDeviceServicingDetails> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExpectedDuration());
             return S_OK;
         }
@@ -63,6 +66,7 @@ struct produce<D, Windows::Devices::Background::IDeviceUseDetails> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -77,6 +81,7 @@ struct produce<D, Windows::Devices::Background::IDeviceUseDetails> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Arguments());
             return S_OK;
         }

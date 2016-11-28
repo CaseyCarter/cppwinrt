@@ -38,6 +38,7 @@ struct produce<D, Windows::Foundation::IReference<T>> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }

@@ -21,6 +21,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IDetectedFace> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FaceBox());
             return S_OK;
         }
@@ -38,6 +39,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetector> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().DetectFacesAsync(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&image)));
             return S_OK;
         }
@@ -52,6 +54,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetector> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().DetectFacesAsync(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&image), *reinterpret_cast<const Windows::Graphics::Imaging::BitmapBounds *>(&searchArea)));
             return S_OK;
         }
@@ -66,6 +69,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetector> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().MinDetectableFaceSize());
             return S_OK;
         }
@@ -79,6 +83,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetector> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MinDetectableFaceSize(*reinterpret_cast<const Windows::Graphics::Imaging::BitmapSize *>(&value));
             return S_OK;
         }
@@ -92,6 +97,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetector> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().MaxDetectableFaceSize());
             return S_OK;
         }
@@ -105,6 +111,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetector> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxDetectableFaceSize(*reinterpret_cast<const Windows::Graphics::Imaging::BitmapSize *>(&value));
             return S_OK;
         }
@@ -122,6 +129,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetectorStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().CreateAsync());
             return S_OK;
         }
@@ -136,6 +144,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetectorStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetSupportedBitmapPixelFormats());
             return S_OK;
         }
@@ -150,6 +159,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetectorStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsBitmapPixelFormatSupported(bitmapPixelFormat));
             return S_OK;
         }
@@ -163,6 +173,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceDetectorStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().IsSupported());
             return S_OK;
         }
@@ -180,6 +191,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceTracker> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().ProcessNextFrameAsync(*reinterpret_cast<const Windows::Media::VideoFrame *>(&videoFrame)));
             return S_OK;
         }
@@ -194,6 +206,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceTracker> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().MinDetectableFaceSize());
             return S_OK;
         }
@@ -207,6 +220,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceTracker> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MinDetectableFaceSize(*reinterpret_cast<const Windows::Graphics::Imaging::BitmapSize *>(&value));
             return S_OK;
         }
@@ -220,6 +234,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceTracker> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().MaxDetectableFaceSize());
             return S_OK;
         }
@@ -233,6 +248,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceTracker> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxDetectableFaceSize(*reinterpret_cast<const Windows::Graphics::Imaging::BitmapSize *>(&value));
             return S_OK;
         }
@@ -250,6 +266,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceTrackerStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().CreateAsync());
             return S_OK;
         }
@@ -264,6 +281,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceTrackerStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetSupportedBitmapPixelFormats());
             return S_OK;
         }
@@ -278,6 +296,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceTrackerStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsBitmapPixelFormatSupported(bitmapPixelFormat));
             return S_OK;
         }
@@ -291,6 +310,7 @@ struct produce<D, Windows::Media::FaceAnalysis::IFaceTrackerStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().IsSupported());
             return S_OK;
         }

@@ -26,6 +26,7 @@ struct produce<D, Windows::Foundation::IActivationFactory> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().ActivateInstance());
             return S_OK;
         }

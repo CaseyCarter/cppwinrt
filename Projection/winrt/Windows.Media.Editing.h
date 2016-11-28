@@ -25,6 +25,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TrimTimeFromStart());
             return S_OK;
         }
@@ -38,6 +39,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TrimTimeFromStart(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -51,6 +53,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TrimTimeFromEnd());
             return S_OK;
         }
@@ -64,6 +67,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TrimTimeFromEnd(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -77,6 +81,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OriginalDuration());
             return S_OK;
         }
@@ -90,6 +95,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TrimmedDuration());
             return S_OK;
         }
@@ -103,6 +109,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserData());
             return S_OK;
         }
@@ -117,6 +124,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Delay(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -130,6 +138,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Delay());
             return S_OK;
         }
@@ -143,6 +152,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Volume(value);
             return S_OK;
         }
@@ -156,6 +166,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Volume());
             return S_OK;
         }
@@ -169,6 +180,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Clone());
             return S_OK;
         }
@@ -183,6 +195,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetAudioEncodingProperties());
             return S_OK;
         }
@@ -197,6 +210,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AudioEffectDefinitions());
             return S_OK;
         }
@@ -215,6 +229,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrackStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateFromEmbeddedAudioTrack(*reinterpret_cast<const Windows::Media::Editing::EmbeddedAudioTrack *>(&embeddedAudioTrack)));
             return S_OK;
         }
@@ -229,6 +244,7 @@ struct produce<D, Windows::Media::Editing::IBackgroundAudioTrackStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateFromFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
@@ -247,6 +263,7 @@ struct produce<D, Windows::Media::Editing::IEmbeddedAudioTrack> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetAudioEncodingProperties());
             return S_OK;
         }
@@ -265,6 +282,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TrimTimeFromStart());
             return S_OK;
         }
@@ -278,6 +296,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TrimTimeFromStart(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -291,6 +310,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TrimTimeFromEnd());
             return S_OK;
         }
@@ -304,6 +324,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TrimTimeFromEnd(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -317,6 +338,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OriginalDuration());
             return S_OK;
         }
@@ -330,6 +352,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TrimmedDuration());
             return S_OK;
         }
@@ -343,6 +366,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserData());
             return S_OK;
         }
@@ -357,6 +381,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Clone());
             return S_OK;
         }
@@ -371,6 +396,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StartTimeInComposition());
             return S_OK;
         }
@@ -384,6 +410,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EndTimeInComposition());
             return S_OK;
         }
@@ -397,6 +424,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EmbeddedAudioTracks());
             return S_OK;
         }
@@ -411,6 +439,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SelectedEmbeddedAudioTrackIndex());
             return S_OK;
         }
@@ -424,6 +453,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SelectedEmbeddedAudioTrackIndex(value);
             return S_OK;
         }
@@ -437,6 +467,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Volume(value);
             return S_OK;
         }
@@ -450,6 +481,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Volume());
             return S_OK;
         }
@@ -463,6 +495,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetVideoEncodingProperties());
             return S_OK;
         }
@@ -477,6 +510,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AudioEffectDefinitions());
             return S_OK;
         }
@@ -491,6 +525,7 @@ struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoEffectDefinitions());
             return S_OK;
         }
@@ -509,6 +544,7 @@ struct produce<D, Windows::Media::Editing::IMediaClipStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateFromColor(*reinterpret_cast<const Windows::UI::Color *>(&color), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&originalDuration)));
             return S_OK;
         }
@@ -523,6 +559,7 @@ struct produce<D, Windows::Media::Editing::IMediaClipStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateFromFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
@@ -537,6 +574,7 @@ struct produce<D, Windows::Media::Editing::IMediaClipStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateFromImageFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&originalDuration)));
             return S_OK;
         }
@@ -555,6 +593,7 @@ struct produce<D, Windows::Media::Editing::IMediaClipStatics2> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateFromSurface(*reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>(&surface), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&originalDuration)));
             return S_OK;
         }
@@ -573,6 +612,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Duration());
             return S_OK;
         }
@@ -586,6 +626,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Clips());
             return S_OK;
         }
@@ -600,6 +641,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BackgroundAudioTracks());
             return S_OK;
         }
@@ -614,6 +656,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserData());
             return S_OK;
         }
@@ -628,6 +671,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Clone());
             return S_OK;
         }
@@ -642,6 +686,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SaveAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
@@ -656,6 +701,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetThumbnailAsync(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timeFromStart), scaledWidth, scaledHeight, framePrecision));
             return S_OK;
         }
@@ -670,6 +716,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetThumbnailsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::TimeSpan> *>(&timesFromStart), scaledWidth, scaledHeight, framePrecision));
             return S_OK;
         }
@@ -684,6 +731,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RenderToFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&destination)));
             return S_OK;
         }
@@ -698,6 +746,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RenderToFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&destination), trimmingPreference));
             return S_OK;
         }
@@ -712,6 +761,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RenderToFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&destination), trimmingPreference, *reinterpret_cast<const Windows::Media::MediaProperties::MediaEncodingProfile *>(&encodingProfile)));
             return S_OK;
         }
@@ -726,6 +776,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateDefaultEncodingProfile());
             return S_OK;
         }
@@ -740,6 +791,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GenerateMediaStreamSource());
             return S_OK;
         }
@@ -754,6 +806,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GenerateMediaStreamSource(*reinterpret_cast<const Windows::Media::MediaProperties::MediaEncodingProfile *>(&encodingProfile)));
             return S_OK;
         }
@@ -768,6 +821,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GeneratePreviewMediaStreamSource(scaledWidth, scaledHeight));
             return S_OK;
         }
@@ -786,6 +840,7 @@ struct produce<D, Windows::Media::Editing::IMediaComposition2> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OverlayLayers());
             return S_OK;
         }
@@ -804,6 +859,7 @@ struct produce<D, Windows::Media::Editing::IMediaCompositionStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().LoadAsync(*reinterpret_cast<const Windows::Storage::StorageFile *>(&file)));
             return S_OK;
         }
@@ -822,6 +878,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -835,6 +892,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Position(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
             return S_OK;
         }
@@ -848,6 +906,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Delay(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -861,6 +920,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Delay());
             return S_OK;
         }
@@ -874,6 +934,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Opacity());
             return S_OK;
         }
@@ -887,6 +948,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Opacity(value);
             return S_OK;
         }
@@ -900,6 +962,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Clone());
             return S_OK;
         }
@@ -914,6 +977,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Clip());
             return S_OK;
         }
@@ -928,6 +992,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AudioEnabled());
             return S_OK;
         }
@@ -941,6 +1006,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AudioEnabled(value);
             return S_OK;
         }
@@ -958,6 +1024,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlayFactory> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *mediaOverlay = detach(this->shim().Create(*reinterpret_cast<const Windows::Media::Editing::MediaClip *>(&clip)));
             return S_OK;
         }
@@ -972,6 +1039,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlayFactory> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *mediaOverlay = detach(this->shim().CreateWithPositionAndOpacity(*reinterpret_cast<const Windows::Media::Editing::MediaClip *>(&clip), *reinterpret_cast<const Windows::Foundation::Rect *>(&position), opacity));
             return S_OK;
         }
@@ -990,6 +1058,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlayLayer> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Clone());
             return S_OK;
         }
@@ -1004,6 +1073,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlayLayer> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Overlays());
             return S_OK;
         }
@@ -1018,6 +1088,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlayLayer> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CustomCompositorDefinition());
             return S_OK;
         }
@@ -1036,6 +1107,7 @@ struct produce<D, Windows::Media::Editing::IMediaOverlayLayerFactory> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *mediaOverlayLayer = detach(this->shim().CreateWithCompositorDefinition(*reinterpret_cast<const Windows::Media::Effects::IVideoCompositorDefinition *>(&compositorDefinition)));
             return S_OK;
         }

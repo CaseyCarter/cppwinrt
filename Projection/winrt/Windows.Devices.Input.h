@@ -19,6 +19,7 @@ struct produce<D, Windows::Devices::Input::IKeyboardCapabilities> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyboardPresent());
             return S_OK;
         }
@@ -36,6 +37,7 @@ struct produce<D, Windows::Devices::Input::IMouseCapabilities> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MousePresent());
             return S_OK;
         }
@@ -49,6 +51,7 @@ struct produce<D, Windows::Devices::Input::IMouseCapabilities> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VerticalWheelPresent());
             return S_OK;
         }
@@ -62,6 +65,7 @@ struct produce<D, Windows::Devices::Input::IMouseCapabilities> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HorizontalWheelPresent());
             return S_OK;
         }
@@ -75,6 +79,7 @@ struct produce<D, Windows::Devices::Input::IMouseCapabilities> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SwapButtons());
             return S_OK;
         }
@@ -88,6 +93,7 @@ struct produce<D, Windows::Devices::Input::IMouseCapabilities> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumberOfButtons());
             return S_OK;
         }
@@ -105,6 +111,7 @@ struct produce<D, Windows::Devices::Input::IMouseDevice> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().MouseMoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -118,6 +125,7 @@ struct produce<D, Windows::Devices::Input::IMouseDevice> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MouseMoved(cookie);
             return S_OK;
         }
@@ -135,6 +143,7 @@ struct produce<D, Windows::Devices::Input::IMouseDeviceStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *mouseDevice = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -153,6 +162,7 @@ struct produce<D, Windows::Devices::Input::IMouseEventArgs> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MouseDelta());
             return S_OK;
         }
@@ -170,6 +180,7 @@ struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -183,6 +194,7 @@ struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsIntegrated());
             return S_OK;
         }
@@ -196,6 +208,7 @@ struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxContacts());
             return S_OK;
         }
@@ -209,6 +222,7 @@ struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PhysicalDeviceRect());
             return S_OK;
         }
@@ -222,6 +236,7 @@ struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ScreenRect());
             return S_OK;
         }
@@ -235,6 +250,7 @@ struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedUsages());
             return S_OK;
         }
@@ -253,6 +269,7 @@ struct produce<D, Windows::Devices::Input::IPointerDevice2> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxPointersWithZDistance());
             return S_OK;
         }
@@ -270,6 +287,7 @@ struct produce<D, Windows::Devices::Input::IPointerDeviceStatics> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pointerDevice = detach(this->shim().GetPointerDevice(pointerId));
             return S_OK;
         }
@@ -284,6 +302,7 @@ struct produce<D, Windows::Devices::Input::IPointerDeviceStatics> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pointerDevices = detach(this->shim().GetPointerDevices());
             return S_OK;
         }
@@ -302,6 +321,7 @@ struct produce<D, Windows::Devices::Input::ITouchCapabilities> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TouchPresent());
             return S_OK;
         }
@@ -315,6 +335,7 @@ struct produce<D, Windows::Devices::Input::ITouchCapabilities> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Contacts());
             return S_OK;
         }

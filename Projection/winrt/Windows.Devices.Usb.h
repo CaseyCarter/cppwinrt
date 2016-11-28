@@ -21,6 +21,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInEndpointDescriptor> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxPacketSize());
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInEndpointDescriptor> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EndpointNumber());
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInEndpointDescriptor> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pipe());
             return S_OK;
         }
@@ -65,6 +68,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxTransferSizeBytes());
             return S_OK;
         }
@@ -78,6 +82,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EndpointDescriptor());
             return S_OK;
         }
@@ -92,6 +97,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ClearStallAsync());
             return S_OK;
         }
@@ -106,6 +112,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadOptions(value);
             return S_OK;
         }
@@ -119,6 +126,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadOptions());
             return S_OK;
         }
@@ -132,6 +140,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FlushBuffer();
             return S_OK;
         }
@@ -145,6 +154,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InputStream());
             return S_OK;
         }
@@ -163,6 +173,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxPacketSize());
             return S_OK;
         }
@@ -176,6 +187,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EndpointNumber());
             return S_OK;
         }
@@ -189,6 +201,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pipe());
             return S_OK;
         }
@@ -207,6 +220,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutPipe> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EndpointDescriptor());
             return S_OK;
         }
@@ -221,6 +235,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutPipe> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ClearStallAsync());
             return S_OK;
         }
@@ -235,6 +250,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutPipe> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteOptions(value);
             return S_OK;
         }
@@ -248,6 +264,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutPipe> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WriteOptions());
             return S_OK;
         }
@@ -261,6 +278,7 @@ struct produce<D, Windows::Devices::Usb::IUsbBulkOutPipe> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OutputStream());
             return S_OK;
         }
@@ -279,6 +297,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfiguration> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsbInterfaces());
             return S_OK;
         }
@@ -293,6 +312,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfiguration> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConfigurationDescriptor());
             return S_OK;
         }
@@ -307,6 +327,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfiguration> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Descriptors());
             return S_OK;
         }
@@ -325,6 +346,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptor> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConfigurationValue());
             return S_OK;
         }
@@ -338,6 +360,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptor> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxPowerMilliamps());
             return S_OK;
         }
@@ -351,6 +374,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptor> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SelfPowered());
             return S_OK;
         }
@@ -364,6 +388,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptor> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteWakeup());
             return S_OK;
         }
@@ -381,6 +406,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptorStatics> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *success = detach(this->shim().TryParse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor), *parsed));
             return S_OK;
         }
@@ -395,6 +421,7 @@ struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptorStatics> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *parsed = detach(this->shim().Parse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor)));
             return S_OK;
         }
@@ -413,6 +440,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Direction());
             return S_OK;
         }
@@ -426,6 +454,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Direction(value);
             return S_OK;
         }
@@ -439,6 +468,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ControlTransferType());
             return S_OK;
         }
@@ -452,6 +482,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ControlTransferType(value);
             return S_OK;
         }
@@ -465,6 +496,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Recipient());
             return S_OK;
         }
@@ -478,6 +510,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Recipient(value);
             return S_OK;
         }
@@ -491,6 +524,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AsByte());
             return S_OK;
         }
@@ -504,6 +538,7 @@ struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AsByte(value);
             return S_OK;
         }
@@ -521,6 +556,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDescriptor> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Length());
             return S_OK;
         }
@@ -534,6 +570,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDescriptor> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DescriptorType());
             return S_OK;
         }
@@ -547,6 +584,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDescriptor> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadDescriptorBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer));
             return S_OK;
         }
@@ -564,6 +602,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SendControlOutTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
             return S_OK;
         }
@@ -578,6 +617,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SendControlOutTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket)));
             return S_OK;
         }
@@ -592,6 +632,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SendControlInTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
             return S_OK;
         }
@@ -606,6 +647,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SendControlInTransferAsync(*reinterpret_cast<const Windows::Devices::Usb::UsbSetupPacket *>(&setupPacket)));
             return S_OK;
         }
@@ -620,6 +662,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DefaultInterface());
             return S_OK;
         }
@@ -634,6 +677,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceDescriptor());
             return S_OK;
         }
@@ -648,6 +692,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Configuration());
             return S_OK;
         }
@@ -666,6 +711,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClass> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClassCode());
             return S_OK;
         }
@@ -679,6 +725,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClass> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClassCode(value);
             return S_OK;
         }
@@ -692,6 +739,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClass> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SubclassCode());
             return S_OK;
         }
@@ -706,6 +754,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClass> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SubclassCode(*reinterpret_cast<const Windows::Foundation::IReference<uint8_t> *>(&value));
             return S_OK;
         }
@@ -719,6 +768,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClass> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProtocolCode());
             return S_OK;
         }
@@ -733,6 +783,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClass> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProtocolCode(*reinterpret_cast<const Windows::Foundation::IReference<uint8_t> *>(&value));
             return S_OK;
         }
@@ -754,6 +805,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CdcControl());
             return S_OK;
         }
@@ -768,6 +820,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Physical());
             return S_OK;
         }
@@ -782,6 +835,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PersonalHealthcare());
             return S_OK;
         }
@@ -796,6 +850,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ActiveSync());
             return S_OK;
         }
@@ -810,6 +865,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PalmSync());
             return S_OK;
         }
@@ -824,6 +880,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceFirmwareUpdate());
             return S_OK;
         }
@@ -838,6 +895,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Irda());
             return S_OK;
         }
@@ -852,6 +910,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Measurement());
             return S_OK;
         }
@@ -866,6 +925,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VendorSpecific());
             return S_OK;
         }
@@ -884,6 +944,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BcdUsb());
             return S_OK;
         }
@@ -897,6 +958,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxPacketSize0());
             return S_OK;
         }
@@ -910,6 +972,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VendorId());
             return S_OK;
         }
@@ -923,6 +986,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProductId());
             return S_OK;
         }
@@ -936,6 +1000,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BcdDeviceRevision());
             return S_OK;
         }
@@ -949,6 +1014,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumberOfConfigurations());
             return S_OK;
         }
@@ -966,6 +1032,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector(vendorId, productId, winUsbInterfaceClass));
             return S_OK;
         }
@@ -980,6 +1047,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector(winUsbInterfaceClass));
             return S_OK;
         }
@@ -994,6 +1062,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector(vendorId, productId));
             return S_OK;
         }
@@ -1008,6 +1077,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceClassSelector(*reinterpret_cast<const Windows::Devices::Usb::UsbDeviceClass *>(&usbClass)));
             return S_OK;
         }
@@ -1022,6 +1092,7 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -1040,6 +1111,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EndpointNumber());
             return S_OK;
         }
@@ -1053,6 +1125,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Direction());
             return S_OK;
         }
@@ -1066,6 +1139,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EndpointType());
             return S_OK;
         }
@@ -1079,6 +1153,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AsBulkInEndpointDescriptor());
             return S_OK;
         }
@@ -1093,6 +1168,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AsInterruptInEndpointDescriptor());
             return S_OK;
         }
@@ -1107,6 +1183,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AsBulkOutEndpointDescriptor());
             return S_OK;
         }
@@ -1121,6 +1198,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AsInterruptOutEndpointDescriptor());
             return S_OK;
         }
@@ -1139,6 +1217,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptorStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *success = detach(this->shim().TryParse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor), *parsed));
             return S_OK;
         }
@@ -1153,6 +1232,7 @@ struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptorStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *parsed = detach(this->shim().Parse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor)));
             return S_OK;
         }
@@ -1171,6 +1251,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BulkInPipes());
             return S_OK;
         }
@@ -1185,6 +1266,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InterruptInPipes());
             return S_OK;
         }
@@ -1199,6 +1281,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BulkOutPipes());
             return S_OK;
         }
@@ -1213,6 +1296,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InterruptOutPipes());
             return S_OK;
         }
@@ -1227,6 +1311,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InterfaceSettings());
             return S_OK;
         }
@@ -1241,6 +1326,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InterfaceNumber());
             return S_OK;
         }
@@ -1254,6 +1340,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Descriptors());
             return S_OK;
         }
@@ -1272,6 +1359,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptor> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClassCode());
             return S_OK;
         }
@@ -1285,6 +1373,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptor> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SubclassCode());
             return S_OK;
         }
@@ -1298,6 +1387,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptor> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProtocolCode());
             return S_OK;
         }
@@ -1311,6 +1401,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptor> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlternateSettingNumber());
             return S_OK;
         }
@@ -1324,6 +1415,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptor> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InterfaceNumber());
             return S_OK;
         }
@@ -1341,6 +1433,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptorStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *success = detach(this->shim().TryParse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor), *parsed));
             return S_OK;
         }
@@ -1355,6 +1448,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptorStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *parsed = detach(this->shim().Parse(*reinterpret_cast<const Windows::Devices::Usb::UsbDescriptor *>(&descriptor)));
             return S_OK;
         }
@@ -1373,6 +1467,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BulkInEndpoints());
             return S_OK;
         }
@@ -1387,6 +1482,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InterruptInEndpoints());
             return S_OK;
         }
@@ -1401,6 +1497,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BulkOutEndpoints());
             return S_OK;
         }
@@ -1415,6 +1512,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InterruptOutEndpoints());
             return S_OK;
         }
@@ -1429,6 +1527,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Selected());
             return S_OK;
         }
@@ -1442,6 +1541,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SelectSettingAsync());
             return S_OK;
         }
@@ -1456,6 +1556,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InterfaceDescriptor());
             return S_OK;
         }
@@ -1470,6 +1571,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Descriptors());
             return S_OK;
         }
@@ -1488,6 +1590,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxPacketSize());
             return S_OK;
         }
@@ -1501,6 +1604,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EndpointNumber());
             return S_OK;
         }
@@ -1514,6 +1618,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Interval());
             return S_OK;
         }
@@ -1527,6 +1632,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pipe());
             return S_OK;
         }
@@ -1545,6 +1651,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInEventArgs> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InterruptData());
             return S_OK;
         }
@@ -1563,6 +1670,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInPipe> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EndpointDescriptor());
             return S_OK;
         }
@@ -1577,6 +1685,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInPipe> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ClearStallAsync());
             return S_OK;
         }
@@ -1591,6 +1700,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInPipe> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DataReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1604,6 +1714,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptInPipe> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DataReceived(token);
             return S_OK;
         }
@@ -1621,6 +1732,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxPacketSize());
             return S_OK;
         }
@@ -1634,6 +1746,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EndpointNumber());
             return S_OK;
         }
@@ -1647,6 +1760,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Interval());
             return S_OK;
         }
@@ -1660,6 +1774,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pipe());
             return S_OK;
         }
@@ -1678,6 +1793,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutPipe> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EndpointDescriptor());
             return S_OK;
         }
@@ -1692,6 +1808,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutPipe> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ClearStallAsync());
             return S_OK;
         }
@@ -1706,6 +1823,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutPipe> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteOptions(value);
             return S_OK;
         }
@@ -1719,6 +1837,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutPipe> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WriteOptions());
             return S_OK;
         }
@@ -1732,6 +1851,7 @@ struct produce<D, Windows::Devices::Usb::IUsbInterruptOutPipe> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OutputStream());
             return S_OK;
         }
@@ -1750,6 +1870,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequestType());
             return S_OK;
         }
@@ -1764,6 +1885,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RequestType(*reinterpret_cast<const Windows::Devices::Usb::UsbControlRequestType *>(&value));
             return S_OK;
         }
@@ -1777,6 +1899,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }
@@ -1790,6 +1913,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Request(value);
             return S_OK;
         }
@@ -1803,6 +1927,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -1816,6 +1941,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(value);
             return S_OK;
         }
@@ -1829,6 +1955,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Index());
             return S_OK;
         }
@@ -1842,6 +1969,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Index(value);
             return S_OK;
         }
@@ -1855,6 +1983,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Length());
             return S_OK;
         }
@@ -1868,6 +1997,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Length(value);
             return S_OK;
         }
@@ -1885,6 +2015,7 @@ struct produce<D, Windows::Devices::Usb::IUsbSetupPacketFactory> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateWithEightByteBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&eightByteBuffer)));
             return S_OK;
         }

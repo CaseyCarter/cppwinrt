@@ -19,6 +19,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AmbientAmount());
             return S_OK;
         }
@@ -32,6 +33,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AmbientAmount(value);
             return S_OK;
         }
@@ -45,6 +47,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DiffuseAmount());
             return S_OK;
         }
@@ -58,6 +61,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DiffuseAmount(value);
             return S_OK;
         }
@@ -71,6 +75,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NormalMapSource());
             return S_OK;
         }
@@ -85,6 +90,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NormalMapSource(*reinterpret_cast<const Windows::Graphics::Effects::IGraphicsEffectSource *>(&value));
             return S_OK;
         }
@@ -98,6 +104,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SpecularAmount());
             return S_OK;
         }
@@ -111,6 +118,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SpecularAmount(value);
             return S_OK;
         }
@@ -124,6 +132,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SpecularShine());
             return S_OK;
         }
@@ -137,6 +146,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SpecularShine(value);
             return S_OK;
         }

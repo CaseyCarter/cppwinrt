@@ -19,6 +19,7 @@ struct produce<D, Windows::Devices::Power::IBattery> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -33,6 +34,7 @@ struct produce<D, Windows::Devices::Power::IBattery> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetReport());
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::Devices::Power::IBattery> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ReportUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -60,6 +63,7 @@ struct produce<D, Windows::Devices::Power::IBattery> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportUpdated(token);
             return S_OK;
         }
@@ -77,6 +81,7 @@ struct produce<D, Windows::Devices::Power::IBatteryReport> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChargeRateInMilliwatts());
             return S_OK;
         }
@@ -91,6 +96,7 @@ struct produce<D, Windows::Devices::Power::IBatteryReport> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesignCapacityInMilliwattHours());
             return S_OK;
         }
@@ -105,6 +111,7 @@ struct produce<D, Windows::Devices::Power::IBatteryReport> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FullChargeCapacityInMilliwattHours());
             return S_OK;
         }
@@ -119,6 +126,7 @@ struct produce<D, Windows::Devices::Power::IBatteryReport> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemainingCapacityInMilliwattHours());
             return S_OK;
         }
@@ -133,6 +141,7 @@ struct produce<D, Windows::Devices::Power::IBatteryReport> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -150,6 +159,7 @@ struct produce<D, Windows::Devices::Power::IBatteryStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().AggregateBattery());
             return S_OK;
         }
@@ -164,6 +174,7 @@ struct produce<D, Windows::Devices::Power::IBatteryStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -178,6 +189,7 @@ struct produce<D, Windows::Devices::Power::IBatteryStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }

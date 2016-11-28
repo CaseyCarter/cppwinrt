@@ -19,6 +19,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactDat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SyncRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderConnection, Windows::ApplicationModel::Contacts::DataProvider::ContactListSyncManagerSyncRequestEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -32,6 +33,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactDat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SyncRequested(token);
             return S_OK;
         }
@@ -45,6 +47,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactDat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ServerSearchReadBatchRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderConnection, Windows::ApplicationModel::Contacts::DataProvider::ContactListServerSearchReadBatchRequestEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -58,6 +61,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactDat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ServerSearchReadBatchRequested(token);
             return S_OK;
         }
@@ -71,6 +75,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactDat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start();
             return S_OK;
         }
@@ -88,6 +93,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactDat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Connection());
             return S_OK;
         }
@@ -106,6 +112,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SessionId());
             return S_OK;
         }
@@ -120,6 +127,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContactListId());
             return S_OK;
         }
@@ -134,6 +142,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Options());
             return S_OK;
         }
@@ -148,6 +157,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SuggestedBatchSize());
             return S_OK;
         }
@@ -161,6 +171,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SaveContactAsync(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact)));
             return S_OK;
         }
@@ -175,6 +186,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
@@ -189,6 +201,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReportFailedAsync(batchStatus));
             return S_OK;
         }
@@ -207,6 +220,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }
@@ -221,6 +235,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -239,6 +254,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContactListId());
             return S_OK;
         }
@@ -253,6 +269,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
@@ -267,6 +284,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
@@ -285,6 +303,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }
@@ -299,6 +318,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::DataProvider::IContactLis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }

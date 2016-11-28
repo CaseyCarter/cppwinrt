@@ -20,6 +20,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerEntering(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -33,6 +34,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerEntering(cookie);
             return S_OK;
         }
@@ -46,6 +48,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerHovering(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -59,6 +62,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerHovering(cookie);
             return S_OK;
         }
@@ -72,6 +76,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerExiting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -85,6 +90,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerExiting(cookie);
             return S_OK;
         }
@@ -98,6 +104,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerPressing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -111,6 +118,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerPressing(cookie);
             return S_OK;
         }
@@ -124,6 +132,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerMoving(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -137,6 +146,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerMoving(cookie);
             return S_OK;
         }
@@ -150,6 +160,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerReleasing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -163,6 +174,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerReleasing(cookie);
             return S_OK;
         }
@@ -176,6 +188,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -189,6 +202,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerLost(cookie);
             return S_OK;
         }
@@ -202,6 +216,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InkPresenter());
             return S_OK;
         }
@@ -220,6 +235,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSour
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *inkIndependentInputSource = detach(this->shim().Create(*reinterpret_cast<const Windows::UI::Input::Inking::InkPresenter *>(&inkPresenter)));
             return S_OK;
         }
@@ -238,6 +254,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewInkPoints());
             return S_OK;
         }
@@ -252,6 +269,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerId());
             return S_OK;
         }
@@ -265,6 +283,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Disposition());
             return S_OK;
         }
@@ -278,6 +297,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Disposition(value);
             return S_OK;
         }
@@ -295,6 +315,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().WetStrokeStarting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -308,6 +329,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WetStrokeStarting(cookie);
             return S_OK;
         }
@@ -321,6 +343,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().WetStrokeContinuing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -334,6 +357,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WetStrokeContinuing(cookie);
             return S_OK;
         }
@@ -347,6 +371,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().WetStrokeStopping(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -360,6 +385,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WetStrokeStopping(cookie);
             return S_OK;
         }
@@ -373,6 +399,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().WetStrokeCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -386,6 +413,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WetStrokeCompleted(cookie);
             return S_OK;
         }
@@ -399,6 +427,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().WetStrokeCanceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -412,6 +441,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WetStrokeCanceled(cookie);
             return S_OK;
         }
@@ -425,6 +455,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InkPresenter());
             return S_OK;
         }
@@ -443,6 +474,7 @@ struct produce<D, Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSourceSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *WetStrokeUpdateSource = detach(this->shim().Create(*reinterpret_cast<const Windows::UI::Input::Inking::InkPresenter *>(&inkPresenter)));
             return S_OK;
         }

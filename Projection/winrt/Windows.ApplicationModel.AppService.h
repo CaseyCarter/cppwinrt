@@ -22,6 +22,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceCatalogStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FindAppServiceProvidersAsync(*reinterpret_cast<const hstring *>(&appServiceName)));
             return S_OK;
         }
@@ -40,6 +41,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceClosedEventA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -57,6 +59,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppServiceName());
             return S_OK;
         }
@@ -71,6 +74,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AppServiceName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -84,6 +88,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PackageFamilyName());
             return S_OK;
         }
@@ -98,6 +103,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PackageFamilyName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -111,6 +117,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().OpenAsync());
             return S_OK;
         }
@@ -125,6 +132,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SendMessageAsync(*reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&message)));
             return S_OK;
         }
@@ -139,6 +147,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RequestReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -152,6 +161,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RequestReceived(token);
             return S_OK;
         }
@@ -165,6 +175,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ServiceClosed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -178,6 +189,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ServiceClosed(token);
             return S_OK;
         }
@@ -195,6 +207,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().OpenRemoteAsync(*reinterpret_cast<const Windows::System::RemoteSystems::RemoteSystemConnectionRequest *>(&remoteSystemConnectionRequest)));
             return S_OK;
         }
@@ -209,6 +222,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().User());
             return S_OK;
         }
@@ -223,6 +237,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().User(*reinterpret_cast<const Windows::System::User *>(&value));
             return S_OK;
         }
@@ -240,6 +255,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceDeferral> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -257,6 +273,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceRequest> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Message());
             return S_OK;
         }
@@ -271,6 +288,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceRequest> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SendResponseAsync(*reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&message)));
             return S_OK;
         }
@@ -289,6 +307,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceRequestRecei
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }
@@ -303,6 +322,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceRequestRecei
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -321,6 +341,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceResponse> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Message());
             return S_OK;
         }
@@ -335,6 +356,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceResponse> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -352,6 +374,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceTriggerDetai
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -366,6 +389,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceTriggerDetai
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CallerPackageFamilyName());
             return S_OK;
         }
@@ -380,6 +404,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceTriggerDetai
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppServiceConnection());
             return S_OK;
         }
@@ -398,6 +423,7 @@ struct produce<D, Windows::ApplicationModel::AppService::IAppServiceTriggerDetai
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsRemoteSystemConnection());
             return S_OK;
         }

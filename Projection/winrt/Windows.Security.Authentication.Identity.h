@@ -17,6 +17,7 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TenantId());
             return S_OK;
         }
@@ -31,6 +32,7 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TenantName());
             return S_OK;
         }
@@ -45,6 +47,7 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Subject());
             return S_OK;
         }
@@ -59,6 +62,7 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyId());
             return S_OK;
         }
@@ -73,6 +77,7 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyName());
             return S_OK;
         }
@@ -91,6 +96,7 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetRegistrationsAsync());
             return S_OK;
         }
@@ -109,6 +115,7 @@ struct produce<D, Windows::Security::Authentication::Identity::IEnterpriseKeyCre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Current());
             return S_OK;
         }

@@ -17,6 +17,7 @@ struct produce<D, Windows::Security::Cryptography::ICryptographicBufferStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *isEqual = detach(this->shim().Compare(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&object1), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&object2)));
             return S_OK;
         }
@@ -30,6 +31,7 @@ struct produce<D, Windows::Security::Cryptography::ICryptographicBufferStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *buffer = detach(this->shim().GenerateRandom(length));
             return S_OK;
         }
@@ -44,6 +46,7 @@ struct produce<D, Windows::Security::Cryptography::ICryptographicBufferStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GenerateRandomNumber());
             return S_OK;
         }
@@ -57,6 +60,7 @@ struct produce<D, Windows::Security::Cryptography::ICryptographicBufferStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *buffer = detach(this->shim().CreateFromByteArray(array_ref<const uint8_t>(value, value + __valueSize)));
             return S_OK;
         }
@@ -71,6 +75,7 @@ struct produce<D, Windows::Security::Cryptography::ICryptographicBufferStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CopyToByteArray(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer), detach<uint8_t>(__valueSize, value));
             return S_OK;
         }
@@ -86,6 +91,7 @@ struct produce<D, Windows::Security::Cryptography::ICryptographicBufferStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *buffer = detach(this->shim().DecodeFromHexString(*reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
@@ -100,6 +106,7 @@ struct produce<D, Windows::Security::Cryptography::ICryptographicBufferStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EncodeToHexString(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
             return S_OK;
         }
@@ -114,6 +121,7 @@ struct produce<D, Windows::Security::Cryptography::ICryptographicBufferStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *buffer = detach(this->shim().DecodeFromBase64String(*reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
@@ -128,6 +136,7 @@ struct produce<D, Windows::Security::Cryptography::ICryptographicBufferStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EncodeToBase64String(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
             return S_OK;
         }
@@ -142,6 +151,7 @@ struct produce<D, Windows::Security::Cryptography::ICryptographicBufferStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *buffer = detach(this->shim().ConvertStringToBinary(*reinterpret_cast<const hstring *>(&value), encoding));
             return S_OK;
         }
@@ -156,6 +166,7 @@ struct produce<D, Windows::Security::Cryptography::ICryptographicBufferStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConvertBinaryToString(encoding, *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
             return S_OK;
         }

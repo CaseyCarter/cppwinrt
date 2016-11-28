@@ -20,6 +20,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *action = detach(this->shim().AddLicenseAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&license)));
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetSatisfactionInfosAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&contentIds), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&keyIds)));
             return S_OK;
         }
@@ -52,6 +54,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SatisfiedByDevice());
             return S_OK;
         }
@@ -65,6 +68,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SatisfiedByOpenLicense());
             return S_OK;
         }
@@ -78,6 +82,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SatisfiedByTrial());
             return S_OK;
         }
@@ -91,6 +96,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SatisfiedByPass());
             return S_OK;
         }
@@ -104,6 +110,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SatisfiedByInstallMedia());
             return S_OK;
         }
@@ -117,6 +124,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SatisfiedBySignedInUser());
             return S_OK;
         }
@@ -130,6 +138,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsSatisfied());
             return S_OK;
         }
@@ -147,6 +156,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LicenseSatisfactionInfos());
             return S_OK;
         }
@@ -161,6 +171,7 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtendedError());
             return S_OK;
         }

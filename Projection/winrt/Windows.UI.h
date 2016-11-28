@@ -20,6 +20,7 @@ struct produce<D, Windows::UI::IColorHelperStatics> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FromArgb(a, r, g, b));
             return S_OK;
         }
@@ -41,6 +42,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AliceBlue());
             return S_OK;
         }
@@ -54,6 +56,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AntiqueWhite());
             return S_OK;
         }
@@ -67,6 +70,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Aqua());
             return S_OK;
         }
@@ -80,6 +84,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Aquamarine());
             return S_OK;
         }
@@ -93,6 +98,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Azure());
             return S_OK;
         }
@@ -106,6 +112,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Beige());
             return S_OK;
         }
@@ -119,6 +126,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bisque());
             return S_OK;
         }
@@ -132,6 +140,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Black());
             return S_OK;
         }
@@ -145,6 +154,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BlanchedAlmond());
             return S_OK;
         }
@@ -158,6 +168,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Blue());
             return S_OK;
         }
@@ -171,6 +182,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BlueViolet());
             return S_OK;
         }
@@ -184,6 +196,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Brown());
             return S_OK;
         }
@@ -197,6 +210,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BurlyWood());
             return S_OK;
         }
@@ -210,6 +224,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CadetBlue());
             return S_OK;
         }
@@ -223,6 +238,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Chartreuse());
             return S_OK;
         }
@@ -236,6 +252,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Chocolate());
             return S_OK;
         }
@@ -249,6 +266,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Coral());
             return S_OK;
         }
@@ -262,6 +280,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CornflowerBlue());
             return S_OK;
         }
@@ -275,6 +294,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Cornsilk());
             return S_OK;
         }
@@ -288,6 +308,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Crimson());
             return S_OK;
         }
@@ -301,6 +322,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Cyan());
             return S_OK;
         }
@@ -314,6 +336,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DarkBlue());
             return S_OK;
         }
@@ -327,6 +350,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DarkCyan());
             return S_OK;
         }
@@ -340,6 +364,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DarkGoldenrod());
             return S_OK;
         }
@@ -353,6 +378,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DarkGray());
             return S_OK;
         }
@@ -366,6 +392,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DarkGreen());
             return S_OK;
         }
@@ -379,6 +406,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DarkKhaki());
             return S_OK;
         }
@@ -392,6 +420,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DarkMagenta());
             return S_OK;
         }
@@ -405,6 +434,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DarkOliveGreen());
             return S_OK;
         }
@@ -418,6 +448,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DarkOrange());
             return S_OK;
         }
@@ -431,6 +462,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DarkOrchid());
             return S_OK;
         }
@@ -444,6 +476,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DarkRed());
             return S_OK;
         }
@@ -457,6 +490,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DarkSalmon());
             return S_OK;
         }
@@ -470,6 +504,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DarkSeaGreen());
             return S_OK;
         }
@@ -483,6 +518,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DarkSlateBlue());
             return S_OK;
         }
@@ -496,6 +532,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DarkSlateGray());
             return S_OK;
         }
@@ -509,6 +546,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DarkTurquoise());
             return S_OK;
         }
@@ -522,6 +560,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DarkViolet());
             return S_OK;
         }
@@ -535,6 +574,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeepPink());
             return S_OK;
         }
@@ -548,6 +588,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeepSkyBlue());
             return S_OK;
         }
@@ -561,6 +602,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DimGray());
             return S_OK;
         }
@@ -574,6 +616,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DodgerBlue());
             return S_OK;
         }
@@ -587,6 +630,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Firebrick());
             return S_OK;
         }
@@ -600,6 +644,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FloralWhite());
             return S_OK;
         }
@@ -613,6 +658,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ForestGreen());
             return S_OK;
         }
@@ -626,6 +672,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Fuchsia());
             return S_OK;
         }
@@ -639,6 +686,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gainsboro());
             return S_OK;
         }
@@ -652,6 +700,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GhostWhite());
             return S_OK;
         }
@@ -665,6 +714,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gold());
             return S_OK;
         }
@@ -678,6 +728,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Goldenrod());
             return S_OK;
         }
@@ -691,6 +742,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gray());
             return S_OK;
         }
@@ -704,6 +756,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Green());
             return S_OK;
         }
@@ -717,6 +770,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GreenYellow());
             return S_OK;
         }
@@ -730,6 +784,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Honeydew());
             return S_OK;
         }
@@ -743,6 +798,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HotPink());
             return S_OK;
         }
@@ -756,6 +812,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IndianRed());
             return S_OK;
         }
@@ -769,6 +826,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Indigo());
             return S_OK;
         }
@@ -782,6 +840,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ivory());
             return S_OK;
         }
@@ -795,6 +854,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Khaki());
             return S_OK;
         }
@@ -808,6 +868,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Lavender());
             return S_OK;
         }
@@ -821,6 +882,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LavenderBlush());
             return S_OK;
         }
@@ -834,6 +896,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LawnGreen());
             return S_OK;
         }
@@ -847,6 +910,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LemonChiffon());
             return S_OK;
         }
@@ -860,6 +924,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LightBlue());
             return S_OK;
         }
@@ -873,6 +938,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LightCoral());
             return S_OK;
         }
@@ -886,6 +952,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LightCyan());
             return S_OK;
         }
@@ -899,6 +966,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LightGoldenrodYellow());
             return S_OK;
         }
@@ -912,6 +980,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LightGreen());
             return S_OK;
         }
@@ -925,6 +994,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LightGray());
             return S_OK;
         }
@@ -938,6 +1008,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LightPink());
             return S_OK;
         }
@@ -951,6 +1022,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LightSalmon());
             return S_OK;
         }
@@ -964,6 +1036,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LightSeaGreen());
             return S_OK;
         }
@@ -977,6 +1050,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LightSkyBlue());
             return S_OK;
         }
@@ -990,6 +1064,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LightSlateGray());
             return S_OK;
         }
@@ -1003,6 +1078,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LightSteelBlue());
             return S_OK;
         }
@@ -1016,6 +1092,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LightYellow());
             return S_OK;
         }
@@ -1029,6 +1106,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Lime());
             return S_OK;
         }
@@ -1042,6 +1120,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LimeGreen());
             return S_OK;
         }
@@ -1055,6 +1134,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Linen());
             return S_OK;
         }
@@ -1068,6 +1148,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Magenta());
             return S_OK;
         }
@@ -1081,6 +1162,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Maroon());
             return S_OK;
         }
@@ -1094,6 +1176,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediumAquamarine());
             return S_OK;
         }
@@ -1107,6 +1190,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediumBlue());
             return S_OK;
         }
@@ -1120,6 +1204,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediumOrchid());
             return S_OK;
         }
@@ -1133,6 +1218,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediumPurple());
             return S_OK;
         }
@@ -1146,6 +1232,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediumSeaGreen());
             return S_OK;
         }
@@ -1159,6 +1246,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediumSlateBlue());
             return S_OK;
         }
@@ -1172,6 +1260,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediumSpringGreen());
             return S_OK;
         }
@@ -1185,6 +1274,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediumTurquoise());
             return S_OK;
         }
@@ -1198,6 +1288,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediumVioletRed());
             return S_OK;
         }
@@ -1211,6 +1302,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MidnightBlue());
             return S_OK;
         }
@@ -1224,6 +1316,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MintCream());
             return S_OK;
         }
@@ -1237,6 +1330,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MistyRose());
             return S_OK;
         }
@@ -1250,6 +1344,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Moccasin());
             return S_OK;
         }
@@ -1263,6 +1358,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NavajoWhite());
             return S_OK;
         }
@@ -1276,6 +1372,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Navy());
             return S_OK;
         }
@@ -1289,6 +1386,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OldLace());
             return S_OK;
         }
@@ -1302,6 +1400,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Olive());
             return S_OK;
         }
@@ -1315,6 +1414,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OliveDrab());
             return S_OK;
         }
@@ -1328,6 +1428,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Orange());
             return S_OK;
         }
@@ -1341,6 +1442,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OrangeRed());
             return S_OK;
         }
@@ -1354,6 +1456,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Orchid());
             return S_OK;
         }
@@ -1367,6 +1470,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PaleGoldenrod());
             return S_OK;
         }
@@ -1380,6 +1484,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PaleGreen());
             return S_OK;
         }
@@ -1393,6 +1498,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PaleTurquoise());
             return S_OK;
         }
@@ -1406,6 +1512,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PaleVioletRed());
             return S_OK;
         }
@@ -1419,6 +1526,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PapayaWhip());
             return S_OK;
         }
@@ -1432,6 +1540,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PeachPuff());
             return S_OK;
         }
@@ -1445,6 +1554,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Peru());
             return S_OK;
         }
@@ -1458,6 +1568,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pink());
             return S_OK;
         }
@@ -1471,6 +1582,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Plum());
             return S_OK;
         }
@@ -1484,6 +1596,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PowderBlue());
             return S_OK;
         }
@@ -1497,6 +1610,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Purple());
             return S_OK;
         }
@@ -1510,6 +1624,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Red());
             return S_OK;
         }
@@ -1523,6 +1638,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RosyBrown());
             return S_OK;
         }
@@ -1536,6 +1652,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RoyalBlue());
             return S_OK;
         }
@@ -1549,6 +1666,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SaddleBrown());
             return S_OK;
         }
@@ -1562,6 +1680,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Salmon());
             return S_OK;
         }
@@ -1575,6 +1694,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SandyBrown());
             return S_OK;
         }
@@ -1588,6 +1708,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SeaGreen());
             return S_OK;
         }
@@ -1601,6 +1722,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SeaShell());
             return S_OK;
         }
@@ -1614,6 +1736,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sienna());
             return S_OK;
         }
@@ -1627,6 +1750,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Silver());
             return S_OK;
         }
@@ -1640,6 +1764,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SkyBlue());
             return S_OK;
         }
@@ -1653,6 +1778,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SlateBlue());
             return S_OK;
         }
@@ -1666,6 +1792,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SlateGray());
             return S_OK;
         }
@@ -1679,6 +1806,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Snow());
             return S_OK;
         }
@@ -1692,6 +1820,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SpringGreen());
             return S_OK;
         }
@@ -1705,6 +1834,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SteelBlue());
             return S_OK;
         }
@@ -1718,6 +1848,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Tan());
             return S_OK;
         }
@@ -1731,6 +1862,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Teal());
             return S_OK;
         }
@@ -1744,6 +1876,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Thistle());
             return S_OK;
         }
@@ -1757,6 +1890,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Tomato());
             return S_OK;
         }
@@ -1770,6 +1904,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Transparent());
             return S_OK;
         }
@@ -1783,6 +1918,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Turquoise());
             return S_OK;
         }
@@ -1796,6 +1932,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Violet());
             return S_OK;
         }
@@ -1809,6 +1946,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Wheat());
             return S_OK;
         }
@@ -1822,6 +1960,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().White());
             return S_OK;
         }
@@ -1835,6 +1974,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WhiteSmoke());
             return S_OK;
         }
@@ -1848,6 +1988,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Yellow());
             return S_OK;
         }
@@ -1861,6 +2002,7 @@ struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().YellowGreen());
             return S_OK;
         }

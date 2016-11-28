@@ -21,6 +21,7 @@ struct produce<D, Windows::ApplicationModel::Core::IAppListEntry> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayInfo());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::ApplicationModel::Core::IAppListEntry> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().LaunchAsync());
             return S_OK;
         }
@@ -53,6 +55,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplication> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -67,6 +70,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplication> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Suspending(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::ApplicationModel::SuspendingEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -80,6 +84,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplication> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Suspending(token);
             return S_OK;
         }
@@ -93,6 +98,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplication> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Resuming(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -106,6 +112,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplication> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Resuming(token);
             return S_OK;
         }
@@ -119,6 +126,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplication> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -133,6 +141,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplication> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCurrentView());
             return S_OK;
         }
@@ -147,6 +156,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplication> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Run(*reinterpret_cast<const Windows::ApplicationModel::Core::IFrameworkViewSource *>(&viewSource));
             return S_OK;
         }
@@ -160,6 +170,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplication> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RunWithActivationFactories(*reinterpret_cast<const Windows::Foundation::IGetActivationFactory *>(&activationFactoryCallback));
             return S_OK;
         }
@@ -177,6 +188,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplication2> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().BackgroundActivated(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -190,6 +202,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplication2> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BackgroundActivated(token);
             return S_OK;
         }
@@ -203,6 +216,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplication2> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().LeavingBackground(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::ApplicationModel::LeavingBackgroundEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -216,6 +230,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplication2> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LeavingBackground(token);
             return S_OK;
         }
@@ -229,6 +244,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplication2> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().EnteredBackground(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::ApplicationModel::EnteredBackgroundEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -242,6 +258,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplication2> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnteredBackground(token);
             return S_OK;
         }
@@ -255,6 +272,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplication2> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnablePrelaunch(value);
             return S_OK;
         }
@@ -272,6 +290,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationExit> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Exit();
             return S_OK;
         }
@@ -285,6 +304,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationExit> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Exiting(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -298,6 +318,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationExit> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Exiting(token);
             return S_OK;
         }
@@ -315,6 +336,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationUnhandledErro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().UnhandledErrorDetected(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::ApplicationModel::Core::UnhandledErrorDetectedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -328,6 +350,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationUnhandledErro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UnhandledErrorDetected(token);
             return S_OK;
         }
@@ -345,6 +368,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationUseCount> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IncrementApplicationUseCount();
             return S_OK;
         }
@@ -358,6 +382,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationUseCount> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DecrementApplicationUseCount();
             return S_OK;
         }
@@ -375,6 +400,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationView> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CoreWindow());
             return S_OK;
         }
@@ -389,6 +415,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationView> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Activated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationView, Windows::ApplicationModel::Activation::IActivatedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -402,6 +429,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationView> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Activated(token);
             return S_OK;
         }
@@ -415,6 +443,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationView> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsMain());
             return S_OK;
         }
@@ -428,6 +457,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationView> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsHosted());
             return S_OK;
         }
@@ -445,6 +475,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationView2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Dispatcher());
             return S_OK;
         }
@@ -463,6 +494,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationView3> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsComponent());
             return S_OK;
         }
@@ -476,6 +508,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationView3> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TitleBar());
             return S_OK;
         }
@@ -490,6 +523,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationView3> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().HostedViewClosing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationView, Windows::ApplicationModel::Core::HostedViewClosingEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -503,6 +537,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationView3> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().HostedViewClosing(token);
             return S_OK;
         }
@@ -520,6 +555,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExtendViewIntoTitleBar(value);
             return S_OK;
         }
@@ -533,6 +569,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtendViewIntoTitleBar());
             return S_OK;
         }
@@ -546,6 +583,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SystemOverlayLeftInset());
             return S_OK;
         }
@@ -559,6 +597,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SystemOverlayRightInset());
             return S_OK;
         }
@@ -572,6 +611,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Height());
             return S_OK;
         }
@@ -585,6 +625,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().LayoutMetricsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -598,6 +639,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LayoutMetricsChanged(token);
             return S_OK;
         }
@@ -611,6 +653,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsVisible());
             return S_OK;
         }
@@ -624,6 +667,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().IsVisibleChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -637,6 +681,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsVisibleChanged(token);
             return S_OK;
         }
@@ -654,6 +699,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreImmersiveApplication> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Views());
             return S_OK;
         }
@@ -668,6 +714,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreImmersiveApplication> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *view = detach(this->shim().CreateNewView(*reinterpret_cast<const hstring *>(&runtimeType), *reinterpret_cast<const hstring *>(&entryPoint)));
             return S_OK;
         }
@@ -682,6 +729,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreImmersiveApplication> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MainView());
             return S_OK;
         }
@@ -700,6 +748,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreImmersiveApplication2> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *view = detach(this->shim().CreateNewView());
             return S_OK;
         }
@@ -718,6 +767,7 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreImmersiveApplication3> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *view = detach(this->shim().CreateNewView(*reinterpret_cast<const Windows::ApplicationModel::Core::IFrameworkViewSource *>(&viewSource)));
             return S_OK;
         }
@@ -736,6 +786,7 @@ struct produce<D, Windows::ApplicationModel::Core::IFrameworkView> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Initialize(*reinterpret_cast<const Windows::ApplicationModel::Core::CoreApplicationView *>(&applicationView));
             return S_OK;
         }
@@ -749,6 +800,7 @@ struct produce<D, Windows::ApplicationModel::Core::IFrameworkView> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetWindow(*reinterpret_cast<const Windows::UI::Core::CoreWindow *>(&window));
             return S_OK;
         }
@@ -762,6 +814,7 @@ struct produce<D, Windows::ApplicationModel::Core::IFrameworkView> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Load(*reinterpret_cast<const hstring *>(&entryPoint));
             return S_OK;
         }
@@ -775,6 +828,7 @@ struct produce<D, Windows::ApplicationModel::Core::IFrameworkView> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Run();
             return S_OK;
         }
@@ -788,6 +842,7 @@ struct produce<D, Windows::ApplicationModel::Core::IFrameworkView> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Uninitialize();
             return S_OK;
         }
@@ -805,6 +860,7 @@ struct produce<D, Windows::ApplicationModel::Core::IFrameworkViewSource> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *viewProvider = detach(this->shim().CreateView());
             return S_OK;
         }
@@ -823,6 +879,7 @@ struct produce<D, Windows::ApplicationModel::Core::IHostedViewClosingEventArgs> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -841,6 +898,7 @@ struct produce<D, Windows::ApplicationModel::Core::IUnhandledError> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -854,6 +912,7 @@ struct produce<D, Windows::ApplicationModel::Core::IUnhandledError> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Propagate();
             return S_OK;
         }
@@ -871,6 +930,7 @@ struct produce<D, Windows::ApplicationModel::Core::IUnhandledErrorDetectedEventA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnhandledError());
             return S_OK;
         }

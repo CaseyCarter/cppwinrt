@@ -18,6 +18,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontColor());
             return S_OK;
         }
@@ -31,6 +32,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ComputedFontColor());
             return S_OK;
         }
@@ -44,6 +46,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontOpacity());
             return S_OK;
         }
@@ -57,6 +60,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontSize());
             return S_OK;
         }
@@ -70,6 +74,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontStyle());
             return S_OK;
         }
@@ -83,6 +88,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontEffect());
             return S_OK;
         }
@@ -96,6 +102,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BackgroundColor());
             return S_OK;
         }
@@ -109,6 +116,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ComputedBackgroundColor());
             return S_OK;
         }
@@ -122,6 +130,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BackgroundOpacity());
             return S_OK;
         }
@@ -135,6 +144,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RegionColor());
             return S_OK;
         }
@@ -148,6 +158,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ComputedRegionColor());
             return S_OK;
         }
@@ -161,6 +172,7 @@ struct produce<D, Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RegionOpacity());
             return S_OK;
         }

@@ -26,6 +26,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().CreatePresenter());
             return S_OK;
         }
@@ -60,6 +61,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnConfirmed();
             return S_OK;
         }
@@ -73,6 +75,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().ShouldShowConfirmationButtons());
             return S_OK;
         }
@@ -111,6 +114,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnMinimumChanged(oldMinimum, newMinimum);
             return S_OK;
         }
@@ -124,6 +128,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnMaximumChanged(oldMaximum, newMaximum);
             return S_OK;
         }
@@ -137,6 +142,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnValueChanged(oldValue, newValue);
             return S_OK;
         }
@@ -165,6 +171,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnToggle();
             return S_OK;
         }

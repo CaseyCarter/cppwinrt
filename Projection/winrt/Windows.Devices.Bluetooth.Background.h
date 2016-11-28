@@ -24,6 +24,7 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IBluetoothLEAdvertise
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -37,6 +38,7 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IBluetoothLEAdvertise
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Error());
             return S_OK;
         }
@@ -54,6 +56,7 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IBluetoothLEAdvertise
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Error());
             return S_OK;
         }
@@ -67,6 +70,7 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IBluetoothLEAdvertise
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Advertisements());
             return S_OK;
         }
@@ -81,6 +85,7 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IBluetoothLEAdvertise
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SignalStrengthFilter());
             return S_OK;
         }
@@ -99,6 +104,7 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IGattCharacteristicNo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Characteristic());
             return S_OK;
         }
@@ -113,6 +119,7 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IGattCharacteristicNo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -131,6 +138,7 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IRfcommConnectionTrig
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Socket());
             return S_OK;
         }
@@ -145,6 +153,7 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IRfcommConnectionTrig
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Incoming());
             return S_OK;
         }
@@ -158,6 +167,7 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IRfcommConnectionTrig
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteDevice());
             return S_OK;
         }
@@ -176,6 +186,7 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IRfcommInboundConnect
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SdpRecord());
             return S_OK;
         }
@@ -190,6 +201,7 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IRfcommInboundConnect
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SdpRecord(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
@@ -203,6 +215,7 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IRfcommInboundConnect
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalServiceId());
             return S_OK;
         }
@@ -217,6 +230,7 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IRfcommInboundConnect
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LocalServiceId(*reinterpret_cast<const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId *>(&value));
             return S_OK;
         }
@@ -230,6 +244,7 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IRfcommInboundConnect
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceCapabilities());
             return S_OK;
         }
@@ -243,6 +258,7 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IRfcommInboundConnect
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ServiceCapabilities(value);
             return S_OK;
         }
@@ -260,6 +276,7 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IRfcommOutboundConnec
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteServiceId());
             return S_OK;
         }
@@ -274,6 +291,7 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IRfcommOutboundConnec
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteServiceId(*reinterpret_cast<const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId *>(&value));
             return S_OK;
         }

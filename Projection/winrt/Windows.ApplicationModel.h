@@ -21,6 +21,7 @@ struct produce<D, Windows::ApplicationModel::IAppDisplayInfo> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::ApplicationModel::IAppDisplayInfo> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -49,6 +51,7 @@ struct produce<D, Windows::ApplicationModel::IAppDisplayInfo> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetLogo(*reinterpret_cast<const Windows::Foundation::Size *>(&size)));
             return S_OK;
         }
@@ -67,6 +70,7 @@ struct produce<D, Windows::ApplicationModel::IAppInfo> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -81,6 +85,7 @@ struct produce<D, Windows::ApplicationModel::IAppInfo> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppUserModelId());
             return S_OK;
         }
@@ -95,6 +100,7 @@ struct produce<D, Windows::ApplicationModel::IAppInfo> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayInfo());
             return S_OK;
         }
@@ -109,6 +115,7 @@ struct produce<D, Windows::ApplicationModel::IAppInfo> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PackageFamilyName());
             return S_OK;
         }
@@ -127,6 +134,7 @@ struct produce<D, Windows::ApplicationModel::IDesignModeStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesignModeEnabled());
             return S_OK;
         }
@@ -144,6 +152,7 @@ struct produce<D, Windows::ApplicationModel::IEnteredBackgroundEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -162,6 +171,7 @@ struct produce<D, Windows::ApplicationModel::ILeavingBackgroundEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -180,6 +190,7 @@ struct produce<D, Windows::ApplicationModel::IPackage> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -194,6 +205,7 @@ struct produce<D, Windows::ApplicationModel::IPackage> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InstalledLocation());
             return S_OK;
         }
@@ -208,6 +220,7 @@ struct produce<D, Windows::ApplicationModel::IPackage> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsFramework());
             return S_OK;
         }
@@ -221,6 +234,7 @@ struct produce<D, Windows::ApplicationModel::IPackage> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Dependencies());
             return S_OK;
         }
@@ -239,6 +253,7 @@ struct produce<D, Windows::ApplicationModel::IPackage2> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -253,6 +268,7 @@ struct produce<D, Windows::ApplicationModel::IPackage2> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PublisherDisplayName());
             return S_OK;
         }
@@ -267,6 +283,7 @@ struct produce<D, Windows::ApplicationModel::IPackage2> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -281,6 +298,7 @@ struct produce<D, Windows::ApplicationModel::IPackage2> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Logo());
             return S_OK;
         }
@@ -295,6 +313,7 @@ struct produce<D, Windows::ApplicationModel::IPackage2> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsResourcePackage());
             return S_OK;
         }
@@ -308,6 +327,7 @@ struct produce<D, Windows::ApplicationModel::IPackage2> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsBundle());
             return S_OK;
         }
@@ -321,6 +341,7 @@ struct produce<D, Windows::ApplicationModel::IPackage2> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDevelopmentMode());
             return S_OK;
         }
@@ -338,6 +359,7 @@ struct produce<D, Windows::ApplicationModel::IPackage3> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -352,6 +374,7 @@ struct produce<D, Windows::ApplicationModel::IPackage3> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InstalledDate());
             return S_OK;
         }
@@ -365,6 +388,7 @@ struct produce<D, Windows::ApplicationModel::IPackage3> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetAppListEntriesAsync());
             return S_OK;
         }
@@ -383,6 +407,7 @@ struct produce<D, Windows::ApplicationModel::IPackage4> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SignatureKind());
             return S_OK;
         }
@@ -396,6 +421,7 @@ struct produce<D, Windows::ApplicationModel::IPackage4> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsOptional());
             return S_OK;
         }
@@ -409,6 +435,7 @@ struct produce<D, Windows::ApplicationModel::IPackage4> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().VerifyContentIntegrityAsync());
             return S_OK;
         }
@@ -427,6 +454,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PackageStaging(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStagingEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -440,6 +468,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PackageStaging(token);
             return S_OK;
         }
@@ -453,6 +482,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PackageInstalling(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageInstallingEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -466,6 +496,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PackageInstalling(token);
             return S_OK;
         }
@@ -479,6 +510,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PackageUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageUpdatingEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -492,6 +524,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PackageUpdating(token);
             return S_OK;
         }
@@ -505,6 +538,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PackageUninstalling(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageUninstallingEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -518,6 +552,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PackageUninstalling(token);
             return S_OK;
         }
@@ -531,6 +566,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PackageStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStatusChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -544,6 +580,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PackageStatusChanged(token);
             return S_OK;
         }
@@ -561,6 +598,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalogStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OpenForCurrentPackage());
             return S_OK;
         }
@@ -575,6 +613,7 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalogStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OpenForCurrentUser());
             return S_OK;
         }
@@ -593,6 +632,7 @@ struct produce<D, Windows::ApplicationModel::IPackageId> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -607,6 +647,7 @@ struct produce<D, Windows::ApplicationModel::IPackageId> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Version());
             return S_OK;
         }
@@ -620,6 +661,7 @@ struct produce<D, Windows::ApplicationModel::IPackageId> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Architecture());
             return S_OK;
         }
@@ -633,6 +675,7 @@ struct produce<D, Windows::ApplicationModel::IPackageId> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResourceId());
             return S_OK;
         }
@@ -647,6 +690,7 @@ struct produce<D, Windows::ApplicationModel::IPackageId> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Publisher());
             return S_OK;
         }
@@ -661,6 +705,7 @@ struct produce<D, Windows::ApplicationModel::IPackageId> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PublisherId());
             return S_OK;
         }
@@ -675,6 +720,7 @@ struct produce<D, Windows::ApplicationModel::IPackageId> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FullName());
             return S_OK;
         }
@@ -689,6 +735,7 @@ struct produce<D, Windows::ApplicationModel::IPackageId> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FamilyName());
             return S_OK;
         }
@@ -707,6 +754,7 @@ struct produce<D, Windows::ApplicationModel::IPackageIdWithMetadata> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProductId());
             return S_OK;
         }
@@ -721,6 +769,7 @@ struct produce<D, Windows::ApplicationModel::IPackageIdWithMetadata> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Author());
             return S_OK;
         }
@@ -739,6 +788,7 @@ struct produce<D, Windows::ApplicationModel::IPackageInstallingEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ActivityId());
             return S_OK;
         }
@@ -752,6 +802,7 @@ struct produce<D, Windows::ApplicationModel::IPackageInstallingEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Package());
             return S_OK;
         }
@@ -766,6 +817,7 @@ struct produce<D, Windows::ApplicationModel::IPackageInstallingEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Progress());
             return S_OK;
         }
@@ -779,6 +831,7 @@ struct produce<D, Windows::ApplicationModel::IPackageInstallingEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsComplete());
             return S_OK;
         }
@@ -792,6 +845,7 @@ struct produce<D, Windows::ApplicationModel::IPackageInstallingEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ErrorCode());
             return S_OK;
         }
@@ -809,6 +863,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStagingEventArgs> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ActivityId());
             return S_OK;
         }
@@ -822,6 +877,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStagingEventArgs> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Package());
             return S_OK;
         }
@@ -836,6 +892,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStagingEventArgs> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Progress());
             return S_OK;
         }
@@ -849,6 +906,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStagingEventArgs> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsComplete());
             return S_OK;
         }
@@ -862,6 +920,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStagingEventArgs> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ErrorCode());
             return S_OK;
         }
@@ -879,6 +938,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Current());
             return S_OK;
         }
@@ -897,6 +957,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VerifyIsOK());
             return S_OK;
         }
@@ -910,6 +971,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NotAvailable());
             return S_OK;
         }
@@ -923,6 +985,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PackageOffline());
             return S_OK;
         }
@@ -936,6 +999,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataOffline());
             return S_OK;
         }
@@ -949,6 +1013,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Disabled());
             return S_OK;
         }
@@ -962,6 +1027,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NeedsRemediation());
             return S_OK;
         }
@@ -975,6 +1041,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LicenseIssue());
             return S_OK;
         }
@@ -988,6 +1055,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Modified());
             return S_OK;
         }
@@ -1001,6 +1069,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Tampered());
             return S_OK;
         }
@@ -1014,6 +1083,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DependencyIssue());
             return S_OK;
         }
@@ -1027,6 +1097,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Servicing());
             return S_OK;
         }
@@ -1040,6 +1111,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeploymentInProgress());
             return S_OK;
         }
@@ -1057,6 +1129,7 @@ struct produce<D, Windows::ApplicationModel::IPackageStatusChangedEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Package());
             return S_OK;
         }
@@ -1075,6 +1148,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUninstallingEventArgs> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ActivityId());
             return S_OK;
         }
@@ -1088,6 +1162,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUninstallingEventArgs> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Package());
             return S_OK;
         }
@@ -1102,6 +1177,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUninstallingEventArgs> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Progress());
             return S_OK;
         }
@@ -1115,6 +1191,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUninstallingEventArgs> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsComplete());
             return S_OK;
         }
@@ -1128,6 +1205,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUninstallingEventArgs> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ErrorCode());
             return S_OK;
         }
@@ -1145,6 +1223,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUpdatingEventArgs> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ActivityId());
             return S_OK;
         }
@@ -1158,6 +1237,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUpdatingEventArgs> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourcePackage());
             return S_OK;
         }
@@ -1172,6 +1252,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUpdatingEventArgs> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetPackage());
             return S_OK;
         }
@@ -1186,6 +1267,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUpdatingEventArgs> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Progress());
             return S_OK;
         }
@@ -1199,6 +1281,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUpdatingEventArgs> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsComplete());
             return S_OK;
         }
@@ -1212,6 +1295,7 @@ struct produce<D, Windows::ApplicationModel::IPackageUpdatingEventArgs> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ErrorCode());
             return S_OK;
         }
@@ -1229,6 +1313,7 @@ struct produce<D, Windows::ApplicationModel::IPackageWithMetadata> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InstallDate());
             return S_OK;
         }
@@ -1242,6 +1327,7 @@ struct produce<D, Windows::ApplicationModel::IPackageWithMetadata> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetThumbnailToken());
             return S_OK;
         }
@@ -1256,6 +1342,7 @@ struct produce<D, Windows::ApplicationModel::IPackageWithMetadata> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Launch(*reinterpret_cast<const hstring *>(&parameters));
             return S_OK;
         }
@@ -1273,6 +1360,7 @@ struct produce<D, Windows::ApplicationModel::ISuspendingDeferral> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -1290,6 +1378,7 @@ struct produce<D, Windows::ApplicationModel::ISuspendingEventArgs> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SuspendingOperation());
             return S_OK;
         }
@@ -1308,6 +1397,7 @@ struct produce<D, Windows::ApplicationModel::ISuspendingOperation> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1322,6 +1412,7 @@ struct produce<D, Windows::ApplicationModel::ISuspendingOperation> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Deadline());
             return S_OK;
         }

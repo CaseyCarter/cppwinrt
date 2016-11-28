@@ -19,6 +19,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOperation = detach(this->shim().GetOneTimePassCodeAsync(*reinterpret_cast<const hstring *>(&userAccountId), codeLength));
             return S_OK;
         }
@@ -33,6 +34,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOperation = detach(this->shim().AddDeviceAsync(*reinterpret_cast<const hstring *>(&userAccountId), *reinterpret_cast<const hstring *>(&authenticationToken), *reinterpret_cast<const hstring *>(&wnsChannelId)));
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOperation = detach(this->shim().RemoveDeviceAsync(*reinterpret_cast<const hstring *>(&userAccountId)));
             return S_OK;
         }
@@ -61,6 +64,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOperation = detach(this->shim().UpdateWnsChannelAsync(*reinterpret_cast<const hstring *>(&userAccountId), *reinterpret_cast<const hstring *>(&channelUri)));
             return S_OK;
         }
@@ -75,6 +79,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOperation = detach(this->shim().GetSessionsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&userAccountIdList)));
             return S_OK;
         }
@@ -89,6 +94,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOperation = detach(this->shim().GetSessionsAndUnregisteredAccountsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&userAccountIdList)));
             return S_OK;
         }
@@ -103,6 +109,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOperation = detach(this->shim().ApproveSessionAsync(sessionAuthentictionStatus, *reinterpret_cast<const Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo *>(&authenticationSessionInfo)));
             return S_OK;
         }
@@ -117,6 +124,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOperation = detach(this->shim().ApproveSessionAsync(sessionAuthentictionStatus, *reinterpret_cast<const hstring *>(&userAccountId), *reinterpret_cast<const hstring *>(&sessionId), sessionAuthenticationType));
             return S_OK;
         }
@@ -131,6 +139,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOperation = detach(this->shim().DenySessionAsync(*reinterpret_cast<const Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo *>(&authenticationSessionInfo)));
             return S_OK;
         }
@@ -145,6 +154,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOperation = detach(this->shim().DenySessionAsync(*reinterpret_cast<const hstring *>(&userAccountId), *reinterpret_cast<const hstring *>(&sessionId), sessionAuthenticationType));
             return S_OK;
         }
@@ -163,6 +173,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Current());
             return S_OK;
         }
@@ -181,6 +192,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sessions());
             return S_OK;
         }
@@ -195,6 +207,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceResponse());
             return S_OK;
         }
@@ -212,6 +225,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Code());
             return S_OK;
         }
@@ -226,6 +240,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TimeInterval());
             return S_OK;
         }
@@ -239,6 +254,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TimeToLive());
             return S_OK;
         }
@@ -252,6 +268,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceResponse());
             return S_OK;
         }
@@ -269,6 +286,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserAccountId());
             return S_OK;
         }
@@ -283,6 +301,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SessionId());
             return S_OK;
         }
@@ -297,6 +316,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplaySessionId());
             return S_OK;
         }
@@ -311,6 +331,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ApprovalStatus());
             return S_OK;
         }
@@ -324,6 +345,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AuthenticationType());
             return S_OK;
         }
@@ -337,6 +359,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequestTime());
             return S_OK;
         }
@@ -350,6 +373,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExpirationTime());
             return S_OK;
         }
@@ -367,6 +391,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sessions());
             return S_OK;
         }
@@ -381,6 +406,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnregisteredAccounts());
             return S_OK;
         }
@@ -395,6 +421,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Core::IMicrosoftA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceResponse());
             return S_OK;
         }

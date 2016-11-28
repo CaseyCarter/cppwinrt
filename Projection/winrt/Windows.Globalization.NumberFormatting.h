@@ -19,6 +19,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ICurrencyFormatter> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Currency());
             return S_OK;
         }
@@ -33,6 +34,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ICurrencyFormatter> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Currency(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -50,6 +52,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ICurrencyFormatter2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Mode());
             return S_OK;
         }
@@ -63,6 +66,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ICurrencyFormatter2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Mode(value);
             return S_OK;
         }
@@ -76,6 +80,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ICurrencyFormatter2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ApplyRoundingForCurrency(roundingAlgorithm);
             return S_OK;
         }
@@ -93,6 +98,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ICurrencyFormatterFa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateCurrencyFormatterCode(*reinterpret_cast<const hstring *>(&currencyCode)));
             return S_OK;
         }
@@ -107,6 +113,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ICurrencyFormatterFa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateCurrencyFormatterCodeContext(*reinterpret_cast<const hstring *>(&currencyCode), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&geographicRegion)));
             return S_OK;
         }
@@ -125,6 +132,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::IDecimalFormatterFac
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateDecimalFormatter(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&geographicRegion)));
             return S_OK;
         }
@@ -143,6 +151,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::IIncrementNumberRoun
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RoundingAlgorithm());
             return S_OK;
         }
@@ -156,6 +165,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::IIncrementNumberRoun
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RoundingAlgorithm(value);
             return S_OK;
         }
@@ -169,6 +179,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::IIncrementNumberRoun
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Increment());
             return S_OK;
         }
@@ -182,6 +193,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::IIncrementNumberRoun
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Increment(value);
             return S_OK;
         }
@@ -199,6 +211,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatter> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Format(value));
             return S_OK;
         }
@@ -213,6 +226,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatter> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Format(value));
             return S_OK;
         }
@@ -227,6 +241,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatter> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Format(value));
             return S_OK;
         }
@@ -245,6 +260,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatter2> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FormatInt(value));
             return S_OK;
         }
@@ -259,6 +275,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatter2> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FormatUInt(value));
             return S_OK;
         }
@@ -273,6 +290,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatter2> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FormatDouble(value));
             return S_OK;
         }
@@ -291,6 +309,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Languages());
             return S_OK;
         }
@@ -305,6 +324,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GeographicRegion());
             return S_OK;
         }
@@ -319,6 +339,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IntegerDigits());
             return S_OK;
         }
@@ -332,6 +353,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IntegerDigits(value);
             return S_OK;
         }
@@ -345,6 +367,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FractionDigits());
             return S_OK;
         }
@@ -358,6 +381,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FractionDigits(value);
             return S_OK;
         }
@@ -371,6 +395,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsGrouped());
             return S_OK;
         }
@@ -384,6 +409,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsGrouped(value);
             return S_OK;
         }
@@ -397,6 +423,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDecimalPointAlwaysDisplayed());
             return S_OK;
         }
@@ -410,6 +437,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsDecimalPointAlwaysDisplayed(value);
             return S_OK;
         }
@@ -423,6 +451,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumeralSystem());
             return S_OK;
         }
@@ -437,6 +466,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NumeralSystem(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -450,6 +480,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResolvedLanguage());
             return S_OK;
         }
@@ -464,6 +495,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOpti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResolvedGeographicRegion());
             return S_OK;
         }
@@ -482,6 +514,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberParser> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ParseInt(*reinterpret_cast<const hstring *>(&text)));
             return S_OK;
         }
@@ -496,6 +529,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberParser> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ParseUInt(*reinterpret_cast<const hstring *>(&text)));
             return S_OK;
         }
@@ -510,6 +544,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberParser> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ParseDouble(*reinterpret_cast<const hstring *>(&text)));
             return S_OK;
         }
@@ -528,6 +563,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberRounder> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RoundInt32(value));
             return S_OK;
         }
@@ -541,6 +577,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberRounder> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RoundUInt32(value));
             return S_OK;
         }
@@ -554,6 +591,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberRounder> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RoundInt64(value));
             return S_OK;
         }
@@ -567,6 +605,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberRounder> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RoundUInt64(value));
             return S_OK;
         }
@@ -580,6 +619,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberRounder> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RoundSingle(value));
             return S_OK;
         }
@@ -593,6 +633,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberRounder> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RoundDouble(value));
             return S_OK;
         }
@@ -610,6 +651,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberRounderOption
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumberRounder());
             return S_OK;
         }
@@ -624,6 +666,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumberRounderOption
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NumberRounder(*reinterpret_cast<const Windows::Globalization::NumberFormatting::INumberRounder *>(&value));
             return S_OK;
         }
@@ -641,6 +684,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumeralSystemTransl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Languages());
             return S_OK;
         }
@@ -655,6 +699,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumeralSystemTransl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResolvedLanguage());
             return S_OK;
         }
@@ -669,6 +714,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumeralSystemTransl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumeralSystem());
             return S_OK;
         }
@@ -683,6 +729,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumeralSystemTransl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NumeralSystem(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -696,6 +743,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumeralSystemTransl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TranslateNumerals(*reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
@@ -714,6 +762,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::INumeralSystemTransl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages)));
             return S_OK;
         }
@@ -732,6 +781,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::IPercentFormatterFac
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreatePercentFormatter(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&geographicRegion)));
             return S_OK;
         }
@@ -750,6 +800,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::IPermilleFormatterFa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreatePermilleFormatter(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&geographicRegion)));
             return S_OK;
         }
@@ -768,6 +819,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ISignedZeroOption> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsZeroSigned());
             return S_OK;
         }
@@ -781,6 +833,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ISignedZeroOption> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsZeroSigned(value);
             return S_OK;
         }
@@ -798,6 +851,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ISignificantDigitsNu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RoundingAlgorithm());
             return S_OK;
         }
@@ -811,6 +865,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ISignificantDigitsNu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RoundingAlgorithm(value);
             return S_OK;
         }
@@ -824,6 +879,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ISignificantDigitsNu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SignificantDigits());
             return S_OK;
         }
@@ -837,6 +893,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ISignificantDigitsNu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SignificantDigits(value);
             return S_OK;
         }
@@ -854,6 +911,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ISignificantDigitsOp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SignificantDigits());
             return S_OK;
         }
@@ -867,6 +925,7 @@ struct produce<D, Windows::Globalization::NumberFormatting::ISignificantDigitsOp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SignificantDigits(value);
             return S_OK;
         }

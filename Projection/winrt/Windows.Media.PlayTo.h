@@ -20,6 +20,7 @@ struct produce<D, Windows::Media::PlayTo::ICurrentTimeChangeRequestedEventArgs> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Time());
             return S_OK;
         }
@@ -37,6 +38,7 @@ struct produce<D, Windows::Media::PlayTo::IMuteChangeRequestedEventArgs> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Mute());
             return S_OK;
         }
@@ -54,6 +56,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnection> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().State());
             return S_OK;
         }
@@ -67,6 +70,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnection> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionStateChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -80,6 +84,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnection> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StateChanged(token);
             return S_OK;
         }
@@ -93,6 +98,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnection> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Transferred(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionTransferredEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -106,6 +112,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnection> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Transferred(token);
             return S_OK;
         }
@@ -119,6 +126,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnection> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Error(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionErrorEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -132,6 +140,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnection> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Error(token);
             return S_OK;
         }
@@ -149,6 +158,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnectionErrorEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Code());
             return S_OK;
         }
@@ -162,6 +172,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnectionErrorEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Message());
             return S_OK;
         }
@@ -180,6 +191,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnectionStateChangedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PreviousState());
             return S_OK;
         }
@@ -193,6 +205,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnectionStateChangedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentState());
             return S_OK;
         }
@@ -210,6 +223,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnectionTransferredEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PreviousSource());
             return S_OK;
         }
@@ -224,6 +238,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToConnectionTransferredEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentSource());
             return S_OK;
         }
@@ -242,6 +257,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToManager> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SourceRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -255,6 +271,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToManager> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceRequested(token);
             return S_OK;
         }
@@ -268,6 +285,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToManager> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SourceSelected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceSelectedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -281,6 +299,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToManager> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceSelected(token);
             return S_OK;
         }
@@ -294,6 +313,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToManager> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DefaultSourceSelection(value);
             return S_OK;
         }
@@ -307,6 +327,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToManager> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DefaultSourceSelection());
             return S_OK;
         }
@@ -324,6 +345,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToManagerStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *playToManager = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -338,6 +360,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToManagerStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShowPlayToUI();
             return S_OK;
         }
@@ -355,6 +378,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PlayRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -368,6 +392,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PlayRequested(token);
             return S_OK;
         }
@@ -381,6 +406,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PauseRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -394,6 +420,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PauseRequested(token);
             return S_OK;
         }
@@ -407,6 +434,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SourceChangeRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::SourceChangeRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -420,6 +448,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceChangeRequested(token);
             return S_OK;
         }
@@ -433,6 +462,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PlaybackRateChangeRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::PlaybackRateChangeRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -446,6 +476,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PlaybackRateChangeRequested(token);
             return S_OK;
         }
@@ -459,6 +490,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CurrentTimeChangeRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::CurrentTimeChangeRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -472,6 +504,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CurrentTimeChangeRequested(token);
             return S_OK;
         }
@@ -485,6 +518,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MuteChangeRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::MuteChangeRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -498,6 +532,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MuteChangeRequested(token);
             return S_OK;
         }
@@ -511,6 +546,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().VolumeChangeRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::VolumeChangeRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -524,6 +560,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VolumeChangeRequested(token);
             return S_OK;
         }
@@ -537,6 +574,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().TimeUpdateRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -550,6 +588,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TimeUpdateRequested(token);
             return S_OK;
         }
@@ -563,6 +602,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().StopRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -576,6 +616,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StopRequested(token);
             return S_OK;
         }
@@ -589,6 +630,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyVolumeChange(volume, mute);
             return S_OK;
         }
@@ -602,6 +644,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyRateChange(rate);
             return S_OK;
         }
@@ -615,6 +658,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyLoadedMetadata();
             return S_OK;
         }
@@ -628,6 +672,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyTimeUpdate(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&currentTime));
             return S_OK;
         }
@@ -641,6 +686,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyDurationChange(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&duration));
             return S_OK;
         }
@@ -654,6 +700,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifySeeking();
             return S_OK;
         }
@@ -667,6 +714,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifySeeked();
             return S_OK;
         }
@@ -680,6 +728,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyPaused();
             return S_OK;
         }
@@ -693,6 +742,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyPlaying();
             return S_OK;
         }
@@ -706,6 +756,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyEnded();
             return S_OK;
         }
@@ -719,6 +770,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyError();
             return S_OK;
         }
@@ -732,6 +784,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyStopped();
             return S_OK;
         }
@@ -745,6 +798,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FriendlyName());
             return S_OK;
         }
@@ -759,6 +813,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FriendlyName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -772,6 +827,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SupportsImage(value);
             return S_OK;
         }
@@ -785,6 +841,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportsImage());
             return S_OK;
         }
@@ -798,6 +855,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SupportsAudio(value);
             return S_OK;
         }
@@ -811,6 +869,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportsAudio());
             return S_OK;
         }
@@ -824,6 +883,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SupportsVideo(value);
             return S_OK;
         }
@@ -837,6 +897,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportsVideo());
             return S_OK;
         }
@@ -850,6 +911,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -864,6 +926,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *action = detach(this->shim().StartAsync());
             return S_OK;
         }
@@ -878,6 +941,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToReceiver> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *action = detach(this->shim().StopAsync());
             return S_OK;
         }
@@ -896,6 +960,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSource> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Connection());
             return S_OK;
         }
@@ -910,6 +975,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSource> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Next());
             return S_OK;
         }
@@ -924,6 +990,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSource> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Next(*reinterpret_cast<const Windows::Media::PlayTo::PlayToSource *>(&value));
             return S_OK;
         }
@@ -937,6 +1004,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSource> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PlayNext();
             return S_OK;
         }
@@ -954,6 +1022,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceDeferral> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -971,6 +1040,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceRequest> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Deadline());
             return S_OK;
         }
@@ -984,6 +1054,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceRequest> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisplayErrorString(*reinterpret_cast<const hstring *>(&errorString));
             return S_OK;
         }
@@ -997,6 +1068,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceRequest> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1011,6 +1083,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceRequest> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetSource(*reinterpret_cast<const Windows::Media::PlayTo::PlayToSource *>(&value));
             return S_OK;
         }
@@ -1028,6 +1101,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceRequestedEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourceRequest());
             return S_OK;
         }
@@ -1046,6 +1120,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceSelectedEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FriendlyName());
             return S_OK;
         }
@@ -1060,6 +1135,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceSelectedEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Icon());
             return S_OK;
         }
@@ -1074,6 +1150,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceSelectedEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportsImage());
             return S_OK;
         }
@@ -1087,6 +1164,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceSelectedEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportsAudio());
             return S_OK;
         }
@@ -1100,6 +1178,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceSelectedEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportsVideo());
             return S_OK;
         }
@@ -1117,6 +1196,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceWithPreferredSourceUri> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PreferredSourceUri());
             return S_OK;
         }
@@ -1131,6 +1211,7 @@ struct produce<D, Windows::Media::PlayTo::IPlayToSourceWithPreferredSourceUri> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PreferredSourceUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -1148,6 +1229,7 @@ struct produce<D, Windows::Media::PlayTo::IPlaybackRateChangeRequestedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Rate());
             return S_OK;
         }
@@ -1165,6 +1247,7 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Stream());
             return S_OK;
         }
@@ -1179,6 +1262,7 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -1193,6 +1277,7 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Author());
             return S_OK;
         }
@@ -1207,6 +1292,7 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Album());
             return S_OK;
         }
@@ -1221,6 +1307,7 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Genre());
             return S_OK;
         }
@@ -1235,6 +1322,7 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -1249,6 +1337,7 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Date());
             return S_OK;
         }
@@ -1263,6 +1352,7 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
@@ -1277,6 +1367,7 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Rating());
             return S_OK;
         }
@@ -1291,6 +1382,7 @@ struct produce<D, Windows::Media::PlayTo::ISourceChangeRequestedEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -1309,6 +1401,7 @@ struct produce<D, Windows::Media::PlayTo::IVolumeChangeRequestedEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Volume());
             return S_OK;
         }

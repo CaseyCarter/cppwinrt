@@ -19,6 +19,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceAuthenticationHmac());
             return S_OK;
         }
@@ -33,6 +34,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SessionNonce());
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceNonce());
             return S_OK;
         }
@@ -61,6 +64,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceConfigurationData());
             return S_OK;
         }
@@ -75,6 +79,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FinishAuthenticationAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&deviceHmac), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&sessionHmac)));
             return S_OK;
         }
@@ -89,6 +94,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().AbortAuthenticationAsync(*reinterpret_cast<const hstring *>(&errorLogMessage)));
             return S_OK;
         }
@@ -107,6 +113,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -120,6 +127,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Authentication());
             return S_OK;
         }
@@ -138,6 +146,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StageInfo());
             return S_OK;
         }
@@ -156,6 +165,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Stage());
             return S_OK;
         }
@@ -169,6 +179,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Scenario());
             return S_OK;
         }
@@ -182,6 +193,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -200,6 +212,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ShowNotificationMessageAsync(*reinterpret_cast<const hstring *>(&deviceName), message));
             return S_OK;
         }
@@ -214,6 +227,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().StartAuthenticationAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&serviceAuthenticationNonce)));
             return S_OK;
         }
@@ -228,6 +242,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().AuthenticationStageChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -241,6 +256,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AuthenticationStageChanged(token);
             return S_OK;
         }
@@ -254,6 +270,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetAuthenticationStageInfoAsync());
             return S_OK;
         }
@@ -272,6 +289,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *deviceId = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -286,6 +304,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceFriendlyName());
             return S_OK;
         }
@@ -300,6 +319,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceModelNumber());
             return S_OK;
         }
@@ -314,6 +334,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceConfigurationData());
             return S_OK;
         }
@@ -332,6 +353,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FinishRegisteringDeviceAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&deviceConfigurationData)));
             return S_OK;
         }
@@ -346,6 +368,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().AbortRegisteringDeviceAsync(*reinterpret_cast<const hstring *>(&errorLogMessage)));
             return S_OK;
         }
@@ -364,6 +387,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -377,6 +401,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Registration());
             return S_OK;
         }
@@ -395,6 +420,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestStartRegisteringDeviceAsync(*reinterpret_cast<const hstring *>(&deviceId), capabilities, *reinterpret_cast<const hstring *>(&deviceFriendlyName), *reinterpret_cast<const hstring *>(&deviceModelNumber), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&deviceKey), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&mutualAuthenticationKey)));
             return S_OK;
         }
@@ -409,6 +435,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *deviceInfoList = detach(this->shim().FindAllRegisteredDeviceInfoAsync(queryType));
             return S_OK;
         }
@@ -423,6 +450,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().UnregisterDeviceAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -437,6 +465,7 @@ struct produce<D, Windows::Security::Authentication::Identity::Provider::ISecond
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().UpdateDeviceConfigurationDataAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&deviceConfigurationData)));
             return S_OK;
         }

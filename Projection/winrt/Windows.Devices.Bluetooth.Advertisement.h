@@ -21,6 +21,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Flags());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Flags(*reinterpret_cast<const Windows::Foundation::IReference<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> *>(&value));
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalName());
             return S_OK;
         }
@@ -62,6 +65,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LocalName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -75,6 +79,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceUuids());
             return S_OK;
         }
@@ -89,6 +94,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ManufacturerData());
             return S_OK;
         }
@@ -103,6 +109,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataSections());
             return S_OK;
         }
@@ -117,6 +124,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *dataList = detach(this->shim().GetManufacturerDataByCompanyId(companyId));
             return S_OK;
         }
@@ -131,6 +139,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *sectionList = detach(this->shim().GetSectionsByType(type));
             return S_OK;
         }
@@ -149,6 +158,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataType());
             return S_OK;
         }
@@ -162,6 +172,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DataType(value);
             return S_OK;
         }
@@ -175,6 +186,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Offset());
             return S_OK;
         }
@@ -188,6 +200,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Offset(value);
             return S_OK;
         }
@@ -201,6 +214,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Data());
             return S_OK;
         }
@@ -215,6 +229,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Data(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
@@ -232,6 +247,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Create(dataType, offset, *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }
@@ -250,6 +266,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataType());
             return S_OK;
         }
@@ -263,6 +280,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DataType(value);
             return S_OK;
         }
@@ -276,6 +294,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Data());
             return S_OK;
         }
@@ -290,6 +309,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Data(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
@@ -307,6 +327,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Create(dataType, *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }
@@ -325,6 +346,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Flags());
             return S_OK;
         }
@@ -338,6 +360,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IncompleteService16BitUuids());
             return S_OK;
         }
@@ -351,6 +374,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CompleteService16BitUuids());
             return S_OK;
         }
@@ -364,6 +388,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IncompleteService32BitUuids());
             return S_OK;
         }
@@ -377,6 +402,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CompleteService32BitUuids());
             return S_OK;
         }
@@ -390,6 +416,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IncompleteService128BitUuids());
             return S_OK;
         }
@@ -403,6 +430,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CompleteService128BitUuids());
             return S_OK;
         }
@@ -416,6 +444,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShortenedLocalName());
             return S_OK;
         }
@@ -429,6 +458,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CompleteLocalName());
             return S_OK;
         }
@@ -442,6 +472,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TxPowerLevel());
             return S_OK;
         }
@@ -455,6 +486,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SlaveConnectionIntervalRange());
             return S_OK;
         }
@@ -468,6 +500,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceSolicitation16BitUuids());
             return S_OK;
         }
@@ -481,6 +514,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceSolicitation32BitUuids());
             return S_OK;
         }
@@ -494,6 +528,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceSolicitation128BitUuids());
             return S_OK;
         }
@@ -507,6 +542,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceData16BitUuids());
             return S_OK;
         }
@@ -520,6 +556,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceData32BitUuids());
             return S_OK;
         }
@@ -533,6 +570,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceData128BitUuids());
             return S_OK;
         }
@@ -546,6 +584,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PublicTargetAddress());
             return S_OK;
         }
@@ -559,6 +598,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RandomTargetAddress());
             return S_OK;
         }
@@ -572,6 +612,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Appearance());
             return S_OK;
         }
@@ -585,6 +626,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AdvertisingInterval());
             return S_OK;
         }
@@ -598,6 +640,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ManufacturerSpecificData());
             return S_OK;
         }
@@ -615,6 +658,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Advertisement());
             return S_OK;
         }
@@ -629,6 +673,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Advertisement(*reinterpret_cast<const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement *>(&value));
             return S_OK;
         }
@@ -642,6 +687,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BytePatterns());
             return S_OK;
         }
@@ -660,6 +706,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -673,6 +720,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Advertisement());
             return S_OK;
         }
@@ -687,6 +735,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start();
             return S_OK;
         }
@@ -700,6 +749,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stop();
             return S_OK;
         }
@@ -713,6 +763,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().StatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatusChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -726,6 +777,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StatusChanged(token);
             return S_OK;
         }
@@ -743,6 +795,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement *>(&advertisement)));
             return S_OK;
         }
@@ -761,6 +814,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -774,6 +828,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Error());
             return S_OK;
         }
@@ -791,6 +846,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RawSignalStrengthInDBm());
             return S_OK;
         }
@@ -804,6 +860,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BluetoothAddress());
             return S_OK;
         }
@@ -817,6 +874,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AdvertisementType());
             return S_OK;
         }
@@ -830,6 +888,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -843,6 +902,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Advertisement());
             return S_OK;
         }
@@ -861,6 +921,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinSamplingInterval());
             return S_OK;
         }
@@ -874,6 +935,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxSamplingInterval());
             return S_OK;
         }
@@ -887,6 +949,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinOutOfRangeTimeout());
             return S_OK;
         }
@@ -900,6 +963,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxOutOfRangeTimeout());
             return S_OK;
         }
@@ -913,6 +977,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -926,6 +991,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ScanningMode());
             return S_OK;
         }
@@ -939,6 +1005,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ScanningMode(value);
             return S_OK;
         }
@@ -952,6 +1019,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SignalStrengthFilter());
             return S_OK;
         }
@@ -966,6 +1034,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SignalStrengthFilter(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter *>(&value));
             return S_OK;
         }
@@ -979,6 +1048,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AdvertisementFilter());
             return S_OK;
         }
@@ -993,6 +1063,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AdvertisementFilter(*reinterpret_cast<const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter *>(&value));
             return S_OK;
         }
@@ -1006,6 +1077,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start();
             return S_OK;
         }
@@ -1019,6 +1091,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stop();
             return S_OK;
         }
@@ -1032,6 +1105,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Received(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1045,6 +1119,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Received(token);
             return S_OK;
         }
@@ -1058,6 +1133,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStoppedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1071,6 +1147,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stopped(token);
             return S_OK;
         }
@@ -1088,6 +1165,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter *>(&advertisementFilter)));
             return S_OK;
         }
@@ -1106,6 +1184,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvert
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Error());
             return S_OK;
         }
@@ -1123,6 +1202,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEManufa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CompanyId());
             return S_OK;
         }
@@ -1136,6 +1216,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEManufa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CompanyId(value);
             return S_OK;
         }
@@ -1149,6 +1230,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEManufa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Data());
             return S_OK;
         }
@@ -1163,6 +1245,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEManufa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Data(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
@@ -1180,6 +1263,7 @@ struct produce<D, Windows::Devices::Bluetooth::Advertisement::IBluetoothLEManufa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Create(companyId, *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }

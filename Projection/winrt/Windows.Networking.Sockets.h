@@ -27,6 +27,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Control());
             return S_OK;
         }
@@ -41,6 +42,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Information());
             return S_OK;
         }
@@ -55,6 +57,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OutputStream());
             return S_OK;
         }
@@ -69,6 +72,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ConnectAsync(*reinterpret_cast<const Windows::Networking::HostName *>(&remoteHostName), *reinterpret_cast<const hstring *>(&remoteServiceName)));
             return S_OK;
         }
@@ -83,6 +87,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ConnectAsync(*reinterpret_cast<const Windows::Networking::EndpointPair *>(&endpointPair)));
             return S_OK;
         }
@@ -97,6 +102,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().BindServiceNameAsync(*reinterpret_cast<const hstring *>(&localServiceName)));
             return S_OK;
         }
@@ -111,6 +117,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().BindEndpointAsync(*reinterpret_cast<const Windows::Networking::HostName *>(&localHostName), *reinterpret_cast<const hstring *>(&localServiceName)));
             return S_OK;
         }
@@ -125,6 +132,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().JoinMulticastGroup(*reinterpret_cast<const Windows::Networking::HostName *>(&host));
             return S_OK;
         }
@@ -138,6 +146,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetOutputStreamAsync(*reinterpret_cast<const Windows::Networking::HostName *>(&remoteHostName), *reinterpret_cast<const hstring *>(&remoteServiceName)));
             return S_OK;
         }
@@ -152,6 +161,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetOutputStreamAsync(*reinterpret_cast<const Windows::Networking::EndpointPair *>(&endpointPair)));
             return S_OK;
         }
@@ -166,6 +176,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().MessageReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::DatagramSocket, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
@@ -179,6 +190,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MessageReceived(eventCookie);
             return S_OK;
         }
@@ -196,6 +208,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().BindServiceNameAsync(*reinterpret_cast<const hstring *>(&localServiceName), *reinterpret_cast<const Windows::Networking::Connectivity::NetworkAdapter *>(&adapter)));
             return S_OK;
         }
@@ -214,6 +227,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CancelIOAsync());
             return S_OK;
         }
@@ -228,6 +242,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableTransferOwnership(taskId);
             return S_OK;
         }
@@ -241,6 +256,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableTransferOwnership(taskId, connectedStandbyAction);
             return S_OK;
         }
@@ -254,6 +270,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransferOwnership(*reinterpret_cast<const hstring *>(&socketId));
             return S_OK;
         }
@@ -267,6 +284,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransferOwnership(*reinterpret_cast<const hstring *>(&socketId), *reinterpret_cast<const Windows::Networking::Sockets::SocketActivityContext *>(&data));
             return S_OK;
         }
@@ -280,6 +298,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocket3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransferOwnership(*reinterpret_cast<const hstring *>(&socketId), *reinterpret_cast<const Windows::Networking::Sockets::SocketActivityContext *>(&data), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&keepAliveTime));
             return S_OK;
         }
@@ -297,6 +316,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketControl> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().QualityOfService());
             return S_OK;
         }
@@ -310,6 +330,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketControl> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().QualityOfService(value);
             return S_OK;
         }
@@ -323,6 +344,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketControl> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OutboundUnicastHopLimit());
             return S_OK;
         }
@@ -336,6 +358,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketControl> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OutboundUnicastHopLimit(value);
             return S_OK;
         }
@@ -353,6 +376,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketControl2> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InboundBufferSizeInBytes());
             return S_OK;
         }
@@ -366,6 +390,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketControl2> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InboundBufferSizeInBytes(value);
             return S_OK;
         }
@@ -379,6 +404,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketControl2> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DontFragment());
             return S_OK;
         }
@@ -392,6 +418,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketControl2> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DontFragment(value);
             return S_OK;
         }
@@ -409,6 +436,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketControl3> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MulticastOnly());
             return S_OK;
         }
@@ -422,6 +450,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketControl3> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MulticastOnly(value);
             return S_OK;
         }
@@ -439,6 +468,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalAddress());
             return S_OK;
         }
@@ -453,6 +483,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalPort());
             return S_OK;
         }
@@ -467,6 +498,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteAddress());
             return S_OK;
         }
@@ -481,6 +513,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemotePort());
             return S_OK;
         }
@@ -499,6 +532,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketMessageReceivedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteAddress());
             return S_OK;
         }
@@ -513,6 +547,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketMessageReceivedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemotePort());
             return S_OK;
         }
@@ -527,6 +562,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketMessageReceivedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalAddress());
             return S_OK;
         }
@@ -541,6 +577,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketMessageReceivedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *dataReader = detach(this->shim().GetDataReader());
             return S_OK;
         }
@@ -555,6 +592,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketMessageReceivedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *inputStream = detach(this->shim().GetDataStream());
             return S_OK;
         }
@@ -573,6 +611,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetEndpointPairsAsync(*reinterpret_cast<const Windows::Networking::HostName *>(&remoteHostName), *reinterpret_cast<const hstring *>(&remoteServiceName)));
             return S_OK;
         }
@@ -587,6 +626,7 @@ struct produce<D, Windows::Networking::Sockets::IDatagramSocketStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetEndpointPairsAsync(*reinterpret_cast<const Windows::Networking::HostName *>(&remoteHostName), *reinterpret_cast<const hstring *>(&remoteServiceName), sortOptions));
             return S_OK;
         }
@@ -605,6 +645,7 @@ struct produce<D, Windows::Networking::Sockets::IMessageWebSocket> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Control());
             return S_OK;
         }
@@ -619,6 +660,7 @@ struct produce<D, Windows::Networking::Sockets::IMessageWebSocket> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Information());
             return S_OK;
         }
@@ -633,6 +675,7 @@ struct produce<D, Windows::Networking::Sockets::IMessageWebSocket> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().MessageReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
@@ -646,6 +689,7 @@ struct produce<D, Windows::Networking::Sockets::IMessageWebSocket> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MessageReceived(eventCookie);
             return S_OK;
         }
@@ -663,6 +707,7 @@ struct produce<D, Windows::Networking::Sockets::IMessageWebSocket2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().ServerCustomValidationRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
@@ -676,6 +721,7 @@ struct produce<D, Windows::Networking::Sockets::IMessageWebSocket2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ServerCustomValidationRequested(eventCookie);
             return S_OK;
         }
@@ -693,6 +739,7 @@ struct produce<D, Windows::Networking::Sockets::IMessageWebSocketControl> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxMessageSize());
             return S_OK;
         }
@@ -706,6 +753,7 @@ struct produce<D, Windows::Networking::Sockets::IMessageWebSocketControl> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxMessageSize(value);
             return S_OK;
         }
@@ -719,6 +767,7 @@ struct produce<D, Windows::Networking::Sockets::IMessageWebSocketControl> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MessageType());
             return S_OK;
         }
@@ -732,6 +781,7 @@ struct produce<D, Windows::Networking::Sockets::IMessageWebSocketControl> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MessageType(value);
             return S_OK;
         }
@@ -749,6 +799,7 @@ struct produce<D, Windows::Networking::Sockets::IMessageWebSocketMessageReceived
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MessageType());
             return S_OK;
         }
@@ -762,6 +813,7 @@ struct produce<D, Windows::Networking::Sockets::IMessageWebSocketMessageReceived
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *dataReader = detach(this->shim().GetDataReader());
             return S_OK;
         }
@@ -776,6 +828,7 @@ struct produce<D, Windows::Networking::Sockets::IMessageWebSocketMessageReceived
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *inputStream = detach(this->shim().GetDataStream());
             return S_OK;
         }
@@ -794,6 +847,7 @@ struct produce<D, Windows::Networking::Sockets::ISocketActivityContext> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Data());
             return S_OK;
         }
@@ -812,6 +866,7 @@ struct produce<D, Windows::Networking::Sockets::ISocketActivityContextFactory> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *context = detach(this->shim().Create(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }
@@ -830,6 +885,7 @@ struct produce<D, Windows::Networking::Sockets::ISocketActivityInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TaskId());
             return S_OK;
         }
@@ -843,6 +899,7 @@ struct produce<D, Windows::Networking::Sockets::ISocketActivityInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -857,6 +914,7 @@ struct produce<D, Windows::Networking::Sockets::ISocketActivityInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SocketKind());
             return S_OK;
         }
@@ -870,6 +928,7 @@ struct produce<D, Windows::Networking::Sockets::ISocketActivityInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Context());
             return S_OK;
         }
@@ -884,6 +943,7 @@ struct produce<D, Windows::Networking::Sockets::ISocketActivityInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DatagramSocket());
             return S_OK;
         }
@@ -898,6 +958,7 @@ struct produce<D, Windows::Networking::Sockets::ISocketActivityInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StreamSocket());
             return S_OK;
         }
@@ -912,6 +973,7 @@ struct produce<D, Windows::Networking::Sockets::ISocketActivityInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StreamSocketListener());
             return S_OK;
         }
@@ -930,6 +992,7 @@ struct produce<D, Windows::Networking::Sockets::ISocketActivityInformationStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *sockets = detach(this->shim().AllSockets());
             return S_OK;
         }
@@ -948,6 +1011,7 @@ struct produce<D, Windows::Networking::Sockets::ISocketActivityTriggerDetails> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reason());
             return S_OK;
         }
@@ -961,6 +1025,7 @@ struct produce<D, Windows::Networking::Sockets::ISocketActivityTriggerDetails> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SocketInformation());
             return S_OK;
         }
@@ -979,6 +1044,7 @@ struct produce<D, Windows::Networking::Sockets::ISocketErrorStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *status = detach(this->shim().GetStatus(hresult));
             return S_OK;
         }
@@ -996,6 +1062,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocket> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Control());
             return S_OK;
         }
@@ -1010,6 +1077,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocket> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Information());
             return S_OK;
         }
@@ -1024,6 +1092,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocket> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InputStream());
             return S_OK;
         }
@@ -1038,6 +1107,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocket> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OutputStream());
             return S_OK;
         }
@@ -1052,6 +1122,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocket> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ConnectAsync(*reinterpret_cast<const Windows::Networking::EndpointPair *>(&endpointPair)));
             return S_OK;
         }
@@ -1066,6 +1137,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocket> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ConnectAsync(*reinterpret_cast<const Windows::Networking::HostName *>(&remoteHostName), *reinterpret_cast<const hstring *>(&remoteServiceName)));
             return S_OK;
         }
@@ -1080,6 +1152,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocket> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ConnectAsync(*reinterpret_cast<const Windows::Networking::EndpointPair *>(&endpointPair), protectionLevel));
             return S_OK;
         }
@@ -1094,6 +1167,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocket> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ConnectAsync(*reinterpret_cast<const Windows::Networking::HostName *>(&remoteHostName), *reinterpret_cast<const hstring *>(&remoteServiceName), protectionLevel));
             return S_OK;
         }
@@ -1108,6 +1182,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocket> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().UpgradeToSslAsync(protectionLevel, *reinterpret_cast<const Windows::Networking::HostName *>(&validationHostName)));
             return S_OK;
         }
@@ -1126,6 +1201,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocket2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ConnectAsync(*reinterpret_cast<const Windows::Networking::HostName *>(&remoteHostName), *reinterpret_cast<const hstring *>(&remoteServiceName), protectionLevel, *reinterpret_cast<const Windows::Networking::Connectivity::NetworkAdapter *>(&adapter)));
             return S_OK;
         }
@@ -1144,6 +1220,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocket3> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CancelIOAsync());
             return S_OK;
         }
@@ -1158,6 +1235,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocket3> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableTransferOwnership(taskId);
             return S_OK;
         }
@@ -1171,6 +1249,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocket3> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableTransferOwnership(taskId, connectedStandbyAction);
             return S_OK;
         }
@@ -1184,6 +1263,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocket3> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransferOwnership(*reinterpret_cast<const hstring *>(&socketId));
             return S_OK;
         }
@@ -1197,6 +1277,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocket3> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransferOwnership(*reinterpret_cast<const hstring *>(&socketId), *reinterpret_cast<const Windows::Networking::Sockets::SocketActivityContext *>(&data));
             return S_OK;
         }
@@ -1210,6 +1291,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocket3> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransferOwnership(*reinterpret_cast<const hstring *>(&socketId), *reinterpret_cast<const Windows::Networking::Sockets::SocketActivityContext *>(&data), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&keepAliveTime));
             return S_OK;
         }
@@ -1227,6 +1309,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketControl> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NoDelay());
             return S_OK;
         }
@@ -1240,6 +1323,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketControl> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NoDelay(value);
             return S_OK;
         }
@@ -1253,6 +1337,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketControl> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeepAlive());
             return S_OK;
         }
@@ -1266,6 +1351,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketControl> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeepAlive(value);
             return S_OK;
         }
@@ -1279,6 +1365,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketControl> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OutboundBufferSizeInBytes());
             return S_OK;
         }
@@ -1292,6 +1379,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketControl> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OutboundBufferSizeInBytes(value);
             return S_OK;
         }
@@ -1305,6 +1393,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketControl> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().QualityOfService());
             return S_OK;
         }
@@ -1318,6 +1407,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketControl> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().QualityOfService(value);
             return S_OK;
         }
@@ -1331,6 +1421,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketControl> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OutboundUnicastHopLimit());
             return S_OK;
         }
@@ -1344,6 +1435,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketControl> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OutboundUnicastHopLimit(value);
             return S_OK;
         }
@@ -1361,6 +1453,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketControl2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IgnorableServerCertificateErrors());
             return S_OK;
         }
@@ -1379,6 +1472,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketControl3> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SerializeConnectionAttempts());
             return S_OK;
         }
@@ -1392,6 +1486,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketControl3> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SerializeConnectionAttempts(value);
             return S_OK;
         }
@@ -1405,6 +1500,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketControl3> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClientCertificate());
             return S_OK;
         }
@@ -1419,6 +1515,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketControl3> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClientCertificate(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&value));
             return S_OK;
         }
@@ -1436,6 +1533,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketInformation> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalAddress());
             return S_OK;
         }
@@ -1450,6 +1548,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketInformation> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalPort());
             return S_OK;
         }
@@ -1464,6 +1563,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketInformation> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteHostName());
             return S_OK;
         }
@@ -1478,6 +1578,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketInformation> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteAddress());
             return S_OK;
         }
@@ -1492,6 +1593,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketInformation> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteServiceName());
             return S_OK;
         }
@@ -1506,6 +1608,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketInformation> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemotePort());
             return S_OK;
         }
@@ -1520,6 +1623,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketInformation> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RoundTripTimeStatistics());
             return S_OK;
         }
@@ -1533,6 +1637,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketInformation> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BandwidthStatistics());
             return S_OK;
         }
@@ -1546,6 +1651,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketInformation> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProtectionLevel());
             return S_OK;
         }
@@ -1559,6 +1665,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketInformation> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SessionKey());
             return S_OK;
         }
@@ -1577,6 +1684,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketInformation2> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCertificateErrorSeverity());
             return S_OK;
         }
@@ -1590,6 +1698,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketInformation2> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCertificateErrors());
             return S_OK;
         }
@@ -1604,6 +1713,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketInformation2> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCertificate());
             return S_OK;
         }
@@ -1618,6 +1728,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketInformation2> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerIntermediateCertificates());
             return S_OK;
         }
@@ -1636,6 +1747,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListener> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Control());
             return S_OK;
         }
@@ -1650,6 +1762,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListener> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Information());
             return S_OK;
         }
@@ -1664,6 +1777,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListener> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().BindServiceNameAsync(*reinterpret_cast<const hstring *>(&localServiceName)));
             return S_OK;
         }
@@ -1678,6 +1792,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListener> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().BindEndpointAsync(*reinterpret_cast<const Windows::Networking::HostName *>(&localHostName), *reinterpret_cast<const hstring *>(&localServiceName)));
             return S_OK;
         }
@@ -1692,6 +1807,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListener> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().ConnectionReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamSocketListener, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
@@ -1705,6 +1821,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListener> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ConnectionReceived(eventCookie);
             return S_OK;
         }
@@ -1722,6 +1839,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListener2> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().BindServiceNameAsync(*reinterpret_cast<const hstring *>(&localServiceName), protectionLevel));
             return S_OK;
         }
@@ -1736,6 +1854,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListener2> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().BindServiceNameAsync(*reinterpret_cast<const hstring *>(&localServiceName), protectionLevel, *reinterpret_cast<const Windows::Networking::Connectivity::NetworkAdapter *>(&adapter)));
             return S_OK;
         }
@@ -1754,6 +1873,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListener3> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CancelIOAsync());
             return S_OK;
         }
@@ -1768,6 +1888,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListener3> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableTransferOwnership(taskId);
             return S_OK;
         }
@@ -1781,6 +1902,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListener3> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableTransferOwnership(taskId, connectedStandbyAction);
             return S_OK;
         }
@@ -1794,6 +1916,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListener3> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransferOwnership(*reinterpret_cast<const hstring *>(&socketId));
             return S_OK;
         }
@@ -1807,6 +1930,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListener3> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransferOwnership(*reinterpret_cast<const hstring *>(&socketId), *reinterpret_cast<const Windows::Networking::Sockets::SocketActivityContext *>(&data));
             return S_OK;
         }
@@ -1824,6 +1948,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListenerConnectionR
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Socket());
             return S_OK;
         }
@@ -1842,6 +1967,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListenerControl> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().QualityOfService());
             return S_OK;
         }
@@ -1855,6 +1981,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListenerControl> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().QualityOfService(value);
             return S_OK;
         }
@@ -1872,6 +1999,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListenerControl2> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NoDelay());
             return S_OK;
         }
@@ -1885,6 +2013,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListenerControl2> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NoDelay(value);
             return S_OK;
         }
@@ -1898,6 +2027,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListenerControl2> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeepAlive());
             return S_OK;
         }
@@ -1911,6 +2041,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListenerControl2> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeepAlive(value);
             return S_OK;
         }
@@ -1924,6 +2055,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListenerControl2> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OutboundBufferSizeInBytes());
             return S_OK;
         }
@@ -1937,6 +2069,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListenerControl2> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OutboundBufferSizeInBytes(value);
             return S_OK;
         }
@@ -1950,6 +2083,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListenerControl2> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OutboundUnicastHopLimit());
             return S_OK;
         }
@@ -1963,6 +2097,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListenerControl2> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OutboundUnicastHopLimit(value);
             return S_OK;
         }
@@ -1980,6 +2115,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketListenerInformation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalPort());
             return S_OK;
         }
@@ -1998,6 +2134,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetEndpointPairsAsync(*reinterpret_cast<const Windows::Networking::HostName *>(&remoteHostName), *reinterpret_cast<const hstring *>(&remoteServiceName)));
             return S_OK;
         }
@@ -2012,6 +2149,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamSocketStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetEndpointPairsAsync(*reinterpret_cast<const Windows::Networking::HostName *>(&remoteHostName), *reinterpret_cast<const hstring *>(&remoteServiceName), sortOptions));
             return S_OK;
         }
@@ -2030,6 +2168,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamWebSocket> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Control());
             return S_OK;
         }
@@ -2044,6 +2183,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamWebSocket> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Information());
             return S_OK;
         }
@@ -2058,6 +2198,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamWebSocket> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InputStream());
             return S_OK;
         }
@@ -2076,6 +2217,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamWebSocket2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().ServerCustomValidationRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
@@ -2089,6 +2231,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamWebSocket2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ServerCustomValidationRequested(eventCookie);
             return S_OK;
         }
@@ -2106,6 +2249,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamWebSocketControl> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NoDelay());
             return S_OK;
         }
@@ -2119,6 +2263,7 @@ struct produce<D, Windows::Networking::Sockets::IStreamWebSocketControl> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NoDelay(value);
             return S_OK;
         }
@@ -2136,6 +2281,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocket> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OutputStream());
             return S_OK;
         }
@@ -2150,6 +2296,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocket> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ConnectAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -2164,6 +2311,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocket> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetRequestHeader(*reinterpret_cast<const hstring *>(&headerName), *reinterpret_cast<const hstring *>(&headerValue));
             return S_OK;
         }
@@ -2177,6 +2325,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocket> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().Closed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::IWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
@@ -2190,6 +2339,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocket> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Closed(eventCookie);
             return S_OK;
         }
@@ -2203,6 +2353,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocket> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Close(code, *reinterpret_cast<const hstring *>(&reason));
             return S_OK;
         }
@@ -2220,6 +2371,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketClosedEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Code());
             return S_OK;
         }
@@ -2233,6 +2385,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketClosedEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reason());
             return S_OK;
         }
@@ -2251,6 +2404,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketControl> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OutboundBufferSizeInBytes());
             return S_OK;
         }
@@ -2264,6 +2418,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketControl> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OutboundBufferSizeInBytes(value);
             return S_OK;
         }
@@ -2277,6 +2432,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketControl> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCredential());
             return S_OK;
         }
@@ -2291,6 +2447,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketControl> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ServerCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
             return S_OK;
         }
@@ -2304,6 +2461,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketControl> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProxyCredential());
             return S_OK;
         }
@@ -2318,6 +2476,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketControl> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProxyCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
             return S_OK;
         }
@@ -2331,6 +2490,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketControl> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedProtocols());
             return S_OK;
         }
@@ -2349,6 +2509,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketControl2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IgnorableServerCertificateErrors());
             return S_OK;
         }
@@ -2367,6 +2528,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketErrorStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *status = detach(this->shim().GetStatus(hresult));
             return S_OK;
         }
@@ -2384,6 +2546,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketInformation> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalAddress());
             return S_OK;
         }
@@ -2398,6 +2561,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketInformation> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BandwidthStatistics());
             return S_OK;
         }
@@ -2411,6 +2575,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketInformation> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Protocol());
             return S_OK;
         }
@@ -2429,6 +2594,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketInformation2> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCertificate());
             return S_OK;
         }
@@ -2443,6 +2609,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketInformation2> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCertificateErrorSeverity());
             return S_OK;
         }
@@ -2456,6 +2623,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketInformation2> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCertificateErrors());
             return S_OK;
         }
@@ -2470,6 +2638,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketInformation2> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerIntermediateCertificates());
             return S_OK;
         }
@@ -2488,6 +2657,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketServerCustomValidation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCertificate());
             return S_OK;
         }
@@ -2502,6 +2672,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketServerCustomValidation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCertificateErrorSeverity());
             return S_OK;
         }
@@ -2515,6 +2686,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketServerCustomValidation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCertificateErrors());
             return S_OK;
         }
@@ -2529,6 +2701,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketServerCustomValidation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerIntermediateCertificates());
             return S_OK;
         }
@@ -2543,6 +2716,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketServerCustomValidation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Reject();
             return S_OK;
         }
@@ -2556,6 +2730,7 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketServerCustomValidation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDeferral());
             return S_OK;
         }

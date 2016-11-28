@@ -23,6 +23,7 @@ struct produce<D, Windows::System::UserProfile::IAdvertisingManagerForUser> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AdvertisingId());
             return S_OK;
         }
@@ -37,6 +38,7 @@ struct produce<D, Windows::System::UserProfile::IAdvertisingManagerForUser> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().User());
             return S_OK;
         }
@@ -55,6 +57,7 @@ struct produce<D, Windows::System::UserProfile::IAdvertisingManagerStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AdvertisingId());
             return S_OK;
         }
@@ -73,6 +76,7 @@ struct produce<D, Windows::System::UserProfile::IAdvertisingManagerStatics2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
@@ -95,6 +99,7 @@ struct produce<D, Windows::System::UserProfile::IFirstSignInSettingsStatics> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefault());
             return S_OK;
         }
@@ -113,6 +118,7 @@ struct produce<D, Windows::System::UserProfile::IGlobalizationPreferencesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Calendars());
             return S_OK;
         }
@@ -127,6 +133,7 @@ struct produce<D, Windows::System::UserProfile::IGlobalizationPreferencesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Clocks());
             return S_OK;
         }
@@ -141,6 +148,7 @@ struct produce<D, Windows::System::UserProfile::IGlobalizationPreferencesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Currencies());
             return S_OK;
         }
@@ -155,6 +163,7 @@ struct produce<D, Windows::System::UserProfile::IGlobalizationPreferencesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Languages());
             return S_OK;
         }
@@ -169,6 +178,7 @@ struct produce<D, Windows::System::UserProfile::IGlobalizationPreferencesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HomeGeographicRegion());
             return S_OK;
         }
@@ -183,6 +193,7 @@ struct produce<D, Windows::System::UserProfile::IGlobalizationPreferencesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WeekStartsOn());
             return S_OK;
         }
@@ -200,6 +211,7 @@ struct produce<D, Windows::System::UserProfile::IUserProfilePersonalizationSetti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().TrySetLockScreenImageAsync(*reinterpret_cast<const Windows::Storage::StorageFile *>(&imageFile)));
             return S_OK;
         }
@@ -214,6 +226,7 @@ struct produce<D, Windows::System::UserProfile::IUserProfilePersonalizationSetti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().TrySetWallpaperImageAsync(*reinterpret_cast<const Windows::Storage::StorageFile *>(&imageFile)));
             return S_OK;
         }
@@ -232,6 +245,7 @@ struct produce<D, Windows::System::UserProfile::IUserProfilePersonalizationSetti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Current());
             return S_OK;
         }
@@ -246,6 +260,7 @@ struct produce<D, Windows::System::UserProfile::IUserProfilePersonalizationSetti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsSupported());
             return S_OK;
         }

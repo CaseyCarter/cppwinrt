@@ -36,6 +36,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InverseCore());
             return S_OK;
         }
@@ -50,6 +51,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TryTransformCore(*reinterpret_cast<const Windows::Foundation::Point *>(&inPoint), *outPoint));
             return S_OK;
         }
@@ -63,6 +65,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TransformBoundsCore(*reinterpret_cast<const Windows::Foundation::Rect *>(&rect)));
             return S_OK;
         }

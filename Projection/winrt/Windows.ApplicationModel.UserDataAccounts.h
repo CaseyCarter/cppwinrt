@@ -21,6 +21,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserDisplayName());
             return S_OK;
         }
@@ -49,6 +51,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UserDisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -62,6 +65,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OtherAppReadAccess());
             return S_OK;
         }
@@ -75,6 +79,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OtherAppReadAccess(value);
             return S_OK;
         }
@@ -88,6 +93,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Icon());
             return S_OK;
         }
@@ -102,6 +108,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceAccountTypeId());
             return S_OK;
         }
@@ -116,6 +123,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PackageFamilyName());
             return S_OK;
         }
@@ -130,6 +138,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SaveAsync());
             return S_OK;
         }
@@ -144,6 +153,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DeleteAsync());
             return S_OK;
         }
@@ -158,6 +168,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindAppointmentCalendarsAsync());
             return S_OK;
         }
@@ -172,6 +183,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindEmailMailboxesAsync());
             return S_OK;
         }
@@ -186,6 +198,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindContactListsAsync());
             return S_OK;
         }
@@ -200,6 +213,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindContactAnnotationListsAsync());
             return S_OK;
         }
@@ -218,6 +232,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount2
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnterpriseId());
             return S_OK;
         }
@@ -232,6 +247,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount2
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsProtectedUnderLock());
             return S_OK;
         }
@@ -249,6 +265,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount3
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExplictReadAccessPackageFamilyNames());
             return S_OK;
         }
@@ -263,6 +280,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount3
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -277,6 +295,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount3
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -294,6 +313,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestStoreAsync(storeAccessType));
             return S_OK;
         }
@@ -308,6 +328,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().User());
             return S_OK;
         }
@@ -326,6 +347,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestStoreAsync(storeAccessType));
             return S_OK;
         }
@@ -340,6 +362,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ShowAddAccountAsync(contentKinds));
             return S_OK;
         }
@@ -354,6 +377,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ShowAccountSettingsAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
@@ -368,6 +392,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ShowAccountErrorResolverAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
@@ -386,6 +411,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
@@ -404,6 +430,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindAccountsAsync());
             return S_OK;
         }
@@ -418,6 +445,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetAccountAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
@@ -432,6 +460,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateAccountAsync(*reinterpret_cast<const hstring *>(&userDisplayName)));
             return S_OK;
         }
@@ -450,6 +479,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateAccountAsync(*reinterpret_cast<const hstring *>(&userDisplayName), *reinterpret_cast<const hstring *>(&packageRelativeAppId)));
             return S_OK;
         }
@@ -464,6 +494,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().StoreChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore, Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -477,6 +508,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StoreChanged(token);
             return S_OK;
         }
@@ -494,6 +526,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDeferral());
             return S_OK;
         }

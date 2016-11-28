@@ -20,6 +20,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
@@ -61,6 +64,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Thumbnail(*reinterpret_cast<const Windows::Storage::Streams::RandomAccessStreamReference *>(&value));
             return S_OK;
         }
@@ -74,6 +78,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -88,6 +93,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Id(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -101,6 +107,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedDataFormats());
             return S_OK;
         }
@@ -115,6 +122,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedFileTypes());
             return S_OK;
         }
@@ -133,6 +141,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Data());
             return S_OK;
         }
@@ -147,6 +156,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().QuickLinkId());
             return S_OK;
         }
@@ -161,6 +171,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveThisQuickLink();
             return S_OK;
         }
@@ -174,6 +185,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportStarted();
             return S_OK;
         }
@@ -187,6 +199,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportDataRetrieved();
             return S_OK;
         }
@@ -200,6 +213,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportSubmittedBackgroundTask();
             return S_OK;
         }
@@ -213,6 +227,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportCompleted(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::ShareTarget::QuickLink *>(&quicklink));
             return S_OK;
         }
@@ -226,6 +241,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportCompleted();
             return S_OK;
         }
@@ -239,6 +255,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportError(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -256,6 +273,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DismissUI();
             return S_OK;
         }

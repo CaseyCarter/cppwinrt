@@ -22,6 +22,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RecognitionStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RecognitionStarted(token);
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RecognitionEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionEndedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -61,6 +64,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RecognitionEnded(token);
             return S_OK;
         }
@@ -74,6 +78,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Tapped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialTappedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -87,6 +92,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Tapped(token);
             return S_OK;
         }
@@ -100,6 +106,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().HoldStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldStartedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -113,6 +120,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().HoldStarted(token);
             return S_OK;
         }
@@ -126,6 +134,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().HoldCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -139,6 +148,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().HoldCompleted(token);
             return S_OK;
         }
@@ -152,6 +162,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().HoldCanceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCanceledEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -165,6 +176,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().HoldCanceled(token);
             return S_OK;
         }
@@ -178,6 +190,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ManipulationStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationStartedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -191,6 +204,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ManipulationStarted(token);
             return S_OK;
         }
@@ -204,6 +218,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ManipulationUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationUpdatedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -217,6 +232,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ManipulationUpdated(token);
             return S_OK;
         }
@@ -230,6 +246,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ManipulationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -243,6 +260,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ManipulationCompleted(token);
             return S_OK;
         }
@@ -256,6 +274,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ManipulationCanceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCanceledEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -269,6 +288,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ManipulationCanceled(token);
             return S_OK;
         }
@@ -282,6 +302,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().NavigationStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationStartedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -295,6 +316,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NavigationStarted(token);
             return S_OK;
         }
@@ -308,6 +330,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().NavigationUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationUpdatedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -321,6 +344,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NavigationUpdated(token);
             return S_OK;
         }
@@ -334,6 +358,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().NavigationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -347,6 +372,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NavigationCompleted(token);
             return S_OK;
         }
@@ -360,6 +386,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().NavigationCanceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCanceledEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -373,6 +400,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NavigationCanceled(token);
             return S_OK;
         }
@@ -386,6 +414,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CaptureInteraction(*reinterpret_cast<const Windows::UI::Input::Spatial::SpatialInteraction *>(&interaction));
             return S_OK;
         }
@@ -399,6 +428,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CancelPendingGestures();
             return S_OK;
         }
@@ -412,6 +442,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TrySetGestureSettings(settings));
             return S_OK;
         }
@@ -425,6 +456,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GestureSettings());
             return S_OK;
         }
@@ -442,6 +474,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizerFactory>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Create(settings));
             return S_OK;
         }
@@ -460,6 +493,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialHoldCanceledEventArgs> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
@@ -477,6 +511,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialHoldCompletedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
@@ -494,6 +529,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialHoldStartedEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
@@ -507,6 +543,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialHoldStartedEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
@@ -525,6 +562,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteraction> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourceState());
             return S_OK;
         }
@@ -543,6 +581,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
@@ -556,6 +595,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
@@ -570,6 +610,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Interaction());
             return S_OK;
         }
@@ -588,6 +629,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SourceDetected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -601,6 +643,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceDetected(token);
             return S_OK;
         }
@@ -614,6 +657,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SourceLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -627,6 +671,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceLost(token);
             return S_OK;
         }
@@ -640,6 +685,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SourceUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -653,6 +699,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceUpdated(token);
             return S_OK;
         }
@@ -666,6 +713,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SourcePressed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -679,6 +727,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourcePressed(token);
             return S_OK;
         }
@@ -692,6 +741,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SourceReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -705,6 +755,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceReleased(token);
             return S_OK;
         }
@@ -718,6 +769,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().InteractionDetected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionDetectedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -731,6 +783,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InteractionDetected(token);
             return S_OK;
         }
@@ -744,6 +797,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDetectedSourcesAtTimestamp(*reinterpret_cast<const Windows::Perception::PerceptionTimestamp *>(&timeStamp)));
             return S_OK;
         }
@@ -762,6 +816,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManagerStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -780,6 +835,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSource> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -793,6 +849,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSource> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -810,6 +867,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().State());
             return S_OK;
         }
@@ -828,6 +886,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceLocation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -842,6 +901,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceLocation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Velocity());
             return S_OK;
         }
@@ -860,6 +920,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceLocation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Orientation());
             return S_OK;
         }
@@ -878,6 +939,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceProperti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TryGetSourceLossMitigationDirection(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
@@ -892,6 +954,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceProperti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourceLossRisk());
             return S_OK;
         }
@@ -905,6 +968,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceProperti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TryGetLocation(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
@@ -923,6 +987,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceState> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Source());
             return S_OK;
         }
@@ -937,6 +1002,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceState> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -951,6 +1017,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceState> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsPressed());
             return S_OK;
         }
@@ -964,6 +1031,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceState> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -978,6 +1046,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceState> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
@@ -996,6 +1065,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationCanceledEvent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
@@ -1013,6 +1083,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationCompletedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
@@ -1026,6 +1097,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationCompletedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TryGetCumulativeDelta(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
@@ -1044,6 +1116,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationDelta> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Translation());
             return S_OK;
         }
@@ -1061,6 +1134,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationStartedEventA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
@@ -1074,6 +1148,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationStartedEventA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
@@ -1092,6 +1167,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationUpdatedEventA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
@@ -1105,6 +1181,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationUpdatedEventA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TryGetCumulativeDelta(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
@@ -1123,6 +1200,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationCanceledEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
@@ -1140,6 +1218,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationCompletedEventA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
@@ -1153,6 +1232,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationCompletedEventA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NormalizedOffset());
             return S_OK;
         }
@@ -1170,6 +1250,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationStartedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
@@ -1183,6 +1264,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationStartedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
@@ -1197,6 +1279,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationStartedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsNavigatingX());
             return S_OK;
         }
@@ -1210,6 +1293,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationStartedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsNavigatingY());
             return S_OK;
         }
@@ -1223,6 +1307,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationStartedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsNavigatingZ());
             return S_OK;
         }
@@ -1240,6 +1325,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationUpdatedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
@@ -1253,6 +1339,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationUpdatedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NormalizedOffset());
             return S_OK;
         }
@@ -1270,6 +1357,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialPointerPose> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -1284,6 +1372,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialPointerPose> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Head());
             return S_OK;
         }
@@ -1302,6 +1391,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialPointerPoseStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TryGetAtTimestamp(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem), *reinterpret_cast<const Windows::Perception::PerceptionTimestamp *>(&timestamp)));
             return S_OK;
         }
@@ -1320,6 +1410,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialRecognitionEndedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
@@ -1337,6 +1428,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialRecognitionStartedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
@@ -1350,6 +1442,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialRecognitionStartedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
@@ -1364,6 +1457,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialRecognitionStartedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsGesturePossible(gesture));
             return S_OK;
         }
@@ -1381,6 +1475,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialTappedEventArgs> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InteractionSourceKind());
             return S_OK;
         }
@@ -1394,6 +1489,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialTappedEventArgs> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
@@ -1408,6 +1504,7 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialTappedEventArgs> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TapCount());
             return S_OK;
         }

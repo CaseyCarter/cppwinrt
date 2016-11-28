@@ -17,6 +17,7 @@ struct produce<D, Windows::System::Display::IDisplayRequest> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RequestActive();
             return S_OK;
         }
@@ -30,6 +31,7 @@ struct produce<D, Windows::System::Display::IDisplayRequest> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RequestRelease();
             return S_OK;
         }

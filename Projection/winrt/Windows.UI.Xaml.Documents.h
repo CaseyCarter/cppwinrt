@@ -25,6 +25,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IBlock> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextAlignment());
             return S_OK;
         }
@@ -38,6 +39,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IBlock> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TextAlignment(value);
             return S_OK;
         }
@@ -51,6 +53,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IBlock> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LineHeight());
             return S_OK;
         }
@@ -64,6 +67,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IBlock> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LineHeight(value);
             return S_OK;
         }
@@ -77,6 +81,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IBlock> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LineStackingStrategy());
             return S_OK;
         }
@@ -90,6 +95,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IBlock> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LineStackingStrategy(value);
             return S_OK;
         }
@@ -103,6 +109,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IBlock> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Margin());
             return S_OK;
         }
@@ -116,6 +123,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IBlock> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Margin(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
             return S_OK;
         }
@@ -133,6 +141,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IBlockFactory> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -152,6 +161,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IBlockStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextAlignmentProperty());
             return S_OK;
         }
@@ -166,6 +176,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IBlockStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LineHeightProperty());
             return S_OK;
         }
@@ -180,6 +191,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IBlockStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LineStackingStrategyProperty());
             return S_OK;
         }
@@ -194,6 +206,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IBlockStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MarginProperty());
             return S_OK;
         }
@@ -216,6 +229,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnicodeString());
             return S_OK;
         }
@@ -230,6 +244,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UnicodeString(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -243,6 +258,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Indices());
             return S_OK;
         }
@@ -257,6 +273,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Indices(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -270,6 +287,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontUri());
             return S_OK;
         }
@@ -284,6 +302,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FontUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -297,6 +316,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StyleSimulations());
             return S_OK;
         }
@@ -310,6 +330,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StyleSimulations(value);
             return S_OK;
         }
@@ -323,6 +344,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontRenderingEmSize());
             return S_OK;
         }
@@ -336,6 +358,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FontRenderingEmSize(value);
             return S_OK;
         }
@@ -349,6 +372,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OriginX());
             return S_OK;
         }
@@ -362,6 +386,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OriginX(value);
             return S_OK;
         }
@@ -375,6 +400,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OriginY());
             return S_OK;
         }
@@ -388,6 +414,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OriginY(value);
             return S_OK;
         }
@@ -401,6 +428,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Fill());
             return S_OK;
         }
@@ -415,6 +443,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Fill(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
@@ -432,6 +461,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsColorFontEnabled());
             return S_OK;
         }
@@ -445,6 +475,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsColorFontEnabled(value);
             return S_OK;
         }
@@ -458,6 +489,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ColorFontPaletteIndex());
             return S_OK;
         }
@@ -471,6 +503,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphs2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ColorFontPaletteIndex(value);
             return S_OK;
         }
@@ -488,6 +521,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphsStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnicodeStringProperty());
             return S_OK;
         }
@@ -502,6 +536,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphsStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IndicesProperty());
             return S_OK;
         }
@@ -516,6 +551,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphsStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontUriProperty());
             return S_OK;
         }
@@ -530,6 +566,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphsStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StyleSimulationsProperty());
             return S_OK;
         }
@@ -544,6 +581,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphsStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontRenderingEmSizeProperty());
             return S_OK;
         }
@@ -558,6 +596,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphsStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OriginXProperty());
             return S_OK;
         }
@@ -572,6 +611,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphsStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OriginYProperty());
             return S_OK;
         }
@@ -586,6 +626,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphsStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FillProperty());
             return S_OK;
         }
@@ -604,6 +645,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphsStatics2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsColorFontEnabledProperty());
             return S_OK;
         }
@@ -618,6 +660,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IGlyphsStatics2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ColorFontPaletteIndexProperty());
             return S_OK;
         }
@@ -636,6 +679,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlink> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NavigateUri());
             return S_OK;
         }
@@ -650,6 +694,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlink> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NavigateUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -663,6 +708,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlink> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Click(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::Hyperlink, Windows::UI::Xaml::Documents::HyperlinkClickEventArgs> *>(&value)));
             return S_OK;
         }
@@ -676,6 +722,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlink> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Click(token);
             return S_OK;
         }
@@ -693,6 +740,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlink2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnderlineStyle());
             return S_OK;
         }
@@ -706,6 +754,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlink2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UnderlineStyle(value);
             return S_OK;
         }
@@ -723,6 +772,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlink3> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().XYFocusLeft());
             return S_OK;
         }
@@ -737,6 +787,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlink3> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().XYFocusLeft(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
@@ -750,6 +801,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlink3> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().XYFocusRight());
             return S_OK;
         }
@@ -764,6 +816,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlink3> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().XYFocusRight(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
@@ -777,6 +830,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlink3> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().XYFocusUp());
             return S_OK;
         }
@@ -791,6 +845,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlink3> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().XYFocusUp(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
@@ -804,6 +859,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlink3> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().XYFocusDown());
             return S_OK;
         }
@@ -818,6 +874,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlink3> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().XYFocusDown(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
@@ -831,6 +888,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlink3> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ElementSoundMode());
             return S_OK;
         }
@@ -844,6 +902,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlink3> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ElementSoundMode(value);
             return S_OK;
         }
@@ -865,6 +924,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlinkStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NavigateUriProperty());
             return S_OK;
         }
@@ -883,6 +943,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlinkStatics2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnderlineStyleProperty());
             return S_OK;
         }
@@ -901,6 +962,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlinkStatics3> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().XYFocusLeftProperty());
             return S_OK;
         }
@@ -915,6 +977,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlinkStatics3> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().XYFocusRightProperty());
             return S_OK;
         }
@@ -929,6 +992,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlinkStatics3> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().XYFocusUpProperty());
             return S_OK;
         }
@@ -943,6 +1007,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlinkStatics3> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().XYFocusDownProperty());
             return S_OK;
         }
@@ -957,6 +1022,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlinkStatics3> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ElementSoundModeProperty());
             return S_OK;
         }
@@ -979,6 +1045,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IInlineFactory> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -998,6 +1065,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IInlineUIContainer> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Child());
             return S_OK;
         }
@@ -1012,6 +1080,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IInlineUIContainer> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Child(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&value));
             return S_OK;
         }
@@ -1037,6 +1106,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IParagraph> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Inlines());
             return S_OK;
         }
@@ -1051,6 +1121,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IParagraph> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextIndent());
             return S_OK;
         }
@@ -1064,6 +1135,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IParagraph> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TextIndent(value);
             return S_OK;
         }
@@ -1081,6 +1153,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IParagraphStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextIndentProperty());
             return S_OK;
         }
@@ -1099,6 +1172,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IRun> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -1113,6 +1187,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IRun> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Text(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1126,6 +1201,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IRun> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FlowDirection());
             return S_OK;
         }
@@ -1139,6 +1215,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IRun> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FlowDirection(value);
             return S_OK;
         }
@@ -1156,6 +1233,7 @@ struct produce<D, Windows::UI::Xaml::Documents::IRunStatics> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FlowDirectionProperty());
             return S_OK;
         }
@@ -1174,6 +1252,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ISpan> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Inlines());
             return S_OK;
         }
@@ -1188,6 +1267,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ISpan> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Inlines(*reinterpret_cast<const Windows::UI::Xaml::Documents::InlineCollection *>(&value));
             return S_OK;
         }
@@ -1205,6 +1285,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ISpanFactory> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -1224,6 +1305,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -1238,6 +1320,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontSize());
             return S_OK;
         }
@@ -1251,6 +1334,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FontSize(value);
             return S_OK;
         }
@@ -1264,6 +1348,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontFamily());
             return S_OK;
         }
@@ -1278,6 +1363,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FontFamily(*reinterpret_cast<const Windows::UI::Xaml::Media::FontFamily *>(&value));
             return S_OK;
         }
@@ -1291,6 +1377,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontWeight());
             return S_OK;
         }
@@ -1304,6 +1391,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FontWeight(*reinterpret_cast<const Windows::UI::Text::FontWeight *>(&value));
             return S_OK;
         }
@@ -1317,6 +1405,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontStyle());
             return S_OK;
         }
@@ -1330,6 +1419,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FontStyle(value);
             return S_OK;
         }
@@ -1343,6 +1433,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontStretch());
             return S_OK;
         }
@@ -1356,6 +1447,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FontStretch(value);
             return S_OK;
         }
@@ -1369,6 +1461,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CharacterSpacing());
             return S_OK;
         }
@@ -1382,6 +1475,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CharacterSpacing(value);
             return S_OK;
         }
@@ -1395,6 +1489,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Foreground());
             return S_OK;
         }
@@ -1409,6 +1504,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Foreground(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
@@ -1422,6 +1518,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Language());
             return S_OK;
         }
@@ -1436,6 +1533,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Language(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1449,6 +1547,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentStart());
             return S_OK;
         }
@@ -1463,6 +1562,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentEnd());
             return S_OK;
         }
@@ -1477,6 +1577,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ElementStart());
             return S_OK;
         }
@@ -1491,6 +1592,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ElementEnd());
             return S_OK;
         }
@@ -1505,6 +1607,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FindName(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -1523,6 +1626,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement2> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTextScaleFactorEnabled());
             return S_OK;
         }
@@ -1536,6 +1640,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement2> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsTextScaleFactorEnabled(value);
             return S_OK;
         }
@@ -1553,6 +1658,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement3> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowFocusOnInteraction());
             return S_OK;
         }
@@ -1566,6 +1672,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement3> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowFocusOnInteraction(value);
             return S_OK;
         }
@@ -1579,6 +1686,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement3> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccessKey());
             return S_OK;
         }
@@ -1593,6 +1701,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement3> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AccessKey(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1606,6 +1715,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement3> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExitDisplayModeOnAccessKeyInvoked());
             return S_OK;
         }
@@ -1619,6 +1729,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement3> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExitDisplayModeOnAccessKeyInvoked(value);
             return S_OK;
         }
@@ -1640,6 +1751,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElementOverrides> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnDisconnectVisualChildren();
             return S_OK;
         }
@@ -1657,6 +1769,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElementStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontSizeProperty());
             return S_OK;
         }
@@ -1671,6 +1784,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElementStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontFamilyProperty());
             return S_OK;
         }
@@ -1685,6 +1799,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElementStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontWeightProperty());
             return S_OK;
         }
@@ -1699,6 +1814,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElementStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontStyleProperty());
             return S_OK;
         }
@@ -1713,6 +1829,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElementStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontStretchProperty());
             return S_OK;
         }
@@ -1727,6 +1844,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElementStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CharacterSpacingProperty());
             return S_OK;
         }
@@ -1741,6 +1859,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElementStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ForegroundProperty());
             return S_OK;
         }
@@ -1755,6 +1874,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElementStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LanguageProperty());
             return S_OK;
         }
@@ -1773,6 +1893,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElementStatics2> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTextScaleFactorEnabledProperty());
             return S_OK;
         }
@@ -1791,6 +1912,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElementStatics3> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowFocusOnInteractionProperty());
             return S_OK;
         }
@@ -1805,6 +1927,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElementStatics3> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccessKeyProperty());
             return S_OK;
         }
@@ -1819,6 +1942,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElementStatics3> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExitDisplayModeOnAccessKeyInvokedProperty());
             return S_OK;
         }
@@ -1837,6 +1961,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextPointer> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Parent());
             return S_OK;
         }
@@ -1851,6 +1976,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextPointer> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VisualParent());
             return S_OK;
         }
@@ -1865,6 +1991,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextPointer> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LogicalDirection());
             return S_OK;
         }
@@ -1878,6 +2005,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextPointer> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Offset());
             return S_OK;
         }
@@ -1891,6 +2019,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextPointer> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetCharacterRect(direction));
             return S_OK;
         }
@@ -1904,6 +2033,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextPointer> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetPositionAtOffset(offset, direction));
             return S_OK;
         }
@@ -1926,6 +2056,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AnnotationAlternatesProperty());
             return S_OK;
         }
@@ -1940,6 +2071,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetAnnotationAlternates(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1953,6 +2085,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetAnnotationAlternates(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -1966,6 +2099,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EastAsianExpertFormsProperty());
             return S_OK;
         }
@@ -1980,6 +2114,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetEastAsianExpertForms(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1993,6 +2128,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetEastAsianExpertForms(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2006,6 +2142,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EastAsianLanguageProperty());
             return S_OK;
         }
@@ -2020,6 +2157,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetEastAsianLanguage(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2033,6 +2171,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetEastAsianLanguage(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2046,6 +2185,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EastAsianWidthsProperty());
             return S_OK;
         }
@@ -2060,6 +2200,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetEastAsianWidths(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2073,6 +2214,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetEastAsianWidths(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2086,6 +2228,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StandardLigaturesProperty());
             return S_OK;
         }
@@ -2100,6 +2243,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStandardLigatures(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2113,6 +2257,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStandardLigatures(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2126,6 +2271,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContextualLigaturesProperty());
             return S_OK;
         }
@@ -2140,6 +2286,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetContextualLigatures(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2153,6 +2300,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetContextualLigatures(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2166,6 +2314,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DiscretionaryLigaturesProperty());
             return S_OK;
         }
@@ -2180,6 +2329,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDiscretionaryLigatures(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2193,6 +2343,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetDiscretionaryLigatures(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2206,6 +2357,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HistoricalLigaturesProperty());
             return S_OK;
         }
@@ -2220,6 +2372,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetHistoricalLigatures(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2233,6 +2386,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetHistoricalLigatures(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2246,6 +2400,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StandardSwashesProperty());
             return S_OK;
         }
@@ -2260,6 +2415,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStandardSwashes(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2273,6 +2429,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStandardSwashes(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2286,6 +2443,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContextualSwashesProperty());
             return S_OK;
         }
@@ -2300,6 +2458,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetContextualSwashes(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2313,6 +2472,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetContextualSwashes(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2326,6 +2486,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContextualAlternatesProperty());
             return S_OK;
         }
@@ -2340,6 +2501,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetContextualAlternates(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2353,6 +2515,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetContextualAlternates(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2366,6 +2529,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticAlternatesProperty());
             return S_OK;
         }
@@ -2380,6 +2544,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticAlternates(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2393,6 +2558,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticAlternates(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2406,6 +2572,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet1Property());
             return S_OK;
         }
@@ -2420,6 +2587,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet1(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2433,6 +2601,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet1(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2446,6 +2615,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet2Property());
             return S_OK;
         }
@@ -2460,6 +2630,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet2(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2473,6 +2644,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet2(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2486,6 +2658,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet3Property());
             return S_OK;
         }
@@ -2500,6 +2673,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet3(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2513,6 +2687,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet3(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2526,6 +2701,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet4Property());
             return S_OK;
         }
@@ -2540,6 +2716,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet4(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2553,6 +2730,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet4(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2566,6 +2744,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet5Property());
             return S_OK;
         }
@@ -2580,6 +2759,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet5(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2593,6 +2773,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet5(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2606,6 +2787,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet6Property());
             return S_OK;
         }
@@ -2620,6 +2802,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet6(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2633,6 +2816,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet6(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2646,6 +2830,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet7Property());
             return S_OK;
         }
@@ -2660,6 +2845,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet7(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2673,6 +2859,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet7(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2686,6 +2873,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet8Property());
             return S_OK;
         }
@@ -2700,6 +2888,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet8(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2713,6 +2902,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet8(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2726,6 +2916,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet9Property());
             return S_OK;
         }
@@ -2740,6 +2931,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet9(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2753,6 +2945,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet9(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2766,6 +2959,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet10Property());
             return S_OK;
         }
@@ -2780,6 +2974,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet10(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2793,6 +2988,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet10(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2806,6 +3002,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet11Property());
             return S_OK;
         }
@@ -2820,6 +3017,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet11(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2833,6 +3031,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet11(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2846,6 +3045,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet12Property());
             return S_OK;
         }
@@ -2860,6 +3060,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet12(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2873,6 +3074,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet12(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2886,6 +3088,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet13Property());
             return S_OK;
         }
@@ -2900,6 +3103,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet13(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2913,6 +3117,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet13(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2926,6 +3131,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet14Property());
             return S_OK;
         }
@@ -2940,6 +3146,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet14(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2953,6 +3160,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet14(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -2966,6 +3174,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet15Property());
             return S_OK;
         }
@@ -2980,6 +3189,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet15(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2993,6 +3203,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet15(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -3006,6 +3217,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet16Property());
             return S_OK;
         }
@@ -3020,6 +3232,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet16(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -3033,6 +3246,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet16(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -3046,6 +3260,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet17Property());
             return S_OK;
         }
@@ -3060,6 +3275,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet17(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -3073,6 +3289,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet17(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -3086,6 +3303,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet18Property());
             return S_OK;
         }
@@ -3100,6 +3318,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet18(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -3113,6 +3332,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet18(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -3126,6 +3346,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet19Property());
             return S_OK;
         }
@@ -3140,6 +3361,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet19(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -3153,6 +3375,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet19(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -3166,6 +3389,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StylisticSet20Property());
             return S_OK;
         }
@@ -3180,6 +3404,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStylisticSet20(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -3193,6 +3418,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStylisticSet20(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -3206,6 +3432,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CapitalsProperty());
             return S_OK;
         }
@@ -3220,6 +3447,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCapitals(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -3233,6 +3461,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetCapitals(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -3246,6 +3475,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CapitalSpacingProperty());
             return S_OK;
         }
@@ -3260,6 +3490,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCapitalSpacing(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -3273,6 +3504,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetCapitalSpacing(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -3286,6 +3518,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KerningProperty());
             return S_OK;
         }
@@ -3300,6 +3533,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetKerning(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -3313,6 +3547,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetKerning(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -3326,6 +3561,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CaseSensitiveFormsProperty());
             return S_OK;
         }
@@ -3340,6 +3576,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCaseSensitiveForms(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -3353,6 +3590,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetCaseSensitiveForms(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -3366,6 +3604,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HistoricalFormsProperty());
             return S_OK;
         }
@@ -3380,6 +3619,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetHistoricalForms(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -3393,6 +3633,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetHistoricalForms(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -3406,6 +3647,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FractionProperty());
             return S_OK;
         }
@@ -3420,6 +3662,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetFraction(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -3433,6 +3676,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetFraction(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -3446,6 +3690,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumeralStyleProperty());
             return S_OK;
         }
@@ -3460,6 +3705,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetNumeralStyle(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -3473,6 +3719,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetNumeralStyle(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -3486,6 +3733,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumeralAlignmentProperty());
             return S_OK;
         }
@@ -3500,6 +3748,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetNumeralAlignment(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -3513,6 +3762,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetNumeralAlignment(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -3526,6 +3776,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SlashedZeroProperty());
             return S_OK;
         }
@@ -3540,6 +3791,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetSlashedZero(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -3553,6 +3805,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetSlashedZero(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -3566,6 +3819,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MathematicalGreekProperty());
             return S_OK;
         }
@@ -3580,6 +3834,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetMathematicalGreek(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -3593,6 +3848,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetMathematicalGreek(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -3606,6 +3862,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VariantsProperty());
             return S_OK;
         }
@@ -3620,6 +3877,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetVariants(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -3633,6 +3891,7 @@ struct produce<D, Windows::UI::Xaml::Documents::ITypographyStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetVariants(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }

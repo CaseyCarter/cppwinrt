@@ -18,6 +18,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputKeyboard
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyOptions());
             return S_OK;
         }
@@ -31,6 +32,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputKeyboard
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeyOptions(value);
             return S_OK;
         }
@@ -44,6 +46,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputKeyboard
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ScanCode());
             return S_OK;
         }
@@ -57,6 +60,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputKeyboard
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ScanCode(value);
             return S_OK;
         }
@@ -70,6 +74,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputKeyboard
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VirtualKey());
             return S_OK;
         }
@@ -83,6 +88,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputKeyboard
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VirtualKey(value);
             return S_OK;
         }
@@ -100,6 +106,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MouseOptions());
             return S_OK;
         }
@@ -113,6 +120,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MouseOptions(value);
             return S_OK;
         }
@@ -126,6 +134,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MouseData());
             return S_OK;
         }
@@ -139,6 +148,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MouseData(value);
             return S_OK;
         }
@@ -152,6 +162,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeltaY());
             return S_OK;
         }
@@ -165,6 +176,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DeltaY(value);
             return S_OK;
         }
@@ -178,6 +190,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeltaX());
             return S_OK;
         }
@@ -191,6 +204,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DeltaX(value);
             return S_OK;
         }
@@ -204,6 +218,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TimeOffsetInMilliseconds());
             return S_OK;
         }
@@ -217,6 +232,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TimeOffsetInMilliseconds(value);
             return S_OK;
         }
@@ -234,6 +250,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerInfo());
             return S_OK;
         }
@@ -247,6 +264,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerInfo(*reinterpret_cast<const Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo *>(&value));
             return S_OK;
         }
@@ -260,6 +278,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PenButtons());
             return S_OK;
         }
@@ -273,6 +292,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PenButtons(value);
             return S_OK;
         }
@@ -286,6 +306,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PenParameters());
             return S_OK;
         }
@@ -299,6 +320,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PenParameters(value);
             return S_OK;
         }
@@ -312,6 +334,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pressure());
             return S_OK;
         }
@@ -325,6 +348,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Pressure(value);
             return S_OK;
         }
@@ -338,6 +362,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Rotation());
             return S_OK;
         }
@@ -351,6 +376,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Rotation(value);
             return S_OK;
         }
@@ -364,6 +390,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TiltX());
             return S_OK;
         }
@@ -377,6 +404,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TiltX(value);
             return S_OK;
         }
@@ -390,6 +418,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TiltY());
             return S_OK;
         }
@@ -403,6 +432,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TiltY(value);
             return S_OK;
         }
@@ -420,6 +450,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Contact());
             return S_OK;
         }
@@ -433,6 +464,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Contact(*reinterpret_cast<const Windows::UI::Input::Preview::Injection::InjectedInputRectangle *>(&value));
             return S_OK;
         }
@@ -446,6 +478,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Orientation());
             return S_OK;
         }
@@ -459,6 +492,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Orientation(value);
             return S_OK;
         }
@@ -472,6 +506,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerInfo());
             return S_OK;
         }
@@ -485,6 +520,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerInfo(*reinterpret_cast<const Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo *>(&value));
             return S_OK;
         }
@@ -498,6 +534,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pressure());
             return S_OK;
         }
@@ -511,6 +548,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Pressure(value);
             return S_OK;
         }
@@ -524,6 +562,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TouchParameters());
             return S_OK;
         }
@@ -537,6 +576,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TouchParameters(value);
             return S_OK;
         }
@@ -554,6 +594,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InjectKeyboardInput(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo> *>(&input));
             return S_OK;
         }
@@ -567,6 +608,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InjectMouseInput(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo> *>(&input));
             return S_OK;
         }
@@ -580,6 +622,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InitializeTouchInjection(visualMode);
             return S_OK;
         }
@@ -593,6 +636,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InjectTouchInput(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputTouchInfo> *>(&input));
             return S_OK;
         }
@@ -606,6 +650,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UninitializeTouchInjection();
             return S_OK;
         }
@@ -619,6 +664,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InitializePenInjection(visualMode);
             return S_OK;
         }
@@ -632,6 +678,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InjectPenInput(*reinterpret_cast<const Windows::UI::Input::Preview::Injection::InjectedInputPenInfo *>(&input));
             return S_OK;
         }
@@ -645,6 +692,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UninitializePenInjection();
             return S_OK;
         }
@@ -658,6 +706,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InjectShortcut(shortcut);
             return S_OK;
         }
@@ -675,6 +724,7 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjectorStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().TryCreate());
             return S_OK;
         }

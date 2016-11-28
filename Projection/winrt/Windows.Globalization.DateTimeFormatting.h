@@ -19,6 +19,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Languages());
             return S_OK;
         }
@@ -33,6 +34,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GeographicRegion());
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Calendar());
             return S_OK;
         }
@@ -61,6 +64,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Clock());
             return S_OK;
         }
@@ -75,6 +79,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumeralSystem());
             return S_OK;
         }
@@ -89,6 +94,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NumeralSystem(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -102,6 +108,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Patterns());
             return S_OK;
         }
@@ -116,6 +123,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Template());
             return S_OK;
         }
@@ -130,6 +138,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Format(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value)));
             return S_OK;
         }
@@ -144,6 +153,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IncludeYear());
             return S_OK;
         }
@@ -157,6 +167,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IncludeMonth());
             return S_OK;
         }
@@ -170,6 +181,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IncludeDayOfWeek());
             return S_OK;
         }
@@ -183,6 +195,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IncludeDay());
             return S_OK;
         }
@@ -196,6 +209,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IncludeHour());
             return S_OK;
         }
@@ -209,6 +223,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IncludeMinute());
             return S_OK;
         }
@@ -222,6 +237,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IncludeSecond());
             return S_OK;
         }
@@ -235,6 +251,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResolvedLanguage());
             return S_OK;
         }
@@ -249,6 +266,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResolvedGeographicRegion());
             return S_OK;
         }
@@ -267,6 +285,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Format(*reinterpret_cast<const Windows::Foundation::DateTime *>(&datetime), *reinterpret_cast<const hstring *>(&timeZoneId)));
             return S_OK;
         }
@@ -285,6 +304,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateDateTimeFormatter(*reinterpret_cast<const hstring *>(&formatTemplate)));
             return S_OK;
         }
@@ -299,6 +319,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateDateTimeFormatterLanguages(*reinterpret_cast<const hstring *>(&formatTemplate), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages)));
             return S_OK;
         }
@@ -313,6 +334,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateDateTimeFormatterContext(*reinterpret_cast<const hstring *>(&formatTemplate), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&geographicRegion), *reinterpret_cast<const hstring *>(&calendar), *reinterpret_cast<const hstring *>(&clock)));
             return S_OK;
         }
@@ -327,6 +349,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateDateTimeFormatterDate(yearFormat, monthFormat, dayFormat, dayOfWeekFormat));
             return S_OK;
         }
@@ -341,6 +364,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateDateTimeFormatterTime(hourFormat, minuteFormat, secondFormat));
             return S_OK;
         }
@@ -355,6 +379,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateDateTimeFormatterDateTimeLanguages(yearFormat, monthFormat, dayFormat, dayOfWeekFormat, hourFormat, minuteFormat, secondFormat, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages)));
             return S_OK;
         }
@@ -369,6 +394,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateDateTimeFormatterDateTimeContext(yearFormat, monthFormat, dayFormat, dayOfWeekFormat, hourFormat, minuteFormat, secondFormat, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&geographicRegion), *reinterpret_cast<const hstring *>(&calendar), *reinterpret_cast<const hstring *>(&clock)));
             return S_OK;
         }
@@ -387,6 +413,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LongDate());
             return S_OK;
         }
@@ -401,6 +428,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LongTime());
             return S_OK;
         }
@@ -415,6 +443,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShortDate());
             return S_OK;
         }
@@ -429,6 +458,7 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShortTime());
             return S_OK;
         }

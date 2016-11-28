@@ -25,6 +25,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::ICustomMapTileDataSource> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().BitmapRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::CustomMapTileDataSource, Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequestedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -38,6 +39,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::ICustomMapTileDataSource> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BitmapRequested(token);
             return S_OK;
         }
@@ -55,6 +57,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::ICustomMapTileDataSourceFac
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -74,6 +77,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UriFormatString());
             return S_OK;
         }
@@ -88,6 +92,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UriFormatString(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -101,6 +106,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AdditionalRequestHeaders());
             return S_OK;
         }
@@ -115,6 +121,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowCaching());
             return S_OK;
         }
@@ -128,6 +135,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowCaching(value);
             return S_OK;
         }
@@ -141,6 +149,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().UriRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource, Windows::UI::Xaml::Controls::Maps::MapTileUriRequestedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -154,6 +163,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UriRequested(token);
             return S_OK;
         }
@@ -171,6 +181,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSourceFacto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -186,6 +197,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSourceFacto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceWithUriFormatString(*reinterpret_cast<const hstring *>(&uriFormatString), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -205,6 +217,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSource> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UriFormatString());
             return S_OK;
         }
@@ -219,6 +232,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSource> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UriFormatString(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -232,6 +246,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSource> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().UriRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource, Windows::UI::Xaml::Controls::Maps::MapTileUriRequestedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -245,6 +260,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSource> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UriRequested(token);
             return S_OK;
         }
@@ -262,6 +278,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSourceFact
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -277,6 +294,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSourceFact
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceWithUriFormatString(*reinterpret_cast<const hstring *>(&uriFormatString), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -296,6 +314,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapActualCameraChangedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Camera());
             return S_OK;
         }
@@ -314,6 +333,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapActualCameraChangedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChangeReason());
             return S_OK;
         }
@@ -331,6 +351,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapActualCameraChangingEve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Camera());
             return S_OK;
         }
@@ -349,6 +370,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapActualCameraChangingEve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChangeReason());
             return S_OK;
         }
@@ -366,6 +388,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapCamera> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Location());
             return S_OK;
         }
@@ -380,6 +403,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapCamera> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Location(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&value));
             return S_OK;
         }
@@ -393,6 +417,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapCamera> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Heading());
             return S_OK;
         }
@@ -406,6 +431,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapCamera> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Heading(value);
             return S_OK;
         }
@@ -419,6 +445,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapCamera> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pitch());
             return S_OK;
         }
@@ -432,6 +459,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapCamera> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Pitch(value);
             return S_OK;
         }
@@ -445,6 +473,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapCamera> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Roll());
             return S_OK;
         }
@@ -458,6 +487,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapCamera> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Roll(value);
             return S_OK;
         }
@@ -471,6 +501,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapCamera> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FieldOfView());
             return S_OK;
         }
@@ -484,6 +515,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapCamera> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FieldOfView(value);
             return S_OK;
         }
@@ -501,6 +533,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapCameraFactory> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceWithLocation(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&location)));
             return S_OK;
         }
@@ -515,6 +548,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapCameraFactory> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceWithLocationAndHeading(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&location), headingInDegrees));
             return S_OK;
         }
@@ -529,6 +563,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapCameraFactory> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceWithLocationHeadingAndPitch(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&location), headingInDegrees, pitchInDegrees));
             return S_OK;
         }
@@ -543,6 +578,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapCameraFactory> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceWithLocationHeadingPitchRollAndFieldOfView(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&location), headingInDegrees, pitchInDegrees, rollInDegrees, fieldOfViewInDegrees));
             return S_OK;
         }
@@ -561,6 +597,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Center());
             return S_OK;
         }
@@ -575,6 +612,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Center(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&value));
             return S_OK;
         }
@@ -588,6 +626,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Children());
             return S_OK;
         }
@@ -602,6 +641,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ColorScheme());
             return S_OK;
         }
@@ -615,6 +655,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ColorScheme(value);
             return S_OK;
         }
@@ -628,6 +669,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredPitch());
             return S_OK;
         }
@@ -641,6 +683,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DesiredPitch(value);
             return S_OK;
         }
@@ -654,6 +697,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Heading());
             return S_OK;
         }
@@ -667,6 +711,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Heading(value);
             return S_OK;
         }
@@ -680,6 +725,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LandmarksVisible());
             return S_OK;
         }
@@ -693,6 +739,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LandmarksVisible(value);
             return S_OK;
         }
@@ -706,6 +753,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LoadingStatus());
             return S_OK;
         }
@@ -719,6 +767,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MapServiceToken());
             return S_OK;
         }
@@ -733,6 +782,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MapServiceToken(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -746,6 +796,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxZoomLevel());
             return S_OK;
         }
@@ -759,6 +810,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinZoomLevel());
             return S_OK;
         }
@@ -772,6 +824,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PedestrianFeaturesVisible());
             return S_OK;
         }
@@ -785,6 +838,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PedestrianFeaturesVisible(value);
             return S_OK;
         }
@@ -798,6 +852,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pitch());
             return S_OK;
         }
@@ -811,6 +866,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Style());
             return S_OK;
         }
@@ -824,6 +880,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Style(value);
             return S_OK;
         }
@@ -837,6 +894,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TrafficFlowVisible());
             return S_OK;
         }
@@ -850,6 +908,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TrafficFlowVisible(value);
             return S_OK;
         }
@@ -863,6 +922,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TransformOrigin());
             return S_OK;
         }
@@ -876,6 +936,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransformOrigin(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
@@ -889,6 +950,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WatermarkMode());
             return S_OK;
         }
@@ -902,6 +964,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WatermarkMode(value);
             return S_OK;
         }
@@ -915,6 +978,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZoomLevel());
             return S_OK;
         }
@@ -928,6 +992,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ZoomLevel(value);
             return S_OK;
         }
@@ -941,6 +1006,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MapElements());
             return S_OK;
         }
@@ -955,6 +1021,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Routes());
             return S_OK;
         }
@@ -969,6 +1036,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TileSources());
             return S_OK;
         }
@@ -983,6 +1051,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CenterChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -996,6 +1065,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CenterChanged(token);
             return S_OK;
         }
@@ -1009,6 +1079,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().HeadingChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -1022,6 +1093,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().HeadingChanged(token);
             return S_OK;
         }
@@ -1035,6 +1107,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().LoadingStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -1048,6 +1121,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LoadingStatusChanged(token);
             return S_OK;
         }
@@ -1061,6 +1135,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MapDoubleTapped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapInputEventArgs> *>(&value)));
             return S_OK;
         }
@@ -1074,6 +1149,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MapDoubleTapped(token);
             return S_OK;
         }
@@ -1087,6 +1163,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MapHolding(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapInputEventArgs> *>(&value)));
             return S_OK;
         }
@@ -1100,6 +1177,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MapHolding(token);
             return S_OK;
         }
@@ -1113,6 +1191,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MapTapped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapInputEventArgs> *>(&value)));
             return S_OK;
         }
@@ -1126,6 +1205,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MapTapped(token);
             return S_OK;
         }
@@ -1139,6 +1219,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PitchChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -1152,6 +1233,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PitchChanged(token);
             return S_OK;
         }
@@ -1165,6 +1247,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().TransformOriginChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -1178,6 +1261,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransformOriginChanged(token);
             return S_OK;
         }
@@ -1191,6 +1275,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ZoomLevelChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -1204,6 +1289,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ZoomLevelChanged(token);
             return S_OK;
         }
@@ -1217,6 +1303,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FindMapElementsAtOffset(*reinterpret_cast<const Windows::Foundation::Point *>(&offset)));
             return S_OK;
         }
@@ -1231,6 +1318,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetLocationFromOffset(*reinterpret_cast<const Windows::Foundation::Point *>(&offset), *location);
             return S_OK;
         }
@@ -1245,6 +1333,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetOffsetFromLocation(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&location), *offset);
             return S_OK;
         }
@@ -1258,6 +1347,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsLocationInView(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&location), *isInView);
             return S_OK;
         }
@@ -1271,6 +1361,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TrySetViewBoundsAsync(*reinterpret_cast<const Windows::Devices::Geolocation::GeoboundingBox *>(&bounds), *reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Xaml::Thickness> *>(&margin), animation));
             return S_OK;
         }
@@ -1285,6 +1376,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TrySetViewAsync(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&center)));
             return S_OK;
         }
@@ -1299,6 +1391,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TrySetViewAsync(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&center), *reinterpret_cast<const Windows::Foundation::IReference<double> *>(&zoomLevel)));
             return S_OK;
         }
@@ -1313,6 +1406,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TrySetViewAsync(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&center), *reinterpret_cast<const Windows::Foundation::IReference<double> *>(&zoomLevel), *reinterpret_cast<const Windows::Foundation::IReference<double> *>(&heading), *reinterpret_cast<const Windows::Foundation::IReference<double> *>(&desiredPitch)));
             return S_OK;
         }
@@ -1327,6 +1421,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TrySetViewAsync(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&center), *reinterpret_cast<const Windows::Foundation::IReference<double> *>(&zoomLevel), *reinterpret_cast<const Windows::Foundation::IReference<double> *>(&heading), *reinterpret_cast<const Windows::Foundation::IReference<double> *>(&desiredPitch), animation));
             return S_OK;
         }
@@ -1345,6 +1440,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BusinessLandmarksVisible());
             return S_OK;
         }
@@ -1358,6 +1454,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BusinessLandmarksVisible(value);
             return S_OK;
         }
@@ -1371,6 +1468,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TransitFeaturesVisible());
             return S_OK;
         }
@@ -1384,6 +1482,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransitFeaturesVisible(value);
             return S_OK;
         }
@@ -1397,6 +1496,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PanInteractionMode());
             return S_OK;
         }
@@ -1410,6 +1510,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PanInteractionMode(value);
             return S_OK;
         }
@@ -1423,6 +1524,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RotateInteractionMode());
             return S_OK;
         }
@@ -1436,6 +1538,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RotateInteractionMode(value);
             return S_OK;
         }
@@ -1449,6 +1552,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TiltInteractionMode());
             return S_OK;
         }
@@ -1462,6 +1566,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TiltInteractionMode(value);
             return S_OK;
         }
@@ -1475,6 +1580,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZoomInteractionMode());
             return S_OK;
         }
@@ -1488,6 +1594,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ZoomInteractionMode(value);
             return S_OK;
         }
@@ -1501,6 +1608,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Is3DSupported());
             return S_OK;
         }
@@ -1514,6 +1622,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStreetsideSupported());
             return S_OK;
         }
@@ -1527,6 +1636,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Scene());
             return S_OK;
         }
@@ -1541,6 +1651,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Scene(*reinterpret_cast<const Windows::UI::Xaml::Controls::Maps::MapScene *>(&value));
             return S_OK;
         }
@@ -1554,6 +1665,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ActualCamera());
             return S_OK;
         }
@@ -1568,6 +1680,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetCamera());
             return S_OK;
         }
@@ -1582,6 +1695,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CustomExperience());
             return S_OK;
         }
@@ -1596,6 +1710,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CustomExperience(*reinterpret_cast<const Windows::UI::Xaml::Controls::Maps::MapCustomExperience *>(&value));
             return S_OK;
         }
@@ -1609,6 +1724,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MapElementClick(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapElementClickEventArgs> *>(&value)));
             return S_OK;
         }
@@ -1622,6 +1738,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MapElementClick(token);
             return S_OK;
         }
@@ -1635,6 +1752,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MapElementPointerEntered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapElementPointerEnteredEventArgs> *>(&value)));
             return S_OK;
         }
@@ -1648,6 +1766,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MapElementPointerEntered(token);
             return S_OK;
         }
@@ -1661,6 +1780,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MapElementPointerExited(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapElementPointerExitedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -1674,6 +1794,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MapElementPointerExited(token);
             return S_OK;
         }
@@ -1687,6 +1808,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ActualCameraChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapActualCameraChangedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -1700,6 +1822,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ActualCameraChanged(token);
             return S_OK;
         }
@@ -1713,6 +1836,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ActualCameraChanging(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapActualCameraChangingEventArgs> *>(&value)));
             return S_OK;
         }
@@ -1726,6 +1850,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ActualCameraChanging(token);
             return S_OK;
         }
@@ -1739,6 +1864,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().TargetCameraChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapTargetCameraChangedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -1752,6 +1878,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetCameraChanged(token);
             return S_OK;
         }
@@ -1765,6 +1892,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CustomExperienceChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapCustomExperienceChangedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -1778,6 +1906,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CustomExperienceChanged(token);
             return S_OK;
         }
@@ -1791,6 +1920,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartContinuousRotate(rateInDegreesPerSecond);
             return S_OK;
         }
@@ -1804,6 +1934,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StopContinuousRotate();
             return S_OK;
         }
@@ -1817,6 +1948,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartContinuousTilt(rateInDegreesPerSecond);
             return S_OK;
         }
@@ -1830,6 +1962,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StopContinuousTilt();
             return S_OK;
         }
@@ -1843,6 +1976,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartContinuousZoom(rateOfChangePerSecond);
             return S_OK;
         }
@@ -1856,6 +1990,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StopContinuousZoom();
             return S_OK;
         }
@@ -1869,6 +2004,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TryRotateAsync(degrees));
             return S_OK;
         }
@@ -1883,6 +2019,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TryRotateToAsync(angleInDegrees));
             return S_OK;
         }
@@ -1897,6 +2034,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TryTiltAsync(degrees));
             return S_OK;
         }
@@ -1911,6 +2049,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TryTiltToAsync(angleInDegrees));
             return S_OK;
         }
@@ -1925,6 +2064,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TryZoomInAsync());
             return S_OK;
         }
@@ -1939,6 +2079,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TryZoomOutAsync());
             return S_OK;
         }
@@ -1953,6 +2094,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TryZoomToAsync(zoomLevel));
             return S_OK;
         }
@@ -1967,6 +2109,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TrySetSceneAsync(*reinterpret_cast<const Windows::UI::Xaml::Controls::Maps::MapScene *>(&scene)));
             return S_OK;
         }
@@ -1981,6 +2124,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TrySetSceneAsync(*reinterpret_cast<const Windows::UI::Xaml::Controls::Maps::MapScene *>(&scene), animationKind));
             return S_OK;
         }
@@ -1999,6 +2143,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl3> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MapRightTapped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapRightTappedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -2012,6 +2157,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl3> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MapRightTapped(token);
             return S_OK;
         }
@@ -2029,6 +2175,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl4> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BusinessLandmarksEnabled());
             return S_OK;
         }
@@ -2042,6 +2189,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl4> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BusinessLandmarksEnabled(value);
             return S_OK;
         }
@@ -2055,6 +2203,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl4> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TransitFeaturesEnabled());
             return S_OK;
         }
@@ -2068,6 +2217,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl4> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransitFeaturesEnabled(value);
             return S_OK;
         }
@@ -2081,6 +2231,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl4> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetVisibleRegion(region));
             return S_OK;
         }
@@ -2099,6 +2250,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CenterProperty());
             return S_OK;
         }
@@ -2113,6 +2265,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChildrenProperty());
             return S_OK;
         }
@@ -2127,6 +2280,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ColorSchemeProperty());
             return S_OK;
         }
@@ -2141,6 +2295,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredPitchProperty());
             return S_OK;
         }
@@ -2155,6 +2310,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HeadingProperty());
             return S_OK;
         }
@@ -2169,6 +2325,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LandmarksVisibleProperty());
             return S_OK;
         }
@@ -2183,6 +2340,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LoadingStatusProperty());
             return S_OK;
         }
@@ -2197,6 +2355,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MapServiceTokenProperty());
             return S_OK;
         }
@@ -2211,6 +2370,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PedestrianFeaturesVisibleProperty());
             return S_OK;
         }
@@ -2225,6 +2385,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PitchProperty());
             return S_OK;
         }
@@ -2239,6 +2400,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StyleProperty());
             return S_OK;
         }
@@ -2253,6 +2415,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TrafficFlowVisibleProperty());
             return S_OK;
         }
@@ -2267,6 +2430,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TransformOriginProperty());
             return S_OK;
         }
@@ -2281,6 +2445,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WatermarkModeProperty());
             return S_OK;
         }
@@ -2295,6 +2460,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZoomLevelProperty());
             return S_OK;
         }
@@ -2309,6 +2475,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MapElementsProperty());
             return S_OK;
         }
@@ -2323,6 +2490,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RoutesProperty());
             return S_OK;
         }
@@ -2337,6 +2505,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TileSourcesProperty());
             return S_OK;
         }
@@ -2351,6 +2520,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocationProperty());
             return S_OK;
         }
@@ -2365,6 +2535,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetLocation(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2379,6 +2550,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetLocation(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&value));
             return S_OK;
         }
@@ -2392,6 +2564,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NormalizedAnchorPointProperty());
             return S_OK;
         }
@@ -2406,6 +2579,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetNormalizedAnchorPoint(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -2419,6 +2593,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetNormalizedAnchorPoint(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
@@ -2436,6 +2611,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BusinessLandmarksVisibleProperty());
             return S_OK;
         }
@@ -2450,6 +2626,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TransitFeaturesVisibleProperty());
             return S_OK;
         }
@@ -2464,6 +2641,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PanInteractionModeProperty());
             return S_OK;
         }
@@ -2478,6 +2656,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RotateInteractionModeProperty());
             return S_OK;
         }
@@ -2492,6 +2671,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TiltInteractionModeProperty());
             return S_OK;
         }
@@ -2506,6 +2686,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZoomInteractionModeProperty());
             return S_OK;
         }
@@ -2520,6 +2701,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Is3DSupportedProperty());
             return S_OK;
         }
@@ -2534,6 +2716,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStreetsideSupportedProperty());
             return S_OK;
         }
@@ -2548,6 +2731,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SceneProperty());
             return S_OK;
         }
@@ -2566,6 +2750,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics4> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BusinessLandmarksEnabledProperty());
             return S_OK;
         }
@@ -2580,6 +2765,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics4> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TransitFeaturesEnabledProperty());
             return S_OK;
         }
@@ -2606,6 +2792,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapCustomExperienceFactory
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -2625,6 +2812,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElement> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZIndex());
             return S_OK;
         }
@@ -2638,6 +2826,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElement> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ZIndex(value);
             return S_OK;
         }
@@ -2651,6 +2840,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElement> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Visible());
             return S_OK;
         }
@@ -2664,6 +2854,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElement> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Visible(value);
             return S_OK;
         }
@@ -2681,6 +2872,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElement2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MapTabIndex());
             return S_OK;
         }
@@ -2694,6 +2886,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElement2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MapTabIndex(value);
             return S_OK;
         }
@@ -2711,6 +2904,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElementClickEventArgs> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -2724,6 +2918,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElementClickEventArgs> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Location());
             return S_OK;
         }
@@ -2738,6 +2933,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElementClickEventArgs> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MapElements());
             return S_OK;
         }
@@ -2756,6 +2952,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElementFactory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -2775,6 +2972,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElementPointerEnteredEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -2788,6 +2986,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElementPointerEnteredEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Location());
             return S_OK;
         }
@@ -2802,6 +3001,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElementPointerEnteredEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MapElement());
             return S_OK;
         }
@@ -2820,6 +3020,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElementPointerExitedEve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -2833,6 +3034,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElementPointerExitedEve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Location());
             return S_OK;
         }
@@ -2847,6 +3049,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElementPointerExitedEve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MapElement());
             return S_OK;
         }
@@ -2865,6 +3068,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElementStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZIndexProperty());
             return S_OK;
         }
@@ -2879,6 +3083,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElementStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VisibleProperty());
             return S_OK;
         }
@@ -2897,6 +3102,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapElementStatics2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MapTabIndexProperty());
             return S_OK;
         }
@@ -2915,6 +3121,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapIcon> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Location());
             return S_OK;
         }
@@ -2929,6 +3136,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapIcon> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Location(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&value));
             return S_OK;
         }
@@ -2942,6 +3150,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapIcon> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -2956,6 +3165,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapIcon> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2969,6 +3179,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapIcon> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NormalizedAnchorPoint());
             return S_OK;
         }
@@ -2982,6 +3193,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapIcon> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NormalizedAnchorPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
@@ -2995,6 +3207,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapIcon> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Image());
             return S_OK;
         }
@@ -3009,6 +3222,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapIcon> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Image(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
@@ -3026,6 +3240,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapIcon2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CollisionBehaviorDesired());
             return S_OK;
         }
@@ -3039,6 +3254,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapIcon2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CollisionBehaviorDesired(value);
             return S_OK;
         }
@@ -3056,6 +3272,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapIconStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocationProperty());
             return S_OK;
         }
@@ -3070,6 +3287,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapIconStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TitleProperty());
             return S_OK;
         }
@@ -3084,6 +3302,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapIconStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NormalizedAnchorPointProperty());
             return S_OK;
         }
@@ -3102,6 +3321,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapIconStatics2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CollisionBehaviorDesiredProperty());
             return S_OK;
         }
@@ -3120,6 +3340,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapInputEventArgs> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -3133,6 +3354,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapInputEventArgs> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Location());
             return S_OK;
         }
@@ -3151,6 +3373,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapItemsControl> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ItemsSource());
             return S_OK;
         }
@@ -3165,6 +3388,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapItemsControl> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ItemsSource(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
@@ -3178,6 +3402,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapItemsControl> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Items());
             return S_OK;
         }
@@ -3192,6 +3417,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapItemsControl> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ItemTemplate());
             return S_OK;
         }
@@ -3206,6 +3432,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapItemsControl> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ItemTemplate(*reinterpret_cast<const Windows::UI::Xaml::DataTemplate *>(&value));
             return S_OK;
         }
@@ -3223,6 +3450,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapItemsControlStatics> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ItemsSourceProperty());
             return S_OK;
         }
@@ -3237,6 +3465,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapItemsControlStatics> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ItemsProperty());
             return S_OK;
         }
@@ -3251,6 +3480,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapItemsControlStatics> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ItemTemplateProperty());
             return S_OK;
         }
@@ -3269,6 +3499,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolygon> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Path());
             return S_OK;
         }
@@ -3283,6 +3514,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolygon> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Path(*reinterpret_cast<const Windows::Devices::Geolocation::Geopath *>(&value));
             return S_OK;
         }
@@ -3296,6 +3528,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolygon> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StrokeColor());
             return S_OK;
         }
@@ -3309,6 +3542,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolygon> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StrokeColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -3322,6 +3556,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolygon> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StrokeThickness());
             return S_OK;
         }
@@ -3335,6 +3570,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolygon> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StrokeThickness(value);
             return S_OK;
         }
@@ -3348,6 +3584,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolygon> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StrokeDashed());
             return S_OK;
         }
@@ -3361,6 +3598,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolygon> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StrokeDashed(value);
             return S_OK;
         }
@@ -3374,6 +3612,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolygon> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FillColor());
             return S_OK;
         }
@@ -3387,6 +3626,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolygon> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FillColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -3404,6 +3644,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolygon2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Paths());
             return S_OK;
         }
@@ -3422,6 +3663,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolygonStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PathProperty());
             return S_OK;
         }
@@ -3436,6 +3678,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolygonStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StrokeThicknessProperty());
             return S_OK;
         }
@@ -3450,6 +3693,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolygonStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StrokeDashedProperty());
             return S_OK;
         }
@@ -3468,6 +3712,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolyline> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Path());
             return S_OK;
         }
@@ -3482,6 +3727,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolyline> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Path(*reinterpret_cast<const Windows::Devices::Geolocation::Geopath *>(&value));
             return S_OK;
         }
@@ -3495,6 +3741,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolyline> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StrokeColor());
             return S_OK;
         }
@@ -3508,6 +3755,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolyline> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StrokeColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -3521,6 +3769,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolyline> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StrokeThickness());
             return S_OK;
         }
@@ -3534,6 +3783,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolyline> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StrokeThickness(value);
             return S_OK;
         }
@@ -3547,6 +3797,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolyline> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StrokeDashed());
             return S_OK;
         }
@@ -3560,6 +3811,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolyline> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StrokeDashed(value);
             return S_OK;
         }
@@ -3577,6 +3829,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolylineStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PathProperty());
             return S_OK;
         }
@@ -3591,6 +3844,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapPolylineStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StrokeDashedProperty());
             return S_OK;
         }
@@ -3609,6 +3863,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapRightTappedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -3622,6 +3877,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapRightTappedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Location());
             return S_OK;
         }
@@ -3640,6 +3896,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapRouteView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RouteColor());
             return S_OK;
         }
@@ -3653,6 +3910,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapRouteView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RouteColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -3666,6 +3924,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapRouteView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OutlineColor());
             return S_OK;
         }
@@ -3679,6 +3938,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapRouteView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OutlineColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -3692,6 +3952,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapRouteView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Route());
             return S_OK;
         }
@@ -3710,6 +3971,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapRouteViewFactory> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceWithMapRoute(*reinterpret_cast<const Windows::Services::Maps::MapRoute *>(&route), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -3729,6 +3991,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapScene> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetCamera());
             return S_OK;
         }
@@ -3743,6 +4006,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapScene> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().TargetCameraChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapScene, Windows::UI::Xaml::Controls::Maps::MapTargetCameraChangedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -3756,6 +4020,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapScene> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetCameraChanged(token);
             return S_OK;
         }
@@ -3773,6 +4038,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapSceneStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().CreateFromBoundingBox(*reinterpret_cast<const Windows::Devices::Geolocation::GeoboundingBox *>(&bounds)));
             return S_OK;
         }
@@ -3787,6 +4053,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapSceneStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().CreateFromBoundingBox(*reinterpret_cast<const Windows::Devices::Geolocation::GeoboundingBox *>(&bounds), headingInDegrees, pitchInDegrees));
             return S_OK;
         }
@@ -3801,6 +4068,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapSceneStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().CreateFromCamera(*reinterpret_cast<const Windows::UI::Xaml::Controls::Maps::MapCamera *>(&camera)));
             return S_OK;
         }
@@ -3815,6 +4083,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapSceneStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().CreateFromLocation(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&location)));
             return S_OK;
         }
@@ -3829,6 +4098,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapSceneStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().CreateFromLocation(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&location), headingInDegrees, pitchInDegrees));
             return S_OK;
         }
@@ -3843,6 +4113,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapSceneStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().CreateFromLocationAndRadius(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&location), radiusInMeters));
             return S_OK;
         }
@@ -3857,6 +4128,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapSceneStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().CreateFromLocationAndRadius(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&location), radiusInMeters, headingInDegrees, pitchInDegrees));
             return S_OK;
         }
@@ -3871,6 +4143,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapSceneStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().CreateFromLocations(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> *>(&locations)));
             return S_OK;
         }
@@ -3885,6 +4158,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapSceneStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().CreateFromLocations(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> *>(&locations), headingInDegrees, pitchInDegrees));
             return S_OK;
         }
@@ -3903,6 +4177,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTargetCameraChangedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Camera());
             return S_OK;
         }
@@ -3921,6 +4196,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTargetCameraChangedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChangeReason());
             return S_OK;
         }
@@ -3938,6 +4214,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequest> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PixelData());
             return S_OK;
         }
@@ -3952,6 +4229,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequest> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PixelData(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
@@ -3965,6 +4243,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequest> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -3983,6 +4262,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequestDeferr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -4000,6 +4280,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequestedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().X());
             return S_OK;
         }
@@ -4013,6 +4294,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequestedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Y());
             return S_OK;
         }
@@ -4026,6 +4308,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequestedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZoomLevel());
             return S_OK;
         }
@@ -4039,6 +4322,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequestedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }
@@ -4061,6 +4345,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileDataSourceFactory> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -4080,6 +4365,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataSource());
             return S_OK;
         }
@@ -4094,6 +4380,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DataSource(*reinterpret_cast<const Windows::UI::Xaml::Controls::Maps::MapTileDataSource *>(&value));
             return S_OK;
         }
@@ -4107,6 +4394,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Layer());
             return S_OK;
         }
@@ -4120,6 +4408,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Layer(value);
             return S_OK;
         }
@@ -4133,6 +4422,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZoomLevelRange());
             return S_OK;
         }
@@ -4146,6 +4436,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ZoomLevelRange(*reinterpret_cast<const Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange *>(&value));
             return S_OK;
         }
@@ -4159,6 +4450,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bounds());
             return S_OK;
         }
@@ -4173,6 +4465,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Bounds(*reinterpret_cast<const Windows::Devices::Geolocation::GeoboundingBox *>(&value));
             return S_OK;
         }
@@ -4186,6 +4479,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowOverstretch());
             return S_OK;
         }
@@ -4199,6 +4493,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowOverstretch(value);
             return S_OK;
         }
@@ -4212,6 +4507,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsFadingEnabled());
             return S_OK;
         }
@@ -4225,6 +4521,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsFadingEnabled(value);
             return S_OK;
         }
@@ -4238,6 +4535,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTransparencyEnabled());
             return S_OK;
         }
@@ -4251,6 +4549,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsTransparencyEnabled(value);
             return S_OK;
         }
@@ -4264,6 +4563,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsRetryEnabled());
             return S_OK;
         }
@@ -4277,6 +4577,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsRetryEnabled(value);
             return S_OK;
         }
@@ -4290,6 +4591,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZIndex());
             return S_OK;
         }
@@ -4303,6 +4605,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ZIndex(value);
             return S_OK;
         }
@@ -4316,6 +4619,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TilePixelSize());
             return S_OK;
         }
@@ -4329,6 +4633,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TilePixelSize(value);
             return S_OK;
         }
@@ -4342,6 +4647,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Visible());
             return S_OK;
         }
@@ -4355,6 +4661,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSource> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Visible(value);
             return S_OK;
         }
@@ -4372,6 +4679,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSourceFactory> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -4387,6 +4695,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSourceFactory> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceWithDataSource(*reinterpret_cast<const Windows::UI::Xaml::Controls::Maps::MapTileDataSource *>(&dataSource), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -4402,6 +4711,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSourceFactory> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceWithDataSourceAndZoomRange(*reinterpret_cast<const Windows::UI::Xaml::Controls::Maps::MapTileDataSource *>(&dataSource), *reinterpret_cast<const Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange *>(&zoomLevelRange), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -4417,6 +4727,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSourceFactory> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceWithDataSourceZoomRangeAndBounds(*reinterpret_cast<const Windows::UI::Xaml::Controls::Maps::MapTileDataSource *>(&dataSource), *reinterpret_cast<const Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange *>(&zoomLevelRange), *reinterpret_cast<const Windows::Devices::Geolocation::GeoboundingBox *>(&bounds), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -4432,6 +4743,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSourceFactory> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize(*reinterpret_cast<const Windows::UI::Xaml::Controls::Maps::MapTileDataSource *>(&dataSource), *reinterpret_cast<const Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange *>(&zoomLevelRange), *reinterpret_cast<const Windows::Devices::Geolocation::GeoboundingBox *>(&bounds), tileSizeInPixels, *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -4451,6 +4763,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSourceStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataSourceProperty());
             return S_OK;
         }
@@ -4465,6 +4778,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSourceStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LayerProperty());
             return S_OK;
         }
@@ -4479,6 +4793,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSourceStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZoomLevelRangeProperty());
             return S_OK;
         }
@@ -4493,6 +4808,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSourceStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BoundsProperty());
             return S_OK;
         }
@@ -4507,6 +4823,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSourceStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowOverstretchProperty());
             return S_OK;
         }
@@ -4521,6 +4838,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSourceStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsFadingEnabledProperty());
             return S_OK;
         }
@@ -4535,6 +4853,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSourceStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTransparencyEnabledProperty());
             return S_OK;
         }
@@ -4549,6 +4868,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSourceStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsRetryEnabledProperty());
             return S_OK;
         }
@@ -4563,6 +4883,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSourceStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZIndexProperty());
             return S_OK;
         }
@@ -4577,6 +4898,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSourceStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TilePixelSizeProperty());
             return S_OK;
         }
@@ -4591,6 +4913,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileSourceStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VisibleProperty());
             return S_OK;
         }
@@ -4609,6 +4932,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileUriRequest> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Uri());
             return S_OK;
         }
@@ -4623,6 +4947,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileUriRequest> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Uri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -4636,6 +4961,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileUriRequest> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -4654,6 +4980,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileUriRequestDeferral>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -4671,6 +4998,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileUriRequestedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().X());
             return S_OK;
         }
@@ -4684,6 +5012,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileUriRequestedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Y());
             return S_OK;
         }
@@ -4697,6 +5026,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileUriRequestedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZoomLevel());
             return S_OK;
         }
@@ -4710,6 +5040,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTileUriRequestedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }
@@ -4728,6 +5059,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IStreetsideExperience> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AddressTextVisible());
             return S_OK;
         }
@@ -4741,6 +5073,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IStreetsideExperience> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddressTextVisible(value);
             return S_OK;
         }
@@ -4754,6 +5087,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IStreetsideExperience> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CursorVisible());
             return S_OK;
         }
@@ -4767,6 +5101,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IStreetsideExperience> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CursorVisible(value);
             return S_OK;
         }
@@ -4780,6 +5115,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IStreetsideExperience> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OverviewMapVisible());
             return S_OK;
         }
@@ -4793,6 +5129,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IStreetsideExperience> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OverviewMapVisible(value);
             return S_OK;
         }
@@ -4806,6 +5143,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IStreetsideExperience> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StreetLabelsVisible());
             return S_OK;
         }
@@ -4819,6 +5157,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IStreetsideExperience> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StreetLabelsVisible(value);
             return S_OK;
         }
@@ -4832,6 +5171,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IStreetsideExperience> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExitButtonVisible());
             return S_OK;
         }
@@ -4845,6 +5185,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IStreetsideExperience> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExitButtonVisible(value);
             return S_OK;
         }
@@ -4858,6 +5199,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IStreetsideExperience> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZoomButtonsVisible());
             return S_OK;
         }
@@ -4871,6 +5213,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IStreetsideExperience> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ZoomButtonsVisible(value);
             return S_OK;
         }
@@ -4888,6 +5231,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IStreetsideExperienceFactor
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceWithPanorama(*reinterpret_cast<const Windows::UI::Xaml::Controls::Maps::StreetsidePanorama *>(&panorama)));
             return S_OK;
         }
@@ -4902,6 +5246,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IStreetsideExperienceFactor
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceWithPanoramaHeadingPitchAndFieldOfView(*reinterpret_cast<const Windows::UI::Xaml::Controls::Maps::StreetsidePanorama *>(&panorama), headingInDegrees, pitchInDegrees, fieldOfViewInDegrees));
             return S_OK;
         }
@@ -4920,6 +5265,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IStreetsidePanorama> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Location());
             return S_OK;
         }
@@ -4938,6 +5284,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IStreetsidePanoramaStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FindNearbyAsync(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&location)));
             return S_OK;
         }
@@ -4952,6 +5299,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IStreetsidePanoramaStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FindNearbyAsync(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&location), radiusInMeters));
             return S_OK;
         }

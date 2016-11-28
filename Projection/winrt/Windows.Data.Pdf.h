@@ -21,6 +21,7 @@ struct produce<D, Windows::Data::Pdf::IPdfDocument> : produce_base<D, Windows::D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pdfPage = detach(this->shim().GetPage(pageIndex));
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::Data::Pdf::IPdfDocument> : produce_base<D, Windows::D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PageCount());
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::Data::Pdf::IPdfDocument> : produce_base<D, Windows::D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsPasswordProtected());
             return S_OK;
         }
@@ -65,6 +68,7 @@ struct produce<D, Windows::Data::Pdf::IPdfDocumentStatics> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().LoadFromFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
@@ -79,6 +83,7 @@ struct produce<D, Windows::Data::Pdf::IPdfDocumentStatics> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().LoadFromFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const hstring *>(&password)));
             return S_OK;
         }
@@ -93,6 +98,7 @@ struct produce<D, Windows::Data::Pdf::IPdfDocumentStatics> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().LoadFromStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&inputStream)));
             return S_OK;
         }
@@ -107,6 +113,7 @@ struct produce<D, Windows::Data::Pdf::IPdfDocumentStatics> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().LoadFromStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&inputStream), *reinterpret_cast<const hstring *>(&password)));
             return S_OK;
         }
@@ -125,6 +132,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPage> : produce_base<D, Windows::Data:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().RenderToStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&outputStream)));
             return S_OK;
         }
@@ -139,6 +147,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPage> : produce_base<D, Windows::Data:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().RenderToStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&outputStream), *reinterpret_cast<const Windows::Data::Pdf::PdfPageRenderOptions *>(&options)));
             return S_OK;
         }
@@ -153,6 +162,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPage> : produce_base<D, Windows::Data:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().PreparePageAsync());
             return S_OK;
         }
@@ -167,6 +177,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPage> : produce_base<D, Windows::Data:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Index());
             return S_OK;
         }
@@ -180,6 +191,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPage> : produce_base<D, Windows::Data:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Size());
             return S_OK;
         }
@@ -193,6 +205,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPage> : produce_base<D, Windows::Data:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Dimensions());
             return S_OK;
         }
@@ -207,6 +220,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPage> : produce_base<D, Windows::Data:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Rotation());
             return S_OK;
         }
@@ -220,6 +234,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPage> : produce_base<D, Windows::Data:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PreferredZoom());
             return S_OK;
         }
@@ -237,6 +252,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageDimensions> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediaBox());
             return S_OK;
         }
@@ -250,6 +266,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageDimensions> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CropBox());
             return S_OK;
         }
@@ -263,6 +280,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageDimensions> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BleedBox());
             return S_OK;
         }
@@ -276,6 +294,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageDimensions> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TrimBox());
             return S_OK;
         }
@@ -289,6 +308,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageDimensions> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ArtBox());
             return S_OK;
         }
@@ -306,6 +326,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourceRect());
             return S_OK;
         }
@@ -319,6 +340,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceRect(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
             return S_OK;
         }
@@ -332,6 +354,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DestinationWidth());
             return S_OK;
         }
@@ -345,6 +368,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DestinationWidth(value);
             return S_OK;
         }
@@ -358,6 +382,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DestinationHeight());
             return S_OK;
         }
@@ -371,6 +396,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DestinationHeight(value);
             return S_OK;
         }
@@ -384,6 +410,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BackgroundColor());
             return S_OK;
         }
@@ -397,6 +424,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -410,6 +438,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsIgnoringHighContrast());
             return S_OK;
         }
@@ -423,6 +452,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsIgnoringHighContrast(value);
             return S_OK;
         }
@@ -436,6 +466,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BitmapEncoderId());
             return S_OK;
         }
@@ -449,6 +480,7 @@ struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BitmapEncoderId(value);
             return S_OK;
         }

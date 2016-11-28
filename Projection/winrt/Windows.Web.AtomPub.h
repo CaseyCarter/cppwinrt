@@ -23,6 +23,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RetrieveServiceDocumentAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -37,6 +38,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RetrieveMediaResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -51,6 +53,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RetrieveResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -65,6 +68,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const hstring *>(&description), *reinterpret_cast<const Windows::Web::Syndication::SyndicationItem *>(&item)));
             return S_OK;
         }
@@ -79,6 +83,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateMediaResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const hstring *>(&mediaType), *reinterpret_cast<const hstring *>(&description), *reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&mediaStream)));
             return S_OK;
         }
@@ -93,6 +98,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().UpdateMediaResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const hstring *>(&mediaType), *reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&mediaStream)));
             return S_OK;
         }
@@ -107,6 +113,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().UpdateResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Web::Syndication::SyndicationItem *>(&item)));
             return S_OK;
         }
@@ -121,6 +128,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().UpdateResourceItemAsync(*reinterpret_cast<const Windows::Web::Syndication::SyndicationItem *>(&item)));
             return S_OK;
         }
@@ -135,6 +143,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().DeleteResourceAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -149,6 +158,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().DeleteResourceItemAsync(*reinterpret_cast<const Windows::Web::Syndication::SyndicationItem *>(&item)));
             return S_OK;
         }
@@ -163,6 +173,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CancelAsyncOperations();
             return S_OK;
         }
@@ -180,6 +191,7 @@ struct produce<D, Windows::Web::AtomPub::IAtomPubClientFactory> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *atomPubClient = detach(this->shim().CreateAtomPubClientWithCredentials(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&serverCredential)));
             return S_OK;
         }
@@ -198,6 +210,7 @@ struct produce<D, Windows::Web::AtomPub::IResourceCollection> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -212,6 +225,7 @@ struct produce<D, Windows::Web::AtomPub::IResourceCollection> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Uri());
             return S_OK;
         }
@@ -226,6 +240,7 @@ struct produce<D, Windows::Web::AtomPub::IResourceCollection> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Categories());
             return S_OK;
         }
@@ -240,6 +255,7 @@ struct produce<D, Windows::Web::AtomPub::IResourceCollection> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Accepts());
             return S_OK;
         }
@@ -258,6 +274,7 @@ struct produce<D, Windows::Web::AtomPub::IServiceDocument> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Workspaces());
             return S_OK;
         }
@@ -276,6 +293,7 @@ struct produce<D, Windows::Web::AtomPub::IWorkspace> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -290,6 +308,7 @@ struct produce<D, Windows::Web::AtomPub::IWorkspace> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Collections());
             return S_OK;
         }

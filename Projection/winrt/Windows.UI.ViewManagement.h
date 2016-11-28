@@ -22,6 +22,7 @@ struct produce<D, Windows::UI::ViewManagement::IAccessibilitySettings> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HighContrast());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::UI::ViewManagement::IAccessibilitySettings> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HighContrastScheme());
             return S_OK;
         }
@@ -49,6 +51,7 @@ struct produce<D, Windows::UI::ViewManagement::IAccessibilitySettings> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().HighContrastChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -62,6 +65,7 @@ struct produce<D, Windows::UI::ViewManagement::IAccessibilitySettings> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().HighContrastChanged(cookie);
             return S_OK;
         }
@@ -79,6 +83,7 @@ struct produce<D, Windows::UI::ViewManagement::IActivationViewSwitcher> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ShowAsStandaloneAsync(viewId));
             return S_OK;
         }
@@ -93,6 +98,7 @@ struct produce<D, Windows::UI::ViewManagement::IActivationViewSwitcher> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ShowAsStandaloneAsync(viewId, sizePreference));
             return S_OK;
         }
@@ -107,6 +113,7 @@ struct produce<D, Windows::UI::ViewManagement::IActivationViewSwitcher> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsViewPresentedOnActivationVirtualDesktop(viewId));
             return S_OK;
         }
@@ -124,6 +131,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Orientation());
             return S_OK;
         }
@@ -137,6 +145,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AdjacentToLeftDisplayEdge());
             return S_OK;
         }
@@ -150,6 +159,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AdjacentToRightDisplayEdge());
             return S_OK;
         }
@@ -163,6 +173,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsFullScreen());
             return S_OK;
         }
@@ -176,6 +187,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsOnLockScreen());
             return S_OK;
         }
@@ -189,6 +201,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsScreenCaptureEnabled());
             return S_OK;
         }
@@ -202,6 +215,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsScreenCaptureEnabled(value);
             return S_OK;
         }
@@ -215,6 +229,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -228,6 +243,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -242,6 +258,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -255,6 +272,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Consolidated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -268,6 +286,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Consolidated(token);
             return S_OK;
         }
@@ -285,6 +304,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SuppressSystemOverlays());
             return S_OK;
         }
@@ -298,6 +318,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SuppressSystemOverlays(value);
             return S_OK;
         }
@@ -311,6 +332,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VisibleBounds());
             return S_OK;
         }
@@ -324,6 +346,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().VisibleBoundsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -337,6 +360,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VisibleBoundsChanged(token);
             return S_OK;
         }
@@ -350,6 +374,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *success = detach(this->shim().SetDesiredBoundsMode(boundsMode));
             return S_OK;
         }
@@ -363,6 +388,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredBoundsMode());
             return S_OK;
         }
@@ -380,6 +406,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TitleBar());
             return S_OK;
         }
@@ -394,6 +421,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FullScreenSystemOverlayMode());
             return S_OK;
         }
@@ -407,6 +435,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FullScreenSystemOverlayMode(value);
             return S_OK;
         }
@@ -420,6 +449,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsFullScreenMode());
             return S_OK;
         }
@@ -433,6 +463,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *success = detach(this->shim().TryEnterFullScreenMode());
             return S_OK;
         }
@@ -446,6 +477,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExitFullScreenMode();
             return S_OK;
         }
@@ -459,6 +491,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShowStandardSystemOverlays();
             return S_OK;
         }
@@ -472,6 +505,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *success = detach(this->shim().TryResizeView(*reinterpret_cast<const Windows::Foundation::Size *>(&value)));
             return S_OK;
         }
@@ -485,6 +519,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetPreferredMinSize(*reinterpret_cast<const Windows::Foundation::Size *>(&minSize));
             return S_OK;
         }
@@ -502,6 +537,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewConsolidatedEvent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsUserInitiated());
             return S_OK;
         }
@@ -519,6 +555,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewFullscreenStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *success = detach(this->shim().TryUnsnapToFullscreen());
             return S_OK;
         }
@@ -536,6 +573,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewInteropStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *id = detach(this->shim().GetApplicationViewIdForWindow(*reinterpret_cast<const Windows::UI::Core::ICoreWindow *>(&window)));
             return S_OK;
         }
@@ -557,6 +595,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewScalingStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisableLayoutScaling());
             return S_OK;
         }
@@ -570,6 +609,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewScalingStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *success = detach(this->shim().TrySetDisableLayoutScaling(disableLayoutScaling));
             return S_OK;
         }
@@ -587,6 +627,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -600,6 +641,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *success = detach(this->shim().TryUnsnap());
             return S_OK;
         }
@@ -617,6 +659,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics2> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *current = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -631,6 +674,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics2> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TerminateAppOnFinalViewClose());
             return S_OK;
         }
@@ -644,6 +688,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics2> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TerminateAppOnFinalViewClose(value);
             return S_OK;
         }
@@ -661,6 +706,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics3> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PreferredLaunchWindowingMode());
             return S_OK;
         }
@@ -674,6 +720,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics3> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PreferredLaunchWindowingMode(value);
             return S_OK;
         }
@@ -687,6 +734,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics3> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PreferredLaunchViewSize());
             return S_OK;
         }
@@ -700,6 +748,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics3> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PreferredLaunchViewSize(*reinterpret_cast<const Windows::Foundation::Size *>(&value));
             return S_OK;
         }
@@ -717,6 +766,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisableShowingMainViewOnActivation();
             return S_OK;
         }
@@ -730,6 +780,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().TryShowAsStandaloneAsync(viewId));
             return S_OK;
         }
@@ -744,6 +795,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().TryShowAsStandaloneAsync(viewId, sizePreference));
             return S_OK;
         }
@@ -758,6 +810,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().TryShowAsStandaloneAsync(viewId, sizePreference, anchorViewId, anchorSizePreference));
             return S_OK;
         }
@@ -772,6 +825,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SwitchAsync(viewId));
             return S_OK;
         }
@@ -786,6 +840,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SwitchAsync(toViewId, fromViewId));
             return S_OK;
         }
@@ -800,6 +855,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SwitchAsync(toViewId, fromViewId, options));
             return S_OK;
         }
@@ -814,6 +870,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().PrepareForCustomAnimatedSwitchAsync(toViewId, fromViewId, options));
             return S_OK;
         }
@@ -832,6 +889,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisableSystemViewActivationPolicy();
             return S_OK;
         }
@@ -849,6 +907,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ForegroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
@@ -862,6 +921,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ForegroundColor());
             return S_OK;
         }
@@ -876,6 +936,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BackgroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
@@ -889,6 +950,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BackgroundColor());
             return S_OK;
         }
@@ -903,6 +965,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ButtonForegroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
@@ -916,6 +979,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ButtonForegroundColor());
             return S_OK;
         }
@@ -930,6 +994,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ButtonBackgroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
@@ -943,6 +1008,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ButtonBackgroundColor());
             return S_OK;
         }
@@ -957,6 +1023,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ButtonHoverForegroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
@@ -970,6 +1037,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ButtonHoverForegroundColor());
             return S_OK;
         }
@@ -984,6 +1052,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ButtonHoverBackgroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
@@ -997,6 +1066,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ButtonHoverBackgroundColor());
             return S_OK;
         }
@@ -1011,6 +1081,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ButtonPressedForegroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
@@ -1024,6 +1095,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ButtonPressedForegroundColor());
             return S_OK;
         }
@@ -1038,6 +1110,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ButtonPressedBackgroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
@@ -1051,6 +1124,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ButtonPressedBackgroundColor());
             return S_OK;
         }
@@ -1065,6 +1139,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InactiveForegroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
@@ -1078,6 +1153,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InactiveForegroundColor());
             return S_OK;
         }
@@ -1092,6 +1168,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InactiveBackgroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
@@ -1105,6 +1182,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InactiveBackgroundColor());
             return S_OK;
         }
@@ -1119,6 +1197,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ButtonInactiveForegroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
@@ -1132,6 +1211,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ButtonInactiveForegroundColor());
             return S_OK;
         }
@@ -1146,6 +1226,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ButtonInactiveBackgroundColor(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
@@ -1159,6 +1240,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ButtonInactiveBackgroundColor());
             return S_OK;
         }
@@ -1177,6 +1259,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTransferContext> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ViewId());
             return S_OK;
         }
@@ -1190,6 +1273,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTransferContext> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ViewId(value);
             return S_OK;
         }
@@ -1207,6 +1291,7 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewTransferContextSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataPackageFormatId());
             return S_OK;
         }
@@ -1225,6 +1310,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPane> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Showing(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1238,6 +1324,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPane> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Showing(token);
             return S_OK;
         }
@@ -1251,6 +1338,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPane> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Hiding(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1264,6 +1352,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPane> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Hiding(token);
             return S_OK;
         }
@@ -1277,6 +1366,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPane> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OccludedRect());
             return S_OK;
         }
@@ -1294,6 +1384,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPane2> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryShow());
             return S_OK;
         }
@@ -1307,6 +1398,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPane2> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryHide());
             return S_OK;
         }
@@ -1324,6 +1416,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPaneControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Visible());
             return S_OK;
         }
@@ -1337,6 +1430,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPaneControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Visible(value);
             return S_OK;
         }
@@ -1354,6 +1448,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPaneStatics> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *inputPane = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -1372,6 +1467,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPaneVisibilityEventArgs> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OccludedRect());
             return S_OK;
         }
@@ -1385,6 +1481,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPaneVisibilityEventArgs> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnsuredFocusedElementInView(value);
             return S_OK;
         }
@@ -1398,6 +1495,7 @@ struct produce<D, Windows::UI::ViewManagement::IInputPaneVisibilityEventArgs> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnsuredFocusedElementInView());
             return S_OK;
         }
@@ -1415,6 +1513,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().StartProjectingAsync(projectionViewId, anchorViewId));
             return S_OK;
         }
@@ -1429,6 +1528,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SwapDisplaysForViewsAsync(projectionViewId, anchorViewId));
             return S_OK;
         }
@@ -1443,6 +1543,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().StopProjectingAsync(projectionViewId, anchorViewId));
             return S_OK;
         }
@@ -1457,6 +1558,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProjectionDisplayAvailable());
             return S_OK;
         }
@@ -1470,6 +1572,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ProjectionDisplayAvailableChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -1483,6 +1586,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProjectionDisplayAvailableChanged(token);
             return S_OK;
         }
@@ -1500,6 +1604,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics2> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().StartProjectingAsync(projectionViewId, anchorViewId, *reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&displayDeviceInfo)));
             return S_OK;
         }
@@ -1514,6 +1619,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics2> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestStartProjectingAsync(projectionViewId, anchorViewId, *reinterpret_cast<const Windows::Foundation::Rect *>(&selection)));
             return S_OK;
         }
@@ -1528,6 +1634,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics2> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestStartProjectingAsync(projectionViewId, anchorViewId, *reinterpret_cast<const Windows::Foundation::Rect *>(&selection), prefferedPlacement));
             return S_OK;
         }
@@ -1542,6 +1649,7 @@ struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics2> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *selector = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -1560,6 +1668,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HandPreference());
             return S_OK;
         }
@@ -1573,6 +1682,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CursorSize());
             return S_OK;
         }
@@ -1586,6 +1696,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ScrollBarSize());
             return S_OK;
         }
@@ -1599,6 +1710,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ScrollBarArrowSize());
             return S_OK;
         }
@@ -1612,6 +1724,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ScrollBarThumbBoxSize());
             return S_OK;
         }
@@ -1625,6 +1738,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MessageDuration());
             return S_OK;
         }
@@ -1638,6 +1752,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AnimationsEnabled());
             return S_OK;
         }
@@ -1651,6 +1766,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CaretBrowsingEnabled());
             return S_OK;
         }
@@ -1664,6 +1780,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CaretBlinkRate());
             return S_OK;
         }
@@ -1677,6 +1794,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CaretWidth());
             return S_OK;
         }
@@ -1690,6 +1808,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DoubleClickTime());
             return S_OK;
         }
@@ -1703,6 +1822,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MouseHoverTime());
             return S_OK;
         }
@@ -1716,6 +1836,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UIElementColor(desiredElement));
             return S_OK;
         }
@@ -1733,6 +1854,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextScaleFactor());
             return S_OK;
         }
@@ -1746,6 +1868,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().TextScaleFactorChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -1759,6 +1882,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TextScaleFactorChanged(cookie);
             return S_OK;
         }
@@ -1776,6 +1900,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings3> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetColorValue(desiredColor));
             return S_OK;
         }
@@ -1789,6 +1914,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings3> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().ColorValuesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -1802,6 +1928,7 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings3> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ColorValuesChanged(cookie);
             return S_OK;
         }
@@ -1819,6 +1946,7 @@ struct produce<D, Windows::UI::ViewManagement::IUIViewSettings> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserInteractionMode());
             return S_OK;
         }
@@ -1836,6 +1964,7 @@ struct produce<D, Windows::UI::ViewManagement::IUIViewSettingsStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *current = detach(this->shim().GetForCurrentView());
             return S_OK;
         }

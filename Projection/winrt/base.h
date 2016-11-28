@@ -768,6 +768,7 @@ bool operator>=(const com_ptr<T> & left, const com_ptr<T> & right) noexcept
 {
     return !(left < right);
 }
+
 __forceinline void check_hresult(HRESULT result);
 
 namespace impl {
@@ -3110,6 +3111,24 @@ struct implements : impl::producer<D, impl::uncloak_t<I>> ...
         return target;
     }
 
+    struct abi_guard
+    {
+        abi_guard(D & derived) :
+            m_derived(derived)
+        {
+            m_derived.abi_enter();
+        }
+
+        ~abi_guard()
+        {
+            m_derived.abi_exit();
+        }
+
+    private:
+
+        D & m_derived;
+    };
+
 protected:
 
     implements(uint32_t references = 1) :
@@ -3163,6 +3182,9 @@ protected:
     }
 
 private:
+
+    void abi_enter() noexcept {}
+    void abi_exit() noexcept {}
 
     using is_agile = std::negation<impl::disjunction<std::is_same<non_agile, I> ...>>;
     using is_factory = impl::disjunction<std::is_same<ABI::Windows::Foundation::IActivationFactory, abi<I>> ...>;
@@ -3443,6 +3465,9 @@ private:
 
     template <typename D, typename I>
     friend struct impl::produce_base;
+
+    template <typename D, typename I>
+    friend struct impl::produce;
 };
 
 template <typename D, typename ... R>
@@ -3872,6 +3897,7 @@ struct produce<D, Windows::Foundation::IActivationFactory> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().ActivateInstance());
             return S_OK;
         }
@@ -4134,6 +4160,7 @@ struct produce<D, Windows::Foundation::IReference<T>> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -5305,6 +5332,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorChangedEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = this->shim().CollectionChange();
             return S_OK;
         }
@@ -5318,6 +5346,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorChangedEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = this->shim().Index();
             return S_OK;
         }
@@ -5335,6 +5364,7 @@ struct produce<D, Windows::Foundation::Collections::IIterator<T>> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *current = detach(this->shim().Current());
             return S_OK;
         }
@@ -5349,6 +5379,7 @@ struct produce<D, Windows::Foundation::Collections::IIterator<T>> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *hasCurrent = this->shim().HasCurrent();
             return S_OK;
         }
@@ -5362,6 +5393,7 @@ struct produce<D, Windows::Foundation::Collections::IIterator<T>> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *hasCurrent = this->shim().MoveNext();
             return S_OK;
         }
@@ -5375,6 +5407,7 @@ struct produce<D, Windows::Foundation::Collections::IIterator<T>> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *actual = this->shim().GetMany({ reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
             return S_OK;
         }
@@ -5394,6 +5427,7 @@ struct produce<D, Windows::Foundation::Collections::IIterable<T>> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *first = detach(this->shim().First());
             return S_OK;
         }
@@ -5412,6 +5446,7 @@ struct produce<D, Windows::Foundation::Collections::IKeyValuePair<K, V>> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *key = detach(this->shim().Key());
             return S_OK;
         }
@@ -5426,6 +5461,7 @@ struct produce<D, Windows::Foundation::Collections::IKeyValuePair<K, V>> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -5444,6 +5480,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorView<T>> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *item = detach(this->shim().GetAt(index));
             return S_OK;
         }
@@ -5458,6 +5495,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorView<T>> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *size = this->shim().Size();
             return S_OK;
         }
@@ -5471,6 +5509,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorView<T>> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *found = this->shim().IndexOf(*reinterpret_cast<const T *>(&value), *index);
             return S_OK;
         }
@@ -5484,6 +5523,7 @@ struct produce<D, Windows::Foundation::Collections::IVectorView<T>> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *actual = this->shim().GetMany(startIndex, { reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
             return S_OK;
         }
@@ -5503,6 +5543,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *item = detach(this->shim().GetAt(index));
             return S_OK;
         }
@@ -5517,6 +5558,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *size = this->shim().Size();
             return S_OK;
         }
@@ -5530,6 +5572,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *view = detach(this->shim().GetView());
             return S_OK;
         }
@@ -5544,6 +5587,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *found = this->shim().IndexOf(*reinterpret_cast<const T *>(&value), *index);
             return S_OK;
         }
@@ -5557,6 +5601,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetAt(index, *reinterpret_cast<const T *>(&item));
             return S_OK;
         }
@@ -5570,6 +5615,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InsertAt(index, *reinterpret_cast<const T *>(&item));
             return S_OK;
         }
@@ -5583,6 +5629,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveAt(index);
             return S_OK;
         }
@@ -5596,6 +5643,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Append(*reinterpret_cast<const T *>(&item));
             return S_OK;
         }
@@ -5609,6 +5657,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveAtEnd();
             return S_OK;
         }
@@ -5622,6 +5671,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Clear();
             return S_OK;
         }
@@ -5635,6 +5685,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *actual = this->shim().GetMany(startIndex, { reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
             return S_OK;
         }
@@ -5650,6 +5701,7 @@ struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReplaceAll({ reinterpret_cast<T const *>(item), reinterpret_cast<T const *>(item) + count });
             return S_OK;
         }
@@ -5667,6 +5719,7 @@ struct produce<D, Windows::Foundation::Collections::IMapView<K, V>> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Lookup(*reinterpret_cast<const K *>(&key)));
             return S_OK;
         }
@@ -5681,6 +5734,7 @@ struct produce<D, Windows::Foundation::Collections::IMapView<K, V>> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *size = this->shim().Size();
             return S_OK;
         }
@@ -5694,6 +5748,7 @@ struct produce<D, Windows::Foundation::Collections::IMapView<K, V>> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *found = this->shim().HasKey(*reinterpret_cast<const K *>(&key));
             return S_OK;
         }
@@ -5707,6 +5762,7 @@ struct produce<D, Windows::Foundation::Collections::IMapView<K, V>> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Split(*reinterpret_cast<Windows::Foundation::Collections::IMapView<K, V> *>(firstPartition), *reinterpret_cast<Windows::Foundation::Collections::IMapView<K, V> *>(secondPartition));
             return S_OK;
         }
@@ -5726,6 +5782,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Lookup(*reinterpret_cast<const K *>(&key)));
             return S_OK;
         }
@@ -5740,6 +5797,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *size = this->shim().Size();
             return S_OK;
         }
@@ -5753,6 +5811,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *found = this->shim().HasKey(*reinterpret_cast<const K *>(&key));
             return S_OK;
         }
@@ -5766,6 +5825,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *view = detach(this->shim().GetView());
             return S_OK;
         }
@@ -5780,6 +5840,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *replaced = this->shim().Insert(*reinterpret_cast<const K *>(&key), *reinterpret_cast<const V *>(&value));
             return S_OK;
         }
@@ -5793,6 +5854,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Remove(*reinterpret_cast<const K *>(&key));
             return S_OK;
         }
@@ -5806,6 +5868,7 @@ struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Clear();
             return S_OK;
         }
@@ -5823,6 +5886,7 @@ struct produce<D, Windows::Foundation::Collections::IMapChangedEventArgs<K>> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = this->shim().CollectionChange();
             return S_OK;
         }
@@ -5836,6 +5900,7 @@ struct produce<D, Windows::Foundation::Collections::IMapChangedEventArgs<K>> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Key());
             return S_OK;
         }
@@ -5854,6 +5919,7 @@ struct produce<D, Windows::Foundation::Collections::IObservableMap<K, V>> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = this->shim().MapChanged(*reinterpret_cast<const Windows::Foundation::Collections::MapChangedEventHandler<K, V> *>(&handler));
             return S_OK;
         }
@@ -5867,6 +5933,7 @@ struct produce<D, Windows::Foundation::Collections::IObservableMap<K, V>> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MapChanged(token);
             return S_OK;
         }
@@ -5884,6 +5951,7 @@ struct produce<D, Windows::Foundation::Collections::IObservableVector<T>> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = this->shim().VectorChanged(*reinterpret_cast<const Windows::Foundation::Collections::VectorChangedEventHandler<T> *>(&handler));
             return S_OK;
         }
@@ -5897,6 +5965,7 @@ struct produce<D, Windows::Foundation::Collections::IObservableVector<T>> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VectorChanged(token);
             return S_OK;
         }
@@ -7401,6 +7470,7 @@ struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncActionCompletedHandler *>(&handler));
             return S_OK;
         }
@@ -7414,6 +7484,7 @@ struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *handler = detach(this->shim().Completed());
             return S_OK;
         }
@@ -7428,6 +7499,7 @@ struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetResults();
             return S_OK;
         }
@@ -7445,6 +7517,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *id = this->shim().Id();
             return S_OK;
         }
@@ -7458,6 +7531,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *status = this->shim().Status();
             return S_OK;
         }
@@ -7471,6 +7545,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *errorCode = this->shim().ErrorCode();
             return S_OK;
         }
@@ -7484,6 +7559,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Cancel();
             return S_OK;
         }
@@ -7497,6 +7573,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Close();
             return S_OK;
         }
@@ -7514,6 +7591,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Progress(*reinterpret_cast<const Windows::Foundation::AsyncActionProgressHandler<TProgress> *>(&handler));
             return S_OK;
         }
@@ -7527,6 +7605,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *handler = detach(this->shim().Progress());
             return S_OK;
         }
@@ -7541,6 +7620,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> *>(&handler));
             return S_OK;
         }
@@ -7554,6 +7634,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *handler = detach(this->shim().Completed());
             return S_OK;
         }
@@ -7568,6 +7649,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetResults();
             return S_OK;
         }
@@ -7585,6 +7667,7 @@ struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncOperationCompletedHandler<TResult> *>(&handler));
             return S_OK;
         }
@@ -7598,6 +7681,7 @@ struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *handler = detach(this->shim().Completed());
             return S_OK;
         }
@@ -7612,6 +7696,7 @@ struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *results = detach(this->shim().GetResults());
             return S_OK;
         }
@@ -7630,6 +7715,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Progress(*reinterpret_cast<const Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> *>(&handler));
             return S_OK;
         }
@@ -7643,6 +7729,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *handler = detach(this->shim().Progress());
             return S_OK;
         }
@@ -7657,6 +7744,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> *>(&handler));
             return S_OK;
         }
@@ -7670,6 +7758,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *handler = detach(this->shim().Completed());
             return S_OK;
         }
@@ -7684,6 +7773,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *results = detach(this->shim().GetResults());
             return S_OK;
         }

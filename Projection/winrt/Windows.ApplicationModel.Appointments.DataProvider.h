@@ -20,6 +20,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentCalendarLocalId());
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentLocalId());
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentOriginalStartTime());
             return S_OK;
         }
@@ -62,6 +65,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Subject());
             return S_OK;
         }
@@ -76,6 +80,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Comment());
             return S_OK;
         }
@@ -90,6 +95,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NotifyInvitees());
             return S_OK;
         }
@@ -103,6 +109,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
@@ -117,6 +124,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
@@ -135,6 +143,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }
@@ -149,6 +158,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -167,6 +177,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentCalendarLocalId());
             return S_OK;
         }
@@ -181,6 +192,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Appointment());
             return S_OK;
         }
@@ -195,6 +207,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NotifyInvitees());
             return S_OK;
         }
@@ -208,6 +221,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChangedProperties());
             return S_OK;
         }
@@ -222,6 +236,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReportCompletedAsync(*reinterpret_cast<const Windows::ApplicationModel::Appointments::Appointment *>(&createdOrUpdatedAppointment)));
             return S_OK;
         }
@@ -236,6 +251,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
@@ -254,6 +270,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }
@@ -268,6 +285,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -286,6 +304,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentCalendarLocalId());
             return S_OK;
         }
@@ -300,6 +319,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentLocalId());
             return S_OK;
         }
@@ -314,6 +334,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentOriginalStartTime());
             return S_OK;
         }
@@ -328,6 +349,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Invitees());
             return S_OK;
         }
@@ -342,6 +364,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Subject());
             return S_OK;
         }
@@ -356,6 +379,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ForwardHeader());
             return S_OK;
         }
@@ -370,6 +394,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Comment());
             return S_OK;
         }
@@ -384,6 +409,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
@@ -398,6 +424,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
@@ -416,6 +443,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }
@@ -430,6 +458,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -448,6 +477,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentCalendarLocalId());
             return S_OK;
         }
@@ -462,6 +492,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentLocalId());
             return S_OK;
         }
@@ -476,6 +507,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentOriginalStartTime());
             return S_OK;
         }
@@ -490,6 +522,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewStartTime());
             return S_OK;
         }
@@ -503,6 +536,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewDuration());
             return S_OK;
         }
@@ -516,6 +550,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Subject());
             return S_OK;
         }
@@ -530,6 +565,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Comment());
             return S_OK;
         }
@@ -544,6 +580,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
@@ -558,6 +595,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
@@ -576,6 +614,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }
@@ -590,6 +629,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -608,6 +648,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentCalendarLocalId());
             return S_OK;
         }
@@ -622,6 +663,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
@@ -636,6 +678,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
@@ -654,6 +697,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }
@@ -668,6 +712,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -686,6 +731,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentCalendarLocalId());
             return S_OK;
         }
@@ -700,6 +746,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentLocalId());
             return S_OK;
         }
@@ -714,6 +761,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentOriginalStartTime());
             return S_OK;
         }
@@ -728,6 +776,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *response = detach(this->shim().Response());
             return S_OK;
         }
@@ -741,6 +790,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Subject());
             return S_OK;
         }
@@ -755,6 +805,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Comment());
             return S_OK;
         }
@@ -769,6 +820,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SendUpdate());
             return S_OK;
         }
@@ -782,6 +834,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReportCompletedAsync());
             return S_OK;
         }
@@ -796,6 +849,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReportFailedAsync());
             return S_OK;
         }
@@ -814,6 +868,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }
@@ -828,6 +883,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -846,6 +902,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SyncRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarSyncManagerSyncRequestEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -859,6 +916,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SyncRequested(token);
             return S_OK;
         }
@@ -872,6 +930,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CreateOrUpdateAppointmentRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -885,6 +944,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CreateOrUpdateAppointmentRequested(token);
             return S_OK;
         }
@@ -898,6 +958,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CancelMeetingRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCancelMeetingRequestEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -911,6 +972,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CancelMeetingRequested(token);
             return S_OK;
         }
@@ -924,6 +986,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ForwardMeetingRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarForwardMeetingRequestEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -937,6 +1000,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ForwardMeetingRequested(token);
             return S_OK;
         }
@@ -950,6 +1014,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ProposeNewTimeForMeetingRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -963,6 +1028,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProposeNewTimeForMeetingRequested(token);
             return S_OK;
         }
@@ -976,6 +1042,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().UpdateMeetingResponseRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarUpdateMeetingResponseRequestEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -989,6 +1056,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UpdateMeetingResponseRequested(token);
             return S_OK;
         }
@@ -1002,6 +1070,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start();
             return S_OK;
         }
@@ -1019,6 +1088,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::DataProvider::IAppoin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Connection());
             return S_OK;
         }

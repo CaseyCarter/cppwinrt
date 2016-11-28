@@ -17,6 +17,7 @@ struct produce<D, Windows::Perception::IPerceptionTimestamp> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetTime());
             return S_OK;
         }
@@ -30,6 +31,7 @@ struct produce<D, Windows::Perception::IPerceptionTimestamp> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PredictionAmount());
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::Perception::IPerceptionTimestampHelperStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromHistoricalTargetTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&targetTime)));
             return S_OK;
         }

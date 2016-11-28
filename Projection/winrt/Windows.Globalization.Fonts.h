@@ -18,6 +18,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFont> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontFamily());
             return S_OK;
         }
@@ -32,6 +33,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFont> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *weight = detach(this->shim().FontWeight());
             return S_OK;
         }
@@ -45,6 +47,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFont> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *stretch = detach(this->shim().FontStretch());
             return S_OK;
         }
@@ -58,6 +61,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFont> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *style = detach(this->shim().FontStyle());
             return S_OK;
         }
@@ -71,6 +75,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFont> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *scale = detach(this->shim().ScaleFactor());
             return S_OK;
         }
@@ -88,6 +93,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UITextFont());
             return S_OK;
         }
@@ -102,6 +108,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UIHeadingFont());
             return S_OK;
         }
@@ -116,6 +123,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UITitleFont());
             return S_OK;
         }
@@ -130,6 +138,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UICaptionFont());
             return S_OK;
         }
@@ -144,6 +153,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UINotificationHeadingFont());
             return S_OK;
         }
@@ -158,6 +168,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TraditionalDocumentFont());
             return S_OK;
         }
@@ -172,6 +183,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ModernDocumentFont());
             return S_OK;
         }
@@ -186,6 +198,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DocumentHeadingFont());
             return S_OK;
         }
@@ -200,6 +213,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FixedWidthTextFont());
             return S_OK;
         }
@@ -214,6 +228,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DocumentAlternate1Font());
             return S_OK;
         }
@@ -228,6 +243,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DocumentAlternate2Font());
             return S_OK;
         }
@@ -246,6 +262,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroupFactory> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *recommendedFonts = detach(this->shim().CreateLanguageFontGroup(*reinterpret_cast<const hstring *>(&languageTag)));
             return S_OK;
         }

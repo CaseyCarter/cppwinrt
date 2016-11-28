@@ -21,6 +21,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationAttribute> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationAttribute> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationAttribute> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Namespace());
             return S_OK;
         }
@@ -62,6 +65,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationAttribute> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Namespace(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -75,6 +79,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationAttribute> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -89,6 +94,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationAttribute> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -106,6 +112,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationAttributeFactory> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *syndicationAttribute = detach(this->shim().CreateSyndicationAttribute(*reinterpret_cast<const hstring *>(&attributeName), *reinterpret_cast<const hstring *>(&attributeNamespace), *reinterpret_cast<const hstring *>(&attributeValue)));
             return S_OK;
         }
@@ -124,6 +131,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationCategory> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Label());
             return S_OK;
         }
@@ -138,6 +146,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationCategory> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Label(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -151,6 +160,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationCategory> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Scheme());
             return S_OK;
         }
@@ -165,6 +175,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationCategory> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Scheme(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -178,6 +189,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationCategory> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Term());
             return S_OK;
         }
@@ -192,6 +204,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationCategory> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Term(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -209,6 +222,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationCategoryFactory> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *category = detach(this->shim().CreateSyndicationCategory(*reinterpret_cast<const hstring *>(&term)));
             return S_OK;
         }
@@ -223,6 +237,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationCategoryFactory> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *category = detach(this->shim().CreateSyndicationCategoryEx(*reinterpret_cast<const hstring *>(&term), *reinterpret_cast<const hstring *>(&scheme), *reinterpret_cast<const hstring *>(&label)));
             return S_OK;
         }
@@ -241,6 +256,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationClient> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCredential());
             return S_OK;
         }
@@ -255,6 +271,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationClient> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ServerCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
             return S_OK;
         }
@@ -268,6 +285,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationClient> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProxyCredential());
             return S_OK;
         }
@@ -282,6 +300,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationClient> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProxyCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
             return S_OK;
         }
@@ -295,6 +314,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationClient> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxResponseBufferSize());
             return S_OK;
         }
@@ -308,6 +328,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationClient> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxResponseBufferSize(value);
             return S_OK;
         }
@@ -321,6 +342,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationClient> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timeout());
             return S_OK;
         }
@@ -334,6 +356,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationClient> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Timeout(value);
             return S_OK;
         }
@@ -347,6 +370,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationClient> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BypassCacheOnRetrieve());
             return S_OK;
         }
@@ -360,6 +384,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationClient> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BypassCacheOnRetrieve(value);
             return S_OK;
         }
@@ -373,6 +398,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationClient> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetRequestHeader(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -386,6 +412,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationClient> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RetrieveFeedAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -404,6 +431,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationClientFactory> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *syndicationClient = detach(this->shim().CreateSyndicationClient(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&serverCredential)));
             return S_OK;
         }
@@ -422,6 +450,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationContent> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourceUri());
             return S_OK;
         }
@@ -436,6 +465,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationContent> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -453,6 +483,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationContentFactory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *content = detach(this->shim().CreateSyndicationContent(*reinterpret_cast<const hstring *>(&text), type));
             return S_OK;
         }
@@ -467,6 +498,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationContentFactory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *content = detach(this->shim().CreateSyndicationContentWithSourceUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&sourceUri)));
             return S_OK;
         }
@@ -485,6 +517,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationErrorStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *status = detach(this->shim().GetStatus(hresult));
             return S_OK;
         }
@@ -502,6 +535,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Authors());
             return S_OK;
         }
@@ -516,6 +550,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Categories());
             return S_OK;
         }
@@ -530,6 +565,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Contributors());
             return S_OK;
         }
@@ -544,6 +580,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Generator());
             return S_OK;
         }
@@ -558,6 +595,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Generator(*reinterpret_cast<const Windows::Web::Syndication::SyndicationGenerator *>(&value));
             return S_OK;
         }
@@ -571,6 +609,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IconUri());
             return S_OK;
         }
@@ -585,6 +624,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IconUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -598,6 +638,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -612,6 +653,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Id(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -625,6 +667,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Items());
             return S_OK;
         }
@@ -639,6 +682,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastUpdatedTime());
             return S_OK;
         }
@@ -652,6 +696,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LastUpdatedTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -665,6 +710,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Links());
             return S_OK;
         }
@@ -679,6 +725,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ImageUri());
             return S_OK;
         }
@@ -693,6 +740,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ImageUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -706,6 +754,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Rights());
             return S_OK;
         }
@@ -720,6 +769,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Rights(*reinterpret_cast<const Windows::Web::Syndication::ISyndicationText *>(&value));
             return S_OK;
         }
@@ -733,6 +783,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Subtitle());
             return S_OK;
         }
@@ -747,6 +798,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Subtitle(*reinterpret_cast<const Windows::Web::Syndication::ISyndicationText *>(&value));
             return S_OK;
         }
@@ -760,6 +812,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -774,6 +827,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Title(*reinterpret_cast<const Windows::Web::Syndication::ISyndicationText *>(&value));
             return S_OK;
         }
@@ -787,6 +841,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FirstUri());
             return S_OK;
         }
@@ -801,6 +856,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastUri());
             return S_OK;
         }
@@ -815,6 +871,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NextUri());
             return S_OK;
         }
@@ -829,6 +886,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PreviousUri());
             return S_OK;
         }
@@ -843,6 +901,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourceFormat());
             return S_OK;
         }
@@ -856,6 +915,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Load(*reinterpret_cast<const hstring *>(&feed));
             return S_OK;
         }
@@ -869,6 +929,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LoadFromXml(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlDocument *>(&feedDocument));
             return S_OK;
         }
@@ -886,6 +947,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationFeedFactory> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *feed = detach(this->shim().CreateSyndicationFeed(*reinterpret_cast<const hstring *>(&title), *reinterpret_cast<const hstring *>(&subtitle), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -904,6 +966,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationGenerator> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -918,6 +981,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationGenerator> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Text(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -931,6 +995,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationGenerator> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Uri());
             return S_OK;
         }
@@ -945,6 +1010,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationGenerator> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Uri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -958,6 +1024,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationGenerator> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Version());
             return S_OK;
         }
@@ -972,6 +1039,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationGenerator> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Version(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -989,6 +1057,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationGeneratorFactory> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *generator = detach(this->shim().CreateSyndicationGenerator(*reinterpret_cast<const hstring *>(&text)));
             return S_OK;
         }
@@ -1007,6 +1076,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Authors());
             return S_OK;
         }
@@ -1021,6 +1091,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Categories());
             return S_OK;
         }
@@ -1035,6 +1106,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Contributors());
             return S_OK;
         }
@@ -1049,6 +1121,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Content());
             return S_OK;
         }
@@ -1063,6 +1136,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Content(*reinterpret_cast<const Windows::Web::Syndication::SyndicationContent *>(&value));
             return S_OK;
         }
@@ -1076,6 +1150,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -1090,6 +1165,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Id(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1103,6 +1179,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastUpdatedTime());
             return S_OK;
         }
@@ -1116,6 +1193,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LastUpdatedTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -1129,6 +1207,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Links());
             return S_OK;
         }
@@ -1143,6 +1222,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PublishedDate());
             return S_OK;
         }
@@ -1156,6 +1236,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PublishedDate(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -1169,6 +1250,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Rights());
             return S_OK;
         }
@@ -1183,6 +1265,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Rights(*reinterpret_cast<const Windows::Web::Syndication::ISyndicationText *>(&value));
             return S_OK;
         }
@@ -1196,6 +1279,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Source());
             return S_OK;
         }
@@ -1210,6 +1294,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Source(*reinterpret_cast<const Windows::Web::Syndication::SyndicationFeed *>(&value));
             return S_OK;
         }
@@ -1223,6 +1308,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Summary());
             return S_OK;
         }
@@ -1237,6 +1323,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Summary(*reinterpret_cast<const Windows::Web::Syndication::ISyndicationText *>(&value));
             return S_OK;
         }
@@ -1250,6 +1337,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -1264,6 +1352,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Title(*reinterpret_cast<const Windows::Web::Syndication::ISyndicationText *>(&value));
             return S_OK;
         }
@@ -1277,6 +1366,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CommentsUri());
             return S_OK;
         }
@@ -1291,6 +1381,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CommentsUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -1304,6 +1395,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EditUri());
             return S_OK;
         }
@@ -1318,6 +1410,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EditMediaUri());
             return S_OK;
         }
@@ -1332,6 +1425,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ETag());
             return S_OK;
         }
@@ -1346,6 +1440,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ItemUri());
             return S_OK;
         }
@@ -1360,6 +1455,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Load(*reinterpret_cast<const hstring *>(&item));
             return S_OK;
         }
@@ -1373,6 +1469,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LoadFromXml(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlDocument *>(&itemDocument));
             return S_OK;
         }
@@ -1390,6 +1487,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationItemFactory> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *item = detach(this->shim().CreateSyndicationItem(*reinterpret_cast<const hstring *>(&title), *reinterpret_cast<const Windows::Web::Syndication::SyndicationContent *>(&content), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -1408,6 +1506,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationLink> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Length());
             return S_OK;
         }
@@ -1421,6 +1520,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationLink> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Length(value);
             return S_OK;
         }
@@ -1434,6 +1534,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationLink> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediaType());
             return S_OK;
         }
@@ -1448,6 +1549,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationLink> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MediaType(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1461,6 +1563,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationLink> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Relationship());
             return S_OK;
         }
@@ -1475,6 +1578,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationLink> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Relationship(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1488,6 +1592,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationLink> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -1502,6 +1607,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationLink> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1515,6 +1621,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationLink> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Uri());
             return S_OK;
         }
@@ -1529,6 +1636,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationLink> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Uri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -1542,6 +1650,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationLink> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResourceLanguage());
             return S_OK;
         }
@@ -1556,6 +1665,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationLink> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ResourceLanguage(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1573,6 +1683,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationLinkFactory> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *link = detach(this->shim().CreateSyndicationLink(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -1587,6 +1698,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationLinkFactory> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *link = detach(this->shim().CreateSyndicationLinkEx(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const hstring *>(&relationship), *reinterpret_cast<const hstring *>(&title), *reinterpret_cast<const hstring *>(&mediaType), length));
             return S_OK;
         }
@@ -1605,6 +1717,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationNode> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NodeName());
             return S_OK;
         }
@@ -1619,6 +1732,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationNode> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NodeName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1632,6 +1746,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationNode> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NodeNamespace());
             return S_OK;
         }
@@ -1646,6 +1761,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationNode> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NodeNamespace(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1659,6 +1775,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationNode> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NodeValue());
             return S_OK;
         }
@@ -1673,6 +1790,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationNode> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NodeValue(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1686,6 +1804,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationNode> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Language());
             return S_OK;
         }
@@ -1700,6 +1819,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationNode> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Language(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1713,6 +1833,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationNode> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BaseUri());
             return S_OK;
         }
@@ -1727,6 +1848,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationNode> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BaseUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -1740,6 +1862,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationNode> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AttributeExtensions());
             return S_OK;
         }
@@ -1754,6 +1877,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationNode> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ElementExtensions());
             return S_OK;
         }
@@ -1768,6 +1892,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationNode> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *xmlDocument = detach(this->shim().GetXmlDocument(format));
             return S_OK;
         }
@@ -1786,6 +1911,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationNodeFactory> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *node = detach(this->shim().CreateSyndicationNode(*reinterpret_cast<const hstring *>(&nodeName), *reinterpret_cast<const hstring *>(&nodeNamespace), *reinterpret_cast<const hstring *>(&nodeValue)));
             return S_OK;
         }
@@ -1804,6 +1930,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationPerson> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Email());
             return S_OK;
         }
@@ -1818,6 +1945,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationPerson> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Email(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1831,6 +1959,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationPerson> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -1845,6 +1974,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationPerson> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1858,6 +1988,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationPerson> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Uri());
             return S_OK;
         }
@@ -1872,6 +2003,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationPerson> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Uri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -1889,6 +2021,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationPersonFactory> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *person = detach(this->shim().CreateSyndicationPerson(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -1903,6 +2036,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationPersonFactory> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *person = detach(this->shim().CreateSyndicationPersonEx(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&email), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -1921,6 +2055,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationText> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -1935,6 +2070,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationText> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Text(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1948,6 +2084,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationText> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -1962,6 +2099,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationText> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Type(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1975,6 +2113,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationText> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Xml());
             return S_OK;
         }
@@ -1989,6 +2128,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationText> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Xml(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlDocument *>(&value));
             return S_OK;
         }
@@ -2006,6 +2146,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationTextFactory> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *syndicationText = detach(this->shim().CreateSyndicationText(*reinterpret_cast<const hstring *>(&text)));
             return S_OK;
         }
@@ -2020,6 +2161,7 @@ struct produce<D, Windows::Web::Syndication::ISyndicationTextFactory> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *syndicationText = detach(this->shim().CreateSyndicationTextEx(*reinterpret_cast<const hstring *>(&text), type));
             return S_OK;
         }

@@ -8,6 +8,7 @@ struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncActionCompletedHandler *>(&handler));
             return S_OK;
         }
@@ -21,6 +22,7 @@ struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *handler = detach(this->shim().Completed());
             return S_OK;
         }
@@ -35,6 +37,7 @@ struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetResults();
             return S_OK;
         }
@@ -52,6 +55,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *id = this->shim().Id();
             return S_OK;
         }
@@ -65,6 +69,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *status = this->shim().Status();
             return S_OK;
         }
@@ -78,6 +83,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *errorCode = this->shim().ErrorCode();
             return S_OK;
         }
@@ -91,6 +97,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Cancel();
             return S_OK;
         }
@@ -104,6 +111,7 @@ struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Fo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Close();
             return S_OK;
         }
@@ -121,6 +129,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Progress(*reinterpret_cast<const Windows::Foundation::AsyncActionProgressHandler<TProgress> *>(&handler));
             return S_OK;
         }
@@ -134,6 +143,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *handler = detach(this->shim().Progress());
             return S_OK;
         }
@@ -148,6 +158,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> *>(&handler));
             return S_OK;
         }
@@ -161,6 +172,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *handler = detach(this->shim().Completed());
             return S_OK;
         }
@@ -175,6 +187,7 @@ struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetResults();
             return S_OK;
         }
@@ -192,6 +205,7 @@ struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncOperationCompletedHandler<TResult> *>(&handler));
             return S_OK;
         }
@@ -205,6 +219,7 @@ struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *handler = detach(this->shim().Completed());
             return S_OK;
         }
@@ -219,6 +234,7 @@ struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *results = detach(this->shim().GetResults());
             return S_OK;
         }
@@ -237,6 +253,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Progress(*reinterpret_cast<const Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> *>(&handler));
             return S_OK;
         }
@@ -250,6 +267,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *handler = detach(this->shim().Progress());
             return S_OK;
         }
@@ -264,6 +282,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> *>(&handler));
             return S_OK;
         }
@@ -277,6 +296,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *handler = detach(this->shim().Completed());
             return S_OK;
         }
@@ -291,6 +311,7 @@ struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TPro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *results = detach(this->shim().GetResults());
             return S_OK;
         }

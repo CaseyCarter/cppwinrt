@@ -220,6 +220,7 @@ struct produce<D, Windows::UI::Xaml::Input::IAccessKeyDisplayRequestedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PressedKeys());
             return S_OK;
         }
@@ -238,6 +239,7 @@ struct produce<D, Windows::UI::Xaml::Input::IAccessKeyInvokedEventArgs> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -251,6 +253,7 @@ struct produce<D, Windows::UI::Xaml::Input::IAccessKeyInvokedEventArgs> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -272,6 +275,7 @@ struct produce<D, Windows::UI::Xaml::Input::IAccessKeyManagerStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDisplayModeEnabled());
             return S_OK;
         }
@@ -285,6 +289,7 @@ struct produce<D, Windows::UI::Xaml::Input::IAccessKeyManagerStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().IsDisplayModeEnabledChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -298,6 +303,7 @@ struct produce<D, Windows::UI::Xaml::Input::IAccessKeyManagerStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsDisplayModeEnabledChanged(token);
             return S_OK;
         }
@@ -311,6 +317,7 @@ struct produce<D, Windows::UI::Xaml::Input::IAccessKeyManagerStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExitDisplayMode();
             return S_OK;
         }
@@ -328,6 +335,7 @@ struct produce<D, Windows::UI::Xaml::Input::ICommand> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CanExecuteChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -341,6 +349,7 @@ struct produce<D, Windows::UI::Xaml::Input::ICommand> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanExecuteChanged(token);
             return S_OK;
         }
@@ -354,6 +363,7 @@ struct produce<D, Windows::UI::Xaml::Input::ICommand> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().CanExecute(*reinterpret_cast<const Windows::IInspectable *>(&parameter)));
             return S_OK;
         }
@@ -367,6 +377,7 @@ struct produce<D, Windows::UI::Xaml::Input::ICommand> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Execute(*reinterpret_cast<const Windows::IInspectable *>(&parameter));
             return S_OK;
         }
@@ -384,6 +395,7 @@ struct produce<D, Windows::UI::Xaml::Input::IContextRequestedEventArgs> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -397,6 +409,7 @@ struct produce<D, Windows::UI::Xaml::Input::IContextRequestedEventArgs> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -410,6 +423,7 @@ struct produce<D, Windows::UI::Xaml::Input::IContextRequestedEventArgs> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TryGetPosition(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&relativeTo), *point));
             return S_OK;
         }
@@ -427,6 +441,7 @@ struct produce<D, Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -440,6 +455,7 @@ struct produce<D, Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -453,6 +469,7 @@ struct produce<D, Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -466,6 +483,7 @@ struct produce<D, Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetPosition(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&relativeTo)));
             return S_OK;
         }
@@ -487,6 +505,7 @@ struct produce<D, Windows::UI::Xaml::Input::IFocusManagerStatics> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetFocusedElement());
             return S_OK;
         }
@@ -505,6 +524,7 @@ struct produce<D, Windows::UI::Xaml::Input::IFocusManagerStatics2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TryMoveFocus(focusNavigationDirection));
             return S_OK;
         }
@@ -522,6 +542,7 @@ struct produce<D, Windows::UI::Xaml::Input::IFocusManagerStatics3> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindNextFocusableElement(focusNavigationDirection));
             return S_OK;
         }
@@ -536,6 +557,7 @@ struct produce<D, Windows::UI::Xaml::Input::IFocusManagerStatics3> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindNextFocusableElement(focusNavigationDirection, *reinterpret_cast<const Windows::Foundation::Rect *>(&hintRect)));
             return S_OK;
         }
@@ -554,6 +576,7 @@ struct produce<D, Windows::UI::Xaml::Input::IHoldingRoutedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -567,6 +590,7 @@ struct produce<D, Windows::UI::Xaml::Input::IHoldingRoutedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HoldingState());
             return S_OK;
         }
@@ -580,6 +604,7 @@ struct produce<D, Windows::UI::Xaml::Input::IHoldingRoutedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -593,6 +618,7 @@ struct produce<D, Windows::UI::Xaml::Input::IHoldingRoutedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -606,6 +632,7 @@ struct produce<D, Windows::UI::Xaml::Input::IHoldingRoutedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetPosition(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&relativeTo)));
             return S_OK;
         }
@@ -623,6 +650,7 @@ struct produce<D, Windows::UI::Xaml::Input::IInertiaExpansionBehavior> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredDeceleration());
             return S_OK;
         }
@@ -636,6 +664,7 @@ struct produce<D, Windows::UI::Xaml::Input::IInertiaExpansionBehavior> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DesiredDeceleration(value);
             return S_OK;
         }
@@ -649,6 +678,7 @@ struct produce<D, Windows::UI::Xaml::Input::IInertiaExpansionBehavior> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredExpansion());
             return S_OK;
         }
@@ -662,6 +692,7 @@ struct produce<D, Windows::UI::Xaml::Input::IInertiaExpansionBehavior> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DesiredExpansion(value);
             return S_OK;
         }
@@ -679,6 +710,7 @@ struct produce<D, Windows::UI::Xaml::Input::IInertiaRotationBehavior> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredDeceleration());
             return S_OK;
         }
@@ -692,6 +724,7 @@ struct produce<D, Windows::UI::Xaml::Input::IInertiaRotationBehavior> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DesiredDeceleration(value);
             return S_OK;
         }
@@ -705,6 +738,7 @@ struct produce<D, Windows::UI::Xaml::Input::IInertiaRotationBehavior> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredRotation());
             return S_OK;
         }
@@ -718,6 +752,7 @@ struct produce<D, Windows::UI::Xaml::Input::IInertiaRotationBehavior> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DesiredRotation(value);
             return S_OK;
         }
@@ -735,6 +770,7 @@ struct produce<D, Windows::UI::Xaml::Input::IInertiaTranslationBehavior> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredDeceleration());
             return S_OK;
         }
@@ -748,6 +784,7 @@ struct produce<D, Windows::UI::Xaml::Input::IInertiaTranslationBehavior> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DesiredDeceleration(value);
             return S_OK;
         }
@@ -761,6 +798,7 @@ struct produce<D, Windows::UI::Xaml::Input::IInertiaTranslationBehavior> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredDisplacement());
             return S_OK;
         }
@@ -774,6 +812,7 @@ struct produce<D, Windows::UI::Xaml::Input::IInertiaTranslationBehavior> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DesiredDisplacement(value);
             return S_OK;
         }
@@ -791,6 +830,7 @@ struct produce<D, Windows::UI::Xaml::Input::IInputScope> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Names());
             return S_OK;
         }
@@ -809,6 +849,7 @@ struct produce<D, Windows::UI::Xaml::Input::IInputScopeName> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NameValue());
             return S_OK;
         }
@@ -822,6 +863,7 @@ struct produce<D, Windows::UI::Xaml::Input::IInputScopeName> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NameValue(value);
             return S_OK;
         }
@@ -839,6 +881,7 @@ struct produce<D, Windows::UI::Xaml::Input::IInputScopeNameFactory> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(nameValue));
             return S_OK;
         }
@@ -857,6 +900,7 @@ struct produce<D, Windows::UI::Xaml::Input::IKeyRoutedEventArgs> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Key());
             return S_OK;
         }
@@ -870,6 +914,7 @@ struct produce<D, Windows::UI::Xaml::Input::IKeyRoutedEventArgs> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyStatus());
             return S_OK;
         }
@@ -883,6 +928,7 @@ struct produce<D, Windows::UI::Xaml::Input::IKeyRoutedEventArgs> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -896,6 +942,7 @@ struct produce<D, Windows::UI::Xaml::Input::IKeyRoutedEventArgs> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -913,6 +960,7 @@ struct produce<D, Windows::UI::Xaml::Input::IKeyRoutedEventArgs2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OriginalKey());
             return S_OK;
         }
@@ -930,6 +978,7 @@ struct produce<D, Windows::UI::Xaml::Input::IKeyRoutedEventArgs3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -948,6 +997,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Container());
             return S_OK;
         }
@@ -962,6 +1012,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -975,6 +1026,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsInertial());
             return S_OK;
         }
@@ -988,6 +1040,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Cumulative());
             return S_OK;
         }
@@ -1001,6 +1054,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Velocities());
             return S_OK;
         }
@@ -1014,6 +1068,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1027,6 +1082,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1040,6 +1096,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -1057,6 +1114,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Container());
             return S_OK;
         }
@@ -1071,6 +1129,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -1084,6 +1143,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsInertial());
             return S_OK;
         }
@@ -1097,6 +1157,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Delta());
             return S_OK;
         }
@@ -1110,6 +1171,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Cumulative());
             return S_OK;
         }
@@ -1123,6 +1185,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Velocities());
             return S_OK;
         }
@@ -1136,6 +1199,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1149,6 +1213,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1162,6 +1227,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -1175,6 +1241,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -1192,6 +1259,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Container());
             return S_OK;
         }
@@ -1206,6 +1274,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExpansionBehavior());
             return S_OK;
         }
@@ -1220,6 +1289,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExpansionBehavior(*reinterpret_cast<const Windows::UI::Xaml::Input::InertiaExpansionBehavior *>(&value));
             return S_OK;
         }
@@ -1233,6 +1303,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RotationBehavior());
             return S_OK;
         }
@@ -1247,6 +1318,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RotationBehavior(*reinterpret_cast<const Windows::UI::Xaml::Input::InertiaRotationBehavior *>(&value));
             return S_OK;
         }
@@ -1260,6 +1332,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TranslationBehavior());
             return S_OK;
         }
@@ -1274,6 +1347,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TranslationBehavior(*reinterpret_cast<const Windows::UI::Xaml::Input::InertiaTranslationBehavior *>(&value));
             return S_OK;
         }
@@ -1287,6 +1361,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1300,6 +1375,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1313,6 +1389,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -1326,6 +1403,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Delta());
             return S_OK;
         }
@@ -1339,6 +1417,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Cumulative());
             return S_OK;
         }
@@ -1352,6 +1431,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Velocities());
             return S_OK;
         }
@@ -1369,6 +1449,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationPivot> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Center());
             return S_OK;
         }
@@ -1382,6 +1463,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationPivot> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Center(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
@@ -1395,6 +1477,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationPivot> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Radius());
             return S_OK;
         }
@@ -1408,6 +1491,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationPivot> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Radius(value);
             return S_OK;
         }
@@ -1425,6 +1509,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationPivotFactory> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceWithCenterAndRadius(*reinterpret_cast<const Windows::Foundation::Point *>(&center), radius));
             return S_OK;
         }
@@ -1443,6 +1528,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Container());
             return S_OK;
         }
@@ -1457,6 +1543,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -1470,6 +1557,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1483,6 +1571,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1496,6 +1585,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -1509,6 +1599,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Cumulative());
             return S_OK;
         }
@@ -1522,6 +1613,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -1539,6 +1631,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgsF
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -1558,6 +1651,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Mode());
             return S_OK;
         }
@@ -1571,6 +1665,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Mode(value);
             return S_OK;
         }
@@ -1584,6 +1679,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Container());
             return S_OK;
         }
@@ -1598,6 +1694,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Container(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&value));
             return S_OK;
         }
@@ -1611,6 +1708,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pivot());
             return S_OK;
         }
@@ -1625,6 +1723,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Pivot(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationPivot *>(&value));
             return S_OK;
         }
@@ -1638,6 +1737,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1651,6 +1751,7 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1668,6 +1769,7 @@ struct produce<D, Windows::UI::Xaml::Input::IPointer> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerId());
             return S_OK;
         }
@@ -1681,6 +1783,7 @@ struct produce<D, Windows::UI::Xaml::Input::IPointer> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -1694,6 +1797,7 @@ struct produce<D, Windows::UI::Xaml::Input::IPointer> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsInContact());
             return S_OK;
         }
@@ -1707,6 +1811,7 @@ struct produce<D, Windows::UI::Xaml::Input::IPointer> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsInRange());
             return S_OK;
         }
@@ -1724,6 +1829,7 @@ struct produce<D, Windows::UI::Xaml::Input::IPointerRoutedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pointer());
             return S_OK;
         }
@@ -1738,6 +1844,7 @@ struct produce<D, Windows::UI::Xaml::Input::IPointerRoutedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyModifiers());
             return S_OK;
         }
@@ -1751,6 +1858,7 @@ struct produce<D, Windows::UI::Xaml::Input::IPointerRoutedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1764,6 +1872,7 @@ struct produce<D, Windows::UI::Xaml::Input::IPointerRoutedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1777,6 +1886,7 @@ struct produce<D, Windows::UI::Xaml::Input::IPointerRoutedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetCurrentPoint(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&relativeTo)));
             return S_OK;
         }
@@ -1791,6 +1901,7 @@ struct produce<D, Windows::UI::Xaml::Input::IPointerRoutedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetIntermediatePoints(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&relativeTo)));
             return S_OK;
         }
@@ -1809,6 +1920,7 @@ struct produce<D, Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -1822,6 +1934,7 @@ struct produce<D, Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1835,6 +1948,7 @@ struct produce<D, Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1848,6 +1962,7 @@ struct produce<D, Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetPosition(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&relativeTo)));
             return S_OK;
         }
@@ -1865,6 +1980,7 @@ struct produce<D, Windows::UI::Xaml::Input::ITappedRoutedEventArgs> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -1878,6 +1994,7 @@ struct produce<D, Windows::UI::Xaml::Input::ITappedRoutedEventArgs> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1891,6 +2008,7 @@ struct produce<D, Windows::UI::Xaml::Input::ITappedRoutedEventArgs> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1904,6 +2022,7 @@ struct produce<D, Windows::UI::Xaml::Input::ITappedRoutedEventArgs> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetPosition(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&relativeTo)));
             return S_OK;
         }

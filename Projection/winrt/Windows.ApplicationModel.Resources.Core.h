@@ -20,6 +20,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::INamedResource> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *uri = detach(this->shim().Uri());
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::INamedResource> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Candidates());
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::INamedResource> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Resolve());
             return S_OK;
         }
@@ -62,6 +65,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::INamedResource> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Resolve(*reinterpret_cast<const Windows::ApplicationModel::Resources::Core::ResourceContext *>(&resourceContext)));
             return S_OK;
         }
@@ -76,6 +80,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::INamedResource> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ResolveAll());
             return S_OK;
         }
@@ -90,6 +95,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::INamedResource> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instances = detach(this->shim().ResolveAll(*reinterpret_cast<const Windows::ApplicationModel::Resources::Core::ResourceContext *>(&resourceContext)));
             return S_OK;
         }
@@ -108,6 +114,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceCandidate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Qualifiers());
             return S_OK;
         }
@@ -122,6 +129,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceCandidate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsMatch());
             return S_OK;
         }
@@ -135,6 +143,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceCandidate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsMatchAsDefault());
             return S_OK;
         }
@@ -148,6 +157,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceCandidate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDefault());
             return S_OK;
         }
@@ -161,6 +171,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceCandidate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ValueAsString());
             return S_OK;
         }
@@ -175,6 +186,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceCandidate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetValueAsFileAsync());
             return S_OK;
         }
@@ -189,6 +201,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceCandidate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetQualifierValue(*reinterpret_cast<const hstring *>(&qualifierName)));
             return S_OK;
         }
@@ -207,6 +220,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceCandidate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetValueAsStreamAsync());
             return S_OK;
         }
@@ -225,6 +239,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContext> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().QualifierValues());
             return S_OK;
         }
@@ -239,6 +254,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContext> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Reset();
             return S_OK;
         }
@@ -252,6 +268,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContext> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Reset(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&qualifierNames));
             return S_OK;
         }
@@ -265,6 +282,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContext> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OverrideToMatch(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> *>(&result));
             return S_OK;
         }
@@ -278,6 +296,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContext> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *clone = detach(this->shim().Clone());
             return S_OK;
         }
@@ -292,6 +311,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContext> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Languages());
             return S_OK;
         }
@@ -306,6 +326,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContext> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Languages(*reinterpret_cast<const Windows::Foundation::Collections::IVectorView<hstring> *>(&languages));
             return S_OK;
         }
@@ -323,6 +344,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContextSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateMatchingContext(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> *>(&result)));
             return S_OK;
         }
@@ -341,6 +363,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContextSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -355,6 +378,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContextSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetGlobalQualifierValue(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -368,6 +392,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContextSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ResetGlobalQualifierValues();
             return S_OK;
         }
@@ -381,6 +406,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContextSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ResetGlobalQualifierValues(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&qualifierNames));
             return S_OK;
         }
@@ -394,6 +420,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContextSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *loader = detach(this->shim().GetForViewIndependentUse());
             return S_OK;
         }
@@ -412,6 +439,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceContextSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetGlobalQualifierValue(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const hstring *>(&value), persistence);
             return S_OK;
         }
@@ -429,6 +457,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceManager> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MainResourceMap());
             return S_OK;
         }
@@ -443,6 +472,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceManager> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *maps = detach(this->shim().AllResourceMaps());
             return S_OK;
         }
@@ -457,6 +487,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceManager> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DefaultContext());
             return S_OK;
         }
@@ -471,6 +502,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceManager> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LoadPriFiles(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageFile> *>(&files));
             return S_OK;
         }
@@ -484,6 +516,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceManager> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UnloadPriFiles(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageFile> *>(&files));
             return S_OK;
         }
@@ -501,6 +534,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceManager2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *table = detach(this->shim().GetAllNamedResourcesForPackage(*reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo *>(&resourceLayoutInfo)));
             return S_OK;
         }
@@ -515,6 +549,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceManager2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *table = detach(this->shim().GetAllSubtreesForPackage(*reinterpret_cast<const hstring *>(&packageName), *reinterpret_cast<const Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo *>(&resourceLayoutInfo)));
             return S_OK;
         }
@@ -533,6 +568,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceManagerSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Current());
             return S_OK;
         }
@@ -547,6 +583,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceManagerSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *isReference = detach(this->shim().IsResourceReference(*reinterpret_cast<const hstring *>(&resourceReference)));
             return S_OK;
         }
@@ -564,6 +601,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceMap> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *uri = detach(this->shim().Uri());
             return S_OK;
         }
@@ -578,6 +616,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceMap> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetValue(*reinterpret_cast<const hstring *>(&resource)));
             return S_OK;
         }
@@ -592,6 +631,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceMap> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetValue(*reinterpret_cast<const hstring *>(&resource), *reinterpret_cast<const Windows::ApplicationModel::Resources::Core::ResourceContext *>(&context)));
             return S_OK;
         }
@@ -606,6 +646,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceMap> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *map = detach(this->shim().GetSubtree(*reinterpret_cast<const hstring *>(&reference)));
             return S_OK;
         }
@@ -624,6 +665,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceQualifier
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().QualifierName());
             return S_OK;
         }
@@ -638,6 +680,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceQualifier
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().QualifierValue());
             return S_OK;
         }
@@ -652,6 +695,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceQualifier
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDefault());
             return S_OK;
         }
@@ -665,6 +709,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceQualifier
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsMatch());
             return S_OK;
         }
@@ -678,6 +723,7 @@ struct produce<D, Windows::ApplicationModel::Resources::Core::IResourceQualifier
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Score());
             return S_OK;
         }

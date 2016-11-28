@@ -24,6 +24,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowAutoRedirect());
             return S_OK;
         }
@@ -37,6 +38,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowAutoRedirect(value);
             return S_OK;
         }
@@ -50,6 +52,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowUI());
             return S_OK;
         }
@@ -63,6 +66,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowUI(value);
             return S_OK;
         }
@@ -76,6 +80,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutomaticDecompression());
             return S_OK;
         }
@@ -89,6 +94,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AutomaticDecompression(value);
             return S_OK;
         }
@@ -102,6 +108,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CacheControl());
             return S_OK;
         }
@@ -116,6 +123,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CookieManager());
             return S_OK;
         }
@@ -130,6 +138,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClientCertificate());
             return S_OK;
         }
@@ -144,6 +153,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClientCertificate(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&value));
             return S_OK;
         }
@@ -157,6 +167,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IgnorableServerCertificateErrors());
             return S_OK;
         }
@@ -171,6 +182,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxConnectionsPerServer());
             return S_OK;
         }
@@ -184,6 +196,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxConnectionsPerServer(value);
             return S_OK;
         }
@@ -197,6 +210,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProxyCredential());
             return S_OK;
         }
@@ -211,6 +225,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProxyCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
             return S_OK;
         }
@@ -224,6 +239,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCredential());
             return S_OK;
         }
@@ -238,6 +254,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ServerCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
             return S_OK;
         }
@@ -251,6 +268,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UseProxy());
             return S_OK;
         }
@@ -264,6 +282,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UseProxy(value);
             return S_OK;
         }
@@ -281,6 +300,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter2> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxVersion());
             return S_OK;
         }
@@ -294,6 +314,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter2> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxVersion(value);
             return S_OK;
         }
@@ -311,6 +332,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter3> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CookieUsageBehavior());
             return S_OK;
         }
@@ -324,6 +346,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter3> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CookieUsageBehavior(value);
             return S_OK;
         }
@@ -341,6 +364,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter4> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().ServerCustomValidationRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Web::Http::Filters::HttpBaseProtocolFilter, Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
@@ -354,6 +378,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter4> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ServerCustomValidationRequested(eventCookie);
             return S_OK;
         }
@@ -367,6 +392,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpBaseProtocolFilter4> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClearAuthenticationCache();
             return S_OK;
         }
@@ -384,6 +410,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpCacheControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadBehavior());
             return S_OK;
         }
@@ -397,6 +424,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpCacheControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadBehavior(value);
             return S_OK;
         }
@@ -410,6 +438,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpCacheControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WriteBehavior());
             return S_OK;
         }
@@ -423,6 +452,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpCacheControl> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteBehavior(value);
             return S_OK;
         }
@@ -440,6 +470,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpFilter> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SendRequestAsync(*reinterpret_cast<const Windows::Web::Http::HttpRequestMessage *>(&request)));
             return S_OK;
         }
@@ -458,6 +489,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpServerCustomValidationReques
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequestMessage());
             return S_OK;
         }
@@ -472,6 +504,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpServerCustomValidationReques
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCertificate());
             return S_OK;
         }
@@ -486,6 +519,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpServerCustomValidationReques
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCertificateErrorSeverity());
             return S_OK;
         }
@@ -499,6 +533,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpServerCustomValidationReques
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCertificateErrors());
             return S_OK;
         }
@@ -513,6 +548,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpServerCustomValidationReques
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerIntermediateCertificates());
             return S_OK;
         }
@@ -527,6 +563,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpServerCustomValidationReques
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Reject();
             return S_OK;
         }
@@ -540,6 +577,7 @@ struct produce<D, Windows::Web::Http::Filters::IHttpServerCustomValidationReques
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDeferral());
             return S_OK;
         }

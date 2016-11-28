@@ -21,6 +21,7 @@ struct produce<D, Windows::Storage::Compression::ICompressor> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FinishAsync());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::Storage::Compression::ICompressor> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *stream = detach(this->shim().DetachStream());
             return S_OK;
         }
@@ -53,6 +55,7 @@ struct produce<D, Windows::Storage::Compression::ICompressorFactory> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *createdCompressor = detach(this->shim().CreateCompressor(*reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&underlyingStream)));
             return S_OK;
         }
@@ -67,6 +70,7 @@ struct produce<D, Windows::Storage::Compression::ICompressorFactory> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *createdCompressor = detach(this->shim().CreateCompressorEx(*reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&underlyingStream), algorithm, blockSize));
             return S_OK;
         }
@@ -85,6 +89,7 @@ struct produce<D, Windows::Storage::Compression::IDecompressor> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *stream = detach(this->shim().DetachStream());
             return S_OK;
         }
@@ -103,6 +108,7 @@ struct produce<D, Windows::Storage::Compression::IDecompressorFactory> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *createdDecompressor = detach(this->shim().CreateDecompressor(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&underlyingStream)));
             return S_OK;
         }

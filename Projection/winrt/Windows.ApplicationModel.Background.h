@@ -86,6 +86,7 @@ struct produce<D, Windows::ApplicationModel::Background::IActivitySensorTrigger>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SubscribedActivities());
             return S_OK;
         }
@@ -100,6 +101,7 @@ struct produce<D, Windows::ApplicationModel::Background::IActivitySensorTrigger>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportInterval());
             return S_OK;
         }
@@ -113,6 +115,7 @@ struct produce<D, Windows::ApplicationModel::Background::IActivitySensorTrigger>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedActivities());
             return S_OK;
         }
@@ -127,6 +130,7 @@ struct produce<D, Windows::ApplicationModel::Background::IActivitySensorTrigger>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinimumReportInterval());
             return S_OK;
         }
@@ -144,6 +148,7 @@ struct produce<D, Windows::ApplicationModel::Background::IActivitySensorTriggerF
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *activityTrigger = detach(this->shim().Create(reportIntervalInMilliseconds));
             return S_OK;
         }
@@ -162,6 +167,7 @@ struct produce<D, Windows::ApplicationModel::Background::IApplicationTrigger> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestAsync());
             return S_OK;
         }
@@ -176,6 +182,7 @@ struct produce<D, Windows::ApplicationModel::Background::IApplicationTrigger> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestAsync(*reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&arguments)));
             return S_OK;
         }
@@ -194,6 +201,7 @@ struct produce<D, Windows::ApplicationModel::Background::IApplicationTriggerDeta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Arguments());
             return S_OK;
         }
@@ -220,6 +228,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundExecutionMan
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }
@@ -234,6 +243,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundExecutionMan
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestAccessAsync(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
@@ -248,6 +258,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundExecutionMan
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveAccess();
             return S_OK;
         }
@@ -261,6 +272,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundExecutionMan
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveAccess(*reinterpret_cast<const hstring *>(&applicationId));
             return S_OK;
         }
@@ -274,6 +286,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundExecutionMan
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *status = detach(this->shim().GetAccessStatus());
             return S_OK;
         }
@@ -287,6 +300,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundExecutionMan
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *status = detach(this->shim().GetAccessStatus(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
@@ -304,6 +318,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTask> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Run(*reinterpret_cast<const Windows::ApplicationModel::Background::IBackgroundTaskInstance *>(&taskInstance));
             return S_OK;
         }
@@ -321,6 +336,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TaskEntryPoint(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -334,6 +350,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TaskEntryPoint());
             return S_OK;
         }
@@ -348,6 +365,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetTrigger(*reinterpret_cast<const Windows::ApplicationModel::Background::IBackgroundTrigger *>(&trigger));
             return S_OK;
         }
@@ -361,6 +379,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddCondition(*reinterpret_cast<const Windows::ApplicationModel::Background::IBackgroundCondition *>(&condition));
             return S_OK;
         }
@@ -374,6 +393,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -387,6 +407,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -401,6 +422,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *task = detach(this->shim().Register());
             return S_OK;
         }
@@ -419,6 +441,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder2
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CancelOnConditionLoss(value);
             return S_OK;
         }
@@ -432,6 +455,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder2
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CancelOnConditionLoss());
             return S_OK;
         }
@@ -449,6 +473,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder3
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsNetworkRequested(value);
             return S_OK;
         }
@@ -462,6 +487,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder3
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsNetworkRequested());
             return S_OK;
         }
@@ -479,6 +505,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskComplete
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InstanceId());
             return S_OK;
         }
@@ -492,6 +519,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskComplete
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CheckResult();
             return S_OK;
         }
@@ -509,6 +537,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskDeferral
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -526,6 +555,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InstanceId());
             return S_OK;
         }
@@ -539,6 +569,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *task = detach(this->shim().Task());
             return S_OK;
         }
@@ -553,6 +584,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Progress());
             return S_OK;
         }
@@ -566,6 +598,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Progress(value);
             return S_OK;
         }
@@ -579,6 +612,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *triggerDetails = detach(this->shim().TriggerDetails());
             return S_OK;
         }
@@ -593,6 +627,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().Canceled(*reinterpret_cast<const Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler *>(&cancelHandler)));
             return S_OK;
         }
@@ -606,6 +641,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Canceled(cookie);
             return S_OK;
         }
@@ -619,6 +655,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SuspendedCount());
             return S_OK;
         }
@@ -632,6 +669,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -650,6 +688,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetThrottleCount(counter));
             return S_OK;
         }
@@ -667,6 +706,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().User());
             return S_OK;
         }
@@ -685,6 +725,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskProgress
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InstanceId());
             return S_OK;
         }
@@ -698,6 +739,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskProgress
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Progress());
             return S_OK;
         }
@@ -715,6 +757,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TaskId());
             return S_OK;
         }
@@ -728,6 +771,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -742,6 +786,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().Progress(*reinterpret_cast<const Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler *>(&handler)));
             return S_OK;
         }
@@ -755,6 +800,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Progress(cookie);
             return S_OK;
         }
@@ -768,6 +814,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().Completed(*reinterpret_cast<const Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler *>(&handler)));
             return S_OK;
         }
@@ -781,6 +828,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Completed(cookie);
             return S_OK;
         }
@@ -794,6 +842,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Unregister(cancelTask);
             return S_OK;
         }
@@ -811,6 +860,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Trigger());
             return S_OK;
         }
@@ -829,6 +879,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *tasks = detach(this->shim().AllTasks());
             return S_OK;
         }
@@ -851,6 +902,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundWorkCostStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentBackgroundWorkCost());
             return S_OK;
         }
@@ -868,6 +920,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertiseme
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Advertisement());
             return S_OK;
         }
@@ -886,6 +939,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertiseme
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinSamplingInterval());
             return S_OK;
         }
@@ -899,6 +953,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertiseme
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxSamplingInterval());
             return S_OK;
         }
@@ -912,6 +967,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertiseme
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinOutOfRangeTimeout());
             return S_OK;
         }
@@ -925,6 +981,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertiseme
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxOutOfRangeTimeout());
             return S_OK;
         }
@@ -938,6 +995,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertiseme
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SignalStrengthFilter());
             return S_OK;
         }
@@ -952,6 +1010,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertiseme
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SignalStrengthFilter(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter *>(&value));
             return S_OK;
         }
@@ -965,6 +1024,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertiseme
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AdvertisementFilter());
             return S_OK;
         }
@@ -979,6 +1039,7 @@ struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertiseme
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AdvertisementFilter(*reinterpret_cast<const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter *>(&value));
             return S_OK;
         }
@@ -1000,6 +1061,7 @@ struct produce<D, Windows::ApplicationModel::Background::ICachedFileUpdaterTrigg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UpdateTarget());
             return S_OK;
         }
@@ -1013,6 +1075,7 @@ struct produce<D, Windows::ApplicationModel::Background::ICachedFileUpdaterTrigg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UpdateRequest());
             return S_OK;
         }
@@ -1027,6 +1090,7 @@ struct produce<D, Windows::ApplicationModel::Background::ICachedFileUpdaterTrigg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanRequestUserInput());
             return S_OK;
         }
@@ -1056,6 +1120,7 @@ struct produce<D, Windows::ApplicationModel::Background::IContentPrefetchTrigger
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *waitInterval = detach(this->shim().WaitInterval());
             return S_OK;
         }
@@ -1073,6 +1138,7 @@ struct produce<D, Windows::ApplicationModel::Background::IContentPrefetchTrigger
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *trigger = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&waitInterval)));
             return S_OK;
         }
@@ -1091,6 +1157,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceConnectionChange
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -1105,6 +1172,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceConnectionChange
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanMaintainConnection());
             return S_OK;
         }
@@ -1118,6 +1186,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceConnectionChange
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaintainConnection());
             return S_OK;
         }
@@ -1131,6 +1200,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceConnectionChange
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaintainConnection(value);
             return S_OK;
         }
@@ -1148,6 +1218,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceConnectionChange
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *deviceChangeTrigger = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -1166,6 +1237,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceManufacturerNoti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TriggerQualifier());
             return S_OK;
         }
@@ -1180,6 +1252,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceManufacturerNoti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *oneShot = detach(this->shim().OneShot());
             return S_OK;
         }
@@ -1197,6 +1270,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceManufacturerNoti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *trigger = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&triggerQualifier), oneShot));
             return S_OK;
         }
@@ -1215,6 +1289,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceServicingTrigger
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&expectedDuration)));
             return S_OK;
         }
@@ -1229,6 +1304,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceServicingTrigger
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&expectedDuration), *reinterpret_cast<const hstring *>(&arguments)));
             return S_OK;
         }
@@ -1247,6 +1323,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceUseTrigger> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -1261,6 +1338,7 @@ struct produce<D, Windows::ApplicationModel::Background::IDeviceUseTrigger> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const hstring *>(&arguments)));
             return S_OK;
         }
@@ -1287,6 +1365,7 @@ struct produce<D, Windows::ApplicationModel::Background::IGattCharacteristicNoti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Characteristic());
             return S_OK;
         }
@@ -1305,6 +1384,7 @@ struct produce<D, Windows::ApplicationModel::Background::IGattCharacteristicNoti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *gattCharacteristicNotificationTrigger = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic *>(&characteristic)));
             return S_OK;
         }
@@ -1323,6 +1403,7 @@ struct produce<D, Windows::ApplicationModel::Background::ILocationTrigger> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *triggerType = detach(this->shim().TriggerType());
             return S_OK;
         }
@@ -1340,6 +1421,7 @@ struct produce<D, Windows::ApplicationModel::Background::ILocationTriggerFactory
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *locationTrigger = detach(this->shim().Create(triggerType));
             return S_OK;
         }
@@ -1358,6 +1440,7 @@ struct produce<D, Windows::ApplicationModel::Background::IMaintenanceTrigger> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *freshnessTime = detach(this->shim().FreshnessTime());
             return S_OK;
         }
@@ -1371,6 +1454,7 @@ struct produce<D, Windows::ApplicationModel::Background::IMaintenanceTrigger> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *oneShot = detach(this->shim().OneShot());
             return S_OK;
         }
@@ -1388,6 +1472,7 @@ struct produce<D, Windows::ApplicationModel::Background::IMaintenanceTriggerFact
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *trigger = detach(this->shim().Create(freshnessTime, oneShot));
             return S_OK;
         }
@@ -1406,6 +1491,7 @@ struct produce<D, Windows::ApplicationModel::Background::IMediaProcessingTrigger
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestAsync());
             return S_OK;
         }
@@ -1420,6 +1506,7 @@ struct produce<D, Windows::ApplicationModel::Background::IMediaProcessingTrigger
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestAsync(*reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&arguments)));
             return S_OK;
         }
@@ -1442,6 +1529,7 @@ struct produce<D, Windows::ApplicationModel::Background::INetworkOperatorNotific
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkAccountId());
             return S_OK;
         }
@@ -1460,6 +1548,7 @@ struct produce<D, Windows::ApplicationModel::Background::INetworkOperatorNotific
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *trigger = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&networkAccountId)));
             return S_OK;
         }
@@ -1478,6 +1567,7 @@ struct produce<D, Windows::ApplicationModel::Background::IPushNotificationTrigge
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *trigger = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
@@ -1500,6 +1590,7 @@ struct produce<D, Windows::ApplicationModel::Background::IRfcommConnectionTrigge
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InboundConnection());
             return S_OK;
         }
@@ -1514,6 +1605,7 @@ struct produce<D, Windows::ApplicationModel::Background::IRfcommConnectionTrigge
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OutboundConnection());
             return S_OK;
         }
@@ -1528,6 +1620,7 @@ struct produce<D, Windows::ApplicationModel::Background::IRfcommConnectionTrigge
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowMultipleConnections());
             return S_OK;
         }
@@ -1541,6 +1634,7 @@ struct produce<D, Windows::ApplicationModel::Background::IRfcommConnectionTrigge
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowMultipleConnections(value);
             return S_OK;
         }
@@ -1554,6 +1648,7 @@ struct produce<D, Windows::ApplicationModel::Background::IRfcommConnectionTrigge
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProtectionLevel());
             return S_OK;
         }
@@ -1567,6 +1662,7 @@ struct produce<D, Windows::ApplicationModel::Background::IRfcommConnectionTrigge
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProtectionLevel(value);
             return S_OK;
         }
@@ -1580,6 +1676,7 @@ struct produce<D, Windows::ApplicationModel::Background::IRfcommConnectionTrigge
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteHostName());
             return S_OK;
         }
@@ -1594,6 +1691,7 @@ struct produce<D, Windows::ApplicationModel::Background::IRfcommConnectionTrigge
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteHostName(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
             return S_OK;
         }
@@ -1619,6 +1717,7 @@ struct produce<D, Windows::ApplicationModel::Background::ISensorDataThresholdTri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *trigger = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::Sensors::ISensorDataThreshold *>(&threshold)));
             return S_OK;
         }
@@ -1637,6 +1736,7 @@ struct produce<D, Windows::ApplicationModel::Background::ISmsMessageReceivedTrig
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::Sms::SmsFilterRules *>(&filterRules)));
             return S_OK;
         }
@@ -1655,6 +1755,7 @@ struct produce<D, Windows::ApplicationModel::Background::ISocketActivityTrigger>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsWakeFromLowPowerSupported());
             return S_OK;
         }
@@ -1676,6 +1777,7 @@ struct produce<D, Windows::ApplicationModel::Background::IStorageLibraryContentC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Storage::StorageLibrary *>(&storageLibrary)));
             return S_OK;
         }
@@ -1690,6 +1792,7 @@ struct produce<D, Windows::ApplicationModel::Background::IStorageLibraryContentC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateFromLibraries(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::StorageLibrary> *>(&storageLibraries)));
             return S_OK;
         }
@@ -1708,6 +1811,7 @@ struct produce<D, Windows::ApplicationModel::Background::ISystemCondition> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *conditionType = detach(this->shim().ConditionType());
             return S_OK;
         }
@@ -1725,6 +1829,7 @@ struct produce<D, Windows::ApplicationModel::Background::ISystemConditionFactory
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *condition = detach(this->shim().Create(conditionType));
             return S_OK;
         }
@@ -1743,6 +1848,7 @@ struct produce<D, Windows::ApplicationModel::Background::ISystemTrigger> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *oneShot = detach(this->shim().OneShot());
             return S_OK;
         }
@@ -1756,6 +1862,7 @@ struct produce<D, Windows::ApplicationModel::Background::ISystemTrigger> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *triggerType = detach(this->shim().TriggerType());
             return S_OK;
         }
@@ -1773,6 +1880,7 @@ struct produce<D, Windows::ApplicationModel::Background::ISystemTriggerFactory> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *trigger = detach(this->shim().Create(triggerType, oneShot));
             return S_OK;
         }
@@ -1791,6 +1899,7 @@ struct produce<D, Windows::ApplicationModel::Background::ITimeTrigger> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *freshnessTime = detach(this->shim().FreshnessTime());
             return S_OK;
         }
@@ -1804,6 +1913,7 @@ struct produce<D, Windows::ApplicationModel::Background::ITimeTrigger> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *oneShot = detach(this->shim().OneShot());
             return S_OK;
         }
@@ -1821,6 +1931,7 @@ struct produce<D, Windows::ApplicationModel::Background::ITimeTriggerFactory> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *trigger = detach(this->shim().Create(freshnessTime, oneShot));
             return S_OK;
         }
@@ -1839,6 +1950,7 @@ struct produce<D, Windows::ApplicationModel::Background::IToastNotificationActio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *trigger = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
@@ -1857,6 +1969,7 @@ struct produce<D, Windows::ApplicationModel::Background::IToastNotificationHisto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *trigger = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
@@ -1875,6 +1988,7 @@ struct produce<D, Windows::ApplicationModel::Background::IUserNotificationChange
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *trigger = detach(this->shim().Create(notificationKinds));
             return S_OK;
         }

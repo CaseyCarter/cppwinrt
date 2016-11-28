@@ -18,6 +18,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PinCount());
             return S_OK;
         }
@@ -31,6 +32,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ActualFrequency());
             return S_OK;
         }
@@ -44,6 +46,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SetDesiredFrequency(frequency));
             return S_OK;
         }
@@ -57,6 +60,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxFrequency());
             return S_OK;
         }
@@ -70,6 +74,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinFrequency());
             return S_OK;
         }
@@ -83,6 +88,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AcquirePin(pin);
             return S_OK;
         }
@@ -96,6 +102,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReleasePin(pin);
             return S_OK;
         }
@@ -109,6 +116,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnablePin(pin);
             return S_OK;
         }
@@ -122,6 +130,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisablePin(pin);
             return S_OK;
         }
@@ -135,6 +144,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetPulseParameters(pin, dutyCycle, invertPolarity);
             return S_OK;
         }
@@ -152,6 +162,7 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmProvider> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetControllers());
             return S_OK;
         }

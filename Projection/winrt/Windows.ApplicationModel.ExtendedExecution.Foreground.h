@@ -19,6 +19,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reason());
             return S_OK;
         }
@@ -36,6 +37,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -50,6 +52,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Description(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -63,6 +66,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Revoked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -76,6 +80,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Revoked(token);
             return S_OK;
         }
@@ -89,6 +94,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestExtensionAsync());
             return S_OK;
         }
@@ -103,6 +109,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reason());
             return S_OK;
         }
@@ -116,6 +123,7 @@ struct produce<D, Windows::ApplicationModel::ExtendedExecution::Foreground::IExt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Reason(value);
             return S_OK;
         }

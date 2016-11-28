@@ -34,6 +34,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IActivatedEventArgs> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -47,6 +48,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IActivatedEventArgs> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PreviousExecutionState());
             return S_OK;
         }
@@ -60,6 +62,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IActivatedEventArgs> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SplashScreen());
             return S_OK;
         }
@@ -78,6 +81,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IActivatedEventArgsWith
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().User());
             return S_OK;
         }
@@ -96,6 +100,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IApplicationViewActivat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentlyShownApplicationViewId());
             return S_OK;
         }
@@ -113,6 +118,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderAc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Verb());
             return S_OK;
         }
@@ -131,6 +137,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderAd
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AddAppointmentOperation());
             return S_OK;
         }
@@ -149,6 +156,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderRe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoveAppointmentOperation());
             return S_OK;
         }
@@ -167,6 +175,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderRe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReplaceAppointmentOperation());
             return S_OK;
         }
@@ -185,6 +194,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderSh
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InstanceStartDate());
             return S_OK;
         }
@@ -199,6 +209,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderSh
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalId());
             return S_OK;
         }
@@ -213,6 +224,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderSh
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RoamingId());
             return S_OK;
         }
@@ -231,6 +243,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderSh
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TimeToShow());
             return S_OK;
         }
@@ -244,6 +257,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderSh
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Duration());
             return S_OK;
         }
@@ -261,6 +275,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IBackgroundActivatedEve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TaskInstance());
             return S_OK;
         }
@@ -279,6 +294,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ICachedFileUpdaterActiv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CachedFileUpdaterUI());
             return S_OK;
         }
@@ -297,6 +313,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IContinuationActivatedE
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContinuationData());
             return S_OK;
         }
@@ -315,6 +332,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IDeviceActivatedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceInformationId());
             return S_OK;
         }
@@ -329,6 +347,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IDeviceActivatedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Verb());
             return S_OK;
         }
@@ -347,6 +366,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IDevicePairingActivated
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceInformation());
             return S_OK;
         }
@@ -365,6 +385,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IDialReceiverActivatedE
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppName());
             return S_OK;
         }
@@ -383,6 +404,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileActivatedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Files());
             return S_OK;
         }
@@ -397,6 +419,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileActivatedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Verb());
             return S_OK;
         }
@@ -415,6 +438,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileActivatedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CallerPackageFamilyName());
             return S_OK;
         }
@@ -433,6 +457,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileActivatedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NeighboringFilesQuery());
             return S_OK;
         }
@@ -451,6 +476,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileOpenPickerActivate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FileOpenPickerUI());
             return S_OK;
         }
@@ -469,6 +495,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileOpenPickerActivate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CallerPackageFamilyName());
             return S_OK;
         }
@@ -487,6 +514,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileOpenPickerContinua
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Files());
             return S_OK;
         }
@@ -505,6 +533,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileSavePickerActivate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FileSavePickerUI());
             return S_OK;
         }
@@ -523,6 +552,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileSavePickerActivate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CallerPackageFamilyName());
             return S_OK;
         }
@@ -537,6 +567,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileSavePickerActivate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnterpriseId());
             return S_OK;
         }
@@ -555,6 +586,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFileSavePickerContinua
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().File());
             return S_OK;
         }
@@ -573,6 +605,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IFolderPickerContinuati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Folder());
             return S_OK;
         }
@@ -591,6 +624,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ILaunchActivatedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Arguments());
             return S_OK;
         }
@@ -605,6 +639,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ILaunchActivatedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TileId());
             return S_OK;
         }
@@ -623,6 +658,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ILaunchActivatedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TileActivatedInfo());
             return S_OK;
         }
@@ -641,6 +677,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ILockScreenActivatedEve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Info());
             return S_OK;
         }
@@ -659,6 +696,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IPickerReturnedActivate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PickerOperationId());
             return S_OK;
         }
@@ -677,6 +715,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IPrelaunchActivatedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PrelaunchActivated());
             return S_OK;
         }
@@ -694,6 +733,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IProtocolActivatedEvent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Uri());
             return S_OK;
         }
@@ -712,6 +752,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IProtocolActivatedEvent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CallerPackageFamilyName());
             return S_OK;
         }
@@ -726,6 +767,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IProtocolActivatedEvent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Data());
             return S_OK;
         }
@@ -744,6 +786,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IProtocolForResultsActi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProtocolForResultsOperation());
             return S_OK;
         }
@@ -762,6 +805,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IRestrictedLaunchActiva
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SharedContext());
             return S_OK;
         }
@@ -780,6 +824,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ISearchActivatedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().QueryText());
             return S_OK;
         }
@@ -794,6 +839,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ISearchActivatedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Language());
             return S_OK;
         }
@@ -812,6 +858,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ISearchActivatedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LinguisticDetails());
             return S_OK;
         }
@@ -830,6 +877,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IShareTargetActivatedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShareOperation());
             return S_OK;
         }
@@ -848,6 +896,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ISplashScreen> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ImageLocation());
             return S_OK;
         }
@@ -861,6 +910,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ISplashScreen> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().Dismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -874,6 +924,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ISplashScreen> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Dismissed(cookie);
             return S_OK;
         }
@@ -891,6 +942,7 @@ struct produce<D, Windows::ApplicationModel::Activation::ITileActivatedInfo> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RecentlyShownNotifications());
             return S_OK;
         }
@@ -909,6 +961,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IToastNotificationActiv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *argument = detach(this->shim().Argument());
             return S_OK;
         }
@@ -923,6 +976,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IToastNotificationActiv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserInput());
             return S_OK;
         }
@@ -941,6 +995,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IUserDataAccountProvide
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Operation());
             return S_OK;
         }
@@ -959,6 +1014,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IViewSwitcherProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ViewSwitcher());
             return S_OK;
         }
@@ -977,6 +1033,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IVoiceCommandActivatedE
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Result());
             return S_OK;
         }
@@ -995,6 +1052,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IWebAccountProviderActi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Operation());
             return S_OK;
         }
@@ -1013,6 +1071,7 @@ struct produce<D, Windows::ApplicationModel::Activation::IWebAuthenticationBroke
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().WebAuthenticationResult());
             return S_OK;
         }

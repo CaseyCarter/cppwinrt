@@ -77,6 +77,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IAccountsSettingsPane> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().AccountCommandsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ApplicationSettings::AccountsSettingsPane, Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -90,6 +91,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IAccountsSettingsPane> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AccountCommandsRequested(cookie);
             return S_OK;
         }
@@ -107,6 +109,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommand
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WebAccountProviderCommands());
             return S_OK;
         }
@@ -121,6 +124,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommand
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WebAccountCommands());
             return S_OK;
         }
@@ -135,6 +139,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommand
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CredentialCommands());
             return S_OK;
         }
@@ -149,6 +154,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommand
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Commands());
             return S_OK;
         }
@@ -163,6 +169,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommand
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HeaderText());
             return S_OK;
         }
@@ -177,6 +184,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommand
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().HeaderText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -190,6 +198,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommand
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -208,6 +217,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IAccountsSettingsPaneEventDe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -225,6 +235,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *current = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -239,6 +250,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Show();
             return S_OK;
         }
@@ -256,6 +268,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().ShowManageAccountsAsync());
             return S_OK;
         }
@@ -270,6 +283,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().ShowAddAccountAsync());
             return S_OK;
         }
@@ -288,6 +302,7 @@ struct produce<D, Windows::UI::ApplicationSettings::ICredentialCommand> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PasswordCredential());
             return S_OK;
         }
@@ -302,6 +317,7 @@ struct produce<D, Windows::UI::ApplicationSettings::ICredentialCommand> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CredentialDeleted());
             return S_OK;
         }
@@ -320,6 +336,7 @@ struct produce<D, Windows::UI::ApplicationSettings::ICredentialCommandFactory> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateCredentialCommand(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&passwordCredential)));
             return S_OK;
         }
@@ -334,6 +351,7 @@ struct produce<D, Windows::UI::ApplicationSettings::ICredentialCommandFactory> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateCredentialCommandWithHandler(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&passwordCredential), *reinterpret_cast<const Windows::UI::ApplicationSettings::CredentialCommandCredentialDeletedHandler *>(&deleted)));
             return S_OK;
         }
@@ -352,6 +370,7 @@ struct produce<D, Windows::UI::ApplicationSettings::ISettingsCommandFactory> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateSettingsCommand(*reinterpret_cast<const Windows::IInspectable *>(&settingsCommandId), *reinterpret_cast<const hstring *>(&label), *reinterpret_cast<const Windows::UI::Popups::UICommandInvokedHandler *>(&handler)));
             return S_OK;
         }
@@ -370,6 +389,7 @@ struct produce<D, Windows::UI::ApplicationSettings::ISettingsCommandStatics> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccountsCommand());
             return S_OK;
         }
@@ -388,6 +408,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IWebAccountCommand> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WebAccount());
             return S_OK;
         }
@@ -402,6 +423,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IWebAccountCommand> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Invoked());
             return S_OK;
         }
@@ -416,6 +438,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IWebAccountCommand> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Actions());
             return S_OK;
         }
@@ -433,6 +456,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IWebAccountCommandFactory> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateWebAccountCommand(*reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount), *reinterpret_cast<const Windows::UI::ApplicationSettings::WebAccountCommandInvokedHandler *>(&invoked), actions));
             return S_OK;
         }
@@ -451,6 +475,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IWebAccountInvokedArgs> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *action = detach(this->shim().Action());
             return S_OK;
         }
@@ -468,6 +493,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IWebAccountProviderCommand> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WebAccountProvider());
             return S_OK;
         }
@@ -482,6 +508,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IWebAccountProviderCommand> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Invoked());
             return S_OK;
         }
@@ -500,6 +527,7 @@ struct produce<D, Windows::UI::ApplicationSettings::IWebAccountProviderCommandFa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateWebAccountProviderCommand(*reinterpret_cast<const Windows::Security::Credentials::WebAccountProvider *>(&webAccountProvider), *reinterpret_cast<const Windows::UI::ApplicationSettings::WebAccountProviderCommandInvokedHandler *>(&invoked)));
             return S_OK;
         }

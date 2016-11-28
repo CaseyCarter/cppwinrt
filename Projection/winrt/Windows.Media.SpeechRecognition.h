@@ -22,6 +22,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechContinuousRecognitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -39,6 +40,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechContinuousRecognitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Result());
             return S_OK;
         }
@@ -57,6 +59,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechContinuousRecognitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutoStopSilenceTimeout());
             return S_OK;
         }
@@ -70,6 +73,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechContinuousRecognitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AutoStopSilenceTimeout(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -83,6 +87,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechContinuousRecognitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StartAsync());
             return S_OK;
         }
@@ -97,6 +102,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechContinuousRecognitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StartAsync(mode));
             return S_OK;
         }
@@ -111,6 +117,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechContinuousRecognitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StopAsync());
             return S_OK;
         }
@@ -125,6 +132,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechContinuousRecognitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CancelAsync());
             return S_OK;
         }
@@ -139,6 +147,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechContinuousRecognitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PauseAsync());
             return S_OK;
         }
@@ -153,6 +162,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechContinuousRecognitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Resume();
             return S_OK;
         }
@@ -166,6 +176,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechContinuousRecognitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession, Windows::Media::SpeechRecognition::SpeechContinuousRecognitionCompletedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -179,6 +190,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechContinuousRecognitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Completed(value);
             return S_OK;
         }
@@ -192,6 +204,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechContinuousRecognitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().ResultGenerated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession, Windows::Media::SpeechRecognition::SpeechContinuousRecognitionResultGeneratedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -205,6 +218,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechContinuousRecognitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ResultGenerated(value);
             return S_OK;
         }
@@ -222,6 +236,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionCompilati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -239,6 +254,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
@@ -252,6 +268,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsEnabled(value);
             return S_OK;
         }
@@ -265,6 +282,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Tag());
             return S_OK;
         }
@@ -279,6 +297,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Tag(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -292,6 +311,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -305,6 +325,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Probability());
             return S_OK;
         }
@@ -318,6 +339,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Probability(value);
             return S_OK;
         }
@@ -335,6 +357,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GrammarFile());
             return S_OK;
         }
@@ -353,6 +376,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *constraint = detach(this->shim().Create(*reinterpret_cast<const Windows::Storage::StorageFile *>(&file)));
             return S_OK;
         }
@@ -367,6 +391,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *constraint = detach(this->shim().CreateWithTag(*reinterpret_cast<const Windows::Storage::StorageFile *>(&file), *reinterpret_cast<const hstring *>(&tag)));
             return S_OK;
         }
@@ -385,6 +410,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionHypothesi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -403,6 +429,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionHypothesi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Hypothesis());
             return S_OK;
         }
@@ -421,6 +448,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionListConst
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Commands());
             return S_OK;
         }
@@ -439,6 +467,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionListConst
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *constraint = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&commands)));
             return S_OK;
         }
@@ -453,6 +482,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionListConst
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *constraint = detach(this->shim().CreateWithTag(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&commands), *reinterpret_cast<const hstring *>(&tag)));
             return S_OK;
         }
@@ -471,6 +501,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionQualityDe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Problem());
             return S_OK;
         }
@@ -488,6 +519,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionResult> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -501,6 +533,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionResult> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -515,6 +548,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionResult> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Confidence());
             return S_OK;
         }
@@ -528,6 +562,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionResult> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SemanticInterpretation());
             return S_OK;
         }
@@ -542,6 +577,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionResult> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *alternates = detach(this->shim().GetAlternates(maxAlternates));
             return S_OK;
         }
@@ -556,6 +592,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionResult> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Constraint());
             return S_OK;
         }
@@ -570,6 +607,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionResult> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RulePath());
             return S_OK;
         }
@@ -584,6 +622,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionResult> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RawConfidence());
             return S_OK;
         }
@@ -601,6 +640,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionResult2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PhraseStartTime());
             return S_OK;
         }
@@ -614,6 +654,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionResult2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PhraseDuration());
             return S_OK;
         }
@@ -631,6 +672,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionSemanticI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -649,6 +691,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionTopicCons
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Scenario());
             return S_OK;
         }
@@ -662,6 +705,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionTopicCons
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TopicHint());
             return S_OK;
         }
@@ -680,6 +724,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionTopicCons
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *constraint = detach(this->shim().Create(scenario, *reinterpret_cast<const hstring *>(&topicHint)));
             return S_OK;
         }
@@ -694,6 +739,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognitionTopicCons
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *constraint = detach(this->shim().CreateWithTag(scenario, *reinterpret_cast<const hstring *>(&topicHint), *reinterpret_cast<const hstring *>(&tag)));
             return S_OK;
         }
@@ -716,6 +762,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *language = detach(this->shim().CurrentLanguage());
             return S_OK;
         }
@@ -730,6 +777,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Constraints());
             return S_OK;
         }
@@ -744,6 +792,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timeouts());
             return S_OK;
         }
@@ -758,6 +807,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UIOptions());
             return S_OK;
         }
@@ -772,6 +822,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOperation = detach(this->shim().CompileConstraintsAsync());
             return S_OK;
         }
@@ -786,6 +837,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOperation = detach(this->shim().RecognizeAsync());
             return S_OK;
         }
@@ -800,6 +852,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOperation = detach(this->shim().RecognizeWithUIAsync());
             return S_OK;
         }
@@ -814,6 +867,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().RecognitionQualityDegrading(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechRecognizer, Windows::Media::SpeechRecognition::SpeechRecognitionQualityDegradingEventArgs> *>(&speechRecognitionQualityDegradingHandler)));
             return S_OK;
         }
@@ -827,6 +881,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RecognitionQualityDegrading(cookie);
             return S_OK;
         }
@@ -840,6 +895,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechRecognizer, Windows::Media::SpeechRecognition::SpeechRecognizerStateChangedEventArgs> *>(&stateChangedHandler)));
             return S_OK;
         }
@@ -853,6 +909,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StateChanged(cookie);
             return S_OK;
         }
@@ -870,6 +927,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizer2> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContinuousRecognitionSession());
             return S_OK;
         }
@@ -884,6 +942,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizer2> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().State());
             return S_OK;
         }
@@ -897,6 +956,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizer2> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StopRecognitionAsync());
             return S_OK;
         }
@@ -911,6 +971,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizer2> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().HypothesisGenerated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechRecognizer, Windows::Media::SpeechRecognition::SpeechRecognitionHypothesisGeneratedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -924,6 +985,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizer2> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().HypothesisGenerated(value);
             return S_OK;
         }
@@ -941,6 +1003,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerFactory> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *recognizer = detach(this->shim().Create(*reinterpret_cast<const Windows::Globalization::Language *>(&language)));
             return S_OK;
         }
@@ -959,6 +1022,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerStateChang
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().State());
             return S_OK;
         }
@@ -976,6 +1040,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *language = detach(this->shim().SystemSpeechLanguage());
             return S_OK;
         }
@@ -990,6 +1055,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *languages = detach(this->shim().SupportedTopicLanguages());
             return S_OK;
         }
@@ -1004,6 +1070,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *languages = detach(this->shim().SupportedGrammarLanguages());
             return S_OK;
         }
@@ -1022,6 +1089,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerTimeouts> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InitialSilenceTimeout());
             return S_OK;
         }
@@ -1035,6 +1103,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerTimeouts> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InitialSilenceTimeout(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -1048,6 +1117,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerTimeouts> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EndSilenceTimeout());
             return S_OK;
         }
@@ -1061,6 +1131,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerTimeouts> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EndSilenceTimeout(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -1074,6 +1145,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerTimeouts> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BabbleTimeout());
             return S_OK;
         }
@@ -1087,6 +1159,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerTimeouts> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BabbleTimeout(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -1104,6 +1177,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerUIOptions>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExampleText());
             return S_OK;
         }
@@ -1118,6 +1192,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerUIOptions>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExampleText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1131,6 +1206,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerUIOptions>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AudiblePrompt());
             return S_OK;
         }
@@ -1145,6 +1221,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerUIOptions>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AudiblePrompt(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1158,6 +1235,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerUIOptions>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsReadBackEnabled());
             return S_OK;
         }
@@ -1171,6 +1249,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerUIOptions>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsReadBackEnabled(value);
             return S_OK;
         }
@@ -1184,6 +1263,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerUIOptions>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShowConfirmation());
             return S_OK;
         }
@@ -1197,6 +1277,7 @@ struct produce<D, Windows::Media::SpeechRecognition::ISpeechRecognizerUIOptions>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShowConfirmation(value);
             return S_OK;
         }

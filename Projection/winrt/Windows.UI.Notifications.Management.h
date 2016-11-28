@@ -19,6 +19,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }
@@ -33,6 +34,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *accessStatus = detach(this->shim().GetAccessStatus());
             return S_OK;
         }
@@ -46,6 +48,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().NotificationChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::Management::UserNotificationListener, Windows::UI::Notifications::UserNotificationChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -59,6 +62,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotificationChanged(token);
             return S_OK;
         }
@@ -72,6 +76,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetNotificationsAsync(kinds));
             return S_OK;
         }
@@ -86,6 +91,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetNotification(notificationId));
             return S_OK;
         }
@@ -100,6 +106,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClearNotifications();
             return S_OK;
         }
@@ -113,6 +120,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveNotification(notificationId);
             return S_OK;
         }
@@ -130,6 +138,7 @@ struct produce<D, Windows::UI::Notifications::Management::IUserNotificationListe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Current());
             return S_OK;
         }

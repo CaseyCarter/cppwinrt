@@ -19,6 +19,7 @@ struct produce<D, Windows::Services::Maps::IMapAddress> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BuildingName());
             return S_OK;
         }
@@ -33,6 +34,7 @@ struct produce<D, Windows::Services::Maps::IMapAddress> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BuildingFloor());
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::Services::Maps::IMapAddress> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BuildingRoom());
             return S_OK;
         }
@@ -61,6 +64,7 @@ struct produce<D, Windows::Services::Maps::IMapAddress> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BuildingWing());
             return S_OK;
         }
@@ -75,6 +79,7 @@ struct produce<D, Windows::Services::Maps::IMapAddress> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StreetNumber());
             return S_OK;
         }
@@ -89,6 +94,7 @@ struct produce<D, Windows::Services::Maps::IMapAddress> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Street());
             return S_OK;
         }
@@ -103,6 +109,7 @@ struct produce<D, Windows::Services::Maps::IMapAddress> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Neighborhood());
             return S_OK;
         }
@@ -117,6 +124,7 @@ struct produce<D, Windows::Services::Maps::IMapAddress> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().District());
             return S_OK;
         }
@@ -131,6 +139,7 @@ struct produce<D, Windows::Services::Maps::IMapAddress> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Town());
             return S_OK;
         }
@@ -145,6 +154,7 @@ struct produce<D, Windows::Services::Maps::IMapAddress> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Region());
             return S_OK;
         }
@@ -159,6 +169,7 @@ struct produce<D, Windows::Services::Maps::IMapAddress> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RegionCode());
             return S_OK;
         }
@@ -173,6 +184,7 @@ struct produce<D, Windows::Services::Maps::IMapAddress> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Country());
             return S_OK;
         }
@@ -187,6 +199,7 @@ struct produce<D, Windows::Services::Maps::IMapAddress> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CountryCode());
             return S_OK;
         }
@@ -201,6 +214,7 @@ struct produce<D, Windows::Services::Maps::IMapAddress> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PostCode());
             return S_OK;
         }
@@ -215,6 +229,7 @@ struct produce<D, Windows::Services::Maps::IMapAddress> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Continent());
             return S_OK;
         }
@@ -233,6 +248,7 @@ struct produce<D, Windows::Services::Maps::IMapAddress2> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FormattedAddress());
             return S_OK;
         }
@@ -251,6 +267,7 @@ struct produce<D, Windows::Services::Maps::IMapLocation> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Point());
             return S_OK;
         }
@@ -265,6 +282,7 @@ struct produce<D, Windows::Services::Maps::IMapLocation> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -279,6 +297,7 @@ struct produce<D, Windows::Services::Maps::IMapLocation> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -293,6 +312,7 @@ struct produce<D, Windows::Services::Maps::IMapLocation> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Address());
             return S_OK;
         }
@@ -311,6 +331,7 @@ struct produce<D, Windows::Services::Maps::IMapLocationFinderResult> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Locations());
             return S_OK;
         }
@@ -325,6 +346,7 @@ struct produce<D, Windows::Services::Maps::IMapLocationFinderResult> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -342,6 +364,7 @@ struct produce<D, Windows::Services::Maps::IMapLocationFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindLocationsAtAsync(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&queryPoint)));
             return S_OK;
         }
@@ -356,6 +379,7 @@ struct produce<D, Windows::Services::Maps::IMapLocationFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindLocationsAsync(*reinterpret_cast<const hstring *>(&searchText), *reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&referencePoint)));
             return S_OK;
         }
@@ -370,6 +394,7 @@ struct produce<D, Windows::Services::Maps::IMapLocationFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindLocationsAsync(*reinterpret_cast<const hstring *>(&searchText), *reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&referencePoint), maxCount));
             return S_OK;
         }
@@ -388,6 +413,7 @@ struct produce<D, Windows::Services::Maps::IMapLocationFinderStatics2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindLocationsAtAsync(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&queryPoint), accuracy));
             return S_OK;
         }
@@ -406,6 +432,7 @@ struct produce<D, Windows::Services::Maps::IMapManagerStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShowDownloadedMapsUI();
             return S_OK;
         }
@@ -419,6 +446,7 @@ struct produce<D, Windows::Services::Maps::IMapManagerStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShowMapsUpdateUI();
             return S_OK;
         }
@@ -436,6 +464,7 @@ struct produce<D, Windows::Services::Maps::IMapRoute> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BoundingBox());
             return S_OK;
         }
@@ -450,6 +479,7 @@ struct produce<D, Windows::Services::Maps::IMapRoute> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LengthInMeters());
             return S_OK;
         }
@@ -463,6 +493,7 @@ struct produce<D, Windows::Services::Maps::IMapRoute> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EstimatedDuration());
             return S_OK;
         }
@@ -476,6 +507,7 @@ struct produce<D, Windows::Services::Maps::IMapRoute> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Path());
             return S_OK;
         }
@@ -490,6 +522,7 @@ struct produce<D, Windows::Services::Maps::IMapRoute> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Legs());
             return S_OK;
         }
@@ -504,6 +537,7 @@ struct produce<D, Windows::Services::Maps::IMapRoute> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTrafficBased());
             return S_OK;
         }
@@ -521,6 +555,7 @@ struct produce<D, Windows::Services::Maps::IMapRoute2> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ViolatedRestrictions());
             return S_OK;
         }
@@ -534,6 +569,7 @@ struct produce<D, Windows::Services::Maps::IMapRoute2> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasBlockedRoads());
             return S_OK;
         }
@@ -551,6 +587,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteDrivingOptions> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxAlternateRouteCount());
             return S_OK;
         }
@@ -564,6 +601,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteDrivingOptions> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxAlternateRouteCount(value);
             return S_OK;
         }
@@ -577,6 +615,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteDrivingOptions> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InitialHeading());
             return S_OK;
         }
@@ -591,6 +630,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteDrivingOptions> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InitialHeading(*reinterpret_cast<const Windows::Foundation::IReference<double> *>(&value));
             return S_OK;
         }
@@ -604,6 +644,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteDrivingOptions> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RouteOptimization());
             return S_OK;
         }
@@ -617,6 +658,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteDrivingOptions> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RouteOptimization(value);
             return S_OK;
         }
@@ -630,6 +672,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteDrivingOptions> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RouteRestrictions());
             return S_OK;
         }
@@ -643,6 +686,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteDrivingOptions> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RouteRestrictions(value);
             return S_OK;
         }
@@ -660,6 +704,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteFinderResult> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Route());
             return S_OK;
         }
@@ -674,6 +719,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteFinderResult> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -691,6 +737,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteFinderResult2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlternateRoutes());
             return S_OK;
         }
@@ -709,6 +756,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteFinderStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDrivingRouteAsync(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&startPoint), *reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&endPoint)));
             return S_OK;
         }
@@ -723,6 +771,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteFinderStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDrivingRouteAsync(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&startPoint), *reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&endPoint), optimization));
             return S_OK;
         }
@@ -737,6 +786,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteFinderStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDrivingRouteAsync(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&startPoint), *reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&endPoint), optimization, restrictions));
             return S_OK;
         }
@@ -751,6 +801,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteFinderStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDrivingRouteAsync(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&startPoint), *reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&endPoint), optimization, restrictions, headingInDegrees));
             return S_OK;
         }
@@ -765,6 +816,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteFinderStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDrivingRouteFromWaypointsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> *>(&wayPoints)));
             return S_OK;
         }
@@ -779,6 +831,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteFinderStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDrivingRouteFromWaypointsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> *>(&wayPoints), optimization));
             return S_OK;
         }
@@ -793,6 +846,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteFinderStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDrivingRouteFromWaypointsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> *>(&wayPoints), optimization, restrictions));
             return S_OK;
         }
@@ -807,6 +861,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteFinderStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDrivingRouteFromWaypointsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> *>(&wayPoints), optimization, restrictions, headingInDegrees));
             return S_OK;
         }
@@ -821,6 +876,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteFinderStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetWalkingRouteAsync(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&startPoint), *reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&endPoint)));
             return S_OK;
         }
@@ -835,6 +891,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteFinderStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetWalkingRouteFromWaypointsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> *>(&wayPoints)));
             return S_OK;
         }
@@ -853,6 +910,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteFinderStatics2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDrivingRouteAsync(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&startPoint), *reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&endPoint), *reinterpret_cast<const Windows::Services::Maps::MapRouteDrivingOptions *>(&options)));
             return S_OK;
         }
@@ -871,6 +929,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteLeg> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BoundingBox());
             return S_OK;
         }
@@ -885,6 +944,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteLeg> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Path());
             return S_OK;
         }
@@ -899,6 +959,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteLeg> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LengthInMeters());
             return S_OK;
         }
@@ -912,6 +973,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteLeg> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EstimatedDuration());
             return S_OK;
         }
@@ -925,6 +987,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteLeg> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Maneuvers());
             return S_OK;
         }
@@ -943,6 +1006,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteManeuver> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StartingPoint());
             return S_OK;
         }
@@ -957,6 +1021,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteManeuver> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LengthInMeters());
             return S_OK;
         }
@@ -970,6 +1035,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteManeuver> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InstructionText());
             return S_OK;
         }
@@ -984,6 +1050,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteManeuver> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -997,6 +1064,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteManeuver> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExitNumber());
             return S_OK;
         }
@@ -1011,6 +1079,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteManeuver> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ManeuverNotices());
             return S_OK;
         }
@@ -1028,6 +1097,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteManeuver2> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StartHeading());
             return S_OK;
         }
@@ -1041,6 +1111,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteManeuver2> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EndHeading());
             return S_OK;
         }
@@ -1054,6 +1125,7 @@ struct produce<D, Windows::Services::Maps::IMapRouteManeuver2> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StreetName());
             return S_OK;
         }
@@ -1072,6 +1144,7 @@ struct produce<D, Windows::Services::Maps::IMapServiceStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ServiceToken(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1085,6 +1158,7 @@ struct produce<D, Windows::Services::Maps::IMapServiceStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceToken());
             return S_OK;
         }
@@ -1103,6 +1177,7 @@ struct produce<D, Windows::Services::Maps::IMapServiceStatics2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WorldViewRegionCode());
             return S_OK;
         }
@@ -1121,6 +1196,7 @@ struct produce<D, Windows::Services::Maps::IMapServiceStatics3> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataAttributions());
             return S_OK;
         }

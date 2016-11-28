@@ -31,6 +31,7 @@ struct produce<D, Windows::Media::Playback::IBackgroundMediaPlayerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *player = detach(this->shim().Current());
             return S_OK;
         }
@@ -45,6 +46,7 @@ struct produce<D, Windows::Media::Playback::IBackgroundMediaPlayerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MessageReceivedFromBackground(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -58,6 +60,7 @@ struct produce<D, Windows::Media::Playback::IBackgroundMediaPlayerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MessageReceivedFromBackground(token);
             return S_OK;
         }
@@ -71,6 +74,7 @@ struct produce<D, Windows::Media::Playback::IBackgroundMediaPlayerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MessageReceivedFromForeground(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -84,6 +88,7 @@ struct produce<D, Windows::Media::Playback::IBackgroundMediaPlayerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MessageReceivedFromForeground(token);
             return S_OK;
         }
@@ -97,6 +102,7 @@ struct produce<D, Windows::Media::Playback::IBackgroundMediaPlayerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SendMessageToBackground(*reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&value));
             return S_OK;
         }
@@ -110,6 +116,7 @@ struct produce<D, Windows::Media::Playback::IBackgroundMediaPlayerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SendMessageToForeground(*reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&value));
             return S_OK;
         }
@@ -123,6 +130,7 @@ struct produce<D, Windows::Media::Playback::IBackgroundMediaPlayerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *isMediaPlaying = detach(this->shim().IsMediaPlaying());
             return S_OK;
         }
@@ -136,6 +144,7 @@ struct produce<D, Windows::Media::Playback::IBackgroundMediaPlayerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Shutdown();
             return S_OK;
         }
@@ -153,6 +162,7 @@ struct produce<D, Windows::Media::Playback::ICurrentMediaPlaybackItemChangedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewItem());
             return S_OK;
         }
@@ -167,6 +177,7 @@ struct produce<D, Windows::Media::Playback::ICurrentMediaPlaybackItemChangedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OldItem());
             return S_OK;
         }
@@ -185,6 +196,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreak> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PlaybackList());
             return S_OK;
         }
@@ -199,6 +211,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreak> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PresentationPosition());
             return S_OK;
         }
@@ -213,6 +226,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreak> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InsertionMethod());
             return S_OK;
         }
@@ -226,6 +240,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreak> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CustomProperties());
             return S_OK;
         }
@@ -240,6 +255,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreak> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanStart());
             return S_OK;
         }
@@ -253,6 +269,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreak> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanStart(value);
             return S_OK;
         }
@@ -270,6 +287,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakEndedEventArgs> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediaBreak());
             return S_OK;
         }
@@ -288,6 +306,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakFactory> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(insertionMethod));
             return S_OK;
         }
@@ -302,6 +321,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakFactory> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateWithPresentationPosition(insertionMethod, *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&presentationPosition)));
             return S_OK;
         }
@@ -320,6 +340,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakManager> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().BreaksSeekedOver(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakManager, Windows::Media::Playback::MediaBreakSeekedOverEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -333,6 +354,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakManager> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BreaksSeekedOver(token);
             return S_OK;
         }
@@ -346,6 +368,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakManager> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().BreakStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakManager, Windows::Media::Playback::MediaBreakStartedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -359,6 +382,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakManager> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BreakStarted(token);
             return S_OK;
         }
@@ -372,6 +396,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakManager> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().BreakEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakManager, Windows::Media::Playback::MediaBreakEndedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -385,6 +410,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakManager> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BreakEnded(token);
             return S_OK;
         }
@@ -398,6 +424,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakManager> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().BreakSkipped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakManager, Windows::Media::Playback::MediaBreakSkippedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -411,6 +438,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakManager> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BreakSkipped(token);
             return S_OK;
         }
@@ -424,6 +452,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakManager> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentBreak());
             return S_OK;
         }
@@ -438,6 +467,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakManager> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PlaybackSession());
             return S_OK;
         }
@@ -452,6 +482,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakManager> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PlayBreak(*reinterpret_cast<const Windows::Media::Playback::MediaBreak *>(&value));
             return S_OK;
         }
@@ -465,6 +496,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakManager> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SkipCurrentBreak();
             return S_OK;
         }
@@ -482,6 +514,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakSchedule> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ScheduleChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -495,6 +528,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakSchedule> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ScheduleChanged(token);
             return S_OK;
         }
@@ -508,6 +542,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakSchedule> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InsertMidrollBreak(*reinterpret_cast<const Windows::Media::Playback::MediaBreak *>(&mediaBreak));
             return S_OK;
         }
@@ -521,6 +556,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakSchedule> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveMidrollBreak(*reinterpret_cast<const Windows::Media::Playback::MediaBreak *>(&mediaBreak));
             return S_OK;
         }
@@ -534,6 +570,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakSchedule> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MidrollBreaks());
             return S_OK;
         }
@@ -548,6 +585,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakSchedule> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PrerollBreak(*reinterpret_cast<const Windows::Media::Playback::MediaBreak *>(&value));
             return S_OK;
         }
@@ -561,6 +599,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakSchedule> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PrerollBreak());
             return S_OK;
         }
@@ -575,6 +614,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakSchedule> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PostrollBreak(*reinterpret_cast<const Windows::Media::Playback::MediaBreak *>(&value));
             return S_OK;
         }
@@ -588,6 +628,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakSchedule> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PostrollBreak());
             return S_OK;
         }
@@ -602,6 +643,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakSchedule> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PlaybackItem());
             return S_OK;
         }
@@ -620,6 +662,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakSeekedOverEventArgs> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SeekedOverBreaks());
             return S_OK;
         }
@@ -634,6 +677,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakSeekedOverEventArgs> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OldPosition());
             return S_OK;
         }
@@ -647,6 +691,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakSeekedOverEventArgs> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewPosition());
             return S_OK;
         }
@@ -664,6 +709,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakSkippedEventArgs> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediaBreak());
             return S_OK;
         }
@@ -682,6 +728,7 @@ struct produce<D, Windows::Media::Playback::IMediaBreakStartedEventArgs> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediaBreak());
             return S_OK;
         }
@@ -700,6 +747,7 @@ struct produce<D, Windows::Media::Playback::IMediaEnginePlaybackSource> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentItem());
             return S_OK;
         }
@@ -714,6 +762,7 @@ struct produce<D, Windows::Media::Playback::IMediaEnginePlaybackSource> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetPlaybackSource(*reinterpret_cast<const Windows::Media::Playback::IMediaPlaybackSource *>(&source));
             return S_OK;
         }
@@ -731,6 +780,7 @@ struct produce<D, Windows::Media::Playback::IMediaItemDisplayProperties> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -744,6 +794,7 @@ struct produce<D, Windows::Media::Playback::IMediaItemDisplayProperties> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Type(value);
             return S_OK;
         }
@@ -757,6 +808,7 @@ struct produce<D, Windows::Media::Playback::IMediaItemDisplayProperties> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MusicProperties());
             return S_OK;
         }
@@ -771,6 +823,7 @@ struct produce<D, Windows::Media::Playback::IMediaItemDisplayProperties> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoProperties());
             return S_OK;
         }
@@ -785,6 +838,7 @@ struct produce<D, Windows::Media::Playback::IMediaItemDisplayProperties> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
@@ -799,6 +853,7 @@ struct produce<D, Windows::Media::Playback::IMediaItemDisplayProperties> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Thumbnail(*reinterpret_cast<const Windows::Storage::Streams::RandomAccessStreamReference *>(&value));
             return S_OK;
         }
@@ -812,6 +867,7 @@ struct produce<D, Windows::Media::Playback::IMediaItemDisplayProperties> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClearAll();
             return S_OK;
         }
@@ -829,6 +885,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
@@ -842,6 +899,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsEnabled(value);
             return S_OK;
         }
@@ -855,6 +913,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediaPlayer());
             return S_OK;
         }
@@ -869,6 +928,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PlayBehavior());
             return S_OK;
         }
@@ -883,6 +943,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PauseBehavior());
             return S_OK;
         }
@@ -897,6 +958,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NextBehavior());
             return S_OK;
         }
@@ -911,6 +973,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PreviousBehavior());
             return S_OK;
         }
@@ -925,6 +988,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FastForwardBehavior());
             return S_OK;
         }
@@ -939,6 +1003,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RewindBehavior());
             return S_OK;
         }
@@ -953,6 +1018,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShuffleBehavior());
             return S_OK;
         }
@@ -967,6 +1033,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutoRepeatModeBehavior());
             return S_OK;
         }
@@ -981,6 +1048,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PositionBehavior());
             return S_OK;
         }
@@ -995,6 +1063,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RateBehavior());
             return S_OK;
         }
@@ -1009,6 +1078,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PlayReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerPlayReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1022,6 +1092,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PlayReceived(token);
             return S_OK;
         }
@@ -1035,6 +1106,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PauseReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerPauseReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1048,6 +1120,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PauseReceived(token);
             return S_OK;
         }
@@ -1061,6 +1134,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().NextReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerNextReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1074,6 +1148,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NextReceived(token);
             return S_OK;
         }
@@ -1087,6 +1162,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PreviousReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerPreviousReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1100,6 +1176,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PreviousReceived(token);
             return S_OK;
         }
@@ -1113,6 +1190,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().FastForwardReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerFastForwardReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1126,6 +1204,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FastForwardReceived(token);
             return S_OK;
         }
@@ -1139,6 +1218,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RewindReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerRewindReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1152,6 +1232,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RewindReceived(token);
             return S_OK;
         }
@@ -1165,6 +1246,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ShuffleReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerShuffleReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1178,6 +1260,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShuffleReceived(token);
             return S_OK;
         }
@@ -1191,6 +1274,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().AutoRepeatModeReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1204,6 +1288,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AutoRepeatModeReceived(token);
             return S_OK;
         }
@@ -1217,6 +1302,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PositionReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerPositionReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1230,6 +1316,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PositionReceived(token);
             return S_OK;
         }
@@ -1243,6 +1330,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RateReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerRateReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1256,6 +1344,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManager> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RateReceived(token);
             return S_OK;
         }
@@ -1273,6 +1362,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerAutoRepe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1286,6 +1376,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerAutoRepe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1299,6 +1390,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerAutoRepe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutoRepeatMode());
             return S_OK;
         }
@@ -1312,6 +1404,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerAutoRepe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1330,6 +1423,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerCommandB
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CommandManager());
             return S_OK;
         }
@@ -1344,6 +1438,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerCommandB
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
@@ -1357,6 +1452,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerCommandB
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnablingRule());
             return S_OK;
         }
@@ -1370,6 +1466,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerCommandB
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnablingRule(value);
             return S_OK;
         }
@@ -1383,6 +1480,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerCommandB
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().IsEnabledChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -1396,6 +1494,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerCommandB
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsEnabledChanged(token);
             return S_OK;
         }
@@ -1413,6 +1512,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerFastForw
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1426,6 +1526,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerFastForw
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1439,6 +1540,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerFastForw
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1457,6 +1559,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerNextRece
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1470,6 +1573,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerNextRece
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1483,6 +1587,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerNextRece
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1501,6 +1606,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerPauseRec
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1514,6 +1620,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerPauseRec
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1527,6 +1634,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerPauseRec
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1545,6 +1653,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerPlayRece
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1558,6 +1667,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerPlayRece
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1571,6 +1681,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerPlayRece
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1589,6 +1700,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerPosition
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1602,6 +1714,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerPosition
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1615,6 +1728,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerPosition
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -1628,6 +1742,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerPosition
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1646,6 +1761,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerPrevious
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1659,6 +1775,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerPrevious
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1672,6 +1789,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerPrevious
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1690,6 +1808,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerRateRece
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1703,6 +1822,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerRateRece
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1716,6 +1836,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerRateRece
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PlaybackRate());
             return S_OK;
         }
@@ -1729,6 +1850,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerRateRece
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1747,6 +1869,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerRewindRe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1760,6 +1883,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerRewindRe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1773,6 +1897,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerRewindRe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1791,6 +1916,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerShuffleR
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1804,6 +1930,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerShuffleR
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1817,6 +1944,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerShuffleR
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsShuffleRequested());
             return S_OK;
         }
@@ -1830,6 +1958,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackCommandManagerShuffleR
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1848,6 +1977,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItem> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().AudioTracksChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackItem, Windows::Foundation::Collections::IVectorChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1861,6 +1991,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItem> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AudioTracksChanged(token);
             return S_OK;
         }
@@ -1874,6 +2005,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItem> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().VideoTracksChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackItem, Windows::Foundation::Collections::IVectorChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1887,6 +2019,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItem> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VideoTracksChanged(token);
             return S_OK;
         }
@@ -1900,6 +2033,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItem> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().TimedMetadataTracksChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackItem, Windows::Foundation::Collections::IVectorChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1913,6 +2047,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItem> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TimedMetadataTracksChanged(token);
             return S_OK;
         }
@@ -1926,6 +2061,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItem> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Source());
             return S_OK;
         }
@@ -1940,6 +2076,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItem> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AudioTracks());
             return S_OK;
         }
@@ -1954,6 +2091,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItem> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoTracks());
             return S_OK;
         }
@@ -1968,6 +2106,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItem> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TimedMetadataTracks());
             return S_OK;
         }
@@ -1986,6 +2125,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItem2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BreakSchedule());
             return S_OK;
         }
@@ -2000,6 +2140,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItem2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StartTime());
             return S_OK;
         }
@@ -2013,6 +2154,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItem2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DurationLimit());
             return S_OK;
         }
@@ -2027,6 +2169,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItem2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanSkip());
             return S_OK;
         }
@@ -2040,6 +2183,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItem2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanSkip(value);
             return S_OK;
         }
@@ -2053,6 +2197,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItem2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDisplayProperties());
             return S_OK;
         }
@@ -2067,6 +2212,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItem2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ApplyDisplayProperties(*reinterpret_cast<const Windows::Media::Playback::MediaItemDisplayProperties *>(&value));
             return S_OK;
         }
@@ -2084,6 +2230,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItemError> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ErrorCode());
             return S_OK;
         }
@@ -2097,6 +2244,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItemError> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtendedError());
             return S_OK;
         }
@@ -2114,6 +2262,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItemFactory> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Create(*reinterpret_cast<const Windows::Media::Core::MediaSource *>(&source)));
             return S_OK;
         }
@@ -2132,6 +2281,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItemFactory2> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateWithStartTime(*reinterpret_cast<const Windows::Media::Core::MediaSource *>(&source), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&startTime)));
             return S_OK;
         }
@@ -2146,6 +2296,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItemFactory2> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateWithStartTimeAndDurationLimit(*reinterpret_cast<const Windows::Media::Core::MediaSource *>(&source), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&startTime), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&durationLimit)));
             return S_OK;
         }
@@ -2164,6 +2315,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItemFailedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Item());
             return S_OK;
         }
@@ -2178,6 +2330,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItemFailedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Error());
             return S_OK;
         }
@@ -2196,6 +2349,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItemOpenedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Item());
             return S_OK;
         }
@@ -2214,6 +2368,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItemStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FindFromMediaSource(*reinterpret_cast<const Windows::Media::Core::MediaSource *>(&source)));
             return S_OK;
         }
@@ -2232,6 +2387,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ItemFailed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackList, Windows::Media::Playback::MediaPlaybackItemFailedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2245,6 +2401,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ItemFailed(token);
             return S_OK;
         }
@@ -2258,6 +2415,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CurrentItemChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackList, Windows::Media::Playback::CurrentMediaPlaybackItemChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2271,6 +2429,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CurrentItemChanged(token);
             return S_OK;
         }
@@ -2284,6 +2443,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ItemOpened(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackList, Windows::Media::Playback::MediaPlaybackItemOpenedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2297,6 +2457,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ItemOpened(token);
             return S_OK;
         }
@@ -2310,6 +2471,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Items());
             return S_OK;
         }
@@ -2324,6 +2486,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutoRepeatEnabled());
             return S_OK;
         }
@@ -2337,6 +2500,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AutoRepeatEnabled(value);
             return S_OK;
         }
@@ -2350,6 +2514,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShuffleEnabled());
             return S_OK;
         }
@@ -2363,6 +2528,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShuffleEnabled(value);
             return S_OK;
         }
@@ -2376,6 +2542,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentItem());
             return S_OK;
         }
@@ -2390,6 +2557,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentItemIndex());
             return S_OK;
         }
@@ -2403,6 +2571,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *item = detach(this->shim().MoveNext());
             return S_OK;
         }
@@ -2417,6 +2586,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *item = detach(this->shim().MovePrevious());
             return S_OK;
         }
@@ -2431,6 +2601,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *item = detach(this->shim().MoveTo(itemIndex));
             return S_OK;
         }
@@ -2449,6 +2620,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxPrefetchTime());
             return S_OK;
         }
@@ -2463,6 +2635,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxPrefetchTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
             return S_OK;
         }
@@ -2476,6 +2649,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StartingItem());
             return S_OK;
         }
@@ -2490,6 +2664,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartingItem(*reinterpret_cast<const Windows::Media::Playback::MediaPlaybackItem *>(&value));
             return S_OK;
         }
@@ -2503,6 +2678,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShuffledItems());
             return S_OK;
         }
@@ -2517,6 +2693,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetShuffledItems(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Media::Playback::MediaPlaybackItem> *>(&value));
             return S_OK;
         }
@@ -2534,6 +2711,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PlaybackStateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -2547,6 +2725,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PlaybackStateChanged(token);
             return S_OK;
         }
@@ -2560,6 +2739,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PlaybackRateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -2573,6 +2753,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PlaybackRateChanged(token);
             return S_OK;
         }
@@ -2586,6 +2767,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SeekCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -2599,6 +2781,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SeekCompleted(token);
             return S_OK;
         }
@@ -2612,6 +2795,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().BufferingStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -2625,6 +2809,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BufferingStarted(token);
             return S_OK;
         }
@@ -2638,6 +2823,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().BufferingEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -2651,6 +2837,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BufferingEnded(token);
             return S_OK;
         }
@@ -2664,6 +2851,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().BufferingProgressChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -2677,6 +2865,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BufferingProgressChanged(token);
             return S_OK;
         }
@@ -2690,6 +2879,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DownloadProgressChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -2703,6 +2893,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DownloadProgressChanged(token);
             return S_OK;
         }
@@ -2716,6 +2907,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().NaturalDurationChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -2729,6 +2921,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NaturalDurationChanged(token);
             return S_OK;
         }
@@ -2742,6 +2935,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PositionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -2755,6 +2949,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PositionChanged(token);
             return S_OK;
         }
@@ -2768,6 +2963,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().NaturalVideoSizeChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -2781,6 +2977,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NaturalVideoSizeChanged(token);
             return S_OK;
         }
@@ -2794,6 +2991,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediaPlayer());
             return S_OK;
         }
@@ -2808,6 +3006,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NaturalDuration());
             return S_OK;
         }
@@ -2821,6 +3020,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -2834,6 +3034,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Position(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -2847,6 +3048,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PlaybackState());
             return S_OK;
         }
@@ -2860,6 +3062,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanSeek());
             return S_OK;
         }
@@ -2873,6 +3076,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanPause());
             return S_OK;
         }
@@ -2886,6 +3090,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsProtected());
             return S_OK;
         }
@@ -2899,6 +3104,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PlaybackRate());
             return S_OK;
         }
@@ -2912,6 +3118,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PlaybackRate(value);
             return S_OK;
         }
@@ -2925,6 +3132,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BufferingProgress());
             return S_OK;
         }
@@ -2938,6 +3146,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DownloadProgress());
             return S_OK;
         }
@@ -2951,6 +3160,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NaturalVideoHeight());
             return S_OK;
         }
@@ -2964,6 +3174,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NaturalVideoWidth());
             return S_OK;
         }
@@ -2977,6 +3188,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NormalizedSourceRect());
             return S_OK;
         }
@@ -2990,6 +3202,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NormalizedSourceRect(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
             return S_OK;
         }
@@ -3003,6 +3216,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StereoscopicVideoPackingMode());
             return S_OK;
         }
@@ -3016,6 +3230,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StereoscopicVideoPackingMode(value);
             return S_OK;
         }
@@ -3037,6 +3252,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackTimedMetadataTrackList
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PresentationModeChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackTimedMetadataTrackList, Windows::Media::Playback::TimedMetadataPresentationModeChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -3050,6 +3266,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackTimedMetadataTrackList
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PresentationModeChanged(token);
             return S_OK;
         }
@@ -3063,6 +3280,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackTimedMetadataTrackList
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetPresentationMode(index));
             return S_OK;
         }
@@ -3076,6 +3294,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackTimedMetadataTrackList
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetPresentationMode(index, value);
             return S_OK;
         }
@@ -3093,6 +3312,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutoPlay());
             return S_OK;
         }
@@ -3106,6 +3326,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AutoPlay(value);
             return S_OK;
         }
@@ -3119,6 +3340,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NaturalDuration());
             return S_OK;
         }
@@ -3132,6 +3354,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -3145,6 +3368,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Position(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -3158,6 +3382,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BufferingProgress());
             return S_OK;
         }
@@ -3171,6 +3396,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentState());
             return S_OK;
         }
@@ -3184,6 +3410,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanSeek());
             return S_OK;
         }
@@ -3197,6 +3424,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanPause());
             return S_OK;
         }
@@ -3210,6 +3438,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsLoopingEnabled());
             return S_OK;
         }
@@ -3223,6 +3452,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsLoopingEnabled(value);
             return S_OK;
         }
@@ -3236,6 +3466,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsProtected());
             return S_OK;
         }
@@ -3249,6 +3480,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsMuted());
             return S_OK;
         }
@@ -3262,6 +3494,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsMuted(value);
             return S_OK;
         }
@@ -3275,6 +3508,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PlaybackRate());
             return S_OK;
         }
@@ -3288,6 +3522,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PlaybackRate(value);
             return S_OK;
         }
@@ -3301,6 +3536,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Volume());
             return S_OK;
         }
@@ -3314,6 +3550,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Volume(value);
             return S_OK;
         }
@@ -3327,6 +3564,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PlaybackMediaMarkers());
             return S_OK;
         }
@@ -3341,6 +3579,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MediaOpened(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -3354,6 +3593,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MediaOpened(token);
             return S_OK;
         }
@@ -3367,6 +3607,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MediaEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -3380,6 +3621,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MediaEnded(token);
             return S_OK;
         }
@@ -3393,6 +3635,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MediaFailed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::MediaPlayerFailedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -3406,6 +3649,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MediaFailed(token);
             return S_OK;
         }
@@ -3419,6 +3663,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CurrentStateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -3432,6 +3677,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CurrentStateChanged(token);
             return S_OK;
         }
@@ -3445,6 +3691,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PlaybackMediaMarkerReached(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::PlaybackMediaMarkerReachedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -3458,6 +3705,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PlaybackMediaMarkerReached(token);
             return S_OK;
         }
@@ -3471,6 +3719,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MediaPlayerRateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::MediaPlayerRateChangedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -3484,6 +3733,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MediaPlayerRateChanged(token);
             return S_OK;
         }
@@ -3497,6 +3747,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().VolumeChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -3510,6 +3761,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VolumeChanged(token);
             return S_OK;
         }
@@ -3523,6 +3775,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SeekCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -3536,6 +3789,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SeekCompleted(token);
             return S_OK;
         }
@@ -3549,6 +3803,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().BufferingStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -3562,6 +3817,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BufferingStarted(token);
             return S_OK;
         }
@@ -3575,6 +3831,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().BufferingEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -3588,6 +3845,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BufferingEnded(token);
             return S_OK;
         }
@@ -3601,6 +3859,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Play();
             return S_OK;
         }
@@ -3614,6 +3873,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Pause();
             return S_OK;
         }
@@ -3627,6 +3887,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetUriSource(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -3644,6 +3905,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer2> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SystemMediaTransportControls());
             return S_OK;
         }
@@ -3658,6 +3920,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer2> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AudioCategory());
             return S_OK;
         }
@@ -3671,6 +3934,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer2> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AudioCategory(value);
             return S_OK;
         }
@@ -3684,6 +3948,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer2> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AudioDeviceType());
             return S_OK;
         }
@@ -3697,6 +3962,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer2> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AudioDeviceType(value);
             return S_OK;
         }
@@ -3714,6 +3980,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().IsMutedChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -3727,6 +3994,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsMutedChanged(token);
             return S_OK;
         }
@@ -3740,6 +4008,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SourceChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -3753,6 +4022,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceChanged(token);
             return S_OK;
         }
@@ -3766,6 +4036,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AudioBalance());
             return S_OK;
         }
@@ -3779,6 +4050,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AudioBalance(value);
             return S_OK;
         }
@@ -3792,6 +4064,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RealTimePlayback());
             return S_OK;
         }
@@ -3805,6 +4078,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RealTimePlayback(value);
             return S_OK;
         }
@@ -3818,6 +4092,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StereoscopicVideoRenderMode());
             return S_OK;
         }
@@ -3831,6 +4106,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StereoscopicVideoRenderMode(value);
             return S_OK;
         }
@@ -3844,6 +4120,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BreakManager());
             return S_OK;
         }
@@ -3858,6 +4135,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CommandManager());
             return S_OK;
         }
@@ -3872,6 +4150,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AudioDevice());
             return S_OK;
         }
@@ -3886,6 +4165,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AudioDevice(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&value));
             return S_OK;
         }
@@ -3899,6 +4179,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TimelineController());
             return S_OK;
         }
@@ -3913,6 +4194,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TimelineController(*reinterpret_cast<const Windows::Media::MediaTimelineController *>(&value));
             return S_OK;
         }
@@ -3926,6 +4208,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TimelineControllerPositionOffset());
             return S_OK;
         }
@@ -3939,6 +4222,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TimelineControllerPositionOffset(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -3952,6 +4236,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PlaybackSession());
             return S_OK;
         }
@@ -3966,6 +4251,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StepForwardOneFrame();
             return S_OK;
         }
@@ -3979,6 +4265,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StepBackwardOneFrame();
             return S_OK;
         }
@@ -3992,6 +4279,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetAsCastingSource());
             return S_OK;
         }
@@ -4010,6 +4298,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer4> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetSurfaceSize(*reinterpret_cast<const Windows::Foundation::Size *>(&size));
             return S_OK;
         }
@@ -4023,6 +4312,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer4> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetSurface(*reinterpret_cast<const Windows::UI::Composition::Compositor *>(&compositor)));
             return S_OK;
         }
@@ -4041,6 +4331,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayerDataReceivedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Data());
             return S_OK;
         }
@@ -4059,6 +4350,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayerEffects> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddAudioEffect(*reinterpret_cast<const hstring *>(&activatableClassId), effectOptional, *reinterpret_cast<const Windows::Foundation::Collections::IPropertySet *>(&configuration));
             return S_OK;
         }
@@ -4072,6 +4364,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayerEffects> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveAllEffects();
             return S_OK;
         }
@@ -4089,6 +4382,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayerEffects2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddVideoEffect(*reinterpret_cast<const hstring *>(&activatableClassId), effectOptional, *reinterpret_cast<const Windows::Foundation::Collections::IPropertySet *>(&effectConfiguration));
             return S_OK;
         }
@@ -4106,6 +4400,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayerFailedEventArgs> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Error());
             return S_OK;
         }
@@ -4119,6 +4414,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayerFailedEventArgs> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtendedErrorCode());
             return S_OK;
         }
@@ -4132,6 +4428,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayerFailedEventArgs> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ErrorMessage());
             return S_OK;
         }
@@ -4150,6 +4447,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayerRateChangedEventArgs> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewRate());
             return S_OK;
         }
@@ -4167,6 +4465,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayerSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProtectionManager());
             return S_OK;
         }
@@ -4181,6 +4480,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayerSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProtectionManager(*reinterpret_cast<const Windows::Media::Protection::MediaProtectionManager *>(&value));
             return S_OK;
         }
@@ -4194,6 +4494,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayerSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetFileSource(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file));
             return S_OK;
         }
@@ -4207,6 +4508,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayerSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStreamSource(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream));
             return S_OK;
         }
@@ -4220,6 +4522,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayerSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetMediaSource(*reinterpret_cast<const Windows::Media::Core::IMediaSource *>(&source));
             return S_OK;
         }
@@ -4237,6 +4540,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayerSource2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Source());
             return S_OK;
         }
@@ -4251,6 +4555,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayerSource2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Source(*reinterpret_cast<const Windows::Media::Playback::IMediaPlaybackSource *>(&value));
             return S_OK;
         }
@@ -4268,6 +4573,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayerSurface> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CompositionSurface());
             return S_OK;
         }
@@ -4282,6 +4588,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayerSurface> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Compositor());
             return S_OK;
         }
@@ -4296,6 +4603,7 @@ struct produce<D, Windows::Media::Playback::IMediaPlayerSurface> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediaPlayer());
             return S_OK;
         }
@@ -4314,6 +4622,7 @@ struct produce<D, Windows::Media::Playback::IPlaybackMediaMarker> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Time());
             return S_OK;
         }
@@ -4327,6 +4636,7 @@ struct produce<D, Windows::Media::Playback::IPlaybackMediaMarker> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediaMarkerType());
             return S_OK;
         }
@@ -4341,6 +4651,7 @@ struct produce<D, Windows::Media::Playback::IPlaybackMediaMarker> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -4359,6 +4670,7 @@ struct produce<D, Windows::Media::Playback::IPlaybackMediaMarkerFactory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *marker = detach(this->shim().CreateFromTime(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value)));
             return S_OK;
         }
@@ -4373,6 +4685,7 @@ struct produce<D, Windows::Media::Playback::IPlaybackMediaMarkerFactory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *marker = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value), *reinterpret_cast<const hstring *>(&mediaMarketType), *reinterpret_cast<const hstring *>(&text)));
             return S_OK;
         }
@@ -4391,6 +4704,7 @@ struct produce<D, Windows::Media::Playback::IPlaybackMediaMarkerReachedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PlaybackMediaMarker());
             return S_OK;
         }
@@ -4409,6 +4723,7 @@ struct produce<D, Windows::Media::Playback::IPlaybackMediaMarkerSequence> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Size());
             return S_OK;
         }
@@ -4422,6 +4737,7 @@ struct produce<D, Windows::Media::Playback::IPlaybackMediaMarkerSequence> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Insert(*reinterpret_cast<const Windows::Media::Playback::PlaybackMediaMarker *>(&value));
             return S_OK;
         }
@@ -4435,6 +4751,7 @@ struct produce<D, Windows::Media::Playback::IPlaybackMediaMarkerSequence> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Clear();
             return S_OK;
         }
@@ -4452,6 +4769,7 @@ struct produce<D, Windows::Media::Playback::ITimedMetadataPresentationModeChange
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Track());
             return S_OK;
         }
@@ -4466,6 +4784,7 @@ struct produce<D, Windows::Media::Playback::ITimedMetadataPresentationModeChange
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OldPresentationMode());
             return S_OK;
         }
@@ -4479,6 +4798,7 @@ struct produce<D, Windows::Media::Playback::ITimedMetadataPresentationModeChange
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewPresentationMode());
             return S_OK;
         }

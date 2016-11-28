@@ -24,6 +24,7 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Black());
             return S_OK;
         }
@@ -37,6 +38,7 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bold());
             return S_OK;
         }
@@ -50,6 +52,7 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtraBlack());
             return S_OK;
         }
@@ -63,6 +66,7 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtraBold());
             return S_OK;
         }
@@ -76,6 +80,7 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtraLight());
             return S_OK;
         }
@@ -89,6 +94,7 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Light());
             return S_OK;
         }
@@ -102,6 +108,7 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Medium());
             return S_OK;
         }
@@ -115,6 +122,7 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Normal());
             return S_OK;
         }
@@ -128,6 +136,7 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SemiBold());
             return S_OK;
         }
@@ -141,6 +150,7 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SemiLight());
             return S_OK;
         }
@@ -154,6 +164,7 @@ struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Thin());
             return S_OK;
         }
@@ -171,6 +182,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllCaps());
             return S_OK;
         }
@@ -184,6 +196,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllCaps(value);
             return S_OK;
         }
@@ -197,6 +210,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BackgroundColor());
             return S_OK;
         }
@@ -210,6 +224,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -223,6 +238,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bold());
             return S_OK;
         }
@@ -236,6 +252,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Bold(value);
             return S_OK;
         }
@@ -249,6 +266,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontStretch());
             return S_OK;
         }
@@ -262,6 +280,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FontStretch(value);
             return S_OK;
         }
@@ -275,6 +294,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FontStyle());
             return S_OK;
         }
@@ -288,6 +308,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FontStyle(value);
             return S_OK;
         }
@@ -301,6 +322,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ForegroundColor());
             return S_OK;
         }
@@ -314,6 +336,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ForegroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -327,6 +350,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Hidden());
             return S_OK;
         }
@@ -340,6 +364,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Hidden(value);
             return S_OK;
         }
@@ -353,6 +378,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Italic());
             return S_OK;
         }
@@ -366,6 +392,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Italic(value);
             return S_OK;
         }
@@ -379,6 +406,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kerning());
             return S_OK;
         }
@@ -392,6 +420,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Kerning(value);
             return S_OK;
         }
@@ -405,6 +434,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LanguageTag());
             return S_OK;
         }
@@ -419,6 +449,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LanguageTag(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -432,6 +463,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LinkType());
             return S_OK;
         }
@@ -445,6 +477,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -459,6 +492,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -472,6 +506,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Outline());
             return S_OK;
         }
@@ -485,6 +520,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Outline(value);
             return S_OK;
         }
@@ -498,6 +534,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -511,6 +548,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Position(value);
             return S_OK;
         }
@@ -524,6 +562,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProtectedText());
             return S_OK;
         }
@@ -537,6 +576,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProtectedText(value);
             return S_OK;
         }
@@ -550,6 +590,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Size());
             return S_OK;
         }
@@ -563,6 +604,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Size(value);
             return S_OK;
         }
@@ -576,6 +618,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SmallCaps());
             return S_OK;
         }
@@ -589,6 +632,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SmallCaps(value);
             return S_OK;
         }
@@ -602,6 +646,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Spacing());
             return S_OK;
         }
@@ -615,6 +660,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Spacing(value);
             return S_OK;
         }
@@ -628,6 +674,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Strikethrough());
             return S_OK;
         }
@@ -641,6 +688,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Strikethrough(value);
             return S_OK;
         }
@@ -654,6 +702,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Subscript());
             return S_OK;
         }
@@ -667,6 +716,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Subscript(value);
             return S_OK;
         }
@@ -680,6 +730,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Superscript());
             return S_OK;
         }
@@ -693,6 +744,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Superscript(value);
             return S_OK;
         }
@@ -706,6 +758,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextScript());
             return S_OK;
         }
@@ -719,6 +772,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TextScript(value);
             return S_OK;
         }
@@ -732,6 +786,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Underline());
             return S_OK;
         }
@@ -745,6 +800,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Underline(value);
             return S_OK;
         }
@@ -758,6 +814,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Weight());
             return S_OK;
         }
@@ -771,6 +828,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Weight(value);
             return S_OK;
         }
@@ -784,6 +842,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetClone(*reinterpret_cast<const Windows::UI::Text::ITextCharacterFormat *>(&value));
             return S_OK;
         }
@@ -797,6 +856,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetClone());
             return S_OK;
         }
@@ -811,6 +871,7 @@ struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEqual(*reinterpret_cast<const Windows::UI::Text::ITextCharacterFormat *>(&format)));
             return S_OK;
         }
@@ -828,6 +889,7 @@ struct produce<D, Windows::UI::Text::ITextConstantsStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutoColor());
             return S_OK;
         }
@@ -841,6 +903,7 @@ struct produce<D, Windows::UI::Text::ITextConstantsStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinUnitCount());
             return S_OK;
         }
@@ -854,6 +917,7 @@ struct produce<D, Windows::UI::Text::ITextConstantsStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxUnitCount());
             return S_OK;
         }
@@ -867,6 +931,7 @@ struct produce<D, Windows::UI::Text::ITextConstantsStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UndefinedColor());
             return S_OK;
         }
@@ -880,6 +945,7 @@ struct produce<D, Windows::UI::Text::ITextConstantsStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UndefinedFloatValue());
             return S_OK;
         }
@@ -893,6 +959,7 @@ struct produce<D, Windows::UI::Text::ITextConstantsStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UndefinedInt32Value());
             return S_OK;
         }
@@ -906,6 +973,7 @@ struct produce<D, Windows::UI::Text::ITextConstantsStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UndefinedFontStretch());
             return S_OK;
         }
@@ -919,6 +987,7 @@ struct produce<D, Windows::UI::Text::ITextConstantsStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UndefinedFontStyle());
             return S_OK;
         }
@@ -936,6 +1005,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CaretType());
             return S_OK;
         }
@@ -949,6 +1019,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CaretType(value);
             return S_OK;
         }
@@ -962,6 +1033,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DefaultTabStop());
             return S_OK;
         }
@@ -975,6 +1047,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DefaultTabStop(value);
             return S_OK;
         }
@@ -988,6 +1061,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Selection());
             return S_OK;
         }
@@ -1002,6 +1076,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UndoLimit());
             return S_OK;
         }
@@ -1015,6 +1090,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UndoLimit(value);
             return S_OK;
         }
@@ -1028,6 +1104,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanCopy());
             return S_OK;
         }
@@ -1041,6 +1118,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanPaste());
             return S_OK;
         }
@@ -1054,6 +1132,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanRedo());
             return S_OK;
         }
@@ -1067,6 +1146,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanUndo());
             return S_OK;
         }
@@ -1080,6 +1160,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *count = detach(this->shim().ApplyDisplayUpdates());
             return S_OK;
         }
@@ -1093,6 +1174,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *count = detach(this->shim().BatchDisplayUpdates());
             return S_OK;
         }
@@ -1106,6 +1188,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BeginUndoGroup();
             return S_OK;
         }
@@ -1119,6 +1202,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EndUndoGroup();
             return S_OK;
         }
@@ -1132,6 +1216,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDefaultCharacterFormat());
             return S_OK;
         }
@@ -1146,6 +1231,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDefaultParagraphFormat());
             return S_OK;
         }
@@ -1160,6 +1246,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetRange(startPosition, endPosition));
             return S_OK;
         }
@@ -1174,6 +1261,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetRangeFromPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&point), options));
             return S_OK;
         }
@@ -1188,6 +1276,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetText(options, *value);
             return S_OK;
         }
@@ -1202,6 +1291,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LoadFromStream(options, *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value));
             return S_OK;
         }
@@ -1215,6 +1305,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Redo();
             return S_OK;
         }
@@ -1228,6 +1319,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SaveToStream(options, *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value));
             return S_OK;
         }
@@ -1241,6 +1333,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetDefaultCharacterFormat(*reinterpret_cast<const Windows::UI::Text::ITextCharacterFormat *>(&value));
             return S_OK;
         }
@@ -1254,6 +1347,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetDefaultParagraphFormat(*reinterpret_cast<const Windows::UI::Text::ITextParagraphFormat *>(&value));
             return S_OK;
         }
@@ -1267,6 +1361,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetText(options, *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1280,6 +1375,7 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Undo();
             return S_OK;
         }
@@ -1297,6 +1393,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Alignment());
             return S_OK;
         }
@@ -1310,6 +1407,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Alignment(value);
             return S_OK;
         }
@@ -1323,6 +1421,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FirstLineIndent());
             return S_OK;
         }
@@ -1336,6 +1435,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeepTogether());
             return S_OK;
         }
@@ -1349,6 +1449,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeepTogether(value);
             return S_OK;
         }
@@ -1362,6 +1463,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeepWithNext());
             return S_OK;
         }
@@ -1375,6 +1477,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeepWithNext(value);
             return S_OK;
         }
@@ -1388,6 +1491,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LeftIndent());
             return S_OK;
         }
@@ -1401,6 +1505,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LineSpacing());
             return S_OK;
         }
@@ -1414,6 +1519,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LineSpacingRule());
             return S_OK;
         }
@@ -1427,6 +1533,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ListAlignment());
             return S_OK;
         }
@@ -1440,6 +1547,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ListAlignment(value);
             return S_OK;
         }
@@ -1453,6 +1561,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ListLevelIndex());
             return S_OK;
         }
@@ -1466,6 +1575,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ListLevelIndex(value);
             return S_OK;
         }
@@ -1479,6 +1589,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ListStart());
             return S_OK;
         }
@@ -1492,6 +1603,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ListStart(value);
             return S_OK;
         }
@@ -1505,6 +1617,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ListStyle());
             return S_OK;
         }
@@ -1518,6 +1631,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ListStyle(value);
             return S_OK;
         }
@@ -1531,6 +1645,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ListTab());
             return S_OK;
         }
@@ -1544,6 +1659,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ListTab(value);
             return S_OK;
         }
@@ -1557,6 +1673,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ListType());
             return S_OK;
         }
@@ -1570,6 +1687,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ListType(value);
             return S_OK;
         }
@@ -1583,6 +1701,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NoLineNumber());
             return S_OK;
         }
@@ -1596,6 +1715,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NoLineNumber(value);
             return S_OK;
         }
@@ -1609,6 +1729,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PageBreakBefore());
             return S_OK;
         }
@@ -1622,6 +1743,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PageBreakBefore(value);
             return S_OK;
         }
@@ -1635,6 +1757,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RightIndent());
             return S_OK;
         }
@@ -1648,6 +1771,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RightIndent(value);
             return S_OK;
         }
@@ -1661,6 +1785,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RightToLeft());
             return S_OK;
         }
@@ -1674,6 +1799,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RightToLeft(value);
             return S_OK;
         }
@@ -1687,6 +1813,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Style());
             return S_OK;
         }
@@ -1700,6 +1827,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Style(value);
             return S_OK;
         }
@@ -1713,6 +1841,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SpaceAfter());
             return S_OK;
         }
@@ -1726,6 +1855,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SpaceAfter(value);
             return S_OK;
         }
@@ -1739,6 +1869,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SpaceBefore());
             return S_OK;
         }
@@ -1752,6 +1883,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SpaceBefore(value);
             return S_OK;
         }
@@ -1765,6 +1897,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WidowControl());
             return S_OK;
         }
@@ -1778,6 +1911,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WidowControl(value);
             return S_OK;
         }
@@ -1791,6 +1925,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TabCount());
             return S_OK;
         }
@@ -1804,6 +1939,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddTab(position, align, leader);
             return S_OK;
         }
@@ -1817,6 +1953,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClearAllTabs();
             return S_OK;
         }
@@ -1830,6 +1967,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DeleteTab(position);
             return S_OK;
         }
@@ -1843,6 +1981,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetClone());
             return S_OK;
         }
@@ -1857,6 +1996,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetTab(index, *position, *align, *leader);
             return S_OK;
         }
@@ -1870,6 +2010,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEqual(*reinterpret_cast<const Windows::UI::Text::ITextParagraphFormat *>(&format)));
             return S_OK;
         }
@@ -1883,6 +2024,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetClone(*reinterpret_cast<const Windows::UI::Text::ITextParagraphFormat *>(&format));
             return S_OK;
         }
@@ -1896,6 +2038,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetIndents(start, left, right);
             return S_OK;
         }
@@ -1909,6 +2052,7 @@ struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetLineSpacing(rule, spacing);
             return S_OK;
         }
@@ -1926,6 +2070,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Character());
             return S_OK;
         }
@@ -1939,6 +2084,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Character(value);
             return S_OK;
         }
@@ -1952,6 +2098,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CharacterFormat());
             return S_OK;
         }
@@ -1966,6 +2113,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CharacterFormat(*reinterpret_cast<const Windows::UI::Text::ITextCharacterFormat *>(&value));
             return S_OK;
         }
@@ -1979,6 +2127,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FormattedText());
             return S_OK;
         }
@@ -1993,6 +2142,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FormattedText(*reinterpret_cast<const Windows::UI::Text::ITextRange *>(&value));
             return S_OK;
         }
@@ -2006,6 +2156,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EndPosition());
             return S_OK;
         }
@@ -2019,6 +2170,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EndPosition(value);
             return S_OK;
         }
@@ -2032,6 +2184,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gravity());
             return S_OK;
         }
@@ -2045,6 +2198,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Gravity(value);
             return S_OK;
         }
@@ -2058,6 +2212,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *length = detach(this->shim().Length());
             return S_OK;
         }
@@ -2071,6 +2226,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Link());
             return S_OK;
         }
@@ -2085,6 +2241,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Link(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2098,6 +2255,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ParagraphFormat());
             return S_OK;
         }
@@ -2112,6 +2270,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ParagraphFormat(*reinterpret_cast<const Windows::UI::Text::ITextParagraphFormat *>(&value));
             return S_OK;
         }
@@ -2125,6 +2284,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StartPosition());
             return S_OK;
         }
@@ -2138,6 +2298,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartPosition(value);
             return S_OK;
         }
@@ -2151,6 +2312,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StoryLength());
             return S_OK;
         }
@@ -2164,6 +2326,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -2178,6 +2341,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Text(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2191,6 +2355,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanPaste(format));
             return S_OK;
         }
@@ -2204,6 +2369,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ChangeCase(value);
             return S_OK;
         }
@@ -2217,6 +2383,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Collapse(value);
             return S_OK;
         }
@@ -2230,6 +2397,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Copy();
             return S_OK;
         }
@@ -2243,6 +2411,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Cut();
             return S_OK;
         }
@@ -2256,6 +2425,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *delta = detach(this->shim().Delete(unit, count));
             return S_OK;
         }
@@ -2269,6 +2439,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *delta = detach(this->shim().EndOf(unit, extend));
             return S_OK;
         }
@@ -2282,6 +2453,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *delta = detach(this->shim().Expand(unit));
             return S_OK;
         }
@@ -2295,6 +2467,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *length = detach(this->shim().FindText(*reinterpret_cast<const hstring *>(&value), scanLength, options));
             return S_OK;
         }
@@ -2308,6 +2481,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetCharacterUtf32(*value, offset);
             return S_OK;
         }
@@ -2321,6 +2495,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetClone());
             return S_OK;
         }
@@ -2335,6 +2510,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *index = detach(this->shim().GetIndex(unit));
             return S_OK;
         }
@@ -2348,6 +2524,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetPoint(horizontalAlign, verticalAlign, options, *point);
             return S_OK;
         }
@@ -2361,6 +2538,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetRect(options, *rect, *hit);
             return S_OK;
         }
@@ -2374,6 +2552,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetText(options, *value);
             return S_OK;
         }
@@ -2388,6 +2567,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetTextViaStream(options, *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value));
             return S_OK;
         }
@@ -2401,6 +2581,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InRange(*reinterpret_cast<const Windows::UI::Text::ITextRange *>(&range)));
             return S_OK;
         }
@@ -2414,6 +2595,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InsertImage(width, height, ascent, verticalAlign, *reinterpret_cast<const hstring *>(&alternateText), *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value));
             return S_OK;
         }
@@ -2427,6 +2609,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InStory(*reinterpret_cast<const Windows::UI::Text::ITextRange *>(&range)));
             return S_OK;
         }
@@ -2440,6 +2623,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEqual(*reinterpret_cast<const Windows::UI::Text::ITextRange *>(&range)));
             return S_OK;
         }
@@ -2453,6 +2637,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *delta = detach(this->shim().Move(unit, count));
             return S_OK;
         }
@@ -2466,6 +2651,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *delta = detach(this->shim().MoveEnd(unit, count));
             return S_OK;
         }
@@ -2479,6 +2665,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *delta = detach(this->shim().MoveStart(unit, count));
             return S_OK;
         }
@@ -2492,6 +2679,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Paste(format);
             return S_OK;
         }
@@ -2505,6 +2693,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ScrollIntoView(value);
             return S_OK;
         }
@@ -2518,6 +2707,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MatchSelection();
             return S_OK;
         }
@@ -2531,6 +2721,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetIndex(unit, index, extend);
             return S_OK;
         }
@@ -2544,6 +2735,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&point), options, extend);
             return S_OK;
         }
@@ -2557,6 +2749,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetRange(startPosition, endPosition);
             return S_OK;
         }
@@ -2570,6 +2763,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetText(options, *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2583,6 +2777,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetTextViaStream(options, *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value));
             return S_OK;
         }
@@ -2596,6 +2791,7 @@ struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *delta = detach(this->shim().StartOf(unit, extend));
             return S_OK;
         }
@@ -2613,6 +2809,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Options());
             return S_OK;
         }
@@ -2626,6 +2823,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Options(value);
             return S_OK;
         }
@@ -2639,6 +2837,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -2652,6 +2851,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *delta = detach(this->shim().EndKey(unit, extend));
             return S_OK;
         }
@@ -2665,6 +2865,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *delta = detach(this->shim().HomeKey(unit, extend));
             return S_OK;
         }
@@ -2678,6 +2879,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *delta = detach(this->shim().MoveDown(unit, count, extend));
             return S_OK;
         }
@@ -2691,6 +2893,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *delta = detach(this->shim().MoveLeft(unit, count, extend));
             return S_OK;
         }
@@ -2704,6 +2907,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *delta = detach(this->shim().MoveRight(unit, count, extend));
             return S_OK;
         }
@@ -2717,6 +2921,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *delta = detach(this->shim().MoveUp(unit, count, extend));
             return S_OK;
         }
@@ -2730,6 +2935,7 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TypeText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }

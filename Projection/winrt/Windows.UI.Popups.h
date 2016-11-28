@@ -40,6 +40,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -54,6 +55,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -67,6 +69,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Commands());
             return S_OK;
         }
@@ -81,6 +84,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DefaultCommandIndex());
             return S_OK;
         }
@@ -94,6 +98,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DefaultCommandIndex(value);
             return S_OK;
         }
@@ -107,6 +112,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CancelCommandIndex());
             return S_OK;
         }
@@ -120,6 +126,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CancelCommandIndex(value);
             return S_OK;
         }
@@ -133,6 +140,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Content());
             return S_OK;
         }
@@ -147,6 +155,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Content(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -160,6 +169,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *messageDialogAsyncOperation = detach(this->shim().ShowAsync());
             return S_OK;
         }
@@ -174,6 +184,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Options());
             return S_OK;
         }
@@ -187,6 +198,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialog> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Options(value);
             return S_OK;
         }
@@ -204,6 +216,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialogFactory> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *messageDialog = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&content)));
             return S_OK;
         }
@@ -218,6 +231,7 @@ struct produce<D, Windows::UI::Popups::IMessageDialogFactory> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *messageDialog = detach(this->shim().CreateWithTitle(*reinterpret_cast<const hstring *>(&content), *reinterpret_cast<const hstring *>(&title)));
             return S_OK;
         }
@@ -236,6 +250,7 @@ struct produce<D, Windows::UI::Popups::IPopupMenu> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Commands());
             return S_OK;
         }
@@ -250,6 +265,7 @@ struct produce<D, Windows::UI::Popups::IPopupMenu> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOperation = detach(this->shim().ShowAsync(*reinterpret_cast<const Windows::Foundation::Point *>(&invocationPoint)));
             return S_OK;
         }
@@ -264,6 +280,7 @@ struct produce<D, Windows::UI::Popups::IPopupMenu> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOperation = detach(this->shim().ShowForSelectionAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection)));
             return S_OK;
         }
@@ -278,6 +295,7 @@ struct produce<D, Windows::UI::Popups::IPopupMenu> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOperation = detach(this->shim().ShowForSelectionAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), preferredPlacement));
             return S_OK;
         }
@@ -296,6 +314,7 @@ struct produce<D, Windows::UI::Popups::IUICommand> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Label());
             return S_OK;
         }
@@ -310,6 +329,7 @@ struct produce<D, Windows::UI::Popups::IUICommand> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Label(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -323,6 +343,7 @@ struct produce<D, Windows::UI::Popups::IUICommand> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Invoked());
             return S_OK;
         }
@@ -337,6 +358,7 @@ struct produce<D, Windows::UI::Popups::IUICommand> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Invoked(*reinterpret_cast<const Windows::UI::Popups::UICommandInvokedHandler *>(&value));
             return S_OK;
         }
@@ -350,6 +372,7 @@ struct produce<D, Windows::UI::Popups::IUICommand> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -364,6 +387,7 @@ struct produce<D, Windows::UI::Popups::IUICommand> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Id(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
@@ -381,6 +405,7 @@ struct produce<D, Windows::UI::Popups::IUICommandFactory> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&label)));
             return S_OK;
         }
@@ -395,6 +420,7 @@ struct produce<D, Windows::UI::Popups::IUICommandFactory> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateWithHandler(*reinterpret_cast<const hstring *>(&label), *reinterpret_cast<const Windows::UI::Popups::UICommandInvokedHandler *>(&action)));
             return S_OK;
         }
@@ -409,6 +435,7 @@ struct produce<D, Windows::UI::Popups::IUICommandFactory> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateWithHandlerAndId(*reinterpret_cast<const hstring *>(&label), *reinterpret_cast<const Windows::UI::Popups::UICommandInvokedHandler *>(&action), *reinterpret_cast<const Windows::IInspectable *>(&commandId)));
             return S_OK;
         }

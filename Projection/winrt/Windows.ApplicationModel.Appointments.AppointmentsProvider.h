@@ -19,6 +19,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentInformation());
             return S_OK;
         }
@@ -33,6 +34,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourcePackageFamilyName());
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportCompleted(*reinterpret_cast<const hstring *>(&itemId));
             return S_OK;
         }
@@ -60,6 +63,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportCanceled();
             return S_OK;
         }
@@ -73,6 +77,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportError(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -86,6 +91,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DismissUI();
             return S_OK;
         }
@@ -103,6 +109,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AddAppointment());
             return S_OK;
         }
@@ -117,6 +124,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReplaceAppointment());
             return S_OK;
         }
@@ -131,6 +139,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoveAppointment());
             return S_OK;
         }
@@ -145,6 +154,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShowTimeFrame());
             return S_OK;
         }
@@ -163,6 +173,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShowAppointmentDetails());
             return S_OK;
         }
@@ -181,6 +192,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentId());
             return S_OK;
         }
@@ -195,6 +207,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InstanceStartDate());
             return S_OK;
         }
@@ -209,6 +222,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourcePackageFamilyName());
             return S_OK;
         }
@@ -223,6 +237,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportCompleted();
             return S_OK;
         }
@@ -236,6 +251,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportCanceled();
             return S_OK;
         }
@@ -249,6 +265,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportError(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -262,6 +279,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DismissUI();
             return S_OK;
         }
@@ -279,6 +297,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentId());
             return S_OK;
         }
@@ -293,6 +312,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentInformation());
             return S_OK;
         }
@@ -307,6 +327,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InstanceStartDate());
             return S_OK;
         }
@@ -321,6 +342,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourcePackageFamilyName());
             return S_OK;
         }
@@ -335,6 +357,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportCompleted(*reinterpret_cast<const hstring *>(&itemId));
             return S_OK;
         }
@@ -348,6 +371,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportCanceled();
             return S_OK;
         }
@@ -361,6 +385,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportError(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -374,6 +399,7 @@ struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DismissUI();
             return S_OK;
         }

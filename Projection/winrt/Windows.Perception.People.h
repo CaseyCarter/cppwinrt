@@ -17,6 +17,7 @@ struct produce<D, Windows::Perception::People::IHeadPose> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -30,6 +31,7 @@ struct produce<D, Windows::Perception::People::IHeadPose> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ForwardDirection());
             return S_OK;
         }
@@ -43,6 +45,7 @@ struct produce<D, Windows::Perception::People::IHeadPose> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UpDirection());
             return S_OK;
         }

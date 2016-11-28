@@ -24,6 +24,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IAggregateContactManager>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FindRawContactsAsync(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact)));
             return S_OK;
         }
@@ -38,6 +39,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IAggregateContactManager>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contact = detach(this->shim().TryLinkContactsAsync(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&primaryContact), *reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&secondaryContact)));
             return S_OK;
         }
@@ -52,6 +54,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IAggregateContactManager>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnlinkRawContactAsync(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact)));
             return S_OK;
         }
@@ -66,6 +69,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IAggregateContactManager>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TrySetPreferredSourceForPictureAsync(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&aggregateContact), *reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&rawContact)));
             return S_OK;
         }
@@ -84,6 +88,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IAggregateContactManager2
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SetRemoteIdentificationInformationAsync(*reinterpret_cast<const hstring *>(&contactListId), *reinterpret_cast<const hstring *>(&remoteSourceId), *reinterpret_cast<const hstring *>(&accountId)));
             return S_OK;
         }
@@ -102,6 +107,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -116,6 +122,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -129,6 +136,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
@@ -143,6 +151,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Thumbnail(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
@@ -156,6 +165,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Fields());
             return S_OK;
         }
@@ -174,6 +184,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -188,6 +199,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Id(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -201,6 +213,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Notes());
             return S_OK;
         }
@@ -215,6 +228,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Notes(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -228,6 +242,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Phones());
             return S_OK;
         }
@@ -242,6 +257,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Emails());
             return S_OK;
         }
@@ -256,6 +272,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Addresses());
             return S_OK;
         }
@@ -270,6 +287,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConnectedServiceAccounts());
             return S_OK;
         }
@@ -284,6 +302,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ImportantDates());
             return S_OK;
         }
@@ -298,6 +317,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataSuppliers());
             return S_OK;
         }
@@ -312,6 +332,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().JobInfo());
             return S_OK;
         }
@@ -326,6 +347,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SignificantOthers());
             return S_OK;
         }
@@ -340,6 +362,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Websites());
             return S_OK;
         }
@@ -354,6 +377,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProviderProperties());
             return S_OK;
         }
@@ -372,6 +396,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContactListId());
             return S_OK;
         }
@@ -386,6 +411,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayPictureUserUpdateTime());
             return S_OK;
         }
@@ -399,6 +425,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisplayPictureUserUpdateTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -412,6 +439,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsMe());
             return S_OK;
         }
@@ -425,6 +453,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AggregateId());
             return S_OK;
         }
@@ -439,6 +468,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteId());
             return S_OK;
         }
@@ -453,6 +483,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -466,6 +497,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RingToneToken());
             return S_OK;
         }
@@ -480,6 +512,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RingToneToken(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -493,6 +526,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDisplayPictureManuallySet());
             return S_OK;
         }
@@ -506,6 +540,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LargeDisplayPicture());
             return S_OK;
         }
@@ -520,6 +555,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SmallDisplayPicture());
             return S_OK;
         }
@@ -534,6 +570,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourceDisplayPicture());
             return S_OK;
         }
@@ -548,6 +585,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceDisplayPicture(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
@@ -561,6 +599,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextToneToken());
             return S_OK;
         }
@@ -575,6 +614,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TextToneToken(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -588,6 +628,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsAggregate());
             return S_OK;
         }
@@ -601,6 +642,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FullName());
             return S_OK;
         }
@@ -615,6 +657,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayNameOverride());
             return S_OK;
         }
@@ -629,6 +672,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisplayNameOverride(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -642,6 +686,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Nickname());
             return S_OK;
         }
@@ -656,6 +701,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Nickname(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -669,6 +715,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SortName());
             return S_OK;
         }
@@ -687,6 +734,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAddress> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StreetAddress());
             return S_OK;
         }
@@ -701,6 +749,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAddress> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StreetAddress(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -714,6 +763,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAddress> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Locality());
             return S_OK;
         }
@@ -728,6 +778,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAddress> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Locality(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -741,6 +792,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAddress> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Region());
             return S_OK;
         }
@@ -755,6 +807,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAddress> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Region(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -768,6 +821,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAddress> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Country());
             return S_OK;
         }
@@ -782,6 +836,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAddress> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Country(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -795,6 +850,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAddress> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PostalCode());
             return S_OK;
         }
@@ -809,6 +865,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAddress> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PostalCode(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -822,6 +879,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAddress> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -835,6 +893,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAddress> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Kind(value);
             return S_OK;
         }
@@ -848,6 +907,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAddress> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -862,6 +922,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAddress> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Description(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -879,6 +940,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotation> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -893,6 +955,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotation> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AnnotationListId());
             return S_OK;
         }
@@ -907,6 +970,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotation> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContactId());
             return S_OK;
         }
@@ -921,6 +985,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotation> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContactId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -934,6 +999,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotation> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteId());
             return S_OK;
         }
@@ -948,6 +1014,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotation> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -961,6 +1028,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotation> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedOperations());
             return S_OK;
         }
@@ -974,6 +1042,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotation> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SupportedOperations(value);
             return S_OK;
         }
@@ -987,6 +1056,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotation> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDisabled());
             return S_OK;
         }
@@ -1000,6 +1070,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotation> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProviderProperties());
             return S_OK;
         }
@@ -1018,6 +1089,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationList> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -1032,6 +1104,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationList> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProviderPackageFamilyName());
             return S_OK;
         }
@@ -1046,6 +1119,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationList> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserDataAccountId());
             return S_OK;
         }
@@ -1060,6 +1134,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationList> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeleteAsync());
             return S_OK;
         }
@@ -1074,6 +1149,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationList> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *ppResult = detach(this->shim().TrySaveAnnotationAsync(*reinterpret_cast<const Windows::ApplicationModel::Contacts::ContactAnnotation *>(&annotation)));
             return S_OK;
         }
@@ -1088,6 +1164,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationList> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *annotation = detach(this->shim().GetAnnotationAsync(*reinterpret_cast<const hstring *>(&annotationId)));
             return S_OK;
         }
@@ -1102,6 +1179,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationList> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *annotations = detach(this->shim().FindAnnotationsByRemoteIdAsync(*reinterpret_cast<const hstring *>(&remoteId)));
             return S_OK;
         }
@@ -1116,6 +1194,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationList> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *annotations = detach(this->shim().FindAnnotationsAsync());
             return S_OK;
         }
@@ -1130,6 +1209,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationList> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeleteAnnotationAsync(*reinterpret_cast<const Windows::ApplicationModel::Contacts::ContactAnnotation *>(&annotation)));
             return S_OK;
         }
@@ -1148,6 +1228,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationStore> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contactIds = detach(this->shim().FindContactIdsByEmailAsync(*reinterpret_cast<const hstring *>(&emailAddress)));
             return S_OK;
         }
@@ -1162,6 +1243,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationStore> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contactIds = detach(this->shim().FindContactIdsByPhoneNumberAsync(*reinterpret_cast<const hstring *>(&phoneNumber)));
             return S_OK;
         }
@@ -1176,6 +1258,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationStore> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *annotations = detach(this->shim().FindAnnotationsForContactAsync(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact)));
             return S_OK;
         }
@@ -1190,6 +1273,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationStore> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisableAnnotationAsync(*reinterpret_cast<const Windows::ApplicationModel::Contacts::ContactAnnotation *>(&annotation)));
             return S_OK;
         }
@@ -1204,6 +1288,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationStore> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateAnnotationListAsync());
             return S_OK;
         }
@@ -1218,6 +1303,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationStore> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateAnnotationListAsync(*reinterpret_cast<const hstring *>(&userDataAccountId)));
             return S_OK;
         }
@@ -1232,6 +1318,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationStore> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetAnnotationListAsync(*reinterpret_cast<const hstring *>(&annotationListId)));
             return S_OK;
         }
@@ -1246,6 +1333,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationStore> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *lists = detach(this->shim().FindAnnotationListsAsync());
             return S_OK;
         }
@@ -1264,6 +1352,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactBatch> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Contacts());
             return S_OK;
         }
@@ -1278,6 +1367,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactBatch> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -1295,6 +1385,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactCardDelayedDataLo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetData(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact));
             return S_OK;
         }
@@ -1312,6 +1403,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactCardOptions> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HeaderKind());
             return S_OK;
         }
@@ -1325,6 +1417,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactCardOptions> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().HeaderKind(value);
             return S_OK;
         }
@@ -1338,6 +1431,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactCardOptions> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InitialTabKind());
             return S_OK;
         }
@@ -1351,6 +1445,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactCardOptions> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InitialTabKind(value);
             return S_OK;
         }
@@ -1368,6 +1463,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactCardOptions2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerSearchContactListIds());
             return S_OK;
         }
@@ -1386,6 +1482,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactChange> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChangeType());
             return S_OK;
         }
@@ -1399,6 +1496,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactChange> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Contact());
             return S_OK;
         }
@@ -1417,6 +1515,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactChangeReader> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AcceptChanges();
             return S_OK;
         }
@@ -1430,6 +1529,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactChangeReader> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AcceptChangesThrough(*reinterpret_cast<const Windows::ApplicationModel::Contacts::ContactChange *>(&lastChangeToAccept));
             return S_OK;
         }
@@ -1443,6 +1543,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactChangeReader> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadBatchAsync());
             return S_OK;
         }
@@ -1461,6 +1562,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactChangeTracker> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Enable();
             return S_OK;
         }
@@ -1474,6 +1576,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactChangeTracker> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetChangeReader());
             return S_OK;
         }
@@ -1488,6 +1591,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactChangeTracker> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Reset();
             return S_OK;
         }
@@ -1505,6 +1609,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactChangedDeferral> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -1522,6 +1627,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactChangedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1540,6 +1646,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactConnectedServiceA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -1554,6 +1661,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactConnectedServiceA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Id(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1567,6 +1675,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactConnectedServiceA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceName());
             return S_OK;
         }
@@ -1581,6 +1690,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactConnectedServiceA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ServiceName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1598,6 +1708,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactDate> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Day());
             return S_OK;
         }
@@ -1612,6 +1723,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactDate> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Day(*reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&value));
             return S_OK;
         }
@@ -1625,6 +1737,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactDate> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Month());
             return S_OK;
         }
@@ -1639,6 +1752,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactDate> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Month(*reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&value));
             return S_OK;
         }
@@ -1652,6 +1766,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactDate> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Year());
             return S_OK;
         }
@@ -1666,6 +1781,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactDate> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Year(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -1679,6 +1795,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactDate> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -1692,6 +1809,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactDate> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Kind(value);
             return S_OK;
         }
@@ -1705,6 +1823,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactDate> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -1719,6 +1838,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactDate> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Description(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1736,6 +1856,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactEmail> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Address());
             return S_OK;
         }
@@ -1750,6 +1871,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactEmail> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Address(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1763,6 +1885,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactEmail> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -1776,6 +1899,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactEmail> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Kind(value);
             return S_OK;
         }
@@ -1789,6 +1913,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactEmail> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -1803,6 +1928,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactEmail> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Description(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1820,6 +1946,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactField> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -1833,6 +1960,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactField> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Category());
             return S_OK;
         }
@@ -1846,6 +1974,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactField> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -1860,6 +1989,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactField> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -1878,6 +2008,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactFieldFactory> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *field = detach(this->shim().CreateField(*reinterpret_cast<const hstring *>(&value), type));
             return S_OK;
         }
@@ -1892,6 +2023,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactFieldFactory> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *field = detach(this->shim().CreateField(*reinterpret_cast<const hstring *>(&value), type, category));
             return S_OK;
         }
@@ -1906,6 +2038,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactFieldFactory> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *field = detach(this->shim().CreateField(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value), type, category));
             return S_OK;
         }
@@ -1924,6 +2057,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -1938,6 +2072,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetThumbnailAsync());
             return S_OK;
         }
@@ -1952,6 +2087,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Emails());
             return S_OK;
         }
@@ -1966,6 +2102,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PhoneNumbers());
             return S_OK;
         }
@@ -1980,6 +2117,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Locations());
             return S_OK;
         }
@@ -1994,6 +2132,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InstantMessages());
             return S_OK;
         }
@@ -2008,6 +2147,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CustomFields());
             return S_OK;
         }
@@ -2022,6 +2162,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactInformation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().QueryCustomFields(*reinterpret_cast<const hstring *>(&customName)));
             return S_OK;
         }
@@ -2040,6 +2181,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactInstantMessageFie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserName());
             return S_OK;
         }
@@ -2054,6 +2196,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactInstantMessageFie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Service());
             return S_OK;
         }
@@ -2068,6 +2211,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactInstantMessageFie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayText());
             return S_OK;
         }
@@ -2082,6 +2226,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactInstantMessageFie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LaunchUri());
             return S_OK;
         }
@@ -2100,6 +2245,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactInstantMessageFie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *field = detach(this->shim().CreateInstantMessage(*reinterpret_cast<const hstring *>(&userName)));
             return S_OK;
         }
@@ -2114,6 +2260,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactInstantMessageFie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *field = detach(this->shim().CreateInstantMessage(*reinterpret_cast<const hstring *>(&userName), category));
             return S_OK;
         }
@@ -2128,6 +2275,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactInstantMessageFie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *field = detach(this->shim().CreateInstantMessage(*reinterpret_cast<const hstring *>(&userName), category, *reinterpret_cast<const hstring *>(&service), *reinterpret_cast<const hstring *>(&displayText), *reinterpret_cast<const Windows::Foundation::Uri *>(&verb)));
             return S_OK;
         }
@@ -2146,6 +2294,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactJobInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CompanyName());
             return S_OK;
         }
@@ -2160,6 +2309,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactJobInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CompanyName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2173,6 +2323,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactJobInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CompanyYomiName());
             return S_OK;
         }
@@ -2187,6 +2338,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactJobInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CompanyYomiName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2200,6 +2352,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactJobInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Department());
             return S_OK;
         }
@@ -2214,6 +2367,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactJobInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Department(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2227,6 +2381,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactJobInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -2241,6 +2396,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactJobInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2254,6 +2410,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactJobInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Manager());
             return S_OK;
         }
@@ -2268,6 +2425,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactJobInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Manager(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2281,6 +2439,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactJobInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Office());
             return S_OK;
         }
@@ -2295,6 +2454,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactJobInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Office(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2308,6 +2468,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactJobInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CompanyAddress());
             return S_OK;
         }
@@ -2322,6 +2483,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactJobInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CompanyAddress(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2335,6 +2497,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactJobInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -2349,6 +2512,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactJobInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Description(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2366,6 +2530,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactLaunchActionVerbs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Call());
             return S_OK;
         }
@@ -2380,6 +2545,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactLaunchActionVerbs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Message());
             return S_OK;
         }
@@ -2394,6 +2560,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactLaunchActionVerbs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Map());
             return S_OK;
         }
@@ -2408,6 +2575,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactLaunchActionVerbs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Post());
             return S_OK;
         }
@@ -2422,6 +2590,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactLaunchActionVerbs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoCall());
             return S_OK;
         }
@@ -2440,6 +2609,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -2454,6 +2624,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -2468,6 +2639,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2481,6 +2653,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourceDisplayName());
             return S_OK;
         }
@@ -2495,6 +2668,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsHidden());
             return S_OK;
         }
@@ -2508,6 +2682,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsHidden(value);
             return S_OK;
         }
@@ -2521,6 +2696,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OtherAppReadAccess());
             return S_OK;
         }
@@ -2534,6 +2710,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OtherAppReadAccess(value);
             return S_OK;
         }
@@ -2547,6 +2724,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OtherAppWriteAccess());
             return S_OK;
         }
@@ -2560,6 +2738,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OtherAppWriteAccess(value);
             return S_OK;
         }
@@ -2573,6 +2752,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChangeTracker());
             return S_OK;
         }
@@ -2587,6 +2767,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SyncManager());
             return S_OK;
         }
@@ -2601,6 +2782,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportsServerSearch());
             return S_OK;
         }
@@ -2614,6 +2796,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserDataAccountId());
             return S_OK;
         }
@@ -2628,6 +2811,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().ContactChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactList, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -2641,6 +2825,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContactChanged(value);
             return S_OK;
         }
@@ -2654,6 +2839,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().SaveAsync());
             return S_OK;
         }
@@ -2668,6 +2854,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().DeleteAsync());
             return S_OK;
         }
@@ -2682,6 +2869,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contact = detach(this->shim().GetContactFromRemoteIdAsync(*reinterpret_cast<const hstring *>(&remoteId)));
             return S_OK;
         }
@@ -2696,6 +2884,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *meContact = detach(this->shim().GetMeContactAsync());
             return S_OK;
         }
@@ -2710,6 +2899,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetContactReader());
             return S_OK;
         }
@@ -2724,6 +2914,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetContactReader(*reinterpret_cast<const Windows::ApplicationModel::Contacts::ContactQueryOptions *>(&options)));
             return S_OK;
         }
@@ -2738,6 +2929,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SaveContactAsync(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact)));
             return S_OK;
         }
@@ -2752,6 +2944,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeleteContactAsync(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact)));
             return S_OK;
         }
@@ -2766,6 +2959,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contacts = detach(this->shim().GetContactAsync(*reinterpret_cast<const hstring *>(&contactId)));
             return S_OK;
         }
@@ -2784,6 +2978,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList2> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RegisterSyncManagerAsync());
             return S_OK;
         }
@@ -2798,6 +2993,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList2> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SupportsServerSearch(value);
             return S_OK;
         }
@@ -2811,6 +3007,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactList2> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SyncConstraints());
             return S_OK;
         }
@@ -2829,6 +3026,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanSyncDescriptions());
             return S_OK;
         }
@@ -2842,6 +3040,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanSyncDescriptions(value);
             return S_OK;
         }
@@ -2855,6 +3054,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxHomePhoneNumbers());
             return S_OK;
         }
@@ -2869,6 +3069,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxHomePhoneNumbers(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -2882,6 +3083,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxMobilePhoneNumbers());
             return S_OK;
         }
@@ -2896,6 +3098,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxMobilePhoneNumbers(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -2909,6 +3112,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxWorkPhoneNumbers());
             return S_OK;
         }
@@ -2923,6 +3127,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxWorkPhoneNumbers(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -2936,6 +3141,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxOtherPhoneNumbers());
             return S_OK;
         }
@@ -2950,6 +3156,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxOtherPhoneNumbers(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -2963,6 +3170,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxPagerPhoneNumbers());
             return S_OK;
         }
@@ -2977,6 +3185,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxPagerPhoneNumbers(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -2990,6 +3199,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxBusinessFaxPhoneNumbers());
             return S_OK;
         }
@@ -3004,6 +3214,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxBusinessFaxPhoneNumbers(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3017,6 +3228,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxHomeFaxPhoneNumbers());
             return S_OK;
         }
@@ -3031,6 +3243,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxHomeFaxPhoneNumbers(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3044,6 +3257,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxCompanyPhoneNumbers());
             return S_OK;
         }
@@ -3058,6 +3272,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxCompanyPhoneNumbers(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3071,6 +3286,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxAssistantPhoneNumbers());
             return S_OK;
         }
@@ -3085,6 +3301,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxAssistantPhoneNumbers(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3098,6 +3315,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxRadioPhoneNumbers());
             return S_OK;
         }
@@ -3112,6 +3330,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxRadioPhoneNumbers(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3125,6 +3344,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxPersonalEmailAddresses());
             return S_OK;
         }
@@ -3139,6 +3359,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxPersonalEmailAddresses(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3152,6 +3373,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxWorkEmailAddresses());
             return S_OK;
         }
@@ -3166,6 +3388,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxWorkEmailAddresses(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3179,6 +3402,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxOtherEmailAddresses());
             return S_OK;
         }
@@ -3193,6 +3417,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxOtherEmailAddresses(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3206,6 +3431,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxHomeAddresses());
             return S_OK;
         }
@@ -3220,6 +3446,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxHomeAddresses(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3233,6 +3460,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxWorkAddresses());
             return S_OK;
         }
@@ -3247,6 +3475,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxWorkAddresses(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3260,6 +3489,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxOtherAddresses());
             return S_OK;
         }
@@ -3274,6 +3504,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxOtherAddresses(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3287,6 +3518,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxBirthdayDates());
             return S_OK;
         }
@@ -3301,6 +3533,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxBirthdayDates(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3314,6 +3547,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxAnniversaryDates());
             return S_OK;
         }
@@ -3328,6 +3562,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxAnniversaryDates(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3341,6 +3576,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxOtherDates());
             return S_OK;
         }
@@ -3355,6 +3591,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxOtherDates(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3368,6 +3605,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxOtherRelationships());
             return S_OK;
         }
@@ -3382,6 +3620,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxOtherRelationships(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3395,6 +3634,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxSpouseRelationships());
             return S_OK;
         }
@@ -3409,6 +3649,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxSpouseRelationships(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3422,6 +3663,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxPartnerRelationships());
             return S_OK;
         }
@@ -3436,6 +3678,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxPartnerRelationships(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3449,6 +3692,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxSiblingRelationships());
             return S_OK;
         }
@@ -3463,6 +3707,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxSiblingRelationships(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3476,6 +3721,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxParentRelationships());
             return S_OK;
         }
@@ -3490,6 +3736,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxParentRelationships(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3503,6 +3750,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxChildRelationships());
             return S_OK;
         }
@@ -3517,6 +3765,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxChildRelationships(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3530,6 +3779,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxJobInfo());
             return S_OK;
         }
@@ -3544,6 +3794,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxJobInfo(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3557,6 +3808,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxWebsites());
             return S_OK;
         }
@@ -3571,6 +3823,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstrain
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxWebsites(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
             return S_OK;
         }
@@ -3588,6 +3841,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncManager> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -3601,6 +3855,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncManager> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastSuccessfulSyncTime());
             return S_OK;
         }
@@ -3614,6 +3869,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncManager> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastAttemptedSyncTime());
             return S_OK;
         }
@@ -3627,6 +3883,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncManager> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SyncAsync());
             return S_OK;
         }
@@ -3641,6 +3898,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncManager> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SyncStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -3654,6 +3912,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncManager> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SyncStatusChanged(token);
             return S_OK;
         }
@@ -3671,6 +3930,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncManager2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Status(value);
             return S_OK;
         }
@@ -3684,6 +3944,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncManager2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LastSuccessfulSyncTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -3697,6 +3958,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncManager2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LastAttemptedSyncTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -3714,6 +3976,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactLocationField> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnstructuredAddress());
             return S_OK;
         }
@@ -3728,6 +3991,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactLocationField> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Street());
             return S_OK;
         }
@@ -3742,6 +4006,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactLocationField> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().City());
             return S_OK;
         }
@@ -3756,6 +4021,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactLocationField> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Region());
             return S_OK;
         }
@@ -3770,6 +4036,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactLocationField> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Country());
             return S_OK;
         }
@@ -3784,6 +4051,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactLocationField> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PostalCode());
             return S_OK;
         }
@@ -3802,6 +4070,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactLocationFieldFact
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *field = detach(this->shim().CreateLocation(*reinterpret_cast<const hstring *>(&unstructuredAddress)));
             return S_OK;
         }
@@ -3816,6 +4085,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactLocationFieldFact
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *field = detach(this->shim().CreateLocation(*reinterpret_cast<const hstring *>(&unstructuredAddress), category));
             return S_OK;
         }
@@ -3830,6 +4100,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactLocationFieldFact
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *field = detach(this->shim().CreateLocation(*reinterpret_cast<const hstring *>(&unstructuredAddress), category, *reinterpret_cast<const hstring *>(&street), *reinterpret_cast<const hstring *>(&city), *reinterpret_cast<const hstring *>(&region), *reinterpret_cast<const hstring *>(&country), *reinterpret_cast<const hstring *>(&postalCode)));
             return S_OK;
         }
@@ -3848,6 +4119,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerForUser> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ConvertContactToVCardAsync(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact)));
             return S_OK;
         }
@@ -3862,6 +4134,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerForUser> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ConvertContactToVCardAsync(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact), maxBytes));
             return S_OK;
         }
@@ -3876,6 +4149,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerForUser> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ConvertVCardToContactAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&vCard)));
             return S_OK;
         }
@@ -3890,6 +4164,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerForUser> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestStoreAsync(accessType));
             return S_OK;
         }
@@ -3904,6 +4179,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerForUser> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestAnnotationStoreAsync(accessType));
             return S_OK;
         }
@@ -3918,6 +4194,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerForUser> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SystemDisplayNameOrder());
             return S_OK;
         }
@@ -3931,6 +4208,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerForUser> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SystemDisplayNameOrder(value);
             return S_OK;
         }
@@ -3944,6 +4222,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerForUser> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SystemSortOrder());
             return S_OK;
         }
@@ -3957,6 +4236,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerForUser> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SystemSortOrder(value);
             return S_OK;
         }
@@ -3970,6 +4250,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerForUser> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().User());
             return S_OK;
         }
@@ -3988,6 +4269,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShowContactCard(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact), *reinterpret_cast<const Windows::Foundation::Rect *>(&selection));
             return S_OK;
         }
@@ -4001,6 +4283,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShowContactCard(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact), *reinterpret_cast<const Windows::Foundation::Rect *>(&selection), preferredPlacement);
             return S_OK;
         }
@@ -4014,6 +4297,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *dataLoader = detach(this->shim().ShowDelayLoadedContactCard(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact), *reinterpret_cast<const Windows::Foundation::Rect *>(&selection), preferredPlacement));
             return S_OK;
         }
@@ -4032,6 +4316,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *store = detach(this->shim().RequestStoreAsync());
             return S_OK;
         }
@@ -4050,6 +4335,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *vCard = detach(this->shim().ConvertContactToVCardAsync(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact)));
             return S_OK;
         }
@@ -4064,6 +4350,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *vCard = detach(this->shim().ConvertContactToVCardAsync(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact), maxBytes));
             return S_OK;
         }
@@ -4078,6 +4365,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contact = detach(this->shim().ConvertVCardToContactAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&vCard)));
             return S_OK;
         }
@@ -4092,6 +4380,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *store = detach(this->shim().RequestStoreAsync(accessType));
             return S_OK;
         }
@@ -4106,6 +4395,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *store = detach(this->shim().RequestAnnotationStoreAsync(accessType));
             return S_OK;
         }
@@ -4120,6 +4410,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsShowContactCardSupported());
             return S_OK;
         }
@@ -4133,6 +4424,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShowContactCard(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact), *reinterpret_cast<const Windows::Foundation::Rect *>(&selection), preferredPlacement, *reinterpret_cast<const Windows::ApplicationModel::Contacts::ContactCardOptions *>(&contactCardOptions));
             return S_OK;
         }
@@ -4146,6 +4438,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsShowDelayLoadedContactCardSupported());
             return S_OK;
         }
@@ -4159,6 +4452,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *dataLoader = detach(this->shim().ShowDelayLoadedContactCard(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact), *reinterpret_cast<const Windows::Foundation::Rect *>(&selection), preferredPlacement, *reinterpret_cast<const Windows::ApplicationModel::Contacts::ContactCardOptions *>(&contactCardOptions)));
             return S_OK;
         }
@@ -4173,6 +4467,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShowFullContactCard(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact), *reinterpret_cast<const Windows::ApplicationModel::Contacts::FullContactCardOptions *>(&fullContactCardOptions));
             return S_OK;
         }
@@ -4186,6 +4481,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SystemDisplayNameOrder());
             return S_OK;
         }
@@ -4199,6 +4495,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SystemDisplayNameOrder(value);
             return S_OK;
         }
@@ -4212,6 +4509,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SystemSortOrder());
             return S_OK;
         }
@@ -4225,6 +4523,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SystemSortOrder(value);
             return S_OK;
         }
@@ -4242,6 +4541,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics4> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
@@ -4260,6 +4560,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactMatchReason> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Field());
             return S_OK;
         }
@@ -4273,6 +4574,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactMatchReason> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Segments());
             return S_OK;
         }
@@ -4287,6 +4589,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactMatchReason> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -4305,6 +4608,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactName> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FirstName());
             return S_OK;
         }
@@ -4319,6 +4623,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactName> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FirstName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4332,6 +4637,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactName> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastName());
             return S_OK;
         }
@@ -4346,6 +4652,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactName> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LastName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4359,6 +4666,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactName> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MiddleName());
             return S_OK;
         }
@@ -4373,6 +4681,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactName> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MiddleName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4386,6 +4695,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactName> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().YomiGivenName());
             return S_OK;
         }
@@ -4400,6 +4710,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactName> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().YomiGivenName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4413,6 +4724,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactName> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().YomiFamilyName());
             return S_OK;
         }
@@ -4427,6 +4739,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactName> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().YomiFamilyName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4440,6 +4753,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactName> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HonorificNameSuffix());
             return S_OK;
         }
@@ -4454,6 +4768,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactName> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().HonorificNameSuffix(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4467,6 +4782,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactName> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HonorificNamePrefix());
             return S_OK;
         }
@@ -4481,6 +4797,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactName> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().HonorificNamePrefix(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4494,6 +4811,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactName> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -4508,6 +4826,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactName> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().YomiDisplayName());
             return S_OK;
         }
@@ -4526,6 +4845,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactPhone> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Number());
             return S_OK;
         }
@@ -4540,6 +4860,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactPhone> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Number(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4553,6 +4874,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactPhone> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -4566,6 +4888,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactPhone> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Kind(value);
             return S_OK;
         }
@@ -4579,6 +4902,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactPhone> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -4593,6 +4917,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactPhone> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Description(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4610,6 +4935,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactPicker> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CommitButtonText());
             return S_OK;
         }
@@ -4624,6 +4950,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactPicker> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CommitButtonText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4637,6 +4964,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactPicker> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SelectionMode());
             return S_OK;
         }
@@ -4650,6 +4978,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactPicker> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SelectionMode(value);
             return S_OK;
         }
@@ -4663,6 +4992,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactPicker> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredFields());
             return S_OK;
         }
@@ -4677,6 +5007,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactPicker> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().PickSingleContactAsync());
             return S_OK;
         }
@@ -4691,6 +5022,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactPicker> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().PickMultipleContactsAsync());
             return S_OK;
         }
@@ -4709,6 +5041,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactPicker2> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredFieldsWithContactFieldType());
             return S_OK;
         }
@@ -4723,6 +5056,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactPicker2> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().PickContactAsync());
             return S_OK;
         }
@@ -4737,6 +5071,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactPicker2> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().PickContactsAsync());
             return S_OK;
         }
@@ -4755,6 +5090,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryOptions> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextSearch());
             return S_OK;
         }
@@ -4769,6 +5105,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryOptions> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContactListIds());
             return S_OK;
         }
@@ -4783,6 +5120,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryOptions> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IncludeContactsFromHiddenLists());
             return S_OK;
         }
@@ -4796,6 +5134,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryOptions> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IncludeContactsFromHiddenLists(value);
             return S_OK;
         }
@@ -4809,6 +5148,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryOptions> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredFields());
             return S_OK;
         }
@@ -4822,6 +5162,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryOptions> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DesiredFields(value);
             return S_OK;
         }
@@ -4835,6 +5176,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryOptions> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredOperations());
             return S_OK;
         }
@@ -4848,6 +5190,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryOptions> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DesiredOperations(value);
             return S_OK;
         }
@@ -4861,6 +5204,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryOptions> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AnnotationListIds());
             return S_OK;
         }
@@ -4879,6 +5223,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryOptionsFacto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateWithText(*reinterpret_cast<const hstring *>(&text)));
             return S_OK;
         }
@@ -4893,6 +5238,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryOptionsFacto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateWithTextAndFields(*reinterpret_cast<const hstring *>(&text), fields));
             return S_OK;
         }
@@ -4911,6 +5257,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryTextSearch> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Fields());
             return S_OK;
         }
@@ -4924,6 +5271,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryTextSearch> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Fields(value);
             return S_OK;
         }
@@ -4937,6 +5285,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryTextSearch> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -4951,6 +5300,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryTextSearch> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Text(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4964,6 +5314,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryTextSearch> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SearchScope());
             return S_OK;
         }
@@ -4977,6 +5328,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryTextSearch> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SearchScope(value);
             return S_OK;
         }
@@ -4994,6 +5346,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactReader> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadBatchAsync());
             return S_OK;
         }
@@ -5008,6 +5361,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactReader> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *ppRetVal = detach(this->shim().GetMatchingPropertiesWithMatchReason(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact)));
             return S_OK;
         }
@@ -5026,6 +5380,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactSignificantOther>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -5040,6 +5395,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactSignificantOther>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -5053,6 +5409,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactSignificantOther>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -5067,6 +5424,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactSignificantOther>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Description(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -5084,6 +5442,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactSignificantOther2
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Relationship());
             return S_OK;
         }
@@ -5097,6 +5456,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactSignificantOther2
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Relationship(value);
             return S_OK;
         }
@@ -5114,6 +5474,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactStore> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contacts = detach(this->shim().FindContactsAsync());
             return S_OK;
         }
@@ -5128,6 +5489,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactStore> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contacts = detach(this->shim().FindContactsAsync(*reinterpret_cast<const hstring *>(&searchText)));
             return S_OK;
         }
@@ -5142,6 +5504,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactStore> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contacts = detach(this->shim().GetContactAsync(*reinterpret_cast<const hstring *>(&contactId)));
             return S_OK;
         }
@@ -5160,6 +5523,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChangeTracker());
             return S_OK;
         }
@@ -5174,6 +5538,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().ContactChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactStore, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -5187,6 +5552,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContactChanged(value);
             return S_OK;
         }
@@ -5200,6 +5566,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AggregateContactManager());
             return S_OK;
         }
@@ -5214,6 +5581,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FindContactListsAsync());
             return S_OK;
         }
@@ -5228,6 +5596,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetContactListAsync(*reinterpret_cast<const hstring *>(&contactListId)));
             return S_OK;
         }
@@ -5242,6 +5611,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateContactListAsync(*reinterpret_cast<const hstring *>(&displayName)));
             return S_OK;
         }
@@ -5256,6 +5626,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *meContact = detach(this->shim().GetMeContactAsync());
             return S_OK;
         }
@@ -5270,6 +5641,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetContactReader());
             return S_OK;
         }
@@ -5284,6 +5656,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetContactReader(*reinterpret_cast<const Windows::ApplicationModel::Contacts::ContactQueryOptions *>(&options)));
             return S_OK;
         }
@@ -5298,6 +5671,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateContactListAsync(*reinterpret_cast<const hstring *>(&displayName), *reinterpret_cast<const hstring *>(&userDataAccountId)));
             return S_OK;
         }
@@ -5320,6 +5694,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactWebsite> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Uri());
             return S_OK;
         }
@@ -5334,6 +5709,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactWebsite> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Uri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -5347,6 +5723,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactWebsite> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -5361,6 +5738,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactWebsite> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Description(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -5378,6 +5756,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactWebsite2> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RawValue());
             return S_OK;
         }
@@ -5392,6 +5771,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactWebsite2> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RawValue(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -5409,6 +5789,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IFullContactCardOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredRemainingView());
             return S_OK;
         }
@@ -5422,6 +5803,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IFullContactCardOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DesiredRemainingView(value);
             return S_OK;
         }
@@ -5439,6 +5821,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Email());
             return S_OK;
         }
@@ -5453,6 +5836,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PhoneNumber());
             return S_OK;
         }
@@ -5467,6 +5851,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Location());
             return S_OK;
         }
@@ -5481,6 +5866,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InstantMessage());
             return S_OK;
         }
@@ -5495,6 +5881,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *type = detach(this->shim().ConvertNameToType(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -5508,6 +5895,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *name = detach(this->shim().ConvertTypeToName(type));
             return S_OK;
         }

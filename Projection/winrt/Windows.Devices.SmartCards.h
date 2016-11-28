@@ -41,6 +41,7 @@ struct produce<D, Windows::Devices::SmartCards::ICardAddedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SmartCard());
             return S_OK;
         }
@@ -59,6 +60,7 @@ struct produce<D, Windows::Devices::SmartCards::ICardRemovedEventArgs> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SmartCard());
             return S_OK;
         }
@@ -77,6 +79,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCard> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reader());
             return S_OK;
         }
@@ -91,6 +94,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCard> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetStatusAsync());
             return S_OK;
         }
@@ -105,6 +109,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCard> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetAnswerToResetAsync());
             return S_OK;
         }
@@ -123,6 +128,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardChallengeContext> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Challenge());
             return S_OK;
         }
@@ -137,6 +143,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardChallengeContext> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().VerifyResponseAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&response)));
             return S_OK;
         }
@@ -151,6 +158,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardChallengeContext> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ProvisionAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&response), formatCard));
             return S_OK;
         }
@@ -165,6 +173,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardChallengeContext> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ProvisionAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&response), formatCard, newCardId));
             return S_OK;
         }
@@ -179,6 +188,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardChallengeContext> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ChangeAdministrativeKeyAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&response), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&newAdministrativeKey)));
             return S_OK;
         }
@@ -197,6 +207,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardConnect> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ConnectAsync());
             return S_OK;
         }
@@ -215,6 +226,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardConnection> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TransmitAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&command)));
             return S_OK;
         }
@@ -233,6 +245,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinPolicy> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinLength());
             return S_OK;
         }
@@ -246,6 +259,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinPolicy> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MinLength(value);
             return S_OK;
         }
@@ -259,6 +273,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinPolicy> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxLength());
             return S_OK;
         }
@@ -272,6 +287,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinPolicy> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxLength(value);
             return S_OK;
         }
@@ -285,6 +301,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinPolicy> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UppercaseLetters());
             return S_OK;
         }
@@ -298,6 +315,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinPolicy> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UppercaseLetters(value);
             return S_OK;
         }
@@ -311,6 +329,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinPolicy> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LowercaseLetters());
             return S_OK;
         }
@@ -324,6 +343,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinPolicy> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LowercaseLetters(value);
             return S_OK;
         }
@@ -337,6 +357,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinPolicy> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Digits());
             return S_OK;
         }
@@ -350,6 +371,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinPolicy> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Digits(value);
             return S_OK;
         }
@@ -363,6 +385,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinPolicy> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SpecialCharacters());
             return S_OK;
         }
@@ -376,6 +399,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinPolicy> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SpecialCharacters(value);
             return S_OK;
         }
@@ -393,6 +417,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinResetDeferral> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -410,6 +435,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinResetRequest> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Challenge());
             return S_OK;
         }
@@ -424,6 +450,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinResetRequest> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Deadline());
             return S_OK;
         }
@@ -437,6 +464,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinResetRequest> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -451,6 +479,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardPinResetRequest> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetResponse(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&response));
             return S_OK;
         }
@@ -468,6 +497,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioning> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SmartCard());
             return S_OK;
         }
@@ -482,6 +512,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioning> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetIdAsync());
             return S_OK;
         }
@@ -496,6 +527,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioning> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetNameAsync());
             return S_OK;
         }
@@ -510,6 +542,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioning> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetChallengeContextAsync());
             return S_OK;
         }
@@ -524,6 +557,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioning> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestPinChangeAsync());
             return S_OK;
         }
@@ -538,6 +572,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioning> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestPinResetAsync(*reinterpret_cast<const Windows::Devices::SmartCards::SmartCardPinResetHandler *>(&handler)));
             return S_OK;
         }
@@ -556,6 +591,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioning2> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetAuthorityKeyContainerNameAsync());
             return S_OK;
         }
@@ -574,6 +610,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioningStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FromSmartCardAsync(*reinterpret_cast<const Windows::Devices::SmartCards::SmartCard *>(&card)));
             return S_OK;
         }
@@ -588,6 +625,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioningStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestVirtualSmartCardCreationAsync(*reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&administrativeKey), *reinterpret_cast<const Windows::Devices::SmartCards::SmartCardPinPolicy *>(&pinPolicy)));
             return S_OK;
         }
@@ -602,6 +640,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioningStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestVirtualSmartCardCreationAsync(*reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&administrativeKey), *reinterpret_cast<const Windows::Devices::SmartCards::SmartCardPinPolicy *>(&pinPolicy), cardId));
             return S_OK;
         }
@@ -616,6 +655,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioningStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestVirtualSmartCardDeletionAsync(*reinterpret_cast<const Windows::Devices::SmartCards::SmartCard *>(&card)));
             return S_OK;
         }
@@ -634,6 +674,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioningStatics2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestAttestedVirtualSmartCardCreationAsync(*reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&administrativeKey), *reinterpret_cast<const Windows::Devices::SmartCards::SmartCardPinPolicy *>(&pinPolicy)));
             return S_OK;
         }
@@ -648,6 +689,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardProvisioningStatics2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestAttestedVirtualSmartCardCreationAsync(*reinterpret_cast<const hstring *>(&friendlyName), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&administrativeKey), *reinterpret_cast<const Windows::Devices::SmartCards::SmartCardPinPolicy *>(&pinPolicy), cardId));
             return S_OK;
         }
@@ -666,6 +708,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReader> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -680,6 +723,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReader> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -694,6 +738,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReader> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -707,6 +752,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReader> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetStatusAsync());
             return S_OK;
         }
@@ -721,6 +767,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReader> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindAllCardsAsync());
             return S_OK;
         }
@@ -735,6 +782,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReader> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CardAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::SmartCards::SmartCardReader, Windows::Devices::SmartCards::CardAddedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -748,6 +796,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReader> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CardAdded(token);
             return S_OK;
         }
@@ -761,6 +810,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReader> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CardRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::SmartCards::SmartCardReader, Windows::Devices::SmartCards::CardRemovedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -774,6 +824,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReader> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CardRemoved(token);
             return S_OK;
         }
@@ -791,6 +842,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReaderStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *selector = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -805,6 +857,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReaderStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *selector = detach(this->shim().GetDeviceSelector(kind));
             return S_OK;
         }
@@ -819,6 +872,7 @@ struct produce<D, Windows::Devices::SmartCards::ISmartCardReaderStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }

@@ -21,6 +21,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TargetRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragDropManager, Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDropOperationTargetRequestedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetRequested(value);
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AreConcurrentOperationsEnabled());
             return S_OK;
         }
@@ -60,6 +63,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AreConcurrentOperationsEnabled(value);
             return S_OK;
         }
@@ -77,6 +81,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -95,6 +100,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Data());
             return S_OK;
         }
@@ -109,6 +115,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Modifiers());
             return S_OK;
         }
@@ -122,6 +129,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -139,6 +147,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowedOperations());
             return S_OK;
         }
@@ -156,6 +165,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Data());
             return S_OK;
         }
@@ -170,6 +180,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetPointerId(pointerId);
             return S_OK;
         }
@@ -183,6 +194,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetDragUIContentFromSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&softwareBitmap));
             return S_OK;
         }
@@ -196,6 +208,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetDragUIContentFromSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&softwareBitmap), *reinterpret_cast<const Windows::Foundation::Point *>(&anchorPoint));
             return S_OK;
         }
@@ -209,6 +222,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DragUIContentMode());
             return S_OK;
         }
@@ -222,6 +236,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DragUIContentMode(value);
             return S_OK;
         }
@@ -235,6 +250,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StartAsync());
             return S_OK;
         }
@@ -253,6 +269,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowedOperations());
             return S_OK;
         }
@@ -266,6 +283,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowedOperations(value);
             return S_OK;
         }
@@ -283,6 +301,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetContentFromSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&softwareBitmap));
             return S_OK;
         }
@@ -296,6 +315,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetContentFromSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&softwareBitmap), *reinterpret_cast<const Windows::Foundation::Point *>(&anchorPoint));
             return S_OK;
         }
@@ -309,6 +329,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsContentVisible());
             return S_OK;
         }
@@ -322,6 +343,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsContentVisible(value);
             return S_OK;
         }
@@ -335,6 +357,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Caption());
             return S_OK;
         }
@@ -349,6 +372,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Caption(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -362,6 +386,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCaptionVisible());
             return S_OK;
         }
@@ -375,6 +400,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsCaptionVisible(value);
             return S_OK;
         }
@@ -388,6 +414,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsGlyphVisible());
             return S_OK;
         }
@@ -401,6 +428,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsGlyphVisible(value);
             return S_OK;
         }
@@ -414,6 +442,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Clear();
             return S_OK;
         }
@@ -431,6 +460,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().EnterAsync(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo *>(&dragInfo), *reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragUIOverride *>(&dragUIOverride)));
             return S_OK;
         }
@@ -445,6 +475,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().OverAsync(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo *>(&dragInfo), *reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragUIOverride *>(&dragUIOverride)));
             return S_OK;
         }
@@ -459,6 +490,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().LeaveAsync(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo *>(&dragInfo)));
             return S_OK;
         }
@@ -473,6 +505,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().DropAsync(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo *>(&dragInfo)));
             return S_OK;
         }
@@ -491,6 +524,7 @@ struct produce<D, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICore
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetTarget(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDropOperationTarget *>(&target));
             return S_OK;
         }

@@ -22,6 +22,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IAnnotationProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AnnotationTypeId());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IAnnotationProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AnnotationTypeName());
             return S_OK;
         }
@@ -49,6 +51,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IAnnotationProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Author());
             return S_OK;
         }
@@ -63,6 +66,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IAnnotationProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DateTime());
             return S_OK;
         }
@@ -77,6 +81,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IAnnotationProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Target());
             return S_OK;
         }
@@ -95,6 +100,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ICustomNavigationProv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().NavigateCustom(direction));
             return S_OK;
         }
@@ -113,6 +119,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IDockProvider> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DockPosition());
             return S_OK;
         }
@@ -126,6 +133,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IDockProvider> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetDockPosition(dockPosition);
             return S_OK;
         }
@@ -143,6 +151,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IDragProvider> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsGrabbed());
             return S_OK;
         }
@@ -156,6 +165,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IDragProvider> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DropEffect());
             return S_OK;
         }
@@ -170,6 +180,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IDragProvider> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__valueSize, *value) = detach(this->shim().DropEffects());
             return S_OK;
         }
@@ -185,6 +196,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IDragProvider> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__returnValueSize, *returnValue) = detach(this->shim().GetGrabbedItems());
             return S_OK;
         }
@@ -204,6 +216,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IDropTargetProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DropEffect());
             return S_OK;
         }
@@ -218,6 +231,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IDropTargetProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__valueSize, *value) = detach(this->shim().DropEffects());
             return S_OK;
         }
@@ -237,6 +251,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IExpandCollapseProvid
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExpandCollapseState());
             return S_OK;
         }
@@ -250,6 +265,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IExpandCollapseProvid
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Collapse();
             return S_OK;
         }
@@ -263,6 +279,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IExpandCollapseProvid
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Expand();
             return S_OK;
         }
@@ -280,6 +297,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IGridItemProvider> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Column());
             return S_OK;
         }
@@ -293,6 +311,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IGridItemProvider> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ColumnSpan());
             return S_OK;
         }
@@ -306,6 +325,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IGridItemProvider> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContainingGrid());
             return S_OK;
         }
@@ -320,6 +340,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IGridItemProvider> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Row());
             return S_OK;
         }
@@ -333,6 +354,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IGridItemProvider> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RowSpan());
             return S_OK;
         }
@@ -350,6 +372,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IGridProvider> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ColumnCount());
             return S_OK;
         }
@@ -363,6 +386,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IGridProvider> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RowCount());
             return S_OK;
         }
@@ -376,6 +400,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IGridProvider> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetItem(row, column));
             return S_OK;
         }
@@ -398,6 +423,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IInvokeProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Invoke();
             return S_OK;
         }
@@ -415,6 +441,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IItemContainerProvide
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FindItemByProperty(*reinterpret_cast<const Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple *>(&startAfter), *reinterpret_cast<const Windows::UI::Xaml::Automation::AutomationProperty *>(&automationProperty), *reinterpret_cast<const Windows::IInspectable *>(&value)));
             return S_OK;
         }
@@ -433,6 +460,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IMultipleViewProvider
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentView());
             return S_OK;
         }
@@ -446,6 +474,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IMultipleViewProvider
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__returnValueSize, *returnValue) = detach(this->shim().GetSupportedViews());
             return S_OK;
         }
@@ -461,6 +490,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IMultipleViewProvider
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetViewName(viewId));
             return S_OK;
         }
@@ -475,6 +505,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IMultipleViewProvider
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetCurrentView(viewId);
             return S_OK;
         }
@@ -492,6 +523,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IObjectModelProvider>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetUnderlyingObjectModel());
             return S_OK;
         }
@@ -510,6 +542,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IRangeValueProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsReadOnly());
             return S_OK;
         }
@@ -523,6 +556,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IRangeValueProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LargeChange());
             return S_OK;
         }
@@ -536,6 +570,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IRangeValueProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Maximum());
             return S_OK;
         }
@@ -549,6 +584,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IRangeValueProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Minimum());
             return S_OK;
         }
@@ -562,6 +598,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IRangeValueProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SmallChange());
             return S_OK;
         }
@@ -575,6 +612,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IRangeValueProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -588,6 +626,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IRangeValueProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetValue(value);
             return S_OK;
         }
@@ -605,6 +644,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IScrollItemProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ScrollIntoView();
             return S_OK;
         }
@@ -622,6 +662,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IScrollProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HorizontallyScrollable());
             return S_OK;
         }
@@ -635,6 +676,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IScrollProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HorizontalScrollPercent());
             return S_OK;
         }
@@ -648,6 +690,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IScrollProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HorizontalViewSize());
             return S_OK;
         }
@@ -661,6 +704,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IScrollProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VerticallyScrollable());
             return S_OK;
         }
@@ -674,6 +718,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IScrollProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VerticalScrollPercent());
             return S_OK;
         }
@@ -687,6 +732,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IScrollProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VerticalViewSize());
             return S_OK;
         }
@@ -700,6 +746,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IScrollProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Scroll(horizontalAmount, verticalAmount);
             return S_OK;
         }
@@ -713,6 +760,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IScrollProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetScrollPercent(horizontalPercent, verticalPercent);
             return S_OK;
         }
@@ -730,6 +778,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvide
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsSelected());
             return S_OK;
         }
@@ -743,6 +792,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvide
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SelectionContainer());
             return S_OK;
         }
@@ -757,6 +807,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvide
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddToSelection();
             return S_OK;
         }
@@ -770,6 +821,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvide
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveFromSelection();
             return S_OK;
         }
@@ -783,6 +835,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ISelectionItemProvide
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Select();
             return S_OK;
         }
@@ -800,6 +853,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ISelectionProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanSelectMultiple());
             return S_OK;
         }
@@ -813,6 +867,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ISelectionProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsSelectionRequired());
             return S_OK;
         }
@@ -826,6 +881,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ISelectionProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__returnValueSize, *returnValue) = detach(this->shim().GetSelection());
             return S_OK;
         }
@@ -845,6 +901,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ISpreadsheetItemProvi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Formula());
             return S_OK;
         }
@@ -859,6 +916,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ISpreadsheetItemProvi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__returnValueSize, *returnValue) = detach(this->shim().GetAnnotationObjects());
             return S_OK;
         }
@@ -874,6 +932,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ISpreadsheetItemProvi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__returnValueSize, *returnValue) = detach(this->shim().GetAnnotationTypes());
             return S_OK;
         }
@@ -893,6 +952,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ISpreadsheetProvider>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetItemByName(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -911,6 +971,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IStylesProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtendedProperties());
             return S_OK;
         }
@@ -925,6 +986,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IStylesProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FillColor());
             return S_OK;
         }
@@ -938,6 +1000,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IStylesProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FillPatternColor());
             return S_OK;
         }
@@ -951,6 +1014,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IStylesProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FillPatternStyle());
             return S_OK;
         }
@@ -965,6 +1029,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IStylesProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Shape());
             return S_OK;
         }
@@ -979,6 +1044,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IStylesProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StyleId());
             return S_OK;
         }
@@ -992,6 +1058,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IStylesProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StyleName());
             return S_OK;
         }
@@ -1010,6 +1077,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ISynchronizedInputPro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Cancel();
             return S_OK;
         }
@@ -1023,6 +1091,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ISynchronizedInputPro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartListening(inputType);
             return S_OK;
         }
@@ -1040,6 +1109,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITableItemProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__returnValueSize, *returnValue) = detach(this->shim().GetColumnHeaderItems());
             return S_OK;
         }
@@ -1055,6 +1125,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITableItemProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__returnValueSize, *returnValue) = detach(this->shim().GetRowHeaderItems());
             return S_OK;
         }
@@ -1074,6 +1145,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITableProvider> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RowOrColumnMajor());
             return S_OK;
         }
@@ -1087,6 +1159,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITableProvider> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__returnValueSize, *returnValue) = detach(this->shim().GetColumnHeaders());
             return S_OK;
         }
@@ -1102,6 +1175,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITableProvider> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__returnValueSize, *returnValue) = detach(this->shim().GetRowHeaders());
             return S_OK;
         }
@@ -1121,6 +1195,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextChildProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextContainer());
             return S_OK;
         }
@@ -1135,6 +1210,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextChildProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextRange());
             return S_OK;
         }
@@ -1153,6 +1229,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextEditProvider> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetActiveComposition());
             return S_OK;
         }
@@ -1167,6 +1244,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextEditProvider> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetConversionTarget());
             return S_OK;
         }
@@ -1185,6 +1263,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextProvider> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DocumentRange());
             return S_OK;
         }
@@ -1199,6 +1278,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextProvider> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedTextSelection());
             return S_OK;
         }
@@ -1212,6 +1292,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextProvider> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__returnValueSize, *returnValue) = detach(this->shim().GetSelection());
             return S_OK;
         }
@@ -1227,6 +1308,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextProvider> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__returnValueSize, *returnValue) = detach(this->shim().GetVisibleRanges());
             return S_OK;
         }
@@ -1242,6 +1324,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextProvider> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().RangeFromChild(*reinterpret_cast<const Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple *>(&childElement)));
             return S_OK;
         }
@@ -1256,6 +1339,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextProvider> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().RangeFromPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&screenLocation)));
             return S_OK;
         }
@@ -1274,6 +1358,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextProvider2> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().RangeFromAnnotation(*reinterpret_cast<const Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple *>(&annotationElement)));
             return S_OK;
         }
@@ -1288,6 +1373,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextProvider2> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetCaretRange(*isActive));
             return S_OK;
         }
@@ -1306,6 +1392,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Clone());
             return S_OK;
         }
@@ -1320,6 +1407,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Compare(*reinterpret_cast<const Windows::UI::Xaml::Automation::Provider::ITextRangeProvider *>(&textRangeProvider)));
             return S_OK;
         }
@@ -1333,6 +1421,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().CompareEndpoints(endpoint, *reinterpret_cast<const Windows::UI::Xaml::Automation::Provider::ITextRangeProvider *>(&textRangeProvider), targetEndpoint));
             return S_OK;
         }
@@ -1346,6 +1435,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExpandToEnclosingUnit(unit);
             return S_OK;
         }
@@ -1359,6 +1449,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FindAttribute(attributeId, *reinterpret_cast<const Windows::IInspectable *>(&value), backward));
             return S_OK;
         }
@@ -1373,6 +1464,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FindText(*reinterpret_cast<const hstring *>(&text), backward, ignoreCase));
             return S_OK;
         }
@@ -1387,6 +1479,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetAttributeValue(attributeId));
             return S_OK;
         }
@@ -1401,6 +1494,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetBoundingRectangles(detach<double>(__returnValueSize, returnValue));
             return S_OK;
         }
@@ -1416,6 +1510,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetEnclosingElement());
             return S_OK;
         }
@@ -1430,6 +1525,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetText(maxLength));
             return S_OK;
         }
@@ -1444,6 +1540,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Move(unit, count));
             return S_OK;
         }
@@ -1457,6 +1554,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().MoveEndpointByUnit(endpoint, unit, count));
             return S_OK;
         }
@@ -1470,6 +1568,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MoveEndpointByRange(endpoint, *reinterpret_cast<const Windows::UI::Xaml::Automation::Provider::ITextRangeProvider *>(&textRangeProvider), targetEndpoint);
             return S_OK;
         }
@@ -1483,6 +1582,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Select();
             return S_OK;
         }
@@ -1496,6 +1596,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddToSelection();
             return S_OK;
         }
@@ -1509,6 +1610,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveFromSelection();
             return S_OK;
         }
@@ -1522,6 +1624,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ScrollIntoView(alignToTop);
             return S_OK;
         }
@@ -1535,6 +1638,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__returnValueSize, *returnValue) = detach(this->shim().GetChildren());
             return S_OK;
         }
@@ -1554,6 +1658,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShowContextMenu();
             return S_OK;
         }
@@ -1571,6 +1676,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IToggleProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ToggleState());
             return S_OK;
         }
@@ -1584,6 +1690,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IToggleProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Toggle();
             return S_OK;
         }
@@ -1601,6 +1708,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITransformProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanMove());
             return S_OK;
         }
@@ -1614,6 +1722,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITransformProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanResize());
             return S_OK;
         }
@@ -1627,6 +1736,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITransformProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanRotate());
             return S_OK;
         }
@@ -1640,6 +1750,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITransformProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Move(x, y);
             return S_OK;
         }
@@ -1653,6 +1764,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITransformProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Resize(width, height);
             return S_OK;
         }
@@ -1666,6 +1778,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITransformProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Rotate(degrees);
             return S_OK;
         }
@@ -1683,6 +1796,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITransformProvider2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanZoom());
             return S_OK;
         }
@@ -1696,6 +1810,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITransformProvider2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZoomLevel());
             return S_OK;
         }
@@ -1709,6 +1824,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITransformProvider2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxZoom());
             return S_OK;
         }
@@ -1722,6 +1838,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITransformProvider2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinZoom());
             return S_OK;
         }
@@ -1735,6 +1852,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITransformProvider2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Zoom(zoom);
             return S_OK;
         }
@@ -1748,6 +1866,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::ITransformProvider2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ZoomByUnit(zoomUnit);
             return S_OK;
         }
@@ -1765,6 +1884,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IValueProvider> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsReadOnly());
             return S_OK;
         }
@@ -1778,6 +1898,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IValueProvider> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -1792,6 +1913,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IValueProvider> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetValue(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1809,6 +1931,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IVirtualizedItemProvi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Realize();
             return S_OK;
         }
@@ -1826,6 +1949,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IWindowProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsModal());
             return S_OK;
         }
@@ -1839,6 +1963,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IWindowProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTopmost());
             return S_OK;
         }
@@ -1852,6 +1977,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IWindowProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Maximizable());
             return S_OK;
         }
@@ -1865,6 +1991,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IWindowProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Minimizable());
             return S_OK;
         }
@@ -1878,6 +2005,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IWindowProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InteractionState());
             return S_OK;
         }
@@ -1891,6 +2019,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IWindowProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VisualState());
             return S_OK;
         }
@@ -1904,6 +2033,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IWindowProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Close();
             return S_OK;
         }
@@ -1917,6 +2047,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IWindowProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetVisualState(state);
             return S_OK;
         }
@@ -1930,6 +2061,7 @@ struct produce<D, Windows::UI::Xaml::Automation::Provider::IWindowProvider> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().WaitForInputIdle(milliseconds));
             return S_OK;
         }

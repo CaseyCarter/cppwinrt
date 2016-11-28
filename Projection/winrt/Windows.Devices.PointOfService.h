@@ -22,6 +22,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScanner> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -36,6 +37,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScanner> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Capabilities());
             return S_OK;
         }
@@ -50,6 +52,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScanner> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ClaimScannerAsync());
             return S_OK;
         }
@@ -64,6 +67,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScanner> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CheckHealthAsync(level));
             return S_OK;
         }
@@ -78,6 +82,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScanner> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetSupportedSymbologiesAsync());
             return S_OK;
         }
@@ -92,6 +97,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScanner> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().IsSymbologySupportedAsync(barcodeSymbology));
             return S_OK;
         }
@@ -106,6 +112,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScanner> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RetrieveStatisticsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&statisticsCategories)));
             return S_OK;
         }
@@ -120,6 +127,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScanner> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetSupportedProfiles());
             return S_OK;
         }
@@ -134,6 +142,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScanner> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *isSupported = detach(this->shim().IsProfileSupported(*reinterpret_cast<const hstring *>(&profile)));
             return S_OK;
         }
@@ -147,6 +156,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScanner> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().StatusUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::BarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerStatusUpdatedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -160,6 +170,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScanner> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StatusUpdated(token);
             return S_OK;
         }
@@ -177,6 +188,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScanner2> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoDeviceId());
             return S_OK;
         }
@@ -195,6 +207,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerCapabilities>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PowerReportingType());
             return S_OK;
         }
@@ -208,6 +221,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerCapabilities>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStatisticsReportingSupported());
             return S_OK;
         }
@@ -221,6 +235,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerCapabilities>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStatisticsUpdatingSupported());
             return S_OK;
         }
@@ -234,6 +249,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerCapabilities>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsImagePreviewSupported());
             return S_OK;
         }
@@ -251,6 +267,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerCapabilities1
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsSoftwareTriggerSupported());
             return S_OK;
         }
@@ -268,6 +285,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerDataReceivedE
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Report());
             return S_OK;
         }
@@ -286,6 +304,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerErrorOccurred
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PartialInputData());
             return S_OK;
         }
@@ -300,6 +319,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerErrorOccurred
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsRetriable());
             return S_OK;
         }
@@ -313,6 +333,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerErrorOccurred
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ErrorData());
             return S_OK;
         }
@@ -331,6 +352,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerImagePreviewR
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *preview = detach(this->shim().Preview());
             return S_OK;
         }
@@ -349,6 +371,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ScanDataType());
             return S_OK;
         }
@@ -362,6 +385,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ScanData());
             return S_OK;
         }
@@ -376,6 +400,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ScanDataLabel());
             return S_OK;
         }
@@ -394,6 +419,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefaultAsync());
             return S_OK;
         }
@@ -408,6 +434,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -422,6 +449,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -440,6 +468,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerStatusUpdated
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -453,6 +482,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerStatusUpdated
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtendedStatus());
             return S_OK;
         }
@@ -470,6 +500,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Unknown());
             return S_OK;
         }
@@ -483,6 +514,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ean8());
             return S_OK;
         }
@@ -496,6 +528,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ean8Add2());
             return S_OK;
         }
@@ -509,6 +542,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ean8Add5());
             return S_OK;
         }
@@ -522,6 +556,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Eanv());
             return S_OK;
         }
@@ -535,6 +570,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EanvAdd2());
             return S_OK;
         }
@@ -548,6 +584,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EanvAdd5());
             return S_OK;
         }
@@ -561,6 +598,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ean13());
             return S_OK;
         }
@@ -574,6 +612,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ean13Add2());
             return S_OK;
         }
@@ -587,6 +626,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ean13Add5());
             return S_OK;
         }
@@ -600,6 +640,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Isbn());
             return S_OK;
         }
@@ -613,6 +654,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsbnAdd5());
             return S_OK;
         }
@@ -626,6 +668,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ismn());
             return S_OK;
         }
@@ -639,6 +682,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsmnAdd2());
             return S_OK;
         }
@@ -652,6 +696,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsmnAdd5());
             return S_OK;
         }
@@ -665,6 +710,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Issn());
             return S_OK;
         }
@@ -678,6 +724,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IssnAdd2());
             return S_OK;
         }
@@ -691,6 +738,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IssnAdd5());
             return S_OK;
         }
@@ -704,6 +752,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ean99());
             return S_OK;
         }
@@ -717,6 +766,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ean99Add2());
             return S_OK;
         }
@@ -730,6 +780,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ean99Add5());
             return S_OK;
         }
@@ -743,6 +794,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Upca());
             return S_OK;
         }
@@ -756,6 +808,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UpcaAdd2());
             return S_OK;
         }
@@ -769,6 +822,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UpcaAdd5());
             return S_OK;
         }
@@ -782,6 +836,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Upce());
             return S_OK;
         }
@@ -795,6 +850,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UpceAdd2());
             return S_OK;
         }
@@ -808,6 +864,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UpceAdd5());
             return S_OK;
         }
@@ -821,6 +878,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UpcCoupon());
             return S_OK;
         }
@@ -834,6 +892,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TfStd());
             return S_OK;
         }
@@ -847,6 +906,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TfDis());
             return S_OK;
         }
@@ -860,6 +920,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TfInt());
             return S_OK;
         }
@@ -873,6 +934,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TfInd());
             return S_OK;
         }
@@ -886,6 +948,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TfMat());
             return S_OK;
         }
@@ -899,6 +962,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TfIata());
             return S_OK;
         }
@@ -912,6 +976,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gs1DatabarType1());
             return S_OK;
         }
@@ -925,6 +990,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gs1DatabarType2());
             return S_OK;
         }
@@ -938,6 +1004,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gs1DatabarType3());
             return S_OK;
         }
@@ -951,6 +1018,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Code39());
             return S_OK;
         }
@@ -964,6 +1032,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Code39Ex());
             return S_OK;
         }
@@ -977,6 +1046,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Trioptic39());
             return S_OK;
         }
@@ -990,6 +1060,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Code32());
             return S_OK;
         }
@@ -1003,6 +1074,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pzn());
             return S_OK;
         }
@@ -1016,6 +1088,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Code93());
             return S_OK;
         }
@@ -1029,6 +1102,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Code93Ex());
             return S_OK;
         }
@@ -1042,6 +1116,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Code128());
             return S_OK;
         }
@@ -1055,6 +1130,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gs1128());
             return S_OK;
         }
@@ -1068,6 +1144,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gs1128Coupon());
             return S_OK;
         }
@@ -1081,6 +1158,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UccEan128());
             return S_OK;
         }
@@ -1094,6 +1172,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sisac());
             return S_OK;
         }
@@ -1107,6 +1186,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Isbt());
             return S_OK;
         }
@@ -1120,6 +1200,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Codabar());
             return S_OK;
         }
@@ -1133,6 +1214,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Code11());
             return S_OK;
         }
@@ -1146,6 +1228,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Msi());
             return S_OK;
         }
@@ -1159,6 +1242,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Plessey());
             return S_OK;
         }
@@ -1172,6 +1256,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Telepen());
             return S_OK;
         }
@@ -1185,6 +1270,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Code16k());
             return S_OK;
         }
@@ -1198,6 +1284,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CodablockA());
             return S_OK;
         }
@@ -1211,6 +1298,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CodablockF());
             return S_OK;
         }
@@ -1224,6 +1312,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Codablock128());
             return S_OK;
         }
@@ -1237,6 +1326,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Code49());
             return S_OK;
         }
@@ -1250,6 +1340,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Aztec());
             return S_OK;
         }
@@ -1263,6 +1354,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataCode());
             return S_OK;
         }
@@ -1276,6 +1368,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataMatrix());
             return S_OK;
         }
@@ -1289,6 +1382,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HanXin());
             return S_OK;
         }
@@ -1302,6 +1396,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Maxicode());
             return S_OK;
         }
@@ -1315,6 +1410,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MicroPdf417());
             return S_OK;
         }
@@ -1328,6 +1424,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MicroQr());
             return S_OK;
         }
@@ -1341,6 +1438,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pdf417());
             return S_OK;
         }
@@ -1354,6 +1452,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Qr());
             return S_OK;
         }
@@ -1367,6 +1466,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MsTag());
             return S_OK;
         }
@@ -1380,6 +1480,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ccab());
             return S_OK;
         }
@@ -1393,6 +1494,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ccc());
             return S_OK;
         }
@@ -1406,6 +1508,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Tlc39());
             return S_OK;
         }
@@ -1419,6 +1522,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AusPost());
             return S_OK;
         }
@@ -1432,6 +1536,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanPost());
             return S_OK;
         }
@@ -1445,6 +1550,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChinaPost());
             return S_OK;
         }
@@ -1458,6 +1564,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DutchKix());
             return S_OK;
         }
@@ -1471,6 +1578,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InfoMail());
             return S_OK;
         }
@@ -1484,6 +1592,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ItalianPost25());
             return S_OK;
         }
@@ -1497,6 +1606,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ItalianPost39());
             return S_OK;
         }
@@ -1510,6 +1620,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().JapanPost());
             return S_OK;
         }
@@ -1523,6 +1634,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KoreanPost());
             return S_OK;
         }
@@ -1536,6 +1648,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SwedenPost());
             return S_OK;
         }
@@ -1549,6 +1662,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UkPost());
             return S_OK;
         }
@@ -1562,6 +1676,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsIntelligent());
             return S_OK;
         }
@@ -1575,6 +1690,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsIntelligentPkg());
             return S_OK;
         }
@@ -1588,6 +1704,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsPlanet());
             return S_OK;
         }
@@ -1601,6 +1718,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsPostNet());
             return S_OK;
         }
@@ -1614,6 +1732,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Us4StateFics());
             return S_OK;
         }
@@ -1627,6 +1746,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OcrA());
             return S_OK;
         }
@@ -1640,6 +1760,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OcrB());
             return S_OK;
         }
@@ -1653,6 +1774,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Micr());
             return S_OK;
         }
@@ -1666,6 +1788,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtendedBase());
             return S_OK;
         }
@@ -1679,6 +1802,7 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetName(scanDataType));
             return S_OK;
         }
@@ -1697,6 +1821,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawer> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -1711,6 +1836,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawer> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Capabilities());
             return S_OK;
         }
@@ -1725,6 +1851,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawer> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -1739,6 +1866,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawer> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDrawerOpen());
             return S_OK;
         }
@@ -1752,6 +1880,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawer> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DrawerEventSource());
             return S_OK;
         }
@@ -1766,6 +1895,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawer> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ClaimDrawerAsync());
             return S_OK;
         }
@@ -1780,6 +1910,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawer> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CheckHealthAsync(level));
             return S_OK;
         }
@@ -1794,6 +1925,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawer> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetStatisticsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&statisticsCategories)));
             return S_OK;
         }
@@ -1808,6 +1940,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawer> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().StatusUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawer, Windows::Devices::PointOfService::CashDrawerStatusUpdatedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1821,6 +1954,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawer> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StatusUpdated(token);
             return S_OK;
         }
@@ -1838,6 +1972,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PowerReportingType());
             return S_OK;
         }
@@ -1851,6 +1986,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStatisticsReportingSupported());
             return S_OK;
         }
@@ -1864,6 +2000,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStatisticsUpdatingSupported());
             return S_OK;
         }
@@ -1877,6 +2014,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStatusReportingSupported());
             return S_OK;
         }
@@ -1890,6 +2028,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStatusMultiDrawerDetectSupported());
             return S_OK;
         }
@@ -1903,6 +2042,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDrawerOpenSensorAvailable());
             return S_OK;
         }
@@ -1920,6 +2060,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerCloseAlarm> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AlarmTimeout(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -1933,6 +2074,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerCloseAlarm> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlarmTimeout());
             return S_OK;
         }
@@ -1946,6 +2088,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerCloseAlarm> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BeepFrequency(value);
             return S_OK;
         }
@@ -1959,6 +2102,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerCloseAlarm> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BeepFrequency());
             return S_OK;
         }
@@ -1972,6 +2116,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerCloseAlarm> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BeepDuration(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -1985,6 +2130,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerCloseAlarm> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BeepDuration());
             return S_OK;
         }
@@ -1998,6 +2144,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerCloseAlarm> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BeepDelay(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -2011,6 +2158,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerCloseAlarm> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BeepDelay());
             return S_OK;
         }
@@ -2024,6 +2172,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerCloseAlarm> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().AlarmTimeoutExpired(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawerCloseAlarm, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -2037,6 +2186,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerCloseAlarm> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AlarmTimeoutExpired(token);
             return S_OK;
         }
@@ -2050,6 +2200,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerCloseAlarm> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().StartAsync());
             return S_OK;
         }
@@ -2068,6 +2219,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerEventSource> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DrawerClosed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawerEventSource, Windows::Devices::PointOfService::CashDrawerClosedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2081,6 +2233,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerEventSource> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DrawerClosed(token);
             return S_OK;
         }
@@ -2094,6 +2247,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerEventSource> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DrawerOpened(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawerEventSource, Windows::Devices::PointOfService::CashDrawerOpenedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2107,6 +2261,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerEventSource> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DrawerOpened(token);
             return S_OK;
         }
@@ -2124,6 +2279,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerEventSourceEventA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *drawer = detach(this->shim().CashDrawer());
             return S_OK;
         }
@@ -2142,6 +2298,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefaultAsync());
             return S_OK;
         }
@@ -2156,6 +2313,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -2170,6 +2328,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -2188,6 +2347,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerStatus> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StatusKind());
             return S_OK;
         }
@@ -2201,6 +2361,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerStatus> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtendedStatus());
             return S_OK;
         }
@@ -2218,6 +2379,7 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerStatusUpdatedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -2236,6 +2398,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -2250,6 +2413,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
@@ -2263,6 +2427,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsDisabledOnDataReceived(value);
             return S_OK;
         }
@@ -2276,6 +2441,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDisabledOnDataReceived());
             return S_OK;
         }
@@ -2289,6 +2455,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsDecodeDataEnabled(value);
             return S_OK;
         }
@@ -2302,6 +2469,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDecodeDataEnabled());
             return S_OK;
         }
@@ -2315,6 +2483,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().EnableAsync());
             return S_OK;
         }
@@ -2329,6 +2498,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DisableAsync());
             return S_OK;
         }
@@ -2343,6 +2513,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RetainDevice();
             return S_OK;
         }
@@ -2356,6 +2527,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SetActiveSymbologiesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<uint32_t> *>(&symbologies)));
             return S_OK;
         }
@@ -2370,6 +2542,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ResetStatisticsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&statisticsCategories)));
             return S_OK;
         }
@@ -2384,6 +2557,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().UpdateStatisticsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> *>(&statistics)));
             return S_OK;
         }
@@ -2398,6 +2572,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SetActiveProfileAsync(*reinterpret_cast<const hstring *>(&profile)));
             return S_OK;
         }
@@ -2412,6 +2587,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DataReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerDataReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2425,6 +2601,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DataReceived(token);
             return S_OK;
         }
@@ -2438,6 +2615,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().TriggerPressed(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> *>(&handler)));
             return S_OK;
         }
@@ -2451,6 +2629,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TriggerPressed(token);
             return S_OK;
         }
@@ -2464,6 +2643,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().TriggerReleased(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> *>(&handler)));
             return S_OK;
         }
@@ -2477,6 +2657,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TriggerReleased(token);
             return S_OK;
         }
@@ -2490,6 +2671,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ReleaseDeviceRequested(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> *>(&handler)));
             return S_OK;
         }
@@ -2503,6 +2685,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReleaseDeviceRequested(token);
             return S_OK;
         }
@@ -2516,6 +2699,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ImagePreviewReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerImagePreviewReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2529,6 +2713,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ImagePreviewReceived(token);
             return S_OK;
         }
@@ -2542,6 +2727,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ErrorOccurred(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerErrorOccurredEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2555,6 +2741,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ErrorOccurred(token);
             return S_OK;
         }
@@ -2572,6 +2759,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner1> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().StartSoftwareTriggerAsync());
             return S_OK;
         }
@@ -2586,6 +2774,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner1> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().StopSoftwareTriggerAsync());
             return S_OK;
         }
@@ -2604,6 +2793,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedCashDrawer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -2618,6 +2808,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedCashDrawer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
@@ -2631,6 +2822,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedCashDrawer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDrawerOpen());
             return S_OK;
         }
@@ -2644,6 +2836,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedCashDrawer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CloseAlarm());
             return S_OK;
         }
@@ -2658,6 +2851,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedCashDrawer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().OpenDrawerAsync());
             return S_OK;
         }
@@ -2672,6 +2866,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedCashDrawer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().EnableAsync());
             return S_OK;
         }
@@ -2686,6 +2881,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedCashDrawer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DisableAsync());
             return S_OK;
         }
@@ -2700,6 +2896,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedCashDrawer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RetainDeviceAsync());
             return S_OK;
         }
@@ -2714,6 +2911,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedCashDrawer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ResetStatisticsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&statisticsCategories)));
             return S_OK;
         }
@@ -2728,6 +2926,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedCashDrawer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().UpdateStatisticsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> *>(&statistics)));
             return S_OK;
         }
@@ -2742,6 +2941,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedCashDrawer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ReleaseDeviceRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -2755,6 +2955,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedCashDrawer> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReleaseDeviceRequested(token);
             return S_OK;
         }
@@ -2772,6 +2973,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedJournalPrinter> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateJob());
             return S_OK;
         }
@@ -2790,6 +2992,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -2804,6 +3007,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
@@ -2817,6 +3021,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsDisabledOnDataReceived(value);
             return S_OK;
         }
@@ -2830,6 +3035,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDisabledOnDataReceived());
             return S_OK;
         }
@@ -2843,6 +3049,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsDecodeDataEnabled(value);
             return S_OK;
         }
@@ -2856,6 +3063,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDecodeDataEnabled());
             return S_OK;
         }
@@ -2869,6 +3077,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDeviceAuthenticated());
             return S_OK;
         }
@@ -2882,6 +3091,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DataEncryptionAlgorithm(value);
             return S_OK;
         }
@@ -2895,6 +3105,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataEncryptionAlgorithm());
             return S_OK;
         }
@@ -2908,6 +3119,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TracksToRead(value);
             return S_OK;
         }
@@ -2921,6 +3133,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TracksToRead());
             return S_OK;
         }
@@ -2934,6 +3147,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsTransmitSentinelsEnabled(value);
             return S_OK;
         }
@@ -2947,6 +3161,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTransmitSentinelsEnabled());
             return S_OK;
         }
@@ -2960,6 +3175,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().EnableAsync());
             return S_OK;
         }
@@ -2974,6 +3190,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DisableAsync());
             return S_OK;
         }
@@ -2988,6 +3205,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RetainDevice();
             return S_OK;
         }
@@ -3001,6 +3219,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetErrorReportingType(value);
             return S_OK;
         }
@@ -3014,6 +3233,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RetrieveDeviceAuthenticationDataAsync());
             return S_OK;
         }
@@ -3028,6 +3248,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().AuthenticateDeviceAsync(array_ref<const uint8_t>(responseToken, responseToken + __responseTokenSize)));
             return S_OK;
         }
@@ -3042,6 +3263,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DeAuthenticateDeviceAsync(array_ref<const uint8_t>(responseToken, responseToken + __responseTokenSize)));
             return S_OK;
         }
@@ -3056,6 +3278,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().UpdateKeyAsync(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const hstring *>(&keyName)));
             return S_OK;
         }
@@ -3070,6 +3293,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ResetStatisticsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&statisticsCategories)));
             return S_OK;
         }
@@ -3084,6 +3308,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().UpdateStatisticsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> *>(&statistics)));
             return S_OK;
         }
@@ -3098,6 +3323,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().BankCardDataReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderBankCardDataReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -3111,6 +3337,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BankCardDataReceived(token);
             return S_OK;
         }
@@ -3124,6 +3351,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().AamvaCardDataReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderAamvaCardDataReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -3137,6 +3365,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AamvaCardDataReceived(token);
             return S_OK;
         }
@@ -3150,6 +3379,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().VendorSpecificDataReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -3163,6 +3393,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VendorSpecificDataReceived(token);
             return S_OK;
         }
@@ -3176,6 +3407,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ReleaseDeviceRequested(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader> *>(&handler)));
             return S_OK;
         }
@@ -3189,6 +3421,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReleaseDeviceRequested(token);
             return S_OK;
         }
@@ -3202,6 +3435,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ErrorOccurred(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderErrorOccurredEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -3215,6 +3449,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedMagneticStripeReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ErrorOccurred(token);
             return S_OK;
         }
@@ -3232,6 +3467,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -3246,6 +3482,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
@@ -3259,6 +3496,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CharacterSet(value);
             return S_OK;
         }
@@ -3272,6 +3510,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CharacterSet());
             return S_OK;
         }
@@ -3285,6 +3524,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCoverOpen());
             return S_OK;
         }
@@ -3298,6 +3538,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsCharacterSetMappingEnabled(value);
             return S_OK;
         }
@@ -3311,6 +3552,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCharacterSetMappingEnabled());
             return S_OK;
         }
@@ -3324,6 +3566,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MapMode(value);
             return S_OK;
         }
@@ -3337,6 +3580,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MapMode());
             return S_OK;
         }
@@ -3350,6 +3594,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Receipt());
             return S_OK;
         }
@@ -3364,6 +3609,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Slip());
             return S_OK;
         }
@@ -3378,6 +3624,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Journal());
             return S_OK;
         }
@@ -3392,6 +3639,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().EnableAsync());
             return S_OK;
         }
@@ -3406,6 +3654,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DisableAsync());
             return S_OK;
         }
@@ -3420,6 +3669,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RetainDeviceAsync());
             return S_OK;
         }
@@ -3434,6 +3684,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ResetStatisticsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&statisticsCategories)));
             return S_OK;
         }
@@ -3448,6 +3699,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().UpdateStatisticsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> *>(&statistics)));
             return S_OK;
         }
@@ -3462,6 +3714,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ReleaseDeviceRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedPosPrinter, Windows::Devices::PointOfService::PosPrinterReleaseDeviceRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -3475,6 +3728,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedPosPrinter> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReleaseDeviceRequested(token);
             return S_OK;
         }
@@ -3492,6 +3746,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedReceiptPrinter> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SidewaysMaxLines());
             return S_OK;
         }
@@ -3505,6 +3760,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedReceiptPrinter> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SidewaysMaxChars());
             return S_OK;
         }
@@ -3518,6 +3774,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedReceiptPrinter> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LinesToPaperCut());
             return S_OK;
         }
@@ -3531,6 +3788,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedReceiptPrinter> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PageSize());
             return S_OK;
         }
@@ -3544,6 +3802,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedReceiptPrinter> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PrintArea());
             return S_OK;
         }
@@ -3557,6 +3816,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedReceiptPrinter> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateJob());
             return S_OK;
         }
@@ -3575,6 +3835,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedSlipPrinter> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SidewaysMaxLines());
             return S_OK;
         }
@@ -3588,6 +3849,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedSlipPrinter> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SidewaysMaxChars());
             return S_OK;
         }
@@ -3601,6 +3863,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedSlipPrinter> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxLines());
             return S_OK;
         }
@@ -3614,6 +3877,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedSlipPrinter> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LinesNearEndToEnd());
             return S_OK;
         }
@@ -3627,6 +3891,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedSlipPrinter> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PrintSide());
             return S_OK;
         }
@@ -3640,6 +3905,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedSlipPrinter> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PageSize());
             return S_OK;
         }
@@ -3653,6 +3919,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedSlipPrinter> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PrintArea());
             return S_OK;
         }
@@ -3666,6 +3933,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedSlipPrinter> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OpenJaws();
             return S_OK;
         }
@@ -3679,6 +3947,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedSlipPrinter> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CloseJaws();
             return S_OK;
         }
@@ -3692,6 +3961,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedSlipPrinter> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().InsertSlipAsync(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timeout)));
             return S_OK;
         }
@@ -3706,6 +3976,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedSlipPrinter> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RemoveSlipAsync(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timeout)));
             return S_OK;
         }
@@ -3720,6 +3991,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedSlipPrinter> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ChangePrintSide(printSide);
             return S_OK;
         }
@@ -3733,6 +4005,7 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedSlipPrinter> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateJob());
             return S_OK;
         }
@@ -3751,6 +4024,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CharactersPerLine(value);
             return S_OK;
         }
@@ -3764,6 +4038,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CharactersPerLine());
             return S_OK;
         }
@@ -3777,6 +4052,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LineHeight(value);
             return S_OK;
         }
@@ -3790,6 +4066,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LineHeight());
             return S_OK;
         }
@@ -3803,6 +4080,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LineSpacing(value);
             return S_OK;
         }
@@ -3816,6 +4094,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LineSpacing());
             return S_OK;
         }
@@ -3829,6 +4108,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LineWidth());
             return S_OK;
         }
@@ -3842,6 +4122,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsLetterQuality(value);
             return S_OK;
         }
@@ -3855,6 +4136,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsLetterQuality());
             return S_OK;
         }
@@ -3868,6 +4150,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsPaperNearEnd());
             return S_OK;
         }
@@ -3881,6 +4164,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ColorCartridge(value);
             return S_OK;
         }
@@ -3894,6 +4178,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ColorCartridge());
             return S_OK;
         }
@@ -3907,6 +4192,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCoverOpen());
             return S_OK;
         }
@@ -3920,6 +4206,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCartridgeRemoved());
             return S_OK;
         }
@@ -3933,6 +4220,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCartridgeEmpty());
             return S_OK;
         }
@@ -3946,6 +4234,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsHeadCleaning());
             return S_OK;
         }
@@ -3959,6 +4248,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsPaperEmpty());
             return S_OK;
         }
@@ -3972,6 +4262,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsReadyToPrint());
             return S_OK;
         }
@@ -3985,6 +4276,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ValidateData(*reinterpret_cast<const hstring *>(&data)));
             return S_OK;
         }
@@ -4002,6 +4294,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonPosPrintStationCapabi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsPrinterPresent());
             return S_OK;
         }
@@ -4015,6 +4308,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonPosPrintStationCapabi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDualColorSupported());
             return S_OK;
         }
@@ -4028,6 +4322,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonPosPrintStationCapabi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ColorCartridgeCapabilities());
             return S_OK;
         }
@@ -4041,6 +4336,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonPosPrintStationCapabi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CartridgeSensors());
             return S_OK;
         }
@@ -4054,6 +4350,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonPosPrintStationCapabi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsBoldSupported());
             return S_OK;
         }
@@ -4067,6 +4364,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonPosPrintStationCapabi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsItalicSupported());
             return S_OK;
         }
@@ -4080,6 +4378,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonPosPrintStationCapabi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsUnderlineSupported());
             return S_OK;
         }
@@ -4093,6 +4392,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonPosPrintStationCapabi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDoubleHighPrintSupported());
             return S_OK;
         }
@@ -4106,6 +4406,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonPosPrintStationCapabi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDoubleWidePrintSupported());
             return S_OK;
         }
@@ -4119,6 +4420,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonPosPrintStationCapabi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDoubleHighDoubleWidePrintSupported());
             return S_OK;
         }
@@ -4132,6 +4434,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonPosPrintStationCapabi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsPaperEmptySensorSupported());
             return S_OK;
         }
@@ -4145,6 +4448,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonPosPrintStationCapabi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsPaperNearEndSensorSupported());
             return S_OK;
         }
@@ -4158,6 +4462,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonPosPrintStationCapabi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedCharactersPerLine());
             return S_OK;
         }
@@ -4176,6 +4481,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonReceiptSlipCapabiliti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsBarcodeSupported());
             return S_OK;
         }
@@ -4189,6 +4495,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonReceiptSlipCapabiliti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsBitmapSupported());
             return S_OK;
         }
@@ -4202,6 +4509,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonReceiptSlipCapabiliti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsLeft90RotationSupported());
             return S_OK;
         }
@@ -4215,6 +4523,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonReceiptSlipCapabiliti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsRight90RotationSupported());
             return S_OK;
         }
@@ -4228,6 +4537,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonReceiptSlipCapabiliti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Is180RotationSupported());
             return S_OK;
         }
@@ -4241,6 +4551,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonReceiptSlipCapabiliti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsPrintAreaSupported());
             return S_OK;
         }
@@ -4254,6 +4565,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonReceiptSlipCapabiliti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RuledLineCapabilities());
             return S_OK;
         }
@@ -4267,6 +4579,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonReceiptSlipCapabiliti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedBarcodeRotations());
             return S_OK;
         }
@@ -4281,6 +4594,7 @@ struct produce<D, Windows::Devices::PointOfService::ICommonReceiptSlipCapabiliti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedBitmapRotations());
             return S_OK;
         }
@@ -4303,6 +4617,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReader> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -4317,6 +4632,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReader> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Capabilities());
             return S_OK;
         }
@@ -4331,6 +4647,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReader> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__valueSize, *value) = detach(this->shim().SupportedCardTypes());
             return S_OK;
         }
@@ -4346,6 +4663,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReader> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceAuthenticationProtocol());
             return S_OK;
         }
@@ -4359,6 +4677,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReader> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CheckHealthAsync(level));
             return S_OK;
         }
@@ -4373,6 +4692,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReader> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ClaimReaderAsync());
             return S_OK;
         }
@@ -4387,6 +4707,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReader> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RetrieveStatisticsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&statisticsCategories)));
             return S_OK;
         }
@@ -4401,6 +4722,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReader> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetErrorReportingType());
             return S_OK;
         }
@@ -4414,6 +4736,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReader> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().StatusUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::MagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderStatusUpdatedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -4427,6 +4750,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReader> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StatusUpdated(token);
             return S_OK;
         }
@@ -4444,6 +4768,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Report());
             return S_OK;
         }
@@ -4458,6 +4783,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LicenseNumber());
             return S_OK;
         }
@@ -4472,6 +4798,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExpirationDate());
             return S_OK;
         }
@@ -4486,6 +4813,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Restrictions());
             return S_OK;
         }
@@ -4500,6 +4828,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Class());
             return S_OK;
         }
@@ -4514,6 +4843,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Endorsements());
             return S_OK;
         }
@@ -4528,6 +4858,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BirthDate());
             return S_OK;
         }
@@ -4542,6 +4873,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FirstName());
             return S_OK;
         }
@@ -4556,6 +4888,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Surname());
             return S_OK;
         }
@@ -4570,6 +4903,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Suffix());
             return S_OK;
         }
@@ -4584,6 +4918,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gender());
             return S_OK;
         }
@@ -4598,6 +4933,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HairColor());
             return S_OK;
         }
@@ -4612,6 +4948,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EyeColor());
             return S_OK;
         }
@@ -4626,6 +4963,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Height());
             return S_OK;
         }
@@ -4640,6 +4978,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Weight());
             return S_OK;
         }
@@ -4654,6 +4993,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Address());
             return S_OK;
         }
@@ -4668,6 +5008,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().City());
             return S_OK;
         }
@@ -4682,6 +5023,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().State());
             return S_OK;
         }
@@ -4696,6 +5038,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PostalCode());
             return S_OK;
         }
@@ -4714,6 +5057,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderBankCar
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Report());
             return S_OK;
         }
@@ -4728,6 +5072,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderBankCar
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccountNumber());
             return S_OK;
         }
@@ -4742,6 +5087,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderBankCar
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExpirationDate());
             return S_OK;
         }
@@ -4756,6 +5102,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderBankCar
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceCode());
             return S_OK;
         }
@@ -4770,6 +5117,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderBankCar
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -4784,6 +5132,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderBankCar
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FirstName());
             return S_OK;
         }
@@ -4798,6 +5147,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderBankCar
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MiddleInitial());
             return S_OK;
         }
@@ -4812,6 +5162,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderBankCar
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Surname());
             return S_OK;
         }
@@ -4826,6 +5177,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderBankCar
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Suffix());
             return S_OK;
         }
@@ -4844,6 +5196,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderCapabil
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CardAuthentication());
             return S_OK;
         }
@@ -4858,6 +5211,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderCapabil
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedEncryptionAlgorithms());
             return S_OK;
         }
@@ -4871,6 +5225,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderCapabil
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AuthenticationLevel());
             return S_OK;
         }
@@ -4884,6 +5239,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderCapabil
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsIsoSupported());
             return S_OK;
         }
@@ -4897,6 +5253,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderCapabil
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsJisOneSupported());
             return S_OK;
         }
@@ -4910,6 +5267,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderCapabil
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsJisTwoSupported());
             return S_OK;
         }
@@ -4923,6 +5281,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderCapabil
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PowerReportingType());
             return S_OK;
         }
@@ -4936,6 +5295,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderCapabil
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStatisticsReportingSupported());
             return S_OK;
         }
@@ -4949,6 +5309,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderCapabil
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStatisticsUpdatingSupported());
             return S_OK;
         }
@@ -4962,6 +5323,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderCapabil
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTrackDataMaskingSupported());
             return S_OK;
         }
@@ -4975,6 +5337,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderCapabil
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTransmitSentinelsSupported());
             return S_OK;
         }
@@ -4992,6 +5355,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderCardTyp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Unknown());
             return S_OK;
         }
@@ -5005,6 +5369,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderCardTyp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bank());
             return S_OK;
         }
@@ -5018,6 +5383,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderCardTyp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Aamva());
             return S_OK;
         }
@@ -5031,6 +5397,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderCardTyp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtendedBase());
             return S_OK;
         }
@@ -5048,6 +5415,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderEncrypt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().None());
             return S_OK;
         }
@@ -5061,6 +5429,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderEncrypt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TripleDesDukpt());
             return S_OK;
         }
@@ -5074,6 +5443,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderEncrypt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtendedBase());
             return S_OK;
         }
@@ -5091,6 +5461,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderErrorOc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Track1Status());
             return S_OK;
         }
@@ -5104,6 +5475,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderErrorOc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Track2Status());
             return S_OK;
         }
@@ -5117,6 +5489,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderErrorOc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Track3Status());
             return S_OK;
         }
@@ -5130,6 +5503,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderErrorOc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Track4Status());
             return S_OK;
         }
@@ -5143,6 +5517,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderErrorOc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ErrorData());
             return S_OK;
         }
@@ -5157,6 +5532,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderErrorOc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PartialInputData());
             return S_OK;
         }
@@ -5175,6 +5551,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderReport>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CardType());
             return S_OK;
         }
@@ -5188,6 +5565,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderReport>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Track1());
             return S_OK;
         }
@@ -5202,6 +5580,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderReport>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Track2());
             return S_OK;
         }
@@ -5216,6 +5595,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderReport>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Track3());
             return S_OK;
         }
@@ -5230,6 +5610,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderReport>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Track4());
             return S_OK;
         }
@@ -5244,6 +5625,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderReport>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -5258,6 +5640,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderReport>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CardAuthenticationData());
             return S_OK;
         }
@@ -5272,6 +5655,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderReport>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CardAuthenticationDataLength());
             return S_OK;
         }
@@ -5285,6 +5669,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderReport>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AdditionalSecurityInformation());
             return S_OK;
         }
@@ -5303,6 +5688,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefaultAsync());
             return S_OK;
         }
@@ -5317,6 +5703,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -5331,6 +5718,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -5349,6 +5737,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderStatusU
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -5362,6 +5751,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderStatusU
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtendedStatus());
             return S_OK;
         }
@@ -5379,6 +5769,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderTrackDa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Data());
             return S_OK;
         }
@@ -5393,6 +5784,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderTrackDa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DiscretionaryData());
             return S_OK;
         }
@@ -5407,6 +5799,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderTrackDa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EncryptedData());
             return S_OK;
         }
@@ -5425,6 +5818,7 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderVendorS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Report());
             return S_OK;
         }
@@ -5443,6 +5837,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinter> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -5457,6 +5852,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinter> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Capabilities());
             return S_OK;
         }
@@ -5471,6 +5867,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinter> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedCharacterSets());
             return S_OK;
         }
@@ -5485,6 +5882,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinter> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedTypeFaces());
             return S_OK;
         }
@@ -5499,6 +5897,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinter> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -5513,6 +5912,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinter> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ClaimPrinterAsync());
             return S_OK;
         }
@@ -5527,6 +5927,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinter> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CheckHealthAsync(level));
             return S_OK;
         }
@@ -5541,6 +5942,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinter> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetStatisticsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&statisticsCategories)));
             return S_OK;
         }
@@ -5555,6 +5957,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinter> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().StatusUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::PosPrinter, Windows::Devices::PointOfService::PosPrinterStatusUpdatedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -5568,6 +5971,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinter> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StatusUpdated(token);
             return S_OK;
         }
@@ -5585,6 +5989,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PowerReportingType());
             return S_OK;
         }
@@ -5598,6 +6003,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStatisticsReportingSupported());
             return S_OK;
         }
@@ -5611,6 +6017,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStatisticsUpdatingSupported());
             return S_OK;
         }
@@ -5624,6 +6031,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DefaultCharacterSet());
             return S_OK;
         }
@@ -5637,6 +6045,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasCoverSensor());
             return S_OK;
         }
@@ -5650,6 +6059,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanMapCharacterSet());
             return S_OK;
         }
@@ -5663,6 +6073,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTransactionSupported());
             return S_OK;
         }
@@ -5676,6 +6087,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Receipt());
             return S_OK;
         }
@@ -5690,6 +6102,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Slip());
             return S_OK;
         }
@@ -5704,6 +6117,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Journal());
             return S_OK;
         }
@@ -5722,6 +6136,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterCharacterSetIdsSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Utf16LE());
             return S_OK;
         }
@@ -5735,6 +6150,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterCharacterSetIdsSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ascii());
             return S_OK;
         }
@@ -5748,6 +6164,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterCharacterSetIdsSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ansi());
             return S_OK;
         }
@@ -5765,6 +6182,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterJob> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Print(*reinterpret_cast<const hstring *>(&data));
             return S_OK;
         }
@@ -5778,6 +6196,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterJob> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PrintLine(*reinterpret_cast<const hstring *>(&data));
             return S_OK;
         }
@@ -5791,6 +6210,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterJob> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PrintLine();
             return S_OK;
         }
@@ -5804,6 +6224,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterJob> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ExecuteAsync());
             return S_OK;
         }
@@ -5826,6 +6247,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefaultAsync());
             return S_OK;
         }
@@ -5840,6 +6262,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -5854,6 +6277,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -5872,6 +6296,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterStatus> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StatusKind());
             return S_OK;
         }
@@ -5885,6 +6310,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterStatus> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtendedStatus());
             return S_OK;
         }
@@ -5902,6 +6328,7 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterStatusUpdatedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -5920,6 +6347,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptOrSlipJob> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetBarcodeRotation(value);
             return S_OK;
         }
@@ -5933,6 +6361,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptOrSlipJob> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetPrintRotation(value, includeBitmaps);
             return S_OK;
         }
@@ -5946,6 +6375,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptOrSlipJob> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetPrintArea(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
             return S_OK;
         }
@@ -5959,6 +6389,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptOrSlipJob> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetBitmap(bitmapNumber, *reinterpret_cast<const Windows::Graphics::Imaging::BitmapFrame *>(&bitmap), alignment);
             return S_OK;
         }
@@ -5972,6 +6403,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptOrSlipJob> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetBitmap(bitmapNumber, *reinterpret_cast<const Windows::Graphics::Imaging::BitmapFrame *>(&bitmap), alignment, width);
             return S_OK;
         }
@@ -5985,6 +6417,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptOrSlipJob> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetCustomAlignedBitmap(bitmapNumber, *reinterpret_cast<const Windows::Graphics::Imaging::BitmapFrame *>(&bitmap), alignmentDistance);
             return S_OK;
         }
@@ -5998,6 +6431,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptOrSlipJob> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetCustomAlignedBitmap(bitmapNumber, *reinterpret_cast<const Windows::Graphics::Imaging::BitmapFrame *>(&bitmap), alignmentDistance, width);
             return S_OK;
         }
@@ -6011,6 +6445,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptOrSlipJob> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PrintSavedBitmap(bitmapNumber);
             return S_OK;
         }
@@ -6024,6 +6459,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptOrSlipJob> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DrawRuledLine(*reinterpret_cast<const hstring *>(&positionList), lineDirection, lineWidth, lineStyle, lineColor);
             return S_OK;
         }
@@ -6037,6 +6473,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptOrSlipJob> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PrintBarcode(*reinterpret_cast<const hstring *>(&data), symbology, height, width, textPosition, alignment);
             return S_OK;
         }
@@ -6050,6 +6487,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptOrSlipJob> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PrintBarcodeCustomAlign(*reinterpret_cast<const hstring *>(&data), symbology, height, width, textPosition, alignmentDistance);
             return S_OK;
         }
@@ -6063,6 +6501,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptOrSlipJob> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PrintBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::BitmapFrame *>(&bitmap), alignment);
             return S_OK;
         }
@@ -6076,6 +6515,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptOrSlipJob> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PrintBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::BitmapFrame *>(&bitmap), alignment, width);
             return S_OK;
         }
@@ -6089,6 +6529,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptOrSlipJob> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PrintCustomAlignedBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::BitmapFrame *>(&bitmap), alignmentDistance);
             return S_OK;
         }
@@ -6102,6 +6543,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptOrSlipJob> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PrintCustomAlignedBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::BitmapFrame *>(&bitmap), alignmentDistance, width);
             return S_OK;
         }
@@ -6119,6 +6561,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptPrintJob> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MarkFeed(kind);
             return S_OK;
         }
@@ -6132,6 +6575,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptPrintJob> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CutPaper(percentage);
             return S_OK;
         }
@@ -6145,6 +6589,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptPrintJob> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CutPaper();
             return S_OK;
         }
@@ -6162,6 +6607,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptPrinterCapabilities>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanCutPaper());
             return S_OK;
         }
@@ -6175,6 +6621,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptPrinterCapabilities>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStampSupported());
             return S_OK;
         }
@@ -6188,6 +6635,7 @@ struct produce<D, Windows::Devices::PointOfService::IReceiptPrinterCapabilities>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MarkFeedCapabilities());
             return S_OK;
         }
@@ -6205,6 +6653,7 @@ struct produce<D, Windows::Devices::PointOfService::ISlipPrinterCapabilities> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsFullLengthSupported());
             return S_OK;
         }
@@ -6218,6 +6667,7 @@ struct produce<D, Windows::Devices::PointOfService::ISlipPrinterCapabilities> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsBothSidesPrintingSupported());
             return S_OK;
         }
@@ -6235,6 +6685,7 @@ struct produce<D, Windows::Devices::PointOfService::IUnifiedPosErrorData> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Message());
             return S_OK;
         }
@@ -6249,6 +6700,7 @@ struct produce<D, Windows::Devices::PointOfService::IUnifiedPosErrorData> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Severity());
             return S_OK;
         }
@@ -6262,6 +6714,7 @@ struct produce<D, Windows::Devices::PointOfService::IUnifiedPosErrorData> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reason());
             return S_OK;
         }
@@ -6275,6 +6728,7 @@ struct produce<D, Windows::Devices::PointOfService::IUnifiedPosErrorData> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtendedReason());
             return S_OK;
         }

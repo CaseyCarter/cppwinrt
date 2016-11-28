@@ -21,6 +21,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpList> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Items());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpList> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SystemGroupKind());
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpList> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SystemGroupKind(value);
             return S_OK;
         }
@@ -61,6 +64,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpList> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SaveAsync());
             return S_OK;
         }
@@ -79,6 +83,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -92,6 +97,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Arguments());
             return S_OK;
         }
@@ -106,6 +112,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemovedByUser());
             return S_OK;
         }
@@ -119,6 +126,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -133,6 +141,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Description(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -146,6 +155,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -160,6 +170,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -173,6 +184,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GroupName());
             return S_OK;
         }
@@ -187,6 +199,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GroupName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -200,6 +213,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Logo());
             return S_OK;
         }
@@ -214,6 +228,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -231,6 +246,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItemStatics> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateWithArguments(*reinterpret_cast<const hstring *>(&arguments), *reinterpret_cast<const hstring *>(&displayName)));
             return S_OK;
         }
@@ -245,6 +261,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListItemStatics> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateSeparator());
             return S_OK;
         }
@@ -263,6 +280,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().LoadCurrentAsync());
             return S_OK;
         }
@@ -277,6 +295,7 @@ struct produce<D, Windows::UI::StartScreen::IJumpListStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsSupported());
             return S_OK;
         }
@@ -294,6 +313,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TileId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -307,6 +327,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TileId());
             return S_OK;
         }
@@ -321,6 +342,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Arguments(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -334,6 +356,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Arguments());
             return S_OK;
         }
@@ -348,6 +371,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShortName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -361,6 +385,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShortName());
             return S_OK;
         }
@@ -375,6 +400,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -388,6 +414,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -402,6 +429,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -415,6 +443,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Logo());
             return S_OK;
         }
@@ -429,6 +458,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SmallLogo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -442,6 +472,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SmallLogo());
             return S_OK;
         }
@@ -456,6 +487,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WideLogo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -469,6 +501,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WideLogo());
             return S_OK;
         }
@@ -483,6 +516,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LockScreenBadgeLogo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -496,6 +530,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LockScreenBadgeLogo());
             return S_OK;
         }
@@ -510,6 +545,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LockScreenDisplayBadgeAndTileText(value);
             return S_OK;
         }
@@ -523,6 +559,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LockScreenDisplayBadgeAndTileText());
             return S_OK;
         }
@@ -536,6 +573,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TileOptions(value);
             return S_OK;
         }
@@ -549,6 +587,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TileOptions());
             return S_OK;
         }
@@ -562,6 +601,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ForegroundText(value);
             return S_OK;
         }
@@ -575,6 +615,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ForegroundText());
             return S_OK;
         }
@@ -588,6 +629,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -601,6 +643,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BackgroundColor());
             return S_OK;
         }
@@ -614,6 +657,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestCreateAsync());
             return S_OK;
         }
@@ -628,6 +672,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestCreateAsync(*reinterpret_cast<const Windows::Foundation::Point *>(&invocationPoint)));
             return S_OK;
         }
@@ -642,6 +687,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestCreateForSelectionAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection)));
             return S_OK;
         }
@@ -656,6 +702,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestCreateForSelectionAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), preferredPlacement));
             return S_OK;
         }
@@ -670,6 +717,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestDeleteAsync());
             return S_OK;
         }
@@ -684,6 +732,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestDeleteAsync(*reinterpret_cast<const Windows::Foundation::Point *>(&invocationPoint)));
             return S_OK;
         }
@@ -698,6 +747,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestDeleteForSelectionAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection)));
             return S_OK;
         }
@@ -712,6 +762,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestDeleteForSelectionAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), preferredPlacement));
             return S_OK;
         }
@@ -726,6 +777,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().UpdateAsync());
             return S_OK;
         }
@@ -744,6 +796,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PhoneticName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -757,6 +810,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PhoneticName());
             return S_OK;
         }
@@ -771,6 +825,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VisualElements());
             return S_OK;
         }
@@ -785,6 +840,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RoamingEnabled(value);
             return S_OK;
         }
@@ -798,6 +854,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RoamingEnabled());
             return S_OK;
         }
@@ -811,6 +868,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().VisualElementsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::StartScreen::SecondaryTile, Windows::UI::StartScreen::VisualElementsRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -824,6 +882,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTile2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VisualElementsRequested(token);
             return S_OK;
         }
@@ -841,6 +900,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileFactory> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateTile(*reinterpret_cast<const hstring *>(&tileId), *reinterpret_cast<const hstring *>(&shortName), *reinterpret_cast<const hstring *>(&displayName), *reinterpret_cast<const hstring *>(&arguments), tileOptions, *reinterpret_cast<const Windows::Foundation::Uri *>(&logoReference)));
             return S_OK;
         }
@@ -855,6 +915,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileFactory> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateWideTile(*reinterpret_cast<const hstring *>(&tileId), *reinterpret_cast<const hstring *>(&shortName), *reinterpret_cast<const hstring *>(&displayName), *reinterpret_cast<const hstring *>(&arguments), tileOptions, *reinterpret_cast<const Windows::Foundation::Uri *>(&logoReference), *reinterpret_cast<const Windows::Foundation::Uri *>(&wideLogoReference)));
             return S_OK;
         }
@@ -869,6 +930,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileFactory> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateWithId(*reinterpret_cast<const hstring *>(&tileId)));
             return S_OK;
         }
@@ -887,6 +949,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileFactory2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateMinimalTile(*reinterpret_cast<const hstring *>(&tileId), *reinterpret_cast<const hstring *>(&displayName), *reinterpret_cast<const hstring *>(&arguments), *reinterpret_cast<const Windows::Foundation::Uri *>(&square150x150Logo), desiredSize));
             return S_OK;
         }
@@ -905,6 +968,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *exists = detach(this->shim().Exists(*reinterpret_cast<const hstring *>(&tileId)));
             return S_OK;
         }
@@ -918,6 +982,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FindAllAsync());
             return S_OK;
         }
@@ -932,6 +997,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FindAllAsync(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
@@ -946,6 +1012,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FindAllForPackageAsync());
             return S_OK;
         }
@@ -964,6 +1031,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Square30x30Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -977,6 +1045,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Square30x30Logo());
             return S_OK;
         }
@@ -991,6 +1060,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Square70x70Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -1004,6 +1074,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Square70x70Logo());
             return S_OK;
         }
@@ -1018,6 +1089,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Square150x150Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -1031,6 +1103,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Square150x150Logo());
             return S_OK;
         }
@@ -1045,6 +1118,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Wide310x150Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -1058,6 +1132,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Wide310x150Logo());
             return S_OK;
         }
@@ -1072,6 +1147,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Square310x310Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -1085,6 +1161,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Square310x310Logo());
             return S_OK;
         }
@@ -1099,6 +1176,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ForegroundText(value);
             return S_OK;
         }
@@ -1112,6 +1190,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ForegroundText());
             return S_OK;
         }
@@ -1125,6 +1204,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -1138,6 +1218,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BackgroundColor());
             return S_OK;
         }
@@ -1151,6 +1232,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShowNameOnSquare150x150Logo(value);
             return S_OK;
         }
@@ -1164,6 +1246,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShowNameOnSquare150x150Logo());
             return S_OK;
         }
@@ -1177,6 +1260,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShowNameOnWide310x150Logo(value);
             return S_OK;
         }
@@ -1190,6 +1274,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShowNameOnWide310x150Logo());
             return S_OK;
         }
@@ -1203,6 +1288,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShowNameOnSquare310x310Logo(value);
             return S_OK;
         }
@@ -1216,6 +1302,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShowNameOnSquare310x310Logo());
             return S_OK;
         }
@@ -1233,6 +1320,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements2> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Square71x71Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -1246,6 +1334,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements2> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Square71x71Logo());
             return S_OK;
         }
@@ -1264,6 +1353,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements3> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Square44x44Logo(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -1277,6 +1367,7 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements3> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Square44x44Logo());
             return S_OK;
         }
@@ -1295,6 +1386,7 @@ struct produce<D, Windows::UI::StartScreen::IVisualElementsRequest> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VisualElements());
             return S_OK;
         }
@@ -1309,6 +1401,7 @@ struct produce<D, Windows::UI::StartScreen::IVisualElementsRequest> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlternateVisualElements());
             return S_OK;
         }
@@ -1323,6 +1416,7 @@ struct produce<D, Windows::UI::StartScreen::IVisualElementsRequest> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Deadline());
             return S_OK;
         }
@@ -1336,6 +1430,7 @@ struct produce<D, Windows::UI::StartScreen::IVisualElementsRequest> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1354,6 +1449,7 @@ struct produce<D, Windows::UI::StartScreen::IVisualElementsRequestDeferral> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -1371,6 +1467,7 @@ struct produce<D, Windows::UI::StartScreen::IVisualElementsRequestedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }

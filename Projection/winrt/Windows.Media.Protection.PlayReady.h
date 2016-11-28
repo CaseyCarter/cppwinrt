@@ -23,6 +23,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClient> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RegistrationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDRegistrationCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -36,6 +37,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClient> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RegistrationCompleted(token);
             return S_OK;
         }
@@ -49,6 +51,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClient> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ProximityDetectionCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDProximityDetectionCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -62,6 +65,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClient> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProximityDetectionCompleted(token);
             return S_OK;
         }
@@ -75,6 +79,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClient> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().LicenseFetchCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDLicenseFetchCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -88,6 +93,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClient> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LicenseFetchCompleted(token);
             return S_OK;
         }
@@ -101,6 +107,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClient> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ReRegistrationNeeded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -114,6 +121,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClient> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReRegistrationNeeded(token);
             return S_OK;
         }
@@ -127,6 +135,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClient> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ClosedCaptionDataReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDClosedCaptionDataReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -140,6 +149,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClient> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClosedCaptionDataReceived(token);
             return S_OK;
         }
@@ -153,6 +163,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClient> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().StartAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&contentUrl), startAsyncOptions, *reinterpret_cast<const Windows::Media::Protection::PlayReady::INDCustomData *>(&registrationCustomData), *reinterpret_cast<const Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor *>(&licenseFetchDescriptor)));
             return S_OK;
         }
@@ -167,6 +178,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClient> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().LicenseFetchAsync(*reinterpret_cast<const Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor *>(&licenseFetchDescriptor)));
             return S_OK;
         }
@@ -181,6 +193,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClient> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReRegistrationAsync(*reinterpret_cast<const Windows::Media::Protection::PlayReady::INDCustomData *>(&registrationCustomData)));
             return S_OK;
         }
@@ -195,6 +208,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClient> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Close();
             return S_OK;
         }
@@ -212,6 +226,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClientFactory> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::Media::Protection::PlayReady::INDDownloadEngine *>(&downloadEngine), *reinterpret_cast<const Windows::Media::Protection::PlayReady::INDStreamParser *>(&streamParser), *reinterpret_cast<const Windows::Media::Protection::PlayReady::INDMessenger *>(&pMessenger)));
             return S_OK;
         }
@@ -230,6 +245,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClosedCaptionDataRec
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *ccForamt = detach(this->shim().ClosedCaptionDataFormat());
             return S_OK;
         }
@@ -243,6 +259,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClosedCaptionDataRec
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *presentationTimestamp = detach(this->shim().PresentationTimestamp());
             return S_OK;
         }
@@ -256,6 +273,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDClosedCaptionDataRec
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__ccDataBytesSize, *ccDataBytes) = detach(this->shim().ClosedCaptionData());
             return S_OK;
         }
@@ -275,6 +293,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDCustomData> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__customDataTypeIDBytesSize, *customDataTypeIDBytes) = detach(this->shim().CustomDataTypeID());
             return S_OK;
         }
@@ -290,6 +309,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDCustomData> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__customDataBytesSize, *customDataBytes) = detach(this->shim().CustomData());
             return S_OK;
         }
@@ -309,6 +329,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDCustomDataFactory> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(array_ref<const uint8_t>(customDataTypeIDBytes, customDataTypeIDBytes + __customDataTypeIDBytesSize), array_ref<const uint8_t>(customDataBytes, customDataBytes + __customDataBytesSize)));
             return S_OK;
         }
@@ -327,6 +348,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDDownloadEngine> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Open(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), array_ref<const uint8_t>(sessionIDBytes, sessionIDBytes + __sessionIDBytesSize));
             return S_OK;
         }
@@ -340,6 +362,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDDownloadEngine> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Pause();
             return S_OK;
         }
@@ -353,6 +376,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDDownloadEngine> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Resume();
             return S_OK;
         }
@@ -366,6 +390,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDDownloadEngine> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Close();
             return S_OK;
         }
@@ -379,6 +404,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDDownloadEngine> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Seek(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&startPosition));
             return S_OK;
         }
@@ -392,6 +418,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDDownloadEngine> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *canSeek = detach(this->shim().CanSeek());
             return S_OK;
         }
@@ -405,6 +432,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDDownloadEngine> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *bufferFullMinThreshold = detach(this->shim().BufferFullMinThresholdInSamples());
             return S_OK;
         }
@@ -418,6 +446,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDDownloadEngine> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *bufferFullMaxThreshold = detach(this->shim().BufferFullMaxThresholdInSamples());
             return S_OK;
         }
@@ -431,6 +460,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDDownloadEngine> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().Notifier());
             return S_OK;
         }
@@ -449,6 +479,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDDownloadEngineNotifi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnStreamOpened();
             return S_OK;
         }
@@ -462,6 +493,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDDownloadEngineNotifi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnPlayReadyObjectReceived(array_ref<const uint8_t>(dataBytes, dataBytes + __dataBytesSize));
             return S_OK;
         }
@@ -475,6 +507,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDDownloadEngineNotifi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnContentIDReceived(*reinterpret_cast<const Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor *>(&licenseFetchDescriptor));
             return S_OK;
         }
@@ -488,6 +521,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDDownloadEngineNotifi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnDataReceived(array_ref<const uint8_t>(dataBytes, dataBytes + __dataBytesSize), bytesReceived);
             return S_OK;
         }
@@ -501,6 +535,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDDownloadEngineNotifi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnEndOfStream();
             return S_OK;
         }
@@ -514,6 +549,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDDownloadEngineNotifi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnNetworkError();
             return S_OK;
         }
@@ -531,6 +567,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDLicenseFetchComplete
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *customData = detach(this->shim().ResponseCustomData());
             return S_OK;
         }
@@ -549,6 +586,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDLicenseFetchDescript
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contentIDType = detach(this->shim().ContentIDType());
             return S_OK;
         }
@@ -562,6 +600,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDLicenseFetchDescript
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__contentIDBytesSize, *contentIDBytes) = detach(this->shim().ContentID());
             return S_OK;
         }
@@ -577,6 +616,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDLicenseFetchDescript
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *licenseFetchChallengeCustomData = detach(this->shim().LicenseFetchChallengeCustomData());
             return S_OK;
         }
@@ -591,6 +631,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDLicenseFetchDescript
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LicenseFetchChallengeCustomData(*reinterpret_cast<const Windows::Media::Protection::PlayReady::INDCustomData *>(&licenseFetchChallengeCustomData));
             return S_OK;
         }
@@ -608,6 +649,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDLicenseFetchDescript
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(contentIDType, array_ref<const uint8_t>(contentIDBytes, contentIDBytes + __contentIDBytesSize), *reinterpret_cast<const Windows::Media::Protection::PlayReady::INDCustomData *>(&licenseFetchChallengeCustomData)));
             return S_OK;
         }
@@ -626,6 +668,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDLicenseFetchResult> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *customData = detach(this->shim().ResponseCustomData());
             return S_OK;
         }
@@ -644,6 +687,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDMessenger> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SendRegistrationRequestAsync(array_ref<const uint8_t>(sessionIDBytes, sessionIDBytes + __sessionIDBytesSize), array_ref<const uint8_t>(challengeDataBytes, challengeDataBytes + __challengeDataBytesSize)));
             return S_OK;
         }
@@ -658,6 +702,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDMessenger> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SendProximityDetectionStartAsync(pdType, array_ref<const uint8_t>(transmitterChannelBytes, transmitterChannelBytes + __transmitterChannelBytesSize), array_ref<const uint8_t>(sessionIDBytes, sessionIDBytes + __sessionIDBytesSize), array_ref<const uint8_t>(challengeDataBytes, challengeDataBytes + __challengeDataBytesSize)));
             return S_OK;
         }
@@ -672,6 +717,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDMessenger> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SendProximityDetectionResponseAsync(pdType, array_ref<const uint8_t>(transmitterChannelBytes, transmitterChannelBytes + __transmitterChannelBytesSize), array_ref<const uint8_t>(sessionIDBytes, sessionIDBytes + __sessionIDBytesSize), array_ref<const uint8_t>(responseDataBytes, responseDataBytes + __responseDataBytesSize)));
             return S_OK;
         }
@@ -686,6 +732,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDMessenger> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SendLicenseFetchRequestAsync(array_ref<const uint8_t>(sessionIDBytes, sessionIDBytes + __sessionIDBytesSize), array_ref<const uint8_t>(challengeDataBytes, challengeDataBytes + __challengeDataBytesSize)));
             return S_OK;
         }
@@ -704,6 +751,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDProximityDetectionCo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *retryCount = detach(this->shim().ProximityDetectionRetryCount());
             return S_OK;
         }
@@ -721,6 +769,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDRegistrationComplete
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *customData = detach(this->shim().ResponseCustomData());
             return S_OK;
         }
@@ -735,6 +784,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDRegistrationComplete
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *transmitterProperties = detach(this->shim().TransmitterProperties());
             return S_OK;
         }
@@ -749,6 +799,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDRegistrationComplete
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *acceptpt = detach(this->shim().TransmitterCertificateAccepted());
             return S_OK;
         }
@@ -762,6 +813,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDRegistrationComplete
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransmitterCertificateAccepted(accept);
             return S_OK;
         }
@@ -779,6 +831,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDSendResult> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__responseDataBytesSize, *responseDataBytes) = detach(this->shim().Response());
             return S_OK;
         }
@@ -798,6 +851,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDStartResult> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *mediaStreamSource = detach(this->shim().MediaStreamSource());
             return S_OK;
         }
@@ -816,6 +870,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDStorageFileHelper> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *fileURLs = detach(this->shim().GetFileURLs(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
@@ -834,6 +889,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDStreamParser> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ParseData(array_ref<const uint8_t>(dataBytes, dataBytes + __dataBytesSize));
             return S_OK;
         }
@@ -847,6 +903,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDStreamParser> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *streamID = detach(this->shim().GetStreamInformation(*reinterpret_cast<const Windows::Media::Core::IMediaStreamDescriptor *>(&descriptor), *streamType));
             return S_OK;
         }
@@ -860,6 +917,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDStreamParser> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BeginOfStream();
             return S_OK;
         }
@@ -873,6 +931,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDStreamParser> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EndOfStream();
             return S_OK;
         }
@@ -886,6 +945,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDStreamParser> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().Notifier());
             return S_OK;
         }
@@ -904,6 +964,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDStreamParserNotifier
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnContentIDReceived(*reinterpret_cast<const Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor *>(&licenseFetchDescriptor));
             return S_OK;
         }
@@ -917,6 +978,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDStreamParserNotifier
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnMediaStreamDescriptorCreated(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Media::Core::AudioStreamDescriptor> *>(&audioStreamDescriptors), *reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::Media::Core::VideoStreamDescriptor> *>(&videoStreamDescriptors));
             return S_OK;
         }
@@ -930,6 +992,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDStreamParserNotifier
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnSampleParsed(streamID, streamType, *reinterpret_cast<const Windows::Media::Core::MediaStreamSample *>(&streamSample), pts, ccFormat, array_ref<const uint8_t>(ccDataBytes, ccDataBytes + __ccDataBytesSize));
             return S_OK;
         }
@@ -943,6 +1006,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDStreamParserNotifier
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnBeginSetupDecryptor(*reinterpret_cast<const Windows::Media::Core::IMediaStreamDescriptor *>(&descriptor), keyID, array_ref<const uint8_t>(proBytes, proBytes + __proBytesSize));
             return S_OK;
         }
@@ -960,6 +1024,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDTCPMessengerFactory>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const hstring *>(&remoteHostName), remoteHostPort));
             return S_OK;
         }
@@ -978,6 +1043,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDTransmitterPropertie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *type = detach(this->shim().CertificateType());
             return S_OK;
         }
@@ -991,6 +1057,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDTransmitterPropertie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *identifier = detach(this->shim().PlatformIdentifier());
             return S_OK;
         }
@@ -1004,6 +1071,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDTransmitterPropertie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__featureSetsSize, *featureSets) = detach(this->shim().SupportedFeatures());
             return S_OK;
         }
@@ -1019,6 +1087,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDTransmitterPropertie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *level = detach(this->shim().SecurityLevel());
             return S_OK;
         }
@@ -1032,6 +1101,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDTransmitterPropertie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *securityVersion = detach(this->shim().SecurityVersion());
             return S_OK;
         }
@@ -1045,6 +1115,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDTransmitterPropertie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *expirationDate = detach(this->shim().ExpirationDate());
             return S_OK;
         }
@@ -1058,6 +1129,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDTransmitterPropertie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__clientIDBytesSize, *clientIDBytes) = detach(this->shim().ClientID());
             return S_OK;
         }
@@ -1073,6 +1145,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDTransmitterPropertie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__modelDigestBytesSize, *modelDigestBytes) = detach(this->shim().ModelDigest());
             return S_OK;
         }
@@ -1088,6 +1161,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDTransmitterPropertie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *modelManufacturerName = detach(this->shim().ModelManufacturerName());
             return S_OK;
         }
@@ -1102,6 +1176,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDTransmitterPropertie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *modelName = detach(this->shim().ModelName());
             return S_OK;
         }
@@ -1116,6 +1191,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::INDTransmitterPropertie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *modelNumber = detach(this->shim().ModelNumber());
             return S_OK;
         }
@@ -1134,6 +1210,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyId());
             return S_OK;
         }
@@ -1147,6 +1224,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyIdString());
             return S_OK;
         }
@@ -1161,6 +1239,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LicenseAcquisitionUrl());
             return S_OK;
         }
@@ -1175,6 +1254,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LicenseAcquisitionUserInterfaceUrl());
             return S_OK;
         }
@@ -1189,6 +1269,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DomainServiceId());
             return S_OK;
         }
@@ -1202,6 +1283,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EncryptionType());
             return S_OK;
         }
@@ -1215,6 +1297,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CustomAttributes());
             return S_OK;
         }
@@ -1229,6 +1312,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DecryptorSetup());
             return S_OK;
         }
@@ -1242,6 +1326,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__headerBytesSize, *headerBytes) = detach(this->shim().GetSerializedHeader());
             return S_OK;
         }
@@ -1257,6 +1342,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HeaderWithEmbeddedUpdates());
             return S_OK;
         }
@@ -1275,6 +1361,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__contentKeyIdsSize, *contentKeyIds) = detach(this->shim().KeyIds());
             return S_OK;
         }
@@ -1290,6 +1377,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__contentKeyIdStringsSize, *contentKeyIdStrings) = detach(this->shim().KeyIdStrings());
             return S_OK;
         }
@@ -1309,6 +1397,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceFromWindowsMediaDrmHeader(array_ref<const uint8_t>(headerBytes, headerBytes + __headerBytesSize), *reinterpret_cast<const Windows::Foundation::Uri *>(&licenseAcquisitionUrl), *reinterpret_cast<const Windows::Foundation::Uri *>(&licenseAcquisitionUserInterfaceUrl), *reinterpret_cast<const hstring *>(&customAttributes), domainServiceId));
             return S_OK;
         }
@@ -1323,6 +1412,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceFromComponents(contentKeyId, *reinterpret_cast<const hstring *>(&contentKeyIdString), contentEncryptionAlgorithm, *reinterpret_cast<const Windows::Foundation::Uri *>(&licenseAcquisitionUrl), *reinterpret_cast<const Windows::Foundation::Uri *>(&licenseAcquisitionUserInterfaceUrl), *reinterpret_cast<const hstring *>(&customAttributes), domainServiceId));
             return S_OK;
         }
@@ -1337,6 +1427,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceFromPlayReadyHeader(array_ref<const uint8_t>(headerBytes, headerBytes + __headerBytesSize)));
             return S_OK;
         }
@@ -1355,6 +1446,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceFromComponents2(dwFlags, array_ref<const GUID>(contentKeyIds, contentKeyIds + __contentKeyIdsSize), *reinterpret_cast<const hstring *>(&contentKeyIdStrings), contentEncryptionAlgorithm, *reinterpret_cast<const Windows::Foundation::Uri *>(&licenseAcquisitionUrl), *reinterpret_cast<const Windows::Foundation::Uri *>(&licenseAcquisitionUserInterfaceUrl), *reinterpret_cast<const hstring *>(&customAttributes), domainServiceId));
             return S_OK;
         }
@@ -1374,6 +1466,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentResolv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *serviceRequest = detach(this->shim().ServiceRequest(*reinterpret_cast<const Windows::Media::Protection::PlayReady::PlayReadyContentHeader *>(&contentHeader)));
             return S_OK;
         }
@@ -1392,6 +1485,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomain> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccountId());
             return S_OK;
         }
@@ -1405,6 +1499,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomain> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceId());
             return S_OK;
         }
@@ -1418,6 +1513,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomain> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Revision());
             return S_OK;
         }
@@ -1431,6 +1527,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomain> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FriendlyName());
             return S_OK;
         }
@@ -1445,6 +1542,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomain> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DomainJoinUrl());
             return S_OK;
         }
@@ -1463,6 +1561,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomainIterabl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *domainIterable = detach(this->shim().CreateInstance(domainAccountId));
             return S_OK;
         }
@@ -1481,6 +1580,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomainJoinSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DomainAccountId());
             return S_OK;
         }
@@ -1494,6 +1594,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomainJoinSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DomainAccountId(value);
             return S_OK;
         }
@@ -1507,6 +1608,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomainJoinSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DomainFriendlyName());
             return S_OK;
         }
@@ -1521,6 +1623,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomainJoinSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DomainFriendlyName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1534,6 +1637,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomainJoinSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DomainServiceId());
             return S_OK;
         }
@@ -1547,6 +1651,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomainJoinSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DomainServiceId(value);
             return S_OK;
         }
@@ -1564,6 +1669,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomainLeaveSe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DomainAccountId());
             return S_OK;
         }
@@ -1577,6 +1683,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomainLeaveSe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DomainAccountId(value);
             return S_OK;
         }
@@ -1590,6 +1697,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomainLeaveSe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DomainServiceId());
             return S_OK;
         }
@@ -1603,6 +1711,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomainLeaveSe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DomainServiceId(value);
             return S_OK;
         }
@@ -1620,6 +1729,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyITADataGenera
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__dataBytesSize, *dataBytes) = detach(this->shim().GenerateData(guidCPSystemId, countOfStreams, *reinterpret_cast<const Windows::Foundation::Collections::IPropertySet *>(&configuration), format));
             return S_OK;
         }
@@ -1643,6 +1753,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicense> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FullyEvaluated());
             return S_OK;
         }
@@ -1656,6 +1767,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicense> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsableForPlay());
             return S_OK;
         }
@@ -1669,6 +1781,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicense> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExpirationDate());
             return S_OK;
         }
@@ -1683,6 +1796,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicense> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExpireAfterFirstPlay());
             return S_OK;
         }
@@ -1696,6 +1810,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicense> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DomainAccountID());
             return S_OK;
         }
@@ -1709,6 +1824,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicense> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChainDepth());
             return S_OK;
         }
@@ -1722,6 +1838,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicense> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *kid = detach(this->shim().GetKIDAtChainDepth(chainDepth));
             return S_OK;
         }
@@ -1739,6 +1856,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentHeader());
             return S_OK;
         }
@@ -1753,6 +1871,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentHeader(*reinterpret_cast<const Windows::Media::Protection::PlayReady::PlayReadyContentHeader *>(&value));
             return S_OK;
         }
@@ -1766,6 +1885,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DomainServiceId());
             return S_OK;
         }
@@ -1779,6 +1899,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DomainServiceId(value);
             return S_OK;
         }
@@ -1796,6 +1917,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SessionId());
             return S_OK;
         }
@@ -1813,6 +1935,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseIterab
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::Media::Protection::PlayReady::PlayReadyContentHeader *>(&contentHeader), fullyEvaluated));
             return S_OK;
         }
@@ -1831,6 +1954,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseManage
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().DeleteLicenses(*reinterpret_cast<const Windows::Media::Protection::PlayReady::PlayReadyContentHeader *>(&contentHeader)));
             return S_OK;
         }
@@ -1849,6 +1973,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseSessio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *serviceRequest = detach(this->shim().CreateLAServiceRequest());
             return S_OK;
         }
@@ -1863,6 +1988,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseSessio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ConfigureMediaProtectionManager(*reinterpret_cast<const Windows::Media::Protection::MediaProtectionManager *>(&mpm));
             return S_OK;
         }
@@ -1880,6 +2006,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseSessio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::Collections::IPropertySet *>(&configuration)));
             return S_OK;
         }
@@ -1898,6 +2025,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyMeteringRepor
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__meteringCertBytesSize, *meteringCertBytes) = detach(this->shim().MeteringCertificate());
             return S_OK;
         }
@@ -1913,6 +2041,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyMeteringRepor
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MeteringCertificate(array_ref<const uint8_t>(meteringCertBytes, meteringCertBytes + __meteringCertBytesSize));
             return S_OK;
         }
@@ -1934,6 +2063,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadySecureStopIte
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(array_ref<const uint8_t>(publisherCertBytes, publisherCertBytes + __publisherCertBytesSize)));
             return S_OK;
         }
@@ -1952,6 +2082,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadySecureStopSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SessionID());
             return S_OK;
         }
@@ -1965,6 +2096,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadySecureStopSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StartTime());
             return S_OK;
         }
@@ -1978,6 +2110,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadySecureStopSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UpdateTime());
             return S_OK;
         }
@@ -1991,6 +2124,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadySecureStopSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Stopped());
             return S_OK;
         }
@@ -2004,6 +2138,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadySecureStopSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__publisherCertBytesSize, *publisherCertBytes) = detach(this->shim().PublisherCertificate());
             return S_OK;
         }
@@ -2023,6 +2158,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadySecureStopSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(array_ref<const uint8_t>(publisherCertBytes, publisherCertBytes + __publisherCertBytesSize)));
             return S_OK;
         }
@@ -2037,6 +2173,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadySecureStopSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceFromSessionID(sessionID, array_ref<const uint8_t>(publisherCertBytes, publisherCertBytes + __publisherCertBytesSize)));
             return S_OK;
         }
@@ -2055,6 +2192,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyServiceReques
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Uri());
             return S_OK;
         }
@@ -2069,6 +2207,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyServiceReques
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Uri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -2082,6 +2221,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyServiceReques
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResponseCustomData());
             return S_OK;
         }
@@ -2096,6 +2236,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyServiceReques
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChallengeCustomData());
             return S_OK;
         }
@@ -2110,6 +2251,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyServiceReques
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ChallengeCustomData(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2123,6 +2265,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyServiceReques
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *action = detach(this->shim().BeginServiceRequest());
             return S_OK;
         }
@@ -2137,6 +2280,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyServiceReques
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *serviceRequest = detach(this->shim().NextServiceRequest());
             return S_OK;
         }
@@ -2151,6 +2295,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyServiceReques
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *challengeMessage = detach(this->shim().GenerateManualEnablingChallenge());
             return S_OK;
         }
@@ -2165,6 +2310,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyServiceReques
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ProcessManualEnablingResponse(array_ref<const uint8_t>(responseBytes, responseBytes + __responseBytesSize)));
             return S_OK;
         }
@@ -2182,6 +2328,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadySoapMessage> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__messageBodyBytesSize, *messageBodyBytes) = detach(this->shim().GetMessageBody());
             return S_OK;
         }
@@ -2197,6 +2344,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadySoapMessage> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MessageHeaders());
             return S_OK;
         }
@@ -2211,6 +2359,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadySoapMessage> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *messageUri = detach(this->shim().Uri());
             return S_OK;
         }
@@ -2229,6 +2378,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DomainJoinServiceRequestType());
             return S_OK;
         }
@@ -2242,6 +2392,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DomainLeaveServiceRequestType());
             return S_OK;
         }
@@ -2255,6 +2406,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IndividualizationServiceRequestType());
             return S_OK;
         }
@@ -2268,6 +2420,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LicenseAcquirerServiceRequestType());
             return S_OK;
         }
@@ -2281,6 +2434,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MeteringReportServiceRequestType());
             return S_OK;
         }
@@ -2294,6 +2448,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RevocationServiceRequestType());
             return S_OK;
         }
@@ -2307,6 +2462,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediaProtectionSystemId());
             return S_OK;
         }
@@ -2320,6 +2476,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PlayReadySecurityVersion());
             return S_OK;
         }
@@ -2337,6 +2494,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PlayReadyCertificateSecurityLevel());
             return S_OK;
         }
@@ -2354,6 +2512,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics3> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SecureStopServiceRequestType());
             return S_OK;
         }
@@ -2367,6 +2526,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics3> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CheckSupportedHardware(hwdrmFeature));
             return S_OK;
         }
@@ -2384,6 +2544,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics4> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InputTrustAuthorityToCreate());
             return S_OK;
         }
@@ -2398,6 +2559,7 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics4> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProtectionSystemId());
             return S_OK;
         }

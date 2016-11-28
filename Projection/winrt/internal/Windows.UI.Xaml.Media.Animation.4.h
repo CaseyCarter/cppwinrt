@@ -31,6 +31,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetNavigationStateCore());
             return S_OK;
         }
@@ -45,6 +46,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetNavigationStateCore(*reinterpret_cast<const hstring *>(&navigationState));
             return S_OK;
         }

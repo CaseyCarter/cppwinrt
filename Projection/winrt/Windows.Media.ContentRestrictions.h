@@ -20,6 +20,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IContentRestrictionsBrows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GeographicRegion());
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IContentRestrictionsBrows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxBrowsableAgeRating());
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IContentRestrictionsBrows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PreferredAgeRating());
             return S_OK;
         }
@@ -66,6 +69,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -80,6 +84,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Id(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -93,6 +98,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -107,6 +113,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -120,6 +127,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Image());
             return S_OK;
         }
@@ -134,6 +142,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Image(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
@@ -147,6 +156,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Category());
             return S_OK;
         }
@@ -160,6 +170,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Category(value);
             return S_OK;
         }
@@ -173,6 +184,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ratings());
             return S_OK;
         }
@@ -187,6 +199,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescription>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Ratings(*reinterpret_cast<const Windows::Foundation::Collections::IVector<hstring> *>(&value));
             return S_OK;
         }
@@ -204,6 +217,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentDescriptionF
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *RatedContentDescription = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const hstring *>(&title), category));
             return S_OK;
         }
@@ -222,6 +236,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetBrowsePolicyAsync());
             return S_OK;
         }
@@ -236,6 +251,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetRestrictionLevelAsync(*reinterpret_cast<const Windows::Media::ContentRestrictions::RatedContentDescription *>(&RatedContentDescription)));
             return S_OK;
         }
@@ -250,6 +266,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestContentAccessAsync(*reinterpret_cast<const Windows::Media::ContentRestrictions::RatedContentDescription *>(&RatedContentDescription)));
             return S_OK;
         }
@@ -264,6 +281,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RestrictionsChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -277,6 +295,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RestrictionsChanged(token);
             return S_OK;
         }
@@ -294,6 +313,7 @@ struct produce<D, Windows::Media::ContentRestrictions::IRatedContentRestrictions
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *ratedContentRestrictions = detach(this->shim().CreateWithMaxAgeRating(maxAgeRating));
             return S_OK;
         }

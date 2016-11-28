@@ -18,6 +18,7 @@ struct produce<D, Windows::Data::Json::IJsonArray> : produce_base<D, Windows::Da
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetObjectAt(index));
             return S_OK;
         }
@@ -32,6 +33,7 @@ struct produce<D, Windows::Data::Json::IJsonArray> : produce_base<D, Windows::Da
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetArrayAt(index));
             return S_OK;
         }
@@ -46,6 +48,7 @@ struct produce<D, Windows::Data::Json::IJsonArray> : produce_base<D, Windows::Da
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetStringAt(index));
             return S_OK;
         }
@@ -60,6 +63,7 @@ struct produce<D, Windows::Data::Json::IJsonArray> : produce_base<D, Windows::Da
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetNumberAt(index));
             return S_OK;
         }
@@ -73,6 +77,7 @@ struct produce<D, Windows::Data::Json::IJsonArray> : produce_base<D, Windows::Da
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetBooleanAt(index));
             return S_OK;
         }
@@ -90,6 +95,7 @@ struct produce<D, Windows::Data::Json::IJsonArrayStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *jsonArray = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -104,6 +110,7 @@ struct produce<D, Windows::Data::Json::IJsonArrayStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *result));
             return S_OK;
         }
@@ -122,6 +129,7 @@ struct produce<D, Windows::Data::Json::IJsonErrorStatics2> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *status = detach(this->shim().GetJsonStatus(hresult));
             return S_OK;
         }
@@ -139,6 +147,7 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetNamedValue(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -153,6 +162,7 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetNamedValue(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Data::Json::IJsonValue *>(&value));
             return S_OK;
         }
@@ -166,6 +176,7 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetNamedObject(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -180,6 +191,7 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetNamedArray(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -194,6 +206,7 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetNamedString(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -208,6 +221,7 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetNamedNumber(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -221,6 +235,7 @@ struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetNamedBoolean(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -238,6 +253,7 @@ struct produce<D, Windows::Data::Json::IJsonObjectStatics> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *jsonObject = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -252,6 +268,7 @@ struct produce<D, Windows::Data::Json::IJsonObjectStatics> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *result));
             return S_OK;
         }
@@ -270,6 +287,7 @@ struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetNamedValue(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Data::Json::JsonValue *>(&defaultValue)));
             return S_OK;
         }
@@ -284,6 +302,7 @@ struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetNamedObject(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Data::Json::JsonObject *>(&defaultValue)));
             return S_OK;
         }
@@ -298,6 +317,7 @@ struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetNamedString(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&defaultValue)));
             return S_OK;
         }
@@ -312,6 +332,7 @@ struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetNamedArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Data::Json::JsonArray *>(&defaultValue)));
             return S_OK;
         }
@@ -326,6 +347,7 @@ struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetNamedNumber(*reinterpret_cast<const hstring *>(&name), defaultValue));
             return S_OK;
         }
@@ -339,6 +361,7 @@ struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetNamedBoolean(*reinterpret_cast<const hstring *>(&name), defaultValue));
             return S_OK;
         }
@@ -356,6 +379,7 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ValueType());
             return S_OK;
         }
@@ -369,6 +393,7 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Stringify());
             return S_OK;
         }
@@ -383,6 +408,7 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetString());
             return S_OK;
         }
@@ -397,6 +423,7 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetNumber());
             return S_OK;
         }
@@ -410,6 +437,7 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetBoolean());
             return S_OK;
         }
@@ -423,6 +451,7 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetArray());
             return S_OK;
         }
@@ -437,6 +466,7 @@ struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Da
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetObject());
             return S_OK;
         }
@@ -455,6 +485,7 @@ struct produce<D, Windows::Data::Json::IJsonValueStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *jsonValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -469,6 +500,7 @@ struct produce<D, Windows::Data::Json::IJsonValueStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *result));
             return S_OK;
         }
@@ -483,6 +515,7 @@ struct produce<D, Windows::Data::Json::IJsonValueStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *jsonValue = detach(this->shim().CreateBooleanValue(input));
             return S_OK;
         }
@@ -497,6 +530,7 @@ struct produce<D, Windows::Data::Json::IJsonValueStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *jsonValue = detach(this->shim().CreateNumberValue(input));
             return S_OK;
         }
@@ -511,6 +545,7 @@ struct produce<D, Windows::Data::Json::IJsonValueStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *jsonValue = detach(this->shim().CreateStringValue(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -529,6 +564,7 @@ struct produce<D, Windows::Data::Json::IJsonValueStatics2> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *jsonValue = detach(this->shim().CreateNullValue());
             return S_OK;
         }

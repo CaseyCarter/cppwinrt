@@ -16,6 +16,7 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -29,6 +30,7 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OperatingSystem());
             return S_OK;
         }
@@ -43,6 +45,7 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FriendlyName());
             return S_OK;
         }
@@ -57,6 +60,7 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SystemManufacturer());
             return S_OK;
         }
@@ -71,6 +75,7 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SystemProductName());
             return S_OK;
         }
@@ -85,6 +90,7 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SystemSku());
             return S_OK;
         }
@@ -103,6 +109,7 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SystemHardwareVersion());
             return S_OK;
         }
@@ -117,6 +124,7 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientD
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SystemFirmwareVersion());
             return S_OK;
         }

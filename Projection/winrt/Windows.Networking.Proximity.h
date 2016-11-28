@@ -94,6 +94,7 @@ struct produce<D, Windows::Networking::Proximity::IConnectionRequestedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PeerInformation());
             return S_OK;
         }
@@ -112,6 +113,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowBluetooth());
             return S_OK;
         }
@@ -125,6 +127,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowBluetooth(value);
             return S_OK;
         }
@@ -138,6 +141,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowInfrastructure());
             return S_OK;
         }
@@ -151,6 +155,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowInfrastructure(value);
             return S_OK;
         }
@@ -164,6 +169,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowWiFiDirect());
             return S_OK;
         }
@@ -177,6 +183,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowWiFiDirect(value);
             return S_OK;
         }
@@ -190,6 +197,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -204,6 +212,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -217,6 +226,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedDiscoveryTypes());
             return S_OK;
         }
@@ -230,6 +240,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlternateIdentities());
             return S_OK;
         }
@@ -244,6 +255,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start();
             return S_OK;
         }
@@ -257,6 +269,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start(*reinterpret_cast<const hstring *>(&peerMessage));
             return S_OK;
         }
@@ -270,6 +283,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stop();
             return S_OK;
         }
@@ -283,6 +297,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().TriggeredConnectionStateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -296,6 +311,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TriggeredConnectionStateChanged(cookie);
             return S_OK;
         }
@@ -309,6 +325,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().ConnectionRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -322,6 +339,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ConnectionRequested(cookie);
             return S_OK;
         }
@@ -335,6 +353,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().FindAllPeersAsync());
             return S_OK;
         }
@@ -349,6 +368,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().ConnectAsync(*reinterpret_cast<const Windows::Networking::Proximity::PeerInformation *>(&peerInformation)));
             return S_OK;
         }
@@ -367,6 +387,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Role());
             return S_OK;
         }
@@ -380,6 +401,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Role(value);
             return S_OK;
         }
@@ -393,6 +415,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DiscoveryData());
             return S_OK;
         }
@@ -407,6 +430,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DiscoveryData(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
@@ -420,6 +444,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerFinderStatics2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *watcher = detach(this->shim().CreateWatcher());
             return S_OK;
         }
@@ -438,6 +463,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerInformation> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -456,6 +482,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerInformation3> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -470,6 +497,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerInformation3> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DiscoveryData());
             return S_OK;
         }
@@ -488,6 +516,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerInformationWithHostAndSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HostName());
             return S_OK;
         }
@@ -502,6 +531,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerInformationWithHostAndSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceName());
             return S_OK;
         }
@@ -520,6 +550,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Added(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Networking::Proximity::PeerInformation> *>(&handler)));
             return S_OK;
         }
@@ -533,6 +564,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Added(token);
             return S_OK;
         }
@@ -546,6 +578,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Removed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Networking::Proximity::PeerInformation> *>(&handler)));
             return S_OK;
         }
@@ -559,6 +592,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Removed(token);
             return S_OK;
         }
@@ -572,6 +606,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Updated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Networking::Proximity::PeerInformation> *>(&handler)));
             return S_OK;
         }
@@ -585,6 +620,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Updated(token);
             return S_OK;
         }
@@ -598,6 +634,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -611,6 +648,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnumerationCompleted(token);
             return S_OK;
         }
@@ -624,6 +662,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -637,6 +676,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stopped(token);
             return S_OK;
         }
@@ -650,6 +690,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *status = detach(this->shim().Status());
             return S_OK;
         }
@@ -663,6 +704,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start();
             return S_OK;
         }
@@ -676,6 +718,7 @@ struct produce<D, Windows::Networking::Proximity::IPeerWatcher> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stop();
             return S_OK;
         }
@@ -693,6 +736,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *subscriptionId = detach(this->shim().SubscribeForMessage(*reinterpret_cast<const hstring *>(&messageType), *reinterpret_cast<const Windows::Networking::Proximity::MessageReceivedHandler *>(&messageReceivedHandler)));
             return S_OK;
         }
@@ -706,6 +750,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *messageId = detach(this->shim().PublishMessage(*reinterpret_cast<const hstring *>(&messageType), *reinterpret_cast<const hstring *>(&message)));
             return S_OK;
         }
@@ -719,6 +764,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *messageId = detach(this->shim().PublishMessage(*reinterpret_cast<const hstring *>(&messageType), *reinterpret_cast<const hstring *>(&message), *reinterpret_cast<const Windows::Networking::Proximity::MessageTransmittedHandler *>(&messageTransmittedHandler)));
             return S_OK;
         }
@@ -732,6 +778,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *messageId = detach(this->shim().PublishBinaryMessage(*reinterpret_cast<const hstring *>(&messageType), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&message)));
             return S_OK;
         }
@@ -745,6 +792,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *messageId = detach(this->shim().PublishBinaryMessage(*reinterpret_cast<const hstring *>(&messageType), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&message), *reinterpret_cast<const Windows::Networking::Proximity::MessageTransmittedHandler *>(&messageTransmittedHandler)));
             return S_OK;
         }
@@ -758,6 +806,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *messageId = detach(this->shim().PublishUriMessage(*reinterpret_cast<const Windows::Foundation::Uri *>(&message)));
             return S_OK;
         }
@@ -771,6 +820,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *messageId = detach(this->shim().PublishUriMessage(*reinterpret_cast<const Windows::Foundation::Uri *>(&message), *reinterpret_cast<const Windows::Networking::Proximity::MessageTransmittedHandler *>(&messageTransmittedHandler)));
             return S_OK;
         }
@@ -784,6 +834,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StopSubscribingForMessage(subscriptionId);
             return S_OK;
         }
@@ -797,6 +848,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StopPublishingMessage(messageId);
             return S_OK;
         }
@@ -810,6 +862,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().DeviceArrived(*reinterpret_cast<const Windows::Networking::Proximity::DeviceArrivedEventHandler *>(&arrivedHandler)));
             return S_OK;
         }
@@ -823,6 +876,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DeviceArrived(cookie);
             return S_OK;
         }
@@ -836,6 +890,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().DeviceDeparted(*reinterpret_cast<const Windows::Networking::Proximity::DeviceDepartedEventHandler *>(&departedHandler)));
             return S_OK;
         }
@@ -849,6 +904,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DeviceDeparted(cookie);
             return S_OK;
         }
@@ -862,6 +918,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxMessageBytes());
             return S_OK;
         }
@@ -875,6 +932,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BitsPerSecond());
             return S_OK;
         }
@@ -888,6 +946,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDevice> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -906,6 +965,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDeviceStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *selector = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -920,6 +980,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDeviceStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *proximityDevice = detach(this->shim().GetDefault());
             return S_OK;
         }
@@ -934,6 +995,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityDeviceStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *proximityDevice = detach(this->shim().FromId(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -952,6 +1014,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityMessage> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MessageType());
             return S_OK;
         }
@@ -966,6 +1029,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityMessage> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SubscriptionId());
             return S_OK;
         }
@@ -979,6 +1043,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityMessage> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Data());
             return S_OK;
         }
@@ -993,6 +1058,7 @@ struct produce<D, Windows::Networking::Proximity::IProximityMessage> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataAsString());
             return S_OK;
         }
@@ -1011,6 +1077,7 @@ struct produce<D, Windows::Networking::Proximity::ITriggeredConnectionStateChang
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().State());
             return S_OK;
         }
@@ -1024,6 +1091,7 @@ struct produce<D, Windows::Networking::Proximity::ITriggeredConnectionStateChang
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -1037,6 +1105,7 @@ struct produce<D, Windows::Networking::Proximity::ITriggeredConnectionStateChang
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Socket());
             return S_OK;
         }

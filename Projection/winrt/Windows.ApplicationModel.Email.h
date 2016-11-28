@@ -22,6 +22,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FileName());
             return S_OK;
         }
@@ -36,6 +37,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FileName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -49,6 +51,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Data());
             return S_OK;
         }
@@ -63,6 +66,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Data(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
@@ -80,6 +84,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -94,6 +99,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentId());
             return S_OK;
         }
@@ -108,6 +114,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -121,6 +128,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentLocation());
             return S_OK;
         }
@@ -135,6 +143,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentLocation(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -148,6 +157,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DownloadState());
             return S_OK;
         }
@@ -161,6 +171,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DownloadState(value);
             return S_OK;
         }
@@ -174,6 +185,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EstimatedDownloadSizeInBytes());
             return S_OK;
         }
@@ -187,6 +199,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EstimatedDownloadSizeInBytes(value);
             return S_OK;
         }
@@ -200,6 +213,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsFromBaseMessage());
             return S_OK;
         }
@@ -213,6 +227,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsInline());
             return S_OK;
         }
@@ -226,6 +241,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsInline(value);
             return S_OK;
         }
@@ -239,6 +255,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MimeType());
             return S_OK;
         }
@@ -253,6 +270,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MimeType(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -270,6 +288,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachmentFactory> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&fileName), *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&data)));
             return S_OK;
         }
@@ -288,6 +307,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailAttachmentFactory2> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&fileName), *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&data), *reinterpret_cast<const hstring *>(&mimeType)));
             return S_OK;
         }
@@ -306,6 +326,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailConversation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -320,6 +341,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailConversation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MailboxId());
             return S_OK;
         }
@@ -334,6 +356,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailConversation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FlagState());
             return S_OK;
         }
@@ -347,6 +370,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailConversation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasAttachment());
             return S_OK;
         }
@@ -360,6 +384,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailConversation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Importance());
             return S_OK;
         }
@@ -373,6 +398,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailConversation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastEmailResponseKind());
             return S_OK;
         }
@@ -386,6 +412,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailConversation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MessageCount());
             return S_OK;
         }
@@ -399,6 +426,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailConversation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MostRecentMessageId());
             return S_OK;
         }
@@ -413,6 +441,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailConversation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MostRecentMessageTime());
             return S_OK;
         }
@@ -426,6 +455,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailConversation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Preview());
             return S_OK;
         }
@@ -440,6 +470,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailConversation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LatestSender());
             return S_OK;
         }
@@ -454,6 +485,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailConversation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Subject());
             return S_OK;
         }
@@ -468,6 +500,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailConversation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnreadMessageCount());
             return S_OK;
         }
@@ -481,6 +514,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailConversation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindMessagesAsync());
             return S_OK;
         }
@@ -495,6 +529,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailConversation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindMessagesAsync(count));
             return S_OK;
         }
@@ -513,6 +548,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailConversationBatch> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Conversations());
             return S_OK;
         }
@@ -527,6 +563,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailConversationBatch> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -544,6 +581,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailConversationReader> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReadBatchAsync());
             return S_OK;
         }
@@ -562,6 +600,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -576,6 +615,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteId());
             return S_OK;
         }
@@ -590,6 +630,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -603,6 +644,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MailboxId());
             return S_OK;
         }
@@ -617,6 +659,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ParentFolderId());
             return S_OK;
         }
@@ -631,6 +674,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -645,6 +689,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -658,6 +703,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsSyncEnabled());
             return S_OK;
         }
@@ -671,6 +717,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsSyncEnabled(value);
             return S_OK;
         }
@@ -684,6 +731,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastSuccessfulSyncTime());
             return S_OK;
         }
@@ -697,6 +745,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LastSuccessfulSyncTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -710,6 +759,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -723,6 +773,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateFolderAsync(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -737,6 +788,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DeleteAsync());
             return S_OK;
         }
@@ -751,6 +803,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindChildFoldersAsync());
             return S_OK;
         }
@@ -765,6 +818,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetConversationReader());
             return S_OK;
         }
@@ -779,6 +833,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetConversationReader(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailQueryOptions *>(&options)));
             return S_OK;
         }
@@ -793,6 +848,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetMessageAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
@@ -807,6 +863,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetMessageReader());
             return S_OK;
         }
@@ -821,6 +878,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetMessageReader(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailQueryOptions *>(&options)));
             return S_OK;
         }
@@ -835,6 +893,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetMessageCountsAsync());
             return S_OK;
         }
@@ -849,6 +908,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryMoveAsync(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailFolder *>(&newParentFolder)));
             return S_OK;
         }
@@ -863,6 +923,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryMoveAsync(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailFolder *>(&newParentFolder), *reinterpret_cast<const hstring *>(&newFolderName)));
             return S_OK;
         }
@@ -877,6 +938,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TrySaveAsync());
             return S_OK;
         }
@@ -891,6 +953,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SaveMessageAsync(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailMessage *>(&message)));
             return S_OK;
         }
@@ -909,6 +972,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanEdit());
             return S_OK;
         }
@@ -922,6 +986,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanEdit(value);
             return S_OK;
         }
@@ -935,6 +1000,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanExtractData());
             return S_OK;
         }
@@ -948,6 +1014,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanExtractData(value);
             return S_OK;
         }
@@ -961,6 +1028,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanForward());
             return S_OK;
         }
@@ -974,6 +1042,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanForward(value);
             return S_OK;
         }
@@ -987,6 +1056,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanModifyRecipientsOnResponse());
             return S_OK;
         }
@@ -1000,6 +1070,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanModifyRecipientsOnResponse(value);
             return S_OK;
         }
@@ -1013,6 +1084,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanPrintData());
             return S_OK;
         }
@@ -1026,6 +1098,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanPrintData(value);
             return S_OK;
         }
@@ -1039,6 +1112,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanRemoveIrmOnResponse());
             return S_OK;
         }
@@ -1052,6 +1126,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanRemoveIrmOnResponse(value);
             return S_OK;
         }
@@ -1065,6 +1140,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanReply());
             return S_OK;
         }
@@ -1078,6 +1154,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanReply(value);
             return S_OK;
         }
@@ -1091,6 +1168,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanReplyAll());
             return S_OK;
         }
@@ -1104,6 +1182,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanReplyAll(value);
             return S_OK;
         }
@@ -1117,6 +1196,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExpirationDate());
             return S_OK;
         }
@@ -1130,6 +1210,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExpirationDate(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -1143,6 +1224,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsIrmOriginator());
             return S_OK;
         }
@@ -1156,6 +1238,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsIrmOriginator(value);
             return S_OK;
         }
@@ -1169,6 +1252,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsProgramaticAccessAllowed());
             return S_OK;
         }
@@ -1182,6 +1266,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsProgramaticAccessAllowed(value);
             return S_OK;
         }
@@ -1195,6 +1280,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Template());
             return S_OK;
         }
@@ -1209,6 +1295,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Template(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailIrmTemplate *>(&value));
             return S_OK;
         }
@@ -1226,6 +1313,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfoFactory> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::DateTime *>(&expiration), *reinterpret_cast<const Windows::ApplicationModel::Email::EmailIrmTemplate *>(&irmTemplate)));
             return S_OK;
         }
@@ -1244,6 +1332,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmTemplate> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -1258,6 +1347,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmTemplate> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Id(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1271,6 +1361,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmTemplate> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -1285,6 +1376,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmTemplate> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Description(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1298,6 +1390,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmTemplate> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -1312,6 +1405,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmTemplate> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1329,6 +1423,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailIrmTemplateFactory> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&description)));
             return S_OK;
         }
@@ -1347,6 +1442,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailItemCounts> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Flagged());
             return S_OK;
         }
@@ -1360,6 +1456,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailItemCounts> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Important());
             return S_OK;
         }
@@ -1373,6 +1470,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailItemCounts> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Total());
             return S_OK;
         }
@@ -1386,6 +1484,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailItemCounts> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Unread());
             return S_OK;
         }
@@ -1403,6 +1502,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Capabilities());
             return S_OK;
         }
@@ -1417,6 +1517,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChangeTracker());
             return S_OK;
         }
@@ -1431,6 +1532,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -1445,6 +1547,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1458,6 +1561,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -1472,6 +1576,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsOwnedByCurrentApp());
             return S_OK;
         }
@@ -1485,6 +1590,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDataEncryptedUnderLock());
             return S_OK;
         }
@@ -1498,6 +1604,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MailAddress());
             return S_OK;
         }
@@ -1512,6 +1619,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MailAddress(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1525,6 +1633,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MailAddressAliases());
             return S_OK;
         }
@@ -1539,6 +1648,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OtherAppReadAccess());
             return S_OK;
         }
@@ -1552,6 +1662,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OtherAppReadAccess(value);
             return S_OK;
         }
@@ -1565,6 +1676,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OtherAppWriteAccess());
             return S_OK;
         }
@@ -1578,6 +1690,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OtherAppWriteAccess(value);
             return S_OK;
         }
@@ -1591,6 +1704,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Policies());
             return S_OK;
         }
@@ -1605,6 +1719,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourceDisplayName());
             return S_OK;
         }
@@ -1619,6 +1734,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SyncManager());
             return S_OK;
         }
@@ -1633,6 +1749,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserDataAccountId());
             return S_OK;
         }
@@ -1647,6 +1764,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetConversationReader());
             return S_OK;
         }
@@ -1661,6 +1779,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetConversationReader(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailQueryOptions *>(&options)));
             return S_OK;
         }
@@ -1675,6 +1794,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetMessageReader());
             return S_OK;
         }
@@ -1689,6 +1809,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetMessageReader(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailQueryOptions *>(&options)));
             return S_OK;
         }
@@ -1703,6 +1824,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DeleteAsync());
             return S_OK;
         }
@@ -1717,6 +1839,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetConversationAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
@@ -1731,6 +1854,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetFolderAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
@@ -1745,6 +1869,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetMessageAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
@@ -1759,6 +1884,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetSpecialFolderAsync(folderType));
             return S_OK;
         }
@@ -1773,6 +1899,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SaveAsync());
             return S_OK;
         }
@@ -1787,6 +1914,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MarkMessageAsSeenAsync(*reinterpret_cast<const hstring *>(&messageId)));
             return S_OK;
         }
@@ -1801,6 +1929,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MarkFolderAsSeenAsync(*reinterpret_cast<const hstring *>(&folderId)));
             return S_OK;
         }
@@ -1815,6 +1944,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MarkMessageReadAsync(*reinterpret_cast<const hstring *>(&messageId), isRead));
             return S_OK;
         }
@@ -1829,6 +1959,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ChangeMessageFlagStateAsync(*reinterpret_cast<const hstring *>(&messageId), flagState));
             return S_OK;
         }
@@ -1843,6 +1974,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryMoveMessageAsync(*reinterpret_cast<const hstring *>(&messageId), *reinterpret_cast<const hstring *>(&newParentFolderId)));
             return S_OK;
         }
@@ -1857,6 +1989,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryMoveFolderAsync(*reinterpret_cast<const hstring *>(&folderId), *reinterpret_cast<const hstring *>(&newParentFolderId)));
             return S_OK;
         }
@@ -1871,6 +2004,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryMoveFolderAsync(*reinterpret_cast<const hstring *>(&folderId), *reinterpret_cast<const hstring *>(&newParentFolderId), *reinterpret_cast<const hstring *>(&newFolderName)));
             return S_OK;
         }
@@ -1885,6 +2019,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DeleteMessageAsync(*reinterpret_cast<const hstring *>(&messageId)));
             return S_OK;
         }
@@ -1899,6 +2034,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MarkFolderSyncEnabledAsync(*reinterpret_cast<const hstring *>(&folderId), isSyncEnabled));
             return S_OK;
         }
@@ -1913,6 +2049,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SendMessageAsync(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailMessage *>(&message)));
             return S_OK;
         }
@@ -1927,6 +2064,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SaveDraftAsync(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailMessage *>(&message)));
             return S_OK;
         }
@@ -1941,6 +2079,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DownloadMessageAsync(*reinterpret_cast<const hstring *>(&messageId)));
             return S_OK;
         }
@@ -1955,6 +2094,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DownloadAttachmentAsync(*reinterpret_cast<const hstring *>(&attachmentId)));
             return S_OK;
         }
@@ -1969,6 +2109,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateResponseMessageAsync(*reinterpret_cast<const hstring *>(&messageId), responseType, *reinterpret_cast<const hstring *>(&subject), responseHeaderType, *reinterpret_cast<const hstring *>(&responseHeader)));
             return S_OK;
         }
@@ -1983,6 +2124,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryUpdateMeetingResponseAsync(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailMessage *>(&meeting), response, *reinterpret_cast<const hstring *>(&subject), *reinterpret_cast<const hstring *>(&comment), sendUpdate));
             return S_OK;
         }
@@ -1997,6 +2139,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryForwardMeetingAsync(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailMessage *>(&meeting), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Email::EmailRecipient> *>(&recipients), *reinterpret_cast<const hstring *>(&subject), forwardHeaderType, *reinterpret_cast<const hstring *>(&forwardHeader), *reinterpret_cast<const hstring *>(&comment)));
             return S_OK;
         }
@@ -2011,6 +2154,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryProposeNewTimeForMeetingAsync(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailMessage *>(&meeting), *reinterpret_cast<const Windows::Foundation::DateTime *>(&newStartTime), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&newDuration), *reinterpret_cast<const hstring *>(&subject), *reinterpret_cast<const hstring *>(&comment)));
             return S_OK;
         }
@@ -2025,6 +2169,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pToken = detach(this->shim().MailboxChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailbox, Windows::ApplicationModel::Email::EmailMailboxChangedEventArgs> *>(&pHandler)));
             return S_OK;
         }
@@ -2038,6 +2183,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MailboxChanged(token);
             return S_OK;
         }
@@ -2051,6 +2197,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SendMessageAsync(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailMessage *>(&message), smartSend));
             return S_OK;
         }
@@ -2065,6 +2212,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TrySetAutoReplySettingsAsync(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailMailboxAutoReplySettings *>(&autoReplySettings)));
             return S_OK;
         }
@@ -2079,6 +2227,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *autoReplySettings = detach(this->shim().TryGetAutoReplySettingsAsync(requestedFormat));
             return S_OK;
         }
@@ -2097,6 +2246,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LinkedMailboxId());
             return S_OK;
         }
@@ -2111,6 +2261,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkAccountId());
             return S_OK;
         }
@@ -2125,6 +2276,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkId());
             return S_OK;
         }
@@ -2143,6 +2295,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox3> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ResolveRecipientsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&recipients)));
             return S_OK;
         }
@@ -2157,6 +2310,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox3> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ValidateCertificatesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> *>(&certificates)));
             return S_OK;
         }
@@ -2171,6 +2325,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox3> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryEmptyFolderAsync(*reinterpret_cast<const hstring *>(&folderId)));
             return S_OK;
         }
@@ -2185,6 +2340,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox3> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryCreateFolderAsync(*reinterpret_cast<const hstring *>(&parentFolderId), *reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -2199,6 +2355,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox3> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryDeleteFolderAsync(*reinterpret_cast<const hstring *>(&folderId)));
             return S_OK;
         }
@@ -2217,6 +2374,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox4> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RegisterSyncManagerAsync());
             return S_OK;
         }
@@ -2235,6 +2393,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAction> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -2248,6 +2407,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAction> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChangeNumber());
             return S_OK;
         }
@@ -2265,6 +2425,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReply> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
@@ -2278,6 +2439,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReply> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsEnabled(value);
             return S_OK;
         }
@@ -2291,6 +2453,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReply> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Response());
             return S_OK;
         }
@@ -2305,6 +2468,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReply> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Response(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2322,6 +2486,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
@@ -2335,6 +2500,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsEnabled(value);
             return S_OK;
         }
@@ -2348,6 +2514,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResponseKind());
             return S_OK;
         }
@@ -2361,6 +2528,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ResponseKind(value);
             return S_OK;
         }
@@ -2374,6 +2542,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StartTime());
             return S_OK;
         }
@@ -2388,6 +2557,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -2401,6 +2571,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EndTime());
             return S_OK;
         }
@@ -2415,6 +2586,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EndTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -2428,6 +2600,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InternalReply());
             return S_OK;
         }
@@ -2442,6 +2615,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KnownExternalReply());
             return S_OK;
         }
@@ -2456,6 +2630,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettin
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnknownExternalReply());
             return S_OK;
         }
@@ -2474,6 +2649,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanForwardMeetings());
             return S_OK;
         }
@@ -2487,6 +2663,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanGetAndSetExternalAutoReplies());
             return S_OK;
         }
@@ -2500,6 +2677,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanGetAndSetInternalAutoReplies());
             return S_OK;
         }
@@ -2513,6 +2691,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanUpdateMeetingResponses());
             return S_OK;
         }
@@ -2526,6 +2705,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanServerSearchFolders());
             return S_OK;
         }
@@ -2539,6 +2719,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanServerSearchMailbox());
             return S_OK;
         }
@@ -2552,6 +2733,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanProposeNewTimeForMeetings());
             return S_OK;
         }
@@ -2565,6 +2747,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanSmartSend());
             return S_OK;
         }
@@ -2582,6 +2765,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanResolveRecipients());
             return S_OK;
         }
@@ -2595,6 +2779,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanValidateCertificates());
             return S_OK;
         }
@@ -2608,6 +2793,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanEmptyFolder());
             return S_OK;
         }
@@ -2621,6 +2807,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanCreateFolder());
             return S_OK;
         }
@@ -2634,6 +2821,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanDeleteFolder());
             return S_OK;
         }
@@ -2647,6 +2835,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanMoveFolder());
             return S_OK;
         }
@@ -2664,6 +2853,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanForwardMeetings(value);
             return S_OK;
         }
@@ -2677,6 +2867,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanGetAndSetExternalAutoReplies(value);
             return S_OK;
         }
@@ -2690,6 +2881,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanGetAndSetInternalAutoReplies(value);
             return S_OK;
         }
@@ -2703,6 +2895,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanUpdateMeetingResponses(value);
             return S_OK;
         }
@@ -2716,6 +2909,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanServerSearchFolders(value);
             return S_OK;
         }
@@ -2729,6 +2923,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanServerSearchMailbox(value);
             return S_OK;
         }
@@ -2742,6 +2937,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanProposeNewTimeForMeetings(value);
             return S_OK;
         }
@@ -2755,6 +2951,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanSmartSend(value);
             return S_OK;
         }
@@ -2768,6 +2965,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanResolveRecipients(value);
             return S_OK;
         }
@@ -2781,6 +2979,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanValidateCertificates(value);
             return S_OK;
         }
@@ -2794,6 +2993,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanEmptyFolder(value);
             return S_OK;
         }
@@ -2807,6 +3007,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanCreateFolder(value);
             return S_OK;
         }
@@ -2820,6 +3021,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanDeleteFolder(value);
             return S_OK;
         }
@@ -2833,6 +3035,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanMoveFolder(value);
             return S_OK;
         }
@@ -2850,6 +3053,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxChange> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChangeType());
             return S_OK;
         }
@@ -2863,6 +3067,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxChange> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MailboxActions());
             return S_OK;
         }
@@ -2877,6 +3082,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxChange> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Message());
             return S_OK;
         }
@@ -2891,6 +3097,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxChange> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Folder());
             return S_OK;
         }
@@ -2909,6 +3116,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxChangeReader> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AcceptChanges();
             return S_OK;
         }
@@ -2922,6 +3130,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxChangeReader> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AcceptChangesThrough(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailMailboxChange *>(&lastChangeToAcknowledge));
             return S_OK;
         }
@@ -2935,6 +3144,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxChangeReader> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadBatchAsync());
             return S_OK;
         }
@@ -2953,6 +3163,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxChangeTracker> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTracking());
             return S_OK;
         }
@@ -2966,6 +3177,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxChangeTracker> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Enable();
             return S_OK;
         }
@@ -2979,6 +3191,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxChangeTracker> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetChangeReader());
             return S_OK;
         }
@@ -2993,6 +3206,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxChangeTracker> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Reset();
             return S_OK;
         }
@@ -3010,6 +3224,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxChangedDeferral
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -3027,6 +3242,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxChangedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -3045,6 +3261,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCreateFolderRes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -3058,6 +3275,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCreateFolderRes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Folder());
             return S_OK;
         }
@@ -3076,6 +3294,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxPolicies> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowedSmimeEncryptionAlgorithmNegotiation());
             return S_OK;
         }
@@ -3089,6 +3308,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxPolicies> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowSmimeSoftCertificates());
             return S_OK;
         }
@@ -3102,6 +3322,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxPolicies> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequiredSmimeEncryptionAlgorithm());
             return S_OK;
         }
@@ -3116,6 +3337,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxPolicies> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequiredSmimeSigningAlgorithm());
             return S_OK;
         }
@@ -3134,6 +3356,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxPolicies2> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MustEncryptSmimeMessages());
             return S_OK;
         }
@@ -3147,6 +3370,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxPolicies2> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MustSignSmimeMessages());
             return S_OK;
         }
@@ -3164,6 +3388,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxPolicies3> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowedSmimeEncryptionAlgorithmNegotiation(value);
             return S_OK;
         }
@@ -3177,6 +3402,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxPolicies3> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowSmimeSoftCertificates(value);
             return S_OK;
         }
@@ -3190,6 +3416,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxPolicies3> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RequiredSmimeEncryptionAlgorithm(*reinterpret_cast<const Windows::Foundation::IReference<winrt::Windows::ApplicationModel::Email::EmailMailboxSmimeEncryptionAlgorithm> *>(&value));
             return S_OK;
         }
@@ -3203,6 +3430,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxPolicies3> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RequiredSmimeSigningAlgorithm(*reinterpret_cast<const Windows::Foundation::IReference<winrt::Windows::ApplicationModel::Email::EmailMailboxSmimeSigningAlgorithm> *>(&value));
             return S_OK;
         }
@@ -3216,6 +3444,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxPolicies3> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MustEncryptSmimeMessages(value);
             return S_OK;
         }
@@ -3229,6 +3458,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxPolicies3> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MustSignSmimeMessages(value);
             return S_OK;
         }
@@ -3246,6 +3476,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxSyncManager> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -3259,6 +3490,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxSyncManager> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastSuccessfulSyncTime());
             return S_OK;
         }
@@ -3272,6 +3504,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxSyncManager> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastAttemptedSyncTime());
             return S_OK;
         }
@@ -3285,6 +3518,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxSyncManager> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SyncAsync());
             return S_OK;
         }
@@ -3299,6 +3533,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxSyncManager> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SyncStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailboxSyncManager, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -3312,6 +3547,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxSyncManager> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SyncStatusChanged(token);
             return S_OK;
         }
@@ -3329,6 +3565,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxSyncManager2> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Status(value);
             return S_OK;
         }
@@ -3342,6 +3579,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxSyncManager2> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LastSuccessfulSyncTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -3355,6 +3593,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxSyncManager2> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LastAttemptedSyncTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -3372,6 +3611,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailManagerForUser> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ShowComposeNewEmailAsync(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailMessage *>(&message)));
             return S_OK;
         }
@@ -3386,6 +3626,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailManagerForUser> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestStoreAsync(accessType));
             return S_OK;
         }
@@ -3400,6 +3641,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailManagerForUser> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().User());
             return S_OK;
         }
@@ -3418,6 +3660,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailManagerStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncAction = detach(this->shim().ShowComposeNewEmailAsync(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailMessage *>(&message)));
             return S_OK;
         }
@@ -3436,6 +3679,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailManagerStatics2> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestStoreAsync(accessType));
             return S_OK;
         }
@@ -3454,6 +3698,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailManagerStatics3> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
@@ -3472,6 +3717,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowNewTimeProposal());
             return S_OK;
         }
@@ -3485,6 +3731,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowNewTimeProposal(value);
             return S_OK;
         }
@@ -3498,6 +3745,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentRoamingId());
             return S_OK;
         }
@@ -3512,6 +3760,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AppointmentRoamingId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -3525,6 +3774,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppointmentOriginalStartTime());
             return S_OK;
         }
@@ -3539,6 +3789,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AppointmentOriginalStartTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -3552,6 +3803,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Duration());
             return S_OK;
         }
@@ -3565,6 +3817,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Duration(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -3578,6 +3831,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsAllDay());
             return S_OK;
         }
@@ -3591,6 +3845,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsAllDay(value);
             return S_OK;
         }
@@ -3604,6 +3859,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsResponseRequested());
             return S_OK;
         }
@@ -3617,6 +3873,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsResponseRequested(value);
             return S_OK;
         }
@@ -3630,6 +3887,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Location());
             return S_OK;
         }
@@ -3644,6 +3902,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Location(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -3657,6 +3916,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *proposedStartTime = detach(this->shim().ProposedStartTime());
             return S_OK;
         }
@@ -3671,6 +3931,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProposedStartTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&proposedStartTime));
             return S_OK;
         }
@@ -3684,6 +3945,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *duration = detach(this->shim().ProposedDuration());
             return S_OK;
         }
@@ -3698,6 +3960,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProposedDuration(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&duration));
             return S_OK;
         }
@@ -3711,6 +3974,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RecurrenceStartTime());
             return S_OK;
         }
@@ -3725,6 +3989,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RecurrenceStartTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -3738,6 +4003,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Recurrence());
             return S_OK;
         }
@@ -3752,6 +4018,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Recurrence(*reinterpret_cast<const Windows::ApplicationModel::Appointments::AppointmentRecurrence *>(&value));
             return S_OK;
         }
@@ -3765,6 +4032,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteChangeNumber());
             return S_OK;
         }
@@ -3778,6 +4046,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteChangeNumber(value);
             return S_OK;
         }
@@ -3791,6 +4060,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StartTime());
             return S_OK;
         }
@@ -3804,6 +4074,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -3821,6 +4092,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo2> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsReportedOutOfDateByServer());
             return S_OK;
         }
@@ -3838,6 +4110,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Subject());
             return S_OK;
         }
@@ -3852,6 +4125,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Subject(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -3865,6 +4139,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Body());
             return S_OK;
         }
@@ -3879,6 +4154,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Body(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -3892,6 +4168,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().To());
             return S_OK;
         }
@@ -3906,6 +4183,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CC());
             return S_OK;
         }
@@ -3920,6 +4198,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bcc());
             return S_OK;
         }
@@ -3934,6 +4213,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Attachments());
             return S_OK;
         }
@@ -3952,6 +4232,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -3966,6 +4247,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteId());
             return S_OK;
         }
@@ -3980,6 +4262,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -3993,6 +4276,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MailboxId());
             return S_OK;
         }
@@ -4007,6 +4291,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConversationId());
             return S_OK;
         }
@@ -4021,6 +4306,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FolderId());
             return S_OK;
         }
@@ -4035,6 +4321,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowInternetImages());
             return S_OK;
         }
@@ -4048,6 +4335,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowInternetImages(value);
             return S_OK;
         }
@@ -4061,6 +4349,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChangeNumber());
             return S_OK;
         }
@@ -4074,6 +4363,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DownloadState());
             return S_OK;
         }
@@ -4087,6 +4377,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DownloadState(value);
             return S_OK;
         }
@@ -4100,6 +4391,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EstimatedDownloadSizeInBytes());
             return S_OK;
         }
@@ -4113,6 +4405,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EstimatedDownloadSizeInBytes(value);
             return S_OK;
         }
@@ -4126,6 +4419,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FlagState());
             return S_OK;
         }
@@ -4139,6 +4433,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FlagState(value);
             return S_OK;
         }
@@ -4152,6 +4447,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasPartialBodies());
             return S_OK;
         }
@@ -4165,6 +4461,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Importance());
             return S_OK;
         }
@@ -4178,6 +4475,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Importance(value);
             return S_OK;
         }
@@ -4191,6 +4489,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InResponseToMessageId());
             return S_OK;
         }
@@ -4205,6 +4504,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IrmInfo());
             return S_OK;
         }
@@ -4219,6 +4519,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IrmInfo(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailIrmInfo *>(&value));
             return S_OK;
         }
@@ -4232,6 +4533,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDraftMessage());
             return S_OK;
         }
@@ -4245,6 +4547,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsRead());
             return S_OK;
         }
@@ -4258,6 +4561,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsRead(value);
             return S_OK;
         }
@@ -4271,6 +4575,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsSeen());
             return S_OK;
         }
@@ -4284,6 +4589,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsSeen(value);
             return S_OK;
         }
@@ -4297,6 +4603,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsServerSearchMessage());
             return S_OK;
         }
@@ -4310,6 +4617,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsSmartSendable());
             return S_OK;
         }
@@ -4323,6 +4631,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MessageClass());
             return S_OK;
         }
@@ -4337,6 +4646,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MessageClass(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4350,6 +4660,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NormalizedSubject());
             return S_OK;
         }
@@ -4364,6 +4675,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OriginalCodePage());
             return S_OK;
         }
@@ -4377,6 +4689,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OriginalCodePage(value);
             return S_OK;
         }
@@ -4390,6 +4703,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Preview());
             return S_OK;
         }
@@ -4404,6 +4718,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Preview(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4417,6 +4732,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastResponseKind());
             return S_OK;
         }
@@ -4430,6 +4746,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LastResponseKind(value);
             return S_OK;
         }
@@ -4443,6 +4760,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sender());
             return S_OK;
         }
@@ -4457,6 +4775,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Sender(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailRecipient *>(&value));
             return S_OK;
         }
@@ -4470,6 +4789,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SentTime());
             return S_OK;
         }
@@ -4484,6 +4804,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SentTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -4497,6 +4818,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MeetingInfo());
             return S_OK;
         }
@@ -4511,6 +4833,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MeetingInfo(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailMeetingInfo *>(&value));
             return S_OK;
         }
@@ -4524,6 +4847,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetBodyStream(type));
             return S_OK;
         }
@@ -4538,6 +4862,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetBodyStream(type, *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&stream));
             return S_OK;
         }
@@ -4555,6 +4880,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage3> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SmimeData());
             return S_OK;
         }
@@ -4569,6 +4895,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage3> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SmimeData(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
@@ -4582,6 +4909,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage3> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SmimeKind());
             return S_OK;
         }
@@ -4595,6 +4923,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage3> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SmimeKind(value);
             return S_OK;
         }
@@ -4612,6 +4941,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessageBatch> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Messages());
             return S_OK;
         }
@@ -4626,6 +4956,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessageBatch> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -4643,6 +4974,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessageReader> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReadBatchAsync());
             return S_OK;
         }
@@ -4661,6 +4993,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailQueryOptions> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextSearch());
             return S_OK;
         }
@@ -4675,6 +5008,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailQueryOptions> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SortDirection());
             return S_OK;
         }
@@ -4688,6 +5022,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailQueryOptions> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SortDirection(value);
             return S_OK;
         }
@@ -4701,6 +5036,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailQueryOptions> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SortProperty());
             return S_OK;
         }
@@ -4714,6 +5050,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailQueryOptions> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SortProperty(value);
             return S_OK;
         }
@@ -4727,6 +5064,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailQueryOptions> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -4740,6 +5078,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailQueryOptions> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Kind(value);
             return S_OK;
         }
@@ -4753,6 +5092,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailQueryOptions> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FolderIds());
             return S_OK;
         }
@@ -4771,6 +5111,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailQueryOptionsFactory> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateWithText(*reinterpret_cast<const hstring *>(&text)));
             return S_OK;
         }
@@ -4785,6 +5126,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailQueryOptionsFactory> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateWithTextAndFields(*reinterpret_cast<const hstring *>(&text), fields));
             return S_OK;
         }
@@ -4803,6 +5145,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailQueryTextSearch> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Fields());
             return S_OK;
         }
@@ -4816,6 +5159,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailQueryTextSearch> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Fields(value);
             return S_OK;
         }
@@ -4829,6 +5173,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailQueryTextSearch> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SearchScope());
             return S_OK;
         }
@@ -4842,6 +5187,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailQueryTextSearch> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SearchScope(value);
             return S_OK;
         }
@@ -4855,6 +5201,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailQueryTextSearch> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -4869,6 +5216,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailQueryTextSearch> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Text(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4886,6 +5234,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailRecipient> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -4900,6 +5249,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailRecipient> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4913,6 +5263,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailRecipient> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Address());
             return S_OK;
         }
@@ -4927,6 +5278,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailRecipient> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Address(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4944,6 +5296,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailRecipientFactory> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&address)));
             return S_OK;
         }
@@ -4958,6 +5311,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailRecipientFactory> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateWithName(*reinterpret_cast<const hstring *>(&address), *reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -4976,6 +5330,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailRecipientResolutionRes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -4989,6 +5344,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailRecipientResolutionRes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PublicKeys());
             return S_OK;
         }
@@ -5007,6 +5363,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailRecipientResolutionRes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Status(value);
             return S_OK;
         }
@@ -5020,6 +5377,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailRecipientResolutionRes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetPublicKeys(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> *>(&value));
             return S_OK;
         }
@@ -5037,6 +5395,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailStore> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindMailboxesAsync());
             return S_OK;
         }
@@ -5051,6 +5410,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailStore> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetConversationReader());
             return S_OK;
         }
@@ -5065,6 +5425,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailStore> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetConversationReader(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailQueryOptions *>(&options)));
             return S_OK;
         }
@@ -5079,6 +5440,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailStore> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetMessageReader());
             return S_OK;
         }
@@ -5093,6 +5455,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailStore> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetMessageReader(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailQueryOptions *>(&options)));
             return S_OK;
         }
@@ -5107,6 +5470,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailStore> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetMailboxAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
@@ -5121,6 +5485,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailStore> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetConversationAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
@@ -5135,6 +5500,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailStore> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetFolderAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
@@ -5149,6 +5515,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailStore> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetMessageAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
@@ -5163,6 +5530,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailStore> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateMailboxAsync(*reinterpret_cast<const hstring *>(&accountName), *reinterpret_cast<const hstring *>(&accountAddress)));
             return S_OK;
         }
@@ -5177,6 +5545,7 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailStore> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateMailboxAsync(*reinterpret_cast<const hstring *>(&accountName), *reinterpret_cast<const hstring *>(&accountAddress), *reinterpret_cast<const hstring *>(&userDataAccountId)));
             return S_OK;
         }

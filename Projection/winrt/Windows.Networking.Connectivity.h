@@ -43,6 +43,7 @@ struct produce<D, Windows::Networking::Connectivity::IAttributedNetworkUsage> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BytesSent());
             return S_OK;
         }
@@ -56,6 +57,7 @@ struct produce<D, Windows::Networking::Connectivity::IAttributedNetworkUsage> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BytesReceived());
             return S_OK;
         }
@@ -69,6 +71,7 @@ struct produce<D, Windows::Networking::Connectivity::IAttributedNetworkUsage> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AttributionId());
             return S_OK;
         }
@@ -83,6 +86,7 @@ struct produce<D, Windows::Networking::Connectivity::IAttributedNetworkUsage> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AttributionName());
             return S_OK;
         }
@@ -97,6 +101,7 @@ struct produce<D, Windows::Networking::Connectivity::IAttributedNetworkUsage> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AttributionThumbnail());
             return S_OK;
         }
@@ -115,6 +120,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProviderId());
             return S_OK;
         }
@@ -129,6 +135,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProviderId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -142,6 +149,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccessPointName());
             return S_OK;
         }
@@ -156,6 +164,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AccessPointName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -169,6 +178,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserName());
             return S_OK;
         }
@@ -183,6 +193,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UserName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -196,6 +207,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Password());
             return S_OK;
         }
@@ -210,6 +222,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Password(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -223,6 +236,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCompressionEnabled());
             return S_OK;
         }
@@ -236,6 +250,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsCompressionEnabled(value);
             return S_OK;
         }
@@ -249,6 +264,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AuthenticationType());
             return S_OK;
         }
@@ -262,6 +278,7 @@ struct produce<D, Windows::Networking::Connectivity::ICellularApnContext> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AuthenticationType(value);
             return S_OK;
         }
@@ -279,6 +296,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionCost> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkCostType());
             return S_OK;
         }
@@ -292,6 +310,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionCost> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Roaming());
             return S_OK;
         }
@@ -305,6 +324,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionCost> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OverDataLimit());
             return S_OK;
         }
@@ -318,6 +338,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionCost> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ApproachingDataLimit());
             return S_OK;
         }
@@ -335,6 +356,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionCost2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BackgroundDataUsageRestricted());
             return S_OK;
         }
@@ -352,6 +374,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProfileName());
             return S_OK;
         }
@@ -366,6 +389,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetNetworkConnectivityLevel());
             return S_OK;
         }
@@ -379,6 +403,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetNetworkNames());
             return S_OK;
         }
@@ -393,6 +418,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetConnectionCost());
             return S_OK;
         }
@@ -407,6 +433,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDataPlanStatus());
             return S_OK;
         }
@@ -421,6 +448,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkAdapter());
             return S_OK;
         }
@@ -435,6 +463,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetLocalUsage(*reinterpret_cast<const Windows::Foundation::DateTime *>(&StartTime), *reinterpret_cast<const Windows::Foundation::DateTime *>(&EndTime)));
             return S_OK;
         }
@@ -449,6 +478,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetLocalUsage(*reinterpret_cast<const Windows::Foundation::DateTime *>(&StartTime), *reinterpret_cast<const Windows::Foundation::DateTime *>(&EndTime), States));
             return S_OK;
         }
@@ -463,6 +493,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkSecuritySettings());
             return S_OK;
         }
@@ -481,6 +512,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsWwanConnectionProfile());
             return S_OK;
         }
@@ -494,6 +526,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsWlanConnectionProfile());
             return S_OK;
         }
@@ -507,6 +540,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WwanConnectionProfileDetails());
             return S_OK;
         }
@@ -521,6 +555,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WlanConnectionProfileDetails());
             return S_OK;
         }
@@ -535,6 +570,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceProviderGuid());
             return S_OK;
         }
@@ -549,6 +585,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetSignalBars());
             return S_OK;
         }
@@ -563,6 +600,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDomainConnectivityLevel());
             return S_OK;
         }
@@ -576,6 +614,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetNetworkUsageAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime), *reinterpret_cast<const Windows::Foundation::DateTime *>(&endTime), granularity, *reinterpret_cast<const Windows::Networking::Connectivity::NetworkUsageStates *>(&states)));
             return S_OK;
         }
@@ -590,6 +629,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetConnectivityIntervalsAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime), *reinterpret_cast<const Windows::Foundation::DateTime *>(&endTime), *reinterpret_cast<const Windows::Networking::Connectivity::NetworkUsageStates *>(&states)));
             return S_OK;
         }
@@ -608,6 +648,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfile3> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetAttributedNetworkUsageAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime), *reinterpret_cast<const Windows::Foundation::DateTime *>(&endTime), *reinterpret_cast<const Windows::Networking::Connectivity::NetworkUsageStates *>(&states)));
             return S_OK;
         }
@@ -626,6 +667,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsConnected(value);
             return S_OK;
         }
@@ -639,6 +681,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsConnected());
             return S_OK;
         }
@@ -652,6 +695,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsWwanConnectionProfile(value);
             return S_OK;
         }
@@ -665,6 +709,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsWwanConnectionProfile());
             return S_OK;
         }
@@ -678,6 +723,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsWlanConnectionProfile(value);
             return S_OK;
         }
@@ -691,6 +737,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsWlanConnectionProfile());
             return S_OK;
         }
@@ -704,6 +751,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NetworkCostType(value);
             return S_OK;
         }
@@ -717,6 +765,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkCostType());
             return S_OK;
         }
@@ -730,6 +779,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ServiceProviderGuid(*reinterpret_cast<const Windows::Foundation::IReference<GUID> *>(&value));
             return S_OK;
         }
@@ -743,6 +793,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceProviderGuid());
             return S_OK;
         }
@@ -761,6 +812,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsRoaming(*reinterpret_cast<const Windows::Foundation::IReference<bool> *>(&value));
             return S_OK;
         }
@@ -774,6 +826,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsRoaming());
             return S_OK;
         }
@@ -788,6 +841,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsOverDataLimit(*reinterpret_cast<const Windows::Foundation::IReference<bool> *>(&value));
             return S_OK;
         }
@@ -801,6 +855,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsOverDataLimit());
             return S_OK;
         }
@@ -815,6 +870,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsBackgroundDataUsageRestricted(*reinterpret_cast<const Windows::Foundation::IReference<bool> *>(&value));
             return S_OK;
         }
@@ -828,6 +884,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsBackgroundDataUsageRestricted());
             return S_OK;
         }
@@ -842,6 +899,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionProfileFilter2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RawData());
             return S_OK;
         }
@@ -860,6 +918,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectionSession> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConnectionProfile());
             return S_OK;
         }
@@ -878,6 +937,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectivityInterval> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *startTime = detach(this->shim().StartTime());
             return S_OK;
         }
@@ -891,6 +951,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectivityInterval> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *duration = detach(this->shim().ConnectionDuration());
             return S_OK;
         }
@@ -908,6 +969,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectivityManagerStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().AcquireConnectionAsync(*reinterpret_cast<const Windows::Networking::Connectivity::CellularApnContext *>(&cellularApnContext)));
             return S_OK;
         }
@@ -922,6 +984,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectivityManagerStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddHttpRoutePolicy(*reinterpret_cast<const Windows::Networking::Connectivity::RoutePolicy *>(&routePolicy));
             return S_OK;
         }
@@ -935,6 +998,7 @@ struct produce<D, Windows::Networking::Connectivity::IConnectivityManagerStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveHttpRoutePolicy(*reinterpret_cast<const Windows::Networking::Connectivity::RoutePolicy *>(&routePolicy));
             return S_OK;
         }
@@ -952,6 +1016,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataPlanStatus> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataPlanUsage());
             return S_OK;
         }
@@ -966,6 +1031,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataPlanStatus> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataLimitInMegabytes());
             return S_OK;
         }
@@ -980,6 +1046,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataPlanStatus> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InboundBitsPerSecond());
             return S_OK;
         }
@@ -994,6 +1061,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataPlanStatus> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OutboundBitsPerSecond());
             return S_OK;
         }
@@ -1008,6 +1076,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataPlanStatus> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NextBillingCycle());
             return S_OK;
         }
@@ -1022,6 +1091,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataPlanStatus> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxTransferSizeInMegabytes());
             return S_OK;
         }
@@ -1040,6 +1110,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataPlanUsage> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MegabytesUsed());
             return S_OK;
         }
@@ -1053,6 +1124,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataPlanUsage> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastSyncTime());
             return S_OK;
         }
@@ -1070,6 +1142,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataUsage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BytesSent());
             return S_OK;
         }
@@ -1083,6 +1156,7 @@ struct produce<D, Windows::Networking::Connectivity::IDataUsage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BytesReceived());
             return S_OK;
         }
@@ -1100,6 +1174,7 @@ struct produce<D, Windows::Networking::Connectivity::IIPInformation> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkAdapter());
             return S_OK;
         }
@@ -1114,6 +1189,7 @@ struct produce<D, Windows::Networking::Connectivity::IIPInformation> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PrefixLength());
             return S_OK;
         }
@@ -1132,6 +1208,7 @@ struct produce<D, Windows::Networking::Connectivity::ILanIdentifier> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InfrastructureId());
             return S_OK;
         }
@@ -1146,6 +1223,7 @@ struct produce<D, Windows::Networking::Connectivity::ILanIdentifier> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PortId());
             return S_OK;
         }
@@ -1160,6 +1238,7 @@ struct produce<D, Windows::Networking::Connectivity::ILanIdentifier> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkAdapterId());
             return S_OK;
         }
@@ -1177,6 +1256,7 @@ struct produce<D, Windows::Networking::Connectivity::ILanIdentifierData> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -1190,6 +1270,7 @@ struct produce<D, Windows::Networking::Connectivity::ILanIdentifierData> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -1208,6 +1289,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkAdapter> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OutboundMaxBitsPerSecond());
             return S_OK;
         }
@@ -1221,6 +1303,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkAdapter> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InboundMaxBitsPerSecond());
             return S_OK;
         }
@@ -1234,6 +1317,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkAdapter> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IanaInterfaceType());
             return S_OK;
         }
@@ -1247,6 +1331,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkAdapter> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkItem());
             return S_OK;
         }
@@ -1261,6 +1346,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkAdapter> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkAdapterId());
             return S_OK;
         }
@@ -1274,6 +1360,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkAdapter> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetConnectedProfileAsync());
             return S_OK;
         }
@@ -1292,6 +1379,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkInformationStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetConnectionProfiles());
             return S_OK;
         }
@@ -1306,6 +1394,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkInformationStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetInternetConnectionProfile());
             return S_OK;
         }
@@ -1320,6 +1409,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkInformationStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetLanIdentifiers());
             return S_OK;
         }
@@ -1334,6 +1424,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkInformationStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetHostNames());
             return S_OK;
         }
@@ -1348,6 +1439,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkInformationStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetProxyConfigurationAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -1362,6 +1454,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkInformationStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetSortedEndpointPairs(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Networking::EndpointPair> *>(&destinationList), sortOptions));
             return S_OK;
         }
@@ -1376,6 +1469,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkInformationStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().NetworkStatusChanged(*reinterpret_cast<const Windows::Networking::Connectivity::NetworkStatusChangedEventHandler *>(&networkStatusHandler)));
             return S_OK;
         }
@@ -1389,6 +1483,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkInformationStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NetworkStatusChanged(eventCookie);
             return S_OK;
         }
@@ -1406,6 +1501,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkInformationStatics2
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FindConnectionProfilesAsync(*reinterpret_cast<const Windows::Networking::Connectivity::ConnectionProfileFilter *>(&pProfileFilter)));
             return S_OK;
         }
@@ -1424,6 +1520,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkItem> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkId());
             return S_OK;
         }
@@ -1437,6 +1534,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkItem> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetNetworkTypes());
             return S_OK;
         }
@@ -1454,6 +1552,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkSecuritySettings> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkAuthenticationType());
             return S_OK;
         }
@@ -1467,6 +1566,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkSecuritySettings> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkEncryptionType());
             return S_OK;
         }
@@ -1484,6 +1584,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkStateChangeEventDet
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasNewInternetConnectionProfile());
             return S_OK;
         }
@@ -1497,6 +1598,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkStateChangeEventDet
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasNewConnectionCost());
             return S_OK;
         }
@@ -1510,6 +1612,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkStateChangeEventDet
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasNewNetworkConnectivityLevel());
             return S_OK;
         }
@@ -1523,6 +1626,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkStateChangeEventDet
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasNewDomainConnectivityLevel());
             return S_OK;
         }
@@ -1536,6 +1640,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkStateChangeEventDet
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasNewHostNameList());
             return S_OK;
         }
@@ -1549,6 +1654,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkStateChangeEventDet
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasNewWwanRegistrationState());
             return S_OK;
         }
@@ -1566,6 +1672,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkStateChangeEventDet
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasNewTetheringOperationalState());
             return S_OK;
         }
@@ -1579,6 +1686,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkStateChangeEventDet
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasNewTetheringClientCount());
             return S_OK;
         }
@@ -1596,6 +1704,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkUsage> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BytesSent());
             return S_OK;
         }
@@ -1609,6 +1718,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkUsage> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BytesReceived());
             return S_OK;
         }
@@ -1622,6 +1732,7 @@ struct produce<D, Windows::Networking::Connectivity::INetworkUsage> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *duration = detach(this->shim().ConnectionDuration());
             return S_OK;
         }
@@ -1639,6 +1750,7 @@ struct produce<D, Windows::Networking::Connectivity::IProxyConfiguration> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProxyUris());
             return S_OK;
         }
@@ -1653,6 +1765,7 @@ struct produce<D, Windows::Networking::Connectivity::IProxyConfiguration> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanConnectDirectly());
             return S_OK;
         }
@@ -1670,6 +1783,7 @@ struct produce<D, Windows::Networking::Connectivity::IRoutePolicy> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConnectionProfile());
             return S_OK;
         }
@@ -1684,6 +1798,7 @@ struct produce<D, Windows::Networking::Connectivity::IRoutePolicy> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HostName());
             return S_OK;
         }
@@ -1698,6 +1813,7 @@ struct produce<D, Windows::Networking::Connectivity::IRoutePolicy> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HostNameType());
             return S_OK;
         }
@@ -1715,6 +1831,7 @@ struct produce<D, Windows::Networking::Connectivity::IRoutePolicyFactory> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *routePolicy = detach(this->shim().CreateRoutePolicy(*reinterpret_cast<const Windows::Networking::Connectivity::ConnectionProfile *>(&connectionProfile), *reinterpret_cast<const Windows::Networking::HostName *>(&hostName), type));
             return S_OK;
         }
@@ -1733,6 +1850,7 @@ struct produce<D, Windows::Networking::Connectivity::IWlanConnectionProfileDetai
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetConnectedSsid());
             return S_OK;
         }
@@ -1751,6 +1869,7 @@ struct produce<D, Windows::Networking::Connectivity::IWwanConnectionProfileDetai
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HomeProviderId());
             return S_OK;
         }
@@ -1765,6 +1884,7 @@ struct produce<D, Windows::Networking::Connectivity::IWwanConnectionProfileDetai
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccessPointName());
             return S_OK;
         }
@@ -1779,6 +1899,7 @@ struct produce<D, Windows::Networking::Connectivity::IWwanConnectionProfileDetai
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetNetworkRegistrationState());
             return S_OK;
         }
@@ -1792,6 +1913,7 @@ struct produce<D, Windows::Networking::Connectivity::IWwanConnectionProfileDetai
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCurrentDataClass());
             return S_OK;
         }

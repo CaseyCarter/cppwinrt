@@ -21,6 +21,7 @@ struct produce<D, Windows::Management::Core::IApplicationDataManagerStatics> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *applicationData = detach(this->shim().CreateForPackageFamily(*reinterpret_cast<const hstring *>(&packageFamilyName)));
             return S_OK;
         }

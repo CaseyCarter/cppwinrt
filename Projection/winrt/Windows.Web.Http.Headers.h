@@ -23,6 +23,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCacheDirectiveHeaderValueCol
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxAge());
             return S_OK;
         }
@@ -37,6 +38,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCacheDirectiveHeaderValueCol
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxAge(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
             return S_OK;
         }
@@ -50,6 +52,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCacheDirectiveHeaderValueCol
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxStale());
             return S_OK;
         }
@@ -64,6 +67,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCacheDirectiveHeaderValueCol
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxStale(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
             return S_OK;
         }
@@ -77,6 +81,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCacheDirectiveHeaderValueCol
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinFresh());
             return S_OK;
         }
@@ -91,6 +96,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCacheDirectiveHeaderValueCol
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MinFresh(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
             return S_OK;
         }
@@ -104,6 +110,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCacheDirectiveHeaderValueCol
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SharedMaxAge());
             return S_OK;
         }
@@ -118,6 +125,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCacheDirectiveHeaderValueCol
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SharedMaxAge(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
             return S_OK;
         }
@@ -131,6 +139,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCacheDirectiveHeaderValueCol
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ParseAdd(*reinterpret_cast<const hstring *>(&input));
             return S_OK;
         }
@@ -144,6 +153,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCacheDirectiveHeaderValueCol
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParseAdd(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -161,6 +171,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpChallengeHeaderValue> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Parameters());
             return S_OK;
         }
@@ -175,6 +186,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpChallengeHeaderValue> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Scheme());
             return S_OK;
         }
@@ -189,6 +201,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpChallengeHeaderValue> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Token());
             return S_OK;
         }
@@ -207,6 +220,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpChallengeHeaderValueCollecti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ParseAdd(*reinterpret_cast<const hstring *>(&input));
             return S_OK;
         }
@@ -220,6 +234,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpChallengeHeaderValueCollecti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParseAdd(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -237,6 +252,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpChallengeHeaderValueFactory>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *challengeHeaderValue = detach(this->shim().CreateFromScheme(*reinterpret_cast<const hstring *>(&scheme)));
             return S_OK;
         }
@@ -251,6 +267,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpChallengeHeaderValueFactory>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *challengeHeaderValue = detach(this->shim().CreateFromSchemeWithToken(*reinterpret_cast<const hstring *>(&scheme), *reinterpret_cast<const hstring *>(&token)));
             return S_OK;
         }
@@ -269,6 +286,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpChallengeHeaderValueStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *challengeHeaderValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -283,6 +301,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpChallengeHeaderValueStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *challengeHeaderValue));
             return S_OK;
         }
@@ -301,6 +320,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpConnectionOptionHeaderValue>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Token());
             return S_OK;
         }
@@ -319,6 +339,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpConnectionOptionHeaderValueC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ParseAdd(*reinterpret_cast<const hstring *>(&input));
             return S_OK;
         }
@@ -332,6 +353,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpConnectionOptionHeaderValueC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParseAdd(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -349,6 +371,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpConnectionOptionHeaderValueF
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *connectionOptionHeaderValue = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&token)));
             return S_OK;
         }
@@ -367,6 +390,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpConnectionOptionHeaderValueS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *connectionOptionHeaderValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -381,6 +405,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpConnectionOptionHeaderValueS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *connectionOptionHeaderValue));
             return S_OK;
         }
@@ -399,6 +424,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentCodingHeaderValue> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentCoding());
             return S_OK;
         }
@@ -417,6 +443,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentCodingHeaderValueColl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ParseAdd(*reinterpret_cast<const hstring *>(&input));
             return S_OK;
         }
@@ -430,6 +457,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentCodingHeaderValueColl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParseAdd(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -447,6 +475,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentCodingHeaderValueFact
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contentCodingHeaderValue = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&contentCoding)));
             return S_OK;
         }
@@ -465,6 +494,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentCodingHeaderValueStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contentCodingHeaderValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -479,6 +509,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentCodingHeaderValueStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *contentCodingHeaderValue));
             return S_OK;
         }
@@ -497,6 +528,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentCodingWithQualityHead
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentCoding());
             return S_OK;
         }
@@ -511,6 +543,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentCodingWithQualityHead
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Quality());
             return S_OK;
         }
@@ -529,6 +562,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentCodingWithQualityHead
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ParseAdd(*reinterpret_cast<const hstring *>(&input));
             return S_OK;
         }
@@ -542,6 +576,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentCodingWithQualityHead
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParseAdd(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -559,6 +594,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentCodingWithQualityHead
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contentCodingWithQualityHeaderValue = detach(this->shim().CreateFromValue(*reinterpret_cast<const hstring *>(&contentCoding)));
             return S_OK;
         }
@@ -573,6 +609,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentCodingWithQualityHead
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contentCodingWithQualityHeaderValue = detach(this->shim().CreateFromValueWithQuality(*reinterpret_cast<const hstring *>(&contentCoding), quality));
             return S_OK;
         }
@@ -591,6 +628,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentCodingWithQualityHead
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contentCodingWithQualityHeaderValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -605,6 +643,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentCodingWithQualityHead
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *contentCodingWithQualityHeaderValue));
             return S_OK;
         }
@@ -623,6 +662,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentDispositionHeaderValu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DispositionType());
             return S_OK;
         }
@@ -637,6 +677,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentDispositionHeaderValu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DispositionType(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -650,6 +691,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentDispositionHeaderValu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FileName());
             return S_OK;
         }
@@ -664,6 +706,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentDispositionHeaderValu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FileName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -677,6 +720,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentDispositionHeaderValu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FileNameStar());
             return S_OK;
         }
@@ -691,6 +735,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentDispositionHeaderValu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FileNameStar(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -704,6 +749,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentDispositionHeaderValu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -718,6 +764,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentDispositionHeaderValu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -731,6 +778,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentDispositionHeaderValu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Parameters());
             return S_OK;
         }
@@ -745,6 +793,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentDispositionHeaderValu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Size());
             return S_OK;
         }
@@ -759,6 +808,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentDispositionHeaderValu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Size(*reinterpret_cast<const Windows::Foundation::IReference<uint64_t> *>(&value));
             return S_OK;
         }
@@ -776,6 +826,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentDispositionHeaderValu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contentDispositionHeaderValue = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&dispositionType)));
             return S_OK;
         }
@@ -794,6 +845,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentDispositionHeaderValu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contentDispositionHeaderValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -808,6 +860,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentDispositionHeaderValu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *contentDispositionHeaderValue));
             return S_OK;
         }
@@ -826,6 +879,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentDisposition());
             return S_OK;
         }
@@ -840,6 +894,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentDisposition(*reinterpret_cast<const Windows::Web::Http::Headers::HttpContentDispositionHeaderValue *>(&value));
             return S_OK;
         }
@@ -853,6 +908,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentEncoding());
             return S_OK;
         }
@@ -867,6 +923,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentLanguage());
             return S_OK;
         }
@@ -881,6 +938,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentLength());
             return S_OK;
         }
@@ -895,6 +953,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentLength(*reinterpret_cast<const Windows::Foundation::IReference<uint64_t> *>(&value));
             return S_OK;
         }
@@ -908,6 +967,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentLocation());
             return S_OK;
         }
@@ -922,6 +982,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentLocation(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -935,6 +996,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentMD5());
             return S_OK;
         }
@@ -949,6 +1011,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentMD5(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
@@ -962,6 +1025,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentRange());
             return S_OK;
         }
@@ -976,6 +1040,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentRange(*reinterpret_cast<const Windows::Web::Http::Headers::HttpContentRangeHeaderValue *>(&value));
             return S_OK;
         }
@@ -989,6 +1054,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentType());
             return S_OK;
         }
@@ -1003,6 +1069,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentType(*reinterpret_cast<const Windows::Web::Http::Headers::HttpMediaTypeHeaderValue *>(&value));
             return S_OK;
         }
@@ -1016,6 +1083,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Expires());
             return S_OK;
         }
@@ -1030,6 +1098,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Expires(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -1043,6 +1112,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastModified());
             return S_OK;
         }
@@ -1057,6 +1127,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LastModified(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -1070,6 +1141,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Append(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1083,6 +1155,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryAppendWithoutValidation(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
@@ -1100,6 +1173,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentRangeHeaderValue> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FirstBytePosition());
             return S_OK;
         }
@@ -1114,6 +1188,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentRangeHeaderValue> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastBytePosition());
             return S_OK;
         }
@@ -1128,6 +1203,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentRangeHeaderValue> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Length());
             return S_OK;
         }
@@ -1142,6 +1218,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentRangeHeaderValue> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Unit());
             return S_OK;
         }
@@ -1156,6 +1233,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentRangeHeaderValue> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Unit(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1173,6 +1251,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentRangeHeaderValueFacto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contentRangeHeaderValue = detach(this->shim().CreateFromLength(length));
             return S_OK;
         }
@@ -1187,6 +1266,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentRangeHeaderValueFacto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contentRangeHeaderValue = detach(this->shim().CreateFromRange(from, to));
             return S_OK;
         }
@@ -1201,6 +1281,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentRangeHeaderValueFacto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contentRangeHeaderValue = detach(this->shim().CreateFromRangeWithLength(from, to, length));
             return S_OK;
         }
@@ -1219,6 +1300,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentRangeHeaderValueStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *contentRangeHeaderValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -1233,6 +1315,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpContentRangeHeaderValueStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *contentRangeHeaderValue));
             return S_OK;
         }
@@ -1251,6 +1334,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCookiePairHeaderValue> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -1265,6 +1349,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCookiePairHeaderValue> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -1279,6 +1364,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCookiePairHeaderValue> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1296,6 +1382,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCookiePairHeaderValueCollect
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ParseAdd(*reinterpret_cast<const hstring *>(&input));
             return S_OK;
         }
@@ -1309,6 +1396,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCookiePairHeaderValueCollect
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParseAdd(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -1326,6 +1414,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCookiePairHeaderValueFactory
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookiePairHeaderValue = detach(this->shim().CreateFromName(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -1340,6 +1429,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCookiePairHeaderValueFactory
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookiePairHeaderValue = detach(this->shim().CreateFromNameWithValue(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
@@ -1358,6 +1448,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCookiePairHeaderValueStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookiePairHeaderValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -1372,6 +1463,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCookiePairHeaderValueStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *cookiePairHeaderValue));
             return S_OK;
         }
@@ -1390,6 +1482,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCredentialsHeaderValue> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Parameters());
             return S_OK;
         }
@@ -1404,6 +1497,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCredentialsHeaderValue> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Scheme());
             return S_OK;
         }
@@ -1418,6 +1512,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCredentialsHeaderValue> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Token());
             return S_OK;
         }
@@ -1436,6 +1531,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCredentialsHeaderValueFactor
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *credentialsHeaderValue = detach(this->shim().CreateFromScheme(*reinterpret_cast<const hstring *>(&scheme)));
             return S_OK;
         }
@@ -1450,6 +1546,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCredentialsHeaderValueFactor
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *credentialsHeaderValue = detach(this->shim().CreateFromSchemeWithToken(*reinterpret_cast<const hstring *>(&scheme), *reinterpret_cast<const hstring *>(&token)));
             return S_OK;
         }
@@ -1468,6 +1565,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCredentialsHeaderValueStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *credentialsHeaderValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -1482,6 +1580,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpCredentialsHeaderValueStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *credentialsHeaderValue));
             return S_OK;
         }
@@ -1500,6 +1599,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpDateOrDeltaHeaderValue> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Date());
             return S_OK;
         }
@@ -1514,6 +1614,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpDateOrDeltaHeaderValue> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Delta());
             return S_OK;
         }
@@ -1532,6 +1633,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpDateOrDeltaHeaderValueStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *dateOrDeltaHeaderValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -1546,6 +1648,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpDateOrDeltaHeaderValueStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *dateOrDeltaHeaderValue));
             return S_OK;
         }
@@ -1564,6 +1667,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpExpectationHeaderValue> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -1578,6 +1682,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpExpectationHeaderValue> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -1592,6 +1697,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpExpectationHeaderValue> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1605,6 +1711,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpExpectationHeaderValue> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Parameters());
             return S_OK;
         }
@@ -1623,6 +1730,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpExpectationHeaderValueCollec
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ParseAdd(*reinterpret_cast<const hstring *>(&input));
             return S_OK;
         }
@@ -1636,6 +1744,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpExpectationHeaderValueCollec
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParseAdd(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -1653,6 +1762,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpExpectationHeaderValueFactor
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *expectationHeaderValue = detach(this->shim().CreateFromName(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -1667,6 +1777,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpExpectationHeaderValueFactor
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *expectationHeaderValue = detach(this->shim().CreateFromNameWithValue(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
@@ -1685,6 +1796,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpExpectationHeaderValueStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *expectationHeaderValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -1699,6 +1811,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpExpectationHeaderValueStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *expectationHeaderValue));
             return S_OK;
         }
@@ -1717,6 +1830,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpLanguageHeaderValueCollectio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ParseAdd(*reinterpret_cast<const hstring *>(&input));
             return S_OK;
         }
@@ -1730,6 +1844,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpLanguageHeaderValueCollectio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParseAdd(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -1747,6 +1862,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpLanguageRangeWithQualityHead
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *languageRange = detach(this->shim().LanguageRange());
             return S_OK;
         }
@@ -1761,6 +1877,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpLanguageRangeWithQualityHead
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Quality());
             return S_OK;
         }
@@ -1779,6 +1896,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpLanguageRangeWithQualityHead
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ParseAdd(*reinterpret_cast<const hstring *>(&input));
             return S_OK;
         }
@@ -1792,6 +1910,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpLanguageRangeWithQualityHead
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParseAdd(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -1809,6 +1928,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpLanguageRangeWithQualityHead
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *languageRangeWithQualityHeaderValue = detach(this->shim().CreateFromLanguageRange(*reinterpret_cast<const hstring *>(&languageRange)));
             return S_OK;
         }
@@ -1823,6 +1943,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpLanguageRangeWithQualityHead
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *languageRangeWithQualityHeaderValue = detach(this->shim().CreateFromLanguageRangeWithQuality(*reinterpret_cast<const hstring *>(&languageRange), quality));
             return S_OK;
         }
@@ -1841,6 +1962,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpLanguageRangeWithQualityHead
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *languageRangeWithQualityHeaderValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -1855,6 +1977,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpLanguageRangeWithQualityHead
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *languageRangeWithQualityHeaderValue));
             return S_OK;
         }
@@ -1873,6 +1996,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeHeaderValue> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CharSet());
             return S_OK;
         }
@@ -1887,6 +2011,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeHeaderValue> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CharSet(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1900,6 +2025,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeHeaderValue> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediaType());
             return S_OK;
         }
@@ -1914,6 +2040,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeHeaderValue> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MediaType(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1927,6 +2054,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeHeaderValue> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Parameters());
             return S_OK;
         }
@@ -1945,6 +2073,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeHeaderValueFactory>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *mediaTypeHeaderValue = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&mediaType)));
             return S_OK;
         }
@@ -1963,6 +2092,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeHeaderValueStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *mediaTypeHeaderValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -1977,6 +2107,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeHeaderValueStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *mediaTypeHeaderValue));
             return S_OK;
         }
@@ -1995,6 +2126,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderVa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CharSet());
             return S_OK;
         }
@@ -2009,6 +2141,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderVa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CharSet(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2022,6 +2155,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderVa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediaType());
             return S_OK;
         }
@@ -2036,6 +2170,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderVa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MediaType(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2049,6 +2184,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderVa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Parameters());
             return S_OK;
         }
@@ -2063,6 +2199,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderVa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Quality());
             return S_OK;
         }
@@ -2077,6 +2214,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderVa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Quality(*reinterpret_cast<const Windows::Foundation::IReference<double> *>(&value));
             return S_OK;
         }
@@ -2094,6 +2232,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderVa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ParseAdd(*reinterpret_cast<const hstring *>(&input));
             return S_OK;
         }
@@ -2107,6 +2246,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderVa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParseAdd(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -2124,6 +2264,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderVa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *mediaTypeWithQualityHeaderValue = detach(this->shim().CreateFromMediaType(*reinterpret_cast<const hstring *>(&mediaType)));
             return S_OK;
         }
@@ -2138,6 +2279,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderVa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *mediaTypeWithQualityHeaderValue = detach(this->shim().CreateFromMediaTypeWithQuality(*reinterpret_cast<const hstring *>(&mediaType), quality));
             return S_OK;
         }
@@ -2156,6 +2298,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderVa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *mediaTypeWithQualityHeaderValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -2170,6 +2313,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMediaTypeWithQualityHeaderVa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *mediaTypeWithQualityHeaderValue));
             return S_OK;
         }
@@ -2188,6 +2332,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMethodHeaderValueCollection>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ParseAdd(*reinterpret_cast<const hstring *>(&input));
             return S_OK;
         }
@@ -2201,6 +2346,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpMethodHeaderValueCollection>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParseAdd(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -2218,6 +2364,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpNameValueHeaderValue> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -2232,6 +2379,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpNameValueHeaderValue> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -2246,6 +2394,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpNameValueHeaderValue> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2263,6 +2412,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpNameValueHeaderValueFactory>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *nameValueHeaderValue = detach(this->shim().CreateFromName(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -2277,6 +2427,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpNameValueHeaderValueFactory>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *nameValueHeaderValue = detach(this->shim().CreateFromNameWithValue(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
@@ -2295,6 +2446,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpNameValueHeaderValueStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *nameValueHeaderValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -2309,6 +2461,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpNameValueHeaderValueStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *nameValueHeaderValue));
             return S_OK;
         }
@@ -2327,6 +2480,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpProductHeaderValue> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -2341,6 +2495,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpProductHeaderValue> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Version());
             return S_OK;
         }
@@ -2359,6 +2514,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpProductHeaderValueFactory> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *productHeaderValue = detach(this->shim().CreateFromName(*reinterpret_cast<const hstring *>(&productName)));
             return S_OK;
         }
@@ -2373,6 +2529,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpProductHeaderValueFactory> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *productHeaderValue = detach(this->shim().CreateFromNameWithVersion(*reinterpret_cast<const hstring *>(&productName), *reinterpret_cast<const hstring *>(&productVersion)));
             return S_OK;
         }
@@ -2391,6 +2548,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpProductHeaderValueStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *productHeaderValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -2405,6 +2563,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpProductHeaderValueStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *productHeaderValue));
             return S_OK;
         }
@@ -2423,6 +2582,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpProductInfoHeaderValue> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Product());
             return S_OK;
         }
@@ -2437,6 +2597,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpProductInfoHeaderValue> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Comment());
             return S_OK;
         }
@@ -2455,6 +2616,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpProductInfoHeaderValueCollec
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ParseAdd(*reinterpret_cast<const hstring *>(&input));
             return S_OK;
         }
@@ -2468,6 +2630,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpProductInfoHeaderValueCollec
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParseAdd(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -2485,6 +2648,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpProductInfoHeaderValueFactor
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *productInfoHeaderValue = detach(this->shim().CreateFromComment(*reinterpret_cast<const hstring *>(&productComment)));
             return S_OK;
         }
@@ -2499,6 +2663,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpProductInfoHeaderValueFactor
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *productInfoHeaderValue = detach(this->shim().CreateFromNameWithVersion(*reinterpret_cast<const hstring *>(&productName), *reinterpret_cast<const hstring *>(&productVersion)));
             return S_OK;
         }
@@ -2517,6 +2682,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpProductInfoHeaderValueStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *productInfoHeaderValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -2531,6 +2697,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpProductInfoHeaderValueStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *productInfoHeaderValue));
             return S_OK;
         }
@@ -2549,6 +2716,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Accept());
             return S_OK;
         }
@@ -2563,6 +2731,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AcceptEncoding());
             return S_OK;
         }
@@ -2577,6 +2746,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AcceptLanguage());
             return S_OK;
         }
@@ -2591,6 +2761,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Authorization());
             return S_OK;
         }
@@ -2605,6 +2776,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Authorization(*reinterpret_cast<const Windows::Web::Http::Headers::HttpCredentialsHeaderValue *>(&value));
             return S_OK;
         }
@@ -2618,6 +2790,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CacheControl());
             return S_OK;
         }
@@ -2632,6 +2805,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Connection());
             return S_OK;
         }
@@ -2646,6 +2820,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Cookie());
             return S_OK;
         }
@@ -2660,6 +2835,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Date());
             return S_OK;
         }
@@ -2674,6 +2850,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Date(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -2687,6 +2864,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Expect());
             return S_OK;
         }
@@ -2701,6 +2879,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().From());
             return S_OK;
         }
@@ -2715,6 +2894,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().From(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2728,6 +2908,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Host());
             return S_OK;
         }
@@ -2742,6 +2923,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Host(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
             return S_OK;
         }
@@ -2755,6 +2937,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IfModifiedSince());
             return S_OK;
         }
@@ -2769,6 +2952,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IfModifiedSince(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -2782,6 +2966,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IfUnmodifiedSince());
             return S_OK;
         }
@@ -2796,6 +2981,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IfUnmodifiedSince(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -2809,6 +2995,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxForwards());
             return S_OK;
         }
@@ -2823,6 +3010,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxForwards(*reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&value));
             return S_OK;
         }
@@ -2836,6 +3024,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProxyAuthorization());
             return S_OK;
         }
@@ -2850,6 +3039,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProxyAuthorization(*reinterpret_cast<const Windows::Web::Http::Headers::HttpCredentialsHeaderValue *>(&value));
             return S_OK;
         }
@@ -2863,6 +3053,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Referer());
             return S_OK;
         }
@@ -2877,6 +3068,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Referer(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -2890,6 +3082,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TransferEncoding());
             return S_OK;
         }
@@ -2904,6 +3097,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserAgent());
             return S_OK;
         }
@@ -2918,6 +3112,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Append(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2931,6 +3126,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpRequestHeaderCollection> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryAppendWithoutValidation(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
@@ -2948,6 +3144,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpResponseHeaderCollection> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Age());
             return S_OK;
         }
@@ -2962,6 +3159,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpResponseHeaderCollection> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Age(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
             return S_OK;
         }
@@ -2975,6 +3173,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpResponseHeaderCollection> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Allow());
             return S_OK;
         }
@@ -2989,6 +3188,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpResponseHeaderCollection> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CacheControl());
             return S_OK;
         }
@@ -3003,6 +3203,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpResponseHeaderCollection> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Connection());
             return S_OK;
         }
@@ -3017,6 +3218,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpResponseHeaderCollection> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Date());
             return S_OK;
         }
@@ -3031,6 +3233,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpResponseHeaderCollection> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Date(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -3044,6 +3247,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpResponseHeaderCollection> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Location());
             return S_OK;
         }
@@ -3058,6 +3262,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpResponseHeaderCollection> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Location(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -3071,6 +3276,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpResponseHeaderCollection> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProxyAuthenticate());
             return S_OK;
         }
@@ -3085,6 +3291,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpResponseHeaderCollection> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RetryAfter());
             return S_OK;
         }
@@ -3099,6 +3306,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpResponseHeaderCollection> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RetryAfter(*reinterpret_cast<const Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue *>(&value));
             return S_OK;
         }
@@ -3112,6 +3320,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpResponseHeaderCollection> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TransferEncoding());
             return S_OK;
         }
@@ -3126,6 +3335,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpResponseHeaderCollection> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WwwAuthenticate());
             return S_OK;
         }
@@ -3140,6 +3350,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpResponseHeaderCollection> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Append(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -3153,6 +3364,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpResponseHeaderCollection> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryAppendWithoutValidation(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
@@ -3170,6 +3382,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpTransferCodingHeaderValue> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Parameters());
             return S_OK;
         }
@@ -3184,6 +3397,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpTransferCodingHeaderValue> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -3202,6 +3416,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpTransferCodingHeaderValueCol
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ParseAdd(*reinterpret_cast<const hstring *>(&input));
             return S_OK;
         }
@@ -3215,6 +3430,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpTransferCodingHeaderValueCol
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParseAdd(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -3232,6 +3448,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpTransferCodingHeaderValueFac
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *transferCodingHeaderValue = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -3250,6 +3467,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpTransferCodingHeaderValueSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *transferCodingHeaderValue = detach(this->shim().Parse(*reinterpret_cast<const hstring *>(&input)));
             return S_OK;
         }
@@ -3264,6 +3482,7 @@ struct produce<D, Windows::Web::Http::Headers::IHttpTransferCodingHeaderValueSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryParse(*reinterpret_cast<const hstring *>(&input), *transferCodingHeaderValue));
             return S_OK;
         }

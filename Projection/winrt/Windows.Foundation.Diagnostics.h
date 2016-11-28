@@ -19,6 +19,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TraceOperationCreation(traceLevel, source, platformId, operationId, *reinterpret_cast<const hstring *>(&operationName), relatedContext);
             return S_OK;
         }
@@ -32,6 +33,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TraceOperationCompletion(traceLevel, source, platformId, operationId, status);
             return S_OK;
         }
@@ -45,6 +47,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TraceOperationRelation(traceLevel, source, platformId, operationId, relation);
             return S_OK;
         }
@@ -58,6 +61,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TraceSynchronousWorkStart(traceLevel, source, platformId, operationId, work);
             return S_OK;
         }
@@ -71,6 +75,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TraceSynchronousWorkCompletion(traceLevel, source, work);
             return S_OK;
         }
@@ -84,6 +89,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().TracingStatusChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Foundation::Diagnostics::TracingStatusChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -97,6 +103,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TracingStatusChanged(cookie);
             return S_OK;
         }
@@ -114,6 +121,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IErrorDetails> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -128,6 +136,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IErrorDetails> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LongDescription());
             return S_OK;
         }
@@ -142,6 +151,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IErrorDetails> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HelpUri());
             return S_OK;
         }
@@ -160,6 +170,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IErrorDetailsStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateFromHResultAsync(errorCode));
             return S_OK;
         }
@@ -178,6 +189,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IErrorReportingSettings> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetErrorOptions(value);
             return S_OK;
         }
@@ -191,6 +203,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IErrorReportingSettings> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetErrorOptions());
             return S_OK;
         }
@@ -208,6 +221,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IFileLoggingSession> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -222,6 +236,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IFileLoggingSession> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddLoggingChannel(*reinterpret_cast<const Windows::Foundation::Diagnostics::ILoggingChannel *>(&loggingChannel));
             return S_OK;
         }
@@ -235,6 +250,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IFileLoggingSession> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddLoggingChannel(*reinterpret_cast<const Windows::Foundation::Diagnostics::ILoggingChannel *>(&loggingChannel), maxLevel);
             return S_OK;
         }
@@ -248,6 +264,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IFileLoggingSession> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveLoggingChannel(*reinterpret_cast<const Windows::Foundation::Diagnostics::ILoggingChannel *>(&loggingChannel));
             return S_OK;
         }
@@ -261,6 +278,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IFileLoggingSession> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CloseAndSaveToFileAsync());
             return S_OK;
         }
@@ -275,6 +293,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IFileLoggingSession> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().LogFileGenerated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::IFileLoggingSession, Windows::Foundation::Diagnostics::LogFileGeneratedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -288,6 +307,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IFileLoggingSession> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LogFileGenerated(token);
             return S_OK;
         }
@@ -305,6 +325,7 @@ struct produce<D, Windows::Foundation::Diagnostics::IFileLoggingSessionFactory> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -323,6 +344,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILogFileGeneratedEventArgs> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().File());
             return S_OK;
         }
@@ -341,6 +363,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivity> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -355,6 +378,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivity> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -372,6 +396,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivity2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Channel());
             return S_OK;
         }
@@ -386,6 +411,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivity2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StopActivity(*reinterpret_cast<const hstring *>(&stopEventName));
             return S_OK;
         }
@@ -399,6 +425,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivity2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StopActivity(*reinterpret_cast<const hstring *>(&stopEventName), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingFields *>(&fields));
             return S_OK;
         }
@@ -412,6 +439,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivity2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StopActivity(*reinterpret_cast<const hstring *>(&stopEventName), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingFields *>(&fields), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingOptions *>(&options));
             return S_OK;
         }
@@ -429,6 +457,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivityFactory> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *loggingActivity = detach(this->shim().CreateLoggingActivity(*reinterpret_cast<const hstring *>(&activityName), *reinterpret_cast<const Windows::Foundation::Diagnostics::ILoggingChannel *>(&loggingChannel)));
             return S_OK;
         }
@@ -443,6 +472,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingActivityFactory> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *loggingActivity = detach(this->shim().CreateLoggingActivityWithLevel(*reinterpret_cast<const hstring *>(&activityName), *reinterpret_cast<const Windows::Foundation::Diagnostics::ILoggingChannel *>(&loggingChannel), level));
             return S_OK;
         }
@@ -461,6 +491,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -475,6 +506,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Enabled());
             return S_OK;
         }
@@ -488,6 +520,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Level());
             return S_OK;
         }
@@ -501,6 +534,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LogMessage(*reinterpret_cast<const hstring *>(&eventString));
             return S_OK;
         }
@@ -514,6 +548,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LogMessage(*reinterpret_cast<const hstring *>(&eventString), level);
             return S_OK;
         }
@@ -527,6 +562,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LogValuePair(*reinterpret_cast<const hstring *>(&value1), value2);
             return S_OK;
         }
@@ -540,6 +576,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LogValuePair(*reinterpret_cast<const hstring *>(&value1), value2, level);
             return S_OK;
         }
@@ -553,6 +590,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().LoggingEnabled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -566,6 +604,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LoggingEnabled(token);
             return S_OK;
         }
@@ -583,6 +622,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannel2> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -600,6 +640,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannelFactory> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -618,6 +659,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannelFactory2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateWithOptions(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingChannelOptions *>(&options)));
             return S_OK;
         }
@@ -632,6 +674,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannelFactory2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateWithOptionsAndId(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingChannelOptions *>(&options), id));
             return S_OK;
         }
@@ -650,6 +693,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannelOptions> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Group());
             return S_OK;
         }
@@ -663,6 +707,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannelOptions> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Group(value);
             return S_OK;
         }
@@ -680,6 +725,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingChannelOptionsFactor
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(group));
             return S_OK;
         }
@@ -698,6 +744,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Clear();
             return S_OK;
         }
@@ -711,6 +758,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BeginStruct(*reinterpret_cast<const hstring *>(&name));
             return S_OK;
         }
@@ -724,6 +772,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BeginStruct(*reinterpret_cast<const hstring *>(&name), tags);
             return S_OK;
         }
@@ -737,6 +786,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EndStruct();
             return S_OK;
         }
@@ -750,6 +800,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddEmpty(*reinterpret_cast<const hstring *>(&name));
             return S_OK;
         }
@@ -763,6 +814,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddEmpty(*reinterpret_cast<const hstring *>(&name), format);
             return S_OK;
         }
@@ -776,6 +828,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddEmpty(*reinterpret_cast<const hstring *>(&name), format, tags);
             return S_OK;
         }
@@ -789,6 +842,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt8(*reinterpret_cast<const hstring *>(&name), value);
             return S_OK;
         }
@@ -802,6 +856,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt8(*reinterpret_cast<const hstring *>(&name), value, format);
             return S_OK;
         }
@@ -815,6 +870,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt8(*reinterpret_cast<const hstring *>(&name), value, format, tags);
             return S_OK;
         }
@@ -828,6 +884,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt8Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
@@ -841,6 +898,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt8Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint8_t>(value, value + __valueSize), format);
             return S_OK;
         }
@@ -854,6 +912,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt8Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint8_t>(value, value + __valueSize), format, tags);
             return S_OK;
         }
@@ -867,6 +926,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddInt16(*reinterpret_cast<const hstring *>(&name), value);
             return S_OK;
         }
@@ -880,6 +940,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddInt16(*reinterpret_cast<const hstring *>(&name), value, format);
             return S_OK;
         }
@@ -893,6 +954,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddInt16(*reinterpret_cast<const hstring *>(&name), value, format, tags);
             return S_OK;
         }
@@ -906,6 +968,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddInt16Array(*reinterpret_cast<const hstring *>(&name), array_ref<const int16_t>(value, value + __valueSize));
             return S_OK;
         }
@@ -919,6 +982,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddInt16Array(*reinterpret_cast<const hstring *>(&name), array_ref<const int16_t>(value, value + __valueSize), format);
             return S_OK;
         }
@@ -932,6 +996,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddInt16Array(*reinterpret_cast<const hstring *>(&name), array_ref<const int16_t>(value, value + __valueSize), format, tags);
             return S_OK;
         }
@@ -945,6 +1010,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt16(*reinterpret_cast<const hstring *>(&name), value);
             return S_OK;
         }
@@ -958,6 +1024,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt16(*reinterpret_cast<const hstring *>(&name), value, format);
             return S_OK;
         }
@@ -971,6 +1038,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt16(*reinterpret_cast<const hstring *>(&name), value, format, tags);
             return S_OK;
         }
@@ -984,6 +1052,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt16Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint16_t>(value, value + __valueSize));
             return S_OK;
         }
@@ -997,6 +1066,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt16Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint16_t>(value, value + __valueSize), format);
             return S_OK;
         }
@@ -1010,6 +1080,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt16Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint16_t>(value, value + __valueSize), format, tags);
             return S_OK;
         }
@@ -1023,6 +1094,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddInt32(*reinterpret_cast<const hstring *>(&name), value);
             return S_OK;
         }
@@ -1036,6 +1108,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddInt32(*reinterpret_cast<const hstring *>(&name), value, format);
             return S_OK;
         }
@@ -1049,6 +1122,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddInt32(*reinterpret_cast<const hstring *>(&name), value, format, tags);
             return S_OK;
         }
@@ -1062,6 +1136,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddInt32Array(*reinterpret_cast<const hstring *>(&name), array_ref<const int32_t>(value, value + __valueSize));
             return S_OK;
         }
@@ -1075,6 +1150,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddInt32Array(*reinterpret_cast<const hstring *>(&name), array_ref<const int32_t>(value, value + __valueSize), format);
             return S_OK;
         }
@@ -1088,6 +1164,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddInt32Array(*reinterpret_cast<const hstring *>(&name), array_ref<const int32_t>(value, value + __valueSize), format, tags);
             return S_OK;
         }
@@ -1101,6 +1178,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt32(*reinterpret_cast<const hstring *>(&name), value);
             return S_OK;
         }
@@ -1114,6 +1192,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt32(*reinterpret_cast<const hstring *>(&name), value, format);
             return S_OK;
         }
@@ -1127,6 +1206,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt32(*reinterpret_cast<const hstring *>(&name), value, format, tags);
             return S_OK;
         }
@@ -1140,6 +1220,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt32Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint32_t>(value, value + __valueSize));
             return S_OK;
         }
@@ -1153,6 +1234,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt32Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint32_t>(value, value + __valueSize), format);
             return S_OK;
         }
@@ -1166,6 +1248,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt32Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint32_t>(value, value + __valueSize), format, tags);
             return S_OK;
         }
@@ -1179,6 +1262,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddInt64(*reinterpret_cast<const hstring *>(&name), value);
             return S_OK;
         }
@@ -1192,6 +1276,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddInt64(*reinterpret_cast<const hstring *>(&name), value, format);
             return S_OK;
         }
@@ -1205,6 +1290,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddInt64(*reinterpret_cast<const hstring *>(&name), value, format, tags);
             return S_OK;
         }
@@ -1218,6 +1304,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddInt64Array(*reinterpret_cast<const hstring *>(&name), array_ref<const int64_t>(value, value + __valueSize));
             return S_OK;
         }
@@ -1231,6 +1318,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddInt64Array(*reinterpret_cast<const hstring *>(&name), array_ref<const int64_t>(value, value + __valueSize), format);
             return S_OK;
         }
@@ -1244,6 +1332,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddInt64Array(*reinterpret_cast<const hstring *>(&name), array_ref<const int64_t>(value, value + __valueSize), format, tags);
             return S_OK;
         }
@@ -1257,6 +1346,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt64(*reinterpret_cast<const hstring *>(&name), value);
             return S_OK;
         }
@@ -1270,6 +1360,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt64(*reinterpret_cast<const hstring *>(&name), value, format);
             return S_OK;
         }
@@ -1283,6 +1374,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt64(*reinterpret_cast<const hstring *>(&name), value, format, tags);
             return S_OK;
         }
@@ -1296,6 +1388,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt64Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint64_t>(value, value + __valueSize));
             return S_OK;
         }
@@ -1309,6 +1402,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt64Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint64_t>(value, value + __valueSize), format);
             return S_OK;
         }
@@ -1322,6 +1416,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddUInt64Array(*reinterpret_cast<const hstring *>(&name), array_ref<const uint64_t>(value, value + __valueSize), format, tags);
             return S_OK;
         }
@@ -1335,6 +1430,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddSingle(*reinterpret_cast<const hstring *>(&name), value);
             return S_OK;
         }
@@ -1348,6 +1444,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddSingle(*reinterpret_cast<const hstring *>(&name), value, format);
             return S_OK;
         }
@@ -1361,6 +1458,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddSingle(*reinterpret_cast<const hstring *>(&name), value, format, tags);
             return S_OK;
         }
@@ -1374,6 +1472,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddSingleArray(*reinterpret_cast<const hstring *>(&name), array_ref<const float>(value, value + __valueSize));
             return S_OK;
         }
@@ -1387,6 +1486,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddSingleArray(*reinterpret_cast<const hstring *>(&name), array_ref<const float>(value, value + __valueSize), format);
             return S_OK;
         }
@@ -1400,6 +1500,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddSingleArray(*reinterpret_cast<const hstring *>(&name), array_ref<const float>(value, value + __valueSize), format, tags);
             return S_OK;
         }
@@ -1413,6 +1514,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddDouble(*reinterpret_cast<const hstring *>(&name), value);
             return S_OK;
         }
@@ -1426,6 +1528,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddDouble(*reinterpret_cast<const hstring *>(&name), value, format);
             return S_OK;
         }
@@ -1439,6 +1542,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddDouble(*reinterpret_cast<const hstring *>(&name), value, format, tags);
             return S_OK;
         }
@@ -1452,6 +1556,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddDoubleArray(*reinterpret_cast<const hstring *>(&name), array_ref<const double>(value, value + __valueSize));
             return S_OK;
         }
@@ -1465,6 +1570,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddDoubleArray(*reinterpret_cast<const hstring *>(&name), array_ref<const double>(value, value + __valueSize), format);
             return S_OK;
         }
@@ -1478,6 +1584,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddDoubleArray(*reinterpret_cast<const hstring *>(&name), array_ref<const double>(value, value + __valueSize), format, tags);
             return S_OK;
         }
@@ -1491,6 +1598,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddChar16(*reinterpret_cast<const hstring *>(&name), value);
             return S_OK;
         }
@@ -1504,6 +1612,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddChar16(*reinterpret_cast<const hstring *>(&name), value, format);
             return S_OK;
         }
@@ -1517,6 +1626,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddChar16(*reinterpret_cast<const hstring *>(&name), value, format, tags);
             return S_OK;
         }
@@ -1530,6 +1640,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddChar16Array(*reinterpret_cast<const hstring *>(&name), array_ref<const wchar_t>(value, value + __valueSize));
             return S_OK;
         }
@@ -1543,6 +1654,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddChar16Array(*reinterpret_cast<const hstring *>(&name), array_ref<const wchar_t>(value, value + __valueSize), format);
             return S_OK;
         }
@@ -1556,6 +1668,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddChar16Array(*reinterpret_cast<const hstring *>(&name), array_ref<const wchar_t>(value, value + __valueSize), format, tags);
             return S_OK;
         }
@@ -1569,6 +1682,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddBoolean(*reinterpret_cast<const hstring *>(&name), value);
             return S_OK;
         }
@@ -1582,6 +1696,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddBoolean(*reinterpret_cast<const hstring *>(&name), value, format);
             return S_OK;
         }
@@ -1595,6 +1710,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddBoolean(*reinterpret_cast<const hstring *>(&name), value, format, tags);
             return S_OK;
         }
@@ -1608,6 +1724,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddBooleanArray(*reinterpret_cast<const hstring *>(&name), array_ref<const bool>(value, value + __valueSize));
             return S_OK;
         }
@@ -1621,6 +1738,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddBooleanArray(*reinterpret_cast<const hstring *>(&name), array_ref<const bool>(value, value + __valueSize), format);
             return S_OK;
         }
@@ -1634,6 +1752,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddBooleanArray(*reinterpret_cast<const hstring *>(&name), array_ref<const bool>(value, value + __valueSize), format, tags);
             return S_OK;
         }
@@ -1647,6 +1766,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddString(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1660,6 +1780,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddString(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value), format);
             return S_OK;
         }
@@ -1673,6 +1794,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddString(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value), format, tags);
             return S_OK;
         }
@@ -1686,6 +1808,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddStringArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1700,6 +1823,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddStringArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value), format);
             return S_OK;
         }
@@ -1714,6 +1838,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddStringArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&value), format, tags);
             return S_OK;
         }
@@ -1728,6 +1853,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddGuid(*reinterpret_cast<const hstring *>(&name), value);
             return S_OK;
         }
@@ -1741,6 +1867,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddGuid(*reinterpret_cast<const hstring *>(&name), value, format);
             return S_OK;
         }
@@ -1754,6 +1881,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddGuid(*reinterpret_cast<const hstring *>(&name), value, format, tags);
             return S_OK;
         }
@@ -1767,6 +1895,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddGuidArray(*reinterpret_cast<const hstring *>(&name), array_ref<const GUID>(value, value + __valueSize));
             return S_OK;
         }
@@ -1780,6 +1909,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddGuidArray(*reinterpret_cast<const hstring *>(&name), array_ref<const GUID>(value, value + __valueSize), format);
             return S_OK;
         }
@@ -1793,6 +1923,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddGuidArray(*reinterpret_cast<const hstring *>(&name), array_ref<const GUID>(value, value + __valueSize), format, tags);
             return S_OK;
         }
@@ -1806,6 +1937,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddDateTime(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -1819,6 +1951,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddDateTime(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::DateTime *>(&value), format);
             return S_OK;
         }
@@ -1832,6 +1965,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddDateTime(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::DateTime *>(&value), format, tags);
             return S_OK;
         }
@@ -1845,6 +1979,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddDateTimeArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -1858,6 +1993,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddDateTimeArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::DateTime *>(&value), format);
             return S_OK;
         }
@@ -1871,6 +2007,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddDateTimeArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::DateTime *>(&value), format, tags);
             return S_OK;
         }
@@ -1884,6 +2021,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddTimeSpan(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -1897,6 +2035,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddTimeSpan(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value), format);
             return S_OK;
         }
@@ -1910,6 +2049,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddTimeSpan(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value), format, tags);
             return S_OK;
         }
@@ -1923,6 +2063,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddTimeSpanArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -1936,6 +2077,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddTimeSpanArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value), format);
             return S_OK;
         }
@@ -1949,6 +2091,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddTimeSpanArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value), format, tags);
             return S_OK;
         }
@@ -1962,6 +2105,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddPoint(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
@@ -1975,6 +2119,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddPoint(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Point *>(&value), format);
             return S_OK;
         }
@@ -1988,6 +2133,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddPoint(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Point *>(&value), format, tags);
             return S_OK;
         }
@@ -2001,6 +2147,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddPointArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
@@ -2014,6 +2161,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddPointArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Point *>(&value), format);
             return S_OK;
         }
@@ -2027,6 +2175,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddPointArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Point *>(&value), format, tags);
             return S_OK;
         }
@@ -2040,6 +2189,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddSize(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Size *>(&value));
             return S_OK;
         }
@@ -2053,6 +2203,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddSize(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Size *>(&value), format);
             return S_OK;
         }
@@ -2066,6 +2217,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddSize(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Size *>(&value), format, tags);
             return S_OK;
         }
@@ -2079,6 +2231,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddSizeArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Size *>(&value));
             return S_OK;
         }
@@ -2092,6 +2245,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddSizeArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Size *>(&value), format);
             return S_OK;
         }
@@ -2105,6 +2259,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddSizeArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Size *>(&value), format, tags);
             return S_OK;
         }
@@ -2118,6 +2273,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddRect(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Rect *>(&value));
             return S_OK;
         }
@@ -2131,6 +2287,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddRect(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Rect *>(&value), format);
             return S_OK;
         }
@@ -2144,6 +2301,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddRect(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Rect *>(&value), format, tags);
             return S_OK;
         }
@@ -2157,6 +2315,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddRectArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Rect *>(&value));
             return S_OK;
         }
@@ -2170,6 +2329,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddRectArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Rect *>(&value), format);
             return S_OK;
         }
@@ -2183,6 +2343,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingFields> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddRectArray(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::Foundation::Rect *>(&value), format, tags);
             return S_OK;
         }
@@ -2200,6 +2361,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Keywords());
             return S_OK;
         }
@@ -2213,6 +2375,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Keywords(value);
             return S_OK;
         }
@@ -2226,6 +2389,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Tags());
             return S_OK;
         }
@@ -2239,6 +2403,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Tags(value);
             return S_OK;
         }
@@ -2252,6 +2417,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Task());
             return S_OK;
         }
@@ -2265,6 +2431,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Task(value);
             return S_OK;
         }
@@ -2278,6 +2445,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Opcode());
             return S_OK;
         }
@@ -2291,6 +2459,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Opcode(value);
             return S_OK;
         }
@@ -2304,6 +2473,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ActivityId());
             return S_OK;
         }
@@ -2317,6 +2487,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ActivityId(value);
             return S_OK;
         }
@@ -2330,6 +2501,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RelatedActivityId());
             return S_OK;
         }
@@ -2343,6 +2515,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptions> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RelatedActivityId(value);
             return S_OK;
         }
@@ -2360,6 +2533,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingOptionsFactory> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateWithKeywords(keywords));
             return S_OK;
         }
@@ -2378,6 +2552,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingSession> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -2392,6 +2567,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingSession> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SaveToFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFolder *>(&folder), *reinterpret_cast<const hstring *>(&fileName)));
             return S_OK;
         }
@@ -2406,6 +2582,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingSession> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddLoggingChannel(*reinterpret_cast<const Windows::Foundation::Diagnostics::ILoggingChannel *>(&loggingChannel));
             return S_OK;
         }
@@ -2419,6 +2596,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingSession> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddLoggingChannel(*reinterpret_cast<const Windows::Foundation::Diagnostics::ILoggingChannel *>(&loggingChannel), maxLevel);
             return S_OK;
         }
@@ -2432,6 +2610,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingSession> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveLoggingChannel(*reinterpret_cast<const Windows::Foundation::Diagnostics::ILoggingChannel *>(&loggingChannel));
             return S_OK;
         }
@@ -2449,6 +2628,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingSessionFactory> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -2467,6 +2647,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsEnabled());
             return S_OK;
         }
@@ -2480,6 +2661,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsEnabled(level));
             return S_OK;
         }
@@ -2493,6 +2675,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsEnabled(level, keywords));
             return S_OK;
         }
@@ -2506,6 +2689,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LogEvent(*reinterpret_cast<const hstring *>(&eventName));
             return S_OK;
         }
@@ -2519,6 +2703,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LogEvent(*reinterpret_cast<const hstring *>(&eventName), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingFields *>(&fields));
             return S_OK;
         }
@@ -2532,6 +2717,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LogEvent(*reinterpret_cast<const hstring *>(&eventName), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingFields *>(&fields), level);
             return S_OK;
         }
@@ -2545,6 +2731,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LogEvent(*reinterpret_cast<const hstring *>(&eventName), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingFields *>(&fields), level, *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingOptions *>(&options));
             return S_OK;
         }
@@ -2558,6 +2745,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().StartActivity(*reinterpret_cast<const hstring *>(&startEventName)));
             return S_OK;
         }
@@ -2572,6 +2760,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().StartActivity(*reinterpret_cast<const hstring *>(&startEventName), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingFields *>(&fields)));
             return S_OK;
         }
@@ -2586,6 +2775,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().StartActivity(*reinterpret_cast<const hstring *>(&startEventName), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingFields *>(&fields), level));
             return S_OK;
         }
@@ -2600,6 +2790,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ILoggingTarget> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().StartActivity(*reinterpret_cast<const hstring *>(&startEventName), *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingFields *>(&fields), level, *reinterpret_cast<const Windows::Foundation::Diagnostics::LoggingOptions *>(&options)));
             return S_OK;
         }
@@ -2618,6 +2809,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ITracingStatusChangedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *enabled = detach(this->shim().Enabled());
             return S_OK;
         }
@@ -2631,6 +2823,7 @@ struct produce<D, Windows::Foundation::Diagnostics::ITracingStatusChangedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TraceLevel());
             return S_OK;
         }

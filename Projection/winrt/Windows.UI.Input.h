@@ -21,6 +21,7 @@ struct produce<D, Windows::UI::Input::ICrossSlidingEventArgs> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::UI::Input::ICrossSlidingEventArgs> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::UI::Input::ICrossSlidingEventArgs> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CrossSlidingState());
             return S_OK;
         }
@@ -64,6 +67,7 @@ struct produce<D, Windows::UI::Input::IDraggingEventArgs> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -77,6 +81,7 @@ struct produce<D, Windows::UI::Input::IDraggingEventArgs> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -90,6 +95,7 @@ struct produce<D, Windows::UI::Input::IDraggingEventArgs> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DraggingState());
             return S_OK;
         }
@@ -107,6 +113,7 @@ struct produce<D, Windows::UI::Input::IEdgeGesture> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Starting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -120,6 +127,7 @@ struct produce<D, Windows::UI::Input::IEdgeGesture> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Starting(token);
             return S_OK;
         }
@@ -133,6 +141,7 @@ struct produce<D, Windows::UI::Input::IEdgeGesture> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -146,6 +155,7 @@ struct produce<D, Windows::UI::Input::IEdgeGesture> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Completed(token);
             return S_OK;
         }
@@ -159,6 +169,7 @@ struct produce<D, Windows::UI::Input::IEdgeGesture> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Canceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -172,6 +183,7 @@ struct produce<D, Windows::UI::Input::IEdgeGesture> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Canceled(token);
             return S_OK;
         }
@@ -189,6 +201,7 @@ struct produce<D, Windows::UI::Input::IEdgeGestureEventArgs> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -206,6 +219,7 @@ struct produce<D, Windows::UI::Input::IEdgeGestureStatics> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *current = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -224,6 +238,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GestureSettings());
             return S_OK;
         }
@@ -237,6 +252,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GestureSettings(value);
             return S_OK;
         }
@@ -250,6 +266,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsInertial());
             return S_OK;
         }
@@ -263,6 +280,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsActive());
             return S_OK;
         }
@@ -276,6 +294,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShowGestureFeedback());
             return S_OK;
         }
@@ -289,6 +308,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShowGestureFeedback(value);
             return S_OK;
         }
@@ -302,6 +322,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PivotCenter());
             return S_OK;
         }
@@ -315,6 +336,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PivotCenter(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
@@ -328,6 +350,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PivotRadius());
             return S_OK;
         }
@@ -341,6 +364,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PivotRadius(value);
             return S_OK;
         }
@@ -354,6 +378,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InertiaTranslationDeceleration());
             return S_OK;
         }
@@ -367,6 +392,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InertiaTranslationDeceleration(value);
             return S_OK;
         }
@@ -380,6 +406,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InertiaRotationDeceleration());
             return S_OK;
         }
@@ -393,6 +420,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InertiaRotationDeceleration(value);
             return S_OK;
         }
@@ -406,6 +434,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InertiaExpansionDeceleration());
             return S_OK;
         }
@@ -419,6 +448,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InertiaExpansionDeceleration(value);
             return S_OK;
         }
@@ -432,6 +462,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InertiaTranslationDisplacement());
             return S_OK;
         }
@@ -445,6 +476,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InertiaTranslationDisplacement(value);
             return S_OK;
         }
@@ -458,6 +490,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InertiaRotationAngle());
             return S_OK;
         }
@@ -471,6 +504,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InertiaRotationAngle(value);
             return S_OK;
         }
@@ -484,6 +518,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InertiaExpansion());
             return S_OK;
         }
@@ -497,6 +532,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InertiaExpansion(value);
             return S_OK;
         }
@@ -510,6 +546,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ManipulationExact());
             return S_OK;
         }
@@ -523,6 +560,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ManipulationExact(value);
             return S_OK;
         }
@@ -536,6 +574,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CrossSlideThresholds());
             return S_OK;
         }
@@ -549,6 +588,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CrossSlideThresholds(*reinterpret_cast<const Windows::UI::Input::CrossSlideThresholds *>(&value));
             return S_OK;
         }
@@ -562,6 +602,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CrossSlideHorizontally());
             return S_OK;
         }
@@ -575,6 +616,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CrossSlideHorizontally(value);
             return S_OK;
         }
@@ -588,6 +630,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CrossSlideExact());
             return S_OK;
         }
@@ -601,6 +644,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CrossSlideExact(value);
             return S_OK;
         }
@@ -614,6 +658,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutoProcessInertia());
             return S_OK;
         }
@@ -627,6 +672,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AutoProcessInertia(value);
             return S_OK;
         }
@@ -640,6 +686,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MouseWheelParameters());
             return S_OK;
         }
@@ -654,6 +701,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *canBeDoubleTap = detach(this->shim().CanBeDoubleTap(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&value)));
             return S_OK;
         }
@@ -667,6 +715,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProcessDownEvent(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&value));
             return S_OK;
         }
@@ -680,6 +729,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProcessMoveEvents(*reinterpret_cast<const Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> *>(&value));
             return S_OK;
         }
@@ -693,6 +743,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProcessUpEvent(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&value));
             return S_OK;
         }
@@ -706,6 +757,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProcessMouseWheelEvent(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&value), isShiftKeyDown, isControlKeyDown);
             return S_OK;
         }
@@ -719,6 +771,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProcessInertia();
             return S_OK;
         }
@@ -732,6 +785,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CompleteGesture();
             return S_OK;
         }
@@ -745,6 +799,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().Tapped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::TappedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -758,6 +813,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Tapped(cookie);
             return S_OK;
         }
@@ -771,6 +827,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().RightTapped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::RightTappedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -784,6 +841,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RightTapped(cookie);
             return S_OK;
         }
@@ -797,6 +855,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().Holding(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::HoldingEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -810,6 +869,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Holding(cookie);
             return S_OK;
         }
@@ -823,6 +883,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().Dragging(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::DraggingEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -836,6 +897,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Dragging(cookie);
             return S_OK;
         }
@@ -849,6 +911,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().ManipulationStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationStartedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -862,6 +925,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ManipulationStarted(cookie);
             return S_OK;
         }
@@ -875,6 +939,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().ManipulationUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationUpdatedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -888,6 +953,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ManipulationUpdated(cookie);
             return S_OK;
         }
@@ -901,6 +967,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().ManipulationInertiaStarting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationInertiaStartingEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -914,6 +981,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ManipulationInertiaStarting(cookie);
             return S_OK;
         }
@@ -927,6 +995,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().ManipulationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -940,6 +1009,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ManipulationCompleted(cookie);
             return S_OK;
         }
@@ -953,6 +1023,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().CrossSliding(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::CrossSlidingEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -966,6 +1037,7 @@ struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CrossSliding(cookie);
             return S_OK;
         }
@@ -983,6 +1055,7 @@ struct produce<D, Windows::UI::Input::IHoldingEventArgs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -996,6 +1069,7 @@ struct produce<D, Windows::UI::Input::IHoldingEventArgs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -1009,6 +1083,7 @@ struct produce<D, Windows::UI::Input::IHoldingEventArgs> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HoldingState());
             return S_OK;
         }
@@ -1026,6 +1101,7 @@ struct produce<D, Windows::UI::Input::IKeyboardDeliveryInterceptor> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsInterceptionEnabledWhenInForeground());
             return S_OK;
         }
@@ -1039,6 +1115,7 @@ struct produce<D, Windows::UI::Input::IKeyboardDeliveryInterceptor> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsInterceptionEnabledWhenInForeground(value);
             return S_OK;
         }
@@ -1052,6 +1129,7 @@ struct produce<D, Windows::UI::Input::IKeyboardDeliveryInterceptor> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().KeyDown(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1065,6 +1143,7 @@ struct produce<D, Windows::UI::Input::IKeyboardDeliveryInterceptor> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeyDown(token);
             return S_OK;
         }
@@ -1078,6 +1157,7 @@ struct produce<D, Windows::UI::Input::IKeyboardDeliveryInterceptor> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().KeyUp(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1091,6 +1171,7 @@ struct produce<D, Windows::UI::Input::IKeyboardDeliveryInterceptor> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeyUp(token);
             return S_OK;
         }
@@ -1108,6 +1189,7 @@ struct produce<D, Windows::UI::Input::IKeyboardDeliveryInterceptorStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *keyboardDeliverySettings = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -1126,6 +1208,7 @@ struct produce<D, Windows::UI::Input::IManipulationCompletedEventArgs> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -1139,6 +1222,7 @@ struct produce<D, Windows::UI::Input::IManipulationCompletedEventArgs> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -1152,6 +1236,7 @@ struct produce<D, Windows::UI::Input::IManipulationCompletedEventArgs> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Cumulative());
             return S_OK;
         }
@@ -1165,6 +1250,7 @@ struct produce<D, Windows::UI::Input::IManipulationCompletedEventArgs> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Velocities());
             return S_OK;
         }
@@ -1182,6 +1268,7 @@ struct produce<D, Windows::UI::Input::IManipulationInertiaStartingEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -1195,6 +1282,7 @@ struct produce<D, Windows::UI::Input::IManipulationInertiaStartingEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -1208,6 +1296,7 @@ struct produce<D, Windows::UI::Input::IManipulationInertiaStartingEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Delta());
             return S_OK;
         }
@@ -1221,6 +1310,7 @@ struct produce<D, Windows::UI::Input::IManipulationInertiaStartingEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Cumulative());
             return S_OK;
         }
@@ -1234,6 +1324,7 @@ struct produce<D, Windows::UI::Input::IManipulationInertiaStartingEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Velocities());
             return S_OK;
         }
@@ -1251,6 +1342,7 @@ struct produce<D, Windows::UI::Input::IManipulationStartedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -1264,6 +1356,7 @@ struct produce<D, Windows::UI::Input::IManipulationStartedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -1277,6 +1370,7 @@ struct produce<D, Windows::UI::Input::IManipulationStartedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Cumulative());
             return S_OK;
         }
@@ -1294,6 +1388,7 @@ struct produce<D, Windows::UI::Input::IManipulationUpdatedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -1307,6 +1402,7 @@ struct produce<D, Windows::UI::Input::IManipulationUpdatedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -1320,6 +1416,7 @@ struct produce<D, Windows::UI::Input::IManipulationUpdatedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Delta());
             return S_OK;
         }
@@ -1333,6 +1430,7 @@ struct produce<D, Windows::UI::Input::IManipulationUpdatedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Cumulative());
             return S_OK;
         }
@@ -1346,6 +1444,7 @@ struct produce<D, Windows::UI::Input::IManipulationUpdatedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Velocities());
             return S_OK;
         }
@@ -1363,6 +1462,7 @@ struct produce<D, Windows::UI::Input::IMouseWheelParameters> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CharTranslation());
             return S_OK;
         }
@@ -1376,6 +1476,7 @@ struct produce<D, Windows::UI::Input::IMouseWheelParameters> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CharTranslation(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
@@ -1389,6 +1490,7 @@ struct produce<D, Windows::UI::Input::IMouseWheelParameters> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeltaScale());
             return S_OK;
         }
@@ -1402,6 +1504,7 @@ struct produce<D, Windows::UI::Input::IMouseWheelParameters> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DeltaScale(value);
             return S_OK;
         }
@@ -1415,6 +1518,7 @@ struct produce<D, Windows::UI::Input::IMouseWheelParameters> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeltaRotationAngle());
             return S_OK;
         }
@@ -1428,6 +1532,7 @@ struct produce<D, Windows::UI::Input::IMouseWheelParameters> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DeltaRotationAngle(value);
             return S_OK;
         }
@@ -1441,6 +1546,7 @@ struct produce<D, Windows::UI::Input::IMouseWheelParameters> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PageTranslation());
             return S_OK;
         }
@@ -1454,6 +1560,7 @@ struct produce<D, Windows::UI::Input::IMouseWheelParameters> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PageTranslation(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
@@ -1471,6 +1578,7 @@ struct produce<D, Windows::UI::Input::IPointerPoint> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDevice());
             return S_OK;
         }
@@ -1485,6 +1593,7 @@ struct produce<D, Windows::UI::Input::IPointerPoint> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -1498,6 +1607,7 @@ struct produce<D, Windows::UI::Input::IPointerPoint> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RawPosition());
             return S_OK;
         }
@@ -1511,6 +1621,7 @@ struct produce<D, Windows::UI::Input::IPointerPoint> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerId());
             return S_OK;
         }
@@ -1524,6 +1635,7 @@ struct produce<D, Windows::UI::Input::IPointerPoint> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameId());
             return S_OK;
         }
@@ -1537,6 +1649,7 @@ struct produce<D, Windows::UI::Input::IPointerPoint> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -1550,6 +1663,7 @@ struct produce<D, Windows::UI::Input::IPointerPoint> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsInContact());
             return S_OK;
         }
@@ -1563,6 +1677,7 @@ struct produce<D, Windows::UI::Input::IPointerPoint> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -1581,6 +1696,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pressure());
             return S_OK;
         }
@@ -1594,6 +1710,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsInverted());
             return S_OK;
         }
@@ -1607,6 +1724,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEraser());
             return S_OK;
         }
@@ -1620,6 +1738,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Orientation());
             return S_OK;
         }
@@ -1633,6 +1752,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().XTilt());
             return S_OK;
         }
@@ -1646,6 +1766,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().YTilt());
             return S_OK;
         }
@@ -1659,6 +1780,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Twist());
             return S_OK;
         }
@@ -1672,6 +1794,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContactRect());
             return S_OK;
         }
@@ -1685,6 +1808,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContactRectRaw());
             return S_OK;
         }
@@ -1698,6 +1822,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TouchConfidence());
             return S_OK;
         }
@@ -1711,6 +1836,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsLeftButtonPressed());
             return S_OK;
         }
@@ -1724,6 +1850,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsRightButtonPressed());
             return S_OK;
         }
@@ -1737,6 +1864,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsMiddleButtonPressed());
             return S_OK;
         }
@@ -1750,6 +1878,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MouseWheelDelta());
             return S_OK;
         }
@@ -1763,6 +1892,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsHorizontalMouseWheel());
             return S_OK;
         }
@@ -1776,6 +1906,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsPrimary());
             return S_OK;
         }
@@ -1789,6 +1920,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsInRange());
             return S_OK;
         }
@@ -1802,6 +1934,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
@@ -1815,6 +1948,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsBarrelButtonPressed());
             return S_OK;
         }
@@ -1828,6 +1962,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsXButton1Pressed());
             return S_OK;
         }
@@ -1841,6 +1976,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsXButton2Pressed());
             return S_OK;
         }
@@ -1854,6 +1990,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerUpdateKind());
             return S_OK;
         }
@@ -1867,6 +2004,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasUsage(usagePage, usageId));
             return S_OK;
         }
@@ -1880,6 +2018,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetUsageValue(usagePage, usageId));
             return S_OK;
         }
@@ -1897,6 +2036,7 @@ struct produce<D, Windows::UI::Input::IPointerPointProperties2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZDistance());
             return S_OK;
         }
@@ -1915,6 +2055,7 @@ struct produce<D, Windows::UI::Input::IPointerPointStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pointerPoint = detach(this->shim().GetCurrentPoint(pointerId));
             return S_OK;
         }
@@ -1929,6 +2070,7 @@ struct produce<D, Windows::UI::Input::IPointerPointStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pointerPoints = detach(this->shim().GetIntermediatePoints(pointerId));
             return S_OK;
         }
@@ -1943,6 +2085,7 @@ struct produce<D, Windows::UI::Input::IPointerPointStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pointerPoint = detach(this->shim().GetCurrentPoint(pointerId, *reinterpret_cast<const Windows::UI::Input::IPointerPointTransform *>(&transform)));
             return S_OK;
         }
@@ -1957,6 +2100,7 @@ struct produce<D, Windows::UI::Input::IPointerPointStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pointerPoints = detach(this->shim().GetIntermediatePoints(pointerId, *reinterpret_cast<const Windows::UI::Input::IPointerPointTransform *>(&transform)));
             return S_OK;
         }
@@ -1975,6 +2119,7 @@ struct produce<D, Windows::UI::Input::IPointerPointTransform> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Inverse());
             return S_OK;
         }
@@ -1989,6 +2134,7 @@ struct produce<D, Windows::UI::Input::IPointerPointTransform> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TryTransform(*reinterpret_cast<const Windows::Foundation::Point *>(&inPoint), *outPoint));
             return S_OK;
         }
@@ -2002,6 +2148,7 @@ struct produce<D, Windows::UI::Input::IPointerPointTransform> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TransformBounds(*reinterpret_cast<const Windows::Foundation::Rect *>(&rect)));
             return S_OK;
         }
@@ -2019,6 +2166,7 @@ struct produce<D, Windows::UI::Input::IPointerVisualizationSettings> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsContactFeedbackEnabled(value);
             return S_OK;
         }
@@ -2032,6 +2180,7 @@ struct produce<D, Windows::UI::Input::IPointerVisualizationSettings> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsContactFeedbackEnabled());
             return S_OK;
         }
@@ -2045,6 +2194,7 @@ struct produce<D, Windows::UI::Input::IPointerVisualizationSettings> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsBarrelButtonFeedbackEnabled(value);
             return S_OK;
         }
@@ -2058,6 +2208,7 @@ struct produce<D, Windows::UI::Input::IPointerVisualizationSettings> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsBarrelButtonFeedbackEnabled());
             return S_OK;
         }
@@ -2075,6 +2226,7 @@ struct produce<D, Windows::UI::Input::IPointerVisualizationSettingsStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *visualizationSettings = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -2093,6 +2245,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Menu());
             return S_OK;
         }
@@ -2107,6 +2260,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RotationResolutionInDegrees());
             return S_OK;
         }
@@ -2120,6 +2274,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RotationResolutionInDegrees(value);
             return S_OK;
         }
@@ -2133,6 +2288,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UseAutomaticHapticFeedback());
             return S_OK;
         }
@@ -2146,6 +2302,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UseAutomaticHapticFeedback(value);
             return S_OK;
         }
@@ -2159,6 +2316,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().ScreenContactStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactStartedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2172,6 +2330,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ScreenContactStarted(cookie);
             return S_OK;
         }
@@ -2185,6 +2344,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().ScreenContactEnded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -2198,6 +2358,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ScreenContactEnded(cookie);
             return S_OK;
         }
@@ -2211,6 +2372,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().ScreenContactContinued(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2224,6 +2386,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ScreenContactContinued(cookie);
             return S_OK;
         }
@@ -2237,6 +2400,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().ControlLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -2250,6 +2414,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ControlLost(cookie);
             return S_OK;
         }
@@ -2263,6 +2428,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RotationChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerRotationChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2276,6 +2442,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RotationChanged(token);
             return S_OK;
         }
@@ -2289,6 +2456,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ButtonClicked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonClickedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2302,6 +2470,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ButtonClicked(token);
             return S_OK;
         }
@@ -2315,6 +2484,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().ControlAcquired(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerControlAcquiredEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2328,6 +2498,7 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ControlAcquired(cookie);
             return S_OK;
         }
@@ -2345,6 +2516,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerButtonClickedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Contact());
             return S_OK;
         }
@@ -2363,6 +2535,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerConfiguration> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetDefaultMenuItems(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<winrt::Windows::UI::Input::RadialControllerSystemMenuItemKind> *>(&buttons));
             return S_OK;
         }
@@ -2376,6 +2549,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerConfiguration> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ResetToDefaultMenuItems();
             return S_OK;
         }
@@ -2389,6 +2563,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerConfiguration> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TrySelectDefaultMenuItem(type));
             return S_OK;
         }
@@ -2406,6 +2581,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerConfigurationStatics> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *configuration = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -2424,6 +2600,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerControlAcquiredEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Contact());
             return S_OK;
         }
@@ -2442,6 +2619,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenu> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Items());
             return S_OK;
         }
@@ -2456,6 +2634,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenu> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
@@ -2469,6 +2648,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenu> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsEnabled(value);
             return S_OK;
         }
@@ -2482,6 +2662,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenu> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetSelectedMenuItem());
             return S_OK;
         }
@@ -2496,6 +2677,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenu> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SelectMenuItem(*reinterpret_cast<const Windows::UI::Input::RadialControllerMenuItem *>(&menuItem));
             return S_OK;
         }
@@ -2509,6 +2691,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenu> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TrySelectPreviouslySelectedMenuItem());
             return S_OK;
         }
@@ -2526,6 +2709,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenuItem> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayText());
             return S_OK;
         }
@@ -2540,6 +2724,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenuItem> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Tag());
             return S_OK;
         }
@@ -2554,6 +2739,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenuItem> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Tag(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
@@ -2567,6 +2753,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenuItem> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Invoked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -2580,6 +2767,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenuItem> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Invoked(token);
             return S_OK;
         }
@@ -2597,6 +2785,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenuItemStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateFromIcon(*reinterpret_cast<const hstring *>(&displayText), *reinterpret_cast<const Windows::Storage::Streams::RandomAccessStreamReference *>(&icon)));
             return S_OK;
         }
@@ -2611,6 +2800,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenuItemStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateFromKnownIcon(*reinterpret_cast<const hstring *>(&displayText), value));
             return S_OK;
         }
@@ -2629,6 +2819,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerRotationChangedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RotationDeltaInDegrees());
             return S_OK;
         }
@@ -2642,6 +2833,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerRotationChangedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Contact());
             return S_OK;
         }
@@ -2660,6 +2852,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerScreenContact> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bounds());
             return S_OK;
         }
@@ -2673,6 +2866,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerScreenContact> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -2690,6 +2884,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerScreenContactContinuedEve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Contact());
             return S_OK;
         }
@@ -2708,6 +2903,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerScreenContactStartedEvent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Contact());
             return S_OK;
         }
@@ -2726,6 +2922,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsSupported());
             return S_OK;
         }
@@ -2739,6 +2936,7 @@ struct produce<D, Windows::UI::Input::IRadialControllerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateForCurrentView());
             return S_OK;
         }
@@ -2757,6 +2955,7 @@ struct produce<D, Windows::UI::Input::IRightTappedEventArgs> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -2770,6 +2969,7 @@ struct produce<D, Windows::UI::Input::IRightTappedEventArgs> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -2787,6 +2987,7 @@ struct produce<D, Windows::UI::Input::ITappedEventArgs> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerDeviceType());
             return S_OK;
         }
@@ -2800,6 +3001,7 @@ struct produce<D, Windows::UI::Input::ITappedEventArgs> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -2813,6 +3015,7 @@ struct produce<D, Windows::UI::Input::ITappedEventArgs> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TapCount());
             return S_OK;
         }

@@ -18,6 +18,7 @@ struct produce<D, Windows::Devices::Radios::IRadio> : produce_base<D, Windows::D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *retval = detach(this->shim().SetStateAsync(value));
             return S_OK;
         }
@@ -32,6 +33,7 @@ struct produce<D, Windows::Devices::Radios::IRadio> : produce_base<D, Windows::D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -45,6 +47,7 @@ struct produce<D, Windows::Devices::Radios::IRadio> : produce_base<D, Windows::D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StateChanged(eventCookie);
             return S_OK;
         }
@@ -58,6 +61,7 @@ struct produce<D, Windows::Devices::Radios::IRadio> : produce_base<D, Windows::D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().State());
             return S_OK;
         }
@@ -71,6 +75,7 @@ struct produce<D, Windows::Devices::Radios::IRadio> : produce_base<D, Windows::D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -85,6 +90,7 @@ struct produce<D, Windows::Devices::Radios::IRadio> : produce_base<D, Windows::D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -102,6 +108,7 @@ struct produce<D, Windows::Devices::Radios::IRadioStatics> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetRadiosAsync());
             return S_OK;
         }
@@ -116,6 +123,7 @@ struct produce<D, Windows::Devices::Radios::IRadioStatics> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *deviceSelector = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -130,6 +138,7 @@ struct produce<D, Windows::Devices::Radios::IRadioStatics> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -144,6 +153,7 @@ struct produce<D, Windows::Devices::Radios::IRadioStatics> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }

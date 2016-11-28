@@ -20,6 +20,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetItemsAsync());
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().DeleteAsync(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ImportItemAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&stream)));
             return S_OK;
         }
@@ -62,6 +65,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetAppStatusForItem(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
             return S_OK;
         }
@@ -75,6 +79,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().LaunchAppForItemAsync(*reinterpret_cast<const Windows::ApplicationModel::Wallet::WalletItem *>(&item)));
             return S_OK;
         }
@@ -93,6 +98,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().ItemsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -106,6 +112,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletItemSystemSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ItemsChanged(cookie);
             return S_OK;
         }
@@ -123,6 +130,7 @@ struct produce<D, Windows::ApplicationModel::Wallet::System::IWalletManagerSyste
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestStoreAsync());
             return S_OK;
         }

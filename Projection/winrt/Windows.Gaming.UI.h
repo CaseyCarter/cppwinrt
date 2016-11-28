@@ -17,6 +17,7 @@ struct produce<D, Windows::Gaming::UI::IGameBarStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().VisibilityChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -30,6 +31,7 @@ struct produce<D, Windows::Gaming::UI::IGameBarStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VisibilityChanged(token);
             return S_OK;
         }
@@ -43,6 +45,7 @@ struct produce<D, Windows::Gaming::UI::IGameBarStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().IsInputRedirectedChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -56,6 +59,7 @@ struct produce<D, Windows::Gaming::UI::IGameBarStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsInputRedirectedChanged(token);
             return S_OK;
         }
@@ -69,6 +73,7 @@ struct produce<D, Windows::Gaming::UI::IGameBarStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Visible());
             return S_OK;
         }
@@ -82,6 +87,7 @@ struct produce<D, Windows::Gaming::UI::IGameBarStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsInputRedirected());
             return S_OK;
         }

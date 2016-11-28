@@ -24,6 +24,7 @@ struct produce<D, Windows::Devices::Perception::IKnownCameraIntrinsicsProperties
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FocalLength());
             return S_OK;
         }
@@ -38,6 +39,7 @@ struct produce<D, Windows::Devices::Perception::IKnownCameraIntrinsicsProperties
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PrincipalPoint());
             return S_OK;
         }
@@ -52,6 +54,7 @@ struct produce<D, Windows::Devices::Perception::IKnownCameraIntrinsicsProperties
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RadialDistortion());
             return S_OK;
         }
@@ -66,6 +69,7 @@ struct produce<D, Windows::Devices::Perception::IKnownCameraIntrinsicsProperties
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TangentialDistortion());
             return S_OK;
         }
@@ -84,6 +88,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionColorFrameSource
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Exposure());
             return S_OK;
         }
@@ -98,6 +103,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionColorFrameSource
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutoExposureEnabled());
             return S_OK;
         }
@@ -112,6 +118,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionColorFrameSource
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExposureCompensation());
             return S_OK;
         }
@@ -130,6 +137,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionDepthFrameSource
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinDepth());
             return S_OK;
         }
@@ -144,6 +152,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionDepthFrameSource
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxDepth());
             return S_OK;
         }
@@ -162,6 +171,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionFrameSourcePrope
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -176,6 +186,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionFrameSourcePrope
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PhysicalDeviceIds());
             return S_OK;
         }
@@ -190,6 +201,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionFrameSourcePrope
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameKind());
             return S_OK;
         }
@@ -204,6 +216,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionFrameSourcePrope
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceModelVersion());
             return S_OK;
         }
@@ -218,6 +231,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionFrameSourcePrope
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnclosureLocation());
             return S_OK;
         }
@@ -236,6 +250,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionFrameSourcePrope
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -254,6 +269,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionInfraredFrameSou
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Exposure());
             return S_OK;
         }
@@ -268,6 +284,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionInfraredFrameSou
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutoExposureEnabled());
             return S_OK;
         }
@@ -282,6 +299,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionInfraredFrameSou
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExposureCompensation());
             return S_OK;
         }
@@ -296,6 +314,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionInfraredFrameSou
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ActiveIlluminationEnabled());
             return S_OK;
         }
@@ -310,6 +329,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionInfraredFrameSou
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AmbientSubtractionEnabled());
             return S_OK;
         }
@@ -324,6 +344,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionInfraredFrameSou
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StructureLightPatternEnabled());
             return S_OK;
         }
@@ -338,6 +359,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionInfraredFrameSou
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InterleavedIlluminationEnabled());
             return S_OK;
         }
@@ -356,6 +378,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoFrameSource
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoProfile());
             return S_OK;
         }
@@ -370,6 +393,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoFrameSource
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedVideoProfiles());
             return S_OK;
         }
@@ -384,6 +408,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoFrameSource
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AvailableVideoProfiles());
             return S_OK;
         }
@@ -398,6 +423,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoFrameSource
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsMirrored());
             return S_OK;
         }
@@ -412,6 +438,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoFrameSource
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CameraIntrinsics());
             return S_OK;
         }
@@ -430,6 +457,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoProfileProp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BitmapPixelFormat());
             return S_OK;
         }
@@ -444,6 +472,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoProfileProp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BitmapAlphaMode());
             return S_OK;
         }
@@ -458,6 +487,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoProfileProp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Width());
             return S_OK;
         }
@@ -472,6 +502,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoProfileProp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Height());
             return S_OK;
         }
@@ -486,6 +517,7 @@ struct produce<D, Windows::Devices::Perception::IKnownPerceptionVideoProfileProp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameDuration());
             return S_OK;
         }
@@ -504,6 +536,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrame> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoFrame());
             return S_OK;
         }
@@ -522,6 +555,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameArrivedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RelativeTime());
             return S_OK;
         }
@@ -535,6 +569,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameArrivedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryOpenFrame());
             return S_OK;
         }
@@ -553,6 +588,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameReader> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().FrameArrived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameReader, Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -566,6 +602,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameReader> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FrameArrived(token);
             return S_OK;
         }
@@ -579,6 +616,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameReader> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Source());
             return S_OK;
         }
@@ -593,6 +631,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameReader> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsPaused());
             return S_OK;
         }
@@ -606,6 +645,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameReader> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsPaused(value);
             return S_OK;
         }
@@ -619,6 +659,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameReader> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryReadLatestFrame());
             return S_OK;
         }
@@ -637,6 +678,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().AvailableChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -650,6 +692,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AvailableChanged(token);
             return S_OK;
         }
@@ -663,6 +706,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ActiveChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -676,6 +720,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ActiveChanged(token);
             return S_OK;
         }
@@ -689,6 +734,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PropertiesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -702,6 +748,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PropertiesChanged(token);
             return S_OK;
         }
@@ -715,6 +762,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().VideoProfileChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -728,6 +776,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VideoProfileChanged(token);
             return S_OK;
         }
@@ -741,6 +790,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CameraIntrinsicsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -754,6 +804,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CameraIntrinsicsChanged(token);
             return S_OK;
         }
@@ -767,6 +818,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -781,6 +833,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -795,6 +848,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceKind());
             return S_OK;
         }
@@ -809,6 +863,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Available());
             return S_OK;
         }
@@ -822,6 +877,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Active());
             return S_OK;
         }
@@ -835,6 +891,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsControlled());
             return S_OK;
         }
@@ -848,6 +905,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -862,6 +920,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedVideoProfiles());
             return S_OK;
         }
@@ -876,6 +935,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AvailableVideoProfiles());
             return S_OK;
         }
@@ -890,6 +950,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoProfile());
             return S_OK;
         }
@@ -904,6 +965,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CameraIntrinsics());
             return S_OK;
         }
@@ -918,6 +980,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AcquireControlSession());
             return S_OK;
         }
@@ -932,6 +995,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CanControlIndependentlyFrom(*reinterpret_cast<const hstring *>(&targetId)));
             return S_OK;
         }
@@ -945,6 +1009,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsCorrelatedWith(*reinterpret_cast<const hstring *>(&targetId)));
             return S_OK;
         }
@@ -958,6 +1023,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *hasResult = detach(this->shim().TryGetTransformTo(*reinterpret_cast<const hstring *>(&targetId), *result));
             return S_OK;
         }
@@ -971,6 +1037,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryGetDepthCorrelatedCameraIntrinsicsAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrameSource *>(&correlatedDepthFrameSource)));
             return S_OK;
         }
@@ -985,6 +1052,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryGetDepthCorrelatedCoordinateMapperAsync(*reinterpret_cast<const hstring *>(&targetSourceId), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrameSource *>(&correlatedDepthFrameSource)));
             return S_OK;
         }
@@ -999,6 +1067,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TrySetVideoProfileAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionControlSession *>(&controlSession), *reinterpret_cast<const Windows::Devices::Perception::PerceptionVideoProfile *>(&profile)));
             return S_OK;
         }
@@ -1013,6 +1082,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().OpenReader());
             return S_OK;
         }
@@ -1031,6 +1101,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSource2> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -1049,6 +1120,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceAdded
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameSource());
             return S_OK;
         }
@@ -1067,6 +1139,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceRemov
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameSource());
             return S_OK;
         }
@@ -1085,6 +1158,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *watcher = detach(this->shim().CreateWatcher());
             return S_OK;
         }
@@ -1099,6 +1173,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindAllAsync());
             return S_OK;
         }
@@ -1113,6 +1188,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
@@ -1127,6 +1203,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }
@@ -1145,6 +1222,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SourceAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceAddedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1158,6 +1236,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceAdded(token);
             return S_OK;
         }
@@ -1171,6 +1250,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SourceRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceRemovedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1184,6 +1264,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceRemoved(token);
             return S_OK;
         }
@@ -1197,6 +1278,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -1210,6 +1292,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stopped(token);
             return S_OK;
         }
@@ -1223,6 +1306,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -1236,6 +1320,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnumerationCompleted(token);
             return S_OK;
         }
@@ -1249,6 +1334,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -1262,6 +1348,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start();
             return S_OK;
         }
@@ -1275,6 +1362,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionColorFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stop();
             return S_OK;
         }
@@ -1292,6 +1380,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionControlSession> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ControlLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -1305,6 +1394,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionControlSession> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ControlLost(token);
             return S_OK;
         }
@@ -1318,6 +1408,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionControlSession> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TrySetPropertyAsync(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::IInspectable *>(&value)));
             return S_OK;
         }
@@ -1336,6 +1427,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCamera
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().UnprojectPixelAtCorrelatedDepth(*reinterpret_cast<const Windows::Foundation::Point *>(&pixelCoordinate), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame)));
             return S_OK;
         }
@@ -1349,6 +1441,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCamera
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UnprojectPixelsAtCorrelatedDepth(*reinterpret_cast<const Windows::Foundation::Point *>(&sourceCoordinates), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame), *results);
             return S_OK;
         }
@@ -1362,6 +1455,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCamera
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().UnprojectRegionPixelsAtCorrelatedDepthAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&region), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame), *results));
             return S_OK;
         }
@@ -1376,6 +1470,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCamera
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().UnprojectAllPixelsAtCorrelatedDepthAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame), *results));
             return S_OK;
         }
@@ -1394,6 +1489,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCoordi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MapPixelToTarget(*reinterpret_cast<const Windows::Foundation::Point *>(&sourcePixelCoordinate), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame)));
             return S_OK;
         }
@@ -1407,6 +1503,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCoordi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MapPixelsToTarget(*reinterpret_cast<const Windows::Foundation::Point *>(&sourceCoordinates), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame), *results);
             return S_OK;
         }
@@ -1420,6 +1517,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCoordi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MapRegionOfPixelsToTargetAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&region), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame), *targetCoordinates));
             return S_OK;
         }
@@ -1434,6 +1532,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthCorrelatedCoordi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MapAllPixelsToTargetAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrame *>(&depthFrame), *targetCoordinates));
             return S_OK;
         }
@@ -1452,6 +1551,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrame> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoFrame());
             return S_OK;
         }
@@ -1470,6 +1570,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameArrivedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RelativeTime());
             return S_OK;
         }
@@ -1483,6 +1584,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameArrivedEven
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryOpenFrame());
             return S_OK;
         }
@@ -1501,6 +1603,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameReader> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().FrameArrived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameReader, Windows::Devices::Perception::PerceptionDepthFrameArrivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1514,6 +1617,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameReader> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FrameArrived(token);
             return S_OK;
         }
@@ -1527,6 +1631,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameReader> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Source());
             return S_OK;
         }
@@ -1541,6 +1646,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameReader> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsPaused());
             return S_OK;
         }
@@ -1554,6 +1660,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameReader> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsPaused(value);
             return S_OK;
         }
@@ -1567,6 +1674,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameReader> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryReadLatestFrame());
             return S_OK;
         }
@@ -1585,6 +1693,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().AvailableChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -1598,6 +1707,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AvailableChanged(token);
             return S_OK;
         }
@@ -1611,6 +1721,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ActiveChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -1624,6 +1735,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ActiveChanged(token);
             return S_OK;
         }
@@ -1637,6 +1749,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PropertiesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1650,6 +1763,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PropertiesChanged(token);
             return S_OK;
         }
@@ -1663,6 +1777,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().VideoProfileChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -1676,6 +1791,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VideoProfileChanged(token);
             return S_OK;
         }
@@ -1689,6 +1805,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CameraIntrinsicsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -1702,6 +1819,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CameraIntrinsicsChanged(token);
             return S_OK;
         }
@@ -1715,6 +1833,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -1729,6 +1848,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -1743,6 +1863,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceKind());
             return S_OK;
         }
@@ -1757,6 +1878,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Available());
             return S_OK;
         }
@@ -1770,6 +1892,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Active());
             return S_OK;
         }
@@ -1783,6 +1906,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsControlled());
             return S_OK;
         }
@@ -1796,6 +1920,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -1810,6 +1935,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedVideoProfiles());
             return S_OK;
         }
@@ -1824,6 +1950,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AvailableVideoProfiles());
             return S_OK;
         }
@@ -1838,6 +1965,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoProfile());
             return S_OK;
         }
@@ -1852,6 +1980,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CameraIntrinsics());
             return S_OK;
         }
@@ -1866,6 +1995,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().AcquireControlSession());
             return S_OK;
         }
@@ -1880,6 +2010,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CanControlIndependentlyFrom(*reinterpret_cast<const hstring *>(&targetId)));
             return S_OK;
         }
@@ -1893,6 +2024,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsCorrelatedWith(*reinterpret_cast<const hstring *>(&targetId)));
             return S_OK;
         }
@@ -1906,6 +2038,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *hasResult = detach(this->shim().TryGetTransformTo(*reinterpret_cast<const hstring *>(&targetId), *result));
             return S_OK;
         }
@@ -1919,6 +2052,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryGetDepthCorrelatedCameraIntrinsicsAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrameSource *>(&target)));
             return S_OK;
         }
@@ -1933,6 +2067,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryGetDepthCorrelatedCoordinateMapperAsync(*reinterpret_cast<const hstring *>(&targetId), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrameSource *>(&depthFrameSourceToMapWith)));
             return S_OK;
         }
@@ -1947,6 +2082,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TrySetVideoProfileAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionControlSession *>(&controlSession), *reinterpret_cast<const Windows::Devices::Perception::PerceptionVideoProfile *>(&profile)));
             return S_OK;
         }
@@ -1961,6 +2097,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().OpenReader());
             return S_OK;
         }
@@ -1979,6 +2116,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSource2> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -1997,6 +2135,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceAdded
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameSource());
             return S_OK;
         }
@@ -2015,6 +2154,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceRemov
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameSource());
             return S_OK;
         }
@@ -2033,6 +2173,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *watcher = detach(this->shim().CreateWatcher());
             return S_OK;
         }
@@ -2047,6 +2188,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindAllAsync());
             return S_OK;
         }
@@ -2061,6 +2203,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
@@ -2075,6 +2218,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }
@@ -2093,6 +2237,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SourceAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceAddedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2106,6 +2251,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceAdded(token);
             return S_OK;
         }
@@ -2119,6 +2265,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SourceRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceRemovedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2132,6 +2279,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceRemoved(token);
             return S_OK;
         }
@@ -2145,6 +2293,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -2158,6 +2307,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stopped(token);
             return S_OK;
         }
@@ -2171,6 +2321,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -2184,6 +2335,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnumerationCompleted(token);
             return S_OK;
         }
@@ -2197,6 +2349,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -2210,6 +2363,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start();
             return S_OK;
         }
@@ -2223,6 +2377,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionDepthFrameSourceWatch
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stop();
             return S_OK;
         }
@@ -2240,6 +2395,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionFrameSourceProperties
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CollectionChange());
             return S_OK;
         }
@@ -2253,6 +2409,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionFrameSourceProperties
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Key());
             return S_OK;
         }
@@ -2271,6 +2428,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionFrameSourcePropertyCh
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -2284,6 +2442,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionFrameSourcePropertyCh
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewValue());
             return S_OK;
         }
@@ -2302,6 +2461,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrame> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoFrame());
             return S_OK;
         }
@@ -2320,6 +2480,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameArrivedE
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RelativeTime());
             return S_OK;
         }
@@ -2333,6 +2494,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameArrivedE
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryOpenFrame());
             return S_OK;
         }
@@ -2351,6 +2513,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameReader> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().FrameArrived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameReader, Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2364,6 +2527,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameReader> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FrameArrived(token);
             return S_OK;
         }
@@ -2377,6 +2541,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameReader> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Source());
             return S_OK;
         }
@@ -2391,6 +2556,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameReader> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsPaused());
             return S_OK;
         }
@@ -2404,6 +2570,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameReader> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsPaused(value);
             return S_OK;
         }
@@ -2417,6 +2584,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameReader> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryReadLatestFrame());
             return S_OK;
         }
@@ -2435,6 +2603,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().AvailableChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -2448,6 +2617,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AvailableChanged(token);
             return S_OK;
         }
@@ -2461,6 +2631,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ActiveChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -2474,6 +2645,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ActiveChanged(token);
             return S_OK;
         }
@@ -2487,6 +2659,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PropertiesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2500,6 +2673,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PropertiesChanged(token);
             return S_OK;
         }
@@ -2513,6 +2687,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().VideoProfileChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -2526,6 +2701,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VideoProfileChanged(token);
             return S_OK;
         }
@@ -2539,6 +2715,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CameraIntrinsicsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -2552,6 +2729,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CameraIntrinsicsChanged(token);
             return S_OK;
         }
@@ -2565,6 +2743,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -2579,6 +2758,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -2593,6 +2773,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceKind());
             return S_OK;
         }
@@ -2607,6 +2788,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Available());
             return S_OK;
         }
@@ -2620,6 +2802,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Active());
             return S_OK;
         }
@@ -2633,6 +2816,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsControlled());
             return S_OK;
         }
@@ -2646,6 +2830,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -2660,6 +2845,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedVideoProfiles());
             return S_OK;
         }
@@ -2674,6 +2860,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AvailableVideoProfiles());
             return S_OK;
         }
@@ -2688,6 +2875,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoProfile());
             return S_OK;
         }
@@ -2702,6 +2890,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CameraIntrinsics());
             return S_OK;
         }
@@ -2716,6 +2905,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().AcquireControlSession());
             return S_OK;
         }
@@ -2730,6 +2920,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CanControlIndependentlyFrom(*reinterpret_cast<const hstring *>(&targetId)));
             return S_OK;
         }
@@ -2743,6 +2934,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsCorrelatedWith(*reinterpret_cast<const hstring *>(&targetId)));
             return S_OK;
         }
@@ -2756,6 +2948,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *hasResult = detach(this->shim().TryGetTransformTo(*reinterpret_cast<const hstring *>(&targetId), *result));
             return S_OK;
         }
@@ -2769,6 +2962,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryGetDepthCorrelatedCameraIntrinsicsAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrameSource *>(&target)));
             return S_OK;
         }
@@ -2783,6 +2977,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryGetDepthCorrelatedCoordinateMapperAsync(*reinterpret_cast<const hstring *>(&targetId), *reinterpret_cast<const Windows::Devices::Perception::PerceptionDepthFrameSource *>(&depthFrameSourceToMapWith)));
             return S_OK;
         }
@@ -2797,6 +2992,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TrySetVideoProfileAsync(*reinterpret_cast<const Windows::Devices::Perception::PerceptionControlSession *>(&controlSession), *reinterpret_cast<const Windows::Devices::Perception::PerceptionVideoProfile *>(&profile)));
             return S_OK;
         }
@@ -2811,6 +3007,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().OpenReader());
             return S_OK;
         }
@@ -2829,6 +3026,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSource2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -2847,6 +3045,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceAd
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameSource());
             return S_OK;
         }
@@ -2865,6 +3064,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceRe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameSource());
             return S_OK;
         }
@@ -2883,6 +3083,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *watcher = detach(this->shim().CreateWatcher());
             return S_OK;
         }
@@ -2897,6 +3098,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FindAllAsync());
             return S_OK;
         }
@@ -2911,6 +3113,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
@@ -2925,6 +3128,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }
@@ -2943,6 +3147,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceWa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SourceAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceAddedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2956,6 +3161,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceWa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceAdded(token);
             return S_OK;
         }
@@ -2969,6 +3175,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceWa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SourceRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceRemovedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2982,6 +3189,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceWa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceRemoved(token);
             return S_OK;
         }
@@ -2995,6 +3203,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceWa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -3008,6 +3217,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceWa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stopped(token);
             return S_OK;
         }
@@ -3021,6 +3231,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceWa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -3034,6 +3245,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceWa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnumerationCompleted(token);
             return S_OK;
         }
@@ -3047,6 +3259,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceWa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -3060,6 +3273,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceWa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start();
             return S_OK;
         }
@@ -3073,6 +3287,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionInfraredFrameSourceWa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stop();
             return S_OK;
         }
@@ -3090,6 +3305,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionVideoProfile> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BitmapPixelFormat());
             return S_OK;
         }
@@ -3103,6 +3319,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionVideoProfile> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BitmapAlphaMode());
             return S_OK;
         }
@@ -3116,6 +3333,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionVideoProfile> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Width());
             return S_OK;
         }
@@ -3129,6 +3347,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionVideoProfile> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Height());
             return S_OK;
         }
@@ -3142,6 +3361,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionVideoProfile> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameDuration());
             return S_OK;
         }
@@ -3155,6 +3375,7 @@ struct produce<D, Windows::Devices::Perception::IPerceptionVideoProfile> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsEqual(*reinterpret_cast<const Windows::Devices::Perception::PerceptionVideoProfile *>(&other)));
             return S_OK;
         }

@@ -18,6 +18,7 @@ struct produce<D, Windows::Devices::I2c::Provider::II2cControllerProvider> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *device = detach(this->shim().GetDeviceProvider(*reinterpret_cast<const Windows::Devices::I2c::Provider::ProviderI2cConnectionSettings *>(&settings)));
             return S_OK;
         }
@@ -36,6 +37,7 @@ struct produce<D, Windows::Devices::I2c::Provider::II2cDeviceProvider> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -50,6 +52,7 @@ struct produce<D, Windows::Devices::I2c::Provider::II2cDeviceProvider> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Write(array_ref<const uint8_t>(buffer, buffer + __bufferSize));
             return S_OK;
         }
@@ -63,6 +66,7 @@ struct produce<D, Windows::Devices::I2c::Provider::II2cDeviceProvider> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().WritePartial(array_ref<const uint8_t>(buffer, buffer + __bufferSize)));
             return S_OK;
         }
@@ -76,6 +80,7 @@ struct produce<D, Windows::Devices::I2c::Provider::II2cDeviceProvider> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Read(*buffer);
             return S_OK;
         }
@@ -89,6 +94,7 @@ struct produce<D, Windows::Devices::I2c::Provider::II2cDeviceProvider> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReadPartial(*buffer));
             return S_OK;
         }
@@ -102,6 +108,7 @@ struct produce<D, Windows::Devices::I2c::Provider::II2cDeviceProvider> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteRead(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
             return S_OK;
         }
@@ -115,6 +122,7 @@ struct produce<D, Windows::Devices::I2c::Provider::II2cDeviceProvider> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().WriteReadPartial(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer));
             return S_OK;
         }
@@ -132,6 +140,7 @@ struct produce<D, Windows::Devices::I2c::Provider::II2cProvider> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetControllersAsync());
             return S_OK;
         }
@@ -150,6 +159,7 @@ struct produce<D, Windows::Devices::I2c::Provider::IProviderI2cConnectionSetting
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SlaveAddress());
             return S_OK;
         }
@@ -163,6 +173,7 @@ struct produce<D, Windows::Devices::I2c::Provider::IProviderI2cConnectionSetting
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SlaveAddress(value);
             return S_OK;
         }
@@ -176,6 +187,7 @@ struct produce<D, Windows::Devices::I2c::Provider::IProviderI2cConnectionSetting
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BusSpeed());
             return S_OK;
         }
@@ -189,6 +201,7 @@ struct produce<D, Windows::Devices::I2c::Provider::IProviderI2cConnectionSetting
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BusSpeed(value);
             return S_OK;
         }
@@ -202,6 +215,7 @@ struct produce<D, Windows::Devices::I2c::Provider::IProviderI2cConnectionSetting
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SharingMode());
             return S_OK;
         }
@@ -215,6 +229,7 @@ struct produce<D, Windows::Devices::I2c::Provider::IProviderI2cConnectionSetting
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SharingMode(value);
             return S_OK;
         }

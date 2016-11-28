@@ -24,6 +24,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdRegistrati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -37,6 +38,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdRegistrati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IPAddress());
             return S_OK;
         }
@@ -51,6 +53,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdRegistrati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasInstanceNameChanged());
             return S_OK;
         }
@@ -68,6 +71,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DnssdServiceInstanceName());
             return S_OK;
         }
@@ -82,6 +86,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DnssdServiceInstanceName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -95,6 +100,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HostName());
             return S_OK;
         }
@@ -109,6 +115,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().HostName(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
             return S_OK;
         }
@@ -122,6 +129,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Port());
             return S_OK;
         }
@@ -135,6 +143,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Port(value);
             return S_OK;
         }
@@ -148,6 +157,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Priority());
             return S_OK;
         }
@@ -161,6 +171,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Priority(value);
             return S_OK;
         }
@@ -174,6 +185,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Weight());
             return S_OK;
         }
@@ -187,6 +199,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Weight(value);
             return S_OK;
         }
@@ -200,6 +213,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextAttributes());
             return S_OK;
         }
@@ -214,6 +228,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RegisterStreamSocketListenerAsync(*reinterpret_cast<const Windows::Networking::Sockets::StreamSocketListener *>(&socket)));
             return S_OK;
         }
@@ -228,6 +243,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RegisterStreamSocketListenerAsync(*reinterpret_cast<const Windows::Networking::Sockets::StreamSocketListener *>(&socket), *reinterpret_cast<const Windows::Networking::Connectivity::NetworkAdapter *>(&adapter)));
             return S_OK;
         }
@@ -242,6 +258,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RegisterDatagramSocketAsync(*reinterpret_cast<const Windows::Networking::Sockets::DatagramSocket *>(&socket)));
             return S_OK;
         }
@@ -256,6 +273,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RegisterDatagramSocketAsync(*reinterpret_cast<const Windows::Networking::Sockets::DatagramSocket *>(&socket), *reinterpret_cast<const Windows::Networking::Connectivity::NetworkAdapter *>(&adapter)));
             return S_OK;
         }
@@ -274,6 +292,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceIns
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&dnssdServiceInstanceName), *reinterpret_cast<const Windows::Networking::HostName *>(&hostName), port));
             return S_OK;
         }
@@ -292,6 +311,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Added(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance> *>(&handler)));
             return S_OK;
         }
@@ -305,6 +325,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Added(token);
             return S_OK;
         }
@@ -318,6 +339,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -331,6 +353,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnumerationCompleted(token);
             return S_OK;
         }
@@ -344,6 +367,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -357,6 +381,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stopped(token);
             return S_OK;
         }
@@ -370,6 +395,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *status = detach(this->shim().Status());
             return S_OK;
         }
@@ -383,6 +409,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start();
             return S_OK;
         }
@@ -396,6 +423,7 @@ struct produce<D, Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stop();
             return S_OK;
         }

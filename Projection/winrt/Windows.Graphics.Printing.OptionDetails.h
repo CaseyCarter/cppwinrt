@@ -20,6 +20,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemDe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ItemId());
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemDe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ItemDisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemDe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ItemDisplayName());
             return S_OK;
         }
@@ -65,6 +68,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemLi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddItem(*reinterpret_cast<const hstring *>(&itemId), *reinterpret_cast<const hstring *>(&displayName));
             return S_OK;
         }
@@ -82,6 +86,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomOption
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -95,6 +100,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomOption
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -113,6 +119,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomTextOp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxCharacters(value);
             return S_OK;
         }
@@ -126,6 +133,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomTextOp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxCharacters());
             return S_OK;
         }
@@ -143,6 +151,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintItemListOpti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Items());
             return S_OK;
         }
@@ -161,6 +170,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintNumberOption
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinValue());
             return S_OK;
         }
@@ -174,6 +184,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintNumberOption
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxValue());
             return S_OK;
         }
@@ -191,6 +202,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OptionId());
             return S_OK;
         }
@@ -205,6 +217,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OptionType());
             return S_OK;
         }
@@ -218,6 +231,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ErrorText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -231,6 +245,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ErrorText());
             return S_OK;
         }
@@ -245,6 +260,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().State(value);
             return S_OK;
         }
@@ -258,6 +274,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().State());
             return S_OK;
         }
@@ -271,6 +288,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -285,6 +303,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetail
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TrySetValue(*reinterpret_cast<const Windows::IInspectable *>(&value)));
             return S_OK;
         }
@@ -302,6 +321,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionCh
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OptionId());
             return S_OK;
         }
@@ -320,6 +340,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Options());
             return S_OK;
         }
@@ -334,6 +355,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *itemListOption = detach(this->shim().CreateItemListOption(*reinterpret_cast<const hstring *>(&optionId), *reinterpret_cast<const hstring *>(&displayName)));
             return S_OK;
         }
@@ -348,6 +370,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *textOption = detach(this->shim().CreateTextOption(*reinterpret_cast<const hstring *>(&optionId), *reinterpret_cast<const hstring *>(&displayName)));
             return S_OK;
         }
@@ -362,6 +385,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().OptionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
@@ -375,6 +399,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OptionChanged(eventCookie);
             return S_OK;
         }
@@ -388,6 +413,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().BeginValidation(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::IInspectable> *>(&eventHandler)));
             return S_OK;
         }
@@ -401,6 +427,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BeginValidation(eventCookie);
             return S_OK;
         }
@@ -418,6 +445,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *printTaskOptionDetails = detach(this->shim().GetFromPrintTaskOptions(*reinterpret_cast<const Windows::Graphics::Printing::PrintTaskOptions *>(&printTaskOptions)));
             return S_OK;
         }
@@ -436,6 +464,7 @@ struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTextOptionDe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxCharacters());
             return S_OK;
         }

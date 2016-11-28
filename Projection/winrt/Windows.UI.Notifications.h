@@ -22,6 +22,7 @@ struct produce<D, Windows::UI::Notifications::IAdaptiveNotificationContent> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::UI::Notifications::IAdaptiveNotificationContent> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Hints());
             return S_OK;
         }
@@ -53,6 +55,7 @@ struct produce<D, Windows::UI::Notifications::IAdaptiveNotificationText> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -67,6 +70,7 @@ struct produce<D, Windows::UI::Notifications::IAdaptiveNotificationText> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Text(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -80,6 +84,7 @@ struct produce<D, Windows::UI::Notifications::IAdaptiveNotificationText> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Language());
             return S_OK;
         }
@@ -94,6 +99,7 @@ struct produce<D, Windows::UI::Notifications::IAdaptiveNotificationText> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Language(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -111,6 +117,7 @@ struct produce<D, Windows::UI::Notifications::IBadgeNotification> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Content());
             return S_OK;
         }
@@ -125,6 +132,7 @@ struct produce<D, Windows::UI::Notifications::IBadgeNotification> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExpirationTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -138,6 +146,7 @@ struct produce<D, Windows::UI::Notifications::IBadgeNotification> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExpirationTime());
             return S_OK;
         }
@@ -156,6 +165,7 @@ struct produce<D, Windows::UI::Notifications::IBadgeNotificationFactory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *notification = detach(this->shim().CreateBadgeNotification(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlDocument *>(&content)));
             return S_OK;
         }
@@ -174,6 +184,7 @@ struct produce<D, Windows::UI::Notifications::IBadgeUpdateManagerForUser> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateBadgeUpdaterForApplication());
             return S_OK;
         }
@@ -188,6 +199,7 @@ struct produce<D, Windows::UI::Notifications::IBadgeUpdateManagerForUser> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateBadgeUpdaterForApplication(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
@@ -202,6 +214,7 @@ struct produce<D, Windows::UI::Notifications::IBadgeUpdateManagerForUser> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateBadgeUpdaterForSecondaryTile(*reinterpret_cast<const hstring *>(&tileId)));
             return S_OK;
         }
@@ -216,6 +229,7 @@ struct produce<D, Windows::UI::Notifications::IBadgeUpdateManagerForUser> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().User());
             return S_OK;
         }
@@ -234,6 +248,7 @@ struct produce<D, Windows::UI::Notifications::IBadgeUpdateManagerStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *updater = detach(this->shim().CreateBadgeUpdaterForApplication());
             return S_OK;
         }
@@ -248,6 +263,7 @@ struct produce<D, Windows::UI::Notifications::IBadgeUpdateManagerStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *updater = detach(this->shim().CreateBadgeUpdaterForApplication(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
@@ -262,6 +278,7 @@ struct produce<D, Windows::UI::Notifications::IBadgeUpdateManagerStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *updater = detach(this->shim().CreateBadgeUpdaterForSecondaryTile(*reinterpret_cast<const hstring *>(&tileId)));
             return S_OK;
         }
@@ -276,6 +293,7 @@ struct produce<D, Windows::UI::Notifications::IBadgeUpdateManagerStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *content = detach(this->shim().GetTemplateContent(type));
             return S_OK;
         }
@@ -294,6 +312,7 @@ struct produce<D, Windows::UI::Notifications::IBadgeUpdateManagerStatics2> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
@@ -312,6 +331,7 @@ struct produce<D, Windows::UI::Notifications::IBadgeUpdater> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Update(*reinterpret_cast<const Windows::UI::Notifications::BadgeNotification *>(&notification));
             return S_OK;
         }
@@ -325,6 +345,7 @@ struct produce<D, Windows::UI::Notifications::IBadgeUpdater> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Clear();
             return S_OK;
         }
@@ -338,6 +359,7 @@ struct produce<D, Windows::UI::Notifications::IBadgeUpdater> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartPeriodicUpdate(*reinterpret_cast<const Windows::Foundation::Uri *>(&badgeContent), requestedInterval);
             return S_OK;
         }
@@ -351,6 +373,7 @@ struct produce<D, Windows::UI::Notifications::IBadgeUpdater> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartPeriodicUpdate(*reinterpret_cast<const Windows::Foundation::Uri *>(&badgeContent), *reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime), requestedInterval);
             return S_OK;
         }
@@ -364,6 +387,7 @@ struct produce<D, Windows::UI::Notifications::IBadgeUpdater> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StopPeriodicUpdate();
             return S_OK;
         }
@@ -381,6 +405,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationHintsSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Style());
             return S_OK;
         }
@@ -395,6 +420,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationHintsSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Wrap());
             return S_OK;
         }
@@ -409,6 +435,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationHintsSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxLines());
             return S_OK;
         }
@@ -423,6 +450,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationHintsSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinLines());
             return S_OK;
         }
@@ -437,6 +465,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationHintsSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextStacking());
             return S_OK;
         }
@@ -451,6 +480,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationHintsSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Align());
             return S_OK;
         }
@@ -469,6 +499,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Caption());
             return S_OK;
         }
@@ -483,6 +514,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Body());
             return S_OK;
         }
@@ -497,6 +529,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Base());
             return S_OK;
         }
@@ -511,6 +544,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Subtitle());
             return S_OK;
         }
@@ -525,6 +559,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -539,6 +574,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Subheader());
             return S_OK;
         }
@@ -553,6 +589,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Header());
             return S_OK;
         }
@@ -567,6 +604,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TitleNumeral());
             return S_OK;
         }
@@ -581,6 +619,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SubheaderNumeral());
             return S_OK;
         }
@@ -595,6 +634,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HeaderNumeral());
             return S_OK;
         }
@@ -609,6 +649,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CaptionSubtle());
             return S_OK;
         }
@@ -623,6 +664,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BodySubtle());
             return S_OK;
         }
@@ -637,6 +679,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BaseSubtle());
             return S_OK;
         }
@@ -651,6 +694,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SubtitleSubtle());
             return S_OK;
         }
@@ -665,6 +709,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TitleSubtle());
             return S_OK;
         }
@@ -679,6 +724,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SubheaderSubtle());
             return S_OK;
         }
@@ -693,6 +739,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SubheaderNumeralSubtle());
             return S_OK;
         }
@@ -707,6 +754,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HeaderSubtle());
             return S_OK;
         }
@@ -721,6 +769,7 @@ struct produce<D, Windows::UI::Notifications::IKnownAdaptiveNotificationTextStyl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HeaderNumeralSubtle());
             return S_OK;
         }
@@ -739,6 +788,7 @@ struct produce<D, Windows::UI::Notifications::IKnownNotificationBindingsStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ToastGeneric());
             return S_OK;
         }
@@ -757,6 +807,7 @@ struct produce<D, Windows::UI::Notifications::INotification> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExpirationTime());
             return S_OK;
         }
@@ -771,6 +822,7 @@ struct produce<D, Windows::UI::Notifications::INotification> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExpirationTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -784,6 +836,7 @@ struct produce<D, Windows::UI::Notifications::INotification> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Visual());
             return S_OK;
         }
@@ -798,6 +851,7 @@ struct produce<D, Windows::UI::Notifications::INotification> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Visual(*reinterpret_cast<const Windows::UI::Notifications::NotificationVisual *>(&value));
             return S_OK;
         }
@@ -815,6 +869,7 @@ struct produce<D, Windows::UI::Notifications::INotificationBinding> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Template());
             return S_OK;
         }
@@ -829,6 +884,7 @@ struct produce<D, Windows::UI::Notifications::INotificationBinding> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Template(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -842,6 +898,7 @@ struct produce<D, Windows::UI::Notifications::INotificationBinding> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Language());
             return S_OK;
         }
@@ -856,6 +913,7 @@ struct produce<D, Windows::UI::Notifications::INotificationBinding> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Language(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -869,6 +927,7 @@ struct produce<D, Windows::UI::Notifications::INotificationBinding> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Hints());
             return S_OK;
         }
@@ -883,6 +942,7 @@ struct produce<D, Windows::UI::Notifications::INotificationBinding> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetTextElements());
             return S_OK;
         }
@@ -901,6 +961,7 @@ struct produce<D, Windows::UI::Notifications::INotificationVisual> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Language());
             return S_OK;
         }
@@ -915,6 +976,7 @@ struct produce<D, Windows::UI::Notifications::INotificationVisual> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Language(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -928,6 +990,7 @@ struct produce<D, Windows::UI::Notifications::INotificationVisual> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Bindings());
             return S_OK;
         }
@@ -942,6 +1005,7 @@ struct produce<D, Windows::UI::Notifications::INotificationVisual> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetBinding(*reinterpret_cast<const hstring *>(&templateName)));
             return S_OK;
         }
@@ -960,6 +1024,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledTileNotification> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Content());
             return S_OK;
         }
@@ -974,6 +1039,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledTileNotification> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeliveryTime());
             return S_OK;
         }
@@ -987,6 +1053,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledTileNotification> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExpirationTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -1000,6 +1067,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledTileNotification> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExpirationTime());
             return S_OK;
         }
@@ -1014,6 +1082,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledTileNotification> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Tag(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1027,6 +1096,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledTileNotification> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Tag());
             return S_OK;
         }
@@ -1041,6 +1111,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledTileNotification> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Id(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1054,6 +1125,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledTileNotification> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -1072,6 +1144,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledTileNotificationFactory>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *notification = detach(this->shim().CreateScheduledTileNotification(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlDocument *>(&content), *reinterpret_cast<const Windows::Foundation::DateTime *>(&deliveryTime)));
             return S_OK;
         }
@@ -1090,6 +1163,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledToastNotification> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Content());
             return S_OK;
         }
@@ -1104,6 +1178,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledToastNotification> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeliveryTime());
             return S_OK;
         }
@@ -1117,6 +1192,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledToastNotification> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SnoozeInterval());
             return S_OK;
         }
@@ -1131,6 +1207,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledToastNotification> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaximumSnoozeCount());
             return S_OK;
         }
@@ -1144,6 +1221,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledToastNotification> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Id(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1157,6 +1235,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledToastNotification> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -1175,6 +1254,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledToastNotification2> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Tag(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1188,6 +1268,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledToastNotification2> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Tag());
             return S_OK;
         }
@@ -1202,6 +1283,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledToastNotification2> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Group(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1215,6 +1297,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledToastNotification2> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Group());
             return S_OK;
         }
@@ -1229,6 +1312,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledToastNotification2> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SuppressPopup(value);
             return S_OK;
         }
@@ -1242,6 +1326,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledToastNotification2> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SuppressPopup());
             return S_OK;
         }
@@ -1259,6 +1344,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledToastNotification3> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NotificationMirroring());
             return S_OK;
         }
@@ -1272,6 +1358,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledToastNotification3> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotificationMirroring(value);
             return S_OK;
         }
@@ -1285,6 +1372,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledToastNotification3> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteId());
             return S_OK;
         }
@@ -1299,6 +1387,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledToastNotification3> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1316,6 +1405,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledToastNotificationFactory
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *notification = detach(this->shim().CreateScheduledToastNotification(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlDocument *>(&content), *reinterpret_cast<const Windows::Foundation::DateTime *>(&deliveryTime)));
             return S_OK;
         }
@@ -1330,6 +1420,7 @@ struct produce<D, Windows::UI::Notifications::IScheduledToastNotificationFactory
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *notification = detach(this->shim().CreateScheduledToastNotificationRecurring(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlDocument *>(&content), *reinterpret_cast<const Windows::Foundation::DateTime *>(&deliveryTime), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&snoozeInterval), maximumSnoozeCount));
             return S_OK;
         }
@@ -1348,6 +1439,7 @@ struct produce<D, Windows::UI::Notifications::IShownTileNotification> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Arguments());
             return S_OK;
         }
@@ -1366,6 +1458,7 @@ struct produce<D, Windows::UI::Notifications::ITileFlyoutNotification> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Content());
             return S_OK;
         }
@@ -1380,6 +1473,7 @@ struct produce<D, Windows::UI::Notifications::ITileFlyoutNotification> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExpirationTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -1393,6 +1487,7 @@ struct produce<D, Windows::UI::Notifications::ITileFlyoutNotification> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExpirationTime());
             return S_OK;
         }
@@ -1411,6 +1506,7 @@ struct produce<D, Windows::UI::Notifications::ITileFlyoutNotificationFactory> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *notification = detach(this->shim().CreateTileFlyoutNotification(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlDocument *>(&content)));
             return S_OK;
         }
@@ -1429,6 +1525,7 @@ struct produce<D, Windows::UI::Notifications::ITileFlyoutUpdateManagerStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *updater = detach(this->shim().CreateTileFlyoutUpdaterForApplication());
             return S_OK;
         }
@@ -1443,6 +1540,7 @@ struct produce<D, Windows::UI::Notifications::ITileFlyoutUpdateManagerStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *updater = detach(this->shim().CreateTileFlyoutUpdaterForApplication(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
@@ -1457,6 +1555,7 @@ struct produce<D, Windows::UI::Notifications::ITileFlyoutUpdateManagerStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *updater = detach(this->shim().CreateTileFlyoutUpdaterForSecondaryTile(*reinterpret_cast<const hstring *>(&tileId)));
             return S_OK;
         }
@@ -1471,6 +1570,7 @@ struct produce<D, Windows::UI::Notifications::ITileFlyoutUpdateManagerStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *content = detach(this->shim().GetTemplateContent(type));
             return S_OK;
         }
@@ -1489,6 +1589,7 @@ struct produce<D, Windows::UI::Notifications::ITileFlyoutUpdater> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Update(*reinterpret_cast<const Windows::UI::Notifications::TileFlyoutNotification *>(&notification));
             return S_OK;
         }
@@ -1502,6 +1603,7 @@ struct produce<D, Windows::UI::Notifications::ITileFlyoutUpdater> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Clear();
             return S_OK;
         }
@@ -1515,6 +1617,7 @@ struct produce<D, Windows::UI::Notifications::ITileFlyoutUpdater> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartPeriodicUpdate(*reinterpret_cast<const Windows::Foundation::Uri *>(&tileFlyoutContent), requestedInterval);
             return S_OK;
         }
@@ -1528,6 +1631,7 @@ struct produce<D, Windows::UI::Notifications::ITileFlyoutUpdater> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartPeriodicUpdate(*reinterpret_cast<const Windows::Foundation::Uri *>(&tileFlyoutContent), *reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime), requestedInterval);
             return S_OK;
         }
@@ -1541,6 +1645,7 @@ struct produce<D, Windows::UI::Notifications::ITileFlyoutUpdater> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StopPeriodicUpdate();
             return S_OK;
         }
@@ -1554,6 +1659,7 @@ struct produce<D, Windows::UI::Notifications::ITileFlyoutUpdater> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Setting());
             return S_OK;
         }
@@ -1571,6 +1677,7 @@ struct produce<D, Windows::UI::Notifications::ITileNotification> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Content());
             return S_OK;
         }
@@ -1585,6 +1692,7 @@ struct produce<D, Windows::UI::Notifications::ITileNotification> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExpirationTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -1598,6 +1706,7 @@ struct produce<D, Windows::UI::Notifications::ITileNotification> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExpirationTime());
             return S_OK;
         }
@@ -1612,6 +1721,7 @@ struct produce<D, Windows::UI::Notifications::ITileNotification> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Tag(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1625,6 +1735,7 @@ struct produce<D, Windows::UI::Notifications::ITileNotification> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Tag());
             return S_OK;
         }
@@ -1643,6 +1754,7 @@ struct produce<D, Windows::UI::Notifications::ITileNotificationFactory> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *notification = detach(this->shim().CreateTileNotification(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlDocument *>(&content)));
             return S_OK;
         }
@@ -1661,6 +1773,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdateManagerForUser> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *updater = detach(this->shim().CreateTileUpdaterForApplicationForUser());
             return S_OK;
         }
@@ -1675,6 +1788,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdateManagerForUser> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *updater = detach(this->shim().CreateTileUpdaterForApplication(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
@@ -1689,6 +1803,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdateManagerForUser> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *updater = detach(this->shim().CreateTileUpdaterForSecondaryTile(*reinterpret_cast<const hstring *>(&tileId)));
             return S_OK;
         }
@@ -1703,6 +1818,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdateManagerForUser> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().User());
             return S_OK;
         }
@@ -1721,6 +1837,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdateManagerStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *updater = detach(this->shim().CreateTileUpdaterForApplication());
             return S_OK;
         }
@@ -1735,6 +1852,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdateManagerStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *updater = detach(this->shim().CreateTileUpdaterForApplication(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
@@ -1749,6 +1867,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdateManagerStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *updater = detach(this->shim().CreateTileUpdaterForSecondaryTile(*reinterpret_cast<const hstring *>(&tileId)));
             return S_OK;
         }
@@ -1763,6 +1882,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdateManagerStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *content = detach(this->shim().GetTemplateContent(type));
             return S_OK;
         }
@@ -1781,6 +1901,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdateManagerStatics2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
@@ -1799,6 +1920,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdater> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Update(*reinterpret_cast<const Windows::UI::Notifications::TileNotification *>(&notification));
             return S_OK;
         }
@@ -1812,6 +1934,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdater> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Clear();
             return S_OK;
         }
@@ -1825,6 +1948,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdater> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableNotificationQueue(enable);
             return S_OK;
         }
@@ -1838,6 +1962,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdater> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Setting());
             return S_OK;
         }
@@ -1851,6 +1976,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdater> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddToSchedule(*reinterpret_cast<const Windows::UI::Notifications::ScheduledTileNotification *>(&scheduledTile));
             return S_OK;
         }
@@ -1864,6 +1990,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdater> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveFromSchedule(*reinterpret_cast<const Windows::UI::Notifications::ScheduledTileNotification *>(&scheduledTile));
             return S_OK;
         }
@@ -1877,6 +2004,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdater> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *scheduledTiles = detach(this->shim().GetScheduledTileNotifications());
             return S_OK;
         }
@@ -1891,6 +2019,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdater> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartPeriodicUpdate(*reinterpret_cast<const Windows::Foundation::Uri *>(&tileContent), requestedInterval);
             return S_OK;
         }
@@ -1904,6 +2033,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdater> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartPeriodicUpdate(*reinterpret_cast<const Windows::Foundation::Uri *>(&tileContent), *reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime), requestedInterval);
             return S_OK;
         }
@@ -1917,6 +2047,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdater> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StopPeriodicUpdate();
             return S_OK;
         }
@@ -1930,6 +2061,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdater> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartPeriodicUpdateBatch(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&tileContents), requestedInterval);
             return S_OK;
         }
@@ -1943,6 +2075,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdater> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartPeriodicUpdateBatch(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&tileContents), *reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime), requestedInterval);
             return S_OK;
         }
@@ -1960,6 +2093,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdater2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableNotificationQueueForSquare150x150(enable);
             return S_OK;
         }
@@ -1973,6 +2107,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdater2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableNotificationQueueForWide310x150(enable);
             return S_OK;
         }
@@ -1986,6 +2121,7 @@ struct produce<D, Windows::UI::Notifications::ITileUpdater2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableNotificationQueueForSquare310x310(enable);
             return S_OK;
         }
@@ -2003,6 +2139,7 @@ struct produce<D, Windows::UI::Notifications::IToastActivatedEventArgs> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Arguments());
             return S_OK;
         }
@@ -2021,6 +2158,7 @@ struct produce<D, Windows::UI::Notifications::IToastDismissedEventArgs> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reason());
             return S_OK;
         }
@@ -2038,6 +2176,7 @@ struct produce<D, Windows::UI::Notifications::IToastFailedEventArgs> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ErrorCode());
             return S_OK;
         }
@@ -2055,6 +2194,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Content());
             return S_OK;
         }
@@ -2069,6 +2209,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExpirationTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -2082,6 +2223,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExpirationTime());
             return S_OK;
         }
@@ -2096,6 +2238,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().Dismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::UI::Notifications::ToastDismissedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2109,6 +2252,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Dismissed(cookie);
             return S_OK;
         }
@@ -2122,6 +2266,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().Activated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -2135,6 +2280,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Activated(cookie);
             return S_OK;
         }
@@ -2148,6 +2294,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Failed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::UI::Notifications::ToastFailedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2161,6 +2308,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Failed(token);
             return S_OK;
         }
@@ -2178,6 +2326,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Tag(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2191,6 +2340,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Tag());
             return S_OK;
         }
@@ -2205,6 +2355,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Group(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2218,6 +2369,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Group());
             return S_OK;
         }
@@ -2232,6 +2384,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SuppressPopup(value);
             return S_OK;
         }
@@ -2245,6 +2398,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SuppressPopup());
             return S_OK;
         }
@@ -2262,6 +2416,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification3> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NotificationMirroring());
             return S_OK;
         }
@@ -2275,6 +2430,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification3> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotificationMirroring(value);
             return S_OK;
         }
@@ -2288,6 +2444,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification3> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteId());
             return S_OK;
         }
@@ -2302,6 +2459,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotification3> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2319,6 +2477,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationActionTriggerDet
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *argument = detach(this->shim().Argument());
             return S_OK;
         }
@@ -2333,6 +2492,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationActionTriggerDet
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *inputs = detach(this->shim().UserInput());
             return S_OK;
         }
@@ -2351,6 +2511,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationFactory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *notification = detach(this->shim().CreateToastNotification(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlDocument *>(&content)));
             return S_OK;
         }
@@ -2369,6 +2530,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationHistory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveGroup(*reinterpret_cast<const hstring *>(&group));
             return S_OK;
         }
@@ -2382,6 +2544,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationHistory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveGroup(*reinterpret_cast<const hstring *>(&group), *reinterpret_cast<const hstring *>(&applicationId));
             return S_OK;
         }
@@ -2395,6 +2558,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationHistory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Remove(*reinterpret_cast<const hstring *>(&tag), *reinterpret_cast<const hstring *>(&group), *reinterpret_cast<const hstring *>(&applicationId));
             return S_OK;
         }
@@ -2408,6 +2572,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationHistory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Remove(*reinterpret_cast<const hstring *>(&tag), *reinterpret_cast<const hstring *>(&group));
             return S_OK;
         }
@@ -2421,6 +2586,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationHistory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Remove(*reinterpret_cast<const hstring *>(&tag));
             return S_OK;
         }
@@ -2434,6 +2600,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationHistory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Clear();
             return S_OK;
         }
@@ -2447,6 +2614,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationHistory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Clear(*reinterpret_cast<const hstring *>(&applicationId));
             return S_OK;
         }
@@ -2464,6 +2632,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationHistory2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *toasts = detach(this->shim().GetHistory());
             return S_OK;
         }
@@ -2478,6 +2647,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationHistory2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *toasts = detach(this->shim().GetHistory(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
@@ -2496,6 +2666,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationHistoryChangedTr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChangeType());
             return S_OK;
         }
@@ -2513,6 +2684,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationManagerForUser> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateToastNotifier());
             return S_OK;
         }
@@ -2527,6 +2699,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationManagerForUser> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateToastNotifier(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
@@ -2541,6 +2714,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationManagerForUser> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().History());
             return S_OK;
         }
@@ -2555,6 +2729,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationManagerForUser> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().User());
             return S_OK;
         }
@@ -2573,6 +2748,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationManagerStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *notifier = detach(this->shim().CreateToastNotifier());
             return S_OK;
         }
@@ -2587,6 +2763,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationManagerStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *notifier = detach(this->shim().CreateToastNotifier(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
@@ -2601,6 +2778,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationManagerStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *content = detach(this->shim().GetTemplateContent(type));
             return S_OK;
         }
@@ -2619,6 +2797,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationManagerStatics2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().History());
             return S_OK;
         }
@@ -2637,6 +2816,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationManagerStatics4>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
@@ -2651,6 +2831,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotificationManagerStatics4>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ConfigureNotificationMirroring(value);
             return S_OK;
         }
@@ -2668,6 +2849,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotifier> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Show(*reinterpret_cast<const Windows::UI::Notifications::ToastNotification *>(&notification));
             return S_OK;
         }
@@ -2681,6 +2863,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotifier> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Hide(*reinterpret_cast<const Windows::UI::Notifications::ToastNotification *>(&notification));
             return S_OK;
         }
@@ -2694,6 +2877,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotifier> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Setting());
             return S_OK;
         }
@@ -2707,6 +2891,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotifier> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddToSchedule(*reinterpret_cast<const Windows::UI::Notifications::ScheduledToastNotification *>(&scheduledToast));
             return S_OK;
         }
@@ -2720,6 +2905,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotifier> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveFromSchedule(*reinterpret_cast<const Windows::UI::Notifications::ScheduledToastNotification *>(&scheduledToast));
             return S_OK;
         }
@@ -2733,6 +2919,7 @@ struct produce<D, Windows::UI::Notifications::IToastNotifier> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *scheduledToasts = detach(this->shim().GetScheduledToastNotifications());
             return S_OK;
         }
@@ -2751,6 +2938,7 @@ struct produce<D, Windows::UI::Notifications::IUserNotification> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Notification());
             return S_OK;
         }
@@ -2765,6 +2953,7 @@ struct produce<D, Windows::UI::Notifications::IUserNotification> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppInfo());
             return S_OK;
         }
@@ -2779,6 +2968,7 @@ struct produce<D, Windows::UI::Notifications::IUserNotification> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -2792,6 +2982,7 @@ struct produce<D, Windows::UI::Notifications::IUserNotification> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreationTime());
             return S_OK;
         }
@@ -2809,6 +3000,7 @@ struct produce<D, Windows::UI::Notifications::IUserNotificationChangedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChangeKind());
             return S_OK;
         }
@@ -2822,6 +3014,7 @@ struct produce<D, Windows::UI::Notifications::IUserNotificationChangedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserNotificationId());
             return S_OK;
         }

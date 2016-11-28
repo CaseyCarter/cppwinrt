@@ -23,6 +23,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ApplicationCallbackUri());
             return S_OK;
         }
@@ -37,6 +38,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -50,6 +52,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccountPairwiseId());
             return S_OK;
         }
@@ -68,6 +71,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *view = detach(this->shim().Create(viewType, *reinterpret_cast<const Windows::Foundation::Uri *>(&applicationCallbackUri)));
             return S_OK;
         }
@@ -82,6 +86,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *view = detach(this->shim().CreateWithPairwiseId(viewType, *reinterpret_cast<const Windows::Foundation::Uri *>(&applicationCallbackUri), *reinterpret_cast<const hstring *>(&accountPairwiseId)));
             return S_OK;
         }
@@ -100,6 +105,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().UpdateWebAccountPropertiesAsync(*reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount), *reinterpret_cast<const hstring *>(&webAccountUserName), *reinterpret_cast<const Windows::Foundation::Collections::IMapView<hstring, hstring> *>(&additionalProperties)));
             return S_OK;
         }
@@ -114,6 +120,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().AddWebAccountAsync(*reinterpret_cast<const hstring *>(&webAccountId), *reinterpret_cast<const hstring *>(&webAccountUserName), *reinterpret_cast<const Windows::Foundation::Collections::IMapView<hstring, hstring> *>(&props)));
             return S_OK;
         }
@@ -128,6 +135,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().DeleteWebAccountAsync(*reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount)));
             return S_OK;
         }
@@ -142,6 +150,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().FindAllProviderWebAccountsAsync());
             return S_OK;
         }
@@ -156,6 +165,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().PushCookiesAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Foundation::Collections::IVectorView<Windows::Web::Http::HttpCookie> *>(&cookies)));
             return S_OK;
         }
@@ -170,6 +180,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().SetViewAsync(*reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount), *reinterpret_cast<const Windows::Security::Authentication::Web::Provider::WebAccountClientView *>(&view)));
             return S_OK;
         }
@@ -184,6 +195,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().ClearViewAsync(*reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount), *reinterpret_cast<const Windows::Foundation::Uri *>(&applicationCallbackUri)));
             return S_OK;
         }
@@ -198,6 +210,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GetViewsAsync(*reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount)));
             return S_OK;
         }
@@ -212,6 +225,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().SetWebAccountPictureAsync(*reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount), *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&webAccountPicture)));
             return S_OK;
         }
@@ -226,6 +240,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().ClearWebAccountPictureAsync(*reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount)));
             return S_OK;
         }
@@ -244,6 +259,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().PullCookiesAsync(*reinterpret_cast<const hstring *>(&uriString), *reinterpret_cast<const hstring *>(&callerPFN)));
             return S_OK;
         }
@@ -262,6 +278,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().AddWebAccountAsync(*reinterpret_cast<const hstring *>(&webAccountId), *reinterpret_cast<const hstring *>(&webAccountUserName), *reinterpret_cast<const Windows::Foundation::Collections::IMapView<hstring, hstring> *>(&props), scope, *reinterpret_cast<const hstring *>(&perUserWebAccountId)));
             return S_OK;
         }
@@ -276,6 +293,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().SetPerAppToPerUserAccountAsync(*reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&perAppAccount), *reinterpret_cast<const hstring *>(&perUserWebAccountId)));
             return S_OK;
         }
@@ -290,6 +308,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GetPerUserFromPerAppAccountAsync(*reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&perAppAccount)));
             return S_OK;
         }
@@ -304,6 +323,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountM
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().ClearPerUserFromPerAppAccountAsync(*reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&perAppAccount)));
             return S_OK;
         }
@@ -322,6 +342,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportCompleted();
             return S_OK;
         }
@@ -339,6 +360,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportCompleted();
             return S_OK;
         }
@@ -352,6 +374,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportError(*reinterpret_cast<const Windows::Security::Authentication::Web::Core::WebProviderError *>(&value));
             return S_OK;
         }
@@ -369,6 +392,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WebAccount());
             return S_OK;
         }
@@ -387,6 +411,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WebAccount());
             return S_OK;
         }
@@ -401,6 +426,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportCompleted();
             return S_OK;
         }
@@ -418,6 +444,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -435,6 +462,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *webCookieRequestContext = detach(this->shim().Context());
             return S_OK;
         }
@@ -449,6 +477,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookies = detach(this->shim().Cookies());
             return S_OK;
         }
@@ -463,6 +492,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Uri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri));
             return S_OK;
         }
@@ -476,6 +506,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *uri = detach(this->shim().Uri());
             return S_OK;
         }
@@ -490,6 +521,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ApplicationCallbackUri());
             return S_OK;
         }
@@ -508,6 +540,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WebAccount());
             return S_OK;
         }
@@ -522,6 +555,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ApplicationCallbackUri());
             return S_OK;
         }
@@ -536,6 +570,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClientId());
             return S_OK;
         }
@@ -554,6 +589,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportUserInteractionRequired();
             return S_OK;
         }
@@ -567,6 +603,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportUserInteractionRequired(*reinterpret_cast<const Windows::Security::Authentication::Web::Core::WebProviderError *>(&value));
             return S_OK;
         }
@@ -584,6 +621,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Operation());
             return S_OK;
         }
@@ -602,6 +640,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *webTokenRequest = detach(this->shim().ProviderRequest());
             return S_OK;
         }
@@ -616,6 +655,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProviderResponses());
             return S_OK;
         }
@@ -630,6 +670,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CacheExpirationTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -643,6 +684,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CacheExpirationTime());
             return S_OK;
         }
@@ -660,6 +702,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportUserCanceled();
             return S_OK;
         }
@@ -677,6 +720,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().AddWebAccountAsync(*reinterpret_cast<const hstring *>(&webAccountId), *reinterpret_cast<const hstring *>(&webAccountUserName), *reinterpret_cast<const Windows::Foundation::Collections::IMapView<hstring, hstring> *>(&props), scope));
             return S_OK;
         }
@@ -691,6 +735,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().SetScopeAsync(*reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount), scope));
             return S_OK;
         }
@@ -705,6 +750,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *scope = detach(this->shim().GetScope(*reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount)));
             return S_OK;
         }
@@ -722,6 +768,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebProvider
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClientRequest());
             return S_OK;
         }
@@ -736,6 +783,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebProvider
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WebAccounts());
             return S_OK;
         }
@@ -750,6 +798,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebProvider
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WebAccountSelectionOptions());
             return S_OK;
         }
@@ -763,6 +812,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebProvider
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ApplicationCallbackUri());
             return S_OK;
         }
@@ -777,6 +827,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebProvider
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GetApplicationTokenBindingKeyAsync(keyType, *reinterpret_cast<const Windows::Foundation::Uri *>(&target)));
             return S_OK;
         }
@@ -795,6 +846,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebProvider
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GetApplicationTokenBindingKeyIdAsync(keyType, *reinterpret_cast<const Windows::Foundation::Uri *>(&target)));
             return S_OK;
         }
@@ -813,6 +865,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebProvider
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClientResponse());
             return S_OK;
         }
@@ -831,6 +884,7 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebProvider
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *webProviderTokenResponse = detach(this->shim().Create(*reinterpret_cast<const Windows::Security::Authentication::Web::Core::WebTokenResponse *>(&webTokenResponse)));
             return S_OK;
         }

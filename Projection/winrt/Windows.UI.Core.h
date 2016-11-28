@@ -59,6 +59,7 @@ struct produce<D, Windows::UI::Core::IAcceleratorKeyEventArgs> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EventType());
             return S_OK;
         }
@@ -72,6 +73,7 @@ struct produce<D, Windows::UI::Core::IAcceleratorKeyEventArgs> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VirtualKey());
             return S_OK;
         }
@@ -85,6 +87,7 @@ struct produce<D, Windows::UI::Core::IAcceleratorKeyEventArgs> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyStatus());
             return S_OK;
         }
@@ -102,6 +105,7 @@ struct produce<D, Windows::UI::Core::IAcceleratorKeyEventArgs2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -120,6 +124,7 @@ struct produce<D, Windows::UI::Core::IAutomationProviderRequestedEventArgs> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutomationProvider());
             return S_OK;
         }
@@ -134,6 +139,7 @@ struct produce<D, Windows::UI::Core::IAutomationProviderRequestedEventArgs> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AutomationProvider(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
@@ -151,6 +157,7 @@ struct produce<D, Windows::UI::Core::IBackRequestedEventArgs> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -164,6 +171,7 @@ struct produce<D, Windows::UI::Core::IBackRequestedEventArgs> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -181,6 +189,7 @@ struct produce<D, Windows::UI::Core::ICharacterReceivedEventArgs> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyCode());
             return S_OK;
         }
@@ -194,6 +203,7 @@ struct produce<D, Windows::UI::Core::ICharacterReceivedEventArgs> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyStatus());
             return S_OK;
         }
@@ -211,6 +221,7 @@ struct produce<D, Windows::UI::Core::IClosestInteractiveBoundsRequestedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerPosition());
             return S_OK;
         }
@@ -224,6 +235,7 @@ struct produce<D, Windows::UI::Core::IClosestInteractiveBoundsRequestedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SearchBounds());
             return S_OK;
         }
@@ -237,6 +249,7 @@ struct produce<D, Windows::UI::Core::IClosestInteractiveBoundsRequestedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClosestInteractiveBounds());
             return S_OK;
         }
@@ -250,6 +263,7 @@ struct produce<D, Windows::UI::Core::IClosestInteractiveBoundsRequestedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClosestInteractiveBounds(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
             return S_OK;
         }
@@ -267,6 +281,7 @@ struct produce<D, Windows::UI::Core::ICoreAcceleratorKeys> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().AcceleratorKeyActivated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreDispatcher, Windows::UI::Core::AcceleratorKeyEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -280,6 +295,7 @@ struct produce<D, Windows::UI::Core::ICoreAcceleratorKeys> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AcceleratorKeyActivated(cookie);
             return S_OK;
         }
@@ -297,6 +313,7 @@ struct produce<D, Windows::UI::Core::ICoreClosestInteractiveBoundsRequested> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().ClosestInteractiveBoundsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreComponentInputSource, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -310,6 +327,7 @@ struct produce<D, Windows::UI::Core::ICoreClosestInteractiveBoundsRequested> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClosestInteractiveBoundsRequested(cookie);
             return S_OK;
         }
@@ -327,6 +345,7 @@ struct produce<D, Windows::UI::Core::ICoreComponentFocusable> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasFocus());
             return S_OK;
         }
@@ -340,6 +359,7 @@ struct produce<D, Windows::UI::Core::ICoreComponentFocusable> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().GotFocus(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -353,6 +373,7 @@ struct produce<D, Windows::UI::Core::ICoreComponentFocusable> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GotFocus(cookie);
             return S_OK;
         }
@@ -366,6 +387,7 @@ struct produce<D, Windows::UI::Core::ICoreComponentFocusable> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().LostFocus(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -379,6 +401,7 @@ struct produce<D, Windows::UI::Core::ICoreComponentFocusable> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LostFocus(cookie);
             return S_OK;
         }
@@ -396,6 +419,7 @@ struct produce<D, Windows::UI::Core::ICoreCursor> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -409,6 +433,7 @@ struct produce<D, Windows::UI::Core::ICoreCursor> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -426,6 +451,7 @@ struct produce<D, Windows::UI::Core::ICoreCursorFactory> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cursor = detach(this->shim().CreateCursor(type, id));
             return S_OK;
         }
@@ -444,6 +470,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcher> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasThreadAccess());
             return S_OK;
         }
@@ -457,6 +484,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcher> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProcessEvents(options);
             return S_OK;
         }
@@ -470,6 +498,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcher> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncAction = detach(this->shim().RunAsync(priority, *reinterpret_cast<const Windows::UI::Core::DispatchedHandler *>(&agileCallback)));
             return S_OK;
         }
@@ -484,6 +513,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcher> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncAction = detach(this->shim().RunIdleAsync(*reinterpret_cast<const Windows::UI::Core::IdleDispatchedHandler *>(&agileCallback)));
             return S_OK;
         }
@@ -502,6 +532,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcher2> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOperation = detach(this->shim().TryRunAsync(priority, *reinterpret_cast<const Windows::UI::Core::DispatchedHandler *>(&agileCallback)));
             return S_OK;
         }
@@ -516,6 +547,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcher2> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOperation = detach(this->shim().TryRunIdleAsync(*reinterpret_cast<const Windows::UI::Core::IdleDispatchedHandler *>(&agileCallback)));
             return S_OK;
         }
@@ -534,6 +566,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcherWithTaskPriority> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentPriority());
             return S_OK;
         }
@@ -547,6 +580,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcherWithTaskPriority> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CurrentPriority(value);
             return S_OK;
         }
@@ -560,6 +594,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcherWithTaskPriority> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShouldYield());
             return S_OK;
         }
@@ -573,6 +608,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcherWithTaskPriority> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShouldYield(priority));
             return S_OK;
         }
@@ -586,6 +622,7 @@ struct produce<D, Windows::UI::Core::ICoreDispatcherWithTaskPriority> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StopProcessEvents();
             return S_OK;
         }
@@ -603,6 +640,7 @@ struct produce<D, Windows::UI::Core::ICoreInputSourceBase> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Dispatcher());
             return S_OK;
         }
@@ -617,6 +655,7 @@ struct produce<D, Windows::UI::Core::ICoreInputSourceBase> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsInputEnabled());
             return S_OK;
         }
@@ -630,6 +669,7 @@ struct produce<D, Windows::UI::Core::ICoreInputSourceBase> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsInputEnabled(value);
             return S_OK;
         }
@@ -643,6 +683,7 @@ struct produce<D, Windows::UI::Core::ICoreInputSourceBase> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().InputEnabled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::InputEnabledEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -656,6 +697,7 @@ struct produce<D, Windows::UI::Core::ICoreInputSourceBase> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InputEnabled(cookie);
             return S_OK;
         }
@@ -673,6 +715,7 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *KeyState = detach(this->shim().GetCurrentKeyState(virtualKey));
             return S_OK;
         }
@@ -686,6 +729,7 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().CharacterReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -699,6 +743,7 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CharacterReceived(cookie);
             return S_OK;
         }
@@ -712,6 +757,7 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().KeyDown(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -725,6 +771,7 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeyDown(cookie);
             return S_OK;
         }
@@ -738,6 +785,7 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().KeyUp(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::KeyEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -751,6 +799,7 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeyUp(cookie);
             return S_OK;
         }
@@ -768,6 +817,7 @@ struct produce<D, Windows::UI::Core::ICoreKeyboardInputSource2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCurrentKeyEventDeviceId());
             return S_OK;
         }
@@ -786,6 +836,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReleasePointerCapture();
             return S_OK;
         }
@@ -799,6 +850,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetPointerCapture();
             return S_OK;
         }
@@ -812,6 +864,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasCapture());
             return S_OK;
         }
@@ -825,6 +878,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerPosition());
             return S_OK;
         }
@@ -838,6 +892,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerCursor());
             return S_OK;
         }
@@ -852,6 +907,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerCursor(*reinterpret_cast<const Windows::UI::Core::CoreCursor *>(&value));
             return S_OK;
         }
@@ -865,6 +921,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerCaptureLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -878,6 +935,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerCaptureLost(cookie);
             return S_OK;
         }
@@ -891,6 +949,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerEntered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -904,6 +963,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerEntered(cookie);
             return S_OK;
         }
@@ -917,6 +977,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerExited(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -930,6 +991,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerExited(cookie);
             return S_OK;
         }
@@ -943,6 +1005,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerMoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -956,6 +1019,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerMoved(cookie);
             return S_OK;
         }
@@ -969,6 +1033,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerPressed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -982,6 +1047,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerPressed(cookie);
             return S_OK;
         }
@@ -995,6 +1061,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1008,6 +1075,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerReleased(cookie);
             return S_OK;
         }
@@ -1021,6 +1089,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerWheelChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1034,6 +1103,7 @@ struct produce<D, Windows::UI::Core::ICorePointerInputSource> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerWheelChanged(cookie);
             return S_OK;
         }
@@ -1051,6 +1121,7 @@ struct produce<D, Windows::UI::Core::ICorePointerRedirector> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerRoutedAway(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1064,6 +1135,7 @@ struct produce<D, Windows::UI::Core::ICorePointerRedirector> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerRoutedAway(cookie);
             return S_OK;
         }
@@ -1077,6 +1149,7 @@ struct produce<D, Windows::UI::Core::ICorePointerRedirector> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerRoutedTo(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1090,6 +1163,7 @@ struct produce<D, Windows::UI::Core::ICorePointerRedirector> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerRoutedTo(cookie);
             return S_OK;
         }
@@ -1103,6 +1177,7 @@ struct produce<D, Windows::UI::Core::ICorePointerRedirector> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerRoutedReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1116,6 +1191,7 @@ struct produce<D, Windows::UI::Core::ICorePointerRedirector> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerRoutedReleased(cookie);
             return S_OK;
         }
@@ -1133,6 +1209,7 @@ struct produce<D, Windows::UI::Core::ICoreTouchHitTesting> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().TouchHitTesting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1146,6 +1223,7 @@ struct produce<D, Windows::UI::Core::ICoreTouchHitTesting> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TouchHitTesting(cookie);
             return S_OK;
         }
@@ -1163,6 +1241,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutomationHostProvider());
             return S_OK;
         }
@@ -1177,6 +1256,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bounds());
             return S_OK;
         }
@@ -1190,6 +1270,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CustomProperties());
             return S_OK;
         }
@@ -1204,6 +1285,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Dispatcher());
             return S_OK;
         }
@@ -1218,6 +1300,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FlowDirection());
             return S_OK;
         }
@@ -1231,6 +1314,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FlowDirection(value);
             return S_OK;
         }
@@ -1244,6 +1328,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsInputEnabled());
             return S_OK;
         }
@@ -1257,6 +1342,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsInputEnabled(value);
             return S_OK;
         }
@@ -1270,6 +1356,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerCursor());
             return S_OK;
         }
@@ -1284,6 +1371,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerCursor(*reinterpret_cast<const Windows::UI::Core::CoreCursor *>(&value));
             return S_OK;
         }
@@ -1297,6 +1385,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerPosition());
             return S_OK;
         }
@@ -1310,6 +1399,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Visible());
             return S_OK;
         }
@@ -1323,6 +1413,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Activate();
             return S_OK;
         }
@@ -1336,6 +1427,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Close();
             return S_OK;
         }
@@ -1349,6 +1441,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *KeyState = detach(this->shim().GetAsyncKeyState(virtualKey));
             return S_OK;
         }
@@ -1362,6 +1455,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *KeyState = detach(this->shim().GetKeyState(virtualKey));
             return S_OK;
         }
@@ -1375,6 +1469,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReleasePointerCapture();
             return S_OK;
         }
@@ -1388,6 +1483,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetPointerCapture();
             return S_OK;
         }
@@ -1401,6 +1497,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().Activated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::WindowActivatedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1414,6 +1511,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Activated(cookie);
             return S_OK;
         }
@@ -1427,6 +1525,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().AutomationProviderRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::AutomationProviderRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1440,6 +1539,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AutomationProviderRequested(cookie);
             return S_OK;
         }
@@ -1453,6 +1553,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().CharacterReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::CharacterReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1466,6 +1567,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CharacterReceived(cookie);
             return S_OK;
         }
@@ -1479,6 +1581,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().Closed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::CoreWindowEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1492,6 +1595,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Closed(cookie);
             return S_OK;
         }
@@ -1505,6 +1609,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().InputEnabled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::InputEnabledEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1518,6 +1623,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InputEnabled(cookie);
             return S_OK;
         }
@@ -1531,6 +1637,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().KeyDown(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::KeyEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1544,6 +1651,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeyDown(cookie);
             return S_OK;
         }
@@ -1557,6 +1665,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().KeyUp(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::KeyEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1570,6 +1679,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeyUp(cookie);
             return S_OK;
         }
@@ -1583,6 +1693,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerCaptureLost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1596,6 +1707,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerCaptureLost(cookie);
             return S_OK;
         }
@@ -1609,6 +1721,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerEntered(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1622,6 +1735,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerEntered(cookie);
             return S_OK;
         }
@@ -1635,6 +1749,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerExited(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1648,6 +1763,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerExited(cookie);
             return S_OK;
         }
@@ -1661,6 +1777,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerMoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1674,6 +1791,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerMoved(cookie);
             return S_OK;
         }
@@ -1687,6 +1805,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerPressed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1700,6 +1819,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerPressed(cookie);
             return S_OK;
         }
@@ -1713,6 +1833,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1726,6 +1847,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerReleased(cookie);
             return S_OK;
         }
@@ -1739,6 +1861,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().TouchHitTesting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::TouchHitTestingEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1752,6 +1875,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TouchHitTesting(cookie);
             return S_OK;
         }
@@ -1765,6 +1889,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().PointerWheelChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::PointerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1778,6 +1903,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerWheelChanged(cookie);
             return S_OK;
         }
@@ -1791,6 +1917,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().SizeChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::WindowSizeChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1804,6 +1931,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SizeChanged(cookie);
             return S_OK;
         }
@@ -1817,6 +1945,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().VisibilityChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::VisibilityChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1830,6 +1959,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VisibilityChanged(cookie);
             return S_OK;
         }
@@ -1847,6 +1977,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow2> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerPosition(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
@@ -1864,6 +1995,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow3> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCookie = detach(this->shim().ClosestInteractiveBoundsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1877,6 +2009,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow3> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClosestInteractiveBoundsRequested(cookie);
             return S_OK;
         }
@@ -1890,6 +2023,7 @@ struct produce<D, Windows::UI::Core::ICoreWindow3> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCurrentKeyEventDeviceId());
             return S_OK;
         }
@@ -1908,6 +2042,7 @@ struct produce<D, Windows::UI::Core::ICoreWindowEventArgs> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1921,6 +2056,7 @@ struct produce<D, Windows::UI::Core::ICoreWindowEventArgs> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1938,6 +2074,7 @@ struct produce<D, Windows::UI::Core::ICoreWindowResizeManager> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyLayoutCompleted();
             return S_OK;
         }
@@ -1955,6 +2092,7 @@ struct produce<D, Windows::UI::Core::ICoreWindowResizeManagerLayoutCapability> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShouldWaitForLayoutCompletion(value);
             return S_OK;
         }
@@ -1968,6 +2106,7 @@ struct produce<D, Windows::UI::Core::ICoreWindowResizeManagerLayoutCapability> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShouldWaitForLayoutCompletion());
             return S_OK;
         }
@@ -1985,6 +2124,7 @@ struct produce<D, Windows::UI::Core::ICoreWindowResizeManagerStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *CoreWindowResizeManager = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -2003,6 +2143,7 @@ struct produce<D, Windows::UI::Core::ICoreWindowStatic> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *ppWindow = detach(this->shim().GetForCurrentThread());
             return S_OK;
         }
@@ -2021,6 +2162,7 @@ struct produce<D, Windows::UI::Core::IIdleDispatchedHandlerArgs> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDispatcherIdle());
             return S_OK;
         }
@@ -2038,6 +2180,7 @@ struct produce<D, Windows::UI::Core::IInitializeWithCoreWindow> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Initialize(*reinterpret_cast<const Windows::UI::Core::CoreWindow *>(&window));
             return S_OK;
         }
@@ -2055,6 +2198,7 @@ struct produce<D, Windows::UI::Core::IInputEnabledEventArgs> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InputEnabled());
             return S_OK;
         }
@@ -2072,6 +2216,7 @@ struct produce<D, Windows::UI::Core::IKeyEventArgs> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VirtualKey());
             return S_OK;
         }
@@ -2085,6 +2230,7 @@ struct produce<D, Windows::UI::Core::IKeyEventArgs> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyStatus());
             return S_OK;
         }
@@ -2102,6 +2248,7 @@ struct produce<D, Windows::UI::Core::IKeyEventArgs2> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -2120,6 +2267,7 @@ struct produce<D, Windows::UI::Core::IPointerEventArgs> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentPoint());
             return S_OK;
         }
@@ -2134,6 +2282,7 @@ struct produce<D, Windows::UI::Core::IPointerEventArgs> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyModifiers());
             return S_OK;
         }
@@ -2147,6 +2296,7 @@ struct produce<D, Windows::UI::Core::IPointerEventArgs> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetIntermediatePoints());
             return S_OK;
         }
@@ -2165,6 +2315,7 @@ struct produce<D, Windows::UI::Core::ISystemNavigationManager> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().BackRequested(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::UI::Core::BackRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2178,6 +2329,7 @@ struct produce<D, Windows::UI::Core::ISystemNavigationManager> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BackRequested(token);
             return S_OK;
         }
@@ -2195,6 +2347,7 @@ struct produce<D, Windows::UI::Core::ISystemNavigationManager2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppViewBackButtonVisibility());
             return S_OK;
         }
@@ -2208,6 +2361,7 @@ struct produce<D, Windows::UI::Core::ISystemNavigationManager2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AppViewBackButtonVisibility(value);
             return S_OK;
         }
@@ -2225,6 +2379,7 @@ struct produce<D, Windows::UI::Core::ISystemNavigationManagerStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *loader = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -2243,6 +2398,7 @@ struct produce<D, Windows::UI::Core::ITouchHitTestingEventArgs> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProximityEvaluation());
             return S_OK;
         }
@@ -2256,6 +2412,7 @@ struct produce<D, Windows::UI::Core::ITouchHitTestingEventArgs> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProximityEvaluation(*reinterpret_cast<const Windows::UI::Core::CoreProximityEvaluation *>(&value));
             return S_OK;
         }
@@ -2269,6 +2426,7 @@ struct produce<D, Windows::UI::Core::ITouchHitTestingEventArgs> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Point());
             return S_OK;
         }
@@ -2282,6 +2440,7 @@ struct produce<D, Windows::UI::Core::ITouchHitTestingEventArgs> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BoundingBox());
             return S_OK;
         }
@@ -2295,6 +2454,7 @@ struct produce<D, Windows::UI::Core::ITouchHitTestingEventArgs> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *proximityEvaluation = detach(this->shim().EvaluateProximity(*reinterpret_cast<const Windows::Foundation::Rect *>(&controlBoundingBox)));
             return S_OK;
         }
@@ -2308,6 +2468,7 @@ struct produce<D, Windows::UI::Core::ITouchHitTestingEventArgs> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *proximityEvaluation = detach(this->shim().EvaluateProximity(*reinterpret_cast<const Windows::Foundation::Point *>(&controlVertices)));
             return S_OK;
         }
@@ -2325,6 +2486,7 @@ struct produce<D, Windows::UI::Core::IVisibilityChangedEventArgs> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Visible());
             return S_OK;
         }
@@ -2342,6 +2504,7 @@ struct produce<D, Windows::UI::Core::IWindowActivatedEventArgs> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WindowActivationState());
             return S_OK;
         }
@@ -2359,6 +2522,7 @@ struct produce<D, Windows::UI::Core::IWindowSizeChangedEventArgs> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Size());
             return S_OK;
         }

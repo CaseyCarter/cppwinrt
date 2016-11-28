@@ -22,6 +22,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FocalLength());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PrincipalPoint());
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RadialDistortion());
             return S_OK;
         }
@@ -61,6 +64,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TangentialDistortion());
             return S_OK;
         }
@@ -74,6 +78,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ImageWidth());
             return S_OK;
         }
@@ -87,6 +92,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ImageHeight());
             return S_OK;
         }
@@ -100,6 +106,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ProjectOntoFrame(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&coordinate)));
             return S_OK;
         }
@@ -113,6 +120,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().UnprojectAtUnitDepth(*reinterpret_cast<const Windows::Foundation::Point *>(&pixelCoordinate)));
             return S_OK;
         }
@@ -126,6 +134,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProjectManyOntoFrame(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&coordinates), *results);
             return S_OK;
         }
@@ -139,6 +148,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UnprojectPixelsAtUnitDepth(*reinterpret_cast<const Windows::Foundation::Point *>(&pixelCoordinates), *results);
             return S_OK;
         }
@@ -156,6 +166,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics2> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UndistortedProjectionTransform());
             return S_OK;
         }
@@ -169,6 +180,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics2> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DistortPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&input)));
             return S_OK;
         }
@@ -182,6 +194,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics2> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DistortPoints(*reinterpret_cast<const Windows::Foundation::Point *>(&inputs), *results);
             return S_OK;
         }
@@ -195,6 +208,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics2> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().UndistortPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&input)));
             return S_OK;
         }
@@ -208,6 +222,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics2> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UndistortPoints(*reinterpret_cast<const Windows::Foundation::Point *>(&inputs), *results);
             return S_OK;
         }
@@ -225,6 +240,7 @@ struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsicsFactory> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&focalLength), *reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&principalPoint), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&radialDistortion), *reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&tangentialDistortion), imageWidth, imageHeight));
             return S_OK;
         }
@@ -243,6 +259,7 @@ struct produce<D, Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMappe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().UnprojectPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&sourcePoint), *reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&targetCoordinateSystem)));
             return S_OK;
         }
@@ -256,6 +273,7 @@ struct produce<D, Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMappe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UnprojectPoints(*reinterpret_cast<const Windows::Foundation::Point *>(&sourcePoints), *reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&targetCoordinateSystem), *results);
             return S_OK;
         }
@@ -269,6 +287,7 @@ struct produce<D, Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMappe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MapPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&sourcePoint), *reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&targetCoordinateSystem), *reinterpret_cast<const Windows::Media::Devices::Core::CameraIntrinsics *>(&targetCameraIntrinsics)));
             return S_OK;
         }
@@ -282,6 +301,7 @@ struct produce<D, Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMappe
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MapPoints(*reinterpret_cast<const Windows::Foundation::Point *>(&sourcePoints), *reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&targetCoordinateSystem), *reinterpret_cast<const Windows::Media::Devices::Core::CameraIntrinsics *>(&targetCameraIntrinsics), *results);
             return S_OK;
         }
@@ -299,6 +319,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameControlCapabilities> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Exposure());
             return S_OK;
         }
@@ -313,6 +334,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameControlCapabilities> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExposureCompensation());
             return S_OK;
         }
@@ -327,6 +349,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameControlCapabilities> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsoSpeed());
             return S_OK;
         }
@@ -341,6 +364,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameControlCapabilities> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Focus());
             return S_OK;
         }
@@ -355,6 +379,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameControlCapabilities> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PhotoConfirmationSupported());
             return S_OK;
         }
@@ -372,6 +397,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameControlCapabilities2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Flash());
             return S_OK;
         }
@@ -390,6 +416,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameController> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExposureControl());
             return S_OK;
         }
@@ -404,6 +431,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameController> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExposureCompensationControl());
             return S_OK;
         }
@@ -418,6 +446,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameController> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsoSpeedControl());
             return S_OK;
         }
@@ -432,6 +461,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameController> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FocusControl());
             return S_OK;
         }
@@ -446,6 +476,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameController> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PhotoConfirmationEnabled());
             return S_OK;
         }
@@ -460,6 +491,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameController> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PhotoConfirmationEnabled(*reinterpret_cast<const Windows::Foundation::IReference<bool> *>(&value));
             return S_OK;
         }
@@ -477,6 +509,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameController2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FlashControl());
             return S_OK;
         }
@@ -495,6 +528,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Supported());
             return S_OK;
         }
@@ -508,6 +542,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Min());
             return S_OK;
         }
@@ -521,6 +556,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Max());
             return S_OK;
         }
@@ -534,6 +570,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Step());
             return S_OK;
         }
@@ -551,6 +588,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCompensationCapab
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Supported());
             return S_OK;
         }
@@ -564,6 +602,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCompensationCapab
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Min());
             return S_OK;
         }
@@ -577,6 +616,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCompensationCapab
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Max());
             return S_OK;
         }
@@ -590,6 +630,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCompensationCapab
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Step());
             return S_OK;
         }
@@ -607,6 +648,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCompensationContr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -621,6 +663,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureCompensationContr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(*reinterpret_cast<const Windows::Foundation::IReference<float> *>(&value));
             return S_OK;
         }
@@ -638,6 +681,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureControl> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Auto());
             return S_OK;
         }
@@ -651,6 +695,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureControl> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Auto(value);
             return S_OK;
         }
@@ -664,6 +709,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureControl> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -678,6 +724,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameExposureControl> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
             return S_OK;
         }
@@ -695,6 +742,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFlashCapabilities> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Supported());
             return S_OK;
         }
@@ -708,6 +756,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFlashCapabilities> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RedEyeReductionSupported());
             return S_OK;
         }
@@ -721,6 +770,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFlashCapabilities> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PowerSupported());
             return S_OK;
         }
@@ -738,6 +788,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFlashControl> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Mode());
             return S_OK;
         }
@@ -751,6 +802,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFlashControl> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Mode(value);
             return S_OK;
         }
@@ -764,6 +816,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFlashControl> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Auto());
             return S_OK;
         }
@@ -777,6 +830,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFlashControl> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Auto(value);
             return S_OK;
         }
@@ -790,6 +844,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFlashControl> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RedEyeReduction());
             return S_OK;
         }
@@ -803,6 +858,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFlashControl> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RedEyeReduction(value);
             return S_OK;
         }
@@ -816,6 +872,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFlashControl> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PowerPercent());
             return S_OK;
         }
@@ -829,6 +886,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFlashControl> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PowerPercent(value);
             return S_OK;
         }
@@ -846,6 +904,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFocusCapabilities> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Supported());
             return S_OK;
         }
@@ -859,6 +918,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFocusCapabilities> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Min());
             return S_OK;
         }
@@ -872,6 +932,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFocusCapabilities> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Max());
             return S_OK;
         }
@@ -885,6 +946,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFocusCapabilities> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Step());
             return S_OK;
         }
@@ -902,6 +964,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFocusControl> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -916,6 +979,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameFocusControl> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(*reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&value));
             return S_OK;
         }
@@ -933,6 +997,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameIsoSpeedCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Supported());
             return S_OK;
         }
@@ -946,6 +1011,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameIsoSpeedCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Min());
             return S_OK;
         }
@@ -959,6 +1025,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameIsoSpeedCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Max());
             return S_OK;
         }
@@ -972,6 +1039,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameIsoSpeedCapabilities> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Step());
             return S_OK;
         }
@@ -989,6 +1057,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameIsoSpeedControl> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Auto());
             return S_OK;
         }
@@ -1002,6 +1071,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameIsoSpeedControl> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Auto(value);
             return S_OK;
         }
@@ -1015,6 +1085,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameIsoSpeedControl> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -1029,6 +1100,7 @@ struct produce<D, Windows::Media::Devices::Core::IFrameIsoSpeedControl> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(*reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&value));
             return S_OK;
         }
@@ -1046,6 +1118,7 @@ struct produce<D, Windows::Media::Devices::Core::IVariablePhotoSequenceControlle
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Supported());
             return S_OK;
         }
@@ -1059,6 +1132,7 @@ struct produce<D, Windows::Media::Devices::Core::IVariablePhotoSequenceControlle
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxPhotosPerSecond());
             return S_OK;
         }
@@ -1072,6 +1146,7 @@ struct produce<D, Windows::Media::Devices::Core::IVariablePhotoSequenceControlle
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PhotosPerSecondLimit());
             return S_OK;
         }
@@ -1085,6 +1160,7 @@ struct produce<D, Windows::Media::Devices::Core::IVariablePhotoSequenceControlle
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PhotosPerSecondLimit(value);
             return S_OK;
         }
@@ -1098,6 +1174,7 @@ struct produce<D, Windows::Media::Devices::Core::IVariablePhotoSequenceControlle
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetHighestConcurrentFrameRate(*reinterpret_cast<const Windows::Media::MediaProperties::IMediaEncodingProperties *>(&captureProperties)));
             return S_OK;
         }
@@ -1112,6 +1189,7 @@ struct produce<D, Windows::Media::Devices::Core::IVariablePhotoSequenceControlle
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCurrentFrameRate());
             return S_OK;
         }
@@ -1126,6 +1204,7 @@ struct produce<D, Windows::Media::Devices::Core::IVariablePhotoSequenceControlle
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameCapabilities());
             return S_OK;
         }
@@ -1140,6 +1219,7 @@ struct produce<D, Windows::Media::Devices::Core::IVariablePhotoSequenceControlle
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *items = detach(this->shim().DesiredFrameControllers());
             return S_OK;
         }

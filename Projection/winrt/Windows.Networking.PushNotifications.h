@@ -20,6 +20,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Uri());
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExpirationTime());
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Close();
             return S_OK;
         }
@@ -60,6 +63,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PushNotificationReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::PushNotifications::PushNotificationChannel, Windows::Networking::PushNotifications::PushNotificationReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -73,6 +77,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PushNotificationReceived(token);
             return S_OK;
         }
@@ -90,6 +95,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreatePushNotificationChannelForApplicationAsync());
             return S_OK;
         }
@@ -104,6 +110,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreatePushNotificationChannelForApplicationAsync(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
@@ -118,6 +125,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreatePushNotificationChannelForSecondaryTileAsync(*reinterpret_cast<const hstring *>(&tileId)));
             return S_OK;
         }
@@ -132,6 +140,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().User());
             return S_OK;
         }
@@ -150,6 +159,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreatePushNotificationChannelForApplicationAsync());
             return S_OK;
         }
@@ -164,6 +174,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreatePushNotificationChannelForApplicationAsync(*reinterpret_cast<const hstring *>(&applicationId)));
             return S_OK;
         }
@@ -178,6 +189,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreatePushNotificationChannelForSecondaryTileAsync(*reinterpret_cast<const hstring *>(&tileId)));
             return S_OK;
         }
@@ -196,6 +208,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationChann
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
@@ -214,6 +227,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationRecei
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Cancel(value);
             return S_OK;
         }
@@ -227,6 +241,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationRecei
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Cancel());
             return S_OK;
         }
@@ -240,6 +255,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationRecei
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NotificationType());
             return S_OK;
         }
@@ -253,6 +269,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationRecei
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ToastNotification());
             return S_OK;
         }
@@ -267,6 +284,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationRecei
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TileNotification());
             return S_OK;
         }
@@ -281,6 +299,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationRecei
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BadgeNotification());
             return S_OK;
         }
@@ -295,6 +314,7 @@ struct produce<D, Windows::Networking::PushNotifications::IPushNotificationRecei
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RawNotification());
             return S_OK;
         }
@@ -313,6 +333,7 @@ struct produce<D, Windows::Networking::PushNotifications::IRawNotification> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Content());
             return S_OK;
         }

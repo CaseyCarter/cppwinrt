@@ -20,6 +20,7 @@ struct produce<D, Windows::Devices::Adc::IAdcChannel> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Controller());
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::Devices::Adc::IAdcChannel> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReadValue());
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::Devices::Adc::IAdcChannel> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReadRatio());
             return S_OK;
         }
@@ -64,6 +67,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChannelCount());
             return S_OK;
         }
@@ -77,6 +81,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResolutionInBits());
             return S_OK;
         }
@@ -90,6 +95,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinValue());
             return S_OK;
         }
@@ -103,6 +109,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxValue());
             return S_OK;
         }
@@ -116,6 +123,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChannelMode());
             return S_OK;
         }
@@ -129,6 +137,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ChannelMode(value);
             return S_OK;
         }
@@ -142,6 +151,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsChannelModeSupported(channelMode));
             return S_OK;
         }
@@ -155,6 +165,7 @@ struct produce<D, Windows::Devices::Adc::IAdcController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().OpenChannel(channelNumber));
             return S_OK;
         }
@@ -173,6 +184,7 @@ struct produce<D, Windows::Devices::Adc::IAdcControllerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetControllersAsync(*reinterpret_cast<const Windows::Devices::Adc::Provider::IAdcProvider *>(&provider)));
             return S_OK;
         }
@@ -191,6 +203,7 @@ struct produce<D, Windows::Devices::Adc::IAdcControllerStatics2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetDefaultAsync());
             return S_OK;
         }

@@ -18,6 +18,7 @@ struct produce<D, Windows::Networking::IEndpointPair> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalHostName());
             return S_OK;
         }
@@ -32,6 +33,7 @@ struct produce<D, Windows::Networking::IEndpointPair> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LocalHostName(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
             return S_OK;
         }
@@ -45,6 +47,7 @@ struct produce<D, Windows::Networking::IEndpointPair> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalServiceName());
             return S_OK;
         }
@@ -59,6 +62,7 @@ struct produce<D, Windows::Networking::IEndpointPair> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LocalServiceName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -72,6 +76,7 @@ struct produce<D, Windows::Networking::IEndpointPair> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteHostName());
             return S_OK;
         }
@@ -86,6 +91,7 @@ struct produce<D, Windows::Networking::IEndpointPair> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteHostName(*reinterpret_cast<const Windows::Networking::HostName *>(&value));
             return S_OK;
         }
@@ -99,6 +105,7 @@ struct produce<D, Windows::Networking::IEndpointPair> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteServiceName());
             return S_OK;
         }
@@ -113,6 +120,7 @@ struct produce<D, Windows::Networking::IEndpointPair> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteServiceName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -130,6 +138,7 @@ struct produce<D, Windows::Networking::IEndpointPairFactory> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateEndpointPair(*reinterpret_cast<const Windows::Networking::HostName *>(&localHostName), *reinterpret_cast<const hstring *>(&localServiceName), *reinterpret_cast<const Windows::Networking::HostName *>(&remoteHostName), *reinterpret_cast<const hstring *>(&remoteServiceName)));
             return S_OK;
         }
@@ -148,6 +157,7 @@ struct produce<D, Windows::Networking::IHostName> : produce_base<D, Windows::Net
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IPInformation());
             return S_OK;
         }
@@ -162,6 +172,7 @@ struct produce<D, Windows::Networking::IHostName> : produce_base<D, Windows::Net
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RawName());
             return S_OK;
         }
@@ -176,6 +187,7 @@ struct produce<D, Windows::Networking::IHostName> : produce_base<D, Windows::Net
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -190,6 +202,7 @@ struct produce<D, Windows::Networking::IHostName> : produce_base<D, Windows::Net
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanonicalName());
             return S_OK;
         }
@@ -204,6 +217,7 @@ struct produce<D, Windows::Networking::IHostName> : produce_base<D, Windows::Net
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -217,6 +231,7 @@ struct produce<D, Windows::Networking::IHostName> : produce_base<D, Windows::Net
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *isEqual = detach(this->shim().IsEqual(*reinterpret_cast<const Windows::Networking::HostName *>(&hostName)));
             return S_OK;
         }
@@ -234,6 +249,7 @@ struct produce<D, Windows::Networking::IHostNameFactory> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateHostName(*reinterpret_cast<const hstring *>(&hostName)));
             return S_OK;
         }
@@ -252,6 +268,7 @@ struct produce<D, Windows::Networking::IHostNameStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Compare(*reinterpret_cast<const hstring *>(&value1), *reinterpret_cast<const hstring *>(&value2)));
             return S_OK;
         }

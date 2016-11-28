@@ -21,6 +21,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RsaPkcs1());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RsaOaepSha1());
             return S_OK;
         }
@@ -49,6 +51,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RsaOaepSha256());
             return S_OK;
         }
@@ -63,6 +66,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RsaOaepSha384());
             return S_OK;
         }
@@ -77,6 +81,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RsaOaepSha512());
             return S_OK;
         }
@@ -91,6 +96,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EcdsaP256Sha256());
             return S_OK;
         }
@@ -105,6 +111,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EcdsaP384Sha384());
             return S_OK;
         }
@@ -119,6 +126,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EcdsaP521Sha512());
             return S_OK;
         }
@@ -133,6 +141,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DsaSha1());
             return S_OK;
         }
@@ -147,6 +156,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DsaSha256());
             return S_OK;
         }
@@ -161,6 +171,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RsaSignPkcs1Sha1());
             return S_OK;
         }
@@ -175,6 +186,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RsaSignPkcs1Sha256());
             return S_OK;
         }
@@ -189,6 +201,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RsaSignPkcs1Sha384());
             return S_OK;
         }
@@ -203,6 +216,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RsaSignPkcs1Sha512());
             return S_OK;
         }
@@ -217,6 +231,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RsaSignPssSha1());
             return S_OK;
         }
@@ -231,6 +246,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RsaSignPssSha256());
             return S_OK;
         }
@@ -245,6 +261,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RsaSignPssSha384());
             return S_OK;
         }
@@ -259,6 +276,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RsaSignPssSha512());
             return S_OK;
         }
@@ -277,6 +295,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EcdsaSha256());
             return S_OK;
         }
@@ -291,6 +310,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EcdsaSha384());
             return S_OK;
         }
@@ -305,6 +325,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EcdsaSha512());
             return S_OK;
         }
@@ -323,6 +344,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlgorithmName());
             return S_OK;
         }
@@ -337,6 +359,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *key = detach(this->shim().CreateKeyPair(keySize));
             return S_OK;
         }
@@ -351,6 +374,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *key = detach(this->shim().ImportKeyPair(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&keyBlob)));
             return S_OK;
         }
@@ -365,6 +389,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *key = detach(this->shim().ImportKeyPair(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&keyBlob), BlobType));
             return S_OK;
         }
@@ -379,6 +404,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *key = detach(this->shim().ImportPublicKey(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&keyBlob)));
             return S_OK;
         }
@@ -393,6 +419,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *key = detach(this->shim().ImportPublicKey(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&keyBlob), BlobType));
             return S_OK;
         }
@@ -411,6 +438,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *key = detach(this->shim().CreateKeyPairWithCurveName(*reinterpret_cast<const hstring *>(&curveName)));
             return S_OK;
         }
@@ -425,6 +453,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *key = detach(this->shim().CreateKeyPairWithCurveParameters(array_ref<const uint8_t>(parameters, parameters + __parametersSize)));
             return S_OK;
         }
@@ -443,6 +472,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *provider = detach(this->shim().OpenAlgorithm(*reinterpret_cast<const hstring *>(&algorithm)));
             return S_OK;
         }
@@ -461,6 +491,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ICryptographicEngineSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Encrypt(*reinterpret_cast<const Windows::Security::Cryptography::Core::CryptographicKey *>(&key), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&iv)));
             return S_OK;
         }
@@ -475,6 +506,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ICryptographicEngineSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Decrypt(*reinterpret_cast<const Windows::Security::Cryptography::Core::CryptographicKey *>(&key), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&iv)));
             return S_OK;
         }
@@ -489,6 +521,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ICryptographicEngineSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EncryptAndAuthenticate(*reinterpret_cast<const Windows::Security::Cryptography::Core::CryptographicKey *>(&key), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&nonce), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&authenticatedData)));
             return S_OK;
         }
@@ -503,6 +536,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ICryptographicEngineSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DecryptAndAuthenticate(*reinterpret_cast<const Windows::Security::Cryptography::Core::CryptographicKey *>(&key), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&nonce), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&authenticationTag), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&authenticatedData)));
             return S_OK;
         }
@@ -517,6 +551,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ICryptographicEngineSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sign(*reinterpret_cast<const Windows::Security::Cryptography::Core::CryptographicKey *>(&key), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }
@@ -531,6 +566,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ICryptographicEngineSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *isAuthenticated = detach(this->shim().VerifySignature(*reinterpret_cast<const Windows::Security::Cryptography::Core::CryptographicKey *>(&key), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&signature)));
             return S_OK;
         }
@@ -544,6 +580,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ICryptographicEngineSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *keyMaterial = detach(this->shim().DeriveKeyMaterial(*reinterpret_cast<const Windows::Security::Cryptography::Core::CryptographicKey *>(&key), *reinterpret_cast<const Windows::Security::Cryptography::Core::KeyDerivationParameters *>(&parameters), desiredKeySize));
             return S_OK;
         }
@@ -562,6 +599,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ICryptographicEngineSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SignHashedData(*reinterpret_cast<const Windows::Security::Cryptography::Core::CryptographicKey *>(&key), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }
@@ -576,6 +614,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ICryptographicEngineSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *isAuthenticated = detach(this->shim().VerifySignatureWithHashInput(*reinterpret_cast<const Windows::Security::Cryptography::Core::CryptographicKey *>(&key), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&signature)));
             return S_OK;
         }
@@ -589,6 +628,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ICryptographicEngineSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DecryptAsync(*reinterpret_cast<const Windows::Security::Cryptography::Core::CryptographicKey *>(&key), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&iv)));
             return S_OK;
         }
@@ -603,6 +643,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ICryptographicEngineSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SignAsync(*reinterpret_cast<const Windows::Security::Cryptography::Core::CryptographicKey *>(&key), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }
@@ -617,6 +658,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ICryptographicEngineSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SignHashedDataAsync(*reinterpret_cast<const Windows::Security::Cryptography::Core::CryptographicKey *>(&key), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }
@@ -635,6 +677,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ICryptographicKey> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeySize());
             return S_OK;
         }
@@ -648,6 +691,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ICryptographicKey> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Export());
             return S_OK;
         }
@@ -662,6 +706,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ICryptographicKey> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Export(BlobType));
             return S_OK;
         }
@@ -676,6 +721,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ICryptographicKey> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExportPublicKey());
             return S_OK;
         }
@@ -690,6 +736,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ICryptographicKey> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExportPublicKey(BlobType));
             return S_OK;
         }
@@ -708,6 +755,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BrainpoolP160r1());
             return S_OK;
         }
@@ -722,6 +770,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BrainpoolP160t1());
             return S_OK;
         }
@@ -736,6 +785,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BrainpoolP192r1());
             return S_OK;
         }
@@ -750,6 +800,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BrainpoolP192t1());
             return S_OK;
         }
@@ -764,6 +815,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BrainpoolP224r1());
             return S_OK;
         }
@@ -778,6 +830,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BrainpoolP224t1());
             return S_OK;
         }
@@ -792,6 +845,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BrainpoolP256r1());
             return S_OK;
         }
@@ -806,6 +860,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BrainpoolP256t1());
             return S_OK;
         }
@@ -820,6 +875,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BrainpoolP320r1());
             return S_OK;
         }
@@ -834,6 +890,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BrainpoolP320t1());
             return S_OK;
         }
@@ -848,6 +905,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BrainpoolP384r1());
             return S_OK;
         }
@@ -862,6 +920,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BrainpoolP384t1());
             return S_OK;
         }
@@ -876,6 +935,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BrainpoolP512r1());
             return S_OK;
         }
@@ -890,6 +950,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BrainpoolP512t1());
             return S_OK;
         }
@@ -904,6 +965,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Curve25519());
             return S_OK;
         }
@@ -918,6 +980,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ec192wapi());
             return S_OK;
         }
@@ -932,6 +995,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NistP192());
             return S_OK;
         }
@@ -946,6 +1010,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NistP224());
             return S_OK;
         }
@@ -960,6 +1025,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NistP256());
             return S_OK;
         }
@@ -974,6 +1040,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NistP384());
             return S_OK;
         }
@@ -988,6 +1055,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NistP521());
             return S_OK;
         }
@@ -1002,6 +1070,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumsP256t1());
             return S_OK;
         }
@@ -1016,6 +1085,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumsP384t1());
             return S_OK;
         }
@@ -1030,6 +1100,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumsP512t1());
             return S_OK;
         }
@@ -1044,6 +1115,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SecP160k1());
             return S_OK;
         }
@@ -1058,6 +1130,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SecP160r1());
             return S_OK;
         }
@@ -1072,6 +1145,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SecP160r2());
             return S_OK;
         }
@@ -1086,6 +1160,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SecP192k1());
             return S_OK;
         }
@@ -1100,6 +1175,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SecP192r1());
             return S_OK;
         }
@@ -1114,6 +1190,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SecP224k1());
             return S_OK;
         }
@@ -1128,6 +1205,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SecP224r1());
             return S_OK;
         }
@@ -1142,6 +1220,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SecP256k1());
             return S_OK;
         }
@@ -1156,6 +1235,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SecP256r1());
             return S_OK;
         }
@@ -1170,6 +1250,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SecP384r1());
             return S_OK;
         }
@@ -1184,6 +1265,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SecP521r1());
             return S_OK;
         }
@@ -1198,6 +1280,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Wtls7());
             return S_OK;
         }
@@ -1212,6 +1295,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Wtls9());
             return S_OK;
         }
@@ -1226,6 +1310,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Wtls12());
             return S_OK;
         }
@@ -1240,6 +1325,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().X962P192v1());
             return S_OK;
         }
@@ -1254,6 +1340,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().X962P192v2());
             return S_OK;
         }
@@ -1268,6 +1355,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().X962P192v3());
             return S_OK;
         }
@@ -1282,6 +1370,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().X962P239v1());
             return S_OK;
         }
@@ -1296,6 +1385,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().X962P239v2());
             return S_OK;
         }
@@ -1310,6 +1400,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().X962P239v3());
             return S_OK;
         }
@@ -1324,6 +1415,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().X962P256v1());
             return S_OK;
         }
@@ -1338,6 +1430,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllEccCurveNames());
             return S_OK;
         }
@@ -1356,6 +1449,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEncryptedAndAuthentica
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EncryptedData());
             return S_OK;
         }
@@ -1370,6 +1464,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IEncryptedAndAuthentica
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AuthenticationTag());
             return S_OK;
         }
@@ -1388,6 +1483,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IHashAlgorithmNamesStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Md5());
             return S_OK;
         }
@@ -1402,6 +1498,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IHashAlgorithmNamesStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sha1());
             return S_OK;
         }
@@ -1416,6 +1513,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IHashAlgorithmNamesStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sha256());
             return S_OK;
         }
@@ -1430,6 +1528,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IHashAlgorithmNamesStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sha384());
             return S_OK;
         }
@@ -1444,6 +1543,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IHashAlgorithmNamesStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sha512());
             return S_OK;
         }
@@ -1462,6 +1562,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IHashAlgorithmProvider>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlgorithmName());
             return S_OK;
         }
@@ -1476,6 +1577,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IHashAlgorithmProvider>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HashLength());
             return S_OK;
         }
@@ -1489,6 +1591,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IHashAlgorithmProvider>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HashData(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }
@@ -1503,6 +1606,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IHashAlgorithmProvider>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *Value = detach(this->shim().CreateHash());
             return S_OK;
         }
@@ -1521,6 +1625,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IHashAlgorithmProviderS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *provider = detach(this->shim().OpenAlgorithm(*reinterpret_cast<const hstring *>(&algorithm)));
             return S_OK;
         }
@@ -1539,6 +1644,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IHashComputation> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Append(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data));
             return S_OK;
         }
@@ -1552,6 +1658,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IHashComputation> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetValueAndReset());
             return S_OK;
         }
@@ -1570,6 +1677,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pbkdf2Md5());
             return S_OK;
         }
@@ -1584,6 +1692,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pbkdf2Sha1());
             return S_OK;
         }
@@ -1598,6 +1707,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pbkdf2Sha256());
             return S_OK;
         }
@@ -1612,6 +1722,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pbkdf2Sha384());
             return S_OK;
         }
@@ -1626,6 +1737,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pbkdf2Sha512());
             return S_OK;
         }
@@ -1640,6 +1752,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sp800108CtrHmacMd5());
             return S_OK;
         }
@@ -1654,6 +1767,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sp800108CtrHmacSha1());
             return S_OK;
         }
@@ -1668,6 +1782,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sp800108CtrHmacSha256());
             return S_OK;
         }
@@ -1682,6 +1797,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sp800108CtrHmacSha384());
             return S_OK;
         }
@@ -1696,6 +1812,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sp800108CtrHmacSha512());
             return S_OK;
         }
@@ -1710,6 +1827,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sp80056aConcatMd5());
             return S_OK;
         }
@@ -1724,6 +1842,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sp80056aConcatSha1());
             return S_OK;
         }
@@ -1738,6 +1857,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sp80056aConcatSha256());
             return S_OK;
         }
@@ -1752,6 +1872,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sp80056aConcatSha384());
             return S_OK;
         }
@@ -1766,6 +1887,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sp80056aConcatSha512());
             return S_OK;
         }
@@ -1784,6 +1906,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CapiKdfMd5());
             return S_OK;
         }
@@ -1798,6 +1921,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CapiKdfSha1());
             return S_OK;
         }
@@ -1812,6 +1936,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CapiKdfSha256());
             return S_OK;
         }
@@ -1826,6 +1951,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CapiKdfSha384());
             return S_OK;
         }
@@ -1840,6 +1966,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CapiKdfSha512());
             return S_OK;
         }
@@ -1858,6 +1985,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlgorithmName());
             return S_OK;
         }
@@ -1872,6 +2000,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *key = detach(this->shim().CreateKey(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&keyMaterial)));
             return S_OK;
         }
@@ -1890,6 +2019,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *provider = detach(this->shim().OpenAlgorithm(*reinterpret_cast<const hstring *>(&algorithm)));
             return S_OK;
         }
@@ -1908,6 +2038,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationParameter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KdfGenericBinary());
             return S_OK;
         }
@@ -1922,6 +2053,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationParameter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KdfGenericBinary(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
@@ -1935,6 +2067,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationParameter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IterationCount());
             return S_OK;
         }
@@ -1952,6 +2085,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationParameter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Capi1KdfTargetAlgorithm());
             return S_OK;
         }
@@ -1965,6 +2099,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationParameter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Capi1KdfTargetAlgorithm(value);
             return S_OK;
         }
@@ -1982,6 +2117,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationParameter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BuildForPbkdf2(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&pbkdf2Salt), iterationCount));
             return S_OK;
         }
@@ -1996,6 +2132,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationParameter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BuildForSP800108(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&label), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&context)));
             return S_OK;
         }
@@ -2010,6 +2147,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationParameter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BuildForSP80056a(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&algorithmId), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&partyUInfo), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&partyVInfo), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&suppPubInfo), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&suppPrivInfo)));
             return S_OK;
         }
@@ -2028,6 +2166,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationParameter
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BuildForCapi1Kdf(capi1KdfTargetAlgorithm));
             return S_OK;
         }
@@ -2046,6 +2185,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HmacMd5());
             return S_OK;
         }
@@ -2060,6 +2200,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HmacSha1());
             return S_OK;
         }
@@ -2074,6 +2215,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HmacSha256());
             return S_OK;
         }
@@ -2088,6 +2230,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HmacSha384());
             return S_OK;
         }
@@ -2102,6 +2245,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HmacSha512());
             return S_OK;
         }
@@ -2116,6 +2260,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AesCmac());
             return S_OK;
         }
@@ -2134,6 +2279,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IMacAlgorithmProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlgorithmName());
             return S_OK;
         }
@@ -2148,6 +2294,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IMacAlgorithmProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MacLength());
             return S_OK;
         }
@@ -2161,6 +2308,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IMacAlgorithmProvider> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *macKey = detach(this->shim().CreateKey(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&keyMaterial)));
             return S_OK;
         }
@@ -2179,6 +2327,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IMacAlgorithmProvider2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateHash(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&keyMaterial)));
             return S_OK;
         }
@@ -2197,6 +2346,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IMacAlgorithmProviderSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *provider = detach(this->shim().OpenAlgorithm(*reinterpret_cast<const hstring *>(&algorithm)));
             return S_OK;
         }
@@ -2215,6 +2365,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IPersistedKeyProviderSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().OpenKeyPairFromCertificateAsync(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate), *reinterpret_cast<const hstring *>(&hashAlgorithmName), padding));
             return S_OK;
         }
@@ -2229,6 +2380,7 @@ struct produce<D, Windows::Security::Cryptography::Core::IPersistedKeyProviderSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *key = detach(this->shim().OpenPublicKeyFromCertificate(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&certificate), *reinterpret_cast<const hstring *>(&hashAlgorithmName), padding));
             return S_OK;
         }
@@ -2247,6 +2399,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesCbc());
             return S_OK;
         }
@@ -2261,6 +2414,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesEcb());
             return S_OK;
         }
@@ -2275,6 +2429,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TripleDesCbc());
             return S_OK;
         }
@@ -2289,6 +2444,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TripleDesEcb());
             return S_OK;
         }
@@ -2303,6 +2459,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Rc2Cbc());
             return S_OK;
         }
@@ -2317,6 +2474,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Rc2Ecb());
             return S_OK;
         }
@@ -2331,6 +2489,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AesCbc());
             return S_OK;
         }
@@ -2345,6 +2504,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AesEcb());
             return S_OK;
         }
@@ -2359,6 +2519,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AesGcm());
             return S_OK;
         }
@@ -2373,6 +2534,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AesCcm());
             return S_OK;
         }
@@ -2387,6 +2549,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AesCbcPkcs7());
             return S_OK;
         }
@@ -2401,6 +2564,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AesEcbPkcs7());
             return S_OK;
         }
@@ -2415,6 +2579,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesCbcPkcs7());
             return S_OK;
         }
@@ -2429,6 +2594,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesEcbPkcs7());
             return S_OK;
         }
@@ -2443,6 +2609,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TripleDesCbcPkcs7());
             return S_OK;
         }
@@ -2457,6 +2624,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TripleDesEcbPkcs7());
             return S_OK;
         }
@@ -2471,6 +2639,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Rc2CbcPkcs7());
             return S_OK;
         }
@@ -2485,6 +2654,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Rc2EcbPkcs7());
             return S_OK;
         }
@@ -2499,6 +2669,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmName
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Rc4());
             return S_OK;
         }
@@ -2517,6 +2688,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricKeyAlgorithmP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlgorithmName());
             return S_OK;
         }
@@ -2531,6 +2703,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricKeyAlgorithmP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BlockLength());
             return S_OK;
         }
@@ -2544,6 +2717,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricKeyAlgorithmP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *key = detach(this->shim().CreateSymmetricKey(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&keyMaterial)));
             return S_OK;
         }
@@ -2562,6 +2736,7 @@ struct produce<D, Windows::Security::Cryptography::Core::ISymmetricKeyAlgorithmP
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *provider = detach(this->shim().OpenAlgorithm(*reinterpret_cast<const hstring *>(&algorithm)));
             return S_OK;
         }

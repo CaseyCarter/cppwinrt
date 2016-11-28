@@ -19,6 +19,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoCapturedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Frame());
             return S_OK;
         }
@@ -33,6 +34,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoCapturedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CaptureTimeOffset());
             return S_OK;
         }
@@ -46,6 +48,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoCapturedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsedFrameControllerIndex());
             return S_OK;
         }
@@ -60,6 +63,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoCapturedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CapturedFrameControlValues());
             return S_OK;
         }
@@ -78,6 +82,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoSequenceCapture> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().StartAsync());
             return S_OK;
         }
@@ -92,6 +97,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoSequenceCapture> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().StopAsync());
             return S_OK;
         }
@@ -106,6 +112,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoSequenceCapture> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FinishAsync());
             return S_OK;
         }
@@ -120,6 +127,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoSequenceCapture> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PhotoCaptured(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::Media::Capture::Core::VariablePhotoCapturedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -133,6 +141,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoSequenceCapture> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PhotoCaptured(token);
             return S_OK;
         }
@@ -146,6 +155,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoSequenceCapture> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -159,6 +169,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoSequenceCapture> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stopped(token);
             return S_OK;
         }
@@ -176,6 +187,7 @@ struct produce<D, Windows::Media::Capture::Core::IVariablePhotoSequenceCapture2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().UpdateSettingsAsync());
             return S_OK;
         }

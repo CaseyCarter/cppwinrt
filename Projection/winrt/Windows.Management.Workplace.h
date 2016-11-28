@@ -16,6 +16,7 @@ struct produce<D, Windows::Management::Workplace::IMdmAllowPolicyStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsBrowserAllowed());
             return S_OK;
         }
@@ -29,6 +30,7 @@ struct produce<D, Windows::Management::Workplace::IMdmAllowPolicyStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCameraAllowed());
             return S_OK;
         }
@@ -42,6 +44,7 @@ struct produce<D, Windows::Management::Workplace::IMdmAllowPolicyStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsMicrosoftAccountAllowed());
             return S_OK;
         }
@@ -55,6 +58,7 @@ struct produce<D, Windows::Management::Workplace::IMdmAllowPolicyStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStoreAllowed());
             return S_OK;
         }
@@ -72,6 +76,7 @@ struct produce<D, Windows::Management::Workplace::IMdmPolicyStatics2> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetMessagingSyncPolicy());
             return S_OK;
         }

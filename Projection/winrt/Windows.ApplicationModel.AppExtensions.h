@@ -20,6 +20,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtension> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtension> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtension> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -62,6 +65,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtension> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Package());
             return S_OK;
         }
@@ -76,6 +80,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtension> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppInfo());
             return S_OK;
         }
@@ -90,6 +95,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtension> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetExtensionPropertiesAsync());
             return S_OK;
         }
@@ -104,6 +110,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtension> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetPublicFolderAsync());
             return S_OK;
         }
@@ -122,6 +129,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FindAllAsync());
             return S_OK;
         }
@@ -136,6 +144,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestRemovePackageAsync(*reinterpret_cast<const hstring *>(&packageFullName)));
             return S_OK;
         }
@@ -150,6 +159,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PackageInstalled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageInstalledEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -163,6 +173,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PackageInstalled(token);
             return S_OK;
         }
@@ -176,6 +187,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PackageUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatingEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -189,6 +201,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PackageUpdating(token);
             return S_OK;
         }
@@ -202,6 +215,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PackageUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -215,6 +229,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PackageUpdated(token);
             return S_OK;
         }
@@ -228,6 +243,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PackageUninstalling(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageUninstallingEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -241,6 +257,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PackageUninstalling(token);
             return S_OK;
         }
@@ -254,6 +271,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PackageStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageStatusChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -267,6 +285,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PackageStatusChanged(token);
             return S_OK;
         }
@@ -284,6 +303,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Open(*reinterpret_cast<const hstring *>(&appExtensionName)));
             return S_OK;
         }
@@ -302,6 +322,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppExtensionName());
             return S_OK;
         }
@@ -316,6 +337,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Package());
             return S_OK;
         }
@@ -330,6 +352,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *values = detach(this->shim().Extensions());
             return S_OK;
         }
@@ -348,6 +371,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppExtensionName());
             return S_OK;
         }
@@ -362,6 +386,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Package());
             return S_OK;
         }
@@ -380,6 +405,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppExtensionName());
             return S_OK;
         }
@@ -394,6 +420,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Package());
             return S_OK;
         }
@@ -412,6 +439,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppExtensionName());
             return S_OK;
         }
@@ -426,6 +454,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Package());
             return S_OK;
         }
@@ -440,6 +469,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *values = detach(this->shim().Extensions());
             return S_OK;
         }
@@ -458,6 +488,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppExtensionName());
             return S_OK;
         }
@@ -472,6 +503,7 @@ struct produce<D, Windows::ApplicationModel::AppExtensions::IAppExtensionPackage
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Package());
             return S_OK;
         }

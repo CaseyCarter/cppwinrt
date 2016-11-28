@@ -18,6 +18,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChipSelectLine());
             return S_OK;
         }
@@ -31,6 +32,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ChipSelectLine(value);
             return S_OK;
         }
@@ -44,6 +46,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Mode());
             return S_OK;
         }
@@ -57,6 +60,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Mode(value);
             return S_OK;
         }
@@ -70,6 +74,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataBitLength());
             return S_OK;
         }
@@ -83,6 +88,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DataBitLength(value);
             return S_OK;
         }
@@ -96,6 +102,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClockFrequency());
             return S_OK;
         }
@@ -109,6 +116,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClockFrequency(value);
             return S_OK;
         }
@@ -122,6 +130,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SharingMode());
             return S_OK;
         }
@@ -135,6 +144,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SharingMode(value);
             return S_OK;
         }
@@ -152,6 +162,7 @@ struct produce<D, Windows::Devices::Spi::Provider::IProviderSpiConnectionSetting
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Create(chipSelectLine));
             return S_OK;
         }
@@ -170,6 +181,7 @@ struct produce<D, Windows::Devices::Spi::Provider::ISpiControllerProvider> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDeviceProvider(*reinterpret_cast<const Windows::Devices::Spi::Provider::ProviderSpiConnectionSettings *>(&settings)));
             return S_OK;
         }
@@ -188,6 +200,7 @@ struct produce<D, Windows::Devices::Spi::Provider::ISpiDeviceProvider> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -202,6 +215,7 @@ struct produce<D, Windows::Devices::Spi::Provider::ISpiDeviceProvider> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConnectionSettings());
             return S_OK;
         }
@@ -216,6 +230,7 @@ struct produce<D, Windows::Devices::Spi::Provider::ISpiDeviceProvider> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Write(array_ref<const uint8_t>(buffer, buffer + __bufferSize));
             return S_OK;
         }
@@ -229,6 +244,7 @@ struct produce<D, Windows::Devices::Spi::Provider::ISpiDeviceProvider> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Read(*buffer);
             return S_OK;
         }
@@ -242,6 +258,7 @@ struct produce<D, Windows::Devices::Spi::Provider::ISpiDeviceProvider> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransferSequential(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
             return S_OK;
         }
@@ -255,6 +272,7 @@ struct produce<D, Windows::Devices::Spi::Provider::ISpiDeviceProvider> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransferFullDuplex(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
             return S_OK;
         }
@@ -272,6 +290,7 @@ struct produce<D, Windows::Devices::Spi::Provider::ISpiProvider> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetControllersAsync());
             return S_OK;
         }

@@ -41,6 +41,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DManager> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().TaskRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DManager, Windows::Graphics::Printing3D::Print3DTaskRequestedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
@@ -54,6 +55,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DManager> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TaskRequested(token);
             return S_OK;
         }
@@ -71,6 +73,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DManagerStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -85,6 +88,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DManagerStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ShowPrintUIAsync());
             return S_OK;
         }
@@ -103,6 +107,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTask> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Source());
             return S_OK;
         }
@@ -117,6 +122,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTask> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().Submitting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::IInspectable> *>(&eventHandler)));
             return S_OK;
         }
@@ -130,6 +136,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTask> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Submitting(eventCookie);
             return S_OK;
         }
@@ -143,6 +150,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTask> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Graphics::Printing3D::Print3DTaskCompletedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
@@ -156,6 +164,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTask> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Completed(eventCookie);
             return S_OK;
         }
@@ -169,6 +178,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTask> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().SourceChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Graphics::Printing3D::Print3DTaskSourceChangedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
@@ -182,6 +192,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTask> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceChanged(eventCookie);
             return S_OK;
         }
@@ -199,6 +210,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTaskCompletedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Completion());
             return S_OK;
         }
@@ -212,6 +224,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTaskCompletedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtendedStatus());
             return S_OK;
         }
@@ -229,6 +242,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTaskRequest> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateTask(*reinterpret_cast<const hstring *>(&title), *reinterpret_cast<const hstring *>(&printerId), *reinterpret_cast<const Windows::Graphics::Printing3D::Print3DTaskSourceRequestedHandler *>(&handler)));
             return S_OK;
         }
@@ -247,6 +261,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTaskRequestedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }
@@ -265,6 +280,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTaskSourceChangedEventA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Source());
             return S_OK;
         }
@@ -283,6 +299,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrint3DTaskSourceRequestedArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetSource(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3D3MFPackage *>(&source));
             return S_OK;
         }
@@ -300,6 +317,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SaveAsync());
             return S_OK;
         }
@@ -314,6 +332,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PrintTicket());
             return S_OK;
         }
@@ -328,6 +347,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PrintTicket(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value));
             return S_OK;
         }
@@ -341,6 +361,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ModelPart());
             return S_OK;
         }
@@ -355,6 +376,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ModelPart(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value));
             return S_OK;
         }
@@ -368,6 +390,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
@@ -382,6 +405,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Thumbnail(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DTextureResource *>(&value));
             return S_OK;
         }
@@ -395,6 +419,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Textures());
             return S_OK;
         }
@@ -409,6 +434,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().LoadModelFromPackageAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value)));
             return S_OK;
         }
@@ -423,6 +449,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackage> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SaveModelToPackageAsync(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DModel *>(&value)));
             return S_OK;
         }
@@ -441,6 +468,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3D3MFPackageStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().LoadAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value)));
             return S_OK;
         }
@@ -459,6 +487,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DBaseMaterial> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -473,6 +502,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DBaseMaterial> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -486,6 +516,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DBaseMaterial> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Color());
             return S_OK;
         }
@@ -500,6 +531,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DBaseMaterial> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Color(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DColorMaterial *>(&value));
             return S_OK;
         }
@@ -517,6 +549,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroup> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bases());
             return S_OK;
         }
@@ -531,6 +564,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroup> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaterialGroupId());
             return S_OK;
         }
@@ -548,6 +582,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroupFac
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(MaterialGroupId));
             return S_OK;
         }
@@ -566,6 +601,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DBaseMaterialStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Abs());
             return S_OK;
         }
@@ -580,6 +616,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DBaseMaterialStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pla());
             return S_OK;
         }
@@ -598,6 +635,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DColorMaterial> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -611,6 +649,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DColorMaterial> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(value);
             return S_OK;
         }
@@ -628,6 +667,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DColorMaterial2> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Color());
             return S_OK;
         }
@@ -641,6 +681,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DColorMaterial2> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Color(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -658,6 +699,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroup> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Colors());
             return S_OK;
         }
@@ -672,6 +714,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroup> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaterialGroupId());
             return S_OK;
         }
@@ -689,6 +732,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroupFa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(MaterialGroupId));
             return S_OK;
         }
@@ -707,6 +751,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Mesh());
             return S_OK;
         }
@@ -721,6 +766,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Mesh(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DMesh *>(&value));
             return S_OK;
         }
@@ -734,6 +780,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Components());
             return S_OK;
         }
@@ -748,6 +795,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
@@ -762,6 +810,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Thumbnail(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DTextureResource *>(&value));
             return S_OK;
         }
@@ -775,6 +824,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -788,6 +838,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Type(value);
             return S_OK;
         }
@@ -801,6 +852,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -815,6 +867,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -828,6 +881,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PartNumber());
             return S_OK;
         }
@@ -842,6 +896,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponent> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PartNumber(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -859,6 +914,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponentWithMatrix>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Component());
             return S_OK;
         }
@@ -873,6 +929,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponentWithMatrix>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Component(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DComponent *>(&value));
             return S_OK;
         }
@@ -886,6 +943,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponentWithMatrix>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Matrix());
             return S_OK;
         }
@@ -899,6 +957,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DComponentWithMatrix>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Matrix(*reinterpret_cast<const Windows::Foundation::Numerics::float4x4 *>(&value));
             return S_OK;
         }
@@ -916,6 +975,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DCompositeMaterial> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Values());
             return S_OK;
         }
@@ -934,6 +994,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Composites());
             return S_OK;
         }
@@ -948,6 +1009,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaterialGroupId());
             return S_OK;
         }
@@ -961,6 +1023,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaterialIndices());
             return S_OK;
         }
@@ -979,6 +1042,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BaseMaterialGroup());
             return S_OK;
         }
@@ -993,6 +1057,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BaseMaterialGroup(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DBaseMaterialGroup *>(&value));
             return S_OK;
         }
@@ -1010,6 +1075,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(MaterialGroupId));
             return S_OK;
         }
@@ -1028,6 +1094,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxReductionArea());
             return S_OK;
         }
@@ -1041,6 +1108,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxReductionArea(value);
             return S_OK;
         }
@@ -1054,6 +1122,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetTriangleCount());
             return S_OK;
         }
@@ -1067,6 +1136,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetTriangleCount(value);
             return S_OK;
         }
@@ -1080,6 +1150,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxEdgeLength());
             return S_OK;
         }
@@ -1093,6 +1164,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxEdgeLength(value);
             return S_OK;
         }
@@ -1110,6 +1182,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMaterial> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BaseGroups());
             return S_OK;
         }
@@ -1124,6 +1197,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMaterial> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ColorGroups());
             return S_OK;
         }
@@ -1138,6 +1212,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMaterial> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Texture2CoordGroups());
             return S_OK;
         }
@@ -1152,6 +1227,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMaterial> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CompositeGroups());
             return S_OK;
         }
@@ -1166,6 +1242,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMaterial> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MultiplePropertyGroups());
             return S_OK;
         }
@@ -1184,6 +1261,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VertexCount());
             return S_OK;
         }
@@ -1197,6 +1275,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VertexCount(value);
             return S_OK;
         }
@@ -1210,6 +1289,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IndexCount());
             return S_OK;
         }
@@ -1223,6 +1303,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IndexCount(value);
             return S_OK;
         }
@@ -1236,6 +1317,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VertexPositionsDescription());
             return S_OK;
         }
@@ -1249,6 +1331,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VertexPositionsDescription(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DBufferDescription *>(&value));
             return S_OK;
         }
@@ -1262,6 +1345,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VertexNormalsDescription());
             return S_OK;
         }
@@ -1275,6 +1359,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VertexNormalsDescription(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DBufferDescription *>(&value));
             return S_OK;
         }
@@ -1288,6 +1373,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TriangleIndicesDescription());
             return S_OK;
         }
@@ -1301,6 +1387,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TriangleIndicesDescription(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DBufferDescription *>(&value));
             return S_OK;
         }
@@ -1314,6 +1401,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TriangleMaterialIndicesDescription());
             return S_OK;
         }
@@ -1327,6 +1415,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TriangleMaterialIndicesDescription(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DBufferDescription *>(&value));
             return S_OK;
         }
@@ -1340,6 +1429,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *buffer = detach(this->shim().GetVertexPositions());
             return S_OK;
         }
@@ -1354,6 +1444,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CreateVertexPositions(value);
             return S_OK;
         }
@@ -1367,6 +1458,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *buffer = detach(this->shim().GetVertexNormals());
             return S_OK;
         }
@@ -1381,6 +1473,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CreateVertexNormals(value);
             return S_OK;
         }
@@ -1394,6 +1487,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *buffer = detach(this->shim().GetTriangleIndices());
             return S_OK;
         }
@@ -1408,6 +1502,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CreateTriangleIndices(value);
             return S_OK;
         }
@@ -1421,6 +1516,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *buffer = detach(this->shim().GetTriangleMaterialIndices());
             return S_OK;
         }
@@ -1435,6 +1531,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CreateTriangleMaterialIndices(value);
             return S_OK;
         }
@@ -1448,6 +1545,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BufferDescriptionSet());
             return S_OK;
         }
@@ -1462,6 +1560,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BufferSet());
             return S_OK;
         }
@@ -1476,6 +1575,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMesh> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().VerifyAsync(value));
             return S_OK;
         }
@@ -1494,6 +1594,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMeshVerificationResu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsValid());
             return S_OK;
         }
@@ -1507,6 +1608,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMeshVerificationResu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NonmanifoldTriangles());
             return S_OK;
         }
@@ -1521,6 +1623,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMeshVerificationResu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReversedNormalTriangles());
             return S_OK;
         }
@@ -1539,6 +1642,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Unit());
             return S_OK;
         }
@@ -1552,6 +1656,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Unit(value);
             return S_OK;
         }
@@ -1565,6 +1670,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Textures());
             return S_OK;
         }
@@ -1579,6 +1685,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Meshes());
             return S_OK;
         }
@@ -1593,6 +1700,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Components());
             return S_OK;
         }
@@ -1607,6 +1715,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Material());
             return S_OK;
         }
@@ -1621,6 +1730,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Material(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DMaterial *>(&value));
             return S_OK;
         }
@@ -1634,6 +1744,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Build());
             return S_OK;
         }
@@ -1648,6 +1759,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Build(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DComponent *>(&value));
             return S_OK;
         }
@@ -1661,6 +1773,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Version());
             return S_OK;
         }
@@ -1675,6 +1788,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Version(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1688,6 +1802,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequiredExtensions());
             return S_OK;
         }
@@ -1702,6 +1817,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Metadata());
             return S_OK;
         }
@@ -1716,6 +1832,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RepairAsync());
             return S_OK;
         }
@@ -1730,6 +1847,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Clone());
             return S_OK;
         }
@@ -1748,6 +1866,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().TryPartialRepairAsync());
             return S_OK;
         }
@@ -1762,6 +1881,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().TryPartialRepairAsync(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&maxWaitTime)));
             return S_OK;
         }
@@ -1776,6 +1896,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().TryReduceFacesAsync());
             return S_OK;
         }
@@ -1790,6 +1911,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().TryReduceFacesAsync(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DFaceReductionOptions *>(&printing3DFaceReductionOptions)));
             return S_OK;
         }
@@ -1804,6 +1926,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().TryReduceFacesAsync(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DFaceReductionOptions *>(&printing3DFaceReductionOptions), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&maxWait)));
             return S_OK;
         }
@@ -1818,6 +1941,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModel2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RepairWithProgressAsync());
             return S_OK;
         }
@@ -1836,6 +1960,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModelTexture> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextureResource());
             return S_OK;
         }
@@ -1850,6 +1975,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModelTexture> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TextureResource(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DTextureResource *>(&value));
             return S_OK;
         }
@@ -1863,6 +1989,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModelTexture> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TileStyleU());
             return S_OK;
         }
@@ -1876,6 +2003,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModelTexture> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TileStyleU(value);
             return S_OK;
         }
@@ -1889,6 +2017,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModelTexture> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TileStyleV());
             return S_OK;
         }
@@ -1902,6 +2031,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DModelTexture> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TileStyleV(value);
             return S_OK;
         }
@@ -1919,6 +2049,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaterialIndices());
             return S_OK;
         }
@@ -1937,6 +2068,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MultipleProperties());
             return S_OK;
         }
@@ -1951,6 +2083,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaterialGroupIndices());
             return S_OK;
         }
@@ -1965,6 +2098,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaterialGroupId());
             return S_OK;
         }
@@ -1982,6 +2116,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMate
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(MaterialGroupId));
             return S_OK;
         }
@@ -2000,6 +2135,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Texture());
             return S_OK;
         }
@@ -2014,6 +2150,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Texture(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DModelTexture *>(&value));
             return S_OK;
         }
@@ -2027,6 +2164,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().U());
             return S_OK;
         }
@@ -2040,6 +2178,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().U(value);
             return S_OK;
         }
@@ -2053,6 +2192,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().V());
             return S_OK;
         }
@@ -2066,6 +2206,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().V(value);
             return S_OK;
         }
@@ -2083,6 +2224,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Texture2Coords());
             return S_OK;
         }
@@ -2097,6 +2239,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaterialGroupId());
             return S_OK;
         }
@@ -2114,6 +2257,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Texture());
             return S_OK;
         }
@@ -2128,6 +2272,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Texture(*reinterpret_cast<const Windows::Graphics::Printing3D::Printing3DModelTexture *>(&value));
             return S_OK;
         }
@@ -2145,6 +2290,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMateria
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(MaterialGroupId));
             return S_OK;
         }
@@ -2163,6 +2309,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTextureResource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextureData());
             return S_OK;
         }
@@ -2177,6 +2324,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTextureResource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TextureData(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamWithContentType *>(&value));
             return S_OK;
         }
@@ -2190,6 +2338,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTextureResource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -2204,6 +2353,7 @@ struct produce<D, Windows::Graphics::Printing3D::IPrinting3DTextureResource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }

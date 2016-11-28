@@ -21,6 +21,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::IInstalledVoicesStatic> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllVoices());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::IInstalledVoicesStatic> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DefaultVoice());
             return S_OK;
         }
@@ -53,6 +55,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::ISpeechSynthesisStream> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Markers());
             return S_OK;
         }
@@ -71,6 +74,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::ISpeechSynthesizer> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SynthesizeTextToStreamAsync(*reinterpret_cast<const hstring *>(&text)));
             return S_OK;
         }
@@ -85,6 +89,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::ISpeechSynthesizer> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SynthesizeSsmlToStreamAsync(*reinterpret_cast<const hstring *>(&Ssml)));
             return S_OK;
         }
@@ -99,6 +104,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::ISpeechSynthesizer> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Voice(*reinterpret_cast<const Windows::Media::SpeechSynthesis::VoiceInformation *>(&value));
             return S_OK;
         }
@@ -112,6 +118,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::ISpeechSynthesizer> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Voice());
             return S_OK;
         }
@@ -130,6 +137,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::IVoiceInformation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -144,6 +152,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::IVoiceInformation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -158,6 +167,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::IVoiceInformation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Language());
             return S_OK;
         }
@@ -172,6 +182,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::IVoiceInformation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -186,6 +197,7 @@ struct produce<D, Windows::Media::SpeechSynthesis::IVoiceInformation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gender());
             return S_OK;
         }

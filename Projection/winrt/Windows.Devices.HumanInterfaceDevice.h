@@ -22,6 +22,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControl> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControl> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsagePage());
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControl> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsageId());
             return S_OK;
         }
@@ -61,6 +64,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControl> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsActive());
             return S_OK;
         }
@@ -74,6 +78,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControl> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsActive(value);
             return S_OK;
         }
@@ -87,6 +92,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControl> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ControlDescription());
             return S_OK;
         }
@@ -105,6 +111,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -118,6 +125,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportId());
             return S_OK;
         }
@@ -131,6 +139,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportType());
             return S_OK;
         }
@@ -144,6 +153,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsagePage());
             return S_OK;
         }
@@ -157,6 +167,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsageId());
             return S_OK;
         }
@@ -170,6 +181,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ParentCollections());
             return S_OK;
         }
@@ -188,6 +200,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsAbsolute());
             return S_OK;
         }
@@ -205,6 +218,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidCollection> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -218,6 +232,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidCollection> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -231,6 +246,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidCollection> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsagePage());
             return S_OK;
         }
@@ -244,6 +260,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidCollection> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsageId());
             return S_OK;
         }
@@ -261,6 +278,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VendorId());
             return S_OK;
         }
@@ -274,6 +292,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProductId());
             return S_OK;
         }
@@ -287,6 +306,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Version());
             return S_OK;
         }
@@ -300,6 +320,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsagePage());
             return S_OK;
         }
@@ -313,6 +334,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsageId());
             return S_OK;
         }
@@ -326,6 +348,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetInputReportAsync());
             return S_OK;
         }
@@ -340,6 +363,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetInputReportAsync(reportId));
             return S_OK;
         }
@@ -354,6 +378,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetFeatureReportAsync());
             return S_OK;
         }
@@ -368,6 +393,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetFeatureReportAsync(reportId));
             return S_OK;
         }
@@ -382,6 +408,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *outputReport = detach(this->shim().CreateOutputReport());
             return S_OK;
         }
@@ -396,6 +423,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *outputReport = detach(this->shim().CreateOutputReport(reportId));
             return S_OK;
         }
@@ -410,6 +438,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *featureReport = detach(this->shim().CreateFeatureReport());
             return S_OK;
         }
@@ -424,6 +453,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *featureReport = detach(this->shim().CreateFeatureReport(reportId));
             return S_OK;
         }
@@ -438,6 +468,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SendOutputReportAsync(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidOutputReport *>(&outputReport)));
             return S_OK;
         }
@@ -452,6 +483,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SendFeatureReportAsync(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidFeatureReport *>(&featureReport)));
             return S_OK;
         }
@@ -466,6 +498,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetBooleanControlDescriptions(reportType, usagePage, usageId));
             return S_OK;
         }
@@ -480,6 +513,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetNumericControlDescriptions(reportType, usagePage, usageId));
             return S_OK;
         }
@@ -494,6 +528,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().InputReportReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> *>(&reportHandler)));
             return S_OK;
         }
@@ -507,6 +542,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InputReportReceived(token);
             return S_OK;
         }
@@ -524,6 +560,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *selector = detach(this->shim().GetDeviceSelector(usagePage, usageId));
             return S_OK;
         }
@@ -538,6 +575,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *selector = detach(this->shim().GetDeviceSelector(usagePage, usageId, vendorId, productId));
             return S_OK;
         }
@@ -552,6 +590,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *hidDevice = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId), accessMode));
             return S_OK;
         }
@@ -570,6 +609,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidFeatureReport> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -583,6 +623,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidFeatureReport> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Data());
             return S_OK;
         }
@@ -597,6 +638,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidFeatureReport> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Data(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
@@ -610,6 +652,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidFeatureReport> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetBooleanControl(usagePage, usageId));
             return S_OK;
         }
@@ -624,6 +667,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidFeatureReport> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetBooleanControlByDescription(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription *>(&controlDescription)));
             return S_OK;
         }
@@ -638,6 +682,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidFeatureReport> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetNumericControl(usagePage, usageId));
             return S_OK;
         }
@@ -652,6 +697,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidFeatureReport> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetNumericControlByDescription(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription *>(&controlDescription)));
             return S_OK;
         }
@@ -670,6 +716,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -683,6 +730,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Data());
             return S_OK;
         }
@@ -697,6 +745,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ActivatedBooleanControls());
             return S_OK;
         }
@@ -711,6 +760,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TransitionedBooleanControls());
             return S_OK;
         }
@@ -725,6 +775,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetBooleanControl(usagePage, usageId));
             return S_OK;
         }
@@ -739,6 +790,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetBooleanControlByDescription(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription *>(&controlDescription)));
             return S_OK;
         }
@@ -753,6 +805,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetNumericControl(usagePage, usageId));
             return S_OK;
         }
@@ -767,6 +820,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetNumericControlByDescription(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription *>(&controlDescription)));
             return S_OK;
         }
@@ -785,6 +839,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReportReceive
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Report());
             return S_OK;
         }
@@ -803,6 +858,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -816,6 +872,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsGrouped());
             return S_OK;
         }
@@ -829,6 +886,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsagePage());
             return S_OK;
         }
@@ -842,6 +900,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsageId());
             return S_OK;
         }
@@ -855,6 +914,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -868,6 +928,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(value);
             return S_OK;
         }
@@ -881,6 +942,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ScaledValue());
             return S_OK;
         }
@@ -894,6 +956,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ScaledValue(value);
             return S_OK;
         }
@@ -907,6 +970,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ControlDescription());
             return S_OK;
         }
@@ -925,6 +989,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -938,6 +1003,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportId());
             return S_OK;
         }
@@ -951,6 +1017,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportType());
             return S_OK;
         }
@@ -964,6 +1031,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportSize());
             return S_OK;
         }
@@ -977,6 +1045,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportCount());
             return S_OK;
         }
@@ -990,6 +1059,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsagePage());
             return S_OK;
         }
@@ -1003,6 +1073,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsageId());
             return S_OK;
         }
@@ -1016,6 +1087,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LogicalMinimum());
             return S_OK;
         }
@@ -1029,6 +1101,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LogicalMaximum());
             return S_OK;
         }
@@ -1042,6 +1115,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PhysicalMinimum());
             return S_OK;
         }
@@ -1055,6 +1129,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PhysicalMaximum());
             return S_OK;
         }
@@ -1068,6 +1143,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnitExponent());
             return S_OK;
         }
@@ -1081,6 +1157,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Unit());
             return S_OK;
         }
@@ -1094,6 +1171,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsAbsolute());
             return S_OK;
         }
@@ -1107,6 +1185,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasNull());
             return S_OK;
         }
@@ -1120,6 +1199,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDesc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ParentCollections());
             return S_OK;
         }
@@ -1138,6 +1218,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidOutputReport> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -1151,6 +1232,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidOutputReport> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Data());
             return S_OK;
         }
@@ -1165,6 +1247,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidOutputReport> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Data(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
@@ -1178,6 +1261,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidOutputReport> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetBooleanControl(usagePage, usageId));
             return S_OK;
         }
@@ -1192,6 +1276,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidOutputReport> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetBooleanControlByDescription(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription *>(&controlDescription)));
             return S_OK;
         }
@@ -1206,6 +1291,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidOutputReport> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetNumericControl(usagePage, usageId));
             return S_OK;
         }
@@ -1220,6 +1306,7 @@ struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidOutputReport> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetNumericControlByDescription(*reinterpret_cast<const Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription *>(&controlDescription)));
             return S_OK;
         }

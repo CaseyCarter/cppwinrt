@@ -20,6 +20,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfiguration
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetSystemConfiguration(*reinterpret_cast<const hstring *>(&catalogHardwareManufacturerId), *reinterpret_cast<const hstring *>(&catalogStoreContentModifierId), *reinterpret_cast<const Windows::Foundation::DateTime *>(&systemConfigurationExpiration), *reinterpret_cast<const hstring *>(&catalogHardwareDescriptor));
             return S_OK;
         }
@@ -33,6 +34,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfiguration
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetMobileOperatorConfiguration(*reinterpret_cast<const hstring *>(&mobileOperatorId), appDownloadLimitInMegabytes, updateDownloadLimitInMegabytes);
             return S_OK;
         }
@@ -46,6 +48,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfiguration
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStoreWebAccountId(*reinterpret_cast<const hstring *>(&webAccountId));
             return S_OK;
         }
@@ -59,6 +62,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfiguration
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStoreWebAccountId(*reinterpret_cast<const hstring *>(&webAccountId)));
             return S_OK;
         }
@@ -72,6 +76,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfiguration
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HardwareManufacturerInfo());
             return S_OK;
         }
@@ -86,6 +91,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfiguration
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FilterUnsupportedSystemFeaturesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature> *>(&systemFeatures)));
             return S_OK;
         }
@@ -104,6 +110,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfiguration
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PurchasePromptingPolicy());
             return S_OK;
         }
@@ -118,6 +125,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfiguration
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PurchasePromptingPolicy(*reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&value));
             return S_OK;
         }
@@ -135,6 +143,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfiguration
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasStoreWebAccount());
             return S_OK;
         }
@@ -148,6 +157,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfiguration
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasStoreWebAccountForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
@@ -161,6 +171,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfiguration
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetStoreLogDataAsync(options));
             return S_OK;
         }
@@ -175,6 +186,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfiguration
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetStoreWebAccountIdForUser(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&webAccountId));
             return S_OK;
         }
@@ -188,6 +200,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfiguration
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStoreWebAccountIdForUser(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&webAccountId)));
             return S_OK;
         }
@@ -201,6 +214,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfiguration
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetPurchasePromptingPolicyForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
@@ -215,6 +229,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfiguration
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetPurchasePromptingPolicyForUser(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&value));
             return S_OK;
         }
@@ -232,6 +247,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreHardwareManuf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HardwareManufacturerId());
             return S_OK;
         }
@@ -246,6 +262,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreHardwareManuf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StoreContentModifierId());
             return S_OK;
         }
@@ -260,6 +277,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreHardwareManuf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ModelName());
             return S_OK;
         }
@@ -274,6 +292,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreHardwareManuf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ManufacturerName());
             return S_OK;
         }
@@ -292,6 +311,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreview> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *requestPurchaseBySkuIdOperation = detach(this->shim().RequestProductPurchaseByProductIdAndSkuIdAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId)));
             return S_OK;
         }
@@ -306,6 +326,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreview> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *loadAddOnProductInfosOperation = detach(this->shim().LoadAddOnProductInfosAsync());
             return S_OK;
         }
@@ -324,6 +345,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreviewProduc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProductId());
             return S_OK;
         }
@@ -338,6 +360,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreviewProduc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProductType());
             return S_OK;
         }
@@ -352,6 +375,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreviewProduc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -366,6 +390,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreviewProduc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -380,6 +405,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreviewProduc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SkuInfoList());
             return S_OK;
         }
@@ -398,6 +424,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreviewPurcha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProductPurchaseStatus());
             return S_OK;
         }
@@ -415,6 +442,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreviewSkuInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProductId());
             return S_OK;
         }
@@ -429,6 +457,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreviewSkuInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SkuId());
             return S_OK;
         }
@@ -443,6 +472,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreviewSkuInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SkuType());
             return S_OK;
         }
@@ -457,6 +487,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreviewSkuInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -471,6 +502,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreviewSkuInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -485,6 +517,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreviewSkuInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CustomDeveloperData());
             return S_OK;
         }
@@ -499,6 +532,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreviewSkuInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrencyCode());
             return S_OK;
         }
@@ -513,6 +547,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreviewSkuInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FormattedListPrice());
             return S_OK;
         }
@@ -527,6 +562,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreviewSkuInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtendedData());
             return S_OK;
         }

@@ -20,6 +20,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PinCount());
             return S_OK;
         }
@@ -33,6 +34,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ActualFrequency());
             return S_OK;
         }
@@ -46,6 +48,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SetDesiredFrequency(desiredFrequency));
             return S_OK;
         }
@@ -59,6 +62,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinFrequency());
             return S_OK;
         }
@@ -72,6 +76,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxFrequency());
             return S_OK;
         }
@@ -85,6 +90,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pin = detach(this->shim().OpenPin(pinNumber));
             return S_OK;
         }
@@ -103,6 +109,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmControllerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetControllersAsync(*reinterpret_cast<const Windows::Devices::Pwm::Provider::IPwmProvider *>(&provider)));
             return S_OK;
         }
@@ -121,6 +128,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmControllerStatics2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetDefaultAsync());
             return S_OK;
         }
@@ -139,6 +147,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Controller());
             return S_OK;
         }
@@ -153,6 +162,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetActiveDutyCyclePercentage());
             return S_OK;
         }
@@ -166,6 +176,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetActiveDutyCyclePercentage(dutyCyclePercentage);
             return S_OK;
         }
@@ -179,6 +190,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Polarity());
             return S_OK;
         }
@@ -192,6 +204,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Polarity(value);
             return S_OK;
         }
@@ -205,6 +218,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start();
             return S_OK;
         }
@@ -218,6 +232,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stop();
             return S_OK;
         }
@@ -231,6 +246,7 @@ struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Dev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStarted());
             return S_OK;
         }

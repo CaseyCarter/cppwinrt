@@ -20,6 +20,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofence> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StartTime());
             return S_OK;
         }
@@ -33,6 +34,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofence> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Duration());
             return S_OK;
         }
@@ -46,6 +48,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofence> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DwellTime());
             return S_OK;
         }
@@ -59,6 +62,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofence> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -73,6 +77,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofence> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MonitoredStates());
             return S_OK;
         }
@@ -86,6 +91,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofence> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Geoshape());
             return S_OK;
         }
@@ -100,6 +106,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofence> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SingleUse());
             return S_OK;
         }
@@ -117,6 +124,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceFactory> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *geofence = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const Windows::Devices::Geolocation::IGeoshape *>(&geoshape)));
             return S_OK;
         }
@@ -131,6 +139,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceFactory> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *geofence = detach(this->shim().CreateWithMonitorStates(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const Windows::Devices::Geolocation::IGeoshape *>(&geoshape), monitoredStates, singleUse));
             return S_OK;
         }
@@ -145,6 +154,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceFactory> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *geofence = detach(this->shim().CreateWithMonitorStatesAndDwellTime(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const Windows::Devices::Geolocation::IGeoshape *>(&geoshape), monitoredStates, singleUse, *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&dwellTime)));
             return S_OK;
         }
@@ -159,6 +169,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceFactory> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *geofence = detach(this->shim().CreateWithMonitorStatesDwellTimeStartTimeAndDuration(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const Windows::Devices::Geolocation::IGeoshape *>(&geoshape), monitoredStates, singleUse, *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&dwellTime), *reinterpret_cast<const Windows::Foundation::DateTime *>(&startTime), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&duration)));
             return S_OK;
         }
@@ -177,6 +188,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceMonitor> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -190,6 +202,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceMonitor> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Geofences());
             return S_OK;
         }
@@ -204,6 +217,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceMonitor> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastKnownGeoposition());
             return S_OK;
         }
@@ -218,6 +232,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceMonitor> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().GeofenceStateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::IInspectable> *>(&eventHandler)));
             return S_OK;
         }
@@ -231,6 +246,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceMonitor> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GeofenceStateChanged(token);
             return S_OK;
         }
@@ -244,6 +260,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceMonitor> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadReports());
             return S_OK;
         }
@@ -258,6 +275,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceMonitor> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().StatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::IInspectable> *>(&eventHandler)));
             return S_OK;
         }
@@ -271,6 +289,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceMonitor> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StatusChanged(token);
             return S_OK;
         }
@@ -288,6 +307,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceMonitorSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Current());
             return S_OK;
         }
@@ -306,6 +326,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceStateChang
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewState());
             return S_OK;
         }
@@ -319,6 +340,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceStateChang
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Geofence());
             return S_OK;
         }
@@ -333,6 +355,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceStateChang
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Geoposition());
             return S_OK;
         }
@@ -347,6 +370,7 @@ struct produce<D, Windows::Devices::Geolocation::Geofencing::IGeofenceStateChang
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemovalReason());
             return S_OK;
         }

@@ -23,6 +23,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapBuffer> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetPlaneCount());
             return S_OK;
         }
@@ -36,6 +37,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapBuffer> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetPlaneDescription(index));
             return S_OK;
         }
@@ -53,6 +55,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapCodecInformation> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CodecId());
             return S_OK;
         }
@@ -66,6 +69,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapCodecInformation> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FileExtensions());
             return S_OK;
         }
@@ -80,6 +84,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapCodecInformation> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FriendlyName());
             return S_OK;
         }
@@ -94,6 +99,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapCodecInformation> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MimeTypes());
             return S_OK;
         }
@@ -112,6 +118,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BitmapContainerProperties());
             return S_OK;
         }
@@ -126,6 +133,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DecoderInformation());
             return S_OK;
         }
@@ -140,6 +148,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameCount());
             return S_OK;
         }
@@ -153,6 +162,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GetPreviewAsync());
             return S_OK;
         }
@@ -167,6 +177,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GetFrameAsync(frameIndex));
             return S_OK;
         }
@@ -185,6 +196,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BmpDecoderId());
             return S_OK;
         }
@@ -198,6 +210,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().JpegDecoderId());
             return S_OK;
         }
@@ -211,6 +224,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PngDecoderId());
             return S_OK;
         }
@@ -224,6 +238,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TiffDecoderId());
             return S_OK;
         }
@@ -237,6 +252,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GifDecoderId());
             return S_OK;
         }
@@ -250,6 +266,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().JpegXRDecoderId());
             return S_OK;
         }
@@ -263,6 +280,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IcoDecoderId());
             return S_OK;
         }
@@ -276,6 +294,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *decoderInformationEnumerator = detach(this->shim().GetDecoderInformationEnumerator());
             return S_OK;
         }
@@ -290,6 +309,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().CreateAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream)));
             return S_OK;
         }
@@ -304,6 +324,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().CreateAsync(decoderId, *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream)));
             return S_OK;
         }
@@ -322,6 +343,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EncoderInformation());
             return S_OK;
         }
@@ -336,6 +358,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BitmapProperties());
             return S_OK;
         }
@@ -350,6 +373,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BitmapContainerProperties());
             return S_OK;
         }
@@ -364,6 +388,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsThumbnailGenerated());
             return S_OK;
         }
@@ -377,6 +402,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsThumbnailGenerated(value);
             return S_OK;
         }
@@ -390,6 +416,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GeneratedThumbnailWidth());
             return S_OK;
         }
@@ -403,6 +430,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GeneratedThumbnailWidth(value);
             return S_OK;
         }
@@ -416,6 +444,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GeneratedThumbnailHeight());
             return S_OK;
         }
@@ -429,6 +458,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GeneratedThumbnailHeight(value);
             return S_OK;
         }
@@ -442,6 +472,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BitmapTransform());
             return S_OK;
         }
@@ -456,6 +487,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetPixelData(pixelFormat, alphaMode, width, height, dpiX, dpiY, array_ref<const uint8_t>(pixels, pixels + __pixelsSize));
             return S_OK;
         }
@@ -469,6 +501,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GoToNextFrameAsync());
             return S_OK;
         }
@@ -483,6 +516,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GoToNextFrameAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> *>(&encodingOptions)));
             return S_OK;
         }
@@ -497,6 +531,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().FlushAsync());
             return S_OK;
         }
@@ -515,6 +550,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BmpEncoderId());
             return S_OK;
         }
@@ -528,6 +564,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().JpegEncoderId());
             return S_OK;
         }
@@ -541,6 +578,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PngEncoderId());
             return S_OK;
         }
@@ -554,6 +592,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TiffEncoderId());
             return S_OK;
         }
@@ -567,6 +606,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GifEncoderId());
             return S_OK;
         }
@@ -580,6 +620,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().JpegXREncoderId());
             return S_OK;
         }
@@ -593,6 +634,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *encoderInformationEnumerator = detach(this->shim().GetEncoderInformationEnumerator());
             return S_OK;
         }
@@ -607,6 +649,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().CreateAsync(encoderId, *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream)));
             return S_OK;
         }
@@ -621,6 +664,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().CreateAsync(encoderId, *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> *>(&encodingOptions)));
             return S_OK;
         }
@@ -635,6 +679,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().CreateForTranscodingAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream), *reinterpret_cast<const Windows::Graphics::Imaging::BitmapDecoder *>(&bitmapDecoder)));
             return S_OK;
         }
@@ -649,6 +694,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().CreateForInPlacePropertyEncodingAsync(*reinterpret_cast<const Windows::Graphics::Imaging::BitmapDecoder *>(&bitmapDecoder)));
             return S_OK;
         }
@@ -667,6 +713,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderWithSoftwareBitmap> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&bitmap));
             return S_OK;
         }
@@ -684,6 +731,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GetThumbnailAsync());
             return S_OK;
         }
@@ -698,6 +746,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BitmapProperties());
             return S_OK;
         }
@@ -712,6 +761,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BitmapPixelFormat());
             return S_OK;
         }
@@ -725,6 +775,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BitmapAlphaMode());
             return S_OK;
         }
@@ -738,6 +789,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DpiX());
             return S_OK;
         }
@@ -751,6 +803,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DpiY());
             return S_OK;
         }
@@ -764,6 +817,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PixelWidth());
             return S_OK;
         }
@@ -777,6 +831,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PixelHeight());
             return S_OK;
         }
@@ -790,6 +845,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OrientedPixelWidth());
             return S_OK;
         }
@@ -803,6 +859,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OrientedPixelHeight());
             return S_OK;
         }
@@ -816,6 +873,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GetPixelDataAsync());
             return S_OK;
         }
@@ -830,6 +888,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GetPixelDataAsync(pixelFormat, alphaMode, *reinterpret_cast<const Windows::Graphics::Imaging::BitmapTransform *>(&transform), exifOrientationMode, colorManagementMode));
             return S_OK;
         }
@@ -848,6 +907,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrameWithSoftwareBitmap> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetSoftwareBitmapAsync());
             return S_OK;
         }
@@ -862,6 +922,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrameWithSoftwareBitmap> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetSoftwareBitmapAsync(pixelFormat, alphaMode));
             return S_OK;
         }
@@ -876,6 +937,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapFrameWithSoftwareBitmap> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetSoftwareBitmapAsync(pixelFormat, alphaMode, *reinterpret_cast<const Windows::Graphics::Imaging::BitmapTransform *>(&transform), exifOrientationMode, colorManagementMode));
             return S_OK;
         }
@@ -894,6 +956,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapProperties> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().SetPropertiesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> *>(&propertiesToSet)));
             return S_OK;
         }
@@ -912,6 +975,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapPropertiesView> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GetPropertiesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve)));
             return S_OK;
         }
@@ -930,6 +994,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ScaledWidth());
             return S_OK;
         }
@@ -943,6 +1008,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ScaledWidth(value);
             return S_OK;
         }
@@ -956,6 +1022,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ScaledHeight());
             return S_OK;
         }
@@ -969,6 +1036,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ScaledHeight(value);
             return S_OK;
         }
@@ -982,6 +1050,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InterpolationMode());
             return S_OK;
         }
@@ -995,6 +1064,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InterpolationMode(value);
             return S_OK;
         }
@@ -1008,6 +1078,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Flip());
             return S_OK;
         }
@@ -1021,6 +1092,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Flip(value);
             return S_OK;
         }
@@ -1034,6 +1106,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Rotation());
             return S_OK;
         }
@@ -1047,6 +1120,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Rotation(value);
             return S_OK;
         }
@@ -1060,6 +1134,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bounds());
             return S_OK;
         }
@@ -1073,6 +1148,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Bounds(*reinterpret_cast<const Windows::Graphics::Imaging::BitmapBounds *>(&value));
             return S_OK;
         }
@@ -1090,6 +1166,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTypedValue> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -1104,6 +1181,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTypedValue> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -1121,6 +1199,7 @@ struct produce<D, Windows::Graphics::Imaging::IBitmapTypedValueFactory> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *bitmapTypedValue = detach(this->shim().Create(*reinterpret_cast<const Windows::IInspectable *>(&value), type));
             return S_OK;
         }
@@ -1139,6 +1218,7 @@ struct produce<D, Windows::Graphics::Imaging::IPixelDataProvider> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__pixelDataSize, *pixelData) = detach(this->shim().DetachPixelData());
             return S_OK;
         }
@@ -1158,6 +1238,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BitmapPixelFormat());
             return S_OK;
         }
@@ -1171,6 +1252,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BitmapAlphaMode());
             return S_OK;
         }
@@ -1184,6 +1266,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PixelWidth());
             return S_OK;
         }
@@ -1197,6 +1280,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PixelHeight());
             return S_OK;
         }
@@ -1210,6 +1294,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsReadOnly());
             return S_OK;
         }
@@ -1223,6 +1308,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DpiX(value);
             return S_OK;
         }
@@ -1236,6 +1322,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DpiX());
             return S_OK;
         }
@@ -1249,6 +1336,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DpiY(value);
             return S_OK;
         }
@@ -1262,6 +1350,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DpiY());
             return S_OK;
         }
@@ -1275,6 +1364,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LockBuffer(mode));
             return S_OK;
         }
@@ -1289,6 +1379,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CopyTo(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&bitmap));
             return S_OK;
         }
@@ -1302,6 +1393,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CopyFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer));
             return S_OK;
         }
@@ -1315,6 +1407,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CopyToBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer));
             return S_OK;
         }
@@ -1328,6 +1421,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetReadOnlyView());
             return S_OK;
         }
@@ -1346,6 +1440,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapFactory> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Create(format, width, height));
             return S_OK;
         }
@@ -1360,6 +1455,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapFactory> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateWithAlpha(format, width, height, alpha));
             return S_OK;
         }
@@ -1378,6 +1474,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Copy(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&source)));
             return S_OK;
         }
@@ -1392,6 +1489,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Convert(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&source), format));
             return S_OK;
         }
@@ -1406,6 +1504,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Convert(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&source), format, alpha));
             return S_OK;
         }
@@ -1420,6 +1519,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateCopyFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&source), format, width, height));
             return S_OK;
         }
@@ -1434,6 +1534,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateCopyFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&source), format, width, height, alpha));
             return S_OK;
         }
@@ -1448,6 +1549,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateCopyFromSurfaceAsync(*reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>(&surface)));
             return S_OK;
         }
@@ -1462,6 +1564,7 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateCopyFromSurfaceAsync(*reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>(&surface), alpha));
             return S_OK;
         }

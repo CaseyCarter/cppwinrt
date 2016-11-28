@@ -31,6 +31,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBackEase> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Amplitude());
             return S_OK;
         }
@@ -44,6 +45,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBackEase> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Amplitude(value);
             return S_OK;
         }
@@ -61,6 +63,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBackEaseStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AmplitudeProperty());
             return S_OK;
         }
@@ -79,6 +82,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBeginStoryboard> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Storyboard());
             return S_OK;
         }
@@ -93,6 +97,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBeginStoryboard> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Storyboard(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Storyboard *>(&value));
             return S_OK;
         }
@@ -110,6 +115,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBeginStoryboardStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StoryboardProperty());
             return S_OK;
         }
@@ -128,6 +134,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBounceEase> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bounces());
             return S_OK;
         }
@@ -141,6 +148,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBounceEase> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Bounces(value);
             return S_OK;
         }
@@ -154,6 +162,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBounceEase> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bounciness());
             return S_OK;
         }
@@ -167,6 +176,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBounceEase> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Bounciness(value);
             return S_OK;
         }
@@ -184,6 +194,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBounceEaseStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BouncesProperty());
             return S_OK;
         }
@@ -198,6 +209,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IBounceEaseStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BouncinessProperty());
             return S_OK;
         }
@@ -220,6 +232,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().From());
             return S_OK;
         }
@@ -234,6 +247,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().From(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
@@ -247,6 +261,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().To());
             return S_OK;
         }
@@ -261,6 +276,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().To(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
@@ -274,6 +290,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().By());
             return S_OK;
         }
@@ -288,6 +305,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().By(*reinterpret_cast<const Windows::Foundation::IReference<Windows::UI::Color> *>(&value));
             return S_OK;
         }
@@ -301,6 +319,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EasingFunction());
             return S_OK;
         }
@@ -315,6 +334,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
             return S_OK;
         }
@@ -328,6 +348,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnableDependentAnimation());
             return S_OK;
         }
@@ -341,6 +362,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableDependentAnimation(value);
             return S_OK;
         }
@@ -358,6 +380,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimationStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromProperty());
             return S_OK;
         }
@@ -372,6 +395,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimationStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ToProperty());
             return S_OK;
         }
@@ -386,6 +410,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimationStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ByProperty());
             return S_OK;
         }
@@ -400,6 +425,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimationStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EasingFunctionProperty());
             return S_OK;
         }
@@ -414,6 +440,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimationStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnableDependentAnimationProperty());
             return S_OK;
         }
@@ -432,6 +459,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimationUsingKeyFr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyFrames());
             return S_OK;
         }
@@ -446,6 +474,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimationUsingKeyFr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnableDependentAnimation());
             return S_OK;
         }
@@ -459,6 +488,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimationUsingKeyFr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableDependentAnimation(value);
             return S_OK;
         }
@@ -476,6 +506,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorAnimationUsingKeyFr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnableDependentAnimationProperty());
             return S_OK;
         }
@@ -494,6 +525,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorKeyFrame> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -507,6 +539,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorKeyFrame> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -520,6 +553,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorKeyFrame> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyTime());
             return S_OK;
         }
@@ -533,6 +567,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorKeyFrame> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeyTime(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeyTime *>(&value));
             return S_OK;
         }
@@ -550,6 +585,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorKeyFrameFactory> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -569,6 +605,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorKeyFrameStatics> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ValueProperty());
             return S_OK;
         }
@@ -583,6 +620,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IColorKeyFrameStatics> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyTimeProperty());
             return S_OK;
         }
@@ -601,6 +639,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ICommonNavigationTransiti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStaggeringEnabled());
             return S_OK;
         }
@@ -614,6 +653,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ICommonNavigationTransiti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsStaggeringEnabled(value);
             return S_OK;
         }
@@ -631,6 +671,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ICommonNavigationTransiti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStaggeringEnabledProperty());
             return S_OK;
         }
@@ -645,6 +686,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ICommonNavigationTransiti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStaggerElementProperty());
             return S_OK;
         }
@@ -659,6 +701,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ICommonNavigationTransiti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetIsStaggerElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
             return S_OK;
         }
@@ -672,6 +715,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ICommonNavigationTransiti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetIsStaggerElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), value);
             return S_OK;
         }
@@ -689,6 +733,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -702,6 +747,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Completed(token);
             return S_OK;
         }
@@ -715,6 +761,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TryStart(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&destination)));
             return S_OK;
         }
@@ -728,6 +775,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimation> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Cancel();
             return S_OK;
         }
@@ -745,6 +793,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimationServic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DefaultDuration());
             return S_OK;
         }
@@ -758,6 +807,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimationServic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DefaultDuration(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -771,6 +821,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimationServic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DefaultEasingFunction());
             return S_OK;
         }
@@ -785,6 +836,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimationServic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DefaultEasingFunction(*reinterpret_cast<const Windows::UI::Composition::CompositionEasingFunction *>(&value));
             return S_OK;
         }
@@ -798,6 +850,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimationServic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().PrepareToAnimate(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&source)));
             return S_OK;
         }
@@ -812,6 +865,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimationServic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetAnimation(*reinterpret_cast<const hstring *>(&key)));
             return S_OK;
         }
@@ -830,6 +884,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimationServic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -848,6 +903,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContentThemeTransition> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HorizontalOffset());
             return S_OK;
         }
@@ -861,6 +917,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContentThemeTransition> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().HorizontalOffset(value);
             return S_OK;
         }
@@ -874,6 +931,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContentThemeTransition> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VerticalOffset());
             return S_OK;
         }
@@ -887,6 +945,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContentThemeTransition> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VerticalOffset(value);
             return S_OK;
         }
@@ -904,6 +963,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContentThemeTransitionSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HorizontalOffsetProperty());
             return S_OK;
         }
@@ -918,6 +978,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContentThemeTransitionSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VerticalOffsetProperty());
             return S_OK;
         }
@@ -936,6 +997,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExitElement());
             return S_OK;
         }
@@ -950,6 +1012,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExitElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&value));
             return S_OK;
         }
@@ -967,6 +1030,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExitElementProperty());
             return S_OK;
         }
@@ -981,6 +1045,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEntranceElementProperty());
             return S_OK;
         }
@@ -995,6 +1060,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetIsEntranceElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
             return S_OK;
         }
@@ -1008,6 +1074,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetIsEntranceElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), value);
             return S_OK;
         }
@@ -1021,6 +1088,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsExitElementProperty());
             return S_OK;
         }
@@ -1035,6 +1103,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetIsExitElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
             return S_OK;
         }
@@ -1048,6 +1117,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetIsExitElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), value);
             return S_OK;
         }
@@ -1061,6 +1131,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExitElementContainerProperty());
             return S_OK;
         }
@@ -1075,6 +1146,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetExitElementContainer(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListViewBase *>(&element)));
             return S_OK;
         }
@@ -1088,6 +1160,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IContinuumNavigationTrans
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetExitElementContainer(*reinterpret_cast<const Windows::UI::Xaml::Controls::ListViewBase *>(&element), value);
             return S_OK;
         }
@@ -1125,6 +1198,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().From());
             return S_OK;
         }
@@ -1139,6 +1213,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().From(*reinterpret_cast<const Windows::Foundation::IReference<double> *>(&value));
             return S_OK;
         }
@@ -1152,6 +1227,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().To());
             return S_OK;
         }
@@ -1166,6 +1242,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().To(*reinterpret_cast<const Windows::Foundation::IReference<double> *>(&value));
             return S_OK;
         }
@@ -1179,6 +1256,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().By());
             return S_OK;
         }
@@ -1193,6 +1271,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().By(*reinterpret_cast<const Windows::Foundation::IReference<double> *>(&value));
             return S_OK;
         }
@@ -1206,6 +1285,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EasingFunction());
             return S_OK;
         }
@@ -1220,6 +1300,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
             return S_OK;
         }
@@ -1233,6 +1314,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnableDependentAnimation());
             return S_OK;
         }
@@ -1246,6 +1328,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimation> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableDependentAnimation(value);
             return S_OK;
         }
@@ -1263,6 +1346,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimationStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromProperty());
             return S_OK;
         }
@@ -1277,6 +1361,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimationStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ToProperty());
             return S_OK;
         }
@@ -1291,6 +1376,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimationStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ByProperty());
             return S_OK;
         }
@@ -1305,6 +1391,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimationStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EasingFunctionProperty());
             return S_OK;
         }
@@ -1319,6 +1406,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimationStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnableDependentAnimationProperty());
             return S_OK;
         }
@@ -1337,6 +1425,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimationUsingKeyF
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyFrames());
             return S_OK;
         }
@@ -1351,6 +1440,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimationUsingKeyF
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnableDependentAnimation());
             return S_OK;
         }
@@ -1364,6 +1454,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimationUsingKeyF
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableDependentAnimation(value);
             return S_OK;
         }
@@ -1381,6 +1472,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleAnimationUsingKeyF
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnableDependentAnimationProperty());
             return S_OK;
         }
@@ -1399,6 +1491,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -1412,6 +1505,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(value);
             return S_OK;
         }
@@ -1425,6 +1519,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyTime());
             return S_OK;
         }
@@ -1438,6 +1533,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeyTime(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeyTime *>(&value));
             return S_OK;
         }
@@ -1455,6 +1551,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrameFactory> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -1474,6 +1571,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrameStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ValueProperty());
             return S_OK;
         }
@@ -1488,6 +1586,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDoubleKeyFrameStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyTimeProperty());
             return S_OK;
         }
@@ -1506,6 +1605,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragItemThemeAnimation> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetName());
             return S_OK;
         }
@@ -1520,6 +1620,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragItemThemeAnimation> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1537,6 +1638,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragItemThemeAnimationSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
@@ -1555,6 +1657,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimation> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetName());
             return S_OK;
         }
@@ -1569,6 +1672,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimation> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1582,6 +1686,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimation> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ToOffset());
             return S_OK;
         }
@@ -1595,6 +1700,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimation> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ToOffset(value);
             return S_OK;
         }
@@ -1608,6 +1714,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimation> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Direction());
             return S_OK;
         }
@@ -1621,6 +1728,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimation> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Direction(value);
             return S_OK;
         }
@@ -1638,6 +1746,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimationSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
@@ -1652,6 +1761,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimationSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ToOffsetProperty());
             return S_OK;
         }
@@ -1666,6 +1776,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimationSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DirectionProperty());
             return S_OK;
         }
@@ -1688,6 +1799,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EntranceTargetName());
             return S_OK;
         }
@@ -1702,6 +1814,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EntranceTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1715,6 +1828,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EntranceTarget());
             return S_OK;
         }
@@ -1729,6 +1843,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EntranceTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
@@ -1742,6 +1857,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExitTargetName());
             return S_OK;
         }
@@ -1756,6 +1872,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExitTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1769,6 +1886,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExitTarget());
             return S_OK;
         }
@@ -1783,6 +1901,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExitTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
@@ -1800,6 +1919,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimationSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EntranceTargetNameProperty());
             return S_OK;
         }
@@ -1814,6 +1934,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimationSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EntranceTargetProperty());
             return S_OK;
         }
@@ -1828,6 +1949,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimationSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExitTargetNameProperty());
             return S_OK;
         }
@@ -1842,6 +1964,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimationSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExitTargetProperty());
             return S_OK;
         }
@@ -1860,6 +1983,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EntranceTargetName());
             return S_OK;
         }
@@ -1874,6 +1998,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EntranceTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1887,6 +2012,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EntranceTarget());
             return S_OK;
         }
@@ -1901,6 +2027,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EntranceTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
@@ -1914,6 +2041,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExitTargetName());
             return S_OK;
         }
@@ -1928,6 +2056,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExitTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1941,6 +2070,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExitTarget());
             return S_OK;
         }
@@ -1955,6 +2085,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExitTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
@@ -1972,6 +2103,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimationSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EntranceTargetNameProperty());
             return S_OK;
         }
@@ -1986,6 +2118,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimationSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EntranceTargetProperty());
             return S_OK;
         }
@@ -2000,6 +2133,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimationSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExitTargetNameProperty());
             return S_OK;
         }
@@ -2014,6 +2148,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimationSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExitTargetProperty());
             return S_OK;
         }
@@ -2032,6 +2167,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDropTargetItemThemeAnima
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetName());
             return S_OK;
         }
@@ -2046,6 +2182,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDropTargetItemThemeAnima
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2063,6 +2200,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IDropTargetItemThemeAnima
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
@@ -2081,6 +2219,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingColorKeyFrame> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EasingFunction());
             return S_OK;
         }
@@ -2095,6 +2234,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingColorKeyFrame> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
             return S_OK;
         }
@@ -2112,6 +2252,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingColorKeyFrameStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EasingFunctionProperty());
             return S_OK;
         }
@@ -2130,6 +2271,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingDoubleKeyFrame> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EasingFunction());
             return S_OK;
         }
@@ -2144,6 +2286,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingDoubleKeyFrame> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
             return S_OK;
         }
@@ -2161,6 +2304,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingDoubleKeyFrameStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EasingFunctionProperty());
             return S_OK;
         }
@@ -2179,6 +2323,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingFunctionBase> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EasingMode());
             return S_OK;
         }
@@ -2192,6 +2337,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingFunctionBase> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EasingMode(value);
             return S_OK;
         }
@@ -2205,6 +2351,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingFunctionBase> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Ease(normalizedTime));
             return S_OK;
         }
@@ -2226,6 +2373,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingFunctionBaseStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EasingModeProperty());
             return S_OK;
         }
@@ -2244,6 +2392,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingPointKeyFrame> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EasingFunction());
             return S_OK;
         }
@@ -2258,6 +2407,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingPointKeyFrame> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
             return S_OK;
         }
@@ -2275,6 +2425,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEasingPointKeyFrameStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EasingFunctionProperty());
             return S_OK;
         }
@@ -2293,6 +2444,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEdgeUIThemeTransition> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Edge());
             return S_OK;
         }
@@ -2306,6 +2458,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEdgeUIThemeTransition> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Edge(value);
             return S_OK;
         }
@@ -2323,6 +2476,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEdgeUIThemeTransitionSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EdgeProperty());
             return S_OK;
         }
@@ -2341,6 +2495,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IElasticEase> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Oscillations());
             return S_OK;
         }
@@ -2354,6 +2509,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IElasticEase> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Oscillations(value);
             return S_OK;
         }
@@ -2367,6 +2523,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IElasticEase> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Springiness());
             return S_OK;
         }
@@ -2380,6 +2537,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IElasticEase> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Springiness(value);
             return S_OK;
         }
@@ -2397,6 +2555,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IElasticEaseStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OscillationsProperty());
             return S_OK;
         }
@@ -2411,6 +2570,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IElasticEaseStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SpringinessProperty());
             return S_OK;
         }
@@ -2433,6 +2593,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceNavigationTransi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTargetElementProperty());
             return S_OK;
         }
@@ -2447,6 +2608,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceNavigationTransi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetIsTargetElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
             return S_OK;
         }
@@ -2460,6 +2622,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceNavigationTransi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetIsTargetElement(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), value);
             return S_OK;
         }
@@ -2477,6 +2640,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceThemeTransition>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromHorizontalOffset());
             return S_OK;
         }
@@ -2490,6 +2654,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceThemeTransition>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FromHorizontalOffset(value);
             return S_OK;
         }
@@ -2503,6 +2668,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceThemeTransition>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromVerticalOffset());
             return S_OK;
         }
@@ -2516,6 +2682,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceThemeTransition>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FromVerticalOffset(value);
             return S_OK;
         }
@@ -2529,6 +2696,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceThemeTransition>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStaggeringEnabled());
             return S_OK;
         }
@@ -2542,6 +2710,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceThemeTransition>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsStaggeringEnabled(value);
             return S_OK;
         }
@@ -2559,6 +2728,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceThemeTransitionS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromHorizontalOffsetProperty());
             return S_OK;
         }
@@ -2573,6 +2743,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceThemeTransitionS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromVerticalOffsetProperty());
             return S_OK;
         }
@@ -2587,6 +2758,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IEntranceThemeTransitionS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStaggeringEnabledProperty());
             return S_OK;
         }
@@ -2605,6 +2777,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IExponentialEase> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Exponent());
             return S_OK;
         }
@@ -2618,6 +2791,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IExponentialEase> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Exponent(value);
             return S_OK;
         }
@@ -2635,6 +2809,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IExponentialEaseStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExponentProperty());
             return S_OK;
         }
@@ -2653,6 +2828,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IFadeInThemeAnimation> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetName());
             return S_OK;
         }
@@ -2667,6 +2843,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IFadeInThemeAnimation> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2684,6 +2861,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IFadeInThemeAnimationStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
@@ -2702,6 +2880,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IFadeOutThemeAnimation> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetName());
             return S_OK;
         }
@@ -2716,6 +2895,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IFadeOutThemeAnimation> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2733,6 +2913,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IFadeOutThemeAnimationSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
@@ -2751,6 +2932,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IKeySpline> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ControlPoint1());
             return S_OK;
         }
@@ -2764,6 +2946,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IKeySpline> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ControlPoint1(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
@@ -2777,6 +2960,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IKeySpline> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ControlPoint2());
             return S_OK;
         }
@@ -2790,6 +2974,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IKeySpline> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ControlPoint2(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
@@ -2811,6 +2996,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IKeyTimeHelperStatics> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FromTimeSpan(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timeSpan)));
             return S_OK;
         }
@@ -2840,6 +3026,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::INavigationThemeTransitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DefaultNavigationTransitionInfo());
             return S_OK;
         }
@@ -2854,6 +3041,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::INavigationThemeTransitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DefaultNavigationTransitionInfo(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo *>(&value));
             return S_OK;
         }
@@ -2871,6 +3059,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::INavigationThemeTransitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DefaultNavigationTransitionInfoProperty());
             return S_OK;
         }
@@ -2893,6 +3082,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -2912,6 +3102,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetNavigationStateCore());
             return S_OK;
         }
@@ -2926,6 +3117,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetNavigationStateCore(*reinterpret_cast<const hstring *>(&navigationState));
             return S_OK;
         }
@@ -2943,6 +3135,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectAnimationUsingKeyF
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyFrames());
             return S_OK;
         }
@@ -2957,6 +3150,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectAnimationUsingKeyF
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnableDependentAnimation());
             return S_OK;
         }
@@ -2970,6 +3164,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectAnimationUsingKeyF
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableDependentAnimation(value);
             return S_OK;
         }
@@ -2987,6 +3182,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectAnimationUsingKeyF
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnableDependentAnimationProperty());
             return S_OK;
         }
@@ -3005,6 +3201,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrame> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -3019,6 +3216,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrame> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
@@ -3032,6 +3230,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrame> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyTime());
             return S_OK;
         }
@@ -3045,6 +3244,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrame> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeyTime(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeyTime *>(&value));
             return S_OK;
         }
@@ -3062,6 +3262,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrameFactory> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -3081,6 +3282,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrameStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ValueProperty());
             return S_OK;
         }
@@ -3095,6 +3297,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IObjectKeyFrameStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyTimeProperty());
             return S_OK;
         }
@@ -3113,6 +3316,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPaneThemeTransition> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Edge());
             return S_OK;
         }
@@ -3126,6 +3330,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPaneThemeTransition> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Edge(value);
             return S_OK;
         }
@@ -3143,6 +3348,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPaneThemeTransitionStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EdgeProperty());
             return S_OK;
         }
@@ -3161,6 +3367,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().From());
             return S_OK;
         }
@@ -3175,6 +3382,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().From(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::Point> *>(&value));
             return S_OK;
         }
@@ -3188,6 +3396,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().To());
             return S_OK;
         }
@@ -3202,6 +3411,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().To(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::Point> *>(&value));
             return S_OK;
         }
@@ -3215,6 +3425,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().By());
             return S_OK;
         }
@@ -3229,6 +3440,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().By(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::Point> *>(&value));
             return S_OK;
         }
@@ -3242,6 +3454,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EasingFunction());
             return S_OK;
         }
@@ -3256,6 +3469,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
             return S_OK;
         }
@@ -3269,6 +3483,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnableDependentAnimation());
             return S_OK;
         }
@@ -3282,6 +3497,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableDependentAnimation(value);
             return S_OK;
         }
@@ -3299,6 +3515,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimationStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromProperty());
             return S_OK;
         }
@@ -3313,6 +3530,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimationStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ToProperty());
             return S_OK;
         }
@@ -3327,6 +3545,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimationStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ByProperty());
             return S_OK;
         }
@@ -3341,6 +3560,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimationStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EasingFunctionProperty());
             return S_OK;
         }
@@ -3355,6 +3575,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimationStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnableDependentAnimationProperty());
             return S_OK;
         }
@@ -3373,6 +3594,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimationUsingKeyFr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyFrames());
             return S_OK;
         }
@@ -3387,6 +3609,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimationUsingKeyFr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnableDependentAnimation());
             return S_OK;
         }
@@ -3400,6 +3623,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimationUsingKeyFr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableDependentAnimation(value);
             return S_OK;
         }
@@ -3417,6 +3641,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointAnimationUsingKeyFr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnableDependentAnimationProperty());
             return S_OK;
         }
@@ -3435,6 +3660,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointKeyFrame> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -3448,6 +3674,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointKeyFrame> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
@@ -3461,6 +3688,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointKeyFrame> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyTime());
             return S_OK;
         }
@@ -3474,6 +3702,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointKeyFrame> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeyTime(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeyTime *>(&value));
             return S_OK;
         }
@@ -3491,6 +3720,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointKeyFrameFactory> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -3510,6 +3740,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointKeyFrameStatics> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ValueProperty());
             return S_OK;
         }
@@ -3524,6 +3755,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointKeyFrameStatics> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyTimeProperty());
             return S_OK;
         }
@@ -3542,6 +3774,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointerDownThemeAnimatio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetName());
             return S_OK;
         }
@@ -3556,6 +3789,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointerDownThemeAnimatio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -3573,6 +3807,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointerDownThemeAnimatio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
@@ -3591,6 +3826,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointerUpThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetName());
             return S_OK;
         }
@@ -3605,6 +3841,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointerUpThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -3622,6 +3859,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPointerUpThemeAnimationS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
@@ -3640,6 +3878,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopInThemeAnimation> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetName());
             return S_OK;
         }
@@ -3654,6 +3893,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopInThemeAnimation> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -3667,6 +3907,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopInThemeAnimation> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromHorizontalOffset());
             return S_OK;
         }
@@ -3680,6 +3921,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopInThemeAnimation> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FromHorizontalOffset(value);
             return S_OK;
         }
@@ -3693,6 +3935,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopInThemeAnimation> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromVerticalOffset());
             return S_OK;
         }
@@ -3706,6 +3949,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopInThemeAnimation> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FromVerticalOffset(value);
             return S_OK;
         }
@@ -3723,6 +3967,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopInThemeAnimationStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
@@ -3737,6 +3982,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopInThemeAnimationStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromHorizontalOffsetProperty());
             return S_OK;
         }
@@ -3751,6 +3997,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopInThemeAnimationStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromVerticalOffsetProperty());
             return S_OK;
         }
@@ -3769,6 +4016,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopOutThemeAnimation> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetName());
             return S_OK;
         }
@@ -3783,6 +4031,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopOutThemeAnimation> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -3800,6 +4049,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopOutThemeAnimationStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
@@ -3818,6 +4068,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopupThemeTransition> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromHorizontalOffset());
             return S_OK;
         }
@@ -3831,6 +4082,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopupThemeTransition> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FromHorizontalOffset(value);
             return S_OK;
         }
@@ -3844,6 +4096,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopupThemeTransition> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromVerticalOffset());
             return S_OK;
         }
@@ -3857,6 +4110,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopupThemeTransition> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FromVerticalOffset(value);
             return S_OK;
         }
@@ -3874,6 +4128,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopupThemeTransitionStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromHorizontalOffsetProperty());
             return S_OK;
         }
@@ -3888,6 +4143,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPopupThemeTransitionStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromVerticalOffsetProperty());
             return S_OK;
         }
@@ -3906,6 +4162,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPowerEase> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Power());
             return S_OK;
         }
@@ -3919,6 +4176,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPowerEase> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Power(value);
             return S_OK;
         }
@@ -3936,6 +4194,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IPowerEaseStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PowerProperty());
             return S_OK;
         }
@@ -3974,6 +4233,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepeatBehaviorHelperStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Forever());
             return S_OK;
         }
@@ -3987,6 +4247,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepeatBehaviorHelperStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FromCount(count));
             return S_OK;
         }
@@ -4000,6 +4261,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepeatBehaviorHelperStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FromDuration(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&duration)));
             return S_OK;
         }
@@ -4013,6 +4275,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepeatBehaviorHelperStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetHasCount(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::RepeatBehavior *>(&target)));
             return S_OK;
         }
@@ -4026,6 +4289,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepeatBehaviorHelperStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetHasDuration(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::RepeatBehavior *>(&target)));
             return S_OK;
         }
@@ -4039,6 +4303,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepeatBehaviorHelperStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Equals(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::RepeatBehavior *>(&target), *reinterpret_cast<const Windows::UI::Xaml::Media::Animation::RepeatBehavior *>(&value)));
             return S_OK;
         }
@@ -4056,6 +4321,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetName());
             return S_OK;
         }
@@ -4070,6 +4336,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4083,6 +4350,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromHorizontalOffset());
             return S_OK;
         }
@@ -4096,6 +4364,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FromHorizontalOffset(value);
             return S_OK;
         }
@@ -4109,6 +4378,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromVerticalOffset());
             return S_OK;
         }
@@ -4122,6 +4392,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FromVerticalOffset(value);
             return S_OK;
         }
@@ -4139,6 +4410,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
@@ -4153,6 +4425,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromHorizontalOffsetProperty());
             return S_OK;
         }
@@ -4167,6 +4440,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromVerticalOffsetProperty());
             return S_OK;
         }
@@ -4189,6 +4463,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeTransitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStaggeringEnabled());
             return S_OK;
         }
@@ -4202,6 +4477,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeTransitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsStaggeringEnabled(value);
             return S_OK;
         }
@@ -4219,6 +4495,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IRepositionThemeTransitio
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStaggeringEnabledProperty());
             return S_OK;
         }
@@ -4245,6 +4522,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplineColorKeyFrame> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeySpline());
             return S_OK;
         }
@@ -4259,6 +4537,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplineColorKeyFrame> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeySpline(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeySpline *>(&value));
             return S_OK;
         }
@@ -4276,6 +4555,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplineColorKeyFrameStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeySplineProperty());
             return S_OK;
         }
@@ -4294,6 +4574,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplineDoubleKeyFrame> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeySpline());
             return S_OK;
         }
@@ -4308,6 +4589,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplineDoubleKeyFrame> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeySpline(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeySpline *>(&value));
             return S_OK;
         }
@@ -4325,6 +4607,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplineDoubleKeyFrameStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeySplineProperty());
             return S_OK;
         }
@@ -4343,6 +4626,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplinePointKeyFrame> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeySpline());
             return S_OK;
         }
@@ -4357,6 +4641,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplinePointKeyFrame> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeySpline(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::KeySpline *>(&value));
             return S_OK;
         }
@@ -4374,6 +4659,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplinePointKeyFrameStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeySplineProperty());
             return S_OK;
         }
@@ -4392,6 +4678,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OpenedTargetName());
             return S_OK;
         }
@@ -4406,6 +4693,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OpenedTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4419,6 +4707,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OpenedTarget());
             return S_OK;
         }
@@ -4433,6 +4722,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OpenedTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
@@ -4446,6 +4736,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClosedTargetName());
             return S_OK;
         }
@@ -4460,6 +4751,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClosedTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4473,6 +4765,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClosedTarget());
             return S_OK;
         }
@@ -4487,6 +4780,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClosedTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
@@ -4500,6 +4794,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentTargetName());
             return S_OK;
         }
@@ -4514,6 +4809,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4527,6 +4823,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentTarget());
             return S_OK;
         }
@@ -4541,6 +4838,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
@@ -4554,6 +4852,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OpenedLength());
             return S_OK;
         }
@@ -4567,6 +4866,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OpenedLength(value);
             return S_OK;
         }
@@ -4580,6 +4880,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClosedLength());
             return S_OK;
         }
@@ -4593,6 +4894,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClosedLength(value);
             return S_OK;
         }
@@ -4606,6 +4908,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OffsetFromCenter());
             return S_OK;
         }
@@ -4619,6 +4922,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OffsetFromCenter(value);
             return S_OK;
         }
@@ -4632,6 +4936,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentTranslationDirection());
             return S_OK;
         }
@@ -4645,6 +4950,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentTranslationDirection(value);
             return S_OK;
         }
@@ -4658,6 +4964,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentTranslationOffset());
             return S_OK;
         }
@@ -4671,6 +4978,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentTranslationOffset(value);
             return S_OK;
         }
@@ -4688,6 +4996,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OpenedTargetNameProperty());
             return S_OK;
         }
@@ -4702,6 +5011,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OpenedTargetProperty());
             return S_OK;
         }
@@ -4716,6 +5026,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClosedTargetNameProperty());
             return S_OK;
         }
@@ -4730,6 +5041,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClosedTargetProperty());
             return S_OK;
         }
@@ -4744,6 +5056,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentTargetNameProperty());
             return S_OK;
         }
@@ -4758,6 +5071,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentTargetProperty());
             return S_OK;
         }
@@ -4772,6 +5086,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OpenedLengthProperty());
             return S_OK;
         }
@@ -4786,6 +5101,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClosedLengthProperty());
             return S_OK;
         }
@@ -4800,6 +5116,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OffsetFromCenterProperty());
             return S_OK;
         }
@@ -4814,6 +5131,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentTranslationDirectionProperty());
             return S_OK;
         }
@@ -4828,6 +5146,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentTranslationOffsetProperty());
             return S_OK;
         }
@@ -4846,6 +5165,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OpenedTargetName());
             return S_OK;
         }
@@ -4860,6 +5180,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OpenedTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4873,6 +5194,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OpenedTarget());
             return S_OK;
         }
@@ -4887,6 +5209,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OpenedTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
@@ -4900,6 +5223,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClosedTargetName());
             return S_OK;
         }
@@ -4914,6 +5238,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClosedTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4927,6 +5252,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClosedTarget());
             return S_OK;
         }
@@ -4941,6 +5267,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClosedTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
@@ -4954,6 +5281,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentTargetName());
             return S_OK;
         }
@@ -4968,6 +5296,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentTargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -4981,6 +5310,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentTarget());
             return S_OK;
         }
@@ -4995,6 +5325,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
@@ -5008,6 +5339,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OpenedLength());
             return S_OK;
         }
@@ -5021,6 +5353,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OpenedLength(value);
             return S_OK;
         }
@@ -5034,6 +5367,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClosedLength());
             return S_OK;
         }
@@ -5047,6 +5381,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClosedLength(value);
             return S_OK;
         }
@@ -5060,6 +5395,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OffsetFromCenter());
             return S_OK;
         }
@@ -5073,6 +5409,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OffsetFromCenter(value);
             return S_OK;
         }
@@ -5086,6 +5423,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentTranslationDirection());
             return S_OK;
         }
@@ -5099,6 +5437,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentTranslationDirection(value);
             return S_OK;
         }
@@ -5112,6 +5451,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentTranslationOffset());
             return S_OK;
         }
@@ -5125,6 +5465,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentTranslationOffset(value);
             return S_OK;
         }
@@ -5142,6 +5483,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OpenedTargetNameProperty());
             return S_OK;
         }
@@ -5156,6 +5498,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OpenedTargetProperty());
             return S_OK;
         }
@@ -5170,6 +5513,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClosedTargetNameProperty());
             return S_OK;
         }
@@ -5184,6 +5528,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClosedTargetProperty());
             return S_OK;
         }
@@ -5198,6 +5543,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentTargetNameProperty());
             return S_OK;
         }
@@ -5212,6 +5558,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentTargetProperty());
             return S_OK;
         }
@@ -5226,6 +5573,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OpenedLengthProperty());
             return S_OK;
         }
@@ -5240,6 +5588,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClosedLengthProperty());
             return S_OK;
         }
@@ -5254,6 +5603,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OffsetFromCenterProperty());
             return S_OK;
         }
@@ -5268,6 +5618,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentTranslationDirectionProperty());
             return S_OK;
         }
@@ -5282,6 +5633,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentTranslationOffsetProperty());
             return S_OK;
         }
@@ -5300,6 +5652,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Children());
             return S_OK;
         }
@@ -5314,6 +5667,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Seek(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&offset));
             return S_OK;
         }
@@ -5327,6 +5681,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stop();
             return S_OK;
         }
@@ -5340,6 +5695,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Begin();
             return S_OK;
         }
@@ -5353,6 +5709,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Pause();
             return S_OK;
         }
@@ -5366,6 +5723,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Resume();
             return S_OK;
         }
@@ -5379,6 +5737,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetCurrentState());
             return S_OK;
         }
@@ -5392,6 +5751,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetCurrentTime());
             return S_OK;
         }
@@ -5405,6 +5765,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SeekAlignedToLastTick(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&offset));
             return S_OK;
         }
@@ -5418,6 +5779,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboard> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SkipToFill();
             return S_OK;
         }
@@ -5435,6 +5797,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboardStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetPropertyProperty());
             return S_OK;
         }
@@ -5449,6 +5812,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboardStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *path = detach(this->shim().GetTargetProperty(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Timeline *>(&element)));
             return S_OK;
         }
@@ -5463,6 +5827,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboardStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetTargetProperty(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Timeline *>(&element), *reinterpret_cast<const hstring *>(&path));
             return S_OK;
         }
@@ -5476,6 +5841,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboardStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
@@ -5490,6 +5856,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboardStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *name = detach(this->shim().GetTargetName(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Timeline *>(&element)));
             return S_OK;
         }
@@ -5504,6 +5871,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboardStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetTargetName(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Timeline *>(&element), *reinterpret_cast<const hstring *>(&name));
             return S_OK;
         }
@@ -5517,6 +5885,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IStoryboardStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetTarget(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Timeline *>(&timeline), *reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&target));
             return S_OK;
         }
@@ -5538,6 +5907,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetName());
             return S_OK;
         }
@@ -5552,6 +5922,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -5565,6 +5936,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromHorizontalOffset());
             return S_OK;
         }
@@ -5578,6 +5950,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FromHorizontalOffset(value);
             return S_OK;
         }
@@ -5591,6 +5964,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromVerticalOffset());
             return S_OK;
         }
@@ -5604,6 +5978,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FromVerticalOffset(value);
             return S_OK;
         }
@@ -5621,6 +5996,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimationS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
@@ -5635,6 +6011,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimationS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromHorizontalOffsetProperty());
             return S_OK;
         }
@@ -5649,6 +6026,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimationS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromVerticalOffsetProperty());
             return S_OK;
         }
@@ -5667,6 +6045,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetName());
             return S_OK;
         }
@@ -5681,6 +6060,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -5694,6 +6074,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ToHorizontalOffset());
             return S_OK;
         }
@@ -5707,6 +6088,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ToHorizontalOffset(value);
             return S_OK;
         }
@@ -5720,6 +6102,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ToVerticalOffset());
             return S_OK;
         }
@@ -5733,6 +6116,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimation>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ToVerticalOffset(value);
             return S_OK;
         }
@@ -5750,6 +6134,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimationS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetNameProperty());
             return S_OK;
         }
@@ -5764,6 +6149,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimationS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ToHorizontalOffsetProperty());
             return S_OK;
         }
@@ -5778,6 +6164,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimationS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ToVerticalOffsetProperty());
             return S_OK;
         }
@@ -5796,6 +6183,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutoReverse());
             return S_OK;
         }
@@ -5809,6 +6197,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AutoReverse(value);
             return S_OK;
         }
@@ -5822,6 +6211,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BeginTime());
             return S_OK;
         }
@@ -5836,6 +6226,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BeginTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
             return S_OK;
         }
@@ -5849,6 +6240,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Duration());
             return S_OK;
         }
@@ -5862,6 +6254,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Duration(*reinterpret_cast<const Windows::UI::Xaml::Duration *>(&value));
             return S_OK;
         }
@@ -5875,6 +6268,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SpeedRatio());
             return S_OK;
         }
@@ -5888,6 +6282,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SpeedRatio(value);
             return S_OK;
         }
@@ -5901,6 +6296,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FillBehavior());
             return S_OK;
         }
@@ -5914,6 +6310,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FillBehavior(value);
             return S_OK;
         }
@@ -5927,6 +6324,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RepeatBehavior());
             return S_OK;
         }
@@ -5940,6 +6338,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RepeatBehavior(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::RepeatBehavior *>(&value));
             return S_OK;
         }
@@ -5953,6 +6352,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -5966,6 +6366,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimeline> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Completed(token);
             return S_OK;
         }
@@ -5983,6 +6384,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineFactory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -6002,6 +6404,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowDependentAnimations());
             return S_OK;
         }
@@ -6015,6 +6418,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowDependentAnimations(value);
             return S_OK;
         }
@@ -6028,6 +6432,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutoReverseProperty());
             return S_OK;
         }
@@ -6042,6 +6447,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BeginTimeProperty());
             return S_OK;
         }
@@ -6056,6 +6462,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DurationProperty());
             return S_OK;
         }
@@ -6070,6 +6477,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SpeedRatioProperty());
             return S_OK;
         }
@@ -6084,6 +6492,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FillBehaviorProperty());
             return S_OK;
         }
@@ -6098,6 +6507,7 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::ITimelineStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RepeatBehaviorProperty());
             return S_OK;
         }

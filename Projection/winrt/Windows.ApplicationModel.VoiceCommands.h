@@ -23,6 +23,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommand> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CommandName());
             return S_OK;
         }
@@ -37,6 +38,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommand> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -51,6 +53,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommand> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SpeechRecognitionResult());
             return S_OK;
         }
@@ -69,6 +72,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandComplet
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reason());
             return S_OK;
         }
@@ -86,6 +90,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandConfirm
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Confirmed());
             return S_OK;
         }
@@ -103,6 +108,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -117,6 +123,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -130,6 +137,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextLine1());
             return S_OK;
         }
@@ -144,6 +152,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TextLine1(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -157,6 +166,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextLine2());
             return S_OK;
         }
@@ -171,6 +181,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TextLine2(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -184,6 +195,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextLine3());
             return S_OK;
         }
@@ -198,6 +210,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TextLine3(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -211,6 +224,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Image());
             return S_OK;
         }
@@ -225,6 +239,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Image(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&value));
             return S_OK;
         }
@@ -238,6 +253,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppContext());
             return S_OK;
         }
@@ -252,6 +268,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AppContext(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
@@ -265,6 +282,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppLaunchArgument());
             return S_OK;
         }
@@ -279,6 +297,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AppLaunchArgument(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -292,6 +311,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentTileType());
             return S_OK;
         }
@@ -305,6 +325,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandContent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentTileType(value);
             return S_OK;
         }
@@ -322,6 +343,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinit
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Language());
             return S_OK;
         }
@@ -336,6 +358,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinit
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -350,6 +373,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinit
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *updateAction = detach(this->shim().SetPhraseListAsync(*reinterpret_cast<const hstring *>(&phraseListName), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&phraseList)));
             return S_OK;
         }
@@ -368,6 +392,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinit
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *installAction = detach(this->shim().InstallCommandDefinitionsFromStorageFileAsync(*reinterpret_cast<const Windows::Storage::StorageFile *>(&file)));
             return S_OK;
         }
@@ -382,6 +407,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinit
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *voiceCommandDefinitions = detach(this->shim().InstalledCommandDefinitions());
             return S_OK;
         }
@@ -400,6 +426,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandDisambi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SelectedItem());
             return S_OK;
         }
@@ -418,6 +445,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Message());
             return S_OK;
         }
@@ -432,6 +460,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Message(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&value));
             return S_OK;
         }
@@ -445,6 +474,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RepeatMessage());
             return S_OK;
         }
@@ -459,6 +489,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RepeatMessage(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&value));
             return S_OK;
         }
@@ -472,6 +503,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppLaunchArgument());
             return S_OK;
         }
@@ -486,6 +518,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AppLaunchArgument(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -499,6 +532,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VoiceCommandContentTiles());
             return S_OK;
         }
@@ -517,6 +551,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxSupportedVoiceCommandContentTiles());
             return S_OK;
         }
@@ -530,6 +565,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *response = detach(this->shim().CreateResponse(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&userMessage)));
             return S_OK;
         }
@@ -544,6 +580,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *response = detach(this->shim().CreateResponse(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&message), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> *>(&contentTiles)));
             return S_OK;
         }
@@ -558,6 +595,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *response = detach(this->shim().CreateResponseForPrompt(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&message), *reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&repeatMessage)));
             return S_OK;
         }
@@ -572,6 +610,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandRespons
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *response = detach(this->shim().CreateResponseForPrompt(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&message), *reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage *>(&repeatMessage), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> *>(&contentTiles)));
             return S_OK;
         }
@@ -590,6 +629,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetVoiceCommandAsync());
             return S_OK;
         }
@@ -604,6 +644,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestConfirmationAsync(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse *>(&response)));
             return S_OK;
         }
@@ -618,6 +659,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestDisambiguationAsync(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse *>(&response)));
             return S_OK;
         }
@@ -632,6 +674,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *action = detach(this->shim().ReportProgressAsync(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse *>(&response)));
             return S_OK;
         }
@@ -646,6 +689,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *action = detach(this->shim().ReportSuccessAsync(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse *>(&response)));
             return S_OK;
         }
@@ -660,6 +704,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *action = detach(this->shim().ReportFailureAsync(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse *>(&response)));
             return S_OK;
         }
@@ -674,6 +719,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *action = detach(this->shim().RequestAppLaunchAsync(*reinterpret_cast<const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse *>(&response)));
             return S_OK;
         }
@@ -688,6 +734,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *language = detach(this->shim().Language());
             return S_OK;
         }
@@ -702,6 +749,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().VoiceCommandCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::VoiceCommands::VoiceCommandServiceConnection, Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -715,6 +763,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VoiceCommandCompleted(token);
             return S_OK;
         }
@@ -732,6 +781,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandService
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromAppServiceTriggerDetails(*reinterpret_cast<const Windows::ApplicationModel::AppService::AppServiceTriggerDetails *>(&triggerDetails)));
             return S_OK;
         }
@@ -750,6 +800,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandUserMes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayMessage());
             return S_OK;
         }
@@ -764,6 +815,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandUserMes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisplayMessage(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -777,6 +829,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandUserMes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SpokenMessage());
             return S_OK;
         }
@@ -791,6 +844,7 @@ struct produce<D, Windows::ApplicationModel::VoiceCommands::IVoiceCommandUserMes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SpokenMessage(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }

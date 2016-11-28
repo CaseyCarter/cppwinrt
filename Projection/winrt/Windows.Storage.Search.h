@@ -23,6 +23,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexer> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().AddAsync(*reinterpret_cast<const Windows::Storage::Search::IIndexableContent *>(&indexableContent)));
             return S_OK;
         }
@@ -37,6 +38,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexer> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().UpdateAsync(*reinterpret_cast<const Windows::Storage::Search::IIndexableContent *>(&indexableContent)));
             return S_OK;
         }
@@ -51,6 +53,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexer> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().DeleteAsync(*reinterpret_cast<const hstring *>(&contentId)));
             return S_OK;
         }
@@ -65,6 +68,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexer> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().DeleteMultipleAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&contentIds)));
             return S_OK;
         }
@@ -79,6 +83,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexer> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().DeleteAllAsync());
             return S_OK;
         }
@@ -93,6 +98,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexer> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RetrievePropertiesAsync(*reinterpret_cast<const hstring *>(&contentId), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve)));
             return S_OK;
         }
@@ -107,6 +113,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexer> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Revision());
             return S_OK;
         }
@@ -124,6 +131,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerQuery> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetCountAsync());
             return S_OK;
         }
@@ -138,6 +146,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerQuery> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetPropertiesAsync());
             return S_OK;
         }
@@ -152,6 +161,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerQuery> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetPropertiesAsync(startIndex, maxItems));
             return S_OK;
         }
@@ -166,6 +176,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerQuery> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetAsync());
             return S_OK;
         }
@@ -180,6 +191,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerQuery> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetAsync(startIndex, maxItems));
             return S_OK;
         }
@@ -194,6 +206,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerQuery> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().QueryFolder());
             return S_OK;
         }
@@ -212,6 +225,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerQueryOperations> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *query = detach(this->shim().CreateQuery(*reinterpret_cast<const hstring *>(&searchFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::Search::SortEntry> *>(&sortOrder), *reinterpret_cast<const hstring *>(&searchFilterLanguage)));
             return S_OK;
         }
@@ -226,6 +240,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerQueryOperations> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *query = detach(this->shim().CreateQuery(*reinterpret_cast<const hstring *>(&searchFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Storage::Search::SortEntry> *>(&sortOrder)));
             return S_OK;
         }
@@ -240,6 +255,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerQueryOperations> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *query = detach(this->shim().CreateQuery(*reinterpret_cast<const hstring *>(&searchFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve)));
             return S_OK;
         }
@@ -258,6 +274,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *index = detach(this->shim().GetIndexer(*reinterpret_cast<const hstring *>(&indexName)));
             return S_OK;
         }
@@ -272,6 +289,7 @@ struct produce<D, Windows::Storage::Search::IContentIndexerStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *index = detach(this->shim().GetIndexer());
             return S_OK;
         }
@@ -290,6 +308,7 @@ struct produce<D, Windows::Storage::Search::IIndexableContent> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -304,6 +323,7 @@ struct produce<D, Windows::Storage::Search::IIndexableContent> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Id(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -317,6 +337,7 @@ struct produce<D, Windows::Storage::Search::IIndexableContent> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -331,6 +352,7 @@ struct produce<D, Windows::Storage::Search::IIndexableContent> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Stream());
             return S_OK;
         }
@@ -345,6 +367,7 @@ struct produce<D, Windows::Storage::Search::IIndexableContent> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stream(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&value));
             return S_OK;
         }
@@ -358,6 +381,7 @@ struct produce<D, Windows::Storage::Search::IIndexableContent> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StreamContentType());
             return S_OK;
         }
@@ -372,6 +396,7 @@ struct produce<D, Windows::Storage::Search::IIndexableContent> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StreamContentType(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -389,6 +414,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FileTypeFilter());
             return S_OK;
         }
@@ -403,6 +429,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FolderDepth());
             return S_OK;
         }
@@ -416,6 +443,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FolderDepth(value);
             return S_OK;
         }
@@ -429,6 +457,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ApplicationSearchFilter());
             return S_OK;
         }
@@ -443,6 +472,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ApplicationSearchFilter(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -456,6 +486,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserSearchFilter());
             return S_OK;
         }
@@ -470,6 +501,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UserSearchFilter(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -483,6 +515,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Language());
             return S_OK;
         }
@@ -497,6 +530,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Language(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -510,6 +544,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IndexerOption());
             return S_OK;
         }
@@ -523,6 +558,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IndexerOption(value);
             return S_OK;
         }
@@ -536,6 +572,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SortOrder());
             return S_OK;
         }
@@ -550,6 +587,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GroupPropertyName());
             return S_OK;
         }
@@ -564,6 +602,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DateStackOption());
             return S_OK;
         }
@@ -577,6 +616,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SaveToString());
             return S_OK;
         }
@@ -591,6 +631,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LoadFromString(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -604,6 +645,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetThumbnailPrefetch(mode, requestedSize, options);
             return S_OK;
         }
@@ -617,6 +659,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptions> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetPropertyPrefetch(options, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&propertiesToRetrieve));
             return S_OK;
         }
@@ -634,6 +677,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptionsFactory> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *queryOptions = detach(this->shim().CreateCommonFileQuery(query, *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&fileTypeFilter)));
             return S_OK;
         }
@@ -648,6 +692,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptionsFactory> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *queryOptions = detach(this->shim().CreateCommonFolderQuery(query));
             return S_OK;
         }
@@ -666,6 +711,7 @@ struct produce<D, Windows::Storage::Search::IQueryOptionsWithProviderFilter> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StorageProviderIdFilter());
             return S_OK;
         }
@@ -684,6 +730,7 @@ struct produce<D, Windows::Storage::Search::IStorageFileQueryResult> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFilesAsync(startIndex, maxNumberOfItems));
             return S_OK;
         }
@@ -698,6 +745,7 @@ struct produce<D, Windows::Storage::Search::IStorageFileQueryResult> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFilesAsync());
             return S_OK;
         }
@@ -716,6 +764,7 @@ struct produce<D, Windows::Storage::Search::IStorageFileQueryResult2> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetMatchingPropertiesWithRanges(*reinterpret_cast<const Windows::Storage::StorageFile *>(&file)));
             return S_OK;
         }
@@ -734,6 +783,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetIndexedStateAsync());
             return S_OK;
         }
@@ -748,6 +798,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateFileQuery());
             return S_OK;
         }
@@ -762,6 +813,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateFileQuery(query));
             return S_OK;
         }
@@ -776,6 +828,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateFileQueryWithOptions(*reinterpret_cast<const Windows::Storage::Search::QueryOptions *>(&queryOptions)));
             return S_OK;
         }
@@ -790,6 +843,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateFolderQuery());
             return S_OK;
         }
@@ -804,6 +858,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateFolderQuery(query));
             return S_OK;
         }
@@ -818,6 +873,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateFolderQueryWithOptions(*reinterpret_cast<const Windows::Storage::Search::QueryOptions *>(&queryOptions)));
             return S_OK;
         }
@@ -832,6 +888,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateItemQuery());
             return S_OK;
         }
@@ -846,6 +903,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateItemQueryWithOptions(*reinterpret_cast<const Windows::Storage::Search::QueryOptions *>(&queryOptions)));
             return S_OK;
         }
@@ -860,6 +918,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFilesAsync(query, startIndex, maxItemsToRetrieve));
             return S_OK;
         }
@@ -874,6 +933,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFilesAsync(query));
             return S_OK;
         }
@@ -888,6 +948,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFoldersAsync(query, startIndex, maxItemsToRetrieve));
             return S_OK;
         }
@@ -902,6 +963,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFoldersAsync(query));
             return S_OK;
         }
@@ -916,6 +978,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetItemsAsync(startIndex, maxItemsToRetrieve));
             return S_OK;
         }
@@ -930,6 +993,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AreQueryOptionsSupported(*reinterpret_cast<const Windows::Storage::Search::QueryOptions *>(&queryOptions)));
             return S_OK;
         }
@@ -943,6 +1007,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCommonFolderQuerySupported(query));
             return S_OK;
         }
@@ -956,6 +1021,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryOperations> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCommonFileQuerySupported(query));
             return S_OK;
         }
@@ -973,6 +1039,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryResult> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFoldersAsync(startIndex, maxNumberOfItems));
             return S_OK;
         }
@@ -987,6 +1054,7 @@ struct produce<D, Windows::Storage::Search::IStorageFolderQueryResult> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFoldersAsync());
             return S_OK;
         }
@@ -1005,6 +1073,7 @@ struct produce<D, Windows::Storage::Search::IStorageItemQueryResult> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetItemsAsync(startIndex, maxNumberOfItems));
             return S_OK;
         }
@@ -1019,6 +1088,7 @@ struct produce<D, Windows::Storage::Search::IStorageItemQueryResult> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetItemsAsync());
             return S_OK;
         }
@@ -1037,6 +1107,7 @@ struct produce<D, Windows::Storage::Search::IStorageLibraryContentChangedTrigger
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Folder());
             return S_OK;
         }
@@ -1051,6 +1122,7 @@ struct produce<D, Windows::Storage::Search::IStorageLibraryContentChangedTrigger
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateModifiedSinceQuery(*reinterpret_cast<const Windows::Foundation::DateTime *>(&lastQueryTime)));
             return S_OK;
         }
@@ -1069,6 +1141,7 @@ struct produce<D, Windows::Storage::Search::IStorageQueryResultBase> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetItemCountAsync());
             return S_OK;
         }
@@ -1083,6 +1156,7 @@ struct produce<D, Windows::Storage::Search::IStorageQueryResultBase> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *container = detach(this->shim().Folder());
             return S_OK;
         }
@@ -1097,6 +1171,7 @@ struct produce<D, Windows::Storage::Search::IStorageQueryResultBase> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().ContentsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -1110,6 +1185,7 @@ struct produce<D, Windows::Storage::Search::IStorageQueryResultBase> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentsChanged(eventCookie);
             return S_OK;
         }
@@ -1123,6 +1199,7 @@ struct produce<D, Windows::Storage::Search::IStorageQueryResultBase> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().OptionsChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::IInspectable> *>(&changedHandler)));
             return S_OK;
         }
@@ -1136,6 +1213,7 @@ struct produce<D, Windows::Storage::Search::IStorageQueryResultBase> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OptionsChanged(eventCookie);
             return S_OK;
         }
@@ -1149,6 +1227,7 @@ struct produce<D, Windows::Storage::Search::IStorageQueryResultBase> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FindStartIndexAsync(*reinterpret_cast<const Windows::IInspectable *>(&value)));
             return S_OK;
         }
@@ -1163,6 +1242,7 @@ struct produce<D, Windows::Storage::Search::IStorageQueryResultBase> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCurrentQueryOptions());
             return S_OK;
         }
@@ -1177,6 +1257,7 @@ struct produce<D, Windows::Storage::Search::IStorageQueryResultBase> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ApplyNewQueryOptions(*reinterpret_cast<const Windows::Storage::Search::QueryOptions *>(&newQueryOptions));
             return S_OK;
         }
@@ -1194,6 +1275,7 @@ struct produce<D, Windows::Storage::Search::IValueAndLanguage> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Language());
             return S_OK;
         }
@@ -1208,6 +1290,7 @@ struct produce<D, Windows::Storage::Search::IValueAndLanguage> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Language(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1221,6 +1304,7 @@ struct produce<D, Windows::Storage::Search::IValueAndLanguage> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -1235,6 +1319,7 @@ struct produce<D, Windows::Storage::Search::IValueAndLanguage> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }

@@ -26,6 +26,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnRun(*reinterpret_cast<const Windows::ApplicationModel::Background::IBackgroundTaskInstance *>(&taskInstance));
             return S_OK;
         }

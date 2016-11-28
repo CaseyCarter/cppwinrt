@@ -16,6 +16,7 @@ struct produce<D, Windows::Data::Html::IHtmlUtilities> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *text = detach(this->shim().ConvertToText(*reinterpret_cast<const hstring *>(&html)));
             return S_OK;
         }

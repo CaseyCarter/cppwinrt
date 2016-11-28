@@ -17,6 +17,7 @@ struct produce<D, Windows::System::Power::Diagnostics::IBackgroundEnergyDiagnost
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceSpecificConversionFactor());
             return S_OK;
         }
@@ -30,6 +31,7 @@ struct produce<D, Windows::System::Power::Diagnostics::IBackgroundEnergyDiagnost
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ComputeTotalEnergyUsage());
             return S_OK;
         }
@@ -43,6 +45,7 @@ struct produce<D, Windows::System::Power::Diagnostics::IBackgroundEnergyDiagnost
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ResetTotalEnergyUsage();
             return S_OK;
         }
@@ -60,6 +63,7 @@ struct produce<D, Windows::System::Power::Diagnostics::IForegroundEnergyDiagnost
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceSpecificConversionFactor());
             return S_OK;
         }
@@ -73,6 +77,7 @@ struct produce<D, Windows::System::Power::Diagnostics::IForegroundEnergyDiagnost
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ComputeTotalEnergyUsage());
             return S_OK;
         }
@@ -86,6 +91,7 @@ struct produce<D, Windows::System::Power::Diagnostics::IForegroundEnergyDiagnost
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ResetTotalEnergyUsage();
             return S_OK;
         }

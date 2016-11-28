@@ -30,6 +30,7 @@ struct produce<D, Windows::Media::Capture::Frames::IBufferMediaFrame> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameReference());
             return S_OK;
         }
@@ -44,6 +45,7 @@ struct produce<D, Windows::Media::Capture::Frames::IBufferMediaFrame> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Buffer());
             return S_OK;
         }
@@ -62,6 +64,7 @@ struct produce<D, Windows::Media::Capture::Frames::IDepthMediaFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameReference());
             return S_OK;
         }
@@ -76,6 +79,7 @@ struct produce<D, Windows::Media::Capture::Frames::IDepthMediaFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoMediaFrame());
             return S_OK;
         }
@@ -90,6 +94,7 @@ struct produce<D, Windows::Media::Capture::Frames::IDepthMediaFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DepthFormat());
             return S_OK;
         }
@@ -104,6 +109,7 @@ struct produce<D, Windows::Media::Capture::Frames::IDepthMediaFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TryCreateCoordinateMapper(*reinterpret_cast<const Windows::Media::Devices::Core::CameraIntrinsics *>(&cameraIntrinsics), *reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
@@ -122,6 +128,7 @@ struct produce<D, Windows::Media::Capture::Frames::IDepthMediaFrameFormat> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoFormat());
             return S_OK;
         }
@@ -136,6 +143,7 @@ struct produce<D, Windows::Media::Capture::Frames::IDepthMediaFrameFormat> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DepthScaleInMeters());
             return S_OK;
         }
@@ -153,6 +161,7 @@ struct produce<D, Windows::Media::Capture::Frames::IInfraredMediaFrame> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameReference());
             return S_OK;
         }
@@ -167,6 +176,7 @@ struct produce<D, Windows::Media::Capture::Frames::IInfraredMediaFrame> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoMediaFrame());
             return S_OK;
         }
@@ -181,6 +191,7 @@ struct produce<D, Windows::Media::Capture::Frames::IInfraredMediaFrame> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsIlluminated());
             return S_OK;
         }
@@ -202,6 +213,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameFormat> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MajorType());
             return S_OK;
         }
@@ -216,6 +228,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameFormat> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Subtype());
             return S_OK;
         }
@@ -230,6 +243,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameFormat> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameRate());
             return S_OK;
         }
@@ -244,6 +258,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameFormat> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -258,6 +273,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameFormat> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoFormat());
             return S_OK;
         }
@@ -276,6 +292,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameReader> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().FrameArrived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameReader, Windows::Media::Capture::Frames::MediaFrameArrivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -289,6 +306,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameReader> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FrameArrived(token);
             return S_OK;
         }
@@ -302,6 +320,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameReader> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TryAcquireLatestFrame());
             return S_OK;
         }
@@ -316,6 +335,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameReader> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().StartAsync());
             return S_OK;
         }
@@ -330,6 +350,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameReader> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *action = detach(this->shim().StopAsync());
             return S_OK;
         }
@@ -348,6 +369,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameReference> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourceKind());
             return S_OK;
         }
@@ -361,6 +383,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameReference> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Format());
             return S_OK;
         }
@@ -375,6 +398,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameReference> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SystemRelativeTime());
             return S_OK;
         }
@@ -389,6 +413,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameReference> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Duration());
             return S_OK;
         }
@@ -402,6 +427,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameReference> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -416,6 +442,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameReference> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BufferMediaFrame());
             return S_OK;
         }
@@ -430,6 +457,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameReference> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoMediaFrame());
             return S_OK;
         }
@@ -444,6 +472,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameReference> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CoordinateSystem());
             return S_OK;
         }
@@ -462,6 +491,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSource> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Info());
             return S_OK;
         }
@@ -476,6 +506,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSource> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Controller());
             return S_OK;
         }
@@ -490,6 +521,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSource> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedFormats());
             return S_OK;
         }
@@ -504,6 +536,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSource> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentFormat());
             return S_OK;
         }
@@ -518,6 +551,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSource> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SetFormatAsync(*reinterpret_cast<const Windows::Media::Capture::Frames::MediaFrameFormat *>(&format)));
             return S_OK;
         }
@@ -532,6 +566,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSource> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().FormatChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameSource, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -545,6 +580,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSource> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FormatChanged(token);
             return S_OK;
         }
@@ -558,6 +594,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSource> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TryGetCameraIntrinsics(*reinterpret_cast<const Windows::Media::Capture::Frames::MediaFrameFormat *>(&format)));
             return S_OK;
         }
@@ -576,6 +613,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceController> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetPropertyAsync(*reinterpret_cast<const hstring *>(&propertyId)));
             return S_OK;
         }
@@ -590,6 +628,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceController> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SetPropertyAsync(*reinterpret_cast<const hstring *>(&propertyId), *reinterpret_cast<const Windows::IInspectable *>(&propertyValue)));
             return S_OK;
         }
@@ -604,6 +643,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceController> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoDeviceController());
             return S_OK;
         }
@@ -622,6 +662,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceGetPropertyR
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -635,6 +676,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceGetPropertyR
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -653,6 +695,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceGroup> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -667,6 +710,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceGroup> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -681,6 +725,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceGroup> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourceInfos());
             return S_OK;
         }
@@ -699,6 +744,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceGroupStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FindAllAsync());
             return S_OK;
         }
@@ -713,6 +759,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceGroupStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
@@ -727,6 +774,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceGroupStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -745,6 +793,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceInfo> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -759,6 +808,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceInfo> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediaStreamType());
             return S_OK;
         }
@@ -772,6 +822,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceInfo> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourceKind());
             return S_OK;
         }
@@ -785,6 +836,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceInfo> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourceGroup());
             return S_OK;
         }
@@ -799,6 +851,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceInfo> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceInformation());
             return S_OK;
         }
@@ -813,6 +866,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceInfo> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -827,6 +881,7 @@ struct produce<D, Windows::Media::Capture::Frames::IMediaFrameSourceInfo> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CoordinateSystem());
             return S_OK;
         }
@@ -845,6 +900,7 @@ struct produce<D, Windows::Media::Capture::Frames::IVideoMediaFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameReference());
             return S_OK;
         }
@@ -859,6 +915,7 @@ struct produce<D, Windows::Media::Capture::Frames::IVideoMediaFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoFormat());
             return S_OK;
         }
@@ -873,6 +930,7 @@ struct produce<D, Windows::Media::Capture::Frames::IVideoMediaFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SoftwareBitmap());
             return S_OK;
         }
@@ -887,6 +945,7 @@ struct produce<D, Windows::Media::Capture::Frames::IVideoMediaFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Direct3DSurface());
             return S_OK;
         }
@@ -901,6 +960,7 @@ struct produce<D, Windows::Media::Capture::Frames::IVideoMediaFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CameraIntrinsics());
             return S_OK;
         }
@@ -915,6 +975,7 @@ struct produce<D, Windows::Media::Capture::Frames::IVideoMediaFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InfraredMediaFrame());
             return S_OK;
         }
@@ -929,6 +990,7 @@ struct produce<D, Windows::Media::Capture::Frames::IVideoMediaFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DepthMediaFrame());
             return S_OK;
         }
@@ -943,6 +1005,7 @@ struct produce<D, Windows::Media::Capture::Frames::IVideoMediaFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetVideoFrame());
             return S_OK;
         }
@@ -961,6 +1024,7 @@ struct produce<D, Windows::Media::Capture::Frames::IVideoMediaFrameFormat> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediaFrameFormat());
             return S_OK;
         }
@@ -975,6 +1039,7 @@ struct produce<D, Windows::Media::Capture::Frames::IVideoMediaFrameFormat> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DepthFormat());
             return S_OK;
         }
@@ -989,6 +1054,7 @@ struct produce<D, Windows::Media::Capture::Frames::IVideoMediaFrameFormat> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Width());
             return S_OK;
         }
@@ -1002,6 +1068,7 @@ struct produce<D, Windows::Media::Capture::Frames::IVideoMediaFrameFormat> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Height());
             return S_OK;
         }

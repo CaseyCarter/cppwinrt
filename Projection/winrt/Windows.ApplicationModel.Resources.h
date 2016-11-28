@@ -18,6 +18,7 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoader> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetString(*reinterpret_cast<const hstring *>(&resource)));
             return S_OK;
         }
@@ -36,6 +37,7 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoader2> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStringForUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -54,6 +56,7 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderFactory> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *loader = detach(this->shim().CreateResourceLoaderByName(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -72,6 +75,7 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetStringForReference(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -90,6 +94,7 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *loader = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -104,6 +109,7 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *loader = detach(this->shim().GetForCurrentView(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -118,6 +124,7 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *loader = detach(this->shim().GetForViewIndependentUse());
             return S_OK;
         }
@@ -132,6 +139,7 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *loader = detach(this->shim().GetForViewIndependentUse(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }

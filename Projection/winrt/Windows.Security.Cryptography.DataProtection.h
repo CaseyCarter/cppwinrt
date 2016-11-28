@@ -19,6 +19,7 @@ struct produce<D, Windows::Security::Cryptography::DataProtection::IDataProtecti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProtectAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }
@@ -33,6 +34,7 @@ struct produce<D, Windows::Security::Cryptography::DataProtection::IDataProtecti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnprotectAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::Security::Cryptography::DataProtection::IDataProtecti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProtectStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&src), *reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&dest)));
             return S_OK;
         }
@@ -61,6 +64,7 @@ struct produce<D, Windows::Security::Cryptography::DataProtection::IDataProtecti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnprotectStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&src), *reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&dest)));
             return S_OK;
         }
@@ -79,6 +83,7 @@ struct produce<D, Windows::Security::Cryptography::DataProtection::IDataProtecti
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateOverloadExplicit(*reinterpret_cast<const hstring *>(&protectionDescriptor)));
             return S_OK;
         }

@@ -20,6 +20,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionCompletedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
@@ -33,6 +34,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionCompletedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CompositionSegments());
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionCompletedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -65,6 +68,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionSegment> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PreconversionString());
             return S_OK;
         }
@@ -79,6 +83,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionSegment> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Range());
             return S_OK;
         }
@@ -96,6 +101,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionStartedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
@@ -109,6 +115,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextCompositionStartedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -127,6 +134,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -141,6 +149,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -154,6 +163,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InputScope());
             return S_OK;
         }
@@ -167,6 +177,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InputScope(value);
             return S_OK;
         }
@@ -180,6 +191,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsReadOnly());
             return S_OK;
         }
@@ -193,6 +205,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsReadOnly(value);
             return S_OK;
         }
@@ -206,6 +219,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InputPaneDisplayPolicy());
             return S_OK;
         }
@@ -219,6 +233,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InputPaneDisplayPolicy(value);
             return S_OK;
         }
@@ -232,6 +247,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().TextRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextTextRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -245,6 +261,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TextRequested(cookie);
             return S_OK;
         }
@@ -258,6 +275,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().SelectionRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextSelectionRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -271,6 +289,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SelectionRequested(cookie);
             return S_OK;
         }
@@ -284,6 +303,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().LayoutRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextLayoutRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -297,6 +317,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LayoutRequested(cookie);
             return S_OK;
         }
@@ -310,6 +331,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().TextUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextTextUpdatingEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -323,6 +345,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TextUpdating(cookie);
             return S_OK;
         }
@@ -336,6 +359,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().SelectionUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextSelectionUpdatingEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -349,6 +373,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SelectionUpdating(cookie);
             return S_OK;
         }
@@ -362,6 +387,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().FormatUpdating(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextFormatUpdatingEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -375,6 +401,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FormatUpdating(cookie);
             return S_OK;
         }
@@ -388,6 +415,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().CompositionStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextCompositionStartedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -401,6 +429,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CompositionStarted(cookie);
             return S_OK;
         }
@@ -414,6 +443,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().CompositionCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextCompositionCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -427,6 +457,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CompositionCompleted(cookie);
             return S_OK;
         }
@@ -440,6 +471,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().FocusRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -453,6 +485,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FocusRemoved(cookie);
             return S_OK;
         }
@@ -466,6 +499,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyFocusEnter();
             return S_OK;
         }
@@ -479,6 +513,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyFocusLeave();
             return S_OK;
         }
@@ -492,6 +527,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyTextChanged(*reinterpret_cast<const Windows::UI::Text::Core::CoreTextRange *>(&modifiedRange), newLength, *reinterpret_cast<const Windows::UI::Text::Core::CoreTextRange *>(&newSelection));
             return S_OK;
         }
@@ -505,6 +541,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifySelectionChanged(*reinterpret_cast<const Windows::UI::Text::Core::CoreTextRange *>(&selection));
             return S_OK;
         }
@@ -518,6 +555,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyLayoutChanged();
             return S_OK;
         }
@@ -535,6 +573,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().NotifyFocusLeaveCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -548,6 +587,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextEditContext2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyFocusLeaveCompleted(cookie);
             return S_OK;
         }
@@ -565,6 +605,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Range());
             return S_OK;
         }
@@ -578,6 +619,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextColor());
             return S_OK;
         }
@@ -592,6 +634,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BackgroundColor());
             return S_OK;
         }
@@ -606,6 +649,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnderlineColor());
             return S_OK;
         }
@@ -620,6 +664,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnderlineType());
             return S_OK;
         }
@@ -634,6 +679,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reason());
             return S_OK;
         }
@@ -647,6 +693,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Result());
             return S_OK;
         }
@@ -660,6 +707,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Result(value);
             return S_OK;
         }
@@ -673,6 +721,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
@@ -686,6 +735,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -704,6 +754,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutBounds> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextBounds());
             return S_OK;
         }
@@ -717,6 +768,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutBounds> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TextBounds(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
             return S_OK;
         }
@@ -730,6 +782,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutBounds> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ControlBounds());
             return S_OK;
         }
@@ -743,6 +796,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutBounds> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ControlBounds(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
             return S_OK;
         }
@@ -760,6 +814,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutRequest> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Range());
             return S_OK;
         }
@@ -773,6 +828,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutRequest> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LayoutBounds());
             return S_OK;
         }
@@ -787,6 +843,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutRequest> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
@@ -800,6 +857,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutRequest> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -818,6 +876,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextLayoutRequestedEventArgs> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }
@@ -836,6 +895,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionRequest> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Selection());
             return S_OK;
         }
@@ -849,6 +909,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionRequest> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Selection(*reinterpret_cast<const Windows::UI::Text::Core::CoreTextRange *>(&value));
             return S_OK;
         }
@@ -862,6 +923,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionRequest> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
@@ -875,6 +937,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionRequest> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -893,6 +956,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionRequestedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }
@@ -911,6 +975,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Selection());
             return S_OK;
         }
@@ -924,6 +989,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Result());
             return S_OK;
         }
@@ -937,6 +1003,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Result(value);
             return S_OK;
         }
@@ -950,6 +1017,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
@@ -963,6 +1031,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -981,6 +1050,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextServicesManager> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InputLanguage());
             return S_OK;
         }
@@ -995,6 +1065,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextServicesManager> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().InputLanguageChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -1008,6 +1079,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextServicesManager> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InputLanguageChanged(cookie);
             return S_OK;
         }
@@ -1021,6 +1093,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextServicesManager> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateEditContext());
             return S_OK;
         }
@@ -1039,6 +1112,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextServicesManagerStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -1057,6 +1131,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextServicesStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HiddenCharacter());
             return S_OK;
         }
@@ -1074,6 +1149,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequest> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Range());
             return S_OK;
         }
@@ -1087,6 +1163,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequest> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -1101,6 +1178,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequest> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Text(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1114,6 +1192,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequest> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
@@ -1127,6 +1206,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequest> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1145,6 +1225,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextRequestedEventArgs> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }
@@ -1163,6 +1244,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Range());
             return S_OK;
         }
@@ -1176,6 +1258,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -1190,6 +1273,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewSelection());
             return S_OK;
         }
@@ -1203,6 +1287,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InputLanguage());
             return S_OK;
         }
@@ -1217,6 +1302,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Result());
             return S_OK;
         }
@@ -1230,6 +1316,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Result(value);
             return S_OK;
         }
@@ -1243,6 +1330,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCanceled());
             return S_OK;
         }
@@ -1256,6 +1344,7 @@ struct produce<D, Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }

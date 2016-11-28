@@ -21,6 +21,7 @@ struct produce<D, Windows::Storage::Streams::IBuffer> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Capacity());
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::Storage::Streams::IBuffer> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Length());
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::Storage::Streams::IBuffer> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Length(value);
             return S_OK;
         }
@@ -64,6 +67,7 @@ struct produce<D, Windows::Storage::Streams::IBufferFactory> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Create(capacity));
             return S_OK;
         }
@@ -82,6 +86,7 @@ struct produce<D, Windows::Storage::Streams::IBufferStatics> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateCopyFromMemoryBuffer(*reinterpret_cast<const Windows::Foundation::IMemoryBuffer *>(&input)));
             return S_OK;
         }
@@ -96,6 +101,7 @@ struct produce<D, Windows::Storage::Streams::IBufferStatics> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateMemoryBufferOverIBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&input)));
             return S_OK;
         }
@@ -114,6 +120,7 @@ struct produce<D, Windows::Storage::Streams::IContentTypeProvider> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentType());
             return S_OK;
         }
@@ -132,6 +139,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnconsumedBufferLength());
             return S_OK;
         }
@@ -145,6 +153,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnicodeEncoding());
             return S_OK;
         }
@@ -158,6 +167,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UnicodeEncoding(value);
             return S_OK;
         }
@@ -171,6 +181,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ByteOrder());
             return S_OK;
         }
@@ -184,6 +195,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ByteOrder(value);
             return S_OK;
         }
@@ -197,6 +209,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InputStreamOptions());
             return S_OK;
         }
@@ -210,6 +223,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InputStreamOptions(value);
             return S_OK;
         }
@@ -223,6 +237,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadByte());
             return S_OK;
         }
@@ -236,6 +251,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadBytes(*value);
             return S_OK;
         }
@@ -249,6 +265,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *buffer = detach(this->shim().ReadBuffer(length));
             return S_OK;
         }
@@ -263,6 +280,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadBoolean());
             return S_OK;
         }
@@ -276,6 +294,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadGuid());
             return S_OK;
         }
@@ -289,6 +308,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadInt16());
             return S_OK;
         }
@@ -302,6 +322,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadInt32());
             return S_OK;
         }
@@ -315,6 +336,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadInt64());
             return S_OK;
         }
@@ -328,6 +350,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadUInt16());
             return S_OK;
         }
@@ -341,6 +364,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadUInt32());
             return S_OK;
         }
@@ -354,6 +378,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadUInt64());
             return S_OK;
         }
@@ -367,6 +392,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadSingle());
             return S_OK;
         }
@@ -380,6 +406,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadDouble());
             return S_OK;
         }
@@ -393,6 +420,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadString(codeUnitCount));
             return S_OK;
         }
@@ -407,6 +435,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadDateTime());
             return S_OK;
         }
@@ -420,6 +449,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadTimeSpan());
             return S_OK;
         }
@@ -433,6 +463,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().LoadAsync(count));
             return S_OK;
         }
@@ -447,6 +478,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *buffer = detach(this->shim().DetachBuffer());
             return S_OK;
         }
@@ -461,6 +493,7 @@ struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *stream = detach(this->shim().DetachStream());
             return S_OK;
         }
@@ -479,6 +512,7 @@ struct produce<D, Windows::Storage::Streams::IDataReaderFactory> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *dataReader = detach(this->shim().CreateDataReader(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&inputStream)));
             return S_OK;
         }
@@ -497,6 +531,7 @@ struct produce<D, Windows::Storage::Streams::IDataReaderStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *dataReader = detach(this->shim().FromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
             return S_OK;
         }
@@ -515,6 +550,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnstoredBufferLength());
             return S_OK;
         }
@@ -528,6 +564,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnicodeEncoding());
             return S_OK;
         }
@@ -541,6 +578,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UnicodeEncoding(value);
             return S_OK;
         }
@@ -554,6 +592,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ByteOrder());
             return S_OK;
         }
@@ -567,6 +606,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ByteOrder(value);
             return S_OK;
         }
@@ -580,6 +620,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteByte(value);
             return S_OK;
         }
@@ -593,6 +634,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteBytes(array_ref<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
@@ -606,6 +648,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer));
             return S_OK;
         }
@@ -619,6 +662,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer), start, count);
             return S_OK;
         }
@@ -632,6 +676,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteBoolean(value);
             return S_OK;
         }
@@ -645,6 +690,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteGuid(value);
             return S_OK;
         }
@@ -658,6 +704,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteInt16(value);
             return S_OK;
         }
@@ -671,6 +718,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteInt32(value);
             return S_OK;
         }
@@ -684,6 +732,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteInt64(value);
             return S_OK;
         }
@@ -697,6 +746,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteUInt16(value);
             return S_OK;
         }
@@ -710,6 +760,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteUInt32(value);
             return S_OK;
         }
@@ -723,6 +774,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteUInt64(value);
             return S_OK;
         }
@@ -736,6 +788,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteSingle(value);
             return S_OK;
         }
@@ -749,6 +802,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteDouble(value);
             return S_OK;
         }
@@ -762,6 +816,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteDateTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -775,6 +830,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteTimeSpan(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -788,6 +844,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *codeUnitCount = detach(this->shim().WriteString(*reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
@@ -801,6 +858,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *codeUnitCount = detach(this->shim().MeasureString(*reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
@@ -814,6 +872,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().StoreAsync());
             return S_OK;
         }
@@ -828,6 +887,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FlushAsync());
             return S_OK;
         }
@@ -842,6 +902,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *buffer = detach(this->shim().DetachBuffer());
             return S_OK;
         }
@@ -856,6 +917,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *outputStream = detach(this->shim().DetachStream());
             return S_OK;
         }
@@ -874,6 +936,7 @@ struct produce<D, Windows::Storage::Streams::IDataWriterFactory> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *dataWriter = detach(this->shim().CreateDataWriter(*reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&outputStream)));
             return S_OK;
         }
@@ -892,6 +955,7 @@ struct produce<D, Windows::Storage::Streams::IInputStream> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ReadAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer), count, options));
             return S_OK;
         }
@@ -910,6 +974,7 @@ struct produce<D, Windows::Storage::Streams::IInputStreamReference> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().OpenSequentialReadAsync());
             return S_OK;
         }
@@ -928,6 +993,7 @@ struct produce<D, Windows::Storage::Streams::IOutputStream> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().WriteAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
             return S_OK;
         }
@@ -942,6 +1008,7 @@ struct produce<D, Windows::Storage::Streams::IOutputStream> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FlushAsync());
             return S_OK;
         }
@@ -960,6 +1027,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Size());
             return S_OK;
         }
@@ -973,6 +1041,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Size(value);
             return S_OK;
         }
@@ -986,6 +1055,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *stream = detach(this->shim().GetInputStreamAt(position));
             return S_OK;
         }
@@ -1000,6 +1070,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *stream = detach(this->shim().GetOutputStreamAt(position));
             return S_OK;
         }
@@ -1014,6 +1085,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Position());
             return S_OK;
         }
@@ -1027,6 +1099,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Seek(position);
             return S_OK;
         }
@@ -1040,6 +1113,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *stream = detach(this->shim().CloneStream());
             return S_OK;
         }
@@ -1054,6 +1128,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanRead());
             return S_OK;
         }
@@ -1067,6 +1142,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanWrite());
             return S_OK;
         }
@@ -1084,6 +1160,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStreamReference> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().OpenReadAsync());
             return S_OK;
         }
@@ -1102,6 +1179,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStreamReferenceStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *streamReference = detach(this->shim().CreateFromFile(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
@@ -1116,6 +1194,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStreamReferenceStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *streamReference = detach(this->shim().CreateFromUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -1130,6 +1209,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStreamReferenceStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *streamReference = detach(this->shim().CreateFromStream(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream)));
             return S_OK;
         }
@@ -1148,6 +1228,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStreamStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CopyAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&source), *reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&destination)));
             return S_OK;
         }
@@ -1162,6 +1243,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStreamStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CopyAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&source), *reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&destination), bytesToCopy));
             return S_OK;
         }
@@ -1176,6 +1258,7 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStreamStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CopyAndCloseAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&source), *reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&destination)));
             return S_OK;
         }

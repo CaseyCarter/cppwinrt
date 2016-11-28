@@ -19,6 +19,7 @@ struct produce<D, Windows::Devices::Printers::IPrint3DDevice> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PrintSchema());
             return S_OK;
         }
@@ -37,6 +38,7 @@ struct produce<D, Windows::Devices::Printers::IPrint3DDeviceStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -51,6 +53,7 @@ struct produce<D, Windows::Devices::Printers::IPrint3DDeviceStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -69,6 +72,7 @@ struct produce<D, Windows::Devices::Printers::IPrintSchema> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetDefaultPrintTicketAsync());
             return S_OK;
         }
@@ -83,6 +87,7 @@ struct produce<D, Windows::Devices::Printers::IPrintSchema> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetCapabilitiesAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamWithContentType *>(&constrainTicket)));
             return S_OK;
         }
@@ -97,6 +102,7 @@ struct produce<D, Windows::Devices::Printers::IPrintSchema> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().MergeAndValidateWithDefaultPrintTicketAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamWithContentType *>(&deltaTicket)));
             return S_OK;
         }

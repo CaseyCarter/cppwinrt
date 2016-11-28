@@ -21,6 +21,7 @@ struct produce<D, Windows::Devices::Spi::ISpiBusInfo> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChipSelectLineCount());
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::Devices::Spi::ISpiBusInfo> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinClockFrequency());
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::Devices::Spi::ISpiBusInfo> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxClockFrequency());
             return S_OK;
         }
@@ -60,6 +63,7 @@ struct produce<D, Windows::Devices::Spi::ISpiBusInfo> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedDataBitLengths());
             return S_OK;
         }
@@ -78,6 +82,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChipSelectLine());
             return S_OK;
         }
@@ -91,6 +96,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ChipSelectLine(value);
             return S_OK;
         }
@@ -104,6 +110,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Mode());
             return S_OK;
         }
@@ -117,6 +124,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Mode(value);
             return S_OK;
         }
@@ -130,6 +138,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataBitLength());
             return S_OK;
         }
@@ -143,6 +152,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DataBitLength(value);
             return S_OK;
         }
@@ -156,6 +166,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClockFrequency());
             return S_OK;
         }
@@ -169,6 +180,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClockFrequency(value);
             return S_OK;
         }
@@ -182,6 +194,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SharingMode());
             return S_OK;
         }
@@ -195,6 +208,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SharingMode(value);
             return S_OK;
         }
@@ -212,6 +226,7 @@ struct produce<D, Windows::Devices::Spi::ISpiConnectionSettingsFactory> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Create(chipSelectLine));
             return S_OK;
         }
@@ -230,6 +245,7 @@ struct produce<D, Windows::Devices::Spi::ISpiController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *device = detach(this->shim().GetDevice(*reinterpret_cast<const Windows::Devices::Spi::SpiConnectionSettings *>(&settings)));
             return S_OK;
         }
@@ -248,6 +264,7 @@ struct produce<D, Windows::Devices::Spi::ISpiControllerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetDefaultAsync());
             return S_OK;
         }
@@ -262,6 +279,7 @@ struct produce<D, Windows::Devices::Spi::ISpiControllerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetControllersAsync(*reinterpret_cast<const Windows::Devices::Spi::Provider::ISpiProvider *>(&provider)));
             return S_OK;
         }
@@ -280,6 +298,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -294,6 +313,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConnectionSettings());
             return S_OK;
         }
@@ -308,6 +328,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Write(array_ref<const uint8_t>(buffer, buffer + __bufferSize));
             return S_OK;
         }
@@ -321,6 +342,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Read(*buffer);
             return S_OK;
         }
@@ -334,6 +356,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransferSequential(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
             return S_OK;
         }
@@ -347,6 +370,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransferFullDuplex(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
             return S_OK;
         }
@@ -364,6 +388,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDeviceStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -378,6 +403,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDeviceStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector(*reinterpret_cast<const hstring *>(&friendlyName)));
             return S_OK;
         }
@@ -392,6 +418,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDeviceStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *busInfo = detach(this->shim().GetBusInfo(*reinterpret_cast<const hstring *>(&busId)));
             return S_OK;
         }
@@ -406,6 +433,7 @@ struct produce<D, Windows::Devices::Spi::ISpiDeviceStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&busId), *reinterpret_cast<const Windows::Devices::Spi::SpiConnectionSettings *>(&settings)));
             return S_OK;
         }

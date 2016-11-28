@@ -21,6 +21,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProductId());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PackageFamilyName());
             return S_OK;
         }
@@ -49,6 +51,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InstallType());
             return S_OK;
         }
@@ -62,6 +65,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsUserInitiated());
             return S_OK;
         }
@@ -75,6 +79,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetCurrentStatus());
             return S_OK;
         }
@@ -89,6 +94,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Cancel();
             return S_OK;
         }
@@ -102,6 +108,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Pause();
             return S_OK;
         }
@@ -115,6 +122,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Restart();
             return S_OK;
         }
@@ -128,6 +136,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Completed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -141,6 +150,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Completed(token);
             return S_OK;
         }
@@ -154,6 +164,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().StatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -167,6 +178,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StatusChanged(token);
             return S_OK;
         }
@@ -184,6 +196,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Cancel(*reinterpret_cast<const hstring *>(&correlationVector));
             return S_OK;
         }
@@ -197,6 +210,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Pause(*reinterpret_cast<const hstring *>(&correlationVector));
             return S_OK;
         }
@@ -210,6 +224,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Restart(*reinterpret_cast<const hstring *>(&correlationVector));
             return S_OK;
         }
@@ -227,6 +242,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppInstallItems());
             return S_OK;
         }
@@ -241,6 +257,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Cancel(*reinterpret_cast<const hstring *>(&productId));
             return S_OK;
         }
@@ -254,6 +271,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Pause(*reinterpret_cast<const hstring *>(&productId));
             return S_OK;
         }
@@ -267,6 +285,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Restart(*reinterpret_cast<const hstring *>(&productId));
             return S_OK;
         }
@@ -280,6 +299,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ItemCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -293,6 +313,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ItemCompleted(token);
             return S_OK;
         }
@@ -306,6 +327,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ItemStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -319,6 +341,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ItemStatusChanged(token);
             return S_OK;
         }
@@ -332,6 +355,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutoUpdateSetting());
             return S_OK;
         }
@@ -345,6 +369,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AutoUpdateSetting(value);
             return S_OK;
         }
@@ -358,6 +383,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AcquisitionIdentity());
             return S_OK;
         }
@@ -372,6 +398,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AcquisitionIdentity(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -385,6 +412,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetIsApplicableAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId)));
             return S_OK;
         }
@@ -399,6 +427,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().StartAppInstallAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId), repair, forceUseOfNonRemovableStorage));
             return S_OK;
         }
@@ -413,6 +442,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().UpdateAppByPackageFamilyNameAsync(*reinterpret_cast<const hstring *>(&packageFamilyName)));
             return S_OK;
         }
@@ -427,6 +457,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SearchForUpdatesAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId)));
             return S_OK;
         }
@@ -441,6 +472,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SearchForAllUpdatesAsync());
             return S_OK;
         }
@@ -455,6 +487,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().IsStoreBlockedByPolicyAsync(*reinterpret_cast<const hstring *>(&storeClientName), *reinterpret_cast<const hstring *>(&storeClientPublisher)));
             return S_OK;
         }
@@ -469,6 +502,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetIsAppAllowedToInstallAsync(*reinterpret_cast<const hstring *>(&productId)));
             return S_OK;
         }
@@ -487,6 +521,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().StartAppInstallAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId), repair, forceUseOfNonRemovableStorage, *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&bundleId), *reinterpret_cast<const hstring *>(&correlationVector)));
             return S_OK;
         }
@@ -501,6 +536,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().UpdateAppByPackageFamilyNameAsync(*reinterpret_cast<const hstring *>(&packageFamilyName), *reinterpret_cast<const hstring *>(&correlationVector)));
             return S_OK;
         }
@@ -515,6 +551,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SearchForUpdatesAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId), *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&correlationVector)));
             return S_OK;
         }
@@ -529,6 +566,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SearchForAllUpdatesAsync(*reinterpret_cast<const hstring *>(&correlationVector)));
             return S_OK;
         }
@@ -543,6 +581,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetIsAppAllowedToInstallAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId), *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&correlationVector)));
             return S_OK;
         }
@@ -557,6 +596,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Cancel(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&correlationVector));
             return S_OK;
         }
@@ -570,6 +610,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Pause(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&correlationVector));
             return S_OK;
         }
@@ -583,6 +624,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Restart(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&correlationVector));
             return S_OK;
         }
@@ -600,6 +642,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().StartProductInstallAsync(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&flightId), *reinterpret_cast<const hstring *>(&clientId), repair, forceUseOfNonRemovableStorage, *reinterpret_cast<const hstring *>(&correlationVector), *reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&targetVolume)));
             return S_OK;
         }
@@ -614,6 +657,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().StartProductInstallForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&flightId), *reinterpret_cast<const hstring *>(&clientId), repair, forceUseOfNonRemovableStorage, *reinterpret_cast<const hstring *>(&correlationVector), *reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&targetVolume)));
             return S_OK;
         }
@@ -628,6 +672,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().UpdateAppByPackageFamilyNameForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&packageFamilyName), *reinterpret_cast<const hstring *>(&correlationVector)));
             return S_OK;
         }
@@ -642,6 +687,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SearchForUpdatesForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId), *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&correlationVector)));
             return S_OK;
         }
@@ -656,6 +702,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SearchForAllUpdatesForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&correlationVector)));
             return S_OK;
         }
@@ -670,6 +717,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetIsAppAllowedToInstallForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId), *reinterpret_cast<const hstring *>(&catalogId), *reinterpret_cast<const hstring *>(&correlationVector)));
             return S_OK;
         }
@@ -684,6 +732,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetIsApplicableForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&skuId)));
             return S_OK;
         }
@@ -698,6 +747,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MoveToFrontOfDownloadQueue(*reinterpret_cast<const hstring *>(&productId), *reinterpret_cast<const hstring *>(&correlationVector));
             return S_OK;
         }
@@ -715,6 +765,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Item());
             return S_OK;
         }
@@ -733,6 +784,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InstallState());
             return S_OK;
         }
@@ -746,6 +798,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DownloadSizeInBytes());
             return S_OK;
         }
@@ -759,6 +812,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BytesDownloaded());
             return S_OK;
         }
@@ -772,6 +826,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PercentComplete());
             return S_OK;
         }
@@ -785,6 +840,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ErrorCode());
             return S_OK;
         }
@@ -802,6 +858,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().User());
             return S_OK;
         }
@@ -816,6 +873,7 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadyForLaunch());
             return S_OK;
         }

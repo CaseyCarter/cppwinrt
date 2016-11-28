@@ -26,6 +26,7 @@ struct produce<D, Windows::Web::Http::IHttpBufferContentFactory> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *bufferContent = detach(this->shim().CreateFromBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&content)));
             return S_OK;
         }
@@ -40,6 +41,7 @@ struct produce<D, Windows::Web::Http::IHttpBufferContentFactory> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *bufferContent = detach(this->shim().CreateFromBufferWithOffset(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&content), offset, count));
             return S_OK;
         }
@@ -58,6 +60,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().DeleteAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -72,6 +75,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -86,6 +90,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), completionOption));
             return S_OK;
         }
@@ -100,6 +105,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetBufferAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -114,6 +120,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetInputStreamAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -128,6 +135,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetStringAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -142,6 +150,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().PostAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&content)));
             return S_OK;
         }
@@ -156,6 +165,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().PutAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&content)));
             return S_OK;
         }
@@ -170,6 +180,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SendRequestAsync(*reinterpret_cast<const Windows::Web::Http::HttpRequestMessage *>(&request)));
             return S_OK;
         }
@@ -184,6 +195,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SendRequestAsync(*reinterpret_cast<const Windows::Web::Http::HttpRequestMessage *>(&request), completionOption));
             return S_OK;
         }
@@ -198,6 +210,7 @@ struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DefaultRequestHeaders());
             return S_OK;
         }
@@ -216,6 +229,7 @@ struct produce<D, Windows::Web::Http::IHttpClientFactory> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *client = detach(this->shim().Create(*reinterpret_cast<const Windows::Web::Http::Filters::IHttpFilter *>(&filter)));
             return S_OK;
         }
@@ -234,6 +248,7 @@ struct produce<D, Windows::Web::Http::IHttpContent> : produce_base<D, Windows::W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Headers());
             return S_OK;
         }
@@ -248,6 +263,7 @@ struct produce<D, Windows::Web::Http::IHttpContent> : produce_base<D, Windows::W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().BufferAllAsync());
             return S_OK;
         }
@@ -262,6 +278,7 @@ struct produce<D, Windows::Web::Http::IHttpContent> : produce_base<D, Windows::W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ReadAsBufferAsync());
             return S_OK;
         }
@@ -276,6 +293,7 @@ struct produce<D, Windows::Web::Http::IHttpContent> : produce_base<D, Windows::W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ReadAsInputStreamAsync());
             return S_OK;
         }
@@ -290,6 +308,7 @@ struct produce<D, Windows::Web::Http::IHttpContent> : produce_base<D, Windows::W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ReadAsStringAsync());
             return S_OK;
         }
@@ -304,6 +323,7 @@ struct produce<D, Windows::Web::Http::IHttpContent> : produce_base<D, Windows::W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().TryComputeLength(*length));
             return S_OK;
         }
@@ -317,6 +337,7 @@ struct produce<D, Windows::Web::Http::IHttpContent> : produce_base<D, Windows::W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().WriteToStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&outputStream)));
             return S_OK;
         }
@@ -335,6 +356,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -349,6 +371,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Domain());
             return S_OK;
         }
@@ -363,6 +386,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Path());
             return S_OK;
         }
@@ -377,6 +401,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Expires());
             return S_OK;
         }
@@ -391,6 +416,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Expires(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -404,6 +430,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HttpOnly());
             return S_OK;
         }
@@ -417,6 +444,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().HttpOnly(value);
             return S_OK;
         }
@@ -430,6 +458,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Secure());
             return S_OK;
         }
@@ -443,6 +472,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Secure(value);
             return S_OK;
         }
@@ -456,6 +486,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -470,6 +501,7 @@ struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -487,6 +519,7 @@ struct produce<D, Windows::Web::Http::IHttpCookieFactory> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&domain), *reinterpret_cast<const hstring *>(&path)));
             return S_OK;
         }
@@ -505,6 +538,7 @@ struct produce<D, Windows::Web::Http::IHttpCookieManager> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *replaced = detach(this->shim().SetCookie(*reinterpret_cast<const Windows::Web::Http::HttpCookie *>(&cookie)));
             return S_OK;
         }
@@ -518,6 +552,7 @@ struct produce<D, Windows::Web::Http::IHttpCookieManager> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *replaced = detach(this->shim().SetCookie(*reinterpret_cast<const Windows::Web::Http::HttpCookie *>(&cookie), thirdParty));
             return S_OK;
         }
@@ -531,6 +566,7 @@ struct produce<D, Windows::Web::Http::IHttpCookieManager> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DeleteCookie(*reinterpret_cast<const Windows::Web::Http::HttpCookie *>(&cookie));
             return S_OK;
         }
@@ -544,6 +580,7 @@ struct produce<D, Windows::Web::Http::IHttpCookieManager> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCookies(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -562,6 +599,7 @@ struct produce<D, Windows::Web::Http::IHttpFormUrlEncodedContentFactory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *formUrlEncodedContent = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> *>(&content)));
             return S_OK;
         }
@@ -580,6 +618,7 @@ struct produce<D, Windows::Web::Http::IHttpMethod> : produce_base<D, Windows::We
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Method());
             return S_OK;
         }
@@ -598,6 +637,7 @@ struct produce<D, Windows::Web::Http::IHttpMethodFactory> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *httpMethod = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&method)));
             return S_OK;
         }
@@ -616,6 +656,7 @@ struct produce<D, Windows::Web::Http::IHttpMethodStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Delete());
             return S_OK;
         }
@@ -630,6 +671,7 @@ struct produce<D, Windows::Web::Http::IHttpMethodStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Get());
             return S_OK;
         }
@@ -644,6 +686,7 @@ struct produce<D, Windows::Web::Http::IHttpMethodStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Head());
             return S_OK;
         }
@@ -658,6 +701,7 @@ struct produce<D, Windows::Web::Http::IHttpMethodStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Options());
             return S_OK;
         }
@@ -672,6 +716,7 @@ struct produce<D, Windows::Web::Http::IHttpMethodStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Patch());
             return S_OK;
         }
@@ -686,6 +731,7 @@ struct produce<D, Windows::Web::Http::IHttpMethodStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Post());
             return S_OK;
         }
@@ -700,6 +746,7 @@ struct produce<D, Windows::Web::Http::IHttpMethodStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Put());
             return S_OK;
         }
@@ -718,6 +765,7 @@ struct produce<D, Windows::Web::Http::IHttpMultipartContent> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Add(*reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&content));
             return S_OK;
         }
@@ -735,6 +783,7 @@ struct produce<D, Windows::Web::Http::IHttpMultipartContentFactory> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *multipartContent = detach(this->shim().CreateWithSubtype(*reinterpret_cast<const hstring *>(&subtype)));
             return S_OK;
         }
@@ -749,6 +798,7 @@ struct produce<D, Windows::Web::Http::IHttpMultipartContentFactory> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *multipartContent = detach(this->shim().CreateWithSubtypeAndBoundary(*reinterpret_cast<const hstring *>(&subtype), *reinterpret_cast<const hstring *>(&boundary)));
             return S_OK;
         }
@@ -767,6 +817,7 @@ struct produce<D, Windows::Web::Http::IHttpMultipartFormDataContent> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Add(*reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&content));
             return S_OK;
         }
@@ -780,6 +831,7 @@ struct produce<D, Windows::Web::Http::IHttpMultipartFormDataContent> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Add(*reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&content), *reinterpret_cast<const hstring *>(&name));
             return S_OK;
         }
@@ -793,6 +845,7 @@ struct produce<D, Windows::Web::Http::IHttpMultipartFormDataContent> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Add(*reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&content), *reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const hstring *>(&fileName));
             return S_OK;
         }
@@ -810,6 +863,7 @@ struct produce<D, Windows::Web::Http::IHttpMultipartFormDataContentFactory> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *multipartFormDataContent = detach(this->shim().CreateWithBoundary(*reinterpret_cast<const hstring *>(&boundary)));
             return S_OK;
         }
@@ -828,6 +882,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Content());
             return S_OK;
         }
@@ -842,6 +897,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Content(*reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&value));
             return S_OK;
         }
@@ -855,6 +911,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Headers());
             return S_OK;
         }
@@ -869,6 +926,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Method());
             return S_OK;
         }
@@ -883,6 +941,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Method(*reinterpret_cast<const Windows::Web::Http::HttpMethod *>(&value));
             return S_OK;
         }
@@ -896,6 +955,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -910,6 +970,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequestUri());
             return S_OK;
         }
@@ -924,6 +985,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RequestUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -937,6 +999,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TransportInformation());
             return S_OK;
         }
@@ -955,6 +1018,7 @@ struct produce<D, Windows::Web::Http::IHttpRequestMessageFactory> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *httpRequestMessage = detach(this->shim().Create(*reinterpret_cast<const Windows::Web::Http::HttpMethod *>(&method), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -973,6 +1037,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Content());
             return S_OK;
         }
@@ -987,6 +1052,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Content(*reinterpret_cast<const Windows::Web::Http::IHttpContent *>(&value));
             return S_OK;
         }
@@ -1000,6 +1066,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Headers());
             return S_OK;
         }
@@ -1014,6 +1081,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsSuccessStatusCode());
             return S_OK;
         }
@@ -1027,6 +1095,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReasonPhrase());
             return S_OK;
         }
@@ -1041,6 +1110,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReasonPhrase(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1054,6 +1124,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequestMessage());
             return S_OK;
         }
@@ -1068,6 +1139,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RequestMessage(*reinterpret_cast<const Windows::Web::Http::HttpRequestMessage *>(&value));
             return S_OK;
         }
@@ -1081,6 +1153,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Source());
             return S_OK;
         }
@@ -1094,6 +1167,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Source(value);
             return S_OK;
         }
@@ -1107,6 +1181,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StatusCode());
             return S_OK;
         }
@@ -1120,6 +1195,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StatusCode(value);
             return S_OK;
         }
@@ -1133,6 +1209,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Version());
             return S_OK;
         }
@@ -1146,6 +1223,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Version(value);
             return S_OK;
         }
@@ -1159,6 +1237,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *httpResponseMessage = detach(this->shim().EnsureSuccessStatusCode());
             return S_OK;
         }
@@ -1177,6 +1256,7 @@ struct produce<D, Windows::Web::Http::IHttpResponseMessageFactory> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *httpResponseMessage = detach(this->shim().Create(statusCode));
             return S_OK;
         }
@@ -1195,6 +1275,7 @@ struct produce<D, Windows::Web::Http::IHttpStreamContentFactory> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *streamContent = detach(this->shim().CreateFromInputStream(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&content)));
             return S_OK;
         }
@@ -1213,6 +1294,7 @@ struct produce<D, Windows::Web::Http::IHttpStringContentFactory> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *stringContent = detach(this->shim().CreateFromString(*reinterpret_cast<const hstring *>(&content)));
             return S_OK;
         }
@@ -1227,6 +1309,7 @@ struct produce<D, Windows::Web::Http::IHttpStringContentFactory> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *stringContent = detach(this->shim().CreateFromStringWithEncoding(*reinterpret_cast<const hstring *>(&content), encoding));
             return S_OK;
         }
@@ -1241,6 +1324,7 @@ struct produce<D, Windows::Web::Http::IHttpStringContentFactory> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *stringContent = detach(this->shim().CreateFromStringWithEncodingAndMediaType(*reinterpret_cast<const hstring *>(&content), encoding, *reinterpret_cast<const hstring *>(&mediaType)));
             return S_OK;
         }
@@ -1259,6 +1343,7 @@ struct produce<D, Windows::Web::Http::IHttpTransportInformation> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCertificate());
             return S_OK;
         }
@@ -1273,6 +1358,7 @@ struct produce<D, Windows::Web::Http::IHttpTransportInformation> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCertificateErrorSeverity());
             return S_OK;
         }
@@ -1286,6 +1372,7 @@ struct produce<D, Windows::Web::Http::IHttpTransportInformation> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCertificateErrors());
             return S_OK;
         }
@@ -1300,6 +1387,7 @@ struct produce<D, Windows::Web::Http::IHttpTransportInformation> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerIntermediateCertificates());
             return S_OK;
         }

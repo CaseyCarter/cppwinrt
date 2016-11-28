@@ -17,6 +17,7 @@ struct produce<D, Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Trim();
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }

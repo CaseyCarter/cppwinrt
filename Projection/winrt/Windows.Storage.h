@@ -63,6 +63,7 @@ struct produce<D, Windows::Storage::IApplicationData> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Version());
             return S_OK;
         }
@@ -76,6 +77,7 @@ struct produce<D, Windows::Storage::IApplicationData> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *setVersionOperation = detach(this->shim().SetVersionAsync(desiredVersion, *reinterpret_cast<const Windows::Storage::ApplicationDataSetVersionHandler *>(&handler)));
             return S_OK;
         }
@@ -90,6 +92,7 @@ struct produce<D, Windows::Storage::IApplicationData> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *clearOperation = detach(this->shim().ClearAsync());
             return S_OK;
         }
@@ -104,6 +107,7 @@ struct produce<D, Windows::Storage::IApplicationData> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *clearOperation = detach(this->shim().ClearAsync(locality));
             return S_OK;
         }
@@ -118,6 +122,7 @@ struct produce<D, Windows::Storage::IApplicationData> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalSettings());
             return S_OK;
         }
@@ -132,6 +137,7 @@ struct produce<D, Windows::Storage::IApplicationData> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RoamingSettings());
             return S_OK;
         }
@@ -146,6 +152,7 @@ struct produce<D, Windows::Storage::IApplicationData> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalFolder());
             return S_OK;
         }
@@ -160,6 +167,7 @@ struct produce<D, Windows::Storage::IApplicationData> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RoamingFolder());
             return S_OK;
         }
@@ -174,6 +182,7 @@ struct produce<D, Windows::Storage::IApplicationData> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TemporaryFolder());
             return S_OK;
         }
@@ -188,6 +197,7 @@ struct produce<D, Windows::Storage::IApplicationData> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DataChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::ApplicationData, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -201,6 +211,7 @@ struct produce<D, Windows::Storage::IApplicationData> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DataChanged(token);
             return S_OK;
         }
@@ -214,6 +225,7 @@ struct produce<D, Windows::Storage::IApplicationData> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SignalDataChanged();
             return S_OK;
         }
@@ -227,6 +239,7 @@ struct produce<D, Windows::Storage::IApplicationData> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RoamingStorageQuota());
             return S_OK;
         }
@@ -244,6 +257,7 @@ struct produce<D, Windows::Storage::IApplicationData2> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalCacheFolder());
             return S_OK;
         }
@@ -262,6 +276,7 @@ struct produce<D, Windows::Storage::IApplicationData3> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetPublisherCacheFolder(*reinterpret_cast<const hstring *>(&folderName)));
             return S_OK;
         }
@@ -276,6 +291,7 @@ struct produce<D, Windows::Storage::IApplicationData3> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *clearOperation = detach(this->shim().ClearPublisherCacheFolderAsync(*reinterpret_cast<const hstring *>(&folderName)));
             return S_OK;
         }
@@ -290,6 +306,7 @@ struct produce<D, Windows::Storage::IApplicationData3> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SharedLocalFolder());
             return S_OK;
         }
@@ -308,6 +325,7 @@ struct produce<D, Windows::Storage::IApplicationDataContainer> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -322,6 +340,7 @@ struct produce<D, Windows::Storage::IApplicationDataContainer> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Locality());
             return S_OK;
         }
@@ -335,6 +354,7 @@ struct produce<D, Windows::Storage::IApplicationDataContainer> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Values());
             return S_OK;
         }
@@ -349,6 +369,7 @@ struct produce<D, Windows::Storage::IApplicationDataContainer> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Containers());
             return S_OK;
         }
@@ -363,6 +384,7 @@ struct produce<D, Windows::Storage::IApplicationDataContainer> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *container = detach(this->shim().CreateContainer(*reinterpret_cast<const hstring *>(&name), disposition));
             return S_OK;
         }
@@ -377,6 +399,7 @@ struct produce<D, Windows::Storage::IApplicationDataContainer> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DeleteContainer(*reinterpret_cast<const hstring *>(&name));
             return S_OK;
         }
@@ -394,6 +417,7 @@ struct produce<D, Windows::Storage::IApplicationDataStatics> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Current());
             return S_OK;
         }
@@ -412,6 +436,7 @@ struct produce<D, Windows::Storage::IApplicationDataStatics2> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *getForUserOperation = detach(this->shim().GetForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
@@ -430,6 +455,7 @@ struct produce<D, Windows::Storage::ICachedFileManagerStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DeferUpdates(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file));
             return S_OK;
         }
@@ -443,6 +469,7 @@ struct produce<D, Windows::Storage::ICachedFileManagerStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CompleteUpdatesAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
@@ -461,6 +488,7 @@ struct produce<D, Windows::Storage::IDownloadsFolderStatics> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateFileAsync(*reinterpret_cast<const hstring *>(&desiredName)));
             return S_OK;
         }
@@ -475,6 +503,7 @@ struct produce<D, Windows::Storage::IDownloadsFolderStatics> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateFolderAsync(*reinterpret_cast<const hstring *>(&desiredName)));
             return S_OK;
         }
@@ -489,6 +518,7 @@ struct produce<D, Windows::Storage::IDownloadsFolderStatics> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateFileAsync(*reinterpret_cast<const hstring *>(&desiredName), option));
             return S_OK;
         }
@@ -503,6 +533,7 @@ struct produce<D, Windows::Storage::IDownloadsFolderStatics> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateFolderAsync(*reinterpret_cast<const hstring *>(&desiredName), option));
             return S_OK;
         }
@@ -521,6 +552,7 @@ struct produce<D, Windows::Storage::IDownloadsFolderStatics2> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateFileForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&desiredName)));
             return S_OK;
         }
@@ -535,6 +567,7 @@ struct produce<D, Windows::Storage::IDownloadsFolderStatics2> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateFolderForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&desiredName)));
             return S_OK;
         }
@@ -549,6 +582,7 @@ struct produce<D, Windows::Storage::IDownloadsFolderStatics2> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateFileForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&desiredName), option));
             return S_OK;
         }
@@ -563,6 +597,7 @@ struct produce<D, Windows::Storage::IDownloadsFolderStatics2> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateFolderForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&desiredName), option));
             return S_OK;
         }
@@ -581,6 +616,7 @@ struct produce<D, Windows::Storage::IFileIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *textOperation = detach(this->shim().ReadTextAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
@@ -595,6 +631,7 @@ struct produce<D, Windows::Storage::IFileIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *textOperation = detach(this->shim().ReadTextAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), encoding));
             return S_OK;
         }
@@ -609,6 +646,7 @@ struct produce<D, Windows::Storage::IFileIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *textOperation = detach(this->shim().WriteTextAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const hstring *>(&contents)));
             return S_OK;
         }
@@ -623,6 +661,7 @@ struct produce<D, Windows::Storage::IFileIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *textOperation = detach(this->shim().WriteTextAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const hstring *>(&contents), encoding));
             return S_OK;
         }
@@ -637,6 +676,7 @@ struct produce<D, Windows::Storage::IFileIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *textOperation = detach(this->shim().AppendTextAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const hstring *>(&contents)));
             return S_OK;
         }
@@ -651,6 +691,7 @@ struct produce<D, Windows::Storage::IFileIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *textOperation = detach(this->shim().AppendTextAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const hstring *>(&contents), encoding));
             return S_OK;
         }
@@ -665,6 +706,7 @@ struct produce<D, Windows::Storage::IFileIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *linesOperation = detach(this->shim().ReadLinesAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
@@ -679,6 +721,7 @@ struct produce<D, Windows::Storage::IFileIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *linesOperation = detach(this->shim().ReadLinesAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), encoding));
             return S_OK;
         }
@@ -693,6 +736,7 @@ struct produce<D, Windows::Storage::IFileIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().WriteLinesAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&lines)));
             return S_OK;
         }
@@ -707,6 +751,7 @@ struct produce<D, Windows::Storage::IFileIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().WriteLinesAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&lines), encoding));
             return S_OK;
         }
@@ -721,6 +766,7 @@ struct produce<D, Windows::Storage::IFileIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().AppendLinesAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&lines)));
             return S_OK;
         }
@@ -735,6 +781,7 @@ struct produce<D, Windows::Storage::IFileIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().AppendLinesAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&lines), encoding));
             return S_OK;
         }
@@ -749,6 +796,7 @@ struct produce<D, Windows::Storage::IFileIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ReadBufferAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
@@ -763,6 +811,7 @@ struct produce<D, Windows::Storage::IFileIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().WriteBufferAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
             return S_OK;
         }
@@ -777,6 +826,7 @@ struct produce<D, Windows::Storage::IFileIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().WriteBytesAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), array_ref<const uint8_t>(buffer, buffer + __bufferSize)));
             return S_OK;
         }
@@ -795,6 +845,7 @@ struct produce<D, Windows::Storage::IKnownFoldersCameraRollStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CameraRoll());
             return S_OK;
         }
@@ -813,6 +864,7 @@ struct produce<D, Windows::Storage::IKnownFoldersPlaylistsStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Playlists());
             return S_OK;
         }
@@ -831,6 +883,7 @@ struct produce<D, Windows::Storage::IKnownFoldersSavedPicturesStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SavedPictures());
             return S_OK;
         }
@@ -849,6 +902,7 @@ struct produce<D, Windows::Storage::IKnownFoldersStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MusicLibrary());
             return S_OK;
         }
@@ -863,6 +917,7 @@ struct produce<D, Windows::Storage::IKnownFoldersStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PicturesLibrary());
             return S_OK;
         }
@@ -877,6 +932,7 @@ struct produce<D, Windows::Storage::IKnownFoldersStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideosLibrary());
             return S_OK;
         }
@@ -891,6 +947,7 @@ struct produce<D, Windows::Storage::IKnownFoldersStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DocumentsLibrary());
             return S_OK;
         }
@@ -905,6 +962,7 @@ struct produce<D, Windows::Storage::IKnownFoldersStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HomeGroup());
             return S_OK;
         }
@@ -919,6 +977,7 @@ struct produce<D, Windows::Storage::IKnownFoldersStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemovableDevices());
             return S_OK;
         }
@@ -933,6 +992,7 @@ struct produce<D, Windows::Storage::IKnownFoldersStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediaServerDevices());
             return S_OK;
         }
@@ -951,6 +1011,7 @@ struct produce<D, Windows::Storage::IKnownFoldersStatics2> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Objects3D());
             return S_OK;
         }
@@ -965,6 +1026,7 @@ struct produce<D, Windows::Storage::IKnownFoldersStatics2> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppCaptures());
             return S_OK;
         }
@@ -979,6 +1041,7 @@ struct produce<D, Windows::Storage::IKnownFoldersStatics2> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RecordedCalls());
             return S_OK;
         }
@@ -997,6 +1060,7 @@ struct produce<D, Windows::Storage::IKnownFoldersStatics3> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFolderForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), folderId));
             return S_OK;
         }
@@ -1015,6 +1079,7 @@ struct produce<D, Windows::Storage::IPathIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *textOperation = detach(this->shim().ReadTextAsync(*reinterpret_cast<const hstring *>(&absolutePath)));
             return S_OK;
         }
@@ -1029,6 +1094,7 @@ struct produce<D, Windows::Storage::IPathIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *textOperation = detach(this->shim().ReadTextAsync(*reinterpret_cast<const hstring *>(&absolutePath), encoding));
             return S_OK;
         }
@@ -1043,6 +1109,7 @@ struct produce<D, Windows::Storage::IPathIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *textOperation = detach(this->shim().WriteTextAsync(*reinterpret_cast<const hstring *>(&absolutePath), *reinterpret_cast<const hstring *>(&contents)));
             return S_OK;
         }
@@ -1057,6 +1124,7 @@ struct produce<D, Windows::Storage::IPathIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *textOperation = detach(this->shim().WriteTextAsync(*reinterpret_cast<const hstring *>(&absolutePath), *reinterpret_cast<const hstring *>(&contents), encoding));
             return S_OK;
         }
@@ -1071,6 +1139,7 @@ struct produce<D, Windows::Storage::IPathIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *textOperation = detach(this->shim().AppendTextAsync(*reinterpret_cast<const hstring *>(&absolutePath), *reinterpret_cast<const hstring *>(&contents)));
             return S_OK;
         }
@@ -1085,6 +1154,7 @@ struct produce<D, Windows::Storage::IPathIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *textOperation = detach(this->shim().AppendTextAsync(*reinterpret_cast<const hstring *>(&absolutePath), *reinterpret_cast<const hstring *>(&contents), encoding));
             return S_OK;
         }
@@ -1099,6 +1169,7 @@ struct produce<D, Windows::Storage::IPathIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *linesOperation = detach(this->shim().ReadLinesAsync(*reinterpret_cast<const hstring *>(&absolutePath)));
             return S_OK;
         }
@@ -1113,6 +1184,7 @@ struct produce<D, Windows::Storage::IPathIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *linesOperation = detach(this->shim().ReadLinesAsync(*reinterpret_cast<const hstring *>(&absolutePath), encoding));
             return S_OK;
         }
@@ -1127,6 +1199,7 @@ struct produce<D, Windows::Storage::IPathIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().WriteLinesAsync(*reinterpret_cast<const hstring *>(&absolutePath), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&lines)));
             return S_OK;
         }
@@ -1141,6 +1214,7 @@ struct produce<D, Windows::Storage::IPathIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().WriteLinesAsync(*reinterpret_cast<const hstring *>(&absolutePath), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&lines), encoding));
             return S_OK;
         }
@@ -1155,6 +1229,7 @@ struct produce<D, Windows::Storage::IPathIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().AppendLinesAsync(*reinterpret_cast<const hstring *>(&absolutePath), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&lines)));
             return S_OK;
         }
@@ -1169,6 +1244,7 @@ struct produce<D, Windows::Storage::IPathIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().AppendLinesAsync(*reinterpret_cast<const hstring *>(&absolutePath), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&lines), encoding));
             return S_OK;
         }
@@ -1183,6 +1259,7 @@ struct produce<D, Windows::Storage::IPathIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ReadBufferAsync(*reinterpret_cast<const hstring *>(&absolutePath)));
             return S_OK;
         }
@@ -1197,6 +1274,7 @@ struct produce<D, Windows::Storage::IPathIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().WriteBufferAsync(*reinterpret_cast<const hstring *>(&absolutePath), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&buffer)));
             return S_OK;
         }
@@ -1211,6 +1289,7 @@ struct produce<D, Windows::Storage::IPathIOStatics> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().WriteBytesAsync(*reinterpret_cast<const hstring *>(&absolutePath), array_ref<const uint8_t>(buffer, buffer + __bufferSize)));
             return S_OK;
         }
@@ -1229,6 +1308,7 @@ struct produce<D, Windows::Storage::ISetVersionDeferral> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -1246,6 +1326,7 @@ struct produce<D, Windows::Storage::ISetVersionRequest> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *currentVersion = detach(this->shim().CurrentVersion());
             return S_OK;
         }
@@ -1259,6 +1340,7 @@ struct produce<D, Windows::Storage::ISetVersionRequest> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *desiredVersion = detach(this->shim().DesiredVersion());
             return S_OK;
         }
@@ -1272,6 +1354,7 @@ struct produce<D, Windows::Storage::ISetVersionRequest> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1290,6 +1373,7 @@ struct produce<D, Windows::Storage::IStorageFile> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FileType());
             return S_OK;
         }
@@ -1304,6 +1388,7 @@ struct produce<D, Windows::Storage::IStorageFile> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentType());
             return S_OK;
         }
@@ -1318,6 +1403,7 @@ struct produce<D, Windows::Storage::IStorageFile> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().OpenAsync(accessMode));
             return S_OK;
         }
@@ -1332,6 +1418,7 @@ struct produce<D, Windows::Storage::IStorageFile> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().OpenTransactedWriteAsync());
             return S_OK;
         }
@@ -1346,6 +1433,7 @@ struct produce<D, Windows::Storage::IStorageFile> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CopyAsync(*reinterpret_cast<const Windows::Storage::IStorageFolder *>(&destinationFolder)));
             return S_OK;
         }
@@ -1360,6 +1448,7 @@ struct produce<D, Windows::Storage::IStorageFile> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CopyAsync(*reinterpret_cast<const Windows::Storage::IStorageFolder *>(&destinationFolder), *reinterpret_cast<const hstring *>(&desiredNewName)));
             return S_OK;
         }
@@ -1374,6 +1463,7 @@ struct produce<D, Windows::Storage::IStorageFile> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CopyAsync(*reinterpret_cast<const Windows::Storage::IStorageFolder *>(&destinationFolder), *reinterpret_cast<const hstring *>(&desiredNewName), option));
             return S_OK;
         }
@@ -1388,6 +1478,7 @@ struct produce<D, Windows::Storage::IStorageFile> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CopyAndReplaceAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&fileToReplace)));
             return S_OK;
         }
@@ -1402,6 +1493,7 @@ struct produce<D, Windows::Storage::IStorageFile> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().MoveAsync(*reinterpret_cast<const Windows::Storage::IStorageFolder *>(&destinationFolder)));
             return S_OK;
         }
@@ -1416,6 +1508,7 @@ struct produce<D, Windows::Storage::IStorageFile> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().MoveAsync(*reinterpret_cast<const Windows::Storage::IStorageFolder *>(&destinationFolder), *reinterpret_cast<const hstring *>(&desiredNewName)));
             return S_OK;
         }
@@ -1430,6 +1523,7 @@ struct produce<D, Windows::Storage::IStorageFile> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().MoveAsync(*reinterpret_cast<const Windows::Storage::IStorageFolder *>(&destinationFolder), *reinterpret_cast<const hstring *>(&desiredNewName), option));
             return S_OK;
         }
@@ -1444,6 +1538,7 @@ struct produce<D, Windows::Storage::IStorageFile> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().MoveAndReplaceAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&fileToReplace)));
             return S_OK;
         }
@@ -1462,6 +1557,7 @@ struct produce<D, Windows::Storage::IStorageFile2> : produce_base<D, Windows::St
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().OpenAsync(accessMode, options));
             return S_OK;
         }
@@ -1476,6 +1572,7 @@ struct produce<D, Windows::Storage::IStorageFile2> : produce_base<D, Windows::St
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().OpenTransactedWriteAsync(options));
             return S_OK;
         }
@@ -1494,6 +1591,7 @@ struct produce<D, Windows::Storage::IStorageFilePropertiesWithAvailability> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsAvailable());
             return S_OK;
         }
@@ -1511,6 +1609,7 @@ struct produce<D, Windows::Storage::IStorageFileStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFileFromPathAsync(*reinterpret_cast<const hstring *>(&path)));
             return S_OK;
         }
@@ -1525,6 +1624,7 @@ struct produce<D, Windows::Storage::IStorageFileStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFileFromApplicationUriAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -1539,6 +1639,7 @@ struct produce<D, Windows::Storage::IStorageFileStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateStreamedFileAsync(*reinterpret_cast<const hstring *>(&displayNameWithExtension), *reinterpret_cast<const Windows::Storage::StreamedFileDataRequestedHandler *>(&dataRequested), *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&thumbnail)));
             return S_OK;
         }
@@ -1553,6 +1654,7 @@ struct produce<D, Windows::Storage::IStorageFileStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ReplaceWithStreamedFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&fileToReplace), *reinterpret_cast<const Windows::Storage::StreamedFileDataRequestedHandler *>(&dataRequested), *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&thumbnail)));
             return S_OK;
         }
@@ -1567,6 +1669,7 @@ struct produce<D, Windows::Storage::IStorageFileStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateStreamedFileFromUriAsync(*reinterpret_cast<const hstring *>(&displayNameWithExtension), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&thumbnail)));
             return S_OK;
         }
@@ -1581,6 +1684,7 @@ struct produce<D, Windows::Storage::IStorageFileStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ReplaceWithStreamedFileFromUriAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&fileToReplace), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&thumbnail)));
             return S_OK;
         }
@@ -1599,6 +1703,7 @@ struct produce<D, Windows::Storage::IStorageFolder> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateFileAsync(*reinterpret_cast<const hstring *>(&desiredName)));
             return S_OK;
         }
@@ -1613,6 +1718,7 @@ struct produce<D, Windows::Storage::IStorageFolder> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateFileAsync(*reinterpret_cast<const hstring *>(&desiredName), options));
             return S_OK;
         }
@@ -1627,6 +1733,7 @@ struct produce<D, Windows::Storage::IStorageFolder> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateFolderAsync(*reinterpret_cast<const hstring *>(&desiredName)));
             return S_OK;
         }
@@ -1641,6 +1748,7 @@ struct produce<D, Windows::Storage::IStorageFolder> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateFolderAsync(*reinterpret_cast<const hstring *>(&desiredName), options));
             return S_OK;
         }
@@ -1655,6 +1763,7 @@ struct produce<D, Windows::Storage::IStorageFolder> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFileAsync(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -1669,6 +1778,7 @@ struct produce<D, Windows::Storage::IStorageFolder> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFolderAsync(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -1683,6 +1793,7 @@ struct produce<D, Windows::Storage::IStorageFolder> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetItemAsync(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -1697,6 +1808,7 @@ struct produce<D, Windows::Storage::IStorageFolder> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFilesAsync());
             return S_OK;
         }
@@ -1711,6 +1823,7 @@ struct produce<D, Windows::Storage::IStorageFolder> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFoldersAsync());
             return S_OK;
         }
@@ -1725,6 +1838,7 @@ struct produce<D, Windows::Storage::IStorageFolder> : produce_base<D, Windows::S
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetItemsAsync());
             return S_OK;
         }
@@ -1743,6 +1857,7 @@ struct produce<D, Windows::Storage::IStorageFolder2> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().TryGetItemAsync(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -1761,6 +1876,7 @@ struct produce<D, Windows::Storage::IStorageFolderStatics> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFolderFromPathAsync(*reinterpret_cast<const hstring *>(&path)));
             return S_OK;
         }
@@ -1779,6 +1895,7 @@ struct produce<D, Windows::Storage::IStorageItem> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RenameAsync(*reinterpret_cast<const hstring *>(&desiredName)));
             return S_OK;
         }
@@ -1793,6 +1910,7 @@ struct produce<D, Windows::Storage::IStorageItem> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RenameAsync(*reinterpret_cast<const hstring *>(&desiredName), option));
             return S_OK;
         }
@@ -1807,6 +1925,7 @@ struct produce<D, Windows::Storage::IStorageItem> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().DeleteAsync());
             return S_OK;
         }
@@ -1821,6 +1940,7 @@ struct produce<D, Windows::Storage::IStorageItem> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().DeleteAsync(option));
             return S_OK;
         }
@@ -1835,6 +1955,7 @@ struct produce<D, Windows::Storage::IStorageItem> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetBasicPropertiesAsync());
             return S_OK;
         }
@@ -1849,6 +1970,7 @@ struct produce<D, Windows::Storage::IStorageItem> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -1863,6 +1985,7 @@ struct produce<D, Windows::Storage::IStorageItem> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Path());
             return S_OK;
         }
@@ -1877,6 +2000,7 @@ struct produce<D, Windows::Storage::IStorageItem> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Attributes());
             return S_OK;
         }
@@ -1890,6 +2014,7 @@ struct produce<D, Windows::Storage::IStorageItem> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DateCreated());
             return S_OK;
         }
@@ -1903,6 +2028,7 @@ struct produce<D, Windows::Storage::IStorageItem> : produce_base<D, Windows::Sto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsOfType(type));
             return S_OK;
         }
@@ -1920,6 +2046,7 @@ struct produce<D, Windows::Storage::IStorageItem2> : produce_base<D, Windows::St
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetParentAsync());
             return S_OK;
         }
@@ -1934,6 +2061,7 @@ struct produce<D, Windows::Storage::IStorageItem2> : produce_base<D, Windows::St
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEqual(*reinterpret_cast<const Windows::Storage::IStorageItem *>(&item)));
             return S_OK;
         }
@@ -1951,6 +2079,7 @@ struct produce<D, Windows::Storage::IStorageItemProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetThumbnailAsync(mode));
             return S_OK;
         }
@@ -1965,6 +2094,7 @@ struct produce<D, Windows::Storage::IStorageItemProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetThumbnailAsync(mode, requestedSize));
             return S_OK;
         }
@@ -1979,6 +2109,7 @@ struct produce<D, Windows::Storage::IStorageItemProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetThumbnailAsync(mode, requestedSize, options));
             return S_OK;
         }
@@ -1993,6 +2124,7 @@ struct produce<D, Windows::Storage::IStorageItemProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -2007,6 +2139,7 @@ struct produce<D, Windows::Storage::IStorageItemProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayType());
             return S_OK;
         }
@@ -2021,6 +2154,7 @@ struct produce<D, Windows::Storage::IStorageItemProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FolderRelativeId());
             return S_OK;
         }
@@ -2035,6 +2169,7 @@ struct produce<D, Windows::Storage::IStorageItemProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -2053,6 +2188,7 @@ struct produce<D, Windows::Storage::IStorageItemProperties2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetScaledImageAsThumbnailAsync(mode));
             return S_OK;
         }
@@ -2067,6 +2203,7 @@ struct produce<D, Windows::Storage::IStorageItemProperties2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetScaledImageAsThumbnailAsync(mode, requestedSize));
             return S_OK;
         }
@@ -2081,6 +2218,7 @@ struct produce<D, Windows::Storage::IStorageItemProperties2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetScaledImageAsThumbnailAsync(mode, requestedSize, options));
             return S_OK;
         }
@@ -2099,6 +2237,7 @@ struct produce<D, Windows::Storage::IStorageItemPropertiesWithProvider> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Provider());
             return S_OK;
         }
@@ -2117,6 +2256,7 @@ struct produce<D, Windows::Storage::IStorageLibrary> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestAddFolderAsync());
             return S_OK;
         }
@@ -2131,6 +2271,7 @@ struct produce<D, Windows::Storage::IStorageLibrary> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestRemoveFolderAsync(*reinterpret_cast<const Windows::Storage::StorageFolder *>(&folder)));
             return S_OK;
         }
@@ -2145,6 +2286,7 @@ struct produce<D, Windows::Storage::IStorageLibrary> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Folders());
             return S_OK;
         }
@@ -2159,6 +2301,7 @@ struct produce<D, Windows::Storage::IStorageLibrary> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SaveFolder());
             return S_OK;
         }
@@ -2173,6 +2316,7 @@ struct produce<D, Windows::Storage::IStorageLibrary> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().DefinitionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::StorageLibrary, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -2186,6 +2330,7 @@ struct produce<D, Windows::Storage::IStorageLibrary> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DefinitionChanged(eventCookie);
             return S_OK;
         }
@@ -2203,6 +2348,7 @@ struct produce<D, Windows::Storage::IStorageLibrary2> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChangeTracker());
             return S_OK;
         }
@@ -2221,6 +2367,7 @@ struct produce<D, Windows::Storage::IStorageLibraryChange> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChangeType());
             return S_OK;
         }
@@ -2234,6 +2381,7 @@ struct produce<D, Windows::Storage::IStorageLibraryChange> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Path());
             return S_OK;
         }
@@ -2248,6 +2396,7 @@ struct produce<D, Windows::Storage::IStorageLibraryChange> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PreviousPath());
             return S_OK;
         }
@@ -2262,6 +2411,7 @@ struct produce<D, Windows::Storage::IStorageLibraryChange> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsOfType(type));
             return S_OK;
         }
@@ -2275,6 +2425,7 @@ struct produce<D, Windows::Storage::IStorageLibraryChange> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetStorageItemAsync());
             return S_OK;
         }
@@ -2293,6 +2444,7 @@ struct produce<D, Windows::Storage::IStorageLibraryChangeReader> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ReadBatchAsync());
             return S_OK;
         }
@@ -2307,6 +2459,7 @@ struct produce<D, Windows::Storage::IStorageLibraryChangeReader> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().AcceptChangesAsync());
             return S_OK;
         }
@@ -2325,6 +2478,7 @@ struct produce<D, Windows::Storage::IStorageLibraryChangeTracker> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetChangeReader());
             return S_OK;
         }
@@ -2339,6 +2493,7 @@ struct produce<D, Windows::Storage::IStorageLibraryChangeTracker> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Enable();
             return S_OK;
         }
@@ -2352,6 +2507,7 @@ struct produce<D, Windows::Storage::IStorageLibraryChangeTracker> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Reset();
             return S_OK;
         }
@@ -2369,6 +2525,7 @@ struct produce<D, Windows::Storage::IStorageLibraryStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetLibraryAsync(libraryId));
             return S_OK;
         }
@@ -2387,6 +2544,7 @@ struct produce<D, Windows::Storage::IStorageLibraryStatics2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetLibraryForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), libraryId));
             return S_OK;
         }
@@ -2405,6 +2563,7 @@ struct produce<D, Windows::Storage::IStorageProvider> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -2419,6 +2578,7 @@ struct produce<D, Windows::Storage::IStorageProvider> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -2437,6 +2597,7 @@ struct produce<D, Windows::Storage::IStorageStreamTransaction> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Stream());
             return S_OK;
         }
@@ -2451,6 +2612,7 @@ struct produce<D, Windows::Storage::IStorageStreamTransaction> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CommitAsync());
             return S_OK;
         }
@@ -2469,6 +2631,7 @@ struct produce<D, Windows::Storage::IStreamedFileDataRequest> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FailAndClose(failureMode);
             return S_OK;
         }
@@ -2486,6 +2649,7 @@ struct produce<D, Windows::Storage::ISystemAudioProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EncodingBitrate());
             return S_OK;
         }
@@ -2504,6 +2668,7 @@ struct produce<D, Windows::Storage::ISystemGPSProperties> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LatitudeDecimal());
             return S_OK;
         }
@@ -2518,6 +2683,7 @@ struct produce<D, Windows::Storage::ISystemGPSProperties> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LongitudeDecimal());
             return S_OK;
         }
@@ -2536,6 +2702,7 @@ struct produce<D, Windows::Storage::ISystemImageProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HorizontalSize());
             return S_OK;
         }
@@ -2550,6 +2717,7 @@ struct produce<D, Windows::Storage::ISystemImageProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VerticalSize());
             return S_OK;
         }
@@ -2568,6 +2736,7 @@ struct produce<D, Windows::Storage::ISystemMediaProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Duration());
             return S_OK;
         }
@@ -2582,6 +2751,7 @@ struct produce<D, Windows::Storage::ISystemMediaProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Producer());
             return S_OK;
         }
@@ -2596,6 +2766,7 @@ struct produce<D, Windows::Storage::ISystemMediaProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Publisher());
             return S_OK;
         }
@@ -2610,6 +2781,7 @@ struct produce<D, Windows::Storage::ISystemMediaProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SubTitle());
             return S_OK;
         }
@@ -2624,6 +2796,7 @@ struct produce<D, Windows::Storage::ISystemMediaProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Writer());
             return S_OK;
         }
@@ -2638,6 +2811,7 @@ struct produce<D, Windows::Storage::ISystemMediaProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Year());
             return S_OK;
         }
@@ -2656,6 +2830,7 @@ struct produce<D, Windows::Storage::ISystemMusicProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlbumArtist());
             return S_OK;
         }
@@ -2670,6 +2845,7 @@ struct produce<D, Windows::Storage::ISystemMusicProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlbumTitle());
             return S_OK;
         }
@@ -2684,6 +2860,7 @@ struct produce<D, Windows::Storage::ISystemMusicProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Artist());
             return S_OK;
         }
@@ -2698,6 +2875,7 @@ struct produce<D, Windows::Storage::ISystemMusicProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Composer());
             return S_OK;
         }
@@ -2712,6 +2890,7 @@ struct produce<D, Windows::Storage::ISystemMusicProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Conductor());
             return S_OK;
         }
@@ -2726,6 +2905,7 @@ struct produce<D, Windows::Storage::ISystemMusicProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayArtist());
             return S_OK;
         }
@@ -2740,6 +2920,7 @@ struct produce<D, Windows::Storage::ISystemMusicProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Genre());
             return S_OK;
         }
@@ -2754,6 +2935,7 @@ struct produce<D, Windows::Storage::ISystemMusicProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TrackNumber());
             return S_OK;
         }
@@ -2772,6 +2954,7 @@ struct produce<D, Windows::Storage::ISystemPhotoProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CameraManufacturer());
             return S_OK;
         }
@@ -2786,6 +2969,7 @@ struct produce<D, Windows::Storage::ISystemPhotoProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CameraModel());
             return S_OK;
         }
@@ -2800,6 +2984,7 @@ struct produce<D, Windows::Storage::ISystemPhotoProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DateTaken());
             return S_OK;
         }
@@ -2814,6 +2999,7 @@ struct produce<D, Windows::Storage::ISystemPhotoProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Orientation());
             return S_OK;
         }
@@ -2828,6 +3014,7 @@ struct produce<D, Windows::Storage::ISystemPhotoProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PeopleNames());
             return S_OK;
         }
@@ -2846,6 +3033,7 @@ struct produce<D, Windows::Storage::ISystemProperties> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Author());
             return S_OK;
         }
@@ -2860,6 +3048,7 @@ struct produce<D, Windows::Storage::ISystemProperties> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Comment());
             return S_OK;
         }
@@ -2874,6 +3063,7 @@ struct produce<D, Windows::Storage::ISystemProperties> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ItemNameDisplay());
             return S_OK;
         }
@@ -2888,6 +3078,7 @@ struct produce<D, Windows::Storage::ISystemProperties> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Keywords());
             return S_OK;
         }
@@ -2902,6 +3093,7 @@ struct produce<D, Windows::Storage::ISystemProperties> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Rating());
             return S_OK;
         }
@@ -2916,6 +3108,7 @@ struct produce<D, Windows::Storage::ISystemProperties> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -2930,6 +3123,7 @@ struct produce<D, Windows::Storage::ISystemProperties> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Audio());
             return S_OK;
         }
@@ -2944,6 +3138,7 @@ struct produce<D, Windows::Storage::ISystemProperties> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GPS());
             return S_OK;
         }
@@ -2958,6 +3153,7 @@ struct produce<D, Windows::Storage::ISystemProperties> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Media());
             return S_OK;
         }
@@ -2972,6 +3168,7 @@ struct produce<D, Windows::Storage::ISystemProperties> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Music());
             return S_OK;
         }
@@ -2986,6 +3183,7 @@ struct produce<D, Windows::Storage::ISystemProperties> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Photo());
             return S_OK;
         }
@@ -3000,6 +3198,7 @@ struct produce<D, Windows::Storage::ISystemProperties> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Video());
             return S_OK;
         }
@@ -3014,6 +3213,7 @@ struct produce<D, Windows::Storage::ISystemProperties> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Image());
             return S_OK;
         }
@@ -3032,6 +3232,7 @@ struct produce<D, Windows::Storage::ISystemVideoProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Director());
             return S_OK;
         }
@@ -3046,6 +3247,7 @@ struct produce<D, Windows::Storage::ISystemVideoProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameHeight());
             return S_OK;
         }
@@ -3060,6 +3262,7 @@ struct produce<D, Windows::Storage::ISystemVideoProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameWidth());
             return S_OK;
         }
@@ -3074,6 +3277,7 @@ struct produce<D, Windows::Storage::ISystemVideoProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Orientation());
             return S_OK;
         }
@@ -3088,6 +3292,7 @@ struct produce<D, Windows::Storage::ISystemVideoProperties> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TotalBitrate());
             return S_OK;
         }

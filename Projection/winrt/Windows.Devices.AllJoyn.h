@@ -24,6 +24,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
@@ -37,6 +38,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsEnabled(value);
             return S_OK;
         }
@@ -50,6 +52,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DefaultAppName());
             return S_OK;
         }
@@ -64,6 +67,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DefaultAppName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -77,6 +81,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppNames());
             return S_OK;
         }
@@ -91,6 +96,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DateOfManufacture());
             return S_OK;
         }
@@ -105,6 +111,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DateOfManufacture(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -118,6 +125,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DefaultDescription());
             return S_OK;
         }
@@ -132,6 +140,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DefaultDescription(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -145,6 +154,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Descriptions());
             return S_OK;
         }
@@ -159,6 +169,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DefaultManufacturer());
             return S_OK;
         }
@@ -173,6 +184,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DefaultManufacturer(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -186,6 +198,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Manufacturers());
             return S_OK;
         }
@@ -200,6 +213,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ModelNumber());
             return S_OK;
         }
@@ -214,6 +228,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ModelNumber(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -227,6 +242,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SoftwareVersion());
             return S_OK;
         }
@@ -241,6 +257,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SoftwareVersion(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -254,6 +271,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportUrl());
             return S_OK;
         }
@@ -268,6 +286,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SupportUrl(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -281,6 +300,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppId());
             return S_OK;
         }
@@ -294,6 +314,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AppId(value);
             return S_OK;
         }
@@ -311,6 +332,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -324,6 +346,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -338,6 +361,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AJSoftwareVersion());
             return S_OK;
         }
@@ -352,6 +376,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppId());
             return S_OK;
         }
@@ -365,6 +390,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DateOfManufacture());
             return S_OK;
         }
@@ -379,6 +405,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DefaultLanguage());
             return S_OK;
         }
@@ -393,6 +420,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -407,6 +435,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HardwareVersion());
             return S_OK;
         }
@@ -421,6 +450,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ModelNumber());
             return S_OK;
         }
@@ -435,6 +465,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SoftwareVersion());
             return S_OK;
         }
@@ -449,6 +480,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedLanguages());
             return S_OK;
         }
@@ -463,6 +495,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportUrl());
             return S_OK;
         }
@@ -477,6 +510,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AppName());
             return S_OK;
         }
@@ -491,6 +525,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -505,6 +540,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceName());
             return S_OK;
         }
@@ -519,6 +555,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Manufacturer());
             return S_OK;
         }
@@ -537,6 +574,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetDataBySessionPortAsync(*reinterpret_cast<const hstring *>(&uniqueName), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment), sessionPort));
             return S_OK;
         }
@@ -551,6 +589,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetDataBySessionPortAsync(*reinterpret_cast<const hstring *>(&uniqueName), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment), sessionPort, *reinterpret_cast<const Windows::Globalization::Language *>(&language)));
             return S_OK;
         }
@@ -569,6 +608,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Accept();
             return S_OK;
         }
@@ -586,6 +626,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UniqueName());
             return S_OK;
         }
@@ -600,6 +641,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SessionPort());
             return S_OK;
         }
@@ -613,6 +655,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TrafficType());
             return S_OK;
         }
@@ -626,6 +669,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SamePhysicalNode());
             return S_OK;
         }
@@ -639,6 +683,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SameNetwork());
             return S_OK;
         }
@@ -652,6 +697,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Accept();
             return S_OK;
         }
@@ -669,6 +715,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName), sessionPort, trafficType, proximity, *reinterpret_cast<const Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner *>(&acceptSessionJoiner)));
             return S_OK;
         }
@@ -687,6 +734,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEvent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AuthenticationMechanism());
             return S_OK;
         }
@@ -700,6 +748,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEvent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PeerUniqueName());
             return S_OK;
         }
@@ -714,6 +763,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEvent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Succeeded());
             return S_OK;
         }
@@ -731,6 +781,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AboutData());
             return S_OK;
         }
@@ -745,6 +796,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConnectionSpecification());
             return S_OK;
         }
@@ -759,6 +811,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().State());
             return S_OK;
         }
@@ -772,6 +825,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UniqueName());
             return S_OK;
         }
@@ -786,6 +840,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().PingAsync(*reinterpret_cast<const hstring *>(&uniqueName)));
             return S_OK;
         }
@@ -800,6 +855,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Connect();
             return S_OK;
         }
@@ -813,6 +869,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Disconnect();
             return S_OK;
         }
@@ -826,6 +883,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -839,6 +897,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StateChanged(token);
             return S_OK;
         }
@@ -852,6 +911,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AuthenticationMechanisms());
             return S_OK;
         }
@@ -866,6 +926,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CredentialsRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -879,6 +940,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CredentialsRequested(token);
             return S_OK;
         }
@@ -892,6 +954,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CredentialsVerificationRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -905,6 +968,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CredentialsVerificationRequested(token);
             return S_OK;
         }
@@ -918,6 +982,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().AuthenticationComplete(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -931,6 +996,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AuthenticationComplete(token);
             return S_OK;
         }
@@ -948,6 +1014,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetAboutDataAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo)));
             return S_OK;
         }
@@ -962,6 +1029,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetAboutDataAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo), *reinterpret_cast<const Windows::Globalization::Language *>(&language)));
             return S_OK;
         }
@@ -976,6 +1044,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().AcceptSessionJoinerRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -989,6 +1058,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AcceptSessionJoinerRequested(token);
             return S_OK;
         }
@@ -1002,6 +1072,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SessionJoined(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1015,6 +1086,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SessionJoined(token);
             return S_OK;
         }
@@ -1032,6 +1104,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentFactory> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&connectionSpecification)));
             return S_OK;
         }
@@ -1050,6 +1123,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStateChangedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().State());
             return S_OK;
         }
@@ -1063,6 +1137,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStateChangedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -1080,6 +1155,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *defaultBusAttachment = detach(this->shim().GetDefault());
             return S_OK;
         }
@@ -1094,6 +1170,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *deviceWatcher = detach(this->shim().GetWatcher(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&requiredInterfaces)));
             return S_OK;
         }
@@ -1112,6 +1189,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start();
             return S_OK;
         }
@@ -1125,6 +1203,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stop();
             return S_OK;
         }
@@ -1138,6 +1217,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddProducer(*reinterpret_cast<const Windows::Devices::AllJoyn::IAllJoynProducer *>(&producer));
             return S_OK;
         }
@@ -1151,6 +1231,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BusAttachment());
             return S_OK;
         }
@@ -1165,6 +1246,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Session());
             return S_OK;
         }
@@ -1179,6 +1261,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1192,6 +1275,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stopped(token);
             return S_OK;
         }
@@ -1209,6 +1293,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObjectFactory> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&objectPath)));
             return S_OK;
         }
@@ -1223,6 +1308,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObjectFactory> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateWithBusAttachment(*reinterpret_cast<const hstring *>(&objectPath), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment)));
             return S_OK;
         }
@@ -1241,6 +1327,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgs> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -1258,6 +1345,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgsFa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(status));
             return S_OK;
         }
@@ -1276,6 +1364,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AuthenticationMechanism());
             return S_OK;
         }
@@ -1289,6 +1378,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Certificate());
             return S_OK;
         }
@@ -1303,6 +1393,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Certificate(*reinterpret_cast<const Windows::Security::Cryptography::Certificates::Certificate *>(&value));
             return S_OK;
         }
@@ -1316,6 +1407,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PasswordCredential());
             return S_OK;
         }
@@ -1330,6 +1422,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PasswordCredential(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&value));
             return S_OK;
         }
@@ -1343,6 +1436,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timeout());
             return S_OK;
         }
@@ -1356,6 +1450,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Timeout(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -1373,6 +1468,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AttemptCount());
             return S_OK;
         }
@@ -1386,6 +1482,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Credentials());
             return S_OK;
         }
@@ -1400,6 +1497,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PeerUniqueName());
             return S_OK;
         }
@@ -1414,6 +1512,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequestedUserName());
             return S_OK;
         }
@@ -1428,6 +1527,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1446,6 +1546,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AuthenticationMechanism());
             return S_OK;
         }
@@ -1459,6 +1560,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PeerUniqueName());
             return S_OK;
         }
@@ -1473,6 +1575,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PeerCertificate());
             return S_OK;
         }
@@ -1487,6 +1590,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PeerCertificateErrorSeverity());
             return S_OK;
         }
@@ -1500,6 +1604,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PeerCertificateErrors());
             return S_OK;
         }
@@ -1514,6 +1619,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PeerIntermediateCertificates());
             return S_OK;
         }
@@ -1528,6 +1634,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Accept();
             return S_OK;
         }
@@ -1541,6 +1648,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1559,6 +1667,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynMessageInfo> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SenderUniqueName());
             return S_OK;
         }
@@ -1577,6 +1686,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynMessageInfoFactory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&senderUniqueName)));
             return S_OK;
         }
@@ -1595,6 +1705,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynProducer> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetBusObject(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusObject *>(&busObject));
             return S_OK;
         }
@@ -1612,6 +1723,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -1629,6 +1741,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgsFac
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(status));
             return S_OK;
         }
@@ -1647,6 +1760,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfo> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UniqueName());
             return S_OK;
         }
@@ -1661,6 +1775,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfo> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ObjectPath());
             return S_OK;
         }
@@ -1675,6 +1790,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfo> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SessionPort());
             return S_OK;
         }
@@ -1692,6 +1808,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoFactory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName), *reinterpret_cast<const hstring *>(&objectPath), sessionPort));
             return S_OK;
         }
@@ -1710,6 +1827,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UniqueName());
             return S_OK;
         }
@@ -1728,6 +1846,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName)));
             return S_OK;
         }
@@ -1746,6 +1865,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -1764,6 +1884,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -1777,6 +1898,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -1790,6 +1912,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RemoveMemberAsync(*reinterpret_cast<const hstring *>(&uniqueName)));
             return S_OK;
         }
@@ -1804,6 +1927,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MemberAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1817,6 +1941,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MemberAdded(token);
             return S_OK;
         }
@@ -1830,6 +1955,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MemberRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1843,6 +1969,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MemberRemoved(token);
             return S_OK;
         }
@@ -1856,6 +1983,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Lost(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1869,6 +1997,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Lost(token);
             return S_OK;
         }
@@ -1886,6 +2015,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Session());
             return S_OK;
         }
@@ -1904,6 +2034,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgsFacto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynSession *>(&session)));
             return S_OK;
         }
@@ -1922,6 +2053,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reason());
             return S_OK;
         }
@@ -1939,6 +2071,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgsFactory
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(reason));
             return S_OK;
         }
@@ -1957,6 +2090,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UniqueName());
             return S_OK;
         }
@@ -1975,6 +2109,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName)));
             return S_OK;
         }
@@ -1993,6 +2128,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UniqueName());
             return S_OK;
         }
@@ -2011,6 +2147,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&uniqueName)));
             return S_OK;
         }
@@ -2029,6 +2166,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFromServiceInfoAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo)));
             return S_OK;
         }
@@ -2043,6 +2181,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFromServiceInfoAsync(*reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynServiceInfo *>(&serviceInfo), *reinterpret_cast<const Windows::Devices::AllJoyn::AllJoynBusAttachment *>(&busAttachment)));
             return S_OK;
         }
@@ -2061,6 +2200,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ok());
             return S_OK;
         }
@@ -2074,6 +2214,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Fail());
             return S_OK;
         }
@@ -2087,6 +2228,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OperationTimedOut());
             return S_OK;
         }
@@ -2100,6 +2242,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OtherEndClosed());
             return S_OK;
         }
@@ -2113,6 +2256,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConnectionRefused());
             return S_OK;
         }
@@ -2126,6 +2270,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AuthenticationFailed());
             return S_OK;
         }
@@ -2139,6 +2284,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AuthenticationRejectedByUser());
             return S_OK;
         }
@@ -2152,6 +2298,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SslConnectFailed());
             return S_OK;
         }
@@ -2165,6 +2312,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SslIdentityVerificationFailed());
             return S_OK;
         }
@@ -2178,6 +2326,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InsufficientSecurity());
             return S_OK;
         }
@@ -2191,6 +2340,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InvalidArgument1());
             return S_OK;
         }
@@ -2204,6 +2354,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InvalidArgument2());
             return S_OK;
         }
@@ -2217,6 +2368,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InvalidArgument3());
             return S_OK;
         }
@@ -2230,6 +2382,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InvalidArgument4());
             return S_OK;
         }
@@ -2243,6 +2396,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InvalidArgument5());
             return S_OK;
         }
@@ -2256,6 +2410,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InvalidArgument6());
             return S_OK;
         }
@@ -2269,6 +2424,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InvalidArgument7());
             return S_OK;
         }
@@ -2282,6 +2438,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InvalidArgument8());
             return S_OK;
         }
@@ -2299,6 +2456,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgs> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -2316,6 +2474,7 @@ struct produce<D, Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgsFact
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(status));
             return S_OK;
         }

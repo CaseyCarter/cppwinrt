@@ -20,6 +20,7 @@ struct produce<D, Windows::ApplicationModel::Calls::ICallAnswerEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AcceptedMedia());
             return S_OK;
         }
@@ -37,6 +38,7 @@ struct produce<D, Windows::ApplicationModel::Calls::ICallRejectEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RejectReason());
             return S_OK;
         }
@@ -54,6 +56,7 @@ struct produce<D, Windows::ApplicationModel::Calls::ICallStateChangeEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().State());
             return S_OK;
         }
@@ -71,6 +74,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IMuteChangeEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Muted());
             return S_OK;
         }
@@ -88,6 +92,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -102,6 +107,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Address());
             return S_OK;
         }
@@ -116,6 +122,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Address(*reinterpret_cast<const Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress *>(&value));
             return S_OK;
         }
@@ -129,6 +136,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Duration());
             return S_OK;
         }
@@ -143,6 +151,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Duration(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
             return S_OK;
         }
@@ -156,6 +165,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCallerIdBlocked());
             return S_OK;
         }
@@ -169,6 +179,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsCallerIdBlocked(value);
             return S_OK;
         }
@@ -182,6 +193,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEmergency());
             return S_OK;
         }
@@ -195,6 +207,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsEmergency(value);
             return S_OK;
         }
@@ -208,6 +221,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsIncoming());
             return S_OK;
         }
@@ -221,6 +235,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsIncoming(value);
             return S_OK;
         }
@@ -234,6 +249,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsMissed());
             return S_OK;
         }
@@ -247,6 +263,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsMissed(value);
             return S_OK;
         }
@@ -260,6 +277,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsRinging());
             return S_OK;
         }
@@ -273,6 +291,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsRinging(value);
             return S_OK;
         }
@@ -286,6 +305,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsSeen());
             return S_OK;
         }
@@ -299,6 +319,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsSeen(value);
             return S_OK;
         }
@@ -312,6 +333,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsSuppressed());
             return S_OK;
         }
@@ -325,6 +347,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsSuppressed(value);
             return S_OK;
         }
@@ -338,6 +361,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsVoicemail());
             return S_OK;
         }
@@ -351,6 +375,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsVoicemail(value);
             return S_OK;
         }
@@ -364,6 +389,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Media());
             return S_OK;
         }
@@ -377,6 +403,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Media(value);
             return S_OK;
         }
@@ -390,6 +417,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OtherAppReadAccess());
             return S_OK;
         }
@@ -403,6 +431,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OtherAppReadAccess(value);
             return S_OK;
         }
@@ -416,6 +445,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteId());
             return S_OK;
         }
@@ -430,6 +460,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -443,6 +474,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourceDisplayName());
             return S_OK;
         }
@@ -457,6 +489,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourceId());
             return S_OK;
         }
@@ -471,6 +504,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -484,6 +518,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourceIdKind());
             return S_OK;
         }
@@ -497,6 +532,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SourceIdKind(value);
             return S_OK;
         }
@@ -510,6 +546,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StartTime());
             return S_OK;
         }
@@ -523,6 +560,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -540,6 +578,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryAddres
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContactId());
             return S_OK;
         }
@@ -554,6 +593,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryAddres
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContactId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -567,6 +607,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryAddres
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -581,6 +622,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryAddres
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -594,6 +636,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryAddres
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RawAddress());
             return S_OK;
         }
@@ -608,6 +651,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryAddres
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RawAddress(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -621,6 +665,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryAddres
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RawAddressKind());
             return S_OK;
         }
@@ -634,6 +679,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryAddres
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RawAddressKind(value);
             return S_OK;
         }
@@ -651,6 +697,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryAddres
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const hstring *>(&rawAddress), rawAddressKind));
             return S_OK;
         }
@@ -669,6 +716,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryQueryO
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredMedia());
             return S_OK;
         }
@@ -682,6 +730,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryQueryO
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DesiredMedia(value);
             return S_OK;
         }
@@ -695,6 +744,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryQueryO
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SourceIds());
             return S_OK;
         }
@@ -713,6 +763,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryReader
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReadBatchAsync());
             return S_OK;
         }
@@ -731,6 +782,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryManagerForU
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestStoreAsync(accessType));
             return S_OK;
         }
@@ -745,6 +797,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryManagerForU
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().User());
             return S_OK;
         }
@@ -763,6 +816,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryManagerStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestStoreAsync(accessType));
             return S_OK;
         }
@@ -781,6 +835,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryManagerStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }
@@ -799,6 +854,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryStore> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetEntryAsync(*reinterpret_cast<const hstring *>(&callHistoryEntryId)));
             return S_OK;
         }
@@ -813,6 +869,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryStore> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetEntryReader());
             return S_OK;
         }
@@ -827,6 +884,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryStore> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetEntryReader(*reinterpret_cast<const Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryOptions *>(&queryOptions)));
             return S_OK;
         }
@@ -841,6 +899,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryStore> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SaveEntryAsync(*reinterpret_cast<const Windows::ApplicationModel::Calls::PhoneCallHistoryEntry *>(&callHistoryEntry)));
             return S_OK;
         }
@@ -855,6 +914,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryStore> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DeleteEntryAsync(*reinterpret_cast<const Windows::ApplicationModel::Calls::PhoneCallHistoryEntry *>(&callHistoryEntry)));
             return S_OK;
         }
@@ -869,6 +929,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryStore> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DeleteEntriesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> *>(&callHistoryEntries)));
             return S_OK;
         }
@@ -883,6 +944,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryStore> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MarkEntryAsSeenAsync(*reinterpret_cast<const Windows::ApplicationModel::Calls::PhoneCallHistoryEntry *>(&callHistoryEntry)));
             return S_OK;
         }
@@ -897,6 +959,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryStore> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MarkEntriesAsSeenAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> *>(&callHistoryEntries)));
             return S_OK;
         }
@@ -911,6 +974,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryStore> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetUnseenCountAsync());
             return S_OK;
         }
@@ -925,6 +989,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryStore> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MarkAllAsSeenAsync());
             return S_OK;
         }
@@ -939,6 +1004,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryStore> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetSourcesUnseenCountAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&sourceIds)));
             return S_OK;
         }
@@ -953,6 +1019,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IPhoneCallHistoryStore> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MarkSourcesAsSeenAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&sourceIds)));
             return S_OK;
         }
@@ -971,6 +1038,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipCallCoordinator> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ReserveCallResourcesAsync(*reinterpret_cast<const hstring *>(&taskEntryPoint)));
             return S_OK;
         }
@@ -985,6 +1053,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipCallCoordinator> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MuteStateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipCallCoordinator, Windows::ApplicationModel::Calls::MuteChangeEventArgs> *>(&muteChangeHandler)));
             return S_OK;
         }
@@ -998,6 +1067,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipCallCoordinator> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MuteStateChanged(token);
             return S_OK;
         }
@@ -1011,6 +1081,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipCallCoordinator> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *call = detach(this->shim().RequestNewIncomingCall(*reinterpret_cast<const hstring *>(&context), *reinterpret_cast<const hstring *>(&contactName), *reinterpret_cast<const hstring *>(&contactNumber), *reinterpret_cast<const Windows::Foundation::Uri *>(&contactImage), *reinterpret_cast<const hstring *>(&serviceName), *reinterpret_cast<const Windows::Foundation::Uri *>(&brandingImage), *reinterpret_cast<const hstring *>(&callDetails), *reinterpret_cast<const Windows::Foundation::Uri *>(&ringtone), media, *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&ringTimeout)));
             return S_OK;
         }
@@ -1025,6 +1096,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipCallCoordinator> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *call = detach(this->shim().RequestNewOutgoingCall(*reinterpret_cast<const hstring *>(&context), *reinterpret_cast<const hstring *>(&contactName), *reinterpret_cast<const hstring *>(&serviceName), media));
             return S_OK;
         }
@@ -1039,6 +1111,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipCallCoordinator> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyMuted();
             return S_OK;
         }
@@ -1052,6 +1125,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipCallCoordinator> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyUnmuted();
             return S_OK;
         }
@@ -1065,6 +1139,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipCallCoordinator> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *call = detach(this->shim().RequestOutgoingUpgradeToVideoCall(callUpgradeGuid, *reinterpret_cast<const hstring *>(&context), *reinterpret_cast<const hstring *>(&contactName), *reinterpret_cast<const hstring *>(&serviceName)));
             return S_OK;
         }
@@ -1079,6 +1154,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipCallCoordinator> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *call = detach(this->shim().RequestIncomingUpgradeToVideoCall(*reinterpret_cast<const hstring *>(&context), *reinterpret_cast<const hstring *>(&contactName), *reinterpret_cast<const hstring *>(&contactNumber), *reinterpret_cast<const Windows::Foundation::Uri *>(&contactImage), *reinterpret_cast<const hstring *>(&serviceName), *reinterpret_cast<const Windows::Foundation::Uri *>(&brandingImage), *reinterpret_cast<const hstring *>(&callDetails), *reinterpret_cast<const Windows::Foundation::Uri *>(&ringtone), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&ringTimeout)));
             return S_OK;
         }
@@ -1093,6 +1169,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipCallCoordinator> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TerminateCellularCall(callUpgradeGuid);
             return S_OK;
         }
@@ -1106,6 +1183,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipCallCoordinator> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CancelUpgrade(callUpgradeGuid);
             return S_OK;
         }
@@ -1123,6 +1201,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipCallCoordinatorStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *coordinator = detach(this->shim().GetDefault());
             return S_OK;
         }
@@ -1141,6 +1220,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().EndRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallStateChangeEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1154,6 +1234,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EndRequested(token);
             return S_OK;
         }
@@ -1167,6 +1248,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().HoldRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallStateChangeEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1180,6 +1262,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().HoldRequested(token);
             return S_OK;
         }
@@ -1193,6 +1276,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ResumeRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallStateChangeEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1206,6 +1290,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ResumeRequested(token);
             return S_OK;
         }
@@ -1219,6 +1304,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().AnswerRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallAnswerEventArgs> *>(&acceptHandler)));
             return S_OK;
         }
@@ -1232,6 +1318,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AnswerRequested(token);
             return S_OK;
         }
@@ -1245,6 +1332,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RejectRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallRejectEventArgs> *>(&rejectHandler)));
             return S_OK;
         }
@@ -1258,6 +1346,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RejectRequested(token);
             return S_OK;
         }
@@ -1271,6 +1360,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyCallHeld();
             return S_OK;
         }
@@ -1284,6 +1374,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyCallActive();
             return S_OK;
         }
@@ -1297,6 +1388,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyCallEnded();
             return S_OK;
         }
@@ -1310,6 +1402,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContactName());
             return S_OK;
         }
@@ -1324,6 +1417,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContactName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1337,6 +1431,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StartTime());
             return S_OK;
         }
@@ -1350,6 +1445,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -1363,6 +1459,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CallMedia());
             return S_OK;
         }
@@ -1376,6 +1473,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CallMedia(value);
             return S_OK;
         }
@@ -1389,6 +1487,7 @@ struct produce<D, Windows::ApplicationModel::Calls::IVoipPhoneCall> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyCallReady();
             return S_OK;
         }

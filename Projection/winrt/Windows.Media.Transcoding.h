@@ -23,6 +23,7 @@ struct produce<D, Windows::Media::Transcoding::IMediaTranscoder> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TrimStartTime(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -36,6 +37,7 @@ struct produce<D, Windows::Media::Transcoding::IMediaTranscoder> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TrimStartTime());
             return S_OK;
         }
@@ -49,6 +51,7 @@ struct produce<D, Windows::Media::Transcoding::IMediaTranscoder> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TrimStopTime(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -62,6 +65,7 @@ struct produce<D, Windows::Media::Transcoding::IMediaTranscoder> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TrimStopTime());
             return S_OK;
         }
@@ -75,6 +79,7 @@ struct produce<D, Windows::Media::Transcoding::IMediaTranscoder> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AlwaysReencode(value);
             return S_OK;
         }
@@ -88,6 +93,7 @@ struct produce<D, Windows::Media::Transcoding::IMediaTranscoder> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlwaysReencode());
             return S_OK;
         }
@@ -101,6 +107,7 @@ struct produce<D, Windows::Media::Transcoding::IMediaTranscoder> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().HardwareAccelerationEnabled(value);
             return S_OK;
         }
@@ -114,6 +121,7 @@ struct produce<D, Windows::Media::Transcoding::IMediaTranscoder> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HardwareAccelerationEnabled());
             return S_OK;
         }
@@ -127,6 +135,7 @@ struct produce<D, Windows::Media::Transcoding::IMediaTranscoder> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddAudioEffect(*reinterpret_cast<const hstring *>(&activatableClassId));
             return S_OK;
         }
@@ -140,6 +149,7 @@ struct produce<D, Windows::Media::Transcoding::IMediaTranscoder> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddAudioEffect(*reinterpret_cast<const hstring *>(&activatableClassId), effectRequired, *reinterpret_cast<const Windows::Foundation::Collections::IPropertySet *>(&configuration));
             return S_OK;
         }
@@ -153,6 +163,7 @@ struct produce<D, Windows::Media::Transcoding::IMediaTranscoder> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddVideoEffect(*reinterpret_cast<const hstring *>(&activatableClassId));
             return S_OK;
         }
@@ -166,6 +177,7 @@ struct produce<D, Windows::Media::Transcoding::IMediaTranscoder> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddVideoEffect(*reinterpret_cast<const hstring *>(&activatableClassId), effectRequired, *reinterpret_cast<const Windows::Foundation::Collections::IPropertySet *>(&configuration));
             return S_OK;
         }
@@ -179,6 +191,7 @@ struct produce<D, Windows::Media::Transcoding::IMediaTranscoder> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClearEffects();
             return S_OK;
         }
@@ -192,6 +205,7 @@ struct produce<D, Windows::Media::Transcoding::IMediaTranscoder> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().PrepareFileTranscodeAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&source), *reinterpret_cast<const Windows::Storage::IStorageFile *>(&destination), *reinterpret_cast<const Windows::Media::MediaProperties::MediaEncodingProfile *>(&profile)));
             return S_OK;
         }
@@ -206,6 +220,7 @@ struct produce<D, Windows::Media::Transcoding::IMediaTranscoder> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().PrepareStreamTranscodeAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&source), *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&destination), *reinterpret_cast<const Windows::Media::MediaProperties::MediaEncodingProfile *>(&profile)));
             return S_OK;
         }
@@ -224,6 +239,7 @@ struct produce<D, Windows::Media::Transcoding::IMediaTranscoder2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().PrepareMediaStreamSourceTranscodeAsync(*reinterpret_cast<const Windows::Media::Core::IMediaSource *>(&source), *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&destination), *reinterpret_cast<const Windows::Media::MediaProperties::MediaEncodingProfile *>(&profile)));
             return S_OK;
         }
@@ -238,6 +254,7 @@ struct produce<D, Windows::Media::Transcoding::IMediaTranscoder2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VideoProcessingAlgorithm(value);
             return S_OK;
         }
@@ -251,6 +268,7 @@ struct produce<D, Windows::Media::Transcoding::IMediaTranscoder2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VideoProcessingAlgorithm());
             return S_OK;
         }
@@ -268,6 +286,7 @@ struct produce<D, Windows::Media::Transcoding::IPrepareTranscodeResult> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanTranscode());
             return S_OK;
         }
@@ -281,6 +300,7 @@ struct produce<D, Windows::Media::Transcoding::IPrepareTranscodeResult> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FailureReason());
             return S_OK;
         }
@@ -294,6 +314,7 @@ struct produce<D, Windows::Media::Transcoding::IPrepareTranscodeResult> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().TranscodeAsync());
             return S_OK;
         }

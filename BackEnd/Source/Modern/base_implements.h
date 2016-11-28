@@ -389,6 +389,24 @@ struct implements : impl::producer<D, impl::uncloak_t<I>> ...
         return target;
     }
 
+    struct abi_guard
+    {
+        abi_guard(D & derived) :
+            m_derived(derived)
+        {
+            m_derived.abi_enter();
+        }
+
+        ~abi_guard()
+        {
+            m_derived.abi_exit();
+        }
+
+    private:
+
+        D & m_derived;
+    };
+
 protected:
 
     implements(uint32_t references = 1) :
@@ -442,6 +460,9 @@ protected:
     }
 
 private:
+
+    void abi_enter() noexcept {}
+    void abi_exit() noexcept {}
 
     using is_agile = std::negation<impl::disjunction<std::is_same<non_agile, I> ...>>;
     using is_factory = impl::disjunction<std::is_same<ABI::Windows::Foundation::IActivationFactory, abi<I>> ...>;
@@ -722,4 +743,7 @@ private:
 
     template <typename D, typename I>
     friend struct impl::produce_base;
+
+    template <typename D, typename I>
+    friend struct impl::produce;
 };

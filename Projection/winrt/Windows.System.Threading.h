@@ -73,6 +73,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolStatics> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RunAsync(*reinterpret_cast<const Windows::System::Threading::WorkItemHandler *>(&handler)));
             return S_OK;
         }
@@ -87,6 +88,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolStatics> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RunAsync(*reinterpret_cast<const Windows::System::Threading::WorkItemHandler *>(&handler), priority));
             return S_OK;
         }
@@ -101,6 +103,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolStatics> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RunAsync(*reinterpret_cast<const Windows::System::Threading::WorkItemHandler *>(&handler), priority, options));
             return S_OK;
         }
@@ -119,6 +122,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolTimer> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Period());
             return S_OK;
         }
@@ -132,6 +136,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolTimer> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Delay());
             return S_OK;
         }
@@ -145,6 +150,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolTimer> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Cancel();
             return S_OK;
         }
@@ -162,6 +168,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolTimerStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *timer = detach(this->shim().CreatePeriodicTimer(*reinterpret_cast<const Windows::System::Threading::TimerElapsedHandler *>(&handler), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&period)));
             return S_OK;
         }
@@ -176,6 +183,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolTimerStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *timer = detach(this->shim().CreateTimer(*reinterpret_cast<const Windows::System::Threading::TimerElapsedHandler *>(&handler), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&delay)));
             return S_OK;
         }
@@ -190,6 +198,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolTimerStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *timer = detach(this->shim().CreatePeriodicTimer(*reinterpret_cast<const Windows::System::Threading::TimerElapsedHandler *>(&handler), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&period), *reinterpret_cast<const Windows::System::Threading::TimerDestroyedHandler *>(&destroyed)));
             return S_OK;
         }
@@ -204,6 +213,7 @@ struct produce<D, Windows::System::Threading::IThreadPoolTimerStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *timer = detach(this->shim().CreateTimer(*reinterpret_cast<const Windows::System::Threading::TimerElapsedHandler *>(&handler), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&delay), *reinterpret_cast<const Windows::System::Threading::TimerDestroyedHandler *>(&destroyed)));
             return S_OK;
         }

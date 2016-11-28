@@ -20,6 +20,7 @@ struct produce<D, Windows::Devices::SerialCommunication::IErrorReceivedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Error());
             return S_OK;
         }
@@ -37,6 +38,7 @@ struct produce<D, Windows::Devices::SerialCommunication::IPinChangedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PinChange());
             return S_OK;
         }
@@ -54,6 +56,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BaudRate());
             return S_OK;
         }
@@ -67,6 +70,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BaudRate(value);
             return S_OK;
         }
@@ -80,6 +84,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BreakSignalState());
             return S_OK;
         }
@@ -93,6 +98,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BreakSignalState(value);
             return S_OK;
         }
@@ -106,6 +112,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BytesReceived());
             return S_OK;
         }
@@ -119,6 +126,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CarrierDetectState());
             return S_OK;
         }
@@ -132,6 +140,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClearToSendState());
             return S_OK;
         }
@@ -145,6 +154,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataBits());
             return S_OK;
         }
@@ -158,6 +168,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DataBits(value);
             return S_OK;
         }
@@ -171,6 +182,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataSetReadyState());
             return S_OK;
         }
@@ -184,6 +196,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handshake());
             return S_OK;
         }
@@ -197,6 +210,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handshake(value);
             return S_OK;
         }
@@ -210,6 +224,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDataTerminalReadyEnabled());
             return S_OK;
         }
@@ -223,6 +238,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsDataTerminalReadyEnabled(value);
             return S_OK;
         }
@@ -236,6 +252,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsRequestToSendEnabled());
             return S_OK;
         }
@@ -249,6 +266,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsRequestToSendEnabled(value);
             return S_OK;
         }
@@ -262,6 +280,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Parity());
             return S_OK;
         }
@@ -275,6 +294,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Parity(value);
             return S_OK;
         }
@@ -288,6 +308,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PortName());
             return S_OK;
         }
@@ -302,6 +323,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadTimeout());
             return S_OK;
         }
@@ -315,6 +337,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadTimeout(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -328,6 +351,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StopBits());
             return S_OK;
         }
@@ -341,6 +365,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StopBits(value);
             return S_OK;
         }
@@ -354,6 +379,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsbVendorId());
             return S_OK;
         }
@@ -367,6 +393,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UsbProductId());
             return S_OK;
         }
@@ -380,6 +407,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WriteTimeout());
             return S_OK;
         }
@@ -393,6 +421,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteTimeout(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -406,6 +435,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InputStream());
             return S_OK;
         }
@@ -420,6 +450,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OutputStream());
             return S_OK;
         }
@@ -434,6 +465,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ErrorReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::ErrorReceivedEventArgs> *>(&reportHandler)));
             return S_OK;
         }
@@ -447,6 +479,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ErrorReceived(token);
             return S_OK;
         }
@@ -460,6 +493,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PinChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::PinChangedEventArgs> *>(&reportHandler)));
             return S_OK;
         }
@@ -473,6 +507,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDevice> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PinChanged(token);
             return S_OK;
         }
@@ -490,6 +525,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDeviceStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -504,6 +540,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDeviceStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDeviceSelector(*reinterpret_cast<const hstring *>(&portName)));
             return S_OK;
         }
@@ -518,6 +555,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDeviceStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDeviceSelectorFromUsbVidPid(vendorId, productId));
             return S_OK;
         }
@@ -532,6 +570,7 @@ struct produce<D, Windows::Devices::SerialCommunication::ISerialDeviceStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }

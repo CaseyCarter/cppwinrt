@@ -19,6 +19,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -33,6 +34,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Priority());
             return S_OK;
         }
@@ -46,6 +48,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccountKind());
             return S_OK;
         }
@@ -63,6 +66,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentKinds());
             return S_OK;
         }
@@ -76,6 +80,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PartnerAccountInfos());
             return S_OK;
         }
@@ -90,6 +95,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportCompleted(*reinterpret_cast<const hstring *>(&userDataAccountId));
             return S_OK;
         }
@@ -107,6 +113,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -124,6 +131,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserDataAccountId());
             return S_OK;
         }
@@ -138,6 +146,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportCompleted();
             return S_OK;
         }
@@ -155,6 +164,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserDataAccountId());
             return S_OK;
         }
@@ -169,6 +179,7 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportCompleted();
             return S_OK;
         }

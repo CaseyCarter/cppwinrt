@@ -22,6 +22,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatCapabilities> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsOnline());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatCapabilities> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsChatCapable());
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatCapabilities> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsFileTransferCapable());
             return S_OK;
         }
@@ -61,6 +64,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatCapabilities> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsGeoLocationPushCapable());
             return S_OK;
         }
@@ -74,6 +78,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatCapabilities> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsIntegratedMessagingCapable());
             return S_OK;
         }
@@ -91,6 +96,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatCapabilitiesManagerStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetCachedCapabilitiesAsync(*reinterpret_cast<const hstring *>(&address)));
             return S_OK;
         }
@@ -105,6 +111,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatCapabilitiesManagerStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetCapabilitiesFromNetworkAsync(*reinterpret_cast<const hstring *>(&address)));
             return S_OK;
         }
@@ -123,6 +130,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().HasUnreadMessages());
             return S_OK;
         }
@@ -136,6 +144,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Id());
             return S_OK;
         }
@@ -150,6 +159,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Subject());
             return S_OK;
         }
@@ -164,6 +174,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Subject(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -177,6 +188,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsConversationMuted());
             return S_OK;
         }
@@ -190,6 +202,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsConversationMuted(value);
             return S_OK;
         }
@@ -203,6 +216,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MostRecentMessageId());
             return S_OK;
         }
@@ -217,6 +231,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Participants());
             return S_OK;
         }
@@ -231,6 +246,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ThreadingInfo());
             return S_OK;
         }
@@ -245,6 +261,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DeleteAsync());
             return S_OK;
         }
@@ -259,6 +276,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetMessageReader());
             return S_OK;
         }
@@ -273,6 +291,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MarkMessagesAsReadAsync());
             return S_OK;
         }
@@ -287,6 +306,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MarkMessagesAsReadAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value)));
             return S_OK;
         }
@@ -301,6 +321,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SaveAsync());
             return S_OK;
         }
@@ -315,6 +336,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyLocalParticipantComposing(*reinterpret_cast<const hstring *>(&transportId), *reinterpret_cast<const hstring *>(&participantAddress), isComposing);
             return S_OK;
         }
@@ -328,6 +350,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NotifyRemoteParticipantComposing(*reinterpret_cast<const hstring *>(&transportId), *reinterpret_cast<const hstring *>(&participantAddress), isComposing);
             return S_OK;
         }
@@ -341,6 +364,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RemoteParticipantComposingChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Chat::ChatConversation, Windows::ApplicationModel::Chat::RemoteParticipantComposingChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -354,6 +378,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteParticipantComposingChanged(token);
             return S_OK;
         }
@@ -371,6 +396,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CanModifyParticipants());
             return S_OK;
         }
@@ -384,6 +410,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversation2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanModifyParticipants(value);
             return S_OK;
         }
@@ -401,6 +428,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversationReader> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReadBatchAsync());
             return S_OK;
         }
@@ -415,6 +443,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversationReader> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReadBatchAsync(count));
             return S_OK;
         }
@@ -433,6 +462,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversationThreadingInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ContactId());
             return S_OK;
         }
@@ -447,6 +477,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversationThreadingInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContactId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -460,6 +491,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversationThreadingInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Custom());
             return S_OK;
         }
@@ -474,6 +506,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversationThreadingInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Custom(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -487,6 +520,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversationThreadingInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ConversationId());
             return S_OK;
         }
@@ -501,6 +535,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversationThreadingInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ConversationId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -514,6 +549,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversationThreadingInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Participants());
             return S_OK;
         }
@@ -528,6 +564,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversationThreadingInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Kind());
             return S_OK;
         }
@@ -541,6 +578,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatConversationThreadingInf
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Kind(value);
             return S_OK;
         }
@@ -558,6 +596,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatItem> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ItemKind());
             return S_OK;
         }
@@ -575,6 +614,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Attachments());
             return S_OK;
         }
@@ -589,6 +629,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Body());
             return S_OK;
         }
@@ -603,6 +644,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Body(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -616,6 +658,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().From());
             return S_OK;
         }
@@ -630,6 +673,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -644,6 +688,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsForwardingDisabled());
             return S_OK;
         }
@@ -657,6 +702,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsIncoming());
             return S_OK;
         }
@@ -670,6 +716,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsRead());
             return S_OK;
         }
@@ -683,6 +730,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalTimestamp());
             return S_OK;
         }
@@ -696,6 +744,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkTimestamp());
             return S_OK;
         }
@@ -709,6 +758,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Recipients());
             return S_OK;
         }
@@ -723,6 +773,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RecipientSendStatuses());
             return S_OK;
         }
@@ -737,6 +788,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -750,6 +802,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Subject());
             return S_OK;
         }
@@ -764,6 +817,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TransportFriendlyName());
             return S_OK;
         }
@@ -778,6 +832,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TransportId());
             return S_OK;
         }
@@ -792,6 +847,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransportId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -809,6 +865,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().EstimatedDownloadSize());
             return S_OK;
         }
@@ -822,6 +879,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EstimatedDownloadSize(value);
             return S_OK;
         }
@@ -835,6 +893,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().From(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -848,6 +907,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsAutoReply());
             return S_OK;
         }
@@ -861,6 +921,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsAutoReply(value);
             return S_OK;
         }
@@ -874,6 +935,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsForwardingDisabled(value);
             return S_OK;
         }
@@ -887,6 +949,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsReplyDisabled());
             return S_OK;
         }
@@ -900,6 +963,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsIncoming(value);
             return S_OK;
         }
@@ -913,6 +977,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsRead(value);
             return S_OK;
         }
@@ -926,6 +991,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsSeen());
             return S_OK;
         }
@@ -939,6 +1005,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsSeen(value);
             return S_OK;
         }
@@ -952,6 +1019,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsSimMessage());
             return S_OK;
         }
@@ -965,6 +1033,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LocalTimestamp(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -978,6 +1047,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MessageKind());
             return S_OK;
         }
@@ -991,6 +1061,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MessageKind(value);
             return S_OK;
         }
@@ -1004,6 +1075,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MessageOperatorKind());
             return S_OK;
         }
@@ -1017,6 +1089,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MessageOperatorKind(value);
             return S_OK;
         }
@@ -1030,6 +1103,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NetworkTimestamp(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -1043,6 +1117,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsReceivedDuringQuietHours());
             return S_OK;
         }
@@ -1056,6 +1131,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsReceivedDuringQuietHours(value);
             return S_OK;
         }
@@ -1069,6 +1145,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1082,6 +1159,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Status(value);
             return S_OK;
         }
@@ -1095,6 +1173,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Subject(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1108,6 +1187,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ShouldSuppressNotification());
             return S_OK;
         }
@@ -1121,6 +1201,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShouldSuppressNotification(value);
             return S_OK;
         }
@@ -1134,6 +1215,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ThreadingInfo());
             return S_OK;
         }
@@ -1148,6 +1230,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ThreadingInfo(*reinterpret_cast<const Windows::ApplicationModel::Chat::ChatConversationThreadingInfo *>(&value));
             return S_OK;
         }
@@ -1161,6 +1244,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RecipientsDeliveryInfos());
             return S_OK;
         }
@@ -1179,6 +1263,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage3> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteId());
             return S_OK;
         }
@@ -1197,6 +1282,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage4> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SyncId());
             return S_OK;
         }
@@ -1211,6 +1297,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessage4> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SyncId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1228,6 +1315,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageAttachment> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataStreamReference());
             return S_OK;
         }
@@ -1242,6 +1330,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageAttachment> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DataStreamReference(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
@@ -1255,6 +1344,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageAttachment> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GroupId());
             return S_OK;
         }
@@ -1268,6 +1358,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageAttachment> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GroupId(value);
             return S_OK;
         }
@@ -1281,6 +1372,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageAttachment> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MimeType());
             return S_OK;
         }
@@ -1295,6 +1387,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageAttachment> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MimeType(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1308,6 +1401,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageAttachment> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -1322,6 +1416,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageAttachment> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Text(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1339,6 +1434,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageAttachment2> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Thumbnail());
             return S_OK;
         }
@@ -1353,6 +1449,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageAttachment2> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Thumbnail(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
             return S_OK;
         }
@@ -1366,6 +1463,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageAttachment2> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TransferProgress());
             return S_OK;
         }
@@ -1379,6 +1477,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageAttachment2> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransferProgress(value);
             return S_OK;
         }
@@ -1392,6 +1491,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageAttachment2> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().OriginalFileName());
             return S_OK;
         }
@@ -1406,6 +1506,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageAttachment2> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OriginalFileName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1423,6 +1524,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageAttachmentFactory
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateChatMessageAttachment(*reinterpret_cast<const hstring *>(&mimeType), *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&dataStreamReference)));
             return S_OK;
         }
@@ -1441,6 +1543,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageBlockingStatic> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MarkMessageAsBlockedAsync(*reinterpret_cast<const hstring *>(&localChatMessageId), blocked));
             return S_OK;
         }
@@ -1459,6 +1562,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageChange> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChangeType());
             return S_OK;
         }
@@ -1472,6 +1576,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageChange> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Message());
             return S_OK;
         }
@@ -1490,6 +1595,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageChangeReader> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AcceptChanges();
             return S_OK;
         }
@@ -1503,6 +1609,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageChangeReader> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AcceptChangesThrough(*reinterpret_cast<const Windows::ApplicationModel::Chat::ChatMessageChange *>(&lastChangeToAcknowledge));
             return S_OK;
         }
@@ -1516,6 +1623,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageChangeReader> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadBatchAsync());
             return S_OK;
         }
@@ -1534,6 +1642,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageChangeTracker> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Enable();
             return S_OK;
         }
@@ -1547,6 +1656,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageChangeTracker> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetChangeReader());
             return S_OK;
         }
@@ -1561,6 +1671,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageChangeTracker> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Reset();
             return S_OK;
         }
@@ -1578,6 +1689,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageChangedDeferral> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -1595,6 +1707,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageChangedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1613,6 +1726,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageManager2Statics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RegisterTransportAsync());
             return S_OK;
         }
@@ -1627,6 +1741,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageManager2Statics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetTransportAsync(*reinterpret_cast<const hstring *>(&transportId)));
             return S_OK;
         }
@@ -1645,6 +1760,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageManagerStatic> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetTransportsAsync());
             return S_OK;
         }
@@ -1659,6 +1775,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageManagerStatic> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequestStoreAsync());
             return S_OK;
         }
@@ -1673,6 +1790,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageManagerStatic> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShowComposeSmsMessageAsync(*reinterpret_cast<const Windows::ApplicationModel::Chat::ChatMessage *>(&message)));
             return S_OK;
         }
@@ -1687,6 +1805,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageManagerStatic> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShowSmsSettings();
             return S_OK;
         }
@@ -1704,6 +1823,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageManagerStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestSyncManagerAsync());
             return S_OK;
         }
@@ -1722,6 +1842,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageNotificationTrigg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChatMessage());
             return S_OK;
         }
@@ -1740,6 +1861,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageNotificationTrigg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ShouldDisplayToast());
             return S_OK;
         }
@@ -1753,6 +1875,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageNotificationTrigg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ShouldUpdateDetailText());
             return S_OK;
         }
@@ -1766,6 +1889,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageNotificationTrigg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ShouldUpdateBadge());
             return S_OK;
         }
@@ -1779,6 +1903,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageNotificationTrigg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ShouldUpdateActionCenter());
             return S_OK;
         }
@@ -1796,6 +1921,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageReader> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadBatchAsync());
             return S_OK;
         }
@@ -1814,6 +1940,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageReader2> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReadBatchAsync(count));
             return S_OK;
         }
@@ -1832,6 +1959,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChangeTracker());
             return S_OK;
         }
@@ -1846,6 +1974,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeleteMessageAsync(*reinterpret_cast<const hstring *>(&localMessageId)));
             return S_OK;
         }
@@ -1860,6 +1989,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DownloadMessageAsync(*reinterpret_cast<const hstring *>(&localChatMessageId)));
             return S_OK;
         }
@@ -1874,6 +2004,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetMessageAsync(*reinterpret_cast<const hstring *>(&localChatMessageId)));
             return S_OK;
         }
@@ -1888,6 +2019,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetMessageReader());
             return S_OK;
         }
@@ -1902,6 +2034,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetMessageReader(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&recentTimeLimit)));
             return S_OK;
         }
@@ -1916,6 +2049,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MarkMessageReadAsync(*reinterpret_cast<const hstring *>(&localChatMessageId)));
             return S_OK;
         }
@@ -1930,6 +2064,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RetrySendMessageAsync(*reinterpret_cast<const hstring *>(&localChatMessageId)));
             return S_OK;
         }
@@ -1944,6 +2079,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SendMessageAsync(*reinterpret_cast<const Windows::ApplicationModel::Chat::ChatMessage *>(&chatMessage)));
             return S_OK;
         }
@@ -1958,6 +2094,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ValidateMessage(*reinterpret_cast<const Windows::ApplicationModel::Chat::ChatMessage *>(&chatMessage)));
             return S_OK;
         }
@@ -1972,6 +2109,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().MessageChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Chat::ChatMessageStore, Windows::ApplicationModel::Chat::ChatMessageChangedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -1985,6 +2123,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MessageChanged(value);
             return S_OK;
         }
@@ -2002,6 +2141,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ForwardMessageAsync(*reinterpret_cast<const hstring *>(&localChatMessageId), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&addresses)));
             return S_OK;
         }
@@ -2016,6 +2156,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetConversationAsync(*reinterpret_cast<const hstring *>(&conversationId)));
             return S_OK;
         }
@@ -2030,6 +2171,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetConversationAsync(*reinterpret_cast<const hstring *>(&conversationId), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&transportIds)));
             return S_OK;
         }
@@ -2044,6 +2186,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetConversationFromThreadingInfoAsync(*reinterpret_cast<const Windows::ApplicationModel::Chat::ChatConversationThreadingInfo *>(&threadingInfo)));
             return S_OK;
         }
@@ -2058,6 +2201,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetConversationReader());
             return S_OK;
         }
@@ -2072,6 +2216,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetConversationReader(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&transportIds)));
             return S_OK;
         }
@@ -2086,6 +2231,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetMessageByRemoteIdAsync(*reinterpret_cast<const hstring *>(&transportId), *reinterpret_cast<const hstring *>(&remoteId)));
             return S_OK;
         }
@@ -2100,6 +2246,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetUnseenCountAsync());
             return S_OK;
         }
@@ -2114,6 +2261,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetUnseenCountAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&transportIds)));
             return S_OK;
         }
@@ -2128,6 +2276,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MarkAsSeenAsync());
             return S_OK;
         }
@@ -2142,6 +2291,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MarkAsSeenAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&transportIds)));
             return S_OK;
         }
@@ -2156,6 +2306,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetSearchReader(*reinterpret_cast<const Windows::ApplicationModel::Chat::ChatQueryOptions *>(&value)));
             return S_OK;
         }
@@ -2170,6 +2321,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SaveMessageAsync(*reinterpret_cast<const Windows::ApplicationModel::Chat::ChatMessage *>(&chatMessage)));
             return S_OK;
         }
@@ -2184,6 +2336,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryCancelDownloadMessageAsync(*reinterpret_cast<const hstring *>(&localChatMessageId)));
             return S_OK;
         }
@@ -2198,6 +2351,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryCancelSendMessageAsync(*reinterpret_cast<const hstring *>(&localChatMessageId)));
             return S_OK;
         }
@@ -2212,6 +2366,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().StoreChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Chat::ChatMessageStore, Windows::ApplicationModel::Chat::ChatMessageStoreChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2225,6 +2380,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StoreChanged(token);
             return S_OK;
         }
@@ -2242,6 +2398,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStore3> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetMessageBySyncIdAsync(*reinterpret_cast<const hstring *>(&syncId)));
             return S_OK;
         }
@@ -2260,6 +2417,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStoreChangedEvent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Id());
             return S_OK;
         }
@@ -2274,6 +2432,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageStoreChangedEvent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Kind());
             return S_OK;
         }
@@ -2291,6 +2450,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageTransport> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsAppSetAsNotificationProvider());
             return S_OK;
         }
@@ -2304,6 +2464,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageTransport> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsActive());
             return S_OK;
         }
@@ -2317,6 +2478,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageTransport> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TransportFriendlyName());
             return S_OK;
         }
@@ -2331,6 +2493,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageTransport> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TransportId());
             return S_OK;
         }
@@ -2345,6 +2508,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageTransport> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequestSetAsNotificationProviderAsync());
             return S_OK;
         }
@@ -2363,6 +2527,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageTransport2> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Configuration());
             return S_OK;
         }
@@ -2377,6 +2542,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageTransport2> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TransportKind());
             return S_OK;
         }
@@ -2394,6 +2560,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageTransportConfigur
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MaxAttachmentCount());
             return S_OK;
         }
@@ -2407,6 +2574,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageTransportConfigur
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MaxMessageSizeInKilobytes());
             return S_OK;
         }
@@ -2420,6 +2588,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageTransportConfigur
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MaxRecipientCount());
             return S_OK;
         }
@@ -2433,6 +2602,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageTransportConfigur
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SupportedVideoFormat());
             return S_OK;
         }
@@ -2447,6 +2617,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageTransportConfigur
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ExtendedProperties());
             return S_OK;
         }
@@ -2465,6 +2636,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageValidationResult>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxPartCount());
             return S_OK;
         }
@@ -2479,6 +2651,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageValidationResult>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PartCount());
             return S_OK;
         }
@@ -2493,6 +2666,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageValidationResult>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemainingCharacterCountInPart());
             return S_OK;
         }
@@ -2507,6 +2681,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatMessageValidationResult>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -2524,6 +2699,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatQueryOptions> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SearchString());
             return S_OK;
         }
@@ -2538,6 +2714,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatQueryOptions> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SearchString(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2555,6 +2732,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatRecipientDeliveryInfo> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TransportAddress());
             return S_OK;
         }
@@ -2569,6 +2747,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatRecipientDeliveryInfo> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TransportAddress(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2582,6 +2761,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatRecipientDeliveryInfo> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DeliveryTime());
             return S_OK;
         }
@@ -2596,6 +2776,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatRecipientDeliveryInfo> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DeliveryTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -2609,6 +2790,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatRecipientDeliveryInfo> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReadTime());
             return S_OK;
         }
@@ -2623,6 +2805,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatRecipientDeliveryInfo> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
             return S_OK;
         }
@@ -2636,6 +2819,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatRecipientDeliveryInfo> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TransportErrorCodeCategory());
             return S_OK;
         }
@@ -2649,6 +2833,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatRecipientDeliveryInfo> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TransportInterpretedErrorCode());
             return S_OK;
         }
@@ -2662,6 +2847,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatRecipientDeliveryInfo> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TransportErrorCode());
             return S_OK;
         }
@@ -2675,6 +2861,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatRecipientDeliveryInfo> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsErrorPermanent());
             return S_OK;
         }
@@ -2688,6 +2875,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatRecipientDeliveryInfo> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Status());
             return S_OK;
         }
@@ -2705,6 +2893,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatSearchReader> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReadBatchAsync());
             return S_OK;
         }
@@ -2719,6 +2908,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatSearchReader> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReadBatchAsync(count));
             return S_OK;
         }
@@ -2737,6 +2927,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatSyncConfiguration> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsSyncEnabled());
             return S_OK;
         }
@@ -2750,6 +2941,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatSyncConfiguration> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsSyncEnabled(value);
             return S_OK;
         }
@@ -2763,6 +2955,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatSyncConfiguration> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RestoreHistorySpan());
             return S_OK;
         }
@@ -2776,6 +2969,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatSyncConfiguration> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RestoreHistorySpan(value);
             return S_OK;
         }
@@ -2793,6 +2987,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatSyncManager> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Configuration());
             return S_OK;
         }
@@ -2807,6 +3002,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatSyncManager> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().AssociateAccountAsync(*reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount)));
             return S_OK;
         }
@@ -2821,6 +3017,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatSyncManager> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().UnassociateAccountAsync());
             return S_OK;
         }
@@ -2835,6 +3032,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatSyncManager> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsAccountAssociated(*reinterpret_cast<const Windows::Security::Credentials::WebAccount *>(&webAccount)));
             return S_OK;
         }
@@ -2848,6 +3046,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatSyncManager> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartSync();
             return S_OK;
         }
@@ -2861,6 +3060,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IChatSyncManager> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SetConfigurationAsync(*reinterpret_cast<const Windows::ApplicationModel::Chat::ChatSyncConfiguration *>(&configuration)));
             return S_OK;
         }
@@ -2879,6 +3079,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsEndUserMessage> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TransportId());
             return S_OK;
         }
@@ -2893,6 +3094,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsEndUserMessage> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Title());
             return S_OK;
         }
@@ -2907,6 +3109,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsEndUserMessage> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Text());
             return S_OK;
         }
@@ -2921,6 +3124,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsEndUserMessage> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsPinRequired());
             return S_OK;
         }
@@ -2934,6 +3138,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsEndUserMessage> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Actions());
             return S_OK;
         }
@@ -2948,6 +3153,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsEndUserMessage> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SendResponseAsync(*reinterpret_cast<const Windows::ApplicationModel::Chat::RcsEndUserMessageAction *>(&action)));
             return S_OK;
         }
@@ -2962,6 +3168,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsEndUserMessage> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SendResponseWithPinAsync(*reinterpret_cast<const Windows::ApplicationModel::Chat::RcsEndUserMessageAction *>(&action), *reinterpret_cast<const hstring *>(&pin)));
             return S_OK;
         }
@@ -2980,6 +3187,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsEndUserMessageAction> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Label());
             return S_OK;
         }
@@ -2998,6 +3206,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsEndUserMessageAvailableEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsMessageAvailable());
             return S_OK;
         }
@@ -3011,6 +3220,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsEndUserMessageAvailableEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Message());
             return S_OK;
         }
@@ -3029,6 +3239,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsEndUserMessageAvailableTr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -3043,6 +3254,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsEndUserMessageAvailableTr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -3061,6 +3273,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsEndUserMessageManager> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MessageAvailableChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Chat::RcsEndUserMessageManager, Windows::ApplicationModel::Chat::RcsEndUserMessageAvailableEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -3074,6 +3287,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsEndUserMessageManager> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MessageAvailableChanged(token);
             return S_OK;
         }
@@ -3091,6 +3305,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsManagerStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetEndUserMessageManager());
             return S_OK;
         }
@@ -3105,6 +3320,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsManagerStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetTransportsAsync());
             return S_OK;
         }
@@ -3119,6 +3335,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsManagerStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetTransportAsync(*reinterpret_cast<const hstring *>(&transportId)));
             return S_OK;
         }
@@ -3133,6 +3350,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsManagerStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LeaveConversationAsync(*reinterpret_cast<const Windows::ApplicationModel::Chat::ChatConversation *>(&conversation)));
             return S_OK;
         }
@@ -3151,6 +3369,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsServiceKindSupportedChang
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ServiceKind());
             return S_OK;
         }
@@ -3168,6 +3387,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsTransport> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtendedProperties());
             return S_OK;
         }
@@ -3182,6 +3402,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsTransport> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsActive());
             return S_OK;
         }
@@ -3195,6 +3416,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsTransport> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TransportFriendlyName());
             return S_OK;
         }
@@ -3209,6 +3431,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsTransport> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TransportId());
             return S_OK;
         }
@@ -3223,6 +3446,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsTransport> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Configuration());
             return S_OK;
         }
@@ -3237,6 +3461,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsTransport> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsStoreAndForwardEnabled(serviceKind));
             return S_OK;
         }
@@ -3250,6 +3475,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsTransport> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsServiceKindSupported(serviceKind));
             return S_OK;
         }
@@ -3263,6 +3489,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsTransport> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ServiceKindSupportedChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Chat::RcsTransport, Windows::ApplicationModel::Chat::RcsServiceKindSupportedChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -3276,6 +3503,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsTransport> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ServiceKindSupportedChanged(token);
             return S_OK;
         }
@@ -3293,6 +3521,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsTransportConfiguration> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MaxAttachmentCount());
             return S_OK;
         }
@@ -3306,6 +3535,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsTransportConfiguration> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MaxMessageSizeInKilobytes());
             return S_OK;
         }
@@ -3319,6 +3549,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsTransportConfiguration> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MaxGroupMessageSizeInKilobytes());
             return S_OK;
         }
@@ -3332,6 +3563,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsTransportConfiguration> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MaxRecipientCount());
             return S_OK;
         }
@@ -3345,6 +3577,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsTransportConfiguration> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MaxFileSizeInKilobytes());
             return S_OK;
         }
@@ -3358,6 +3591,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRcsTransportConfiguration> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().WarningFileSizeInKilobytes());
             return S_OK;
         }
@@ -3375,6 +3609,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRemoteParticipantComposingCh
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TransportId());
             return S_OK;
         }
@@ -3389,6 +3624,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRemoteParticipantComposingCh
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ParticipantAddress());
             return S_OK;
         }
@@ -3403,6 +3639,7 @@ struct produce<D, Windows::ApplicationModel::Chat::IRemoteParticipantComposingCh
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsComposing());
             return S_OK;
         }

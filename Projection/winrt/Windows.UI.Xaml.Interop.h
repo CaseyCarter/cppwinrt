@@ -56,6 +56,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableIterable> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().First());
             return S_OK;
         }
@@ -74,6 +75,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableIterator> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Current());
             return S_OK;
         }
@@ -88,6 +90,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableIterator> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasCurrent());
             return S_OK;
         }
@@ -101,6 +104,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableIterator> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().MoveNext());
             return S_OK;
         }
@@ -118,6 +122,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableObservableVector> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().VectorChanged(*reinterpret_cast<const Windows::UI::Xaml::Interop::BindableVectorChangedEventHandler *>(&value)));
             return S_OK;
         }
@@ -131,6 +136,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableObservableVector> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VectorChanged(token);
             return S_OK;
         }
@@ -148,6 +154,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVector> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetAt(index));
             return S_OK;
         }
@@ -162,6 +169,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVector> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Size());
             return S_OK;
         }
@@ -175,6 +183,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVector> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetView());
             return S_OK;
         }
@@ -189,6 +198,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVector> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().IndexOf(*reinterpret_cast<const Windows::IInspectable *>(&value), *index));
             return S_OK;
         }
@@ -202,6 +212,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVector> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetAt(index, *reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
@@ -215,6 +226,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVector> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InsertAt(index, *reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
@@ -228,6 +240,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVector> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveAt(index);
             return S_OK;
         }
@@ -241,6 +254,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVector> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Append(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
@@ -254,6 +268,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVector> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveAtEnd();
             return S_OK;
         }
@@ -267,6 +282,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVector> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Clear();
             return S_OK;
         }
@@ -284,6 +300,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVectorView> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetAt(index));
             return S_OK;
         }
@@ -298,6 +315,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVectorView> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Size());
             return S_OK;
         }
@@ -311,6 +329,7 @@ struct produce<D, Windows::UI::Xaml::Interop::IBindableVectorView> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().IndexOf(*reinterpret_cast<const Windows::IInspectable *>(&value), *index));
             return S_OK;
         }
@@ -328,6 +347,7 @@ struct produce<D, Windows::UI::Xaml::Interop::INotifyCollectionChanged> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CollectionChanged(*reinterpret_cast<const Windows::UI::Xaml::Interop::NotifyCollectionChangedEventHandler *>(&value)));
             return S_OK;
         }
@@ -341,6 +361,7 @@ struct produce<D, Windows::UI::Xaml::Interop::INotifyCollectionChanged> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CollectionChanged(token);
             return S_OK;
         }
@@ -358,6 +379,7 @@ struct produce<D, Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Action());
             return S_OK;
         }
@@ -371,6 +393,7 @@ struct produce<D, Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewItems());
             return S_OK;
         }
@@ -385,6 +408,7 @@ struct produce<D, Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OldItems());
             return S_OK;
         }
@@ -399,6 +423,7 @@ struct produce<D, Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewStartingIndex());
             return S_OK;
         }
@@ -412,6 +437,7 @@ struct produce<D, Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OldStartingIndex());
             return S_OK;
         }
@@ -429,6 +455,7 @@ struct produce<D, Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgsF
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceWithAllParameters(action, *reinterpret_cast<const Windows::UI::Xaml::Interop::IBindableVector *>(&newItems), *reinterpret_cast<const Windows::UI::Xaml::Interop::IBindableVector *>(&oldItems), newIndex, oldIndex, *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }

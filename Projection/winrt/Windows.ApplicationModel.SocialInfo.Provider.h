@@ -20,6 +20,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialDashbo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OwnerRemoteId());
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialDashbo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Content());
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialDashbo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -61,6 +64,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialDashbo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Timestamp(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -74,6 +78,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialDashbo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Thumbnail(*reinterpret_cast<const Windows::ApplicationModel::SocialInfo::SocialItemThumbnail *>(&value));
             return S_OK;
         }
@@ -87,6 +92,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialDashbo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
@@ -101,6 +107,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialDashbo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CommitAsync());
             return S_OK;
         }
@@ -115,6 +122,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialDashbo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetUri());
             return S_OK;
         }
@@ -129,6 +137,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialDashbo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -146,6 +155,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialFeedUp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OwnerRemoteId());
             return S_OK;
         }
@@ -160,6 +170,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialFeedUp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -173,6 +184,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialFeedUp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Items());
             return S_OK;
         }
@@ -187,6 +199,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialFeedUp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CommitAsync());
             return S_OK;
         }
@@ -205,6 +218,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialInfoPr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateSocialFeedUpdaterAsync(kind, mode, *reinterpret_cast<const hstring *>(&ownerRemoteId)));
             return S_OK;
         }
@@ -219,6 +233,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialInfoPr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateDashboardItemUpdaterAsync(*reinterpret_cast<const hstring *>(&ownerRemoteId)));
             return S_OK;
         }
@@ -233,6 +248,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialInfoPr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UpdateBadgeCountValue(*reinterpret_cast<const hstring *>(&itemRemoteId), newCount);
             return S_OK;
         }
@@ -246,6 +262,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialInfoPr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportNewContentAvailable(*reinterpret_cast<const hstring *>(&contactRemoteId), kind);
             return S_OK;
         }
@@ -259,6 +276,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialInfoPr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().ProvisionAsync());
             return S_OK;
         }
@@ -273,6 +291,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::Provider::ISocialInfoPr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().DeprovisionAsync());
             return S_OK;
         }

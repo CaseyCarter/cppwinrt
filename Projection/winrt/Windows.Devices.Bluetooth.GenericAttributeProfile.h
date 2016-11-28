@@ -22,6 +22,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDescriptors(descriptorUuid));
             return S_OK;
         }
@@ -36,6 +37,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CharacteristicProperties());
             return S_OK;
         }
@@ -49,6 +51,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProtectionLevel());
             return S_OK;
         }
@@ -62,6 +65,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProtectionLevel(value);
             return S_OK;
         }
@@ -75,6 +79,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserDescription());
             return S_OK;
         }
@@ -89,6 +94,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Uuid());
             return S_OK;
         }
@@ -102,6 +108,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AttributeHandle());
             return S_OK;
         }
@@ -115,6 +122,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PresentationFormats());
             return S_OK;
         }
@@ -129,6 +137,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadValueAsync());
             return S_OK;
         }
@@ -143,6 +152,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadValueAsync(cacheMode));
             return S_OK;
         }
@@ -157,6 +167,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().WriteValueAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value)));
             return S_OK;
         }
@@ -171,6 +182,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().WriteValueAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value), writeOption));
             return S_OK;
         }
@@ -185,6 +197,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().ReadClientCharacteristicConfigurationDescriptorAsync());
             return S_OK;
         }
@@ -199,6 +212,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().WriteClientCharacteristicConfigurationDescriptorAsync(clientCharacteristicConfigurationDescriptorValue));
             return S_OK;
         }
@@ -213,6 +227,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *valueChangedEventCookie = detach(this->shim().ValueChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs> *>(&valueChangedHandler)));
             return S_OK;
         }
@@ -226,6 +241,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ValueChanged(valueChangedEventCookie);
             return S_OK;
         }
@@ -243,6 +259,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Service());
             return S_OK;
         }
@@ -257,6 +274,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *descriptors = detach(this->shim().GetAllDescriptors());
             return S_OK;
         }
@@ -275,6 +293,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *characteristicUuid = detach(this->shim().ConvertShortIdToUuid(shortId));
             return S_OK;
         }
@@ -292,6 +311,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BatteryLevel());
             return S_OK;
         }
@@ -305,6 +325,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BloodPressureFeature());
             return S_OK;
         }
@@ -318,6 +339,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BloodPressureMeasurement());
             return S_OK;
         }
@@ -331,6 +353,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BodySensorLocation());
             return S_OK;
         }
@@ -344,6 +367,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CscFeature());
             return S_OK;
         }
@@ -357,6 +381,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CscMeasurement());
             return S_OK;
         }
@@ -370,6 +395,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GlucoseFeature());
             return S_OK;
         }
@@ -383,6 +409,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GlucoseMeasurement());
             return S_OK;
         }
@@ -396,6 +423,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GlucoseMeasurementContext());
             return S_OK;
         }
@@ -409,6 +437,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HeartRateControlPoint());
             return S_OK;
         }
@@ -422,6 +451,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HeartRateMeasurement());
             return S_OK;
         }
@@ -435,6 +465,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IntermediateCuffPressure());
             return S_OK;
         }
@@ -448,6 +479,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IntermediateTemperature());
             return S_OK;
         }
@@ -461,6 +493,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MeasurementInterval());
             return S_OK;
         }
@@ -474,6 +507,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RecordAccessControlPoint());
             return S_OK;
         }
@@ -487,6 +521,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RscFeature());
             return S_OK;
         }
@@ -500,6 +535,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RscMeasurement());
             return S_OK;
         }
@@ -513,6 +549,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SCControlPoint());
             return S_OK;
         }
@@ -526,6 +563,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SensorLocation());
             return S_OK;
         }
@@ -539,6 +577,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TemperatureMeasurement());
             return S_OK;
         }
@@ -552,6 +591,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TemperatureType());
             return S_OK;
         }
@@ -569,6 +609,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlertCategoryId());
             return S_OK;
         }
@@ -582,6 +623,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlertCategoryIdBitMask());
             return S_OK;
         }
@@ -595,6 +637,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlertLevel());
             return S_OK;
         }
@@ -608,6 +651,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlertNotificationControlPoint());
             return S_OK;
         }
@@ -621,6 +665,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlertStatus());
             return S_OK;
         }
@@ -634,6 +679,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GapAppearance());
             return S_OK;
         }
@@ -647,6 +693,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BootKeyboardInputReport());
             return S_OK;
         }
@@ -660,6 +707,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BootKeyboardOutputReport());
             return S_OK;
         }
@@ -673,6 +721,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BootMouseInputReport());
             return S_OK;
         }
@@ -686,6 +735,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentTime());
             return S_OK;
         }
@@ -699,6 +749,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CyclingPowerControlPoint());
             return S_OK;
         }
@@ -712,6 +763,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CyclingPowerFeature());
             return S_OK;
         }
@@ -725,6 +777,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CyclingPowerMeasurement());
             return S_OK;
         }
@@ -738,6 +791,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CyclingPowerVector());
             return S_OK;
         }
@@ -751,6 +805,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DateTime());
             return S_OK;
         }
@@ -764,6 +819,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DayDateTime());
             return S_OK;
         }
@@ -777,6 +833,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DayOfWeek());
             return S_OK;
         }
@@ -790,6 +847,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GapDeviceName());
             return S_OK;
         }
@@ -803,6 +861,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DstOffset());
             return S_OK;
         }
@@ -816,6 +875,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExactTime256());
             return S_OK;
         }
@@ -829,6 +889,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FirmwareRevisionString());
             return S_OK;
         }
@@ -842,6 +903,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HardwareRevisionString());
             return S_OK;
         }
@@ -855,6 +917,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HidControlPoint());
             return S_OK;
         }
@@ -868,6 +931,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HidInformation());
             return S_OK;
         }
@@ -881,6 +945,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ieee1107320601RegulatoryCertificationDataList());
             return S_OK;
         }
@@ -894,6 +959,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LnControlPoint());
             return S_OK;
         }
@@ -907,6 +973,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LnFeature());
             return S_OK;
         }
@@ -920,6 +987,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalTimeInformation());
             return S_OK;
         }
@@ -933,6 +1001,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocationAndSpeed());
             return S_OK;
         }
@@ -946,6 +1015,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ManufacturerNameString());
             return S_OK;
         }
@@ -959,6 +1029,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ModelNumberString());
             return S_OK;
         }
@@ -972,6 +1043,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Navigation());
             return S_OK;
         }
@@ -985,6 +1057,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewAlert());
             return S_OK;
         }
@@ -998,6 +1071,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GapPeripheralPreferredConnectionParameters());
             return S_OK;
         }
@@ -1011,6 +1085,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GapPeripheralPrivacyFlag());
             return S_OK;
         }
@@ -1024,6 +1099,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PnpId());
             return S_OK;
         }
@@ -1037,6 +1113,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PositionQuality());
             return S_OK;
         }
@@ -1050,6 +1127,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProtocolMode());
             return S_OK;
         }
@@ -1063,6 +1141,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GapReconnectionAddress());
             return S_OK;
         }
@@ -1076,6 +1155,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReferenceTimeInformation());
             return S_OK;
         }
@@ -1089,6 +1169,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Report());
             return S_OK;
         }
@@ -1102,6 +1183,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportMap());
             return S_OK;
         }
@@ -1115,6 +1197,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RingerControlPoint());
             return S_OK;
         }
@@ -1128,6 +1211,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RingerSetting());
             return S_OK;
         }
@@ -1141,6 +1225,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ScanIntervalWindow());
             return S_OK;
         }
@@ -1154,6 +1239,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ScanRefresh());
             return S_OK;
         }
@@ -1167,6 +1253,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SerialNumberString());
             return S_OK;
         }
@@ -1180,6 +1267,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GattServiceChanged());
             return S_OK;
         }
@@ -1193,6 +1281,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SoftwareRevisionString());
             return S_OK;
         }
@@ -1206,6 +1295,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedNewAlertCategory());
             return S_OK;
         }
@@ -1219,6 +1309,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportUnreadAlertCategory());
             return S_OK;
         }
@@ -1232,6 +1323,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SystemId());
             return S_OK;
         }
@@ -1245,6 +1337,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TimeAccuracy());
             return S_OK;
         }
@@ -1258,6 +1351,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TimeSource());
             return S_OK;
         }
@@ -1271,6 +1365,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TimeUpdateControlPoint());
             return S_OK;
         }
@@ -1284,6 +1379,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TimeUpdateState());
             return S_OK;
         }
@@ -1297,6 +1393,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TimeWithDst());
             return S_OK;
         }
@@ -1310,6 +1407,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TimeZone());
             return S_OK;
         }
@@ -1323,6 +1421,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TxPowerLevel());
             return S_OK;
         }
@@ -1336,6 +1435,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCha
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnreadAlertStatus());
             return S_OK;
         }
@@ -1353,6 +1453,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProtectionLevel());
             return S_OK;
         }
@@ -1366,6 +1467,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProtectionLevel(value);
             return S_OK;
         }
@@ -1379,6 +1481,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Uuid());
             return S_OK;
         }
@@ -1392,6 +1495,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AttributeHandle());
             return S_OK;
         }
@@ -1405,6 +1509,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadValueAsync());
             return S_OK;
         }
@@ -1419,6 +1524,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadValueAsync(cacheMode));
             return S_OK;
         }
@@ -1433,6 +1539,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *action = detach(this->shim().WriteValueAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value)));
             return S_OK;
         }
@@ -1451,6 +1558,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *descriptorUuid = detach(this->shim().ConvertShortIdToUuid(shortId));
             return S_OK;
         }
@@ -1468,6 +1576,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CharacteristicAggregateFormat());
             return S_OK;
         }
@@ -1481,6 +1590,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CharacteristicExtendedProperties());
             return S_OK;
         }
@@ -1494,6 +1604,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CharacteristicPresentationFormat());
             return S_OK;
         }
@@ -1507,6 +1618,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CharacteristicUserDescription());
             return S_OK;
         }
@@ -1520,6 +1632,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClientCharacteristicConfiguration());
             return S_OK;
         }
@@ -1533,6 +1646,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDes
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServerCharacteristicConfiguration());
             return S_OK;
         }
@@ -1550,6 +1664,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCharacteristics(characteristicUuid));
             return S_OK;
         }
@@ -1564,6 +1679,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetIncludedServices(serviceUuid));
             return S_OK;
         }
@@ -1578,6 +1694,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -1592,6 +1709,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Uuid());
             return S_OK;
         }
@@ -1605,6 +1723,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AttributeHandle());
             return S_OK;
         }
@@ -1622,6 +1741,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Device());
             return S_OK;
         }
@@ -1636,6 +1756,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ParentServices());
             return S_OK;
         }
@@ -1650,6 +1771,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *characteristics = detach(this->shim().GetAllCharacteristics());
             return S_OK;
         }
@@ -1664,6 +1786,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *includedServices = detach(this->shim().GetAllIncludedServices());
             return S_OK;
         }
@@ -1682,6 +1805,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *gattDeviceService = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -1696,6 +1820,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *selector = detach(this->shim().GetDeviceSelectorFromUuid(serviceUuid));
             return S_OK;
         }
@@ -1710,6 +1835,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *selector = detach(this->shim().GetDeviceSelectorFromShortId(serviceShortId));
             return S_OK;
         }
@@ -1724,6 +1850,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDev
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *serviceUuid = detach(this->shim().ConvertShortIdToUuid(shortId));
             return S_OK;
         }
@@ -1741,6 +1868,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FormatType());
             return S_OK;
         }
@@ -1754,6 +1882,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Exponent());
             return S_OK;
         }
@@ -1767,6 +1896,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Unit());
             return S_OK;
         }
@@ -1780,6 +1910,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Namespace());
             return S_OK;
         }
@@ -1793,6 +1924,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Description());
             return S_OK;
         }
@@ -1810,6 +1942,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BluetoothSigAssignedNumbers());
             return S_OK;
         }
@@ -1827,6 +1960,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Boolean());
             return S_OK;
         }
@@ -1840,6 +1974,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bit2());
             return S_OK;
         }
@@ -1853,6 +1988,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Nibble());
             return S_OK;
         }
@@ -1866,6 +2002,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UInt8());
             return S_OK;
         }
@@ -1879,6 +2016,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UInt12());
             return S_OK;
         }
@@ -1892,6 +2030,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UInt16());
             return S_OK;
         }
@@ -1905,6 +2044,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UInt24());
             return S_OK;
         }
@@ -1918,6 +2058,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UInt32());
             return S_OK;
         }
@@ -1931,6 +2072,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UInt48());
             return S_OK;
         }
@@ -1944,6 +2086,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UInt64());
             return S_OK;
         }
@@ -1957,6 +2100,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UInt128());
             return S_OK;
         }
@@ -1970,6 +2114,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SInt8());
             return S_OK;
         }
@@ -1983,6 +2128,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SInt12());
             return S_OK;
         }
@@ -1996,6 +2142,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SInt16());
             return S_OK;
         }
@@ -2009,6 +2156,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SInt24());
             return S_OK;
         }
@@ -2022,6 +2170,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SInt32());
             return S_OK;
         }
@@ -2035,6 +2184,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SInt48());
             return S_OK;
         }
@@ -2048,6 +2198,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SInt64());
             return S_OK;
         }
@@ -2061,6 +2212,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SInt128());
             return S_OK;
         }
@@ -2074,6 +2226,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Float32());
             return S_OK;
         }
@@ -2087,6 +2240,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Float64());
             return S_OK;
         }
@@ -2100,6 +2254,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SFloat());
             return S_OK;
         }
@@ -2113,6 +2268,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Float());
             return S_OK;
         }
@@ -2126,6 +2282,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DUInt16());
             return S_OK;
         }
@@ -2139,6 +2296,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Utf8());
             return S_OK;
         }
@@ -2152,6 +2310,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Utf16());
             return S_OK;
         }
@@ -2165,6 +2324,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPre
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Struct());
             return S_OK;
         }
@@ -2182,6 +2342,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattRea
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -2195,6 +2356,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattRea
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClientCharacteristicConfigurationDescriptor());
             return S_OK;
         }
@@ -2212,6 +2374,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattRea
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -2225,6 +2388,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattRea
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -2243,6 +2407,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattRel
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteValue(*reinterpret_cast<const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic *>(&characteristic), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
@@ -2256,6 +2421,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattRel
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().CommitAsync());
             return S_OK;
         }
@@ -2274,6 +2440,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Battery());
             return S_OK;
         }
@@ -2287,6 +2454,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BloodPressure());
             return S_OK;
         }
@@ -2300,6 +2468,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CyclingSpeedAndCadence());
             return S_OK;
         }
@@ -2313,6 +2482,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GenericAccess());
             return S_OK;
         }
@@ -2326,6 +2496,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GenericAttribute());
             return S_OK;
         }
@@ -2339,6 +2510,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Glucose());
             return S_OK;
         }
@@ -2352,6 +2524,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HealthThermometer());
             return S_OK;
         }
@@ -2365,6 +2538,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HeartRate());
             return S_OK;
         }
@@ -2378,6 +2552,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RunningSpeedAndCadence());
             return S_OK;
         }
@@ -2395,6 +2570,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlertNotification());
             return S_OK;
         }
@@ -2408,6 +2584,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentTime());
             return S_OK;
         }
@@ -2421,6 +2598,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CyclingPower());
             return S_OK;
         }
@@ -2434,6 +2612,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceInformation());
             return S_OK;
         }
@@ -2447,6 +2626,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HumanInterfaceDevice());
             return S_OK;
         }
@@ -2460,6 +2640,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ImmediateAlert());
             return S_OK;
         }
@@ -2473,6 +2654,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LinkLoss());
             return S_OK;
         }
@@ -2486,6 +2668,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocationAndNavigation());
             return S_OK;
         }
@@ -2499,6 +2682,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NextDstChange());
             return S_OK;
         }
@@ -2512,6 +2696,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PhoneAlertStatus());
             return S_OK;
         }
@@ -2525,6 +2710,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReferenceTimeUpdate());
             return S_OK;
         }
@@ -2538,6 +2724,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ScanParameters());
             return S_OK;
         }
@@ -2551,6 +2738,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSer
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TxPower());
             return S_OK;
         }
@@ -2568,6 +2756,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattVal
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CharacteristicValue());
             return S_OK;
         }
@@ -2582,6 +2771,7 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattVal
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *timestamp = detach(this->shim().Timestamp());
             return S_OK;
         }

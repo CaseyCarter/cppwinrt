@@ -369,6 +369,7 @@ struct produce<D, Windows::UI::Xaml::IAdaptiveTrigger> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinWindowWidth());
             return S_OK;
         }
@@ -382,6 +383,7 @@ struct produce<D, Windows::UI::Xaml::IAdaptiveTrigger> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MinWindowWidth(value);
             return S_OK;
         }
@@ -395,6 +397,7 @@ struct produce<D, Windows::UI::Xaml::IAdaptiveTrigger> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinWindowHeight());
             return S_OK;
         }
@@ -408,6 +411,7 @@ struct produce<D, Windows::UI::Xaml::IAdaptiveTrigger> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MinWindowHeight(value);
             return S_OK;
         }
@@ -425,6 +429,7 @@ struct produce<D, Windows::UI::Xaml::IAdaptiveTriggerFactory> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -444,6 +449,7 @@ struct produce<D, Windows::UI::Xaml::IAdaptiveTriggerStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinWindowWidthProperty());
             return S_OK;
         }
@@ -458,6 +464,7 @@ struct produce<D, Windows::UI::Xaml::IAdaptiveTriggerStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinWindowHeightProperty());
             return S_OK;
         }
@@ -476,6 +483,7 @@ struct produce<D, Windows::UI::Xaml::IApplication> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Resources());
             return S_OK;
         }
@@ -490,6 +498,7 @@ struct produce<D, Windows::UI::Xaml::IApplication> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Resources(*reinterpret_cast<const Windows::UI::Xaml::ResourceDictionary *>(&value));
             return S_OK;
         }
@@ -503,6 +512,7 @@ struct produce<D, Windows::UI::Xaml::IApplication> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DebugSettings());
             return S_OK;
         }
@@ -517,6 +527,7 @@ struct produce<D, Windows::UI::Xaml::IApplication> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequestedTheme());
             return S_OK;
         }
@@ -530,6 +541,7 @@ struct produce<D, Windows::UI::Xaml::IApplication> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RequestedTheme(value);
             return S_OK;
         }
@@ -543,6 +555,7 @@ struct produce<D, Windows::UI::Xaml::IApplication> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().UnhandledException(*reinterpret_cast<const Windows::UI::Xaml::UnhandledExceptionEventHandler *>(&value)));
             return S_OK;
         }
@@ -556,6 +569,7 @@ struct produce<D, Windows::UI::Xaml::IApplication> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UnhandledException(token);
             return S_OK;
         }
@@ -569,6 +583,7 @@ struct produce<D, Windows::UI::Xaml::IApplication> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Suspending(*reinterpret_cast<const Windows::UI::Xaml::SuspendingEventHandler *>(&value)));
             return S_OK;
         }
@@ -582,6 +597,7 @@ struct produce<D, Windows::UI::Xaml::IApplication> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Suspending(token);
             return S_OK;
         }
@@ -595,6 +611,7 @@ struct produce<D, Windows::UI::Xaml::IApplication> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Resuming(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -608,6 +625,7 @@ struct produce<D, Windows::UI::Xaml::IApplication> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Resuming(token);
             return S_OK;
         }
@@ -621,6 +639,7 @@ struct produce<D, Windows::UI::Xaml::IApplication> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Exit();
             return S_OK;
         }
@@ -638,6 +657,7 @@ struct produce<D, Windows::UI::Xaml::IApplication2> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FocusVisualKind());
             return S_OK;
         }
@@ -651,6 +671,7 @@ struct produce<D, Windows::UI::Xaml::IApplication2> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FocusVisualKind(value);
             return S_OK;
         }
@@ -664,6 +685,7 @@ struct produce<D, Windows::UI::Xaml::IApplication2> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequiresPointerMode());
             return S_OK;
         }
@@ -677,6 +699,7 @@ struct produce<D, Windows::UI::Xaml::IApplication2> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RequiresPointerMode(value);
             return S_OK;
         }
@@ -690,6 +713,7 @@ struct produce<D, Windows::UI::Xaml::IApplication2> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().LeavingBackground(*reinterpret_cast<const Windows::UI::Xaml::LeavingBackgroundEventHandler *>(&value)));
             return S_OK;
         }
@@ -703,6 +727,7 @@ struct produce<D, Windows::UI::Xaml::IApplication2> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LeavingBackground(token);
             return S_OK;
         }
@@ -716,6 +741,7 @@ struct produce<D, Windows::UI::Xaml::IApplication2> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().EnteredBackground(*reinterpret_cast<const Windows::UI::Xaml::EnteredBackgroundEventHandler *>(&value)));
             return S_OK;
         }
@@ -729,6 +755,7 @@ struct produce<D, Windows::UI::Xaml::IApplication2> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnteredBackground(token);
             return S_OK;
         }
@@ -746,6 +773,7 @@ struct produce<D, Windows::UI::Xaml::IApplicationFactory> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -769,6 +797,7 @@ struct produce<D, Windows::UI::Xaml::IApplicationOverrides> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::IActivatedEventArgs *>(&args));
             return S_OK;
         }
@@ -782,6 +811,7 @@ struct produce<D, Windows::UI::Xaml::IApplicationOverrides> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnLaunched(*reinterpret_cast<const Windows::ApplicationModel::Activation::LaunchActivatedEventArgs *>(&args));
             return S_OK;
         }
@@ -795,6 +825,7 @@ struct produce<D, Windows::UI::Xaml::IApplicationOverrides> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnFileActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::FileActivatedEventArgs *>(&args));
             return S_OK;
         }
@@ -808,6 +839,7 @@ struct produce<D, Windows::UI::Xaml::IApplicationOverrides> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnSearchActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::SearchActivatedEventArgs *>(&args));
             return S_OK;
         }
@@ -821,6 +853,7 @@ struct produce<D, Windows::UI::Xaml::IApplicationOverrides> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnShareTargetActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::ShareTargetActivatedEventArgs *>(&args));
             return S_OK;
         }
@@ -834,6 +867,7 @@ struct produce<D, Windows::UI::Xaml::IApplicationOverrides> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnFileOpenPickerActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::FileOpenPickerActivatedEventArgs *>(&args));
             return S_OK;
         }
@@ -847,6 +881,7 @@ struct produce<D, Windows::UI::Xaml::IApplicationOverrides> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnFileSavePickerActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::FileSavePickerActivatedEventArgs *>(&args));
             return S_OK;
         }
@@ -860,6 +895,7 @@ struct produce<D, Windows::UI::Xaml::IApplicationOverrides> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnCachedFileUpdaterActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::CachedFileUpdaterActivatedEventArgs *>(&args));
             return S_OK;
         }
@@ -873,6 +909,7 @@ struct produce<D, Windows::UI::Xaml::IApplicationOverrides> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnWindowCreated(*reinterpret_cast<const Windows::UI::Xaml::WindowCreatedEventArgs *>(&args));
             return S_OK;
         }
@@ -890,6 +927,7 @@ struct produce<D, Windows::UI::Xaml::IApplicationOverrides2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnBackgroundActivated(*reinterpret_cast<const Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs *>(&args));
             return S_OK;
         }
@@ -907,6 +945,7 @@ struct produce<D, Windows::UI::Xaml::IApplicationStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Current());
             return S_OK;
         }
@@ -921,6 +960,7 @@ struct produce<D, Windows::UI::Xaml::IApplicationStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start(*reinterpret_cast<const Windows::UI::Xaml::ApplicationInitializationCallback *>(&callback));
             return S_OK;
         }
@@ -934,6 +974,7 @@ struct produce<D, Windows::UI::Xaml::IApplicationStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LoadComponent(*reinterpret_cast<const Windows::IInspectable *>(&component), *reinterpret_cast<const Windows::Foundation::Uri *>(&resourceLocator));
             return S_OK;
         }
@@ -947,6 +988,7 @@ struct produce<D, Windows::UI::Xaml::IApplicationStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LoadComponent(*reinterpret_cast<const Windows::IInspectable *>(&component), *reinterpret_cast<const Windows::Foundation::Uri *>(&resourceLocator), componentResourceLocation);
             return S_OK;
         }
@@ -964,6 +1006,7 @@ struct produce<D, Windows::UI::Xaml::IBindingFailedEventArgs> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Message());
             return S_OK;
         }
@@ -986,6 +1029,7 @@ struct produce<D, Windows::UI::Xaml::ICornerRadiusHelperStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FromRadii(topLeft, topRight, bottomRight, bottomLeft));
             return S_OK;
         }
@@ -999,6 +1043,7 @@ struct produce<D, Windows::UI::Xaml::ICornerRadiusHelperStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FromUniformRadius(uniformRadius));
             return S_OK;
         }
@@ -1016,6 +1061,7 @@ struct produce<D, Windows::UI::Xaml::IDataContextChangedEventArgs> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewValue());
             return S_OK;
         }
@@ -1030,6 +1076,7 @@ struct produce<D, Windows::UI::Xaml::IDataContextChangedEventArgs> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1043,6 +1090,7 @@ struct produce<D, Windows::UI::Xaml::IDataContextChangedEventArgs> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1060,6 +1108,7 @@ struct produce<D, Windows::UI::Xaml::IDataTemplate> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().LoadContent());
             return S_OK;
         }
@@ -1078,6 +1127,7 @@ struct produce<D, Windows::UI::Xaml::IDataTemplateExtension> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ResetTemplate();
             return S_OK;
         }
@@ -1091,6 +1141,7 @@ struct produce<D, Windows::UI::Xaml::IDataTemplateExtension> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().ProcessBinding(phase));
             return S_OK;
         }
@@ -1104,6 +1155,7 @@ struct produce<D, Windows::UI::Xaml::IDataTemplateExtension> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().ProcessBindings(*reinterpret_cast<const Windows::UI::Xaml::Controls::ContainerContentChangingEventArgs *>(&arg)));
             return S_OK;
         }
@@ -1121,6 +1173,7 @@ struct produce<D, Windows::UI::Xaml::IDataTemplateFactory> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -1140,6 +1193,7 @@ struct produce<D, Windows::UI::Xaml::IDataTemplateKey> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataType());
             return S_OK;
         }
@@ -1154,6 +1208,7 @@ struct produce<D, Windows::UI::Xaml::IDataTemplateKey> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DataType(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
@@ -1171,6 +1226,7 @@ struct produce<D, Windows::UI::Xaml::IDataTemplateKeyFactory> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -1186,6 +1242,7 @@ struct produce<D, Windows::UI::Xaml::IDataTemplateKeyFactory> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceWithType(*reinterpret_cast<const Windows::IInspectable *>(&dataType), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -1205,6 +1262,7 @@ struct produce<D, Windows::UI::Xaml::IDataTemplateStatics2> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtensionInstanceProperty());
             return S_OK;
         }
@@ -1219,6 +1277,7 @@ struct produce<D, Windows::UI::Xaml::IDataTemplateStatics2> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetExtensionInstance(*reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&element)));
             return S_OK;
         }
@@ -1233,6 +1292,7 @@ struct produce<D, Windows::UI::Xaml::IDataTemplateStatics2> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetExtensionInstance(*reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&element), *reinterpret_cast<const Windows::UI::Xaml::IDataTemplateExtension *>(&value));
             return S_OK;
         }
@@ -1250,6 +1310,7 @@ struct produce<D, Windows::UI::Xaml::IDebugSettings> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnableFrameRateCounter());
             return S_OK;
         }
@@ -1263,6 +1324,7 @@ struct produce<D, Windows::UI::Xaml::IDebugSettings> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableFrameRateCounter(value);
             return S_OK;
         }
@@ -1276,6 +1338,7 @@ struct produce<D, Windows::UI::Xaml::IDebugSettings> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsBindingTracingEnabled());
             return S_OK;
         }
@@ -1289,6 +1352,7 @@ struct produce<D, Windows::UI::Xaml::IDebugSettings> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsBindingTracingEnabled(value);
             return S_OK;
         }
@@ -1302,6 +1366,7 @@ struct produce<D, Windows::UI::Xaml::IDebugSettings> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsOverdrawHeatMapEnabled());
             return S_OK;
         }
@@ -1315,6 +1380,7 @@ struct produce<D, Windows::UI::Xaml::IDebugSettings> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsOverdrawHeatMapEnabled(value);
             return S_OK;
         }
@@ -1328,6 +1394,7 @@ struct produce<D, Windows::UI::Xaml::IDebugSettings> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().BindingFailed(*reinterpret_cast<const Windows::UI::Xaml::BindingFailedEventHandler *>(&value)));
             return S_OK;
         }
@@ -1341,6 +1408,7 @@ struct produce<D, Windows::UI::Xaml::IDebugSettings> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BindingFailed(token);
             return S_OK;
         }
@@ -1358,6 +1426,7 @@ struct produce<D, Windows::UI::Xaml::IDebugSettings2> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnableRedrawRegions());
             return S_OK;
         }
@@ -1371,6 +1440,7 @@ struct produce<D, Windows::UI::Xaml::IDebugSettings2> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableRedrawRegions(value);
             return S_OK;
         }
@@ -1388,6 +1458,7 @@ struct produce<D, Windows::UI::Xaml::IDebugSettings3> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTextPerformanceVisualizationEnabled());
             return S_OK;
         }
@@ -1401,6 +1472,7 @@ struct produce<D, Windows::UI::Xaml::IDebugSettings3> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsTextPerformanceVisualizationEnabled(value);
             return S_OK;
         }
@@ -1418,6 +1490,7 @@ struct produce<D, Windows::UI::Xaml::IDependencyObject> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetValue(*reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&dp)));
             return S_OK;
         }
@@ -1432,6 +1505,7 @@ struct produce<D, Windows::UI::Xaml::IDependencyObject> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetValue(*reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&dp), *reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
@@ -1445,6 +1519,7 @@ struct produce<D, Windows::UI::Xaml::IDependencyObject> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ClearValue(*reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&dp));
             return S_OK;
         }
@@ -1458,6 +1533,7 @@ struct produce<D, Windows::UI::Xaml::IDependencyObject> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().ReadLocalValue(*reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&dp)));
             return S_OK;
         }
@@ -1472,6 +1548,7 @@ struct produce<D, Windows::UI::Xaml::IDependencyObject> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetAnimationBaseValue(*reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&dp)));
             return S_OK;
         }
@@ -1486,6 +1563,7 @@ struct produce<D, Windows::UI::Xaml::IDependencyObject> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Dispatcher());
             return S_OK;
         }
@@ -1504,6 +1582,7 @@ struct produce<D, Windows::UI::Xaml::IDependencyObject2> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().RegisterPropertyChangedCallback(*reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&dp), *reinterpret_cast<const Windows::UI::Xaml::DependencyPropertyChangedCallback *>(&callback)));
             return S_OK;
         }
@@ -1517,6 +1596,7 @@ struct produce<D, Windows::UI::Xaml::IDependencyObject2> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UnregisterPropertyChangedCallback(*reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&dp), token);
             return S_OK;
         }
@@ -1534,6 +1614,7 @@ struct produce<D, Windows::UI::Xaml::IDependencyObjectCollectionFactory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -1553,6 +1634,7 @@ struct produce<D, Windows::UI::Xaml::IDependencyObjectFactory> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -1572,6 +1654,7 @@ struct produce<D, Windows::UI::Xaml::IDependencyProperty> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetMetadata(*reinterpret_cast<const Windows::UI::Xaml::Interop::TypeName *>(&forType)));
             return S_OK;
         }
@@ -1590,6 +1673,7 @@ struct produce<D, Windows::UI::Xaml::IDependencyPropertyChangedEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Property());
             return S_OK;
         }
@@ -1604,6 +1688,7 @@ struct produce<D, Windows::UI::Xaml::IDependencyPropertyChangedEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OldValue());
             return S_OK;
         }
@@ -1618,6 +1703,7 @@ struct produce<D, Windows::UI::Xaml::IDependencyPropertyChangedEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewValue());
             return S_OK;
         }
@@ -1636,6 +1722,7 @@ struct produce<D, Windows::UI::Xaml::IDependencyPropertyStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnsetValue());
             return S_OK;
         }
@@ -1650,6 +1737,7 @@ struct produce<D, Windows::UI::Xaml::IDependencyPropertyStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Register(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::UI::Xaml::Interop::TypeName *>(&propertyType), *reinterpret_cast<const Windows::UI::Xaml::Interop::TypeName *>(&ownerType), *reinterpret_cast<const Windows::UI::Xaml::PropertyMetadata *>(&typeMetadata)));
             return S_OK;
         }
@@ -1664,6 +1752,7 @@ struct produce<D, Windows::UI::Xaml::IDependencyPropertyStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().RegisterAttached(*reinterpret_cast<const hstring *>(&name), *reinterpret_cast<const Windows::UI::Xaml::Interop::TypeName *>(&propertyType), *reinterpret_cast<const Windows::UI::Xaml::Interop::TypeName *>(&ownerType), *reinterpret_cast<const Windows::UI::Xaml::PropertyMetadata *>(&defaultMetadata)));
             return S_OK;
         }
@@ -1682,6 +1771,7 @@ struct produce<D, Windows::UI::Xaml::IDispatcherTimer> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Interval());
             return S_OK;
         }
@@ -1695,6 +1785,7 @@ struct produce<D, Windows::UI::Xaml::IDispatcherTimer> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Interval(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -1708,6 +1799,7 @@ struct produce<D, Windows::UI::Xaml::IDispatcherTimer> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
@@ -1721,6 +1813,7 @@ struct produce<D, Windows::UI::Xaml::IDispatcherTimer> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Tick(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -1734,6 +1827,7 @@ struct produce<D, Windows::UI::Xaml::IDispatcherTimer> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Tick(token);
             return S_OK;
         }
@@ -1747,6 +1841,7 @@ struct produce<D, Windows::UI::Xaml::IDispatcherTimer> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start();
             return S_OK;
         }
@@ -1760,6 +1855,7 @@ struct produce<D, Windows::UI::Xaml::IDispatcherTimer> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stop();
             return S_OK;
         }
@@ -1777,6 +1873,7 @@ struct produce<D, Windows::UI::Xaml::IDispatcherTimerFactory> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -1796,6 +1893,7 @@ struct produce<D, Windows::UI::Xaml::IDragEventArgs> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -1809,6 +1907,7 @@ struct produce<D, Windows::UI::Xaml::IDragEventArgs> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -1822,6 +1921,7 @@ struct produce<D, Windows::UI::Xaml::IDragEventArgs> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Data());
             return S_OK;
         }
@@ -1836,6 +1936,7 @@ struct produce<D, Windows::UI::Xaml::IDragEventArgs> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Data(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::DataPackage *>(&value));
             return S_OK;
         }
@@ -1849,6 +1950,7 @@ struct produce<D, Windows::UI::Xaml::IDragEventArgs> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetPosition(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&relativeTo)));
             return S_OK;
         }
@@ -1866,6 +1968,7 @@ struct produce<D, Windows::UI::Xaml::IDragEventArgs2> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataView());
             return S_OK;
         }
@@ -1880,6 +1983,7 @@ struct produce<D, Windows::UI::Xaml::IDragEventArgs2> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DragUIOverride());
             return S_OK;
         }
@@ -1894,6 +1998,7 @@ struct produce<D, Windows::UI::Xaml::IDragEventArgs2> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Modifiers());
             return S_OK;
         }
@@ -1907,6 +2012,7 @@ struct produce<D, Windows::UI::Xaml::IDragEventArgs2> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AcceptedOperation());
             return S_OK;
         }
@@ -1920,6 +2026,7 @@ struct produce<D, Windows::UI::Xaml::IDragEventArgs2> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AcceptedOperation(value);
             return S_OK;
         }
@@ -1933,6 +2040,7 @@ struct produce<D, Windows::UI::Xaml::IDragEventArgs2> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -1951,6 +2059,7 @@ struct produce<D, Windows::UI::Xaml::IDragEventArgs3> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowedOperations());
             return S_OK;
         }
@@ -1968,6 +2077,7 @@ struct produce<D, Windows::UI::Xaml::IDragOperationDeferral> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -1985,6 +2095,7 @@ struct produce<D, Windows::UI::Xaml::IDragStartingEventArgs> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Cancel());
             return S_OK;
         }
@@ -1998,6 +2109,7 @@ struct produce<D, Windows::UI::Xaml::IDragStartingEventArgs> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Cancel(value);
             return S_OK;
         }
@@ -2011,6 +2123,7 @@ struct produce<D, Windows::UI::Xaml::IDragStartingEventArgs> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Data());
             return S_OK;
         }
@@ -2025,6 +2138,7 @@ struct produce<D, Windows::UI::Xaml::IDragStartingEventArgs> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DragUI());
             return S_OK;
         }
@@ -2039,6 +2153,7 @@ struct produce<D, Windows::UI::Xaml::IDragStartingEventArgs> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -2053,6 +2168,7 @@ struct produce<D, Windows::UI::Xaml::IDragStartingEventArgs> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetPosition(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&relativeTo)));
             return S_OK;
         }
@@ -2070,6 +2186,7 @@ struct produce<D, Windows::UI::Xaml::IDragStartingEventArgs2> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowedOperations());
             return S_OK;
         }
@@ -2083,6 +2200,7 @@ struct produce<D, Windows::UI::Xaml::IDragStartingEventArgs2> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowedOperations(value);
             return S_OK;
         }
@@ -2100,6 +2218,7 @@ struct produce<D, Windows::UI::Xaml::IDragUI> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetContentFromBitmapImage(*reinterpret_cast<const Windows::UI::Xaml::Media::Imaging::BitmapImage *>(&bitmapImage));
             return S_OK;
         }
@@ -2113,6 +2232,7 @@ struct produce<D, Windows::UI::Xaml::IDragUI> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetContentFromBitmapImage(*reinterpret_cast<const Windows::UI::Xaml::Media::Imaging::BitmapImage *>(&bitmapImage), *reinterpret_cast<const Windows::Foundation::Point *>(&anchorPoint));
             return S_OK;
         }
@@ -2126,6 +2246,7 @@ struct produce<D, Windows::UI::Xaml::IDragUI> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetContentFromSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&softwareBitmap));
             return S_OK;
         }
@@ -2139,6 +2260,7 @@ struct produce<D, Windows::UI::Xaml::IDragUI> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetContentFromSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&softwareBitmap), *reinterpret_cast<const Windows::Foundation::Point *>(&anchorPoint));
             return S_OK;
         }
@@ -2152,6 +2274,7 @@ struct produce<D, Windows::UI::Xaml::IDragUI> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetContentFromDataPackage();
             return S_OK;
         }
@@ -2169,6 +2292,7 @@ struct produce<D, Windows::UI::Xaml::IDragUIOverride> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Caption());
             return S_OK;
         }
@@ -2183,6 +2307,7 @@ struct produce<D, Windows::UI::Xaml::IDragUIOverride> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Caption(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2196,6 +2321,7 @@ struct produce<D, Windows::UI::Xaml::IDragUIOverride> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsContentVisible());
             return S_OK;
         }
@@ -2209,6 +2335,7 @@ struct produce<D, Windows::UI::Xaml::IDragUIOverride> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsContentVisible(value);
             return S_OK;
         }
@@ -2222,6 +2349,7 @@ struct produce<D, Windows::UI::Xaml::IDragUIOverride> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsCaptionVisible());
             return S_OK;
         }
@@ -2235,6 +2363,7 @@ struct produce<D, Windows::UI::Xaml::IDragUIOverride> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsCaptionVisible(value);
             return S_OK;
         }
@@ -2248,6 +2377,7 @@ struct produce<D, Windows::UI::Xaml::IDragUIOverride> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsGlyphVisible());
             return S_OK;
         }
@@ -2261,6 +2391,7 @@ struct produce<D, Windows::UI::Xaml::IDragUIOverride> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsGlyphVisible(value);
             return S_OK;
         }
@@ -2274,6 +2405,7 @@ struct produce<D, Windows::UI::Xaml::IDragUIOverride> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Clear();
             return S_OK;
         }
@@ -2287,6 +2419,7 @@ struct produce<D, Windows::UI::Xaml::IDragUIOverride> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetContentFromBitmapImage(*reinterpret_cast<const Windows::UI::Xaml::Media::Imaging::BitmapImage *>(&bitmapImage));
             return S_OK;
         }
@@ -2300,6 +2433,7 @@ struct produce<D, Windows::UI::Xaml::IDragUIOverride> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetContentFromBitmapImage(*reinterpret_cast<const Windows::UI::Xaml::Media::Imaging::BitmapImage *>(&bitmapImage), *reinterpret_cast<const Windows::Foundation::Point *>(&anchorPoint));
             return S_OK;
         }
@@ -2313,6 +2447,7 @@ struct produce<D, Windows::UI::Xaml::IDragUIOverride> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetContentFromSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&softwareBitmap));
             return S_OK;
         }
@@ -2326,6 +2461,7 @@ struct produce<D, Windows::UI::Xaml::IDragUIOverride> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetContentFromSoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&softwareBitmap), *reinterpret_cast<const Windows::Foundation::Point *>(&anchorPoint));
             return S_OK;
         }
@@ -2343,6 +2479,7 @@ struct produce<D, Windows::UI::Xaml::IDropCompletedEventArgs> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DropResult());
             return S_OK;
         }
@@ -2364,6 +2501,7 @@ struct produce<D, Windows::UI::Xaml::IDurationHelperStatics> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Automatic());
             return S_OK;
         }
@@ -2377,6 +2515,7 @@ struct produce<D, Windows::UI::Xaml::IDurationHelperStatics> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Forever());
             return S_OK;
         }
@@ -2390,6 +2529,7 @@ struct produce<D, Windows::UI::Xaml::IDurationHelperStatics> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Compare(*reinterpret_cast<const Windows::UI::Xaml::Duration *>(&duration1), *reinterpret_cast<const Windows::UI::Xaml::Duration *>(&duration2)));
             return S_OK;
         }
@@ -2403,6 +2543,7 @@ struct produce<D, Windows::UI::Xaml::IDurationHelperStatics> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FromTimeSpan(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&timeSpan)));
             return S_OK;
         }
@@ -2416,6 +2557,7 @@ struct produce<D, Windows::UI::Xaml::IDurationHelperStatics> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetHasTimeSpan(*reinterpret_cast<const Windows::UI::Xaml::Duration *>(&target)));
             return S_OK;
         }
@@ -2429,6 +2571,7 @@ struct produce<D, Windows::UI::Xaml::IDurationHelperStatics> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Add(*reinterpret_cast<const Windows::UI::Xaml::Duration *>(&target), *reinterpret_cast<const Windows::UI::Xaml::Duration *>(&duration)));
             return S_OK;
         }
@@ -2442,6 +2585,7 @@ struct produce<D, Windows::UI::Xaml::IDurationHelperStatics> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Equals(*reinterpret_cast<const Windows::UI::Xaml::Duration *>(&target), *reinterpret_cast<const Windows::UI::Xaml::Duration *>(&value)));
             return S_OK;
         }
@@ -2455,6 +2599,7 @@ struct produce<D, Windows::UI::Xaml::IDurationHelperStatics> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Subtract(*reinterpret_cast<const Windows::UI::Xaml::Duration *>(&target), *reinterpret_cast<const Windows::UI::Xaml::Duration *>(&duration)));
             return S_OK;
         }
@@ -2476,6 +2621,7 @@ struct produce<D, Windows::UI::Xaml::IElementSoundPlayerStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Volume());
             return S_OK;
         }
@@ -2489,6 +2635,7 @@ struct produce<D, Windows::UI::Xaml::IElementSoundPlayerStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Volume(value);
             return S_OK;
         }
@@ -2502,6 +2649,7 @@ struct produce<D, Windows::UI::Xaml::IElementSoundPlayerStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().State());
             return S_OK;
         }
@@ -2515,6 +2663,7 @@ struct produce<D, Windows::UI::Xaml::IElementSoundPlayerStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().State(value);
             return S_OK;
         }
@@ -2528,6 +2677,7 @@ struct produce<D, Windows::UI::Xaml::IElementSoundPlayerStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Play(sound);
             return S_OK;
         }
@@ -2545,6 +2695,7 @@ struct produce<D, Windows::UI::Xaml::IEventTrigger> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RoutedEvent());
             return S_OK;
         }
@@ -2559,6 +2710,7 @@ struct produce<D, Windows::UI::Xaml::IEventTrigger> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RoutedEvent(*reinterpret_cast<const Windows::UI::Xaml::RoutedEvent *>(&value));
             return S_OK;
         }
@@ -2572,6 +2724,7 @@ struct produce<D, Windows::UI::Xaml::IEventTrigger> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Actions());
             return S_OK;
         }
@@ -2590,6 +2743,7 @@ struct produce<D, Windows::UI::Xaml::IExceptionRoutedEventArgs> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ErrorMessage());
             return S_OK;
         }
@@ -2612,6 +2766,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Triggers());
             return S_OK;
         }
@@ -2626,6 +2781,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Resources());
             return S_OK;
         }
@@ -2640,6 +2796,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Resources(*reinterpret_cast<const Windows::UI::Xaml::ResourceDictionary *>(&value));
             return S_OK;
         }
@@ -2653,6 +2810,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Tag());
             return S_OK;
         }
@@ -2667,6 +2825,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Tag(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
@@ -2680,6 +2839,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Language());
             return S_OK;
         }
@@ -2694,6 +2854,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Language(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2707,6 +2868,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ActualWidth());
             return S_OK;
         }
@@ -2720,6 +2882,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ActualHeight());
             return S_OK;
         }
@@ -2733,6 +2896,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Width());
             return S_OK;
         }
@@ -2746,6 +2910,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Width(value);
             return S_OK;
         }
@@ -2759,6 +2924,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Height());
             return S_OK;
         }
@@ -2772,6 +2938,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Height(value);
             return S_OK;
         }
@@ -2785,6 +2952,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinWidth());
             return S_OK;
         }
@@ -2798,6 +2966,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MinWidth(value);
             return S_OK;
         }
@@ -2811,6 +2980,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxWidth());
             return S_OK;
         }
@@ -2824,6 +2994,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxWidth(value);
             return S_OK;
         }
@@ -2837,6 +3008,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinHeight());
             return S_OK;
         }
@@ -2850,6 +3022,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MinHeight(value);
             return S_OK;
         }
@@ -2863,6 +3036,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxHeight());
             return S_OK;
         }
@@ -2876,6 +3050,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MaxHeight(value);
             return S_OK;
         }
@@ -2889,6 +3064,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HorizontalAlignment());
             return S_OK;
         }
@@ -2902,6 +3078,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().HorizontalAlignment(value);
             return S_OK;
         }
@@ -2915,6 +3092,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VerticalAlignment());
             return S_OK;
         }
@@ -2928,6 +3106,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VerticalAlignment(value);
             return S_OK;
         }
@@ -2941,6 +3120,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Margin());
             return S_OK;
         }
@@ -2954,6 +3134,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Margin(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
             return S_OK;
         }
@@ -2967,6 +3148,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -2981,6 +3163,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Name(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2994,6 +3177,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BaseUri());
             return S_OK;
         }
@@ -3008,6 +3192,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataContext());
             return S_OK;
         }
@@ -3022,6 +3207,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DataContext(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
@@ -3035,6 +3221,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Style());
             return S_OK;
         }
@@ -3049,6 +3236,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Style(*reinterpret_cast<const Windows::UI::Xaml::Style *>(&value));
             return S_OK;
         }
@@ -3062,6 +3250,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Parent());
             return S_OK;
         }
@@ -3076,6 +3265,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FlowDirection());
             return S_OK;
         }
@@ -3089,6 +3279,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FlowDirection(value);
             return S_OK;
         }
@@ -3102,6 +3293,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Loaded(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventHandler *>(&value)));
             return S_OK;
         }
@@ -3115,6 +3307,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Loaded(token);
             return S_OK;
         }
@@ -3128,6 +3321,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Unloaded(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventHandler *>(&value)));
             return S_OK;
         }
@@ -3141,6 +3335,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Unloaded(token);
             return S_OK;
         }
@@ -3154,6 +3349,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SizeChanged(*reinterpret_cast<const Windows::UI::Xaml::SizeChangedEventHandler *>(&value)));
             return S_OK;
         }
@@ -3167,6 +3363,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SizeChanged(token);
             return S_OK;
         }
@@ -3180,6 +3377,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().LayoutUpdated(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -3193,6 +3391,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LayoutUpdated(token);
             return S_OK;
         }
@@ -3206,6 +3405,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FindName(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -3220,6 +3420,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetBinding(*reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&dp), *reinterpret_cast<const Windows::UI::Xaml::Data::BindingBase *>(&binding));
             return S_OK;
         }
@@ -3237,6 +3438,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement2> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequestedTheme());
             return S_OK;
         }
@@ -3250,6 +3452,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement2> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RequestedTheme(value);
             return S_OK;
         }
@@ -3263,6 +3466,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement2> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DataContextChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::UI::Xaml::DataContextChangedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -3276,6 +3480,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement2> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DataContextChanged(token);
             return S_OK;
         }
@@ -3289,6 +3494,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement2> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetBindingExpression(*reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&dp)));
             return S_OK;
         }
@@ -3307,6 +3513,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement3> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Loading(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::IInspectable> *>(&value)));
             return S_OK;
         }
@@ -3320,6 +3527,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement3> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Loading(token);
             return S_OK;
         }
@@ -3337,6 +3545,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowFocusOnInteraction());
             return S_OK;
         }
@@ -3350,6 +3559,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowFocusOnInteraction(value);
             return S_OK;
         }
@@ -3363,6 +3573,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FocusVisualMargin());
             return S_OK;
         }
@@ -3376,6 +3587,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FocusVisualMargin(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
             return S_OK;
         }
@@ -3389,6 +3601,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FocusVisualSecondaryThickness());
             return S_OK;
         }
@@ -3402,6 +3615,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FocusVisualSecondaryThickness(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
             return S_OK;
         }
@@ -3415,6 +3629,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FocusVisualPrimaryThickness());
             return S_OK;
         }
@@ -3428,6 +3643,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FocusVisualPrimaryThickness(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
             return S_OK;
         }
@@ -3441,6 +3657,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FocusVisualSecondaryBrush());
             return S_OK;
         }
@@ -3455,6 +3672,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FocusVisualSecondaryBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
@@ -3468,6 +3686,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FocusVisualPrimaryBrush());
             return S_OK;
         }
@@ -3482,6 +3701,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FocusVisualPrimaryBrush(*reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&value));
             return S_OK;
         }
@@ -3495,6 +3715,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowFocusWhenDisabled());
             return S_OK;
         }
@@ -3508,6 +3729,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElement4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowFocusWhenDisabled(value);
             return S_OK;
         }
@@ -3525,6 +3747,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementFactory> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -3544,6 +3767,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementOverrides> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().MeasureOverride(*reinterpret_cast<const Windows::Foundation::Size *>(&availableSize)));
             return S_OK;
         }
@@ -3557,6 +3781,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementOverrides> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().ArrangeOverride(*reinterpret_cast<const Windows::Foundation::Size *>(&finalSize)));
             return S_OK;
         }
@@ -3570,6 +3795,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementOverrides> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnApplyTemplate();
             return S_OK;
         }
@@ -3587,6 +3813,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementOverrides2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GoToElementStateCore(*reinterpret_cast<const hstring *>(&stateName), useTransitions));
             return S_OK;
         }
@@ -3604,6 +3831,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TagProperty());
             return S_OK;
         }
@@ -3618,6 +3846,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LanguageProperty());
             return S_OK;
         }
@@ -3632,6 +3861,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ActualWidthProperty());
             return S_OK;
         }
@@ -3646,6 +3876,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ActualHeightProperty());
             return S_OK;
         }
@@ -3660,6 +3891,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WidthProperty());
             return S_OK;
         }
@@ -3674,6 +3906,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HeightProperty());
             return S_OK;
         }
@@ -3688,6 +3921,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinWidthProperty());
             return S_OK;
         }
@@ -3702,6 +3936,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxWidthProperty());
             return S_OK;
         }
@@ -3716,6 +3951,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinHeightProperty());
             return S_OK;
         }
@@ -3730,6 +3966,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxHeightProperty());
             return S_OK;
         }
@@ -3744,6 +3981,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HorizontalAlignmentProperty());
             return S_OK;
         }
@@ -3758,6 +3996,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VerticalAlignmentProperty());
             return S_OK;
         }
@@ -3772,6 +4011,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MarginProperty());
             return S_OK;
         }
@@ -3786,6 +4026,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NameProperty());
             return S_OK;
         }
@@ -3800,6 +4041,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataContextProperty());
             return S_OK;
         }
@@ -3814,6 +4056,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StyleProperty());
             return S_OK;
         }
@@ -3828,6 +4071,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FlowDirectionProperty());
             return S_OK;
         }
@@ -3846,6 +4090,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequestedThemeProperty());
             return S_OK;
         }
@@ -3864,6 +4109,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics4> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowFocusOnInteractionProperty());
             return S_OK;
         }
@@ -3878,6 +4124,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics4> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FocusVisualMarginProperty());
             return S_OK;
         }
@@ -3892,6 +4139,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics4> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FocusVisualSecondaryThicknessProperty());
             return S_OK;
         }
@@ -3906,6 +4154,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics4> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FocusVisualPrimaryThicknessProperty());
             return S_OK;
         }
@@ -3920,6 +4169,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics4> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FocusVisualSecondaryBrushProperty());
             return S_OK;
         }
@@ -3934,6 +4184,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics4> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FocusVisualPrimaryBrushProperty());
             return S_OK;
         }
@@ -3948,6 +4199,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics4> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowFocusWhenDisabledProperty());
             return S_OK;
         }
@@ -3970,6 +4222,7 @@ struct produce<D, Windows::UI::Xaml::IFrameworkTemplateFactory> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -4001,6 +4254,7 @@ struct produce<D, Windows::UI::Xaml::IGridLengthHelperStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Auto());
             return S_OK;
         }
@@ -4014,6 +4268,7 @@ struct produce<D, Windows::UI::Xaml::IGridLengthHelperStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FromPixels(pixels));
             return S_OK;
         }
@@ -4027,6 +4282,7 @@ struct produce<D, Windows::UI::Xaml::IGridLengthHelperStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FromValueAndType(value, type));
             return S_OK;
         }
@@ -4040,6 +4296,7 @@ struct produce<D, Windows::UI::Xaml::IGridLengthHelperStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetIsAbsolute(*reinterpret_cast<const Windows::UI::Xaml::GridLength *>(&target)));
             return S_OK;
         }
@@ -4053,6 +4310,7 @@ struct produce<D, Windows::UI::Xaml::IGridLengthHelperStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetIsAuto(*reinterpret_cast<const Windows::UI::Xaml::GridLength *>(&target)));
             return S_OK;
         }
@@ -4066,6 +4324,7 @@ struct produce<D, Windows::UI::Xaml::IGridLengthHelperStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetIsStar(*reinterpret_cast<const Windows::UI::Xaml::GridLength *>(&target)));
             return S_OK;
         }
@@ -4079,6 +4338,7 @@ struct produce<D, Windows::UI::Xaml::IGridLengthHelperStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Equals(*reinterpret_cast<const Windows::UI::Xaml::GridLength *>(&target), *reinterpret_cast<const Windows::UI::Xaml::GridLength *>(&value)));
             return S_OK;
         }
@@ -4096,6 +4356,7 @@ struct produce<D, Windows::UI::Xaml::IMediaFailedRoutedEventArgs> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ErrorTrace());
             return S_OK;
         }
@@ -4118,6 +4379,7 @@ struct produce<D, Windows::UI::Xaml::IPointHelperStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FromCoordinates(x, y));
             return S_OK;
         }
@@ -4135,6 +4397,7 @@ struct produce<D, Windows::UI::Xaml::IPropertyMetadata> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DefaultValue());
             return S_OK;
         }
@@ -4149,6 +4412,7 @@ struct produce<D, Windows::UI::Xaml::IPropertyMetadata> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateDefaultValueCallback());
             return S_OK;
         }
@@ -4167,6 +4431,7 @@ struct produce<D, Windows::UI::Xaml::IPropertyMetadataFactory> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceWithDefaultValue(*reinterpret_cast<const Windows::IInspectable *>(&defaultValue), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -4182,6 +4447,7 @@ struct produce<D, Windows::UI::Xaml::IPropertyMetadataFactory> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstanceWithDefaultValueAndCallback(*reinterpret_cast<const Windows::IInspectable *>(&defaultValue), *reinterpret_cast<const Windows::UI::Xaml::PropertyChangedCallback *>(&propertyChangedCallback), *reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -4201,6 +4467,7 @@ struct produce<D, Windows::UI::Xaml::IPropertyMetadataStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Create(*reinterpret_cast<const Windows::IInspectable *>(&defaultValue)));
             return S_OK;
         }
@@ -4215,6 +4482,7 @@ struct produce<D, Windows::UI::Xaml::IPropertyMetadataStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Create(*reinterpret_cast<const Windows::IInspectable *>(&defaultValue), *reinterpret_cast<const Windows::UI::Xaml::PropertyChangedCallback *>(&propertyChangedCallback)));
             return S_OK;
         }
@@ -4229,6 +4497,7 @@ struct produce<D, Windows::UI::Xaml::IPropertyMetadataStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Create(*reinterpret_cast<const Windows::UI::Xaml::CreateDefaultValueCallback *>(&createDefaultValueCallback)));
             return S_OK;
         }
@@ -4243,6 +4512,7 @@ struct produce<D, Windows::UI::Xaml::IPropertyMetadataStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Create(*reinterpret_cast<const Windows::UI::Xaml::CreateDefaultValueCallback *>(&createDefaultValueCallback), *reinterpret_cast<const Windows::UI::Xaml::PropertyChangedCallback *>(&propertyChangedCallback)));
             return S_OK;
         }
@@ -4261,6 +4531,7 @@ struct produce<D, Windows::UI::Xaml::IPropertyPath> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Path());
             return S_OK;
         }
@@ -4279,6 +4550,7 @@ struct produce<D, Windows::UI::Xaml::IPropertyPathFactory> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const hstring *>(&path)));
             return S_OK;
         }
@@ -4301,6 +4573,7 @@ struct produce<D, Windows::UI::Xaml::IRectHelperStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Empty());
             return S_OK;
         }
@@ -4314,6 +4587,7 @@ struct produce<D, Windows::UI::Xaml::IRectHelperStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FromCoordinatesAndDimensions(x, y, width, height));
             return S_OK;
         }
@@ -4327,6 +4601,7 @@ struct produce<D, Windows::UI::Xaml::IRectHelperStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FromPoints(*reinterpret_cast<const Windows::Foundation::Point *>(&point1), *reinterpret_cast<const Windows::Foundation::Point *>(&point2)));
             return S_OK;
         }
@@ -4340,6 +4615,7 @@ struct produce<D, Windows::UI::Xaml::IRectHelperStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FromLocationAndSize(*reinterpret_cast<const Windows::Foundation::Point *>(&location), *reinterpret_cast<const Windows::Foundation::Size *>(&size)));
             return S_OK;
         }
@@ -4353,6 +4629,7 @@ struct produce<D, Windows::UI::Xaml::IRectHelperStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetIsEmpty(*reinterpret_cast<const Windows::Foundation::Rect *>(&target)));
             return S_OK;
         }
@@ -4366,6 +4643,7 @@ struct produce<D, Windows::UI::Xaml::IRectHelperStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetBottom(*reinterpret_cast<const Windows::Foundation::Rect *>(&target)));
             return S_OK;
         }
@@ -4379,6 +4657,7 @@ struct produce<D, Windows::UI::Xaml::IRectHelperStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetLeft(*reinterpret_cast<const Windows::Foundation::Rect *>(&target)));
             return S_OK;
         }
@@ -4392,6 +4671,7 @@ struct produce<D, Windows::UI::Xaml::IRectHelperStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetRight(*reinterpret_cast<const Windows::Foundation::Rect *>(&target)));
             return S_OK;
         }
@@ -4405,6 +4685,7 @@ struct produce<D, Windows::UI::Xaml::IRectHelperStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetTop(*reinterpret_cast<const Windows::Foundation::Rect *>(&target)));
             return S_OK;
         }
@@ -4418,6 +4699,7 @@ struct produce<D, Windows::UI::Xaml::IRectHelperStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Contains(*reinterpret_cast<const Windows::Foundation::Rect *>(&target), *reinterpret_cast<const Windows::Foundation::Point *>(&point)));
             return S_OK;
         }
@@ -4431,6 +4713,7 @@ struct produce<D, Windows::UI::Xaml::IRectHelperStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Equals(*reinterpret_cast<const Windows::Foundation::Rect *>(&target), *reinterpret_cast<const Windows::Foundation::Rect *>(&value)));
             return S_OK;
         }
@@ -4444,6 +4727,7 @@ struct produce<D, Windows::UI::Xaml::IRectHelperStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Intersect(*reinterpret_cast<const Windows::Foundation::Rect *>(&target), *reinterpret_cast<const Windows::Foundation::Rect *>(&rect)));
             return S_OK;
         }
@@ -4457,6 +4741,7 @@ struct produce<D, Windows::UI::Xaml::IRectHelperStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Union(*reinterpret_cast<const Windows::Foundation::Rect *>(&target), *reinterpret_cast<const Windows::Foundation::Point *>(&point)));
             return S_OK;
         }
@@ -4470,6 +4755,7 @@ struct produce<D, Windows::UI::Xaml::IRectHelperStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Union(*reinterpret_cast<const Windows::Foundation::Rect *>(&target), *reinterpret_cast<const Windows::Foundation::Rect *>(&rect)));
             return S_OK;
         }
@@ -4487,6 +4773,7 @@ struct produce<D, Windows::UI::Xaml::IResourceDictionary> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Source());
             return S_OK;
         }
@@ -4501,6 +4788,7 @@ struct produce<D, Windows::UI::Xaml::IResourceDictionary> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Source(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -4514,6 +4802,7 @@ struct produce<D, Windows::UI::Xaml::IResourceDictionary> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MergedDictionaries());
             return S_OK;
         }
@@ -4528,6 +4817,7 @@ struct produce<D, Windows::UI::Xaml::IResourceDictionary> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ThemeDictionaries());
             return S_OK;
         }
@@ -4546,6 +4836,7 @@ struct produce<D, Windows::UI::Xaml::IResourceDictionaryFactory> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -4569,6 +4860,7 @@ struct produce<D, Windows::UI::Xaml::IRoutedEventArgs> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OriginalSource());
             return S_OK;
         }
@@ -4587,6 +4879,7 @@ struct produce<D, Windows::UI::Xaml::IRoutedEventArgsFactory> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -4606,6 +4899,7 @@ struct produce<D, Windows::UI::Xaml::ISetter> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Property());
             return S_OK;
         }
@@ -4620,6 +4914,7 @@ struct produce<D, Windows::UI::Xaml::ISetter> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Property(*reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&value));
             return S_OK;
         }
@@ -4633,6 +4928,7 @@ struct produce<D, Windows::UI::Xaml::ISetter> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -4647,6 +4943,7 @@ struct produce<D, Windows::UI::Xaml::ISetter> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Value(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
@@ -4664,6 +4961,7 @@ struct produce<D, Windows::UI::Xaml::ISetter2> : produce_base<D, Windows::UI::Xa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Target());
             return S_OK;
         }
@@ -4678,6 +4976,7 @@ struct produce<D, Windows::UI::Xaml::ISetter2> : produce_base<D, Windows::UI::Xa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Target(*reinterpret_cast<const Windows::UI::Xaml::TargetPropertyPath *>(&value));
             return S_OK;
         }
@@ -4695,6 +4994,7 @@ struct produce<D, Windows::UI::Xaml::ISetterBase> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsSealed());
             return S_OK;
         }
@@ -4712,6 +5012,7 @@ struct produce<D, Windows::UI::Xaml::ISetterBaseCollection> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsSealed());
             return S_OK;
         }
@@ -4733,6 +5034,7 @@ struct produce<D, Windows::UI::Xaml::ISetterFactory> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&targetProperty), *reinterpret_cast<const Windows::IInspectable *>(&value)));
             return S_OK;
         }
@@ -4751,6 +5053,7 @@ struct produce<D, Windows::UI::Xaml::ISizeChangedEventArgs> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PreviousSize());
             return S_OK;
         }
@@ -4764,6 +5067,7 @@ struct produce<D, Windows::UI::Xaml::ISizeChangedEventArgs> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewSize());
             return S_OK;
         }
@@ -4785,6 +5089,7 @@ struct produce<D, Windows::UI::Xaml::ISizeHelperStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Empty());
             return S_OK;
         }
@@ -4798,6 +5103,7 @@ struct produce<D, Windows::UI::Xaml::ISizeHelperStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FromDimensions(width, height));
             return S_OK;
         }
@@ -4811,6 +5117,7 @@ struct produce<D, Windows::UI::Xaml::ISizeHelperStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetIsEmpty(*reinterpret_cast<const Windows::Foundation::Size *>(&target)));
             return S_OK;
         }
@@ -4824,6 +5131,7 @@ struct produce<D, Windows::UI::Xaml::ISizeHelperStatics> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().Equals(*reinterpret_cast<const Windows::Foundation::Size *>(&target), *reinterpret_cast<const Windows::Foundation::Size *>(&value)));
             return S_OK;
         }
@@ -4841,6 +5149,7 @@ struct produce<D, Windows::UI::Xaml::IStateTrigger> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsActive());
             return S_OK;
         }
@@ -4854,6 +5163,7 @@ struct produce<D, Windows::UI::Xaml::IStateTrigger> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsActive(value);
             return S_OK;
         }
@@ -4875,6 +5185,7 @@ struct produce<D, Windows::UI::Xaml::IStateTriggerBaseFactory> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -4894,6 +5205,7 @@ struct produce<D, Windows::UI::Xaml::IStateTriggerBaseProtected> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetActive(IsActive);
             return S_OK;
         }
@@ -4911,6 +5223,7 @@ struct produce<D, Windows::UI::Xaml::IStateTriggerStatics> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsActiveProperty());
             return S_OK;
         }
@@ -4929,6 +5242,7 @@ struct produce<D, Windows::UI::Xaml::IStyle> : produce_base<D, Windows::UI::Xaml
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsSealed());
             return S_OK;
         }
@@ -4942,6 +5256,7 @@ struct produce<D, Windows::UI::Xaml::IStyle> : produce_base<D, Windows::UI::Xaml
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Setters());
             return S_OK;
         }
@@ -4956,6 +5271,7 @@ struct produce<D, Windows::UI::Xaml::IStyle> : produce_base<D, Windows::UI::Xaml
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetType());
             return S_OK;
         }
@@ -4969,6 +5285,7 @@ struct produce<D, Windows::UI::Xaml::IStyle> : produce_base<D, Windows::UI::Xaml
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetType(*reinterpret_cast<const Windows::UI::Xaml::Interop::TypeName *>(&value));
             return S_OK;
         }
@@ -4982,6 +5299,7 @@ struct produce<D, Windows::UI::Xaml::IStyle> : produce_base<D, Windows::UI::Xaml
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BasedOn());
             return S_OK;
         }
@@ -4996,6 +5314,7 @@ struct produce<D, Windows::UI::Xaml::IStyle> : produce_base<D, Windows::UI::Xaml
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BasedOn(*reinterpret_cast<const Windows::UI::Xaml::Style *>(&value));
             return S_OK;
         }
@@ -5009,6 +5328,7 @@ struct produce<D, Windows::UI::Xaml::IStyle> : produce_base<D, Windows::UI::Xaml
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Seal();
             return S_OK;
         }
@@ -5026,6 +5346,7 @@ struct produce<D, Windows::UI::Xaml::IStyleFactory> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::UI::Xaml::Interop::TypeName *>(&targetType)));
             return S_OK;
         }
@@ -5044,6 +5365,7 @@ struct produce<D, Windows::UI::Xaml::ITargetPropertyPath> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Path());
             return S_OK;
         }
@@ -5058,6 +5380,7 @@ struct produce<D, Windows::UI::Xaml::ITargetPropertyPath> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Path(*reinterpret_cast<const Windows::UI::Xaml::PropertyPath *>(&value));
             return S_OK;
         }
@@ -5071,6 +5394,7 @@ struct produce<D, Windows::UI::Xaml::ITargetPropertyPath> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Target());
             return S_OK;
         }
@@ -5085,6 +5409,7 @@ struct produce<D, Windows::UI::Xaml::ITargetPropertyPath> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Target(*reinterpret_cast<const Windows::IInspectable *>(&value));
             return S_OK;
         }
@@ -5102,6 +5427,7 @@ struct produce<D, Windows::UI::Xaml::ITargetPropertyPathFactory> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::UI::Xaml::DependencyProperty *>(&targetProperty)));
             return S_OK;
         }
@@ -5124,6 +5450,7 @@ struct produce<D, Windows::UI::Xaml::IThicknessHelperStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FromLengths(left, top, right, bottom));
             return S_OK;
         }
@@ -5137,6 +5464,7 @@ struct produce<D, Windows::UI::Xaml::IThicknessHelperStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FromUniformLength(uniformLength));
             return S_OK;
         }
@@ -5170,6 +5498,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredSize());
             return S_OK;
         }
@@ -5183,6 +5512,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowDrop());
             return S_OK;
         }
@@ -5196,6 +5526,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllowDrop(value);
             return S_OK;
         }
@@ -5209,6 +5540,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Opacity());
             return S_OK;
         }
@@ -5222,6 +5554,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Opacity(value);
             return S_OK;
         }
@@ -5235,6 +5568,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Clip());
             return S_OK;
         }
@@ -5249,6 +5583,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Clip(*reinterpret_cast<const Windows::UI::Xaml::Media::RectangleGeometry *>(&value));
             return S_OK;
         }
@@ -5262,6 +5597,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RenderTransform());
             return S_OK;
         }
@@ -5276,6 +5612,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RenderTransform(*reinterpret_cast<const Windows::UI::Xaml::Media::Transform *>(&value));
             return S_OK;
         }
@@ -5289,6 +5626,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Projection());
             return S_OK;
         }
@@ -5303,6 +5641,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Projection(*reinterpret_cast<const Windows::UI::Xaml::Media::Projection *>(&value));
             return S_OK;
         }
@@ -5316,6 +5655,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RenderTransformOrigin());
             return S_OK;
         }
@@ -5329,6 +5669,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RenderTransformOrigin(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
             return S_OK;
         }
@@ -5342,6 +5683,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsHitTestVisible());
             return S_OK;
         }
@@ -5355,6 +5697,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsHitTestVisible(value);
             return S_OK;
         }
@@ -5368,6 +5711,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Visibility());
             return S_OK;
         }
@@ -5381,6 +5725,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Visibility(value);
             return S_OK;
         }
@@ -5394,6 +5739,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RenderSize());
             return S_OK;
         }
@@ -5407,6 +5753,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UseLayoutRounding());
             return S_OK;
         }
@@ -5420,6 +5767,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UseLayoutRounding(value);
             return S_OK;
         }
@@ -5433,6 +5781,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Transitions());
             return S_OK;
         }
@@ -5447,6 +5796,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Transitions(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::TransitionCollection *>(&value));
             return S_OK;
         }
@@ -5460,6 +5810,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CacheMode());
             return S_OK;
         }
@@ -5474,6 +5825,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CacheMode(*reinterpret_cast<const Windows::UI::Xaml::Media::CacheMode *>(&value));
             return S_OK;
         }
@@ -5487,6 +5839,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTapEnabled());
             return S_OK;
         }
@@ -5500,6 +5853,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsTapEnabled(value);
             return S_OK;
         }
@@ -5513,6 +5867,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDoubleTapEnabled());
             return S_OK;
         }
@@ -5526,6 +5881,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsDoubleTapEnabled(value);
             return S_OK;
         }
@@ -5539,6 +5895,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsRightTapEnabled());
             return S_OK;
         }
@@ -5552,6 +5909,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsRightTapEnabled(value);
             return S_OK;
         }
@@ -5565,6 +5923,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsHoldingEnabled());
             return S_OK;
         }
@@ -5578,6 +5937,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsHoldingEnabled(value);
             return S_OK;
         }
@@ -5591,6 +5951,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ManipulationMode());
             return S_OK;
         }
@@ -5604,6 +5965,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ManipulationMode(value);
             return S_OK;
         }
@@ -5617,6 +5979,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerCaptures());
             return S_OK;
         }
@@ -5631,6 +5994,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().KeyUp(*reinterpret_cast<const Windows::UI::Xaml::Input::KeyEventHandler *>(&value)));
             return S_OK;
         }
@@ -5644,6 +6008,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeyUp(token);
             return S_OK;
         }
@@ -5657,6 +6022,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().KeyDown(*reinterpret_cast<const Windows::UI::Xaml::Input::KeyEventHandler *>(&value)));
             return S_OK;
         }
@@ -5670,6 +6036,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().KeyDown(token);
             return S_OK;
         }
@@ -5683,6 +6050,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().GotFocus(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventHandler *>(&value)));
             return S_OK;
         }
@@ -5696,6 +6064,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GotFocus(token);
             return S_OK;
         }
@@ -5709,6 +6078,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().LostFocus(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventHandler *>(&value)));
             return S_OK;
         }
@@ -5722,6 +6092,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LostFocus(token);
             return S_OK;
         }
@@ -5735,6 +6106,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DragEnter(*reinterpret_cast<const Windows::UI::Xaml::DragEventHandler *>(&value)));
             return S_OK;
         }
@@ -5748,6 +6120,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DragEnter(token);
             return S_OK;
         }
@@ -5761,6 +6134,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DragLeave(*reinterpret_cast<const Windows::UI::Xaml::DragEventHandler *>(&value)));
             return S_OK;
         }
@@ -5774,6 +6148,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DragLeave(token);
             return S_OK;
         }
@@ -5787,6 +6162,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DragOver(*reinterpret_cast<const Windows::UI::Xaml::DragEventHandler *>(&value)));
             return S_OK;
         }
@@ -5800,6 +6176,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DragOver(token);
             return S_OK;
         }
@@ -5813,6 +6190,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Drop(*reinterpret_cast<const Windows::UI::Xaml::DragEventHandler *>(&value)));
             return S_OK;
         }
@@ -5826,6 +6204,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Drop(token);
             return S_OK;
         }
@@ -5839,6 +6218,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PointerPressed(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerEventHandler *>(&value)));
             return S_OK;
         }
@@ -5852,6 +6232,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerPressed(token);
             return S_OK;
         }
@@ -5865,6 +6246,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PointerMoved(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerEventHandler *>(&value)));
             return S_OK;
         }
@@ -5878,6 +6260,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerMoved(token);
             return S_OK;
         }
@@ -5891,6 +6274,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PointerReleased(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerEventHandler *>(&value)));
             return S_OK;
         }
@@ -5904,6 +6288,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerReleased(token);
             return S_OK;
         }
@@ -5917,6 +6302,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PointerEntered(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerEventHandler *>(&value)));
             return S_OK;
         }
@@ -5930,6 +6316,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerEntered(token);
             return S_OK;
         }
@@ -5943,6 +6330,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PointerExited(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerEventHandler *>(&value)));
             return S_OK;
         }
@@ -5956,6 +6344,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerExited(token);
             return S_OK;
         }
@@ -5969,6 +6358,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PointerCaptureLost(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerEventHandler *>(&value)));
             return S_OK;
         }
@@ -5982,6 +6372,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerCaptureLost(token);
             return S_OK;
         }
@@ -5995,6 +6386,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PointerCanceled(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerEventHandler *>(&value)));
             return S_OK;
         }
@@ -6008,6 +6400,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerCanceled(token);
             return S_OK;
         }
@@ -6021,6 +6414,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PointerWheelChanged(*reinterpret_cast<const Windows::UI::Xaml::Input::PointerEventHandler *>(&value)));
             return S_OK;
         }
@@ -6034,6 +6428,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PointerWheelChanged(token);
             return S_OK;
         }
@@ -6047,6 +6442,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Tapped(*reinterpret_cast<const Windows::UI::Xaml::Input::TappedEventHandler *>(&value)));
             return S_OK;
         }
@@ -6060,6 +6456,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Tapped(token);
             return S_OK;
         }
@@ -6073,6 +6470,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DoubleTapped(*reinterpret_cast<const Windows::UI::Xaml::Input::DoubleTappedEventHandler *>(&value)));
             return S_OK;
         }
@@ -6086,6 +6484,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DoubleTapped(token);
             return S_OK;
         }
@@ -6099,6 +6498,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Holding(*reinterpret_cast<const Windows::UI::Xaml::Input::HoldingEventHandler *>(&value)));
             return S_OK;
         }
@@ -6112,6 +6512,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Holding(token);
             return S_OK;
         }
@@ -6125,6 +6526,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RightTapped(*reinterpret_cast<const Windows::UI::Xaml::Input::RightTappedEventHandler *>(&value)));
             return S_OK;
         }
@@ -6138,6 +6540,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RightTapped(token);
             return S_OK;
         }
@@ -6151,6 +6554,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ManipulationStarting(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationStartingEventHandler *>(&value)));
             return S_OK;
         }
@@ -6164,6 +6568,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ManipulationStarting(token);
             return S_OK;
         }
@@ -6177,6 +6582,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ManipulationInertiaStarting(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationInertiaStartingEventHandler *>(&value)));
             return S_OK;
         }
@@ -6190,6 +6596,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ManipulationInertiaStarting(token);
             return S_OK;
         }
@@ -6203,6 +6610,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ManipulationStarted(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationStartedEventHandler *>(&value)));
             return S_OK;
         }
@@ -6216,6 +6624,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ManipulationStarted(token);
             return S_OK;
         }
@@ -6229,6 +6638,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ManipulationDelta(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationDeltaEventHandler *>(&value)));
             return S_OK;
         }
@@ -6242,6 +6652,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ManipulationDelta(token);
             return S_OK;
         }
@@ -6255,6 +6666,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ManipulationCompleted(*reinterpret_cast<const Windows::UI::Xaml::Input::ManipulationCompletedEventHandler *>(&value)));
             return S_OK;
         }
@@ -6268,6 +6680,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ManipulationCompleted(token);
             return S_OK;
         }
@@ -6281,6 +6694,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Measure(*reinterpret_cast<const Windows::Foundation::Size *>(&availableSize));
             return S_OK;
         }
@@ -6294,6 +6708,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Arrange(*reinterpret_cast<const Windows::Foundation::Rect *>(&finalRect));
             return S_OK;
         }
@@ -6307,6 +6722,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().CapturePointer(*reinterpret_cast<const Windows::UI::Xaml::Input::Pointer *>(&value)));
             return S_OK;
         }
@@ -6320,6 +6736,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReleasePointerCapture(*reinterpret_cast<const Windows::UI::Xaml::Input::Pointer *>(&value));
             return S_OK;
         }
@@ -6333,6 +6750,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReleasePointerCaptures();
             return S_OK;
         }
@@ -6346,6 +6764,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddHandler(*reinterpret_cast<const Windows::UI::Xaml::RoutedEvent *>(&routedEvent), *reinterpret_cast<const Windows::IInspectable *>(&handler), handledEventsToo);
             return S_OK;
         }
@@ -6359,6 +6778,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveHandler(*reinterpret_cast<const Windows::UI::Xaml::RoutedEvent *>(&routedEvent), *reinterpret_cast<const Windows::IInspectable *>(&handler));
             return S_OK;
         }
@@ -6372,6 +6792,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TransformToVisual(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&visual)));
             return S_OK;
         }
@@ -6386,6 +6807,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InvalidateMeasure();
             return S_OK;
         }
@@ -6399,6 +6821,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InvalidateArrange();
             return S_OK;
         }
@@ -6412,6 +6835,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement> : produce_base<D, Windows::UI::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UpdateLayout();
             return S_OK;
         }
@@ -6429,6 +6853,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement2> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CompositeMode());
             return S_OK;
         }
@@ -6442,6 +6867,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement2> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CompositeMode(value);
             return S_OK;
         }
@@ -6455,6 +6881,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement2> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().CancelDirectManipulations());
             return S_OK;
         }
@@ -6472,6 +6899,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement3> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Transform3D());
             return S_OK;
         }
@@ -6486,6 +6914,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement3> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Transform3D(*reinterpret_cast<const Windows::UI::Xaml::Media::Media3D::Transform3D *>(&value));
             return S_OK;
         }
@@ -6499,6 +6928,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement3> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanDrag());
             return S_OK;
         }
@@ -6512,6 +6942,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement3> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CanDrag(value);
             return S_OK;
         }
@@ -6525,6 +6956,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement3> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DragStarting(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DragStartingEventArgs> *>(&value)));
             return S_OK;
         }
@@ -6538,6 +6970,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement3> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DragStarting(token);
             return S_OK;
         }
@@ -6551,6 +6984,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement3> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DropCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DropCompletedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -6564,6 +6998,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement3> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DropCompleted(token);
             return S_OK;
         }
@@ -6577,6 +7012,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement3> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().StartDragAsync(*reinterpret_cast<const Windows::UI::Input::PointerPoint *>(&pointerPoint)));
             return S_OK;
         }
@@ -6595,6 +7031,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContextFlyout());
             return S_OK;
         }
@@ -6609,6 +7046,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContextFlyout(*reinterpret_cast<const Windows::UI::Xaml::Controls::Primitives::FlyoutBase *>(&value));
             return S_OK;
         }
@@ -6622,6 +7060,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExitDisplayModeOnAccessKeyInvoked());
             return S_OK;
         }
@@ -6635,6 +7074,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExitDisplayModeOnAccessKeyInvoked(value);
             return S_OK;
         }
@@ -6648,6 +7088,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsAccessKeyScope());
             return S_OK;
         }
@@ -6661,6 +7102,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsAccessKeyScope(value);
             return S_OK;
         }
@@ -6674,6 +7116,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccessKeyScopeOwner());
             return S_OK;
         }
@@ -6688,6 +7131,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AccessKeyScopeOwner(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
             return S_OK;
         }
@@ -6701,6 +7145,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccessKey());
             return S_OK;
         }
@@ -6715,6 +7160,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AccessKey(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -6728,6 +7174,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ContextRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::ContextRequestedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -6741,6 +7188,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContextRequested(token);
             return S_OK;
         }
@@ -6754,6 +7202,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ContextCanceled(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::RoutedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -6767,6 +7216,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContextCanceled(token);
             return S_OK;
         }
@@ -6780,6 +7230,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().AccessKeyDisplayRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -6793,6 +7244,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AccessKeyDisplayRequested(token);
             return S_OK;
         }
@@ -6806,6 +7258,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().AccessKeyDisplayDismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -6819,6 +7272,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AccessKeyDisplayDismissed(token);
             return S_OK;
         }
@@ -6832,6 +7286,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().AccessKeyInvoked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> *>(&value)));
             return S_OK;
         }
@@ -6845,6 +7300,7 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AccessKeyInvoked(token);
             return S_OK;
         }
@@ -6866,6 +7322,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementOverrides> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().OnCreateAutomationPeer());
             return S_OK;
         }
@@ -6880,6 +7337,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementOverrides> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnDisconnectVisualChildren();
             return S_OK;
         }
@@ -6893,6 +7351,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementOverrides> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().FindSubElementsForTouchTargeting(*reinterpret_cast<const Windows::Foundation::Point *>(&point), *reinterpret_cast<const Windows::Foundation::Rect *>(&boundingRect)));
             return S_OK;
         }
@@ -6911,6 +7370,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyDownEvent());
             return S_OK;
         }
@@ -6925,6 +7385,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KeyUpEvent());
             return S_OK;
         }
@@ -6939,6 +7400,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerEnteredEvent());
             return S_OK;
         }
@@ -6953,6 +7415,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerPressedEvent());
             return S_OK;
         }
@@ -6967,6 +7430,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerMovedEvent());
             return S_OK;
         }
@@ -6981,6 +7445,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerReleasedEvent());
             return S_OK;
         }
@@ -6995,6 +7460,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerExitedEvent());
             return S_OK;
         }
@@ -7009,6 +7475,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerCaptureLostEvent());
             return S_OK;
         }
@@ -7023,6 +7490,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerCanceledEvent());
             return S_OK;
         }
@@ -7037,6 +7505,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerWheelChangedEvent());
             return S_OK;
         }
@@ -7051,6 +7520,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TappedEvent());
             return S_OK;
         }
@@ -7065,6 +7535,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DoubleTappedEvent());
             return S_OK;
         }
@@ -7079,6 +7550,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HoldingEvent());
             return S_OK;
         }
@@ -7093,6 +7565,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RightTappedEvent());
             return S_OK;
         }
@@ -7107,6 +7580,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ManipulationStartingEvent());
             return S_OK;
         }
@@ -7121,6 +7595,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ManipulationInertiaStartingEvent());
             return S_OK;
         }
@@ -7135,6 +7610,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ManipulationStartedEvent());
             return S_OK;
         }
@@ -7149,6 +7625,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ManipulationDeltaEvent());
             return S_OK;
         }
@@ -7163,6 +7640,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ManipulationCompletedEvent());
             return S_OK;
         }
@@ -7177,6 +7655,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DragEnterEvent());
             return S_OK;
         }
@@ -7191,6 +7670,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DragLeaveEvent());
             return S_OK;
         }
@@ -7205,6 +7685,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DragOverEvent());
             return S_OK;
         }
@@ -7219,6 +7700,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DropEvent());
             return S_OK;
         }
@@ -7233,6 +7715,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllowDropProperty());
             return S_OK;
         }
@@ -7247,6 +7730,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OpacityProperty());
             return S_OK;
         }
@@ -7261,6 +7745,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClipProperty());
             return S_OK;
         }
@@ -7275,6 +7760,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RenderTransformProperty());
             return S_OK;
         }
@@ -7289,6 +7775,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProjectionProperty());
             return S_OK;
         }
@@ -7303,6 +7790,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RenderTransformOriginProperty());
             return S_OK;
         }
@@ -7317,6 +7805,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsHitTestVisibleProperty());
             return S_OK;
         }
@@ -7331,6 +7820,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VisibilityProperty());
             return S_OK;
         }
@@ -7345,6 +7835,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UseLayoutRoundingProperty());
             return S_OK;
         }
@@ -7359,6 +7850,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TransitionsProperty());
             return S_OK;
         }
@@ -7373,6 +7865,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CacheModeProperty());
             return S_OK;
         }
@@ -7387,6 +7880,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTapEnabledProperty());
             return S_OK;
         }
@@ -7401,6 +7895,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDoubleTapEnabledProperty());
             return S_OK;
         }
@@ -7415,6 +7910,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsRightTapEnabledProperty());
             return S_OK;
         }
@@ -7429,6 +7925,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsHoldingEnabledProperty());
             return S_OK;
         }
@@ -7443,6 +7940,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ManipulationModeProperty());
             return S_OK;
         }
@@ -7457,6 +7955,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PointerCapturesProperty());
             return S_OK;
         }
@@ -7475,6 +7974,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics2> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CompositeModeProperty());
             return S_OK;
         }
@@ -7493,6 +7993,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics3> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Transform3DProperty());
             return S_OK;
         }
@@ -7507,6 +8008,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics3> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanDragProperty());
             return S_OK;
         }
@@ -7521,6 +8023,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics3> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().TryStartDirectManipulation(*reinterpret_cast<const Windows::UI::Xaml::Input::Pointer *>(&value)));
             return S_OK;
         }
@@ -7538,6 +8041,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContextFlyoutProperty());
             return S_OK;
         }
@@ -7552,6 +8056,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExitDisplayModeOnAccessKeyInvokedProperty());
             return S_OK;
         }
@@ -7566,6 +8071,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsAccessKeyScopeProperty());
             return S_OK;
         }
@@ -7580,6 +8086,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccessKeyScopeOwnerProperty());
             return S_OK;
         }
@@ -7594,6 +8101,7 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics4> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccessKeyProperty());
             return S_OK;
         }
@@ -7612,6 +8120,7 @@ struct produce<D, Windows::UI::Xaml::IUnhandledExceptionEventArgs> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Exception());
             return S_OK;
         }
@@ -7625,6 +8134,7 @@ struct produce<D, Windows::UI::Xaml::IUnhandledExceptionEventArgs> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Message());
             return S_OK;
         }
@@ -7639,6 +8149,7 @@ struct produce<D, Windows::UI::Xaml::IUnhandledExceptionEventArgs> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Handled());
             return S_OK;
         }
@@ -7652,6 +8163,7 @@ struct produce<D, Windows::UI::Xaml::IUnhandledExceptionEventArgs> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Handled(value);
             return S_OK;
         }
@@ -7669,6 +8181,7 @@ struct produce<D, Windows::UI::Xaml::IVisualState> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -7683,6 +8196,7 @@ struct produce<D, Windows::UI::Xaml::IVisualState> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Storyboard());
             return S_OK;
         }
@@ -7697,6 +8211,7 @@ struct produce<D, Windows::UI::Xaml::IVisualState> : produce_base<D, Windows::UI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Storyboard(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Storyboard *>(&value));
             return S_OK;
         }
@@ -7714,6 +8229,7 @@ struct produce<D, Windows::UI::Xaml::IVisualState2> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Setters());
             return S_OK;
         }
@@ -7728,6 +8244,7 @@ struct produce<D, Windows::UI::Xaml::IVisualState2> : produce_base<D, Windows::U
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StateTriggers());
             return S_OK;
         }
@@ -7746,6 +8263,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateChangedEventArgs> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OldState());
             return S_OK;
         }
@@ -7760,6 +8278,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateChangedEventArgs> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OldState(*reinterpret_cast<const Windows::UI::Xaml::VisualState *>(&value));
             return S_OK;
         }
@@ -7773,6 +8292,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateChangedEventArgs> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewState());
             return S_OK;
         }
@@ -7787,6 +8307,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateChangedEventArgs> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NewState(*reinterpret_cast<const Windows::UI::Xaml::VisualState *>(&value));
             return S_OK;
         }
@@ -7800,6 +8321,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateChangedEventArgs> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Control());
             return S_OK;
         }
@@ -7814,6 +8336,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateChangedEventArgs> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Control(*reinterpret_cast<const Windows::UI::Xaml::Controls::Control *>(&value));
             return S_OK;
         }
@@ -7831,6 +8354,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateGroup> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -7845,6 +8369,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateGroup> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Transitions());
             return S_OK;
         }
@@ -7859,6 +8384,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateGroup> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().States());
             return S_OK;
         }
@@ -7873,6 +8399,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateGroup> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentState());
             return S_OK;
         }
@@ -7887,6 +8414,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateGroup> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CurrentStateChanged(*reinterpret_cast<const Windows::UI::Xaml::VisualStateChangedEventHandler *>(&value)));
             return S_OK;
         }
@@ -7900,6 +8428,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateGroup> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CurrentStateChanged(token);
             return S_OK;
         }
@@ -7913,6 +8442,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateGroup> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CurrentStateChanging(*reinterpret_cast<const Windows::UI::Xaml::VisualStateChangedEventHandler *>(&value)));
             return S_OK;
         }
@@ -7926,6 +8456,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateGroup> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CurrentStateChanging(token);
             return S_OK;
         }
@@ -7947,6 +8478,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateManagerFactory> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -7966,6 +8498,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateManagerOverrides> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GoToStateCore(*reinterpret_cast<const Windows::UI::Xaml::Controls::Control *>(&control), *reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&templateRoot), *reinterpret_cast<const hstring *>(&stateName), *reinterpret_cast<const Windows::UI::Xaml::VisualStateGroup *>(&group), *reinterpret_cast<const Windows::UI::Xaml::VisualState *>(&state), useTransitions));
             return S_OK;
         }
@@ -7983,6 +8516,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateManagerProtected> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RaiseCurrentStateChanging(*reinterpret_cast<const Windows::UI::Xaml::VisualStateGroup *>(&stateGroup), *reinterpret_cast<const Windows::UI::Xaml::VisualState *>(&oldState), *reinterpret_cast<const Windows::UI::Xaml::VisualState *>(&newState), *reinterpret_cast<const Windows::UI::Xaml::Controls::Control *>(&control));
             return S_OK;
         }
@@ -7996,6 +8530,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateManagerProtected> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RaiseCurrentStateChanged(*reinterpret_cast<const Windows::UI::Xaml::VisualStateGroup *>(&stateGroup), *reinterpret_cast<const Windows::UI::Xaml::VisualState *>(&oldState), *reinterpret_cast<const Windows::UI::Xaml::VisualState *>(&newState), *reinterpret_cast<const Windows::UI::Xaml::Controls::Control *>(&control));
             return S_OK;
         }
@@ -8013,6 +8548,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateManagerStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetVisualStateGroups(*reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&obj)));
             return S_OK;
         }
@@ -8027,6 +8563,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateManagerStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CustomVisualStateManagerProperty());
             return S_OK;
         }
@@ -8041,6 +8578,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateManagerStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCustomVisualStateManager(*reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&obj)));
             return S_OK;
         }
@@ -8055,6 +8593,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateManagerStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetCustomVisualStateManager(*reinterpret_cast<const Windows::UI::Xaml::FrameworkElement *>(&obj), *reinterpret_cast<const Windows::UI::Xaml::VisualStateManager *>(&value));
             return S_OK;
         }
@@ -8068,6 +8607,7 @@ struct produce<D, Windows::UI::Xaml::IVisualStateManagerStatics> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GoToState(*reinterpret_cast<const Windows::UI::Xaml::Controls::Control *>(&control), *reinterpret_cast<const hstring *>(&stateName), useTransitions));
             return S_OK;
         }
@@ -8085,6 +8625,7 @@ struct produce<D, Windows::UI::Xaml::IVisualTransition> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GeneratedDuration());
             return S_OK;
         }
@@ -8098,6 +8639,7 @@ struct produce<D, Windows::UI::Xaml::IVisualTransition> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GeneratedDuration(*reinterpret_cast<const Windows::UI::Xaml::Duration *>(&value));
             return S_OK;
         }
@@ -8111,6 +8653,7 @@ struct produce<D, Windows::UI::Xaml::IVisualTransition> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GeneratedEasingFunction());
             return S_OK;
         }
@@ -8125,6 +8668,7 @@ struct produce<D, Windows::UI::Xaml::IVisualTransition> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GeneratedEasingFunction(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::EasingFunctionBase *>(&value));
             return S_OK;
         }
@@ -8138,6 +8682,7 @@ struct produce<D, Windows::UI::Xaml::IVisualTransition> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().To());
             return S_OK;
         }
@@ -8152,6 +8697,7 @@ struct produce<D, Windows::UI::Xaml::IVisualTransition> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().To(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -8165,6 +8711,7 @@ struct produce<D, Windows::UI::Xaml::IVisualTransition> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().From());
             return S_OK;
         }
@@ -8179,6 +8726,7 @@ struct produce<D, Windows::UI::Xaml::IVisualTransition> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().From(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -8192,6 +8740,7 @@ struct produce<D, Windows::UI::Xaml::IVisualTransition> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Storyboard());
             return S_OK;
         }
@@ -8206,6 +8755,7 @@ struct produce<D, Windows::UI::Xaml::IVisualTransition> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Storyboard(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::Storyboard *>(&value));
             return S_OK;
         }
@@ -8223,6 +8773,7 @@ struct produce<D, Windows::UI::Xaml::IVisualTransitionFactory> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -8242,6 +8793,7 @@ struct produce<D, Windows::UI::Xaml::IWindow> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bounds());
             return S_OK;
         }
@@ -8255,6 +8807,7 @@ struct produce<D, Windows::UI::Xaml::IWindow> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Visible());
             return S_OK;
         }
@@ -8268,6 +8821,7 @@ struct produce<D, Windows::UI::Xaml::IWindow> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Content());
             return S_OK;
         }
@@ -8282,6 +8836,7 @@ struct produce<D, Windows::UI::Xaml::IWindow> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Content(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&value));
             return S_OK;
         }
@@ -8295,6 +8850,7 @@ struct produce<D, Windows::UI::Xaml::IWindow> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CoreWindow());
             return S_OK;
         }
@@ -8309,6 +8865,7 @@ struct produce<D, Windows::UI::Xaml::IWindow> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Dispatcher());
             return S_OK;
         }
@@ -8323,6 +8880,7 @@ struct produce<D, Windows::UI::Xaml::IWindow> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Activated(*reinterpret_cast<const Windows::UI::Xaml::WindowActivatedEventHandler *>(&value)));
             return S_OK;
         }
@@ -8336,6 +8894,7 @@ struct produce<D, Windows::UI::Xaml::IWindow> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Activated(token);
             return S_OK;
         }
@@ -8349,6 +8908,7 @@ struct produce<D, Windows::UI::Xaml::IWindow> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Closed(*reinterpret_cast<const Windows::UI::Xaml::WindowClosedEventHandler *>(&value)));
             return S_OK;
         }
@@ -8362,6 +8922,7 @@ struct produce<D, Windows::UI::Xaml::IWindow> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Closed(token);
             return S_OK;
         }
@@ -8375,6 +8936,7 @@ struct produce<D, Windows::UI::Xaml::IWindow> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SizeChanged(*reinterpret_cast<const Windows::UI::Xaml::WindowSizeChangedEventHandler *>(&value)));
             return S_OK;
         }
@@ -8388,6 +8950,7 @@ struct produce<D, Windows::UI::Xaml::IWindow> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SizeChanged(token);
             return S_OK;
         }
@@ -8401,6 +8964,7 @@ struct produce<D, Windows::UI::Xaml::IWindow> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().VisibilityChanged(*reinterpret_cast<const Windows::UI::Xaml::WindowVisibilityChangedEventHandler *>(&value)));
             return S_OK;
         }
@@ -8414,6 +8978,7 @@ struct produce<D, Windows::UI::Xaml::IWindow> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().VisibilityChanged(token);
             return S_OK;
         }
@@ -8427,6 +8992,7 @@ struct produce<D, Windows::UI::Xaml::IWindow> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Activate();
             return S_OK;
         }
@@ -8440,6 +9006,7 @@ struct produce<D, Windows::UI::Xaml::IWindow> : produce_base<D, Windows::UI::Xam
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Close();
             return S_OK;
         }
@@ -8457,6 +9024,7 @@ struct produce<D, Windows::UI::Xaml::IWindow2> : produce_base<D, Windows::UI::Xa
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetTitleBar(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&value));
             return S_OK;
         }
@@ -8474,6 +9042,7 @@ struct produce<D, Windows::UI::Xaml::IWindowCreatedEventArgs> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Window());
             return S_OK;
         }
@@ -8492,6 +9061,7 @@ struct produce<D, Windows::UI::Xaml::IWindowStatics> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Current());
             return S_OK;
         }

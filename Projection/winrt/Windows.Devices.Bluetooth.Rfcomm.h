@@ -24,6 +24,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConnectionHostName());
             return S_OK;
         }
@@ -38,6 +39,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConnectionServiceName());
             return S_OK;
         }
@@ -52,6 +54,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceId());
             return S_OK;
         }
@@ -66,6 +69,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProtectionLevel());
             return S_OK;
         }
@@ -79,6 +83,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxProtectionLevel());
             return S_OK;
         }
@@ -92,6 +97,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().GetSdpRawAttributesAsync());
             return S_OK;
         }
@@ -106,6 +112,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().GetSdpRawAttributesAsync(cacheMode));
             return S_OK;
         }
@@ -124,6 +131,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService2> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Device());
             return S_OK;
         }
@@ -142,6 +150,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService3> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceAccessInformation());
             return S_OK;
         }
@@ -156,6 +165,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService3> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }
@@ -174,6 +184,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServiceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -188,6 +199,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServiceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *selector = detach(this->shim().GetDeviceSelector(*reinterpret_cast<const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId *>(&serviceId)));
             return S_OK;
         }
@@ -206,6 +218,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServiceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *selector = detach(this->shim().GetDeviceSelectorForBluetoothDevice(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothDevice *>(&bluetoothDevice)));
             return S_OK;
         }
@@ -220,6 +233,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServiceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *selector = detach(this->shim().GetDeviceSelectorForBluetoothDevice(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothDevice *>(&bluetoothDevice), cacheMode));
             return S_OK;
         }
@@ -234,6 +248,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServiceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *selector = detach(this->shim().GetDeviceSelectorForBluetoothDeviceAndServiceId(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothDevice *>(&bluetoothDevice), *reinterpret_cast<const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId *>(&serviceId)));
             return S_OK;
         }
@@ -248,6 +263,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServiceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *selector = detach(this->shim().GetDeviceSelectorForBluetoothDeviceAndServiceId(*reinterpret_cast<const Windows::Devices::Bluetooth::BluetoothDevice *>(&bluetoothDevice), *reinterpret_cast<const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId *>(&serviceId), cacheMode));
             return S_OK;
         }
@@ -266,6 +282,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServicesResu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Error());
             return S_OK;
         }
@@ -279,6 +296,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServicesResu
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *services = detach(this->shim().Services());
             return S_OK;
         }
@@ -297,6 +315,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Uuid());
             return S_OK;
         }
@@ -310,6 +329,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *shortId = detach(this->shim().AsShortId());
             return S_OK;
         }
@@ -323,6 +343,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *id = detach(this->shim().AsString());
             return S_OK;
         }
@@ -341,6 +362,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceIdStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *serviceId = detach(this->shim().FromUuid(uuid));
             return S_OK;
         }
@@ -355,6 +377,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceIdStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *serviceId = detach(this->shim().FromShortId(shortId));
             return S_OK;
         }
@@ -369,6 +392,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceIdStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *serviceId = detach(this->shim().SerialPort());
             return S_OK;
         }
@@ -383,6 +407,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceIdStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *serviceId = detach(this->shim().ObexObjectPush());
             return S_OK;
         }
@@ -397,6 +422,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceIdStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *serviceId = detach(this->shim().ObexFileTransfer());
             return S_OK;
         }
@@ -411,6 +437,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceIdStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *serviceId = detach(this->shim().PhoneBookAccessPce());
             return S_OK;
         }
@@ -425,6 +452,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceIdStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *serviceId = detach(this->shim().PhoneBookAccessPse());
             return S_OK;
         }
@@ -439,6 +467,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceIdStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *serviceId = detach(this->shim().GenericFileTransfer());
             return S_OK;
         }
@@ -457,6 +486,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceId());
             return S_OK;
         }
@@ -471,6 +501,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SdpRawAttributes());
             return S_OK;
         }
@@ -485,6 +516,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartAdvertising(*reinterpret_cast<const Windows::Networking::Sockets::StreamSocketListener *>(&listener));
             return S_OK;
         }
@@ -498,6 +530,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProvider> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StopAdvertising();
             return S_OK;
         }
@@ -515,6 +548,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProvider2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StartAdvertising(*reinterpret_cast<const Windows::Networking::Sockets::StreamSocketListener *>(&listener), radioDiscoverable);
             return S_OK;
         }
@@ -532,6 +566,7 @@ struct produce<D, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProviderSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().CreateAsync(*reinterpret_cast<const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId *>(&serviceId)));
             return S_OK;
         }

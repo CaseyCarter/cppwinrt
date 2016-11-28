@@ -17,6 +17,7 @@ struct produce<D, Windows::Foundation::Metadata::IApiInformationStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTypePresent(*reinterpret_cast<const hstring *>(&typeName)));
             return S_OK;
         }
@@ -30,6 +31,7 @@ struct produce<D, Windows::Foundation::Metadata::IApiInformationStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsMethodPresent(*reinterpret_cast<const hstring *>(&typeName), *reinterpret_cast<const hstring *>(&methodName)));
             return S_OK;
         }
@@ -43,6 +45,7 @@ struct produce<D, Windows::Foundation::Metadata::IApiInformationStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsMethodPresent(*reinterpret_cast<const hstring *>(&typeName), *reinterpret_cast<const hstring *>(&methodName), inputParameterCount));
             return S_OK;
         }
@@ -56,6 +59,7 @@ struct produce<D, Windows::Foundation::Metadata::IApiInformationStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEventPresent(*reinterpret_cast<const hstring *>(&typeName), *reinterpret_cast<const hstring *>(&eventName)));
             return S_OK;
         }
@@ -69,6 +73,7 @@ struct produce<D, Windows::Foundation::Metadata::IApiInformationStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsPropertyPresent(*reinterpret_cast<const hstring *>(&typeName), *reinterpret_cast<const hstring *>(&propertyName)));
             return S_OK;
         }
@@ -82,6 +87,7 @@ struct produce<D, Windows::Foundation::Metadata::IApiInformationStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsReadOnlyPropertyPresent(*reinterpret_cast<const hstring *>(&typeName), *reinterpret_cast<const hstring *>(&propertyName)));
             return S_OK;
         }
@@ -95,6 +101,7 @@ struct produce<D, Windows::Foundation::Metadata::IApiInformationStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsWriteablePropertyPresent(*reinterpret_cast<const hstring *>(&typeName), *reinterpret_cast<const hstring *>(&propertyName)));
             return S_OK;
         }
@@ -108,6 +115,7 @@ struct produce<D, Windows::Foundation::Metadata::IApiInformationStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEnumNamedValuePresent(*reinterpret_cast<const hstring *>(&enumTypeName), *reinterpret_cast<const hstring *>(&valueName)));
             return S_OK;
         }
@@ -121,6 +129,7 @@ struct produce<D, Windows::Foundation::Metadata::IApiInformationStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsApiContractPresent(*reinterpret_cast<const hstring *>(&contractName), majorVersion));
             return S_OK;
         }
@@ -134,6 +143,7 @@ struct produce<D, Windows::Foundation::Metadata::IApiInformationStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsApiContractPresent(*reinterpret_cast<const hstring *>(&contractName), majorVersion, minorVersion));
             return S_OK;
         }

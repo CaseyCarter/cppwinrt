@@ -23,6 +23,7 @@ struct produce<D, Windows::Media::Casting::ICastingConnection> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().State());
             return S_OK;
         }
@@ -36,6 +37,7 @@ struct produce<D, Windows::Media::Casting::ICastingConnection> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Device());
             return S_OK;
         }
@@ -50,6 +52,7 @@ struct produce<D, Windows::Media::Casting::ICastingConnection> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Source());
             return S_OK;
         }
@@ -64,6 +67,7 @@ struct produce<D, Windows::Media::Casting::ICastingConnection> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Source(*reinterpret_cast<const Windows::Media::Casting::CastingSource *>(&value));
             return S_OK;
         }
@@ -77,6 +81,7 @@ struct produce<D, Windows::Media::Casting::ICastingConnection> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().StateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingConnection, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -90,6 +95,7 @@ struct produce<D, Windows::Media::Casting::ICastingConnection> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StateChanged(token);
             return S_OK;
         }
@@ -103,6 +109,7 @@ struct produce<D, Windows::Media::Casting::ICastingConnection> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ErrorOccurred(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingConnection, Windows::Media::Casting::CastingConnectionErrorOccurredEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -116,6 +123,7 @@ struct produce<D, Windows::Media::Casting::ICastingConnection> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ErrorOccurred(token);
             return S_OK;
         }
@@ -129,6 +137,7 @@ struct produce<D, Windows::Media::Casting::ICastingConnection> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestStartCastingAsync(*reinterpret_cast<const Windows::Media::Casting::CastingSource *>(&value)));
             return S_OK;
         }
@@ -143,6 +152,7 @@ struct produce<D, Windows::Media::Casting::ICastingConnection> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().DisconnectAsync());
             return S_OK;
         }
@@ -161,6 +171,7 @@ struct produce<D, Windows::Media::Casting::ICastingConnectionErrorOccurredEventA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ErrorStatus());
             return S_OK;
         }
@@ -174,6 +185,7 @@ struct produce<D, Windows::Media::Casting::ICastingConnectionErrorOccurredEventA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Message());
             return S_OK;
         }
@@ -192,6 +204,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevice> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -206,6 +219,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevice> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FriendlyName());
             return S_OK;
         }
@@ -220,6 +234,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevice> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Icon());
             return S_OK;
         }
@@ -234,6 +249,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevice> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetSupportedCastingPlaybackTypesAsync());
             return S_OK;
         }
@@ -248,6 +264,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevice> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateCastingConnection());
             return S_OK;
         }
@@ -266,6 +283,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevicePicker> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Filter());
             return S_OK;
         }
@@ -280,6 +298,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevicePicker> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Appearance());
             return S_OK;
         }
@@ -294,6 +313,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevicePicker> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CastingDeviceSelected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingDevicePicker, Windows::Media::Casting::CastingDeviceSelectedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -307,6 +327,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevicePicker> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CastingDeviceSelected(token);
             return S_OK;
         }
@@ -320,6 +341,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevicePicker> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CastingDevicePickerDismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingDevicePicker, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -333,6 +355,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevicePicker> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CastingDevicePickerDismissed(token);
             return S_OK;
         }
@@ -346,6 +369,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevicePicker> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Show(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection));
             return S_OK;
         }
@@ -359,6 +383,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevicePicker> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Show(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), preferredPlacement);
             return S_OK;
         }
@@ -372,6 +397,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevicePicker> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Hide();
             return S_OK;
         }
@@ -389,6 +415,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevicePickerFilter> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportsAudio());
             return S_OK;
         }
@@ -402,6 +429,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevicePickerFilter> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SupportsAudio(value);
             return S_OK;
         }
@@ -415,6 +443,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevicePickerFilter> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportsVideo());
             return S_OK;
         }
@@ -428,6 +457,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevicePickerFilter> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SupportsVideo(value);
             return S_OK;
         }
@@ -441,6 +471,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevicePickerFilter> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportsPictures());
             return S_OK;
         }
@@ -454,6 +485,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevicePickerFilter> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SupportsPictures(value);
             return S_OK;
         }
@@ -467,6 +499,7 @@ struct produce<D, Windows::Media::Casting::ICastingDevicePickerFilter> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedCastingSources());
             return S_OK;
         }
@@ -485,6 +518,7 @@ struct produce<D, Windows::Media::Casting::ICastingDeviceSelectedEventArgs> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SelectedCastingDevice());
             return S_OK;
         }
@@ -503,6 +537,7 @@ struct produce<D, Windows::Media::Casting::ICastingDeviceStatics> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector(type));
             return S_OK;
         }
@@ -517,6 +552,7 @@ struct produce<D, Windows::Media::Casting::ICastingDeviceStatics> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetDeviceSelectorFromCastingSourceAsync(*reinterpret_cast<const Windows::Media::Casting::CastingSource *>(&castingSource)));
             return S_OK;
         }
@@ -531,6 +567,7 @@ struct produce<D, Windows::Media::Casting::ICastingDeviceStatics> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
@@ -545,6 +582,7 @@ struct produce<D, Windows::Media::Casting::ICastingDeviceStatics> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().DeviceInfoSupportsCastingAsync(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&device)));
             return S_OK;
         }
@@ -563,6 +601,7 @@ struct produce<D, Windows::Media::Casting::ICastingSource> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PreferredSourceUri());
             return S_OK;
         }
@@ -577,6 +616,7 @@ struct produce<D, Windows::Media::Casting::ICastingSource> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PreferredSourceUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }

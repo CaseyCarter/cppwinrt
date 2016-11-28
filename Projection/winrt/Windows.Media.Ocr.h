@@ -21,6 +21,7 @@ struct produce<D, Windows::Media::Ocr::IOcrEngine> : produce_base<D, Windows::Me
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RecognizeAsync(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&bitmap)));
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::Media::Ocr::IOcrEngine> : produce_base<D, Windows::Me
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RecognizerLanguage());
             return S_OK;
         }
@@ -53,6 +55,7 @@ struct produce<D, Windows::Media::Ocr::IOcrEngineStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxImageDimension());
             return S_OK;
         }
@@ -66,6 +69,7 @@ struct produce<D, Windows::Media::Ocr::IOcrEngineStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AvailableRecognizerLanguages());
             return S_OK;
         }
@@ -80,6 +84,7 @@ struct produce<D, Windows::Media::Ocr::IOcrEngineStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsLanguageSupported(*reinterpret_cast<const Windows::Globalization::Language *>(&language)));
             return S_OK;
         }
@@ -93,6 +98,7 @@ struct produce<D, Windows::Media::Ocr::IOcrEngineStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryCreateFromLanguage(*reinterpret_cast<const Windows::Globalization::Language *>(&language)));
             return S_OK;
         }
@@ -107,6 +113,7 @@ struct produce<D, Windows::Media::Ocr::IOcrEngineStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryCreateFromUserProfileLanguages());
             return S_OK;
         }
@@ -125,6 +132,7 @@ struct produce<D, Windows::Media::Ocr::IOcrLine> : produce_base<D, Windows::Medi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Words());
             return S_OK;
         }
@@ -139,6 +147,7 @@ struct produce<D, Windows::Media::Ocr::IOcrLine> : produce_base<D, Windows::Medi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -157,6 +166,7 @@ struct produce<D, Windows::Media::Ocr::IOcrResult> : produce_base<D, Windows::Me
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Lines());
             return S_OK;
         }
@@ -171,6 +181,7 @@ struct produce<D, Windows::Media::Ocr::IOcrResult> : produce_base<D, Windows::Me
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TextAngle());
             return S_OK;
         }
@@ -185,6 +196,7 @@ struct produce<D, Windows::Media::Ocr::IOcrResult> : produce_base<D, Windows::Me
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }
@@ -203,6 +215,7 @@ struct produce<D, Windows::Media::Ocr::IOcrWord> : produce_base<D, Windows::Medi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BoundingRect());
             return S_OK;
         }
@@ -216,6 +229,7 @@ struct produce<D, Windows::Media::Ocr::IOcrWord> : produce_base<D, Windows::Medi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Text());
             return S_OK;
         }

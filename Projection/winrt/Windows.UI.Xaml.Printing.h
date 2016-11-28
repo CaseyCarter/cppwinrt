@@ -75,6 +75,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IAddPagesEventArgs> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PrintTaskOptions());
             return S_OK;
         }
@@ -93,6 +94,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IGetPreviewPageEventArgs> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PageNumber());
             return S_OK;
         }
@@ -110,6 +112,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPaginateEventArgs> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PrintTaskOptions());
             return S_OK;
         }
@@ -124,6 +127,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPaginateEventArgs> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentPreviewPageNumber());
             return S_OK;
         }
@@ -141,6 +145,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DocumentSource());
             return S_OK;
         }
@@ -155,6 +160,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Paginate(*reinterpret_cast<const Windows::UI::Xaml::Printing::PaginateEventHandler *>(&value)));
             return S_OK;
         }
@@ -168,6 +174,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Paginate(token);
             return S_OK;
         }
@@ -181,6 +188,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().GetPreviewPage(*reinterpret_cast<const Windows::UI::Xaml::Printing::GetPreviewPageEventHandler *>(&value)));
             return S_OK;
         }
@@ -194,6 +202,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetPreviewPage(token);
             return S_OK;
         }
@@ -207,6 +216,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().AddPages(*reinterpret_cast<const Windows::UI::Xaml::Printing::AddPagesEventHandler *>(&value)));
             return S_OK;
         }
@@ -220,6 +230,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddPages(token);
             return S_OK;
         }
@@ -233,6 +244,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddPage(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&pageVisual));
             return S_OK;
         }
@@ -246,6 +258,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddPagesComplete();
             return S_OK;
         }
@@ -259,6 +272,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetPreviewPageCount(count, type);
             return S_OK;
         }
@@ -272,6 +286,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetPreviewPage(pageNumber, *reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&pageVisual));
             return S_OK;
         }
@@ -285,6 +300,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocument> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InvalidatePreview();
             return S_OK;
         }
@@ -302,6 +318,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocumentFactory> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::IInspectable *>(&outer), *inner));
             return S_OK;
         }
@@ -321,6 +338,7 @@ struct produce<D, Windows::UI::Xaml::Printing::IPrintDocumentStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DocumentSourceProperty());
             return S_OK;
         }

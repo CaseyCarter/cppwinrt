@@ -19,6 +19,7 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetUpdateInformation(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file), *reinterpret_cast<const hstring *>(&contentId), readMode, writeMode, options);
             return S_OK;
         }
@@ -36,6 +37,7 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -50,6 +52,7 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -63,6 +66,7 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UpdateTarget());
             return S_OK;
         }
@@ -76,6 +80,7 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().FileUpdateRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::Storage::Provider::FileUpdateRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -89,6 +94,7 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().FileUpdateRequested(token);
             return S_OK;
         }
@@ -102,6 +108,7 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().UIRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -115,6 +122,7 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UIRequested(token);
             return S_OK;
         }
@@ -128,6 +136,7 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UIStatus());
             return S_OK;
         }
@@ -145,6 +154,7 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI2> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UpdateRequest());
             return S_OK;
         }
@@ -159,6 +169,7 @@ struct produce<D, Windows::Storage::Provider::ICachedFileUpdaterUI2> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -177,6 +188,7 @@ struct produce<D, Windows::Storage::Provider::IFileUpdateRequest> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentId());
             return S_OK;
         }
@@ -191,6 +203,7 @@ struct produce<D, Windows::Storage::Provider::IFileUpdateRequest> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().File());
             return S_OK;
         }
@@ -205,6 +218,7 @@ struct produce<D, Windows::Storage::Provider::IFileUpdateRequest> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -218,6 +232,7 @@ struct produce<D, Windows::Storage::Provider::IFileUpdateRequest> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Status(value);
             return S_OK;
         }
@@ -231,6 +246,7 @@ struct produce<D, Windows::Storage::Provider::IFileUpdateRequest> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -245,6 +261,7 @@ struct produce<D, Windows::Storage::Provider::IFileUpdateRequest> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UpdateLocalFile(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&value));
             return S_OK;
         }
@@ -262,6 +279,7 @@ struct produce<D, Windows::Storage::Provider::IFileUpdateRequest2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserInputNeededMessage());
             return S_OK;
         }
@@ -276,6 +294,7 @@ struct produce<D, Windows::Storage::Provider::IFileUpdateRequest2> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UserInputNeededMessage(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -293,6 +312,7 @@ struct produce<D, Windows::Storage::Provider::IFileUpdateRequestDeferral> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -310,6 +330,7 @@ struct produce<D, Windows::Storage::Provider::IFileUpdateRequestedEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }

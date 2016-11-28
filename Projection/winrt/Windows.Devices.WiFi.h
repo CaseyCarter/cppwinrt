@@ -21,6 +21,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkAdapter());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ScanAsync());
             return S_OK;
         }
@@ -49,6 +51,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkReport());
             return S_OK;
         }
@@ -63,6 +66,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().AvailableNetworksChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::IInspectable> *>(&args)));
             return S_OK;
         }
@@ -76,6 +80,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AvailableNetworksChanged(eventCookie);
             return S_OK;
         }
@@ -89,6 +94,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConnectAsync(*reinterpret_cast<const Windows::Devices::WiFi::WiFiAvailableNetwork *>(&availableNetwork), reconnectionKind));
             return S_OK;
         }
@@ -103,6 +109,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConnectAsync(*reinterpret_cast<const Windows::Devices::WiFi::WiFiAvailableNetwork *>(&availableNetwork), reconnectionKind, *reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&passwordCredential)));
             return S_OK;
         }
@@ -117,6 +124,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConnectAsync(*reinterpret_cast<const Windows::Devices::WiFi::WiFiAvailableNetwork *>(&availableNetwork), reconnectionKind, *reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&passwordCredential), *reinterpret_cast<const hstring *>(&ssid)));
             return S_OK;
         }
@@ -131,6 +139,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapter> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Disconnect();
             return S_OK;
         }
@@ -148,6 +157,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapterStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FindAllAdaptersAsync());
             return S_OK;
         }
@@ -162,6 +172,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapterStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *deviceSelector = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -176,6 +187,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapterStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -190,6 +202,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAdapterStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }
@@ -208,6 +221,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Uptime());
             return S_OK;
         }
@@ -221,6 +235,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ssid());
             return S_OK;
         }
@@ -235,6 +250,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bssid());
             return S_OK;
         }
@@ -249,6 +265,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChannelCenterFrequencyInKilohertz());
             return S_OK;
         }
@@ -262,6 +279,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkRssiInDecibelMilliwatts());
             return S_OK;
         }
@@ -275,6 +293,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SignalBars());
             return S_OK;
         }
@@ -288,6 +307,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkKind());
             return S_OK;
         }
@@ -301,6 +321,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PhyKind());
             return S_OK;
         }
@@ -314,6 +335,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SecuritySettings());
             return S_OK;
         }
@@ -328,6 +350,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BeaconInterval());
             return S_OK;
         }
@@ -341,6 +364,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiAvailableNetwork> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsWiFiDirect());
             return S_OK;
         }
@@ -358,6 +382,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiConnectionResult> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConnectionStatus());
             return S_OK;
         }
@@ -375,6 +400,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiNetworkReport> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -388,6 +414,7 @@ struct produce<D, Windows::Devices::WiFi::IWiFiNetworkReport> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AvailableNetworks());
             return S_OK;
         }

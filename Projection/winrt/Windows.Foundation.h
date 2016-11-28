@@ -38,6 +38,7 @@ struct produce<D, Windows::Foundation::IClosable> : produce_base<D, Windows::Fou
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Close();
             return S_OK;
         }
@@ -55,6 +56,7 @@ struct produce<D, Windows::Foundation::IDeferral> : produce_base<D, Windows::Fou
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -72,6 +74,7 @@ struct produce<D, Windows::Foundation::IDeferralFactory> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::DeferralCompletedHandler *>(&handler)));
             return S_OK;
         }
@@ -90,6 +93,7 @@ struct produce<D, Windows::Foundation::IGetActivationFactory> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *factory = detach(this->shim().GetActivationFactory(*reinterpret_cast<const hstring *>(&activatableClassId)));
             return S_OK;
         }
@@ -108,6 +112,7 @@ struct produce<D, Windows::Foundation::IMemoryBuffer> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *reference = detach(this->shim().CreateReference());
             return S_OK;
         }
@@ -126,6 +131,7 @@ struct produce<D, Windows::Foundation::IMemoryBufferFactory> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Create(capacity));
             return S_OK;
         }
@@ -144,6 +150,7 @@ struct produce<D, Windows::Foundation::IMemoryBufferReference> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Capacity());
             return S_OK;
         }
@@ -157,6 +164,7 @@ struct produce<D, Windows::Foundation::IMemoryBufferReference> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().Closed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -170,6 +178,7 @@ struct produce<D, Windows::Foundation::IMemoryBufferReference> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Closed(cookie);
             return S_OK;
         }
@@ -187,6 +196,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -200,6 +210,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsNumericScalar());
             return S_OK;
         }
@@ -213,6 +224,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetUInt8());
             return S_OK;
         }
@@ -226,6 +238,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetInt16());
             return S_OK;
         }
@@ -239,6 +252,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetUInt16());
             return S_OK;
         }
@@ -252,6 +266,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetInt32());
             return S_OK;
         }
@@ -265,6 +280,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetUInt32());
             return S_OK;
         }
@@ -278,6 +294,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetInt64());
             return S_OK;
         }
@@ -291,6 +308,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetUInt64());
             return S_OK;
         }
@@ -304,6 +322,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetSingle());
             return S_OK;
         }
@@ -317,6 +336,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDouble());
             return S_OK;
         }
@@ -330,6 +350,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetChar16());
             return S_OK;
         }
@@ -343,6 +364,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetBoolean());
             return S_OK;
         }
@@ -356,6 +378,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetString());
             return S_OK;
         }
@@ -370,6 +393,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetGuid());
             return S_OK;
         }
@@ -383,6 +407,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDateTime());
             return S_OK;
         }
@@ -396,6 +421,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetTimeSpan());
             return S_OK;
         }
@@ -409,6 +435,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetPoint());
             return S_OK;
         }
@@ -422,6 +449,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetSize());
             return S_OK;
         }
@@ -435,6 +463,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetRect());
             return S_OK;
         }
@@ -448,6 +477,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetUInt8Array(detach<uint8_t>(__valueSize, value));
             return S_OK;
         }
@@ -463,6 +493,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetInt16Array(detach<int16_t>(__valueSize, value));
             return S_OK;
         }
@@ -478,6 +509,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetUInt16Array(detach<uint16_t>(__valueSize, value));
             return S_OK;
         }
@@ -493,6 +525,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetInt32Array(detach<int32_t>(__valueSize, value));
             return S_OK;
         }
@@ -508,6 +541,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetUInt32Array(detach<uint32_t>(__valueSize, value));
             return S_OK;
         }
@@ -523,6 +557,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetInt64Array(detach<int64_t>(__valueSize, value));
             return S_OK;
         }
@@ -538,6 +573,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetUInt64Array(detach<uint64_t>(__valueSize, value));
             return S_OK;
         }
@@ -553,6 +589,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetSingleArray(detach<float>(__valueSize, value));
             return S_OK;
         }
@@ -568,6 +605,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetDoubleArray(detach<double>(__valueSize, value));
             return S_OK;
         }
@@ -583,6 +621,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetChar16Array(detach<wchar_t>(__valueSize, value));
             return S_OK;
         }
@@ -598,6 +637,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetBooleanArray(detach<bool>(__valueSize, value));
             return S_OK;
         }
@@ -613,6 +653,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetStringArray(detach<hstring>(__valueSize, value));
             return S_OK;
         }
@@ -628,6 +669,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetInspectableArray(detach<Windows::IInspectable>(__valueSize, value));
             return S_OK;
         }
@@ -643,6 +685,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetGuidArray(detach<GUID>(__valueSize, value));
             return S_OK;
         }
@@ -658,6 +701,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetDateTimeArray(detach<Windows::Foundation::DateTime>(__valueSize, value));
             return S_OK;
         }
@@ -673,6 +717,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetTimeSpanArray(detach<Windows::Foundation::TimeSpan>(__valueSize, value));
             return S_OK;
         }
@@ -688,6 +733,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetPointArray(detach<Windows::Foundation::Point>(__valueSize, value));
             return S_OK;
         }
@@ -703,6 +749,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetSizeArray(detach<Windows::Foundation::Size>(__valueSize, value));
             return S_OK;
         }
@@ -718,6 +765,7 @@ struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetRectArray(detach<Windows::Foundation::Rect>(__valueSize, value));
             return S_OK;
         }
@@ -737,6 +785,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateEmpty());
             return S_OK;
         }
@@ -751,6 +800,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateUInt8(value));
             return S_OK;
         }
@@ -765,6 +815,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateInt16(value));
             return S_OK;
         }
@@ -779,6 +830,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateUInt16(value));
             return S_OK;
         }
@@ -793,6 +845,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateInt32(value));
             return S_OK;
         }
@@ -807,6 +860,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateUInt32(value));
             return S_OK;
         }
@@ -821,6 +875,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateInt64(value));
             return S_OK;
         }
@@ -835,6 +890,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateUInt64(value));
             return S_OK;
         }
@@ -849,6 +905,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateSingle(value));
             return S_OK;
         }
@@ -863,6 +920,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateDouble(value));
             return S_OK;
         }
@@ -877,6 +935,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateChar16(value));
             return S_OK;
         }
@@ -891,6 +950,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateBoolean(value));
             return S_OK;
         }
@@ -905,6 +965,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateString(*reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
@@ -919,6 +980,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateInspectable(*reinterpret_cast<const Windows::IInspectable *>(&value)));
             return S_OK;
         }
@@ -933,6 +995,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateGuid(value));
             return S_OK;
         }
@@ -947,6 +1010,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateDateTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value)));
             return S_OK;
         }
@@ -961,6 +1025,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateTimeSpan(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value)));
             return S_OK;
         }
@@ -975,6 +1040,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreatePoint(*reinterpret_cast<const Windows::Foundation::Point *>(&value)));
             return S_OK;
         }
@@ -989,6 +1055,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateSize(*reinterpret_cast<const Windows::Foundation::Size *>(&value)));
             return S_OK;
         }
@@ -1003,6 +1070,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateRect(*reinterpret_cast<const Windows::Foundation::Rect *>(&value)));
             return S_OK;
         }
@@ -1017,6 +1085,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateUInt8Array(array_ref<const uint8_t>(value, value + __valueSize)));
             return S_OK;
         }
@@ -1031,6 +1100,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateInt16Array(array_ref<const int16_t>(value, value + __valueSize)));
             return S_OK;
         }
@@ -1045,6 +1115,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateUInt16Array(array_ref<const uint16_t>(value, value + __valueSize)));
             return S_OK;
         }
@@ -1059,6 +1130,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateInt32Array(array_ref<const int32_t>(value, value + __valueSize)));
             return S_OK;
         }
@@ -1073,6 +1145,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateUInt32Array(array_ref<const uint32_t>(value, value + __valueSize)));
             return S_OK;
         }
@@ -1087,6 +1160,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateInt64Array(array_ref<const int64_t>(value, value + __valueSize)));
             return S_OK;
         }
@@ -1101,6 +1175,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateUInt64Array(array_ref<const uint64_t>(value, value + __valueSize)));
             return S_OK;
         }
@@ -1115,6 +1190,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateSingleArray(array_ref<const float>(value, value + __valueSize)));
             return S_OK;
         }
@@ -1129,6 +1205,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateDoubleArray(array_ref<const double>(value, value + __valueSize)));
             return S_OK;
         }
@@ -1143,6 +1220,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateChar16Array(array_ref<const wchar_t>(value, value + __valueSize)));
             return S_OK;
         }
@@ -1157,6 +1235,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateBooleanArray(array_ref<const bool>(value, value + __valueSize)));
             return S_OK;
         }
@@ -1171,6 +1250,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateStringArray(*reinterpret_cast<const hstring *>(&value)));
             return S_OK;
         }
@@ -1186,6 +1266,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateInspectableArray(*reinterpret_cast<const Windows::IInspectable *>(&value)));
             return S_OK;
         }
@@ -1201,6 +1282,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateGuidArray(array_ref<const GUID>(value, value + __valueSize)));
             return S_OK;
         }
@@ -1215,6 +1297,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateDateTimeArray(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value)));
             return S_OK;
         }
@@ -1229,6 +1312,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateTimeSpanArray(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value)));
             return S_OK;
         }
@@ -1243,6 +1327,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreatePointArray(*reinterpret_cast<const Windows::Foundation::Point *>(&value)));
             return S_OK;
         }
@@ -1257,6 +1342,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateSizeArray(*reinterpret_cast<const Windows::Foundation::Size *>(&value)));
             return S_OK;
         }
@@ -1271,6 +1357,7 @@ struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *propertyValue = detach(this->shim().CreateRectArray(*reinterpret_cast<const Windows::Foundation::Rect *>(&value)));
             return S_OK;
         }
@@ -1289,6 +1376,7 @@ struct produce<D, Windows::Foundation::IStringable> : produce_base<D, Windows::F
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ToString());
             return S_OK;
         }
@@ -1307,6 +1395,7 @@ struct produce<D, Windows::Foundation::IUriEscapeStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UnescapeComponent(*reinterpret_cast<const hstring *>(&toUnescape)));
             return S_OK;
         }
@@ -1321,6 +1410,7 @@ struct produce<D, Windows::Foundation::IUriEscapeStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EscapeComponent(*reinterpret_cast<const hstring *>(&toEscape)));
             return S_OK;
         }
@@ -1339,6 +1429,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AbsoluteUri());
             return S_OK;
         }
@@ -1353,6 +1444,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayUri());
             return S_OK;
         }
@@ -1367,6 +1459,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Domain());
             return S_OK;
         }
@@ -1381,6 +1474,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Extension());
             return S_OK;
         }
@@ -1395,6 +1489,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Fragment());
             return S_OK;
         }
@@ -1409,6 +1504,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Host());
             return S_OK;
         }
@@ -1423,6 +1519,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Password());
             return S_OK;
         }
@@ -1437,6 +1534,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Path());
             return S_OK;
         }
@@ -1451,6 +1549,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Query());
             return S_OK;
         }
@@ -1465,6 +1564,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *ppWwwFormUrlDecoder = detach(this->shim().QueryParsed());
             return S_OK;
         }
@@ -1479,6 +1579,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RawUri());
             return S_OK;
         }
@@ -1493,6 +1594,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SchemeName());
             return S_OK;
         }
@@ -1507,6 +1609,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserName());
             return S_OK;
         }
@@ -1521,6 +1624,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Port());
             return S_OK;
         }
@@ -1534,6 +1638,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Suspicious());
             return S_OK;
         }
@@ -1547,6 +1652,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Equals(*reinterpret_cast<const Windows::Foundation::Uri *>(&pUri)));
             return S_OK;
         }
@@ -1560,6 +1666,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CombineUri(*reinterpret_cast<const hstring *>(&relativeUri)));
             return S_OK;
         }
@@ -1578,6 +1685,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClassFactory> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateUri(*reinterpret_cast<const hstring *>(&uri)));
             return S_OK;
         }
@@ -1592,6 +1700,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClassFactory> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateWithRelativeUri(*reinterpret_cast<const hstring *>(&baseUri), *reinterpret_cast<const hstring *>(&relativeUri)));
             return S_OK;
         }
@@ -1610,6 +1719,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClassWithAbsoluteCanonicalUri>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AbsoluteCanonicalUri());
             return S_OK;
         }
@@ -1624,6 +1734,7 @@ struct produce<D, Windows::Foundation::IUriRuntimeClassWithAbsoluteCanonicalUri>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayIri());
             return S_OK;
         }
@@ -1642,6 +1753,7 @@ struct produce<D, Windows::Foundation::IWwwFormUrlDecoderEntry> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -1656,6 +1768,7 @@ struct produce<D, Windows::Foundation::IWwwFormUrlDecoderEntry> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Value());
             return S_OK;
         }
@@ -1674,6 +1787,7 @@ struct produce<D, Windows::Foundation::IWwwFormUrlDecoderRuntimeClass> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *phstrValue = detach(this->shim().GetFirstValueByName(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -1692,6 +1806,7 @@ struct produce<D, Windows::Foundation::IWwwFormUrlDecoderRuntimeClassFactory> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateWwwFormUrlDecoder(*reinterpret_cast<const hstring *>(&query)));
             return S_OK;
         }

@@ -20,6 +20,7 @@ struct produce<D, Windows::System::Profile::IAnalyticsInfoStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VersionInfo());
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::System::Profile::IAnalyticsInfoStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceForm());
             return S_OK;
         }
@@ -52,6 +54,7 @@ struct produce<D, Windows::System::Profile::IAnalyticsVersionInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceFamily());
             return S_OK;
         }
@@ -66,6 +69,7 @@ struct produce<D, Windows::System::Profile::IAnalyticsVersionInfo> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceFamilyVersion());
             return S_OK;
         }
@@ -84,6 +88,7 @@ struct produce<D, Windows::System::Profile::IHardwareIdentificationStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *packageSpecificHardwareToken = detach(this->shim().GetPackageSpecificToken(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&nonce)));
             return S_OK;
         }
@@ -102,6 +107,7 @@ struct produce<D, Windows::System::Profile::IHardwareToken> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -116,6 +122,7 @@ struct produce<D, Windows::System::Profile::IHardwareToken> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Signature());
             return S_OK;
         }
@@ -130,6 +137,7 @@ struct produce<D, Windows::System::Profile::IHardwareToken> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Certificate());
             return S_OK;
         }
@@ -148,6 +156,7 @@ struct produce<D, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSett
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CollectionLevel());
             return S_OK;
         }
@@ -161,6 +170,7 @@ struct produce<D, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSett
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().CollectionLevelChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -174,6 +184,7 @@ struct produce<D, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSett
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CollectionLevelChanged(token);
             return S_OK;
         }
@@ -187,6 +198,7 @@ struct produce<D, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSett
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CanCollectDiagnostics(level));
             return S_OK;
         }
@@ -204,6 +216,7 @@ struct produce<D, Windows::System::Profile::ISharedModeSettingsStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
@@ -221,6 +234,7 @@ struct produce<D, Windows::System::Profile::ISystemIdentificationInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -235,6 +249,7 @@ struct produce<D, Windows::System::Profile::ISystemIdentificationInfo> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Source());
             return S_OK;
         }
@@ -252,6 +267,7 @@ struct produce<D, Windows::System::Profile::ISystemIdentificationStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetSystemIdForPublisher());
             return S_OK;
         }
@@ -266,6 +282,7 @@ struct produce<D, Windows::System::Profile::ISystemIdentificationStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetSystemIdForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
             return S_OK;
         }

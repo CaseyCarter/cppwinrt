@@ -21,6 +21,7 @@ struct produce<D, Windows::Devices::Midi::IMidiChannelPressureMessage> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Channel());
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::Devices::Midi::IMidiChannelPressureMessage> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pressure());
             return S_OK;
         }
@@ -51,6 +53,7 @@ struct produce<D, Windows::Devices::Midi::IMidiChannelPressureMessageFactory> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateMidiChannelPressureMessage(channel, pressure));
             return S_OK;
         }
@@ -69,6 +72,7 @@ struct produce<D, Windows::Devices::Midi::IMidiControlChangeMessage> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Channel());
             return S_OK;
         }
@@ -82,6 +86,7 @@ struct produce<D, Windows::Devices::Midi::IMidiControlChangeMessage> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Controller());
             return S_OK;
         }
@@ -95,6 +100,7 @@ struct produce<D, Windows::Devices::Midi::IMidiControlChangeMessage> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ControlValue());
             return S_OK;
         }
@@ -112,6 +118,7 @@ struct produce<D, Windows::Devices::Midi::IMidiControlChangeMessageFactory> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateMidiControlChangeMessage(channel, controller, controlValue));
             return S_OK;
         }
@@ -130,6 +137,7 @@ struct produce<D, Windows::Devices::Midi::IMidiInPort> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().MessageReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Midi::MidiInPort, Windows::Devices::Midi::MidiMessageReceivedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -143,6 +151,7 @@ struct produce<D, Windows::Devices::Midi::IMidiInPort> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().MessageReceived(token);
             return S_OK;
         }
@@ -156,6 +165,7 @@ struct produce<D, Windows::Devices::Midi::IMidiInPort> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -174,6 +184,7 @@ struct produce<D, Windows::Devices::Midi::IMidiInPortStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -188,6 +199,7 @@ struct produce<D, Windows::Devices::Midi::IMidiInPortStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -206,6 +218,7 @@ struct produce<D, Windows::Devices::Midi::IMidiMessage> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -219,6 +232,7 @@ struct produce<D, Windows::Devices::Midi::IMidiMessage> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RawData());
             return S_OK;
         }
@@ -233,6 +247,7 @@ struct produce<D, Windows::Devices::Midi::IMidiMessage> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -250,6 +265,7 @@ struct produce<D, Windows::Devices::Midi::IMidiMessageReceivedEventArgs> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Message());
             return S_OK;
         }
@@ -268,6 +284,7 @@ struct produce<D, Windows::Devices::Midi::IMidiNoteOffMessage> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Channel());
             return S_OK;
         }
@@ -281,6 +298,7 @@ struct produce<D, Windows::Devices::Midi::IMidiNoteOffMessage> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Note());
             return S_OK;
         }
@@ -294,6 +312,7 @@ struct produce<D, Windows::Devices::Midi::IMidiNoteOffMessage> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Velocity());
             return S_OK;
         }
@@ -311,6 +330,7 @@ struct produce<D, Windows::Devices::Midi::IMidiNoteOffMessageFactory> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateMidiNoteOffMessage(channel, note, velocity));
             return S_OK;
         }
@@ -329,6 +349,7 @@ struct produce<D, Windows::Devices::Midi::IMidiNoteOnMessage> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Channel());
             return S_OK;
         }
@@ -342,6 +363,7 @@ struct produce<D, Windows::Devices::Midi::IMidiNoteOnMessage> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Note());
             return S_OK;
         }
@@ -355,6 +377,7 @@ struct produce<D, Windows::Devices::Midi::IMidiNoteOnMessage> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Velocity());
             return S_OK;
         }
@@ -372,6 +395,7 @@ struct produce<D, Windows::Devices::Midi::IMidiNoteOnMessageFactory> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateMidiNoteOnMessage(channel, note, velocity));
             return S_OK;
         }
@@ -390,6 +414,7 @@ struct produce<D, Windows::Devices::Midi::IMidiOutPort> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SendMessage(*reinterpret_cast<const Windows::Devices::Midi::IMidiMessage *>(&midiMessage));
             return S_OK;
         }
@@ -403,6 +428,7 @@ struct produce<D, Windows::Devices::Midi::IMidiOutPort> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SendBuffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&midiData));
             return S_OK;
         }
@@ -416,6 +442,7 @@ struct produce<D, Windows::Devices::Midi::IMidiOutPort> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -434,6 +461,7 @@ struct produce<D, Windows::Devices::Midi::IMidiOutPortStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -448,6 +476,7 @@ struct produce<D, Windows::Devices::Midi::IMidiOutPortStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -466,6 +495,7 @@ struct produce<D, Windows::Devices::Midi::IMidiPitchBendChangeMessage> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Channel());
             return S_OK;
         }
@@ -479,6 +509,7 @@ struct produce<D, Windows::Devices::Midi::IMidiPitchBendChangeMessage> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bend());
             return S_OK;
         }
@@ -496,6 +527,7 @@ struct produce<D, Windows::Devices::Midi::IMidiPitchBendChangeMessageFactory> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateMidiPitchBendChangeMessage(channel, bend));
             return S_OK;
         }
@@ -514,6 +546,7 @@ struct produce<D, Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessage> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Channel());
             return S_OK;
         }
@@ -527,6 +560,7 @@ struct produce<D, Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessage> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Note());
             return S_OK;
         }
@@ -540,6 +574,7 @@ struct produce<D, Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessage> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pressure());
             return S_OK;
         }
@@ -557,6 +592,7 @@ struct produce<D, Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessageFacto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateMidiPolyphonicKeyPressureMessage(channel, note, pressure));
             return S_OK;
         }
@@ -575,6 +611,7 @@ struct produce<D, Windows::Devices::Midi::IMidiProgramChangeMessage> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Channel());
             return S_OK;
         }
@@ -588,6 +625,7 @@ struct produce<D, Windows::Devices::Midi::IMidiProgramChangeMessage> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Program());
             return S_OK;
         }
@@ -605,6 +643,7 @@ struct produce<D, Windows::Devices::Midi::IMidiProgramChangeMessageFactory> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateMidiProgramChangeMessage(channel, program));
             return S_OK;
         }
@@ -623,6 +662,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSongPositionPointerMessage> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Beats());
             return S_OK;
         }
@@ -640,6 +680,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSongPositionPointerMessageFactory
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateMidiSongPositionPointerMessage(beats));
             return S_OK;
         }
@@ -658,6 +699,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSongSelectMessage> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Song());
             return S_OK;
         }
@@ -675,6 +717,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSongSelectMessageFactory> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateMidiSongSelectMessage(song));
             return S_OK;
         }
@@ -693,6 +736,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSynthesizer> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AudioDevice());
             return S_OK;
         }
@@ -707,6 +751,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSynthesizer> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Volume());
             return S_OK;
         }
@@ -720,6 +765,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSynthesizer> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Volume(value);
             return S_OK;
         }
@@ -737,6 +783,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSynthesizerStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateAsync());
             return S_OK;
         }
@@ -751,6 +798,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSynthesizerStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateAsync(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&audioDevice)));
             return S_OK;
         }
@@ -765,6 +813,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSynthesizerStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsSynthesizer(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&midiDevice)));
             return S_OK;
         }
@@ -782,6 +831,7 @@ struct produce<D, Windows::Devices::Midi::IMidiSystemExclusiveMessageFactory> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateMidiSystemExclusiveMessage(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&rawData)));
             return S_OK;
         }
@@ -800,6 +850,7 @@ struct produce<D, Windows::Devices::Midi::IMidiTimeCodeMessage> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameType());
             return S_OK;
         }
@@ -813,6 +864,7 @@ struct produce<D, Windows::Devices::Midi::IMidiTimeCodeMessage> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Values());
             return S_OK;
         }
@@ -830,6 +882,7 @@ struct produce<D, Windows::Devices::Midi::IMidiTimeCodeMessageFactory> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateMidiTimeCodeMessage(frameType, values));
             return S_OK;
         }

@@ -20,6 +20,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
@@ -47,6 +49,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsEnabled(value);
             return S_OK;
         }
@@ -60,6 +63,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BrightnessLevel());
             return S_OK;
         }
@@ -73,6 +77,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BrightnessLevel(value);
             return S_OK;
         }
@@ -86,6 +91,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsColorSettable());
             return S_OK;
         }
@@ -99,6 +105,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Color());
             return S_OK;
         }
@@ -112,6 +119,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Color(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -125,6 +133,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().AvailabilityChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Lights::Lamp, Windows::Devices::Lights::LampAvailabilityChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -138,6 +147,7 @@ struct produce<D, Windows::Devices::Lights::ILamp> : produce_base<D, Windows::De
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AvailabilityChanged(token);
             return S_OK;
         }
@@ -155,6 +165,7 @@ struct produce<D, Windows::Devices::Lights::ILampAvailabilityChangedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsAvailable());
             return S_OK;
         }
@@ -172,6 +183,7 @@ struct produce<D, Windows::Devices::Lights::ILampStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -186,6 +198,7 @@ struct produce<D, Windows::Devices::Lights::ILampStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -200,6 +213,7 @@ struct produce<D, Windows::Devices::Lights::ILampStatics> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetDefaultAsync());
             return S_OK;
         }

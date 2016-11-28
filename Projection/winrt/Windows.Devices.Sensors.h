@@ -21,6 +21,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometer> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCurrentReading());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometer> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinimumReportInterval());
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometer> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportInterval(value);
             return S_OK;
         }
@@ -61,6 +64,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometer> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportInterval());
             return S_OK;
         }
@@ -74,6 +78,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometer> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ReadingChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Accelerometer, Windows::Devices::Sensors::AccelerometerReadingChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -87,6 +92,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometer> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingChanged(token);
             return S_OK;
         }
@@ -100,6 +106,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometer> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Shaken(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Accelerometer, Windows::Devices::Sensors::AccelerometerShakenEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -113,6 +120,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometer> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Shaken(token);
             return S_OK;
         }
@@ -130,6 +138,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometer2> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingTransform(value);
             return S_OK;
         }
@@ -143,6 +152,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometer2> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadingTransform());
             return S_OK;
         }
@@ -160,6 +170,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometer3> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportLatency(value);
             return S_OK;
         }
@@ -173,6 +184,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometer3> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportLatency());
             return S_OK;
         }
@@ -186,6 +198,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometer3> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxBatchSize());
             return S_OK;
         }
@@ -203,6 +216,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometer4> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *type = detach(this->shim().ReadingType());
             return S_OK;
         }
@@ -220,6 +234,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometerDeviceId> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -238,6 +253,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometerReading> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -251,6 +267,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometerReading> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccelerationX());
             return S_OK;
         }
@@ -264,6 +281,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometerReading> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccelerationY());
             return S_OK;
         }
@@ -277,6 +295,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometerReading> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccelerationZ());
             return S_OK;
         }
@@ -294,6 +313,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometerReadingChangedEventAr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reading());
             return S_OK;
         }
@@ -312,6 +332,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometerShakenEventArgs> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -329,6 +350,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometerStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefault());
             return S_OK;
         }
@@ -347,6 +369,7 @@ struct produce<D, Windows::Devices::Sensors::IAccelerometerStatics2> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefault(readingType));
             return S_OK;
         }
@@ -365,6 +388,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensor> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetCurrentReadingAsync());
             return S_OK;
         }
@@ -379,6 +403,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensor> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SubscribedActivities());
             return S_OK;
         }
@@ -393,6 +418,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensor> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PowerInMilliwatts());
             return S_OK;
         }
@@ -406,6 +432,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensor> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -420,6 +447,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensor> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedActivities());
             return S_OK;
         }
@@ -434,6 +462,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensor> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinimumReportInterval());
             return S_OK;
         }
@@ -447,6 +476,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensor> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ReadingChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::ActivitySensor, Windows::Devices::Sensors::ActivitySensorReadingChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -460,6 +490,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensor> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingChanged(token);
             return S_OK;
         }
@@ -477,6 +508,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensorReading> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -490,6 +522,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensorReading> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Activity());
             return S_OK;
         }
@@ -503,6 +536,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensorReading> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Confidence());
             return S_OK;
         }
@@ -520,6 +554,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensorReadingChangeReport>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reading());
             return S_OK;
         }
@@ -538,6 +573,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensorReadingChangedEventA
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reading());
             return S_OK;
         }
@@ -556,6 +592,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensorStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefaultAsync());
             return S_OK;
         }
@@ -570,6 +607,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensorStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -584,6 +622,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensorStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -598,6 +637,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensorStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetSystemHistoryAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&fromTime)));
             return S_OK;
         }
@@ -612,6 +652,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensorStatics> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetSystemHistoryAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&fromTime), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&duration)));
             return S_OK;
         }
@@ -630,6 +671,7 @@ struct produce<D, Windows::Devices::Sensors::IActivitySensorTriggerDetails> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadReports());
             return S_OK;
         }
@@ -648,6 +690,7 @@ struct produce<D, Windows::Devices::Sensors::IAltimeter> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCurrentReading());
             return S_OK;
         }
@@ -662,6 +705,7 @@ struct produce<D, Windows::Devices::Sensors::IAltimeter> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -676,6 +720,7 @@ struct produce<D, Windows::Devices::Sensors::IAltimeter> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinimumReportInterval());
             return S_OK;
         }
@@ -689,6 +734,7 @@ struct produce<D, Windows::Devices::Sensors::IAltimeter> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportInterval(value);
             return S_OK;
         }
@@ -702,6 +748,7 @@ struct produce<D, Windows::Devices::Sensors::IAltimeter> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportInterval());
             return S_OK;
         }
@@ -715,6 +762,7 @@ struct produce<D, Windows::Devices::Sensors::IAltimeter> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ReadingChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Altimeter, Windows::Devices::Sensors::AltimeterReadingChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -728,6 +776,7 @@ struct produce<D, Windows::Devices::Sensors::IAltimeter> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingChanged(token);
             return S_OK;
         }
@@ -745,6 +794,7 @@ struct produce<D, Windows::Devices::Sensors::IAltimeterReading> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -758,6 +808,7 @@ struct produce<D, Windows::Devices::Sensors::IAltimeterReading> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AltitudeChangeInMeters());
             return S_OK;
         }
@@ -775,6 +826,7 @@ struct produce<D, Windows::Devices::Sensors::IAltimeterReadingChangedEventArgs> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reading());
             return S_OK;
         }
@@ -793,6 +845,7 @@ struct produce<D, Windows::Devices::Sensors::IAltimeterStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefault());
             return S_OK;
         }
@@ -811,6 +864,7 @@ struct produce<D, Windows::Devices::Sensors::IBarometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCurrentReading());
             return S_OK;
         }
@@ -825,6 +879,7 @@ struct produce<D, Windows::Devices::Sensors::IBarometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -839,6 +894,7 @@ struct produce<D, Windows::Devices::Sensors::IBarometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinimumReportInterval());
             return S_OK;
         }
@@ -852,6 +908,7 @@ struct produce<D, Windows::Devices::Sensors::IBarometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportInterval(value);
             return S_OK;
         }
@@ -865,6 +922,7 @@ struct produce<D, Windows::Devices::Sensors::IBarometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportInterval());
             return S_OK;
         }
@@ -878,6 +936,7 @@ struct produce<D, Windows::Devices::Sensors::IBarometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ReadingChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Barometer, Windows::Devices::Sensors::BarometerReadingChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -891,6 +950,7 @@ struct produce<D, Windows::Devices::Sensors::IBarometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingChanged(token);
             return S_OK;
         }
@@ -908,6 +968,7 @@ struct produce<D, Windows::Devices::Sensors::IBarometerReading> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -921,6 +982,7 @@ struct produce<D, Windows::Devices::Sensors::IBarometerReading> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StationPressureInHectopascals());
             return S_OK;
         }
@@ -938,6 +1000,7 @@ struct produce<D, Windows::Devices::Sensors::IBarometerReadingChangedEventArgs> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reading());
             return S_OK;
         }
@@ -956,6 +1019,7 @@ struct produce<D, Windows::Devices::Sensors::IBarometerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefault());
             return S_OK;
         }
@@ -974,6 +1038,7 @@ struct produce<D, Windows::Devices::Sensors::ICompass> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCurrentReading());
             return S_OK;
         }
@@ -988,6 +1053,7 @@ struct produce<D, Windows::Devices::Sensors::ICompass> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinimumReportInterval());
             return S_OK;
         }
@@ -1001,6 +1067,7 @@ struct produce<D, Windows::Devices::Sensors::ICompass> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportInterval(value);
             return S_OK;
         }
@@ -1014,6 +1081,7 @@ struct produce<D, Windows::Devices::Sensors::ICompass> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportInterval());
             return S_OK;
         }
@@ -1027,6 +1095,7 @@ struct produce<D, Windows::Devices::Sensors::ICompass> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ReadingChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Compass, Windows::Devices::Sensors::CompassReadingChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1040,6 +1109,7 @@ struct produce<D, Windows::Devices::Sensors::ICompass> : produce_base<D, Windows
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingChanged(token);
             return S_OK;
         }
@@ -1057,6 +1127,7 @@ struct produce<D, Windows::Devices::Sensors::ICompass2> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingTransform(value);
             return S_OK;
         }
@@ -1070,6 +1141,7 @@ struct produce<D, Windows::Devices::Sensors::ICompass2> : produce_base<D, Window
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadingTransform());
             return S_OK;
         }
@@ -1087,6 +1159,7 @@ struct produce<D, Windows::Devices::Sensors::ICompassDeviceId> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -1105,6 +1178,7 @@ struct produce<D, Windows::Devices::Sensors::ICompassReading> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -1118,6 +1192,7 @@ struct produce<D, Windows::Devices::Sensors::ICompassReading> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HeadingMagneticNorth());
             return S_OK;
         }
@@ -1131,6 +1206,7 @@ struct produce<D, Windows::Devices::Sensors::ICompassReading> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HeadingTrueNorth());
             return S_OK;
         }
@@ -1149,6 +1225,7 @@ struct produce<D, Windows::Devices::Sensors::ICompassReadingChangedEventArgs> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reading());
             return S_OK;
         }
@@ -1167,6 +1244,7 @@ struct produce<D, Windows::Devices::Sensors::ICompassReadingHeadingAccuracy> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HeadingAccuracy());
             return S_OK;
         }
@@ -1184,6 +1262,7 @@ struct produce<D, Windows::Devices::Sensors::ICompassStatics> : produce_base<D, 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefault());
             return S_OK;
         }
@@ -1202,6 +1281,7 @@ struct produce<D, Windows::Devices::Sensors::IGyrometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCurrentReading());
             return S_OK;
         }
@@ -1216,6 +1296,7 @@ struct produce<D, Windows::Devices::Sensors::IGyrometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinimumReportInterval());
             return S_OK;
         }
@@ -1229,6 +1310,7 @@ struct produce<D, Windows::Devices::Sensors::IGyrometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportInterval(value);
             return S_OK;
         }
@@ -1242,6 +1324,7 @@ struct produce<D, Windows::Devices::Sensors::IGyrometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportInterval());
             return S_OK;
         }
@@ -1255,6 +1338,7 @@ struct produce<D, Windows::Devices::Sensors::IGyrometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ReadingChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Gyrometer, Windows::Devices::Sensors::GyrometerReadingChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1268,6 +1352,7 @@ struct produce<D, Windows::Devices::Sensors::IGyrometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingChanged(token);
             return S_OK;
         }
@@ -1285,6 +1370,7 @@ struct produce<D, Windows::Devices::Sensors::IGyrometer2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingTransform(value);
             return S_OK;
         }
@@ -1298,6 +1384,7 @@ struct produce<D, Windows::Devices::Sensors::IGyrometer2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadingTransform());
             return S_OK;
         }
@@ -1315,6 +1402,7 @@ struct produce<D, Windows::Devices::Sensors::IGyrometerDeviceId> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -1333,6 +1421,7 @@ struct produce<D, Windows::Devices::Sensors::IGyrometerReading> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -1346,6 +1435,7 @@ struct produce<D, Windows::Devices::Sensors::IGyrometerReading> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AngularVelocityX());
             return S_OK;
         }
@@ -1359,6 +1449,7 @@ struct produce<D, Windows::Devices::Sensors::IGyrometerReading> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AngularVelocityY());
             return S_OK;
         }
@@ -1372,6 +1463,7 @@ struct produce<D, Windows::Devices::Sensors::IGyrometerReading> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AngularVelocityZ());
             return S_OK;
         }
@@ -1389,6 +1481,7 @@ struct produce<D, Windows::Devices::Sensors::IGyrometerReadingChangedEventArgs> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reading());
             return S_OK;
         }
@@ -1407,6 +1500,7 @@ struct produce<D, Windows::Devices::Sensors::IGyrometerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefault());
             return S_OK;
         }
@@ -1425,6 +1519,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometer> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCurrentReading());
             return S_OK;
         }
@@ -1439,6 +1534,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometer> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinimumReportInterval());
             return S_OK;
         }
@@ -1452,6 +1548,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometer> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportInterval(value);
             return S_OK;
         }
@@ -1465,6 +1562,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometer> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportInterval());
             return S_OK;
         }
@@ -1478,6 +1576,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometer> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ReadingChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Inclinometer, Windows::Devices::Sensors::InclinometerReadingChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1491,6 +1590,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometer> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingChanged(token);
             return S_OK;
         }
@@ -1508,6 +1608,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometer2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingTransform(value);
             return S_OK;
         }
@@ -1521,6 +1622,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometer2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadingTransform());
             return S_OK;
         }
@@ -1534,6 +1636,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometer2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *type = detach(this->shim().ReadingType());
             return S_OK;
         }
@@ -1551,6 +1654,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometerDeviceId> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -1569,6 +1673,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometerReading> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -1582,6 +1687,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometerReading> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PitchDegrees());
             return S_OK;
         }
@@ -1595,6 +1701,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometerReading> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RollDegrees());
             return S_OK;
         }
@@ -1608,6 +1715,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometerReading> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().YawDegrees());
             return S_OK;
         }
@@ -1625,6 +1733,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometerReadingChangedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reading());
             return S_OK;
         }
@@ -1643,6 +1752,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometerReadingYawAccuracy> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().YawAccuracy());
             return S_OK;
         }
@@ -1660,6 +1770,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometerStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefault());
             return S_OK;
         }
@@ -1678,6 +1789,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometerStatics2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefaultForRelativeReadings());
             return S_OK;
         }
@@ -1696,6 +1808,7 @@ struct produce<D, Windows::Devices::Sensors::IInclinometerStatics3> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefault(sensorReadingtype));
             return S_OK;
         }
@@ -1714,6 +1827,7 @@ struct produce<D, Windows::Devices::Sensors::ILightSensor> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCurrentReading());
             return S_OK;
         }
@@ -1728,6 +1842,7 @@ struct produce<D, Windows::Devices::Sensors::ILightSensor> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinimumReportInterval());
             return S_OK;
         }
@@ -1741,6 +1856,7 @@ struct produce<D, Windows::Devices::Sensors::ILightSensor> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportInterval(value);
             return S_OK;
         }
@@ -1754,6 +1870,7 @@ struct produce<D, Windows::Devices::Sensors::ILightSensor> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportInterval());
             return S_OK;
         }
@@ -1767,6 +1884,7 @@ struct produce<D, Windows::Devices::Sensors::ILightSensor> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ReadingChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::LightSensor, Windows::Devices::Sensors::LightSensorReadingChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1780,6 +1898,7 @@ struct produce<D, Windows::Devices::Sensors::ILightSensor> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingChanged(token);
             return S_OK;
         }
@@ -1797,6 +1916,7 @@ struct produce<D, Windows::Devices::Sensors::ILightSensorDeviceId> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -1815,6 +1935,7 @@ struct produce<D, Windows::Devices::Sensors::ILightSensorReading> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -1828,6 +1949,7 @@ struct produce<D, Windows::Devices::Sensors::ILightSensorReading> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IlluminanceInLux());
             return S_OK;
         }
@@ -1845,6 +1967,7 @@ struct produce<D, Windows::Devices::Sensors::ILightSensorReadingChangedEventArgs
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reading());
             return S_OK;
         }
@@ -1863,6 +1986,7 @@ struct produce<D, Windows::Devices::Sensors::ILightSensorStatics> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefault());
             return S_OK;
         }
@@ -1881,6 +2005,7 @@ struct produce<D, Windows::Devices::Sensors::IMagnetometer> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCurrentReading());
             return S_OK;
         }
@@ -1895,6 +2020,7 @@ struct produce<D, Windows::Devices::Sensors::IMagnetometer> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinimumReportInterval());
             return S_OK;
         }
@@ -1908,6 +2034,7 @@ struct produce<D, Windows::Devices::Sensors::IMagnetometer> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportInterval(value);
             return S_OK;
         }
@@ -1921,6 +2048,7 @@ struct produce<D, Windows::Devices::Sensors::IMagnetometer> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportInterval());
             return S_OK;
         }
@@ -1934,6 +2062,7 @@ struct produce<D, Windows::Devices::Sensors::IMagnetometer> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ReadingChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Magnetometer, Windows::Devices::Sensors::MagnetometerReadingChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1947,6 +2076,7 @@ struct produce<D, Windows::Devices::Sensors::IMagnetometer> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingChanged(token);
             return S_OK;
         }
@@ -1964,6 +2094,7 @@ struct produce<D, Windows::Devices::Sensors::IMagnetometer2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingTransform(value);
             return S_OK;
         }
@@ -1977,6 +2108,7 @@ struct produce<D, Windows::Devices::Sensors::IMagnetometer2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadingTransform());
             return S_OK;
         }
@@ -1994,6 +2126,7 @@ struct produce<D, Windows::Devices::Sensors::IMagnetometerDeviceId> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -2012,6 +2145,7 @@ struct produce<D, Windows::Devices::Sensors::IMagnetometerReading> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -2025,6 +2159,7 @@ struct produce<D, Windows::Devices::Sensors::IMagnetometerReading> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MagneticFieldX());
             return S_OK;
         }
@@ -2038,6 +2173,7 @@ struct produce<D, Windows::Devices::Sensors::IMagnetometerReading> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MagneticFieldY());
             return S_OK;
         }
@@ -2051,6 +2187,7 @@ struct produce<D, Windows::Devices::Sensors::IMagnetometerReading> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MagneticFieldZ());
             return S_OK;
         }
@@ -2064,6 +2201,7 @@ struct produce<D, Windows::Devices::Sensors::IMagnetometerReading> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DirectionalAccuracy());
             return S_OK;
         }
@@ -2081,6 +2219,7 @@ struct produce<D, Windows::Devices::Sensors::IMagnetometerReadingChangedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reading());
             return S_OK;
         }
@@ -2099,6 +2238,7 @@ struct produce<D, Windows::Devices::Sensors::IMagnetometerStatics> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefault());
             return S_OK;
         }
@@ -2117,6 +2257,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensor> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCurrentReading());
             return S_OK;
         }
@@ -2131,6 +2272,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensor> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinimumReportInterval());
             return S_OK;
         }
@@ -2144,6 +2286,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensor> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportInterval(value);
             return S_OK;
         }
@@ -2157,6 +2300,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensor> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportInterval());
             return S_OK;
         }
@@ -2170,6 +2314,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensor> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ReadingChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::OrientationSensor, Windows::Devices::Sensors::OrientationSensorReadingChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2183,6 +2328,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensor> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingChanged(token);
             return S_OK;
         }
@@ -2200,6 +2346,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensor2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingTransform(value);
             return S_OK;
         }
@@ -2213,6 +2360,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensor2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadingTransform());
             return S_OK;
         }
@@ -2226,6 +2374,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensor2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *type = detach(this->shim().ReadingType());
             return S_OK;
         }
@@ -2243,6 +2392,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensorDeviceId> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -2261,6 +2411,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensorReading> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -2274,6 +2425,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensorReading> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RotationMatrix());
             return S_OK;
         }
@@ -2288,6 +2440,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensorReading> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Quaternion());
             return S_OK;
         }
@@ -2306,6 +2459,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensorReadingChangedEve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reading());
             return S_OK;
         }
@@ -2324,6 +2478,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensorReadingYawAccurac
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().YawAccuracy());
             return S_OK;
         }
@@ -2341,6 +2496,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensorStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefault());
             return S_OK;
         }
@@ -2359,6 +2515,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensorStatics2> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefaultForRelativeReadings());
             return S_OK;
         }
@@ -2377,6 +2534,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensorStatics3> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefault(sensorReadingtype));
             return S_OK;
         }
@@ -2391,6 +2549,7 @@ struct produce<D, Windows::Devices::Sensors::IOrientationSensorStatics3> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefault(sensorReadingType, optimizationGoal));
             return S_OK;
         }
@@ -2409,6 +2568,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -2423,6 +2583,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PowerInMilliwatts());
             return S_OK;
         }
@@ -2436,6 +2597,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinimumReportInterval());
             return S_OK;
         }
@@ -2449,6 +2611,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReportInterval(value);
             return S_OK;
         }
@@ -2462,6 +2625,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReportInterval());
             return S_OK;
         }
@@ -2475,6 +2639,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ReadingChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Pedometer, Windows::Devices::Sensors::PedometerReadingChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2488,6 +2653,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometer> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingChanged(token);
             return S_OK;
         }
@@ -2505,6 +2671,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometer2> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCurrentReadings());
             return S_OK;
         }
@@ -2523,6 +2690,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometerDataThresholdFactory> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *threshold = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::Sensors::Pedometer *>(&sensor), stepGoal));
             return S_OK;
         }
@@ -2541,6 +2709,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometerReading> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StepKind());
             return S_OK;
         }
@@ -2554,6 +2723,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometerReading> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CumulativeSteps());
             return S_OK;
         }
@@ -2567,6 +2737,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometerReading> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -2580,6 +2751,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometerReading> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CumulativeStepsDuration());
             return S_OK;
         }
@@ -2597,6 +2769,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometerReadingChangedEventArgs> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reading());
             return S_OK;
         }
@@ -2615,6 +2788,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -2629,6 +2803,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetDefaultAsync());
             return S_OK;
         }
@@ -2643,6 +2818,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -2657,6 +2833,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetSystemHistoryAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&fromTime)));
             return S_OK;
         }
@@ -2671,6 +2848,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetSystemHistoryAsync(*reinterpret_cast<const Windows::Foundation::DateTime *>(&fromTime), *reinterpret_cast<const Windows::Foundation::TimeSpan *>(&duration)));
             return S_OK;
         }
@@ -2689,6 +2867,7 @@ struct produce<D, Windows::Devices::Sensors::IPedometerStatics2> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetReadingsFromTriggerDetails(*reinterpret_cast<const Windows::Devices::Sensors::SensorDataThresholdTriggerDetails *>(&triggerDetails)));
             return S_OK;
         }
@@ -2707,6 +2886,7 @@ struct produce<D, Windows::Devices::Sensors::IProximitySensor> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -2721,6 +2901,7 @@ struct produce<D, Windows::Devices::Sensors::IProximitySensor> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxDistanceInMillimeters());
             return S_OK;
         }
@@ -2735,6 +2916,7 @@ struct produce<D, Windows::Devices::Sensors::IProximitySensor> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinDistanceInMillimeters());
             return S_OK;
         }
@@ -2749,6 +2931,7 @@ struct produce<D, Windows::Devices::Sensors::IProximitySensor> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCurrentReading());
             return S_OK;
         }
@@ -2763,6 +2946,7 @@ struct produce<D, Windows::Devices::Sensors::IProximitySensor> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ReadingChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::ProximitySensor, Windows::Devices::Sensors::ProximitySensorReadingChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -2776,6 +2960,7 @@ struct produce<D, Windows::Devices::Sensors::IProximitySensor> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingChanged(token);
             return S_OK;
         }
@@ -2789,6 +2974,7 @@ struct produce<D, Windows::Devices::Sensors::IProximitySensor> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *controller = detach(this->shim().CreateDisplayOnOffController());
             return S_OK;
         }
@@ -2807,6 +2993,7 @@ struct produce<D, Windows::Devices::Sensors::IProximitySensorDataThresholdFactor
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *threshold = detach(this->shim().Create(*reinterpret_cast<const Windows::Devices::Sensors::ProximitySensor *>(&sensor)));
             return S_OK;
         }
@@ -2825,6 +3012,7 @@ struct produce<D, Windows::Devices::Sensors::IProximitySensorReading> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -2838,6 +3026,7 @@ struct produce<D, Windows::Devices::Sensors::IProximitySensorReading> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDetected());
             return S_OK;
         }
@@ -2851,6 +3040,7 @@ struct produce<D, Windows::Devices::Sensors::IProximitySensorReading> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DistanceInMillimeters());
             return S_OK;
         }
@@ -2869,6 +3059,7 @@ struct produce<D, Windows::Devices::Sensors::IProximitySensorReadingChangedEvent
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Reading());
             return S_OK;
         }
@@ -2887,6 +3078,7 @@ struct produce<D, Windows::Devices::Sensors::IProximitySensorStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -2901,6 +3093,7 @@ struct produce<D, Windows::Devices::Sensors::IProximitySensorStatics> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().FromId(*reinterpret_cast<const hstring *>(&sensorId)));
             return S_OK;
         }
@@ -2919,6 +3112,7 @@ struct produce<D, Windows::Devices::Sensors::IProximitySensorStatics2> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetReadingsFromTriggerDetails(*reinterpret_cast<const Windows::Devices::Sensors::SensorDataThresholdTriggerDetails *>(&triggerDetails)));
             return S_OK;
         }
@@ -2941,6 +3135,7 @@ struct produce<D, Windows::Devices::Sensors::ISensorDataThresholdTriggerDetails>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -2955,6 +3150,7 @@ struct produce<D, Windows::Devices::Sensors::ISensorDataThresholdTriggerDetails>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SensorType());
             return S_OK;
         }
@@ -2972,6 +3168,7 @@ struct produce<D, Windows::Devices::Sensors::ISensorQuaternion> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().W());
             return S_OK;
         }
@@ -2985,6 +3182,7 @@ struct produce<D, Windows::Devices::Sensors::ISensorQuaternion> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().X());
             return S_OK;
         }
@@ -2998,6 +3196,7 @@ struct produce<D, Windows::Devices::Sensors::ISensorQuaternion> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Y());
             return S_OK;
         }
@@ -3011,6 +3210,7 @@ struct produce<D, Windows::Devices::Sensors::ISensorQuaternion> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Z());
             return S_OK;
         }
@@ -3028,6 +3228,7 @@ struct produce<D, Windows::Devices::Sensors::ISensorRotationMatrix> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().M11());
             return S_OK;
         }
@@ -3041,6 +3242,7 @@ struct produce<D, Windows::Devices::Sensors::ISensorRotationMatrix> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().M12());
             return S_OK;
         }
@@ -3054,6 +3256,7 @@ struct produce<D, Windows::Devices::Sensors::ISensorRotationMatrix> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().M13());
             return S_OK;
         }
@@ -3067,6 +3270,7 @@ struct produce<D, Windows::Devices::Sensors::ISensorRotationMatrix> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().M21());
             return S_OK;
         }
@@ -3080,6 +3284,7 @@ struct produce<D, Windows::Devices::Sensors::ISensorRotationMatrix> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().M22());
             return S_OK;
         }
@@ -3093,6 +3298,7 @@ struct produce<D, Windows::Devices::Sensors::ISensorRotationMatrix> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().M23());
             return S_OK;
         }
@@ -3106,6 +3312,7 @@ struct produce<D, Windows::Devices::Sensors::ISensorRotationMatrix> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().M31());
             return S_OK;
         }
@@ -3119,6 +3326,7 @@ struct produce<D, Windows::Devices::Sensors::ISensorRotationMatrix> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().M32());
             return S_OK;
         }
@@ -3132,6 +3340,7 @@ struct produce<D, Windows::Devices::Sensors::ISensorRotationMatrix> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().M33());
             return S_OK;
         }
@@ -3149,6 +3358,7 @@ struct produce<D, Windows::Devices::Sensors::ISimpleOrientationSensor> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCurrentOrientation());
             return S_OK;
         }
@@ -3162,6 +3372,7 @@ struct produce<D, Windows::Devices::Sensors::ISimpleOrientationSensor> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().OrientationChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::SimpleOrientationSensor, Windows::Devices::Sensors::SimpleOrientationSensorOrientationChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -3175,6 +3386,7 @@ struct produce<D, Windows::Devices::Sensors::ISimpleOrientationSensor> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OrientationChanged(token);
             return S_OK;
         }
@@ -3192,6 +3404,7 @@ struct produce<D, Windows::Devices::Sensors::ISimpleOrientationSensor2> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ReadingTransform(value);
             return S_OK;
         }
@@ -3205,6 +3418,7 @@ struct produce<D, Windows::Devices::Sensors::ISimpleOrientationSensor2> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadingTransform());
             return S_OK;
         }
@@ -3222,6 +3436,7 @@ struct produce<D, Windows::Devices::Sensors::ISimpleOrientationSensorDeviceId> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -3240,6 +3455,7 @@ struct produce<D, Windows::Devices::Sensors::ISimpleOrientationSensorOrientation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -3253,6 +3469,7 @@ struct produce<D, Windows::Devices::Sensors::ISimpleOrientationSensorOrientation
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Orientation());
             return S_OK;
         }
@@ -3270,6 +3487,7 @@ struct produce<D, Windows::Devices::Sensors::ISimpleOrientationSensorStatics> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDefault());
             return S_OK;
         }

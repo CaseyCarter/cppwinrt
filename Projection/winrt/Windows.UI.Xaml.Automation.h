@@ -24,6 +24,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AnnotationTypeIdProperty());
             return S_OK;
         }
@@ -38,6 +39,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AnnotationTypeNameProperty());
             return S_OK;
         }
@@ -52,6 +54,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AuthorProperty());
             return S_OK;
         }
@@ -66,6 +69,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DateTimeProperty());
             return S_OK;
         }
@@ -80,6 +84,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetProperty());
             return S_OK;
         }
@@ -98,6 +103,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationAnnotation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -111,6 +117,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationAnnotation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Type(value);
             return S_OK;
         }
@@ -124,6 +131,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationAnnotation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Element());
             return S_OK;
         }
@@ -138,6 +146,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationAnnotation> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Element(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&value));
             return S_OK;
         }
@@ -155,6 +164,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationAnnotationFactory> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateInstance(type));
             return S_OK;
         }
@@ -169,6 +179,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationAnnotationFactory> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateWithElementParameter(type, *reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
             return S_OK;
         }
@@ -187,6 +198,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationAnnotationStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TypeProperty());
             return S_OK;
         }
@@ -201,6 +213,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationAnnotationStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ElementProperty());
             return S_OK;
         }
@@ -223,6 +236,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AcceleratorKeyProperty());
             return S_OK;
         }
@@ -237,6 +251,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccessKeyProperty());
             return S_OK;
         }
@@ -251,6 +266,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutomationIdProperty());
             return S_OK;
         }
@@ -265,6 +281,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BoundingRectangleProperty());
             return S_OK;
         }
@@ -279,6 +296,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClassNameProperty());
             return S_OK;
         }
@@ -293,6 +311,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClickablePointProperty());
             return S_OK;
         }
@@ -307,6 +326,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ControlTypeProperty());
             return S_OK;
         }
@@ -321,6 +341,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasKeyboardFocusProperty());
             return S_OK;
         }
@@ -335,6 +356,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HelpTextProperty());
             return S_OK;
         }
@@ -349,6 +371,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsContentElementProperty());
             return S_OK;
         }
@@ -363,6 +386,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsControlElementProperty());
             return S_OK;
         }
@@ -377,6 +401,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEnabledProperty());
             return S_OK;
         }
@@ -391,6 +416,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsKeyboardFocusableProperty());
             return S_OK;
         }
@@ -405,6 +431,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsOffscreenProperty());
             return S_OK;
         }
@@ -419,6 +446,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsPasswordProperty());
             return S_OK;
         }
@@ -433,6 +461,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsRequiredForFormProperty());
             return S_OK;
         }
@@ -447,6 +476,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ItemStatusProperty());
             return S_OK;
         }
@@ -461,6 +491,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ItemTypeProperty());
             return S_OK;
         }
@@ -475,6 +506,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LabeledByProperty());
             return S_OK;
         }
@@ -489,6 +521,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalizedControlTypeProperty());
             return S_OK;
         }
@@ -503,6 +536,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NameProperty());
             return S_OK;
         }
@@ -517,6 +551,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OrientationProperty());
             return S_OK;
         }
@@ -531,6 +566,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LiveSettingProperty());
             return S_OK;
         }
@@ -549,6 +585,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ControlledPeersProperty());
             return S_OK;
         }
@@ -567,6 +604,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PositionInSetProperty());
             return S_OK;
         }
@@ -581,6 +619,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SizeOfSetProperty());
             return S_OK;
         }
@@ -595,6 +634,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LevelProperty());
             return S_OK;
         }
@@ -609,6 +649,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AnnotationsProperty());
             return S_OK;
         }
@@ -627,6 +668,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LandmarkTypeProperty());
             return S_OK;
         }
@@ -641,6 +683,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalizedLandmarkTypeProperty());
             return S_OK;
         }
@@ -659,6 +702,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsPeripheralProperty());
             return S_OK;
         }
@@ -673,6 +717,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDataValidForFormProperty());
             return S_OK;
         }
@@ -687,6 +732,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FullDescriptionProperty());
             return S_OK;
         }
@@ -701,6 +747,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DescribedByProperty());
             return S_OK;
         }
@@ -715,6 +762,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FlowsToProperty());
             return S_OK;
         }
@@ -729,6 +777,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FlowsFromProperty());
             return S_OK;
         }
@@ -751,6 +800,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AcceleratorKeyProperty());
             return S_OK;
         }
@@ -765,6 +815,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetAcceleratorKey(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -779,6 +830,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetAcceleratorKey(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -792,6 +844,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccessKeyProperty());
             return S_OK;
         }
@@ -806,6 +859,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetAccessKey(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -820,6 +874,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetAccessKey(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -833,6 +888,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutomationIdProperty());
             return S_OK;
         }
@@ -847,6 +903,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetAutomationId(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -861,6 +918,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetAutomationId(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -874,6 +932,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HelpTextProperty());
             return S_OK;
         }
@@ -888,6 +947,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetHelpText(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -902,6 +962,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetHelpText(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -915,6 +976,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsRequiredForFormProperty());
             return S_OK;
         }
@@ -929,6 +991,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetIsRequiredForForm(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -942,6 +1005,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetIsRequiredForForm(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -955,6 +1019,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ItemStatusProperty());
             return S_OK;
         }
@@ -969,6 +1034,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetItemStatus(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -983,6 +1049,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetItemStatus(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -996,6 +1063,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ItemTypeProperty());
             return S_OK;
         }
@@ -1010,6 +1078,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetItemType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1024,6 +1093,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetItemType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1037,6 +1107,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LabeledByProperty());
             return S_OK;
         }
@@ -1051,6 +1122,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetLabeledBy(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1065,6 +1137,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetLabeledBy(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&value));
             return S_OK;
         }
@@ -1078,6 +1151,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NameProperty());
             return S_OK;
         }
@@ -1092,6 +1166,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetName(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1106,6 +1181,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetName(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1119,6 +1195,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LiveSettingProperty());
             return S_OK;
         }
@@ -1133,6 +1210,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetLiveSetting(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1146,6 +1224,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetLiveSetting(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -1163,6 +1242,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccessibilityViewProperty());
             return S_OK;
         }
@@ -1177,6 +1257,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetAccessibilityView(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1190,6 +1271,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetAccessibilityView(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -1203,6 +1285,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ControlledPeersProperty());
             return S_OK;
         }
@@ -1217,6 +1300,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics2> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetControlledPeers(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1235,6 +1319,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PositionInSetProperty());
             return S_OK;
         }
@@ -1249,6 +1334,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetPositionInSet(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1262,6 +1348,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetPositionInSet(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -1275,6 +1362,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SizeOfSetProperty());
             return S_OK;
         }
@@ -1289,6 +1377,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetSizeOfSet(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1302,6 +1391,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetSizeOfSet(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -1315,6 +1405,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LevelProperty());
             return S_OK;
         }
@@ -1329,6 +1420,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetLevel(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1342,6 +1434,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetLevel(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -1355,6 +1448,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AnnotationsProperty());
             return S_OK;
         }
@@ -1369,6 +1463,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetAnnotations(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1387,6 +1482,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics4> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LandmarkTypeProperty());
             return S_OK;
         }
@@ -1401,6 +1497,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics4> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetLandmarkType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1414,6 +1511,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics4> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetLandmarkType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -1427,6 +1525,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics4> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalizedLandmarkTypeProperty());
             return S_OK;
         }
@@ -1441,6 +1540,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics4> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetLocalizedLandmarkType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1455,6 +1555,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics4> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetLocalizedLandmarkType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1472,6 +1573,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsPeripheralProperty());
             return S_OK;
         }
@@ -1486,6 +1588,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetIsPeripheral(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1499,6 +1602,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetIsPeripheral(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -1512,6 +1616,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDataValidForFormProperty());
             return S_OK;
         }
@@ -1526,6 +1631,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetIsDataValidForForm(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1539,6 +1645,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetIsDataValidForForm(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
             return S_OK;
         }
@@ -1552,6 +1659,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FullDescriptionProperty());
             return S_OK;
         }
@@ -1566,6 +1674,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetFullDescription(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1580,6 +1689,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetFullDescription(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1593,6 +1703,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LocalizedControlTypeProperty());
             return S_OK;
         }
@@ -1607,6 +1718,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetLocalizedControlType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1621,6 +1733,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetLocalizedControlType(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), *reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1634,6 +1747,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DescribedByProperty());
             return S_OK;
         }
@@ -1648,6 +1762,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDescribedBy(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1662,6 +1777,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FlowsToProperty());
             return S_OK;
         }
@@ -1676,6 +1792,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetFlowsTo(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1690,6 +1807,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FlowsFromProperty());
             return S_OK;
         }
@@ -1704,6 +1822,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetFlowsFrom(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
             return S_OK;
         }
@@ -1730,6 +1849,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IDockPatternIdentifiersStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DockPositionProperty());
             return S_OK;
         }
@@ -1752,6 +1872,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IDragPatternIdentifiersStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DropEffectProperty());
             return S_OK;
         }
@@ -1766,6 +1887,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IDragPatternIdentifiersStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DropEffectsProperty());
             return S_OK;
         }
@@ -1780,6 +1902,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IDragPatternIdentifiersStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GrabbedItemsProperty());
             return S_OK;
         }
@@ -1794,6 +1917,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IDragPatternIdentifiersStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsGrabbedProperty());
             return S_OK;
         }
@@ -1816,6 +1940,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IDropTargetPatternIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DropTargetEffectProperty());
             return S_OK;
         }
@@ -1830,6 +1955,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IDropTargetPatternIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DropTargetEffectsProperty());
             return S_OK;
         }
@@ -1852,6 +1978,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IExpandCollapsePatternIdentifie
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExpandCollapseStateProperty());
             return S_OK;
         }
@@ -1874,6 +2001,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IGridItemPatternIdentifiersStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ColumnProperty());
             return S_OK;
         }
@@ -1888,6 +2016,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IGridItemPatternIdentifiersStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ColumnSpanProperty());
             return S_OK;
         }
@@ -1902,6 +2031,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IGridItemPatternIdentifiersStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContainingGridProperty());
             return S_OK;
         }
@@ -1916,6 +2046,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IGridItemPatternIdentifiersStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RowProperty());
             return S_OK;
         }
@@ -1930,6 +2061,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IGridItemPatternIdentifiersStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RowSpanProperty());
             return S_OK;
         }
@@ -1952,6 +2084,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IGridPatternIdentifiersStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ColumnCountProperty());
             return S_OK;
         }
@@ -1966,6 +2099,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IGridPatternIdentifiersStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RowCountProperty());
             return S_OK;
         }
@@ -1988,6 +2122,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IMultipleViewPatternIdentifiers
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentViewProperty());
             return S_OK;
         }
@@ -2002,6 +2137,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IMultipleViewPatternIdentifiers
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedViewsProperty());
             return S_OK;
         }
@@ -2024,6 +2160,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsReadOnlyProperty());
             return S_OK;
         }
@@ -2038,6 +2175,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LargeChangeProperty());
             return S_OK;
         }
@@ -2052,6 +2190,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaximumProperty());
             return S_OK;
         }
@@ -2066,6 +2205,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinimumProperty());
             return S_OK;
         }
@@ -2080,6 +2220,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SmallChangeProperty());
             return S_OK;
         }
@@ -2094,6 +2235,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ValueProperty());
             return S_OK;
         }
@@ -2116,6 +2258,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HorizontallyScrollableProperty());
             return S_OK;
         }
@@ -2130,6 +2273,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HorizontalScrollPercentProperty());
             return S_OK;
         }
@@ -2144,6 +2288,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HorizontalViewSizeProperty());
             return S_OK;
         }
@@ -2158,6 +2303,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NoScroll());
             return S_OK;
         }
@@ -2171,6 +2317,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VerticallyScrollableProperty());
             return S_OK;
         }
@@ -2185,6 +2332,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VerticalScrollPercentProperty());
             return S_OK;
         }
@@ -2199,6 +2347,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VerticalViewSizeProperty());
             return S_OK;
         }
@@ -2221,6 +2370,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ISelectionItemPatternIdentifier
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsSelectedProperty());
             return S_OK;
         }
@@ -2235,6 +2385,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ISelectionItemPatternIdentifier
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SelectionContainerProperty());
             return S_OK;
         }
@@ -2257,6 +2408,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ISelectionPatternIdentifiersSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanSelectMultipleProperty());
             return S_OK;
         }
@@ -2271,6 +2423,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ISelectionPatternIdentifiersSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsSelectionRequiredProperty());
             return S_OK;
         }
@@ -2285,6 +2438,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ISelectionPatternIdentifiersSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SelectionProperty());
             return S_OK;
         }
@@ -2307,6 +2461,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ISpreadsheetItemPatternIdentifi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FormulaProperty());
             return S_OK;
         }
@@ -2329,6 +2484,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtendedPropertiesProperty());
             return S_OK;
         }
@@ -2343,6 +2499,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FillColorProperty());
             return S_OK;
         }
@@ -2357,6 +2514,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FillPatternColorProperty());
             return S_OK;
         }
@@ -2371,6 +2529,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FillPatternStyleProperty());
             return S_OK;
         }
@@ -2385,6 +2544,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShapeProperty());
             return S_OK;
         }
@@ -2399,6 +2559,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StyleIdProperty());
             return S_OK;
         }
@@ -2413,6 +2574,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StyleNameProperty());
             return S_OK;
         }
@@ -2435,6 +2597,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITableItemPatternIdentifiersSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ColumnHeaderItemsProperty());
             return S_OK;
         }
@@ -2449,6 +2612,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITableItemPatternIdentifiersSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RowHeaderItemsProperty());
             return S_OK;
         }
@@ -2471,6 +2635,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITablePatternIdentifiersStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ColumnHeadersProperty());
             return S_OK;
         }
@@ -2485,6 +2650,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITablePatternIdentifiersStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RowHeadersProperty());
             return S_OK;
         }
@@ -2499,6 +2665,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITablePatternIdentifiersStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RowOrColumnMajorProperty());
             return S_OK;
         }
@@ -2521,6 +2688,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITogglePatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ToggleStateProperty());
             return S_OK;
         }
@@ -2543,6 +2711,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITransformPattern2IdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanZoomProperty());
             return S_OK;
         }
@@ -2557,6 +2726,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITransformPattern2IdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZoomLevelProperty());
             return S_OK;
         }
@@ -2571,6 +2741,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITransformPattern2IdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxZoomProperty());
             return S_OK;
         }
@@ -2585,6 +2756,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITransformPattern2IdentifiersSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinZoomProperty());
             return S_OK;
         }
@@ -2607,6 +2779,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITransformPatternIdentifiersSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanMoveProperty());
             return S_OK;
         }
@@ -2621,6 +2794,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITransformPatternIdentifiersSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanResizeProperty());
             return S_OK;
         }
@@ -2635,6 +2809,7 @@ struct produce<D, Windows::UI::Xaml::Automation::ITransformPatternIdentifiersSta
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanRotateProperty());
             return S_OK;
         }
@@ -2657,6 +2832,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IValuePatternIdentifiersStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsReadOnlyProperty());
             return S_OK;
         }
@@ -2671,6 +2847,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IValuePatternIdentifiersStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ValueProperty());
             return S_OK;
         }
@@ -2693,6 +2870,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanMaximizeProperty());
             return S_OK;
         }
@@ -2707,6 +2885,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanMinimizeProperty());
             return S_OK;
         }
@@ -2721,6 +2900,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsModalProperty());
             return S_OK;
         }
@@ -2735,6 +2915,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTopmostProperty());
             return S_OK;
         }
@@ -2749,6 +2930,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WindowInteractionStateProperty());
             return S_OK;
         }
@@ -2763,6 +2945,7 @@ struct produce<D, Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WindowVisualStateProperty());
             return S_OK;
         }

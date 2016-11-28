@@ -20,6 +20,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystem> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -34,6 +35,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystem> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystem> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -62,6 +65,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystem> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -75,6 +79,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystem> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsAvailableByProximity());
             return S_OK;
         }
@@ -92,6 +97,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemAddedEventArgs> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteSystem());
             return S_OK;
         }
@@ -110,6 +116,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemConnectionRequest
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteSystem());
             return S_OK;
         }
@@ -128,6 +135,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemConnectionRequest
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const Windows::System::RemoteSystems::RemoteSystem *>(&remoteSystem)));
             return S_OK;
         }
@@ -146,6 +154,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteSystemDiscoveryType());
             return S_OK;
         }
@@ -163,6 +172,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(discoveryType));
             return S_OK;
         }
@@ -185,6 +195,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemKindFilter> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteSystemKinds());
             return S_OK;
         }
@@ -203,6 +214,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemKindFilterFactory
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&remoteSystemKinds)));
             return S_OK;
         }
@@ -221,6 +233,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemKindStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Phone());
             return S_OK;
         }
@@ -235,6 +248,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemKindStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Hub());
             return S_OK;
         }
@@ -249,6 +263,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemKindStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Holographic());
             return S_OK;
         }
@@ -263,6 +278,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemKindStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Desktop());
             return S_OK;
         }
@@ -277,6 +293,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemKindStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Xbox());
             return S_OK;
         }
@@ -295,6 +312,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemRemovedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteSystemId());
             return S_OK;
         }
@@ -313,6 +331,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FindByHostNameAsync(*reinterpret_cast<const Windows::Networking::HostName *>(&hostName)));
             return S_OK;
         }
@@ -327,6 +346,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateWatcher());
             return S_OK;
         }
@@ -341,6 +361,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateWatcher(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::System::RemoteSystems::IRemoteSystemFilter> *>(&filters)));
             return S_OK;
         }
@@ -355,6 +376,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RequestAccessAsync());
             return S_OK;
         }
@@ -373,6 +395,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemStatusTypeFilter>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteSystemStatusType());
             return S_OK;
         }
@@ -390,6 +413,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemStatusTypeFilterF
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Create(remoteSystemStatusType));
             return S_OK;
         }
@@ -408,6 +432,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemUpdatedEventArgs>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteSystem());
             return S_OK;
         }
@@ -426,6 +451,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemWatcher> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start();
             return S_OK;
         }
@@ -439,6 +465,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemWatcher> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stop();
             return S_OK;
         }
@@ -452,6 +479,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemWatcher> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RemoteSystemAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemAddedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -465,6 +493,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemWatcher> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteSystemAdded(token);
             return S_OK;
         }
@@ -478,6 +507,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemWatcher> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RemoteSystemUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemUpdatedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -491,6 +521,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemWatcher> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteSystemUpdated(token);
             return S_OK;
         }
@@ -504,6 +535,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemWatcher> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RemoteSystemRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemRemovedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -517,6 +549,7 @@ struct produce<D, Windows::System::RemoteSystems::IRemoteSystemWatcher> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteSystemRemoved(token);
             return S_OK;
         }

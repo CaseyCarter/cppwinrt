@@ -76,6 +76,7 @@ struct produce<D, Windows::Media::Protection::IComponentLoadFailedEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Information());
             return S_OK;
         }
@@ -90,6 +91,7 @@ struct produce<D, Windows::Media::Protection::IComponentLoadFailedEventArgs> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Completion());
             return S_OK;
         }
@@ -108,6 +110,7 @@ struct produce<D, Windows::Media::Protection::IHdcpSession> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEffectiveProtectionAtLeast(protection));
             return S_OK;
         }
@@ -121,6 +124,7 @@ struct produce<D, Windows::Media::Protection::IHdcpSession> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetEffectiveProtection());
             return S_OK;
         }
@@ -135,6 +139,7 @@ struct produce<D, Windows::Media::Protection::IHdcpSession> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SetDesiredMinProtectionAsync(protection));
             return S_OK;
         }
@@ -149,6 +154,7 @@ struct produce<D, Windows::Media::Protection::IHdcpSession> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ProtectionChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -162,6 +168,7 @@ struct produce<D, Windows::Media::Protection::IHdcpSession> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProtectionChanged(token);
             return S_OK;
         }
@@ -179,6 +186,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().ServiceRequested(*reinterpret_cast<const Windows::Media::Protection::ServiceRequestedEventHandler *>(&handler)));
             return S_OK;
         }
@@ -192,6 +200,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ServiceRequested(cookie);
             return S_OK;
         }
@@ -205,6 +214,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().RebootNeeded(*reinterpret_cast<const Windows::Media::Protection::RebootNeededEventHandler *>(&handler)));
             return S_OK;
         }
@@ -218,6 +228,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RebootNeeded(cookie);
             return S_OK;
         }
@@ -231,6 +242,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().ComponentLoadFailed(*reinterpret_cast<const Windows::Media::Protection::ComponentLoadFailedEventHandler *>(&handler)));
             return S_OK;
         }
@@ -244,6 +256,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ComponentLoadFailed(cookie);
             return S_OK;
         }
@@ -257,6 +270,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -275,6 +289,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionPMPServer> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *ppProperties = detach(this->shim().Properties());
             return S_OK;
         }
@@ -293,6 +308,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionPMPServerFactory> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *ppObject = detach(this->shim().CreatePMPServer(*reinterpret_cast<const Windows::Foundation::Collections::IPropertySet *>(&pProperties)));
             return S_OK;
         }
@@ -311,6 +327,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionServiceCompletion>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete(success);
             return S_OK;
         }
@@ -328,6 +345,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionServiceRequest> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *system = detach(this->shim().ProtectionSystem());
             return S_OK;
         }
@@ -341,6 +359,7 @@ struct produce<D, Windows::Media::Protection::IMediaProtectionServiceRequest> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *type = detach(this->shim().Type());
             return S_OK;
         }
@@ -358,6 +377,7 @@ struct produce<D, Windows::Media::Protection::IProtectionCapabilities> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsTypeSupported(*reinterpret_cast<const hstring *>(&type), *reinterpret_cast<const hstring *>(&keySystem)));
             return S_OK;
         }
@@ -375,6 +395,7 @@ struct produce<D, Windows::Media::Protection::IRevocationAndRenewalInformation> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *items = detach(this->shim().Items());
             return S_OK;
         }
@@ -393,6 +414,7 @@ struct produce<D, Windows::Media::Protection::IRevocationAndRenewalItem> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *reasons = detach(this->shim().Reasons());
             return S_OK;
         }
@@ -406,6 +428,7 @@ struct produce<D, Windows::Media::Protection::IRevocationAndRenewalItem> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HeaderHash());
             return S_OK;
         }
@@ -420,6 +443,7 @@ struct produce<D, Windows::Media::Protection::IRevocationAndRenewalItem> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PublicKeyHash());
             return S_OK;
         }
@@ -434,6 +458,7 @@ struct produce<D, Windows::Media::Protection::IRevocationAndRenewalItem> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *name = detach(this->shim().Name());
             return S_OK;
         }
@@ -448,6 +473,7 @@ struct produce<D, Windows::Media::Protection::IRevocationAndRenewalItem> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RenewalId());
             return S_OK;
         }
@@ -466,6 +492,7 @@ struct produce<D, Windows::Media::Protection::IServiceRequestedEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Request());
             return S_OK;
         }
@@ -480,6 +507,7 @@ struct produce<D, Windows::Media::Protection::IServiceRequestedEventArgs> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Completion());
             return S_OK;
         }
@@ -498,6 +526,7 @@ struct produce<D, Windows::Media::Protection::IServiceRequestedEventArgs2> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediaPlaybackItem());
             return S_OK;
         }

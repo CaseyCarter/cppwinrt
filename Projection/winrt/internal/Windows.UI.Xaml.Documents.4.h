@@ -26,6 +26,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OnDisconnectVisualChildren();
             return S_OK;
         }

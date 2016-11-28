@@ -25,6 +25,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -42,6 +43,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs2>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -60,6 +62,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceAccessInformation> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().AccessChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceAccessInformation, Windows::Devices::Enumeration::DeviceAccessChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -73,6 +76,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceAccessInformation> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AccessChanged(cookie);
             return S_OK;
         }
@@ -86,6 +90,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceAccessInformation> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *status = detach(this->shim().CurrentStatus());
             return S_OK;
         }
@@ -103,6 +108,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceAccessInformationStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateFromId(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -117,6 +123,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceAccessInformationStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateFromDeviceClassId(deviceClassId));
             return S_OK;
         }
@@ -131,6 +138,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceAccessInformationStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateFromDeviceClass(deviceClass));
             return S_OK;
         }
@@ -149,6 +157,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceConnectionChangeTriggerD
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -167,6 +176,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceDisconnectButtonClickedE
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Device());
             return S_OK;
         }
@@ -185,6 +195,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -199,6 +210,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -213,6 +225,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsEnabled());
             return S_OK;
         }
@@ -226,6 +239,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDefault());
             return S_OK;
         }
@@ -239,6 +253,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnclosureLocation());
             return S_OK;
         }
@@ -253,6 +268,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -267,6 +283,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Update(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformationUpdate *>(&updateInfo));
             return S_OK;
         }
@@ -280,6 +297,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().GetThumbnailAsync());
             return S_OK;
         }
@@ -294,6 +312,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().GetGlyphThumbnailAsync());
             return S_OK;
         }
@@ -312,6 +331,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation2> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -325,6 +345,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformation2> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pairing());
             return S_OK;
         }
@@ -343,6 +364,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationCustomPairing
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().PairAsync(pairingKindsSupported));
             return S_OK;
         }
@@ -357,6 +379,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationCustomPairing
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().PairAsync(pairingKindsSupported, minProtectionLevel));
             return S_OK;
         }
@@ -371,6 +394,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationCustomPairing
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().PairAsync(pairingKindsSupported, minProtectionLevel, *reinterpret_cast<const Windows::Devices::Enumeration::IDevicePairingSettings *>(&devicePairingSettings)));
             return S_OK;
         }
@@ -385,6 +409,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationCustomPairing
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PairingRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceInformationCustomPairing, Windows::Devices::Enumeration::DevicePairingRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -398,6 +423,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationCustomPairing
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PairingRequested(token);
             return S_OK;
         }
@@ -415,6 +441,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairing> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsPaired());
             return S_OK;
         }
@@ -428,6 +455,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairing> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CanPair());
             return S_OK;
         }
@@ -441,6 +469,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairing> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().PairAsync());
             return S_OK;
         }
@@ -455,6 +484,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairing> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().PairAsync(minProtectionLevel));
             return S_OK;
         }
@@ -473,6 +503,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairing2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProtectionLevel());
             return S_OK;
         }
@@ -486,6 +517,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairing2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Custom());
             return S_OK;
         }
@@ -500,6 +532,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairing2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().PairAsync(minProtectionLevel, *reinterpret_cast<const Windows::Devices::Enumeration::IDevicePairingSettings *>(&devicePairingSettings)));
             return S_OK;
         }
@@ -514,6 +547,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairing2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().UnpairAsync());
             return S_OK;
         }
@@ -532,6 +566,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairingStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TryRegisterForAllInboundPairingRequests(pairingKindsSupported));
             return S_OK;
         }
@@ -549,6 +584,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().CreateFromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -563,6 +599,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().CreateFromIdAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&additionalProperties)));
             return S_OK;
         }
@@ -577,6 +614,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().FindAllAsync());
             return S_OK;
         }
@@ -591,6 +629,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().FindAllAsync(deviceClass));
             return S_OK;
         }
@@ -605,6 +644,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().FindAllAsync(*reinterpret_cast<const hstring *>(&aqsFilter)));
             return S_OK;
         }
@@ -619,6 +659,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().FindAllAsync(*reinterpret_cast<const hstring *>(&aqsFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&additionalProperties)));
             return S_OK;
         }
@@ -633,6 +674,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *watcher = detach(this->shim().CreateWatcher());
             return S_OK;
         }
@@ -647,6 +689,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *watcher = detach(this->shim().CreateWatcher(deviceClass));
             return S_OK;
         }
@@ -661,6 +704,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *watcher = detach(this->shim().CreateWatcher(*reinterpret_cast<const hstring *>(&aqsFilter)));
             return S_OK;
         }
@@ -675,6 +719,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *watcher = detach(this->shim().CreateWatcher(*reinterpret_cast<const hstring *>(&aqsFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&additionalProperties)));
             return S_OK;
         }
@@ -693,6 +738,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *aqsFilter = detach(this->shim().GetAqsFilterFromDeviceClass(deviceClass));
             return S_OK;
         }
@@ -707,6 +753,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().CreateFromIdAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&additionalProperties), kind));
             return S_OK;
         }
@@ -721,6 +768,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().FindAllAsync(*reinterpret_cast<const hstring *>(&aqsFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&additionalProperties), kind));
             return S_OK;
         }
@@ -735,6 +783,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *watcher = detach(this->shim().CreateWatcher(*reinterpret_cast<const hstring *>(&aqsFilter), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&additionalProperties), kind));
             return S_OK;
         }
@@ -753,6 +802,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationUpdate> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -767,6 +817,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationUpdate> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -785,6 +836,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceInformationUpdate2> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -802,6 +854,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePairingRequestedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceInformation());
             return S_OK;
         }
@@ -816,6 +869,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePairingRequestedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PairingKind());
             return S_OK;
         }
@@ -829,6 +883,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePairingRequestedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pin());
             return S_OK;
         }
@@ -843,6 +898,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePairingRequestedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Accept();
             return S_OK;
         }
@@ -856,6 +912,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePairingRequestedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Accept(*reinterpret_cast<const hstring *>(&pin));
             return S_OK;
         }
@@ -869,6 +926,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePairingRequestedEventArg
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -887,6 +945,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePairingResult> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *status = detach(this->shim().Status());
             return S_OK;
         }
@@ -900,6 +959,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePairingResult> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProtectionLevelUsed());
             return S_OK;
         }
@@ -921,6 +981,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *filter = detach(this->shim().Filter());
             return S_OK;
         }
@@ -935,6 +996,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Appearance());
             return S_OK;
         }
@@ -949,6 +1011,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequestedProperties());
             return S_OK;
         }
@@ -963,6 +1026,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DeviceSelected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceSelectedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -976,6 +1040,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DeviceSelected(token);
             return S_OK;
         }
@@ -989,6 +1054,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DisconnectButtonClicked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -1002,6 +1068,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisconnectButtonClicked(token);
             return S_OK;
         }
@@ -1015,6 +1082,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DevicePickerDismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -1028,6 +1096,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DevicePickerDismissed(token);
             return S_OK;
         }
@@ -1041,6 +1110,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Show(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection));
             return S_OK;
         }
@@ -1054,6 +1124,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Show(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), placement);
             return S_OK;
         }
@@ -1067,6 +1138,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().PickSingleDeviceAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection)));
             return S_OK;
         }
@@ -1081,6 +1153,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().PickSingleDeviceAsync(*reinterpret_cast<const Windows::Foundation::Rect *>(&selection), placement));
             return S_OK;
         }
@@ -1095,6 +1168,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Hide();
             return S_OK;
         }
@@ -1108,6 +1182,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetDisplayStatus(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&device), *reinterpret_cast<const hstring *>(&status), options);
             return S_OK;
         }
@@ -1125,6 +1200,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -1139,6 +1215,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -1152,6 +1229,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ForegroundColor());
             return S_OK;
         }
@@ -1165,6 +1243,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ForegroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -1178,6 +1257,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BackgroundColor());
             return S_OK;
         }
@@ -1191,6 +1271,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -1204,6 +1285,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AccentColor());
             return S_OK;
         }
@@ -1217,6 +1299,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AccentColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -1230,6 +1313,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SelectedForegroundColor());
             return S_OK;
         }
@@ -1243,6 +1327,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SelectedForegroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -1256,6 +1341,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SelectedBackgroundColor());
             return S_OK;
         }
@@ -1269,6 +1355,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SelectedBackgroundColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -1282,6 +1369,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SelectedAccentColor());
             return S_OK;
         }
@@ -1295,6 +1383,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SelectedAccentColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
             return S_OK;
         }
@@ -1312,6 +1401,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerFilter> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedDeviceClasses());
             return S_OK;
         }
@@ -1326,6 +1416,7 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePickerFilter> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedDeviceSelectors());
             return S_OK;
         }
@@ -1344,6 +1435,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceSelectedEventArgs> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SelectedDevice());
             return S_OK;
         }
@@ -1362,6 +1454,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceUnpairingResult> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *status = detach(this->shim().Status());
             return S_OK;
         }
@@ -1379,6 +1472,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Added(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformation> *>(&handler)));
             return S_OK;
         }
@@ -1392,6 +1486,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Added(token);
             return S_OK;
         }
@@ -1405,6 +1500,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Updated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> *>(&handler)));
             return S_OK;
         }
@@ -1418,6 +1514,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Updated(token);
             return S_OK;
         }
@@ -1431,6 +1528,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Removed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> *>(&handler)));
             return S_OK;
         }
@@ -1444,6 +1542,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Removed(token);
             return S_OK;
         }
@@ -1457,6 +1556,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -1470,6 +1570,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnumerationCompleted(token);
             return S_OK;
         }
@@ -1483,6 +1584,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -1496,6 +1598,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stopped(token);
             return S_OK;
         }
@@ -1509,6 +1612,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *status = detach(this->shim().Status());
             return S_OK;
         }
@@ -1522,6 +1626,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start();
             return S_OK;
         }
@@ -1535,6 +1640,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stop();
             return S_OK;
         }
@@ -1552,6 +1658,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher2> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *trigger = detach(this->shim().GetBackgroundTrigger(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<winrt::Windows::Devices::Enumeration::DeviceWatcherEventKind> *>(&requestedEventKinds)));
             return S_OK;
         }
@@ -1570,6 +1677,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcherEvent> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -1583,6 +1691,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcherEvent> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceInformation());
             return S_OK;
         }
@@ -1597,6 +1706,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcherEvent> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceInformationUpdate());
             return S_OK;
         }
@@ -1615,6 +1725,7 @@ struct produce<D, Windows::Devices::Enumeration::IDeviceWatcherTriggerDetails> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceWatcherEvents());
             return S_OK;
         }
@@ -1633,6 +1744,7 @@ struct produce<D, Windows::Devices::Enumeration::IEnclosureLocation> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InDock());
             return S_OK;
         }
@@ -1646,6 +1758,7 @@ struct produce<D, Windows::Devices::Enumeration::IEnclosureLocation> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InLid());
             return S_OK;
         }
@@ -1659,6 +1772,7 @@ struct produce<D, Windows::Devices::Enumeration::IEnclosureLocation> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Panel());
             return S_OK;
         }
@@ -1676,6 +1790,7 @@ struct produce<D, Windows::Devices::Enumeration::IEnclosureLocation2> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RotationAngleInDegreesClockwise());
             return S_OK;
         }

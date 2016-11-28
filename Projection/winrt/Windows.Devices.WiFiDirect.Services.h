@@ -23,6 +23,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectService> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteServiceInfo());
             return S_OK;
         }
@@ -37,6 +38,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectService> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedConfigurationMethods());
             return S_OK;
         }
@@ -51,6 +53,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectService> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PreferGroupOwnerMode());
             return S_OK;
         }
@@ -64,6 +67,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectService> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PreferGroupOwnerMode(value);
             return S_OK;
         }
@@ -77,6 +81,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectService> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SessionInfo());
             return S_OK;
         }
@@ -91,6 +96,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectService> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SessionInfo(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
@@ -104,6 +110,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectService> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceError());
             return S_OK;
         }
@@ -117,6 +124,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectService> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SessionDeferred(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectService, Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSessionDeferredEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -130,6 +138,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectService> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SessionDeferred(token);
             return S_OK;
         }
@@ -143,6 +152,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectService> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetProvisioningInfoAsync(selectedConfigurationMethod));
             return S_OK;
         }
@@ -157,6 +167,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectService> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ConnectAsync());
             return S_OK;
         }
@@ -171,6 +182,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectService> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ConnectAsync(*reinterpret_cast<const hstring *>(&pin)));
             return S_OK;
         }
@@ -189,6 +201,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceName());
             return S_OK;
         }
@@ -203,6 +216,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceNamePrefixes());
             return S_OK;
         }
@@ -217,6 +231,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceInfo());
             return S_OK;
         }
@@ -231,6 +246,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ServiceInfo(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
@@ -244,6 +260,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutoAcceptSession());
             return S_OK;
         }
@@ -257,6 +274,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AutoAcceptSession(value);
             return S_OK;
         }
@@ -270,6 +288,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PreferGroupOwnerMode());
             return S_OK;
         }
@@ -283,6 +302,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PreferGroupOwnerMode(value);
             return S_OK;
         }
@@ -296,6 +316,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PreferredConfigurationMethods());
             return S_OK;
         }
@@ -310,6 +331,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceStatus());
             return S_OK;
         }
@@ -323,6 +345,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ServiceStatus(value);
             return S_OK;
         }
@@ -336,6 +359,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CustomServiceStatusCode());
             return S_OK;
         }
@@ -349,6 +373,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CustomServiceStatusCode(value);
             return S_OK;
         }
@@ -362,6 +387,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeferredSessionInfo());
             return S_OK;
         }
@@ -376,6 +402,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DeferredSessionInfo(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
@@ -389,6 +416,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AdvertisementStatus());
             return S_OK;
         }
@@ -402,6 +430,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceError());
             return S_OK;
         }
@@ -415,6 +444,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SessionRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser, Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSessionRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -428,6 +458,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SessionRequested(token);
             return S_OK;
         }
@@ -441,6 +472,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().AutoAcceptSessionConnected(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser, Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAutoAcceptSessionConnectedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -454,6 +486,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AutoAcceptSessionConnected(token);
             return S_OK;
         }
@@ -467,6 +500,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().AdvertisementStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -480,6 +514,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AdvertisementStatusChanged(token);
             return S_OK;
         }
@@ -493,6 +528,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ConnectAsync(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&deviceInfo)));
             return S_OK;
         }
@@ -507,6 +543,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ConnectAsync(*reinterpret_cast<const Windows::Devices::Enumeration::DeviceInformation *>(&deviceInfo), *reinterpret_cast<const hstring *>(&pin)));
             return S_OK;
         }
@@ -521,6 +558,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start();
             return S_OK;
         }
@@ -534,6 +572,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stop();
             return S_OK;
         }
@@ -551,6 +590,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdve
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateWiFiDirectServiceAdvertiser(*reinterpret_cast<const hstring *>(&serviceName)));
             return S_OK;
         }
@@ -569,6 +609,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAuto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Session());
             return S_OK;
         }
@@ -583,6 +624,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAuto
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SessionInfo());
             return S_OK;
         }
@@ -601,6 +643,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceProv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SelectedConfigurationMethod());
             return S_OK;
         }
@@ -614,6 +657,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceProv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsGroupFormationNeeded());
             return S_OK;
         }
@@ -631,6 +675,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceRemo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EndpointPairs());
             return S_OK;
         }
@@ -645,6 +690,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceRemo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Protocol());
             return S_OK;
         }
@@ -662,6 +708,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceName());
             return S_OK;
         }
@@ -676,6 +723,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -689,6 +737,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ErrorStatus());
             return S_OK;
         }
@@ -702,6 +751,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SessionId());
             return S_OK;
         }
@@ -715,6 +765,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AdvertisementId());
             return S_OK;
         }
@@ -728,6 +779,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceAddress());
             return S_OK;
         }
@@ -742,6 +794,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SessionAddress());
             return S_OK;
         }
@@ -756,6 +809,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetConnectionEndpointPairs());
             return S_OK;
         }
@@ -770,6 +824,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().SessionStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -783,6 +838,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SessionStatusChanged(token);
             return S_OK;
         }
@@ -796,6 +852,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().AddStreamSocketListenerAsync(*reinterpret_cast<const Windows::Networking::Sockets::StreamSocketListener *>(&value)));
             return S_OK;
         }
@@ -810,6 +867,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().AddDatagramSocketAsync(*reinterpret_cast<const Windows::Networking::Sockets::DatagramSocket *>(&value)));
             return S_OK;
         }
@@ -824,6 +882,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RemotePortAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession, Windows::Devices::WiFiDirect::Services::WiFiDirectServiceRemotePortAddedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -837,6 +896,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemotePortAdded(token);
             return S_OK;
         }
@@ -854,6 +914,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeferredSessionInfo());
             return S_OK;
         }
@@ -872,6 +933,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceInformation());
             return S_OK;
         }
@@ -886,6 +948,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProvisioningInfo());
             return S_OK;
         }
@@ -900,6 +963,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SessionInfo());
             return S_OK;
         }
@@ -918,6 +982,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSess
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetSessionRequest());
             return S_OK;
         }
@@ -936,6 +1001,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *serviceSelector = detach(this->shim().GetSelector(*reinterpret_cast<const hstring *>(&serviceName)));
             return S_OK;
         }
@@ -950,6 +1016,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *serviceSelector = detach(this->shim().GetSelector(*reinterpret_cast<const hstring *>(&serviceName), *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&serviceInfoFilter)));
             return S_OK;
         }
@@ -964,6 +1031,7 @@ struct produce<D, Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncOp = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }

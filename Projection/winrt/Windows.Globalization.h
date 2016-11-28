@@ -18,6 +18,7 @@ struct produce<D, Windows::Globalization::IApplicationLanguagesStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PrimaryLanguageOverride());
             return S_OK;
         }
@@ -32,6 +33,7 @@ struct produce<D, Windows::Globalization::IApplicationLanguagesStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PrimaryLanguageOverride(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -45,6 +47,7 @@ struct produce<D, Windows::Globalization::IApplicationLanguagesStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Languages());
             return S_OK;
         }
@@ -59,6 +62,7 @@ struct produce<D, Windows::Globalization::IApplicationLanguagesStatics> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ManifestLanguages());
             return S_OK;
         }
@@ -77,6 +81,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Clone());
             return S_OK;
         }
@@ -91,6 +96,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetToMin();
             return S_OK;
         }
@@ -104,6 +110,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetToMax();
             return S_OK;
         }
@@ -117,6 +124,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Languages());
             return S_OK;
         }
@@ -131,6 +139,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumeralSystem());
             return S_OK;
         }
@@ -145,6 +154,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().NumeralSystem(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -158,6 +168,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetCalendarSystem());
             return S_OK;
         }
@@ -172,6 +183,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ChangeCalendarSystem(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -185,6 +197,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetClock());
             return S_OK;
         }
@@ -199,6 +212,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ChangeClock(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -212,6 +226,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetDateTime());
             return S_OK;
         }
@@ -225,6 +240,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetDateTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -238,6 +254,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetToNow();
             return S_OK;
         }
@@ -251,6 +268,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FirstEra());
             return S_OK;
         }
@@ -264,6 +282,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastEra());
             return S_OK;
         }
@@ -277,6 +296,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumberOfEras());
             return S_OK;
         }
@@ -290,6 +310,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Era());
             return S_OK;
         }
@@ -303,6 +324,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Era(value);
             return S_OK;
         }
@@ -316,6 +338,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddEras(eras);
             return S_OK;
         }
@@ -329,6 +352,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().EraAsString());
             return S_OK;
         }
@@ -343,6 +367,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().EraAsString(idealLength));
             return S_OK;
         }
@@ -357,6 +382,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FirstYearInThisEra());
             return S_OK;
         }
@@ -370,6 +396,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastYearInThisEra());
             return S_OK;
         }
@@ -383,6 +410,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumberOfYearsInThisEra());
             return S_OK;
         }
@@ -396,6 +424,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Year());
             return S_OK;
         }
@@ -409,6 +438,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Year(value);
             return S_OK;
         }
@@ -422,6 +452,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddYears(years);
             return S_OK;
         }
@@ -435,6 +466,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().YearAsString());
             return S_OK;
         }
@@ -449,6 +481,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().YearAsTruncatedString(remainingDigits));
             return S_OK;
         }
@@ -463,6 +496,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().YearAsPaddedString(minDigits));
             return S_OK;
         }
@@ -477,6 +511,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FirstMonthInThisYear());
             return S_OK;
         }
@@ -490,6 +525,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastMonthInThisYear());
             return S_OK;
         }
@@ -503,6 +539,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumberOfMonthsInThisYear());
             return S_OK;
         }
@@ -516,6 +553,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Month());
             return S_OK;
         }
@@ -529,6 +567,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Month(value);
             return S_OK;
         }
@@ -542,6 +581,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddMonths(months);
             return S_OK;
         }
@@ -555,6 +595,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MonthAsString());
             return S_OK;
         }
@@ -569,6 +610,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MonthAsString(idealLength));
             return S_OK;
         }
@@ -583,6 +625,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MonthAsSoloString());
             return S_OK;
         }
@@ -597,6 +640,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MonthAsSoloString(idealLength));
             return S_OK;
         }
@@ -611,6 +655,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MonthAsNumericString());
             return S_OK;
         }
@@ -625,6 +670,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MonthAsPaddedNumericString(minDigits));
             return S_OK;
         }
@@ -639,6 +685,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddWeeks(weeks);
             return S_OK;
         }
@@ -652,6 +699,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FirstDayInThisMonth());
             return S_OK;
         }
@@ -665,6 +713,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastDayInThisMonth());
             return S_OK;
         }
@@ -678,6 +727,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumberOfDaysInThisMonth());
             return S_OK;
         }
@@ -691,6 +741,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Day());
             return S_OK;
         }
@@ -704,6 +755,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Day(value);
             return S_OK;
         }
@@ -717,6 +769,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddDays(days);
             return S_OK;
         }
@@ -730,6 +783,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DayAsString());
             return S_OK;
         }
@@ -744,6 +798,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DayAsPaddedString(minDigits));
             return S_OK;
         }
@@ -758,6 +813,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DayOfWeek());
             return S_OK;
         }
@@ -771,6 +827,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DayOfWeekAsString());
             return S_OK;
         }
@@ -785,6 +842,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DayOfWeekAsString(idealLength));
             return S_OK;
         }
@@ -799,6 +857,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DayOfWeekAsSoloString());
             return S_OK;
         }
@@ -813,6 +872,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().DayOfWeekAsSoloString(idealLength));
             return S_OK;
         }
@@ -827,6 +887,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FirstPeriodInThisDay());
             return S_OK;
         }
@@ -840,6 +901,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastPeriodInThisDay());
             return S_OK;
         }
@@ -853,6 +915,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumberOfPeriodsInThisDay());
             return S_OK;
         }
@@ -866,6 +929,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Period());
             return S_OK;
         }
@@ -879,6 +943,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Period(value);
             return S_OK;
         }
@@ -892,6 +957,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddPeriods(periods);
             return S_OK;
         }
@@ -905,6 +971,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().PeriodAsString());
             return S_OK;
         }
@@ -919,6 +986,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().PeriodAsString(idealLength));
             return S_OK;
         }
@@ -933,6 +1001,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FirstHourInThisPeriod());
             return S_OK;
         }
@@ -946,6 +1015,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastHourInThisPeriod());
             return S_OK;
         }
@@ -959,6 +1029,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumberOfHoursInThisPeriod());
             return S_OK;
         }
@@ -972,6 +1043,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Hour());
             return S_OK;
         }
@@ -985,6 +1057,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Hour(value);
             return S_OK;
         }
@@ -998,6 +1071,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddHours(hours);
             return S_OK;
         }
@@ -1011,6 +1085,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().HourAsString());
             return S_OK;
         }
@@ -1025,6 +1100,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().HourAsPaddedString(minDigits));
             return S_OK;
         }
@@ -1039,6 +1115,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Minute());
             return S_OK;
         }
@@ -1052,6 +1129,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Minute(value);
             return S_OK;
         }
@@ -1065,6 +1143,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddMinutes(minutes);
             return S_OK;
         }
@@ -1078,6 +1157,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MinuteAsString());
             return S_OK;
         }
@@ -1092,6 +1172,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().MinuteAsPaddedString(minDigits));
             return S_OK;
         }
@@ -1106,6 +1187,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Second());
             return S_OK;
         }
@@ -1119,6 +1201,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Second(value);
             return S_OK;
         }
@@ -1132,6 +1215,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddSeconds(seconds);
             return S_OK;
         }
@@ -1145,6 +1229,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SecondAsString());
             return S_OK;
         }
@@ -1159,6 +1244,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().SecondAsPaddedString(minDigits));
             return S_OK;
         }
@@ -1173,6 +1259,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Nanosecond());
             return S_OK;
         }
@@ -1186,6 +1273,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Nanosecond(value);
             return S_OK;
         }
@@ -1199,6 +1287,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddNanoseconds(nanoseconds);
             return S_OK;
         }
@@ -1212,6 +1301,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().NanosecondAsString());
             return S_OK;
         }
@@ -1226,6 +1316,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().NanosecondAsPaddedString(minDigits));
             return S_OK;
         }
@@ -1240,6 +1331,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Compare(*reinterpret_cast<const Windows::Globalization::Calendar *>(&other)));
             return S_OK;
         }
@@ -1253,6 +1345,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CompareDateTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&other)));
             return S_OK;
         }
@@ -1266,6 +1359,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CopyTo(*reinterpret_cast<const Windows::Globalization::Calendar *>(&other));
             return S_OK;
         }
@@ -1279,6 +1373,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FirstMinuteInThisHour());
             return S_OK;
         }
@@ -1292,6 +1387,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastMinuteInThisHour());
             return S_OK;
         }
@@ -1305,6 +1401,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumberOfMinutesInThisHour());
             return S_OK;
         }
@@ -1318,6 +1415,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FirstSecondInThisMinute());
             return S_OK;
         }
@@ -1331,6 +1429,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LastSecondInThisMinute());
             return S_OK;
         }
@@ -1344,6 +1443,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NumberOfSecondsInThisMinute());
             return S_OK;
         }
@@ -1357,6 +1457,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResolvedLanguage());
             return S_OK;
         }
@@ -1371,6 +1472,7 @@ struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDaylightSavingTime());
             return S_OK;
         }
@@ -1388,6 +1490,7 @@ struct produce<D, Windows::Globalization::ICalendarFactory> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateCalendarDefaultCalendarAndClock(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages)));
             return S_OK;
         }
@@ -1402,6 +1505,7 @@ struct produce<D, Windows::Globalization::ICalendarFactory> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateCalendar(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&calendar), *reinterpret_cast<const hstring *>(&clock)));
             return S_OK;
         }
@@ -1420,6 +1524,7 @@ struct produce<D, Windows::Globalization::ICalendarFactory2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateCalendarWithTimeZone(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&languages), *reinterpret_cast<const hstring *>(&calendar), *reinterpret_cast<const hstring *>(&clock), *reinterpret_cast<const hstring *>(&timeZoneId)));
             return S_OK;
         }
@@ -1438,6 +1543,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gregorian());
             return S_OK;
         }
@@ -1452,6 +1558,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Hebrew());
             return S_OK;
         }
@@ -1466,6 +1573,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Hijri());
             return S_OK;
         }
@@ -1480,6 +1588,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Japanese());
             return S_OK;
         }
@@ -1494,6 +1603,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Julian());
             return S_OK;
         }
@@ -1508,6 +1618,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Korean());
             return S_OK;
         }
@@ -1522,6 +1633,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Taiwan());
             return S_OK;
         }
@@ -1536,6 +1648,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Thai());
             return S_OK;
         }
@@ -1550,6 +1663,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UmAlQura());
             return S_OK;
         }
@@ -1568,6 +1682,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics2> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Persian());
             return S_OK;
         }
@@ -1586,6 +1701,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics3> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChineseLunar());
             return S_OK;
         }
@@ -1600,6 +1716,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics3> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().JapaneseLunar());
             return S_OK;
         }
@@ -1614,6 +1731,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics3> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KoreanLunar());
             return S_OK;
         }
@@ -1628,6 +1746,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics3> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TaiwanLunar());
             return S_OK;
         }
@@ -1642,6 +1761,7 @@ struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics3> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VietnameseLunar());
             return S_OK;
         }
@@ -1660,6 +1780,7 @@ struct produce<D, Windows::Globalization::IClockIdentifiersStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TwelveHour());
             return S_OK;
         }
@@ -1674,6 +1795,7 @@ struct produce<D, Windows::Globalization::IClockIdentifiersStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TwentyFourHour());
             return S_OK;
         }
@@ -1692,6 +1814,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AED());
             return S_OK;
         }
@@ -1706,6 +1829,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AFN());
             return S_OK;
         }
@@ -1720,6 +1844,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ALL());
             return S_OK;
         }
@@ -1734,6 +1859,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AMD());
             return S_OK;
         }
@@ -1748,6 +1874,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ANG());
             return S_OK;
         }
@@ -1762,6 +1889,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AOA());
             return S_OK;
         }
@@ -1776,6 +1904,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ARS());
             return S_OK;
         }
@@ -1790,6 +1919,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AUD());
             return S_OK;
         }
@@ -1804,6 +1934,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AWG());
             return S_OK;
         }
@@ -1818,6 +1949,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AZN());
             return S_OK;
         }
@@ -1832,6 +1964,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BAM());
             return S_OK;
         }
@@ -1846,6 +1979,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BBD());
             return S_OK;
         }
@@ -1860,6 +1994,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BDT());
             return S_OK;
         }
@@ -1874,6 +2009,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BGN());
             return S_OK;
         }
@@ -1888,6 +2024,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BHD());
             return S_OK;
         }
@@ -1902,6 +2039,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BIF());
             return S_OK;
         }
@@ -1916,6 +2054,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BMD());
             return S_OK;
         }
@@ -1930,6 +2069,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BND());
             return S_OK;
         }
@@ -1944,6 +2084,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BOB());
             return S_OK;
         }
@@ -1958,6 +2099,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BRL());
             return S_OK;
         }
@@ -1972,6 +2114,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BSD());
             return S_OK;
         }
@@ -1986,6 +2129,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BTN());
             return S_OK;
         }
@@ -2000,6 +2144,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BWP());
             return S_OK;
         }
@@ -2014,6 +2159,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BYR());
             return S_OK;
         }
@@ -2028,6 +2174,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BZD());
             return S_OK;
         }
@@ -2042,6 +2189,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CAD());
             return S_OK;
         }
@@ -2056,6 +2204,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CDF());
             return S_OK;
         }
@@ -2070,6 +2219,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CHF());
             return S_OK;
         }
@@ -2084,6 +2234,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CLP());
             return S_OK;
         }
@@ -2098,6 +2249,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CNY());
             return S_OK;
         }
@@ -2112,6 +2264,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().COP());
             return S_OK;
         }
@@ -2126,6 +2279,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CRC());
             return S_OK;
         }
@@ -2140,6 +2294,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CUP());
             return S_OK;
         }
@@ -2154,6 +2309,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CVE());
             return S_OK;
         }
@@ -2168,6 +2324,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CZK());
             return S_OK;
         }
@@ -2182,6 +2339,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DJF());
             return S_OK;
         }
@@ -2196,6 +2354,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DKK());
             return S_OK;
         }
@@ -2210,6 +2369,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DOP());
             return S_OK;
         }
@@ -2224,6 +2384,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DZD());
             return S_OK;
         }
@@ -2238,6 +2399,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EGP());
             return S_OK;
         }
@@ -2252,6 +2414,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ERN());
             return S_OK;
         }
@@ -2266,6 +2429,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ETB());
             return S_OK;
         }
@@ -2280,6 +2444,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EUR());
             return S_OK;
         }
@@ -2294,6 +2459,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FJD());
             return S_OK;
         }
@@ -2308,6 +2474,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FKP());
             return S_OK;
         }
@@ -2322,6 +2489,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GBP());
             return S_OK;
         }
@@ -2336,6 +2504,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GEL());
             return S_OK;
         }
@@ -2350,6 +2519,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GHS());
             return S_OK;
         }
@@ -2364,6 +2534,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GIP());
             return S_OK;
         }
@@ -2378,6 +2549,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GMD());
             return S_OK;
         }
@@ -2392,6 +2564,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GNF());
             return S_OK;
         }
@@ -2406,6 +2579,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GTQ());
             return S_OK;
         }
@@ -2420,6 +2594,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GYD());
             return S_OK;
         }
@@ -2434,6 +2609,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HKD());
             return S_OK;
         }
@@ -2448,6 +2624,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HNL());
             return S_OK;
         }
@@ -2462,6 +2639,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HRK());
             return S_OK;
         }
@@ -2476,6 +2654,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HTG());
             return S_OK;
         }
@@ -2490,6 +2669,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HUF());
             return S_OK;
         }
@@ -2504,6 +2684,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IDR());
             return S_OK;
         }
@@ -2518,6 +2699,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ILS());
             return S_OK;
         }
@@ -2532,6 +2714,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().INR());
             return S_OK;
         }
@@ -2546,6 +2729,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IQD());
             return S_OK;
         }
@@ -2560,6 +2744,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IRR());
             return S_OK;
         }
@@ -2574,6 +2759,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ISK());
             return S_OK;
         }
@@ -2588,6 +2774,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().JMD());
             return S_OK;
         }
@@ -2602,6 +2789,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().JOD());
             return S_OK;
         }
@@ -2616,6 +2804,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().JPY());
             return S_OK;
         }
@@ -2630,6 +2819,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KES());
             return S_OK;
         }
@@ -2644,6 +2834,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KGS());
             return S_OK;
         }
@@ -2658,6 +2849,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KHR());
             return S_OK;
         }
@@ -2672,6 +2864,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KMF());
             return S_OK;
         }
@@ -2686,6 +2879,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KPW());
             return S_OK;
         }
@@ -2700,6 +2894,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KRW());
             return S_OK;
         }
@@ -2714,6 +2909,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KWD());
             return S_OK;
         }
@@ -2728,6 +2924,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KYD());
             return S_OK;
         }
@@ -2742,6 +2939,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KZT());
             return S_OK;
         }
@@ -2756,6 +2954,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LAK());
             return S_OK;
         }
@@ -2770,6 +2969,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LBP());
             return S_OK;
         }
@@ -2784,6 +2984,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LKR());
             return S_OK;
         }
@@ -2798,6 +2999,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LRD());
             return S_OK;
         }
@@ -2812,6 +3014,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LSL());
             return S_OK;
         }
@@ -2826,6 +3029,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LTL());
             return S_OK;
         }
@@ -2840,6 +3044,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LVL());
             return S_OK;
         }
@@ -2854,6 +3059,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LYD());
             return S_OK;
         }
@@ -2868,6 +3074,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MAD());
             return S_OK;
         }
@@ -2882,6 +3089,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MDL());
             return S_OK;
         }
@@ -2896,6 +3104,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MGA());
             return S_OK;
         }
@@ -2910,6 +3119,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MKD());
             return S_OK;
         }
@@ -2924,6 +3134,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MMK());
             return S_OK;
         }
@@ -2938,6 +3149,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MNT());
             return S_OK;
         }
@@ -2952,6 +3164,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MOP());
             return S_OK;
         }
@@ -2966,6 +3179,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MRO());
             return S_OK;
         }
@@ -2980,6 +3194,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MUR());
             return S_OK;
         }
@@ -2994,6 +3209,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MVR());
             return S_OK;
         }
@@ -3008,6 +3224,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MWK());
             return S_OK;
         }
@@ -3022,6 +3239,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MXN());
             return S_OK;
         }
@@ -3036,6 +3254,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MYR());
             return S_OK;
         }
@@ -3050,6 +3269,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MZN());
             return S_OK;
         }
@@ -3064,6 +3284,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NAD());
             return S_OK;
         }
@@ -3078,6 +3299,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NGN());
             return S_OK;
         }
@@ -3092,6 +3314,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NIO());
             return S_OK;
         }
@@ -3106,6 +3329,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NOK());
             return S_OK;
         }
@@ -3120,6 +3344,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NPR());
             return S_OK;
         }
@@ -3134,6 +3359,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NZD());
             return S_OK;
         }
@@ -3148,6 +3374,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OMR());
             return S_OK;
         }
@@ -3162,6 +3389,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PAB());
             return S_OK;
         }
@@ -3176,6 +3404,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PEN());
             return S_OK;
         }
@@ -3190,6 +3419,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PGK());
             return S_OK;
         }
@@ -3204,6 +3434,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PHP());
             return S_OK;
         }
@@ -3218,6 +3449,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PKR());
             return S_OK;
         }
@@ -3232,6 +3464,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PLN());
             return S_OK;
         }
@@ -3246,6 +3479,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PYG());
             return S_OK;
         }
@@ -3260,6 +3494,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().QAR());
             return S_OK;
         }
@@ -3274,6 +3509,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RON());
             return S_OK;
         }
@@ -3288,6 +3524,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RSD());
             return S_OK;
         }
@@ -3302,6 +3539,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RUB());
             return S_OK;
         }
@@ -3316,6 +3554,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RWF());
             return S_OK;
         }
@@ -3330,6 +3569,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SAR());
             return S_OK;
         }
@@ -3344,6 +3584,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SBD());
             return S_OK;
         }
@@ -3358,6 +3599,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SCR());
             return S_OK;
         }
@@ -3372,6 +3614,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SDG());
             return S_OK;
         }
@@ -3386,6 +3629,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SEK());
             return S_OK;
         }
@@ -3400,6 +3644,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SGD());
             return S_OK;
         }
@@ -3414,6 +3659,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SHP());
             return S_OK;
         }
@@ -3428,6 +3674,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SLL());
             return S_OK;
         }
@@ -3442,6 +3689,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SOS());
             return S_OK;
         }
@@ -3456,6 +3704,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SRD());
             return S_OK;
         }
@@ -3470,6 +3719,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().STD());
             return S_OK;
         }
@@ -3484,6 +3734,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SYP());
             return S_OK;
         }
@@ -3498,6 +3749,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SZL());
             return S_OK;
         }
@@ -3512,6 +3764,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().THB());
             return S_OK;
         }
@@ -3526,6 +3779,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TJS());
             return S_OK;
         }
@@ -3540,6 +3794,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TMT());
             return S_OK;
         }
@@ -3554,6 +3809,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TND());
             return S_OK;
         }
@@ -3568,6 +3824,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TOP());
             return S_OK;
         }
@@ -3582,6 +3839,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TRY());
             return S_OK;
         }
@@ -3596,6 +3854,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TTD());
             return S_OK;
         }
@@ -3610,6 +3869,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TWD());
             return S_OK;
         }
@@ -3624,6 +3884,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TZS());
             return S_OK;
         }
@@ -3638,6 +3899,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UAH());
             return S_OK;
         }
@@ -3652,6 +3914,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UGX());
             return S_OK;
         }
@@ -3666,6 +3929,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().USD());
             return S_OK;
         }
@@ -3680,6 +3944,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UYU());
             return S_OK;
         }
@@ -3694,6 +3959,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UZS());
             return S_OK;
         }
@@ -3708,6 +3974,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VEF());
             return S_OK;
         }
@@ -3722,6 +3989,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VND());
             return S_OK;
         }
@@ -3736,6 +4004,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VUV());
             return S_OK;
         }
@@ -3750,6 +4019,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WST());
             return S_OK;
         }
@@ -3764,6 +4034,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().XAF());
             return S_OK;
         }
@@ -3778,6 +4049,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().XCD());
             return S_OK;
         }
@@ -3792,6 +4064,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().XOF());
             return S_OK;
         }
@@ -3806,6 +4079,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().XPF());
             return S_OK;
         }
@@ -3820,6 +4094,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().XXX());
             return S_OK;
         }
@@ -3834,6 +4109,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().YER());
             return S_OK;
         }
@@ -3848,6 +4124,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZAR());
             return S_OK;
         }
@@ -3862,6 +4139,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZMW());
             return S_OK;
         }
@@ -3876,6 +4154,7 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZWL());
             return S_OK;
         }
@@ -3894,6 +4173,7 @@ struct produce<D, Windows::Globalization::IGeographicRegion> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Code());
             return S_OK;
         }
@@ -3908,6 +4188,7 @@ struct produce<D, Windows::Globalization::IGeographicRegion> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CodeTwoLetter());
             return S_OK;
         }
@@ -3922,6 +4203,7 @@ struct produce<D, Windows::Globalization::IGeographicRegion> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CodeThreeLetter());
             return S_OK;
         }
@@ -3936,6 +4218,7 @@ struct produce<D, Windows::Globalization::IGeographicRegion> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CodeThreeDigit());
             return S_OK;
         }
@@ -3950,6 +4233,7 @@ struct produce<D, Windows::Globalization::IGeographicRegion> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -3964,6 +4248,7 @@ struct produce<D, Windows::Globalization::IGeographicRegion> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NativeName());
             return S_OK;
         }
@@ -3978,6 +4263,7 @@ struct produce<D, Windows::Globalization::IGeographicRegion> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrenciesInUse());
             return S_OK;
         }
@@ -3996,6 +4282,7 @@ struct produce<D, Windows::Globalization::IGeographicRegionFactory> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateGeographicRegion(*reinterpret_cast<const hstring *>(&geographicRegionCode)));
             return S_OK;
         }
@@ -4014,6 +4301,7 @@ struct produce<D, Windows::Globalization::IGeographicRegionStatics> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsSupported(*reinterpret_cast<const hstring *>(&geographicRegionCode)));
             return S_OK;
         }
@@ -4031,6 +4319,7 @@ struct produce<D, Windows::Globalization::ILanguage> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LanguageTag());
             return S_OK;
         }
@@ -4045,6 +4334,7 @@ struct produce<D, Windows::Globalization::ILanguage> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -4059,6 +4349,7 @@ struct produce<D, Windows::Globalization::ILanguage> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NativeName());
             return S_OK;
         }
@@ -4073,6 +4364,7 @@ struct produce<D, Windows::Globalization::ILanguage> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Script());
             return S_OK;
         }
@@ -4091,6 +4383,7 @@ struct produce<D, Windows::Globalization::ILanguageExtensionSubtags> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetExtensionSubtags(*reinterpret_cast<const hstring *>(&singleton)));
             return S_OK;
         }
@@ -4109,6 +4402,7 @@ struct produce<D, Windows::Globalization::ILanguageFactory> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateLanguage(*reinterpret_cast<const hstring *>(&languageTag)));
             return S_OK;
         }
@@ -4127,6 +4421,7 @@ struct produce<D, Windows::Globalization::ILanguageStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsWellFormed(*reinterpret_cast<const hstring *>(&languageTag)));
             return S_OK;
         }
@@ -4140,6 +4435,7 @@ struct produce<D, Windows::Globalization::ILanguageStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentInputMethodLanguageTag());
             return S_OK;
         }
@@ -4158,6 +4454,7 @@ struct produce<D, Windows::Globalization::ILanguageStatics2> : produce_base<D, W
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TrySetInputMethodLanguageTag(*reinterpret_cast<const hstring *>(&languageTag)));
             return S_OK;
         }
@@ -4175,6 +4472,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Arab());
             return S_OK;
         }
@@ -4189,6 +4487,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ArabExt());
             return S_OK;
         }
@@ -4203,6 +4502,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bali());
             return S_OK;
         }
@@ -4217,6 +4517,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Beng());
             return S_OK;
         }
@@ -4231,6 +4532,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Cham());
             return S_OK;
         }
@@ -4245,6 +4547,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Deva());
             return S_OK;
         }
@@ -4259,6 +4562,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FullWide());
             return S_OK;
         }
@@ -4273,6 +4577,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gujr());
             return S_OK;
         }
@@ -4287,6 +4592,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Guru());
             return S_OK;
         }
@@ -4301,6 +4607,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HaniDec());
             return S_OK;
         }
@@ -4315,6 +4622,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Java());
             return S_OK;
         }
@@ -4329,6 +4637,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kali());
             return S_OK;
         }
@@ -4343,6 +4652,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Khmr());
             return S_OK;
         }
@@ -4357,6 +4667,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Knda());
             return S_OK;
         }
@@ -4371,6 +4682,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Lana());
             return S_OK;
         }
@@ -4385,6 +4697,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LanaTham());
             return S_OK;
         }
@@ -4399,6 +4712,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Laoo());
             return S_OK;
         }
@@ -4413,6 +4727,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Latn());
             return S_OK;
         }
@@ -4427,6 +4742,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Lepc());
             return S_OK;
         }
@@ -4441,6 +4757,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Limb());
             return S_OK;
         }
@@ -4455,6 +4772,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Mlym());
             return S_OK;
         }
@@ -4469,6 +4787,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Mong());
             return S_OK;
         }
@@ -4483,6 +4802,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Mtei());
             return S_OK;
         }
@@ -4497,6 +4817,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Mymr());
             return S_OK;
         }
@@ -4511,6 +4832,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MymrShan());
             return S_OK;
         }
@@ -4525,6 +4847,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Nkoo());
             return S_OK;
         }
@@ -4539,6 +4862,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Olck());
             return S_OK;
         }
@@ -4553,6 +4877,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Orya());
             return S_OK;
         }
@@ -4567,6 +4892,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Saur());
             return S_OK;
         }
@@ -4581,6 +4907,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Sund());
             return S_OK;
         }
@@ -4595,6 +4922,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Talu());
             return S_OK;
         }
@@ -4609,6 +4937,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TamlDec());
             return S_OK;
         }
@@ -4623,6 +4952,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Telu());
             return S_OK;
         }
@@ -4637,6 +4967,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Thai());
             return S_OK;
         }
@@ -4651,6 +4982,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Tibt());
             return S_OK;
         }
@@ -4665,6 +4997,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Vaii());
             return S_OK;
         }
@@ -4683,6 +5016,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Brah());
             return S_OK;
         }
@@ -4697,6 +5031,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Osma());
             return S_OK;
         }
@@ -4711,6 +5046,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MathBold());
             return S_OK;
         }
@@ -4725,6 +5061,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MathDbl());
             return S_OK;
         }
@@ -4739,6 +5076,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MathSans());
             return S_OK;
         }
@@ -4753,6 +5091,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MathSanb());
             return S_OK;
         }
@@ -4767,6 +5106,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MathMono());
             return S_OK;
         }
@@ -4781,6 +5121,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZmthBold());
             return S_OK;
         }
@@ -4795,6 +5136,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZmthDbl());
             return S_OK;
         }
@@ -4809,6 +5151,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZmthSans());
             return S_OK;
         }
@@ -4823,6 +5166,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZmthSanb());
             return S_OK;
         }
@@ -4837,6 +5181,7 @@ struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ZmthMono());
             return S_OK;
         }
@@ -4855,6 +5200,7 @@ struct produce<D, Windows::Globalization::ITimeZoneOnCalendar> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetTimeZone());
             return S_OK;
         }
@@ -4869,6 +5215,7 @@ struct produce<D, Windows::Globalization::ITimeZoneOnCalendar> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ChangeTimeZone(*reinterpret_cast<const hstring *>(&timeZoneId));
             return S_OK;
         }
@@ -4882,6 +5229,7 @@ struct produce<D, Windows::Globalization::ITimeZoneOnCalendar> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TimeZoneAsString());
             return S_OK;
         }
@@ -4896,6 +5244,7 @@ struct produce<D, Windows::Globalization::ITimeZoneOnCalendar> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().TimeZoneAsString(idealLength));
             return S_OK;
         }

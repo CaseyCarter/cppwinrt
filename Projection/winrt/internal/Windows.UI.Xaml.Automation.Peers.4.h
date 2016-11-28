@@ -156,6 +156,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetPatternCore(patternInterface));
             return S_OK;
         }
@@ -170,6 +171,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetAcceleratorKeyCore());
             return S_OK;
         }
@@ -184,6 +186,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetAccessKeyCore());
             return S_OK;
         }
@@ -198,6 +201,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetAutomationControlTypeCore());
             return S_OK;
         }
@@ -211,6 +215,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetAutomationIdCore());
             return S_OK;
         }
@@ -225,6 +230,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetBoundingRectangleCore());
             return S_OK;
         }
@@ -238,6 +244,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetChildrenCore());
             return S_OK;
         }
@@ -252,6 +259,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetClassNameCore());
             return S_OK;
         }
@@ -266,6 +274,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetClickablePointCore());
             return S_OK;
         }
@@ -279,6 +288,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetHelpTextCore());
             return S_OK;
         }
@@ -293,6 +303,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetItemStatusCore());
             return S_OK;
         }
@@ -307,6 +318,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetItemTypeCore());
             return S_OK;
         }
@@ -321,6 +333,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetLabeledByCore());
             return S_OK;
         }
@@ -335,6 +348,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetLocalizedControlTypeCore());
             return S_OK;
         }
@@ -349,6 +363,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetNameCore());
             return S_OK;
         }
@@ -363,6 +378,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetOrientationCore());
             return S_OK;
         }
@@ -376,6 +392,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().HasKeyboardFocusCore());
             return S_OK;
         }
@@ -389,6 +406,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().IsContentElementCore());
             return S_OK;
         }
@@ -402,6 +420,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().IsControlElementCore());
             return S_OK;
         }
@@ -415,6 +434,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().IsEnabledCore());
             return S_OK;
         }
@@ -428,6 +448,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().IsKeyboardFocusableCore());
             return S_OK;
         }
@@ -441,6 +462,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().IsOffscreenCore());
             return S_OK;
         }
@@ -454,6 +476,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().IsPasswordCore());
             return S_OK;
         }
@@ -467,6 +490,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().IsRequiredForFormCore());
             return S_OK;
         }
@@ -480,6 +504,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetFocusCore();
             return S_OK;
         }
@@ -493,6 +518,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetPeerFromPointCore(*reinterpret_cast<const Windows::Foundation::Point *>(&point)));
             return S_OK;
         }
@@ -507,6 +533,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetLiveSettingCore());
             return S_OK;
         }
@@ -540,6 +567,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShowContextMenuCore();
             return S_OK;
         }
@@ -553,6 +581,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetControlledPeersCore());
             return S_OK;
         }
@@ -612,6 +641,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().NavigateCore(direction));
             return S_OK;
         }
@@ -626,6 +656,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetElementFromPointCore(*reinterpret_cast<const Windows::Foundation::Point *>(&pointInWindowCoordinates)));
             return S_OK;
         }
@@ -640,6 +671,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetFocusedElementCore());
             return S_OK;
         }
@@ -654,6 +686,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetAnnotationsCore());
             return S_OK;
         }
@@ -668,6 +701,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetPositionInSetCore());
             return S_OK;
         }
@@ -681,6 +715,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetSizeOfSetCore());
             return S_OK;
         }
@@ -694,6 +729,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetLevelCore());
             return S_OK;
         }
@@ -727,6 +763,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetLandmarkTypeCore());
             return S_OK;
         }
@@ -740,6 +777,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetLocalizedLandmarkTypeCore());
             return S_OK;
         }
@@ -794,6 +832,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().IsPeripheralCore());
             return S_OK;
         }
@@ -807,6 +846,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().IsDataValidForFormCore());
             return S_OK;
         }
@@ -820,6 +860,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetFullDescriptionCore());
             return S_OK;
         }
@@ -834,6 +875,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetDescribedByCore());
             return S_OK;
         }
@@ -848,6 +890,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetFlowsToCore());
             return S_OK;
         }
@@ -862,6 +905,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().GetFlowsFromCore());
             return S_OK;
         }
@@ -891,6 +935,7 @@ public:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *returnValue = detach(this->shim().OnCreateItemAutomationPeer(*reinterpret_cast<const Windows::IInspectable *>(&item)));
             return S_OK;
         }

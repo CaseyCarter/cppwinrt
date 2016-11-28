@@ -22,6 +22,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCamera> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RenderTargetSize());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCamera> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ViewportScaleFactor());
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCamera> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ViewportScaleFactor(value);
             return S_OK;
         }
@@ -61,6 +64,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCamera> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsStereo());
             return S_OK;
         }
@@ -74,6 +78,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCamera> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -87,6 +92,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCamera> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetNearPlaneDistance(value);
             return S_OK;
         }
@@ -100,6 +106,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCamera> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetFarPlaneDistance(value);
             return S_OK;
         }
@@ -117,6 +124,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCameraPose> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HolographicCamera());
             return S_OK;
         }
@@ -131,6 +139,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCameraPose> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Viewport());
             return S_OK;
         }
@@ -144,6 +153,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCameraPose> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TryGetViewTransform(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
@@ -158,6 +168,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCameraPose> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProjectionTransform());
             return S_OK;
         }
@@ -171,6 +182,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCameraPose> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TryGetCullingFrustum(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
@@ -185,6 +197,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCameraPose> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TryGetVisibleFrustum(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
             return S_OK;
         }
@@ -199,6 +212,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCameraPose> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NearPlaneDistance());
             return S_OK;
         }
@@ -212,6 +226,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCameraPose> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FarPlaneDistance());
             return S_OK;
         }
@@ -229,6 +244,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCameraRenderingPar
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetFocusPoint(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&position));
             return S_OK;
         }
@@ -242,6 +258,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCameraRenderingPar
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetFocusPoint(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&position), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&normal));
             return S_OK;
         }
@@ -255,6 +272,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCameraRenderingPar
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetFocusPoint(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&position), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&normal), *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&linearVelocity));
             return S_OK;
         }
@@ -268,6 +286,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCameraRenderingPar
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Direct3D11Device());
             return S_OK;
         }
@@ -282,6 +301,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCameraRenderingPar
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Direct3D11BackBuffer());
             return S_OK;
         }
@@ -300,6 +320,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AddedCameras());
             return S_OK;
         }
@@ -314,6 +335,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemovedCameras());
             return S_OK;
         }
@@ -328,6 +350,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetRenderingParameters(*reinterpret_cast<const Windows::Graphics::Holographic::HolographicCameraPose *>(&cameraPose)));
             return S_OK;
         }
@@ -342,6 +365,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Duration());
             return S_OK;
         }
@@ -355,6 +379,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentPrediction());
             return S_OK;
         }
@@ -369,6 +394,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UpdateCurrentPrediction();
             return S_OK;
         }
@@ -382,6 +408,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().PresentUsingCurrentPrediction());
             return S_OK;
         }
@@ -395,6 +422,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().PresentUsingCurrentPrediction(waitBehavior));
             return S_OK;
         }
@@ -408,6 +436,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicFrame> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WaitForFrameToFinish();
             return S_OK;
         }
@@ -425,6 +454,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicFramePrediction> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CameraPoses());
             return S_OK;
         }
@@ -439,6 +469,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicFramePrediction> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -457,6 +488,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicSpace> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PrimaryAdapterId());
             return S_OK;
         }
@@ -470,6 +502,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicSpace> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetDirect3D11Device(*reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice *>(&value));
             return S_OK;
         }
@@ -483,6 +516,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicSpace> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().CameraAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraAddedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -496,6 +530,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicSpace> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CameraAdded(cookie);
             return S_OK;
         }
@@ -509,6 +544,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicSpace> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().CameraRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraRemovedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -522,6 +558,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicSpace> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CameraRemoved(cookie);
             return S_OK;
         }
@@ -535,6 +572,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicSpace> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateNextFrame());
             return S_OK;
         }
@@ -553,6 +591,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicSpaceCameraAddedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Camera());
             return S_OK;
         }
@@ -567,6 +606,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicSpaceCameraAddedEv
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -585,6 +625,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicSpaceCameraRemoved
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Camera());
             return S_OK;
         }
@@ -603,6 +644,7 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicSpaceStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateForCoreWindow(*reinterpret_cast<const Windows::UI::Core::CoreWindow *>(&window)));
             return S_OK;
         }

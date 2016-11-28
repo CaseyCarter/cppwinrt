@@ -21,6 +21,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Author());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PrimaryContent());
             return S_OK;
         }
@@ -49,6 +51,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SecondaryContent());
             return S_OK;
         }
@@ -63,6 +66,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -76,6 +80,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Timestamp(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -89,6 +94,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetUri());
             return S_OK;
         }
@@ -103,6 +109,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -116,6 +123,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Thumbnails());
             return S_OK;
         }
@@ -130,6 +138,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SharedItem());
             return S_OK;
         }
@@ -144,6 +153,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SharedItem(*reinterpret_cast<const Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem *>(&value));
             return S_OK;
         }
@@ -161,6 +171,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedContent> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Title());
             return S_OK;
         }
@@ -175,6 +186,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedContent> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Title(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -188,6 +200,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedContent> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Message());
             return S_OK;
         }
@@ -202,6 +215,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedContent> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Message(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -215,6 +229,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedContent> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetUri());
             return S_OK;
         }
@@ -229,6 +244,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedContent> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -246,6 +262,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Author());
             return S_OK;
         }
@@ -260,6 +277,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PrimaryContent());
             return S_OK;
         }
@@ -274,6 +292,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SecondaryContent());
             return S_OK;
         }
@@ -288,6 +307,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -301,6 +321,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Timestamp(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -314,6 +335,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetUri());
             return S_OK;
         }
@@ -328,6 +350,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -341,6 +364,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Thumbnails());
             return S_OK;
         }
@@ -355,6 +379,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SharedItem());
             return S_OK;
         }
@@ -369,6 +394,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SharedItem(*reinterpret_cast<const Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem *>(&value));
             return S_OK;
         }
@@ -382,6 +408,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BadgeStyle());
             return S_OK;
         }
@@ -395,6 +422,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BadgeStyle(value);
             return S_OK;
         }
@@ -408,6 +436,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BadgeCountValue());
             return S_OK;
         }
@@ -421,6 +450,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BadgeCountValue(value);
             return S_OK;
         }
@@ -434,6 +464,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteId());
             return S_OK;
         }
@@ -448,6 +479,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -461,6 +493,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChildItem());
             return S_OK;
         }
@@ -475,6 +508,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ChildItem(*reinterpret_cast<const Windows::ApplicationModel::SocialInfo::SocialFeedChildItem *>(&value));
             return S_OK;
         }
@@ -488,6 +522,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Style());
             return S_OK;
         }
@@ -501,6 +536,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Style(value);
             return S_OK;
         }
@@ -518,6 +554,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OriginalSource());
             return S_OK;
         }
@@ -532,6 +569,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OriginalSource(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -545,6 +583,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Content());
             return S_OK;
         }
@@ -559,6 +598,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Timestamp());
             return S_OK;
         }
@@ -572,6 +612,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Timestamp(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value));
             return S_OK;
         }
@@ -585,6 +626,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetUri());
             return S_OK;
         }
@@ -599,6 +641,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -612,6 +655,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Thumbnail(*reinterpret_cast<const Windows::ApplicationModel::SocialInfo::SocialItemThumbnail *>(&value));
             return S_OK;
         }
@@ -625,6 +669,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Thumbnail());
             return S_OK;
         }
@@ -643,6 +688,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetUri());
             return S_OK;
         }
@@ -657,6 +703,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -670,6 +717,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ImageUri());
             return S_OK;
         }
@@ -684,6 +732,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ImageUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -697,6 +746,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BitmapSize());
             return S_OK;
         }
@@ -710,6 +760,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BitmapSize(*reinterpret_cast<const Windows::Graphics::Imaging::BitmapSize *>(&value));
             return S_OK;
         }
@@ -723,6 +774,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().SetImageAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&image)));
             return S_OK;
         }
@@ -741,6 +793,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -755,6 +808,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisplayName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -768,6 +822,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserName());
             return S_OK;
         }
@@ -782,6 +837,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UserName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -795,6 +851,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemoteId());
             return S_OK;
         }
@@ -809,6 +866,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoteId(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -822,6 +880,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetUri());
             return S_OK;
         }
@@ -836,6 +895,7 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }

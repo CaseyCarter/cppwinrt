@@ -19,6 +19,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessCpuUsage> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetReport());
             return S_OK;
         }
@@ -37,6 +38,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessCpuUsageReport> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().KernelTime());
             return S_OK;
         }
@@ -50,6 +52,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessCpuUsageReport> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserTime());
             return S_OK;
         }
@@ -67,6 +70,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiagnosticInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProcessId());
             return S_OK;
         }
@@ -80,6 +84,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiagnosticInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExecutableFileName());
             return S_OK;
         }
@@ -94,6 +99,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiagnosticInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Parent());
             return S_OK;
         }
@@ -108,6 +114,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiagnosticInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProcessStartTime());
             return S_OK;
         }
@@ -121,6 +128,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiagnosticInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DiskUsage());
             return S_OK;
         }
@@ -135,6 +143,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiagnosticInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MemoryUsage());
             return S_OK;
         }
@@ -149,6 +158,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiagnosticInfo> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CpuUsage());
             return S_OK;
         }
@@ -167,6 +177,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiagnosticInfoStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *processes = detach(this->shim().GetForProcesses());
             return S_OK;
         }
@@ -181,6 +192,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiagnosticInfoStatics> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *processes = detach(this->shim().GetForCurrentProcess());
             return S_OK;
         }
@@ -199,6 +211,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiskUsage> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetReport());
             return S_OK;
         }
@@ -217,6 +230,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiskUsageReport> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadOperationCount());
             return S_OK;
         }
@@ -230,6 +244,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiskUsageReport> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WriteOperationCount());
             return S_OK;
         }
@@ -243,6 +258,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiskUsageReport> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OtherOperationCount());
             return S_OK;
         }
@@ -256,6 +272,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiskUsageReport> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BytesReadCount());
             return S_OK;
         }
@@ -269,6 +286,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiskUsageReport> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BytesWrittenCount());
             return S_OK;
         }
@@ -282,6 +300,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessDiskUsageReport> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OtherBytesCount());
             return S_OK;
         }
@@ -299,6 +318,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsage> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetReport());
             return S_OK;
         }
@@ -317,6 +337,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NonPagedPoolSizeInBytes());
             return S_OK;
         }
@@ -330,6 +351,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PageFaultCount());
             return S_OK;
         }
@@ -343,6 +365,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PageFileSizeInBytes());
             return S_OK;
         }
@@ -356,6 +379,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PagedPoolSizeInBytes());
             return S_OK;
         }
@@ -369,6 +393,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PeakNonPagedPoolSizeInBytes());
             return S_OK;
         }
@@ -382,6 +407,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PeakPageFileSizeInBytes());
             return S_OK;
         }
@@ -395,6 +421,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PeakPagedPoolSizeInBytes());
             return S_OK;
         }
@@ -408,6 +435,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PeakVirtualMemorySizeInBytes());
             return S_OK;
         }
@@ -421,6 +449,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PeakWorkingSetSizeInBytes());
             return S_OK;
         }
@@ -434,6 +463,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PrivatePageCount());
             return S_OK;
         }
@@ -447,6 +477,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().VirtualMemorySizeInBytes());
             return S_OK;
         }
@@ -460,6 +491,7 @@ struct produce<D, Windows::System::Diagnostics::IProcessMemoryUsageReport> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WorkingSetSizeInBytes());
             return S_OK;
         }

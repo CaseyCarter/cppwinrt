@@ -24,6 +24,7 @@ struct produce<D, Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetElementVisual(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
             return S_OK;
         }
@@ -38,6 +39,7 @@ struct produce<D, Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetElementChildVisual(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
             return S_OK;
         }
@@ -52,6 +54,7 @@ struct produce<D, Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetElementChildVisual(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), *reinterpret_cast<const Windows::UI::Composition::Visual *>(&visual));
             return S_OK;
         }
@@ -65,6 +68,7 @@ struct produce<D, Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetScrollViewerManipulationPropertySet(*reinterpret_cast<const Windows::UI::Xaml::Controls::ScrollViewer *>(&scrollViewer)));
             return S_OK;
         }

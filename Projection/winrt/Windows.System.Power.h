@@ -18,6 +18,7 @@ struct produce<D, Windows::System::Power::IBackgroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LowUsageLevel());
             return S_OK;
         }
@@ -31,6 +32,7 @@ struct produce<D, Windows::System::Power::IBackgroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NearMaxAcceptableUsageLevel());
             return S_OK;
         }
@@ -44,6 +46,7 @@ struct produce<D, Windows::System::Power::IBackgroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxAcceptableUsageLevel());
             return S_OK;
         }
@@ -57,6 +60,7 @@ struct produce<D, Windows::System::Power::IBackgroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExcessiveUsageLevel());
             return S_OK;
         }
@@ -70,6 +74,7 @@ struct produce<D, Windows::System::Power::IBackgroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NearTerminationUsageLevel());
             return S_OK;
         }
@@ -83,6 +88,7 @@ struct produce<D, Windows::System::Power::IBackgroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TerminationUsageLevel());
             return S_OK;
         }
@@ -96,6 +102,7 @@ struct produce<D, Windows::System::Power::IBackgroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RecentEnergyUsage());
             return S_OK;
         }
@@ -109,6 +116,7 @@ struct produce<D, Windows::System::Power::IBackgroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RecentEnergyUsageLevel());
             return S_OK;
         }
@@ -122,6 +130,7 @@ struct produce<D, Windows::System::Power::IBackgroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RecentEnergyUsageIncreased(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -135,6 +144,7 @@ struct produce<D, Windows::System::Power::IBackgroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RecentEnergyUsageIncreased(token);
             return S_OK;
         }
@@ -148,6 +158,7 @@ struct produce<D, Windows::System::Power::IBackgroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RecentEnergyUsageReturnedToLow(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -161,6 +172,7 @@ struct produce<D, Windows::System::Power::IBackgroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RecentEnergyUsageReturnedToLow(token);
             return S_OK;
         }
@@ -178,6 +190,7 @@ struct produce<D, Windows::System::Power::IForegroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LowUsageLevel());
             return S_OK;
         }
@@ -191,6 +204,7 @@ struct produce<D, Windows::System::Power::IForegroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NearMaxAcceptableUsageLevel());
             return S_OK;
         }
@@ -204,6 +218,7 @@ struct produce<D, Windows::System::Power::IForegroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxAcceptableUsageLevel());
             return S_OK;
         }
@@ -217,6 +232,7 @@ struct produce<D, Windows::System::Power::IForegroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExcessiveUsageLevel());
             return S_OK;
         }
@@ -230,6 +246,7 @@ struct produce<D, Windows::System::Power::IForegroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RecentEnergyUsage());
             return S_OK;
         }
@@ -243,6 +260,7 @@ struct produce<D, Windows::System::Power::IForegroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RecentEnergyUsageLevel());
             return S_OK;
         }
@@ -256,6 +274,7 @@ struct produce<D, Windows::System::Power::IForegroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RecentEnergyUsageIncreased(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -269,6 +288,7 @@ struct produce<D, Windows::System::Power::IForegroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RecentEnergyUsageIncreased(token);
             return S_OK;
         }
@@ -282,6 +302,7 @@ struct produce<D, Windows::System::Power::IForegroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RecentEnergyUsageReturnedToLow(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -295,6 +316,7 @@ struct produce<D, Windows::System::Power::IForegroundEnergyManagerStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RecentEnergyUsageReturnedToLow(token);
             return S_OK;
         }
@@ -312,6 +334,7 @@ struct produce<D, Windows::System::Power::IPowerManagerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnergySaverStatus());
             return S_OK;
         }
@@ -325,6 +348,7 @@ struct produce<D, Windows::System::Power::IPowerManagerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().EnergySaverStatusChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -338,6 +362,7 @@ struct produce<D, Windows::System::Power::IPowerManagerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnergySaverStatusChanged(token);
             return S_OK;
         }
@@ -351,6 +376,7 @@ struct produce<D, Windows::System::Power::IPowerManagerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BatteryStatus());
             return S_OK;
         }
@@ -364,6 +390,7 @@ struct produce<D, Windows::System::Power::IPowerManagerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().BatteryStatusChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -377,6 +404,7 @@ struct produce<D, Windows::System::Power::IPowerManagerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BatteryStatusChanged(token);
             return S_OK;
         }
@@ -390,6 +418,7 @@ struct produce<D, Windows::System::Power::IPowerManagerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PowerSupplyStatus());
             return S_OK;
         }
@@ -403,6 +432,7 @@ struct produce<D, Windows::System::Power::IPowerManagerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PowerSupplyStatusChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -416,6 +446,7 @@ struct produce<D, Windows::System::Power::IPowerManagerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PowerSupplyStatusChanged(token);
             return S_OK;
         }
@@ -429,6 +460,7 @@ struct produce<D, Windows::System::Power::IPowerManagerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemainingChargePercent());
             return S_OK;
         }
@@ -442,6 +474,7 @@ struct produce<D, Windows::System::Power::IPowerManagerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RemainingChargePercentChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -455,6 +488,7 @@ struct produce<D, Windows::System::Power::IPowerManagerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemainingChargePercentChanged(token);
             return S_OK;
         }
@@ -468,6 +502,7 @@ struct produce<D, Windows::System::Power::IPowerManagerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemainingDischargeTime());
             return S_OK;
         }
@@ -481,6 +516,7 @@ struct produce<D, Windows::System::Power::IPowerManagerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().RemainingDischargeTimeChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -494,6 +530,7 @@ struct produce<D, Windows::System::Power::IPowerManagerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemainingDischargeTimeChanged(token);
             return S_OK;
         }

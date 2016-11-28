@@ -21,6 +21,7 @@ struct produce<D, Windows::Storage::AccessCache::IItemRemovedEventArgs> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RemovedEntry());
             return S_OK;
         }
@@ -38,6 +39,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageApplicationPermissionsS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FutureAccessList());
             return S_OK;
         }
@@ -52,6 +54,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageApplicationPermissionsS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MostRecentlyUsedList());
             return S_OK;
         }
@@ -70,6 +73,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemAccessList> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Add(*reinterpret_cast<const Windows::Storage::IStorageItem *>(&file)));
             return S_OK;
         }
@@ -84,6 +88,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemAccessList> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Add(*reinterpret_cast<const Windows::Storage::IStorageItem *>(&file), *reinterpret_cast<const hstring *>(&metadata)));
             return S_OK;
         }
@@ -98,6 +103,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemAccessList> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddOrReplace(*reinterpret_cast<const hstring *>(&token), *reinterpret_cast<const Windows::Storage::IStorageItem *>(&file));
             return S_OK;
         }
@@ -111,6 +117,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemAccessList> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddOrReplace(*reinterpret_cast<const hstring *>(&token), *reinterpret_cast<const Windows::Storage::IStorageItem *>(&file), *reinterpret_cast<const hstring *>(&metadata));
             return S_OK;
         }
@@ -124,6 +131,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemAccessList> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetItemAsync(*reinterpret_cast<const hstring *>(&token)));
             return S_OK;
         }
@@ -138,6 +146,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemAccessList> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFileAsync(*reinterpret_cast<const hstring *>(&token)));
             return S_OK;
         }
@@ -152,6 +161,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemAccessList> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFolderAsync(*reinterpret_cast<const hstring *>(&token)));
             return S_OK;
         }
@@ -166,6 +176,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemAccessList> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetItemAsync(*reinterpret_cast<const hstring *>(&token), options));
             return S_OK;
         }
@@ -180,6 +191,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemAccessList> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFileAsync(*reinterpret_cast<const hstring *>(&token), options));
             return S_OK;
         }
@@ -194,6 +206,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemAccessList> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetFolderAsync(*reinterpret_cast<const hstring *>(&token), options));
             return S_OK;
         }
@@ -208,6 +221,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemAccessList> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Remove(*reinterpret_cast<const hstring *>(&token));
             return S_OK;
         }
@@ -221,6 +235,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemAccessList> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContainsItem(*reinterpret_cast<const hstring *>(&token)));
             return S_OK;
         }
@@ -234,6 +249,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemAccessList> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Clear();
             return S_OK;
         }
@@ -247,6 +263,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemAccessList> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CheckAccess(*reinterpret_cast<const Windows::Storage::IStorageItem *>(&file)));
             return S_OK;
         }
@@ -260,6 +277,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemAccessList> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *entries = detach(this->shim().Entries());
             return S_OK;
         }
@@ -274,6 +292,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemAccessList> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaximumItemsAllowed());
             return S_OK;
         }
@@ -291,6 +310,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedLis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().ItemRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::ItemRemovedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -304,6 +324,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedLis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ItemRemoved(eventCookie);
             return S_OK;
         }
@@ -321,6 +342,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedLis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Add(*reinterpret_cast<const Windows::Storage::IStorageItem *>(&file), *reinterpret_cast<const hstring *>(&metadata), visibility));
             return S_OK;
         }
@@ -335,6 +357,7 @@ struct produce<D, Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedLis
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AddOrReplace(*reinterpret_cast<const hstring *>(&token), *reinterpret_cast<const Windows::Storage::IStorageItem *>(&file), *reinterpret_cast<const hstring *>(&metadata), visibility);
             return S_OK;
         }

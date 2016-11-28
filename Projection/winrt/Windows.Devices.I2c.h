@@ -20,6 +20,7 @@ struct produce<D, Windows::Devices::I2c::II2cConnectionSettings> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SlaveAddress());
             return S_OK;
         }
@@ -33,6 +34,7 @@ struct produce<D, Windows::Devices::I2c::II2cConnectionSettings> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SlaveAddress(value);
             return S_OK;
         }
@@ -46,6 +48,7 @@ struct produce<D, Windows::Devices::I2c::II2cConnectionSettings> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BusSpeed());
             return S_OK;
         }
@@ -59,6 +62,7 @@ struct produce<D, Windows::Devices::I2c::II2cConnectionSettings> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BusSpeed(value);
             return S_OK;
         }
@@ -72,6 +76,7 @@ struct produce<D, Windows::Devices::I2c::II2cConnectionSettings> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SharingMode());
             return S_OK;
         }
@@ -85,6 +90,7 @@ struct produce<D, Windows::Devices::I2c::II2cConnectionSettings> : produce_base<
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SharingMode(value);
             return S_OK;
         }
@@ -102,6 +108,7 @@ struct produce<D, Windows::Devices::I2c::II2cConnectionSettingsFactory> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Create(slaveAddress));
             return S_OK;
         }
@@ -120,6 +127,7 @@ struct produce<D, Windows::Devices::I2c::II2cController> : produce_base<D, Windo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *device = detach(this->shim().GetDevice(*reinterpret_cast<const Windows::Devices::I2c::I2cConnectionSettings *>(&settings)));
             return S_OK;
         }
@@ -138,6 +146,7 @@ struct produce<D, Windows::Devices::I2c::II2cControllerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetControllersAsync(*reinterpret_cast<const Windows::Devices::I2c::Provider::II2cProvider *>(&provider)));
             return S_OK;
         }
@@ -152,6 +161,7 @@ struct produce<D, Windows::Devices::I2c::II2cControllerStatics> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().GetDefaultAsync());
             return S_OK;
         }
@@ -170,6 +180,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -184,6 +195,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConnectionSettings());
             return S_OK;
         }
@@ -198,6 +210,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Write(array_ref<const uint8_t>(buffer, buffer + __bufferSize));
             return S_OK;
         }
@@ -211,6 +224,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().WritePartial(array_ref<const uint8_t>(buffer, buffer + __bufferSize)));
             return S_OK;
         }
@@ -224,6 +238,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Read(*buffer);
             return S_OK;
         }
@@ -237,6 +252,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().ReadPartial(*buffer));
             return S_OK;
         }
@@ -250,6 +266,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().WriteRead(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer);
             return S_OK;
         }
@@ -263,6 +280,7 @@ struct produce<D, Windows::Devices::I2c::II2cDevice> : produce_base<D, Windows::
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().WriteReadPartial(array_ref<const uint8_t>(writeBuffer, writeBuffer + __writeBufferSize), *readBuffer));
             return S_OK;
         }
@@ -280,6 +298,7 @@ struct produce<D, Windows::Devices::I2c::II2cDeviceStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -294,6 +313,7 @@ struct produce<D, Windows::Devices::I2c::II2cDeviceStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector(*reinterpret_cast<const hstring *>(&friendlyName)));
             return S_OK;
         }
@@ -308,6 +328,7 @@ struct produce<D, Windows::Devices::I2c::II2cDeviceStatics> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId), *reinterpret_cast<const Windows::Devices::I2c::I2cConnectionSettings *>(&settings)));
             return S_OK;
         }

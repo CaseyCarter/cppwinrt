@@ -19,6 +19,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Caption(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -32,6 +33,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Caption());
             return S_OK;
         }
@@ -46,6 +48,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Message(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -59,6 +62,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Message());
             return S_OK;
         }
@@ -73,6 +77,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ErrorCode(value);
             return S_OK;
         }
@@ -86,6 +91,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ErrorCode());
             return S_OK;
         }
@@ -99,6 +105,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TargetName(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -112,6 +119,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TargetName());
             return S_OK;
         }
@@ -126,6 +134,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AuthenticationProtocol(value);
             return S_OK;
         }
@@ -139,6 +148,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AuthenticationProtocol());
             return S_OK;
         }
@@ -152,6 +162,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CustomAuthenticationProtocol(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -165,6 +176,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CustomAuthenticationProtocol());
             return S_OK;
         }
@@ -179,6 +191,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PreviousCredential(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
@@ -192,6 +205,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PreviousCredential());
             return S_OK;
         }
@@ -206,6 +220,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AlwaysDisplayDialog(value);
             return S_OK;
         }
@@ -219,6 +234,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AlwaysDisplayDialog());
             return S_OK;
         }
@@ -232,6 +248,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CallerSavesCredential(value);
             return S_OK;
         }
@@ -245,6 +262,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CallerSavesCredential());
             return S_OK;
         }
@@ -258,6 +276,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CredentialSaveOption(value);
             return S_OK;
         }
@@ -271,6 +290,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CredentialSaveOption());
             return S_OK;
         }
@@ -288,6 +308,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerResults> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ErrorCode());
             return S_OK;
         }
@@ -301,6 +322,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerResults> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CredentialSaveOption());
             return S_OK;
         }
@@ -314,6 +336,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerResults> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CredentialSaved());
             return S_OK;
         }
@@ -327,6 +350,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerResults> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Credential());
             return S_OK;
         }
@@ -341,6 +365,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerResults> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CredentialDomainName());
             return S_OK;
         }
@@ -355,6 +380,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerResults> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CredentialUserName());
             return S_OK;
         }
@@ -369,6 +395,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerResults> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CredentialPassword());
             return S_OK;
         }
@@ -387,6 +414,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().PickAsync(*reinterpret_cast<const Windows::Security::Credentials::UI::CredentialPickerOptions *>(&options)));
             return S_OK;
         }
@@ -401,6 +429,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().PickAsync(*reinterpret_cast<const hstring *>(&targetName), *reinterpret_cast<const hstring *>(&message)));
             return S_OK;
         }
@@ -415,6 +444,7 @@ struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().PickAsync(*reinterpret_cast<const hstring *>(&targetName), *reinterpret_cast<const hstring *>(&message), *reinterpret_cast<const hstring *>(&caption)));
             return S_OK;
         }
@@ -433,6 +463,7 @@ struct produce<D, Windows::Security::Credentials::UI::IUserConsentVerifierStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CheckAvailabilityAsync());
             return S_OK;
         }
@@ -447,6 +478,7 @@ struct produce<D, Windows::Security::Credentials::UI::IUserConsentVerifierStatic
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().RequestVerificationAsync(*reinterpret_cast<const hstring *>(&message)));
             return S_OK;
         }

@@ -22,6 +22,7 @@ struct produce<D, Windows::Media::MediaProperties::IAudioEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Bitrate(value);
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::Media::MediaProperties::IAudioEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bitrate());
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::Media::MediaProperties::IAudioEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ChannelCount(value);
             return S_OK;
         }
@@ -61,6 +64,7 @@ struct produce<D, Windows::Media::MediaProperties::IAudioEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ChannelCount());
             return S_OK;
         }
@@ -74,6 +78,7 @@ struct produce<D, Windows::Media::MediaProperties::IAudioEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SampleRate(value);
             return S_OK;
         }
@@ -87,6 +92,7 @@ struct produce<D, Windows::Media::MediaProperties::IAudioEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SampleRate());
             return S_OK;
         }
@@ -100,6 +106,7 @@ struct produce<D, Windows::Media::MediaProperties::IAudioEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BitsPerSample(value);
             return S_OK;
         }
@@ -113,6 +120,7 @@ struct produce<D, Windows::Media::MediaProperties::IAudioEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BitsPerSample());
             return S_OK;
         }
@@ -130,6 +138,7 @@ struct produce<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateAac(sampleRate, channelCount, bitrate));
             return S_OK;
         }
@@ -144,6 +153,7 @@ struct produce<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateAacAdts(sampleRate, channelCount, bitrate));
             return S_OK;
         }
@@ -158,6 +168,7 @@ struct produce<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateMp3(sampleRate, channelCount, bitrate));
             return S_OK;
         }
@@ -172,6 +183,7 @@ struct produce<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreatePcm(sampleRate, channelCount, bitsPerSample));
             return S_OK;
         }
@@ -186,6 +198,7 @@ struct produce<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateWma(sampleRate, channelCount, bitrate));
             return S_OK;
         }
@@ -204,6 +217,7 @@ struct produce<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesWithF
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetFormatUserData(array_ref<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
@@ -217,6 +231,7 @@ struct produce<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesWithF
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetFormatUserData(detach<uint8_t>(__valueSize, value));
             return S_OK;
         }
@@ -240,6 +255,7 @@ struct produce<D, Windows::Media::MediaProperties::IH264ProfileIdsStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ConstrainedBaseline());
             return S_OK;
         }
@@ -253,6 +269,7 @@ struct produce<D, Windows::Media::MediaProperties::IH264ProfileIdsStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Baseline());
             return S_OK;
         }
@@ -266,6 +283,7 @@ struct produce<D, Windows::Media::MediaProperties::IH264ProfileIdsStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Extended());
             return S_OK;
         }
@@ -279,6 +297,7 @@ struct produce<D, Windows::Media::MediaProperties::IH264ProfileIdsStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Main());
             return S_OK;
         }
@@ -292,6 +311,7 @@ struct produce<D, Windows::Media::MediaProperties::IH264ProfileIdsStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().High());
             return S_OK;
         }
@@ -305,6 +325,7 @@ struct produce<D, Windows::Media::MediaProperties::IH264ProfileIdsStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().High10());
             return S_OK;
         }
@@ -318,6 +339,7 @@ struct produce<D, Windows::Media::MediaProperties::IH264ProfileIdsStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().High422());
             return S_OK;
         }
@@ -331,6 +353,7 @@ struct produce<D, Windows::Media::MediaProperties::IH264ProfileIdsStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().High444());
             return S_OK;
         }
@@ -344,6 +367,7 @@ struct produce<D, Windows::Media::MediaProperties::IH264ProfileIdsStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StereoHigh());
             return S_OK;
         }
@@ -357,6 +381,7 @@ struct produce<D, Windows::Media::MediaProperties::IH264ProfileIdsStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MultiviewHigh());
             return S_OK;
         }
@@ -374,6 +399,7 @@ struct produce<D, Windows::Media::MediaProperties::IImageEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Width(value);
             return S_OK;
         }
@@ -387,6 +413,7 @@ struct produce<D, Windows::Media::MediaProperties::IImageEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Width());
             return S_OK;
         }
@@ -400,6 +427,7 @@ struct produce<D, Windows::Media::MediaProperties::IImageEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Height(value);
             return S_OK;
         }
@@ -413,6 +441,7 @@ struct produce<D, Windows::Media::MediaProperties::IImageEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Height());
             return S_OK;
         }
@@ -430,6 +459,7 @@ struct produce<D, Windows::Media::MediaProperties::IImageEncodingPropertiesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateJpeg());
             return S_OK;
         }
@@ -444,6 +474,7 @@ struct produce<D, Windows::Media::MediaProperties::IImageEncodingPropertiesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreatePng());
             return S_OK;
         }
@@ -458,6 +489,7 @@ struct produce<D, Windows::Media::MediaProperties::IImageEncodingPropertiesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateJpegXR());
             return S_OK;
         }
@@ -476,6 +508,7 @@ struct produce<D, Windows::Media::MediaProperties::IImageEncodingPropertiesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateUncompressed(format));
             return S_OK;
         }
@@ -490,6 +523,7 @@ struct produce<D, Windows::Media::MediaProperties::IImageEncodingPropertiesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateBmp());
             return S_OK;
         }
@@ -508,6 +542,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfile> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Audio(*reinterpret_cast<const Windows::Media::MediaProperties::AudioEncodingProperties *>(&value));
             return S_OK;
         }
@@ -521,6 +556,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfile> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Audio());
             return S_OK;
         }
@@ -535,6 +571,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfile> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Video(*reinterpret_cast<const Windows::Media::MediaProperties::VideoEncodingProperties *>(&value));
             return S_OK;
         }
@@ -548,6 +585,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfile> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Video());
             return S_OK;
         }
@@ -562,6 +600,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfile> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Container(*reinterpret_cast<const Windows::Media::MediaProperties::ContainerEncodingProperties *>(&value));
             return S_OK;
         }
@@ -575,6 +614,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfile> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Container());
             return S_OK;
         }
@@ -593,6 +633,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateM4a(quality));
             return S_OK;
         }
@@ -607,6 +648,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateMp3(quality));
             return S_OK;
         }
@@ -621,6 +663,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateWma(quality));
             return S_OK;
         }
@@ -635,6 +678,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateMp4(quality));
             return S_OK;
         }
@@ -649,6 +693,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateWmv(quality));
             return S_OK;
         }
@@ -663,6 +708,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateFromFileAsync(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file)));
             return S_OK;
         }
@@ -677,6 +723,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().CreateFromStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream)));
             return S_OK;
         }
@@ -695,6 +742,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics2
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateWav(quality));
             return S_OK;
         }
@@ -709,6 +757,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics2
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateAvi(quality));
             return S_OK;
         }
@@ -727,6 +776,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -741,6 +791,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -755,6 +806,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Subtype(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -768,6 +820,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Subtype());
             return S_OK;
         }
@@ -786,6 +839,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Aac());
             return S_OK;
         }
@@ -800,6 +854,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AacAdts());
             return S_OK;
         }
@@ -814,6 +869,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ac3());
             return S_OK;
         }
@@ -828,6 +884,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AmrNb());
             return S_OK;
         }
@@ -842,6 +899,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AmrWb());
             return S_OK;
         }
@@ -856,6 +914,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Argb32());
             return S_OK;
         }
@@ -870,6 +929,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Asf());
             return S_OK;
         }
@@ -884,6 +944,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Avi());
             return S_OK;
         }
@@ -898,6 +959,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bgra8());
             return S_OK;
         }
@@ -912,6 +974,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bmp());
             return S_OK;
         }
@@ -926,6 +989,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Eac3());
             return S_OK;
         }
@@ -940,6 +1004,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Float());
             return S_OK;
         }
@@ -954,6 +1019,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gif());
             return S_OK;
         }
@@ -968,6 +1034,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().H263());
             return S_OK;
         }
@@ -982,6 +1049,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().H264());
             return S_OK;
         }
@@ -996,6 +1064,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().H264Es());
             return S_OK;
         }
@@ -1010,6 +1079,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Hevc());
             return S_OK;
         }
@@ -1024,6 +1094,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HevcEs());
             return S_OK;
         }
@@ -1038,6 +1109,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Iyuv());
             return S_OK;
         }
@@ -1052,6 +1124,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Jpeg());
             return S_OK;
         }
@@ -1066,6 +1139,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().JpegXr());
             return S_OK;
         }
@@ -1080,6 +1154,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Mjpg());
             return S_OK;
         }
@@ -1094,6 +1169,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Mpeg());
             return S_OK;
         }
@@ -1108,6 +1184,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Mpeg1());
             return S_OK;
         }
@@ -1122,6 +1199,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Mpeg2());
             return S_OK;
         }
@@ -1136,6 +1214,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Mp3());
             return S_OK;
         }
@@ -1150,6 +1229,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Mpeg4());
             return S_OK;
         }
@@ -1164,6 +1244,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Nv12());
             return S_OK;
         }
@@ -1178,6 +1259,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Pcm());
             return S_OK;
         }
@@ -1192,6 +1274,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Png());
             return S_OK;
         }
@@ -1206,6 +1289,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Rgb24());
             return S_OK;
         }
@@ -1220,6 +1304,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Rgb32());
             return S_OK;
         }
@@ -1234,6 +1319,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Tiff());
             return S_OK;
         }
@@ -1248,6 +1334,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Wave());
             return S_OK;
         }
@@ -1262,6 +1349,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Wma8());
             return S_OK;
         }
@@ -1276,6 +1364,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Wma9());
             return S_OK;
         }
@@ -1290,6 +1379,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Wmv3());
             return S_OK;
         }
@@ -1304,6 +1394,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Wvc1());
             return S_OK;
         }
@@ -1318,6 +1409,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Yuy2());
             return S_OK;
         }
@@ -1332,6 +1424,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Yv12());
             return S_OK;
         }
@@ -1350,6 +1443,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaRatio> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Numerator(value);
             return S_OK;
         }
@@ -1363,6 +1457,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaRatio> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Numerator());
             return S_OK;
         }
@@ -1376,6 +1471,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaRatio> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Denominator(value);
             return S_OK;
         }
@@ -1389,6 +1485,7 @@ struct produce<D, Windows::Media::MediaProperties::IMediaRatio> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Denominator());
             return S_OK;
         }
@@ -1406,6 +1503,7 @@ struct produce<D, Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Simple());
             return S_OK;
         }
@@ -1419,6 +1517,7 @@ struct produce<D, Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Main());
             return S_OK;
         }
@@ -1432,6 +1531,7 @@ struct produce<D, Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SignalNoiseRatioScalable());
             return S_OK;
         }
@@ -1445,6 +1545,7 @@ struct produce<D, Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SpatiallyScalable());
             return S_OK;
         }
@@ -1458,6 +1559,7 @@ struct produce<D, Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().High());
             return S_OK;
         }
@@ -1475,6 +1577,7 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Bitrate(value);
             return S_OK;
         }
@@ -1488,6 +1591,7 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Bitrate());
             return S_OK;
         }
@@ -1501,6 +1605,7 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Width(value);
             return S_OK;
         }
@@ -1514,6 +1619,7 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Width());
             return S_OK;
         }
@@ -1527,6 +1633,7 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Height(value);
             return S_OK;
         }
@@ -1540,6 +1647,7 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Height());
             return S_OK;
         }
@@ -1553,6 +1661,7 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FrameRate());
             return S_OK;
         }
@@ -1567,6 +1676,7 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PixelAspectRatio());
             return S_OK;
         }
@@ -1585,6 +1695,7 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties2> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetFormatUserData(array_ref<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
@@ -1598,6 +1709,7 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties2> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().GetFormatUserData(detach<uint8_t>(__valueSize, value));
             return S_OK;
         }
@@ -1613,6 +1725,7 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties2> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ProfileId(value);
             return S_OK;
         }
@@ -1626,6 +1739,7 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties2> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProfileId());
             return S_OK;
         }
@@ -1643,6 +1757,7 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties3> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StereoscopicVideoPackingMode());
             return S_OK;
         }
@@ -1660,6 +1775,7 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingPropertiesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateH264());
             return S_OK;
         }
@@ -1674,6 +1790,7 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingPropertiesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateMpeg2());
             return S_OK;
         }
@@ -1688,6 +1805,7 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingPropertiesStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CreateUncompressed(*reinterpret_cast<const hstring *>(&subtype), width, height));
             return S_OK;
         }

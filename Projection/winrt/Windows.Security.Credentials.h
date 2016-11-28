@@ -22,6 +22,7 @@ struct produce<D, Windows::Security::Credentials::ICredentialFactory> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *credential = detach(this->shim().CreatePasswordCredential(*reinterpret_cast<const hstring *>(&resource), *reinterpret_cast<const hstring *>(&userName), *reinterpret_cast<const hstring *>(&password)));
             return S_OK;
         }
@@ -40,6 +41,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredential> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Name());
             return S_OK;
         }
@@ -54,6 +56,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredential> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RetrievePublicKey());
             return S_OK;
         }
@@ -68,6 +71,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredential> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RetrievePublicKey(blobType));
             return S_OK;
         }
@@ -82,6 +86,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredential> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequestSignAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }
@@ -96,6 +101,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredential> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetAttestationAsync());
             return S_OK;
         }
@@ -114,6 +120,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialAttestationResul
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CertificateChainBuffer());
             return S_OK;
         }
@@ -128,6 +135,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialAttestationResul
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AttestationBuffer());
             return S_OK;
         }
@@ -142,6 +150,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialAttestationResul
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -159,6 +168,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialManagerStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsSupportedAsync());
             return S_OK;
         }
@@ -173,6 +183,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialManagerStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().RenewAttestationAsync());
             return S_OK;
         }
@@ -187,6 +198,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialManagerStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RequestCreateAsync(*reinterpret_cast<const hstring *>(&name), option));
             return S_OK;
         }
@@ -201,6 +213,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialManagerStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OpenAsync(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -215,6 +228,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialManagerStatics> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().DeleteAsync(*reinterpret_cast<const hstring *>(&name)));
             return S_OK;
         }
@@ -233,6 +247,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialOperationResult>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Result());
             return S_OK;
         }
@@ -247,6 +262,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialOperationResult>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -264,6 +280,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialRetrievalResult>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Credential());
             return S_OK;
         }
@@ -278,6 +295,7 @@ struct produce<D, Windows::Security::Credentials::IKeyCredentialRetrievalResult>
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -295,6 +313,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordCredential> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *resource = detach(this->shim().Resource());
             return S_OK;
         }
@@ -309,6 +328,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordCredential> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Resource(*reinterpret_cast<const hstring *>(&resource));
             return S_OK;
         }
@@ -322,6 +342,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordCredential> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *userName = detach(this->shim().UserName());
             return S_OK;
         }
@@ -336,6 +357,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordCredential> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UserName(*reinterpret_cast<const hstring *>(&userName));
             return S_OK;
         }
@@ -349,6 +371,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordCredential> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *password = detach(this->shim().Password());
             return S_OK;
         }
@@ -363,6 +386,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordCredential> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Password(*reinterpret_cast<const hstring *>(&password));
             return S_OK;
         }
@@ -376,6 +400,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordCredential> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RetrievePassword();
             return S_OK;
         }
@@ -389,6 +414,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordCredential> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *props = detach(this->shim().Properties());
             return S_OK;
         }
@@ -407,6 +433,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordVault> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Add(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&credential));
             return S_OK;
         }
@@ -420,6 +447,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordVault> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Remove(*reinterpret_cast<const Windows::Security::Credentials::PasswordCredential *>(&credential));
             return S_OK;
         }
@@ -433,6 +461,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordVault> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *credential = detach(this->shim().Retrieve(*reinterpret_cast<const hstring *>(&resource), *reinterpret_cast<const hstring *>(&userName)));
             return S_OK;
         }
@@ -447,6 +476,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordVault> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *credentials = detach(this->shim().FindAllByResource(*reinterpret_cast<const hstring *>(&resource)));
             return S_OK;
         }
@@ -461,6 +491,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordVault> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *credentials = detach(this->shim().FindAllByUserName(*reinterpret_cast<const hstring *>(&userName)));
             return S_OK;
         }
@@ -475,6 +506,7 @@ struct produce<D, Windows::Security::Credentials::IPasswordVault> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *credentials = detach(this->shim().RetrieveAll());
             return S_OK;
         }
@@ -493,6 +525,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccount> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WebAccountProvider());
             return S_OK;
         }
@@ -507,6 +540,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccount> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UserName());
             return S_OK;
         }
@@ -521,6 +555,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccount> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().State());
             return S_OK;
         }
@@ -538,6 +573,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccount2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -552,6 +588,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccount2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Properties());
             return S_OK;
         }
@@ -566,6 +603,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccount2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GetPictureAsync(desizedSize));
             return S_OK;
         }
@@ -580,6 +618,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccount2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().SignOutAsync());
             return S_OK;
         }
@@ -594,6 +633,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccount2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().SignOutAsync(*reinterpret_cast<const hstring *>(&clientId)));
             return S_OK;
         }
@@ -612,6 +652,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccountFactory> : produce_
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateWebAccount(*reinterpret_cast<const Windows::Security::Credentials::WebAccountProvider *>(&webAccountProvider), *reinterpret_cast<const hstring *>(&userName), state));
             return S_OK;
         }
@@ -630,6 +671,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccountProvider> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -644,6 +686,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccountProvider> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayName());
             return S_OK;
         }
@@ -658,6 +701,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccountProvider> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IconUri());
             return S_OK;
         }
@@ -676,6 +720,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccountProvider2> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DisplayPurpose());
             return S_OK;
         }
@@ -690,6 +735,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccountProvider2> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Authority());
             return S_OK;
         }
@@ -708,6 +754,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccountProvider3> : produc
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *user = detach(this->shim().User());
             return S_OK;
         }
@@ -726,6 +773,7 @@ struct produce<D, Windows::Security::Credentials::IWebAccountProviderFactory> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *instance = detach(this->shim().CreateWebAccountProvider(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const hstring *>(&displayName), *reinterpret_cast<const Windows::Foundation::Uri *>(&iconUri)));
             return S_OK;
         }

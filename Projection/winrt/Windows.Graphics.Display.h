@@ -38,6 +38,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentOrientation());
             return S_OK;
         }
@@ -51,6 +52,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NativeOrientation());
             return S_OK;
         }
@@ -64,6 +66,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().OrientationChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -77,6 +80,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OrientationChanged(token);
             return S_OK;
         }
@@ -90,6 +94,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResolutionScale());
             return S_OK;
         }
@@ -103,6 +108,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LogicalDpi());
             return S_OK;
         }
@@ -116,6 +122,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RawDpiX());
             return S_OK;
         }
@@ -129,6 +136,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RawDpiY());
             return S_OK;
         }
@@ -142,6 +150,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DpiChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -155,6 +164,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DpiChanged(token);
             return S_OK;
         }
@@ -168,6 +178,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StereoEnabled());
             return S_OK;
         }
@@ -181,6 +192,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().StereoEnabledChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -194,6 +206,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StereoEnabledChanged(token);
             return S_OK;
         }
@@ -207,6 +220,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GetColorProfileAsync());
             return S_OK;
         }
@@ -221,6 +235,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ColorProfileChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -234,6 +249,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ColorProfileChanged(token);
             return S_OK;
         }
@@ -251,6 +267,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation2> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RawPixelsPerViewPixel());
             return S_OK;
         }
@@ -268,6 +285,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation3> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DiagonalSizeInInches());
             return S_OK;
         }
@@ -286,6 +304,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation4> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ScreenWidthInRawPixels());
             return S_OK;
         }
@@ -299,6 +318,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformation4> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ScreenHeightInRawPixels());
             return S_OK;
         }
@@ -316,6 +336,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformationStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *current = detach(this->shim().GetForCurrentView());
             return S_OK;
         }
@@ -330,6 +351,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformationStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutoRotationPreferences());
             return S_OK;
         }
@@ -343,6 +365,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformationStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AutoRotationPreferences(value);
             return S_OK;
         }
@@ -356,6 +379,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformationStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DisplayContentsInvalidated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -369,6 +393,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayInformationStatics> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisplayContentsInvalidated(token);
             return S_OK;
         }
@@ -386,6 +411,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentOrientation());
             return S_OK;
         }
@@ -399,6 +425,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NativeOrientation());
             return S_OK;
         }
@@ -412,6 +439,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AutoRotationPreferences());
             return S_OK;
         }
@@ -425,6 +453,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AutoRotationPreferences(value);
             return S_OK;
         }
@@ -438,6 +467,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().OrientationChanged(*reinterpret_cast<const Windows::Graphics::Display::DisplayPropertiesEventHandler *>(&handler)));
             return S_OK;
         }
@@ -451,6 +481,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().OrientationChanged(token);
             return S_OK;
         }
@@ -464,6 +495,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResolutionScale());
             return S_OK;
         }
@@ -477,6 +509,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LogicalDpi());
             return S_OK;
         }
@@ -490,6 +523,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().LogicalDpiChanged(*reinterpret_cast<const Windows::Graphics::Display::DisplayPropertiesEventHandler *>(&handler)));
             return S_OK;
         }
@@ -503,6 +537,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LogicalDpiChanged(token);
             return S_OK;
         }
@@ -516,6 +551,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StereoEnabled());
             return S_OK;
         }
@@ -529,6 +565,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().StereoEnabledChanged(*reinterpret_cast<const Windows::Graphics::Display::DisplayPropertiesEventHandler *>(&handler)));
             return S_OK;
         }
@@ -542,6 +579,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().StereoEnabledChanged(token);
             return S_OK;
         }
@@ -555,6 +593,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GetColorProfileAsync());
             return S_OK;
         }
@@ -569,6 +608,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ColorProfileChanged(*reinterpret_cast<const Windows::Graphics::Display::DisplayPropertiesEventHandler *>(&handler)));
             return S_OK;
         }
@@ -582,6 +622,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ColorProfileChanged(token);
             return S_OK;
         }
@@ -595,6 +636,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DisplayContentsInvalidated(*reinterpret_cast<const Windows::Graphics::Display::DisplayPropertiesEventHandler *>(&handler)));
             return S_OK;
         }
@@ -608,6 +650,7 @@ struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DisplayContentsInvalidated(token);
             return S_OK;
         }

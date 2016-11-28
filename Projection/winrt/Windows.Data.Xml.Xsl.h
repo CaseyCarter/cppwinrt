@@ -17,6 +17,7 @@ struct produce<D, Windows::Data::Xml::Xsl::IXsltProcessor> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *output = detach(this->shim().TransformToString(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&inputNode)));
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::Data::Xml::Xsl::IXsltProcessor2> : produce_base<D, Wi
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *output = detach(this->shim().TransformToDocument(*reinterpret_cast<const Windows::Data::Xml::Dom::IXmlNode *>(&inputNode)));
             return S_OK;
         }
@@ -53,6 +55,7 @@ struct produce<D, Windows::Data::Xml::Xsl::IXsltProcessorFactory> : produce_base
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *xsltProcessor = detach(this->shim().CreateInstance(*reinterpret_cast<const Windows::Data::Xml::Dom::XmlDocument *>(&document)));
             return S_OK;
         }

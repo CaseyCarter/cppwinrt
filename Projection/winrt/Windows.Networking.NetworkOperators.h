@@ -23,6 +23,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__valueSize, *value) = detach(this->shim().WirelessNetworkId());
             return S_OK;
         }
@@ -38,6 +39,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkAdapter());
             return S_OK;
         }
@@ -52,6 +54,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RedirectMessageUrl());
             return S_OK;
         }
@@ -66,6 +69,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RedirectMessageXml());
             return S_OK;
         }
@@ -80,6 +84,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AuthenticationUrl());
             return S_OK;
         }
@@ -94,6 +99,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IssueCredentials(*reinterpret_cast<const hstring *>(&userName), *reinterpret_cast<const hstring *>(&password), *reinterpret_cast<const hstring *>(&extraParameters), markAsManualConnectOnFailure);
             return S_OK;
         }
@@ -107,6 +113,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AbortAuthentication(markAsManual);
             return S_OK;
         }
@@ -120,6 +127,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SkipAuthentication();
             return S_OK;
         }
@@ -133,6 +141,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TriggerAttentionRequired(*reinterpret_cast<const hstring *>(&packageRelativeApplicationId), *reinterpret_cast<const hstring *>(&applicationParameters));
             return S_OK;
         }
@@ -150,6 +159,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().IssueCredentialsAsync(*reinterpret_cast<const hstring *>(&userName), *reinterpret_cast<const hstring *>(&password), *reinterpret_cast<const hstring *>(&extraParameters), markAsManualConnectOnFailure));
             return S_OK;
         }
@@ -168,6 +178,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *isValid = detach(this->shim().TryGetAuthenticationContext(*reinterpret_cast<const hstring *>(&evenToken), *context));
             return S_OK;
         }
@@ -186,6 +197,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationE
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EventToken());
             return S_OK;
         }
@@ -204,6 +216,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotCredentialsAuth
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasNetworkErrorOccurred());
             return S_OK;
         }
@@ -217,6 +230,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotCredentialsAuth
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResponseCode());
             return S_OK;
         }
@@ -230,6 +244,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotCredentialsAuth
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LogoffUrl());
             return S_OK;
         }
@@ -244,6 +259,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotCredentialsAuth
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AuthenticationReplyXml());
             return S_OK;
         }
@@ -262,6 +278,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownCSimFilePathsStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EFSpn());
             return S_OK;
         }
@@ -276,6 +293,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownCSimFilePathsStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gid1());
             return S_OK;
         }
@@ -290,6 +308,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownCSimFilePathsStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gid2());
             return S_OK;
         }
@@ -308,6 +327,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownRuimFilePathsStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EFSpn());
             return S_OK;
         }
@@ -322,6 +342,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownRuimFilePathsStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gid1());
             return S_OK;
         }
@@ -336,6 +357,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownRuimFilePathsStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gid2());
             return S_OK;
         }
@@ -354,6 +376,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownSimFilePathsStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EFOns());
             return S_OK;
         }
@@ -368,6 +391,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownSimFilePathsStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EFSpn());
             return S_OK;
         }
@@ -382,6 +406,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownSimFilePathsStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gid1());
             return S_OK;
         }
@@ -396,6 +421,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownSimFilePathsStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gid2());
             return S_OK;
         }
@@ -414,6 +440,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EFSpn());
             return S_OK;
         }
@@ -428,6 +455,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EFOpl());
             return S_OK;
         }
@@ -442,6 +470,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EFPnn());
             return S_OK;
         }
@@ -456,6 +485,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gid1());
             return S_OK;
         }
@@ -470,6 +500,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Gid2());
             return S_OK;
         }
@@ -488,6 +519,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkAccountId());
             return S_OK;
         }
@@ -502,6 +534,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceProviderGuid());
             return S_OK;
         }
@@ -515,6 +548,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ServiceProviderName());
             return S_OK;
         }
@@ -529,6 +563,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *network = detach(this->shim().CurrentNetwork());
             return S_OK;
         }
@@ -543,6 +578,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *deviceInformation = detach(this->shim().CurrentDeviceInformation());
             return S_OK;
         }
@@ -561,6 +597,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetConnectionProfiles());
             return S_OK;
         }
@@ -579,6 +616,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkAccountId());
             return S_OK;
         }
@@ -597,6 +635,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *ppAccountIds = detach(this->shim().AvailableNetworkAccountIds());
             return S_OK;
         }
@@ -611,6 +650,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *ppAccount = detach(this->shim().CreateFromNetworkAccountId(*reinterpret_cast<const hstring *>(&networkAccountId)));
             return S_OK;
         }
@@ -629,6 +669,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkAccountId());
             return S_OK;
         }
@@ -643,6 +684,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasDeviceInformationChanged());
             return S_OK;
         }
@@ -656,6 +698,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HasNetworkChanged());
             return S_OK;
         }
@@ -673,6 +716,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().AccountAdded(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -686,6 +730,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AccountAdded(cookie);
             return S_OK;
         }
@@ -699,6 +744,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().AccountUpdated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -712,6 +758,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AccountUpdated(cookie);
             return S_OK;
         }
@@ -725,6 +772,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().AccountRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -738,6 +786,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AccountRemoved(cookie);
             return S_OK;
         }
@@ -751,6 +800,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -764,6 +814,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnumerationCompleted(cookie);
             return S_OK;
         }
@@ -777,6 +828,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *cookie = detach(this->shim().Stopped(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable> *>(&handler)));
             return S_OK;
         }
@@ -790,6 +842,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stopped(cookie);
             return S_OK;
         }
@@ -803,6 +856,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *status = detach(this->shim().Status());
             return S_OK;
         }
@@ -816,6 +870,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Start();
             return S_OK;
         }
@@ -829,6 +884,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Stop();
             return S_OK;
         }
@@ -846,6 +902,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkDeviceStatus());
             return S_OK;
         }
@@ -859,6 +916,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Manufacturer());
             return S_OK;
         }
@@ -873,6 +931,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Model());
             return S_OK;
         }
@@ -887,6 +946,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FirmwareInformation());
             return S_OK;
         }
@@ -901,6 +961,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CellularClass());
             return S_OK;
         }
@@ -914,6 +975,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataClasses());
             return S_OK;
         }
@@ -927,6 +989,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CustomDataClass());
             return S_OK;
         }
@@ -941,6 +1004,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MobileEquipmentId());
             return S_OK;
         }
@@ -955,6 +1019,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TelephoneNumbers());
             return S_OK;
         }
@@ -969,6 +1034,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SubscriberId());
             return S_OK;
         }
@@ -983,6 +1049,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SimIccId());
             return S_OK;
         }
@@ -997,6 +1064,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pDeviceType = detach(this->shim().DeviceType());
             return S_OK;
         }
@@ -1010,6 +1078,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -1024,6 +1093,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pCurrentState = detach(this->shim().CurrentRadioState());
             return S_OK;
         }
@@ -1041,6 +1111,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PinManager());
             return S_OK;
         }
@@ -1055,6 +1126,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Revision());
             return S_OK;
         }
@@ -1069,6 +1141,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SerialNumber());
             return S_OK;
         }
@@ -1087,6 +1160,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceServiceId());
             return S_OK;
         }
@@ -1100,6 +1174,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedCommands());
             return S_OK;
         }
@@ -1114,6 +1189,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OpenDataSession());
             return S_OK;
         }
@@ -1128,6 +1204,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OpenCommandSession());
             return S_OK;
         }
@@ -1146,6 +1223,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().StatusCode());
             return S_OK;
         }
@@ -1159,6 +1237,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResponseData());
             return S_OK;
         }
@@ -1177,6 +1256,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().SendQueryCommandAsync(commandId, *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }
@@ -1191,6 +1271,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().SendSetCommandAsync(commandId, *reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&data)));
             return S_OK;
         }
@@ -1205,6 +1286,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CloseSession();
             return S_OK;
         }
@@ -1222,6 +1304,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReceivedData());
             return S_OK;
         }
@@ -1240,6 +1323,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().WriteDataAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value)));
             return S_OK;
         }
@@ -1254,6 +1338,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().CloseSession();
             return S_OK;
         }
@@ -1267,6 +1352,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().DataReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession, Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
@@ -1280,6 +1366,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DataReceived(eventCookie);
             return S_OK;
         }
@@ -1297,6 +1384,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceServiceId());
             return S_OK;
         }
@@ -1310,6 +1398,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDataReadSupported());
             return S_OK;
         }
@@ -1323,6 +1412,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsDataWriteSupported());
             return S_OK;
         }
@@ -1340,6 +1430,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -1354,6 +1445,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceServiceId());
             return S_OK;
         }
@@ -1367,6 +1459,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceS
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReceivedData());
             return S_OK;
         }
@@ -1385,6 +1478,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentAccount());
             return S_OK;
         }
@@ -1399,6 +1493,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceInformation());
             return S_OK;
         }
@@ -1413,6 +1508,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxDeviceServiceCommandSizeInBytes());
             return S_OK;
         }
@@ -1426,6 +1522,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxDeviceServiceDataSizeInBytes());
             return S_OK;
         }
@@ -1439,6 +1536,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceServices());
             return S_OK;
         }
@@ -1453,6 +1551,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceService(deviceServiceId));
             return S_OK;
         }
@@ -1467,6 +1566,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsResetSupported());
             return S_OK;
         }
@@ -1480,6 +1580,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().ResetAsync());
             return S_OK;
         }
@@ -1494,6 +1595,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GetCurrentConfigurationAsync());
             return S_OK;
         }
@@ -1508,6 +1610,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentNetwork());
             return S_OK;
         }
@@ -1526,6 +1629,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemCo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Uicc());
             return S_OK;
         }
@@ -1540,6 +1644,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemCo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HomeProviderId());
             return S_OK;
         }
@@ -1554,6 +1659,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemCo
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HomeProviderName());
             return S_OK;
         }
@@ -1572,6 +1678,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDeviceSelector());
             return S_OK;
         }
@@ -1586,6 +1693,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().FromId(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
@@ -1600,6 +1708,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetDefault());
             return S_OK;
         }
@@ -1618,6 +1727,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkAdapter());
             return S_OK;
         }
@@ -1632,6 +1742,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *registrationState = detach(this->shim().NetworkRegistrationState());
             return S_OK;
         }
@@ -1645,6 +1756,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *networkError = detach(this->shim().RegistrationNetworkError());
             return S_OK;
         }
@@ -1658,6 +1770,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *networkError = detach(this->shim().PacketAttachNetworkError());
             return S_OK;
         }
@@ -1671,6 +1784,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *networkError = detach(this->shim().ActivationNetworkError());
             return S_OK;
         }
@@ -1684,6 +1798,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *apn = detach(this->shim().AccessPointName());
             return S_OK;
         }
@@ -1698,6 +1813,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RegisteredDataClass());
             return S_OK;
         }
@@ -1711,6 +1827,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RegisteredProviderId());
             return S_OK;
         }
@@ -1725,6 +1842,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RegisteredProviderName());
             return S_OK;
         }
@@ -1739,6 +1857,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShowConnectionUI();
             return S_OK;
         }
@@ -1756,6 +1875,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GetVoiceCallSupportAsync());
             return S_OK;
         }
@@ -1770,6 +1890,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RegistrationUiccApps());
             return S_OK;
         }
@@ -1788,6 +1909,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -1802,6 +1924,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Network());
             return S_OK;
         }
@@ -1820,6 +1943,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NetworkRegistrationStateChanges());
             return S_OK;
         }
@@ -1838,6 +1962,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Type());
             return S_OK;
         }
@@ -1851,6 +1976,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LockState());
             return S_OK;
         }
@@ -1864,6 +1990,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Format());
             return S_OK;
         }
@@ -1877,6 +2004,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Enabled());
             return S_OK;
         }
@@ -1890,6 +2018,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxLength());
             return S_OK;
         }
@@ -1903,6 +2032,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MinLength());
             return S_OK;
         }
@@ -1916,6 +2046,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AttemptsRemaining());
             return S_OK;
         }
@@ -1929,6 +2060,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().EnableAsync(*reinterpret_cast<const hstring *>(&currentPin)));
             return S_OK;
         }
@@ -1943,6 +2075,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().DisableAsync(*reinterpret_cast<const hstring *>(&currentPin)));
             return S_OK;
         }
@@ -1957,6 +2090,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().EnterAsync(*reinterpret_cast<const hstring *>(&currentPin)));
             return S_OK;
         }
@@ -1971,6 +2105,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().ChangeAsync(*reinterpret_cast<const hstring *>(&currentPin), *reinterpret_cast<const hstring *>(&newPin)));
             return S_OK;
         }
@@ -1985,6 +2120,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().UnblockAsync(*reinterpret_cast<const hstring *>(&pinUnblockKey), *reinterpret_cast<const hstring *>(&newPin)));
             return S_OK;
         }
@@ -2003,6 +2139,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinLock
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -2017,6 +2154,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinLock
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PinType());
             return S_OK;
         }
@@ -2030,6 +2168,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinLock
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PinLockState());
             return S_OK;
         }
@@ -2047,6 +2186,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinLock
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PinLockStateChanges());
             return S_OK;
         }
@@ -2065,6 +2205,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinMana
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SupportedPins());
             return S_OK;
         }
@@ -2079,6 +2220,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinMana
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetPin(pinType));
             return S_OK;
         }
@@ -2097,6 +2239,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinOper
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsSuccessful());
             return S_OK;
         }
@@ -2110,6 +2253,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinOper
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AttemptsRemaining());
             return S_OK;
         }
@@ -2127,6 +2271,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandRadioSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceId());
             return S_OK;
         }
@@ -2141,6 +2286,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandRadioSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RadioState());
             return S_OK;
         }
@@ -2158,6 +2304,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandRadioSt
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RadioStateChanges());
             return S_OK;
         }
@@ -2176,6 +2323,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUicc> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SimIccId());
             return S_OK;
         }
@@ -2190,6 +2338,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUicc> :
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GetUiccAppsAsync());
             return S_OK;
         }
@@ -2208,6 +2357,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }
@@ -2222,6 +2372,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -2235,6 +2386,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().GetRecordDetailsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<uint32_t> *>(&uiccFilePath)));
             return S_OK;
         }
@@ -2249,6 +2401,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().ReadRecordAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<uint32_t> *>(&uiccFilePath), recordIndex));
             return S_OK;
         }
@@ -2267,6 +2420,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -2280,6 +2434,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Data());
             return S_OK;
         }
@@ -2298,6 +2453,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -2311,6 +2467,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Kind());
             return S_OK;
         }
@@ -2324,6 +2481,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RecordCount());
             return S_OK;
         }
@@ -2337,6 +2495,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RecordSize());
             return S_OK;
         }
@@ -2350,6 +2509,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ReadAccessCondition());
             return S_OK;
         }
@@ -2363,6 +2523,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().WriteAccessCondition());
             return S_OK;
         }
@@ -2380,6 +2541,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -2393,6 +2555,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().UiccApps());
             return S_OK;
         }
@@ -2411,6 +2574,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Ssid());
             return S_OK;
         }
@@ -2425,6 +2589,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Ssid(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2438,6 +2603,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Passphrase());
             return S_OK;
         }
@@ -2452,6 +2618,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Passphrase(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2469,6 +2636,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MacAddress());
             return S_OK;
         }
@@ -2483,6 +2651,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HostNames());
             return S_OK;
         }
@@ -2501,6 +2670,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetTetheringClients());
             return S_OK;
         }
@@ -2519,6 +2689,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MaxClientCount());
             return S_OK;
         }
@@ -2532,6 +2703,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ClientCount());
             return S_OK;
         }
@@ -2545,6 +2717,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TetheringOperationalState());
             return S_OK;
         }
@@ -2558,6 +2731,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *configuration = detach(this->shim().GetCurrentAccessPointConfiguration());
             return S_OK;
         }
@@ -2572,6 +2746,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().ConfigureAccessPointAsync(*reinterpret_cast<const Windows::Networking::NetworkOperators::NetworkOperatorTetheringAccessPointConfiguration *>(&configuration)));
             return S_OK;
         }
@@ -2586,6 +2761,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().StartTetheringAsync());
             return S_OK;
         }
@@ -2600,6 +2776,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().StopTetheringAsync());
             return S_OK;
         }
@@ -2618,6 +2795,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().GetTetheringCapability(*reinterpret_cast<const hstring *>(&networkAccountId)));
             return S_OK;
         }
@@ -2631,6 +2809,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *ppManager = detach(this->shim().CreateFromNetworkAccountId(*reinterpret_cast<const hstring *>(&networkAccountId)));
             return S_OK;
         }
@@ -2649,6 +2828,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().GetTetheringCapabilityFromConnectionProfile(*reinterpret_cast<const Windows::Networking::Connectivity::ConnectionProfile *>(&profile)));
             return S_OK;
         }
@@ -2662,6 +2842,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *ppManager = detach(this->shim().CreateFromConnectionProfile(*reinterpret_cast<const Windows::Networking::Connectivity::ConnectionProfile *>(&profile)));
             return S_OK;
         }
@@ -2680,6 +2861,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *ppManager = detach(this->shim().CreateFromConnectionProfile(*reinterpret_cast<const Windows::Networking::Connectivity::ConnectionProfile *>(&profile), *reinterpret_cast<const Windows::Networking::Connectivity::NetworkAdapter *>(&adapter)));
             return S_OK;
         }
@@ -2698,6 +2880,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -2711,6 +2894,7 @@ struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheri
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AdditionalErrorMessage());
             return S_OK;
         }
@@ -2729,6 +2913,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IProvisionFromXmlDocume
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllElementsProvisioned());
             return S_OK;
         }
@@ -2742,6 +2927,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IProvisionFromXmlDocume
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ProvisionResultsXml());
             return S_OK;
         }
@@ -2760,6 +2946,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IProvisionedProfile> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UpdateCost(value);
             return S_OK;
         }
@@ -2773,6 +2960,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IProvisionedProfile> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().UpdateUsage(*reinterpret_cast<const Windows::Networking::NetworkOperators::ProfileUsage *>(&value));
             return S_OK;
         }
@@ -2790,6 +2978,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IProvisioningAgent> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().ProvisionFromXmlDocumentAsync(*reinterpret_cast<const hstring *>(&provisioningXmlDocument)));
             return S_OK;
         }
@@ -2804,6 +2993,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IProvisioningAgent> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *provisionedProfile = detach(this->shim().GetProvisionedProfile(mediaType, *reinterpret_cast<const hstring *>(&profileName)));
             return S_OK;
         }
@@ -2822,6 +3012,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IProvisioningAgentStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *provisioningAgent = detach(this->shim().CreateFromNetworkAccountId(*reinterpret_cast<const hstring *>(&networkAccountId)));
             return S_OK;
         }
@@ -2840,6 +3031,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdMessage> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DataCodingScheme());
             return S_OK;
         }
@@ -2853,6 +3045,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdMessage> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DataCodingScheme(value);
             return S_OK;
         }
@@ -2866,6 +3059,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdMessage> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             std::tie(*__valueSize, *value) = detach(this->shim().GetPayload());
             return S_OK;
         }
@@ -2881,6 +3075,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdMessage> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetPayload(array_ref<const uint8_t>(value, value + __valueSize));
             return S_OK;
         }
@@ -2894,6 +3089,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdMessage> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().PayloadAsText());
             return S_OK;
         }
@@ -2908,6 +3104,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdMessage> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PayloadAsText(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -2925,6 +3122,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdMessageFactory> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *ussdMessage = detach(this->shim().CreateMessage(*reinterpret_cast<const hstring *>(&messageText)));
             return S_OK;
         }
@@ -2943,6 +3141,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdReply> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResultCode());
             return S_OK;
         }
@@ -2956,6 +3155,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdReply> : produce_b
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Message());
             return S_OK;
         }
@@ -2974,6 +3174,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdSession> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *asyncInfo = detach(this->shim().SendMessageAndGetReplyAsync(*reinterpret_cast<const Windows::Networking::NetworkOperators::UssdMessage *>(&message)));
             return S_OK;
         }
@@ -2988,6 +3189,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdSession> : produce
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Close();
             return S_OK;
         }
@@ -3005,6 +3207,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdSessionStatics> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *ussdSession = detach(this->shim().CreateFromNetworkAccountId(*reinterpret_cast<const hstring *>(&networkAccountId)));
             return S_OK;
         }
@@ -3019,6 +3222,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IUssdSessionStatics> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *ussdSession = detach(this->shim().CreateFromNetworkInterfaceId(*reinterpret_cast<const hstring *>(&networkInterfaceId)));
             return S_OK;
         }

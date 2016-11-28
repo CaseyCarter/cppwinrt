@@ -18,6 +18,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DeviceID());
             return S_OK;
         }
@@ -32,6 +33,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *printModelPackage = detach(this->shim().GetPrintModelPackage());
             return S_OK;
         }
@@ -46,6 +48,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsPrintReady());
             return S_OK;
         }
@@ -59,6 +62,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().IsPrintReady(value);
             return S_OK;
         }
@@ -72,6 +76,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().PrintRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
@@ -85,6 +90,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : pr
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PrintRequested(eventCookie);
             return S_OK;
         }
@@ -102,6 +108,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *eventCookie = detach(this->shim().PrinterChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs> *>(&eventHandler)));
             return S_OK;
         }
@@ -115,6 +122,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow2> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PrinterChanged(eventCookie);
             return S_OK;
         }
@@ -132,6 +140,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrintR
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -145,6 +154,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrintR
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetExtendedStatus(value);
             return S_OK;
         }
@@ -158,6 +168,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrintR
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetSource(*reinterpret_cast<const Windows::IInspectable *>(&source));
             return S_OK;
         }
@@ -171,6 +182,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrintR
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetSourceChanged(value);
             return S_OK;
         }
@@ -188,6 +200,7 @@ struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrinte
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewDeviceId());
             return S_OK;
         }

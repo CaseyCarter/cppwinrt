@@ -16,6 +16,7 @@ struct produce<D, Windows::Graphics::Effects::IGraphicsEffect> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *name = detach(this->shim().Name());
             return S_OK;
         }
@@ -30,6 +31,7 @@ struct produce<D, Windows::Graphics::Effects::IGraphicsEffect> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Name(*reinterpret_cast<const hstring *>(&name));
             return S_OK;
         }

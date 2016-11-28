@@ -22,6 +22,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().IsLive());
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredLiveOffset());
             return S_OK;
         }
@@ -48,6 +50,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DesiredLiveOffset(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -61,6 +64,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InitialBitrate());
             return S_OK;
         }
@@ -74,6 +78,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InitialBitrate(value);
             return S_OK;
         }
@@ -87,6 +92,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentDownloadBitrate());
             return S_OK;
         }
@@ -100,6 +106,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().CurrentPlaybackBitrate());
             return S_OK;
         }
@@ -113,6 +120,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AvailableBitrates());
             return S_OK;
         }
@@ -127,6 +135,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredMinBitrate());
             return S_OK;
         }
@@ -141,6 +150,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DesiredMinBitrate(*reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&value));
             return S_OK;
         }
@@ -154,6 +164,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredMaxBitrate());
             return S_OK;
         }
@@ -168,6 +179,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DesiredMaxBitrate(*reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&value));
             return S_OK;
         }
@@ -181,6 +193,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AudioOnlyPlayback());
             return S_OK;
         }
@@ -194,6 +207,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InboundBitsPerSecond());
             return S_OK;
         }
@@ -207,6 +221,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InboundBitsPerSecondWindow());
             return S_OK;
         }
@@ -220,6 +235,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InboundBitsPerSecondWindow(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
             return S_OK;
         }
@@ -233,6 +249,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DownloadBitrateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Streaming::Adaptive::AdaptiveMediaSource, Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadBitrateChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -246,6 +263,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DownloadBitrateChanged(token);
             return S_OK;
         }
@@ -259,6 +277,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().PlaybackBitrateChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Streaming::Adaptive::AdaptiveMediaSource, Windows::Media::Streaming::Adaptive::AdaptiveMediaSourcePlaybackBitrateChangedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -272,6 +291,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PlaybackBitrateChanged(token);
             return S_OK;
         }
@@ -285,6 +305,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DownloadRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Streaming::Adaptive::AdaptiveMediaSource, Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadRequestedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -298,6 +319,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DownloadRequested(token);
             return S_OK;
         }
@@ -311,6 +333,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DownloadCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Streaming::Adaptive::AdaptiveMediaSource, Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadCompletedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -324,6 +347,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DownloadCompleted(token);
             return S_OK;
         }
@@ -337,6 +361,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().DownloadFailed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Streaming::Adaptive::AdaptiveMediaSource, Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadFailedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -350,6 +375,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> : p
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DownloadFailed(token);
             return S_OK;
         }
@@ -367,6 +393,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource2> : 
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AdvancedSettings());
             return S_OK;
         }
@@ -385,6 +412,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceAdvan
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AllSegmentsIndependent());
             return S_OK;
         }
@@ -398,6 +426,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceAdvan
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().AllSegmentsIndependent(value);
             return S_OK;
         }
@@ -411,6 +440,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceAdvan
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredBitrateHeadroomRatio());
             return S_OK;
         }
@@ -425,6 +455,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceAdvan
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().DesiredBitrateHeadroomRatio(*reinterpret_cast<const Windows::Foundation::IReference<double> *>(&value));
             return S_OK;
         }
@@ -438,6 +469,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceAdvan
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BitrateDowngradeTriggerRatio());
             return S_OK;
         }
@@ -452,6 +484,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceAdvan
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BitrateDowngradeTriggerRatio(*reinterpret_cast<const Windows::Foundation::IReference<double> *>(&value));
             return S_OK;
         }
@@ -469,6 +502,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceCreat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Status());
             return S_OK;
         }
@@ -482,6 +516,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceCreat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().MediaSource());
             return S_OK;
         }
@@ -496,6 +531,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceCreat
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HttpResponseMessage());
             return S_OK;
         }
@@ -514,6 +550,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OldValue());
             return S_OK;
         }
@@ -527,6 +564,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewValue());
             return S_OK;
         }
@@ -544,6 +582,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResourceType());
             return S_OK;
         }
@@ -557,6 +596,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResourceUri());
             return S_OK;
         }
@@ -571,6 +611,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResourceByteRangeOffset());
             return S_OK;
         }
@@ -585,6 +626,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResourceByteRangeLength());
             return S_OK;
         }
@@ -599,6 +641,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HttpResponseMessage());
             return S_OK;
         }
@@ -617,6 +660,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResourceType());
             return S_OK;
         }
@@ -630,6 +674,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResourceUri());
             return S_OK;
         }
@@ -644,6 +689,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResourceByteRangeOffset());
             return S_OK;
         }
@@ -658,6 +704,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResourceByteRangeLength());
             return S_OK;
         }
@@ -672,6 +719,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().HttpResponseMessage());
             return S_OK;
         }
@@ -690,6 +738,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -707,6 +756,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResourceType());
             return S_OK;
         }
@@ -720,6 +770,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResourceUri());
             return S_OK;
         }
@@ -734,6 +785,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResourceByteRangeOffset());
             return S_OK;
         }
@@ -748,6 +800,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResourceByteRangeLength());
             return S_OK;
         }
@@ -762,6 +815,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Result());
             return S_OK;
         }
@@ -776,6 +830,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -794,6 +849,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResourceUri());
             return S_OK;
         }
@@ -808,6 +864,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ResourceUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
             return S_OK;
         }
@@ -821,6 +878,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().InputStream());
             return S_OK;
         }
@@ -835,6 +893,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().InputStream(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&value));
             return S_OK;
         }
@@ -848,6 +907,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Buffer());
             return S_OK;
         }
@@ -862,6 +922,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Buffer(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&value));
             return S_OK;
         }
@@ -875,6 +936,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ContentType());
             return S_OK;
         }
@@ -889,6 +951,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContentType(*reinterpret_cast<const hstring *>(&value));
             return S_OK;
         }
@@ -902,6 +965,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ExtendedStatus());
             return S_OK;
         }
@@ -915,6 +979,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ExtendedStatus(value);
             return S_OK;
         }
@@ -932,6 +997,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResourceByteRangeOffset());
             return S_OK;
         }
@@ -946,6 +1012,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ResourceByteRangeOffset(*reinterpret_cast<const Windows::Foundation::IReference<uint64_t> *>(&value));
             return S_OK;
         }
@@ -959,6 +1026,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ResourceByteRangeLength());
             return S_OK;
         }
@@ -973,6 +1041,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceDownl
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ResourceByteRangeLength(*reinterpret_cast<const Windows::Foundation::IReference<uint64_t> *>(&value));
             return S_OK;
         }
@@ -990,6 +1059,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourcePlayb
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().OldValue());
             return S_OK;
         }
@@ -1003,6 +1073,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourcePlayb
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NewValue());
             return S_OK;
         }
@@ -1016,6 +1087,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourcePlayb
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().AudioOnly());
             return S_OK;
         }
@@ -1033,6 +1105,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().IsContentTypeSupported(*reinterpret_cast<const hstring *>(&contentType)));
             return S_OK;
         }
@@ -1046,6 +1119,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateFromUriAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -1060,6 +1134,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateFromUriAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Web::Http::HttpClient *>(&httpClient)));
             return S_OK;
         }
@@ -1074,6 +1149,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateFromStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&stream), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const hstring *>(&contentType)));
             return S_OK;
         }
@@ -1088,6 +1164,7 @@ struct produce<D, Windows::Media::Streaming::Adaptive::IAdaptiveMediaSourceStati
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().CreateFromStreamAsync(*reinterpret_cast<const Windows::Storage::Streams::IInputStream *>(&stream), *reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const hstring *>(&contentType), *reinterpret_cast<const Windows::Web::Http::HttpClient *>(&httpClient)));
             return S_OK;
         }

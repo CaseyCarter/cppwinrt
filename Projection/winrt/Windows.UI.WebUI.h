@@ -130,6 +130,7 @@ struct produce<D, Windows::UI::WebUI::IActivatedDeferral> : produce_base<D, Wind
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -147,6 +148,7 @@ struct produce<D, Windows::UI::WebUI::IActivatedEventArgsDeferral> : produce_bas
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ActivatedOperation());
             return S_OK;
         }
@@ -165,6 +167,7 @@ struct produce<D, Windows::UI::WebUI::IActivatedOperation> : produce_base<D, Win
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }
@@ -183,6 +186,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Content());
             return S_OK;
         }
@@ -196,6 +200,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Content(value);
             return S_OK;
         }
@@ -209,6 +214,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().LeftMargin());
             return S_OK;
         }
@@ -222,6 +228,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LeftMargin(value);
             return S_OK;
         }
@@ -235,6 +242,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().TopMargin());
             return S_OK;
         }
@@ -248,6 +256,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().TopMargin(value);
             return S_OK;
         }
@@ -261,6 +270,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().RightMargin());
             return S_OK;
         }
@@ -274,6 +284,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RightMargin(value);
             return S_OK;
         }
@@ -287,6 +298,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().BottomMargin());
             return S_OK;
         }
@@ -300,6 +312,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().BottomMargin(value);
             return S_OK;
         }
@@ -313,6 +326,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().EnableHeaderFooter());
             return S_OK;
         }
@@ -326,6 +340,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnableHeaderFooter(value);
             return S_OK;
         }
@@ -339,6 +354,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().ShrinkToFit());
             return S_OK;
         }
@@ -352,6 +368,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ShrinkToFit(value);
             return S_OK;
         }
@@ -365,6 +382,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pScalePercent = detach(this->shim().PercentScale());
             return S_OK;
         }
@@ -378,6 +396,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().PercentScale(scalePercent);
             return S_OK;
         }
@@ -391,6 +410,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pstrPageRange = detach(this->shim().PageRange());
             return S_OK;
         }
@@ -405,6 +425,7 @@ struct produce<D, Windows::UI::WebUI::IHtmlPrintDocumentSource> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *pfSuccess = detach(this->shim().TrySetPageRange(*reinterpret_cast<const hstring *>(&strPageRange)));
             return S_OK;
         }
@@ -422,6 +443,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Activated(*reinterpret_cast<const Windows::UI::WebUI::ActivatedEventHandler *>(&handler)));
             return S_OK;
         }
@@ -435,6 +457,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Activated(token);
             return S_OK;
         }
@@ -448,6 +471,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Suspending(*reinterpret_cast<const Windows::UI::WebUI::SuspendingEventHandler *>(&handler)));
             return S_OK;
         }
@@ -461,6 +485,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Suspending(token);
             return S_OK;
         }
@@ -474,6 +499,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Resuming(*reinterpret_cast<const Windows::UI::WebUI::ResumingEventHandler *>(&handler)));
             return S_OK;
         }
@@ -487,6 +513,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Resuming(token);
             return S_OK;
         }
@@ -500,6 +527,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().Navigated(*reinterpret_cast<const Windows::UI::WebUI::NavigatedEventHandler *>(&handler)));
             return S_OK;
         }
@@ -513,6 +541,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Navigated(token);
             return S_OK;
         }
@@ -530,6 +559,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().LeavingBackground(*reinterpret_cast<const Windows::UI::WebUI::LeavingBackgroundEventHandler *>(&handler)));
             return S_OK;
         }
@@ -543,6 +573,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().LeavingBackground(token);
             return S_OK;
         }
@@ -556,6 +587,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().EnteredBackground(*reinterpret_cast<const Windows::UI::WebUI::EnteredBackgroundEventHandler *>(&handler)));
             return S_OK;
         }
@@ -569,6 +601,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnteredBackground(token);
             return S_OK;
         }
@@ -582,6 +615,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIActivationStatics2> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().EnablePrelaunch(value);
             return S_OK;
         }
@@ -599,6 +633,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIBackgroundTaskInstance> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *succeeded = detach(this->shim().Succeeded());
             return S_OK;
         }
@@ -612,6 +647,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIBackgroundTaskInstance> : produce_ba
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Succeeded(succeeded);
             return S_OK;
         }
@@ -629,6 +665,7 @@ struct produce<D, Windows::UI::WebUI::IWebUIBackgroundTaskInstanceStatics> : pro
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *backgroundTaskInstance = detach(this->shim().Current());
             return S_OK;
         }
@@ -647,6 +684,7 @@ struct produce<D, Windows::UI::WebUI::IWebUINavigatedDeferral> : produce_base<D,
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().Complete();
             return S_OK;
         }
@@ -664,6 +702,7 @@ struct produce<D, Windows::UI::WebUI::IWebUINavigatedEventArgs> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().NavigatedOperation());
             return S_OK;
         }
@@ -682,6 +721,7 @@ struct produce<D, Windows::UI::WebUI::IWebUINavigatedOperation> : produce_base<D
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *deferral = detach(this->shim().GetDeferral());
             return S_OK;
         }

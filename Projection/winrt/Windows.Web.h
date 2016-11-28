@@ -17,6 +17,7 @@ struct produce<D, Windows::Web::IUriToStreamResolver> : produce_base<D, Windows:
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *operation = detach(this->shim().UriToStreamAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
             return S_OK;
         }
@@ -35,6 +36,7 @@ struct produce<D, Windows::Web::IWebErrorStatics> : produce_base<D, Windows::Web
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *status = detach(this->shim().GetStatus(hresult));
             return S_OK;
         }

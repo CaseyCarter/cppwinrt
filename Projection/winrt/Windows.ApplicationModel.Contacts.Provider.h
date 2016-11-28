@@ -20,6 +20,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactPickerU
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().AddContact(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact)));
             return S_OK;
         }
@@ -33,6 +34,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactPickerU
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().RemoveContact(*reinterpret_cast<const hstring *>(&id));
             return S_OK;
         }
@@ -46,6 +48,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactPickerU
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *isContained = detach(this->shim().ContainsContact(*reinterpret_cast<const hstring *>(&id)));
             return S_OK;
         }
@@ -59,6 +62,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactPickerU
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredFields());
             return S_OK;
         }
@@ -73,6 +77,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactPickerU
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().SelectionMode());
             return S_OK;
         }
@@ -86,6 +91,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactPickerU
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *token = detach(this->shim().ContactRemoved(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::Provider::ContactPickerUI, Windows::ApplicationModel::Contacts::Provider::ContactRemovedEventArgs> *>(&handler)));
             return S_OK;
         }
@@ -99,6 +105,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactPickerU
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().ContactRemoved(token);
             return S_OK;
         }
@@ -116,6 +123,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactPickerU
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().AddContact(*reinterpret_cast<const Windows::ApplicationModel::Contacts::Contact *>(&contact)));
             return S_OK;
         }
@@ -129,6 +137,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactPickerU
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().DesiredFieldsWithContactFieldType());
             return S_OK;
         }
@@ -147,6 +156,7 @@ struct produce<D, Windows::ApplicationModel::Contacts::Provider::IContactRemoved
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Id());
             return S_OK;
         }

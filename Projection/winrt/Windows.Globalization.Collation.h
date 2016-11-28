@@ -18,6 +18,7 @@ struct produce<D, Windows::Globalization::Collation::ICharacterGrouping> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().First());
             return S_OK;
         }
@@ -32,6 +33,7 @@ struct produce<D, Windows::Globalization::Collation::ICharacterGrouping> : produ
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *value = detach(this->shim().Label());
             return S_OK;
         }
@@ -50,6 +52,7 @@ struct produce<D, Windows::Globalization::Collation::ICharacterGroupings> : prod
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             *result = detach(this->shim().Lookup(*reinterpret_cast<const hstring *>(&text)));
             return S_OK;
         }
