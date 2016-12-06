@@ -236,7 +236,7 @@ private:
     }
 
     std::vector<T> v;
-    event<Windows::Foundation::Collections::VectorChangedEventHandler<T>> m_vectorChanged;
+    agile_event<Windows::Foundation::Collections::VectorChangedEventHandler<T>> m_vectorChanged;
 };
 
 }}

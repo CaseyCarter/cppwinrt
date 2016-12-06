@@ -1,5 +1,7 @@
 
-namespace impl {
+
+namespace impl
+{
 
 template <typename T>
 struct event_array
@@ -82,21 +84,21 @@ auto make_event_array(const uint32_t capacity)
     return instance;
 }
 
-}
-
-template<typename Delegate>
-struct event
+template <typename Traits>
+struct event : Traits
 {
+    using delegate_type = typename Traits::delegate_type;
+
     event() = default;
-    event(const event<Delegate>&) = delete;
-    event<Delegate> &operator =(const event<Delegate> &) = delete;
+    event(const event<Traits> &) = delete;
+    event<Traits> & operator =(const event<Traits> &) = delete;
 
     explicit operator bool() const noexcept
     {
         return m_targets != nullptr;
     }
 
-    event_token add(const Delegate & delegate)
+    event_token add(const delegate_type & delegate)
     {
         if (delegate == nullptr)
         {
@@ -107,8 +109,8 @@ struct event
         delegate_array temp_targets;
 
         {
-            lock_guard add_remove_lock(m_add_remove_lock);
-            delegate_array new_targets = impl::make_event_array<agile_delegate>((!m_targets) ? 1 : m_targets->size() + 1);
+            auto change_guard = this->get_change_guard();
+            delegate_array new_targets = impl::make_event_array<storage_type>((!m_targets) ? 1 : m_targets->size() + 1);
 
             if (m_targets)
             {
@@ -118,7 +120,7 @@ struct event
             token.value = reinterpret_cast<int64_t>(get(delegate));
             new_targets->back() = delegate;
 
-            lock_guard targets_pointer_lock(m_targets_pointer_lock);
+            auto swap_guard = this->get_swap_guard();
             temp_targets = m_targets;
             m_targets = new_targets;
         }
@@ -131,7 +133,7 @@ struct event
         delegate_array temp_targets;
 
         {
-            lock_guard add_remove_lock(m_add_remove_lock);
+            auto change_guard = this->get_change_guard();
 
             if (!m_targets)
             {
@@ -144,21 +146,19 @@ struct event
 
             if (available_slots == 0)
             {
-                abi<Delegate> * raw_delegate_address = get(m_targets->begin()->get());
-
-                if (reinterpret_cast<int64_t>(raw_delegate_address) == token.value)
+                if (this->get_token(*m_targets->begin()) == token)
                 {
                     removed = true;
                 }
             }
             else
             {
-                new_targets = impl::make_event_array<agile_delegate>(available_slots);
+                new_targets = impl::make_event_array<storage_type>(available_slots);
                 auto new_iterator = new_targets->begin();
 
-                for (const agile_delegate & element : *m_targets)
+                for (const storage_type & element : *m_targets)
                 {
-                    if (!removed && token.value == reinterpret_cast<int64_t>(get(element.get())))
+                    if (!removed && token == this->get_token(element))
                     {
                         removed = true;
                         continue;
@@ -171,7 +171,7 @@ struct event
 
             if (removed)
             {
-                lock_guard targets_pointer_lock(m_targets_pointer_lock);
+                auto swap_guard = this->get_swap_guard();
                 temp_targets = m_targets;
                 m_targets = new_targets;
             }
@@ -184,19 +184,19 @@ struct event
         delegate_array temp_targets;
 
         {
-            lock_guard targets_pointer_lock(m_targets_pointer_lock);
+            auto swap_guard = this->get_swap_guard();
             temp_targets = m_targets;
         }
 
         if (temp_targets)
         {
-            for (const agile_delegate & element : *temp_targets)
+            for (const storage_type & element : *temp_targets)
             {
                 bool remove_delegate = false;
 
                 try
                 {
-                    element.get()(args...);
+                    this->invoke(element, args...);
                 }
                 catch (const hresult_error& e)
                 {
@@ -210,17 +210,110 @@ struct event
 
                 if (remove_delegate)
                 {
-                    remove(event_token{ reinterpret_cast<__int64>(get(element.get())) });
+                    remove(this->get_token(element));
                 }
             }
         }
     }
 
 private:
-    using agile_delegate = agile_ref<Delegate>;
-    using delegate_array = com_ptr<impl::event_array<agile_delegate>>;
+
+    using storage_type = typename Traits::storage_type;
+    using delegate_array = com_ptr<impl::event_array<storage_type>>;
 
     delegate_array m_targets;
-    lock m_targets_pointer_lock;
-    lock m_add_remove_lock;
 };
+
+struct no_lock_guard {};
+
+struct locked_event_traits
+{
+    lock_guard get_swap_guard() noexcept
+    {
+        return lock_guard(m_swap);
+    }
+
+    lock_guard get_change_guard() noexcept
+    {
+        return lock_guard(m_change);
+    }
+
+private:
+
+    lock m_swap;
+    lock m_change;
+};
+
+template <typename Delegate>
+struct single_threaded_event_traits
+{
+    using delegate_type = Delegate;
+    using storage_type = Delegate;
+
+    template <typename ... Args>
+    void invoke(const storage_type & delegate, const Args & ... args) const
+    {
+        delegate(args ...);
+    }
+
+    event_token get_token(const storage_type & delegate) const noexcept
+    {
+        return{ reinterpret_cast<int64_t>(get(delegate)) };
+    }
+
+    no_lock_guard get_swap_guard() const noexcept
+    {
+        return{};
+    }
+
+    no_lock_guard get_change_guard() const noexcept
+    {
+        return{};
+    }
+};
+
+template <typename Delegate>
+struct agile_event_traits : locked_event_traits
+{
+    using delegate_type = Delegate;
+    using storage_type = agile_ref<Delegate>;
+
+    template <typename ... Args>
+    void invoke(const storage_type & delegate, const Args & ... args) const
+    {
+        delegate.get()(args ...);
+    }
+
+    event_token get_token(const storage_type & delegate) const noexcept
+    {
+        return{ reinterpret_cast<int64_t>(get(delegate.get())) };
+    }
+};
+
+template <typename Delegate>
+struct non_agile_event_traits : locked_event_traits
+{
+    using delegate_type = Delegate;
+    using storage_type = Delegate;
+
+    template <typename ... Args>
+    void invoke(const storage_type & delegate, const Args & ... args) const
+    {
+        delegate(args ...);
+    }
+
+    event_token get_token(const storage_type & delegate) const noexcept
+    {
+        return{ reinterpret_cast<int64_t>(get(delegate)) };
+    }
+};
+}
+
+template <typename Delegate>
+using agile_event = impl::event<impl::agile_event_traits<Delegate>>;
+
+template <typename Delegate>
+using non_agile_event = impl::event<impl::non_agile_event_traits<Delegate>>;
+
+template <typename Delegate>
+using single_threaded_event = impl::event<impl::single_threaded_event_traits<Delegate>>;

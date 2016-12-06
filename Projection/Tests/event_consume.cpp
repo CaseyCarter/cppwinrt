@@ -35,7 +35,7 @@ struct TestSplashScreen : implements<TestSplashScreen, ISplashScreen, ABI::Windo
         return result;
     }
 
-    event<TypedEventHandler<SplashScreen, Windows::IInspectable>> m_dismissed;
+    agile_event<TypedEventHandler<SplashScreen, Windows::IInspectable>> m_dismissed;
 
     Rect ImageLocation()
     {
@@ -71,7 +71,7 @@ struct TestSplashScreen : implements<TestSplashScreen, ISplashScreen, ABI::Windo
 
 struct TestClipboardStatics : implements<TestClipboardStatics, IClipboardStatics>
 {
-    event<EventHandler<IInspectable>> m_contentChanged;
+    agile_event<EventHandler<IInspectable>> m_contentChanged;
 
     DataPackageView GetContent() const { return nullptr; }
     void Flush() const {}

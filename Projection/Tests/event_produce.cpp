@@ -51,12 +51,13 @@ TypedEventHandler<DisplayInformation, IInspectable> lambda_delegate = [](const D
     lambda_invoked.set_invoked();
 };
 
-TEST_CASE("event, basic add/remove/invoke")
+template <typename T>
+void BasicTest()
 {
-    event<TypedEventHandler<DisplayInformation, IInspectable>> test_event;
+    T test_event;
 
     auto lambda_token = test_event.add(lambda_delegate);
-    
+
     // Lambda should be invoked
     test_event(nullptr, nullptr);
     REQUIRE(lambda_invoked.get_invoked());
@@ -79,6 +80,16 @@ TEST_CASE("event, basic add/remove/invoke")
     test_event(nullptr, nullptr);
     REQUIRE(!member_invoked.get_invoked());
     REQUIRE(!lambda_invoked.get_invoked());
+}
+
+TEST_CASE("agile event, basic add/remove/invoke")
+{
+    BasicTest<agile_event<TypedEventHandler<DisplayInformation, IInspectable>>>();
+}
+
+TEST_CASE("non-agile event, basic add/remove/invoke")
+{
+    BasicTest<non_agile_event<TypedEventHandler<DisplayInformation, IInspectable>>>();
 }
 
 struct event_traits : handle_traits<HANDLE>
@@ -173,9 +184,10 @@ event_token blocking_object2_token;
 TypedEventHandler<DisplayInformation, IInspectable> blocking_delegate1(&blocking_object1, &BlockingHandler::handler);
 TypedEventHandler<DisplayInformation, IInspectable> blocking_delegate2(&blocking_object2, &BlockingHandler::handler);
 
-TEST_CASE("event, add an event when the event source is already being invoked")
+template <typename T>
+void ConcurrentAddTest()
 {
-    event<TypedEventHandler<DisplayInformation, IInspectable>> test_event;
+    T test_event;
 
     // Do all catch framework tests on the main thread, but grab the results from the appropriate thread as soon as they're available
     bool thread1_check_handler1_not_started = false;
@@ -205,7 +217,7 @@ TEST_CASE("event, add an event when the event source is already being invoked")
     {
         // Add the second handler while the first handler is executing
         thread2_check_handler1_block = blocking_object1.block_until_invoking();
-        
+
         blocking_object2_token = test_event.add(blocking_delegate2);
         thread2_check_handler2_not_started = (blocking_object2.get_state() == BlockingHandler::NotStarted);
 
@@ -261,9 +273,20 @@ TEST_CASE("event, add an event when the event source is already being invoked")
     blocking_object2.reset();
 }
 
-TEST_CASE("event, remove an event when the event source is already being invoked")
+TEST_CASE("agile event, add an event when the event source is already being invoked")
 {
-    event<TypedEventHandler<DisplayInformation, IInspectable>> test_event;
+    ConcurrentAddTest<agile_event<TypedEventHandler<DisplayInformation, IInspectable>>>();
+}
+
+TEST_CASE("non-agile event, add an event when the event source is already being invoked")
+{
+    ConcurrentAddTest<non_agile_event<TypedEventHandler<DisplayInformation, IInspectable>>>();
+}
+
+template <typename T>
+void ConcurrentRemoveTest()
+{
+    T test_event;
 
     // Do all catch framework tests on the main thread, but grab the results from the appropriate thread as soon as they're available
     bool thread1_check_handler1_not_started = false;
@@ -356,4 +379,14 @@ TEST_CASE("event, remove an event when the event source is already being invoked
 
     REQUIRE(blocking_object1.get_state() == BlockingHandler::NotStarted);
     REQUIRE(blocking_object2.get_state() == BlockingHandler::NotStarted);
+}
+
+TEST_CASE("agile event, remove an event when the event source is already being invoked")
+{
+    ConcurrentRemoveTest<agile_event<TypedEventHandler<DisplayInformation, IInspectable>>>();
+}
+
+TEST_CASE("non-agile event, remove an event when the event source is already being invoked")
+{
+    ConcurrentRemoveTest<non_agile_event<TypedEventHandler<DisplayInformation, IInspectable>>>();
 }

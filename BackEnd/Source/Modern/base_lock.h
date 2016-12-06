@@ -32,9 +32,6 @@ private:
 
 struct lock_guard
 {
-    lock_guard(const lock_guard &) = delete;
-    lock_guard & operator=(const lock_guard &) = delete;
-
     explicit lock_guard(lock & lock) noexcept :
         m_lock(lock)
     {

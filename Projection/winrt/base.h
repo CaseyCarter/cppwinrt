@@ -1786,9 +1786,6 @@ private:
 
 struct lock_guard
 {
-    lock_guard(const lock_guard &) = delete;
-    lock_guard & operator=(const lock_guard &) = delete;
-
     explicit lock_guard(lock & lock) noexcept :
         m_lock(lock)
     {
@@ -2721,6 +2718,479 @@ weak_ref<T> make_weak(T const & object)
     return object;
 }
 
+#ifndef WINRT_NO_AGILE_REFERENCE
+
+template <typename T>
+struct agile_ref
+{
+    agile_ref(std::nullptr_t = nullptr) noexcept {}
+
+    agile_ref(const T & object)
+    {
+#ifdef WINRT_DEBUG
+        if (object.template try_as<IAgileObject>())
+        {
+            WINRT_TRACE("winrt::agile_ref - wrapping an agile object is unnecessary.\n");
+        }
+#endif
+
+        check_hresult(RoGetAgileReference(AGILEREFERENCE_DEFAULT,
+                                          __uuidof(abi_default_interface<T>),
+                                          winrt::get(object),
+                                          put(m_ref)));
+    }
+
+    T get() const
+    {
+        T result = nullptr;
+        check_hresult(m_ref->Resolve(put(result)));
+        return result;
+    }
+
+    explicit operator bool() const noexcept
+    {
+        return static_cast<bool>(m_ref);
+    }
+
+private:
+
+    com_ptr<IAgileReference> m_ref;
+};
+
+template <typename T>
+agile_ref<T> make_agile(const T & object)
+{
+    return object;
+}
+
+#endif
+
+struct event_token
+{
+    int64_t value;
+};
+
+inline bool operator==(const event_token & left, const event_token & right) noexcept
+{
+    return left.value == right.value;
+}
+
+struct auto_revoke_t {};
+constexpr auto_revoke_t auto_revoke {};
+
+template <typename I>
+struct event_revoker
+{
+    using method_type = HRESULT(__stdcall abi<I>::*)(event_token);
+
+    event_revoker() noexcept = default;
+    event_revoker(const event_revoker &) = delete;
+    event_revoker & operator=(const event_revoker &) = delete;
+    event_revoker(event_revoker &&) = default;
+    event_revoker & operator=(event_revoker &&) = default;
+
+    event_revoker(const I & object, method_type method, event_token token) :
+        m_object(object),
+        m_method(method),
+        m_token(token)
+    {}
+
+    ~event_revoker() noexcept
+    {
+        revoke();
+    }
+
+    void revoke() noexcept
+    {
+        if (!m_object)
+        {
+            return;
+        }
+
+        if (I object = m_object.get())
+        {
+            ((*get(object)).*(m_method))(m_token);
+        }
+
+        m_object = nullptr;
+    }
+
+private:
+
+    weak_ref<I> m_object;
+    method_type m_method {};
+    event_token m_token {};
+};
+
+template <typename I>
+struct factory_event_revoker
+{
+    using method_type = HRESULT(__stdcall abi<I>::*)(event_token);
+
+    factory_event_revoker() noexcept = default;
+    factory_event_revoker(const factory_event_revoker &) = delete;
+    factory_event_revoker & operator=(const factory_event_revoker &) = delete;
+    factory_event_revoker(factory_event_revoker &&) = default;
+    factory_event_revoker & operator=(factory_event_revoker &&) = default;
+
+    factory_event_revoker(const I & object, method_type method, event_token token) :
+        m_object(object),
+        m_method(method),
+        m_token(token)
+    {}
+
+    ~factory_event_revoker() noexcept
+    {
+        revoke();
+    }
+
+    void revoke() noexcept
+    {
+        if (!m_object)
+        {
+            return;
+        }
+
+        ((*get(m_object)).*(m_method))(m_token);
+        m_object = nullptr;
+    }
+
+private:
+
+    I m_object;
+    method_type m_method {};
+    event_token m_token {};
+};
+
+namespace impl {
+
+template <typename D, typename I, typename S, typename M>
+auto make_event_revoker(S source, M method, event_token token)
+{
+    return event_revoker<I>(static_cast<const I &>(static_cast<const D &>(*source)), method, token);
+}
+
+}
+
+
+namespace impl
+{
+
+template <typename T>
+struct event_array
+{
+    using value_type = T;
+    using reference = value_type &;
+    using pointer = value_type *;
+    using iterator = impl::array_iterator<value_type>;
+
+    explicit event_array(const uint32_t count) noexcept : m_size(count)
+    {
+        std::uninitialized_fill_n(data(), count, value_type());
+    }
+
+    unsigned long AddRef() noexcept
+    {
+        return 1 + m_references.fetch_add(1, std::memory_order_relaxed);
+    }
+
+    unsigned long Release() noexcept
+    {
+        const uint32_t remaining = m_references.fetch_sub(1, std::memory_order_release) - 1;
+
+        if (remaining == 0)
+        {
+            std::atomic_thread_fence(std::memory_order_acquire);
+            this->~event_array();
+            ::operator delete(static_cast<void*>(this));
+        }
+
+        return remaining;
+    }
+
+    reference back() noexcept
+    {
+        WINRT_ASSERT(m_size > 0);
+        return *(data() + m_size - 1);
+    }
+
+    iterator begin() noexcept
+    {
+        return impl::make_array_iterator(data(), m_size);
+    }
+
+    iterator end() noexcept
+    {
+        return impl::make_array_iterator(data(), m_size, m_size);
+    }
+
+    uint32_t size() const noexcept
+    {
+        return m_size;
+    }
+
+    ~event_array() noexcept
+    {
+        for (reference element : *this)
+        {
+            element.~T();
+        }
+    }
+
+private:
+
+    pointer data() noexcept
+    {
+        return reinterpret_cast<pointer>(this + 1);
+    }
+
+    std::atomic<uint32_t> m_references{ 1 };
+    uint32_t m_size{ 0 };
+};
+
+template <typename T>
+auto make_event_array(const uint32_t capacity)
+{
+    com_ptr<event_array<T>> instance;
+    void* raw = ::operator new(sizeof(event_array<T>) + (sizeof(T) * capacity));
+    *put(instance) = new(raw) event_array<T>(capacity);
+    return instance;
+}
+
+template <typename Traits>
+struct event : Traits
+{
+    using delegate_type = typename Traits::delegate_type;
+
+    event() = default;
+    event(const event<Traits> &) = delete;
+    event<Traits> & operator =(const event<Traits> &) = delete;
+
+    explicit operator bool() const noexcept
+    {
+        return m_targets != nullptr;
+    }
+
+    event_token add(const delegate_type & delegate)
+    {
+        if (delegate == nullptr)
+        {
+            throw hresult_invalid_argument();
+        }
+
+        event_token token{};
+        delegate_array temp_targets;
+
+        {
+            auto change_guard = this->get_change_guard();
+            delegate_array new_targets = impl::make_event_array<storage_type>((!m_targets) ? 1 : m_targets->size() + 1);
+
+            if (m_targets)
+            {
+                std::copy_n(m_targets->begin(), m_targets->size(), new_targets->begin());
+            }
+
+            token.value = reinterpret_cast<int64_t>(get(delegate));
+            new_targets->back() = delegate;
+
+            auto swap_guard = this->get_swap_guard();
+            temp_targets = m_targets;
+            m_targets = new_targets;
+        }
+
+        return token;
+    }
+
+    void remove(const event_token token)
+    {
+        delegate_array temp_targets;
+
+        {
+            auto change_guard = this->get_change_guard();
+
+            if (!m_targets)
+            {
+                return;
+            }
+
+            uint32_t available_slots = m_targets->size() - 1;
+            delegate_array new_targets;
+            bool removed = false;
+
+            if (available_slots == 0)
+            {
+                if (this->get_token(*m_targets->begin()) == token)
+                {
+                    removed = true;
+                }
+            }
+            else
+            {
+                new_targets = impl::make_event_array<storage_type>(available_slots);
+                auto new_iterator = new_targets->begin();
+
+                for (const storage_type & element : *m_targets)
+                {
+                    if (!removed && token == this->get_token(element))
+                    {
+                        removed = true;
+                        continue;
+                    }
+
+                    *new_iterator = element;
+                    ++new_iterator;
+                }
+            }
+
+            if (removed)
+            {
+                auto swap_guard = this->get_swap_guard();
+                temp_targets = m_targets;
+                m_targets = new_targets;
+            }
+        }
+    }
+
+    template<typename ...Arg>
+    void operator()(const Arg & ... args)
+    {
+        delegate_array temp_targets;
+
+        {
+            auto swap_guard = this->get_swap_guard();
+            temp_targets = m_targets;
+        }
+
+        if (temp_targets)
+        {
+            for (const storage_type & element : *temp_targets)
+            {
+                bool remove_delegate = false;
+
+                try
+                {
+                    this->invoke(element, args...);
+                }
+                catch (const hresult_error& e)
+                {
+                    if (e.code() == JSCRIPT_E_CANTEXECUTE ||
+                        e.code() == RPC_S_SERVER_UNAVAILABLE ||
+                        e.code() == RPC_E_DISCONNECTED)
+                    {
+                        remove_delegate = true;
+                    }
+                }
+
+                if (remove_delegate)
+                {
+                    remove(this->get_token(element));
+                }
+            }
+        }
+    }
+
+private:
+
+    using storage_type = typename Traits::storage_type;
+    using delegate_array = com_ptr<impl::event_array<storage_type>>;
+
+    delegate_array m_targets;
+};
+
+struct no_lock_guard {};
+
+struct locked_event_traits
+{
+    lock_guard get_swap_guard() noexcept
+    {
+        return lock_guard(m_swap);
+    }
+
+    lock_guard get_change_guard() noexcept
+    {
+        return lock_guard(m_change);
+    }
+
+private:
+
+    lock m_swap;
+    lock m_change;
+};
+
+template <typename Delegate>
+struct single_threaded_event_traits
+{
+    using delegate_type = Delegate;
+    using storage_type = Delegate;
+
+    template <typename ... Args>
+    void invoke(const storage_type & delegate, const Args & ... args) const
+    {
+        delegate(args ...);
+    }
+
+    event_token get_token(const storage_type & delegate) const noexcept
+    {
+        return{ reinterpret_cast<int64_t>(get(delegate)) };
+    }
+
+    no_lock_guard get_swap_guard() const noexcept
+    {
+        return{};
+    }
+
+    no_lock_guard get_change_guard() const noexcept
+    {
+        return{};
+    }
+};
+
+template <typename Delegate>
+struct agile_event_traits : locked_event_traits
+{
+    using delegate_type = Delegate;
+    using storage_type = agile_ref<Delegate>;
+
+    template <typename ... Args>
+    void invoke(const storage_type & delegate, const Args & ... args) const
+    {
+        delegate.get()(args ...);
+    }
+
+    event_token get_token(const storage_type & delegate) const noexcept
+    {
+        return{ reinterpret_cast<int64_t>(get(delegate.get())) };
+    }
+};
+
+template <typename Delegate>
+struct non_agile_event_traits : locked_event_traits
+{
+    using delegate_type = Delegate;
+    using storage_type = Delegate;
+
+    template <typename ... Args>
+    void invoke(const storage_type & delegate, const Args & ... args) const
+    {
+        delegate(args ...);
+    }
+
+    event_token get_token(const storage_type & delegate) const noexcept
+    {
+        return{ reinterpret_cast<int64_t>(get(delegate)) };
+    }
+};
+}
+
+template <typename Delegate>
+using agile_event = impl::event<impl::agile_event_traits<Delegate>>;
+
+template <typename Delegate>
+using non_agile_event = impl::event<impl::non_agile_event_traits<Delegate>>;
+
+template <typename Delegate>
+using single_threaded_event = impl::event<impl::single_threaded_event_traits<Delegate>>;
+
 namespace impl
 {
     struct marker {};
@@ -3496,380 +3966,6 @@ protected:
     Windows::IInspectable m_inner;
 };
 
-#ifndef WINRT_NO_AGILE_REFERENCE
-
-template <typename T>
-struct agile_ref
-{
-    agile_ref(std::nullptr_t = nullptr) noexcept {}
-
-    agile_ref(const T & object)
-    {
-#ifdef WINRT_DEBUG
-        if (object.template try_as<IAgileObject>())
-        {
-            WINRT_TRACE("winrt::agile_ref - wrapping an agile object is unnecessary.\n");
-        }
-#endif
-
-        check_hresult(RoGetAgileReference(AGILEREFERENCE_DEFAULT,
-                                          __uuidof(abi_default_interface<T>),
-                                          winrt::get(object),
-                                          put(m_ref)));
-    }
-
-    T get() const
-    {
-        T result = nullptr;
-        check_hresult(m_ref->Resolve(put(result)));
-        return result;
-    }
-
-    explicit operator bool() const noexcept
-    {
-        return static_cast<bool>(m_ref);
-    }
-
-private:
-
-    com_ptr<IAgileReference> m_ref;
-};
-
-template <typename T>
-agile_ref<T> make_agile(const T & object)
-{
-    return object;
-}
-
-#endif
-
-struct event_token
-{
-    int64_t value;
-};
-
-struct auto_revoke_t {};
-constexpr auto_revoke_t auto_revoke {};
-
-template <typename I>
-struct event_revoker
-{
-    using method_type = HRESULT(__stdcall abi<I>::*)(event_token);
-
-    event_revoker() noexcept = default;
-    event_revoker(const event_revoker &) = delete;
-    event_revoker & operator=(const event_revoker &) = delete;
-    event_revoker(event_revoker &&) = default;
-    event_revoker & operator=(event_revoker &&) = default;
-
-    event_revoker(const I & object, method_type method, event_token token) :
-        m_object(object),
-        m_method(method),
-        m_token(token)
-    {}
-
-    ~event_revoker() noexcept
-    {
-        revoke();
-    }
-
-    void revoke() noexcept
-    {
-        if (!m_object)
-        {
-            return;
-        }
-
-        if (I object = m_object.get())
-        {
-            ((*get(object)).*(m_method))(m_token);
-        }
-
-        m_object = nullptr;
-    }
-
-private:
-
-    weak_ref<I> m_object;
-    method_type m_method {};
-    event_token m_token {};
-};
-
-template <typename I>
-struct factory_event_revoker
-{
-    using method_type = HRESULT(__stdcall abi<I>::*)(event_token);
-
-    factory_event_revoker() noexcept = default;
-    factory_event_revoker(const factory_event_revoker &) = delete;
-    factory_event_revoker & operator=(const factory_event_revoker &) = delete;
-    factory_event_revoker(factory_event_revoker &&) = default;
-    factory_event_revoker & operator=(factory_event_revoker &&) = default;
-
-    factory_event_revoker(const I & object, method_type method, event_token token) :
-        m_object(object),
-        m_method(method),
-        m_token(token)
-    {}
-
-    ~factory_event_revoker() noexcept
-    {
-        revoke();
-    }
-
-    void revoke() noexcept
-    {
-        if (!m_object)
-        {
-            return;
-        }
-
-        ((*get(m_object)).*(m_method))(m_token);
-        m_object = nullptr;
-    }
-
-private:
-
-    I m_object;
-    method_type m_method {};
-    event_token m_token {};
-};
-
-namespace impl {
-
-template <typename D, typename I, typename S, typename M>
-auto make_event_revoker(S source, M method, event_token token)
-{
-    return event_revoker<I>(static_cast<const I &>(static_cast<const D &>(*source)), method, token);
-}
-
-}
-
-namespace impl {
-
-template <typename T>
-struct event_array
-{
-    using value_type = T;
-    using reference = value_type &;
-    using pointer = value_type *;
-    using iterator = impl::array_iterator<value_type>;
-
-    explicit event_array(const uint32_t count) noexcept : m_size(count)
-    {
-        std::uninitialized_fill_n(data(), count, value_type());
-    }
-
-    unsigned long AddRef() noexcept
-    {
-        return 1 + m_references.fetch_add(1, std::memory_order_relaxed);
-    }
-
-    unsigned long Release() noexcept
-    {
-        const uint32_t remaining = m_references.fetch_sub(1, std::memory_order_release) - 1;
-
-        if (remaining == 0)
-        {
-            std::atomic_thread_fence(std::memory_order_acquire);
-            this->~event_array();
-            ::operator delete(static_cast<void*>(this));
-        }
-
-        return remaining;
-    }
-
-    reference back() noexcept
-    {
-        WINRT_ASSERT(m_size > 0);
-        return *(data() + m_size - 1);
-    }
-
-    iterator begin() noexcept
-    {
-        return impl::make_array_iterator(data(), m_size);
-    }
-
-    iterator end() noexcept
-    {
-        return impl::make_array_iterator(data(), m_size, m_size);
-    }
-
-    uint32_t size() const noexcept
-    {
-        return m_size;
-    }
-
-    ~event_array() noexcept
-    {
-        for (reference element : *this)
-        {
-            element.~T();
-        }
-    }
-
-private:
-
-    pointer data() noexcept
-    {
-        return reinterpret_cast<pointer>(this + 1);
-    }
-
-    std::atomic<uint32_t> m_references{ 1 };
-    uint32_t m_size{ 0 };
-};
-
-template <typename T>
-auto make_event_array(const uint32_t capacity)
-{
-    com_ptr<event_array<T>> instance;
-    void* raw = ::operator new(sizeof(event_array<T>) + (sizeof(T) * capacity));
-    *put(instance) = new(raw) event_array<T>(capacity);
-    return instance;
-}
-
-}
-
-template<typename Delegate>
-struct event
-{
-    event() = default;
-    event(const event<Delegate>&) = delete;
-    event<Delegate> &operator =(const event<Delegate> &) = delete;
-
-    explicit operator bool() const noexcept
-    {
-        return m_targets != nullptr;
-    }
-
-    event_token add(const Delegate & delegate)
-    {
-        if (delegate == nullptr)
-        {
-            throw hresult_invalid_argument();
-        }
-
-        event_token token{};
-        delegate_array temp_targets;
-
-        {
-            lock_guard add_remove_lock(m_add_remove_lock);
-            delegate_array new_targets = impl::make_event_array<agile_delegate>((!m_targets) ? 1 : m_targets->size() + 1);
-
-            if (m_targets)
-            {
-                std::copy_n(m_targets->begin(), m_targets->size(), new_targets->begin());
-            }
-
-            token.value = reinterpret_cast<int64_t>(get(delegate));
-            new_targets->back() = delegate;
-
-            lock_guard targets_pointer_lock(m_targets_pointer_lock);
-            temp_targets = m_targets;
-            m_targets = new_targets;
-        }
-
-        return token;
-    }
-
-    void remove(const event_token token)
-    {
-        delegate_array temp_targets;
-
-        {
-            lock_guard add_remove_lock(m_add_remove_lock);
-
-            if (!m_targets)
-            {
-                return;
-            }
-
-            uint32_t available_slots = m_targets->size() - 1;
-            delegate_array new_targets;
-            bool removed = false;
-
-            if (available_slots == 0)
-            {
-                abi<Delegate> * raw_delegate_address = get(m_targets->begin()->get());
-
-                if (reinterpret_cast<int64_t>(raw_delegate_address) == token.value)
-                {
-                    removed = true;
-                }
-            }
-            else
-            {
-                new_targets = impl::make_event_array<agile_delegate>(available_slots);
-                auto new_iterator = new_targets->begin();
-
-                for (const agile_delegate & element : *m_targets)
-                {
-                    if (!removed && token.value == reinterpret_cast<int64_t>(get(element.get())))
-                    {
-                        removed = true;
-                        continue;
-                    }
-
-                    *new_iterator = element;
-                    ++new_iterator;
-                }
-            }
-
-            if (removed)
-            {
-                lock_guard targets_pointer_lock(m_targets_pointer_lock);
-                temp_targets = m_targets;
-                m_targets = new_targets;
-            }
-        }
-    }
-
-    template<typename ...Arg>
-    void operator()(const Arg & ... args)
-    {
-        delegate_array temp_targets;
-
-        {
-            lock_guard targets_pointer_lock(m_targets_pointer_lock);
-            temp_targets = m_targets;
-        }
-
-        if (temp_targets)
-        {
-            for (const agile_delegate & element : *temp_targets)
-            {
-                bool remove_delegate = false;
-
-                try
-                {
-                    element.get()(args...);
-                }
-                catch (const hresult_error& e)
-                {
-                    if (e.code() == JSCRIPT_E_CANTEXECUTE ||
-                        e.code() == RPC_S_SERVER_UNAVAILABLE ||
-                        e.code() == RPC_E_DISCONNECTED)
-                    {
-                        remove_delegate = true;
-                    }
-                }
-
-                if (remove_delegate)
-                {
-                    remove(event_token{ reinterpret_cast<__int64>(get(element.get())) });
-                }
-            }
-        }
-    }
-
-private:
-    using agile_delegate = agile_ref<Delegate>;
-    using delegate_array = com_ptr<impl::event_array<agile_delegate>>;
-
-    delegate_array m_targets;
-    lock m_targets_pointer_lock;
-    lock m_add_remove_lock;
-};
 namespace Windows::Foundation {
 
 struct IActivationFactory;

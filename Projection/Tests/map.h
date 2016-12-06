@@ -149,7 +149,7 @@ struct Map : implements<Map<C>,
     using mapped_type = typename C::mapped_type;
 
     C m;
-    event<Windows::Foundation::Collections::MapChangedEventHandler<key_type, mapped_type>> m_mapChanged;
+    agile_event<Windows::Foundation::Collections::MapChangedEventHandler<key_type, mapped_type>> m_mapChanged;
 
     Map() = default;
 

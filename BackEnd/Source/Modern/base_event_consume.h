@@ -4,6 +4,11 @@ struct event_token
     int64_t value;
 };
 
+inline bool operator==(const event_token & left, const event_token & right) noexcept
+{
+    return left.value == right.value;
+}
+
 struct auto_revoke_t {};
 constexpr auto_revoke_t auto_revoke {};
 
