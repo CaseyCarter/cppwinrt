@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -457,7 +457,12 @@ struct require_one : consume<D, I>
 {
     operator I() const
     {
-        return static_cast<const D *>(this)->template as<I>();
+        const auto& d = *static_cast<const D*>(this);
+        if (d)
+        {
+            return d.template as<I>();
+        }
+        return nullptr;
     }
 };
 
@@ -470,7 +475,12 @@ struct bases_one
 {
     operator I() const
     {
-        return static_cast<const D *>(this)->template as<I>();
+        const auto& d = *static_cast<const D*>(this);
+        if (d)
+        {
+            return d.template as<I>();
+        }
+        return nullptr;
     }
 };
 

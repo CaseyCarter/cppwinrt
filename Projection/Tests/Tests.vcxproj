@@ -167,6 +167,7 @@
     <ClCompile Include="agility.cpp" />
     <ClCompile Include="array.cpp" />
     <ClCompile Include="async.cpp" />
+    <ClCompile Include="casts.cpp" />
     <ClCompile Include="Collections.cpp" />
     <ClCompile Include="com_ptr.cpp" />
     <ClCompile Include="delegate.cpp" />
