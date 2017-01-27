@@ -94,7 +94,7 @@ enum class initialize_type
 
 inline void initialize(const initialize_type type = initialize_type::multi_threaded)
 {
-    check_hresult(WINRT_RoInitialize(static_cast<uint32_t>(type)));
+    check_hresult<S_FALSE>(WINRT_RoInitialize(static_cast<uint32_t>(type)));
 }
 
 inline void uninitialize() noexcept

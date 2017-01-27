@@ -330,9 +330,10 @@ inline __declspec(noinline) HRESULT to_hresult() noexcept
 
 }
 
+template<HRESULT... ValuesToIgnore>
 __forceinline void check_hresult(const HRESULT result)
 {
-    if (result != S_OK)
+    if (!impl::sequence_contains<HRESULT, S_OK, ValuesToIgnore...>(result))
     {
         impl::throw_hresult(result);
     }
