@@ -1,4 +1,4 @@
-
+template<HRESULT... ValuesToIgnore>
 __forceinline void check_hresult(HRESULT result);
 
 namespace impl {

@@ -426,6 +426,18 @@ struct conjunction<B1, Bn ...> : std::conditional_t<B1::value, conjunction<Bn ..
 template<typename ... B>
 constexpr bool conjunction_v = conjunction<B ...>::value;
 
+template<typename T, T First, T... Rest>
+constexpr bool sequence_contains(T value)
+{
+    return (First == value) || sequence_contains<T, Rest...>(value);
+}
+
+template<typename T>
+constexpr bool sequence_contains(T)
+{
+    return false;
+}
+
 }
 
 namespace ABI {
@@ -779,6 +791,7 @@ bool operator>=(const com_ptr<T> & left, const com_ptr<T> & right) noexcept
     return !(left < right);
 }
 
+template<HRESULT... ValuesToIgnore>
 __forceinline void check_hresult(HRESULT result);
 
 namespace impl {
@@ -1755,9 +1768,10 @@ inline __declspec(noinline) HRESULT to_hresult() noexcept
 
 }
 
+template<HRESULT... ValuesToIgnore>
 __forceinline void check_hresult(const HRESULT result)
 {
-    if (result != S_OK)
+    if (!impl::sequence_contains<HRESULT, S_OK, ValuesToIgnore...>(result))
     {
         impl::throw_hresult(result);
     }
@@ -4071,7 +4085,7 @@ enum class initialize_type
 
 inline void initialize(const initialize_type type = initialize_type::multi_threaded)
 {
-    check_hresult(WINRT_RoInitialize(static_cast<uint32_t>(type)));
+    check_hresult<S_FALSE>(WINRT_RoInitialize(static_cast<uint32_t>(type)));
 }
 
 inline void uninitialize() noexcept

@@ -31,6 +31,18 @@ struct conjunction<B1, Bn ...> : std::conditional_t<B1::value, conjunction<Bn ..
 template<typename ... B>
 constexpr bool conjunction_v = conjunction<B ...>::value;
 
+template<typename T, T First, T... Rest>
+constexpr bool sequence_contains(T value)
+{
+    return (value == first) || sequence_contains<T, Rest...>(value);
+}
+
+template<typename T>
+constexpr bool sequence_contains(T)
+{
+    return false;
+}
+
 }
 
 namespace ABI {
