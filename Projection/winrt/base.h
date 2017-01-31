@@ -429,7 +429,7 @@ constexpr bool conjunction_v = conjunction<B ...>::value;
 template<typename T, T First, T... Rest>
 constexpr bool sequence_contains(T value)
 {
-    return (First == value) || sequence_contains<T, Rest...>(value);
+    return (value == First) || sequence_contains<T, Rest...>(value);
 }
 
 template<typename T>
@@ -790,7 +790,6 @@ bool operator>=(const com_ptr<T> & left, const com_ptr<T> & right) noexcept
 {
     return !(left < right);
 }
-
 template<HRESULT... ValuesToIgnore>
 __forceinline void check_hresult(HRESULT result);
 
@@ -4274,7 +4273,7 @@ template <typename T> struct traits<Windows::Foundation::IReference<T>>
 };
 
 template <typename D, typename T>
-struct produce<D, Windows::Foundation::IReference<T>> : produce_base<D, Windows::Foundation::IReference<abi<T>>>
+struct produce<D, Windows::Foundation::IReference<T>> : produce_base<D, Windows::Foundation::IReference<T>>
 {
     HRESULT __stdcall get_Value(abi_arg_out<T> value) noexcept final
     {

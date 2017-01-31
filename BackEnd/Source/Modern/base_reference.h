@@ -32,7 +32,7 @@ template <typename T> struct traits<Windows::Foundation::IReference<T>>
 };
 
 template <typename D, typename T>
-struct produce<D, Windows::Foundation::IReference<T>> : produce_base<D, Windows::Foundation::IReference<abi<T>>>
+struct produce<D, Windows::Foundation::IReference<T>> : produce_base<D, Windows::Foundation::IReference<T>>
 {
     HRESULT __stdcall get_Value(abi_arg_out<T> value) noexcept final
     {
