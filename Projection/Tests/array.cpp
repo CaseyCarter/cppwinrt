@@ -492,6 +492,15 @@ TEST_CASE("array,data")
     }
 }
 
+static void test_array_cref(array_ref<int const> const a)
+{
+    int const * p = a.data();
+
+    REQUIRE(p[0] == 1);
+    REQUIRE(p[1] == 2);
+    REQUIRE(p[2] == 3);
+}
+
 //
 // Tests for the 'data' method for the three array patterns.
 //
@@ -511,13 +520,7 @@ TEST_CASE("array,data,const")
 
     SECTION("array_cref")
     {
-        array_ref<int const> const a{ 1, 2, 3 };
-
-        int const * p = a.data();
-
-        REQUIRE(p[0] == 1);
-        REQUIRE(p[1] == 2);
-        REQUIRE(p[2] == 3);
+        test_array_cref({ 1, 2, 3 });
     }
 
     SECTION("com_array")
