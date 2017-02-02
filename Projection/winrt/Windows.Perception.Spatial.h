@@ -855,35 +855,35 @@ namespace Windows::Perception::Spatial {
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::Numerics::float4x4> impl_ISpatialCoordinateSystem<D>::TryGetTransformTo(const Windows::Perception::Spatial::SpatialCoordinateSystem & target) const
 {
     Windows::Foundation::IReference<Windows::Foundation::Numerics::float4x4> value;
-    check_hresult(static_cast<const ISpatialCoordinateSystem &>(static_cast<const D &>(*this))->abi_TryGetTransformTo(get(target), put(value)));
+    check_hresult(WINRT_SHIM(ISpatialCoordinateSystem)->abi_TryGetTransformTo(get(target), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float4x4 impl_ISpatialAnchorRawCoordinateSystemAdjustedEventArgs<D>::OldRawCoordinateSystemToNewRawCoordinateSystemTransform() const
 {
     Windows::Foundation::Numerics::float4x4 value {};
-    check_hresult(static_cast<const ISpatialAnchorRawCoordinateSystemAdjustedEventArgs &>(static_cast<const D &>(*this))->get_OldRawCoordinateSystemToNewRawCoordinateSystemTransform(put(value)));
+    check_hresult(WINRT_SHIM(ISpatialAnchorRawCoordinateSystemAdjustedEventArgs)->get_OldRawCoordinateSystemToNewRawCoordinateSystemTransform(put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialCoordinateSystem impl_ISpatialAnchor<D>::CoordinateSystem() const
 {
     Windows::Perception::Spatial::SpatialCoordinateSystem value { nullptr };
-    check_hresult(static_cast<const ISpatialAnchor &>(static_cast<const D &>(*this))->get_CoordinateSystem(put(value)));
+    check_hresult(WINRT_SHIM(ISpatialAnchor)->get_CoordinateSystem(put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialCoordinateSystem impl_ISpatialAnchor<D>::RawCoordinateSystem() const
 {
     Windows::Perception::Spatial::SpatialCoordinateSystem value { nullptr };
-    check_hresult(static_cast<const ISpatialAnchor &>(static_cast<const D &>(*this))->get_RawCoordinateSystem(put(value)));
+    check_hresult(WINRT_SHIM(ISpatialAnchor)->get_RawCoordinateSystem(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_ISpatialAnchor<D>::RawCoordinateSystemAdjusted(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialAnchor, Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const ISpatialAnchor &>(static_cast<const D &>(*this))->add_RawCoordinateSystemAdjusted(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ISpatialAnchor)->add_RawCoordinateSystemAdjusted(get(handler), &cookie));
     return cookie;
 }
 
@@ -894,204 +894,204 @@ template <typename D> event_revoker<ISpatialAnchor> impl_ISpatialAnchor<D>::RawC
 
 template <typename D> void impl_ISpatialAnchor<D>::RawCoordinateSystemAdjusted(event_token cookie) const
 {
-    check_hresult(static_cast<const ISpatialAnchor &>(static_cast<const D &>(*this))->remove_RawCoordinateSystemAdjusted(cookie));
+    check_hresult(WINRT_SHIM(ISpatialAnchor)->remove_RawCoordinateSystemAdjusted(cookie));
 }
 
 template <typename D> bool impl_ISpatialAnchor2<D>::RemovedByUser() const
 {
     bool value {};
-    check_hresult(static_cast<const ISpatialAnchor2 &>(static_cast<const D &>(*this))->get_RemovedByUser(&value));
+    check_hresult(WINRT_SHIM(ISpatialAnchor2)->get_RemovedByUser(&value));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialAnchor impl_ISpatialAnchorStatics<D>::TryCreateRelativeTo(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
 {
     Windows::Perception::Spatial::SpatialAnchor value { nullptr };
-    check_hresult(static_cast<const ISpatialAnchorStatics &>(static_cast<const D &>(*this))->abi_TryCreateRelativeTo(get(coordinateSystem), put(value)));
+    check_hresult(WINRT_SHIM(ISpatialAnchorStatics)->abi_TryCreateRelativeTo(get(coordinateSystem), put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialAnchor impl_ISpatialAnchorStatics<D>::TryCreateRelativeTo(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Foundation::Numerics::float3 & position) const
 {
     Windows::Perception::Spatial::SpatialAnchor value { nullptr };
-    check_hresult(static_cast<const ISpatialAnchorStatics &>(static_cast<const D &>(*this))->abi_TryCreateWithPositionRelativeTo(get(coordinateSystem), get(position), put(value)));
+    check_hresult(WINRT_SHIM(ISpatialAnchorStatics)->abi_TryCreateWithPositionRelativeTo(get(coordinateSystem), get(position), put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialAnchor impl_ISpatialAnchorStatics<D>::TryCreateRelativeTo(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::quaternion & orientation) const
 {
     Windows::Perception::Spatial::SpatialAnchor value { nullptr };
-    check_hresult(static_cast<const ISpatialAnchorStatics &>(static_cast<const D &>(*this))->abi_TryCreateWithPositionAndOrientationRelativeTo(get(coordinateSystem), get(position), get(orientation), put(value)));
+    check_hresult(WINRT_SHIM(ISpatialAnchorStatics)->abi_TryCreateWithPositionAndOrientationRelativeTo(get(coordinateSystem), get(position), get(orientation), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor> impl_ISpatialAnchorStore<D>::GetAllSavedAnchors() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor> value;
-    check_hresult(static_cast<const ISpatialAnchorStore &>(static_cast<const D &>(*this))->abi_GetAllSavedAnchors(put(value)));
+    check_hresult(WINRT_SHIM(ISpatialAnchorStore)->abi_GetAllSavedAnchors(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ISpatialAnchorStore<D>::TrySave(hstring_ref id, const Windows::Perception::Spatial::SpatialAnchor & anchor) const
 {
     bool succeeded {};
-    check_hresult(static_cast<const ISpatialAnchorStore &>(static_cast<const D &>(*this))->abi_TrySave(get(id), get(anchor), &succeeded));
+    check_hresult(WINRT_SHIM(ISpatialAnchorStore)->abi_TrySave(get(id), get(anchor), &succeeded));
     return succeeded;
 }
 
 template <typename D> void impl_ISpatialAnchorStore<D>::Remove(hstring_ref id) const
 {
-    check_hresult(static_cast<const ISpatialAnchorStore &>(static_cast<const D &>(*this))->abi_Remove(get(id)));
+    check_hresult(WINRT_SHIM(ISpatialAnchorStore)->abi_Remove(get(id)));
 }
 
 template <typename D> void impl_ISpatialAnchorStore<D>::Clear() const
 {
-    check_hresult(static_cast<const ISpatialAnchorStore &>(static_cast<const D &>(*this))->abi_Clear());
+    check_hresult(WINRT_SHIM(ISpatialAnchorStore)->abi_Clear());
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialAnchorStore> impl_ISpatialAnchorManagerStatics<D>::RequestStoreAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialAnchorStore> value;
-    check_hresult(static_cast<const ISpatialAnchorManagerStatics &>(static_cast<const D &>(*this))->abi_RequestStoreAsync(put(value)));
+    check_hresult(WINRT_SHIM(ISpatialAnchorManagerStatics)->abi_RequestStoreAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor>> impl_ISpatialAnchorTransferManagerStatics<D>::TryImportAnchorsAsync(const Windows::Storage::Streams::IInputStream & stream) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor>> operation;
-    check_hresult(static_cast<const ISpatialAnchorTransferManagerStatics &>(static_cast<const D &>(*this))->abi_TryImportAnchorsAsync(get(stream), put(operation)));
+    check_hresult(WINRT_SHIM(ISpatialAnchorTransferManagerStatics)->abi_TryImportAnchorsAsync(get(stream), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISpatialAnchorTransferManagerStatics<D>::TryExportAnchorsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Perception::Spatial::SpatialAnchor>> & anchors, const Windows::Storage::Streams::IOutputStream & stream) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const ISpatialAnchorTransferManagerStatics &>(static_cast<const D &>(*this))->abi_TryExportAnchorsAsync(get(anchors), get(stream), put(operation)));
+    check_hresult(WINRT_SHIM(ISpatialAnchorTransferManagerStatics)->abi_TryExportAnchorsAsync(get(anchors), get(stream), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Perception::Spatial::SpatialPerceptionAccessStatus> impl_ISpatialAnchorTransferManagerStatics<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Perception::Spatial::SpatialPerceptionAccessStatus> result;
-    check_hresult(static_cast<const ISpatialAnchorTransferManagerStatics &>(static_cast<const D &>(*this))->abi_RequestAccessAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISpatialAnchorTransferManagerStatics)->abi_RequestAccessAsync(put(result)));
     return result;
 }
 
 template <typename D> bool impl_ISpatialLocatorPositionalTrackingDeactivatingEventArgs<D>::Canceled() const
 {
     bool value {};
-    check_hresult(static_cast<const ISpatialLocatorPositionalTrackingDeactivatingEventArgs &>(static_cast<const D &>(*this))->get_Canceled(&value));
+    check_hresult(WINRT_SHIM(ISpatialLocatorPositionalTrackingDeactivatingEventArgs)->get_Canceled(&value));
     return value;
 }
 
 template <typename D> void impl_ISpatialLocatorPositionalTrackingDeactivatingEventArgs<D>::Canceled(bool value) const
 {
-    check_hresult(static_cast<const ISpatialLocatorPositionalTrackingDeactivatingEventArgs &>(static_cast<const D &>(*this))->put_Canceled(value));
+    check_hresult(WINRT_SHIM(ISpatialLocatorPositionalTrackingDeactivatingEventArgs)->put_Canceled(value));
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_ISpatialLocatorAttachedFrameOfReference<D>::RelativePosition() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(static_cast<const ISpatialLocatorAttachedFrameOfReference &>(static_cast<const D &>(*this))->get_RelativePosition(put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocatorAttachedFrameOfReference)->get_RelativePosition(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISpatialLocatorAttachedFrameOfReference<D>::RelativePosition(const Windows::Foundation::Numerics::float3 & value) const
 {
-    check_hresult(static_cast<const ISpatialLocatorAttachedFrameOfReference &>(static_cast<const D &>(*this))->put_RelativePosition(get(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocatorAttachedFrameOfReference)->put_RelativePosition(get(value)));
 }
 
 template <typename D> Windows::Foundation::Numerics::quaternion impl_ISpatialLocatorAttachedFrameOfReference<D>::RelativeOrientation() const
 {
     Windows::Foundation::Numerics::quaternion value {};
-    check_hresult(static_cast<const ISpatialLocatorAttachedFrameOfReference &>(static_cast<const D &>(*this))->get_RelativeOrientation(put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocatorAttachedFrameOfReference)->get_RelativeOrientation(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISpatialLocatorAttachedFrameOfReference<D>::RelativeOrientation(const Windows::Foundation::Numerics::quaternion & value) const
 {
-    check_hresult(static_cast<const ISpatialLocatorAttachedFrameOfReference &>(static_cast<const D &>(*this))->put_RelativeOrientation(get(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocatorAttachedFrameOfReference)->put_RelativeOrientation(get(value)));
 }
 
 template <typename D> void impl_ISpatialLocatorAttachedFrameOfReference<D>::AdjustHeading(double headingOffsetInRadians) const
 {
-    check_hresult(static_cast<const ISpatialLocatorAttachedFrameOfReference &>(static_cast<const D &>(*this))->abi_AdjustHeading(headingOffsetInRadians));
+    check_hresult(WINRT_SHIM(ISpatialLocatorAttachedFrameOfReference)->abi_AdjustHeading(headingOffsetInRadians));
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialCoordinateSystem impl_ISpatialLocatorAttachedFrameOfReference<D>::GetStationaryCoordinateSystemAtTimestamp(const Windows::Perception::PerceptionTimestamp & timestamp) const
 {
     Windows::Perception::Spatial::SpatialCoordinateSystem value { nullptr };
-    check_hresult(static_cast<const ISpatialLocatorAttachedFrameOfReference &>(static_cast<const D &>(*this))->abi_GetStationaryCoordinateSystemAtTimestamp(get(timestamp), put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocatorAttachedFrameOfReference)->abi_GetStationaryCoordinateSystemAtTimestamp(get(timestamp), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_ISpatialLocatorAttachedFrameOfReference<D>::TryGetRelativeHeadingAtTimestamp(const Windows::Perception::PerceptionTimestamp & timestamp) const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(static_cast<const ISpatialLocatorAttachedFrameOfReference &>(static_cast<const D &>(*this))->abi_TryGetRelativeHeadingAtTimestamp(get(timestamp), put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocatorAttachedFrameOfReference)->abi_TryGetRelativeHeadingAtTimestamp(get(timestamp), put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialCoordinateSystem impl_ISpatialStationaryFrameOfReference<D>::CoordinateSystem() const
 {
     Windows::Perception::Spatial::SpatialCoordinateSystem value { nullptr };
-    check_hresult(static_cast<const ISpatialStationaryFrameOfReference &>(static_cast<const D &>(*this))->get_CoordinateSystem(put(value)));
+    check_hresult(WINRT_SHIM(ISpatialStationaryFrameOfReference)->get_CoordinateSystem(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_ISpatialLocation<D>::Position() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(static_cast<const ISpatialLocation &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocation)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::quaternion impl_ISpatialLocation<D>::Orientation() const
 {
     Windows::Foundation::Numerics::quaternion value {};
-    check_hresult(static_cast<const ISpatialLocation &>(static_cast<const D &>(*this))->get_Orientation(put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocation)->get_Orientation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_ISpatialLocation<D>::AbsoluteLinearVelocity() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(static_cast<const ISpatialLocation &>(static_cast<const D &>(*this))->get_AbsoluteLinearVelocity(put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocation)->get_AbsoluteLinearVelocity(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_ISpatialLocation<D>::AbsoluteLinearAcceleration() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(static_cast<const ISpatialLocation &>(static_cast<const D &>(*this))->get_AbsoluteLinearAcceleration(put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocation)->get_AbsoluteLinearAcceleration(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::quaternion impl_ISpatialLocation<D>::AbsoluteAngularVelocity() const
 {
     Windows::Foundation::Numerics::quaternion value {};
-    check_hresult(static_cast<const ISpatialLocation &>(static_cast<const D &>(*this))->get_AbsoluteAngularVelocity(put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocation)->get_AbsoluteAngularVelocity(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::quaternion impl_ISpatialLocation<D>::AbsoluteAngularAcceleration() const
 {
     Windows::Foundation::Numerics::quaternion value {};
-    check_hresult(static_cast<const ISpatialLocation &>(static_cast<const D &>(*this))->get_AbsoluteAngularAcceleration(put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocation)->get_AbsoluteAngularAcceleration(put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialLocatability impl_ISpatialLocator<D>::Locatability() const
 {
     Windows::Perception::Spatial::SpatialLocatability value {};
-    check_hresult(static_cast<const ISpatialLocator &>(static_cast<const D &>(*this))->get_Locatability(&value));
+    check_hresult(WINRT_SHIM(ISpatialLocator)->get_Locatability(&value));
     return value;
 }
 
 template <typename D> event_token impl_ISpatialLocator<D>::LocatabilityChanged(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const ISpatialLocator &>(static_cast<const D &>(*this))->add_LocatabilityChanged(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ISpatialLocator)->add_LocatabilityChanged(get(handler), &cookie));
     return cookie;
 }
 
@@ -1102,13 +1102,13 @@ template <typename D> event_revoker<ISpatialLocator> impl_ISpatialLocator<D>::Lo
 
 template <typename D> void impl_ISpatialLocator<D>::LocatabilityChanged(event_token cookie) const
 {
-    check_hresult(static_cast<const ISpatialLocator &>(static_cast<const D &>(*this))->remove_LocatabilityChanged(cookie));
+    check_hresult(WINRT_SHIM(ISpatialLocator)->remove_LocatabilityChanged(cookie));
 }
 
 template <typename D> event_token impl_ISpatialLocator<D>::PositionalTrackingDeactivating(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const ISpatialLocator &>(static_cast<const D &>(*this))->add_PositionalTrackingDeactivating(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(ISpatialLocator)->add_PositionalTrackingDeactivating(get(handler), &cookie));
     return cookie;
 }
 
@@ -1119,104 +1119,104 @@ template <typename D> event_revoker<ISpatialLocator> impl_ISpatialLocator<D>::Po
 
 template <typename D> void impl_ISpatialLocator<D>::PositionalTrackingDeactivating(event_token cookie) const
 {
-    check_hresult(static_cast<const ISpatialLocator &>(static_cast<const D &>(*this))->remove_PositionalTrackingDeactivating(cookie));
+    check_hresult(WINRT_SHIM(ISpatialLocator)->remove_PositionalTrackingDeactivating(cookie));
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialLocation impl_ISpatialLocator<D>::TryLocateAtTimestamp(const Windows::Perception::PerceptionTimestamp & timestamp, const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
 {
     Windows::Perception::Spatial::SpatialLocation value { nullptr };
-    check_hresult(static_cast<const ISpatialLocator &>(static_cast<const D &>(*this))->abi_TryLocateAtTimestamp(get(timestamp), get(coordinateSystem), put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocator)->abi_TryLocateAtTimestamp(get(timestamp), get(coordinateSystem), put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference impl_ISpatialLocator<D>::CreateAttachedFrameOfReferenceAtCurrentHeading() const
 {
     Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference value { nullptr };
-    check_hresult(static_cast<const ISpatialLocator &>(static_cast<const D &>(*this))->abi_CreateAttachedFrameOfReferenceAtCurrentHeading(put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocator)->abi_CreateAttachedFrameOfReferenceAtCurrentHeading(put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference impl_ISpatialLocator<D>::CreateAttachedFrameOfReferenceAtCurrentHeading(const Windows::Foundation::Numerics::float3 & relativePosition) const
 {
     Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference value { nullptr };
-    check_hresult(static_cast<const ISpatialLocator &>(static_cast<const D &>(*this))->abi_CreateAttachedFrameOfReferenceAtCurrentHeadingWithPosition(get(relativePosition), put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocator)->abi_CreateAttachedFrameOfReferenceAtCurrentHeadingWithPosition(get(relativePosition), put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference impl_ISpatialLocator<D>::CreateAttachedFrameOfReferenceAtCurrentHeading(const Windows::Foundation::Numerics::float3 & relativePosition, const Windows::Foundation::Numerics::quaternion & relativeOrientation) const
 {
     Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference value { nullptr };
-    check_hresult(static_cast<const ISpatialLocator &>(static_cast<const D &>(*this))->abi_CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientation(get(relativePosition), get(relativeOrientation), put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocator)->abi_CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientation(get(relativePosition), get(relativeOrientation), put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference impl_ISpatialLocator<D>::CreateAttachedFrameOfReferenceAtCurrentHeading(const Windows::Foundation::Numerics::float3 & relativePosition, const Windows::Foundation::Numerics::quaternion & relativeOrientation, double relativeHeadingInRadians) const
 {
     Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference value { nullptr };
-    check_hresult(static_cast<const ISpatialLocator &>(static_cast<const D &>(*this))->abi_CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientationAndRelativeHeading(get(relativePosition), get(relativeOrientation), relativeHeadingInRadians, put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocator)->abi_CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientationAndRelativeHeading(get(relativePosition), get(relativeOrientation), relativeHeadingInRadians, put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialStationaryFrameOfReference impl_ISpatialLocator<D>::CreateStationaryFrameOfReferenceAtCurrentLocation() const
 {
     Windows::Perception::Spatial::SpatialStationaryFrameOfReference value { nullptr };
-    check_hresult(static_cast<const ISpatialLocator &>(static_cast<const D &>(*this))->abi_CreateStationaryFrameOfReferenceAtCurrentLocation(put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocator)->abi_CreateStationaryFrameOfReferenceAtCurrentLocation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialStationaryFrameOfReference impl_ISpatialLocator<D>::CreateStationaryFrameOfReferenceAtCurrentLocation(const Windows::Foundation::Numerics::float3 & relativePosition) const
 {
     Windows::Perception::Spatial::SpatialStationaryFrameOfReference value { nullptr };
-    check_hresult(static_cast<const ISpatialLocator &>(static_cast<const D &>(*this))->abi_CreateStationaryFrameOfReferenceAtCurrentLocationWithPosition(get(relativePosition), put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocator)->abi_CreateStationaryFrameOfReferenceAtCurrentLocationWithPosition(get(relativePosition), put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialStationaryFrameOfReference impl_ISpatialLocator<D>::CreateStationaryFrameOfReferenceAtCurrentLocation(const Windows::Foundation::Numerics::float3 & relativePosition, const Windows::Foundation::Numerics::quaternion & relativeOrientation) const
 {
     Windows::Perception::Spatial::SpatialStationaryFrameOfReference value { nullptr };
-    check_hresult(static_cast<const ISpatialLocator &>(static_cast<const D &>(*this))->abi_CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientation(get(relativePosition), get(relativeOrientation), put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocator)->abi_CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientation(get(relativePosition), get(relativeOrientation), put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialStationaryFrameOfReference impl_ISpatialLocator<D>::CreateStationaryFrameOfReferenceAtCurrentLocation(const Windows::Foundation::Numerics::float3 & relativePosition, const Windows::Foundation::Numerics::quaternion & relativeOrientation, double relativeHeadingInRadians) const
 {
     Windows::Perception::Spatial::SpatialStationaryFrameOfReference value { nullptr };
-    check_hresult(static_cast<const ISpatialLocator &>(static_cast<const D &>(*this))->abi_CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientationAndRelativeHeading(get(relativePosition), get(relativeOrientation), relativeHeadingInRadians, put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocator)->abi_CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientationAndRelativeHeading(get(relativePosition), get(relativeOrientation), relativeHeadingInRadians, put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialLocator impl_ISpatialLocatorStatics<D>::GetDefault() const
 {
     Windows::Perception::Spatial::SpatialLocator value { nullptr };
-    check_hresult(static_cast<const ISpatialLocatorStatics &>(static_cast<const D &>(*this))->abi_GetDefault(put(value)));
+    check_hresult(WINRT_SHIM(ISpatialLocatorStatics)->abi_GetDefault(put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialBoundingVolume impl_ISpatialBoundingVolumeStatics<D>::FromBox(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::Spatial::SpatialBoundingBox & box) const
 {
     Windows::Perception::Spatial::SpatialBoundingVolume value { nullptr };
-    check_hresult(static_cast<const ISpatialBoundingVolumeStatics &>(static_cast<const D &>(*this))->abi_FromBox(get(coordinateSystem), get(box), put(value)));
+    check_hresult(WINRT_SHIM(ISpatialBoundingVolumeStatics)->abi_FromBox(get(coordinateSystem), get(box), put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialBoundingVolume impl_ISpatialBoundingVolumeStatics<D>::FromOrientedBox(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::Spatial::SpatialBoundingOrientedBox & box) const
 {
     Windows::Perception::Spatial::SpatialBoundingVolume value { nullptr };
-    check_hresult(static_cast<const ISpatialBoundingVolumeStatics &>(static_cast<const D &>(*this))->abi_FromOrientedBox(get(coordinateSystem), get(box), put(value)));
+    check_hresult(WINRT_SHIM(ISpatialBoundingVolumeStatics)->abi_FromOrientedBox(get(coordinateSystem), get(box), put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialBoundingVolume impl_ISpatialBoundingVolumeStatics<D>::FromSphere(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::Spatial::SpatialBoundingSphere & sphere) const
 {
     Windows::Perception::Spatial::SpatialBoundingVolume value { nullptr };
-    check_hresult(static_cast<const ISpatialBoundingVolumeStatics &>(static_cast<const D &>(*this))->abi_FromSphere(get(coordinateSystem), get(sphere), put(value)));
+    check_hresult(WINRT_SHIM(ISpatialBoundingVolumeStatics)->abi_FromSphere(get(coordinateSystem), get(sphere), put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialBoundingVolume impl_ISpatialBoundingVolumeStatics<D>::FromFrustum(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::Spatial::SpatialBoundingFrustum & frustum) const
 {
     Windows::Perception::Spatial::SpatialBoundingVolume value { nullptr };
-    check_hresult(static_cast<const ISpatialBoundingVolumeStatics &>(static_cast<const D &>(*this))->abi_FromFrustum(get(coordinateSystem), get(frustum), put(value)));
+    check_hresult(WINRT_SHIM(ISpatialBoundingVolumeStatics)->abi_FromFrustum(get(coordinateSystem), get(frustum), put(value)));
     return value;
 }
 

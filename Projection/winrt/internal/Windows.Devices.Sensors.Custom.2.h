@@ -64,7 +64,6 @@ struct ICustomSensor :
     impl::consume<ICustomSensor>
 {
     ICustomSensor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICustomSensor>(m_ptr); }
 };
 
 struct ICustomSensorReading :
@@ -72,7 +71,6 @@ struct ICustomSensorReading :
     impl::consume<ICustomSensorReading>
 {
     ICustomSensorReading(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICustomSensorReading>(m_ptr); }
 };
 
 struct ICustomSensorReadingChangedEventArgs :
@@ -80,7 +78,6 @@ struct ICustomSensorReadingChangedEventArgs :
     impl::consume<ICustomSensorReadingChangedEventArgs>
 {
     ICustomSensorReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICustomSensorReadingChangedEventArgs>(m_ptr); }
 };
 
 struct ICustomSensorStatics :
@@ -88,7 +85,6 @@ struct ICustomSensorStatics :
     impl::consume<ICustomSensorStatics>
 {
     ICustomSensorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICustomSensorStatics>(m_ptr); }
 };
 
 }

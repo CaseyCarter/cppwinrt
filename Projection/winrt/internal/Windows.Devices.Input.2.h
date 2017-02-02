@@ -64,7 +64,6 @@ struct IKeyboardCapabilities :
     impl::consume<IKeyboardCapabilities>
 {
     IKeyboardCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyboardCapabilities>(m_ptr); }
 };
 
 struct IMouseCapabilities :
@@ -72,7 +71,6 @@ struct IMouseCapabilities :
     impl::consume<IMouseCapabilities>
 {
     IMouseCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMouseCapabilities>(m_ptr); }
 };
 
 struct IMouseDevice :
@@ -80,7 +78,6 @@ struct IMouseDevice :
     impl::consume<IMouseDevice>
 {
     IMouseDevice(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMouseDevice>(m_ptr); }
 };
 
 struct IMouseDeviceStatics :
@@ -88,7 +85,6 @@ struct IMouseDeviceStatics :
     impl::consume<IMouseDeviceStatics>
 {
     IMouseDeviceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMouseDeviceStatics>(m_ptr); }
 };
 
 struct IMouseEventArgs :
@@ -96,7 +92,6 @@ struct IMouseEventArgs :
     impl::consume<IMouseEventArgs>
 {
     IMouseEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMouseEventArgs>(m_ptr); }
 };
 
 struct IPointerDevice :
@@ -104,7 +99,6 @@ struct IPointerDevice :
     impl::consume<IPointerDevice>
 {
     IPointerDevice(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointerDevice>(m_ptr); }
 };
 
 struct IPointerDevice2 :
@@ -112,7 +106,6 @@ struct IPointerDevice2 :
     impl::consume<IPointerDevice2>
 {
     IPointerDevice2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointerDevice2>(m_ptr); }
 };
 
 struct IPointerDeviceStatics :
@@ -120,7 +113,6 @@ struct IPointerDeviceStatics :
     impl::consume<IPointerDeviceStatics>
 {
     IPointerDeviceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointerDeviceStatics>(m_ptr); }
 };
 
 struct ITouchCapabilities :
@@ -128,7 +120,6 @@ struct ITouchCapabilities :
     impl::consume<ITouchCapabilities>
 {
     ITouchCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITouchCapabilities>(m_ptr); }
 };
 
 }

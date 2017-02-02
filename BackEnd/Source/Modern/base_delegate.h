@@ -80,7 +80,6 @@ template <typename T>
 struct WINRT_EBO EventHandler : IUnknown
 {
     EventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<EventHandler>(m_ptr); }
 
     template <typename L>
     EventHandler(L handler) :
@@ -97,7 +96,7 @@ struct WINRT_EBO EventHandler : IUnknown
 
     void operator()(const IInspectable & sender, const T & args) const
     {
-        check_hresult((*this)->abi_Invoke(get(sender), get(args)));
+        check_hresult((*(abi<EventHandler<T>> **)this)->abi_Invoke(get(sender), get(args)));
     }
 };
 
@@ -105,7 +104,6 @@ template <typename TSender, typename TArgs>
 struct WINRT_EBO TypedEventHandler : IUnknown
 {
     TypedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<TypedEventHandler>(m_ptr); }
 
     template <typename L>
     TypedEventHandler(L handler) :
@@ -122,7 +120,7 @@ struct WINRT_EBO TypedEventHandler : IUnknown
 
     void operator()(const TSender & sender, const TArgs & args) const
     {
-        check_hresult((*this)->abi_Invoke(get(sender), get(args)));
+        check_hresult((*(abi<TypedEventHandler<TSender, TArgs>> **)this)->abi_Invoke(get(sender), get(args)));
     }
 };
 

@@ -27,7 +27,7 @@ template <typename O, typename M> AddPagesEventHandler::AddPagesEventHandler(O *
 
 inline void AddPagesEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Printing::AddPagesEventArgs & e) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<AddPagesEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
 }
 
 template <typename L> GetPreviewPageEventHandler::GetPreviewPageEventHandler(L lambda) :
@@ -44,7 +44,7 @@ template <typename O, typename M> GetPreviewPageEventHandler::GetPreviewPageEven
 
 inline void GetPreviewPageEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Printing::GetPreviewPageEventArgs & e) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<GetPreviewPageEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
 }
 
 template <typename L> PaginateEventHandler::PaginateEventHandler(L lambda) :
@@ -61,7 +61,7 @@ template <typename O, typename M> PaginateEventHandler::PaginateEventHandler(O *
 
 inline void PaginateEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Printing::PaginateEventArgs & e) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<PaginateEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
 }
 
 }
@@ -357,42 +357,42 @@ namespace Windows::UI::Xaml::Printing {
 template <typename D> Windows::Graphics::Printing::PrintTaskOptions impl_IAddPagesEventArgs<D>::PrintTaskOptions() const
 {
     Windows::Graphics::Printing::PrintTaskOptions value { nullptr };
-    check_hresult(static_cast<const IAddPagesEventArgs &>(static_cast<const D &>(*this))->get_PrintTaskOptions(put(value)));
+    check_hresult(WINRT_SHIM(IAddPagesEventArgs)->get_PrintTaskOptions(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IGetPreviewPageEventArgs<D>::PageNumber() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IGetPreviewPageEventArgs &>(static_cast<const D &>(*this))->get_PageNumber(&value));
+    check_hresult(WINRT_SHIM(IGetPreviewPageEventArgs)->get_PageNumber(&value));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing::PrintTaskOptions impl_IPaginateEventArgs<D>::PrintTaskOptions() const
 {
     Windows::Graphics::Printing::PrintTaskOptions value { nullptr };
-    check_hresult(static_cast<const IPaginateEventArgs &>(static_cast<const D &>(*this))->get_PrintTaskOptions(put(value)));
+    check_hresult(WINRT_SHIM(IPaginateEventArgs)->get_PrintTaskOptions(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IPaginateEventArgs<D>::CurrentPreviewPageNumber() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IPaginateEventArgs &>(static_cast<const D &>(*this))->get_CurrentPreviewPageNumber(&value));
+    check_hresult(WINRT_SHIM(IPaginateEventArgs)->get_CurrentPreviewPageNumber(&value));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing::IPrintDocumentSource impl_IPrintDocument<D>::DocumentSource() const
 {
     Windows::Graphics::Printing::IPrintDocumentSource value;
-    check_hresult(static_cast<const IPrintDocument &>(static_cast<const D &>(*this))->get_DocumentSource(put(value)));
+    check_hresult(WINRT_SHIM(IPrintDocument)->get_DocumentSource(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IPrintDocument<D>::Paginate(const Windows::UI::Xaml::Printing::PaginateEventHandler & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPrintDocument &>(static_cast<const D &>(*this))->add_Paginate(get(value), &token));
+    check_hresult(WINRT_SHIM(IPrintDocument)->add_Paginate(get(value), &token));
     return token;
 }
 
@@ -403,13 +403,13 @@ template <typename D> event_revoker<IPrintDocument> impl_IPrintDocument<D>::Pagi
 
 template <typename D> void impl_IPrintDocument<D>::Paginate(event_token token) const
 {
-    check_hresult(static_cast<const IPrintDocument &>(static_cast<const D &>(*this))->remove_Paginate(token));
+    check_hresult(WINRT_SHIM(IPrintDocument)->remove_Paginate(token));
 }
 
 template <typename D> event_token impl_IPrintDocument<D>::GetPreviewPage(const Windows::UI::Xaml::Printing::GetPreviewPageEventHandler & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPrintDocument &>(static_cast<const D &>(*this))->add_GetPreviewPage(get(value), &token));
+    check_hresult(WINRT_SHIM(IPrintDocument)->add_GetPreviewPage(get(value), &token));
     return token;
 }
 
@@ -420,13 +420,13 @@ template <typename D> event_revoker<IPrintDocument> impl_IPrintDocument<D>::GetP
 
 template <typename D> void impl_IPrintDocument<D>::GetPreviewPage(event_token token) const
 {
-    check_hresult(static_cast<const IPrintDocument &>(static_cast<const D &>(*this))->remove_GetPreviewPage(token));
+    check_hresult(WINRT_SHIM(IPrintDocument)->remove_GetPreviewPage(token));
 }
 
 template <typename D> event_token impl_IPrintDocument<D>::AddPages(const Windows::UI::Xaml::Printing::AddPagesEventHandler & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPrintDocument &>(static_cast<const D &>(*this))->add_AddPages(get(value), &token));
+    check_hresult(WINRT_SHIM(IPrintDocument)->add_AddPages(get(value), &token));
     return token;
 }
 
@@ -437,45 +437,45 @@ template <typename D> event_revoker<IPrintDocument> impl_IPrintDocument<D>::AddP
 
 template <typename D> void impl_IPrintDocument<D>::AddPages(event_token token) const
 {
-    check_hresult(static_cast<const IPrintDocument &>(static_cast<const D &>(*this))->remove_AddPages(token));
+    check_hresult(WINRT_SHIM(IPrintDocument)->remove_AddPages(token));
 }
 
 template <typename D> void impl_IPrintDocument<D>::AddPage(const Windows::UI::Xaml::UIElement & pageVisual) const
 {
-    check_hresult(static_cast<const IPrintDocument &>(static_cast<const D &>(*this))->abi_AddPage(get(pageVisual)));
+    check_hresult(WINRT_SHIM(IPrintDocument)->abi_AddPage(get(pageVisual)));
 }
 
 template <typename D> void impl_IPrintDocument<D>::AddPagesComplete() const
 {
-    check_hresult(static_cast<const IPrintDocument &>(static_cast<const D &>(*this))->abi_AddPagesComplete());
+    check_hresult(WINRT_SHIM(IPrintDocument)->abi_AddPagesComplete());
 }
 
 template <typename D> void impl_IPrintDocument<D>::SetPreviewPageCount(int32_t count, Windows::UI::Xaml::Printing::PreviewPageCountType type) const
 {
-    check_hresult(static_cast<const IPrintDocument &>(static_cast<const D &>(*this))->abi_SetPreviewPageCount(count, type));
+    check_hresult(WINRT_SHIM(IPrintDocument)->abi_SetPreviewPageCount(count, type));
 }
 
 template <typename D> void impl_IPrintDocument<D>::SetPreviewPage(int32_t pageNumber, const Windows::UI::Xaml::UIElement & pageVisual) const
 {
-    check_hresult(static_cast<const IPrintDocument &>(static_cast<const D &>(*this))->abi_SetPreviewPage(pageNumber, get(pageVisual)));
+    check_hresult(WINRT_SHIM(IPrintDocument)->abi_SetPreviewPage(pageNumber, get(pageVisual)));
 }
 
 template <typename D> void impl_IPrintDocument<D>::InvalidatePreview() const
 {
-    check_hresult(static_cast<const IPrintDocument &>(static_cast<const D &>(*this))->abi_InvalidatePreview());
+    check_hresult(WINRT_SHIM(IPrintDocument)->abi_InvalidatePreview());
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPrintDocumentStatics<D>::DocumentSourceProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPrintDocumentStatics &>(static_cast<const D &>(*this))->get_DocumentSourceProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPrintDocumentStatics)->get_DocumentSourceProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Printing::PrintDocument impl_IPrintDocumentFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Printing::PrintDocument instance { nullptr };
-    check_hresult(static_cast<const IPrintDocumentFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(IPrintDocumentFactory)->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 

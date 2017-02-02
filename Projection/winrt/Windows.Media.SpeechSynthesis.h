@@ -215,82 +215,82 @@ namespace Windows::Media::SpeechSynthesis {
 template <typename D> hstring impl_IVoiceInformation<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const IVoiceInformation &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IVoiceInformation)->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVoiceInformation<D>::Id() const
 {
     hstring value;
-    check_hresult(static_cast<const IVoiceInformation &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IVoiceInformation)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVoiceInformation<D>::Language() const
 {
     hstring value;
-    check_hresult(static_cast<const IVoiceInformation &>(static_cast<const D &>(*this))->get_Language(put(value)));
+    check_hresult(WINRT_SHIM(IVoiceInformation)->get_Language(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVoiceInformation<D>::Description() const
 {
     hstring value;
-    check_hresult(static_cast<const IVoiceInformation &>(static_cast<const D &>(*this))->get_Description(put(value)));
+    check_hresult(WINRT_SHIM(IVoiceInformation)->get_Description(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::SpeechSynthesis::VoiceGender impl_IVoiceInformation<D>::Gender() const
 {
     Windows::Media::SpeechSynthesis::VoiceGender value {};
-    check_hresult(static_cast<const IVoiceInformation &>(static_cast<const D &>(*this))->get_Gender(&value));
+    check_hresult(WINRT_SHIM(IVoiceInformation)->get_Gender(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::SpeechSynthesis::VoiceInformation> impl_IInstalledVoicesStatic<D>::AllVoices() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::SpeechSynthesis::VoiceInformation> value;
-    check_hresult(static_cast<const IInstalledVoicesStatic &>(static_cast<const D &>(*this))->get_AllVoices(put(value)));
+    check_hresult(WINRT_SHIM(IInstalledVoicesStatic)->get_AllVoices(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::SpeechSynthesis::VoiceInformation impl_IInstalledVoicesStatic<D>::DefaultVoice() const
 {
     Windows::Media::SpeechSynthesis::VoiceInformation value { nullptr };
-    check_hresult(static_cast<const IInstalledVoicesStatic &>(static_cast<const D &>(*this))->get_DefaultVoice(put(value)));
+    check_hresult(WINRT_SHIM(IInstalledVoicesStatic)->get_DefaultVoice(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::IMediaMarker> impl_ISpeechSynthesisStream<D>::Markers() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::IMediaMarker> value;
-    check_hresult(static_cast<const ISpeechSynthesisStream &>(static_cast<const D &>(*this))->get_Markers(put(value)));
+    check_hresult(WINRT_SHIM(ISpeechSynthesisStream)->get_Markers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> impl_ISpeechSynthesizer<D>::SynthesizeTextToStreamAsync(hstring_ref text) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> operation;
-    check_hresult(static_cast<const ISpeechSynthesizer &>(static_cast<const D &>(*this))->abi_SynthesizeTextToStreamAsync(get(text), put(operation)));
+    check_hresult(WINRT_SHIM(ISpeechSynthesizer)->abi_SynthesizeTextToStreamAsync(get(text), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> impl_ISpeechSynthesizer<D>::SynthesizeSsmlToStreamAsync(hstring_ref Ssml) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> operation;
-    check_hresult(static_cast<const ISpeechSynthesizer &>(static_cast<const D &>(*this))->abi_SynthesizeSsmlToStreamAsync(get(Ssml), put(operation)));
+    check_hresult(WINRT_SHIM(ISpeechSynthesizer)->abi_SynthesizeSsmlToStreamAsync(get(Ssml), put(operation)));
     return operation;
 }
 
 template <typename D> void impl_ISpeechSynthesizer<D>::Voice(const Windows::Media::SpeechSynthesis::VoiceInformation & value) const
 {
-    check_hresult(static_cast<const ISpeechSynthesizer &>(static_cast<const D &>(*this))->put_Voice(get(value)));
+    check_hresult(WINRT_SHIM(ISpeechSynthesizer)->put_Voice(get(value)));
 }
 
 template <typename D> Windows::Media::SpeechSynthesis::VoiceInformation impl_ISpeechSynthesizer<D>::Voice() const
 {
     Windows::Media::SpeechSynthesis::VoiceInformation value { nullptr };
-    check_hresult(static_cast<const ISpeechSynthesizer &>(static_cast<const D &>(*this))->get_Voice(put(value)));
+    check_hresult(WINRT_SHIM(ISpeechSynthesizer)->get_Voice(put(value)));
     return value;
 }
 

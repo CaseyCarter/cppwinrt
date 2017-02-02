@@ -275,7 +275,6 @@ struct IPhotoImportDeleteImportedItemsFromSourceResult :
     impl::consume<IPhotoImportDeleteImportedItemsFromSourceResult>
 {
     IPhotoImportDeleteImportedItemsFromSourceResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoImportDeleteImportedItemsFromSourceResult>(m_ptr); }
 };
 
 struct IPhotoImportFindItemsResult :
@@ -283,7 +282,6 @@ struct IPhotoImportFindItemsResult :
     impl::consume<IPhotoImportFindItemsResult>
 {
     IPhotoImportFindItemsResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoImportFindItemsResult>(m_ptr); }
 };
 
 struct IPhotoImportFindItemsResult2 :
@@ -291,7 +289,6 @@ struct IPhotoImportFindItemsResult2 :
     impl::consume<IPhotoImportFindItemsResult2>
 {
     IPhotoImportFindItemsResult2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoImportFindItemsResult2>(m_ptr); }
 };
 
 struct IPhotoImportImportItemsResult :
@@ -299,7 +296,6 @@ struct IPhotoImportImportItemsResult :
     impl::consume<IPhotoImportImportItemsResult>
 {
     IPhotoImportImportItemsResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoImportImportItemsResult>(m_ptr); }
 };
 
 struct IPhotoImportItem :
@@ -307,7 +303,6 @@ struct IPhotoImportItem :
     impl::consume<IPhotoImportItem>
 {
     IPhotoImportItem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoImportItem>(m_ptr); }
 };
 
 struct IPhotoImportItemImportedEventArgs :
@@ -315,7 +310,6 @@ struct IPhotoImportItemImportedEventArgs :
     impl::consume<IPhotoImportItemImportedEventArgs>
 {
     IPhotoImportItemImportedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoImportItemImportedEventArgs>(m_ptr); }
 };
 
 struct IPhotoImportManagerStatics :
@@ -323,7 +317,6 @@ struct IPhotoImportManagerStatics :
     impl::consume<IPhotoImportManagerStatics>
 {
     IPhotoImportManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoImportManagerStatics>(m_ptr); }
 };
 
 struct IPhotoImportOperation :
@@ -331,7 +324,6 @@ struct IPhotoImportOperation :
     impl::consume<IPhotoImportOperation>
 {
     IPhotoImportOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoImportOperation>(m_ptr); }
 };
 
 struct IPhotoImportSelectionChangedEventArgs :
@@ -339,7 +331,6 @@ struct IPhotoImportSelectionChangedEventArgs :
     impl::consume<IPhotoImportSelectionChangedEventArgs>
 {
     IPhotoImportSelectionChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoImportSelectionChangedEventArgs>(m_ptr); }
 };
 
 struct IPhotoImportSession :
@@ -348,7 +339,6 @@ struct IPhotoImportSession :
     impl::require<IPhotoImportSession, Windows::Foundation::IClosable>
 {
     IPhotoImportSession(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoImportSession>(m_ptr); }
 };
 
 struct IPhotoImportSession2 :
@@ -356,7 +346,6 @@ struct IPhotoImportSession2 :
     impl::consume<IPhotoImportSession2>
 {
     IPhotoImportSession2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoImportSession2>(m_ptr); }
 };
 
 struct IPhotoImportSidecar :
@@ -364,7 +353,6 @@ struct IPhotoImportSidecar :
     impl::consume<IPhotoImportSidecar>
 {
     IPhotoImportSidecar(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoImportSidecar>(m_ptr); }
 };
 
 struct IPhotoImportSource :
@@ -372,7 +360,6 @@ struct IPhotoImportSource :
     impl::consume<IPhotoImportSource>
 {
     IPhotoImportSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoImportSource>(m_ptr); }
 };
 
 struct IPhotoImportSourceStatics :
@@ -380,7 +367,6 @@ struct IPhotoImportSourceStatics :
     impl::consume<IPhotoImportSourceStatics>
 {
     IPhotoImportSourceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoImportSourceStatics>(m_ptr); }
 };
 
 struct IPhotoImportStorageMedium :
@@ -388,7 +374,6 @@ struct IPhotoImportStorageMedium :
     impl::consume<IPhotoImportStorageMedium>
 {
     IPhotoImportStorageMedium(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoImportStorageMedium>(m_ptr); }
 };
 
 struct IPhotoImportVideoSegment :
@@ -396,7 +381,6 @@ struct IPhotoImportVideoSegment :
     impl::consume<IPhotoImportVideoSegment>
 {
     IPhotoImportVideoSegment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoImportVideoSegment>(m_ptr); }
 };
 
 }

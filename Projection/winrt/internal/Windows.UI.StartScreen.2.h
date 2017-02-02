@@ -144,7 +144,6 @@ struct IJumpList :
     impl::consume<IJumpList>
 {
     IJumpList(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IJumpList>(m_ptr); }
 };
 
 struct IJumpListItem :
@@ -152,7 +151,6 @@ struct IJumpListItem :
     impl::consume<IJumpListItem>
 {
     IJumpListItem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IJumpListItem>(m_ptr); }
 };
 
 struct IJumpListItemStatics :
@@ -160,7 +158,6 @@ struct IJumpListItemStatics :
     impl::consume<IJumpListItemStatics>
 {
     IJumpListItemStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IJumpListItemStatics>(m_ptr); }
 };
 
 struct IJumpListStatics :
@@ -168,7 +165,6 @@ struct IJumpListStatics :
     impl::consume<IJumpListStatics>
 {
     IJumpListStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IJumpListStatics>(m_ptr); }
 };
 
 struct ISecondaryTile :
@@ -176,7 +172,6 @@ struct ISecondaryTile :
     impl::consume<ISecondaryTile>
 {
     ISecondaryTile(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISecondaryTile>(m_ptr); }
 };
 
 struct ISecondaryTile2 :
@@ -185,7 +180,6 @@ struct ISecondaryTile2 :
     impl::require<ISecondaryTile2, Windows::UI::StartScreen::ISecondaryTile>
 {
     ISecondaryTile2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISecondaryTile2>(m_ptr); }
 };
 
 struct ISecondaryTileFactory :
@@ -193,7 +187,6 @@ struct ISecondaryTileFactory :
     impl::consume<ISecondaryTileFactory>
 {
     ISecondaryTileFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISecondaryTileFactory>(m_ptr); }
 };
 
 struct ISecondaryTileFactory2 :
@@ -202,7 +195,6 @@ struct ISecondaryTileFactory2 :
     impl::require<ISecondaryTileFactory2, Windows::UI::StartScreen::ISecondaryTileFactory>
 {
     ISecondaryTileFactory2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISecondaryTileFactory2>(m_ptr); }
 };
 
 struct ISecondaryTileStatics :
@@ -210,7 +202,6 @@ struct ISecondaryTileStatics :
     impl::consume<ISecondaryTileStatics>
 {
     ISecondaryTileStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISecondaryTileStatics>(m_ptr); }
 };
 
 struct ISecondaryTileVisualElements :
@@ -218,7 +209,6 @@ struct ISecondaryTileVisualElements :
     impl::consume<ISecondaryTileVisualElements>
 {
     ISecondaryTileVisualElements(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISecondaryTileVisualElements>(m_ptr); }
 };
 
 struct ISecondaryTileVisualElements2 :
@@ -226,7 +216,6 @@ struct ISecondaryTileVisualElements2 :
     impl::consume<ISecondaryTileVisualElements2>
 {
     ISecondaryTileVisualElements2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISecondaryTileVisualElements2>(m_ptr); }
 };
 
 struct ISecondaryTileVisualElements3 :
@@ -234,7 +223,6 @@ struct ISecondaryTileVisualElements3 :
     impl::consume<ISecondaryTileVisualElements3>
 {
     ISecondaryTileVisualElements3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISecondaryTileVisualElements3>(m_ptr); }
 };
 
 struct IVisualElementsRequest :
@@ -242,7 +230,6 @@ struct IVisualElementsRequest :
     impl::consume<IVisualElementsRequest>
 {
     IVisualElementsRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVisualElementsRequest>(m_ptr); }
 };
 
 struct IVisualElementsRequestDeferral :
@@ -250,7 +237,6 @@ struct IVisualElementsRequestDeferral :
     impl::consume<IVisualElementsRequestDeferral>
 {
     IVisualElementsRequestDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVisualElementsRequestDeferral>(m_ptr); }
 };
 
 struct IVisualElementsRequestedEventArgs :
@@ -258,7 +244,6 @@ struct IVisualElementsRequestedEventArgs :
     impl::consume<IVisualElementsRequestedEventArgs>
 {
     IVisualElementsRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVisualElementsRequestedEventArgs>(m_ptr); }
 };
 
 }

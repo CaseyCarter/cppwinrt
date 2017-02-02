@@ -191,7 +191,6 @@ struct ICredentialFactory :
     impl::consume<ICredentialFactory>
 {
     ICredentialFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICredentialFactory>(m_ptr); }
 };
 
 struct IKeyCredential :
@@ -199,7 +198,6 @@ struct IKeyCredential :
     impl::consume<IKeyCredential>
 {
     IKeyCredential(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyCredential>(m_ptr); }
 };
 
 struct IKeyCredentialAttestationResult :
@@ -207,7 +205,6 @@ struct IKeyCredentialAttestationResult :
     impl::consume<IKeyCredentialAttestationResult>
 {
     IKeyCredentialAttestationResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyCredentialAttestationResult>(m_ptr); }
 };
 
 struct IKeyCredentialManagerStatics :
@@ -215,7 +212,6 @@ struct IKeyCredentialManagerStatics :
     impl::consume<IKeyCredentialManagerStatics>
 {
     IKeyCredentialManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyCredentialManagerStatics>(m_ptr); }
 };
 
 struct IKeyCredentialOperationResult :
@@ -223,7 +219,6 @@ struct IKeyCredentialOperationResult :
     impl::consume<IKeyCredentialOperationResult>
 {
     IKeyCredentialOperationResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyCredentialOperationResult>(m_ptr); }
 };
 
 struct IKeyCredentialRetrievalResult :
@@ -231,7 +226,6 @@ struct IKeyCredentialRetrievalResult :
     impl::consume<IKeyCredentialRetrievalResult>
 {
     IKeyCredentialRetrievalResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyCredentialRetrievalResult>(m_ptr); }
 };
 
 struct IPasswordCredential :
@@ -239,7 +233,6 @@ struct IPasswordCredential :
     impl::consume<IPasswordCredential>
 {
     IPasswordCredential(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPasswordCredential>(m_ptr); }
 };
 
 struct IPasswordVault :
@@ -247,7 +240,6 @@ struct IPasswordVault :
     impl::consume<IPasswordVault>
 {
     IPasswordVault(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPasswordVault>(m_ptr); }
 };
 
 struct IWebAccount :
@@ -255,7 +247,6 @@ struct IWebAccount :
     impl::consume<IWebAccount>
 {
     IWebAccount(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccount>(m_ptr); }
 };
 
 struct IWebAccount2 :
@@ -264,7 +255,6 @@ struct IWebAccount2 :
     impl::require<IWebAccount2, Windows::Security::Credentials::IWebAccount>
 {
     IWebAccount2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccount2>(m_ptr); }
 };
 
 struct IWebAccountFactory :
@@ -272,7 +262,6 @@ struct IWebAccountFactory :
     impl::consume<IWebAccountFactory>
 {
     IWebAccountFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountFactory>(m_ptr); }
 };
 
 struct IWebAccountProvider :
@@ -280,7 +269,6 @@ struct IWebAccountProvider :
     impl::consume<IWebAccountProvider>
 {
     IWebAccountProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountProvider>(m_ptr); }
 };
 
 struct IWebAccountProvider2 :
@@ -289,7 +277,6 @@ struct IWebAccountProvider2 :
     impl::require<IWebAccountProvider2, Windows::Security::Credentials::IWebAccountProvider>
 {
     IWebAccountProvider2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountProvider2>(m_ptr); }
 };
 
 struct IWebAccountProvider3 :
@@ -298,7 +285,6 @@ struct IWebAccountProvider3 :
     impl::require<IWebAccountProvider3, Windows::Security::Credentials::IWebAccountProvider, Windows::Security::Credentials::IWebAccountProvider2>
 {
     IWebAccountProvider3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountProvider3>(m_ptr); }
 };
 
 struct IWebAccountProviderFactory :
@@ -306,7 +292,6 @@ struct IWebAccountProviderFactory :
     impl::consume<IWebAccountProviderFactory>
 {
     IWebAccountProviderFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountProviderFactory>(m_ptr); }
 };
 
 }

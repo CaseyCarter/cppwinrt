@@ -29,7 +29,6 @@ struct IWebAuthenticationBrokerStatics :
     impl::consume<IWebAuthenticationBrokerStatics>
 {
     IWebAuthenticationBrokerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAuthenticationBrokerStatics>(m_ptr); }
 };
 
 struct IWebAuthenticationBrokerStatics2 :
@@ -37,7 +36,6 @@ struct IWebAuthenticationBrokerStatics2 :
     impl::consume<IWebAuthenticationBrokerStatics2>
 {
     IWebAuthenticationBrokerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAuthenticationBrokerStatics2>(m_ptr); }
 };
 
 struct IWebAuthenticationResult :
@@ -45,7 +43,6 @@ struct IWebAuthenticationResult :
     impl::consume<IWebAuthenticationResult>
 {
     IWebAuthenticationResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAuthenticationResult>(m_ptr); }
 };
 
 }

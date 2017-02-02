@@ -30,7 +30,6 @@ struct IPdfDocument :
     impl::consume<IPdfDocument>
 {
     IPdfDocument(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPdfDocument>(m_ptr); }
 };
 
 struct IPdfDocumentStatics :
@@ -38,7 +37,6 @@ struct IPdfDocumentStatics :
     impl::consume<IPdfDocumentStatics>
 {
     IPdfDocumentStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPdfDocumentStatics>(m_ptr); }
 };
 
 struct IPdfPage :
@@ -46,7 +44,6 @@ struct IPdfPage :
     impl::consume<IPdfPage>
 {
     IPdfPage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPdfPage>(m_ptr); }
 };
 
 struct IPdfPageDimensions :
@@ -54,7 +51,6 @@ struct IPdfPageDimensions :
     impl::consume<IPdfPageDimensions>
 {
     IPdfPageDimensions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPdfPageDimensions>(m_ptr); }
 };
 
 struct IPdfPageRenderOptions :
@@ -62,7 +58,6 @@ struct IPdfPageRenderOptions :
     impl::consume<IPdfPageRenderOptions>
 {
     IPdfPageRenderOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPdfPageRenderOptions>(m_ptr); }
 };
 
 }

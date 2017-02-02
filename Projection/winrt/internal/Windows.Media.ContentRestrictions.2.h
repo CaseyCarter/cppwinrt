@@ -109,7 +109,6 @@ struct IContentRestrictionsBrowsePolicy :
     impl::consume<IContentRestrictionsBrowsePolicy>
 {
     IContentRestrictionsBrowsePolicy(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContentRestrictionsBrowsePolicy>(m_ptr); }
 };
 
 struct IRatedContentDescription :
@@ -117,7 +116,6 @@ struct IRatedContentDescription :
     impl::consume<IRatedContentDescription>
 {
     IRatedContentDescription(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRatedContentDescription>(m_ptr); }
 };
 
 struct IRatedContentDescriptionFactory :
@@ -125,7 +123,6 @@ struct IRatedContentDescriptionFactory :
     impl::consume<IRatedContentDescriptionFactory>
 {
     IRatedContentDescriptionFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRatedContentDescriptionFactory>(m_ptr); }
 };
 
 struct IRatedContentRestrictions :
@@ -133,7 +130,6 @@ struct IRatedContentRestrictions :
     impl::consume<IRatedContentRestrictions>
 {
     IRatedContentRestrictions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRatedContentRestrictions>(m_ptr); }
 };
 
 struct IRatedContentRestrictionsFactory :
@@ -141,7 +137,6 @@ struct IRatedContentRestrictionsFactory :
     impl::consume<IRatedContentRestrictionsFactory>
 {
     IRatedContentRestrictionsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRatedContentRestrictionsFactory>(m_ptr); }
 };
 
 }

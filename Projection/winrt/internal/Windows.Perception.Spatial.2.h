@@ -134,7 +134,6 @@ struct ISpatialAnchor :
     impl::consume<ISpatialAnchor>
 {
     ISpatialAnchor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialAnchor>(m_ptr); }
 };
 
 struct ISpatialAnchor2 :
@@ -142,7 +141,6 @@ struct ISpatialAnchor2 :
     impl::consume<ISpatialAnchor2>
 {
     ISpatialAnchor2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialAnchor2>(m_ptr); }
 };
 
 struct ISpatialAnchorManagerStatics :
@@ -150,7 +148,6 @@ struct ISpatialAnchorManagerStatics :
     impl::consume<ISpatialAnchorManagerStatics>
 {
     ISpatialAnchorManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialAnchorManagerStatics>(m_ptr); }
 };
 
 struct ISpatialAnchorRawCoordinateSystemAdjustedEventArgs :
@@ -158,7 +155,6 @@ struct ISpatialAnchorRawCoordinateSystemAdjustedEventArgs :
     impl::consume<ISpatialAnchorRawCoordinateSystemAdjustedEventArgs>
 {
     ISpatialAnchorRawCoordinateSystemAdjustedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialAnchorRawCoordinateSystemAdjustedEventArgs>(m_ptr); }
 };
 
 struct ISpatialAnchorStatics :
@@ -166,7 +162,6 @@ struct ISpatialAnchorStatics :
     impl::consume<ISpatialAnchorStatics>
 {
     ISpatialAnchorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialAnchorStatics>(m_ptr); }
 };
 
 struct ISpatialAnchorStore :
@@ -174,7 +169,6 @@ struct ISpatialAnchorStore :
     impl::consume<ISpatialAnchorStore>
 {
     ISpatialAnchorStore(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialAnchorStore>(m_ptr); }
 };
 
 struct ISpatialAnchorTransferManagerStatics :
@@ -182,7 +176,6 @@ struct ISpatialAnchorTransferManagerStatics :
     impl::consume<ISpatialAnchorTransferManagerStatics>
 {
     ISpatialAnchorTransferManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialAnchorTransferManagerStatics>(m_ptr); }
 };
 
 struct ISpatialBoundingVolume :
@@ -190,7 +183,6 @@ struct ISpatialBoundingVolume :
     impl::consume<ISpatialBoundingVolume>
 {
     ISpatialBoundingVolume(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialBoundingVolume>(m_ptr); }
 };
 
 struct ISpatialBoundingVolumeStatics :
@@ -198,7 +190,6 @@ struct ISpatialBoundingVolumeStatics :
     impl::consume<ISpatialBoundingVolumeStatics>
 {
     ISpatialBoundingVolumeStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialBoundingVolumeStatics>(m_ptr); }
 };
 
 struct ISpatialCoordinateSystem :
@@ -206,7 +197,6 @@ struct ISpatialCoordinateSystem :
     impl::consume<ISpatialCoordinateSystem>
 {
     ISpatialCoordinateSystem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialCoordinateSystem>(m_ptr); }
 };
 
 struct ISpatialLocation :
@@ -214,7 +204,6 @@ struct ISpatialLocation :
     impl::consume<ISpatialLocation>
 {
     ISpatialLocation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialLocation>(m_ptr); }
 };
 
 struct ISpatialLocator :
@@ -222,7 +211,6 @@ struct ISpatialLocator :
     impl::consume<ISpatialLocator>
 {
     ISpatialLocator(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialLocator>(m_ptr); }
 };
 
 struct ISpatialLocatorAttachedFrameOfReference :
@@ -230,7 +218,6 @@ struct ISpatialLocatorAttachedFrameOfReference :
     impl::consume<ISpatialLocatorAttachedFrameOfReference>
 {
     ISpatialLocatorAttachedFrameOfReference(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialLocatorAttachedFrameOfReference>(m_ptr); }
 };
 
 struct ISpatialLocatorPositionalTrackingDeactivatingEventArgs :
@@ -238,7 +225,6 @@ struct ISpatialLocatorPositionalTrackingDeactivatingEventArgs :
     impl::consume<ISpatialLocatorPositionalTrackingDeactivatingEventArgs>
 {
     ISpatialLocatorPositionalTrackingDeactivatingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialLocatorPositionalTrackingDeactivatingEventArgs>(m_ptr); }
 };
 
 struct ISpatialLocatorStatics :
@@ -246,7 +232,6 @@ struct ISpatialLocatorStatics :
     impl::consume<ISpatialLocatorStatics>
 {
     ISpatialLocatorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialLocatorStatics>(m_ptr); }
 };
 
 struct ISpatialStationaryFrameOfReference :
@@ -254,7 +239,6 @@ struct ISpatialStationaryFrameOfReference :
     impl::consume<ISpatialStationaryFrameOfReference>
 {
     ISpatialStationaryFrameOfReference(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialStationaryFrameOfReference>(m_ptr); }
 };
 
 }

@@ -205,7 +205,6 @@ struct ISmsAppMessage :
     impl::require<ISmsAppMessage, Windows::Devices::Sms::ISmsMessageBase>
 {
     ISmsAppMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmsAppMessage>(m_ptr); }
 };
 
 struct ISmsBroadcastMessage :
@@ -214,7 +213,6 @@ struct ISmsBroadcastMessage :
     impl::require<ISmsBroadcastMessage, Windows::Devices::Sms::ISmsMessageBase>
 {
     ISmsBroadcastMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmsBroadcastMessage>(m_ptr); }
 };
 
 struct ISmsDevice2 :
@@ -222,7 +220,6 @@ struct ISmsDevice2 :
     impl::consume<ISmsDevice2>
 {
     ISmsDevice2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmsDevice2>(m_ptr); }
 };
 
 struct ISmsDevice2Statics :
@@ -230,7 +227,6 @@ struct ISmsDevice2Statics :
     impl::consume<ISmsDevice2Statics>
 {
     ISmsDevice2Statics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmsDevice2Statics>(m_ptr); }
 };
 
 struct ISmsFilterRule :
@@ -238,7 +234,6 @@ struct ISmsFilterRule :
     impl::consume<ISmsFilterRule>
 {
     ISmsFilterRule(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmsFilterRule>(m_ptr); }
 };
 
 struct ISmsFilterRuleFactory :
@@ -246,7 +241,6 @@ struct ISmsFilterRuleFactory :
     impl::consume<ISmsFilterRuleFactory>
 {
     ISmsFilterRuleFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmsFilterRuleFactory>(m_ptr); }
 };
 
 struct ISmsFilterRules :
@@ -254,7 +248,6 @@ struct ISmsFilterRules :
     impl::consume<ISmsFilterRules>
 {
     ISmsFilterRules(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmsFilterRules>(m_ptr); }
 };
 
 struct ISmsFilterRulesFactory :
@@ -262,7 +255,6 @@ struct ISmsFilterRulesFactory :
     impl::consume<ISmsFilterRulesFactory>
 {
     ISmsFilterRulesFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmsFilterRulesFactory>(m_ptr); }
 };
 
 struct ISmsMessageBase :
@@ -270,7 +262,6 @@ struct ISmsMessageBase :
     impl::consume<ISmsMessageBase>
 {
     ISmsMessageBase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmsMessageBase>(m_ptr); }
 };
 
 struct ISmsMessageReceivedTriggerDetails :
@@ -278,7 +269,6 @@ struct ISmsMessageReceivedTriggerDetails :
     impl::consume<ISmsMessageReceivedTriggerDetails>
 {
     ISmsMessageReceivedTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmsMessageReceivedTriggerDetails>(m_ptr); }
 };
 
 struct ISmsMessageRegistration :
@@ -286,7 +276,6 @@ struct ISmsMessageRegistration :
     impl::consume<ISmsMessageRegistration>
 {
     ISmsMessageRegistration(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmsMessageRegistration>(m_ptr); }
 };
 
 struct ISmsMessageRegistrationStatics :
@@ -294,7 +283,6 @@ struct ISmsMessageRegistrationStatics :
     impl::consume<ISmsMessageRegistrationStatics>
 {
     ISmsMessageRegistrationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmsMessageRegistrationStatics>(m_ptr); }
 };
 
 struct ISmsSendMessageResult :
@@ -302,7 +290,6 @@ struct ISmsSendMessageResult :
     impl::consume<ISmsSendMessageResult>
 {
     ISmsSendMessageResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmsSendMessageResult>(m_ptr); }
 };
 
 struct ISmsStatusMessage :
@@ -311,7 +298,6 @@ struct ISmsStatusMessage :
     impl::require<ISmsStatusMessage, Windows::Devices::Sms::ISmsMessageBase>
 {
     ISmsStatusMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmsStatusMessage>(m_ptr); }
 };
 
 struct ISmsTextMessage2 :
@@ -320,7 +306,6 @@ struct ISmsTextMessage2 :
     impl::require<ISmsTextMessage2, Windows::Devices::Sms::ISmsMessageBase>
 {
     ISmsTextMessage2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmsTextMessage2>(m_ptr); }
 };
 
 struct ISmsVoicemailMessage :
@@ -329,7 +314,6 @@ struct ISmsVoicemailMessage :
     impl::require<ISmsVoicemailMessage, Windows::Devices::Sms::ISmsMessageBase>
 {
     ISmsVoicemailMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmsVoicemailMessage>(m_ptr); }
 };
 
 struct ISmsWapMessage :
@@ -338,7 +322,6 @@ struct ISmsWapMessage :
     impl::require<ISmsWapMessage, Windows::Devices::Sms::ISmsMessageBase>
 {
     ISmsWapMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmsWapMessage>(m_ptr); }
 };
 
 }

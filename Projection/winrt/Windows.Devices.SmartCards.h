@@ -27,7 +27,7 @@ template <typename O, typename M> SmartCardPinResetHandler::SmartCardPinResetHan
 
 inline void SmartCardPinResetHandler::operator()(const Windows::Devices::SmartCards::SmartCardProvisioning & sender, const Windows::Devices::SmartCards::SmartCardPinResetRequest & request) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(request)));
+    check_hresult((*(abi<SmartCardPinResetHandler> **)this)->abi_Invoke(get(sender), get(request)));
 }
 
 }
@@ -891,63 +891,63 @@ namespace Windows::Devices::SmartCards {
 template <typename D> hstring impl_ISmartCardReaderStatics<D>::GetDeviceSelector() const
 {
     hstring selector;
-    check_hresult(static_cast<const ISmartCardReaderStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(selector)));
+    check_hresult(WINRT_SHIM(ISmartCardReaderStatics)->abi_GetDeviceSelector(put(selector)));
     return selector;
 }
 
 template <typename D> hstring impl_ISmartCardReaderStatics<D>::GetDeviceSelector(Windows::Devices::SmartCards::SmartCardReaderKind kind) const
 {
     hstring selector;
-    check_hresult(static_cast<const ISmartCardReaderStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorWithKind(kind, put(selector)));
+    check_hresult(WINRT_SHIM(ISmartCardReaderStatics)->abi_GetDeviceSelectorWithKind(kind, put(selector)));
     return selector;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardReader> impl_ISmartCardReaderStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardReader> result;
-    check_hresult(static_cast<const ISmartCardReaderStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardReaderStatics)->abi_FromIdAsync(get(deviceId), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ISmartCardReader<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const ISmartCardReader &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(ISmartCardReader)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmartCardReader<D>::Name() const
 {
     hstring value;
-    check_hresult(static_cast<const ISmartCardReader &>(static_cast<const D &>(*this))->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(ISmartCardReader)->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::SmartCards::SmartCardReaderKind impl_ISmartCardReader<D>::Kind() const
 {
     Windows::Devices::SmartCards::SmartCardReaderKind value {};
-    check_hresult(static_cast<const ISmartCardReader &>(static_cast<const D &>(*this))->get_Kind(&value));
+    check_hresult(WINRT_SHIM(ISmartCardReader)->get_Kind(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::SmartCards::SmartCardReaderStatus> impl_ISmartCardReader<D>::GetStatusAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::SmartCards::SmartCardReaderStatus> result;
-    check_hresult(static_cast<const ISmartCardReader &>(static_cast<const D &>(*this))->abi_GetStatusAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardReader)->abi_GetStatusAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::SmartCards::SmartCard>> impl_ISmartCardReader<D>::FindAllCardsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::SmartCards::SmartCard>> result;
-    check_hresult(static_cast<const ISmartCardReader &>(static_cast<const D &>(*this))->abi_FindAllCardsAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardReader)->abi_FindAllCardsAsync(put(result)));
     return result;
 }
 
 template <typename D> event_token impl_ISmartCardReader<D>::CardAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::SmartCards::SmartCardReader, Windows::Devices::SmartCards::CardAddedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ISmartCardReader &>(static_cast<const D &>(*this))->add_CardAdded(get(handler), &token));
+    check_hresult(WINRT_SHIM(ISmartCardReader)->add_CardAdded(get(handler), &token));
     return token;
 }
 
@@ -958,13 +958,13 @@ template <typename D> event_revoker<ISmartCardReader> impl_ISmartCardReader<D>::
 
 template <typename D> void impl_ISmartCardReader<D>::CardAdded(event_token token) const
 {
-    check_hresult(static_cast<const ISmartCardReader &>(static_cast<const D &>(*this))->remove_CardAdded(token));
+    check_hresult(WINRT_SHIM(ISmartCardReader)->remove_CardAdded(token));
 }
 
 template <typename D> event_token impl_ISmartCardReader<D>::CardRemoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::SmartCards::SmartCardReader, Windows::Devices::SmartCards::CardRemovedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ISmartCardReader &>(static_cast<const D &>(*this))->add_CardRemoved(get(handler), &token));
+    check_hresult(WINRT_SHIM(ISmartCardReader)->add_CardRemoved(get(handler), &token));
     return token;
 }
 
@@ -975,284 +975,284 @@ template <typename D> event_revoker<ISmartCardReader> impl_ISmartCardReader<D>::
 
 template <typename D> void impl_ISmartCardReader<D>::CardRemoved(event_token token) const
 {
-    check_hresult(static_cast<const ISmartCardReader &>(static_cast<const D &>(*this))->remove_CardRemoved(token));
+    check_hresult(WINRT_SHIM(ISmartCardReader)->remove_CardRemoved(token));
 }
 
 template <typename D> Windows::Devices::SmartCards::SmartCard impl_ICardAddedEventArgs<D>::SmartCard() const
 {
     Windows::Devices::SmartCards::SmartCard value { nullptr };
-    check_hresult(static_cast<const ICardAddedEventArgs &>(static_cast<const D &>(*this))->get_SmartCard(put(value)));
+    check_hresult(WINRT_SHIM(ICardAddedEventArgs)->get_SmartCard(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::SmartCards::SmartCard impl_ICardRemovedEventArgs<D>::SmartCard() const
 {
     Windows::Devices::SmartCards::SmartCard value { nullptr };
-    check_hresult(static_cast<const ICardRemovedEventArgs &>(static_cast<const D &>(*this))->get_SmartCard(put(value)));
+    check_hresult(WINRT_SHIM(ICardRemovedEventArgs)->get_SmartCard(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::SmartCards::SmartCardReader impl_ISmartCard<D>::Reader() const
 {
     Windows::Devices::SmartCards::SmartCardReader value { nullptr };
-    check_hresult(static_cast<const ISmartCard &>(static_cast<const D &>(*this))->get_Reader(put(value)));
+    check_hresult(WINRT_SHIM(ISmartCard)->get_Reader(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::SmartCards::SmartCardStatus> impl_ISmartCard<D>::GetStatusAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::SmartCards::SmartCardStatus> result;
-    check_hresult(static_cast<const ISmartCard &>(static_cast<const D &>(*this))->abi_GetStatusAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCard)->abi_GetStatusAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_ISmartCard<D>::GetAnswerToResetAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> result;
-    check_hresult(static_cast<const ISmartCard &>(static_cast<const D &>(*this))->abi_GetAnswerToResetAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCard)->abi_GetAnswerToResetAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> impl_ISmartCardProvisioningStatics<D>::FromSmartCardAsync(const Windows::Devices::SmartCards::SmartCard & card) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> result;
-    check_hresult(static_cast<const ISmartCardProvisioningStatics &>(static_cast<const D &>(*this))->abi_FromSmartCardAsync(get(card), put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioningStatics)->abi_FromSmartCardAsync(get(card), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> impl_ISmartCardProvisioningStatics<D>::RequestVirtualSmartCardCreationAsync(hstring_ref friendlyName, const Windows::Storage::Streams::IBuffer & administrativeKey, const Windows::Devices::SmartCards::SmartCardPinPolicy & pinPolicy) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> result;
-    check_hresult(static_cast<const ISmartCardProvisioningStatics &>(static_cast<const D &>(*this))->abi_RequestVirtualSmartCardCreationAsync(get(friendlyName), get(administrativeKey), get(pinPolicy), put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioningStatics)->abi_RequestVirtualSmartCardCreationAsync(get(friendlyName), get(administrativeKey), get(pinPolicy), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> impl_ISmartCardProvisioningStatics<D>::RequestVirtualSmartCardCreationAsync(hstring_ref friendlyName, const Windows::Storage::Streams::IBuffer & administrativeKey, const Windows::Devices::SmartCards::SmartCardPinPolicy & pinPolicy, GUID cardId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> result;
-    check_hresult(static_cast<const ISmartCardProvisioningStatics &>(static_cast<const D &>(*this))->abi_RequestVirtualSmartCardCreationAsyncWithCardId(get(friendlyName), get(administrativeKey), get(pinPolicy), cardId, put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioningStatics)->abi_RequestVirtualSmartCardCreationAsyncWithCardId(get(friendlyName), get(administrativeKey), get(pinPolicy), cardId, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISmartCardProvisioningStatics<D>::RequestVirtualSmartCardDeletionAsync(const Windows::Devices::SmartCards::SmartCard & card) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const ISmartCardProvisioningStatics &>(static_cast<const D &>(*this))->abi_RequestVirtualSmartCardDeletionAsync(get(card), put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioningStatics)->abi_RequestVirtualSmartCardDeletionAsync(get(card), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> impl_ISmartCardProvisioningStatics2<D>::RequestAttestedVirtualSmartCardCreationAsync(hstring_ref friendlyName, const Windows::Storage::Streams::IBuffer & administrativeKey, const Windows::Devices::SmartCards::SmartCardPinPolicy & pinPolicy) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> result;
-    check_hresult(static_cast<const ISmartCardProvisioningStatics2 &>(static_cast<const D &>(*this))->abi_RequestAttestedVirtualSmartCardCreationAsync(get(friendlyName), get(administrativeKey), get(pinPolicy), put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioningStatics2)->abi_RequestAttestedVirtualSmartCardCreationAsync(get(friendlyName), get(administrativeKey), get(pinPolicy), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> impl_ISmartCardProvisioningStatics2<D>::RequestAttestedVirtualSmartCardCreationAsync(hstring_ref friendlyName, const Windows::Storage::Streams::IBuffer & administrativeKey, const Windows::Devices::SmartCards::SmartCardPinPolicy & pinPolicy, GUID cardId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> result;
-    check_hresult(static_cast<const ISmartCardProvisioningStatics2 &>(static_cast<const D &>(*this))->abi_RequestAttestedVirtualSmartCardCreationAsyncWithCardId(get(friendlyName), get(administrativeKey), get(pinPolicy), cardId, put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioningStatics2)->abi_RequestAttestedVirtualSmartCardCreationAsyncWithCardId(get(friendlyName), get(administrativeKey), get(pinPolicy), cardId, put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::SmartCards::SmartCard impl_ISmartCardProvisioning<D>::SmartCard() const
 {
     Windows::Devices::SmartCards::SmartCard value { nullptr };
-    check_hresult(static_cast<const ISmartCardProvisioning &>(static_cast<const D &>(*this))->get_SmartCard(put(value)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioning)->get_SmartCard(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<GUID> impl_ISmartCardProvisioning<D>::GetIdAsync() const
 {
     Windows::Foundation::IAsyncOperation<GUID> result;
-    check_hresult(static_cast<const ISmartCardProvisioning &>(static_cast<const D &>(*this))->abi_GetIdAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioning)->abi_GetIdAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ISmartCardProvisioning<D>::GetNameAsync() const
 {
     Windows::Foundation::IAsyncOperation<hstring> result;
-    check_hresult(static_cast<const ISmartCardProvisioning &>(static_cast<const D &>(*this))->abi_GetNameAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioning)->abi_GetNameAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardChallengeContext> impl_ISmartCardProvisioning<D>::GetChallengeContextAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardChallengeContext> result;
-    check_hresult(static_cast<const ISmartCardProvisioning &>(static_cast<const D &>(*this))->abi_GetChallengeContextAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioning)->abi_GetChallengeContextAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISmartCardProvisioning<D>::RequestPinChangeAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const ISmartCardProvisioning &>(static_cast<const D &>(*this))->abi_RequestPinChangeAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioning)->abi_RequestPinChangeAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISmartCardProvisioning<D>::RequestPinResetAsync(const Windows::Devices::SmartCards::SmartCardPinResetHandler & handler) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const ISmartCardProvisioning &>(static_cast<const D &>(*this))->abi_RequestPinResetAsync(get(handler), put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioning)->abi_RequestPinResetAsync(get(handler), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ISmartCardProvisioning2<D>::GetAuthorityKeyContainerNameAsync() const
 {
     Windows::Foundation::IAsyncOperation<hstring> result;
-    check_hresult(static_cast<const ISmartCardProvisioning2 &>(static_cast<const D &>(*this))->abi_GetAuthorityKeyContainerNameAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardProvisioning2)->abi_GetAuthorityKeyContainerNameAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ISmartCardPinResetRequest<D>::Challenge() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const ISmartCardPinResetRequest &>(static_cast<const D &>(*this))->get_Challenge(put(value)));
+    check_hresult(WINRT_SHIM(ISmartCardPinResetRequest)->get_Challenge(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISmartCardPinResetRequest<D>::Deadline() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const ISmartCardPinResetRequest &>(static_cast<const D &>(*this))->get_Deadline(put(value)));
+    check_hresult(WINRT_SHIM(ISmartCardPinResetRequest)->get_Deadline(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::SmartCards::SmartCardPinResetDeferral impl_ISmartCardPinResetRequest<D>::GetDeferral() const
 {
     Windows::Devices::SmartCards::SmartCardPinResetDeferral result { nullptr };
-    check_hresult(static_cast<const ISmartCardPinResetRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardPinResetRequest)->abi_GetDeferral(put(result)));
     return result;
 }
 
 template <typename D> void impl_ISmartCardPinResetRequest<D>::SetResponse(const Windows::Storage::Streams::IBuffer & response) const
 {
-    check_hresult(static_cast<const ISmartCardPinResetRequest &>(static_cast<const D &>(*this))->abi_SetResponse(get(response)));
+    check_hresult(WINRT_SHIM(ISmartCardPinResetRequest)->abi_SetResponse(get(response)));
 }
 
 template <typename D> void impl_ISmartCardPinResetDeferral<D>::Complete() const
 {
-    check_hresult(static_cast<const ISmartCardPinResetDeferral &>(static_cast<const D &>(*this))->abi_Complete());
+    check_hresult(WINRT_SHIM(ISmartCardPinResetDeferral)->abi_Complete());
 }
 
 template <typename D> uint32_t impl_ISmartCardPinPolicy<D>::MinLength() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ISmartCardPinPolicy &>(static_cast<const D &>(*this))->get_MinLength(&value));
+    check_hresult(WINRT_SHIM(ISmartCardPinPolicy)->get_MinLength(&value));
     return value;
 }
 
 template <typename D> void impl_ISmartCardPinPolicy<D>::MinLength(uint32_t value) const
 {
-    check_hresult(static_cast<const ISmartCardPinPolicy &>(static_cast<const D &>(*this))->put_MinLength(value));
+    check_hresult(WINRT_SHIM(ISmartCardPinPolicy)->put_MinLength(value));
 }
 
 template <typename D> uint32_t impl_ISmartCardPinPolicy<D>::MaxLength() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ISmartCardPinPolicy &>(static_cast<const D &>(*this))->get_MaxLength(&value));
+    check_hresult(WINRT_SHIM(ISmartCardPinPolicy)->get_MaxLength(&value));
     return value;
 }
 
 template <typename D> void impl_ISmartCardPinPolicy<D>::MaxLength(uint32_t value) const
 {
-    check_hresult(static_cast<const ISmartCardPinPolicy &>(static_cast<const D &>(*this))->put_MaxLength(value));
+    check_hresult(WINRT_SHIM(ISmartCardPinPolicy)->put_MaxLength(value));
 }
 
 template <typename D> Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption impl_ISmartCardPinPolicy<D>::UppercaseLetters() const
 {
     Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption value {};
-    check_hresult(static_cast<const ISmartCardPinPolicy &>(static_cast<const D &>(*this))->get_UppercaseLetters(&value));
+    check_hresult(WINRT_SHIM(ISmartCardPinPolicy)->get_UppercaseLetters(&value));
     return value;
 }
 
 template <typename D> void impl_ISmartCardPinPolicy<D>::UppercaseLetters(Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption value) const
 {
-    check_hresult(static_cast<const ISmartCardPinPolicy &>(static_cast<const D &>(*this))->put_UppercaseLetters(value));
+    check_hresult(WINRT_SHIM(ISmartCardPinPolicy)->put_UppercaseLetters(value));
 }
 
 template <typename D> Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption impl_ISmartCardPinPolicy<D>::LowercaseLetters() const
 {
     Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption value {};
-    check_hresult(static_cast<const ISmartCardPinPolicy &>(static_cast<const D &>(*this))->get_LowercaseLetters(&value));
+    check_hresult(WINRT_SHIM(ISmartCardPinPolicy)->get_LowercaseLetters(&value));
     return value;
 }
 
 template <typename D> void impl_ISmartCardPinPolicy<D>::LowercaseLetters(Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption value) const
 {
-    check_hresult(static_cast<const ISmartCardPinPolicy &>(static_cast<const D &>(*this))->put_LowercaseLetters(value));
+    check_hresult(WINRT_SHIM(ISmartCardPinPolicy)->put_LowercaseLetters(value));
 }
 
 template <typename D> Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption impl_ISmartCardPinPolicy<D>::Digits() const
 {
     Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption value {};
-    check_hresult(static_cast<const ISmartCardPinPolicy &>(static_cast<const D &>(*this))->get_Digits(&value));
+    check_hresult(WINRT_SHIM(ISmartCardPinPolicy)->get_Digits(&value));
     return value;
 }
 
 template <typename D> void impl_ISmartCardPinPolicy<D>::Digits(Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption value) const
 {
-    check_hresult(static_cast<const ISmartCardPinPolicy &>(static_cast<const D &>(*this))->put_Digits(value));
+    check_hresult(WINRT_SHIM(ISmartCardPinPolicy)->put_Digits(value));
 }
 
 template <typename D> Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption impl_ISmartCardPinPolicy<D>::SpecialCharacters() const
 {
     Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption value {};
-    check_hresult(static_cast<const ISmartCardPinPolicy &>(static_cast<const D &>(*this))->get_SpecialCharacters(&value));
+    check_hresult(WINRT_SHIM(ISmartCardPinPolicy)->get_SpecialCharacters(&value));
     return value;
 }
 
 template <typename D> void impl_ISmartCardPinPolicy<D>::SpecialCharacters(Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption value) const
 {
-    check_hresult(static_cast<const ISmartCardPinPolicy &>(static_cast<const D &>(*this))->put_SpecialCharacters(value));
+    check_hresult(WINRT_SHIM(ISmartCardPinPolicy)->put_SpecialCharacters(value));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardConnection> impl_ISmartCardConnect<D>::ConnectAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardConnection> result;
-    check_hresult(static_cast<const ISmartCardConnect &>(static_cast<const D &>(*this))->abi_ConnectAsync(put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardConnect)->abi_ConnectAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ISmartCardChallengeContext<D>::Challenge() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const ISmartCardChallengeContext &>(static_cast<const D &>(*this))->get_Challenge(put(value)));
+    check_hresult(WINRT_SHIM(ISmartCardChallengeContext)->get_Challenge(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISmartCardChallengeContext<D>::VerifyResponseAsync(const Windows::Storage::Streams::IBuffer & response) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const ISmartCardChallengeContext &>(static_cast<const D &>(*this))->abi_VerifyResponseAsync(get(response), put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardChallengeContext)->abi_VerifyResponseAsync(get(response), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ISmartCardChallengeContext<D>::ProvisionAsync(const Windows::Storage::Streams::IBuffer & response, bool formatCard) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const ISmartCardChallengeContext &>(static_cast<const D &>(*this))->abi_ProvisionAsync(get(response), formatCard, put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardChallengeContext)->abi_ProvisionAsync(get(response), formatCard, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ISmartCardChallengeContext<D>::ProvisionAsync(const Windows::Storage::Streams::IBuffer & response, bool formatCard, GUID newCardId) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const ISmartCardChallengeContext &>(static_cast<const D &>(*this))->abi_ProvisionAsyncWithNewCardId(get(response), formatCard, newCardId, put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardChallengeContext)->abi_ProvisionAsyncWithNewCardId(get(response), formatCard, newCardId, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ISmartCardChallengeContext<D>::ChangeAdministrativeKeyAsync(const Windows::Storage::Streams::IBuffer & response, const Windows::Storage::Streams::IBuffer & newAdministrativeKey) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const ISmartCardChallengeContext &>(static_cast<const D &>(*this))->abi_ChangeAdministrativeKeyAsync(get(response), get(newAdministrativeKey), put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardChallengeContext)->abi_ChangeAdministrativeKeyAsync(get(response), get(newAdministrativeKey), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_ISmartCardConnection<D>::TransmitAsync(const Windows::Storage::Streams::IBuffer & command) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> result;
-    check_hresult(static_cast<const ISmartCardConnection &>(static_cast<const D &>(*this))->abi_TransmitAsync(get(command), put(result)));
+    check_hresult(WINRT_SHIM(ISmartCardConnection)->abi_TransmitAsync(get(command), put(result)));
     return result;
 }
 

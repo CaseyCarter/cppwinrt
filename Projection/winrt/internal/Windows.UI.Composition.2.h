@@ -96,7 +96,6 @@ struct IAmbientLight :
     impl::consume<IAmbientLight>
 {
     IAmbientLight(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAmbientLight>(m_ptr); }
 };
 
 struct IColorKeyFrameAnimation :
@@ -104,7 +103,6 @@ struct IColorKeyFrameAnimation :
     impl::consume<IColorKeyFrameAnimation>
 {
     IColorKeyFrameAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IColorKeyFrameAnimation>(m_ptr); }
 };
 
 struct ICompositionAnimation :
@@ -112,7 +110,6 @@ struct ICompositionAnimation :
     impl::consume<ICompositionAnimation>
 {
     ICompositionAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionAnimation>(m_ptr); }
 };
 
 struct ICompositionAnimation2 :
@@ -120,7 +117,6 @@ struct ICompositionAnimation2 :
     impl::consume<ICompositionAnimation2>
 {
     ICompositionAnimation2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionAnimation2>(m_ptr); }
 };
 
 struct ICompositionAnimationBase :
@@ -128,7 +124,6 @@ struct ICompositionAnimationBase :
     impl::consume<ICompositionAnimationBase>
 {
     ICompositionAnimationBase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionAnimationBase>(m_ptr); }
 };
 
 struct ICompositionAnimationFactory :
@@ -136,7 +131,6 @@ struct ICompositionAnimationFactory :
     impl::consume<ICompositionAnimationFactory>
 {
     ICompositionAnimationFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionAnimationFactory>(m_ptr); }
 };
 
 struct ICompositionAnimationGroup :
@@ -145,7 +139,6 @@ struct ICompositionAnimationGroup :
     impl::require<ICompositionAnimationGroup, Windows::Foundation::Collections::IIterable<Windows::UI::Composition::CompositionAnimation>>
 {
     ICompositionAnimationGroup(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionAnimationGroup>(m_ptr); }
 };
 
 struct ICompositionBackdropBrush :
@@ -153,7 +146,6 @@ struct ICompositionBackdropBrush :
     impl::consume<ICompositionBackdropBrush>
 {
     ICompositionBackdropBrush(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionBackdropBrush>(m_ptr); }
 };
 
 struct ICompositionBatchCompletedEventArgs :
@@ -161,7 +153,6 @@ struct ICompositionBatchCompletedEventArgs :
     impl::consume<ICompositionBatchCompletedEventArgs>
 {
     ICompositionBatchCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionBatchCompletedEventArgs>(m_ptr); }
 };
 
 struct ICompositionBrush :
@@ -169,7 +160,6 @@ struct ICompositionBrush :
     impl::consume<ICompositionBrush>
 {
     ICompositionBrush(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionBrush>(m_ptr); }
 };
 
 struct ICompositionBrushFactory :
@@ -177,7 +167,6 @@ struct ICompositionBrushFactory :
     impl::consume<ICompositionBrushFactory>
 {
     ICompositionBrushFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionBrushFactory>(m_ptr); }
 };
 
 struct ICompositionClip :
@@ -185,7 +174,6 @@ struct ICompositionClip :
     impl::consume<ICompositionClip>
 {
     ICompositionClip(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionClip>(m_ptr); }
 };
 
 struct ICompositionClip2 :
@@ -193,7 +181,6 @@ struct ICompositionClip2 :
     impl::consume<ICompositionClip2>
 {
     ICompositionClip2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionClip2>(m_ptr); }
 };
 
 struct ICompositionClipFactory :
@@ -201,7 +188,6 @@ struct ICompositionClipFactory :
     impl::consume<ICompositionClipFactory>
 {
     ICompositionClipFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionClipFactory>(m_ptr); }
 };
 
 struct ICompositionColorBrush :
@@ -209,7 +195,6 @@ struct ICompositionColorBrush :
     impl::consume<ICompositionColorBrush>
 {
     ICompositionColorBrush(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionColorBrush>(m_ptr); }
 };
 
 struct ICompositionCommitBatch :
@@ -217,7 +202,6 @@ struct ICompositionCommitBatch :
     impl::consume<ICompositionCommitBatch>
 {
     ICompositionCommitBatch(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionCommitBatch>(m_ptr); }
 };
 
 struct ICompositionDrawingSurface :
@@ -225,7 +209,6 @@ struct ICompositionDrawingSurface :
     impl::consume<ICompositionDrawingSurface>
 {
     ICompositionDrawingSurface(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionDrawingSurface>(m_ptr); }
 };
 
 struct ICompositionEasingFunction :
@@ -233,7 +216,6 @@ struct ICompositionEasingFunction :
     impl::consume<ICompositionEasingFunction>
 {
     ICompositionEasingFunction(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionEasingFunction>(m_ptr); }
 };
 
 struct ICompositionEasingFunctionFactory :
@@ -241,7 +223,6 @@ struct ICompositionEasingFunctionFactory :
     impl::consume<ICompositionEasingFunctionFactory>
 {
     ICompositionEasingFunctionFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionEasingFunctionFactory>(m_ptr); }
 };
 
 struct ICompositionEffectBrush :
@@ -249,7 +230,6 @@ struct ICompositionEffectBrush :
     impl::consume<ICompositionEffectBrush>
 {
     ICompositionEffectBrush(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionEffectBrush>(m_ptr); }
 };
 
 struct ICompositionEffectFactory :
@@ -257,7 +237,6 @@ struct ICompositionEffectFactory :
     impl::consume<ICompositionEffectFactory>
 {
     ICompositionEffectFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionEffectFactory>(m_ptr); }
 };
 
 struct ICompositionEffectSourceParameter :
@@ -266,7 +245,6 @@ struct ICompositionEffectSourceParameter :
     impl::require<ICompositionEffectSourceParameter, Windows::Graphics::Effects::IGraphicsEffectSource>
 {
     ICompositionEffectSourceParameter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionEffectSourceParameter>(m_ptr); }
 };
 
 struct ICompositionEffectSourceParameterFactory :
@@ -274,7 +252,6 @@ struct ICompositionEffectSourceParameterFactory :
     impl::consume<ICompositionEffectSourceParameterFactory>
 {
     ICompositionEffectSourceParameterFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionEffectSourceParameterFactory>(m_ptr); }
 };
 
 struct ICompositionGraphicsDevice :
@@ -282,7 +259,6 @@ struct ICompositionGraphicsDevice :
     impl::consume<ICompositionGraphicsDevice>
 {
     ICompositionGraphicsDevice(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionGraphicsDevice>(m_ptr); }
 };
 
 struct ICompositionLight :
@@ -290,7 +266,6 @@ struct ICompositionLight :
     impl::consume<ICompositionLight>
 {
     ICompositionLight(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionLight>(m_ptr); }
 };
 
 struct ICompositionLightFactory :
@@ -298,7 +273,6 @@ struct ICompositionLightFactory :
     impl::consume<ICompositionLightFactory>
 {
     ICompositionLightFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionLightFactory>(m_ptr); }
 };
 
 struct ICompositionMaskBrush :
@@ -306,7 +280,6 @@ struct ICompositionMaskBrush :
     impl::consume<ICompositionMaskBrush>
 {
     ICompositionMaskBrush(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionMaskBrush>(m_ptr); }
 };
 
 struct ICompositionNineGridBrush :
@@ -314,7 +287,6 @@ struct ICompositionNineGridBrush :
     impl::consume<ICompositionNineGridBrush>
 {
     ICompositionNineGridBrush(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionNineGridBrush>(m_ptr); }
 };
 
 struct ICompositionObject :
@@ -322,7 +294,6 @@ struct ICompositionObject :
     impl::consume<ICompositionObject>
 {
     ICompositionObject(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionObject>(m_ptr); }
 };
 
 struct ICompositionObject2 :
@@ -330,7 +301,6 @@ struct ICompositionObject2 :
     impl::consume<ICompositionObject2>
 {
     ICompositionObject2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionObject2>(m_ptr); }
 };
 
 struct ICompositionObjectFactory :
@@ -338,7 +308,6 @@ struct ICompositionObjectFactory :
     impl::consume<ICompositionObjectFactory>
 {
     ICompositionObjectFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionObjectFactory>(m_ptr); }
 };
 
 struct ICompositionPropertySet :
@@ -346,7 +315,6 @@ struct ICompositionPropertySet :
     impl::consume<ICompositionPropertySet>
 {
     ICompositionPropertySet(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionPropertySet>(m_ptr); }
 };
 
 struct ICompositionPropertySet2 :
@@ -354,7 +322,6 @@ struct ICompositionPropertySet2 :
     impl::consume<ICompositionPropertySet2>
 {
     ICompositionPropertySet2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionPropertySet2>(m_ptr); }
 };
 
 struct ICompositionScopedBatch :
@@ -362,7 +329,6 @@ struct ICompositionScopedBatch :
     impl::consume<ICompositionScopedBatch>
 {
     ICompositionScopedBatch(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionScopedBatch>(m_ptr); }
 };
 
 struct ICompositionShadow :
@@ -370,7 +336,6 @@ struct ICompositionShadow :
     impl::consume<ICompositionShadow>
 {
     ICompositionShadow(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionShadow>(m_ptr); }
 };
 
 struct ICompositionShadowFactory :
@@ -378,7 +343,6 @@ struct ICompositionShadowFactory :
     impl::consume<ICompositionShadowFactory>
 {
     ICompositionShadowFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionShadowFactory>(m_ptr); }
 };
 
 struct ICompositionSurface :
@@ -386,7 +350,6 @@ struct ICompositionSurface :
     impl::consume<ICompositionSurface>
 {
     ICompositionSurface(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionSurface>(m_ptr); }
 };
 
 struct ICompositionSurfaceBrush :
@@ -394,7 +357,6 @@ struct ICompositionSurfaceBrush :
     impl::consume<ICompositionSurfaceBrush>
 {
     ICompositionSurfaceBrush(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionSurfaceBrush>(m_ptr); }
 };
 
 struct ICompositionSurfaceBrush2 :
@@ -402,7 +364,6 @@ struct ICompositionSurfaceBrush2 :
     impl::consume<ICompositionSurfaceBrush2>
 {
     ICompositionSurfaceBrush2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionSurfaceBrush2>(m_ptr); }
 };
 
 struct ICompositionTarget :
@@ -410,7 +371,6 @@ struct ICompositionTarget :
     impl::consume<ICompositionTarget>
 {
     ICompositionTarget(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionTarget>(m_ptr); }
 };
 
 struct ICompositor :
@@ -418,7 +378,6 @@ struct ICompositor :
     impl::consume<ICompositor>
 {
     ICompositor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositor>(m_ptr); }
 };
 
 struct ICompositor2 :
@@ -426,7 +385,6 @@ struct ICompositor2 :
     impl::consume<ICompositor2>
 {
     ICompositor2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositor2>(m_ptr); }
 };
 
 struct IContainerVisual :
@@ -434,7 +392,6 @@ struct IContainerVisual :
     impl::consume<IContainerVisual>
 {
     IContainerVisual(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContainerVisual>(m_ptr); }
 };
 
 struct IContainerVisualFactory :
@@ -442,7 +399,6 @@ struct IContainerVisualFactory :
     impl::consume<IContainerVisualFactory>
 {
     IContainerVisualFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContainerVisualFactory>(m_ptr); }
 };
 
 struct ICubicBezierEasingFunction :
@@ -450,7 +406,6 @@ struct ICubicBezierEasingFunction :
     impl::consume<ICubicBezierEasingFunction>
 {
     ICubicBezierEasingFunction(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICubicBezierEasingFunction>(m_ptr); }
 };
 
 struct IDistantLight :
@@ -458,7 +413,6 @@ struct IDistantLight :
     impl::consume<IDistantLight>
 {
     IDistantLight(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDistantLight>(m_ptr); }
 };
 
 struct IDropShadow :
@@ -466,7 +420,6 @@ struct IDropShadow :
     impl::consume<IDropShadow>
 {
     IDropShadow(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDropShadow>(m_ptr); }
 };
 
 struct IExpressionAnimation :
@@ -474,7 +427,6 @@ struct IExpressionAnimation :
     impl::consume<IExpressionAnimation>
 {
     IExpressionAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IExpressionAnimation>(m_ptr); }
 };
 
 struct IImplicitAnimationCollection :
@@ -483,7 +435,6 @@ struct IImplicitAnimationCollection :
     impl::require<IImplicitAnimationCollection, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::UI::Composition::ICompositionAnimationBase>>, Windows::Foundation::Collections::IMap<hstring, Windows::UI::Composition::ICompositionAnimationBase>>
 {
     IImplicitAnimationCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IImplicitAnimationCollection>(m_ptr); }
 };
 
 struct IInsetClip :
@@ -491,7 +442,6 @@ struct IInsetClip :
     impl::consume<IInsetClip>
 {
     IInsetClip(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInsetClip>(m_ptr); }
 };
 
 struct IKeyFrameAnimation :
@@ -499,7 +449,6 @@ struct IKeyFrameAnimation :
     impl::consume<IKeyFrameAnimation>
 {
     IKeyFrameAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyFrameAnimation>(m_ptr); }
 };
 
 struct IKeyFrameAnimation2 :
@@ -507,7 +456,6 @@ struct IKeyFrameAnimation2 :
     impl::consume<IKeyFrameAnimation2>
 {
     IKeyFrameAnimation2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyFrameAnimation2>(m_ptr); }
 };
 
 struct IKeyFrameAnimationFactory :
@@ -515,7 +463,6 @@ struct IKeyFrameAnimationFactory :
     impl::consume<IKeyFrameAnimationFactory>
 {
     IKeyFrameAnimationFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyFrameAnimationFactory>(m_ptr); }
 };
 
 struct ILayerVisual :
@@ -523,7 +470,6 @@ struct ILayerVisual :
     impl::consume<ILayerVisual>
 {
     ILayerVisual(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILayerVisual>(m_ptr); }
 };
 
 struct ILinearEasingFunction :
@@ -531,7 +477,6 @@ struct ILinearEasingFunction :
     impl::consume<ILinearEasingFunction>
 {
     ILinearEasingFunction(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILinearEasingFunction>(m_ptr); }
 };
 
 struct IPointLight :
@@ -539,7 +484,6 @@ struct IPointLight :
     impl::consume<IPointLight>
 {
     IPointLight(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointLight>(m_ptr); }
 };
 
 struct IQuaternionKeyFrameAnimation :
@@ -547,7 +491,6 @@ struct IQuaternionKeyFrameAnimation :
     impl::consume<IQuaternionKeyFrameAnimation>
 {
     IQuaternionKeyFrameAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IQuaternionKeyFrameAnimation>(m_ptr); }
 };
 
 struct IRenderingDeviceReplacedEventArgs :
@@ -555,7 +498,6 @@ struct IRenderingDeviceReplacedEventArgs :
     impl::consume<IRenderingDeviceReplacedEventArgs>
 {
     IRenderingDeviceReplacedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRenderingDeviceReplacedEventArgs>(m_ptr); }
 };
 
 struct IScalarKeyFrameAnimation :
@@ -563,7 +505,6 @@ struct IScalarKeyFrameAnimation :
     impl::consume<IScalarKeyFrameAnimation>
 {
     IScalarKeyFrameAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScalarKeyFrameAnimation>(m_ptr); }
 };
 
 struct ISpotLight :
@@ -571,7 +512,6 @@ struct ISpotLight :
     impl::consume<ISpotLight>
 {
     ISpotLight(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpotLight>(m_ptr); }
 };
 
 struct ISpriteVisual :
@@ -579,7 +519,6 @@ struct ISpriteVisual :
     impl::consume<ISpriteVisual>
 {
     ISpriteVisual(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpriteVisual>(m_ptr); }
 };
 
 struct ISpriteVisual2 :
@@ -587,7 +526,6 @@ struct ISpriteVisual2 :
     impl::consume<ISpriteVisual2>
 {
     ISpriteVisual2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpriteVisual2>(m_ptr); }
 };
 
 struct IStepEasingFunction :
@@ -595,7 +533,6 @@ struct IStepEasingFunction :
     impl::consume<IStepEasingFunction>
 {
     IStepEasingFunction(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStepEasingFunction>(m_ptr); }
 };
 
 struct IVector2KeyFrameAnimation :
@@ -603,7 +540,6 @@ struct IVector2KeyFrameAnimation :
     impl::consume<IVector2KeyFrameAnimation>
 {
     IVector2KeyFrameAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVector2KeyFrameAnimation>(m_ptr); }
 };
 
 struct IVector3KeyFrameAnimation :
@@ -611,7 +547,6 @@ struct IVector3KeyFrameAnimation :
     impl::consume<IVector3KeyFrameAnimation>
 {
     IVector3KeyFrameAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVector3KeyFrameAnimation>(m_ptr); }
 };
 
 struct IVector4KeyFrameAnimation :
@@ -619,7 +554,6 @@ struct IVector4KeyFrameAnimation :
     impl::consume<IVector4KeyFrameAnimation>
 {
     IVector4KeyFrameAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVector4KeyFrameAnimation>(m_ptr); }
 };
 
 struct IVisual :
@@ -627,7 +561,6 @@ struct IVisual :
     impl::consume<IVisual>
 {
     IVisual(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVisual>(m_ptr); }
 };
 
 struct IVisualCollection :
@@ -636,7 +569,6 @@ struct IVisualCollection :
     impl::require<IVisualCollection, Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Visual>>
 {
     IVisualCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVisualCollection>(m_ptr); }
 };
 
 struct IVisualFactory :
@@ -644,7 +576,6 @@ struct IVisualFactory :
     impl::consume<IVisualFactory>
 {
     IVisualFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVisualFactory>(m_ptr); }
 };
 
 struct IVisualUnorderedCollection :
@@ -653,7 +584,6 @@ struct IVisualUnorderedCollection :
     impl::require<IVisualUnorderedCollection, Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Visual>>
 {
     IVisualUnorderedCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVisualUnorderedCollection>(m_ptr); }
 };
 
 }

@@ -222,89 +222,89 @@ namespace Windows::Devices::Adc {
 template <typename D> int32_t impl_IAdcController<D>::ChannelCount() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAdcController &>(static_cast<const D &>(*this))->get_ChannelCount(&value));
+    check_hresult(WINRT_SHIM(IAdcController)->get_ChannelCount(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAdcController<D>::ResolutionInBits() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAdcController &>(static_cast<const D &>(*this))->get_ResolutionInBits(&value));
+    check_hresult(WINRT_SHIM(IAdcController)->get_ResolutionInBits(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAdcController<D>::MinValue() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAdcController &>(static_cast<const D &>(*this))->get_MinValue(&value));
+    check_hresult(WINRT_SHIM(IAdcController)->get_MinValue(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAdcController<D>::MaxValue() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAdcController &>(static_cast<const D &>(*this))->get_MaxValue(&value));
+    check_hresult(WINRT_SHIM(IAdcController)->get_MaxValue(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Adc::AdcChannelMode impl_IAdcController<D>::ChannelMode() const
 {
     Windows::Devices::Adc::AdcChannelMode value {};
-    check_hresult(static_cast<const IAdcController &>(static_cast<const D &>(*this))->get_ChannelMode(&value));
+    check_hresult(WINRT_SHIM(IAdcController)->get_ChannelMode(&value));
     return value;
 }
 
 template <typename D> void impl_IAdcController<D>::ChannelMode(Windows::Devices::Adc::AdcChannelMode value) const
 {
-    check_hresult(static_cast<const IAdcController &>(static_cast<const D &>(*this))->put_ChannelMode(value));
+    check_hresult(WINRT_SHIM(IAdcController)->put_ChannelMode(value));
 }
 
 template <typename D> bool impl_IAdcController<D>::IsChannelModeSupported(Windows::Devices::Adc::AdcChannelMode channelMode) const
 {
     bool result {};
-    check_hresult(static_cast<const IAdcController &>(static_cast<const D &>(*this))->abi_IsChannelModeSupported(channelMode, &result));
+    check_hresult(WINRT_SHIM(IAdcController)->abi_IsChannelModeSupported(channelMode, &result));
     return result;
 }
 
 template <typename D> Windows::Devices::Adc::AdcChannel impl_IAdcController<D>::OpenChannel(int32_t channelNumber) const
 {
     Windows::Devices::Adc::AdcChannel result { nullptr };
-    check_hresult(static_cast<const IAdcController &>(static_cast<const D &>(*this))->abi_OpenChannel(channelNumber, put(result)));
+    check_hresult(WINRT_SHIM(IAdcController)->abi_OpenChannel(channelNumber, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::AdcController>> impl_IAdcControllerStatics<D>::GetControllersAsync(const Windows::Devices::Adc::Provider::IAdcProvider & provider) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::AdcController>> operation;
-    check_hresult(static_cast<const IAdcControllerStatics &>(static_cast<const D &>(*this))->abi_GetControllersAsync(get(provider), put(operation)));
+    check_hresult(WINRT_SHIM(IAdcControllerStatics)->abi_GetControllersAsync(get(provider), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Adc::AdcController> impl_IAdcControllerStatics2<D>::GetDefaultAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Adc::AdcController> operation;
-    check_hresult(static_cast<const IAdcControllerStatics2 &>(static_cast<const D &>(*this))->abi_GetDefaultAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IAdcControllerStatics2)->abi_GetDefaultAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Devices::Adc::AdcController impl_IAdcChannel<D>::Controller() const
 {
     Windows::Devices::Adc::AdcController value { nullptr };
-    check_hresult(static_cast<const IAdcChannel &>(static_cast<const D &>(*this))->get_Controller(put(value)));
+    check_hresult(WINRT_SHIM(IAdcChannel)->get_Controller(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IAdcChannel<D>::ReadValue() const
 {
     int32_t result {};
-    check_hresult(static_cast<const IAdcChannel &>(static_cast<const D &>(*this))->abi_ReadValue(&result));
+    check_hresult(WINRT_SHIM(IAdcChannel)->abi_ReadValue(&result));
     return result;
 }
 
 template <typename D> double impl_IAdcChannel<D>::ReadRatio() const
 {
     double result {};
-    check_hresult(static_cast<const IAdcChannel &>(static_cast<const D &>(*this))->abi_ReadRatio(&result));
+    check_hresult(WINRT_SHIM(IAdcChannel)->abi_ReadRatio(&result));
     return result;
 }
 

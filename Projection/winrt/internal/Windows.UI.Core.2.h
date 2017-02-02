@@ -168,7 +168,6 @@ namespace Windows::UI::Core {
 struct DispatchedHandler : Windows::IUnknown
 {
     DispatchedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<DispatchedHandler>(m_ptr); }
     template <typename L> DispatchedHandler(L lambda);
     template <typename F> DispatchedHandler (F * function);
     template <typename O, typename M> DispatchedHandler(O * object, M method);
@@ -178,7 +177,6 @@ struct DispatchedHandler : Windows::IUnknown
 struct IdleDispatchedHandler : Windows::IUnknown
 {
     IdleDispatchedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IdleDispatchedHandler>(m_ptr); }
     template <typename L> IdleDispatchedHandler(L lambda);
     template <typename F> IdleDispatchedHandler (F * function);
     template <typename O, typename M> IdleDispatchedHandler(O * object, M method);
@@ -191,7 +189,6 @@ struct IAcceleratorKeyEventArgs :
     impl::require<IAcceleratorKeyEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
     IAcceleratorKeyEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAcceleratorKeyEventArgs>(m_ptr); }
 };
 
 struct IAcceleratorKeyEventArgs2 :
@@ -200,7 +197,6 @@ struct IAcceleratorKeyEventArgs2 :
     impl::require<IAcceleratorKeyEventArgs2, Windows::UI::Core::ICoreWindowEventArgs>
 {
     IAcceleratorKeyEventArgs2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAcceleratorKeyEventArgs2>(m_ptr); }
 };
 
 struct IAutomationProviderRequestedEventArgs :
@@ -209,7 +205,6 @@ struct IAutomationProviderRequestedEventArgs :
     impl::require<IAutomationProviderRequestedEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
     IAutomationProviderRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationProviderRequestedEventArgs>(m_ptr); }
 };
 
 struct IBackRequestedEventArgs :
@@ -217,7 +212,6 @@ struct IBackRequestedEventArgs :
     impl::consume<IBackRequestedEventArgs>
 {
     IBackRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackRequestedEventArgs>(m_ptr); }
 };
 
 struct ICharacterReceivedEventArgs :
@@ -226,7 +220,6 @@ struct ICharacterReceivedEventArgs :
     impl::require<ICharacterReceivedEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
     ICharacterReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICharacterReceivedEventArgs>(m_ptr); }
 };
 
 struct IClosestInteractiveBoundsRequestedEventArgs :
@@ -234,7 +227,6 @@ struct IClosestInteractiveBoundsRequestedEventArgs :
     impl::consume<IClosestInteractiveBoundsRequestedEventArgs>
 {
     IClosestInteractiveBoundsRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IClosestInteractiveBoundsRequestedEventArgs>(m_ptr); }
 };
 
 struct ICoreAcceleratorKeys :
@@ -242,7 +234,6 @@ struct ICoreAcceleratorKeys :
     impl::consume<ICoreAcceleratorKeys>
 {
     ICoreAcceleratorKeys(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreAcceleratorKeys>(m_ptr); }
 };
 
 struct ICoreClosestInteractiveBoundsRequested :
@@ -250,7 +241,6 @@ struct ICoreClosestInteractiveBoundsRequested :
     impl::consume<ICoreClosestInteractiveBoundsRequested>
 {
     ICoreClosestInteractiveBoundsRequested(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreClosestInteractiveBoundsRequested>(m_ptr); }
 };
 
 struct ICoreComponentFocusable :
@@ -258,7 +248,6 @@ struct ICoreComponentFocusable :
     impl::consume<ICoreComponentFocusable>
 {
     ICoreComponentFocusable(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreComponentFocusable>(m_ptr); }
 };
 
 struct ICoreCursor :
@@ -266,7 +255,6 @@ struct ICoreCursor :
     impl::consume<ICoreCursor>
 {
     ICoreCursor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreCursor>(m_ptr); }
 };
 
 struct ICoreCursorFactory :
@@ -274,7 +262,6 @@ struct ICoreCursorFactory :
     impl::consume<ICoreCursorFactory>
 {
     ICoreCursorFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreCursorFactory>(m_ptr); }
 };
 
 struct ICoreDispatcher :
@@ -283,7 +270,6 @@ struct ICoreDispatcher :
     impl::require<ICoreDispatcher, Windows::UI::Core::ICoreAcceleratorKeys>
 {
     ICoreDispatcher(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreDispatcher>(m_ptr); }
 };
 
 struct ICoreDispatcher2 :
@@ -291,7 +277,6 @@ struct ICoreDispatcher2 :
     impl::consume<ICoreDispatcher2>
 {
     ICoreDispatcher2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreDispatcher2>(m_ptr); }
 };
 
 struct ICoreDispatcherWithTaskPriority :
@@ -299,7 +284,6 @@ struct ICoreDispatcherWithTaskPriority :
     impl::consume<ICoreDispatcherWithTaskPriority>
 {
     ICoreDispatcherWithTaskPriority(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreDispatcherWithTaskPriority>(m_ptr); }
 };
 
 struct ICoreInputSourceBase :
@@ -307,7 +291,6 @@ struct ICoreInputSourceBase :
     impl::consume<ICoreInputSourceBase>
 {
     ICoreInputSourceBase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreInputSourceBase>(m_ptr); }
 };
 
 struct ICoreKeyboardInputSource :
@@ -315,7 +298,6 @@ struct ICoreKeyboardInputSource :
     impl::consume<ICoreKeyboardInputSource>
 {
     ICoreKeyboardInputSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreKeyboardInputSource>(m_ptr); }
 };
 
 struct ICoreKeyboardInputSource2 :
@@ -323,7 +305,6 @@ struct ICoreKeyboardInputSource2 :
     impl::consume<ICoreKeyboardInputSource2>
 {
     ICoreKeyboardInputSource2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreKeyboardInputSource2>(m_ptr); }
 };
 
 struct ICorePointerInputSource :
@@ -331,7 +312,6 @@ struct ICorePointerInputSource :
     impl::consume<ICorePointerInputSource>
 {
     ICorePointerInputSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICorePointerInputSource>(m_ptr); }
 };
 
 struct ICorePointerRedirector :
@@ -339,7 +319,6 @@ struct ICorePointerRedirector :
     impl::consume<ICorePointerRedirector>
 {
     ICorePointerRedirector(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICorePointerRedirector>(m_ptr); }
 };
 
 struct ICoreTouchHitTesting :
@@ -347,7 +326,6 @@ struct ICoreTouchHitTesting :
     impl::consume<ICoreTouchHitTesting>
 {
     ICoreTouchHitTesting(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTouchHitTesting>(m_ptr); }
 };
 
 struct ICoreWindow :
@@ -355,7 +333,6 @@ struct ICoreWindow :
     impl::consume<ICoreWindow>
 {
     ICoreWindow(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreWindow>(m_ptr); }
 };
 
 struct ICoreWindow2 :
@@ -363,7 +340,6 @@ struct ICoreWindow2 :
     impl::consume<ICoreWindow2>
 {
     ICoreWindow2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreWindow2>(m_ptr); }
 };
 
 struct ICoreWindow3 :
@@ -371,7 +347,6 @@ struct ICoreWindow3 :
     impl::consume<ICoreWindow3>
 {
     ICoreWindow3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreWindow3>(m_ptr); }
 };
 
 struct ICoreWindowEventArgs :
@@ -379,7 +354,6 @@ struct ICoreWindowEventArgs :
     impl::consume<ICoreWindowEventArgs>
 {
     ICoreWindowEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreWindowEventArgs>(m_ptr); }
 };
 
 struct ICoreWindowResizeManager :
@@ -387,7 +361,6 @@ struct ICoreWindowResizeManager :
     impl::consume<ICoreWindowResizeManager>
 {
     ICoreWindowResizeManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreWindowResizeManager>(m_ptr); }
 };
 
 struct ICoreWindowResizeManagerLayoutCapability :
@@ -395,7 +368,6 @@ struct ICoreWindowResizeManagerLayoutCapability :
     impl::consume<ICoreWindowResizeManagerLayoutCapability>
 {
     ICoreWindowResizeManagerLayoutCapability(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreWindowResizeManagerLayoutCapability>(m_ptr); }
 };
 
 struct ICoreWindowResizeManagerStatics :
@@ -403,7 +375,6 @@ struct ICoreWindowResizeManagerStatics :
     impl::consume<ICoreWindowResizeManagerStatics>
 {
     ICoreWindowResizeManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreWindowResizeManagerStatics>(m_ptr); }
 };
 
 struct ICoreWindowStatic :
@@ -411,7 +382,6 @@ struct ICoreWindowStatic :
     impl::consume<ICoreWindowStatic>
 {
     ICoreWindowStatic(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreWindowStatic>(m_ptr); }
 };
 
 struct IIdleDispatchedHandlerArgs :
@@ -419,7 +389,6 @@ struct IIdleDispatchedHandlerArgs :
     impl::consume<IIdleDispatchedHandlerArgs>
 {
     IIdleDispatchedHandlerArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IIdleDispatchedHandlerArgs>(m_ptr); }
 };
 
 struct IInitializeWithCoreWindow :
@@ -427,7 +396,6 @@ struct IInitializeWithCoreWindow :
     impl::consume<IInitializeWithCoreWindow>
 {
     IInitializeWithCoreWindow(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInitializeWithCoreWindow>(m_ptr); }
 };
 
 struct IInputEnabledEventArgs :
@@ -436,7 +404,6 @@ struct IInputEnabledEventArgs :
     impl::require<IInputEnabledEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
     IInputEnabledEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInputEnabledEventArgs>(m_ptr); }
 };
 
 struct IKeyEventArgs :
@@ -445,7 +412,6 @@ struct IKeyEventArgs :
     impl::require<IKeyEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
     IKeyEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyEventArgs>(m_ptr); }
 };
 
 struct IKeyEventArgs2 :
@@ -454,7 +420,6 @@ struct IKeyEventArgs2 :
     impl::require<IKeyEventArgs2, Windows::UI::Core::ICoreWindowEventArgs>
 {
     IKeyEventArgs2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyEventArgs2>(m_ptr); }
 };
 
 struct IPointerEventArgs :
@@ -463,7 +428,6 @@ struct IPointerEventArgs :
     impl::require<IPointerEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
     IPointerEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointerEventArgs>(m_ptr); }
 };
 
 struct ISystemNavigationManager :
@@ -471,7 +435,6 @@ struct ISystemNavigationManager :
     impl::consume<ISystemNavigationManager>
 {
     ISystemNavigationManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemNavigationManager>(m_ptr); }
 };
 
 struct ISystemNavigationManager2 :
@@ -479,7 +442,6 @@ struct ISystemNavigationManager2 :
     impl::consume<ISystemNavigationManager2>
 {
     ISystemNavigationManager2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemNavigationManager2>(m_ptr); }
 };
 
 struct ISystemNavigationManagerStatics :
@@ -487,7 +449,6 @@ struct ISystemNavigationManagerStatics :
     impl::consume<ISystemNavigationManagerStatics>
 {
     ISystemNavigationManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemNavigationManagerStatics>(m_ptr); }
 };
 
 struct ITouchHitTestingEventArgs :
@@ -496,7 +457,6 @@ struct ITouchHitTestingEventArgs :
     impl::require<ITouchHitTestingEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
     ITouchHitTestingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITouchHitTestingEventArgs>(m_ptr); }
 };
 
 struct IVisibilityChangedEventArgs :
@@ -505,7 +465,6 @@ struct IVisibilityChangedEventArgs :
     impl::require<IVisibilityChangedEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
     IVisibilityChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVisibilityChangedEventArgs>(m_ptr); }
 };
 
 struct IWindowActivatedEventArgs :
@@ -514,7 +473,6 @@ struct IWindowActivatedEventArgs :
     impl::require<IWindowActivatedEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
     IWindowActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWindowActivatedEventArgs>(m_ptr); }
 };
 
 struct IWindowSizeChangedEventArgs :
@@ -523,7 +481,6 @@ struct IWindowSizeChangedEventArgs :
     impl::require<IWindowSizeChangedEventArgs, Windows::UI::Core::ICoreWindowEventArgs>
 {
     IWindowSizeChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWindowSizeChangedEventArgs>(m_ptr); }
 };
 
 }

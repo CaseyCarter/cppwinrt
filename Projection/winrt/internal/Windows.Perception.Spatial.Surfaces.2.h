@@ -129,7 +129,6 @@ struct ISpatialSurfaceInfo :
     impl::consume<ISpatialSurfaceInfo>
 {
     ISpatialSurfaceInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialSurfaceInfo>(m_ptr); }
 };
 
 struct ISpatialSurfaceMesh :
@@ -137,7 +136,6 @@ struct ISpatialSurfaceMesh :
     impl::consume<ISpatialSurfaceMesh>
 {
     ISpatialSurfaceMesh(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialSurfaceMesh>(m_ptr); }
 };
 
 struct ISpatialSurfaceMeshBuffer :
@@ -145,7 +143,6 @@ struct ISpatialSurfaceMeshBuffer :
     impl::consume<ISpatialSurfaceMeshBuffer>
 {
     ISpatialSurfaceMeshBuffer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialSurfaceMeshBuffer>(m_ptr); }
 };
 
 struct ISpatialSurfaceMeshOptions :
@@ -153,7 +150,6 @@ struct ISpatialSurfaceMeshOptions :
     impl::consume<ISpatialSurfaceMeshOptions>
 {
     ISpatialSurfaceMeshOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialSurfaceMeshOptions>(m_ptr); }
 };
 
 struct ISpatialSurfaceMeshOptionsStatics :
@@ -161,7 +157,6 @@ struct ISpatialSurfaceMeshOptionsStatics :
     impl::consume<ISpatialSurfaceMeshOptionsStatics>
 {
     ISpatialSurfaceMeshOptionsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialSurfaceMeshOptionsStatics>(m_ptr); }
 };
 
 struct ISpatialSurfaceObserver :
@@ -169,7 +164,6 @@ struct ISpatialSurfaceObserver :
     impl::consume<ISpatialSurfaceObserver>
 {
     ISpatialSurfaceObserver(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialSurfaceObserver>(m_ptr); }
 };
 
 struct ISpatialSurfaceObserverStatics :
@@ -177,7 +171,6 @@ struct ISpatialSurfaceObserverStatics :
     impl::consume<ISpatialSurfaceObserverStatics>
 {
     ISpatialSurfaceObserverStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialSurfaceObserverStatics>(m_ptr); }
 };
 
 }

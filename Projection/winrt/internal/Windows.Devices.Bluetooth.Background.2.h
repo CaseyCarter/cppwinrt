@@ -34,7 +34,6 @@ struct IBluetoothLEAdvertisementPublisherTriggerDetails :
     impl::consume<IBluetoothLEAdvertisementPublisherTriggerDetails>
 {
     IBluetoothLEAdvertisementPublisherTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAdvertisementPublisherTriggerDetails>(m_ptr); }
 };
 
 struct IBluetoothLEAdvertisementWatcherTriggerDetails :
@@ -42,7 +41,6 @@ struct IBluetoothLEAdvertisementWatcherTriggerDetails :
     impl::consume<IBluetoothLEAdvertisementWatcherTriggerDetails>
 {
     IBluetoothLEAdvertisementWatcherTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAdvertisementWatcherTriggerDetails>(m_ptr); }
 };
 
 struct IGattCharacteristicNotificationTriggerDetails :
@@ -50,7 +48,6 @@ struct IGattCharacteristicNotificationTriggerDetails :
     impl::consume<IGattCharacteristicNotificationTriggerDetails>
 {
     IGattCharacteristicNotificationTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattCharacteristicNotificationTriggerDetails>(m_ptr); }
 };
 
 struct IRfcommConnectionTriggerDetails :
@@ -58,7 +55,6 @@ struct IRfcommConnectionTriggerDetails :
     impl::consume<IRfcommConnectionTriggerDetails>
 {
     IRfcommConnectionTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRfcommConnectionTriggerDetails>(m_ptr); }
 };
 
 struct IRfcommInboundConnectionInformation :
@@ -66,7 +62,6 @@ struct IRfcommInboundConnectionInformation :
     impl::consume<IRfcommInboundConnectionInformation>
 {
     IRfcommInboundConnectionInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRfcommInboundConnectionInformation>(m_ptr); }
 };
 
 struct IRfcommOutboundConnectionInformation :
@@ -74,7 +69,6 @@ struct IRfcommOutboundConnectionInformation :
     impl::consume<IRfcommOutboundConnectionInformation>
 {
     IRfcommOutboundConnectionInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRfcommOutboundConnectionInformation>(m_ptr); }
 };
 
 }

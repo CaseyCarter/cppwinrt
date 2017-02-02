@@ -49,7 +49,6 @@ struct IInjectedInputKeyboardInfo :
     impl::consume<IInjectedInputKeyboardInfo>
 {
     IInjectedInputKeyboardInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInjectedInputKeyboardInfo>(m_ptr); }
 };
 
 struct IInjectedInputMouseInfo :
@@ -57,7 +56,6 @@ struct IInjectedInputMouseInfo :
     impl::consume<IInjectedInputMouseInfo>
 {
     IInjectedInputMouseInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInjectedInputMouseInfo>(m_ptr); }
 };
 
 struct IInjectedInputPenInfo :
@@ -65,7 +63,6 @@ struct IInjectedInputPenInfo :
     impl::consume<IInjectedInputPenInfo>
 {
     IInjectedInputPenInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInjectedInputPenInfo>(m_ptr); }
 };
 
 struct IInjectedInputTouchInfo :
@@ -73,7 +70,6 @@ struct IInjectedInputTouchInfo :
     impl::consume<IInjectedInputTouchInfo>
 {
     IInjectedInputTouchInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInjectedInputTouchInfo>(m_ptr); }
 };
 
 struct IInputInjector :
@@ -81,7 +77,6 @@ struct IInputInjector :
     impl::consume<IInputInjector>
 {
     IInputInjector(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInputInjector>(m_ptr); }
 };
 
 struct IInputInjectorStatics :
@@ -89,7 +84,6 @@ struct IInputInjectorStatics :
     impl::consume<IInputInjectorStatics>
 {
     IInputInjectorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInputInjectorStatics>(m_ptr); }
 };
 
 }

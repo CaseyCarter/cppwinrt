@@ -134,7 +134,6 @@ struct IBluetoothLEAdvertisement :
     impl::consume<IBluetoothLEAdvertisement>
 {
     IBluetoothLEAdvertisement(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAdvertisement>(m_ptr); }
 };
 
 struct IBluetoothLEAdvertisementBytePattern :
@@ -142,7 +141,6 @@ struct IBluetoothLEAdvertisementBytePattern :
     impl::consume<IBluetoothLEAdvertisementBytePattern>
 {
     IBluetoothLEAdvertisementBytePattern(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAdvertisementBytePattern>(m_ptr); }
 };
 
 struct IBluetoothLEAdvertisementBytePatternFactory :
@@ -150,7 +148,6 @@ struct IBluetoothLEAdvertisementBytePatternFactory :
     impl::consume<IBluetoothLEAdvertisementBytePatternFactory>
 {
     IBluetoothLEAdvertisementBytePatternFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAdvertisementBytePatternFactory>(m_ptr); }
 };
 
 struct IBluetoothLEAdvertisementDataSection :
@@ -158,7 +155,6 @@ struct IBluetoothLEAdvertisementDataSection :
     impl::consume<IBluetoothLEAdvertisementDataSection>
 {
     IBluetoothLEAdvertisementDataSection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAdvertisementDataSection>(m_ptr); }
 };
 
 struct IBluetoothLEAdvertisementDataSectionFactory :
@@ -166,7 +162,6 @@ struct IBluetoothLEAdvertisementDataSectionFactory :
     impl::consume<IBluetoothLEAdvertisementDataSectionFactory>
 {
     IBluetoothLEAdvertisementDataSectionFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAdvertisementDataSectionFactory>(m_ptr); }
 };
 
 struct IBluetoothLEAdvertisementDataTypesStatics :
@@ -174,7 +169,6 @@ struct IBluetoothLEAdvertisementDataTypesStatics :
     impl::consume<IBluetoothLEAdvertisementDataTypesStatics>
 {
     IBluetoothLEAdvertisementDataTypesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAdvertisementDataTypesStatics>(m_ptr); }
 };
 
 struct IBluetoothLEAdvertisementFilter :
@@ -182,7 +176,6 @@ struct IBluetoothLEAdvertisementFilter :
     impl::consume<IBluetoothLEAdvertisementFilter>
 {
     IBluetoothLEAdvertisementFilter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAdvertisementFilter>(m_ptr); }
 };
 
 struct IBluetoothLEAdvertisementPublisher :
@@ -190,7 +183,6 @@ struct IBluetoothLEAdvertisementPublisher :
     impl::consume<IBluetoothLEAdvertisementPublisher>
 {
     IBluetoothLEAdvertisementPublisher(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAdvertisementPublisher>(m_ptr); }
 };
 
 struct IBluetoothLEAdvertisementPublisherFactory :
@@ -198,7 +190,6 @@ struct IBluetoothLEAdvertisementPublisherFactory :
     impl::consume<IBluetoothLEAdvertisementPublisherFactory>
 {
     IBluetoothLEAdvertisementPublisherFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAdvertisementPublisherFactory>(m_ptr); }
 };
 
 struct IBluetoothLEAdvertisementPublisherStatusChangedEventArgs :
@@ -206,7 +197,6 @@ struct IBluetoothLEAdvertisementPublisherStatusChangedEventArgs :
     impl::consume<IBluetoothLEAdvertisementPublisherStatusChangedEventArgs>
 {
     IBluetoothLEAdvertisementPublisherStatusChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAdvertisementPublisherStatusChangedEventArgs>(m_ptr); }
 };
 
 struct IBluetoothLEAdvertisementReceivedEventArgs :
@@ -214,7 +204,6 @@ struct IBluetoothLEAdvertisementReceivedEventArgs :
     impl::consume<IBluetoothLEAdvertisementReceivedEventArgs>
 {
     IBluetoothLEAdvertisementReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAdvertisementReceivedEventArgs>(m_ptr); }
 };
 
 struct IBluetoothLEAdvertisementWatcher :
@@ -222,7 +211,6 @@ struct IBluetoothLEAdvertisementWatcher :
     impl::consume<IBluetoothLEAdvertisementWatcher>
 {
     IBluetoothLEAdvertisementWatcher(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAdvertisementWatcher>(m_ptr); }
 };
 
 struct IBluetoothLEAdvertisementWatcherFactory :
@@ -230,7 +218,6 @@ struct IBluetoothLEAdvertisementWatcherFactory :
     impl::consume<IBluetoothLEAdvertisementWatcherFactory>
 {
     IBluetoothLEAdvertisementWatcherFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAdvertisementWatcherFactory>(m_ptr); }
 };
 
 struct IBluetoothLEAdvertisementWatcherStoppedEventArgs :
@@ -238,7 +225,6 @@ struct IBluetoothLEAdvertisementWatcherStoppedEventArgs :
     impl::consume<IBluetoothLEAdvertisementWatcherStoppedEventArgs>
 {
     IBluetoothLEAdvertisementWatcherStoppedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAdvertisementWatcherStoppedEventArgs>(m_ptr); }
 };
 
 struct IBluetoothLEManufacturerData :
@@ -246,7 +232,6 @@ struct IBluetoothLEManufacturerData :
     impl::consume<IBluetoothLEManufacturerData>
 {
     IBluetoothLEManufacturerData(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEManufacturerData>(m_ptr); }
 };
 
 struct IBluetoothLEManufacturerDataFactory :
@@ -254,7 +239,6 @@ struct IBluetoothLEManufacturerDataFactory :
     impl::consume<IBluetoothLEManufacturerDataFactory>
 {
     IBluetoothLEManufacturerDataFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEManufacturerDataFactory>(m_ptr); }
 };
 
 }

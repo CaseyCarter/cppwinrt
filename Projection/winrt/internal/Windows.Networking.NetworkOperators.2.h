@@ -445,7 +445,6 @@ struct IHotspotAuthenticationContext :
     impl::consume<IHotspotAuthenticationContext>
 {
     IHotspotAuthenticationContext(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHotspotAuthenticationContext>(m_ptr); }
 };
 
 struct IHotspotAuthenticationContext2 :
@@ -453,7 +452,6 @@ struct IHotspotAuthenticationContext2 :
     impl::consume<IHotspotAuthenticationContext2>
 {
     IHotspotAuthenticationContext2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHotspotAuthenticationContext2>(m_ptr); }
 };
 
 struct IHotspotAuthenticationContextStatics :
@@ -461,7 +459,6 @@ struct IHotspotAuthenticationContextStatics :
     impl::consume<IHotspotAuthenticationContextStatics>
 {
     IHotspotAuthenticationContextStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHotspotAuthenticationContextStatics>(m_ptr); }
 };
 
 struct IHotspotAuthenticationEventDetails :
@@ -469,7 +466,6 @@ struct IHotspotAuthenticationEventDetails :
     impl::consume<IHotspotAuthenticationEventDetails>
 {
     IHotspotAuthenticationEventDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHotspotAuthenticationEventDetails>(m_ptr); }
 };
 
 struct IHotspotCredentialsAuthenticationResult :
@@ -477,7 +473,6 @@ struct IHotspotCredentialsAuthenticationResult :
     impl::consume<IHotspotCredentialsAuthenticationResult>
 {
     IHotspotCredentialsAuthenticationResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHotspotCredentialsAuthenticationResult>(m_ptr); }
 };
 
 struct IKnownCSimFilePathsStatics :
@@ -485,7 +480,6 @@ struct IKnownCSimFilePathsStatics :
     impl::consume<IKnownCSimFilePathsStatics>
 {
     IKnownCSimFilePathsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownCSimFilePathsStatics>(m_ptr); }
 };
 
 struct IKnownRuimFilePathsStatics :
@@ -493,7 +487,6 @@ struct IKnownRuimFilePathsStatics :
     impl::consume<IKnownRuimFilePathsStatics>
 {
     IKnownRuimFilePathsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownRuimFilePathsStatics>(m_ptr); }
 };
 
 struct IKnownSimFilePathsStatics :
@@ -501,7 +494,6 @@ struct IKnownSimFilePathsStatics :
     impl::consume<IKnownSimFilePathsStatics>
 {
     IKnownSimFilePathsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownSimFilePathsStatics>(m_ptr); }
 };
 
 struct IKnownUSimFilePathsStatics :
@@ -509,7 +501,6 @@ struct IKnownUSimFilePathsStatics :
     impl::consume<IKnownUSimFilePathsStatics>
 {
     IKnownUSimFilePathsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownUSimFilePathsStatics>(m_ptr); }
 };
 
 struct IMobileBroadbandAccount :
@@ -517,7 +508,6 @@ struct IMobileBroadbandAccount :
     impl::consume<IMobileBroadbandAccount>
 {
     IMobileBroadbandAccount(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandAccount>(m_ptr); }
 };
 
 struct IMobileBroadbandAccount2 :
@@ -525,7 +515,6 @@ struct IMobileBroadbandAccount2 :
     impl::consume<IMobileBroadbandAccount2>
 {
     IMobileBroadbandAccount2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandAccount2>(m_ptr); }
 };
 
 struct IMobileBroadbandAccountEventArgs :
@@ -533,7 +522,6 @@ struct IMobileBroadbandAccountEventArgs :
     impl::consume<IMobileBroadbandAccountEventArgs>
 {
     IMobileBroadbandAccountEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandAccountEventArgs>(m_ptr); }
 };
 
 struct IMobileBroadbandAccountStatics :
@@ -541,7 +529,6 @@ struct IMobileBroadbandAccountStatics :
     impl::consume<IMobileBroadbandAccountStatics>
 {
     IMobileBroadbandAccountStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandAccountStatics>(m_ptr); }
 };
 
 struct IMobileBroadbandAccountUpdatedEventArgs :
@@ -549,7 +536,6 @@ struct IMobileBroadbandAccountUpdatedEventArgs :
     impl::consume<IMobileBroadbandAccountUpdatedEventArgs>
 {
     IMobileBroadbandAccountUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandAccountUpdatedEventArgs>(m_ptr); }
 };
 
 struct IMobileBroadbandAccountWatcher :
@@ -557,7 +543,6 @@ struct IMobileBroadbandAccountWatcher :
     impl::consume<IMobileBroadbandAccountWatcher>
 {
     IMobileBroadbandAccountWatcher(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandAccountWatcher>(m_ptr); }
 };
 
 struct IMobileBroadbandDeviceInformation :
@@ -565,7 +550,6 @@ struct IMobileBroadbandDeviceInformation :
     impl::consume<IMobileBroadbandDeviceInformation>
 {
     IMobileBroadbandDeviceInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandDeviceInformation>(m_ptr); }
 };
 
 struct IMobileBroadbandDeviceInformation2 :
@@ -573,7 +557,6 @@ struct IMobileBroadbandDeviceInformation2 :
     impl::consume<IMobileBroadbandDeviceInformation2>
 {
     IMobileBroadbandDeviceInformation2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandDeviceInformation2>(m_ptr); }
 };
 
 struct IMobileBroadbandDeviceService :
@@ -581,7 +564,6 @@ struct IMobileBroadbandDeviceService :
     impl::consume<IMobileBroadbandDeviceService>
 {
     IMobileBroadbandDeviceService(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandDeviceService>(m_ptr); }
 };
 
 struct IMobileBroadbandDeviceServiceCommandResult :
@@ -589,7 +571,6 @@ struct IMobileBroadbandDeviceServiceCommandResult :
     impl::consume<IMobileBroadbandDeviceServiceCommandResult>
 {
     IMobileBroadbandDeviceServiceCommandResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandDeviceServiceCommandResult>(m_ptr); }
 };
 
 struct IMobileBroadbandDeviceServiceCommandSession :
@@ -597,7 +578,6 @@ struct IMobileBroadbandDeviceServiceCommandSession :
     impl::consume<IMobileBroadbandDeviceServiceCommandSession>
 {
     IMobileBroadbandDeviceServiceCommandSession(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandDeviceServiceCommandSession>(m_ptr); }
 };
 
 struct IMobileBroadbandDeviceServiceDataReceivedEventArgs :
@@ -605,7 +585,6 @@ struct IMobileBroadbandDeviceServiceDataReceivedEventArgs :
     impl::consume<IMobileBroadbandDeviceServiceDataReceivedEventArgs>
 {
     IMobileBroadbandDeviceServiceDataReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandDeviceServiceDataReceivedEventArgs>(m_ptr); }
 };
 
 struct IMobileBroadbandDeviceServiceDataSession :
@@ -613,7 +592,6 @@ struct IMobileBroadbandDeviceServiceDataSession :
     impl::consume<IMobileBroadbandDeviceServiceDataSession>
 {
     IMobileBroadbandDeviceServiceDataSession(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandDeviceServiceDataSession>(m_ptr); }
 };
 
 struct IMobileBroadbandDeviceServiceInformation :
@@ -621,7 +599,6 @@ struct IMobileBroadbandDeviceServiceInformation :
     impl::consume<IMobileBroadbandDeviceServiceInformation>
 {
     IMobileBroadbandDeviceServiceInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandDeviceServiceInformation>(m_ptr); }
 };
 
 struct IMobileBroadbandDeviceServiceTriggerDetails :
@@ -629,7 +606,6 @@ struct IMobileBroadbandDeviceServiceTriggerDetails :
     impl::consume<IMobileBroadbandDeviceServiceTriggerDetails>
 {
     IMobileBroadbandDeviceServiceTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandDeviceServiceTriggerDetails>(m_ptr); }
 };
 
 struct IMobileBroadbandModem :
@@ -637,7 +613,6 @@ struct IMobileBroadbandModem :
     impl::consume<IMobileBroadbandModem>
 {
     IMobileBroadbandModem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandModem>(m_ptr); }
 };
 
 struct IMobileBroadbandModemConfiguration :
@@ -645,7 +620,6 @@ struct IMobileBroadbandModemConfiguration :
     impl::consume<IMobileBroadbandModemConfiguration>
 {
     IMobileBroadbandModemConfiguration(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandModemConfiguration>(m_ptr); }
 };
 
 struct IMobileBroadbandModemStatics :
@@ -653,7 +627,6 @@ struct IMobileBroadbandModemStatics :
     impl::consume<IMobileBroadbandModemStatics>
 {
     IMobileBroadbandModemStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandModemStatics>(m_ptr); }
 };
 
 struct IMobileBroadbandNetwork :
@@ -661,7 +634,6 @@ struct IMobileBroadbandNetwork :
     impl::consume<IMobileBroadbandNetwork>
 {
     IMobileBroadbandNetwork(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandNetwork>(m_ptr); }
 };
 
 struct IMobileBroadbandNetwork2 :
@@ -669,7 +641,6 @@ struct IMobileBroadbandNetwork2 :
     impl::consume<IMobileBroadbandNetwork2>
 {
     IMobileBroadbandNetwork2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandNetwork2>(m_ptr); }
 };
 
 struct IMobileBroadbandNetworkRegistrationStateChange :
@@ -677,7 +648,6 @@ struct IMobileBroadbandNetworkRegistrationStateChange :
     impl::consume<IMobileBroadbandNetworkRegistrationStateChange>
 {
     IMobileBroadbandNetworkRegistrationStateChange(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandNetworkRegistrationStateChange>(m_ptr); }
 };
 
 struct IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails :
@@ -685,7 +655,6 @@ struct IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails :
     impl::consume<IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails>
 {
     IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails>(m_ptr); }
 };
 
 struct IMobileBroadbandPin :
@@ -693,7 +662,6 @@ struct IMobileBroadbandPin :
     impl::consume<IMobileBroadbandPin>
 {
     IMobileBroadbandPin(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandPin>(m_ptr); }
 };
 
 struct IMobileBroadbandPinLockStateChange :
@@ -701,7 +669,6 @@ struct IMobileBroadbandPinLockStateChange :
     impl::consume<IMobileBroadbandPinLockStateChange>
 {
     IMobileBroadbandPinLockStateChange(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandPinLockStateChange>(m_ptr); }
 };
 
 struct IMobileBroadbandPinLockStateChangeTriggerDetails :
@@ -709,7 +676,6 @@ struct IMobileBroadbandPinLockStateChangeTriggerDetails :
     impl::consume<IMobileBroadbandPinLockStateChangeTriggerDetails>
 {
     IMobileBroadbandPinLockStateChangeTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandPinLockStateChangeTriggerDetails>(m_ptr); }
 };
 
 struct IMobileBroadbandPinManager :
@@ -717,7 +683,6 @@ struct IMobileBroadbandPinManager :
     impl::consume<IMobileBroadbandPinManager>
 {
     IMobileBroadbandPinManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandPinManager>(m_ptr); }
 };
 
 struct IMobileBroadbandPinOperationResult :
@@ -725,7 +690,6 @@ struct IMobileBroadbandPinOperationResult :
     impl::consume<IMobileBroadbandPinOperationResult>
 {
     IMobileBroadbandPinOperationResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandPinOperationResult>(m_ptr); }
 };
 
 struct IMobileBroadbandRadioStateChange :
@@ -733,7 +697,6 @@ struct IMobileBroadbandRadioStateChange :
     impl::consume<IMobileBroadbandRadioStateChange>
 {
     IMobileBroadbandRadioStateChange(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandRadioStateChange>(m_ptr); }
 };
 
 struct IMobileBroadbandRadioStateChangeTriggerDetails :
@@ -741,7 +704,6 @@ struct IMobileBroadbandRadioStateChangeTriggerDetails :
     impl::consume<IMobileBroadbandRadioStateChangeTriggerDetails>
 {
     IMobileBroadbandRadioStateChangeTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandRadioStateChangeTriggerDetails>(m_ptr); }
 };
 
 struct IMobileBroadbandUicc :
@@ -749,7 +711,6 @@ struct IMobileBroadbandUicc :
     impl::consume<IMobileBroadbandUicc>
 {
     IMobileBroadbandUicc(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandUicc>(m_ptr); }
 };
 
 struct IMobileBroadbandUiccApp :
@@ -757,7 +718,6 @@ struct IMobileBroadbandUiccApp :
     impl::consume<IMobileBroadbandUiccApp>
 {
     IMobileBroadbandUiccApp(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandUiccApp>(m_ptr); }
 };
 
 struct IMobileBroadbandUiccAppReadRecordResult :
@@ -765,7 +725,6 @@ struct IMobileBroadbandUiccAppReadRecordResult :
     impl::consume<IMobileBroadbandUiccAppReadRecordResult>
 {
     IMobileBroadbandUiccAppReadRecordResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandUiccAppReadRecordResult>(m_ptr); }
 };
 
 struct IMobileBroadbandUiccAppRecordDetailsResult :
@@ -773,7 +732,6 @@ struct IMobileBroadbandUiccAppRecordDetailsResult :
     impl::consume<IMobileBroadbandUiccAppRecordDetailsResult>
 {
     IMobileBroadbandUiccAppRecordDetailsResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandUiccAppRecordDetailsResult>(m_ptr); }
 };
 
 struct IMobileBroadbandUiccAppsResult :
@@ -781,7 +739,6 @@ struct IMobileBroadbandUiccAppsResult :
     impl::consume<IMobileBroadbandUiccAppsResult>
 {
     IMobileBroadbandUiccAppsResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMobileBroadbandUiccAppsResult>(m_ptr); }
 };
 
 struct INetworkOperatorTetheringAccessPointConfiguration :
@@ -789,7 +746,6 @@ struct INetworkOperatorTetheringAccessPointConfiguration :
     impl::consume<INetworkOperatorTetheringAccessPointConfiguration>
 {
     INetworkOperatorTetheringAccessPointConfiguration(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkOperatorTetheringAccessPointConfiguration>(m_ptr); }
 };
 
 struct INetworkOperatorTetheringClient :
@@ -797,7 +753,6 @@ struct INetworkOperatorTetheringClient :
     impl::consume<INetworkOperatorTetheringClient>
 {
     INetworkOperatorTetheringClient(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkOperatorTetheringClient>(m_ptr); }
 };
 
 struct INetworkOperatorTetheringClientManager :
@@ -805,7 +760,6 @@ struct INetworkOperatorTetheringClientManager :
     impl::consume<INetworkOperatorTetheringClientManager>
 {
     INetworkOperatorTetheringClientManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkOperatorTetheringClientManager>(m_ptr); }
 };
 
 struct INetworkOperatorTetheringManager :
@@ -813,7 +767,6 @@ struct INetworkOperatorTetheringManager :
     impl::consume<INetworkOperatorTetheringManager>
 {
     INetworkOperatorTetheringManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkOperatorTetheringManager>(m_ptr); }
 };
 
 struct INetworkOperatorTetheringManagerStatics :
@@ -821,7 +774,6 @@ struct INetworkOperatorTetheringManagerStatics :
     impl::consume<INetworkOperatorTetheringManagerStatics>
 {
     INetworkOperatorTetheringManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkOperatorTetheringManagerStatics>(m_ptr); }
 };
 
 struct INetworkOperatorTetheringManagerStatics2 :
@@ -829,7 +781,6 @@ struct INetworkOperatorTetheringManagerStatics2 :
     impl::consume<INetworkOperatorTetheringManagerStatics2>
 {
     INetworkOperatorTetheringManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkOperatorTetheringManagerStatics2>(m_ptr); }
 };
 
 struct INetworkOperatorTetheringManagerStatics3 :
@@ -837,7 +788,6 @@ struct INetworkOperatorTetheringManagerStatics3 :
     impl::consume<INetworkOperatorTetheringManagerStatics3>
 {
     INetworkOperatorTetheringManagerStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkOperatorTetheringManagerStatics3>(m_ptr); }
 };
 
 struct INetworkOperatorTetheringOperationResult :
@@ -845,7 +795,6 @@ struct INetworkOperatorTetheringOperationResult :
     impl::consume<INetworkOperatorTetheringOperationResult>
 {
     INetworkOperatorTetheringOperationResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkOperatorTetheringOperationResult>(m_ptr); }
 };
 
 struct IProvisionFromXmlDocumentResults :
@@ -853,7 +802,6 @@ struct IProvisionFromXmlDocumentResults :
     impl::consume<IProvisionFromXmlDocumentResults>
 {
     IProvisionFromXmlDocumentResults(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProvisionFromXmlDocumentResults>(m_ptr); }
 };
 
 struct IProvisionedProfile :
@@ -861,7 +809,6 @@ struct IProvisionedProfile :
     impl::consume<IProvisionedProfile>
 {
     IProvisionedProfile(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProvisionedProfile>(m_ptr); }
 };
 
 struct IProvisioningAgent :
@@ -869,7 +816,6 @@ struct IProvisioningAgent :
     impl::consume<IProvisioningAgent>
 {
     IProvisioningAgent(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProvisioningAgent>(m_ptr); }
 };
 
 struct IProvisioningAgentStaticMethods :
@@ -877,7 +823,6 @@ struct IProvisioningAgentStaticMethods :
     impl::consume<IProvisioningAgentStaticMethods>
 {
     IProvisioningAgentStaticMethods(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProvisioningAgentStaticMethods>(m_ptr); }
 };
 
 struct IUssdMessage :
@@ -885,7 +830,6 @@ struct IUssdMessage :
     impl::consume<IUssdMessage>
 {
     IUssdMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUssdMessage>(m_ptr); }
 };
 
 struct IUssdMessageFactory :
@@ -893,7 +837,6 @@ struct IUssdMessageFactory :
     impl::consume<IUssdMessageFactory>
 {
     IUssdMessageFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUssdMessageFactory>(m_ptr); }
 };
 
 struct IUssdReply :
@@ -901,7 +844,6 @@ struct IUssdReply :
     impl::consume<IUssdReply>
 {
     IUssdReply(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUssdReply>(m_ptr); }
 };
 
 struct IUssdSession :
@@ -909,7 +851,6 @@ struct IUssdSession :
     impl::consume<IUssdSession>
 {
     IUssdSession(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUssdSession>(m_ptr); }
 };
 
 struct IUssdSessionStatics :
@@ -917,7 +858,6 @@ struct IUssdSessionStatics :
     impl::consume<IUssdSessionStatics>
 {
     IUssdSessionStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUssdSessionStatics>(m_ptr); }
 };
 
 }

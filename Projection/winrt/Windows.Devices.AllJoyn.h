@@ -2493,178 +2493,178 @@ namespace Windows::Devices::AllJoyn {
 template <typename D> int32_t impl_IAllJoynStatusStatics<D>::Ok() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynStatusStatics &>(static_cast<const D &>(*this))->get_Ok(&value));
+    check_hresult(WINRT_SHIM(IAllJoynStatusStatics)->get_Ok(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynStatusStatics<D>::Fail() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynStatusStatics &>(static_cast<const D &>(*this))->get_Fail(&value));
+    check_hresult(WINRT_SHIM(IAllJoynStatusStatics)->get_Fail(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynStatusStatics<D>::OperationTimedOut() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynStatusStatics &>(static_cast<const D &>(*this))->get_OperationTimedOut(&value));
+    check_hresult(WINRT_SHIM(IAllJoynStatusStatics)->get_OperationTimedOut(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynStatusStatics<D>::OtherEndClosed() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynStatusStatics &>(static_cast<const D &>(*this))->get_OtherEndClosed(&value));
+    check_hresult(WINRT_SHIM(IAllJoynStatusStatics)->get_OtherEndClosed(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynStatusStatics<D>::ConnectionRefused() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynStatusStatics &>(static_cast<const D &>(*this))->get_ConnectionRefused(&value));
+    check_hresult(WINRT_SHIM(IAllJoynStatusStatics)->get_ConnectionRefused(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynStatusStatics<D>::AuthenticationFailed() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynStatusStatics &>(static_cast<const D &>(*this))->get_AuthenticationFailed(&value));
+    check_hresult(WINRT_SHIM(IAllJoynStatusStatics)->get_AuthenticationFailed(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynStatusStatics<D>::AuthenticationRejectedByUser() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynStatusStatics &>(static_cast<const D &>(*this))->get_AuthenticationRejectedByUser(&value));
+    check_hresult(WINRT_SHIM(IAllJoynStatusStatics)->get_AuthenticationRejectedByUser(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynStatusStatics<D>::SslConnectFailed() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynStatusStatics &>(static_cast<const D &>(*this))->get_SslConnectFailed(&value));
+    check_hresult(WINRT_SHIM(IAllJoynStatusStatics)->get_SslConnectFailed(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynStatusStatics<D>::SslIdentityVerificationFailed() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynStatusStatics &>(static_cast<const D &>(*this))->get_SslIdentityVerificationFailed(&value));
+    check_hresult(WINRT_SHIM(IAllJoynStatusStatics)->get_SslIdentityVerificationFailed(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynStatusStatics<D>::InsufficientSecurity() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynStatusStatics &>(static_cast<const D &>(*this))->get_InsufficientSecurity(&value));
+    check_hresult(WINRT_SHIM(IAllJoynStatusStatics)->get_InsufficientSecurity(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynStatusStatics<D>::InvalidArgument1() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynStatusStatics &>(static_cast<const D &>(*this))->get_InvalidArgument1(&value));
+    check_hresult(WINRT_SHIM(IAllJoynStatusStatics)->get_InvalidArgument1(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynStatusStatics<D>::InvalidArgument2() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynStatusStatics &>(static_cast<const D &>(*this))->get_InvalidArgument2(&value));
+    check_hresult(WINRT_SHIM(IAllJoynStatusStatics)->get_InvalidArgument2(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynStatusStatics<D>::InvalidArgument3() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynStatusStatics &>(static_cast<const D &>(*this))->get_InvalidArgument3(&value));
+    check_hresult(WINRT_SHIM(IAllJoynStatusStatics)->get_InvalidArgument3(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynStatusStatics<D>::InvalidArgument4() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynStatusStatics &>(static_cast<const D &>(*this))->get_InvalidArgument4(&value));
+    check_hresult(WINRT_SHIM(IAllJoynStatusStatics)->get_InvalidArgument4(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynStatusStatics<D>::InvalidArgument5() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynStatusStatics &>(static_cast<const D &>(*this))->get_InvalidArgument5(&value));
+    check_hresult(WINRT_SHIM(IAllJoynStatusStatics)->get_InvalidArgument5(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynStatusStatics<D>::InvalidArgument6() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynStatusStatics &>(static_cast<const D &>(*this))->get_InvalidArgument6(&value));
+    check_hresult(WINRT_SHIM(IAllJoynStatusStatics)->get_InvalidArgument6(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynStatusStatics<D>::InvalidArgument7() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynStatusStatics &>(static_cast<const D &>(*this))->get_InvalidArgument7(&value));
+    check_hresult(WINRT_SHIM(IAllJoynStatusStatics)->get_InvalidArgument7(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynStatusStatics<D>::InvalidArgument8() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynStatusStatics &>(static_cast<const D &>(*this))->get_InvalidArgument8(&value));
+    check_hresult(WINRT_SHIM(IAllJoynStatusStatics)->get_InvalidArgument8(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynAboutData impl_IAllJoynBusAttachment<D>::AboutData() const
 {
     Windows::Devices::AllJoyn::AllJoynAboutData value { nullptr };
-    check_hresult(static_cast<const IAllJoynBusAttachment &>(static_cast<const D &>(*this))->get_AboutData(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->get_AboutData(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynBusAttachment<D>::ConnectionSpecification() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynBusAttachment &>(static_cast<const D &>(*this))->get_ConnectionSpecification(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->get_ConnectionSpecification(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynBusAttachmentState impl_IAllJoynBusAttachment<D>::State() const
 {
     Windows::Devices::AllJoyn::AllJoynBusAttachmentState value {};
-    check_hresult(static_cast<const IAllJoynBusAttachment &>(static_cast<const D &>(*this))->get_State(&value));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->get_State(&value));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynBusAttachment<D>::UniqueName() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynBusAttachment &>(static_cast<const D &>(*this))->get_UniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->get_UniqueName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<int32_t> impl_IAllJoynBusAttachment<D>::PingAsync(hstring_ref uniqueName) const
 {
     Windows::Foundation::IAsyncOperation<int32_t> operation;
-    check_hresult(static_cast<const IAllJoynBusAttachment &>(static_cast<const D &>(*this))->abi_PingAsync(get(uniqueName), put(operation)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->abi_PingAsync(get(uniqueName), put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IAllJoynBusAttachment<D>::Connect() const
 {
-    check_hresult(static_cast<const IAllJoynBusAttachment &>(static_cast<const D &>(*this))->abi_Connect());
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->abi_Connect());
 }
 
 template <typename D> void impl_IAllJoynBusAttachment<D>::Disconnect() const
 {
-    check_hresult(static_cast<const IAllJoynBusAttachment &>(static_cast<const D &>(*this))->abi_Disconnect());
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->abi_Disconnect());
 }
 
 template <typename D> event_token impl_IAllJoynBusAttachment<D>::StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAllJoynBusAttachment &>(static_cast<const D &>(*this))->add_StateChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->add_StateChanged(get(handler), &token));
     return token;
 }
 
@@ -2675,20 +2675,20 @@ template <typename D> event_revoker<IAllJoynBusAttachment> impl_IAllJoynBusAttac
 
 template <typename D> void impl_IAllJoynBusAttachment<D>::StateChanged(event_token token) const
 {
-    check_hresult(static_cast<const IAllJoynBusAttachment &>(static_cast<const D &>(*this))->remove_StateChanged(token));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->remove_StateChanged(token));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<winrt::Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism> impl_IAllJoynBusAttachment<D>::AuthenticationMechanisms() const
 {
     Windows::Foundation::Collections::IVector<winrt::Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism> value;
-    check_hresult(static_cast<const IAllJoynBusAttachment &>(static_cast<const D &>(*this))->get_AuthenticationMechanisms(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->get_AuthenticationMechanisms(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IAllJoynBusAttachment<D>::CredentialsRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAllJoynBusAttachment &>(static_cast<const D &>(*this))->add_CredentialsRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->add_CredentialsRequested(get(handler), &token));
     return token;
 }
 
@@ -2699,13 +2699,13 @@ template <typename D> event_revoker<IAllJoynBusAttachment> impl_IAllJoynBusAttac
 
 template <typename D> void impl_IAllJoynBusAttachment<D>::CredentialsRequested(event_token token) const
 {
-    check_hresult(static_cast<const IAllJoynBusAttachment &>(static_cast<const D &>(*this))->remove_CredentialsRequested(token));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->remove_CredentialsRequested(token));
 }
 
 template <typename D> event_token impl_IAllJoynBusAttachment<D>::CredentialsVerificationRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAllJoynBusAttachment &>(static_cast<const D &>(*this))->add_CredentialsVerificationRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->add_CredentialsVerificationRequested(get(handler), &token));
     return token;
 }
 
@@ -2716,13 +2716,13 @@ template <typename D> event_revoker<IAllJoynBusAttachment> impl_IAllJoynBusAttac
 
 template <typename D> void impl_IAllJoynBusAttachment<D>::CredentialsVerificationRequested(event_token token) const
 {
-    check_hresult(static_cast<const IAllJoynBusAttachment &>(static_cast<const D &>(*this))->remove_CredentialsVerificationRequested(token));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->remove_CredentialsVerificationRequested(token));
 }
 
 template <typename D> event_token impl_IAllJoynBusAttachment<D>::AuthenticationComplete(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAllJoynBusAttachment &>(static_cast<const D &>(*this))->add_AuthenticationComplete(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->add_AuthenticationComplete(get(handler), &token));
     return token;
 }
 
@@ -2733,27 +2733,27 @@ template <typename D> event_revoker<IAllJoynBusAttachment> impl_IAllJoynBusAttac
 
 template <typename D> void impl_IAllJoynBusAttachment<D>::AuthenticationComplete(event_token token) const
 {
-    check_hresult(static_cast<const IAllJoynBusAttachment &>(static_cast<const D &>(*this))->remove_AuthenticationComplete(token));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment)->remove_AuthenticationComplete(token));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> impl_IAllJoynBusAttachment2<D>::GetAboutDataAsync(const Windows::Devices::AllJoyn::AllJoynServiceInfo & serviceInfo) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> operation;
-    check_hresult(static_cast<const IAllJoynBusAttachment2 &>(static_cast<const D &>(*this))->abi_GetAboutDataAsync(get(serviceInfo), put(operation)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment2)->abi_GetAboutDataAsync(get(serviceInfo), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> impl_IAllJoynBusAttachment2<D>::GetAboutDataAsync(const Windows::Devices::AllJoyn::AllJoynServiceInfo & serviceInfo, const Windows::Globalization::Language & language) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> operation;
-    check_hresult(static_cast<const IAllJoynBusAttachment2 &>(static_cast<const D &>(*this))->abi_GetAboutDataWithLanguageAsync(get(serviceInfo), get(language), put(operation)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment2)->abi_GetAboutDataWithLanguageAsync(get(serviceInfo), get(language), put(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IAllJoynBusAttachment2<D>::AcceptSessionJoinerRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAllJoynBusAttachment2 &>(static_cast<const D &>(*this))->add_AcceptSessionJoinerRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment2)->add_AcceptSessionJoinerRequested(get(handler), &token));
     return token;
 }
 
@@ -2764,13 +2764,13 @@ template <typename D> event_revoker<IAllJoynBusAttachment2> impl_IAllJoynBusAtta
 
 template <typename D> void impl_IAllJoynBusAttachment2<D>::AcceptSessionJoinerRequested(event_token token) const
 {
-    check_hresult(static_cast<const IAllJoynBusAttachment2 &>(static_cast<const D &>(*this))->remove_AcceptSessionJoinerRequested(token));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment2)->remove_AcceptSessionJoinerRequested(token));
 }
 
 template <typename D> event_token impl_IAllJoynBusAttachment2<D>::SessionJoined(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAllJoynBusAttachment2 &>(static_cast<const D &>(*this))->add_SessionJoined(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment2)->add_SessionJoined(get(handler), &token));
     return token;
 }
 
@@ -2781,222 +2781,222 @@ template <typename D> event_revoker<IAllJoynBusAttachment2> impl_IAllJoynBusAtta
 
 template <typename D> void impl_IAllJoynBusAttachment2<D>::SessionJoined(event_token token) const
 {
-    check_hresult(static_cast<const IAllJoynBusAttachment2 &>(static_cast<const D &>(*this))->remove_SessionJoined(token));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachment2)->remove_SessionJoined(token));
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynBusAttachment impl_IAllJoynBusAttachmentStatics<D>::GetDefault() const
 {
     Windows::Devices::AllJoyn::AllJoynBusAttachment defaultBusAttachment { nullptr };
-    check_hresult(static_cast<const IAllJoynBusAttachmentStatics &>(static_cast<const D &>(*this))->abi_GetDefault(put(defaultBusAttachment)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachmentStatics)->abi_GetDefault(put(defaultBusAttachment)));
     return defaultBusAttachment;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceWatcher impl_IAllJoynBusAttachmentStatics<D>::GetWatcher(const Windows::Foundation::Collections::IIterable<hstring> & requiredInterfaces) const
 {
     Windows::Devices::Enumeration::DeviceWatcher deviceWatcher { nullptr };
-    check_hresult(static_cast<const IAllJoynBusAttachmentStatics &>(static_cast<const D &>(*this))->abi_GetWatcher(get(requiredInterfaces), put(deviceWatcher)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachmentStatics)->abi_GetWatcher(get(requiredInterfaces), put(deviceWatcher)));
     return deviceWatcher;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynBusAttachmentState impl_IAllJoynBusAttachmentStateChangedEventArgs<D>::State() const
 {
     Windows::Devices::AllJoyn::AllJoynBusAttachmentState value {};
-    check_hresult(static_cast<const IAllJoynBusAttachmentStateChangedEventArgs &>(static_cast<const D &>(*this))->get_State(&value));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachmentStateChangedEventArgs)->get_State(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynBusAttachmentStateChangedEventArgs<D>::Status() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynBusAttachmentStateChangedEventArgs &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachmentStateChangedEventArgs)->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism impl_IAllJoynCredentials<D>::AuthenticationMechanism() const
 {
     Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism value {};
-    check_hresult(static_cast<const IAllJoynCredentials &>(static_cast<const D &>(*this))->get_AuthenticationMechanism(&value));
+    check_hresult(WINRT_SHIM(IAllJoynCredentials)->get_AuthenticationMechanism(&value));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_IAllJoynCredentials<D>::Certificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(static_cast<const IAllJoynCredentials &>(static_cast<const D &>(*this))->get_Certificate(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentials)->get_Certificate(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynCredentials<D>::Certificate(const Windows::Security::Cryptography::Certificates::Certificate & value) const
 {
-    check_hresult(static_cast<const IAllJoynCredentials &>(static_cast<const D &>(*this))->put_Certificate(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentials)->put_Certificate(get(value)));
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IAllJoynCredentials<D>::PasswordCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(static_cast<const IAllJoynCredentials &>(static_cast<const D &>(*this))->get_PasswordCredential(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentials)->get_PasswordCredential(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynCredentials<D>::PasswordCredential(const Windows::Security::Credentials::PasswordCredential & value) const
 {
-    check_hresult(static_cast<const IAllJoynCredentials &>(static_cast<const D &>(*this))->put_PasswordCredential(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentials)->put_PasswordCredential(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IAllJoynCredentials<D>::Timeout() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IAllJoynCredentials &>(static_cast<const D &>(*this))->get_Timeout(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentials)->get_Timeout(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynCredentials<D>::Timeout(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const IAllJoynCredentials &>(static_cast<const D &>(*this))->put_Timeout(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentials)->put_Timeout(get(value)));
 }
 
 template <typename D> uint16_t impl_IAllJoynCredentialsRequestedEventArgs<D>::AttemptCount() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IAllJoynCredentialsRequestedEventArgs &>(static_cast<const D &>(*this))->get_AttemptCount(&value));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsRequestedEventArgs)->get_AttemptCount(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynCredentials impl_IAllJoynCredentialsRequestedEventArgs<D>::Credentials() const
 {
     Windows::Devices::AllJoyn::AllJoynCredentials value { nullptr };
-    check_hresult(static_cast<const IAllJoynCredentialsRequestedEventArgs &>(static_cast<const D &>(*this))->get_Credentials(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsRequestedEventArgs)->get_Credentials(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynCredentialsRequestedEventArgs<D>::PeerUniqueName() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynCredentialsRequestedEventArgs &>(static_cast<const D &>(*this))->get_PeerUniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsRequestedEventArgs)->get_PeerUniqueName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynCredentialsRequestedEventArgs<D>::RequestedUserName() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynCredentialsRequestedEventArgs &>(static_cast<const D &>(*this))->get_RequestedUserName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsRequestedEventArgs)->get_RequestedUserName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IAllJoynCredentialsRequestedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral result { nullptr };
-    check_hresult(static_cast<const IAllJoynCredentialsRequestedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsRequestedEventArgs)->abi_GetDeferral(put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism impl_IAllJoynCredentialsVerificationRequestedEventArgs<D>::AuthenticationMechanism() const
 {
     Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism value {};
-    check_hresult(static_cast<const IAllJoynCredentialsVerificationRequestedEventArgs &>(static_cast<const D &>(*this))->get_AuthenticationMechanism(&value));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsVerificationRequestedEventArgs)->get_AuthenticationMechanism(&value));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynCredentialsVerificationRequestedEventArgs<D>::PeerUniqueName() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynCredentialsVerificationRequestedEventArgs &>(static_cast<const D &>(*this))->get_PeerUniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsVerificationRequestedEventArgs)->get_PeerUniqueName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_IAllJoynCredentialsVerificationRequestedEventArgs<D>::PeerCertificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(static_cast<const IAllJoynCredentialsVerificationRequestedEventArgs &>(static_cast<const D &>(*this))->get_PeerCertificate(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsVerificationRequestedEventArgs)->get_PeerCertificate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::SocketSslErrorSeverity impl_IAllJoynCredentialsVerificationRequestedEventArgs<D>::PeerCertificateErrorSeverity() const
 {
     Windows::Networking::Sockets::SocketSslErrorSeverity value {};
-    check_hresult(static_cast<const IAllJoynCredentialsVerificationRequestedEventArgs &>(static_cast<const D &>(*this))->get_PeerCertificateErrorSeverity(&value));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsVerificationRequestedEventArgs)->get_PeerCertificateErrorSeverity(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> impl_IAllJoynCredentialsVerificationRequestedEventArgs<D>::PeerCertificateErrors() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> value;
-    check_hresult(static_cast<const IAllJoynCredentialsVerificationRequestedEventArgs &>(static_cast<const D &>(*this))->get_PeerCertificateErrors(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsVerificationRequestedEventArgs)->get_PeerCertificateErrors(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> impl_IAllJoynCredentialsVerificationRequestedEventArgs<D>::PeerIntermediateCertificates() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> value;
-    check_hresult(static_cast<const IAllJoynCredentialsVerificationRequestedEventArgs &>(static_cast<const D &>(*this))->get_PeerIntermediateCertificates(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsVerificationRequestedEventArgs)->get_PeerIntermediateCertificates(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynCredentialsVerificationRequestedEventArgs<D>::Accept() const
 {
-    check_hresult(static_cast<const IAllJoynCredentialsVerificationRequestedEventArgs &>(static_cast<const D &>(*this))->abi_Accept());
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsVerificationRequestedEventArgs)->abi_Accept());
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IAllJoynCredentialsVerificationRequestedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral result { nullptr };
-    check_hresult(static_cast<const IAllJoynCredentialsVerificationRequestedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynCredentialsVerificationRequestedEventArgs)->abi_GetDeferral(put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism impl_IAllJoynAuthenticationCompleteEventArgs<D>::AuthenticationMechanism() const
 {
     Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism value {};
-    check_hresult(static_cast<const IAllJoynAuthenticationCompleteEventArgs &>(static_cast<const D &>(*this))->get_AuthenticationMechanism(&value));
+    check_hresult(WINRT_SHIM(IAllJoynAuthenticationCompleteEventArgs)->get_AuthenticationMechanism(&value));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAuthenticationCompleteEventArgs<D>::PeerUniqueName() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynAuthenticationCompleteEventArgs &>(static_cast<const D &>(*this))->get_PeerUniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAuthenticationCompleteEventArgs)->get_PeerUniqueName(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IAllJoynAuthenticationCompleteEventArgs<D>::Succeeded() const
 {
     bool value {};
-    check_hresult(static_cast<const IAllJoynAuthenticationCompleteEventArgs &>(static_cast<const D &>(*this))->get_Succeeded(&value));
+    check_hresult(WINRT_SHIM(IAllJoynAuthenticationCompleteEventArgs)->get_Succeeded(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynBusAttachment impl_IAllJoynBusAttachmentFactory<D>::Create(hstring_ref connectionSpecification) const
 {
     Windows::Devices::AllJoyn::AllJoynBusAttachment result { nullptr };
-    check_hresult(static_cast<const IAllJoynBusAttachmentFactory &>(static_cast<const D &>(*this))->abi_Create(get(connectionSpecification), put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynBusAttachmentFactory)->abi_Create(get(connectionSpecification), put(result)));
     return result;
 }
 
 template <typename D> int32_t impl_IAllJoynSession<D>::Id() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynSession &>(static_cast<const D &>(*this))->get_Id(&value));
+    check_hresult(WINRT_SHIM(IAllJoynSession)->get_Id(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAllJoynSession<D>::Status() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynSession &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IAllJoynSession)->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<int32_t> impl_IAllJoynSession<D>::RemoveMemberAsync(hstring_ref uniqueName) const
 {
     Windows::Foundation::IAsyncOperation<int32_t> operation;
-    check_hresult(static_cast<const IAllJoynSession &>(static_cast<const D &>(*this))->abi_RemoveMemberAsync(get(uniqueName), put(operation)));
+    check_hresult(WINRT_SHIM(IAllJoynSession)->abi_RemoveMemberAsync(get(uniqueName), put(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IAllJoynSession<D>::MemberAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAllJoynSession &>(static_cast<const D &>(*this))->add_MemberAdded(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynSession)->add_MemberAdded(get(handler), &token));
     return token;
 }
 
@@ -3007,13 +3007,13 @@ template <typename D> event_revoker<IAllJoynSession> impl_IAllJoynSession<D>::Me
 
 template <typename D> void impl_IAllJoynSession<D>::MemberAdded(event_token token) const
 {
-    check_hresult(static_cast<const IAllJoynSession &>(static_cast<const D &>(*this))->remove_MemberAdded(token));
+    check_hresult(WINRT_SHIM(IAllJoynSession)->remove_MemberAdded(token));
 }
 
 template <typename D> event_token impl_IAllJoynSession<D>::MemberRemoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAllJoynSession &>(static_cast<const D &>(*this))->add_MemberRemoved(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynSession)->add_MemberRemoved(get(handler), &token));
     return token;
 }
 
@@ -3024,13 +3024,13 @@ template <typename D> event_revoker<IAllJoynSession> impl_IAllJoynSession<D>::Me
 
 template <typename D> void impl_IAllJoynSession<D>::MemberRemoved(event_token token) const
 {
-    check_hresult(static_cast<const IAllJoynSession &>(static_cast<const D &>(*this))->remove_MemberRemoved(token));
+    check_hresult(WINRT_SHIM(IAllJoynSession)->remove_MemberRemoved(token));
 }
 
 template <typename D> event_token impl_IAllJoynSession<D>::Lost(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAllJoynSession &>(static_cast<const D &>(*this))->add_Lost(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynSession)->add_Lost(get(handler), &token));
     return token;
 }
 
@@ -3041,61 +3041,61 @@ template <typename D> event_revoker<IAllJoynSession> impl_IAllJoynSession<D>::Lo
 
 template <typename D> void impl_IAllJoynSession<D>::Lost(event_token token) const
 {
-    check_hresult(static_cast<const IAllJoynSession &>(static_cast<const D &>(*this))->remove_Lost(token));
+    check_hresult(WINRT_SHIM(IAllJoynSession)->remove_Lost(token));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession> impl_IAllJoynSessionStatics<D>::GetFromServiceInfoAsync(const Windows::Devices::AllJoyn::AllJoynServiceInfo & serviceInfo) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession> operation;
-    check_hresult(static_cast<const IAllJoynSessionStatics &>(static_cast<const D &>(*this))->abi_GetFromServiceInfoAsync(get(serviceInfo), put(operation)));
+    check_hresult(WINRT_SHIM(IAllJoynSessionStatics)->abi_GetFromServiceInfoAsync(get(serviceInfo), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession> impl_IAllJoynSessionStatics<D>::GetFromServiceInfoAsync(const Windows::Devices::AllJoyn::AllJoynServiceInfo & serviceInfo, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession> operation;
-    check_hresult(static_cast<const IAllJoynSessionStatics &>(static_cast<const D &>(*this))->abi_GetFromServiceInfoAndBusAttachmentAsync(get(serviceInfo), get(busAttachment), put(operation)));
+    check_hresult(WINRT_SHIM(IAllJoynSessionStatics)->abi_GetFromServiceInfoAndBusAttachmentAsync(get(serviceInfo), get(busAttachment), put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IAllJoynProducer<D>::SetBusObject(const Windows::Devices::AllJoyn::AllJoynBusObject & busObject) const
 {
-    check_hresult(static_cast<const IAllJoynProducer &>(static_cast<const D &>(*this))->abi_SetBusObject(get(busObject)));
+    check_hresult(WINRT_SHIM(IAllJoynProducer)->abi_SetBusObject(get(busObject)));
 }
 
 template <typename D> void impl_IAllJoynBusObject<D>::Start() const
 {
-    check_hresult(static_cast<const IAllJoynBusObject &>(static_cast<const D &>(*this))->abi_Start());
+    check_hresult(WINRT_SHIM(IAllJoynBusObject)->abi_Start());
 }
 
 template <typename D> void impl_IAllJoynBusObject<D>::Stop() const
 {
-    check_hresult(static_cast<const IAllJoynBusObject &>(static_cast<const D &>(*this))->abi_Stop());
+    check_hresult(WINRT_SHIM(IAllJoynBusObject)->abi_Stop());
 }
 
 template <typename D> void impl_IAllJoynBusObject<D>::AddProducer(const Windows::Devices::AllJoyn::IAllJoynProducer & producer) const
 {
-    check_hresult(static_cast<const IAllJoynBusObject &>(static_cast<const D &>(*this))->abi_AddProducer(get(producer)));
+    check_hresult(WINRT_SHIM(IAllJoynBusObject)->abi_AddProducer(get(producer)));
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynBusAttachment impl_IAllJoynBusObject<D>::BusAttachment() const
 {
     Windows::Devices::AllJoyn::AllJoynBusAttachment value { nullptr };
-    check_hresult(static_cast<const IAllJoynBusObject &>(static_cast<const D &>(*this))->get_BusAttachment(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynBusObject)->get_BusAttachment(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynSession impl_IAllJoynBusObject<D>::Session() const
 {
     Windows::Devices::AllJoyn::AllJoynSession value { nullptr };
-    check_hresult(static_cast<const IAllJoynBusObject &>(static_cast<const D &>(*this))->get_Session(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynBusObject)->get_Session(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IAllJoynBusObject<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAllJoynBusObject &>(static_cast<const D &>(*this))->add_Stopped(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAllJoynBusObject)->add_Stopped(get(handler), &token));
     return token;
 }
 
@@ -3106,488 +3106,488 @@ template <typename D> event_revoker<IAllJoynBusObject> impl_IAllJoynBusObject<D>
 
 template <typename D> void impl_IAllJoynBusObject<D>::Stopped(event_token token) const
 {
-    check_hresult(static_cast<const IAllJoynBusObject &>(static_cast<const D &>(*this))->remove_Stopped(token));
+    check_hresult(WINRT_SHIM(IAllJoynBusObject)->remove_Stopped(token));
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynBusObject impl_IAllJoynBusObjectFactory<D>::Create(hstring_ref objectPath) const
 {
     Windows::Devices::AllJoyn::AllJoynBusObject result { nullptr };
-    check_hresult(static_cast<const IAllJoynBusObjectFactory &>(static_cast<const D &>(*this))->abi_Create(get(objectPath), put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynBusObjectFactory)->abi_Create(get(objectPath), put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynBusObject impl_IAllJoynBusObjectFactory<D>::CreateWithBusAttachment(hstring_ref objectPath, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment) const
 {
     Windows::Devices::AllJoyn::AllJoynBusObject result { nullptr };
-    check_hresult(static_cast<const IAllJoynBusObjectFactory &>(static_cast<const D &>(*this))->abi_CreateWithBusAttachment(get(objectPath), get(busAttachment), put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynBusObjectFactory)->abi_CreateWithBusAttachment(get(objectPath), get(busAttachment), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IAllJoynServiceInfo<D>::UniqueName() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynServiceInfo &>(static_cast<const D &>(*this))->get_UniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynServiceInfo)->get_UniqueName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynServiceInfo<D>::ObjectPath() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynServiceInfo &>(static_cast<const D &>(*this))->get_ObjectPath(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynServiceInfo)->get_ObjectPath(put(value)));
     return value;
 }
 
 template <typename D> uint16_t impl_IAllJoynServiceInfo<D>::SessionPort() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IAllJoynServiceInfo &>(static_cast<const D &>(*this))->get_SessionPort(&value));
+    check_hresult(WINRT_SHIM(IAllJoynServiceInfo)->get_SessionPort(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo> impl_IAllJoynServiceInfoStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo> operation;
-    check_hresult(static_cast<const IAllJoynServiceInfoStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(operation)));
+    check_hresult(WINRT_SHIM(IAllJoynServiceInfoStatics)->abi_FromIdAsync(get(deviceId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynServiceInfo impl_IAllJoynServiceInfoFactory<D>::Create(hstring_ref uniqueName, hstring_ref objectPath, uint16_t sessionPort) const
 {
     Windows::Devices::AllJoyn::AllJoynServiceInfo result { nullptr };
-    check_hresult(static_cast<const IAllJoynServiceInfoFactory &>(static_cast<const D &>(*this))->abi_Create(get(uniqueName), get(objectPath), sessionPort, put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynServiceInfoFactory)->abi_Create(get(uniqueName), get(objectPath), sessionPort, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> impl_IAllJoynAboutDataViewStatics<D>::GetDataBySessionPortAsync(hstring_ref uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> operation;
-    check_hresult(static_cast<const IAllJoynAboutDataViewStatics &>(static_cast<const D &>(*this))->abi_GetDataBySessionPortAsync(get(uniqueName), get(busAttachment), sessionPort, put(operation)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataViewStatics)->abi_GetDataBySessionPortAsync(get(uniqueName), get(busAttachment), sessionPort, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> impl_IAllJoynAboutDataViewStatics<D>::GetDataBySessionPortAsync(hstring_ref uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort, const Windows::Globalization::Language & language) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> operation;
-    check_hresult(static_cast<const IAllJoynAboutDataViewStatics &>(static_cast<const D &>(*this))->abi_GetDataBySessionPortWithLanguageAsync(get(uniqueName), get(busAttachment), sessionPort, get(language), put(operation)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataViewStatics)->abi_GetDataBySessionPortWithLanguageAsync(get(uniqueName), get(busAttachment), sessionPort, get(language), put(operation)));
     return operation;
 }
 
 template <typename D> int32_t impl_IAllJoynAboutDataView<D>::Status() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynAboutDataView &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_IAllJoynAboutDataView<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
-    check_hresult(static_cast<const IAllJoynAboutDataView &>(static_cast<const D &>(*this))->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutDataView<D>::AJSoftwareVersion() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynAboutDataView &>(static_cast<const D &>(*this))->get_AJSoftwareVersion(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_AJSoftwareVersion(put(value)));
     return value;
 }
 
 template <typename D> GUID impl_IAllJoynAboutDataView<D>::AppId() const
 {
     GUID value {};
-    check_hresult(static_cast<const IAllJoynAboutDataView &>(static_cast<const D &>(*this))->get_AppId(&value));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_AppId(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IAllJoynAboutDataView<D>::DateOfManufacture() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(static_cast<const IAllJoynAboutDataView &>(static_cast<const D &>(*this))->get_DateOfManufacture(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_DateOfManufacture(put(value)));
     return value;
 }
 
 template <typename D> Windows::Globalization::Language impl_IAllJoynAboutDataView<D>::DefaultLanguage() const
 {
     Windows::Globalization::Language value { nullptr };
-    check_hresult(static_cast<const IAllJoynAboutDataView &>(static_cast<const D &>(*this))->get_DefaultLanguage(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_DefaultLanguage(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutDataView<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynAboutDataView &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutDataView<D>::HardwareVersion() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynAboutDataView &>(static_cast<const D &>(*this))->get_HardwareVersion(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_HardwareVersion(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutDataView<D>::ModelNumber() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynAboutDataView &>(static_cast<const D &>(*this))->get_ModelNumber(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_ModelNumber(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutDataView<D>::SoftwareVersion() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynAboutDataView &>(static_cast<const D &>(*this))->get_SoftwareVersion(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_SoftwareVersion(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> impl_IAllJoynAboutDataView<D>::SupportedLanguages() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> value;
-    check_hresult(static_cast<const IAllJoynAboutDataView &>(static_cast<const D &>(*this))->get_SupportedLanguages(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_SupportedLanguages(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IAllJoynAboutDataView<D>::SupportUrl() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const IAllJoynAboutDataView &>(static_cast<const D &>(*this))->get_SupportUrl(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_SupportUrl(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutDataView<D>::AppName() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynAboutDataView &>(static_cast<const D &>(*this))->get_AppName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_AppName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutDataView<D>::Description() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynAboutDataView &>(static_cast<const D &>(*this))->get_Description(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_Description(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutDataView<D>::DeviceName() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynAboutDataView &>(static_cast<const D &>(*this))->get_DeviceName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_DeviceName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutDataView<D>::Manufacturer() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynAboutDataView &>(static_cast<const D &>(*this))->get_Manufacturer(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutDataView)->get_Manufacturer(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IAllJoynAboutData<D>::IsEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->get_IsEnabled(&value));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_IsEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IAllJoynAboutData<D>::IsEnabled(bool value) const
 {
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->put_IsEnabled(value));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_IsEnabled(value));
 }
 
 template <typename D> hstring impl_IAllJoynAboutData<D>::DefaultAppName() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->get_DefaultAppName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_DefaultAppName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynAboutData<D>::DefaultAppName(hstring_ref value) const
 {
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->put_DefaultAppName(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_DefaultAppName(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_IAllJoynAboutData<D>::AppNames() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> value;
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->get_AppNames(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_AppNames(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IAllJoynAboutData<D>::DateOfManufacture() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->get_DateOfManufacture(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_DateOfManufacture(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynAboutData<D>::DateOfManufacture(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->put_DateOfManufacture(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_DateOfManufacture(get(value)));
 }
 
 template <typename D> hstring impl_IAllJoynAboutData<D>::DefaultDescription() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->get_DefaultDescription(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_DefaultDescription(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynAboutData<D>::DefaultDescription(hstring_ref value) const
 {
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->put_DefaultDescription(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_DefaultDescription(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_IAllJoynAboutData<D>::Descriptions() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> value;
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->get_Descriptions(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_Descriptions(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutData<D>::DefaultManufacturer() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->get_DefaultManufacturer(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_DefaultManufacturer(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynAboutData<D>::DefaultManufacturer(hstring_ref value) const
 {
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->put_DefaultManufacturer(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_DefaultManufacturer(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_IAllJoynAboutData<D>::Manufacturers() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> value;
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->get_Manufacturers(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_Manufacturers(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAllJoynAboutData<D>::ModelNumber() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->get_ModelNumber(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_ModelNumber(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynAboutData<D>::ModelNumber(hstring_ref value) const
 {
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->put_ModelNumber(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_ModelNumber(get(value)));
 }
 
 template <typename D> hstring impl_IAllJoynAboutData<D>::SoftwareVersion() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->get_SoftwareVersion(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_SoftwareVersion(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynAboutData<D>::SoftwareVersion(hstring_ref value) const
 {
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->put_SoftwareVersion(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_SoftwareVersion(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IAllJoynAboutData<D>::SupportUrl() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->get_SupportUrl(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_SupportUrl(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAllJoynAboutData<D>::SupportUrl(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->put_SupportUrl(get(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_SupportUrl(get(value)));
 }
 
 template <typename D> GUID impl_IAllJoynAboutData<D>::AppId() const
 {
     GUID value {};
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->get_AppId(&value));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->get_AppId(&value));
     return value;
 }
 
 template <typename D> void impl_IAllJoynAboutData<D>::AppId(GUID value) const
 {
-    check_hresult(static_cast<const IAllJoynAboutData &>(static_cast<const D &>(*this))->put_AppId(value));
+    check_hresult(WINRT_SHIM(IAllJoynAboutData)->put_AppId(value));
 }
 
 template <typename D> hstring impl_IAllJoynAcceptSessionJoinerEventArgs<D>::UniqueName() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynAcceptSessionJoinerEventArgs &>(static_cast<const D &>(*this))->get_UniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynAcceptSessionJoinerEventArgs)->get_UniqueName(put(value)));
     return value;
 }
 
 template <typename D> uint16_t impl_IAllJoynAcceptSessionJoinerEventArgs<D>::SessionPort() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IAllJoynAcceptSessionJoinerEventArgs &>(static_cast<const D &>(*this))->get_SessionPort(&value));
+    check_hresult(WINRT_SHIM(IAllJoynAcceptSessionJoinerEventArgs)->get_SessionPort(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynTrafficType impl_IAllJoynAcceptSessionJoinerEventArgs<D>::TrafficType() const
 {
     Windows::Devices::AllJoyn::AllJoynTrafficType value {};
-    check_hresult(static_cast<const IAllJoynAcceptSessionJoinerEventArgs &>(static_cast<const D &>(*this))->get_TrafficType(&value));
+    check_hresult(WINRT_SHIM(IAllJoynAcceptSessionJoinerEventArgs)->get_TrafficType(&value));
     return value;
 }
 
 template <typename D> bool impl_IAllJoynAcceptSessionJoinerEventArgs<D>::SamePhysicalNode() const
 {
     bool value {};
-    check_hresult(static_cast<const IAllJoynAcceptSessionJoinerEventArgs &>(static_cast<const D &>(*this))->get_SamePhysicalNode(&value));
+    check_hresult(WINRT_SHIM(IAllJoynAcceptSessionJoinerEventArgs)->get_SamePhysicalNode(&value));
     return value;
 }
 
 template <typename D> bool impl_IAllJoynAcceptSessionJoinerEventArgs<D>::SameNetwork() const
 {
     bool value {};
-    check_hresult(static_cast<const IAllJoynAcceptSessionJoinerEventArgs &>(static_cast<const D &>(*this))->get_SameNetwork(&value));
+    check_hresult(WINRT_SHIM(IAllJoynAcceptSessionJoinerEventArgs)->get_SameNetwork(&value));
     return value;
 }
 
 template <typename D> void impl_IAllJoynAcceptSessionJoinerEventArgs<D>::Accept() const
 {
-    check_hresult(static_cast<const IAllJoynAcceptSessionJoinerEventArgs &>(static_cast<const D &>(*this))->abi_Accept());
+    check_hresult(WINRT_SHIM(IAllJoynAcceptSessionJoinerEventArgs)->abi_Accept());
 }
 
 template <typename D> void impl_IAllJoynAcceptSessionJoiner<D>::Accept() const
 {
-    check_hresult(static_cast<const IAllJoynAcceptSessionJoiner &>(static_cast<const D &>(*this))->abi_Accept());
+    check_hresult(WINRT_SHIM(IAllJoynAcceptSessionJoiner)->abi_Accept());
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs impl_IAllJoynAcceptSessionJoinerEventArgsFactory<D>::Create(hstring_ref uniqueName, uint16_t sessionPort, Windows::Devices::AllJoyn::AllJoynTrafficType trafficType, uint8_t proximity, const Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner & acceptSessionJoiner) const
 {
     Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs result { nullptr };
-    check_hresult(static_cast<const IAllJoynAcceptSessionJoinerEventArgsFactory &>(static_cast<const D &>(*this))->abi_Create(get(uniqueName), sessionPort, trafficType, proximity, get(acceptSessionJoiner), put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynAcceptSessionJoinerEventArgsFactory)->abi_Create(get(uniqueName), sessionPort, trafficType, proximity, get(acceptSessionJoiner), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IAllJoynSessionMemberAddedEventArgs<D>::UniqueName() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynSessionMemberAddedEventArgs &>(static_cast<const D &>(*this))->get_UniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynSessionMemberAddedEventArgs)->get_UniqueName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs impl_IAllJoynSessionMemberAddedEventArgsFactory<D>::Create(hstring_ref uniqueName) const
 {
     Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs result { nullptr };
-    check_hresult(static_cast<const IAllJoynSessionMemberAddedEventArgsFactory &>(static_cast<const D &>(*this))->abi_Create(get(uniqueName), put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynSessionMemberAddedEventArgsFactory)->abi_Create(get(uniqueName), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IAllJoynSessionMemberRemovedEventArgs<D>::UniqueName() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynSessionMemberRemovedEventArgs &>(static_cast<const D &>(*this))->get_UniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynSessionMemberRemovedEventArgs)->get_UniqueName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs impl_IAllJoynSessionMemberRemovedEventArgsFactory<D>::Create(hstring_ref uniqueName) const
 {
     Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs result { nullptr };
-    check_hresult(static_cast<const IAllJoynSessionMemberRemovedEventArgsFactory &>(static_cast<const D &>(*this))->abi_Create(get(uniqueName), put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynSessionMemberRemovedEventArgsFactory)->abi_Create(get(uniqueName), put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynSession impl_IAllJoynSessionJoinedEventArgs<D>::Session() const
 {
     Windows::Devices::AllJoyn::AllJoynSession value { nullptr };
-    check_hresult(static_cast<const IAllJoynSessionJoinedEventArgs &>(static_cast<const D &>(*this))->get_Session(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynSessionJoinedEventArgs)->get_Session(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs impl_IAllJoynSessionJoinedEventArgsFactory<D>::Create(const Windows::Devices::AllJoyn::AllJoynSession & session) const
 {
     Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs result { nullptr };
-    check_hresult(static_cast<const IAllJoynSessionJoinedEventArgsFactory &>(static_cast<const D &>(*this))->abi_Create(get(session), put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynSessionJoinedEventArgsFactory)->abi_Create(get(session), put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynSessionLostReason impl_IAllJoynSessionLostEventArgs<D>::Reason() const
 {
     Windows::Devices::AllJoyn::AllJoynSessionLostReason value {};
-    check_hresult(static_cast<const IAllJoynSessionLostEventArgs &>(static_cast<const D &>(*this))->get_Reason(&value));
+    check_hresult(WINRT_SHIM(IAllJoynSessionLostEventArgs)->get_Reason(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs impl_IAllJoynSessionLostEventArgsFactory<D>::Create(Windows::Devices::AllJoyn::AllJoynSessionLostReason reason) const
 {
     Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs result { nullptr };
-    check_hresult(static_cast<const IAllJoynSessionLostEventArgsFactory &>(static_cast<const D &>(*this))->abi_Create(reason, put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynSessionLostEventArgsFactory)->abi_Create(reason, put(result)));
     return result;
 }
 
 template <typename D> int32_t impl_IAllJoynProducerStoppedEventArgs<D>::Status() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynProducerStoppedEventArgs &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IAllJoynProducerStoppedEventArgs)->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynProducerStoppedEventArgs impl_IAllJoynProducerStoppedEventArgsFactory<D>::Create(int32_t status) const
 {
     Windows::Devices::AllJoyn::AllJoynProducerStoppedEventArgs result { nullptr };
-    check_hresult(static_cast<const IAllJoynProducerStoppedEventArgsFactory &>(static_cast<const D &>(*this))->abi_Create(status, put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynProducerStoppedEventArgsFactory)->abi_Create(status, put(result)));
     return result;
 }
 
 template <typename D> int32_t impl_IAllJoynBusObjectStoppedEventArgs<D>::Status() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynBusObjectStoppedEventArgs &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IAllJoynBusObjectStoppedEventArgs)->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs impl_IAllJoynBusObjectStoppedEventArgsFactory<D>::Create(int32_t status) const
 {
     Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs result { nullptr };
-    check_hresult(static_cast<const IAllJoynBusObjectStoppedEventArgsFactory &>(static_cast<const D &>(*this))->abi_Create(status, put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynBusObjectStoppedEventArgsFactory)->abi_Create(status, put(result)));
     return result;
 }
 
 template <typename D> int32_t impl_IAllJoynWatcherStoppedEventArgs<D>::Status() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAllJoynWatcherStoppedEventArgs &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IAllJoynWatcherStoppedEventArgs)->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynWatcherStoppedEventArgs impl_IAllJoynWatcherStoppedEventArgsFactory<D>::Create(int32_t status) const
 {
     Windows::Devices::AllJoyn::AllJoynWatcherStoppedEventArgs result { nullptr };
-    check_hresult(static_cast<const IAllJoynWatcherStoppedEventArgsFactory &>(static_cast<const D &>(*this))->abi_Create(status, put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynWatcherStoppedEventArgsFactory)->abi_Create(status, put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IAllJoynServiceInfoRemovedEventArgs<D>::UniqueName() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynServiceInfoRemovedEventArgs &>(static_cast<const D &>(*this))->get_UniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynServiceInfoRemovedEventArgs)->get_UniqueName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynServiceInfoRemovedEventArgs impl_IAllJoynServiceInfoRemovedEventArgsFactory<D>::Create(hstring_ref uniqueName) const
 {
     Windows::Devices::AllJoyn::AllJoynServiceInfoRemovedEventArgs result { nullptr };
-    check_hresult(static_cast<const IAllJoynServiceInfoRemovedEventArgsFactory &>(static_cast<const D &>(*this))->abi_Create(get(uniqueName), put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynServiceInfoRemovedEventArgsFactory)->abi_Create(get(uniqueName), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IAllJoynMessageInfo<D>::SenderUniqueName() const
 {
     hstring value;
-    check_hresult(static_cast<const IAllJoynMessageInfo &>(static_cast<const D &>(*this))->get_SenderUniqueName(put(value)));
+    check_hresult(WINRT_SHIM(IAllJoynMessageInfo)->get_SenderUniqueName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynMessageInfo impl_IAllJoynMessageInfoFactory<D>::Create(hstring_ref senderUniqueName) const
 {
     Windows::Devices::AllJoyn::AllJoynMessageInfo result { nullptr };
-    check_hresult(static_cast<const IAllJoynMessageInfoFactory &>(static_cast<const D &>(*this))->abi_Create(get(senderUniqueName), put(result)));
+    check_hresult(WINRT_SHIM(IAllJoynMessageInfoFactory)->abi_Create(get(senderUniqueName), put(result)));
     return result;
 }
 

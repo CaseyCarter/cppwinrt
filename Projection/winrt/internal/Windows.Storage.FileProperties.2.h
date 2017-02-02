@@ -167,7 +167,6 @@ struct IBasicProperties :
     impl::consume<IBasicProperties>
 {
     IBasicProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBasicProperties>(m_ptr); }
 };
 
 struct IDocumentProperties :
@@ -176,7 +175,6 @@ struct IDocumentProperties :
     impl::require<IDocumentProperties, Windows::Storage::FileProperties::IStorageItemExtraProperties>
 {
     IDocumentProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDocumentProperties>(m_ptr); }
 };
 
 struct IGeotagHelperStatics :
@@ -184,7 +182,6 @@ struct IGeotagHelperStatics :
     impl::consume<IGeotagHelperStatics>
 {
     IGeotagHelperStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeotagHelperStatics>(m_ptr); }
 };
 
 struct IImageProperties :
@@ -193,7 +190,6 @@ struct IImageProperties :
     impl::require<IImageProperties, Windows::Storage::FileProperties::IStorageItemExtraProperties>
 {
     IImageProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IImageProperties>(m_ptr); }
 };
 
 struct IMusicProperties :
@@ -202,7 +198,6 @@ struct IMusicProperties :
     impl::require<IMusicProperties, Windows::Storage::FileProperties::IStorageItemExtraProperties>
 {
     IMusicProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMusicProperties>(m_ptr); }
 };
 
 struct IStorageItemContentProperties :
@@ -211,7 +206,6 @@ struct IStorageItemContentProperties :
     impl::require<IStorageItemContentProperties, Windows::Storage::FileProperties::IStorageItemExtraProperties>
 {
     IStorageItemContentProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageItemContentProperties>(m_ptr); }
 };
 
 struct IStorageItemExtraProperties :
@@ -219,7 +213,6 @@ struct IStorageItemExtraProperties :
     impl::consume<IStorageItemExtraProperties>
 {
     IStorageItemExtraProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageItemExtraProperties>(m_ptr); }
 };
 
 struct IThumbnailProperties :
@@ -227,7 +220,6 @@ struct IThumbnailProperties :
     impl::consume<IThumbnailProperties>
 {
     IThumbnailProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IThumbnailProperties>(m_ptr); }
 };
 
 struct IVideoProperties :
@@ -236,7 +228,6 @@ struct IVideoProperties :
     impl::require<IVideoProperties, Windows::Storage::FileProperties::IStorageItemExtraProperties>
 {
     IVideoProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoProperties>(m_ptr); }
 };
 
 }

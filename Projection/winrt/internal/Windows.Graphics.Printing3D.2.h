@@ -572,7 +572,6 @@ namespace Windows::Graphics::Printing3D {
 struct Print3DTaskSourceRequestedHandler : Windows::IUnknown
 {
     Print3DTaskSourceRequestedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<Print3DTaskSourceRequestedHandler>(m_ptr); }
     template <typename L> Print3DTaskSourceRequestedHandler(L lambda);
     template <typename F> Print3DTaskSourceRequestedHandler (F * function);
     template <typename O, typename M> Print3DTaskSourceRequestedHandler(O * object, M method);
@@ -584,7 +583,6 @@ struct IPrint3DManager :
     impl::consume<IPrint3DManager>
 {
     IPrint3DManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrint3DManager>(m_ptr); }
 };
 
 struct IPrint3DManagerStatics :
@@ -592,7 +590,6 @@ struct IPrint3DManagerStatics :
     impl::consume<IPrint3DManagerStatics>
 {
     IPrint3DManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrint3DManagerStatics>(m_ptr); }
 };
 
 struct IPrint3DTask :
@@ -600,7 +597,6 @@ struct IPrint3DTask :
     impl::consume<IPrint3DTask>
 {
     IPrint3DTask(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrint3DTask>(m_ptr); }
 };
 
 struct IPrint3DTaskCompletedEventArgs :
@@ -608,7 +604,6 @@ struct IPrint3DTaskCompletedEventArgs :
     impl::consume<IPrint3DTaskCompletedEventArgs>
 {
     IPrint3DTaskCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrint3DTaskCompletedEventArgs>(m_ptr); }
 };
 
 struct IPrint3DTaskRequest :
@@ -616,7 +611,6 @@ struct IPrint3DTaskRequest :
     impl::consume<IPrint3DTaskRequest>
 {
     IPrint3DTaskRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrint3DTaskRequest>(m_ptr); }
 };
 
 struct IPrint3DTaskRequestedEventArgs :
@@ -624,7 +618,6 @@ struct IPrint3DTaskRequestedEventArgs :
     impl::consume<IPrint3DTaskRequestedEventArgs>
 {
     IPrint3DTaskRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrint3DTaskRequestedEventArgs>(m_ptr); }
 };
 
 struct IPrint3DTaskSourceChangedEventArgs :
@@ -632,7 +625,6 @@ struct IPrint3DTaskSourceChangedEventArgs :
     impl::consume<IPrint3DTaskSourceChangedEventArgs>
 {
     IPrint3DTaskSourceChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrint3DTaskSourceChangedEventArgs>(m_ptr); }
 };
 
 struct IPrint3DTaskSourceRequestedArgs :
@@ -640,7 +632,6 @@ struct IPrint3DTaskSourceRequestedArgs :
     impl::consume<IPrint3DTaskSourceRequestedArgs>
 {
     IPrint3DTaskSourceRequestedArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrint3DTaskSourceRequestedArgs>(m_ptr); }
 };
 
 struct IPrinting3D3MFPackage :
@@ -648,7 +639,6 @@ struct IPrinting3D3MFPackage :
     impl::consume<IPrinting3D3MFPackage>
 {
     IPrinting3D3MFPackage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3D3MFPackage>(m_ptr); }
 };
 
 struct IPrinting3D3MFPackageStatics :
@@ -656,7 +646,6 @@ struct IPrinting3D3MFPackageStatics :
     impl::consume<IPrinting3D3MFPackageStatics>
 {
     IPrinting3D3MFPackageStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3D3MFPackageStatics>(m_ptr); }
 };
 
 struct IPrinting3DBaseMaterial :
@@ -664,7 +653,6 @@ struct IPrinting3DBaseMaterial :
     impl::consume<IPrinting3DBaseMaterial>
 {
     IPrinting3DBaseMaterial(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DBaseMaterial>(m_ptr); }
 };
 
 struct IPrinting3DBaseMaterialGroup :
@@ -672,7 +660,6 @@ struct IPrinting3DBaseMaterialGroup :
     impl::consume<IPrinting3DBaseMaterialGroup>
 {
     IPrinting3DBaseMaterialGroup(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DBaseMaterialGroup>(m_ptr); }
 };
 
 struct IPrinting3DBaseMaterialGroupFactory :
@@ -680,7 +667,6 @@ struct IPrinting3DBaseMaterialGroupFactory :
     impl::consume<IPrinting3DBaseMaterialGroupFactory>
 {
     IPrinting3DBaseMaterialGroupFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DBaseMaterialGroupFactory>(m_ptr); }
 };
 
 struct IPrinting3DBaseMaterialStatics :
@@ -688,7 +674,6 @@ struct IPrinting3DBaseMaterialStatics :
     impl::consume<IPrinting3DBaseMaterialStatics>
 {
     IPrinting3DBaseMaterialStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DBaseMaterialStatics>(m_ptr); }
 };
 
 struct IPrinting3DColorMaterial :
@@ -696,7 +681,6 @@ struct IPrinting3DColorMaterial :
     impl::consume<IPrinting3DColorMaterial>
 {
     IPrinting3DColorMaterial(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DColorMaterial>(m_ptr); }
 };
 
 struct IPrinting3DColorMaterial2 :
@@ -704,7 +688,6 @@ struct IPrinting3DColorMaterial2 :
     impl::consume<IPrinting3DColorMaterial2>
 {
     IPrinting3DColorMaterial2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DColorMaterial2>(m_ptr); }
 };
 
 struct IPrinting3DColorMaterialGroup :
@@ -712,7 +695,6 @@ struct IPrinting3DColorMaterialGroup :
     impl::consume<IPrinting3DColorMaterialGroup>
 {
     IPrinting3DColorMaterialGroup(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DColorMaterialGroup>(m_ptr); }
 };
 
 struct IPrinting3DColorMaterialGroupFactory :
@@ -720,7 +702,6 @@ struct IPrinting3DColorMaterialGroupFactory :
     impl::consume<IPrinting3DColorMaterialGroupFactory>
 {
     IPrinting3DColorMaterialGroupFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DColorMaterialGroupFactory>(m_ptr); }
 };
 
 struct IPrinting3DComponent :
@@ -728,7 +709,6 @@ struct IPrinting3DComponent :
     impl::consume<IPrinting3DComponent>
 {
     IPrinting3DComponent(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DComponent>(m_ptr); }
 };
 
 struct IPrinting3DComponentWithMatrix :
@@ -736,7 +716,6 @@ struct IPrinting3DComponentWithMatrix :
     impl::consume<IPrinting3DComponentWithMatrix>
 {
     IPrinting3DComponentWithMatrix(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DComponentWithMatrix>(m_ptr); }
 };
 
 struct IPrinting3DCompositeMaterial :
@@ -744,7 +723,6 @@ struct IPrinting3DCompositeMaterial :
     impl::consume<IPrinting3DCompositeMaterial>
 {
     IPrinting3DCompositeMaterial(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DCompositeMaterial>(m_ptr); }
 };
 
 struct IPrinting3DCompositeMaterialGroup :
@@ -752,7 +730,6 @@ struct IPrinting3DCompositeMaterialGroup :
     impl::consume<IPrinting3DCompositeMaterialGroup>
 {
     IPrinting3DCompositeMaterialGroup(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DCompositeMaterialGroup>(m_ptr); }
 };
 
 struct IPrinting3DCompositeMaterialGroup2 :
@@ -760,7 +737,6 @@ struct IPrinting3DCompositeMaterialGroup2 :
     impl::consume<IPrinting3DCompositeMaterialGroup2>
 {
     IPrinting3DCompositeMaterialGroup2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DCompositeMaterialGroup2>(m_ptr); }
 };
 
 struct IPrinting3DCompositeMaterialGroupFactory :
@@ -768,7 +744,6 @@ struct IPrinting3DCompositeMaterialGroupFactory :
     impl::consume<IPrinting3DCompositeMaterialGroupFactory>
 {
     IPrinting3DCompositeMaterialGroupFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DCompositeMaterialGroupFactory>(m_ptr); }
 };
 
 struct IPrinting3DFaceReductionOptions :
@@ -776,7 +751,6 @@ struct IPrinting3DFaceReductionOptions :
     impl::consume<IPrinting3DFaceReductionOptions>
 {
     IPrinting3DFaceReductionOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DFaceReductionOptions>(m_ptr); }
 };
 
 struct IPrinting3DMaterial :
@@ -784,7 +758,6 @@ struct IPrinting3DMaterial :
     impl::consume<IPrinting3DMaterial>
 {
     IPrinting3DMaterial(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DMaterial>(m_ptr); }
 };
 
 struct IPrinting3DMesh :
@@ -792,7 +765,6 @@ struct IPrinting3DMesh :
     impl::consume<IPrinting3DMesh>
 {
     IPrinting3DMesh(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DMesh>(m_ptr); }
 };
 
 struct IPrinting3DMeshVerificationResult :
@@ -800,7 +772,6 @@ struct IPrinting3DMeshVerificationResult :
     impl::consume<IPrinting3DMeshVerificationResult>
 {
     IPrinting3DMeshVerificationResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DMeshVerificationResult>(m_ptr); }
 };
 
 struct IPrinting3DModel :
@@ -808,7 +779,6 @@ struct IPrinting3DModel :
     impl::consume<IPrinting3DModel>
 {
     IPrinting3DModel(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DModel>(m_ptr); }
 };
 
 struct IPrinting3DModel2 :
@@ -816,7 +786,6 @@ struct IPrinting3DModel2 :
     impl::consume<IPrinting3DModel2>
 {
     IPrinting3DModel2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DModel2>(m_ptr); }
 };
 
 struct IPrinting3DModelTexture :
@@ -824,7 +793,6 @@ struct IPrinting3DModelTexture :
     impl::consume<IPrinting3DModelTexture>
 {
     IPrinting3DModelTexture(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DModelTexture>(m_ptr); }
 };
 
 struct IPrinting3DMultiplePropertyMaterial :
@@ -832,7 +800,6 @@ struct IPrinting3DMultiplePropertyMaterial :
     impl::consume<IPrinting3DMultiplePropertyMaterial>
 {
     IPrinting3DMultiplePropertyMaterial(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DMultiplePropertyMaterial>(m_ptr); }
 };
 
 struct IPrinting3DMultiplePropertyMaterialGroup :
@@ -840,7 +807,6 @@ struct IPrinting3DMultiplePropertyMaterialGroup :
     impl::consume<IPrinting3DMultiplePropertyMaterialGroup>
 {
     IPrinting3DMultiplePropertyMaterialGroup(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DMultiplePropertyMaterialGroup>(m_ptr); }
 };
 
 struct IPrinting3DMultiplePropertyMaterialGroupFactory :
@@ -848,7 +814,6 @@ struct IPrinting3DMultiplePropertyMaterialGroupFactory :
     impl::consume<IPrinting3DMultiplePropertyMaterialGroupFactory>
 {
     IPrinting3DMultiplePropertyMaterialGroupFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DMultiplePropertyMaterialGroupFactory>(m_ptr); }
 };
 
 struct IPrinting3DTexture2CoordMaterial :
@@ -856,7 +821,6 @@ struct IPrinting3DTexture2CoordMaterial :
     impl::consume<IPrinting3DTexture2CoordMaterial>
 {
     IPrinting3DTexture2CoordMaterial(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DTexture2CoordMaterial>(m_ptr); }
 };
 
 struct IPrinting3DTexture2CoordMaterialGroup :
@@ -864,7 +828,6 @@ struct IPrinting3DTexture2CoordMaterialGroup :
     impl::consume<IPrinting3DTexture2CoordMaterialGroup>
 {
     IPrinting3DTexture2CoordMaterialGroup(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DTexture2CoordMaterialGroup>(m_ptr); }
 };
 
 struct IPrinting3DTexture2CoordMaterialGroup2 :
@@ -872,7 +835,6 @@ struct IPrinting3DTexture2CoordMaterialGroup2 :
     impl::consume<IPrinting3DTexture2CoordMaterialGroup2>
 {
     IPrinting3DTexture2CoordMaterialGroup2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DTexture2CoordMaterialGroup2>(m_ptr); }
 };
 
 struct IPrinting3DTexture2CoordMaterialGroupFactory :
@@ -880,7 +842,6 @@ struct IPrinting3DTexture2CoordMaterialGroupFactory :
     impl::consume<IPrinting3DTexture2CoordMaterialGroupFactory>
 {
     IPrinting3DTexture2CoordMaterialGroupFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DTexture2CoordMaterialGroupFactory>(m_ptr); }
 };
 
 struct IPrinting3DTextureResource :
@@ -888,7 +849,6 @@ struct IPrinting3DTextureResource :
     impl::consume<IPrinting3DTextureResource>
 {
     IPrinting3DTextureResource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrinting3DTextureResource>(m_ptr); }
 };
 
 }

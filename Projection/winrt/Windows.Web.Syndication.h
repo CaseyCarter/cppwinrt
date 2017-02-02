@@ -2180,886 +2180,886 @@ namespace Windows::Web::Syndication {
 template <typename D> hstring impl_ISyndicationAttribute<D>::Name() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationAttribute &>(static_cast<const D &>(*this))->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationAttribute)->get_Name(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationAttribute<D>::Name(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationAttribute &>(static_cast<const D &>(*this))->put_Name(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationAttribute)->put_Name(get(value)));
 }
 
 template <typename D> hstring impl_ISyndicationAttribute<D>::Namespace() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationAttribute &>(static_cast<const D &>(*this))->get_Namespace(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationAttribute)->get_Namespace(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationAttribute<D>::Namespace(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationAttribute &>(static_cast<const D &>(*this))->put_Namespace(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationAttribute)->put_Namespace(get(value)));
 }
 
 template <typename D> hstring impl_ISyndicationAttribute<D>::Value() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationAttribute &>(static_cast<const D &>(*this))->get_Value(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationAttribute)->get_Value(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationAttribute<D>::Value(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationAttribute &>(static_cast<const D &>(*this))->put_Value(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationAttribute)->put_Value(get(value)));
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationAttribute impl_ISyndicationAttributeFactory<D>::CreateSyndicationAttribute(hstring_ref attributeName, hstring_ref attributeNamespace, hstring_ref attributeValue) const
 {
     Windows::Web::Syndication::SyndicationAttribute syndicationAttribute { nullptr };
-    check_hresult(static_cast<const ISyndicationAttributeFactory &>(static_cast<const D &>(*this))->abi_CreateSyndicationAttribute(get(attributeName), get(attributeNamespace), get(attributeValue), put(syndicationAttribute)));
+    check_hresult(WINRT_SHIM(ISyndicationAttributeFactory)->abi_CreateSyndicationAttribute(get(attributeName), get(attributeNamespace), get(attributeValue), put(syndicationAttribute)));
     return syndicationAttribute;
 }
 
 template <typename D> hstring impl_ISyndicationNode<D>::NodeName() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationNode &>(static_cast<const D &>(*this))->get_NodeName(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationNode)->get_NodeName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationNode<D>::NodeName(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationNode &>(static_cast<const D &>(*this))->put_NodeName(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationNode)->put_NodeName(get(value)));
 }
 
 template <typename D> hstring impl_ISyndicationNode<D>::NodeNamespace() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationNode &>(static_cast<const D &>(*this))->get_NodeNamespace(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationNode)->get_NodeNamespace(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationNode<D>::NodeNamespace(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationNode &>(static_cast<const D &>(*this))->put_NodeNamespace(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationNode)->put_NodeNamespace(get(value)));
 }
 
 template <typename D> hstring impl_ISyndicationNode<D>::NodeValue() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationNode &>(static_cast<const D &>(*this))->get_NodeValue(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationNode)->get_NodeValue(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationNode<D>::NodeValue(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationNode &>(static_cast<const D &>(*this))->put_NodeValue(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationNode)->put_NodeValue(get(value)));
 }
 
 template <typename D> hstring impl_ISyndicationNode<D>::Language() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationNode &>(static_cast<const D &>(*this))->get_Language(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationNode)->get_Language(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationNode<D>::Language(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationNode &>(static_cast<const D &>(*this))->put_Language(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationNode)->put_Language(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISyndicationNode<D>::BaseUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISyndicationNode &>(static_cast<const D &>(*this))->get_BaseUri(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationNode)->get_BaseUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationNode<D>::BaseUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISyndicationNode &>(static_cast<const D &>(*this))->put_BaseUri(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationNode)->put_BaseUri(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationAttribute> impl_ISyndicationNode<D>::AttributeExtensions() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationAttribute> value;
-    check_hresult(static_cast<const ISyndicationNode &>(static_cast<const D &>(*this))->get_AttributeExtensions(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationNode)->get_AttributeExtensions(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Syndication::ISyndicationNode> impl_ISyndicationNode<D>::ElementExtensions() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::ISyndicationNode> value;
-    check_hresult(static_cast<const ISyndicationNode &>(static_cast<const D &>(*this))->get_ElementExtensions(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationNode)->get_ElementExtensions(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_ISyndicationNode<D>::GetXmlDocument(Windows::Web::Syndication::SyndicationFormat format) const
 {
     Windows::Data::Xml::Dom::XmlDocument xmlDocument { nullptr };
-    check_hresult(static_cast<const ISyndicationNode &>(static_cast<const D &>(*this))->abi_GetXmlDocument(format, put(xmlDocument)));
+    check_hresult(WINRT_SHIM(ISyndicationNode)->abi_GetXmlDocument(format, put(xmlDocument)));
     return xmlDocument;
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationNode impl_ISyndicationNodeFactory<D>::CreateSyndicationNode(hstring_ref nodeName, hstring_ref nodeNamespace, hstring_ref nodeValue) const
 {
     Windows::Web::Syndication::SyndicationNode node { nullptr };
-    check_hresult(static_cast<const ISyndicationNodeFactory &>(static_cast<const D &>(*this))->abi_CreateSyndicationNode(get(nodeName), get(nodeNamespace), get(nodeValue), put(node)));
+    check_hresult(WINRT_SHIM(ISyndicationNodeFactory)->abi_CreateSyndicationNode(get(nodeName), get(nodeNamespace), get(nodeValue), put(node)));
     return node;
 }
 
 template <typename D> hstring impl_ISyndicationGenerator<D>::Text() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationGenerator &>(static_cast<const D &>(*this))->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationGenerator)->get_Text(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationGenerator<D>::Text(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationGenerator &>(static_cast<const D &>(*this))->put_Text(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationGenerator)->put_Text(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISyndicationGenerator<D>::Uri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISyndicationGenerator &>(static_cast<const D &>(*this))->get_Uri(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationGenerator)->get_Uri(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationGenerator<D>::Uri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISyndicationGenerator &>(static_cast<const D &>(*this))->put_Uri(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationGenerator)->put_Uri(get(value)));
 }
 
 template <typename D> hstring impl_ISyndicationGenerator<D>::Version() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationGenerator &>(static_cast<const D &>(*this))->get_Version(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationGenerator)->get_Version(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationGenerator<D>::Version(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationGenerator &>(static_cast<const D &>(*this))->put_Version(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationGenerator)->put_Version(get(value)));
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationGenerator impl_ISyndicationGeneratorFactory<D>::CreateSyndicationGenerator(hstring_ref text) const
 {
     Windows::Web::Syndication::SyndicationGenerator generator { nullptr };
-    check_hresult(static_cast<const ISyndicationGeneratorFactory &>(static_cast<const D &>(*this))->abi_CreateSyndicationGenerator(get(text), put(generator)));
+    check_hresult(WINRT_SHIM(ISyndicationGeneratorFactory)->abi_CreateSyndicationGenerator(get(text), put(generator)));
     return generator;
 }
 
 template <typename D> hstring impl_ISyndicationText<D>::Text() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationText &>(static_cast<const D &>(*this))->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationText)->get_Text(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationText<D>::Text(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationText &>(static_cast<const D &>(*this))->put_Text(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationText)->put_Text(get(value)));
 }
 
 template <typename D> hstring impl_ISyndicationText<D>::Type() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationText &>(static_cast<const D &>(*this))->get_Type(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationText)->get_Type(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationText<D>::Type(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationText &>(static_cast<const D &>(*this))->put_Type(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationText)->put_Type(get(value)));
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_ISyndicationText<D>::Xml() const
 {
     Windows::Data::Xml::Dom::XmlDocument value { nullptr };
-    check_hresult(static_cast<const ISyndicationText &>(static_cast<const D &>(*this))->get_Xml(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationText)->get_Xml(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationText<D>::Xml(const Windows::Data::Xml::Dom::XmlDocument & value) const
 {
-    check_hresult(static_cast<const ISyndicationText &>(static_cast<const D &>(*this))->put_Xml(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationText)->put_Xml(get(value)));
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationText impl_ISyndicationTextFactory<D>::CreateSyndicationText(hstring_ref text) const
 {
     Windows::Web::Syndication::SyndicationText syndicationText { nullptr };
-    check_hresult(static_cast<const ISyndicationTextFactory &>(static_cast<const D &>(*this))->abi_CreateSyndicationText(get(text), put(syndicationText)));
+    check_hresult(WINRT_SHIM(ISyndicationTextFactory)->abi_CreateSyndicationText(get(text), put(syndicationText)));
     return syndicationText;
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationText impl_ISyndicationTextFactory<D>::CreateSyndicationTextEx(hstring_ref text, Windows::Web::Syndication::SyndicationTextType type) const
 {
     Windows::Web::Syndication::SyndicationText syndicationText { nullptr };
-    check_hresult(static_cast<const ISyndicationTextFactory &>(static_cast<const D &>(*this))->abi_CreateSyndicationTextEx(get(text), type, put(syndicationText)));
+    check_hresult(WINRT_SHIM(ISyndicationTextFactory)->abi_CreateSyndicationTextEx(get(text), type, put(syndicationText)));
     return syndicationText;
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISyndicationContent<D>::SourceUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISyndicationContent &>(static_cast<const D &>(*this))->get_SourceUri(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationContent)->get_SourceUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationContent<D>::SourceUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISyndicationContent &>(static_cast<const D &>(*this))->put_SourceUri(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationContent)->put_SourceUri(get(value)));
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationContent impl_ISyndicationContentFactory<D>::CreateSyndicationContent(hstring_ref text, Windows::Web::Syndication::SyndicationTextType type) const
 {
     Windows::Web::Syndication::SyndicationContent content { nullptr };
-    check_hresult(static_cast<const ISyndicationContentFactory &>(static_cast<const D &>(*this))->abi_CreateSyndicationContent(get(text), type, put(content)));
+    check_hresult(WINRT_SHIM(ISyndicationContentFactory)->abi_CreateSyndicationContent(get(text), type, put(content)));
     return content;
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationContent impl_ISyndicationContentFactory<D>::CreateSyndicationContentWithSourceUri(const Windows::Foundation::Uri & sourceUri) const
 {
     Windows::Web::Syndication::SyndicationContent content { nullptr };
-    check_hresult(static_cast<const ISyndicationContentFactory &>(static_cast<const D &>(*this))->abi_CreateSyndicationContentWithSourceUri(get(sourceUri), put(content)));
+    check_hresult(WINRT_SHIM(ISyndicationContentFactory)->abi_CreateSyndicationContentWithSourceUri(get(sourceUri), put(content)));
     return content;
 }
 
 template <typename D> uint32_t impl_ISyndicationLink<D>::Length() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ISyndicationLink &>(static_cast<const D &>(*this))->get_Length(&value));
+    check_hresult(WINRT_SHIM(ISyndicationLink)->get_Length(&value));
     return value;
 }
 
 template <typename D> void impl_ISyndicationLink<D>::Length(uint32_t value) const
 {
-    check_hresult(static_cast<const ISyndicationLink &>(static_cast<const D &>(*this))->put_Length(value));
+    check_hresult(WINRT_SHIM(ISyndicationLink)->put_Length(value));
 }
 
 template <typename D> hstring impl_ISyndicationLink<D>::MediaType() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationLink &>(static_cast<const D &>(*this))->get_MediaType(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationLink)->get_MediaType(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationLink<D>::MediaType(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationLink &>(static_cast<const D &>(*this))->put_MediaType(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationLink)->put_MediaType(get(value)));
 }
 
 template <typename D> hstring impl_ISyndicationLink<D>::Relationship() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationLink &>(static_cast<const D &>(*this))->get_Relationship(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationLink)->get_Relationship(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationLink<D>::Relationship(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationLink &>(static_cast<const D &>(*this))->put_Relationship(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationLink)->put_Relationship(get(value)));
 }
 
 template <typename D> hstring impl_ISyndicationLink<D>::Title() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationLink &>(static_cast<const D &>(*this))->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationLink)->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationLink<D>::Title(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationLink &>(static_cast<const D &>(*this))->put_Title(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationLink)->put_Title(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISyndicationLink<D>::Uri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISyndicationLink &>(static_cast<const D &>(*this))->get_Uri(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationLink)->get_Uri(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationLink<D>::Uri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISyndicationLink &>(static_cast<const D &>(*this))->put_Uri(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationLink)->put_Uri(get(value)));
 }
 
 template <typename D> hstring impl_ISyndicationLink<D>::ResourceLanguage() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationLink &>(static_cast<const D &>(*this))->get_ResourceLanguage(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationLink)->get_ResourceLanguage(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationLink<D>::ResourceLanguage(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationLink &>(static_cast<const D &>(*this))->put_ResourceLanguage(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationLink)->put_ResourceLanguage(get(value)));
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationLink impl_ISyndicationLinkFactory<D>::CreateSyndicationLink(const Windows::Foundation::Uri & uri) const
 {
     Windows::Web::Syndication::SyndicationLink link { nullptr };
-    check_hresult(static_cast<const ISyndicationLinkFactory &>(static_cast<const D &>(*this))->abi_CreateSyndicationLink(get(uri), put(link)));
+    check_hresult(WINRT_SHIM(ISyndicationLinkFactory)->abi_CreateSyndicationLink(get(uri), put(link)));
     return link;
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationLink impl_ISyndicationLinkFactory<D>::CreateSyndicationLinkEx(const Windows::Foundation::Uri & uri, hstring_ref relationship, hstring_ref title, hstring_ref mediaType, uint32_t length) const
 {
     Windows::Web::Syndication::SyndicationLink link { nullptr };
-    check_hresult(static_cast<const ISyndicationLinkFactory &>(static_cast<const D &>(*this))->abi_CreateSyndicationLinkEx(get(uri), get(relationship), get(title), get(mediaType), length, put(link)));
+    check_hresult(WINRT_SHIM(ISyndicationLinkFactory)->abi_CreateSyndicationLinkEx(get(uri), get(relationship), get(title), get(mediaType), length, put(link)));
     return link;
 }
 
 template <typename D> hstring impl_ISyndicationPerson<D>::Email() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationPerson &>(static_cast<const D &>(*this))->get_Email(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationPerson)->get_Email(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationPerson<D>::Email(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationPerson &>(static_cast<const D &>(*this))->put_Email(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationPerson)->put_Email(get(value)));
 }
 
 template <typename D> hstring impl_ISyndicationPerson<D>::Name() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationPerson &>(static_cast<const D &>(*this))->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationPerson)->get_Name(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationPerson<D>::Name(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationPerson &>(static_cast<const D &>(*this))->put_Name(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationPerson)->put_Name(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISyndicationPerson<D>::Uri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISyndicationPerson &>(static_cast<const D &>(*this))->get_Uri(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationPerson)->get_Uri(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationPerson<D>::Uri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISyndicationPerson &>(static_cast<const D &>(*this))->put_Uri(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationPerson)->put_Uri(get(value)));
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationPerson impl_ISyndicationPersonFactory<D>::CreateSyndicationPerson(hstring_ref name) const
 {
     Windows::Web::Syndication::SyndicationPerson person { nullptr };
-    check_hresult(static_cast<const ISyndicationPersonFactory &>(static_cast<const D &>(*this))->abi_CreateSyndicationPerson(get(name), put(person)));
+    check_hresult(WINRT_SHIM(ISyndicationPersonFactory)->abi_CreateSyndicationPerson(get(name), put(person)));
     return person;
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationPerson impl_ISyndicationPersonFactory<D>::CreateSyndicationPersonEx(hstring_ref name, hstring_ref email, const Windows::Foundation::Uri & uri) const
 {
     Windows::Web::Syndication::SyndicationPerson person { nullptr };
-    check_hresult(static_cast<const ISyndicationPersonFactory &>(static_cast<const D &>(*this))->abi_CreateSyndicationPersonEx(get(name), get(email), get(uri), put(person)));
+    check_hresult(WINRT_SHIM(ISyndicationPersonFactory)->abi_CreateSyndicationPersonEx(get(name), get(email), get(uri), put(person)));
     return person;
 }
 
 template <typename D> hstring impl_ISyndicationCategory<D>::Label() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationCategory &>(static_cast<const D &>(*this))->get_Label(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationCategory)->get_Label(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationCategory<D>::Label(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationCategory &>(static_cast<const D &>(*this))->put_Label(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationCategory)->put_Label(get(value)));
 }
 
 template <typename D> hstring impl_ISyndicationCategory<D>::Scheme() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationCategory &>(static_cast<const D &>(*this))->get_Scheme(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationCategory)->get_Scheme(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationCategory<D>::Scheme(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationCategory &>(static_cast<const D &>(*this))->put_Scheme(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationCategory)->put_Scheme(get(value)));
 }
 
 template <typename D> hstring impl_ISyndicationCategory<D>::Term() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationCategory &>(static_cast<const D &>(*this))->get_Term(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationCategory)->get_Term(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationCategory<D>::Term(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationCategory &>(static_cast<const D &>(*this))->put_Term(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationCategory)->put_Term(get(value)));
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationCategory impl_ISyndicationCategoryFactory<D>::CreateSyndicationCategory(hstring_ref term) const
 {
     Windows::Web::Syndication::SyndicationCategory category { nullptr };
-    check_hresult(static_cast<const ISyndicationCategoryFactory &>(static_cast<const D &>(*this))->abi_CreateSyndicationCategory(get(term), put(category)));
+    check_hresult(WINRT_SHIM(ISyndicationCategoryFactory)->abi_CreateSyndicationCategory(get(term), put(category)));
     return category;
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationCategory impl_ISyndicationCategoryFactory<D>::CreateSyndicationCategoryEx(hstring_ref term, hstring_ref scheme, hstring_ref label) const
 {
     Windows::Web::Syndication::SyndicationCategory category { nullptr };
-    check_hresult(static_cast<const ISyndicationCategoryFactory &>(static_cast<const D &>(*this))->abi_CreateSyndicationCategoryEx(get(term), get(scheme), get(label), put(category)));
+    check_hresult(WINRT_SHIM(ISyndicationCategoryFactory)->abi_CreateSyndicationCategoryEx(get(term), get(scheme), get(label), put(category)));
     return category;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson> impl_ISyndicationItem<D>::Authors() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson> value;
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->get_Authors(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->get_Authors(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationCategory> impl_ISyndicationItem<D>::Categories() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationCategory> value;
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->get_Categories(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->get_Categories(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson> impl_ISyndicationItem<D>::Contributors() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson> value;
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->get_Contributors(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->get_Contributors(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationContent impl_ISyndicationItem<D>::Content() const
 {
     Windows::Web::Syndication::SyndicationContent value { nullptr };
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->get_Content(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->get_Content(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationItem<D>::Content(const Windows::Web::Syndication::SyndicationContent & value) const
 {
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->put_Content(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->put_Content(get(value)));
 }
 
 template <typename D> hstring impl_ISyndicationItem<D>::Id() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationItem<D>::Id(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->put_Id(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->put_Id(get(value)));
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISyndicationItem<D>::LastUpdatedTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->get_LastUpdatedTime(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->get_LastUpdatedTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationItem<D>::LastUpdatedTime(const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->put_LastUpdatedTime(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->put_LastUpdatedTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationLink> impl_ISyndicationItem<D>::Links() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationLink> value;
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->get_Links(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->get_Links(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISyndicationItem<D>::PublishedDate() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->get_PublishedDate(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->get_PublishedDate(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationItem<D>::PublishedDate(const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->put_PublishedDate(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->put_PublishedDate(get(value)));
 }
 
 template <typename D> Windows::Web::Syndication::ISyndicationText impl_ISyndicationItem<D>::Rights() const
 {
     Windows::Web::Syndication::ISyndicationText value;
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->get_Rights(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->get_Rights(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationItem<D>::Rights(const Windows::Web::Syndication::ISyndicationText & value) const
 {
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->put_Rights(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->put_Rights(get(value)));
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationFeed impl_ISyndicationItem<D>::Source() const
 {
     Windows::Web::Syndication::SyndicationFeed value { nullptr };
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->get_Source(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->get_Source(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationItem<D>::Source(const Windows::Web::Syndication::SyndicationFeed & value) const
 {
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->put_Source(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->put_Source(get(value)));
 }
 
 template <typename D> Windows::Web::Syndication::ISyndicationText impl_ISyndicationItem<D>::Summary() const
 {
     Windows::Web::Syndication::ISyndicationText value;
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->get_Summary(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->get_Summary(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationItem<D>::Summary(const Windows::Web::Syndication::ISyndicationText & value) const
 {
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->put_Summary(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->put_Summary(get(value)));
 }
 
 template <typename D> Windows::Web::Syndication::ISyndicationText impl_ISyndicationItem<D>::Title() const
 {
     Windows::Web::Syndication::ISyndicationText value;
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationItem<D>::Title(const Windows::Web::Syndication::ISyndicationText & value) const
 {
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->put_Title(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->put_Title(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISyndicationItem<D>::CommentsUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->get_CommentsUri(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->get_CommentsUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationItem<D>::CommentsUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->put_CommentsUri(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->put_CommentsUri(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISyndicationItem<D>::EditUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->get_EditUri(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->get_EditUri(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISyndicationItem<D>::EditMediaUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->get_EditMediaUri(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->get_EditMediaUri(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISyndicationItem<D>::ETag() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->get_ETag(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->get_ETag(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISyndicationItem<D>::ItemUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->get_ItemUri(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->get_ItemUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationItem<D>::Load(hstring_ref item) const
 {
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->abi_Load(get(item)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->abi_Load(get(item)));
 }
 
 template <typename D> void impl_ISyndicationItem<D>::LoadFromXml(const Windows::Data::Xml::Dom::XmlDocument & itemDocument) const
 {
-    check_hresult(static_cast<const ISyndicationItem &>(static_cast<const D &>(*this))->abi_LoadFromXml(get(itemDocument)));
+    check_hresult(WINRT_SHIM(ISyndicationItem)->abi_LoadFromXml(get(itemDocument)));
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationItem impl_ISyndicationItemFactory<D>::CreateSyndicationItem(hstring_ref title, const Windows::Web::Syndication::SyndicationContent & content, const Windows::Foundation::Uri & uri) const
 {
     Windows::Web::Syndication::SyndicationItem item { nullptr };
-    check_hresult(static_cast<const ISyndicationItemFactory &>(static_cast<const D &>(*this))->abi_CreateSyndicationItem(get(title), get(content), get(uri), put(item)));
+    check_hresult(WINRT_SHIM(ISyndicationItemFactory)->abi_CreateSyndicationItem(get(title), get(content), get(uri), put(item)));
     return item;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson> impl_ISyndicationFeed<D>::Authors() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson> value;
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->get_Authors(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->get_Authors(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationCategory> impl_ISyndicationFeed<D>::Categories() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationCategory> value;
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->get_Categories(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->get_Categories(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson> impl_ISyndicationFeed<D>::Contributors() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson> value;
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->get_Contributors(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->get_Contributors(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationGenerator impl_ISyndicationFeed<D>::Generator() const
 {
     Windows::Web::Syndication::SyndicationGenerator value { nullptr };
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->get_Generator(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->get_Generator(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationFeed<D>::Generator(const Windows::Web::Syndication::SyndicationGenerator & value) const
 {
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->put_Generator(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->put_Generator(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISyndicationFeed<D>::IconUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->get_IconUri(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->get_IconUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationFeed<D>::IconUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->put_IconUri(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->put_IconUri(get(value)));
 }
 
 template <typename D> hstring impl_ISyndicationFeed<D>::Id() const
 {
     hstring value;
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationFeed<D>::Id(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->put_Id(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->put_Id(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationItem> impl_ISyndicationFeed<D>::Items() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationItem> value;
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->get_Items(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->get_Items(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISyndicationFeed<D>::LastUpdatedTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->get_LastUpdatedTime(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->get_LastUpdatedTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationFeed<D>::LastUpdatedTime(const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->put_LastUpdatedTime(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->put_LastUpdatedTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationLink> impl_ISyndicationFeed<D>::Links() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationLink> value;
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->get_Links(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->get_Links(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISyndicationFeed<D>::ImageUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->get_ImageUri(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->get_ImageUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationFeed<D>::ImageUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->put_ImageUri(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->put_ImageUri(get(value)));
 }
 
 template <typename D> Windows::Web::Syndication::ISyndicationText impl_ISyndicationFeed<D>::Rights() const
 {
     Windows::Web::Syndication::ISyndicationText value;
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->get_Rights(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->get_Rights(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationFeed<D>::Rights(const Windows::Web::Syndication::ISyndicationText & value) const
 {
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->put_Rights(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->put_Rights(get(value)));
 }
 
 template <typename D> Windows::Web::Syndication::ISyndicationText impl_ISyndicationFeed<D>::Subtitle() const
 {
     Windows::Web::Syndication::ISyndicationText value;
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->get_Subtitle(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->get_Subtitle(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationFeed<D>::Subtitle(const Windows::Web::Syndication::ISyndicationText & value) const
 {
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->put_Subtitle(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->put_Subtitle(get(value)));
 }
 
 template <typename D> Windows::Web::Syndication::ISyndicationText impl_ISyndicationFeed<D>::Title() const
 {
     Windows::Web::Syndication::ISyndicationText value;
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationFeed<D>::Title(const Windows::Web::Syndication::ISyndicationText & value) const
 {
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->put_Title(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->put_Title(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISyndicationFeed<D>::FirstUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->get_FirstUri(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->get_FirstUri(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISyndicationFeed<D>::LastUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->get_LastUri(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->get_LastUri(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISyndicationFeed<D>::NextUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->get_NextUri(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->get_NextUri(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISyndicationFeed<D>::PreviousUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->get_PreviousUri(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->get_PreviousUri(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationFormat impl_ISyndicationFeed<D>::SourceFormat() const
 {
     Windows::Web::Syndication::SyndicationFormat value {};
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->get_SourceFormat(&value));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->get_SourceFormat(&value));
     return value;
 }
 
 template <typename D> void impl_ISyndicationFeed<D>::Load(hstring_ref feed) const
 {
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->abi_Load(get(feed)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->abi_Load(get(feed)));
 }
 
 template <typename D> void impl_ISyndicationFeed<D>::LoadFromXml(const Windows::Data::Xml::Dom::XmlDocument & feedDocument) const
 {
-    check_hresult(static_cast<const ISyndicationFeed &>(static_cast<const D &>(*this))->abi_LoadFromXml(get(feedDocument)));
+    check_hresult(WINRT_SHIM(ISyndicationFeed)->abi_LoadFromXml(get(feedDocument)));
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationFeed impl_ISyndicationFeedFactory<D>::CreateSyndicationFeed(hstring_ref title, hstring_ref subtitle, const Windows::Foundation::Uri & uri) const
 {
     Windows::Web::Syndication::SyndicationFeed feed { nullptr };
-    check_hresult(static_cast<const ISyndicationFeedFactory &>(static_cast<const D &>(*this))->abi_CreateSyndicationFeed(get(title), get(subtitle), get(uri), put(feed)));
+    check_hresult(WINRT_SHIM(ISyndicationFeedFactory)->abi_CreateSyndicationFeed(get(title), get(subtitle), get(uri), put(feed)));
     return feed;
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_ISyndicationClient<D>::ServerCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(static_cast<const ISyndicationClient &>(static_cast<const D &>(*this))->get_ServerCredential(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationClient)->get_ServerCredential(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationClient<D>::ServerCredential(const Windows::Security::Credentials::PasswordCredential & value) const
 {
-    check_hresult(static_cast<const ISyndicationClient &>(static_cast<const D &>(*this))->put_ServerCredential(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationClient)->put_ServerCredential(get(value)));
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_ISyndicationClient<D>::ProxyCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(static_cast<const ISyndicationClient &>(static_cast<const D &>(*this))->get_ProxyCredential(put(value)));
+    check_hresult(WINRT_SHIM(ISyndicationClient)->get_ProxyCredential(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISyndicationClient<D>::ProxyCredential(const Windows::Security::Credentials::PasswordCredential & value) const
 {
-    check_hresult(static_cast<const ISyndicationClient &>(static_cast<const D &>(*this))->put_ProxyCredential(get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationClient)->put_ProxyCredential(get(value)));
 }
 
 template <typename D> uint32_t impl_ISyndicationClient<D>::MaxResponseBufferSize() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ISyndicationClient &>(static_cast<const D &>(*this))->get_MaxResponseBufferSize(&value));
+    check_hresult(WINRT_SHIM(ISyndicationClient)->get_MaxResponseBufferSize(&value));
     return value;
 }
 
 template <typename D> void impl_ISyndicationClient<D>::MaxResponseBufferSize(uint32_t value) const
 {
-    check_hresult(static_cast<const ISyndicationClient &>(static_cast<const D &>(*this))->put_MaxResponseBufferSize(value));
+    check_hresult(WINRT_SHIM(ISyndicationClient)->put_MaxResponseBufferSize(value));
 }
 
 template <typename D> uint32_t impl_ISyndicationClient<D>::Timeout() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ISyndicationClient &>(static_cast<const D &>(*this))->get_Timeout(&value));
+    check_hresult(WINRT_SHIM(ISyndicationClient)->get_Timeout(&value));
     return value;
 }
 
 template <typename D> void impl_ISyndicationClient<D>::Timeout(uint32_t value) const
 {
-    check_hresult(static_cast<const ISyndicationClient &>(static_cast<const D &>(*this))->put_Timeout(value));
+    check_hresult(WINRT_SHIM(ISyndicationClient)->put_Timeout(value));
 }
 
 template <typename D> bool impl_ISyndicationClient<D>::BypassCacheOnRetrieve() const
 {
     bool value {};
-    check_hresult(static_cast<const ISyndicationClient &>(static_cast<const D &>(*this))->get_BypassCacheOnRetrieve(&value));
+    check_hresult(WINRT_SHIM(ISyndicationClient)->get_BypassCacheOnRetrieve(&value));
     return value;
 }
 
 template <typename D> void impl_ISyndicationClient<D>::BypassCacheOnRetrieve(bool value) const
 {
-    check_hresult(static_cast<const ISyndicationClient &>(static_cast<const D &>(*this))->put_BypassCacheOnRetrieve(value));
+    check_hresult(WINRT_SHIM(ISyndicationClient)->put_BypassCacheOnRetrieve(value));
 }
 
 template <typename D> void impl_ISyndicationClient<D>::SetRequestHeader(hstring_ref name, hstring_ref value) const
 {
-    check_hresult(static_cast<const ISyndicationClient &>(static_cast<const D &>(*this))->abi_SetRequestHeader(get(name), get(value)));
+    check_hresult(WINRT_SHIM(ISyndicationClient)->abi_SetRequestHeader(get(name), get(value)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationFeed, Windows::Web::Syndication::RetrievalProgress> impl_ISyndicationClient<D>::RetrieveFeedAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationFeed, Windows::Web::Syndication::RetrievalProgress> operation;
-    check_hresult(static_cast<const ISyndicationClient &>(static_cast<const D &>(*this))->abi_RetrieveFeedAsync(get(uri), put(operation)));
+    check_hresult(WINRT_SHIM(ISyndicationClient)->abi_RetrieveFeedAsync(get(uri), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationClient impl_ISyndicationClientFactory<D>::CreateSyndicationClient(const Windows::Security::Credentials::PasswordCredential & serverCredential) const
 {
     Windows::Web::Syndication::SyndicationClient syndicationClient { nullptr };
-    check_hresult(static_cast<const ISyndicationClientFactory &>(static_cast<const D &>(*this))->abi_CreateSyndicationClient(get(serverCredential), put(syndicationClient)));
+    check_hresult(WINRT_SHIM(ISyndicationClientFactory)->abi_CreateSyndicationClient(get(serverCredential), put(syndicationClient)));
     return syndicationClient;
 }
 
 template <typename D> Windows::Web::Syndication::SyndicationErrorStatus impl_ISyndicationErrorStatics<D>::GetStatus(int32_t hresult) const
 {
     Windows::Web::Syndication::SyndicationErrorStatus status {};
-    check_hresult(static_cast<const ISyndicationErrorStatics &>(static_cast<const D &>(*this))->abi_GetStatus(hresult, &status));
+    check_hresult(WINRT_SHIM(ISyndicationErrorStatics)->abi_GetStatus(hresult, &status));
     return status;
 }
 

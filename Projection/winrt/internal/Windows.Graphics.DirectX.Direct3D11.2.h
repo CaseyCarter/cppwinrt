@@ -17,7 +17,6 @@ struct IDirect3DDevice :
     impl::require<IDirect3DDevice, Windows::Foundation::IClosable>
 {
     IDirect3DDevice(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDirect3DDevice>(m_ptr); }
 };
 
 struct IDirect3DSurface :
@@ -26,7 +25,6 @@ struct IDirect3DSurface :
     impl::require<IDirect3DSurface, Windows::Foundation::IClosable>
 {
     IDirect3DSurface(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDirect3DSurface>(m_ptr); }
 };
 
 }

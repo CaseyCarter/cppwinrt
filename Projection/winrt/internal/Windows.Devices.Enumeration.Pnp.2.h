@@ -119,7 +119,6 @@ struct IPnpObject :
     impl::consume<IPnpObject>
 {
     IPnpObject(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPnpObject>(m_ptr); }
 };
 
 struct IPnpObjectStatics :
@@ -127,7 +126,6 @@ struct IPnpObjectStatics :
     impl::consume<IPnpObjectStatics>
 {
     IPnpObjectStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPnpObjectStatics>(m_ptr); }
 };
 
 struct IPnpObjectUpdate :
@@ -135,7 +133,6 @@ struct IPnpObjectUpdate :
     impl::consume<IPnpObjectUpdate>
 {
     IPnpObjectUpdate(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPnpObjectUpdate>(m_ptr); }
 };
 
 struct IPnpObjectWatcher :
@@ -143,7 +140,6 @@ struct IPnpObjectWatcher :
     impl::consume<IPnpObjectWatcher>
 {
     IPnpObjectWatcher(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPnpObjectWatcher>(m_ptr); }
 };
 
 }

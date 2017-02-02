@@ -169,7 +169,6 @@ struct ISyndicationAttribute :
     impl::consume<ISyndicationAttribute>
 {
     ISyndicationAttribute(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationAttribute>(m_ptr); }
 };
 
 struct ISyndicationAttributeFactory :
@@ -177,7 +176,6 @@ struct ISyndicationAttributeFactory :
     impl::consume<ISyndicationAttributeFactory>
 {
     ISyndicationAttributeFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationAttributeFactory>(m_ptr); }
 };
 
 struct ISyndicationCategory :
@@ -186,7 +184,6 @@ struct ISyndicationCategory :
     impl::require<ISyndicationCategory, Windows::Web::Syndication::ISyndicationNode>
 {
     ISyndicationCategory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationCategory>(m_ptr); }
 };
 
 struct ISyndicationCategoryFactory :
@@ -194,7 +191,6 @@ struct ISyndicationCategoryFactory :
     impl::consume<ISyndicationCategoryFactory>
 {
     ISyndicationCategoryFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationCategoryFactory>(m_ptr); }
 };
 
 struct ISyndicationClient :
@@ -202,7 +198,6 @@ struct ISyndicationClient :
     impl::consume<ISyndicationClient>
 {
     ISyndicationClient(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationClient>(m_ptr); }
 };
 
 struct ISyndicationClientFactory :
@@ -210,7 +205,6 @@ struct ISyndicationClientFactory :
     impl::consume<ISyndicationClientFactory>
 {
     ISyndicationClientFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationClientFactory>(m_ptr); }
 };
 
 struct ISyndicationContent :
@@ -219,7 +213,6 @@ struct ISyndicationContent :
     impl::require<ISyndicationContent, Windows::Web::Syndication::ISyndicationNode, Windows::Web::Syndication::ISyndicationText>
 {
     ISyndicationContent(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationContent>(m_ptr); }
 };
 
 struct ISyndicationContentFactory :
@@ -227,7 +220,6 @@ struct ISyndicationContentFactory :
     impl::consume<ISyndicationContentFactory>
 {
     ISyndicationContentFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationContentFactory>(m_ptr); }
 };
 
 struct ISyndicationErrorStatics :
@@ -235,7 +227,6 @@ struct ISyndicationErrorStatics :
     impl::consume<ISyndicationErrorStatics>
 {
     ISyndicationErrorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationErrorStatics>(m_ptr); }
 };
 
 struct ISyndicationFeed :
@@ -244,7 +235,6 @@ struct ISyndicationFeed :
     impl::require<ISyndicationFeed, Windows::Web::Syndication::ISyndicationNode>
 {
     ISyndicationFeed(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationFeed>(m_ptr); }
 };
 
 struct ISyndicationFeedFactory :
@@ -252,7 +242,6 @@ struct ISyndicationFeedFactory :
     impl::consume<ISyndicationFeedFactory>
 {
     ISyndicationFeedFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationFeedFactory>(m_ptr); }
 };
 
 struct ISyndicationGenerator :
@@ -260,7 +249,6 @@ struct ISyndicationGenerator :
     impl::consume<ISyndicationGenerator>
 {
     ISyndicationGenerator(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationGenerator>(m_ptr); }
 };
 
 struct ISyndicationGeneratorFactory :
@@ -268,7 +256,6 @@ struct ISyndicationGeneratorFactory :
     impl::consume<ISyndicationGeneratorFactory>
 {
     ISyndicationGeneratorFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationGeneratorFactory>(m_ptr); }
 };
 
 struct ISyndicationItem :
@@ -277,7 +264,6 @@ struct ISyndicationItem :
     impl::require<ISyndicationItem, Windows::Web::Syndication::ISyndicationNode>
 {
     ISyndicationItem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationItem>(m_ptr); }
 };
 
 struct ISyndicationItemFactory :
@@ -285,7 +271,6 @@ struct ISyndicationItemFactory :
     impl::consume<ISyndicationItemFactory>
 {
     ISyndicationItemFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationItemFactory>(m_ptr); }
 };
 
 struct ISyndicationLink :
@@ -294,7 +279,6 @@ struct ISyndicationLink :
     impl::require<ISyndicationLink, Windows::Web::Syndication::ISyndicationNode>
 {
     ISyndicationLink(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationLink>(m_ptr); }
 };
 
 struct ISyndicationLinkFactory :
@@ -302,7 +286,6 @@ struct ISyndicationLinkFactory :
     impl::consume<ISyndicationLinkFactory>
 {
     ISyndicationLinkFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationLinkFactory>(m_ptr); }
 };
 
 struct ISyndicationNode :
@@ -310,7 +293,6 @@ struct ISyndicationNode :
     impl::consume<ISyndicationNode>
 {
     ISyndicationNode(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationNode>(m_ptr); }
 };
 
 struct ISyndicationNodeFactory :
@@ -318,7 +300,6 @@ struct ISyndicationNodeFactory :
     impl::consume<ISyndicationNodeFactory>
 {
     ISyndicationNodeFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationNodeFactory>(m_ptr); }
 };
 
 struct ISyndicationPerson :
@@ -327,7 +308,6 @@ struct ISyndicationPerson :
     impl::require<ISyndicationPerson, Windows::Web::Syndication::ISyndicationNode>
 {
     ISyndicationPerson(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationPerson>(m_ptr); }
 };
 
 struct ISyndicationPersonFactory :
@@ -335,7 +315,6 @@ struct ISyndicationPersonFactory :
     impl::consume<ISyndicationPersonFactory>
 {
     ISyndicationPersonFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationPersonFactory>(m_ptr); }
 };
 
 struct ISyndicationText :
@@ -344,7 +323,6 @@ struct ISyndicationText :
     impl::require<ISyndicationText, Windows::Web::Syndication::ISyndicationNode>
 {
     ISyndicationText(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationText>(m_ptr); }
 };
 
 struct ISyndicationTextFactory :
@@ -352,7 +330,6 @@ struct ISyndicationTextFactory :
     impl::consume<ISyndicationTextFactory>
 {
     ISyndicationTextFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISyndicationTextFactory>(m_ptr); }
 };
 
 }

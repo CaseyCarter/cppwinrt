@@ -165,7 +165,6 @@ struct IBluetoothClassOfDevice :
     impl::consume<IBluetoothClassOfDevice>
 {
     IBluetoothClassOfDevice(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothClassOfDevice>(m_ptr); }
 };
 
 struct IBluetoothClassOfDeviceStatics :
@@ -173,7 +172,6 @@ struct IBluetoothClassOfDeviceStatics :
     impl::consume<IBluetoothClassOfDeviceStatics>
 {
     IBluetoothClassOfDeviceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothClassOfDeviceStatics>(m_ptr); }
 };
 
 struct IBluetoothDevice :
@@ -181,7 +179,6 @@ struct IBluetoothDevice :
     impl::consume<IBluetoothDevice>
 {
     IBluetoothDevice(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothDevice>(m_ptr); }
 };
 
 struct IBluetoothDevice2 :
@@ -190,7 +187,6 @@ struct IBluetoothDevice2 :
     impl::require<IBluetoothDevice2, Windows::Devices::Bluetooth::IBluetoothDevice>
 {
     IBluetoothDevice2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothDevice2>(m_ptr); }
 };
 
 struct IBluetoothDevice3 :
@@ -199,7 +195,6 @@ struct IBluetoothDevice3 :
     impl::require<IBluetoothDevice3, Windows::Devices::Bluetooth::IBluetoothDevice, Windows::Devices::Bluetooth::IBluetoothDevice2>
 {
     IBluetoothDevice3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothDevice3>(m_ptr); }
 };
 
 struct IBluetoothDeviceStatics :
@@ -207,7 +202,6 @@ struct IBluetoothDeviceStatics :
     impl::consume<IBluetoothDeviceStatics>
 {
     IBluetoothDeviceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothDeviceStatics>(m_ptr); }
 };
 
 struct IBluetoothDeviceStatics2 :
@@ -216,7 +210,6 @@ struct IBluetoothDeviceStatics2 :
     impl::require<IBluetoothDeviceStatics2, Windows::Devices::Bluetooth::IBluetoothDeviceStatics>
 {
     IBluetoothDeviceStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothDeviceStatics2>(m_ptr); }
 };
 
 struct IBluetoothLEAppearance :
@@ -224,7 +217,6 @@ struct IBluetoothLEAppearance :
     impl::consume<IBluetoothLEAppearance>
 {
     IBluetoothLEAppearance(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAppearance>(m_ptr); }
 };
 
 struct IBluetoothLEAppearanceCategoriesStatics :
@@ -232,7 +224,6 @@ struct IBluetoothLEAppearanceCategoriesStatics :
     impl::consume<IBluetoothLEAppearanceCategoriesStatics>
 {
     IBluetoothLEAppearanceCategoriesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAppearanceCategoriesStatics>(m_ptr); }
 };
 
 struct IBluetoothLEAppearanceStatics :
@@ -240,7 +231,6 @@ struct IBluetoothLEAppearanceStatics :
     impl::consume<IBluetoothLEAppearanceStatics>
 {
     IBluetoothLEAppearanceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAppearanceStatics>(m_ptr); }
 };
 
 struct IBluetoothLEAppearanceSubcategoriesStatics :
@@ -248,7 +238,6 @@ struct IBluetoothLEAppearanceSubcategoriesStatics :
     impl::consume<IBluetoothLEAppearanceSubcategoriesStatics>
 {
     IBluetoothLEAppearanceSubcategoriesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAppearanceSubcategoriesStatics>(m_ptr); }
 };
 
 struct IBluetoothLEDevice :
@@ -256,7 +245,6 @@ struct IBluetoothLEDevice :
     impl::consume<IBluetoothLEDevice>
 {
     IBluetoothLEDevice(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEDevice>(m_ptr); }
 };
 
 struct IBluetoothLEDevice2 :
@@ -265,7 +253,6 @@ struct IBluetoothLEDevice2 :
     impl::require<IBluetoothLEDevice2, Windows::Devices::Bluetooth::IBluetoothLEDevice>
 {
     IBluetoothLEDevice2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEDevice2>(m_ptr); }
 };
 
 struct IBluetoothLEDeviceStatics :
@@ -273,7 +260,6 @@ struct IBluetoothLEDeviceStatics :
     impl::consume<IBluetoothLEDeviceStatics>
 {
     IBluetoothLEDeviceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEDeviceStatics>(m_ptr); }
 };
 
 struct IBluetoothLEDeviceStatics2 :
@@ -281,7 +267,6 @@ struct IBluetoothLEDeviceStatics2 :
     impl::consume<IBluetoothLEDeviceStatics2>
 {
     IBluetoothLEDeviceStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEDeviceStatics2>(m_ptr); }
 };
 
 struct IBluetoothSignalStrengthFilter :
@@ -289,7 +274,6 @@ struct IBluetoothSignalStrengthFilter :
     impl::consume<IBluetoothSignalStrengthFilter>
 {
     IBluetoothSignalStrengthFilter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothSignalStrengthFilter>(m_ptr); }
 };
 
 }

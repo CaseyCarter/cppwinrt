@@ -901,332 +901,332 @@ namespace Windows::Devices::Midi {
 template <typename D> Windows::Foundation::TimeSpan impl_IMidiMessage<D>::Timestamp() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMidiMessage &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(IMidiMessage)->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IMidiMessage<D>::RawData() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IMidiMessage &>(static_cast<const D &>(*this))->get_RawData(put(value)));
+    check_hresult(WINRT_SHIM(IMidiMessage)->get_RawData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Midi::MidiMessageType impl_IMidiMessage<D>::Type() const
 {
     Windows::Devices::Midi::MidiMessageType value {};
-    check_hresult(static_cast<const IMidiMessage &>(static_cast<const D &>(*this))->get_Type(&value));
+    check_hresult(WINRT_SHIM(IMidiMessage)->get_Type(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiNoteOffMessage<D>::Channel() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiNoteOffMessage &>(static_cast<const D &>(*this))->get_Channel(&value));
+    check_hresult(WINRT_SHIM(IMidiNoteOffMessage)->get_Channel(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiNoteOffMessage<D>::Note() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiNoteOffMessage &>(static_cast<const D &>(*this))->get_Note(&value));
+    check_hresult(WINRT_SHIM(IMidiNoteOffMessage)->get_Note(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiNoteOffMessage<D>::Velocity() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiNoteOffMessage &>(static_cast<const D &>(*this))->get_Velocity(&value));
+    check_hresult(WINRT_SHIM(IMidiNoteOffMessage)->get_Velocity(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiNoteOnMessage<D>::Channel() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiNoteOnMessage &>(static_cast<const D &>(*this))->get_Channel(&value));
+    check_hresult(WINRT_SHIM(IMidiNoteOnMessage)->get_Channel(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiNoteOnMessage<D>::Note() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiNoteOnMessage &>(static_cast<const D &>(*this))->get_Note(&value));
+    check_hresult(WINRT_SHIM(IMidiNoteOnMessage)->get_Note(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiNoteOnMessage<D>::Velocity() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiNoteOnMessage &>(static_cast<const D &>(*this))->get_Velocity(&value));
+    check_hresult(WINRT_SHIM(IMidiNoteOnMessage)->get_Velocity(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiPolyphonicKeyPressureMessage<D>::Channel() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiPolyphonicKeyPressureMessage &>(static_cast<const D &>(*this))->get_Channel(&value));
+    check_hresult(WINRT_SHIM(IMidiPolyphonicKeyPressureMessage)->get_Channel(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiPolyphonicKeyPressureMessage<D>::Note() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiPolyphonicKeyPressureMessage &>(static_cast<const D &>(*this))->get_Note(&value));
+    check_hresult(WINRT_SHIM(IMidiPolyphonicKeyPressureMessage)->get_Note(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiPolyphonicKeyPressureMessage<D>::Pressure() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiPolyphonicKeyPressureMessage &>(static_cast<const D &>(*this))->get_Pressure(&value));
+    check_hresult(WINRT_SHIM(IMidiPolyphonicKeyPressureMessage)->get_Pressure(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiControlChangeMessage<D>::Channel() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiControlChangeMessage &>(static_cast<const D &>(*this))->get_Channel(&value));
+    check_hresult(WINRT_SHIM(IMidiControlChangeMessage)->get_Channel(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiControlChangeMessage<D>::Controller() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiControlChangeMessage &>(static_cast<const D &>(*this))->get_Controller(&value));
+    check_hresult(WINRT_SHIM(IMidiControlChangeMessage)->get_Controller(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiControlChangeMessage<D>::ControlValue() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiControlChangeMessage &>(static_cast<const D &>(*this))->get_ControlValue(&value));
+    check_hresult(WINRT_SHIM(IMidiControlChangeMessage)->get_ControlValue(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiProgramChangeMessage<D>::Channel() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiProgramChangeMessage &>(static_cast<const D &>(*this))->get_Channel(&value));
+    check_hresult(WINRT_SHIM(IMidiProgramChangeMessage)->get_Channel(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiProgramChangeMessage<D>::Program() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiProgramChangeMessage &>(static_cast<const D &>(*this))->get_Program(&value));
+    check_hresult(WINRT_SHIM(IMidiProgramChangeMessage)->get_Program(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiChannelPressureMessage<D>::Channel() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiChannelPressureMessage &>(static_cast<const D &>(*this))->get_Channel(&value));
+    check_hresult(WINRT_SHIM(IMidiChannelPressureMessage)->get_Channel(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiChannelPressureMessage<D>::Pressure() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiChannelPressureMessage &>(static_cast<const D &>(*this))->get_Pressure(&value));
+    check_hresult(WINRT_SHIM(IMidiChannelPressureMessage)->get_Pressure(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiPitchBendChangeMessage<D>::Channel() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiPitchBendChangeMessage &>(static_cast<const D &>(*this))->get_Channel(&value));
+    check_hresult(WINRT_SHIM(IMidiPitchBendChangeMessage)->get_Channel(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IMidiPitchBendChangeMessage<D>::Bend() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IMidiPitchBendChangeMessage &>(static_cast<const D &>(*this))->get_Bend(&value));
+    check_hresult(WINRT_SHIM(IMidiPitchBendChangeMessage)->get_Bend(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiTimeCodeMessage<D>::FrameType() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiTimeCodeMessage &>(static_cast<const D &>(*this))->get_FrameType(&value));
+    check_hresult(WINRT_SHIM(IMidiTimeCodeMessage)->get_FrameType(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiTimeCodeMessage<D>::Values() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiTimeCodeMessage &>(static_cast<const D &>(*this))->get_Values(&value));
+    check_hresult(WINRT_SHIM(IMidiTimeCodeMessage)->get_Values(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IMidiSongPositionPointerMessage<D>::Beats() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IMidiSongPositionPointerMessage &>(static_cast<const D &>(*this))->get_Beats(&value));
+    check_hresult(WINRT_SHIM(IMidiSongPositionPointerMessage)->get_Beats(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IMidiSongSelectMessage<D>::Song() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IMidiSongSelectMessage &>(static_cast<const D &>(*this))->get_Song(&value));
+    check_hresult(WINRT_SHIM(IMidiSongSelectMessage)->get_Song(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Midi::MidiNoteOffMessage impl_IMidiNoteOffMessageFactory<D>::CreateMidiNoteOffMessage(uint8_t channel, uint8_t note, uint8_t velocity) const
 {
     Windows::Devices::Midi::MidiNoteOffMessage value { nullptr };
-    check_hresult(static_cast<const IMidiNoteOffMessageFactory &>(static_cast<const D &>(*this))->abi_CreateMidiNoteOffMessage(channel, note, velocity, put(value)));
+    check_hresult(WINRT_SHIM(IMidiNoteOffMessageFactory)->abi_CreateMidiNoteOffMessage(channel, note, velocity, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Midi::MidiNoteOnMessage impl_IMidiNoteOnMessageFactory<D>::CreateMidiNoteOnMessage(uint8_t channel, uint8_t note, uint8_t velocity) const
 {
     Windows::Devices::Midi::MidiNoteOnMessage value { nullptr };
-    check_hresult(static_cast<const IMidiNoteOnMessageFactory &>(static_cast<const D &>(*this))->abi_CreateMidiNoteOnMessage(channel, note, velocity, put(value)));
+    check_hresult(WINRT_SHIM(IMidiNoteOnMessageFactory)->abi_CreateMidiNoteOnMessage(channel, note, velocity, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Midi::MidiPolyphonicKeyPressureMessage impl_IMidiPolyphonicKeyPressureMessageFactory<D>::CreateMidiPolyphonicKeyPressureMessage(uint8_t channel, uint8_t note, uint8_t pressure) const
 {
     Windows::Devices::Midi::MidiPolyphonicKeyPressureMessage value { nullptr };
-    check_hresult(static_cast<const IMidiPolyphonicKeyPressureMessageFactory &>(static_cast<const D &>(*this))->abi_CreateMidiPolyphonicKeyPressureMessage(channel, note, pressure, put(value)));
+    check_hresult(WINRT_SHIM(IMidiPolyphonicKeyPressureMessageFactory)->abi_CreateMidiPolyphonicKeyPressureMessage(channel, note, pressure, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Midi::MidiControlChangeMessage impl_IMidiControlChangeMessageFactory<D>::CreateMidiControlChangeMessage(uint8_t channel, uint8_t controller, uint8_t controlValue) const
 {
     Windows::Devices::Midi::MidiControlChangeMessage value { nullptr };
-    check_hresult(static_cast<const IMidiControlChangeMessageFactory &>(static_cast<const D &>(*this))->abi_CreateMidiControlChangeMessage(channel, controller, controlValue, put(value)));
+    check_hresult(WINRT_SHIM(IMidiControlChangeMessageFactory)->abi_CreateMidiControlChangeMessage(channel, controller, controlValue, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Midi::MidiProgramChangeMessage impl_IMidiProgramChangeMessageFactory<D>::CreateMidiProgramChangeMessage(uint8_t channel, uint8_t program) const
 {
     Windows::Devices::Midi::MidiProgramChangeMessage value { nullptr };
-    check_hresult(static_cast<const IMidiProgramChangeMessageFactory &>(static_cast<const D &>(*this))->abi_CreateMidiProgramChangeMessage(channel, program, put(value)));
+    check_hresult(WINRT_SHIM(IMidiProgramChangeMessageFactory)->abi_CreateMidiProgramChangeMessage(channel, program, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Midi::MidiChannelPressureMessage impl_IMidiChannelPressureMessageFactory<D>::CreateMidiChannelPressureMessage(uint8_t channel, uint8_t pressure) const
 {
     Windows::Devices::Midi::MidiChannelPressureMessage value { nullptr };
-    check_hresult(static_cast<const IMidiChannelPressureMessageFactory &>(static_cast<const D &>(*this))->abi_CreateMidiChannelPressureMessage(channel, pressure, put(value)));
+    check_hresult(WINRT_SHIM(IMidiChannelPressureMessageFactory)->abi_CreateMidiChannelPressureMessage(channel, pressure, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Midi::MidiPitchBendChangeMessage impl_IMidiPitchBendChangeMessageFactory<D>::CreateMidiPitchBendChangeMessage(uint8_t channel, uint16_t bend) const
 {
     Windows::Devices::Midi::MidiPitchBendChangeMessage value { nullptr };
-    check_hresult(static_cast<const IMidiPitchBendChangeMessageFactory &>(static_cast<const D &>(*this))->abi_CreateMidiPitchBendChangeMessage(channel, bend, put(value)));
+    check_hresult(WINRT_SHIM(IMidiPitchBendChangeMessageFactory)->abi_CreateMidiPitchBendChangeMessage(channel, bend, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Midi::MidiSystemExclusiveMessage impl_IMidiSystemExclusiveMessageFactory<D>::CreateMidiSystemExclusiveMessage(const Windows::Storage::Streams::IBuffer & rawData) const
 {
     Windows::Devices::Midi::MidiSystemExclusiveMessage value { nullptr };
-    check_hresult(static_cast<const IMidiSystemExclusiveMessageFactory &>(static_cast<const D &>(*this))->abi_CreateMidiSystemExclusiveMessage(get(rawData), put(value)));
+    check_hresult(WINRT_SHIM(IMidiSystemExclusiveMessageFactory)->abi_CreateMidiSystemExclusiveMessage(get(rawData), put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Midi::MidiTimeCodeMessage impl_IMidiTimeCodeMessageFactory<D>::CreateMidiTimeCodeMessage(uint8_t frameType, uint8_t values) const
 {
     Windows::Devices::Midi::MidiTimeCodeMessage value { nullptr };
-    check_hresult(static_cast<const IMidiTimeCodeMessageFactory &>(static_cast<const D &>(*this))->abi_CreateMidiTimeCodeMessage(frameType, values, put(value)));
+    check_hresult(WINRT_SHIM(IMidiTimeCodeMessageFactory)->abi_CreateMidiTimeCodeMessage(frameType, values, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Midi::MidiSongPositionPointerMessage impl_IMidiSongPositionPointerMessageFactory<D>::CreateMidiSongPositionPointerMessage(uint16_t beats) const
 {
     Windows::Devices::Midi::MidiSongPositionPointerMessage value { nullptr };
-    check_hresult(static_cast<const IMidiSongPositionPointerMessageFactory &>(static_cast<const D &>(*this))->abi_CreateMidiSongPositionPointerMessage(beats, put(value)));
+    check_hresult(WINRT_SHIM(IMidiSongPositionPointerMessageFactory)->abi_CreateMidiSongPositionPointerMessage(beats, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Midi::MidiSongSelectMessage impl_IMidiSongSelectMessageFactory<D>::CreateMidiSongSelectMessage(uint8_t song) const
 {
     Windows::Devices::Midi::MidiSongSelectMessage value { nullptr };
-    check_hresult(static_cast<const IMidiSongSelectMessageFactory &>(static_cast<const D &>(*this))->abi_CreateMidiSongSelectMessage(song, put(value)));
+    check_hresult(WINRT_SHIM(IMidiSongSelectMessageFactory)->abi_CreateMidiSongSelectMessage(song, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Midi::IMidiMessage impl_IMidiMessageReceivedEventArgs<D>::Message() const
 {
     Windows::Devices::Midi::IMidiMessage value;
-    check_hresult(static_cast<const IMidiMessageReceivedEventArgs &>(static_cast<const D &>(*this))->get_Message(put(value)));
+    check_hresult(WINRT_SHIM(IMidiMessageReceivedEventArgs)->get_Message(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiInPort> impl_IMidiInPortStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiInPort> value;
-    check_hresult(static_cast<const IMidiInPortStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(value)));
+    check_hresult(WINRT_SHIM(IMidiInPortStatics)->abi_FromIdAsync(get(deviceId), put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMidiInPortStatics<D>::GetDeviceSelector() const
 {
     hstring value;
-    check_hresult(static_cast<const IMidiInPortStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(value)));
+    check_hresult(WINRT_SHIM(IMidiInPortStatics)->abi_GetDeviceSelector(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::IMidiOutPort> impl_IMidiOutPortStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::IMidiOutPort> value;
-    check_hresult(static_cast<const IMidiOutPortStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(value)));
+    check_hresult(WINRT_SHIM(IMidiOutPortStatics)->abi_FromIdAsync(get(deviceId), put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMidiOutPortStatics<D>::GetDeviceSelector() const
 {
     hstring value;
-    check_hresult(static_cast<const IMidiOutPortStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(value)));
+    check_hresult(WINRT_SHIM(IMidiOutPortStatics)->abi_GetDeviceSelector(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> impl_IMidiSynthesizerStatics<D>::CreateAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> value;
-    check_hresult(static_cast<const IMidiSynthesizerStatics &>(static_cast<const D &>(*this))->abi_CreateAsync(put(value)));
+    check_hresult(WINRT_SHIM(IMidiSynthesizerStatics)->abi_CreateAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> impl_IMidiSynthesizerStatics<D>::CreateAsync(const Windows::Devices::Enumeration::DeviceInformation & audioDevice) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> value;
-    check_hresult(static_cast<const IMidiSynthesizerStatics &>(static_cast<const D &>(*this))->abi_CreateFromAudioDeviceAsync(get(audioDevice), put(value)));
+    check_hresult(WINRT_SHIM(IMidiSynthesizerStatics)->abi_CreateFromAudioDeviceAsync(get(audioDevice), put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMidiSynthesizerStatics<D>::IsSynthesizer(const Windows::Devices::Enumeration::DeviceInformation & midiDevice) const
 {
     bool value {};
-    check_hresult(static_cast<const IMidiSynthesizerStatics &>(static_cast<const D &>(*this))->abi_IsSynthesizer(get(midiDevice), &value));
+    check_hresult(WINRT_SHIM(IMidiSynthesizerStatics)->abi_IsSynthesizer(get(midiDevice), &value));
     return value;
 }
 
 template <typename D> void impl_IMidiOutPort<D>::SendMessage(const Windows::Devices::Midi::IMidiMessage & midiMessage) const
 {
-    check_hresult(static_cast<const IMidiOutPort &>(static_cast<const D &>(*this))->abi_SendMessage(get(midiMessage)));
+    check_hresult(WINRT_SHIM(IMidiOutPort)->abi_SendMessage(get(midiMessage)));
 }
 
 template <typename D> void impl_IMidiOutPort<D>::SendBuffer(const Windows::Storage::Streams::IBuffer & midiData) const
 {
-    check_hresult(static_cast<const IMidiOutPort &>(static_cast<const D &>(*this))->abi_SendBuffer(get(midiData)));
+    check_hresult(WINRT_SHIM(IMidiOutPort)->abi_SendBuffer(get(midiData)));
 }
 
 template <typename D> hstring impl_IMidiOutPort<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMidiOutPort &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IMidiOutPort)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IMidiInPort<D>::MessageReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Midi::MidiInPort, Windows::Devices::Midi::MidiMessageReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMidiInPort &>(static_cast<const D &>(*this))->add_MessageReceived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMidiInPort)->add_MessageReceived(get(handler), &token));
     return token;
 }
 
@@ -1237,33 +1237,33 @@ template <typename D> event_revoker<IMidiInPort> impl_IMidiInPort<D>::MessageRec
 
 template <typename D> void impl_IMidiInPort<D>::MessageReceived(event_token token) const
 {
-    check_hresult(static_cast<const IMidiInPort &>(static_cast<const D &>(*this))->remove_MessageReceived(token));
+    check_hresult(WINRT_SHIM(IMidiInPort)->remove_MessageReceived(token));
 }
 
 template <typename D> hstring impl_IMidiInPort<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMidiInPort &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IMidiInPort)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IMidiSynthesizer<D>::AudioDevice() const
 {
     Windows::Devices::Enumeration::DeviceInformation value { nullptr };
-    check_hresult(static_cast<const IMidiSynthesizer &>(static_cast<const D &>(*this))->get_AudioDevice(put(value)));
+    check_hresult(WINRT_SHIM(IMidiSynthesizer)->get_AudioDevice(put(value)));
     return value;
 }
 
 template <typename D> double impl_IMidiSynthesizer<D>::Volume() const
 {
     double value {};
-    check_hresult(static_cast<const IMidiSynthesizer &>(static_cast<const D &>(*this))->get_Volume(&value));
+    check_hresult(WINRT_SHIM(IMidiSynthesizer)->get_Volume(&value));
     return value;
 }
 
 template <typename D> void impl_IMidiSynthesizer<D>::Volume(double value) const
 {
-    check_hresult(static_cast<const IMidiSynthesizer &>(static_cast<const D &>(*this))->put_Volume(value));
+    check_hresult(WINRT_SHIM(IMidiSynthesizer)->put_Volume(value));
 }
 
 inline MidiActiveSensingMessage::MidiActiveSensingMessage() :

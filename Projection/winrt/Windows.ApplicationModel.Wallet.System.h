@@ -149,42 +149,42 @@ namespace Windows::ApplicationModel::Wallet::System {
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Wallet::WalletItem>> impl_IWalletItemSystemStore<D>::GetItemsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Wallet::WalletItem>> operation;
-    check_hresult(static_cast<const IWalletItemSystemStore &>(static_cast<const D &>(*this))->abi_GetItemsAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IWalletItemSystemStore)->abi_GetItemsAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWalletItemSystemStore<D>::DeleteAsync(const Windows::ApplicationModel::Wallet::WalletItem & item) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IWalletItemSystemStore &>(static_cast<const D &>(*this))->abi_DeleteAsync(get(item), put(operation)));
+    check_hresult(WINRT_SHIM(IWalletItemSystemStore)->abi_DeleteAsync(get(item), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItem> impl_IWalletItemSystemStore<D>::ImportItemAsync(const Windows::Storage::Streams::IRandomAccessStreamReference & stream) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItem> operation;
-    check_hresult(static_cast<const IWalletItemSystemStore &>(static_cast<const D &>(*this))->abi_ImportItemAsync(get(stream), put(operation)));
+    check_hresult(WINRT_SHIM(IWalletItemSystemStore)->abi_ImportItemAsync(get(stream), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::ApplicationModel::Wallet::System::WalletItemAppAssociation impl_IWalletItemSystemStore<D>::GetAppStatusForItem(const Windows::ApplicationModel::Wallet::WalletItem & item) const
 {
     Windows::ApplicationModel::Wallet::System::WalletItemAppAssociation result {};
-    check_hresult(static_cast<const IWalletItemSystemStore &>(static_cast<const D &>(*this))->abi_GetAppStatusForItem(get(item), &result));
+    check_hresult(WINRT_SHIM(IWalletItemSystemStore)->abi_GetAppStatusForItem(get(item), &result));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IWalletItemSystemStore<D>::LaunchAppForItemAsync(const Windows::ApplicationModel::Wallet::WalletItem & item) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const IWalletItemSystemStore &>(static_cast<const D &>(*this))->abi_LaunchAppForItemAsync(get(item), put(operation)));
+    check_hresult(WINRT_SHIM(IWalletItemSystemStore)->abi_LaunchAppForItemAsync(get(item), put(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IWalletItemSystemStore2<D>::ItemsChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IWalletItemSystemStore2 &>(static_cast<const D &>(*this))->add_ItemsChanged(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IWalletItemSystemStore2)->add_ItemsChanged(get(handler), &cookie));
     return cookie;
 }
 
@@ -195,13 +195,13 @@ template <typename D> event_revoker<IWalletItemSystemStore2> impl_IWalletItemSys
 
 template <typename D> void impl_IWalletItemSystemStore2<D>::ItemsChanged(event_token cookie) const
 {
-    check_hresult(static_cast<const IWalletItemSystemStore2 &>(static_cast<const D &>(*this))->remove_ItemsChanged(cookie));
+    check_hresult(WINRT_SHIM(IWalletItemSystemStore2)->remove_ItemsChanged(cookie));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore> impl_IWalletManagerSystemStatics<D>::RequestStoreAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore> operation;
-    check_hresult(static_cast<const IWalletManagerSystemStatics &>(static_cast<const D &>(*this))->abi_RequestStoreAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IWalletManagerSystemStatics)->abi_RequestStoreAsync(put(operation)));
     return operation;
 }
 

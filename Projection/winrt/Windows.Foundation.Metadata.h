@@ -161,70 +161,70 @@ namespace Windows::Foundation::Metadata {
 template <typename D> bool impl_IApiInformationStatics<D>::IsTypePresent(hstring_ref typeName) const
 {
     bool value {};
-    check_hresult(static_cast<const IApiInformationStatics &>(static_cast<const D &>(*this))->abi_IsTypePresent(get(typeName), &value));
+    check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsTypePresent(get(typeName), &value));
     return value;
 }
 
 template <typename D> bool impl_IApiInformationStatics<D>::IsMethodPresent(hstring_ref typeName, hstring_ref methodName) const
 {
     bool value {};
-    check_hresult(static_cast<const IApiInformationStatics &>(static_cast<const D &>(*this))->abi_IsMethodPresent(get(typeName), get(methodName), &value));
+    check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsMethodPresent(get(typeName), get(methodName), &value));
     return value;
 }
 
 template <typename D> bool impl_IApiInformationStatics<D>::IsMethodPresent(hstring_ref typeName, hstring_ref methodName, uint32_t inputParameterCount) const
 {
     bool value {};
-    check_hresult(static_cast<const IApiInformationStatics &>(static_cast<const D &>(*this))->abi_IsMethodPresentWithArity(get(typeName), get(methodName), inputParameterCount, &value));
+    check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsMethodPresentWithArity(get(typeName), get(methodName), inputParameterCount, &value));
     return value;
 }
 
 template <typename D> bool impl_IApiInformationStatics<D>::IsEventPresent(hstring_ref typeName, hstring_ref eventName) const
 {
     bool value {};
-    check_hresult(static_cast<const IApiInformationStatics &>(static_cast<const D &>(*this))->abi_IsEventPresent(get(typeName), get(eventName), &value));
+    check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsEventPresent(get(typeName), get(eventName), &value));
     return value;
 }
 
 template <typename D> bool impl_IApiInformationStatics<D>::IsPropertyPresent(hstring_ref typeName, hstring_ref propertyName) const
 {
     bool value {};
-    check_hresult(static_cast<const IApiInformationStatics &>(static_cast<const D &>(*this))->abi_IsPropertyPresent(get(typeName), get(propertyName), &value));
+    check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsPropertyPresent(get(typeName), get(propertyName), &value));
     return value;
 }
 
 template <typename D> bool impl_IApiInformationStatics<D>::IsReadOnlyPropertyPresent(hstring_ref typeName, hstring_ref propertyName) const
 {
     bool value {};
-    check_hresult(static_cast<const IApiInformationStatics &>(static_cast<const D &>(*this))->abi_IsReadOnlyPropertyPresent(get(typeName), get(propertyName), &value));
+    check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsReadOnlyPropertyPresent(get(typeName), get(propertyName), &value));
     return value;
 }
 
 template <typename D> bool impl_IApiInformationStatics<D>::IsWriteablePropertyPresent(hstring_ref typeName, hstring_ref propertyName) const
 {
     bool value {};
-    check_hresult(static_cast<const IApiInformationStatics &>(static_cast<const D &>(*this))->abi_IsWriteablePropertyPresent(get(typeName), get(propertyName), &value));
+    check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsWriteablePropertyPresent(get(typeName), get(propertyName), &value));
     return value;
 }
 
 template <typename D> bool impl_IApiInformationStatics<D>::IsEnumNamedValuePresent(hstring_ref enumTypeName, hstring_ref valueName) const
 {
     bool value {};
-    check_hresult(static_cast<const IApiInformationStatics &>(static_cast<const D &>(*this))->abi_IsEnumNamedValuePresent(get(enumTypeName), get(valueName), &value));
+    check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsEnumNamedValuePresent(get(enumTypeName), get(valueName), &value));
     return value;
 }
 
 template <typename D> bool impl_IApiInformationStatics<D>::IsApiContractPresent(hstring_ref contractName, uint16_t majorVersion) const
 {
     bool value {};
-    check_hresult(static_cast<const IApiInformationStatics &>(static_cast<const D &>(*this))->abi_IsApiContractPresentByMajor(get(contractName), majorVersion, &value));
+    check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsApiContractPresentByMajor(get(contractName), majorVersion, &value));
     return value;
 }
 
 template <typename D> bool impl_IApiInformationStatics<D>::IsApiContractPresent(hstring_ref contractName, uint16_t majorVersion, uint16_t minorVersion) const
 {
     bool value {};
-    check_hresult(static_cast<const IApiInformationStatics &>(static_cast<const D &>(*this))->abi_IsApiContractPresentByMajorAndMinor(get(contractName), majorVersion, minorVersion, &value));
+    check_hresult(WINRT_SHIM(IApiInformationStatics)->abi_IsApiContractPresentByMajorAndMinor(get(contractName), majorVersion, minorVersion, &value));
     return value;
 }
 

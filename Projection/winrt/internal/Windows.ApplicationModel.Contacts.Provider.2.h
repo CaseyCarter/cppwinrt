@@ -69,7 +69,6 @@ struct IContactPickerUI :
     impl::consume<IContactPickerUI>
 {
     IContactPickerUI(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactPickerUI>(m_ptr); }
 };
 
 struct IContactPickerUI2 :
@@ -77,7 +76,6 @@ struct IContactPickerUI2 :
     impl::consume<IContactPickerUI2>
 {
     IContactPickerUI2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactPickerUI2>(m_ptr); }
 };
 
 struct IContactRemovedEventArgs :
@@ -85,7 +83,6 @@ struct IContactRemovedEventArgs :
     impl::consume<IContactRemovedEventArgs>
 {
     IContactRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactRemovedEventArgs>(m_ptr); }
 };
 
 }

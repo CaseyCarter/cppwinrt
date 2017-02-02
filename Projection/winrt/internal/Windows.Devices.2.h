@@ -14,7 +14,6 @@ struct ILowLevelDevicesAggregateProvider :
     impl::consume<ILowLevelDevicesAggregateProvider>
 {
     ILowLevelDevicesAggregateProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILowLevelDevicesAggregateProvider>(m_ptr); }
 };
 
 struct ILowLevelDevicesAggregateProviderFactory :
@@ -22,7 +21,6 @@ struct ILowLevelDevicesAggregateProviderFactory :
     impl::consume<ILowLevelDevicesAggregateProviderFactory>
 {
     ILowLevelDevicesAggregateProviderFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILowLevelDevicesAggregateProviderFactory>(m_ptr); }
 };
 
 struct ILowLevelDevicesController :
@@ -30,7 +28,6 @@ struct ILowLevelDevicesController :
     impl::consume<ILowLevelDevicesController>
 {
     ILowLevelDevicesController(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILowLevelDevicesController>(m_ptr); }
 };
 
 struct ILowLevelDevicesControllerStatics :
@@ -38,7 +35,6 @@ struct ILowLevelDevicesControllerStatics :
     impl::consume<ILowLevelDevicesControllerStatics>
 {
     ILowLevelDevicesControllerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILowLevelDevicesControllerStatics>(m_ptr); }
 };
 
 }

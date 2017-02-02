@@ -14,7 +14,6 @@ namespace Windows::UI::Xaml::Printing {
 struct AddPagesEventHandler : Windows::IUnknown
 {
     AddPagesEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<AddPagesEventHandler>(m_ptr); }
     template <typename L> AddPagesEventHandler(L lambda);
     template <typename F> AddPagesEventHandler (F * function);
     template <typename O, typename M> AddPagesEventHandler(O * object, M method);
@@ -24,7 +23,6 @@ struct AddPagesEventHandler : Windows::IUnknown
 struct GetPreviewPageEventHandler : Windows::IUnknown
 {
     GetPreviewPageEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<GetPreviewPageEventHandler>(m_ptr); }
     template <typename L> GetPreviewPageEventHandler(L lambda);
     template <typename F> GetPreviewPageEventHandler (F * function);
     template <typename O, typename M> GetPreviewPageEventHandler(O * object, M method);
@@ -34,7 +32,6 @@ struct GetPreviewPageEventHandler : Windows::IUnknown
 struct PaginateEventHandler : Windows::IUnknown
 {
     PaginateEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<PaginateEventHandler>(m_ptr); }
     template <typename L> PaginateEventHandler(L lambda);
     template <typename F> PaginateEventHandler (F * function);
     template <typename O, typename M> PaginateEventHandler(O * object, M method);
@@ -46,7 +43,6 @@ struct IAddPagesEventArgs :
     impl::consume<IAddPagesEventArgs>
 {
     IAddPagesEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAddPagesEventArgs>(m_ptr); }
 };
 
 struct IGetPreviewPageEventArgs :
@@ -54,7 +50,6 @@ struct IGetPreviewPageEventArgs :
     impl::consume<IGetPreviewPageEventArgs>
 {
     IGetPreviewPageEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGetPreviewPageEventArgs>(m_ptr); }
 };
 
 struct IPaginateEventArgs :
@@ -62,7 +57,6 @@ struct IPaginateEventArgs :
     impl::consume<IPaginateEventArgs>
 {
     IPaginateEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPaginateEventArgs>(m_ptr); }
 };
 
 struct IPrintDocument :
@@ -70,7 +64,6 @@ struct IPrintDocument :
     impl::consume<IPrintDocument>
 {
     IPrintDocument(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintDocument>(m_ptr); }
 };
 
 struct IPrintDocumentFactory :
@@ -78,7 +71,6 @@ struct IPrintDocumentFactory :
     impl::consume<IPrintDocumentFactory>
 {
     IPrintDocumentFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintDocumentFactory>(m_ptr); }
 };
 
 struct IPrintDocumentStatics :
@@ -86,7 +78,6 @@ struct IPrintDocumentStatics :
     impl::consume<IPrintDocumentStatics>
 {
     IPrintDocumentStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintDocumentStatics>(m_ptr); }
 };
 
 }

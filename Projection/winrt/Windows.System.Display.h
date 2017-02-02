@@ -48,12 +48,12 @@ namespace Windows::System::Display {
 
 template <typename D> void impl_IDisplayRequest<D>::RequestActive() const
 {
-    check_hresult(static_cast<const IDisplayRequest &>(static_cast<const D &>(*this))->abi_RequestActive());
+    check_hresult(WINRT_SHIM(IDisplayRequest)->abi_RequestActive());
 }
 
 template <typename D> void impl_IDisplayRequest<D>::RequestRelease() const
 {
-    check_hresult(static_cast<const IDisplayRequest &>(static_cast<const D &>(*this))->abi_RequestRelease());
+    check_hresult(WINRT_SHIM(IDisplayRequest)->abi_RequestRelease());
 }
 
 inline DisplayRequest::DisplayRequest() :

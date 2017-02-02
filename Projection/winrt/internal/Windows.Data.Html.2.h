@@ -14,7 +14,6 @@ struct IHtmlUtilities :
     impl::consume<IHtmlUtilities>
 {
     IHtmlUtilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHtmlUtilities>(m_ptr); }
 };
 
 }

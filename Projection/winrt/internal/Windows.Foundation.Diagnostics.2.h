@@ -55,7 +55,6 @@ struct IAsyncCausalityTracerStatics :
     impl::consume<IAsyncCausalityTracerStatics>
 {
     IAsyncCausalityTracerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAsyncCausalityTracerStatics>(m_ptr); }
 };
 
 struct IErrorDetails :
@@ -63,7 +62,6 @@ struct IErrorDetails :
     impl::consume<IErrorDetails>
 {
     IErrorDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IErrorDetails>(m_ptr); }
 };
 
 struct IErrorDetailsStatics :
@@ -71,7 +69,6 @@ struct IErrorDetailsStatics :
     impl::consume<IErrorDetailsStatics>
 {
     IErrorDetailsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IErrorDetailsStatics>(m_ptr); }
 };
 
 struct IErrorReportingSettings :
@@ -79,7 +76,6 @@ struct IErrorReportingSettings :
     impl::consume<IErrorReportingSettings>
 {
     IErrorReportingSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IErrorReportingSettings>(m_ptr); }
 };
 
 struct IFileLoggingSession :
@@ -88,7 +84,6 @@ struct IFileLoggingSession :
     impl::require<IFileLoggingSession, Windows::Foundation::IClosable>
 {
     IFileLoggingSession(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileLoggingSession>(m_ptr); }
 };
 
 struct IFileLoggingSessionFactory :
@@ -96,7 +91,6 @@ struct IFileLoggingSessionFactory :
     impl::consume<IFileLoggingSessionFactory>
 {
     IFileLoggingSessionFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileLoggingSessionFactory>(m_ptr); }
 };
 
 struct ILogFileGeneratedEventArgs :
@@ -104,7 +98,6 @@ struct ILogFileGeneratedEventArgs :
     impl::consume<ILogFileGeneratedEventArgs>
 {
     ILogFileGeneratedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILogFileGeneratedEventArgs>(m_ptr); }
 };
 
 struct ILoggingActivity :
@@ -113,7 +106,6 @@ struct ILoggingActivity :
     impl::require<ILoggingActivity, Windows::Foundation::IClosable>
 {
     ILoggingActivity(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoggingActivity>(m_ptr); }
 };
 
 struct ILoggingActivity2 :
@@ -122,7 +114,6 @@ struct ILoggingActivity2 :
     impl::require<ILoggingActivity2, Windows::Foundation::Diagnostics::ILoggingActivity, Windows::Foundation::Diagnostics::ILoggingTarget, Windows::Foundation::IClosable>
 {
     ILoggingActivity2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoggingActivity2>(m_ptr); }
 };
 
 struct ILoggingActivityFactory :
@@ -130,7 +121,6 @@ struct ILoggingActivityFactory :
     impl::consume<ILoggingActivityFactory>
 {
     ILoggingActivityFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoggingActivityFactory>(m_ptr); }
 };
 
 struct ILoggingChannel :
@@ -139,7 +129,6 @@ struct ILoggingChannel :
     impl::require<ILoggingChannel, Windows::Foundation::IClosable>
 {
     ILoggingChannel(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoggingChannel>(m_ptr); }
 };
 
 struct ILoggingChannel2 :
@@ -148,7 +137,6 @@ struct ILoggingChannel2 :
     impl::require<ILoggingChannel2, Windows::Foundation::Diagnostics::ILoggingChannel, Windows::Foundation::Diagnostics::ILoggingTarget, Windows::Foundation::IClosable>
 {
     ILoggingChannel2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoggingChannel2>(m_ptr); }
 };
 
 struct ILoggingChannelFactory :
@@ -156,7 +144,6 @@ struct ILoggingChannelFactory :
     impl::consume<ILoggingChannelFactory>
 {
     ILoggingChannelFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoggingChannelFactory>(m_ptr); }
 };
 
 struct ILoggingChannelFactory2 :
@@ -164,7 +151,6 @@ struct ILoggingChannelFactory2 :
     impl::consume<ILoggingChannelFactory2>
 {
     ILoggingChannelFactory2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoggingChannelFactory2>(m_ptr); }
 };
 
 struct ILoggingChannelOptions :
@@ -172,7 +158,6 @@ struct ILoggingChannelOptions :
     impl::consume<ILoggingChannelOptions>
 {
     ILoggingChannelOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoggingChannelOptions>(m_ptr); }
 };
 
 struct ILoggingChannelOptionsFactory :
@@ -180,7 +165,6 @@ struct ILoggingChannelOptionsFactory :
     impl::consume<ILoggingChannelOptionsFactory>
 {
     ILoggingChannelOptionsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoggingChannelOptionsFactory>(m_ptr); }
 };
 
 struct ILoggingFields :
@@ -188,7 +172,6 @@ struct ILoggingFields :
     impl::consume<ILoggingFields>
 {
     ILoggingFields(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoggingFields>(m_ptr); }
 };
 
 struct ILoggingOptions :
@@ -196,7 +179,6 @@ struct ILoggingOptions :
     impl::consume<ILoggingOptions>
 {
     ILoggingOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoggingOptions>(m_ptr); }
 };
 
 struct ILoggingOptionsFactory :
@@ -204,7 +186,6 @@ struct ILoggingOptionsFactory :
     impl::consume<ILoggingOptionsFactory>
 {
     ILoggingOptionsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoggingOptionsFactory>(m_ptr); }
 };
 
 struct ILoggingSession :
@@ -213,7 +194,6 @@ struct ILoggingSession :
     impl::require<ILoggingSession, Windows::Foundation::IClosable>
 {
     ILoggingSession(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoggingSession>(m_ptr); }
 };
 
 struct ILoggingSessionFactory :
@@ -221,7 +201,6 @@ struct ILoggingSessionFactory :
     impl::consume<ILoggingSessionFactory>
 {
     ILoggingSessionFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoggingSessionFactory>(m_ptr); }
 };
 
 struct ILoggingTarget :
@@ -229,7 +208,6 @@ struct ILoggingTarget :
     impl::consume<ILoggingTarget>
 {
     ILoggingTarget(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoggingTarget>(m_ptr); }
 };
 
 struct ITracingStatusChangedEventArgs :
@@ -237,7 +215,6 @@ struct ITracingStatusChangedEventArgs :
     impl::consume<ITracingStatusChangedEventArgs>
 {
     ITracingStatusChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITracingStatusChangedEventArgs>(m_ptr); }
 };
 
 }

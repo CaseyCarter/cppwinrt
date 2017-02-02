@@ -234,7 +234,6 @@ struct IInkDrawingAttributes :
     impl::consume<IInkDrawingAttributes>
 {
     IInkDrawingAttributes(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkDrawingAttributes>(m_ptr); }
 };
 
 struct IInkDrawingAttributes2 :
@@ -242,7 +241,6 @@ struct IInkDrawingAttributes2 :
     impl::consume<IInkDrawingAttributes2>
 {
     IInkDrawingAttributes2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkDrawingAttributes2>(m_ptr); }
 };
 
 struct IInkDrawingAttributes3 :
@@ -250,7 +248,6 @@ struct IInkDrawingAttributes3 :
     impl::consume<IInkDrawingAttributes3>
 {
     IInkDrawingAttributes3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkDrawingAttributes3>(m_ptr); }
 };
 
 struct IInkDrawingAttributesPencilProperties :
@@ -258,7 +255,6 @@ struct IInkDrawingAttributesPencilProperties :
     impl::consume<IInkDrawingAttributesPencilProperties>
 {
     IInkDrawingAttributesPencilProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkDrawingAttributesPencilProperties>(m_ptr); }
 };
 
 struct IInkDrawingAttributesStatics :
@@ -266,7 +262,6 @@ struct IInkDrawingAttributesStatics :
     impl::consume<IInkDrawingAttributesStatics>
 {
     IInkDrawingAttributesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkDrawingAttributesStatics>(m_ptr); }
 };
 
 struct IInkInputProcessingConfiguration :
@@ -274,7 +269,6 @@ struct IInkInputProcessingConfiguration :
     impl::consume<IInkInputProcessingConfiguration>
 {
     IInkInputProcessingConfiguration(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkInputProcessingConfiguration>(m_ptr); }
 };
 
 struct IInkManager :
@@ -283,7 +277,6 @@ struct IInkManager :
     impl::require<IInkManager, Windows::UI::Input::Inking::IInkRecognizerContainer, Windows::UI::Input::Inking::IInkStrokeContainer>
 {
     IInkManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkManager>(m_ptr); }
     using impl_IInkManager::RecognizeAsync;
     using impl_IInkRecognizerContainer::RecognizeAsync;
 };
@@ -293,7 +286,6 @@ struct IInkPoint :
     impl::consume<IInkPoint>
 {
     IInkPoint(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkPoint>(m_ptr); }
 };
 
 struct IInkPointFactory :
@@ -301,7 +293,6 @@ struct IInkPointFactory :
     impl::consume<IInkPointFactory>
 {
     IInkPointFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkPointFactory>(m_ptr); }
 };
 
 struct IInkPresenter :
@@ -309,7 +300,6 @@ struct IInkPresenter :
     impl::consume<IInkPresenter>
 {
     IInkPresenter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkPresenter>(m_ptr); }
 };
 
 struct IInkPresenterRuler :
@@ -318,7 +308,6 @@ struct IInkPresenterRuler :
     impl::require<IInkPresenterRuler, Windows::UI::Input::Inking::IInkPresenterStencil>
 {
     IInkPresenterRuler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkPresenterRuler>(m_ptr); }
 };
 
 struct IInkPresenterRulerFactory :
@@ -326,7 +315,6 @@ struct IInkPresenterRulerFactory :
     impl::consume<IInkPresenterRulerFactory>
 {
     IInkPresenterRulerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkPresenterRulerFactory>(m_ptr); }
 };
 
 struct IInkPresenterStencil :
@@ -334,7 +322,6 @@ struct IInkPresenterStencil :
     impl::consume<IInkPresenterStencil>
 {
     IInkPresenterStencil(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkPresenterStencil>(m_ptr); }
 };
 
 struct IInkRecognitionResult :
@@ -342,7 +329,6 @@ struct IInkRecognitionResult :
     impl::consume<IInkRecognitionResult>
 {
     IInkRecognitionResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkRecognitionResult>(m_ptr); }
 };
 
 struct IInkRecognizer :
@@ -350,7 +336,6 @@ struct IInkRecognizer :
     impl::consume<IInkRecognizer>
 {
     IInkRecognizer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkRecognizer>(m_ptr); }
 };
 
 struct IInkRecognizerContainer :
@@ -358,7 +343,6 @@ struct IInkRecognizerContainer :
     impl::consume<IInkRecognizerContainer>
 {
     IInkRecognizerContainer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkRecognizerContainer>(m_ptr); }
 };
 
 struct IInkStroke :
@@ -366,7 +350,6 @@ struct IInkStroke :
     impl::consume<IInkStroke>
 {
     IInkStroke(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkStroke>(m_ptr); }
 };
 
 struct IInkStroke2 :
@@ -374,7 +357,6 @@ struct IInkStroke2 :
     impl::consume<IInkStroke2>
 {
     IInkStroke2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkStroke2>(m_ptr); }
 };
 
 struct IInkStrokeBuilder :
@@ -382,7 +364,6 @@ struct IInkStrokeBuilder :
     impl::consume<IInkStrokeBuilder>
 {
     IInkStrokeBuilder(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkStrokeBuilder>(m_ptr); }
 };
 
 struct IInkStrokeBuilder2 :
@@ -390,7 +371,6 @@ struct IInkStrokeBuilder2 :
     impl::consume<IInkStrokeBuilder2>
 {
     IInkStrokeBuilder2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkStrokeBuilder2>(m_ptr); }
 };
 
 struct IInkStrokeContainer :
@@ -398,7 +378,6 @@ struct IInkStrokeContainer :
     impl::consume<IInkStrokeContainer>
 {
     IInkStrokeContainer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkStrokeContainer>(m_ptr); }
 };
 
 struct IInkStrokeContainer2 :
@@ -406,7 +385,6 @@ struct IInkStrokeContainer2 :
     impl::consume<IInkStrokeContainer2>
 {
     IInkStrokeContainer2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkStrokeContainer2>(m_ptr); }
 };
 
 struct IInkStrokeInput :
@@ -414,7 +392,6 @@ struct IInkStrokeInput :
     impl::consume<IInkStrokeInput>
 {
     IInkStrokeInput(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkStrokeInput>(m_ptr); }
 };
 
 struct IInkStrokeRenderingSegment :
@@ -422,7 +399,6 @@ struct IInkStrokeRenderingSegment :
     impl::consume<IInkStrokeRenderingSegment>
 {
     IInkStrokeRenderingSegment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkStrokeRenderingSegment>(m_ptr); }
 };
 
 struct IInkStrokesCollectedEventArgs :
@@ -430,7 +406,6 @@ struct IInkStrokesCollectedEventArgs :
     impl::consume<IInkStrokesCollectedEventArgs>
 {
     IInkStrokesCollectedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkStrokesCollectedEventArgs>(m_ptr); }
 };
 
 struct IInkStrokesErasedEventArgs :
@@ -438,7 +413,6 @@ struct IInkStrokesErasedEventArgs :
     impl::consume<IInkStrokesErasedEventArgs>
 {
     IInkStrokesErasedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkStrokesErasedEventArgs>(m_ptr); }
 };
 
 struct IInkSynchronizer :
@@ -446,7 +420,6 @@ struct IInkSynchronizer :
     impl::consume<IInkSynchronizer>
 {
     IInkSynchronizer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkSynchronizer>(m_ptr); }
 };
 
 struct IInkUnprocessedInput :
@@ -454,7 +427,6 @@ struct IInkUnprocessedInput :
     impl::consume<IInkUnprocessedInput>
 {
     IInkUnprocessedInput(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkUnprocessedInput>(m_ptr); }
 };
 
 }

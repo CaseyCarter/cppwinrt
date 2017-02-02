@@ -52,13 +52,13 @@ namespace Windows::Graphics::DirectX::Direct3D11 {
 
 template <typename D> void impl_IDirect3DDevice<D>::Trim() const
 {
-    check_hresult(static_cast<const IDirect3DDevice &>(static_cast<const D &>(*this))->abi_Trim());
+    check_hresult(WINRT_SHIM(IDirect3DDevice)->abi_Trim());
 }
 
 template <typename D> Windows::Graphics::DirectX::Direct3D11::Direct3DSurfaceDescription impl_IDirect3DSurface<D>::Description() const
 {
     Windows::Graphics::DirectX::Direct3D11::Direct3DSurfaceDescription value {};
-    check_hresult(static_cast<const IDirect3DSurface &>(static_cast<const D &>(*this))->get_Description(put(value)));
+    check_hresult(WINRT_SHIM(IDirect3DSurface)->get_Description(put(value)));
     return value;
 }
 

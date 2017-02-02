@@ -95,7 +95,6 @@ struct IPropertySet :
     impl::require<IPropertySet, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>, Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>, Windows::Foundation::Collections::IObservableMap<hstring, Windows::IInspectable>>
 {
     IPropertySet(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPropertySet>(m_ptr); }
 };
 
 }

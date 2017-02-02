@@ -79,7 +79,6 @@ struct IAdvertisingManagerForUser :
     impl::consume<IAdvertisingManagerForUser>
 {
     IAdvertisingManagerForUser(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdvertisingManagerForUser>(m_ptr); }
 };
 
 struct IAdvertisingManagerStatics :
@@ -87,7 +86,6 @@ struct IAdvertisingManagerStatics :
     impl::consume<IAdvertisingManagerStatics>
 {
     IAdvertisingManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdvertisingManagerStatics>(m_ptr); }
 };
 
 struct IAdvertisingManagerStatics2 :
@@ -95,7 +93,6 @@ struct IAdvertisingManagerStatics2 :
     impl::consume<IAdvertisingManagerStatics2>
 {
     IAdvertisingManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdvertisingManagerStatics2>(m_ptr); }
 };
 
 struct IFirstSignInSettings :
@@ -104,7 +101,6 @@ struct IFirstSignInSettings :
     impl::require<IFirstSignInSettings, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>, Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>>
 {
     IFirstSignInSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFirstSignInSettings>(m_ptr); }
 };
 
 struct IFirstSignInSettingsStatics :
@@ -112,7 +108,6 @@ struct IFirstSignInSettingsStatics :
     impl::consume<IFirstSignInSettingsStatics>
 {
     IFirstSignInSettingsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFirstSignInSettingsStatics>(m_ptr); }
 };
 
 struct IGlobalizationPreferencesStatics :
@@ -120,7 +115,6 @@ struct IGlobalizationPreferencesStatics :
     impl::consume<IGlobalizationPreferencesStatics>
 {
     IGlobalizationPreferencesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGlobalizationPreferencesStatics>(m_ptr); }
 };
 
 struct IUserProfilePersonalizationSettings :
@@ -128,7 +122,6 @@ struct IUserProfilePersonalizationSettings :
     impl::consume<IUserProfilePersonalizationSettings>
 {
     IUserProfilePersonalizationSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserProfilePersonalizationSettings>(m_ptr); }
 };
 
 struct IUserProfilePersonalizationSettingsStatics :
@@ -136,7 +129,6 @@ struct IUserProfilePersonalizationSettingsStatics :
     impl::consume<IUserProfilePersonalizationSettingsStatics>
 {
     IUserProfilePersonalizationSettingsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserProfilePersonalizationSettingsStatics>(m_ptr); }
 };
 
 }

@@ -136,7 +136,6 @@ struct IWiFiDirectAdvertisement :
     impl::consume<IWiFiDirectAdvertisement>
 {
     IWiFiDirectAdvertisement(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiDirectAdvertisement>(m_ptr); }
 };
 
 struct IWiFiDirectAdvertisement2 :
@@ -144,7 +143,6 @@ struct IWiFiDirectAdvertisement2 :
     impl::consume<IWiFiDirectAdvertisement2>
 {
     IWiFiDirectAdvertisement2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiDirectAdvertisement2>(m_ptr); }
 };
 
 struct IWiFiDirectAdvertisementPublisher :
@@ -152,7 +150,6 @@ struct IWiFiDirectAdvertisementPublisher :
     impl::consume<IWiFiDirectAdvertisementPublisher>
 {
     IWiFiDirectAdvertisementPublisher(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiDirectAdvertisementPublisher>(m_ptr); }
 };
 
 struct IWiFiDirectAdvertisementPublisherStatusChangedEventArgs :
@@ -160,7 +157,6 @@ struct IWiFiDirectAdvertisementPublisherStatusChangedEventArgs :
     impl::consume<IWiFiDirectAdvertisementPublisherStatusChangedEventArgs>
 {
     IWiFiDirectAdvertisementPublisherStatusChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiDirectAdvertisementPublisherStatusChangedEventArgs>(m_ptr); }
 };
 
 struct IWiFiDirectConnectionListener :
@@ -168,7 +164,6 @@ struct IWiFiDirectConnectionListener :
     impl::consume<IWiFiDirectConnectionListener>
 {
     IWiFiDirectConnectionListener(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiDirectConnectionListener>(m_ptr); }
 };
 
 struct IWiFiDirectConnectionParameters :
@@ -176,7 +171,6 @@ struct IWiFiDirectConnectionParameters :
     impl::consume<IWiFiDirectConnectionParameters>
 {
     IWiFiDirectConnectionParameters(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiDirectConnectionParameters>(m_ptr); }
 };
 
 struct IWiFiDirectConnectionParameters2 :
@@ -184,7 +178,6 @@ struct IWiFiDirectConnectionParameters2 :
     impl::consume<IWiFiDirectConnectionParameters2>
 {
     IWiFiDirectConnectionParameters2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiDirectConnectionParameters2>(m_ptr); }
 };
 
 struct IWiFiDirectConnectionParametersStatics :
@@ -192,7 +185,6 @@ struct IWiFiDirectConnectionParametersStatics :
     impl::consume<IWiFiDirectConnectionParametersStatics>
 {
     IWiFiDirectConnectionParametersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiDirectConnectionParametersStatics>(m_ptr); }
 };
 
 struct IWiFiDirectConnectionRequest :
@@ -201,7 +193,6 @@ struct IWiFiDirectConnectionRequest :
     impl::require<IWiFiDirectConnectionRequest, Windows::Foundation::IClosable>
 {
     IWiFiDirectConnectionRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiDirectConnectionRequest>(m_ptr); }
 };
 
 struct IWiFiDirectConnectionRequestedEventArgs :
@@ -209,7 +200,6 @@ struct IWiFiDirectConnectionRequestedEventArgs :
     impl::consume<IWiFiDirectConnectionRequestedEventArgs>
 {
     IWiFiDirectConnectionRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiDirectConnectionRequestedEventArgs>(m_ptr); }
 };
 
 struct IWiFiDirectDevice :
@@ -218,7 +208,6 @@ struct IWiFiDirectDevice :
     impl::require<IWiFiDirectDevice, Windows::Foundation::IClosable>
 {
     IWiFiDirectDevice(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiDirectDevice>(m_ptr); }
 };
 
 struct IWiFiDirectDeviceStatics :
@@ -226,7 +215,6 @@ struct IWiFiDirectDeviceStatics :
     impl::consume<IWiFiDirectDeviceStatics>
 {
     IWiFiDirectDeviceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiDirectDeviceStatics>(m_ptr); }
 };
 
 struct IWiFiDirectDeviceStatics2 :
@@ -234,7 +222,6 @@ struct IWiFiDirectDeviceStatics2 :
     impl::consume<IWiFiDirectDeviceStatics2>
 {
     IWiFiDirectDeviceStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiDirectDeviceStatics2>(m_ptr); }
 };
 
 struct IWiFiDirectInformationElement :
@@ -242,7 +229,6 @@ struct IWiFiDirectInformationElement :
     impl::consume<IWiFiDirectInformationElement>
 {
     IWiFiDirectInformationElement(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiDirectInformationElement>(m_ptr); }
 };
 
 struct IWiFiDirectInformationElementStatics :
@@ -250,7 +236,6 @@ struct IWiFiDirectInformationElementStatics :
     impl::consume<IWiFiDirectInformationElementStatics>
 {
     IWiFiDirectInformationElementStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiDirectInformationElementStatics>(m_ptr); }
 };
 
 struct IWiFiDirectLegacySettings :
@@ -258,7 +243,6 @@ struct IWiFiDirectLegacySettings :
     impl::consume<IWiFiDirectLegacySettings>
 {
     IWiFiDirectLegacySettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiDirectLegacySettings>(m_ptr); }
 };
 
 }

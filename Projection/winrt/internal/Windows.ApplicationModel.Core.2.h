@@ -104,7 +104,6 @@ struct IAppListEntry :
     impl::consume<IAppListEntry>
 {
     IAppListEntry(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppListEntry>(m_ptr); }
 };
 
 struct ICoreApplication :
@@ -112,7 +111,6 @@ struct ICoreApplication :
     impl::consume<ICoreApplication>
 {
     ICoreApplication(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreApplication>(m_ptr); }
 };
 
 struct ICoreApplication2 :
@@ -120,7 +118,6 @@ struct ICoreApplication2 :
     impl::consume<ICoreApplication2>
 {
     ICoreApplication2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreApplication2>(m_ptr); }
 };
 
 struct ICoreApplicationExit :
@@ -128,7 +125,6 @@ struct ICoreApplicationExit :
     impl::consume<ICoreApplicationExit>
 {
     ICoreApplicationExit(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreApplicationExit>(m_ptr); }
 };
 
 struct ICoreApplicationUnhandledError :
@@ -136,7 +132,6 @@ struct ICoreApplicationUnhandledError :
     impl::consume<ICoreApplicationUnhandledError>
 {
     ICoreApplicationUnhandledError(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreApplicationUnhandledError>(m_ptr); }
 };
 
 struct ICoreApplicationUseCount :
@@ -144,7 +139,6 @@ struct ICoreApplicationUseCount :
     impl::consume<ICoreApplicationUseCount>
 {
     ICoreApplicationUseCount(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreApplicationUseCount>(m_ptr); }
 };
 
 struct ICoreApplicationView :
@@ -152,7 +146,6 @@ struct ICoreApplicationView :
     impl::consume<ICoreApplicationView>
 {
     ICoreApplicationView(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreApplicationView>(m_ptr); }
 };
 
 struct ICoreApplicationView2 :
@@ -160,7 +153,6 @@ struct ICoreApplicationView2 :
     impl::consume<ICoreApplicationView2>
 {
     ICoreApplicationView2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreApplicationView2>(m_ptr); }
 };
 
 struct ICoreApplicationView3 :
@@ -168,7 +160,6 @@ struct ICoreApplicationView3 :
     impl::consume<ICoreApplicationView3>
 {
     ICoreApplicationView3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreApplicationView3>(m_ptr); }
 };
 
 struct ICoreApplicationViewTitleBar :
@@ -176,7 +167,6 @@ struct ICoreApplicationViewTitleBar :
     impl::consume<ICoreApplicationViewTitleBar>
 {
     ICoreApplicationViewTitleBar(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreApplicationViewTitleBar>(m_ptr); }
 };
 
 struct ICoreImmersiveApplication :
@@ -184,7 +174,6 @@ struct ICoreImmersiveApplication :
     impl::consume<ICoreImmersiveApplication>
 {
     ICoreImmersiveApplication(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreImmersiveApplication>(m_ptr); }
 };
 
 struct ICoreImmersiveApplication2 :
@@ -192,7 +181,6 @@ struct ICoreImmersiveApplication2 :
     impl::consume<ICoreImmersiveApplication2>
 {
     ICoreImmersiveApplication2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreImmersiveApplication2>(m_ptr); }
 };
 
 struct ICoreImmersiveApplication3 :
@@ -200,7 +188,6 @@ struct ICoreImmersiveApplication3 :
     impl::consume<ICoreImmersiveApplication3>
 {
     ICoreImmersiveApplication3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreImmersiveApplication3>(m_ptr); }
 };
 
 struct IFrameworkView :
@@ -208,7 +195,6 @@ struct IFrameworkView :
     impl::consume<IFrameworkView>
 {
     IFrameworkView(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameworkView>(m_ptr); }
 };
 
 struct IFrameworkViewSource :
@@ -216,7 +202,6 @@ struct IFrameworkViewSource :
     impl::consume<IFrameworkViewSource>
 {
     IFrameworkViewSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameworkViewSource>(m_ptr); }
 };
 
 struct IHostedViewClosingEventArgs :
@@ -224,7 +209,6 @@ struct IHostedViewClosingEventArgs :
     impl::consume<IHostedViewClosingEventArgs>
 {
     IHostedViewClosingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHostedViewClosingEventArgs>(m_ptr); }
 };
 
 struct IUnhandledError :
@@ -232,7 +216,6 @@ struct IUnhandledError :
     impl::consume<IUnhandledError>
 {
     IUnhandledError(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUnhandledError>(m_ptr); }
 };
 
 struct IUnhandledErrorDetectedEventArgs :
@@ -240,7 +223,6 @@ struct IUnhandledErrorDetectedEventArgs :
     impl::consume<IUnhandledErrorDetectedEventArgs>
 {
     IUnhandledErrorDetectedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUnhandledErrorDetectedEventArgs>(m_ptr); }
 };
 
 }

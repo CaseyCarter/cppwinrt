@@ -99,7 +99,6 @@ struct IWalletItemSystemStore :
     impl::consume<IWalletItemSystemStore>
 {
     IWalletItemSystemStore(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWalletItemSystemStore>(m_ptr); }
 };
 
 struct IWalletItemSystemStore2 :
@@ -107,7 +106,6 @@ struct IWalletItemSystemStore2 :
     impl::consume<IWalletItemSystemStore2>
 {
     IWalletItemSystemStore2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWalletItemSystemStore2>(m_ptr); }
 };
 
 struct IWalletManagerSystemStatics :
@@ -115,7 +113,6 @@ struct IWalletManagerSystemStatics :
     impl::consume<IWalletManagerSystemStatics>
 {
     IWalletManagerSystemStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWalletManagerSystemStatics>(m_ptr); }
 };
 
 }

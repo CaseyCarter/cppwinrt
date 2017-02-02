@@ -39,7 +39,6 @@ struct IBattery :
     impl::consume<IBattery>
 {
     IBattery(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBattery>(m_ptr); }
 };
 
 struct IBatteryReport :
@@ -47,7 +46,6 @@ struct IBatteryReport :
     impl::consume<IBatteryReport>
 {
     IBatteryReport(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBatteryReport>(m_ptr); }
 };
 
 struct IBatteryStatics :
@@ -55,7 +53,6 @@ struct IBatteryStatics :
     impl::consume<IBatteryStatics>
 {
     IBatteryStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBatteryStatics>(m_ptr); }
 };
 
 }

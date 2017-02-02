@@ -114,7 +114,6 @@ struct IAppDisplayInfo :
     impl::consume<IAppDisplayInfo>
 {
     IAppDisplayInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppDisplayInfo>(m_ptr); }
 };
 
 struct IAppInfo :
@@ -122,7 +121,6 @@ struct IAppInfo :
     impl::consume<IAppInfo>
 {
     IAppInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppInfo>(m_ptr); }
 };
 
 struct IDesignModeStatics :
@@ -130,7 +128,6 @@ struct IDesignModeStatics :
     impl::consume<IDesignModeStatics>
 {
     IDesignModeStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDesignModeStatics>(m_ptr); }
 };
 
 struct IEnteredBackgroundEventArgs :
@@ -138,7 +135,6 @@ struct IEnteredBackgroundEventArgs :
     impl::consume<IEnteredBackgroundEventArgs>
 {
     IEnteredBackgroundEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEnteredBackgroundEventArgs>(m_ptr); }
 };
 
 struct ILeavingBackgroundEventArgs :
@@ -146,7 +142,6 @@ struct ILeavingBackgroundEventArgs :
     impl::consume<ILeavingBackgroundEventArgs>
 {
     ILeavingBackgroundEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILeavingBackgroundEventArgs>(m_ptr); }
 };
 
 struct IPackage :
@@ -154,7 +149,6 @@ struct IPackage :
     impl::consume<IPackage>
 {
     IPackage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackage>(m_ptr); }
 };
 
 struct IPackage2 :
@@ -162,7 +156,6 @@ struct IPackage2 :
     impl::consume<IPackage2>
 {
     IPackage2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackage2>(m_ptr); }
 };
 
 struct IPackage3 :
@@ -170,7 +163,6 @@ struct IPackage3 :
     impl::consume<IPackage3>
 {
     IPackage3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackage3>(m_ptr); }
 };
 
 struct IPackage4 :
@@ -178,7 +170,6 @@ struct IPackage4 :
     impl::consume<IPackage4>
 {
     IPackage4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackage4>(m_ptr); }
 };
 
 struct IPackageCatalog :
@@ -186,7 +177,6 @@ struct IPackageCatalog :
     impl::consume<IPackageCatalog>
 {
     IPackageCatalog(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageCatalog>(m_ptr); }
 };
 
 struct IPackageCatalogStatics :
@@ -194,7 +184,6 @@ struct IPackageCatalogStatics :
     impl::consume<IPackageCatalogStatics>
 {
     IPackageCatalogStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageCatalogStatics>(m_ptr); }
 };
 
 struct IPackageId :
@@ -202,7 +191,6 @@ struct IPackageId :
     impl::consume<IPackageId>
 {
     IPackageId(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageId>(m_ptr); }
 };
 
 struct IPackageIdWithMetadata :
@@ -210,7 +198,6 @@ struct IPackageIdWithMetadata :
     impl::consume<IPackageIdWithMetadata>
 {
     IPackageIdWithMetadata(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageIdWithMetadata>(m_ptr); }
 };
 
 struct IPackageInstallingEventArgs :
@@ -218,7 +205,6 @@ struct IPackageInstallingEventArgs :
     impl::consume<IPackageInstallingEventArgs>
 {
     IPackageInstallingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageInstallingEventArgs>(m_ptr); }
 };
 
 struct IPackageStagingEventArgs :
@@ -226,7 +212,6 @@ struct IPackageStagingEventArgs :
     impl::consume<IPackageStagingEventArgs>
 {
     IPackageStagingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageStagingEventArgs>(m_ptr); }
 };
 
 struct IPackageStatics :
@@ -234,7 +219,6 @@ struct IPackageStatics :
     impl::consume<IPackageStatics>
 {
     IPackageStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageStatics>(m_ptr); }
 };
 
 struct IPackageStatus :
@@ -242,7 +226,6 @@ struct IPackageStatus :
     impl::consume<IPackageStatus>
 {
     IPackageStatus(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageStatus>(m_ptr); }
 };
 
 struct IPackageStatusChangedEventArgs :
@@ -250,7 +233,6 @@ struct IPackageStatusChangedEventArgs :
     impl::consume<IPackageStatusChangedEventArgs>
 {
     IPackageStatusChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageStatusChangedEventArgs>(m_ptr); }
 };
 
 struct IPackageUninstallingEventArgs :
@@ -258,7 +240,6 @@ struct IPackageUninstallingEventArgs :
     impl::consume<IPackageUninstallingEventArgs>
 {
     IPackageUninstallingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageUninstallingEventArgs>(m_ptr); }
 };
 
 struct IPackageUpdatingEventArgs :
@@ -266,7 +247,6 @@ struct IPackageUpdatingEventArgs :
     impl::consume<IPackageUpdatingEventArgs>
 {
     IPackageUpdatingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageUpdatingEventArgs>(m_ptr); }
 };
 
 struct IPackageWithMetadata :
@@ -274,7 +254,6 @@ struct IPackageWithMetadata :
     impl::consume<IPackageWithMetadata>
 {
     IPackageWithMetadata(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageWithMetadata>(m_ptr); }
 };
 
 struct ISuspendingDeferral :
@@ -282,7 +261,6 @@ struct ISuspendingDeferral :
     impl::consume<ISuspendingDeferral>
 {
     ISuspendingDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISuspendingDeferral>(m_ptr); }
 };
 
 struct ISuspendingEventArgs :
@@ -290,7 +268,6 @@ struct ISuspendingEventArgs :
     impl::consume<ISuspendingEventArgs>
 {
     ISuspendingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISuspendingEventArgs>(m_ptr); }
 };
 
 struct ISuspendingOperation :
@@ -298,7 +275,6 @@ struct ISuspendingOperation :
     impl::consume<ISuspendingOperation>
 {
     ISuspendingOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISuspendingOperation>(m_ptr); }
 };
 
 }

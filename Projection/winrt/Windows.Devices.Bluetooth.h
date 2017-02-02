@@ -1870,126 +1870,126 @@ namespace Windows::Devices::Bluetooth {
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> impl_IBluetoothDeviceStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> operation;
-    check_hresult(static_cast<const IBluetoothDeviceStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(operation)));
+    check_hresult(WINRT_SHIM(IBluetoothDeviceStatics)->abi_FromIdAsync(get(deviceId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> impl_IBluetoothDeviceStatics<D>::FromHostNameAsync(const Windows::Networking::HostName & hostName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> operation;
-    check_hresult(static_cast<const IBluetoothDeviceStatics &>(static_cast<const D &>(*this))->abi_FromHostNameAsync(get(hostName), put(operation)));
+    check_hresult(WINRT_SHIM(IBluetoothDeviceStatics)->abi_FromHostNameAsync(get(hostName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> impl_IBluetoothDeviceStatics<D>::FromBluetoothAddressAsync(uint64_t address) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> operation;
-    check_hresult(static_cast<const IBluetoothDeviceStatics &>(static_cast<const D &>(*this))->abi_FromBluetoothAddressAsync(address, put(operation)));
+    check_hresult(WINRT_SHIM(IBluetoothDeviceStatics)->abi_FromBluetoothAddressAsync(address, put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IBluetoothDeviceStatics<D>::GetDeviceSelector() const
 {
     hstring deviceSelector;
-    check_hresult(static_cast<const IBluetoothDeviceStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(deviceSelector)));
+    check_hresult(WINRT_SHIM(IBluetoothDeviceStatics)->abi_GetDeviceSelector(put(deviceSelector)));
     return deviceSelector;
 }
 
 template <typename D> hstring impl_IBluetoothDeviceStatics2<D>::GetDeviceSelectorFromPairingState(bool pairingState) const
 {
     hstring deviceSelector;
-    check_hresult(static_cast<const IBluetoothDeviceStatics2 &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorFromPairingState(pairingState, put(deviceSelector)));
+    check_hresult(WINRT_SHIM(IBluetoothDeviceStatics2)->abi_GetDeviceSelectorFromPairingState(pairingState, put(deviceSelector)));
     return deviceSelector;
 }
 
 template <typename D> hstring impl_IBluetoothDeviceStatics2<D>::GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus) const
 {
     hstring deviceSelector;
-    check_hresult(static_cast<const IBluetoothDeviceStatics2 &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorFromConnectionStatus(connectionStatus, put(deviceSelector)));
+    check_hresult(WINRT_SHIM(IBluetoothDeviceStatics2)->abi_GetDeviceSelectorFromConnectionStatus(connectionStatus, put(deviceSelector)));
     return deviceSelector;
 }
 
 template <typename D> hstring impl_IBluetoothDeviceStatics2<D>::GetDeviceSelectorFromDeviceName(hstring_ref deviceName) const
 {
     hstring deviceSelector;
-    check_hresult(static_cast<const IBluetoothDeviceStatics2 &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorFromDeviceName(get(deviceName), put(deviceSelector)));
+    check_hresult(WINRT_SHIM(IBluetoothDeviceStatics2)->abi_GetDeviceSelectorFromDeviceName(get(deviceName), put(deviceSelector)));
     return deviceSelector;
 }
 
 template <typename D> hstring impl_IBluetoothDeviceStatics2<D>::GetDeviceSelectorFromBluetoothAddress(uint64_t bluetoothAddress) const
 {
     hstring deviceSelector;
-    check_hresult(static_cast<const IBluetoothDeviceStatics2 &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorFromBluetoothAddress(bluetoothAddress, put(deviceSelector)));
+    check_hresult(WINRT_SHIM(IBluetoothDeviceStatics2)->abi_GetDeviceSelectorFromBluetoothAddress(bluetoothAddress, put(deviceSelector)));
     return deviceSelector;
 }
 
 template <typename D> hstring impl_IBluetoothDeviceStatics2<D>::GetDeviceSelectorFromClassOfDevice(const Windows::Devices::Bluetooth::BluetoothClassOfDevice & classOfDevice) const
 {
     hstring deviceSelector;
-    check_hresult(static_cast<const IBluetoothDeviceStatics2 &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorFromClassOfDevice(get(classOfDevice), put(deviceSelector)));
+    check_hresult(WINRT_SHIM(IBluetoothDeviceStatics2)->abi_GetDeviceSelectorFromClassOfDevice(get(classOfDevice), put(deviceSelector)));
     return deviceSelector;
 }
 
 template <typename D> hstring impl_IBluetoothDevice<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IBluetoothDevice &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IBluetoothDevice)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::HostName impl_IBluetoothDevice<D>::HostName() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(static_cast<const IBluetoothDevice &>(static_cast<const D &>(*this))->get_HostName(put(value)));
+    check_hresult(WINRT_SHIM(IBluetoothDevice)->get_HostName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IBluetoothDevice<D>::Name() const
 {
     hstring value;
-    check_hresult(static_cast<const IBluetoothDevice &>(static_cast<const D &>(*this))->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(IBluetoothDevice)->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::BluetoothClassOfDevice impl_IBluetoothDevice<D>::ClassOfDevice() const
 {
     Windows::Devices::Bluetooth::BluetoothClassOfDevice value { nullptr };
-    check_hresult(static_cast<const IBluetoothDevice &>(static_cast<const D &>(*this))->get_ClassOfDevice(put(value)));
+    check_hresult(WINRT_SHIM(IBluetoothDevice)->get_ClassOfDevice(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Storage::Streams::IBuffer> impl_IBluetoothDevice<D>::SdpRecords() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Storage::Streams::IBuffer> value;
-    check_hresult(static_cast<const IBluetoothDevice &>(static_cast<const D &>(*this))->get_SdpRecords(put(value)));
+    check_hresult(WINRT_SHIM(IBluetoothDevice)->get_SdpRecords(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> impl_IBluetoothDevice<D>::RfcommServices() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> value;
-    check_hresult(static_cast<const IBluetoothDevice &>(static_cast<const D &>(*this))->get_RfcommServices(put(value)));
+    check_hresult(WINRT_SHIM(IBluetoothDevice)->get_RfcommServices(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::BluetoothConnectionStatus impl_IBluetoothDevice<D>::ConnectionStatus() const
 {
     Windows::Devices::Bluetooth::BluetoothConnectionStatus value {};
-    check_hresult(static_cast<const IBluetoothDevice &>(static_cast<const D &>(*this))->get_ConnectionStatus(&value));
+    check_hresult(WINRT_SHIM(IBluetoothDevice)->get_ConnectionStatus(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IBluetoothDevice<D>::BluetoothAddress() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IBluetoothDevice &>(static_cast<const D &>(*this))->get_BluetoothAddress(&value));
+    check_hresult(WINRT_SHIM(IBluetoothDevice)->get_BluetoothAddress(&value));
     return value;
 }
 
 template <typename D> event_token impl_IBluetoothDevice<D>::NameChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IBluetoothDevice &>(static_cast<const D &>(*this))->add_NameChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IBluetoothDevice)->add_NameChanged(get(handler), &token));
     return token;
 }
 
@@ -2000,13 +2000,13 @@ template <typename D> event_revoker<IBluetoothDevice> impl_IBluetoothDevice<D>::
 
 template <typename D> void impl_IBluetoothDevice<D>::NameChanged(event_token token) const
 {
-    check_hresult(static_cast<const IBluetoothDevice &>(static_cast<const D &>(*this))->remove_NameChanged(token));
+    check_hresult(WINRT_SHIM(IBluetoothDevice)->remove_NameChanged(token));
 }
 
 template <typename D> event_token impl_IBluetoothDevice<D>::SdpRecordsChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IBluetoothDevice &>(static_cast<const D &>(*this))->add_SdpRecordsChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IBluetoothDevice)->add_SdpRecordsChanged(get(handler), &token));
     return token;
 }
 
@@ -2017,13 +2017,13 @@ template <typename D> event_revoker<IBluetoothDevice> impl_IBluetoothDevice<D>::
 
 template <typename D> void impl_IBluetoothDevice<D>::SdpRecordsChanged(event_token token) const
 {
-    check_hresult(static_cast<const IBluetoothDevice &>(static_cast<const D &>(*this))->remove_SdpRecordsChanged(token));
+    check_hresult(WINRT_SHIM(IBluetoothDevice)->remove_SdpRecordsChanged(token));
 }
 
 template <typename D> event_token impl_IBluetoothDevice<D>::ConnectionStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IBluetoothDevice &>(static_cast<const D &>(*this))->add_ConnectionStatusChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IBluetoothDevice)->add_ConnectionStatusChanged(get(handler), &token));
     return token;
 }
 
@@ -2034,489 +2034,489 @@ template <typename D> event_revoker<IBluetoothDevice> impl_IBluetoothDevice<D>::
 
 template <typename D> void impl_IBluetoothDevice<D>::ConnectionStatusChanged(event_token token) const
 {
-    check_hresult(static_cast<const IBluetoothDevice &>(static_cast<const D &>(*this))->remove_ConnectionStatusChanged(token));
+    check_hresult(WINRT_SHIM(IBluetoothDevice)->remove_ConnectionStatusChanged(token));
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IBluetoothDevice2<D>::DeviceInformation() const
 {
     Windows::Devices::Enumeration::DeviceInformation value { nullptr };
-    check_hresult(static_cast<const IBluetoothDevice2 &>(static_cast<const D &>(*this))->get_DeviceInformation(put(value)));
+    check_hresult(WINRT_SHIM(IBluetoothDevice2)->get_DeviceInformation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceAccessInformation impl_IBluetoothDevice3<D>::DeviceAccessInformation() const
 {
     Windows::Devices::Enumeration::DeviceAccessInformation value { nullptr };
-    check_hresult(static_cast<const IBluetoothDevice3 &>(static_cast<const D &>(*this))->get_DeviceAccessInformation(put(value)));
+    check_hresult(WINRT_SHIM(IBluetoothDevice3)->get_DeviceAccessInformation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Enumeration::DeviceAccessStatus> impl_IBluetoothDevice3<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Enumeration::DeviceAccessStatus> value;
-    check_hresult(static_cast<const IBluetoothDevice3 &>(static_cast<const D &>(*this))->abi_RequestAccessAsync(put(value)));
+    check_hresult(WINRT_SHIM(IBluetoothDevice3)->abi_RequestAccessAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> impl_IBluetoothDevice3<D>::GetRfcommServicesAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> operation;
-    check_hresult(static_cast<const IBluetoothDevice3 &>(static_cast<const D &>(*this))->abi_GetRfcommServicesAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IBluetoothDevice3)->abi_GetRfcommServicesAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> impl_IBluetoothDevice3<D>::GetRfcommServicesAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> operation;
-    check_hresult(static_cast<const IBluetoothDevice3 &>(static_cast<const D &>(*this))->abi_GetRfcommServicesWithCacheModeAsync(cacheMode, put(operation)));
+    check_hresult(WINRT_SHIM(IBluetoothDevice3)->abi_GetRfcommServicesWithCacheModeAsync(cacheMode, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> impl_IBluetoothDevice3<D>::GetRfcommServicesForIdAsync(const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId & serviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> operation;
-    check_hresult(static_cast<const IBluetoothDevice3 &>(static_cast<const D &>(*this))->abi_GetRfcommServicesForIdAsync(get(serviceId), put(operation)));
+    check_hresult(WINRT_SHIM(IBluetoothDevice3)->abi_GetRfcommServicesForIdAsync(get(serviceId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> impl_IBluetoothDevice3<D>::GetRfcommServicesForIdAsync(const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId & serviceId, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> operation;
-    check_hresult(static_cast<const IBluetoothDevice3 &>(static_cast<const D &>(*this))->abi_GetRfcommServicesForIdWithCacheModeAsync(get(serviceId), cacheMode, put(operation)));
+    check_hresult(WINRT_SHIM(IBluetoothDevice3)->abi_GetRfcommServicesForIdWithCacheModeAsync(get(serviceId), cacheMode, put(operation)));
     return operation;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::Uncategorized() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_Uncategorized(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_Uncategorized(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::Phone() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_Phone(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_Phone(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::Computer() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_Computer(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_Computer(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::Watch() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_Watch(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_Watch(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::Clock() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_Clock(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_Clock(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::Display() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_Display(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_Display(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::RemoteControl() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_RemoteControl(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_RemoteControl(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::EyeGlasses() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_EyeGlasses(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_EyeGlasses(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::Tag() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_Tag(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_Tag(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::Keyring() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_Keyring(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_Keyring(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::MediaPlayer() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_MediaPlayer(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_MediaPlayer(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::BarcodeScanner() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_BarcodeScanner(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_BarcodeScanner(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::Thermometer() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_Thermometer(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_Thermometer(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::HeartRate() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_HeartRate(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_HeartRate(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::BloodPressure() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_BloodPressure(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_BloodPressure(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::HumanInterfaceDevice() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_HumanInterfaceDevice(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_HumanInterfaceDevice(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::GlucoseMeter() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_GlucoseMeter(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_GlucoseMeter(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::RunningWalking() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_RunningWalking(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_RunningWalking(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::Cycling() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_Cycling(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_Cycling(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::PulseOximeter() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_PulseOximeter(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_PulseOximeter(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::WeightScale() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_WeightScale(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_WeightScale(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceCategoriesStatics<D>::OutdoorSportActivity() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceCategoriesStatics &>(static_cast<const D &>(*this))->get_OutdoorSportActivity(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceCategoriesStatics)->get_OutdoorSportActivity(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::Generic() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_Generic(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_Generic(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::SportsWatch() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_SportsWatch(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_SportsWatch(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::ThermometerEar() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_ThermometerEar(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_ThermometerEar(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::HeartRateBelt() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_HeartRateBelt(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_HeartRateBelt(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::BloodPressureArm() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_BloodPressureArm(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_BloodPressureArm(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::BloodPressureWrist() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_BloodPressureWrist(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_BloodPressureWrist(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::Keyboard() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_Keyboard(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_Keyboard(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::Mouse() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_Mouse(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_Mouse(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::Joystick() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_Joystick(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_Joystick(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::Gamepad() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_Gamepad(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_Gamepad(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::DigitizerTablet() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_DigitizerTablet(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_DigitizerTablet(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::CardReader() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_CardReader(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_CardReader(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::DigitalPen() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_DigitalPen(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_DigitalPen(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::BarcodeScanner() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_BarcodeScanner(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_BarcodeScanner(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::RunningWalkingInShoe() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_RunningWalkingInShoe(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_RunningWalkingInShoe(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::RunningWalkingOnShoe() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_RunningWalkingOnShoe(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_RunningWalkingOnShoe(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::RunningWalkingOnHip() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_RunningWalkingOnHip(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_RunningWalkingOnHip(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::CyclingComputer() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_CyclingComputer(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_CyclingComputer(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::CyclingSpeedSensor() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_CyclingSpeedSensor(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_CyclingSpeedSensor(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::CyclingCadenceSensor() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_CyclingCadenceSensor(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_CyclingCadenceSensor(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::CyclingPowerSensor() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_CyclingPowerSensor(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_CyclingPowerSensor(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::CyclingSpeedCadenceSensor() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_CyclingSpeedCadenceSensor(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_CyclingSpeedCadenceSensor(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::OximeterFingertip() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_OximeterFingertip(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_OximeterFingertip(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::OximeterWristWorn() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_OximeterWristWorn(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_OximeterWristWorn(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::LocationDisplay() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_LocationDisplay(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_LocationDisplay(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::LocationNavigationDisplay() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_LocationNavigationDisplay(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_LocationNavigationDisplay(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::LocationPod() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_LocationPod(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_LocationPod(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearanceSubcategoriesStatics<D>::LocationNavigationPod() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearanceSubcategoriesStatics &>(static_cast<const D &>(*this))->get_LocationNavigationPod(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceSubcategoriesStatics)->get_LocationNavigationPod(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearance<D>::RawValue() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearance &>(static_cast<const D &>(*this))->get_RawValue(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearance)->get_RawValue(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearance<D>::Category() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearance &>(static_cast<const D &>(*this))->get_Category(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearance)->get_Category(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEAppearance<D>::SubCategory() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IBluetoothLEAppearance &>(static_cast<const D &>(*this))->get_SubCategory(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearance)->get_SubCategory(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::BluetoothLEAppearance impl_IBluetoothLEAppearanceStatics<D>::FromRawValue(uint16_t rawValue) const
 {
     Windows::Devices::Bluetooth::BluetoothLEAppearance appearance { nullptr };
-    check_hresult(static_cast<const IBluetoothLEAppearanceStatics &>(static_cast<const D &>(*this))->abi_FromRawValue(rawValue, put(appearance)));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceStatics)->abi_FromRawValue(rawValue, put(appearance)));
     return appearance;
 }
 
 template <typename D> Windows::Devices::Bluetooth::BluetoothLEAppearance impl_IBluetoothLEAppearanceStatics<D>::FromParts(uint16_t appearanceCategory, uint16_t appearanceSubCategory) const
 {
     Windows::Devices::Bluetooth::BluetoothLEAppearance appearance { nullptr };
-    check_hresult(static_cast<const IBluetoothLEAppearanceStatics &>(static_cast<const D &>(*this))->abi_FromParts(appearanceCategory, appearanceSubCategory, put(appearance)));
+    check_hresult(WINRT_SHIM(IBluetoothLEAppearanceStatics)->abi_FromParts(appearanceCategory, appearanceSubCategory, put(appearance)));
     return appearance;
 }
 
 template <typename D> hstring impl_IBluetoothLEDevice<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IBluetoothLEDevice &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IBluetoothLEDevice<D>::Name() const
 {
     hstring value;
-    check_hresult(static_cast<const IBluetoothLEDevice &>(static_cast<const D &>(*this))->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice)->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> impl_IBluetoothLEDevice<D>::GattServices() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> value;
-    check_hresult(static_cast<const IBluetoothLEDevice &>(static_cast<const D &>(*this))->get_GattServices(put(value)));
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice)->get_GattServices(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::BluetoothConnectionStatus impl_IBluetoothLEDevice<D>::ConnectionStatus() const
 {
     Windows::Devices::Bluetooth::BluetoothConnectionStatus value {};
-    check_hresult(static_cast<const IBluetoothLEDevice &>(static_cast<const D &>(*this))->get_ConnectionStatus(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice)->get_ConnectionStatus(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IBluetoothLEDevice<D>::BluetoothAddress() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IBluetoothLEDevice &>(static_cast<const D &>(*this))->get_BluetoothAddress(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice)->get_BluetoothAddress(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService impl_IBluetoothLEDevice<D>::GetGattService(GUID serviceUuid) const
 {
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService service { nullptr };
-    check_hresult(static_cast<const IBluetoothLEDevice &>(static_cast<const D &>(*this))->abi_GetGattService(serviceUuid, put(service)));
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice)->abi_GetGattService(serviceUuid, put(service)));
     return service;
 }
 
 template <typename D> event_token impl_IBluetoothLEDevice<D>::NameChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IBluetoothLEDevice &>(static_cast<const D &>(*this))->add_NameChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice)->add_NameChanged(get(handler), &token));
     return token;
 }
 
@@ -2527,13 +2527,13 @@ template <typename D> event_revoker<IBluetoothLEDevice> impl_IBluetoothLEDevice<
 
 template <typename D> void impl_IBluetoothLEDevice<D>::NameChanged(event_token token) const
 {
-    check_hresult(static_cast<const IBluetoothLEDevice &>(static_cast<const D &>(*this))->remove_NameChanged(token));
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice)->remove_NameChanged(token));
 }
 
 template <typename D> event_token impl_IBluetoothLEDevice<D>::GattServicesChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IBluetoothLEDevice &>(static_cast<const D &>(*this))->add_GattServicesChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice)->add_GattServicesChanged(get(handler), &token));
     return token;
 }
 
@@ -2544,13 +2544,13 @@ template <typename D> event_revoker<IBluetoothLEDevice> impl_IBluetoothLEDevice<
 
 template <typename D> void impl_IBluetoothLEDevice<D>::GattServicesChanged(event_token token) const
 {
-    check_hresult(static_cast<const IBluetoothLEDevice &>(static_cast<const D &>(*this))->remove_GattServicesChanged(token));
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice)->remove_GattServicesChanged(token));
 }
 
 template <typename D> event_token impl_IBluetoothLEDevice<D>::ConnectionStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IBluetoothLEDevice &>(static_cast<const D &>(*this))->add_ConnectionStatusChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice)->add_ConnectionStatusChanged(get(handler), &token));
     return token;
 }
 
@@ -2561,188 +2561,188 @@ template <typename D> event_revoker<IBluetoothLEDevice> impl_IBluetoothLEDevice<
 
 template <typename D> void impl_IBluetoothLEDevice<D>::ConnectionStatusChanged(event_token token) const
 {
-    check_hresult(static_cast<const IBluetoothLEDevice &>(static_cast<const D &>(*this))->remove_ConnectionStatusChanged(token));
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice)->remove_ConnectionStatusChanged(token));
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IBluetoothLEDevice2<D>::DeviceInformation() const
 {
     Windows::Devices::Enumeration::DeviceInformation value { nullptr };
-    check_hresult(static_cast<const IBluetoothLEDevice2 &>(static_cast<const D &>(*this))->get_DeviceInformation(put(value)));
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice2)->get_DeviceInformation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::BluetoothLEAppearance impl_IBluetoothLEDevice2<D>::Appearance() const
 {
     Windows::Devices::Bluetooth::BluetoothLEAppearance value { nullptr };
-    check_hresult(static_cast<const IBluetoothLEDevice2 &>(static_cast<const D &>(*this))->get_Appearance(put(value)));
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice2)->get_Appearance(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::BluetoothAddressType impl_IBluetoothLEDevice2<D>::BluetoothAddressType() const
 {
     Windows::Devices::Bluetooth::BluetoothAddressType value {};
-    check_hresult(static_cast<const IBluetoothLEDevice2 &>(static_cast<const D &>(*this))->get_BluetoothAddressType(&value));
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice2)->get_BluetoothAddressType(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> impl_IBluetoothLEDeviceStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> operation;
-    check_hresult(static_cast<const IBluetoothLEDeviceStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(operation)));
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics)->abi_FromIdAsync(get(deviceId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> impl_IBluetoothLEDeviceStatics<D>::FromBluetoothAddressAsync(uint64_t bluetoothAddress) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> operation;
-    check_hresult(static_cast<const IBluetoothLEDeviceStatics &>(static_cast<const D &>(*this))->abi_FromBluetoothAddressAsync(bluetoothAddress, put(operation)));
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics)->abi_FromBluetoothAddressAsync(bluetoothAddress, put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IBluetoothLEDeviceStatics<D>::GetDeviceSelector() const
 {
     hstring deviceSelector;
-    check_hresult(static_cast<const IBluetoothLEDeviceStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(deviceSelector)));
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics)->abi_GetDeviceSelector(put(deviceSelector)));
     return deviceSelector;
 }
 
 template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromPairingState(bool pairingState) const
 {
     hstring deviceSelector;
-    check_hresult(static_cast<const IBluetoothLEDeviceStatics2 &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorFromPairingState(pairingState, put(deviceSelector)));
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromPairingState(pairingState, put(deviceSelector)));
     return deviceSelector;
 }
 
 template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus) const
 {
     hstring deviceSelector;
-    check_hresult(static_cast<const IBluetoothLEDeviceStatics2 &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorFromConnectionStatus(connectionStatus, put(deviceSelector)));
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromConnectionStatus(connectionStatus, put(deviceSelector)));
     return deviceSelector;
 }
 
 template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromDeviceName(hstring_ref deviceName) const
 {
     hstring deviceSelector;
-    check_hresult(static_cast<const IBluetoothLEDeviceStatics2 &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorFromDeviceName(get(deviceName), put(deviceSelector)));
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromDeviceName(get(deviceName), put(deviceSelector)));
     return deviceSelector;
 }
 
 template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromBluetoothAddress(uint64_t bluetoothAddress) const
 {
     hstring deviceSelector;
-    check_hresult(static_cast<const IBluetoothLEDeviceStatics2 &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorFromBluetoothAddress(bluetoothAddress, put(deviceSelector)));
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromBluetoothAddress(bluetoothAddress, put(deviceSelector)));
     return deviceSelector;
 }
 
 template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromBluetoothAddress(uint64_t bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType) const
 {
     hstring deviceSelector;
-    check_hresult(static_cast<const IBluetoothLEDeviceStatics2 &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorFromBluetoothAddressWithBluetoothAddressType(bluetoothAddress, bluetoothAddressType, put(deviceSelector)));
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromBluetoothAddressWithBluetoothAddressType(bluetoothAddress, bluetoothAddressType, put(deviceSelector)));
     return deviceSelector;
 }
 
 template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromAppearance(const Windows::Devices::Bluetooth::BluetoothLEAppearance & appearance) const
 {
     hstring deviceSelector;
-    check_hresult(static_cast<const IBluetoothLEDeviceStatics2 &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorFromAppearance(get(appearance), put(deviceSelector)));
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromAppearance(get(appearance), put(deviceSelector)));
     return deviceSelector;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> impl_IBluetoothLEDeviceStatics2<D>::FromBluetoothAddressAsync(uint64_t bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> operation;
-    check_hresult(static_cast<const IBluetoothLEDeviceStatics2 &>(static_cast<const D &>(*this))->abi_FromBluetoothAddressWithBluetoothAddressTypeAsync(bluetoothAddress, bluetoothAddressType, put(operation)));
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_FromBluetoothAddressWithBluetoothAddressTypeAsync(bluetoothAddress, bluetoothAddressType, put(operation)));
     return operation;
 }
 
 template <typename D> uint32_t impl_IBluetoothClassOfDevice<D>::RawValue() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBluetoothClassOfDevice &>(static_cast<const D &>(*this))->get_RawValue(&value));
+    check_hresult(WINRT_SHIM(IBluetoothClassOfDevice)->get_RawValue(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::BluetoothMajorClass impl_IBluetoothClassOfDevice<D>::MajorClass() const
 {
     Windows::Devices::Bluetooth::BluetoothMajorClass value {};
-    check_hresult(static_cast<const IBluetoothClassOfDevice &>(static_cast<const D &>(*this))->get_MajorClass(&value));
+    check_hresult(WINRT_SHIM(IBluetoothClassOfDevice)->get_MajorClass(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::BluetoothMinorClass impl_IBluetoothClassOfDevice<D>::MinorClass() const
 {
     Windows::Devices::Bluetooth::BluetoothMinorClass value {};
-    check_hresult(static_cast<const IBluetoothClassOfDevice &>(static_cast<const D &>(*this))->get_MinorClass(&value));
+    check_hresult(WINRT_SHIM(IBluetoothClassOfDevice)->get_MinorClass(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::BluetoothServiceCapabilities impl_IBluetoothClassOfDevice<D>::ServiceCapabilities() const
 {
     Windows::Devices::Bluetooth::BluetoothServiceCapabilities value {};
-    check_hresult(static_cast<const IBluetoothClassOfDevice &>(static_cast<const D &>(*this))->get_ServiceCapabilities(&value));
+    check_hresult(WINRT_SHIM(IBluetoothClassOfDevice)->get_ServiceCapabilities(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::BluetoothClassOfDevice impl_IBluetoothClassOfDeviceStatics<D>::FromRawValue(uint32_t rawValue) const
 {
     Windows::Devices::Bluetooth::BluetoothClassOfDevice classOfDevice { nullptr };
-    check_hresult(static_cast<const IBluetoothClassOfDeviceStatics &>(static_cast<const D &>(*this))->abi_FromRawValue(rawValue, put(classOfDevice)));
+    check_hresult(WINRT_SHIM(IBluetoothClassOfDeviceStatics)->abi_FromRawValue(rawValue, put(classOfDevice)));
     return classOfDevice;
 }
 
 template <typename D> Windows::Devices::Bluetooth::BluetoothClassOfDevice impl_IBluetoothClassOfDeviceStatics<D>::FromParts(Windows::Devices::Bluetooth::BluetoothMajorClass majorClass, Windows::Devices::Bluetooth::BluetoothMinorClass minorClass, Windows::Devices::Bluetooth::BluetoothServiceCapabilities serviceCapabilities) const
 {
     Windows::Devices::Bluetooth::BluetoothClassOfDevice classOfDevice { nullptr };
-    check_hresult(static_cast<const IBluetoothClassOfDeviceStatics &>(static_cast<const D &>(*this))->abi_FromParts(majorClass, minorClass, serviceCapabilities, put(classOfDevice)));
+    check_hresult(WINRT_SHIM(IBluetoothClassOfDeviceStatics)->abi_FromParts(majorClass, minorClass, serviceCapabilities, put(classOfDevice)));
     return classOfDevice;
 }
 
 template <typename D> Windows::Foundation::IReference<int16_t> impl_IBluetoothSignalStrengthFilter<D>::InRangeThresholdInDBm() const
 {
     Windows::Foundation::IReference<int16_t> value;
-    check_hresult(static_cast<const IBluetoothSignalStrengthFilter &>(static_cast<const D &>(*this))->get_InRangeThresholdInDBm(put(value)));
+    check_hresult(WINRT_SHIM(IBluetoothSignalStrengthFilter)->get_InRangeThresholdInDBm(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBluetoothSignalStrengthFilter<D>::InRangeThresholdInDBm(const Windows::Foundation::IReference<int16_t> & value) const
 {
-    check_hresult(static_cast<const IBluetoothSignalStrengthFilter &>(static_cast<const D &>(*this))->put_InRangeThresholdInDBm(get(value)));
+    check_hresult(WINRT_SHIM(IBluetoothSignalStrengthFilter)->put_InRangeThresholdInDBm(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int16_t> impl_IBluetoothSignalStrengthFilter<D>::OutOfRangeThresholdInDBm() const
 {
     Windows::Foundation::IReference<int16_t> value;
-    check_hresult(static_cast<const IBluetoothSignalStrengthFilter &>(static_cast<const D &>(*this))->get_OutOfRangeThresholdInDBm(put(value)));
+    check_hresult(WINRT_SHIM(IBluetoothSignalStrengthFilter)->get_OutOfRangeThresholdInDBm(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBluetoothSignalStrengthFilter<D>::OutOfRangeThresholdInDBm(const Windows::Foundation::IReference<int16_t> & value) const
 {
-    check_hresult(static_cast<const IBluetoothSignalStrengthFilter &>(static_cast<const D &>(*this))->put_OutOfRangeThresholdInDBm(get(value)));
+    check_hresult(WINRT_SHIM(IBluetoothSignalStrengthFilter)->put_OutOfRangeThresholdInDBm(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IBluetoothSignalStrengthFilter<D>::OutOfRangeTimeout() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(static_cast<const IBluetoothSignalStrengthFilter &>(static_cast<const D &>(*this))->get_OutOfRangeTimeout(put(value)));
+    check_hresult(WINRT_SHIM(IBluetoothSignalStrengthFilter)->get_OutOfRangeTimeout(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBluetoothSignalStrengthFilter<D>::OutOfRangeTimeout(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(static_cast<const IBluetoothSignalStrengthFilter &>(static_cast<const D &>(*this))->put_OutOfRangeTimeout(get(value)));
+    check_hresult(WINRT_SHIM(IBluetoothSignalStrengthFilter)->put_OutOfRangeTimeout(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IBluetoothSignalStrengthFilter<D>::SamplingInterval() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(static_cast<const IBluetoothSignalStrengthFilter &>(static_cast<const D &>(*this))->get_SamplingInterval(put(value)));
+    check_hresult(WINRT_SHIM(IBluetoothSignalStrengthFilter)->get_SamplingInterval(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBluetoothSignalStrengthFilter<D>::SamplingInterval(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(static_cast<const IBluetoothSignalStrengthFilter &>(static_cast<const D &>(*this))->put_SamplingInterval(get(value)));
+    check_hresult(WINRT_SHIM(IBluetoothSignalStrengthFilter)->put_SamplingInterval(get(value)));
 }
 
 inline Windows::Devices::Bluetooth::BluetoothClassOfDevice BluetoothClassOfDevice::FromRawValue(uint32_t rawValue)

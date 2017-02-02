@@ -32,7 +32,6 @@ namespace Windows::UI::Xaml::Media::Imaging {
 struct DownloadProgressEventHandler : Windows::IUnknown
 {
     DownloadProgressEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<DownloadProgressEventHandler>(m_ptr); }
     template <typename L> DownloadProgressEventHandler(L lambda);
     template <typename F> DownloadProgressEventHandler (F * function);
     template <typename O, typename M> DownloadProgressEventHandler(O * object, M method);
@@ -44,7 +43,6 @@ struct IBitmapImage :
     impl::consume<IBitmapImage>
 {
     IBitmapImage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapImage>(m_ptr); }
 };
 
 struct IBitmapImage2 :
@@ -52,7 +50,6 @@ struct IBitmapImage2 :
     impl::consume<IBitmapImage2>
 {
     IBitmapImage2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapImage2>(m_ptr); }
 };
 
 struct IBitmapImage3 :
@@ -60,7 +57,6 @@ struct IBitmapImage3 :
     impl::consume<IBitmapImage3>
 {
     IBitmapImage3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapImage3>(m_ptr); }
 };
 
 struct IBitmapImageFactory :
@@ -68,7 +64,6 @@ struct IBitmapImageFactory :
     impl::consume<IBitmapImageFactory>
 {
     IBitmapImageFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapImageFactory>(m_ptr); }
 };
 
 struct IBitmapImageStatics :
@@ -76,7 +71,6 @@ struct IBitmapImageStatics :
     impl::consume<IBitmapImageStatics>
 {
     IBitmapImageStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapImageStatics>(m_ptr); }
 };
 
 struct IBitmapImageStatics2 :
@@ -84,7 +78,6 @@ struct IBitmapImageStatics2 :
     impl::consume<IBitmapImageStatics2>
 {
     IBitmapImageStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapImageStatics2>(m_ptr); }
 };
 
 struct IBitmapImageStatics3 :
@@ -92,7 +85,6 @@ struct IBitmapImageStatics3 :
     impl::consume<IBitmapImageStatics3>
 {
     IBitmapImageStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapImageStatics3>(m_ptr); }
 };
 
 struct IBitmapSource :
@@ -100,7 +92,6 @@ struct IBitmapSource :
     impl::consume<IBitmapSource>
 {
     IBitmapSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapSource>(m_ptr); }
 };
 
 struct IBitmapSourceFactory :
@@ -108,7 +99,6 @@ struct IBitmapSourceFactory :
     impl::consume<IBitmapSourceFactory>
 {
     IBitmapSourceFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapSourceFactory>(m_ptr); }
 };
 
 struct IBitmapSourceStatics :
@@ -116,7 +106,6 @@ struct IBitmapSourceStatics :
     impl::consume<IBitmapSourceStatics>
 {
     IBitmapSourceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapSourceStatics>(m_ptr); }
 };
 
 struct IDownloadProgressEventArgs :
@@ -124,7 +113,6 @@ struct IDownloadProgressEventArgs :
     impl::consume<IDownloadProgressEventArgs>
 {
     IDownloadProgressEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDownloadProgressEventArgs>(m_ptr); }
 };
 
 struct IRenderTargetBitmap :
@@ -132,7 +120,6 @@ struct IRenderTargetBitmap :
     impl::consume<IRenderTargetBitmap>
 {
     IRenderTargetBitmap(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRenderTargetBitmap>(m_ptr); }
 };
 
 struct IRenderTargetBitmapStatics :
@@ -140,7 +127,6 @@ struct IRenderTargetBitmapStatics :
     impl::consume<IRenderTargetBitmapStatics>
 {
     IRenderTargetBitmapStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRenderTargetBitmapStatics>(m_ptr); }
 };
 
 struct ISoftwareBitmapSource :
@@ -148,7 +134,6 @@ struct ISoftwareBitmapSource :
     impl::consume<ISoftwareBitmapSource>
 {
     ISoftwareBitmapSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISoftwareBitmapSource>(m_ptr); }
 };
 
 struct ISurfaceImageSource :
@@ -156,7 +141,6 @@ struct ISurfaceImageSource :
     impl::consume<ISurfaceImageSource>
 {
     ISurfaceImageSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISurfaceImageSource>(m_ptr); }
 };
 
 struct ISurfaceImageSourceFactory :
@@ -164,7 +148,6 @@ struct ISurfaceImageSourceFactory :
     impl::consume<ISurfaceImageSourceFactory>
 {
     ISurfaceImageSourceFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISurfaceImageSourceFactory>(m_ptr); }
 };
 
 struct IVirtualSurfaceImageSource :
@@ -172,7 +155,6 @@ struct IVirtualSurfaceImageSource :
     impl::consume<IVirtualSurfaceImageSource>
 {
     IVirtualSurfaceImageSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVirtualSurfaceImageSource>(m_ptr); }
 };
 
 struct IVirtualSurfaceImageSourceFactory :
@@ -180,7 +162,6 @@ struct IVirtualSurfaceImageSourceFactory :
     impl::consume<IVirtualSurfaceImageSourceFactory>
 {
     IVirtualSurfaceImageSourceFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVirtualSurfaceImageSourceFactory>(m_ptr); }
 };
 
 struct IWriteableBitmap :
@@ -188,7 +169,6 @@ struct IWriteableBitmap :
     impl::consume<IWriteableBitmap>
 {
     IWriteableBitmap(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWriteableBitmap>(m_ptr); }
 };
 
 struct IWriteableBitmapFactory :
@@ -196,7 +176,6 @@ struct IWriteableBitmapFactory :
     impl::consume<IWriteableBitmapFactory>
 {
     IWriteableBitmapFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWriteableBitmapFactory>(m_ptr); }
 };
 
 struct IXamlRenderingBackgroundTask :
@@ -204,7 +183,6 @@ struct IXamlRenderingBackgroundTask :
     impl::consume<IXamlRenderingBackgroundTask>
 {
     IXamlRenderingBackgroundTask(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXamlRenderingBackgroundTask>(m_ptr); }
 };
 
 struct IXamlRenderingBackgroundTaskFactory :
@@ -212,7 +190,6 @@ struct IXamlRenderingBackgroundTaskFactory :
     impl::consume<IXamlRenderingBackgroundTaskFactory>
 {
     IXamlRenderingBackgroundTaskFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXamlRenderingBackgroundTaskFactory>(m_ptr); }
 };
 
 struct IXamlRenderingBackgroundTaskOverrides :
@@ -220,7 +197,6 @@ struct IXamlRenderingBackgroundTaskOverrides :
     impl::consume<IXamlRenderingBackgroundTaskOverrides>
 {
     IXamlRenderingBackgroundTaskOverrides(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXamlRenderingBackgroundTaskOverrides>(m_ptr); }
 };
 
 }

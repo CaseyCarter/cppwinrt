@@ -3241,435 +3241,435 @@ namespace Windows::Networking::NetworkOperators {
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IMobileBroadbandAccountStatics<D>::AvailableNetworkAccountIds() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> ppAccountIds;
-    check_hresult(static_cast<const IMobileBroadbandAccountStatics &>(static_cast<const D &>(*this))->get_AvailableNetworkAccountIds(put(ppAccountIds)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountStatics)->get_AvailableNetworkAccountIds(put(ppAccountIds)));
     return ppAccountIds;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandAccount impl_IMobileBroadbandAccountStatics<D>::CreateFromNetworkAccountId(hstring_ref networkAccountId) const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandAccount ppAccount { nullptr };
-    check_hresult(static_cast<const IMobileBroadbandAccountStatics &>(static_cast<const D &>(*this))->abi_CreateFromNetworkAccountId(get(networkAccountId), put(ppAccount)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountStatics)->abi_CreateFromNetworkAccountId(get(networkAccountId), put(ppAccount)));
     return ppAccount;
 }
 
 template <typename D> hstring impl_IMobileBroadbandAccount<D>::NetworkAccountId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandAccount &>(static_cast<const D &>(*this))->get_NetworkAccountId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccount)->get_NetworkAccountId(put(value)));
     return value;
 }
 
 template <typename D> GUID impl_IMobileBroadbandAccount<D>::ServiceProviderGuid() const
 {
     GUID value {};
-    check_hresult(static_cast<const IMobileBroadbandAccount &>(static_cast<const D &>(*this))->get_ServiceProviderGuid(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccount)->get_ServiceProviderGuid(&value));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandAccount<D>::ServiceProviderName() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandAccount &>(static_cast<const D &>(*this))->get_ServiceProviderName(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccount)->get_ServiceProviderName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandNetwork impl_IMobileBroadbandAccount<D>::CurrentNetwork() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandNetwork network { nullptr };
-    check_hresult(static_cast<const IMobileBroadbandAccount &>(static_cast<const D &>(*this))->get_CurrentNetwork(put(network)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccount)->get_CurrentNetwork(put(network)));
     return network;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandDeviceInformation impl_IMobileBroadbandAccount<D>::CurrentDeviceInformation() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandDeviceInformation deviceInformation { nullptr };
-    check_hresult(static_cast<const IMobileBroadbandAccount &>(static_cast<const D &>(*this))->get_CurrentDeviceInformation(put(deviceInformation)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccount)->get_CurrentDeviceInformation(put(deviceInformation)));
     return deviceInformation;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile> impl_IMobileBroadbandAccount2<D>::GetConnectionProfiles() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile> value;
-    check_hresult(static_cast<const IMobileBroadbandAccount2 &>(static_cast<const D &>(*this))->abi_GetConnectionProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccount2)->abi_GetConnectionProfiles(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::NetworkDeviceStatus impl_IMobileBroadbandDeviceInformation<D>::NetworkDeviceStatus() const
 {
     Windows::Networking::NetworkOperators::NetworkDeviceStatus value {};
-    check_hresult(static_cast<const IMobileBroadbandDeviceInformation &>(static_cast<const D &>(*this))->get_NetworkDeviceStatus(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_NetworkDeviceStatus(&value));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation<D>::Manufacturer() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandDeviceInformation &>(static_cast<const D &>(*this))->get_Manufacturer(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_Manufacturer(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation<D>::Model() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandDeviceInformation &>(static_cast<const D &>(*this))->get_Model(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_Model(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation<D>::FirmwareInformation() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandDeviceInformation &>(static_cast<const D &>(*this))->get_FirmwareInformation(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_FirmwareInformation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::CellularClass impl_IMobileBroadbandDeviceInformation<D>::CellularClass() const
 {
     Windows::Devices::Sms::CellularClass value {};
-    check_hresult(static_cast<const IMobileBroadbandDeviceInformation &>(static_cast<const D &>(*this))->get_CellularClass(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_CellularClass(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::DataClasses impl_IMobileBroadbandDeviceInformation<D>::DataClasses() const
 {
     Windows::Networking::NetworkOperators::DataClasses value {};
-    check_hresult(static_cast<const IMobileBroadbandDeviceInformation &>(static_cast<const D &>(*this))->get_DataClasses(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_DataClasses(&value));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation<D>::CustomDataClass() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandDeviceInformation &>(static_cast<const D &>(*this))->get_CustomDataClass(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_CustomDataClass(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation<D>::MobileEquipmentId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandDeviceInformation &>(static_cast<const D &>(*this))->get_MobileEquipmentId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_MobileEquipmentId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IMobileBroadbandDeviceInformation<D>::TelephoneNumbers() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IMobileBroadbandDeviceInformation &>(static_cast<const D &>(*this))->get_TelephoneNumbers(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_TelephoneNumbers(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation<D>::SubscriberId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandDeviceInformation &>(static_cast<const D &>(*this))->get_SubscriberId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_SubscriberId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation<D>::SimIccId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandDeviceInformation &>(static_cast<const D &>(*this))->get_SimIccId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_SimIccId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandDeviceType impl_IMobileBroadbandDeviceInformation<D>::DeviceType() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandDeviceType pDeviceType {};
-    check_hresult(static_cast<const IMobileBroadbandDeviceInformation &>(static_cast<const D &>(*this))->get_DeviceType(&pDeviceType));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_DeviceType(&pDeviceType));
     return pDeviceType;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandDeviceInformation &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandRadioState impl_IMobileBroadbandDeviceInformation<D>::CurrentRadioState() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandRadioState pCurrentState {};
-    check_hresult(static_cast<const IMobileBroadbandDeviceInformation &>(static_cast<const D &>(*this))->get_CurrentRadioState(&pCurrentState));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation)->get_CurrentRadioState(&pCurrentState));
     return pCurrentState;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandPinManager impl_IMobileBroadbandDeviceInformation2<D>::PinManager() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandPinManager value { nullptr };
-    check_hresult(static_cast<const IMobileBroadbandDeviceInformation2 &>(static_cast<const D &>(*this))->get_PinManager(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation2)->get_PinManager(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation2<D>::Revision() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandDeviceInformation2 &>(static_cast<const D &>(*this))->get_Revision(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation2)->get_Revision(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceInformation2<D>::SerialNumber() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandDeviceInformation2 &>(static_cast<const D &>(*this))->get_SerialNumber(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation2)->get_SerialNumber(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::NetworkAdapter impl_IMobileBroadbandNetwork<D>::NetworkAdapter() const
 {
     Windows::Networking::Connectivity::NetworkAdapter value { nullptr };
-    check_hresult(static_cast<const IMobileBroadbandNetwork &>(static_cast<const D &>(*this))->get_NetworkAdapter(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork)->get_NetworkAdapter(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::NetworkRegistrationState impl_IMobileBroadbandNetwork<D>::NetworkRegistrationState() const
 {
     Windows::Networking::NetworkOperators::NetworkRegistrationState registrationState {};
-    check_hresult(static_cast<const IMobileBroadbandNetwork &>(static_cast<const D &>(*this))->get_NetworkRegistrationState(&registrationState));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork)->get_NetworkRegistrationState(&registrationState));
     return registrationState;
 }
 
 template <typename D> uint32_t impl_IMobileBroadbandNetwork<D>::RegistrationNetworkError() const
 {
     uint32_t networkError {};
-    check_hresult(static_cast<const IMobileBroadbandNetwork &>(static_cast<const D &>(*this))->get_RegistrationNetworkError(&networkError));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork)->get_RegistrationNetworkError(&networkError));
     return networkError;
 }
 
 template <typename D> uint32_t impl_IMobileBroadbandNetwork<D>::PacketAttachNetworkError() const
 {
     uint32_t networkError {};
-    check_hresult(static_cast<const IMobileBroadbandNetwork &>(static_cast<const D &>(*this))->get_PacketAttachNetworkError(&networkError));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork)->get_PacketAttachNetworkError(&networkError));
     return networkError;
 }
 
 template <typename D> uint32_t impl_IMobileBroadbandNetwork<D>::ActivationNetworkError() const
 {
     uint32_t networkError {};
-    check_hresult(static_cast<const IMobileBroadbandNetwork &>(static_cast<const D &>(*this))->get_ActivationNetworkError(&networkError));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork)->get_ActivationNetworkError(&networkError));
     return networkError;
 }
 
 template <typename D> hstring impl_IMobileBroadbandNetwork<D>::AccessPointName() const
 {
     hstring apn;
-    check_hresult(static_cast<const IMobileBroadbandNetwork &>(static_cast<const D &>(*this))->get_AccessPointName(put(apn)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork)->get_AccessPointName(put(apn)));
     return apn;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::DataClasses impl_IMobileBroadbandNetwork<D>::RegisteredDataClass() const
 {
     Windows::Networking::NetworkOperators::DataClasses value {};
-    check_hresult(static_cast<const IMobileBroadbandNetwork &>(static_cast<const D &>(*this))->get_RegisteredDataClass(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork)->get_RegisteredDataClass(&value));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandNetwork<D>::RegisteredProviderId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandNetwork &>(static_cast<const D &>(*this))->get_RegisteredProviderId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork)->get_RegisteredProviderId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandNetwork<D>::RegisteredProviderName() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandNetwork &>(static_cast<const D &>(*this))->get_RegisteredProviderName(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork)->get_RegisteredProviderName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMobileBroadbandNetwork<D>::ShowConnectionUI() const
 {
-    check_hresult(static_cast<const IMobileBroadbandNetwork &>(static_cast<const D &>(*this))->abi_ShowConnectionUI());
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork)->abi_ShowConnectionUI());
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMobileBroadbandNetwork2<D>::GetVoiceCallSupportAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> asyncInfo;
-    check_hresult(static_cast<const IMobileBroadbandNetwork2 &>(static_cast<const D &>(*this))->abi_GetVoiceCallSupportAsync(put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork2)->abi_GetVoiceCallSupportAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp> impl_IMobileBroadbandNetwork2<D>::RegistrationUiccApps() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp> value;
-    check_hresult(static_cast<const IMobileBroadbandNetwork2 &>(static_cast<const D &>(*this))->get_RegistrationUiccApps(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetwork2)->get_RegistrationUiccApps(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INetworkOperatorTetheringAccessPointConfiguration<D>::Ssid() const
 {
     hstring value;
-    check_hresult(static_cast<const INetworkOperatorTetheringAccessPointConfiguration &>(static_cast<const D &>(*this))->get_Ssid(put(value)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringAccessPointConfiguration)->get_Ssid(put(value)));
     return value;
 }
 
 template <typename D> void impl_INetworkOperatorTetheringAccessPointConfiguration<D>::Ssid(hstring_ref value) const
 {
-    check_hresult(static_cast<const INetworkOperatorTetheringAccessPointConfiguration &>(static_cast<const D &>(*this))->put_Ssid(get(value)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringAccessPointConfiguration)->put_Ssid(get(value)));
 }
 
 template <typename D> hstring impl_INetworkOperatorTetheringAccessPointConfiguration<D>::Passphrase() const
 {
     hstring value;
-    check_hresult(static_cast<const INetworkOperatorTetheringAccessPointConfiguration &>(static_cast<const D &>(*this))->get_Passphrase(put(value)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringAccessPointConfiguration)->get_Passphrase(put(value)));
     return value;
 }
 
 template <typename D> void impl_INetworkOperatorTetheringAccessPointConfiguration<D>::Passphrase(hstring_ref value) const
 {
-    check_hresult(static_cast<const INetworkOperatorTetheringAccessPointConfiguration &>(static_cast<const D &>(*this))->put_Passphrase(get(value)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringAccessPointConfiguration)->put_Passphrase(get(value)));
 }
 
 template <typename D> Windows::Networking::NetworkOperators::TetheringOperationStatus impl_INetworkOperatorTetheringOperationResult<D>::Status() const
 {
     Windows::Networking::NetworkOperators::TetheringOperationStatus value {};
-    check_hresult(static_cast<const INetworkOperatorTetheringOperationResult &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringOperationResult)->get_Status(&value));
     return value;
 }
 
 template <typename D> hstring impl_INetworkOperatorTetheringOperationResult<D>::AdditionalErrorMessage() const
 {
     hstring value;
-    check_hresult(static_cast<const INetworkOperatorTetheringOperationResult &>(static_cast<const D &>(*this))->get_AdditionalErrorMessage(put(value)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringOperationResult)->get_AdditionalErrorMessage(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::TetheringCapability impl_INetworkOperatorTetheringManagerStatics<D>::GetTetheringCapability(hstring_ref networkAccountId) const
 {
     Windows::Networking::NetworkOperators::TetheringCapability value {};
-    check_hresult(static_cast<const INetworkOperatorTetheringManagerStatics &>(static_cast<const D &>(*this))->abi_GetTetheringCapability(get(networkAccountId), &value));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManagerStatics)->abi_GetTetheringCapability(get(networkAccountId), &value));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager impl_INetworkOperatorTetheringManagerStatics<D>::CreateFromNetworkAccountId(hstring_ref networkAccountId) const
 {
     Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager ppManager { nullptr };
-    check_hresult(static_cast<const INetworkOperatorTetheringManagerStatics &>(static_cast<const D &>(*this))->abi_CreateFromNetworkAccountId(get(networkAccountId), put(ppManager)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManagerStatics)->abi_CreateFromNetworkAccountId(get(networkAccountId), put(ppManager)));
     return ppManager;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::TetheringCapability impl_INetworkOperatorTetheringManagerStatics2<D>::GetTetheringCapabilityFromConnectionProfile(const Windows::Networking::Connectivity::ConnectionProfile & profile) const
 {
     Windows::Networking::NetworkOperators::TetheringCapability result {};
-    check_hresult(static_cast<const INetworkOperatorTetheringManagerStatics2 &>(static_cast<const D &>(*this))->abi_GetTetheringCapabilityFromConnectionProfile(get(profile), &result));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManagerStatics2)->abi_GetTetheringCapabilityFromConnectionProfile(get(profile), &result));
     return result;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager impl_INetworkOperatorTetheringManagerStatics2<D>::CreateFromConnectionProfile(const Windows::Networking::Connectivity::ConnectionProfile & profile) const
 {
     Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager ppManager { nullptr };
-    check_hresult(static_cast<const INetworkOperatorTetheringManagerStatics2 &>(static_cast<const D &>(*this))->abi_CreateFromConnectionProfile(get(profile), put(ppManager)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManagerStatics2)->abi_CreateFromConnectionProfile(get(profile), put(ppManager)));
     return ppManager;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager impl_INetworkOperatorTetheringManagerStatics3<D>::CreateFromConnectionProfile(const Windows::Networking::Connectivity::ConnectionProfile & profile, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const
 {
     Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager ppManager { nullptr };
-    check_hresult(static_cast<const INetworkOperatorTetheringManagerStatics3 &>(static_cast<const D &>(*this))->abi_CreateFromConnectionProfileWithTargetAdapter(get(profile), get(adapter), put(ppManager)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManagerStatics3)->abi_CreateFromConnectionProfileWithTargetAdapter(get(profile), get(adapter), put(ppManager)));
     return ppManager;
 }
 
 template <typename D> uint32_t impl_INetworkOperatorTetheringManager<D>::MaxClientCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const INetworkOperatorTetheringManager &>(static_cast<const D &>(*this))->get_MaxClientCount(&value));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManager)->get_MaxClientCount(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_INetworkOperatorTetheringManager<D>::ClientCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const INetworkOperatorTetheringManager &>(static_cast<const D &>(*this))->get_ClientCount(&value));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManager)->get_ClientCount(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::TetheringOperationalState impl_INetworkOperatorTetheringManager<D>::TetheringOperationalState() const
 {
     Windows::Networking::NetworkOperators::TetheringOperationalState value {};
-    check_hresult(static_cast<const INetworkOperatorTetheringManager &>(static_cast<const D &>(*this))->get_TetheringOperationalState(&value));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManager)->get_TetheringOperationalState(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::NetworkOperatorTetheringAccessPointConfiguration impl_INetworkOperatorTetheringManager<D>::GetCurrentAccessPointConfiguration() const
 {
     Windows::Networking::NetworkOperators::NetworkOperatorTetheringAccessPointConfiguration configuration { nullptr };
-    check_hresult(static_cast<const INetworkOperatorTetheringManager &>(static_cast<const D &>(*this))->abi_GetCurrentAccessPointConfiguration(put(configuration)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManager)->abi_GetCurrentAccessPointConfiguration(put(configuration)));
     return configuration;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_INetworkOperatorTetheringManager<D>::ConfigureAccessPointAsync(const Windows::Networking::NetworkOperators::NetworkOperatorTetheringAccessPointConfiguration & configuration) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(static_cast<const INetworkOperatorTetheringManager &>(static_cast<const D &>(*this))->abi_ConfigureAccessPointAsync(get(configuration), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManager)->abi_ConfigureAccessPointAsync(get(configuration), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult> impl_INetworkOperatorTetheringManager<D>::StartTetheringAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult> asyncInfo;
-    check_hresult(static_cast<const INetworkOperatorTetheringManager &>(static_cast<const D &>(*this))->abi_StartTetheringAsync(put(asyncInfo)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManager)->abi_StartTetheringAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult> impl_INetworkOperatorTetheringManager<D>::StopTetheringAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult> asyncInfo;
-    check_hresult(static_cast<const INetworkOperatorTetheringManager &>(static_cast<const D &>(*this))->abi_StopTetheringAsync(put(asyncInfo)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringManager)->abi_StopTetheringAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> hstring impl_INetworkOperatorTetheringClient<D>::MacAddress() const
 {
     hstring value;
-    check_hresult(static_cast<const INetworkOperatorTetheringClient &>(static_cast<const D &>(*this))->get_MacAddress(put(value)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringClient)->get_MacAddress(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> impl_INetworkOperatorTetheringClient<D>::HostNames() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> value;
-    check_hresult(static_cast<const INetworkOperatorTetheringClient &>(static_cast<const D &>(*this))->get_HostNames(put(value)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringClient)->get_HostNames(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient> impl_INetworkOperatorTetheringClientManager<D>::GetTetheringClients() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient> value;
-    check_hresult(static_cast<const INetworkOperatorTetheringClientManager &>(static_cast<const D &>(*this))->abi_GetTetheringClients(put(value)));
+    check_hresult(WINRT_SHIM(INetworkOperatorTetheringClientManager)->abi_GetTetheringClients(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandAccountEventArgs<D>::NetworkAccountId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandAccountEventArgs &>(static_cast<const D &>(*this))->get_NetworkAccountId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountEventArgs)->get_NetworkAccountId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandAccountUpdatedEventArgs<D>::NetworkAccountId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandAccountUpdatedEventArgs &>(static_cast<const D &>(*this))->get_NetworkAccountId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountUpdatedEventArgs)->get_NetworkAccountId(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMobileBroadbandAccountUpdatedEventArgs<D>::HasDeviceInformationChanged() const
 {
     bool value {};
-    check_hresult(static_cast<const IMobileBroadbandAccountUpdatedEventArgs &>(static_cast<const D &>(*this))->get_HasDeviceInformationChanged(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountUpdatedEventArgs)->get_HasDeviceInformationChanged(&value));
     return value;
 }
 
 template <typename D> bool impl_IMobileBroadbandAccountUpdatedEventArgs<D>::HasNetworkChanged() const
 {
     bool value {};
-    check_hresult(static_cast<const IMobileBroadbandAccountUpdatedEventArgs &>(static_cast<const D &>(*this))->get_HasNetworkChanged(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountUpdatedEventArgs)->get_HasNetworkChanged(&value));
     return value;
 }
 
 template <typename D> event_token impl_IMobileBroadbandAccountWatcher<D>::AccountAdded(const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IMobileBroadbandAccountWatcher &>(static_cast<const D &>(*this))->add_AccountAdded(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->add_AccountAdded(get(handler), &cookie));
     return cookie;
 }
 
@@ -3680,13 +3680,13 @@ template <typename D> event_revoker<IMobileBroadbandAccountWatcher> impl_IMobile
 
 template <typename D> void impl_IMobileBroadbandAccountWatcher<D>::AccountAdded(event_token cookie) const
 {
-    check_hresult(static_cast<const IMobileBroadbandAccountWatcher &>(static_cast<const D &>(*this))->remove_AccountAdded(cookie));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->remove_AccountAdded(cookie));
 }
 
 template <typename D> event_token impl_IMobileBroadbandAccountWatcher<D>::AccountUpdated(const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IMobileBroadbandAccountWatcher &>(static_cast<const D &>(*this))->add_AccountUpdated(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->add_AccountUpdated(get(handler), &cookie));
     return cookie;
 }
 
@@ -3697,13 +3697,13 @@ template <typename D> event_revoker<IMobileBroadbandAccountWatcher> impl_IMobile
 
 template <typename D> void impl_IMobileBroadbandAccountWatcher<D>::AccountUpdated(event_token cookie) const
 {
-    check_hresult(static_cast<const IMobileBroadbandAccountWatcher &>(static_cast<const D &>(*this))->remove_AccountUpdated(cookie));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->remove_AccountUpdated(cookie));
 }
 
 template <typename D> event_token impl_IMobileBroadbandAccountWatcher<D>::AccountRemoved(const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IMobileBroadbandAccountWatcher &>(static_cast<const D &>(*this))->add_AccountRemoved(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->add_AccountRemoved(get(handler), &cookie));
     return cookie;
 }
 
@@ -3714,13 +3714,13 @@ template <typename D> event_revoker<IMobileBroadbandAccountWatcher> impl_IMobile
 
 template <typename D> void impl_IMobileBroadbandAccountWatcher<D>::AccountRemoved(event_token cookie) const
 {
-    check_hresult(static_cast<const IMobileBroadbandAccountWatcher &>(static_cast<const D &>(*this))->remove_AccountRemoved(cookie));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->remove_AccountRemoved(cookie));
 }
 
 template <typename D> event_token impl_IMobileBroadbandAccountWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IMobileBroadbandAccountWatcher &>(static_cast<const D &>(*this))->add_EnumerationCompleted(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->add_EnumerationCompleted(get(handler), &cookie));
     return cookie;
 }
 
@@ -3731,13 +3731,13 @@ template <typename D> event_revoker<IMobileBroadbandAccountWatcher> impl_IMobile
 
 template <typename D> void impl_IMobileBroadbandAccountWatcher<D>::EnumerationCompleted(event_token cookie) const
 {
-    check_hresult(static_cast<const IMobileBroadbandAccountWatcher &>(static_cast<const D &>(*this))->remove_EnumerationCompleted(cookie));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->remove_EnumerationCompleted(cookie));
 }
 
 template <typename D> event_token impl_IMobileBroadbandAccountWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IMobileBroadbandAccountWatcher &>(static_cast<const D &>(*this))->add_Stopped(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->add_Stopped(get(handler), &cookie));
     return cookie;
 }
 
@@ -3748,322 +3748,322 @@ template <typename D> event_revoker<IMobileBroadbandAccountWatcher> impl_IMobile
 
 template <typename D> void impl_IMobileBroadbandAccountWatcher<D>::Stopped(event_token cookie) const
 {
-    check_hresult(static_cast<const IMobileBroadbandAccountWatcher &>(static_cast<const D &>(*this))->remove_Stopped(cookie));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->remove_Stopped(cookie));
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcherStatus impl_IMobileBroadbandAccountWatcher<D>::Status() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcherStatus status {};
-    check_hresult(static_cast<const IMobileBroadbandAccountWatcher &>(static_cast<const D &>(*this))->get_Status(&status));
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->get_Status(&status));
     return status;
 }
 
 template <typename D> void impl_IMobileBroadbandAccountWatcher<D>::Start() const
 {
-    check_hresult(static_cast<const IMobileBroadbandAccountWatcher &>(static_cast<const D &>(*this))->abi_Start());
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->abi_Start());
 }
 
 template <typename D> void impl_IMobileBroadbandAccountWatcher<D>::Stop() const
 {
-    check_hresult(static_cast<const IMobileBroadbandAccountWatcher &>(static_cast<const D &>(*this))->abi_Stop());
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccountWatcher)->abi_Stop());
 }
 
 template <typename D> hstring impl_IMobileBroadbandModemStatics<D>::GetDeviceSelector() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandModemStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModemStatics)->abi_GetDeviceSelector(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandModem impl_IMobileBroadbandModemStatics<D>::FromId(hstring_ref deviceId) const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandModem value { nullptr };
-    check_hresult(static_cast<const IMobileBroadbandModemStatics &>(static_cast<const D &>(*this))->abi_FromId(get(deviceId), put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModemStatics)->abi_FromId(get(deviceId), put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandModem impl_IMobileBroadbandModemStatics<D>::GetDefault() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandModem value { nullptr };
-    check_hresult(static_cast<const IMobileBroadbandModemStatics &>(static_cast<const D &>(*this))->abi_GetDefault(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModemStatics)->abi_GetDefault(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandUicc impl_IMobileBroadbandModemConfiguration<D>::Uicc() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandUicc value { nullptr };
-    check_hresult(static_cast<const IMobileBroadbandModemConfiguration &>(static_cast<const D &>(*this))->get_Uicc(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModemConfiguration)->get_Uicc(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandModemConfiguration<D>::HomeProviderId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandModemConfiguration &>(static_cast<const D &>(*this))->get_HomeProviderId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModemConfiguration)->get_HomeProviderId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandModemConfiguration<D>::HomeProviderName() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandModemConfiguration &>(static_cast<const D &>(*this))->get_HomeProviderName(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModemConfiguration)->get_HomeProviderName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandAccount impl_IMobileBroadbandModem<D>::CurrentAccount() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandAccount value { nullptr };
-    check_hresult(static_cast<const IMobileBroadbandModem &>(static_cast<const D &>(*this))->get_CurrentAccount(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->get_CurrentAccount(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandDeviceInformation impl_IMobileBroadbandModem<D>::DeviceInformation() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandDeviceInformation value { nullptr };
-    check_hresult(static_cast<const IMobileBroadbandModem &>(static_cast<const D &>(*this))->get_DeviceInformation(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->get_DeviceInformation(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IMobileBroadbandModem<D>::MaxDeviceServiceCommandSizeInBytes() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMobileBroadbandModem &>(static_cast<const D &>(*this))->get_MaxDeviceServiceCommandSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->get_MaxDeviceServiceCommandSizeInBytes(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IMobileBroadbandModem<D>::MaxDeviceServiceDataSizeInBytes() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMobileBroadbandModem &>(static_cast<const D &>(*this))->get_MaxDeviceServiceDataSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->get_MaxDeviceServiceDataSizeInBytes(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceInformation> impl_IMobileBroadbandModem<D>::DeviceServices() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceInformation> value;
-    check_hresult(static_cast<const IMobileBroadbandModem &>(static_cast<const D &>(*this))->get_DeviceServices(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->get_DeviceServices(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandDeviceService impl_IMobileBroadbandModem<D>::GetDeviceService(GUID deviceServiceId) const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandDeviceService value { nullptr };
-    check_hresult(static_cast<const IMobileBroadbandModem &>(static_cast<const D &>(*this))->abi_GetDeviceService(deviceServiceId, put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->abi_GetDeviceService(deviceServiceId, put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMobileBroadbandModem<D>::IsResetSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IMobileBroadbandModem &>(static_cast<const D &>(*this))->get_IsResetSupported(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->get_IsResetSupported(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IMobileBroadbandModem<D>::ResetAsync() const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(static_cast<const IMobileBroadbandModem &>(static_cast<const D &>(*this))->abi_ResetAsync(put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->abi_ResetAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandModemConfiguration> impl_IMobileBroadbandModem<D>::GetCurrentConfigurationAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandModemConfiguration> asyncInfo;
-    check_hresult(static_cast<const IMobileBroadbandModem &>(static_cast<const D &>(*this))->abi_GetCurrentConfigurationAsync(put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->abi_GetCurrentConfigurationAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandNetwork impl_IMobileBroadbandModem<D>::CurrentNetwork() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandNetwork value { nullptr };
-    check_hresult(static_cast<const IMobileBroadbandModem &>(static_cast<const D &>(*this))->get_CurrentNetwork(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandModem)->get_CurrentNetwork(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Networking::NetworkOperators::MobileBroadbandPinType> impl_IMobileBroadbandPinManager<D>::SupportedPins() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Networking::NetworkOperators::MobileBroadbandPinType> value;
-    check_hresult(static_cast<const IMobileBroadbandPinManager &>(static_cast<const D &>(*this))->get_SupportedPins(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPinManager)->get_SupportedPins(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandPin impl_IMobileBroadbandPinManager<D>::GetPin(Windows::Networking::NetworkOperators::MobileBroadbandPinType pinType) const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandPin value { nullptr };
-    check_hresult(static_cast<const IMobileBroadbandPinManager &>(static_cast<const D &>(*this))->abi_GetPin(pinType, put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPinManager)->abi_GetPin(pinType, put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMobileBroadbandPinOperationResult<D>::IsSuccessful() const
 {
     bool value {};
-    check_hresult(static_cast<const IMobileBroadbandPinOperationResult &>(static_cast<const D &>(*this))->get_IsSuccessful(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPinOperationResult)->get_IsSuccessful(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IMobileBroadbandPinOperationResult<D>::AttemptsRemaining() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMobileBroadbandPinOperationResult &>(static_cast<const D &>(*this))->get_AttemptsRemaining(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPinOperationResult)->get_AttemptsRemaining(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandPinType impl_IMobileBroadbandPin<D>::Type() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandPinType value {};
-    check_hresult(static_cast<const IMobileBroadbandPin &>(static_cast<const D &>(*this))->get_Type(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->get_Type(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandPinLockState impl_IMobileBroadbandPin<D>::LockState() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandPinLockState value {};
-    check_hresult(static_cast<const IMobileBroadbandPin &>(static_cast<const D &>(*this))->get_LockState(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->get_LockState(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandPinFormat impl_IMobileBroadbandPin<D>::Format() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandPinFormat value {};
-    check_hresult(static_cast<const IMobileBroadbandPin &>(static_cast<const D &>(*this))->get_Format(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->get_Format(&value));
     return value;
 }
 
 template <typename D> bool impl_IMobileBroadbandPin<D>::Enabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMobileBroadbandPin &>(static_cast<const D &>(*this))->get_Enabled(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->get_Enabled(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IMobileBroadbandPin<D>::MaxLength() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMobileBroadbandPin &>(static_cast<const D &>(*this))->get_MaxLength(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->get_MaxLength(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IMobileBroadbandPin<D>::MinLength() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMobileBroadbandPin &>(static_cast<const D &>(*this))->get_MinLength(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->get_MinLength(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IMobileBroadbandPin<D>::AttemptsRemaining() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMobileBroadbandPin &>(static_cast<const D &>(*this))->get_AttemptsRemaining(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->get_AttemptsRemaining(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::EnableAsync(hstring_ref currentPin) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> asyncInfo;
-    check_hresult(static_cast<const IMobileBroadbandPin &>(static_cast<const D &>(*this))->abi_EnableAsync(get(currentPin), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_EnableAsync(get(currentPin), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::DisableAsync(hstring_ref currentPin) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> asyncInfo;
-    check_hresult(static_cast<const IMobileBroadbandPin &>(static_cast<const D &>(*this))->abi_DisableAsync(get(currentPin), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_DisableAsync(get(currentPin), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::EnterAsync(hstring_ref currentPin) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> asyncInfo;
-    check_hresult(static_cast<const IMobileBroadbandPin &>(static_cast<const D &>(*this))->abi_EnterAsync(get(currentPin), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_EnterAsync(get(currentPin), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::ChangeAsync(hstring_ref currentPin, hstring_ref newPin) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> asyncInfo;
-    check_hresult(static_cast<const IMobileBroadbandPin &>(static_cast<const D &>(*this))->abi_ChangeAsync(get(currentPin), get(newPin), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_ChangeAsync(get(currentPin), get(newPin), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> impl_IMobileBroadbandPin<D>::UnblockAsync(hstring_ref pinUnblockKey, hstring_ref newPin) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult> asyncInfo;
-    check_hresult(static_cast<const IMobileBroadbandPin &>(static_cast<const D &>(*this))->abi_UnblockAsync(get(pinUnblockKey), get(newPin), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPin)->abi_UnblockAsync(get(pinUnblockKey), get(newPin), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> GUID impl_IMobileBroadbandDeviceServiceInformation<D>::DeviceServiceId() const
 {
     GUID value {};
-    check_hresult(static_cast<const IMobileBroadbandDeviceServiceInformation &>(static_cast<const D &>(*this))->get_DeviceServiceId(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceInformation)->get_DeviceServiceId(&value));
     return value;
 }
 
 template <typename D> bool impl_IMobileBroadbandDeviceServiceInformation<D>::IsDataReadSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IMobileBroadbandDeviceServiceInformation &>(static_cast<const D &>(*this))->get_IsDataReadSupported(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceInformation)->get_IsDataReadSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IMobileBroadbandDeviceServiceInformation<D>::IsDataWriteSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IMobileBroadbandDeviceServiceInformation &>(static_cast<const D &>(*this))->get_IsDataWriteSupported(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceInformation)->get_IsDataWriteSupported(&value));
     return value;
 }
 
 template <typename D> GUID impl_IMobileBroadbandDeviceService<D>::DeviceServiceId() const
 {
     GUID value {};
-    check_hresult(static_cast<const IMobileBroadbandDeviceService &>(static_cast<const D &>(*this))->get_DeviceServiceId(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceService)->get_DeviceServiceId(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IMobileBroadbandDeviceService<D>::SupportedCommands() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IMobileBroadbandDeviceService &>(static_cast<const D &>(*this))->get_SupportedCommands(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceService)->get_SupportedCommands(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession impl_IMobileBroadbandDeviceService<D>::OpenDataSession() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession value { nullptr };
-    check_hresult(static_cast<const IMobileBroadbandDeviceService &>(static_cast<const D &>(*this))->abi_OpenDataSession(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceService)->abi_OpenDataSession(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandSession impl_IMobileBroadbandDeviceService<D>::OpenCommandSession() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandSession value { nullptr };
-    check_hresult(static_cast<const IMobileBroadbandDeviceService &>(static_cast<const D &>(*this))->abi_OpenCommandSession(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceService)->abi_OpenCommandSession(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IMobileBroadbandDeviceServiceDataReceivedEventArgs<D>::ReceivedData() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IMobileBroadbandDeviceServiceDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_ReceivedData(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceDataReceivedEventArgs)->get_ReceivedData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IMobileBroadbandDeviceServiceDataSession<D>::WriteDataAsync(const Windows::Storage::Streams::IBuffer & value) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(static_cast<const IMobileBroadbandDeviceServiceDataSession &>(static_cast<const D &>(*this))->abi_WriteDataAsync(get(value), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceDataSession)->abi_WriteDataAsync(get(value), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> void impl_IMobileBroadbandDeviceServiceDataSession<D>::CloseSession() const
 {
-    check_hresult(static_cast<const IMobileBroadbandDeviceServiceDataSession &>(static_cast<const D &>(*this))->abi_CloseSession());
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceDataSession)->abi_CloseSession());
 }
 
 template <typename D> event_token impl_IMobileBroadbandDeviceServiceDataSession<D>::DataReceived(const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession, Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(static_cast<const IMobileBroadbandDeviceServiceDataSession &>(static_cast<const D &>(*this))->add_DataReceived(get(eventHandler), &eventCookie));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceDataSession)->add_DataReceived(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -4074,579 +4074,579 @@ template <typename D> event_revoker<IMobileBroadbandDeviceServiceDataSession> im
 
 template <typename D> void impl_IMobileBroadbandDeviceServiceDataSession<D>::DataReceived(event_token eventCookie) const
 {
-    check_hresult(static_cast<const IMobileBroadbandDeviceServiceDataSession &>(static_cast<const D &>(*this))->remove_DataReceived(eventCookie));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceDataSession)->remove_DataReceived(eventCookie));
 }
 
 template <typename D> uint32_t impl_IMobileBroadbandDeviceServiceCommandResult<D>::StatusCode() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMobileBroadbandDeviceServiceCommandResult &>(static_cast<const D &>(*this))->get_StatusCode(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceCommandResult)->get_StatusCode(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IMobileBroadbandDeviceServiceCommandResult<D>::ResponseData() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IMobileBroadbandDeviceServiceCommandResult &>(static_cast<const D &>(*this))->get_ResponseData(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceCommandResult)->get_ResponseData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult> impl_IMobileBroadbandDeviceServiceCommandSession<D>::SendQueryCommandAsync(uint32_t commandId, const Windows::Storage::Streams::IBuffer & data) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult> asyncInfo;
-    check_hresult(static_cast<const IMobileBroadbandDeviceServiceCommandSession &>(static_cast<const D &>(*this))->abi_SendQueryCommandAsync(commandId, get(data), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceCommandSession)->abi_SendQueryCommandAsync(commandId, get(data), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult> impl_IMobileBroadbandDeviceServiceCommandSession<D>::SendSetCommandAsync(uint32_t commandId, const Windows::Storage::Streams::IBuffer & data) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult> asyncInfo;
-    check_hresult(static_cast<const IMobileBroadbandDeviceServiceCommandSession &>(static_cast<const D &>(*this))->abi_SendSetCommandAsync(commandId, get(data), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceCommandSession)->abi_SendSetCommandAsync(commandId, get(data), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> void impl_IMobileBroadbandDeviceServiceCommandSession<D>::CloseSession() const
 {
-    check_hresult(static_cast<const IMobileBroadbandDeviceServiceCommandSession &>(static_cast<const D &>(*this))->abi_CloseSession());
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceCommandSession)->abi_CloseSession());
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus impl_IMobileBroadbandUiccAppsResult<D>::Status() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus value {};
-    check_hresult(static_cast<const IMobileBroadbandUiccAppsResult &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccAppsResult)->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp> impl_IMobileBroadbandUiccAppsResult<D>::UiccApps() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp> value;
-    check_hresult(static_cast<const IMobileBroadbandUiccAppsResult &>(static_cast<const D &>(*this))->get_UiccApps(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccAppsResult)->get_UiccApps(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandUicc<D>::SimIccId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandUicc &>(static_cast<const D &>(*this))->get_SimIccId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUicc)->get_SimIccId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppsResult> impl_IMobileBroadbandUicc<D>::GetUiccAppsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppsResult> asyncInfo;
-    check_hresult(static_cast<const IMobileBroadbandUicc &>(static_cast<const D &>(*this))->abi_GetUiccAppsAsync(put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUicc)->abi_GetUiccAppsAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus impl_IMobileBroadbandUiccAppRecordDetailsResult<D>::Status() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus value {};
-    check_hresult(static_cast<const IMobileBroadbandUiccAppRecordDetailsResult &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccAppRecordDetailsResult)->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::UiccAppRecordKind impl_IMobileBroadbandUiccAppRecordDetailsResult<D>::Kind() const
 {
     Windows::Networking::NetworkOperators::UiccAppRecordKind value {};
-    check_hresult(static_cast<const IMobileBroadbandUiccAppRecordDetailsResult &>(static_cast<const D &>(*this))->get_Kind(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccAppRecordDetailsResult)->get_Kind(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IMobileBroadbandUiccAppRecordDetailsResult<D>::RecordCount() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMobileBroadbandUiccAppRecordDetailsResult &>(static_cast<const D &>(*this))->get_RecordCount(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccAppRecordDetailsResult)->get_RecordCount(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IMobileBroadbandUiccAppRecordDetailsResult<D>::RecordSize() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMobileBroadbandUiccAppRecordDetailsResult &>(static_cast<const D &>(*this))->get_RecordSize(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccAppRecordDetailsResult)->get_RecordSize(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::UiccAccessCondition impl_IMobileBroadbandUiccAppRecordDetailsResult<D>::ReadAccessCondition() const
 {
     Windows::Networking::NetworkOperators::UiccAccessCondition value {};
-    check_hresult(static_cast<const IMobileBroadbandUiccAppRecordDetailsResult &>(static_cast<const D &>(*this))->get_ReadAccessCondition(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccAppRecordDetailsResult)->get_ReadAccessCondition(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::UiccAccessCondition impl_IMobileBroadbandUiccAppRecordDetailsResult<D>::WriteAccessCondition() const
 {
     Windows::Networking::NetworkOperators::UiccAccessCondition value {};
-    check_hresult(static_cast<const IMobileBroadbandUiccAppRecordDetailsResult &>(static_cast<const D &>(*this))->get_WriteAccessCondition(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccAppRecordDetailsResult)->get_WriteAccessCondition(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus impl_IMobileBroadbandUiccAppReadRecordResult<D>::Status() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus value {};
-    check_hresult(static_cast<const IMobileBroadbandUiccAppReadRecordResult &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccAppReadRecordResult)->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IMobileBroadbandUiccAppReadRecordResult<D>::Data() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IMobileBroadbandUiccAppReadRecordResult &>(static_cast<const D &>(*this))->get_Data(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccAppReadRecordResult)->get_Data(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IMobileBroadbandUiccApp<D>::Id() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IMobileBroadbandUiccApp &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccApp)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::UiccAppKind impl_IMobileBroadbandUiccApp<D>::Kind() const
 {
     Windows::Networking::NetworkOperators::UiccAppKind value {};
-    check_hresult(static_cast<const IMobileBroadbandUiccApp &>(static_cast<const D &>(*this))->get_Kind(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccApp)->get_Kind(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppRecordDetailsResult> impl_IMobileBroadbandUiccApp<D>::GetRecordDetailsAsync(const Windows::Foundation::Collections::IIterable<uint32_t> & uiccFilePath) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppRecordDetailsResult> asyncInfo;
-    check_hresult(static_cast<const IMobileBroadbandUiccApp &>(static_cast<const D &>(*this))->abi_GetRecordDetailsAsync(get(uiccFilePath), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccApp)->abi_GetRecordDetailsAsync(get(uiccFilePath), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppReadRecordResult> impl_IMobileBroadbandUiccApp<D>::ReadRecordAsync(const Windows::Foundation::Collections::IIterable<uint32_t> & uiccFilePath, int32_t recordIndex) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppReadRecordResult> asyncInfo;
-    check_hresult(static_cast<const IMobileBroadbandUiccApp &>(static_cast<const D &>(*this))->abi_ReadRecordAsync(get(uiccFilePath), recordIndex, put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandUiccApp)->abi_ReadRecordAsync(get(uiccFilePath), recordIndex, put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> hstring impl_IMobileBroadbandNetworkRegistrationStateChange<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandNetworkRegistrationStateChange &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetworkRegistrationStateChange)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandNetwork impl_IMobileBroadbandNetworkRegistrationStateChange<D>::Network() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandNetwork value { nullptr };
-    check_hresult(static_cast<const IMobileBroadbandNetworkRegistrationStateChange &>(static_cast<const D &>(*this))->get_Network(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetworkRegistrationStateChange)->get_Network(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange> impl_IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails<D>::NetworkRegistrationStateChanges() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange> value;
-    check_hresult(static_cast<const IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails &>(static_cast<const D &>(*this))->get_NetworkRegistrationStateChanges(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails)->get_NetworkRegistrationStateChanges(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandRadioStateChange<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandRadioStateChange &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandRadioStateChange)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandRadioState impl_IMobileBroadbandRadioStateChange<D>::RadioState() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandRadioState value {};
-    check_hresult(static_cast<const IMobileBroadbandRadioStateChange &>(static_cast<const D &>(*this))->get_RadioState(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandRadioStateChange)->get_RadioState(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange> impl_IMobileBroadbandRadioStateChangeTriggerDetails<D>::RadioStateChanges() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange> value;
-    check_hresult(static_cast<const IMobileBroadbandRadioStateChangeTriggerDetails &>(static_cast<const D &>(*this))->get_RadioStateChanges(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandRadioStateChangeTriggerDetails)->get_RadioStateChanges(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandPinLockStateChange<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandPinLockStateChange &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPinLockStateChange)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandPinType impl_IMobileBroadbandPinLockStateChange<D>::PinType() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandPinType value {};
-    check_hresult(static_cast<const IMobileBroadbandPinLockStateChange &>(static_cast<const D &>(*this))->get_PinType(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPinLockStateChange)->get_PinType(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandPinLockState impl_IMobileBroadbandPinLockStateChange<D>::PinLockState() const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandPinLockState value {};
-    check_hresult(static_cast<const IMobileBroadbandPinLockStateChange &>(static_cast<const D &>(*this))->get_PinLockState(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPinLockStateChange)->get_PinLockState(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChange> impl_IMobileBroadbandPinLockStateChangeTriggerDetails<D>::PinLockStateChanges() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChange> value;
-    check_hresult(static_cast<const IMobileBroadbandPinLockStateChangeTriggerDetails &>(static_cast<const D &>(*this))->get_PinLockStateChanges(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandPinLockStateChangeTriggerDetails)->get_PinLockStateChanges(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMobileBroadbandDeviceServiceTriggerDetails<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMobileBroadbandDeviceServiceTriggerDetails &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceTriggerDetails)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> GUID impl_IMobileBroadbandDeviceServiceTriggerDetails<D>::DeviceServiceId() const
 {
     GUID value {};
-    check_hresult(static_cast<const IMobileBroadbandDeviceServiceTriggerDetails &>(static_cast<const D &>(*this))->get_DeviceServiceId(&value));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceTriggerDetails)->get_DeviceServiceId(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IMobileBroadbandDeviceServiceTriggerDetails<D>::ReceivedData() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IMobileBroadbandDeviceServiceTriggerDetails &>(static_cast<const D &>(*this))->get_ReceivedData(put(value)));
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceServiceTriggerDetails)->get_ReceivedData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownCSimFilePathsStatics<D>::EFSpn() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IKnownCSimFilePathsStatics &>(static_cast<const D &>(*this))->get_EFSpn(put(value)));
+    check_hresult(WINRT_SHIM(IKnownCSimFilePathsStatics)->get_EFSpn(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownCSimFilePathsStatics<D>::Gid1() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IKnownCSimFilePathsStatics &>(static_cast<const D &>(*this))->get_Gid1(put(value)));
+    check_hresult(WINRT_SHIM(IKnownCSimFilePathsStatics)->get_Gid1(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownCSimFilePathsStatics<D>::Gid2() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IKnownCSimFilePathsStatics &>(static_cast<const D &>(*this))->get_Gid2(put(value)));
+    check_hresult(WINRT_SHIM(IKnownCSimFilePathsStatics)->get_Gid2(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownRuimFilePathsStatics<D>::EFSpn() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IKnownRuimFilePathsStatics &>(static_cast<const D &>(*this))->get_EFSpn(put(value)));
+    check_hresult(WINRT_SHIM(IKnownRuimFilePathsStatics)->get_EFSpn(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownRuimFilePathsStatics<D>::Gid1() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IKnownRuimFilePathsStatics &>(static_cast<const D &>(*this))->get_Gid1(put(value)));
+    check_hresult(WINRT_SHIM(IKnownRuimFilePathsStatics)->get_Gid1(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownRuimFilePathsStatics<D>::Gid2() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IKnownRuimFilePathsStatics &>(static_cast<const D &>(*this))->get_Gid2(put(value)));
+    check_hresult(WINRT_SHIM(IKnownRuimFilePathsStatics)->get_Gid2(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownSimFilePathsStatics<D>::EFOns() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IKnownSimFilePathsStatics &>(static_cast<const D &>(*this))->get_EFOns(put(value)));
+    check_hresult(WINRT_SHIM(IKnownSimFilePathsStatics)->get_EFOns(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownSimFilePathsStatics<D>::EFSpn() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IKnownSimFilePathsStatics &>(static_cast<const D &>(*this))->get_EFSpn(put(value)));
+    check_hresult(WINRT_SHIM(IKnownSimFilePathsStatics)->get_EFSpn(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownSimFilePathsStatics<D>::Gid1() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IKnownSimFilePathsStatics &>(static_cast<const D &>(*this))->get_Gid1(put(value)));
+    check_hresult(WINRT_SHIM(IKnownSimFilePathsStatics)->get_Gid1(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownSimFilePathsStatics<D>::Gid2() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IKnownSimFilePathsStatics &>(static_cast<const D &>(*this))->get_Gid2(put(value)));
+    check_hresult(WINRT_SHIM(IKnownSimFilePathsStatics)->get_Gid2(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownUSimFilePathsStatics<D>::EFSpn() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IKnownUSimFilePathsStatics &>(static_cast<const D &>(*this))->get_EFSpn(put(value)));
+    check_hresult(WINRT_SHIM(IKnownUSimFilePathsStatics)->get_EFSpn(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownUSimFilePathsStatics<D>::EFOpl() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IKnownUSimFilePathsStatics &>(static_cast<const D &>(*this))->get_EFOpl(put(value)));
+    check_hresult(WINRT_SHIM(IKnownUSimFilePathsStatics)->get_EFOpl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownUSimFilePathsStatics<D>::EFPnn() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IKnownUSimFilePathsStatics &>(static_cast<const D &>(*this))->get_EFPnn(put(value)));
+    check_hresult(WINRT_SHIM(IKnownUSimFilePathsStatics)->get_EFPnn(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownUSimFilePathsStatics<D>::Gid1() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IKnownUSimFilePathsStatics &>(static_cast<const D &>(*this))->get_Gid1(put(value)));
+    check_hresult(WINRT_SHIM(IKnownUSimFilePathsStatics)->get_Gid1(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IKnownUSimFilePathsStatics<D>::Gid2() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IKnownUSimFilePathsStatics &>(static_cast<const D &>(*this))->get_Gid2(put(value)));
+    check_hresult(WINRT_SHIM(IKnownUSimFilePathsStatics)->get_Gid2(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHotspotAuthenticationEventDetails<D>::EventToken() const
 {
     hstring value;
-    check_hresult(static_cast<const IHotspotAuthenticationEventDetails &>(static_cast<const D &>(*this))->get_EventToken(put(value)));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationEventDetails)->get_EventToken(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IHotspotAuthenticationContextStatics<D>::TryGetAuthenticationContext(hstring_ref evenToken, Windows::Networking::NetworkOperators::HotspotAuthenticationContext & context) const
 {
     bool isValid {};
-    check_hresult(static_cast<const IHotspotAuthenticationContextStatics &>(static_cast<const D &>(*this))->abi_TryGetAuthenticationContext(get(evenToken), put(context), &isValid));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContextStatics)->abi_TryGetAuthenticationContext(get(evenToken), put(context), &isValid));
     return isValid;
 }
 
 template <typename D> com_array<uint8_t> impl_IHotspotAuthenticationContext<D>::WirelessNetworkId() const
 {
     com_array<uint8_t> value {};
-    check_hresult(static_cast<const IHotspotAuthenticationContext &>(static_cast<const D &>(*this))->get_WirelessNetworkId(put_size(value), put(value)));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->get_WirelessNetworkId(put_size(value), put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::NetworkAdapter impl_IHotspotAuthenticationContext<D>::NetworkAdapter() const
 {
     Windows::Networking::Connectivity::NetworkAdapter value { nullptr };
-    check_hresult(static_cast<const IHotspotAuthenticationContext &>(static_cast<const D &>(*this))->get_NetworkAdapter(put(value)));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->get_NetworkAdapter(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IHotspotAuthenticationContext<D>::RedirectMessageUrl() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const IHotspotAuthenticationContext &>(static_cast<const D &>(*this))->get_RedirectMessageUrl(put(value)));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->get_RedirectMessageUrl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_IHotspotAuthenticationContext<D>::RedirectMessageXml() const
 {
     Windows::Data::Xml::Dom::XmlDocument value { nullptr };
-    check_hresult(static_cast<const IHotspotAuthenticationContext &>(static_cast<const D &>(*this))->get_RedirectMessageXml(put(value)));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->get_RedirectMessageXml(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IHotspotAuthenticationContext<D>::AuthenticationUrl() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const IHotspotAuthenticationContext &>(static_cast<const D &>(*this))->get_AuthenticationUrl(put(value)));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->get_AuthenticationUrl(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHotspotAuthenticationContext<D>::IssueCredentials(hstring_ref userName, hstring_ref password, hstring_ref extraParameters, bool markAsManualConnectOnFailure) const
 {
-    check_hresult(static_cast<const IHotspotAuthenticationContext &>(static_cast<const D &>(*this))->abi_IssueCredentials(get(userName), get(password), get(extraParameters), markAsManualConnectOnFailure));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->abi_IssueCredentials(get(userName), get(password), get(extraParameters), markAsManualConnectOnFailure));
 }
 
 template <typename D> void impl_IHotspotAuthenticationContext<D>::AbortAuthentication(bool markAsManual) const
 {
-    check_hresult(static_cast<const IHotspotAuthenticationContext &>(static_cast<const D &>(*this))->abi_AbortAuthentication(markAsManual));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->abi_AbortAuthentication(markAsManual));
 }
 
 template <typename D> void impl_IHotspotAuthenticationContext<D>::SkipAuthentication() const
 {
-    check_hresult(static_cast<const IHotspotAuthenticationContext &>(static_cast<const D &>(*this))->abi_SkipAuthentication());
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->abi_SkipAuthentication());
 }
 
 template <typename D> void impl_IHotspotAuthenticationContext<D>::TriggerAttentionRequired(hstring_ref packageRelativeApplicationId, hstring_ref applicationParameters) const
 {
-    check_hresult(static_cast<const IHotspotAuthenticationContext &>(static_cast<const D &>(*this))->abi_TriggerAttentionRequired(get(packageRelativeApplicationId), get(applicationParameters)));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext)->abi_TriggerAttentionRequired(get(packageRelativeApplicationId), get(applicationParameters)));
 }
 
 template <typename D> bool impl_IHotspotCredentialsAuthenticationResult<D>::HasNetworkErrorOccurred() const
 {
     bool value {};
-    check_hresult(static_cast<const IHotspotCredentialsAuthenticationResult &>(static_cast<const D &>(*this))->get_HasNetworkErrorOccurred(&value));
+    check_hresult(WINRT_SHIM(IHotspotCredentialsAuthenticationResult)->get_HasNetworkErrorOccurred(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::HotspotAuthenticationResponseCode impl_IHotspotCredentialsAuthenticationResult<D>::ResponseCode() const
 {
     Windows::Networking::NetworkOperators::HotspotAuthenticationResponseCode value {};
-    check_hresult(static_cast<const IHotspotCredentialsAuthenticationResult &>(static_cast<const D &>(*this))->get_ResponseCode(&value));
+    check_hresult(WINRT_SHIM(IHotspotCredentialsAuthenticationResult)->get_ResponseCode(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IHotspotCredentialsAuthenticationResult<D>::LogoffUrl() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const IHotspotCredentialsAuthenticationResult &>(static_cast<const D &>(*this))->get_LogoffUrl(put(value)));
+    check_hresult(WINRT_SHIM(IHotspotCredentialsAuthenticationResult)->get_LogoffUrl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_IHotspotCredentialsAuthenticationResult<D>::AuthenticationReplyXml() const
 {
     Windows::Data::Xml::Dom::XmlDocument value { nullptr };
-    check_hresult(static_cast<const IHotspotCredentialsAuthenticationResult &>(static_cast<const D &>(*this))->get_AuthenticationReplyXml(put(value)));
+    check_hresult(WINRT_SHIM(IHotspotCredentialsAuthenticationResult)->get_AuthenticationReplyXml(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::HotspotCredentialsAuthenticationResult> impl_IHotspotAuthenticationContext2<D>::IssueCredentialsAsync(hstring_ref userName, hstring_ref password, hstring_ref extraParameters, bool markAsManualConnectOnFailure) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::HotspotCredentialsAuthenticationResult> asyncInfo;
-    check_hresult(static_cast<const IHotspotAuthenticationContext2 &>(static_cast<const D &>(*this))->abi_IssueCredentialsAsync(get(userName), get(password), get(extraParameters), markAsManualConnectOnFailure, put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IHotspotAuthenticationContext2)->abi_IssueCredentialsAsync(get(userName), get(password), get(extraParameters), markAsManualConnectOnFailure, put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> bool impl_IProvisionFromXmlDocumentResults<D>::AllElementsProvisioned() const
 {
     bool value {};
-    check_hresult(static_cast<const IProvisionFromXmlDocumentResults &>(static_cast<const D &>(*this))->get_AllElementsProvisioned(&value));
+    check_hresult(WINRT_SHIM(IProvisionFromXmlDocumentResults)->get_AllElementsProvisioned(&value));
     return value;
 }
 
 template <typename D> hstring impl_IProvisionFromXmlDocumentResults<D>::ProvisionResultsXml() const
 {
     hstring value;
-    check_hresult(static_cast<const IProvisionFromXmlDocumentResults &>(static_cast<const D &>(*this))->get_ProvisionResultsXml(put(value)));
+    check_hresult(WINRT_SHIM(IProvisionFromXmlDocumentResults)->get_ProvisionResultsXml(put(value)));
     return value;
 }
 
 template <typename D> void impl_IProvisionedProfile<D>::UpdateCost(Windows::Networking::Connectivity::NetworkCostType value) const
 {
-    check_hresult(static_cast<const IProvisionedProfile &>(static_cast<const D &>(*this))->abi_UpdateCost(value));
+    check_hresult(WINRT_SHIM(IProvisionedProfile)->abi_UpdateCost(value));
 }
 
 template <typename D> void impl_IProvisionedProfile<D>::UpdateUsage(const Windows::Networking::NetworkOperators::ProfileUsage & value) const
 {
-    check_hresult(static_cast<const IProvisionedProfile &>(static_cast<const D &>(*this))->abi_UpdateUsage(get(value)));
+    check_hresult(WINRT_SHIM(IProvisionedProfile)->abi_UpdateUsage(get(value)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ProvisionFromXmlDocumentResults> impl_IProvisioningAgent<D>::ProvisionFromXmlDocumentAsync(hstring_ref provisioningXmlDocument) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ProvisionFromXmlDocumentResults> asyncInfo;
-    check_hresult(static_cast<const IProvisioningAgent &>(static_cast<const D &>(*this))->abi_ProvisionFromXmlDocumentAsync(get(provisioningXmlDocument), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IProvisioningAgent)->abi_ProvisionFromXmlDocumentAsync(get(provisioningXmlDocument), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::ProvisionedProfile impl_IProvisioningAgent<D>::GetProvisionedProfile(Windows::Networking::NetworkOperators::ProfileMediaType mediaType, hstring_ref profileName) const
 {
     Windows::Networking::NetworkOperators::ProvisionedProfile provisionedProfile { nullptr };
-    check_hresult(static_cast<const IProvisioningAgent &>(static_cast<const D &>(*this))->abi_GetProvisionedProfile(mediaType, get(profileName), put(provisionedProfile)));
+    check_hresult(WINRT_SHIM(IProvisioningAgent)->abi_GetProvisionedProfile(mediaType, get(profileName), put(provisionedProfile)));
     return provisionedProfile;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::ProvisioningAgent impl_IProvisioningAgentStaticMethods<D>::CreateFromNetworkAccountId(hstring_ref networkAccountId) const
 {
     Windows::Networking::NetworkOperators::ProvisioningAgent provisioningAgent { nullptr };
-    check_hresult(static_cast<const IProvisioningAgentStaticMethods &>(static_cast<const D &>(*this))->abi_CreateFromNetworkAccountId(get(networkAccountId), put(provisioningAgent)));
+    check_hresult(WINRT_SHIM(IProvisioningAgentStaticMethods)->abi_CreateFromNetworkAccountId(get(networkAccountId), put(provisioningAgent)));
     return provisioningAgent;
 }
 
 template <typename D> uint8_t impl_IUssdMessage<D>::DataCodingScheme() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IUssdMessage &>(static_cast<const D &>(*this))->get_DataCodingScheme(&value));
+    check_hresult(WINRT_SHIM(IUssdMessage)->get_DataCodingScheme(&value));
     return value;
 }
 
 template <typename D> void impl_IUssdMessage<D>::DataCodingScheme(uint8_t value) const
 {
-    check_hresult(static_cast<const IUssdMessage &>(static_cast<const D &>(*this))->put_DataCodingScheme(value));
+    check_hresult(WINRT_SHIM(IUssdMessage)->put_DataCodingScheme(value));
 }
 
 template <typename D> com_array<uint8_t> impl_IUssdMessage<D>::GetPayload() const
 {
     com_array<uint8_t> value {};
-    check_hresult(static_cast<const IUssdMessage &>(static_cast<const D &>(*this))->abi_GetPayload(put_size(value), put(value)));
+    check_hresult(WINRT_SHIM(IUssdMessage)->abi_GetPayload(put_size(value), put(value)));
     return value;
 }
 
 template <typename D> void impl_IUssdMessage<D>::SetPayload(array_ref<const uint8_t> value) const
 {
-    check_hresult(static_cast<const IUssdMessage &>(static_cast<const D &>(*this))->abi_SetPayload(value.size(), get(value)));
+    check_hresult(WINRT_SHIM(IUssdMessage)->abi_SetPayload(value.size(), get(value)));
 }
 
 template <typename D> hstring impl_IUssdMessage<D>::PayloadAsText() const
 {
     hstring value;
-    check_hresult(static_cast<const IUssdMessage &>(static_cast<const D &>(*this))->get_PayloadAsText(put(value)));
+    check_hresult(WINRT_SHIM(IUssdMessage)->get_PayloadAsText(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUssdMessage<D>::PayloadAsText(hstring_ref value) const
 {
-    check_hresult(static_cast<const IUssdMessage &>(static_cast<const D &>(*this))->put_PayloadAsText(get(value)));
+    check_hresult(WINRT_SHIM(IUssdMessage)->put_PayloadAsText(get(value)));
 }
 
 template <typename D> Windows::Networking::NetworkOperators::UssdMessage impl_IUssdMessageFactory<D>::CreateMessage(hstring_ref messageText) const
 {
     Windows::Networking::NetworkOperators::UssdMessage ussdMessage { nullptr };
-    check_hresult(static_cast<const IUssdMessageFactory &>(static_cast<const D &>(*this))->abi_CreateMessage(get(messageText), put(ussdMessage)));
+    check_hresult(WINRT_SHIM(IUssdMessageFactory)->abi_CreateMessage(get(messageText), put(ussdMessage)));
     return ussdMessage;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::UssdResultCode impl_IUssdReply<D>::ResultCode() const
 {
     Windows::Networking::NetworkOperators::UssdResultCode value {};
-    check_hresult(static_cast<const IUssdReply &>(static_cast<const D &>(*this))->get_ResultCode(&value));
+    check_hresult(WINRT_SHIM(IUssdReply)->get_ResultCode(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::UssdMessage impl_IUssdReply<D>::Message() const
 {
     Windows::Networking::NetworkOperators::UssdMessage value { nullptr };
-    check_hresult(static_cast<const IUssdReply &>(static_cast<const D &>(*this))->get_Message(put(value)));
+    check_hresult(WINRT_SHIM(IUssdReply)->get_Message(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::UssdReply> impl_IUssdSession<D>::SendMessageAndGetReplyAsync(const Windows::Networking::NetworkOperators::UssdMessage & message) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::UssdReply> asyncInfo;
-    check_hresult(static_cast<const IUssdSession &>(static_cast<const D &>(*this))->abi_SendMessageAndGetReplyAsync(get(message), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IUssdSession)->abi_SendMessageAndGetReplyAsync(get(message), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> void impl_IUssdSession<D>::Close() const
 {
-    check_hresult(static_cast<const IUssdSession &>(static_cast<const D &>(*this))->abi_Close());
+    check_hresult(WINRT_SHIM(IUssdSession)->abi_Close());
 }
 
 template <typename D> Windows::Networking::NetworkOperators::UssdSession impl_IUssdSessionStatics<D>::CreateFromNetworkAccountId(hstring_ref networkAccountId) const
 {
     Windows::Networking::NetworkOperators::UssdSession ussdSession { nullptr };
-    check_hresult(static_cast<const IUssdSessionStatics &>(static_cast<const D &>(*this))->abi_CreateFromNetworkAccountId(get(networkAccountId), put(ussdSession)));
+    check_hresult(WINRT_SHIM(IUssdSessionStatics)->abi_CreateFromNetworkAccountId(get(networkAccountId), put(ussdSession)));
     return ussdSession;
 }
 
 template <typename D> Windows::Networking::NetworkOperators::UssdSession impl_IUssdSessionStatics<D>::CreateFromNetworkInterfaceId(hstring_ref networkInterfaceId) const
 {
     Windows::Networking::NetworkOperators::UssdSession ussdSession { nullptr };
-    check_hresult(static_cast<const IUssdSessionStatics &>(static_cast<const D &>(*this))->abi_CreateFromNetworkInterfaceId(get(networkInterfaceId), put(ussdSession)));
+    check_hresult(WINRT_SHIM(IUssdSessionStatics)->abi_CreateFromNetworkInterfaceId(get(networkInterfaceId), put(ussdSession)));
     return ussdSession;
 }
 

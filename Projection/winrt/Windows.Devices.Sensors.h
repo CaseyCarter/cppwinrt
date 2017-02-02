@@ -3506,68 +3506,68 @@ namespace Windows::Devices::Sensors {
 template <typename D> hstring impl_ISensorDataThresholdTriggerDetails<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const ISensorDataThresholdTriggerDetails &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(ISensorDataThresholdTriggerDetails)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::SensorType impl_ISensorDataThresholdTriggerDetails<D>::SensorType() const
 {
     Windows::Devices::Sensors::SensorType value {};
-    check_hresult(static_cast<const ISensorDataThresholdTriggerDetails &>(static_cast<const D &>(*this))->get_SensorType(&value));
+    check_hresult(WINRT_SHIM(ISensorDataThresholdTriggerDetails)->get_SensorType(&value));
     return value;
 }
 
 template <typename D> hstring impl_IAccelerometerDeviceId<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IAccelerometerDeviceId &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IAccelerometerDeviceId)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::Accelerometer impl_IAccelerometerStatics<D>::GetDefault() const
 {
     Windows::Devices::Sensors::Accelerometer result { nullptr };
-    check_hresult(static_cast<const IAccelerometerStatics &>(static_cast<const D &>(*this))->abi_GetDefault(put(result)));
+    check_hresult(WINRT_SHIM(IAccelerometerStatics)->abi_GetDefault(put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Sensors::Accelerometer impl_IAccelerometerStatics2<D>::GetDefault(Windows::Devices::Sensors::AccelerometerReadingType readingType) const
 {
     Windows::Devices::Sensors::Accelerometer result { nullptr };
-    check_hresult(static_cast<const IAccelerometerStatics2 &>(static_cast<const D &>(*this))->abi_GetDefaultWithAccelerometerReadingType(readingType, put(result)));
+    check_hresult(WINRT_SHIM(IAccelerometerStatics2)->abi_GetDefaultWithAccelerometerReadingType(readingType, put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Sensors::AccelerometerReading impl_IAccelerometer<D>::GetCurrentReading() const
 {
     Windows::Devices::Sensors::AccelerometerReading value { nullptr };
-    check_hresult(static_cast<const IAccelerometer &>(static_cast<const D &>(*this))->abi_GetCurrentReading(put(value)));
+    check_hresult(WINRT_SHIM(IAccelerometer)->abi_GetCurrentReading(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IAccelerometer<D>::MinimumReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IAccelerometer &>(static_cast<const D &>(*this))->get_MinimumReportInterval(&value));
+    check_hresult(WINRT_SHIM(IAccelerometer)->get_MinimumReportInterval(&value));
     return value;
 }
 
 template <typename D> void impl_IAccelerometer<D>::ReportInterval(uint32_t value) const
 {
-    check_hresult(static_cast<const IAccelerometer &>(static_cast<const D &>(*this))->put_ReportInterval(value));
+    check_hresult(WINRT_SHIM(IAccelerometer)->put_ReportInterval(value));
 }
 
 template <typename D> uint32_t impl_IAccelerometer<D>::ReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IAccelerometer &>(static_cast<const D &>(*this))->get_ReportInterval(&value));
+    check_hresult(WINRT_SHIM(IAccelerometer)->get_ReportInterval(&value));
     return value;
 }
 
 template <typename D> event_token impl_IAccelerometer<D>::ReadingChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Accelerometer, Windows::Devices::Sensors::AccelerometerReadingChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAccelerometer &>(static_cast<const D &>(*this))->add_ReadingChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAccelerometer)->add_ReadingChanged(get(handler), &token));
     return token;
 }
 
@@ -3578,13 +3578,13 @@ template <typename D> event_revoker<IAccelerometer> impl_IAccelerometer<D>::Read
 
 template <typename D> void impl_IAccelerometer<D>::ReadingChanged(event_token token) const
 {
-    check_hresult(static_cast<const IAccelerometer &>(static_cast<const D &>(*this))->remove_ReadingChanged(token));
+    check_hresult(WINRT_SHIM(IAccelerometer)->remove_ReadingChanged(token));
 }
 
 template <typename D> event_token impl_IAccelerometer<D>::Shaken(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Accelerometer, Windows::Devices::Sensors::AccelerometerShakenEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAccelerometer &>(static_cast<const D &>(*this))->add_Shaken(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAccelerometer)->add_Shaken(get(handler), &token));
     return token;
 }
 
@@ -3595,147 +3595,147 @@ template <typename D> event_revoker<IAccelerometer> impl_IAccelerometer<D>::Shak
 
 template <typename D> void impl_IAccelerometer<D>::Shaken(event_token token) const
 {
-    check_hresult(static_cast<const IAccelerometer &>(static_cast<const D &>(*this))->remove_Shaken(token));
+    check_hresult(WINRT_SHIM(IAccelerometer)->remove_Shaken(token));
 }
 
 template <typename D> void impl_IAccelerometer2<D>::ReadingTransform(Windows::Graphics::Display::DisplayOrientations value) const
 {
-    check_hresult(static_cast<const IAccelerometer2 &>(static_cast<const D &>(*this))->put_ReadingTransform(value));
+    check_hresult(WINRT_SHIM(IAccelerometer2)->put_ReadingTransform(value));
 }
 
 template <typename D> Windows::Graphics::Display::DisplayOrientations impl_IAccelerometer2<D>::ReadingTransform() const
 {
     Windows::Graphics::Display::DisplayOrientations value {};
-    check_hresult(static_cast<const IAccelerometer2 &>(static_cast<const D &>(*this))->get_ReadingTransform(&value));
+    check_hresult(WINRT_SHIM(IAccelerometer2)->get_ReadingTransform(&value));
     return value;
 }
 
 template <typename D> void impl_IAccelerometer3<D>::ReportLatency(uint32_t value) const
 {
-    check_hresult(static_cast<const IAccelerometer3 &>(static_cast<const D &>(*this))->put_ReportLatency(value));
+    check_hresult(WINRT_SHIM(IAccelerometer3)->put_ReportLatency(value));
 }
 
 template <typename D> uint32_t impl_IAccelerometer3<D>::ReportLatency() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IAccelerometer3 &>(static_cast<const D &>(*this))->get_ReportLatency(&value));
+    check_hresult(WINRT_SHIM(IAccelerometer3)->get_ReportLatency(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IAccelerometer3<D>::MaxBatchSize() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IAccelerometer3 &>(static_cast<const D &>(*this))->get_MaxBatchSize(&value));
+    check_hresult(WINRT_SHIM(IAccelerometer3)->get_MaxBatchSize(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::AccelerometerReadingType impl_IAccelerometer4<D>::ReadingType() const
 {
     Windows::Devices::Sensors::AccelerometerReadingType type {};
-    check_hresult(static_cast<const IAccelerometer4 &>(static_cast<const D &>(*this))->get_ReadingType(&type));
+    check_hresult(WINRT_SHIM(IAccelerometer4)->get_ReadingType(&type));
     return type;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IAccelerometerReading<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IAccelerometerReading &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(IAccelerometerReading)->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> double impl_IAccelerometerReading<D>::AccelerationX() const
 {
     double value {};
-    check_hresult(static_cast<const IAccelerometerReading &>(static_cast<const D &>(*this))->get_AccelerationX(&value));
+    check_hresult(WINRT_SHIM(IAccelerometerReading)->get_AccelerationX(&value));
     return value;
 }
 
 template <typename D> double impl_IAccelerometerReading<D>::AccelerationY() const
 {
     double value {};
-    check_hresult(static_cast<const IAccelerometerReading &>(static_cast<const D &>(*this))->get_AccelerationY(&value));
+    check_hresult(WINRT_SHIM(IAccelerometerReading)->get_AccelerationY(&value));
     return value;
 }
 
 template <typename D> double impl_IAccelerometerReading<D>::AccelerationZ() const
 {
     double value {};
-    check_hresult(static_cast<const IAccelerometerReading &>(static_cast<const D &>(*this))->get_AccelerationZ(&value));
+    check_hresult(WINRT_SHIM(IAccelerometerReading)->get_AccelerationZ(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::AccelerometerReading impl_IAccelerometerReadingChangedEventArgs<D>::Reading() const
 {
     Windows::Devices::Sensors::AccelerometerReading value { nullptr };
-    check_hresult(static_cast<const IAccelerometerReadingChangedEventArgs &>(static_cast<const D &>(*this))->get_Reading(put(value)));
+    check_hresult(WINRT_SHIM(IAccelerometerReadingChangedEventArgs)->get_Reading(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IAccelerometerShakenEventArgs<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IAccelerometerShakenEventArgs &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(IAccelerometerShakenEventArgs)->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IInclinometerDeviceId<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IInclinometerDeviceId &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IInclinometerDeviceId)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::Inclinometer impl_IInclinometerStatics<D>::GetDefault() const
 {
     Windows::Devices::Sensors::Inclinometer result { nullptr };
-    check_hresult(static_cast<const IInclinometerStatics &>(static_cast<const D &>(*this))->abi_GetDefault(put(result)));
+    check_hresult(WINRT_SHIM(IInclinometerStatics)->abi_GetDefault(put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Sensors::Inclinometer impl_IInclinometerStatics2<D>::GetDefaultForRelativeReadings() const
 {
     Windows::Devices::Sensors::Inclinometer result { nullptr };
-    check_hresult(static_cast<const IInclinometerStatics2 &>(static_cast<const D &>(*this))->abi_GetDefaultForRelativeReadings(put(result)));
+    check_hresult(WINRT_SHIM(IInclinometerStatics2)->abi_GetDefaultForRelativeReadings(put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Sensors::Inclinometer impl_IInclinometerStatics3<D>::GetDefault(Windows::Devices::Sensors::SensorReadingType sensorReadingtype) const
 {
     Windows::Devices::Sensors::Inclinometer result { nullptr };
-    check_hresult(static_cast<const IInclinometerStatics3 &>(static_cast<const D &>(*this))->abi_GetDefaultWithSensorReadingType(sensorReadingtype, put(result)));
+    check_hresult(WINRT_SHIM(IInclinometerStatics3)->abi_GetDefaultWithSensorReadingType(sensorReadingtype, put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Sensors::InclinometerReading impl_IInclinometer<D>::GetCurrentReading() const
 {
     Windows::Devices::Sensors::InclinometerReading value { nullptr };
-    check_hresult(static_cast<const IInclinometer &>(static_cast<const D &>(*this))->abi_GetCurrentReading(put(value)));
+    check_hresult(WINRT_SHIM(IInclinometer)->abi_GetCurrentReading(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IInclinometer<D>::MinimumReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IInclinometer &>(static_cast<const D &>(*this))->get_MinimumReportInterval(&value));
+    check_hresult(WINRT_SHIM(IInclinometer)->get_MinimumReportInterval(&value));
     return value;
 }
 
 template <typename D> void impl_IInclinometer<D>::ReportInterval(uint32_t value) const
 {
-    check_hresult(static_cast<const IInclinometer &>(static_cast<const D &>(*this))->put_ReportInterval(value));
+    check_hresult(WINRT_SHIM(IInclinometer)->put_ReportInterval(value));
 }
 
 template <typename D> uint32_t impl_IInclinometer<D>::ReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IInclinometer &>(static_cast<const D &>(*this))->get_ReportInterval(&value));
+    check_hresult(WINRT_SHIM(IInclinometer)->get_ReportInterval(&value));
     return value;
 }
 
 template <typename D> event_token impl_IInclinometer<D>::ReadingChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Inclinometer, Windows::Devices::Sensors::InclinometerReadingChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IInclinometer &>(static_cast<const D &>(*this))->add_ReadingChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IInclinometer)->add_ReadingChanged(get(handler), &token));
     return token;
 }
 
@@ -3746,114 +3746,114 @@ template <typename D> event_revoker<IInclinometer> impl_IInclinometer<D>::Readin
 
 template <typename D> void impl_IInclinometer<D>::ReadingChanged(event_token token) const
 {
-    check_hresult(static_cast<const IInclinometer &>(static_cast<const D &>(*this))->remove_ReadingChanged(token));
+    check_hresult(WINRT_SHIM(IInclinometer)->remove_ReadingChanged(token));
 }
 
 template <typename D> void impl_IInclinometer2<D>::ReadingTransform(Windows::Graphics::Display::DisplayOrientations value) const
 {
-    check_hresult(static_cast<const IInclinometer2 &>(static_cast<const D &>(*this))->put_ReadingTransform(value));
+    check_hresult(WINRT_SHIM(IInclinometer2)->put_ReadingTransform(value));
 }
 
 template <typename D> Windows::Graphics::Display::DisplayOrientations impl_IInclinometer2<D>::ReadingTransform() const
 {
     Windows::Graphics::Display::DisplayOrientations value {};
-    check_hresult(static_cast<const IInclinometer2 &>(static_cast<const D &>(*this))->get_ReadingTransform(&value));
+    check_hresult(WINRT_SHIM(IInclinometer2)->get_ReadingTransform(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::SensorReadingType impl_IInclinometer2<D>::ReadingType() const
 {
     Windows::Devices::Sensors::SensorReadingType type {};
-    check_hresult(static_cast<const IInclinometer2 &>(static_cast<const D &>(*this))->get_ReadingType(&type));
+    check_hresult(WINRT_SHIM(IInclinometer2)->get_ReadingType(&type));
     return type;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IInclinometerReading<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IInclinometerReading &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(IInclinometerReading)->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> float impl_IInclinometerReading<D>::PitchDegrees() const
 {
     float value {};
-    check_hresult(static_cast<const IInclinometerReading &>(static_cast<const D &>(*this))->get_PitchDegrees(&value));
+    check_hresult(WINRT_SHIM(IInclinometerReading)->get_PitchDegrees(&value));
     return value;
 }
 
 template <typename D> float impl_IInclinometerReading<D>::RollDegrees() const
 {
     float value {};
-    check_hresult(static_cast<const IInclinometerReading &>(static_cast<const D &>(*this))->get_RollDegrees(&value));
+    check_hresult(WINRT_SHIM(IInclinometerReading)->get_RollDegrees(&value));
     return value;
 }
 
 template <typename D> float impl_IInclinometerReading<D>::YawDegrees() const
 {
     float value {};
-    check_hresult(static_cast<const IInclinometerReading &>(static_cast<const D &>(*this))->get_YawDegrees(&value));
+    check_hresult(WINRT_SHIM(IInclinometerReading)->get_YawDegrees(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::MagnetometerAccuracy impl_IInclinometerReadingYawAccuracy<D>::YawAccuracy() const
 {
     Windows::Devices::Sensors::MagnetometerAccuracy value {};
-    check_hresult(static_cast<const IInclinometerReadingYawAccuracy &>(static_cast<const D &>(*this))->get_YawAccuracy(&value));
+    check_hresult(WINRT_SHIM(IInclinometerReadingYawAccuracy)->get_YawAccuracy(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::InclinometerReading impl_IInclinometerReadingChangedEventArgs<D>::Reading() const
 {
     Windows::Devices::Sensors::InclinometerReading value { nullptr };
-    check_hresult(static_cast<const IInclinometerReadingChangedEventArgs &>(static_cast<const D &>(*this))->get_Reading(put(value)));
+    check_hresult(WINRT_SHIM(IInclinometerReadingChangedEventArgs)->get_Reading(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IGyrometerDeviceId<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IGyrometerDeviceId &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IGyrometerDeviceId)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::Gyrometer impl_IGyrometerStatics<D>::GetDefault() const
 {
     Windows::Devices::Sensors::Gyrometer result { nullptr };
-    check_hresult(static_cast<const IGyrometerStatics &>(static_cast<const D &>(*this))->abi_GetDefault(put(result)));
+    check_hresult(WINRT_SHIM(IGyrometerStatics)->abi_GetDefault(put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Sensors::GyrometerReading impl_IGyrometer<D>::GetCurrentReading() const
 {
     Windows::Devices::Sensors::GyrometerReading value { nullptr };
-    check_hresult(static_cast<const IGyrometer &>(static_cast<const D &>(*this))->abi_GetCurrentReading(put(value)));
+    check_hresult(WINRT_SHIM(IGyrometer)->abi_GetCurrentReading(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IGyrometer<D>::MinimumReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IGyrometer &>(static_cast<const D &>(*this))->get_MinimumReportInterval(&value));
+    check_hresult(WINRT_SHIM(IGyrometer)->get_MinimumReportInterval(&value));
     return value;
 }
 
 template <typename D> void impl_IGyrometer<D>::ReportInterval(uint32_t value) const
 {
-    check_hresult(static_cast<const IGyrometer &>(static_cast<const D &>(*this))->put_ReportInterval(value));
+    check_hresult(WINRT_SHIM(IGyrometer)->put_ReportInterval(value));
 }
 
 template <typename D> uint32_t impl_IGyrometer<D>::ReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IGyrometer &>(static_cast<const D &>(*this))->get_ReportInterval(&value));
+    check_hresult(WINRT_SHIM(IGyrometer)->get_ReportInterval(&value));
     return value;
 }
 
 template <typename D> event_token impl_IGyrometer<D>::ReadingChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Gyrometer, Windows::Devices::Sensors::GyrometerReadingChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IGyrometer &>(static_cast<const D &>(*this))->add_ReadingChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IGyrometer)->add_ReadingChanged(get(handler), &token));
     return token;
 }
 
@@ -3864,100 +3864,100 @@ template <typename D> event_revoker<IGyrometer> impl_IGyrometer<D>::ReadingChang
 
 template <typename D> void impl_IGyrometer<D>::ReadingChanged(event_token token) const
 {
-    check_hresult(static_cast<const IGyrometer &>(static_cast<const D &>(*this))->remove_ReadingChanged(token));
+    check_hresult(WINRT_SHIM(IGyrometer)->remove_ReadingChanged(token));
 }
 
 template <typename D> void impl_IGyrometer2<D>::ReadingTransform(Windows::Graphics::Display::DisplayOrientations value) const
 {
-    check_hresult(static_cast<const IGyrometer2 &>(static_cast<const D &>(*this))->put_ReadingTransform(value));
+    check_hresult(WINRT_SHIM(IGyrometer2)->put_ReadingTransform(value));
 }
 
 template <typename D> Windows::Graphics::Display::DisplayOrientations impl_IGyrometer2<D>::ReadingTransform() const
 {
     Windows::Graphics::Display::DisplayOrientations value {};
-    check_hresult(static_cast<const IGyrometer2 &>(static_cast<const D &>(*this))->get_ReadingTransform(&value));
+    check_hresult(WINRT_SHIM(IGyrometer2)->get_ReadingTransform(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IGyrometerReading<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IGyrometerReading &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(IGyrometerReading)->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> double impl_IGyrometerReading<D>::AngularVelocityX() const
 {
     double value {};
-    check_hresult(static_cast<const IGyrometerReading &>(static_cast<const D &>(*this))->get_AngularVelocityX(&value));
+    check_hresult(WINRT_SHIM(IGyrometerReading)->get_AngularVelocityX(&value));
     return value;
 }
 
 template <typename D> double impl_IGyrometerReading<D>::AngularVelocityY() const
 {
     double value {};
-    check_hresult(static_cast<const IGyrometerReading &>(static_cast<const D &>(*this))->get_AngularVelocityY(&value));
+    check_hresult(WINRT_SHIM(IGyrometerReading)->get_AngularVelocityY(&value));
     return value;
 }
 
 template <typename D> double impl_IGyrometerReading<D>::AngularVelocityZ() const
 {
     double value {};
-    check_hresult(static_cast<const IGyrometerReading &>(static_cast<const D &>(*this))->get_AngularVelocityZ(&value));
+    check_hresult(WINRT_SHIM(IGyrometerReading)->get_AngularVelocityZ(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::GyrometerReading impl_IGyrometerReadingChangedEventArgs<D>::Reading() const
 {
     Windows::Devices::Sensors::GyrometerReading value { nullptr };
-    check_hresult(static_cast<const IGyrometerReadingChangedEventArgs &>(static_cast<const D &>(*this))->get_Reading(put(value)));
+    check_hresult(WINRT_SHIM(IGyrometerReadingChangedEventArgs)->get_Reading(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICompassDeviceId<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const ICompassDeviceId &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(ICompassDeviceId)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::Compass impl_ICompassStatics<D>::GetDefault() const
 {
     Windows::Devices::Sensors::Compass result { nullptr };
-    check_hresult(static_cast<const ICompassStatics &>(static_cast<const D &>(*this))->abi_GetDefault(put(result)));
+    check_hresult(WINRT_SHIM(ICompassStatics)->abi_GetDefault(put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Sensors::CompassReading impl_ICompass<D>::GetCurrentReading() const
 {
     Windows::Devices::Sensors::CompassReading value { nullptr };
-    check_hresult(static_cast<const ICompass &>(static_cast<const D &>(*this))->abi_GetCurrentReading(put(value)));
+    check_hresult(WINRT_SHIM(ICompass)->abi_GetCurrentReading(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_ICompass<D>::MinimumReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ICompass &>(static_cast<const D &>(*this))->get_MinimumReportInterval(&value));
+    check_hresult(WINRT_SHIM(ICompass)->get_MinimumReportInterval(&value));
     return value;
 }
 
 template <typename D> void impl_ICompass<D>::ReportInterval(uint32_t value) const
 {
-    check_hresult(static_cast<const ICompass &>(static_cast<const D &>(*this))->put_ReportInterval(value));
+    check_hresult(WINRT_SHIM(ICompass)->put_ReportInterval(value));
 }
 
 template <typename D> uint32_t impl_ICompass<D>::ReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ICompass &>(static_cast<const D &>(*this))->get_ReportInterval(&value));
+    check_hresult(WINRT_SHIM(ICompass)->get_ReportInterval(&value));
     return value;
 }
 
 template <typename D> event_token impl_ICompass<D>::ReadingChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Compass, Windows::Devices::Sensors::CompassReadingChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ICompass &>(static_cast<const D &>(*this))->add_ReadingChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(ICompass)->add_ReadingChanged(get(handler), &token));
     return token;
 }
 
@@ -3968,100 +3968,100 @@ template <typename D> event_revoker<ICompass> impl_ICompass<D>::ReadingChanged(a
 
 template <typename D> void impl_ICompass<D>::ReadingChanged(event_token token) const
 {
-    check_hresult(static_cast<const ICompass &>(static_cast<const D &>(*this))->remove_ReadingChanged(token));
+    check_hresult(WINRT_SHIM(ICompass)->remove_ReadingChanged(token));
 }
 
 template <typename D> void impl_ICompass2<D>::ReadingTransform(Windows::Graphics::Display::DisplayOrientations value) const
 {
-    check_hresult(static_cast<const ICompass2 &>(static_cast<const D &>(*this))->put_ReadingTransform(value));
+    check_hresult(WINRT_SHIM(ICompass2)->put_ReadingTransform(value));
 }
 
 template <typename D> Windows::Graphics::Display::DisplayOrientations impl_ICompass2<D>::ReadingTransform() const
 {
     Windows::Graphics::Display::DisplayOrientations value {};
-    check_hresult(static_cast<const ICompass2 &>(static_cast<const D &>(*this))->get_ReadingTransform(&value));
+    check_hresult(WINRT_SHIM(ICompass2)->get_ReadingTransform(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ICompassReading<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const ICompassReading &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(ICompassReading)->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> double impl_ICompassReading<D>::HeadingMagneticNorth() const
 {
     double value {};
-    check_hresult(static_cast<const ICompassReading &>(static_cast<const D &>(*this))->get_HeadingMagneticNorth(&value));
+    check_hresult(WINRT_SHIM(ICompassReading)->get_HeadingMagneticNorth(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_ICompassReading<D>::HeadingTrueNorth() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(static_cast<const ICompassReading &>(static_cast<const D &>(*this))->get_HeadingTrueNorth(put(value)));
+    check_hresult(WINRT_SHIM(ICompassReading)->get_HeadingTrueNorth(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::MagnetometerAccuracy impl_ICompassReadingHeadingAccuracy<D>::HeadingAccuracy() const
 {
     Windows::Devices::Sensors::MagnetometerAccuracy value {};
-    check_hresult(static_cast<const ICompassReadingHeadingAccuracy &>(static_cast<const D &>(*this))->get_HeadingAccuracy(&value));
+    check_hresult(WINRT_SHIM(ICompassReadingHeadingAccuracy)->get_HeadingAccuracy(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::CompassReading impl_ICompassReadingChangedEventArgs<D>::Reading() const
 {
     Windows::Devices::Sensors::CompassReading value { nullptr };
-    check_hresult(static_cast<const ICompassReadingChangedEventArgs &>(static_cast<const D &>(*this))->get_Reading(put(value)));
+    check_hresult(WINRT_SHIM(ICompassReadingChangedEventArgs)->get_Reading(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ILightSensorDeviceId<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const ILightSensorDeviceId &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(ILightSensorDeviceId)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::LightSensor impl_ILightSensorStatics<D>::GetDefault() const
 {
     Windows::Devices::Sensors::LightSensor result { nullptr };
-    check_hresult(static_cast<const ILightSensorStatics &>(static_cast<const D &>(*this))->abi_GetDefault(put(result)));
+    check_hresult(WINRT_SHIM(ILightSensorStatics)->abi_GetDefault(put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Sensors::LightSensorReading impl_ILightSensor<D>::GetCurrentReading() const
 {
     Windows::Devices::Sensors::LightSensorReading value { nullptr };
-    check_hresult(static_cast<const ILightSensor &>(static_cast<const D &>(*this))->abi_GetCurrentReading(put(value)));
+    check_hresult(WINRT_SHIM(ILightSensor)->abi_GetCurrentReading(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_ILightSensor<D>::MinimumReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ILightSensor &>(static_cast<const D &>(*this))->get_MinimumReportInterval(&value));
+    check_hresult(WINRT_SHIM(ILightSensor)->get_MinimumReportInterval(&value));
     return value;
 }
 
 template <typename D> void impl_ILightSensor<D>::ReportInterval(uint32_t value) const
 {
-    check_hresult(static_cast<const ILightSensor &>(static_cast<const D &>(*this))->put_ReportInterval(value));
+    check_hresult(WINRT_SHIM(ILightSensor)->put_ReportInterval(value));
 }
 
 template <typename D> uint32_t impl_ILightSensor<D>::ReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ILightSensor &>(static_cast<const D &>(*this))->get_ReportInterval(&value));
+    check_hresult(WINRT_SHIM(ILightSensor)->get_ReportInterval(&value));
     return value;
 }
 
 template <typename D> event_token impl_ILightSensor<D>::ReadingChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::LightSensor, Windows::Devices::Sensors::LightSensorReadingChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ILightSensor &>(static_cast<const D &>(*this))->add_ReadingChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(ILightSensor)->add_ReadingChanged(get(handler), &token));
     return token;
 }
 
@@ -4072,186 +4072,186 @@ template <typename D> event_revoker<ILightSensor> impl_ILightSensor<D>::ReadingC
 
 template <typename D> void impl_ILightSensor<D>::ReadingChanged(event_token token) const
 {
-    check_hresult(static_cast<const ILightSensor &>(static_cast<const D &>(*this))->remove_ReadingChanged(token));
+    check_hresult(WINRT_SHIM(ILightSensor)->remove_ReadingChanged(token));
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ILightSensorReading<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const ILightSensorReading &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(ILightSensorReading)->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> float impl_ILightSensorReading<D>::IlluminanceInLux() const
 {
     float value {};
-    check_hresult(static_cast<const ILightSensorReading &>(static_cast<const D &>(*this))->get_IlluminanceInLux(&value));
+    check_hresult(WINRT_SHIM(ILightSensorReading)->get_IlluminanceInLux(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::LightSensorReading impl_ILightSensorReadingChangedEventArgs<D>::Reading() const
 {
     Windows::Devices::Sensors::LightSensorReading value { nullptr };
-    check_hresult(static_cast<const ILightSensorReadingChangedEventArgs &>(static_cast<const D &>(*this))->get_Reading(put(value)));
+    check_hresult(WINRT_SHIM(ILightSensorReadingChangedEventArgs)->get_Reading(put(value)));
     return value;
 }
 
 template <typename D> float impl_ISensorRotationMatrix<D>::M11() const
 {
     float value {};
-    check_hresult(static_cast<const ISensorRotationMatrix &>(static_cast<const D &>(*this))->get_M11(&value));
+    check_hresult(WINRT_SHIM(ISensorRotationMatrix)->get_M11(&value));
     return value;
 }
 
 template <typename D> float impl_ISensorRotationMatrix<D>::M12() const
 {
     float value {};
-    check_hresult(static_cast<const ISensorRotationMatrix &>(static_cast<const D &>(*this))->get_M12(&value));
+    check_hresult(WINRT_SHIM(ISensorRotationMatrix)->get_M12(&value));
     return value;
 }
 
 template <typename D> float impl_ISensorRotationMatrix<D>::M13() const
 {
     float value {};
-    check_hresult(static_cast<const ISensorRotationMatrix &>(static_cast<const D &>(*this))->get_M13(&value));
+    check_hresult(WINRT_SHIM(ISensorRotationMatrix)->get_M13(&value));
     return value;
 }
 
 template <typename D> float impl_ISensorRotationMatrix<D>::M21() const
 {
     float value {};
-    check_hresult(static_cast<const ISensorRotationMatrix &>(static_cast<const D &>(*this))->get_M21(&value));
+    check_hresult(WINRT_SHIM(ISensorRotationMatrix)->get_M21(&value));
     return value;
 }
 
 template <typename D> float impl_ISensorRotationMatrix<D>::M22() const
 {
     float value {};
-    check_hresult(static_cast<const ISensorRotationMatrix &>(static_cast<const D &>(*this))->get_M22(&value));
+    check_hresult(WINRT_SHIM(ISensorRotationMatrix)->get_M22(&value));
     return value;
 }
 
 template <typename D> float impl_ISensorRotationMatrix<D>::M23() const
 {
     float value {};
-    check_hresult(static_cast<const ISensorRotationMatrix &>(static_cast<const D &>(*this))->get_M23(&value));
+    check_hresult(WINRT_SHIM(ISensorRotationMatrix)->get_M23(&value));
     return value;
 }
 
 template <typename D> float impl_ISensorRotationMatrix<D>::M31() const
 {
     float value {};
-    check_hresult(static_cast<const ISensorRotationMatrix &>(static_cast<const D &>(*this))->get_M31(&value));
+    check_hresult(WINRT_SHIM(ISensorRotationMatrix)->get_M31(&value));
     return value;
 }
 
 template <typename D> float impl_ISensorRotationMatrix<D>::M32() const
 {
     float value {};
-    check_hresult(static_cast<const ISensorRotationMatrix &>(static_cast<const D &>(*this))->get_M32(&value));
+    check_hresult(WINRT_SHIM(ISensorRotationMatrix)->get_M32(&value));
     return value;
 }
 
 template <typename D> float impl_ISensorRotationMatrix<D>::M33() const
 {
     float value {};
-    check_hresult(static_cast<const ISensorRotationMatrix &>(static_cast<const D &>(*this))->get_M33(&value));
+    check_hresult(WINRT_SHIM(ISensorRotationMatrix)->get_M33(&value));
     return value;
 }
 
 template <typename D> float impl_ISensorQuaternion<D>::W() const
 {
     float value {};
-    check_hresult(static_cast<const ISensorQuaternion &>(static_cast<const D &>(*this))->get_W(&value));
+    check_hresult(WINRT_SHIM(ISensorQuaternion)->get_W(&value));
     return value;
 }
 
 template <typename D> float impl_ISensorQuaternion<D>::X() const
 {
     float value {};
-    check_hresult(static_cast<const ISensorQuaternion &>(static_cast<const D &>(*this))->get_X(&value));
+    check_hresult(WINRT_SHIM(ISensorQuaternion)->get_X(&value));
     return value;
 }
 
 template <typename D> float impl_ISensorQuaternion<D>::Y() const
 {
     float value {};
-    check_hresult(static_cast<const ISensorQuaternion &>(static_cast<const D &>(*this))->get_Y(&value));
+    check_hresult(WINRT_SHIM(ISensorQuaternion)->get_Y(&value));
     return value;
 }
 
 template <typename D> float impl_ISensorQuaternion<D>::Z() const
 {
     float value {};
-    check_hresult(static_cast<const ISensorQuaternion &>(static_cast<const D &>(*this))->get_Z(&value));
+    check_hresult(WINRT_SHIM(ISensorQuaternion)->get_Z(&value));
     return value;
 }
 
 template <typename D> hstring impl_IOrientationSensorDeviceId<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IOrientationSensorDeviceId &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IOrientationSensorDeviceId)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::OrientationSensor impl_IOrientationSensorStatics<D>::GetDefault() const
 {
     Windows::Devices::Sensors::OrientationSensor result { nullptr };
-    check_hresult(static_cast<const IOrientationSensorStatics &>(static_cast<const D &>(*this))->abi_GetDefault(put(result)));
+    check_hresult(WINRT_SHIM(IOrientationSensorStatics)->abi_GetDefault(put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Sensors::OrientationSensor impl_IOrientationSensorStatics2<D>::GetDefaultForRelativeReadings() const
 {
     Windows::Devices::Sensors::OrientationSensor result { nullptr };
-    check_hresult(static_cast<const IOrientationSensorStatics2 &>(static_cast<const D &>(*this))->abi_GetDefaultForRelativeReadings(put(result)));
+    check_hresult(WINRT_SHIM(IOrientationSensorStatics2)->abi_GetDefaultForRelativeReadings(put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Sensors::OrientationSensor impl_IOrientationSensorStatics3<D>::GetDefault(Windows::Devices::Sensors::SensorReadingType sensorReadingtype) const
 {
     Windows::Devices::Sensors::OrientationSensor result { nullptr };
-    check_hresult(static_cast<const IOrientationSensorStatics3 &>(static_cast<const D &>(*this))->abi_GetDefaultWithSensorReadingType(sensorReadingtype, put(result)));
+    check_hresult(WINRT_SHIM(IOrientationSensorStatics3)->abi_GetDefaultWithSensorReadingType(sensorReadingtype, put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Sensors::OrientationSensor impl_IOrientationSensorStatics3<D>::GetDefault(Windows::Devices::Sensors::SensorReadingType sensorReadingType, Windows::Devices::Sensors::SensorOptimizationGoal optimizationGoal) const
 {
     Windows::Devices::Sensors::OrientationSensor result { nullptr };
-    check_hresult(static_cast<const IOrientationSensorStatics3 &>(static_cast<const D &>(*this))->abi_GetDefaultWithSensorReadingTypeAndSensorOptimizationGoal(sensorReadingType, optimizationGoal, put(result)));
+    check_hresult(WINRT_SHIM(IOrientationSensorStatics3)->abi_GetDefaultWithSensorReadingTypeAndSensorOptimizationGoal(sensorReadingType, optimizationGoal, put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Sensors::OrientationSensorReading impl_IOrientationSensor<D>::GetCurrentReading() const
 {
     Windows::Devices::Sensors::OrientationSensorReading value { nullptr };
-    check_hresult(static_cast<const IOrientationSensor &>(static_cast<const D &>(*this))->abi_GetCurrentReading(put(value)));
+    check_hresult(WINRT_SHIM(IOrientationSensor)->abi_GetCurrentReading(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IOrientationSensor<D>::MinimumReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IOrientationSensor &>(static_cast<const D &>(*this))->get_MinimumReportInterval(&value));
+    check_hresult(WINRT_SHIM(IOrientationSensor)->get_MinimumReportInterval(&value));
     return value;
 }
 
 template <typename D> void impl_IOrientationSensor<D>::ReportInterval(uint32_t value) const
 {
-    check_hresult(static_cast<const IOrientationSensor &>(static_cast<const D &>(*this))->put_ReportInterval(value));
+    check_hresult(WINRT_SHIM(IOrientationSensor)->put_ReportInterval(value));
 }
 
 template <typename D> uint32_t impl_IOrientationSensor<D>::ReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IOrientationSensor &>(static_cast<const D &>(*this))->get_ReportInterval(&value));
+    check_hresult(WINRT_SHIM(IOrientationSensor)->get_ReportInterval(&value));
     return value;
 }
 
 template <typename D> event_token impl_IOrientationSensor<D>::ReadingChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::OrientationSensor, Windows::Devices::Sensors::OrientationSensorReadingChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IOrientationSensor &>(static_cast<const D &>(*this))->add_ReadingChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IOrientationSensor)->add_ReadingChanged(get(handler), &token));
     return token;
 }
 
@@ -4262,88 +4262,88 @@ template <typename D> event_revoker<IOrientationSensor> impl_IOrientationSensor<
 
 template <typename D> void impl_IOrientationSensor<D>::ReadingChanged(event_token token) const
 {
-    check_hresult(static_cast<const IOrientationSensor &>(static_cast<const D &>(*this))->remove_ReadingChanged(token));
+    check_hresult(WINRT_SHIM(IOrientationSensor)->remove_ReadingChanged(token));
 }
 
 template <typename D> void impl_IOrientationSensor2<D>::ReadingTransform(Windows::Graphics::Display::DisplayOrientations value) const
 {
-    check_hresult(static_cast<const IOrientationSensor2 &>(static_cast<const D &>(*this))->put_ReadingTransform(value));
+    check_hresult(WINRT_SHIM(IOrientationSensor2)->put_ReadingTransform(value));
 }
 
 template <typename D> Windows::Graphics::Display::DisplayOrientations impl_IOrientationSensor2<D>::ReadingTransform() const
 {
     Windows::Graphics::Display::DisplayOrientations value {};
-    check_hresult(static_cast<const IOrientationSensor2 &>(static_cast<const D &>(*this))->get_ReadingTransform(&value));
+    check_hresult(WINRT_SHIM(IOrientationSensor2)->get_ReadingTransform(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::SensorReadingType impl_IOrientationSensor2<D>::ReadingType() const
 {
     Windows::Devices::Sensors::SensorReadingType type {};
-    check_hresult(static_cast<const IOrientationSensor2 &>(static_cast<const D &>(*this))->get_ReadingType(&type));
+    check_hresult(WINRT_SHIM(IOrientationSensor2)->get_ReadingType(&type));
     return type;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IOrientationSensorReading<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IOrientationSensorReading &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(IOrientationSensorReading)->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::SensorRotationMatrix impl_IOrientationSensorReading<D>::RotationMatrix() const
 {
     Windows::Devices::Sensors::SensorRotationMatrix value { nullptr };
-    check_hresult(static_cast<const IOrientationSensorReading &>(static_cast<const D &>(*this))->get_RotationMatrix(put(value)));
+    check_hresult(WINRT_SHIM(IOrientationSensorReading)->get_RotationMatrix(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::SensorQuaternion impl_IOrientationSensorReading<D>::Quaternion() const
 {
     Windows::Devices::Sensors::SensorQuaternion value { nullptr };
-    check_hresult(static_cast<const IOrientationSensorReading &>(static_cast<const D &>(*this))->get_Quaternion(put(value)));
+    check_hresult(WINRT_SHIM(IOrientationSensorReading)->get_Quaternion(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::MagnetometerAccuracy impl_IOrientationSensorReadingYawAccuracy<D>::YawAccuracy() const
 {
     Windows::Devices::Sensors::MagnetometerAccuracy value {};
-    check_hresult(static_cast<const IOrientationSensorReadingYawAccuracy &>(static_cast<const D &>(*this))->get_YawAccuracy(&value));
+    check_hresult(WINRT_SHIM(IOrientationSensorReadingYawAccuracy)->get_YawAccuracy(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::OrientationSensorReading impl_IOrientationSensorReadingChangedEventArgs<D>::Reading() const
 {
     Windows::Devices::Sensors::OrientationSensorReading value { nullptr };
-    check_hresult(static_cast<const IOrientationSensorReadingChangedEventArgs &>(static_cast<const D &>(*this))->get_Reading(put(value)));
+    check_hresult(WINRT_SHIM(IOrientationSensorReadingChangedEventArgs)->get_Reading(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISimpleOrientationSensorDeviceId<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const ISimpleOrientationSensorDeviceId &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(ISimpleOrientationSensorDeviceId)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::SimpleOrientationSensor impl_ISimpleOrientationSensorStatics<D>::GetDefault() const
 {
     Windows::Devices::Sensors::SimpleOrientationSensor result { nullptr };
-    check_hresult(static_cast<const ISimpleOrientationSensorStatics &>(static_cast<const D &>(*this))->abi_GetDefault(put(result)));
+    check_hresult(WINRT_SHIM(ISimpleOrientationSensorStatics)->abi_GetDefault(put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Sensors::SimpleOrientation impl_ISimpleOrientationSensor<D>::GetCurrentOrientation() const
 {
     Windows::Devices::Sensors::SimpleOrientation value {};
-    check_hresult(static_cast<const ISimpleOrientationSensor &>(static_cast<const D &>(*this))->abi_GetCurrentOrientation(&value));
+    check_hresult(WINRT_SHIM(ISimpleOrientationSensor)->abi_GetCurrentOrientation(&value));
     return value;
 }
 
 template <typename D> event_token impl_ISimpleOrientationSensor<D>::OrientationChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::SimpleOrientationSensor, Windows::Devices::Sensors::SimpleOrientationSensorOrientationChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ISimpleOrientationSensor &>(static_cast<const D &>(*this))->add_OrientationChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(ISimpleOrientationSensor)->add_OrientationChanged(get(handler), &token));
     return token;
 }
 
@@ -4354,79 +4354,79 @@ template <typename D> event_revoker<ISimpleOrientationSensor> impl_ISimpleOrient
 
 template <typename D> void impl_ISimpleOrientationSensor<D>::OrientationChanged(event_token token) const
 {
-    check_hresult(static_cast<const ISimpleOrientationSensor &>(static_cast<const D &>(*this))->remove_OrientationChanged(token));
+    check_hresult(WINRT_SHIM(ISimpleOrientationSensor)->remove_OrientationChanged(token));
 }
 
 template <typename D> void impl_ISimpleOrientationSensor2<D>::ReadingTransform(Windows::Graphics::Display::DisplayOrientations value) const
 {
-    check_hresult(static_cast<const ISimpleOrientationSensor2 &>(static_cast<const D &>(*this))->put_ReadingTransform(value));
+    check_hresult(WINRT_SHIM(ISimpleOrientationSensor2)->put_ReadingTransform(value));
 }
 
 template <typename D> Windows::Graphics::Display::DisplayOrientations impl_ISimpleOrientationSensor2<D>::ReadingTransform() const
 {
     Windows::Graphics::Display::DisplayOrientations value {};
-    check_hresult(static_cast<const ISimpleOrientationSensor2 &>(static_cast<const D &>(*this))->get_ReadingTransform(&value));
+    check_hresult(WINRT_SHIM(ISimpleOrientationSensor2)->get_ReadingTransform(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISimpleOrientationSensorOrientationChangedEventArgs<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const ISimpleOrientationSensorOrientationChangedEventArgs &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(ISimpleOrientationSensorOrientationChangedEventArgs)->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::SimpleOrientation impl_ISimpleOrientationSensorOrientationChangedEventArgs<D>::Orientation() const
 {
     Windows::Devices::Sensors::SimpleOrientation value {};
-    check_hresult(static_cast<const ISimpleOrientationSensorOrientationChangedEventArgs &>(static_cast<const D &>(*this))->get_Orientation(&value));
+    check_hresult(WINRT_SHIM(ISimpleOrientationSensorOrientationChangedEventArgs)->get_Orientation(&value));
     return value;
 }
 
 template <typename D> hstring impl_IMagnetometerDeviceId<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagnetometerDeviceId &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IMagnetometerDeviceId)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::Magnetometer impl_IMagnetometerStatics<D>::GetDefault() const
 {
     Windows::Devices::Sensors::Magnetometer result { nullptr };
-    check_hresult(static_cast<const IMagnetometerStatics &>(static_cast<const D &>(*this))->abi_GetDefault(put(result)));
+    check_hresult(WINRT_SHIM(IMagnetometerStatics)->abi_GetDefault(put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Sensors::MagnetometerReading impl_IMagnetometer<D>::GetCurrentReading() const
 {
     Windows::Devices::Sensors::MagnetometerReading value { nullptr };
-    check_hresult(static_cast<const IMagnetometer &>(static_cast<const D &>(*this))->abi_GetCurrentReading(put(value)));
+    check_hresult(WINRT_SHIM(IMagnetometer)->abi_GetCurrentReading(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IMagnetometer<D>::MinimumReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMagnetometer &>(static_cast<const D &>(*this))->get_MinimumReportInterval(&value));
+    check_hresult(WINRT_SHIM(IMagnetometer)->get_MinimumReportInterval(&value));
     return value;
 }
 
 template <typename D> void impl_IMagnetometer<D>::ReportInterval(uint32_t value) const
 {
-    check_hresult(static_cast<const IMagnetometer &>(static_cast<const D &>(*this))->put_ReportInterval(value));
+    check_hresult(WINRT_SHIM(IMagnetometer)->put_ReportInterval(value));
 }
 
 template <typename D> uint32_t impl_IMagnetometer<D>::ReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMagnetometer &>(static_cast<const D &>(*this))->get_ReportInterval(&value));
+    check_hresult(WINRT_SHIM(IMagnetometer)->get_ReportInterval(&value));
     return value;
 }
 
 template <typename D> event_token impl_IMagnetometer<D>::ReadingChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Magnetometer, Windows::Devices::Sensors::MagnetometerReadingChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMagnetometer &>(static_cast<const D &>(*this))->add_ReadingChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMagnetometer)->add_ReadingChanged(get(handler), &token));
     return token;
 }
 
@@ -4437,144 +4437,144 @@ template <typename D> event_revoker<IMagnetometer> impl_IMagnetometer<D>::Readin
 
 template <typename D> void impl_IMagnetometer<D>::ReadingChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMagnetometer &>(static_cast<const D &>(*this))->remove_ReadingChanged(token));
+    check_hresult(WINRT_SHIM(IMagnetometer)->remove_ReadingChanged(token));
 }
 
 template <typename D> void impl_IMagnetometer2<D>::ReadingTransform(Windows::Graphics::Display::DisplayOrientations value) const
 {
-    check_hresult(static_cast<const IMagnetometer2 &>(static_cast<const D &>(*this))->put_ReadingTransform(value));
+    check_hresult(WINRT_SHIM(IMagnetometer2)->put_ReadingTransform(value));
 }
 
 template <typename D> Windows::Graphics::Display::DisplayOrientations impl_IMagnetometer2<D>::ReadingTransform() const
 {
     Windows::Graphics::Display::DisplayOrientations value {};
-    check_hresult(static_cast<const IMagnetometer2 &>(static_cast<const D &>(*this))->get_ReadingTransform(&value));
+    check_hresult(WINRT_SHIM(IMagnetometer2)->get_ReadingTransform(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IMagnetometerReading<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IMagnetometerReading &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(IMagnetometerReading)->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> float impl_IMagnetometerReading<D>::MagneticFieldX() const
 {
     float value {};
-    check_hresult(static_cast<const IMagnetometerReading &>(static_cast<const D &>(*this))->get_MagneticFieldX(&value));
+    check_hresult(WINRT_SHIM(IMagnetometerReading)->get_MagneticFieldX(&value));
     return value;
 }
 
 template <typename D> float impl_IMagnetometerReading<D>::MagneticFieldY() const
 {
     float value {};
-    check_hresult(static_cast<const IMagnetometerReading &>(static_cast<const D &>(*this))->get_MagneticFieldY(&value));
+    check_hresult(WINRT_SHIM(IMagnetometerReading)->get_MagneticFieldY(&value));
     return value;
 }
 
 template <typename D> float impl_IMagnetometerReading<D>::MagneticFieldZ() const
 {
     float value {};
-    check_hresult(static_cast<const IMagnetometerReading &>(static_cast<const D &>(*this))->get_MagneticFieldZ(&value));
+    check_hresult(WINRT_SHIM(IMagnetometerReading)->get_MagneticFieldZ(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::MagnetometerAccuracy impl_IMagnetometerReading<D>::DirectionalAccuracy() const
 {
     Windows::Devices::Sensors::MagnetometerAccuracy value {};
-    check_hresult(static_cast<const IMagnetometerReading &>(static_cast<const D &>(*this))->get_DirectionalAccuracy(&value));
+    check_hresult(WINRT_SHIM(IMagnetometerReading)->get_DirectionalAccuracy(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::MagnetometerReading impl_IMagnetometerReadingChangedEventArgs<D>::Reading() const
 {
     Windows::Devices::Sensors::MagnetometerReading value { nullptr };
-    check_hresult(static_cast<const IMagnetometerReadingChangedEventArgs &>(static_cast<const D &>(*this))->get_Reading(put(value)));
+    check_hresult(WINRT_SHIM(IMagnetometerReadingChangedEventArgs)->get_Reading(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> impl_IActivitySensorStatics<D>::GetDefaultAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> result;
-    check_hresult(static_cast<const IActivitySensorStatics &>(static_cast<const D &>(*this))->abi_GetDefaultAsync(put(result)));
+    check_hresult(WINRT_SHIM(IActivitySensorStatics)->abi_GetDefaultAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IActivitySensorStatics<D>::GetDeviceSelector() const
 {
     hstring value;
-    check_hresult(static_cast<const IActivitySensorStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(value)));
+    check_hresult(WINRT_SHIM(IActivitySensorStatics)->abi_GetDeviceSelector(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> impl_IActivitySensorStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> result;
-    check_hresult(static_cast<const IActivitySensorStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(result)));
+    check_hresult(WINRT_SHIM(IActivitySensorStatics)->abi_FromIdAsync(get(deviceId), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ActivitySensorReading>> impl_IActivitySensorStatics<D>::GetSystemHistoryAsync(const Windows::Foundation::DateTime & fromTime) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ActivitySensorReading>> result;
-    check_hresult(static_cast<const IActivitySensorStatics &>(static_cast<const D &>(*this))->abi_GetSystemHistoryAsync(get(fromTime), put(result)));
+    check_hresult(WINRT_SHIM(IActivitySensorStatics)->abi_GetSystemHistoryAsync(get(fromTime), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ActivitySensorReading>> impl_IActivitySensorStatics<D>::GetSystemHistoryAsync(const Windows::Foundation::DateTime & fromTime, const Windows::Foundation::TimeSpan & duration) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ActivitySensorReading>> result;
-    check_hresult(static_cast<const IActivitySensorStatics &>(static_cast<const D &>(*this))->abi_GetSystemHistoryWithDurationAsync(get(fromTime), get(duration), put(result)));
+    check_hresult(WINRT_SHIM(IActivitySensorStatics)->abi_GetSystemHistoryWithDurationAsync(get(fromTime), get(duration), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensorReading> impl_IActivitySensor<D>::GetCurrentReadingAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensorReading> result;
-    check_hresult(static_cast<const IActivitySensor &>(static_cast<const D &>(*this))->abi_GetCurrentReadingAsync(put(result)));
+    check_hresult(WINRT_SHIM(IActivitySensor)->abi_GetCurrentReadingAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Sensors::ActivityType> impl_IActivitySensor<D>::SubscribedActivities() const
 {
     Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Sensors::ActivityType> value;
-    check_hresult(static_cast<const IActivitySensor &>(static_cast<const D &>(*this))->get_SubscribedActivities(put(value)));
+    check_hresult(WINRT_SHIM(IActivitySensor)->get_SubscribedActivities(put(value)));
     return value;
 }
 
 template <typename D> double impl_IActivitySensor<D>::PowerInMilliwatts() const
 {
     double value {};
-    check_hresult(static_cast<const IActivitySensor &>(static_cast<const D &>(*this))->get_PowerInMilliwatts(&value));
+    check_hresult(WINRT_SHIM(IActivitySensor)->get_PowerInMilliwatts(&value));
     return value;
 }
 
 template <typename D> hstring impl_IActivitySensor<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IActivitySensor &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IActivitySensor)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Devices::Sensors::ActivityType> impl_IActivitySensor<D>::SupportedActivities() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Devices::Sensors::ActivityType> value;
-    check_hresult(static_cast<const IActivitySensor &>(static_cast<const D &>(*this))->get_SupportedActivities(put(value)));
+    check_hresult(WINRT_SHIM(IActivitySensor)->get_SupportedActivities(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IActivitySensor<D>::MinimumReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IActivitySensor &>(static_cast<const D &>(*this))->get_MinimumReportInterval(&value));
+    check_hresult(WINRT_SHIM(IActivitySensor)->get_MinimumReportInterval(&value));
     return value;
 }
 
 template <typename D> event_token impl_IActivitySensor<D>::ReadingChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::ActivitySensor, Windows::Devices::Sensors::ActivitySensorReadingChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IActivitySensor &>(static_cast<const D &>(*this))->add_ReadingChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IActivitySensor)->add_ReadingChanged(get(handler), &token));
     return token;
 }
 
@@ -4585,95 +4585,95 @@ template <typename D> event_revoker<IActivitySensor> impl_IActivitySensor<D>::Re
 
 template <typename D> void impl_IActivitySensor<D>::ReadingChanged(event_token token) const
 {
-    check_hresult(static_cast<const IActivitySensor &>(static_cast<const D &>(*this))->remove_ReadingChanged(token));
+    check_hresult(WINRT_SHIM(IActivitySensor)->remove_ReadingChanged(token));
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IActivitySensorReading<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IActivitySensorReading &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(IActivitySensorReading)->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::ActivityType impl_IActivitySensorReading<D>::Activity() const
 {
     Windows::Devices::Sensors::ActivityType value {};
-    check_hresult(static_cast<const IActivitySensorReading &>(static_cast<const D &>(*this))->get_Activity(&value));
+    check_hresult(WINRT_SHIM(IActivitySensorReading)->get_Activity(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::ActivitySensorReadingConfidence impl_IActivitySensorReading<D>::Confidence() const
 {
     Windows::Devices::Sensors::ActivitySensorReadingConfidence value {};
-    check_hresult(static_cast<const IActivitySensorReading &>(static_cast<const D &>(*this))->get_Confidence(&value));
+    check_hresult(WINRT_SHIM(IActivitySensorReading)->get_Confidence(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::ActivitySensorReading impl_IActivitySensorReadingChangedEventArgs<D>::Reading() const
 {
     Windows::Devices::Sensors::ActivitySensorReading value { nullptr };
-    check_hresult(static_cast<const IActivitySensorReadingChangedEventArgs &>(static_cast<const D &>(*this))->get_Reading(put(value)));
+    check_hresult(WINRT_SHIM(IActivitySensorReadingChangedEventArgs)->get_Reading(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::ActivitySensorReading impl_IActivitySensorReadingChangeReport<D>::Reading() const
 {
     Windows::Devices::Sensors::ActivitySensorReading value { nullptr };
-    check_hresult(static_cast<const IActivitySensorReadingChangeReport &>(static_cast<const D &>(*this))->get_Reading(put(value)));
+    check_hresult(WINRT_SHIM(IActivitySensorReadingChangeReport)->get_Reading(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ActivitySensorReadingChangeReport> impl_IActivitySensorTriggerDetails<D>::ReadReports() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ActivitySensorReadingChangeReport> value;
-    check_hresult(static_cast<const IActivitySensorTriggerDetails &>(static_cast<const D &>(*this))->abi_ReadReports(put(value)));
+    check_hresult(WINRT_SHIM(IActivitySensorTriggerDetails)->abi_ReadReports(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::Barometer impl_IBarometerStatics<D>::GetDefault() const
 {
     Windows::Devices::Sensors::Barometer result { nullptr };
-    check_hresult(static_cast<const IBarometerStatics &>(static_cast<const D &>(*this))->abi_GetDefault(put(result)));
+    check_hresult(WINRT_SHIM(IBarometerStatics)->abi_GetDefault(put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Sensors::BarometerReading impl_IBarometer<D>::GetCurrentReading() const
 {
     Windows::Devices::Sensors::BarometerReading value { nullptr };
-    check_hresult(static_cast<const IBarometer &>(static_cast<const D &>(*this))->abi_GetCurrentReading(put(value)));
+    check_hresult(WINRT_SHIM(IBarometer)->abi_GetCurrentReading(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IBarometer<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IBarometer &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IBarometer)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarometer<D>::MinimumReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarometer &>(static_cast<const D &>(*this))->get_MinimumReportInterval(&value));
+    check_hresult(WINRT_SHIM(IBarometer)->get_MinimumReportInterval(&value));
     return value;
 }
 
 template <typename D> void impl_IBarometer<D>::ReportInterval(uint32_t value) const
 {
-    check_hresult(static_cast<const IBarometer &>(static_cast<const D &>(*this))->put_ReportInterval(value));
+    check_hresult(WINRT_SHIM(IBarometer)->put_ReportInterval(value));
 }
 
 template <typename D> uint32_t impl_IBarometer<D>::ReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarometer &>(static_cast<const D &>(*this))->get_ReportInterval(&value));
+    check_hresult(WINRT_SHIM(IBarometer)->get_ReportInterval(&value));
     return value;
 }
 
 template <typename D> event_token impl_IBarometer<D>::ReadingChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Barometer, Windows::Devices::Sensors::BarometerReadingChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IBarometer &>(static_cast<const D &>(*this))->add_ReadingChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IBarometer)->add_ReadingChanged(get(handler), &token));
     return token;
 }
 
@@ -4684,151 +4684,151 @@ template <typename D> event_revoker<IBarometer> impl_IBarometer<D>::ReadingChang
 
 template <typename D> void impl_IBarometer<D>::ReadingChanged(event_token token) const
 {
-    check_hresult(static_cast<const IBarometer &>(static_cast<const D &>(*this))->remove_ReadingChanged(token));
+    check_hresult(WINRT_SHIM(IBarometer)->remove_ReadingChanged(token));
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IBarometerReading<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IBarometerReading &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(IBarometerReading)->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> double impl_IBarometerReading<D>::StationPressureInHectopascals() const
 {
     double value {};
-    check_hresult(static_cast<const IBarometerReading &>(static_cast<const D &>(*this))->get_StationPressureInHectopascals(&value));
+    check_hresult(WINRT_SHIM(IBarometerReading)->get_StationPressureInHectopascals(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::BarometerReading impl_IBarometerReadingChangedEventArgs<D>::Reading() const
 {
     Windows::Devices::Sensors::BarometerReading value { nullptr };
-    check_hresult(static_cast<const IBarometerReadingChangedEventArgs &>(static_cast<const D &>(*this))->get_Reading(put(value)));
+    check_hresult(WINRT_SHIM(IBarometerReadingChangedEventArgs)->get_Reading(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::PedometerStepKind impl_IPedometerReading<D>::StepKind() const
 {
     Windows::Devices::Sensors::PedometerStepKind value {};
-    check_hresult(static_cast<const IPedometerReading &>(static_cast<const D &>(*this))->get_StepKind(&value));
+    check_hresult(WINRT_SHIM(IPedometerReading)->get_StepKind(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IPedometerReading<D>::CumulativeSteps() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IPedometerReading &>(static_cast<const D &>(*this))->get_CumulativeSteps(&value));
+    check_hresult(WINRT_SHIM(IPedometerReading)->get_CumulativeSteps(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IPedometerReading<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IPedometerReading &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(IPedometerReading)->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IPedometerReading<D>::CumulativeStepsDuration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IPedometerReading &>(static_cast<const D &>(*this))->get_CumulativeStepsDuration(put(value)));
+    check_hresult(WINRT_SHIM(IPedometerReading)->get_CumulativeStepsDuration(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::PedometerReading impl_IPedometerReadingChangedEventArgs<D>::Reading() const
 {
     Windows::Devices::Sensors::PedometerReading value { nullptr };
-    check_hresult(static_cast<const IPedometerReadingChangedEventArgs &>(static_cast<const D &>(*this))->get_Reading(put(value)));
+    check_hresult(WINRT_SHIM(IPedometerReadingChangedEventArgs)->get_Reading(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> impl_IPedometerStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> operation;
-    check_hresult(static_cast<const IPedometerStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(operation)));
+    check_hresult(WINRT_SHIM(IPedometerStatics)->abi_FromIdAsync(get(deviceId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> impl_IPedometerStatics<D>::GetDefaultAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> operation;
-    check_hresult(static_cast<const IPedometerStatics &>(static_cast<const D &>(*this))->abi_GetDefaultAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPedometerStatics)->abi_GetDefaultAsync(put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IPedometerStatics<D>::GetDeviceSelector() const
 {
     hstring result;
-    check_hresult(static_cast<const IPedometerStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(result)));
+    check_hresult(WINRT_SHIM(IPedometerStatics)->abi_GetDeviceSelector(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::PedometerReading>> impl_IPedometerStatics<D>::GetSystemHistoryAsync(const Windows::Foundation::DateTime & fromTime) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::PedometerReading>> operation;
-    check_hresult(static_cast<const IPedometerStatics &>(static_cast<const D &>(*this))->abi_GetSystemHistoryAsync(get(fromTime), put(operation)));
+    check_hresult(WINRT_SHIM(IPedometerStatics)->abi_GetSystemHistoryAsync(get(fromTime), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::PedometerReading>> impl_IPedometerStatics<D>::GetSystemHistoryAsync(const Windows::Foundation::DateTime & fromTime, const Windows::Foundation::TimeSpan & duration) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::PedometerReading>> operation;
-    check_hresult(static_cast<const IPedometerStatics &>(static_cast<const D &>(*this))->abi_GetSystemHistoryWithDurationAsync(get(fromTime), get(duration), put(operation)));
+    check_hresult(WINRT_SHIM(IPedometerStatics)->abi_GetSystemHistoryWithDurationAsync(get(fromTime), get(duration), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::PedometerReading> impl_IPedometerStatics2<D>::GetReadingsFromTriggerDetails(const Windows::Devices::Sensors::SensorDataThresholdTriggerDetails & triggerDetails) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::PedometerReading> result;
-    check_hresult(static_cast<const IPedometerStatics2 &>(static_cast<const D &>(*this))->abi_GetReadingsFromTriggerDetails(get(triggerDetails), put(result)));
+    check_hresult(WINRT_SHIM(IPedometerStatics2)->abi_GetReadingsFromTriggerDetails(get(triggerDetails), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<winrt::Windows::Devices::Sensors::PedometerStepKind, Windows::Devices::Sensors::PedometerReading> impl_IPedometer2<D>::GetCurrentReadings() const
 {
     Windows::Foundation::Collections::IMapView<winrt::Windows::Devices::Sensors::PedometerStepKind, Windows::Devices::Sensors::PedometerReading> value;
-    check_hresult(static_cast<const IPedometer2 &>(static_cast<const D &>(*this))->abi_GetCurrentReadings(put(value)));
+    check_hresult(WINRT_SHIM(IPedometer2)->abi_GetCurrentReadings(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPedometer<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IPedometer &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IPedometer)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> double impl_IPedometer<D>::PowerInMilliwatts() const
 {
     double value {};
-    check_hresult(static_cast<const IPedometer &>(static_cast<const D &>(*this))->get_PowerInMilliwatts(&value));
+    check_hresult(WINRT_SHIM(IPedometer)->get_PowerInMilliwatts(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPedometer<D>::MinimumReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPedometer &>(static_cast<const D &>(*this))->get_MinimumReportInterval(&value));
+    check_hresult(WINRT_SHIM(IPedometer)->get_MinimumReportInterval(&value));
     return value;
 }
 
 template <typename D> void impl_IPedometer<D>::ReportInterval(uint32_t value) const
 {
-    check_hresult(static_cast<const IPedometer &>(static_cast<const D &>(*this))->put_ReportInterval(value));
+    check_hresult(WINRT_SHIM(IPedometer)->put_ReportInterval(value));
 }
 
 template <typename D> uint32_t impl_IPedometer<D>::ReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPedometer &>(static_cast<const D &>(*this))->get_ReportInterval(&value));
+    check_hresult(WINRT_SHIM(IPedometer)->get_ReportInterval(&value));
     return value;
 }
 
 template <typename D> event_token impl_IPedometer<D>::ReadingChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Pedometer, Windows::Devices::Sensors::PedometerReadingChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPedometer &>(static_cast<const D &>(*this))->add_ReadingChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPedometer)->add_ReadingChanged(get(handler), &token));
     return token;
 }
 
@@ -4839,62 +4839,62 @@ template <typename D> event_revoker<IPedometer> impl_IPedometer<D>::ReadingChang
 
 template <typename D> void impl_IPedometer<D>::ReadingChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPedometer &>(static_cast<const D &>(*this))->remove_ReadingChanged(token));
+    check_hresult(WINRT_SHIM(IPedometer)->remove_ReadingChanged(token));
 }
 
 template <typename D> Windows::Devices::Sensors::PedometerDataThreshold impl_IPedometerDataThresholdFactory<D>::Create(const Windows::Devices::Sensors::Pedometer & sensor, int32_t stepGoal) const
 {
     Windows::Devices::Sensors::PedometerDataThreshold threshold { nullptr };
-    check_hresult(static_cast<const IPedometerDataThresholdFactory &>(static_cast<const D &>(*this))->abi_Create(get(sensor), stepGoal, put(threshold)));
+    check_hresult(WINRT_SHIM(IPedometerDataThresholdFactory)->abi_Create(get(sensor), stepGoal, put(threshold)));
     return threshold;
 }
 
 template <typename D> hstring impl_IProximitySensorStatics<D>::GetDeviceSelector() const
 {
     hstring value;
-    check_hresult(static_cast<const IProximitySensorStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(value)));
+    check_hresult(WINRT_SHIM(IProximitySensorStatics)->abi_GetDeviceSelector(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::ProximitySensor impl_IProximitySensorStatics<D>::FromId(hstring_ref sensorId) const
 {
     Windows::Devices::Sensors::ProximitySensor result { nullptr };
-    check_hresult(static_cast<const IProximitySensorStatics &>(static_cast<const D &>(*this))->abi_FromId(get(sensorId), put(result)));
+    check_hresult(WINRT_SHIM(IProximitySensorStatics)->abi_FromId(get(sensorId), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IProximitySensor<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IProximitySensor &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IProximitySensor)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IProximitySensor<D>::MaxDistanceInMillimeters() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(static_cast<const IProximitySensor &>(static_cast<const D &>(*this))->get_MaxDistanceInMillimeters(put(value)));
+    check_hresult(WINRT_SHIM(IProximitySensor)->get_MaxDistanceInMillimeters(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IProximitySensor<D>::MinDistanceInMillimeters() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(static_cast<const IProximitySensor &>(static_cast<const D &>(*this))->get_MinDistanceInMillimeters(put(value)));
+    check_hresult(WINRT_SHIM(IProximitySensor)->get_MinDistanceInMillimeters(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::ProximitySensorReading impl_IProximitySensor<D>::GetCurrentReading() const
 {
     Windows::Devices::Sensors::ProximitySensorReading value { nullptr };
-    check_hresult(static_cast<const IProximitySensor &>(static_cast<const D &>(*this))->abi_GetCurrentReading(put(value)));
+    check_hresult(WINRT_SHIM(IProximitySensor)->abi_GetCurrentReading(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IProximitySensor<D>::ReadingChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::ProximitySensor, Windows::Devices::Sensors::ProximitySensorReadingChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IProximitySensor &>(static_cast<const D &>(*this))->add_ReadingChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IProximitySensor)->add_ReadingChanged(get(handler), &token));
     return token;
 }
 
@@ -4905,102 +4905,102 @@ template <typename D> event_revoker<IProximitySensor> impl_IProximitySensor<D>::
 
 template <typename D> void impl_IProximitySensor<D>::ReadingChanged(event_token token) const
 {
-    check_hresult(static_cast<const IProximitySensor &>(static_cast<const D &>(*this))->remove_ReadingChanged(token));
+    check_hresult(WINRT_SHIM(IProximitySensor)->remove_ReadingChanged(token));
 }
 
 template <typename D> Windows::Devices::Sensors::ProximitySensorDisplayOnOffController impl_IProximitySensor<D>::CreateDisplayOnOffController() const
 {
     Windows::Devices::Sensors::ProximitySensorDisplayOnOffController controller { nullptr };
-    check_hresult(static_cast<const IProximitySensor &>(static_cast<const D &>(*this))->abi_CreateDisplayOnOffController(put(controller)));
+    check_hresult(WINRT_SHIM(IProximitySensor)->abi_CreateDisplayOnOffController(put(controller)));
     return controller;
 }
 
 template <typename D> Windows::Devices::Sensors::ProximitySensorReading impl_IProximitySensorReadingChangedEventArgs<D>::Reading() const
 {
     Windows::Devices::Sensors::ProximitySensorReading value { nullptr };
-    check_hresult(static_cast<const IProximitySensorReadingChangedEventArgs &>(static_cast<const D &>(*this))->get_Reading(put(value)));
+    check_hresult(WINRT_SHIM(IProximitySensorReadingChangedEventArgs)->get_Reading(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IProximitySensorReading<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IProximitySensorReading &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(IProximitySensorReading)->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IProximitySensorReading<D>::IsDetected() const
 {
     bool value {};
-    check_hresult(static_cast<const IProximitySensorReading &>(static_cast<const D &>(*this))->get_IsDetected(&value));
+    check_hresult(WINRT_SHIM(IProximitySensorReading)->get_IsDetected(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IProximitySensorReading<D>::DistanceInMillimeters() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(static_cast<const IProximitySensorReading &>(static_cast<const D &>(*this))->get_DistanceInMillimeters(put(value)));
+    check_hresult(WINRT_SHIM(IProximitySensorReading)->get_DistanceInMillimeters(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::ProximitySensorDataThreshold impl_IProximitySensorDataThresholdFactory<D>::Create(const Windows::Devices::Sensors::ProximitySensor & sensor) const
 {
     Windows::Devices::Sensors::ProximitySensorDataThreshold threshold { nullptr };
-    check_hresult(static_cast<const IProximitySensorDataThresholdFactory &>(static_cast<const D &>(*this))->abi_Create(get(sensor), put(threshold)));
+    check_hresult(WINRT_SHIM(IProximitySensorDataThresholdFactory)->abi_Create(get(sensor), put(threshold)));
     return threshold;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ProximitySensorReading> impl_IProximitySensorStatics2<D>::GetReadingsFromTriggerDetails(const Windows::Devices::Sensors::SensorDataThresholdTriggerDetails & triggerDetails) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ProximitySensorReading> result;
-    check_hresult(static_cast<const IProximitySensorStatics2 &>(static_cast<const D &>(*this))->abi_GetReadingsFromTriggerDetails(get(triggerDetails), put(result)));
+    check_hresult(WINRT_SHIM(IProximitySensorStatics2)->abi_GetReadingsFromTriggerDetails(get(triggerDetails), put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Sensors::Altimeter impl_IAltimeterStatics<D>::GetDefault() const
 {
     Windows::Devices::Sensors::Altimeter result { nullptr };
-    check_hresult(static_cast<const IAltimeterStatics &>(static_cast<const D &>(*this))->abi_GetDefault(put(result)));
+    check_hresult(WINRT_SHIM(IAltimeterStatics)->abi_GetDefault(put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Sensors::AltimeterReading impl_IAltimeter<D>::GetCurrentReading() const
 {
     Windows::Devices::Sensors::AltimeterReading value { nullptr };
-    check_hresult(static_cast<const IAltimeter &>(static_cast<const D &>(*this))->abi_GetCurrentReading(put(value)));
+    check_hresult(WINRT_SHIM(IAltimeter)->abi_GetCurrentReading(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAltimeter<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IAltimeter &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IAltimeter)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IAltimeter<D>::MinimumReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IAltimeter &>(static_cast<const D &>(*this))->get_MinimumReportInterval(&value));
+    check_hresult(WINRT_SHIM(IAltimeter)->get_MinimumReportInterval(&value));
     return value;
 }
 
 template <typename D> void impl_IAltimeter<D>::ReportInterval(uint32_t value) const
 {
-    check_hresult(static_cast<const IAltimeter &>(static_cast<const D &>(*this))->put_ReportInterval(value));
+    check_hresult(WINRT_SHIM(IAltimeter)->put_ReportInterval(value));
 }
 
 template <typename D> uint32_t impl_IAltimeter<D>::ReportInterval() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IAltimeter &>(static_cast<const D &>(*this))->get_ReportInterval(&value));
+    check_hresult(WINRT_SHIM(IAltimeter)->get_ReportInterval(&value));
     return value;
 }
 
 template <typename D> event_token impl_IAltimeter<D>::ReadingChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Altimeter, Windows::Devices::Sensors::AltimeterReadingChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAltimeter &>(static_cast<const D &>(*this))->add_ReadingChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAltimeter)->add_ReadingChanged(get(handler), &token));
     return token;
 }
 
@@ -5011,27 +5011,27 @@ template <typename D> event_revoker<IAltimeter> impl_IAltimeter<D>::ReadingChang
 
 template <typename D> void impl_IAltimeter<D>::ReadingChanged(event_token token) const
 {
-    check_hresult(static_cast<const IAltimeter &>(static_cast<const D &>(*this))->remove_ReadingChanged(token));
+    check_hresult(WINRT_SHIM(IAltimeter)->remove_ReadingChanged(token));
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IAltimeterReading<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IAltimeterReading &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(IAltimeterReading)->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> double impl_IAltimeterReading<D>::AltitudeChangeInMeters() const
 {
     double value {};
-    check_hresult(static_cast<const IAltimeterReading &>(static_cast<const D &>(*this))->get_AltitudeChangeInMeters(&value));
+    check_hresult(WINRT_SHIM(IAltimeterReading)->get_AltitudeChangeInMeters(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::AltimeterReading impl_IAltimeterReadingChangedEventArgs<D>::Reading() const
 {
     Windows::Devices::Sensors::AltimeterReading value { nullptr };
-    check_hresult(static_cast<const IAltimeterReadingChangedEventArgs &>(static_cast<const D &>(*this))->get_Reading(put(value)));
+    check_hresult(WINRT_SHIM(IAltimeterReadingChangedEventArgs)->get_Reading(put(value)));
     return value;
 }
 

@@ -12,7 +12,6 @@ namespace Windows::UI::Xaml::Interop {
 struct BindableVectorChangedEventHandler : Windows::IUnknown
 {
     BindableVectorChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<BindableVectorChangedEventHandler>(m_ptr); }
     template <typename L> BindableVectorChangedEventHandler(L lambda);
     template <typename F> BindableVectorChangedEventHandler (F * function);
     template <typename O, typename M> BindableVectorChangedEventHandler(O * object, M method);
@@ -22,7 +21,6 @@ struct BindableVectorChangedEventHandler : Windows::IUnknown
 struct NotifyCollectionChangedEventHandler : Windows::IUnknown
 {
     NotifyCollectionChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<NotifyCollectionChangedEventHandler>(m_ptr); }
     template <typename L> NotifyCollectionChangedEventHandler(L lambda);
     template <typename F> NotifyCollectionChangedEventHandler (F * function);
     template <typename O, typename M> NotifyCollectionChangedEventHandler(O * object, M method);
@@ -34,7 +32,6 @@ struct IBindableIterable :
     impl::consume<IBindableIterable>
 {
     IBindableIterable(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBindableIterable>(m_ptr); }
 };
 
 struct IBindableIterator :
@@ -42,7 +39,6 @@ struct IBindableIterator :
     impl::consume<IBindableIterator>
 {
     IBindableIterator(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBindableIterator>(m_ptr); }
 };
 
 struct IBindableObservableVector :
@@ -51,7 +47,6 @@ struct IBindableObservableVector :
     impl::require<IBindableObservableVector, Windows::UI::Xaml::Interop::IBindableIterable, Windows::UI::Xaml::Interop::IBindableVector>
 {
     IBindableObservableVector(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBindableObservableVector>(m_ptr); }
 };
 
 struct IBindableVector :
@@ -60,7 +55,6 @@ struct IBindableVector :
     impl::require<IBindableVector, Windows::UI::Xaml::Interop::IBindableIterable>
 {
     IBindableVector(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBindableVector>(m_ptr); }
 };
 
 struct IBindableVectorView :
@@ -69,7 +63,6 @@ struct IBindableVectorView :
     impl::require<IBindableVectorView, Windows::UI::Xaml::Interop::IBindableIterable>
 {
     IBindableVectorView(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBindableVectorView>(m_ptr); }
 };
 
 struct INotifyCollectionChanged :
@@ -77,7 +70,6 @@ struct INotifyCollectionChanged :
     impl::consume<INotifyCollectionChanged>
 {
     INotifyCollectionChanged(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INotifyCollectionChanged>(m_ptr); }
 };
 
 struct INotifyCollectionChangedEventArgs :
@@ -85,7 +77,6 @@ struct INotifyCollectionChangedEventArgs :
     impl::consume<INotifyCollectionChangedEventArgs>
 {
     INotifyCollectionChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INotifyCollectionChangedEventArgs>(m_ptr); }
 };
 
 struct INotifyCollectionChangedEventArgsFactory :
@@ -93,7 +84,6 @@ struct INotifyCollectionChangedEventArgsFactory :
     impl::consume<INotifyCollectionChangedEventArgsFactory>
 {
     INotifyCollectionChangedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INotifyCollectionChangedEventArgsFactory>(m_ptr); }
 };
 
 }

@@ -69,7 +69,6 @@ struct IAsymmetricAlgorithmNamesStatics :
     impl::consume<IAsymmetricAlgorithmNamesStatics>
 {
     IAsymmetricAlgorithmNamesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAsymmetricAlgorithmNamesStatics>(m_ptr); }
 };
 
 struct IAsymmetricAlgorithmNamesStatics2 :
@@ -77,7 +76,6 @@ struct IAsymmetricAlgorithmNamesStatics2 :
     impl::consume<IAsymmetricAlgorithmNamesStatics2>
 {
     IAsymmetricAlgorithmNamesStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAsymmetricAlgorithmNamesStatics2>(m_ptr); }
 };
 
 struct IAsymmetricKeyAlgorithmProvider :
@@ -85,7 +83,6 @@ struct IAsymmetricKeyAlgorithmProvider :
     impl::consume<IAsymmetricKeyAlgorithmProvider>
 {
     IAsymmetricKeyAlgorithmProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAsymmetricKeyAlgorithmProvider>(m_ptr); }
 };
 
 struct IAsymmetricKeyAlgorithmProvider2 :
@@ -93,7 +90,6 @@ struct IAsymmetricKeyAlgorithmProvider2 :
     impl::consume<IAsymmetricKeyAlgorithmProvider2>
 {
     IAsymmetricKeyAlgorithmProvider2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAsymmetricKeyAlgorithmProvider2>(m_ptr); }
 };
 
 struct IAsymmetricKeyAlgorithmProviderStatics :
@@ -101,7 +97,6 @@ struct IAsymmetricKeyAlgorithmProviderStatics :
     impl::consume<IAsymmetricKeyAlgorithmProviderStatics>
 {
     IAsymmetricKeyAlgorithmProviderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAsymmetricKeyAlgorithmProviderStatics>(m_ptr); }
 };
 
 struct ICryptographicEngineStatics :
@@ -109,7 +104,6 @@ struct ICryptographicEngineStatics :
     impl::consume<ICryptographicEngineStatics>
 {
     ICryptographicEngineStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICryptographicEngineStatics>(m_ptr); }
 };
 
 struct ICryptographicEngineStatics2 :
@@ -117,7 +111,6 @@ struct ICryptographicEngineStatics2 :
     impl::consume<ICryptographicEngineStatics2>
 {
     ICryptographicEngineStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICryptographicEngineStatics2>(m_ptr); }
 };
 
 struct ICryptographicKey :
@@ -125,7 +118,6 @@ struct ICryptographicKey :
     impl::consume<ICryptographicKey>
 {
     ICryptographicKey(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICryptographicKey>(m_ptr); }
 };
 
 struct IEccCurveNamesStatics :
@@ -133,7 +125,6 @@ struct IEccCurveNamesStatics :
     impl::consume<IEccCurveNamesStatics>
 {
     IEccCurveNamesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEccCurveNamesStatics>(m_ptr); }
 };
 
 struct IEncryptedAndAuthenticatedData :
@@ -141,7 +132,6 @@ struct IEncryptedAndAuthenticatedData :
     impl::consume<IEncryptedAndAuthenticatedData>
 {
     IEncryptedAndAuthenticatedData(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEncryptedAndAuthenticatedData>(m_ptr); }
 };
 
 struct IHashAlgorithmNamesStatics :
@@ -149,7 +139,6 @@ struct IHashAlgorithmNamesStatics :
     impl::consume<IHashAlgorithmNamesStatics>
 {
     IHashAlgorithmNamesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHashAlgorithmNamesStatics>(m_ptr); }
 };
 
 struct IHashAlgorithmProvider :
@@ -157,7 +146,6 @@ struct IHashAlgorithmProvider :
     impl::consume<IHashAlgorithmProvider>
 {
     IHashAlgorithmProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHashAlgorithmProvider>(m_ptr); }
 };
 
 struct IHashAlgorithmProviderStatics :
@@ -165,7 +153,6 @@ struct IHashAlgorithmProviderStatics :
     impl::consume<IHashAlgorithmProviderStatics>
 {
     IHashAlgorithmProviderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHashAlgorithmProviderStatics>(m_ptr); }
 };
 
 struct IHashComputation :
@@ -173,7 +160,6 @@ struct IHashComputation :
     impl::consume<IHashComputation>
 {
     IHashComputation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHashComputation>(m_ptr); }
 };
 
 struct IKeyDerivationAlgorithmNamesStatics :
@@ -181,7 +167,6 @@ struct IKeyDerivationAlgorithmNamesStatics :
     impl::consume<IKeyDerivationAlgorithmNamesStatics>
 {
     IKeyDerivationAlgorithmNamesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyDerivationAlgorithmNamesStatics>(m_ptr); }
 };
 
 struct IKeyDerivationAlgorithmNamesStatics2 :
@@ -189,7 +174,6 @@ struct IKeyDerivationAlgorithmNamesStatics2 :
     impl::consume<IKeyDerivationAlgorithmNamesStatics2>
 {
     IKeyDerivationAlgorithmNamesStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyDerivationAlgorithmNamesStatics2>(m_ptr); }
 };
 
 struct IKeyDerivationAlgorithmProvider :
@@ -197,7 +181,6 @@ struct IKeyDerivationAlgorithmProvider :
     impl::consume<IKeyDerivationAlgorithmProvider>
 {
     IKeyDerivationAlgorithmProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyDerivationAlgorithmProvider>(m_ptr); }
 };
 
 struct IKeyDerivationAlgorithmProviderStatics :
@@ -205,7 +188,6 @@ struct IKeyDerivationAlgorithmProviderStatics :
     impl::consume<IKeyDerivationAlgorithmProviderStatics>
 {
     IKeyDerivationAlgorithmProviderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyDerivationAlgorithmProviderStatics>(m_ptr); }
 };
 
 struct IKeyDerivationParameters :
@@ -213,7 +195,6 @@ struct IKeyDerivationParameters :
     impl::consume<IKeyDerivationParameters>
 {
     IKeyDerivationParameters(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyDerivationParameters>(m_ptr); }
 };
 
 struct IKeyDerivationParameters2 :
@@ -221,7 +202,6 @@ struct IKeyDerivationParameters2 :
     impl::consume<IKeyDerivationParameters2>
 {
     IKeyDerivationParameters2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyDerivationParameters2>(m_ptr); }
 };
 
 struct IKeyDerivationParametersStatics :
@@ -229,7 +209,6 @@ struct IKeyDerivationParametersStatics :
     impl::consume<IKeyDerivationParametersStatics>
 {
     IKeyDerivationParametersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyDerivationParametersStatics>(m_ptr); }
 };
 
 struct IKeyDerivationParametersStatics2 :
@@ -237,7 +216,6 @@ struct IKeyDerivationParametersStatics2 :
     impl::consume<IKeyDerivationParametersStatics2>
 {
     IKeyDerivationParametersStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyDerivationParametersStatics2>(m_ptr); }
 };
 
 struct IMacAlgorithmNamesStatics :
@@ -245,7 +223,6 @@ struct IMacAlgorithmNamesStatics :
     impl::consume<IMacAlgorithmNamesStatics>
 {
     IMacAlgorithmNamesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMacAlgorithmNamesStatics>(m_ptr); }
 };
 
 struct IMacAlgorithmProvider :
@@ -253,7 +230,6 @@ struct IMacAlgorithmProvider :
     impl::consume<IMacAlgorithmProvider>
 {
     IMacAlgorithmProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMacAlgorithmProvider>(m_ptr); }
 };
 
 struct IMacAlgorithmProvider2 :
@@ -261,7 +237,6 @@ struct IMacAlgorithmProvider2 :
     impl::consume<IMacAlgorithmProvider2>
 {
     IMacAlgorithmProvider2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMacAlgorithmProvider2>(m_ptr); }
 };
 
 struct IMacAlgorithmProviderStatics :
@@ -269,7 +244,6 @@ struct IMacAlgorithmProviderStatics :
     impl::consume<IMacAlgorithmProviderStatics>
 {
     IMacAlgorithmProviderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMacAlgorithmProviderStatics>(m_ptr); }
 };
 
 struct IPersistedKeyProviderStatics :
@@ -277,7 +251,6 @@ struct IPersistedKeyProviderStatics :
     impl::consume<IPersistedKeyProviderStatics>
 {
     IPersistedKeyProviderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPersistedKeyProviderStatics>(m_ptr); }
 };
 
 struct ISymmetricAlgorithmNamesStatics :
@@ -285,7 +258,6 @@ struct ISymmetricAlgorithmNamesStatics :
     impl::consume<ISymmetricAlgorithmNamesStatics>
 {
     ISymmetricAlgorithmNamesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISymmetricAlgorithmNamesStatics>(m_ptr); }
 };
 
 struct ISymmetricKeyAlgorithmProvider :
@@ -293,7 +265,6 @@ struct ISymmetricKeyAlgorithmProvider :
     impl::consume<ISymmetricKeyAlgorithmProvider>
 {
     ISymmetricKeyAlgorithmProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISymmetricKeyAlgorithmProvider>(m_ptr); }
 };
 
 struct ISymmetricKeyAlgorithmProviderStatics :
@@ -301,7 +272,6 @@ struct ISymmetricKeyAlgorithmProviderStatics :
     impl::consume<ISymmetricKeyAlgorithmProviderStatics>
 {
     ISymmetricKeyAlgorithmProviderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISymmetricKeyAlgorithmProviderStatics>(m_ptr); }
 };
 
 }

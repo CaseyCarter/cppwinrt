@@ -109,7 +109,6 @@ struct ISecondaryAuthenticationFactorAuthentication :
     impl::consume<ISecondaryAuthenticationFactorAuthentication>
 {
     ISecondaryAuthenticationFactorAuthentication(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISecondaryAuthenticationFactorAuthentication>(m_ptr); }
 };
 
 struct ISecondaryAuthenticationFactorAuthenticationResult :
@@ -117,7 +116,6 @@ struct ISecondaryAuthenticationFactorAuthenticationResult :
     impl::consume<ISecondaryAuthenticationFactorAuthenticationResult>
 {
     ISecondaryAuthenticationFactorAuthenticationResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISecondaryAuthenticationFactorAuthenticationResult>(m_ptr); }
 };
 
 struct ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs :
@@ -125,7 +123,6 @@ struct ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs :
     impl::consume<ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs>
 {
     ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs>(m_ptr); }
 };
 
 struct ISecondaryAuthenticationFactorAuthenticationStageInfo :
@@ -133,7 +130,6 @@ struct ISecondaryAuthenticationFactorAuthenticationStageInfo :
     impl::consume<ISecondaryAuthenticationFactorAuthenticationStageInfo>
 {
     ISecondaryAuthenticationFactorAuthenticationStageInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISecondaryAuthenticationFactorAuthenticationStageInfo>(m_ptr); }
 };
 
 struct ISecondaryAuthenticationFactorAuthenticationStatics :
@@ -141,7 +137,6 @@ struct ISecondaryAuthenticationFactorAuthenticationStatics :
     impl::consume<ISecondaryAuthenticationFactorAuthenticationStatics>
 {
     ISecondaryAuthenticationFactorAuthenticationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISecondaryAuthenticationFactorAuthenticationStatics>(m_ptr); }
 };
 
 struct ISecondaryAuthenticationFactorInfo :
@@ -149,7 +144,6 @@ struct ISecondaryAuthenticationFactorInfo :
     impl::consume<ISecondaryAuthenticationFactorInfo>
 {
     ISecondaryAuthenticationFactorInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISecondaryAuthenticationFactorInfo>(m_ptr); }
 };
 
 struct ISecondaryAuthenticationFactorRegistration :
@@ -157,7 +151,6 @@ struct ISecondaryAuthenticationFactorRegistration :
     impl::consume<ISecondaryAuthenticationFactorRegistration>
 {
     ISecondaryAuthenticationFactorRegistration(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISecondaryAuthenticationFactorRegistration>(m_ptr); }
 };
 
 struct ISecondaryAuthenticationFactorRegistrationResult :
@@ -165,7 +158,6 @@ struct ISecondaryAuthenticationFactorRegistrationResult :
     impl::consume<ISecondaryAuthenticationFactorRegistrationResult>
 {
     ISecondaryAuthenticationFactorRegistrationResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISecondaryAuthenticationFactorRegistrationResult>(m_ptr); }
 };
 
 struct ISecondaryAuthenticationFactorRegistrationStatics :
@@ -173,7 +165,6 @@ struct ISecondaryAuthenticationFactorRegistrationStatics :
     impl::consume<ISecondaryAuthenticationFactorRegistrationStatics>
 {
     ISecondaryAuthenticationFactorRegistrationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISecondaryAuthenticationFactorRegistrationStatics>(m_ptr); }
 };
 
 }

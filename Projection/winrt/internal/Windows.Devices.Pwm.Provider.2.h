@@ -34,7 +34,6 @@ struct IPwmControllerProvider :
     impl::consume<IPwmControllerProvider>
 {
     IPwmControllerProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPwmControllerProvider>(m_ptr); }
 };
 
 struct IPwmProvider :
@@ -42,7 +41,6 @@ struct IPwmProvider :
     impl::consume<IPwmProvider>
 {
     IPwmProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPwmProvider>(m_ptr); }
 };
 
 }

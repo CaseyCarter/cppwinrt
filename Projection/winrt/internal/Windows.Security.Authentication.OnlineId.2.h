@@ -69,7 +69,6 @@ struct IOnlineIdAuthenticator :
     impl::consume<IOnlineIdAuthenticator>
 {
     IOnlineIdAuthenticator(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOnlineIdAuthenticator>(m_ptr); }
 };
 
 struct IOnlineIdServiceTicket :
@@ -77,7 +76,6 @@ struct IOnlineIdServiceTicket :
     impl::consume<IOnlineIdServiceTicket>
 {
     IOnlineIdServiceTicket(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOnlineIdServiceTicket>(m_ptr); }
 };
 
 struct IOnlineIdServiceTicketRequest :
@@ -85,7 +83,6 @@ struct IOnlineIdServiceTicketRequest :
     impl::consume<IOnlineIdServiceTicketRequest>
 {
     IOnlineIdServiceTicketRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOnlineIdServiceTicketRequest>(m_ptr); }
 };
 
 struct IOnlineIdServiceTicketRequestFactory :
@@ -93,7 +90,6 @@ struct IOnlineIdServiceTicketRequestFactory :
     impl::consume<IOnlineIdServiceTicketRequestFactory>
 {
     IOnlineIdServiceTicketRequestFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOnlineIdServiceTicketRequestFactory>(m_ptr); }
 };
 
 struct IUserIdentity :
@@ -101,7 +97,6 @@ struct IUserIdentity :
     impl::consume<IUserIdentity>
 {
     IUserIdentity(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserIdentity>(m_ptr); }
 };
 
 }

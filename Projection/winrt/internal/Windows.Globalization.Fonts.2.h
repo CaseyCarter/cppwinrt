@@ -14,7 +14,6 @@ struct ILanguageFont :
     impl::consume<ILanguageFont>
 {
     ILanguageFont(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILanguageFont>(m_ptr); }
 };
 
 struct ILanguageFontGroup :
@@ -22,7 +21,6 @@ struct ILanguageFontGroup :
     impl::consume<ILanguageFontGroup>
 {
     ILanguageFontGroup(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILanguageFontGroup>(m_ptr); }
 };
 
 struct ILanguageFontGroupFactory :
@@ -30,7 +28,6 @@ struct ILanguageFontGroupFactory :
     impl::consume<ILanguageFontGroupFactory>
 {
     ILanguageFontGroupFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILanguageFontGroupFactory>(m_ptr); }
 };
 
 }

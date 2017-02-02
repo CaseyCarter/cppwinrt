@@ -187,7 +187,6 @@ struct IAddDeleteThemeTransition :
     impl::consume<IAddDeleteThemeTransition>
 {
     IAddDeleteThemeTransition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAddDeleteThemeTransition>(m_ptr); }
 };
 
 struct IBackEase :
@@ -195,7 +194,6 @@ struct IBackEase :
     impl::consume<IBackEase>
 {
     IBackEase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackEase>(m_ptr); }
 };
 
 struct IBackEaseStatics :
@@ -203,7 +201,6 @@ struct IBackEaseStatics :
     impl::consume<IBackEaseStatics>
 {
     IBackEaseStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackEaseStatics>(m_ptr); }
 };
 
 struct IBeginStoryboard :
@@ -211,7 +208,6 @@ struct IBeginStoryboard :
     impl::consume<IBeginStoryboard>
 {
     IBeginStoryboard(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBeginStoryboard>(m_ptr); }
 };
 
 struct IBeginStoryboardStatics :
@@ -219,7 +215,6 @@ struct IBeginStoryboardStatics :
     impl::consume<IBeginStoryboardStatics>
 {
     IBeginStoryboardStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBeginStoryboardStatics>(m_ptr); }
 };
 
 struct IBounceEase :
@@ -227,7 +222,6 @@ struct IBounceEase :
     impl::consume<IBounceEase>
 {
     IBounceEase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBounceEase>(m_ptr); }
 };
 
 struct IBounceEaseStatics :
@@ -235,7 +229,6 @@ struct IBounceEaseStatics :
     impl::consume<IBounceEaseStatics>
 {
     IBounceEaseStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBounceEaseStatics>(m_ptr); }
 };
 
 struct ICircleEase :
@@ -243,7 +236,6 @@ struct ICircleEase :
     impl::consume<ICircleEase>
 {
     ICircleEase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICircleEase>(m_ptr); }
 };
 
 struct IColorAnimation :
@@ -251,7 +243,6 @@ struct IColorAnimation :
     impl::consume<IColorAnimation>
 {
     IColorAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IColorAnimation>(m_ptr); }
 };
 
 struct IColorAnimationStatics :
@@ -259,7 +250,6 @@ struct IColorAnimationStatics :
     impl::consume<IColorAnimationStatics>
 {
     IColorAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IColorAnimationStatics>(m_ptr); }
 };
 
 struct IColorAnimationUsingKeyFrames :
@@ -267,7 +257,6 @@ struct IColorAnimationUsingKeyFrames :
     impl::consume<IColorAnimationUsingKeyFrames>
 {
     IColorAnimationUsingKeyFrames(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IColorAnimationUsingKeyFrames>(m_ptr); }
 };
 
 struct IColorAnimationUsingKeyFramesStatics :
@@ -275,7 +264,6 @@ struct IColorAnimationUsingKeyFramesStatics :
     impl::consume<IColorAnimationUsingKeyFramesStatics>
 {
     IColorAnimationUsingKeyFramesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IColorAnimationUsingKeyFramesStatics>(m_ptr); }
 };
 
 struct IColorKeyFrame :
@@ -283,7 +271,6 @@ struct IColorKeyFrame :
     impl::consume<IColorKeyFrame>
 {
     IColorKeyFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IColorKeyFrame>(m_ptr); }
 };
 
 struct IColorKeyFrameFactory :
@@ -291,7 +278,6 @@ struct IColorKeyFrameFactory :
     impl::consume<IColorKeyFrameFactory>
 {
     IColorKeyFrameFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IColorKeyFrameFactory>(m_ptr); }
 };
 
 struct IColorKeyFrameStatics :
@@ -299,7 +285,6 @@ struct IColorKeyFrameStatics :
     impl::consume<IColorKeyFrameStatics>
 {
     IColorKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IColorKeyFrameStatics>(m_ptr); }
 };
 
 struct ICommonNavigationTransitionInfo :
@@ -307,7 +292,6 @@ struct ICommonNavigationTransitionInfo :
     impl::consume<ICommonNavigationTransitionInfo>
 {
     ICommonNavigationTransitionInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICommonNavigationTransitionInfo>(m_ptr); }
 };
 
 struct ICommonNavigationTransitionInfoStatics :
@@ -315,7 +299,6 @@ struct ICommonNavigationTransitionInfoStatics :
     impl::consume<ICommonNavigationTransitionInfoStatics>
 {
     ICommonNavigationTransitionInfoStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICommonNavigationTransitionInfoStatics>(m_ptr); }
 };
 
 struct IConnectedAnimation :
@@ -323,7 +306,6 @@ struct IConnectedAnimation :
     impl::consume<IConnectedAnimation>
 {
     IConnectedAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IConnectedAnimation>(m_ptr); }
 };
 
 struct IConnectedAnimationService :
@@ -331,7 +313,6 @@ struct IConnectedAnimationService :
     impl::consume<IConnectedAnimationService>
 {
     IConnectedAnimationService(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IConnectedAnimationService>(m_ptr); }
 };
 
 struct IConnectedAnimationServiceStatics :
@@ -339,7 +320,6 @@ struct IConnectedAnimationServiceStatics :
     impl::consume<IConnectedAnimationServiceStatics>
 {
     IConnectedAnimationServiceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IConnectedAnimationServiceStatics>(m_ptr); }
 };
 
 struct IContentThemeTransition :
@@ -347,7 +327,6 @@ struct IContentThemeTransition :
     impl::consume<IContentThemeTransition>
 {
     IContentThemeTransition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContentThemeTransition>(m_ptr); }
 };
 
 struct IContentThemeTransitionStatics :
@@ -355,7 +334,6 @@ struct IContentThemeTransitionStatics :
     impl::consume<IContentThemeTransitionStatics>
 {
     IContentThemeTransitionStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContentThemeTransitionStatics>(m_ptr); }
 };
 
 struct IContinuumNavigationTransitionInfo :
@@ -363,7 +341,6 @@ struct IContinuumNavigationTransitionInfo :
     impl::consume<IContinuumNavigationTransitionInfo>
 {
     IContinuumNavigationTransitionInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContinuumNavigationTransitionInfo>(m_ptr); }
 };
 
 struct IContinuumNavigationTransitionInfoStatics :
@@ -371,7 +348,6 @@ struct IContinuumNavigationTransitionInfoStatics :
     impl::consume<IContinuumNavigationTransitionInfoStatics>
 {
     IContinuumNavigationTransitionInfoStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContinuumNavigationTransitionInfoStatics>(m_ptr); }
 };
 
 struct ICubicEase :
@@ -379,7 +355,6 @@ struct ICubicEase :
     impl::consume<ICubicEase>
 {
     ICubicEase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICubicEase>(m_ptr); }
 };
 
 struct IDiscreteColorKeyFrame :
@@ -387,7 +362,6 @@ struct IDiscreteColorKeyFrame :
     impl::consume<IDiscreteColorKeyFrame>
 {
     IDiscreteColorKeyFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDiscreteColorKeyFrame>(m_ptr); }
 };
 
 struct IDiscreteDoubleKeyFrame :
@@ -395,7 +369,6 @@ struct IDiscreteDoubleKeyFrame :
     impl::consume<IDiscreteDoubleKeyFrame>
 {
     IDiscreteDoubleKeyFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDiscreteDoubleKeyFrame>(m_ptr); }
 };
 
 struct IDiscreteObjectKeyFrame :
@@ -403,7 +376,6 @@ struct IDiscreteObjectKeyFrame :
     impl::consume<IDiscreteObjectKeyFrame>
 {
     IDiscreteObjectKeyFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDiscreteObjectKeyFrame>(m_ptr); }
 };
 
 struct IDiscretePointKeyFrame :
@@ -411,7 +383,6 @@ struct IDiscretePointKeyFrame :
     impl::consume<IDiscretePointKeyFrame>
 {
     IDiscretePointKeyFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDiscretePointKeyFrame>(m_ptr); }
 };
 
 struct IDoubleAnimation :
@@ -419,7 +390,6 @@ struct IDoubleAnimation :
     impl::consume<IDoubleAnimation>
 {
     IDoubleAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDoubleAnimation>(m_ptr); }
 };
 
 struct IDoubleAnimationStatics :
@@ -427,7 +397,6 @@ struct IDoubleAnimationStatics :
     impl::consume<IDoubleAnimationStatics>
 {
     IDoubleAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDoubleAnimationStatics>(m_ptr); }
 };
 
 struct IDoubleAnimationUsingKeyFrames :
@@ -435,7 +404,6 @@ struct IDoubleAnimationUsingKeyFrames :
     impl::consume<IDoubleAnimationUsingKeyFrames>
 {
     IDoubleAnimationUsingKeyFrames(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDoubleAnimationUsingKeyFrames>(m_ptr); }
 };
 
 struct IDoubleAnimationUsingKeyFramesStatics :
@@ -443,7 +411,6 @@ struct IDoubleAnimationUsingKeyFramesStatics :
     impl::consume<IDoubleAnimationUsingKeyFramesStatics>
 {
     IDoubleAnimationUsingKeyFramesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDoubleAnimationUsingKeyFramesStatics>(m_ptr); }
 };
 
 struct IDoubleKeyFrame :
@@ -451,7 +418,6 @@ struct IDoubleKeyFrame :
     impl::consume<IDoubleKeyFrame>
 {
     IDoubleKeyFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDoubleKeyFrame>(m_ptr); }
 };
 
 struct IDoubleKeyFrameFactory :
@@ -459,7 +425,6 @@ struct IDoubleKeyFrameFactory :
     impl::consume<IDoubleKeyFrameFactory>
 {
     IDoubleKeyFrameFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDoubleKeyFrameFactory>(m_ptr); }
 };
 
 struct IDoubleKeyFrameStatics :
@@ -467,7 +432,6 @@ struct IDoubleKeyFrameStatics :
     impl::consume<IDoubleKeyFrameStatics>
 {
     IDoubleKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDoubleKeyFrameStatics>(m_ptr); }
 };
 
 struct IDragItemThemeAnimation :
@@ -475,7 +439,6 @@ struct IDragItemThemeAnimation :
     impl::consume<IDragItemThemeAnimation>
 {
     IDragItemThemeAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDragItemThemeAnimation>(m_ptr); }
 };
 
 struct IDragItemThemeAnimationStatics :
@@ -483,7 +446,6 @@ struct IDragItemThemeAnimationStatics :
     impl::consume<IDragItemThemeAnimationStatics>
 {
     IDragItemThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDragItemThemeAnimationStatics>(m_ptr); }
 };
 
 struct IDragOverThemeAnimation :
@@ -491,7 +453,6 @@ struct IDragOverThemeAnimation :
     impl::consume<IDragOverThemeAnimation>
 {
     IDragOverThemeAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDragOverThemeAnimation>(m_ptr); }
 };
 
 struct IDragOverThemeAnimationStatics :
@@ -499,7 +460,6 @@ struct IDragOverThemeAnimationStatics :
     impl::consume<IDragOverThemeAnimationStatics>
 {
     IDragOverThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDragOverThemeAnimationStatics>(m_ptr); }
 };
 
 struct IDrillInNavigationTransitionInfo :
@@ -507,7 +467,6 @@ struct IDrillInNavigationTransitionInfo :
     impl::consume<IDrillInNavigationTransitionInfo>
 {
     IDrillInNavigationTransitionInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDrillInNavigationTransitionInfo>(m_ptr); }
 };
 
 struct IDrillInThemeAnimation :
@@ -515,7 +474,6 @@ struct IDrillInThemeAnimation :
     impl::consume<IDrillInThemeAnimation>
 {
     IDrillInThemeAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDrillInThemeAnimation>(m_ptr); }
 };
 
 struct IDrillInThemeAnimationStatics :
@@ -523,7 +481,6 @@ struct IDrillInThemeAnimationStatics :
     impl::consume<IDrillInThemeAnimationStatics>
 {
     IDrillInThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDrillInThemeAnimationStatics>(m_ptr); }
 };
 
 struct IDrillOutThemeAnimation :
@@ -531,7 +488,6 @@ struct IDrillOutThemeAnimation :
     impl::consume<IDrillOutThemeAnimation>
 {
     IDrillOutThemeAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDrillOutThemeAnimation>(m_ptr); }
 };
 
 struct IDrillOutThemeAnimationStatics :
@@ -539,7 +495,6 @@ struct IDrillOutThemeAnimationStatics :
     impl::consume<IDrillOutThemeAnimationStatics>
 {
     IDrillOutThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDrillOutThemeAnimationStatics>(m_ptr); }
 };
 
 struct IDropTargetItemThemeAnimation :
@@ -547,7 +502,6 @@ struct IDropTargetItemThemeAnimation :
     impl::consume<IDropTargetItemThemeAnimation>
 {
     IDropTargetItemThemeAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDropTargetItemThemeAnimation>(m_ptr); }
 };
 
 struct IDropTargetItemThemeAnimationStatics :
@@ -555,7 +509,6 @@ struct IDropTargetItemThemeAnimationStatics :
     impl::consume<IDropTargetItemThemeAnimationStatics>
 {
     IDropTargetItemThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDropTargetItemThemeAnimationStatics>(m_ptr); }
 };
 
 struct IEasingColorKeyFrame :
@@ -563,7 +516,6 @@ struct IEasingColorKeyFrame :
     impl::consume<IEasingColorKeyFrame>
 {
     IEasingColorKeyFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEasingColorKeyFrame>(m_ptr); }
 };
 
 struct IEasingColorKeyFrameStatics :
@@ -571,7 +523,6 @@ struct IEasingColorKeyFrameStatics :
     impl::consume<IEasingColorKeyFrameStatics>
 {
     IEasingColorKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEasingColorKeyFrameStatics>(m_ptr); }
 };
 
 struct IEasingDoubleKeyFrame :
@@ -579,7 +530,6 @@ struct IEasingDoubleKeyFrame :
     impl::consume<IEasingDoubleKeyFrame>
 {
     IEasingDoubleKeyFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEasingDoubleKeyFrame>(m_ptr); }
 };
 
 struct IEasingDoubleKeyFrameStatics :
@@ -587,7 +537,6 @@ struct IEasingDoubleKeyFrameStatics :
     impl::consume<IEasingDoubleKeyFrameStatics>
 {
     IEasingDoubleKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEasingDoubleKeyFrameStatics>(m_ptr); }
 };
 
 struct IEasingFunctionBase :
@@ -595,7 +544,6 @@ struct IEasingFunctionBase :
     impl::consume<IEasingFunctionBase>
 {
     IEasingFunctionBase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEasingFunctionBase>(m_ptr); }
 };
 
 struct IEasingFunctionBaseFactory :
@@ -603,7 +551,6 @@ struct IEasingFunctionBaseFactory :
     impl::consume<IEasingFunctionBaseFactory>
 {
     IEasingFunctionBaseFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEasingFunctionBaseFactory>(m_ptr); }
 };
 
 struct IEasingFunctionBaseStatics :
@@ -611,7 +558,6 @@ struct IEasingFunctionBaseStatics :
     impl::consume<IEasingFunctionBaseStatics>
 {
     IEasingFunctionBaseStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEasingFunctionBaseStatics>(m_ptr); }
 };
 
 struct IEasingPointKeyFrame :
@@ -619,7 +565,6 @@ struct IEasingPointKeyFrame :
     impl::consume<IEasingPointKeyFrame>
 {
     IEasingPointKeyFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEasingPointKeyFrame>(m_ptr); }
 };
 
 struct IEasingPointKeyFrameStatics :
@@ -627,7 +572,6 @@ struct IEasingPointKeyFrameStatics :
     impl::consume<IEasingPointKeyFrameStatics>
 {
     IEasingPointKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEasingPointKeyFrameStatics>(m_ptr); }
 };
 
 struct IEdgeUIThemeTransition :
@@ -635,7 +579,6 @@ struct IEdgeUIThemeTransition :
     impl::consume<IEdgeUIThemeTransition>
 {
     IEdgeUIThemeTransition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEdgeUIThemeTransition>(m_ptr); }
 };
 
 struct IEdgeUIThemeTransitionStatics :
@@ -643,7 +586,6 @@ struct IEdgeUIThemeTransitionStatics :
     impl::consume<IEdgeUIThemeTransitionStatics>
 {
     IEdgeUIThemeTransitionStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEdgeUIThemeTransitionStatics>(m_ptr); }
 };
 
 struct IElasticEase :
@@ -651,7 +593,6 @@ struct IElasticEase :
     impl::consume<IElasticEase>
 {
     IElasticEase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IElasticEase>(m_ptr); }
 };
 
 struct IElasticEaseStatics :
@@ -659,7 +600,6 @@ struct IElasticEaseStatics :
     impl::consume<IElasticEaseStatics>
 {
     IElasticEaseStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IElasticEaseStatics>(m_ptr); }
 };
 
 struct IEntranceNavigationTransitionInfo :
@@ -667,7 +607,6 @@ struct IEntranceNavigationTransitionInfo :
     impl::consume<IEntranceNavigationTransitionInfo>
 {
     IEntranceNavigationTransitionInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEntranceNavigationTransitionInfo>(m_ptr); }
 };
 
 struct IEntranceNavigationTransitionInfoStatics :
@@ -675,7 +614,6 @@ struct IEntranceNavigationTransitionInfoStatics :
     impl::consume<IEntranceNavigationTransitionInfoStatics>
 {
     IEntranceNavigationTransitionInfoStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEntranceNavigationTransitionInfoStatics>(m_ptr); }
 };
 
 struct IEntranceThemeTransition :
@@ -683,7 +621,6 @@ struct IEntranceThemeTransition :
     impl::consume<IEntranceThemeTransition>
 {
     IEntranceThemeTransition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEntranceThemeTransition>(m_ptr); }
 };
 
 struct IEntranceThemeTransitionStatics :
@@ -691,7 +628,6 @@ struct IEntranceThemeTransitionStatics :
     impl::consume<IEntranceThemeTransitionStatics>
 {
     IEntranceThemeTransitionStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEntranceThemeTransitionStatics>(m_ptr); }
 };
 
 struct IExponentialEase :
@@ -699,7 +635,6 @@ struct IExponentialEase :
     impl::consume<IExponentialEase>
 {
     IExponentialEase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IExponentialEase>(m_ptr); }
 };
 
 struct IExponentialEaseStatics :
@@ -707,7 +642,6 @@ struct IExponentialEaseStatics :
     impl::consume<IExponentialEaseStatics>
 {
     IExponentialEaseStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IExponentialEaseStatics>(m_ptr); }
 };
 
 struct IFadeInThemeAnimation :
@@ -715,7 +649,6 @@ struct IFadeInThemeAnimation :
     impl::consume<IFadeInThemeAnimation>
 {
     IFadeInThemeAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFadeInThemeAnimation>(m_ptr); }
 };
 
 struct IFadeInThemeAnimationStatics :
@@ -723,7 +656,6 @@ struct IFadeInThemeAnimationStatics :
     impl::consume<IFadeInThemeAnimationStatics>
 {
     IFadeInThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFadeInThemeAnimationStatics>(m_ptr); }
 };
 
 struct IFadeOutThemeAnimation :
@@ -731,7 +663,6 @@ struct IFadeOutThemeAnimation :
     impl::consume<IFadeOutThemeAnimation>
 {
     IFadeOutThemeAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFadeOutThemeAnimation>(m_ptr); }
 };
 
 struct IFadeOutThemeAnimationStatics :
@@ -739,7 +670,6 @@ struct IFadeOutThemeAnimationStatics :
     impl::consume<IFadeOutThemeAnimationStatics>
 {
     IFadeOutThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFadeOutThemeAnimationStatics>(m_ptr); }
 };
 
 struct IKeySpline :
@@ -747,7 +677,6 @@ struct IKeySpline :
     impl::consume<IKeySpline>
 {
     IKeySpline(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeySpline>(m_ptr); }
 };
 
 struct IKeyTimeHelper :
@@ -755,7 +684,6 @@ struct IKeyTimeHelper :
     impl::consume<IKeyTimeHelper>
 {
     IKeyTimeHelper(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyTimeHelper>(m_ptr); }
 };
 
 struct IKeyTimeHelperStatics :
@@ -763,7 +691,6 @@ struct IKeyTimeHelperStatics :
     impl::consume<IKeyTimeHelperStatics>
 {
     IKeyTimeHelperStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyTimeHelperStatics>(m_ptr); }
 };
 
 struct ILinearColorKeyFrame :
@@ -771,7 +698,6 @@ struct ILinearColorKeyFrame :
     impl::consume<ILinearColorKeyFrame>
 {
     ILinearColorKeyFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILinearColorKeyFrame>(m_ptr); }
 };
 
 struct ILinearDoubleKeyFrame :
@@ -779,7 +705,6 @@ struct ILinearDoubleKeyFrame :
     impl::consume<ILinearDoubleKeyFrame>
 {
     ILinearDoubleKeyFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILinearDoubleKeyFrame>(m_ptr); }
 };
 
 struct ILinearPointKeyFrame :
@@ -787,7 +712,6 @@ struct ILinearPointKeyFrame :
     impl::consume<ILinearPointKeyFrame>
 {
     ILinearPointKeyFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILinearPointKeyFrame>(m_ptr); }
 };
 
 struct INavigationThemeTransition :
@@ -795,7 +719,6 @@ struct INavigationThemeTransition :
     impl::consume<INavigationThemeTransition>
 {
     INavigationThemeTransition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INavigationThemeTransition>(m_ptr); }
 };
 
 struct INavigationThemeTransitionStatics :
@@ -803,7 +726,6 @@ struct INavigationThemeTransitionStatics :
     impl::consume<INavigationThemeTransitionStatics>
 {
     INavigationThemeTransitionStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INavigationThemeTransitionStatics>(m_ptr); }
 };
 
 struct INavigationTransitionInfo :
@@ -811,7 +733,6 @@ struct INavigationTransitionInfo :
     impl::consume<INavigationTransitionInfo>
 {
     INavigationTransitionInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INavigationTransitionInfo>(m_ptr); }
 };
 
 struct INavigationTransitionInfoFactory :
@@ -819,7 +740,6 @@ struct INavigationTransitionInfoFactory :
     impl::consume<INavigationTransitionInfoFactory>
 {
     INavigationTransitionInfoFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INavigationTransitionInfoFactory>(m_ptr); }
 };
 
 struct INavigationTransitionInfoOverrides :
@@ -827,7 +747,6 @@ struct INavigationTransitionInfoOverrides :
     impl::consume<INavigationTransitionInfoOverrides>
 {
     INavigationTransitionInfoOverrides(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INavigationTransitionInfoOverrides>(m_ptr); }
 };
 
 struct IObjectAnimationUsingKeyFrames :
@@ -835,7 +754,6 @@ struct IObjectAnimationUsingKeyFrames :
     impl::consume<IObjectAnimationUsingKeyFrames>
 {
     IObjectAnimationUsingKeyFrames(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IObjectAnimationUsingKeyFrames>(m_ptr); }
 };
 
 struct IObjectAnimationUsingKeyFramesStatics :
@@ -843,7 +761,6 @@ struct IObjectAnimationUsingKeyFramesStatics :
     impl::consume<IObjectAnimationUsingKeyFramesStatics>
 {
     IObjectAnimationUsingKeyFramesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IObjectAnimationUsingKeyFramesStatics>(m_ptr); }
 };
 
 struct IObjectKeyFrame :
@@ -851,7 +768,6 @@ struct IObjectKeyFrame :
     impl::consume<IObjectKeyFrame>
 {
     IObjectKeyFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IObjectKeyFrame>(m_ptr); }
 };
 
 struct IObjectKeyFrameFactory :
@@ -859,7 +775,6 @@ struct IObjectKeyFrameFactory :
     impl::consume<IObjectKeyFrameFactory>
 {
     IObjectKeyFrameFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IObjectKeyFrameFactory>(m_ptr); }
 };
 
 struct IObjectKeyFrameStatics :
@@ -867,7 +782,6 @@ struct IObjectKeyFrameStatics :
     impl::consume<IObjectKeyFrameStatics>
 {
     IObjectKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IObjectKeyFrameStatics>(m_ptr); }
 };
 
 struct IPaneThemeTransition :
@@ -875,7 +789,6 @@ struct IPaneThemeTransition :
     impl::consume<IPaneThemeTransition>
 {
     IPaneThemeTransition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPaneThemeTransition>(m_ptr); }
 };
 
 struct IPaneThemeTransitionStatics :
@@ -883,7 +796,6 @@ struct IPaneThemeTransitionStatics :
     impl::consume<IPaneThemeTransitionStatics>
 {
     IPaneThemeTransitionStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPaneThemeTransitionStatics>(m_ptr); }
 };
 
 struct IPointAnimation :
@@ -891,7 +803,6 @@ struct IPointAnimation :
     impl::consume<IPointAnimation>
 {
     IPointAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointAnimation>(m_ptr); }
 };
 
 struct IPointAnimationStatics :
@@ -899,7 +810,6 @@ struct IPointAnimationStatics :
     impl::consume<IPointAnimationStatics>
 {
     IPointAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointAnimationStatics>(m_ptr); }
 };
 
 struct IPointAnimationUsingKeyFrames :
@@ -907,7 +817,6 @@ struct IPointAnimationUsingKeyFrames :
     impl::consume<IPointAnimationUsingKeyFrames>
 {
     IPointAnimationUsingKeyFrames(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointAnimationUsingKeyFrames>(m_ptr); }
 };
 
 struct IPointAnimationUsingKeyFramesStatics :
@@ -915,7 +824,6 @@ struct IPointAnimationUsingKeyFramesStatics :
     impl::consume<IPointAnimationUsingKeyFramesStatics>
 {
     IPointAnimationUsingKeyFramesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointAnimationUsingKeyFramesStatics>(m_ptr); }
 };
 
 struct IPointKeyFrame :
@@ -923,7 +831,6 @@ struct IPointKeyFrame :
     impl::consume<IPointKeyFrame>
 {
     IPointKeyFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointKeyFrame>(m_ptr); }
 };
 
 struct IPointKeyFrameFactory :
@@ -931,7 +838,6 @@ struct IPointKeyFrameFactory :
     impl::consume<IPointKeyFrameFactory>
 {
     IPointKeyFrameFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointKeyFrameFactory>(m_ptr); }
 };
 
 struct IPointKeyFrameStatics :
@@ -939,7 +845,6 @@ struct IPointKeyFrameStatics :
     impl::consume<IPointKeyFrameStatics>
 {
     IPointKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointKeyFrameStatics>(m_ptr); }
 };
 
 struct IPointerDownThemeAnimation :
@@ -947,7 +852,6 @@ struct IPointerDownThemeAnimation :
     impl::consume<IPointerDownThemeAnimation>
 {
     IPointerDownThemeAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointerDownThemeAnimation>(m_ptr); }
 };
 
 struct IPointerDownThemeAnimationStatics :
@@ -955,7 +859,6 @@ struct IPointerDownThemeAnimationStatics :
     impl::consume<IPointerDownThemeAnimationStatics>
 {
     IPointerDownThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointerDownThemeAnimationStatics>(m_ptr); }
 };
 
 struct IPointerUpThemeAnimation :
@@ -963,7 +866,6 @@ struct IPointerUpThemeAnimation :
     impl::consume<IPointerUpThemeAnimation>
 {
     IPointerUpThemeAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointerUpThemeAnimation>(m_ptr); }
 };
 
 struct IPointerUpThemeAnimationStatics :
@@ -971,7 +873,6 @@ struct IPointerUpThemeAnimationStatics :
     impl::consume<IPointerUpThemeAnimationStatics>
 {
     IPointerUpThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointerUpThemeAnimationStatics>(m_ptr); }
 };
 
 struct IPopInThemeAnimation :
@@ -979,7 +880,6 @@ struct IPopInThemeAnimation :
     impl::consume<IPopInThemeAnimation>
 {
     IPopInThemeAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPopInThemeAnimation>(m_ptr); }
 };
 
 struct IPopInThemeAnimationStatics :
@@ -987,7 +887,6 @@ struct IPopInThemeAnimationStatics :
     impl::consume<IPopInThemeAnimationStatics>
 {
     IPopInThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPopInThemeAnimationStatics>(m_ptr); }
 };
 
 struct IPopOutThemeAnimation :
@@ -995,7 +894,6 @@ struct IPopOutThemeAnimation :
     impl::consume<IPopOutThemeAnimation>
 {
     IPopOutThemeAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPopOutThemeAnimation>(m_ptr); }
 };
 
 struct IPopOutThemeAnimationStatics :
@@ -1003,7 +901,6 @@ struct IPopOutThemeAnimationStatics :
     impl::consume<IPopOutThemeAnimationStatics>
 {
     IPopOutThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPopOutThemeAnimationStatics>(m_ptr); }
 };
 
 struct IPopupThemeTransition :
@@ -1011,7 +908,6 @@ struct IPopupThemeTransition :
     impl::consume<IPopupThemeTransition>
 {
     IPopupThemeTransition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPopupThemeTransition>(m_ptr); }
 };
 
 struct IPopupThemeTransitionStatics :
@@ -1019,7 +915,6 @@ struct IPopupThemeTransitionStatics :
     impl::consume<IPopupThemeTransitionStatics>
 {
     IPopupThemeTransitionStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPopupThemeTransitionStatics>(m_ptr); }
 };
 
 struct IPowerEase :
@@ -1027,7 +922,6 @@ struct IPowerEase :
     impl::consume<IPowerEase>
 {
     IPowerEase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPowerEase>(m_ptr); }
 };
 
 struct IPowerEaseStatics :
@@ -1035,7 +929,6 @@ struct IPowerEaseStatics :
     impl::consume<IPowerEaseStatics>
 {
     IPowerEaseStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPowerEaseStatics>(m_ptr); }
 };
 
 struct IQuadraticEase :
@@ -1043,7 +936,6 @@ struct IQuadraticEase :
     impl::consume<IQuadraticEase>
 {
     IQuadraticEase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IQuadraticEase>(m_ptr); }
 };
 
 struct IQuarticEase :
@@ -1051,7 +943,6 @@ struct IQuarticEase :
     impl::consume<IQuarticEase>
 {
     IQuarticEase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IQuarticEase>(m_ptr); }
 };
 
 struct IQuinticEase :
@@ -1059,7 +950,6 @@ struct IQuinticEase :
     impl::consume<IQuinticEase>
 {
     IQuinticEase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IQuinticEase>(m_ptr); }
 };
 
 struct IReorderThemeTransition :
@@ -1067,7 +957,6 @@ struct IReorderThemeTransition :
     impl::consume<IReorderThemeTransition>
 {
     IReorderThemeTransition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IReorderThemeTransition>(m_ptr); }
 };
 
 struct IRepeatBehaviorHelper :
@@ -1075,7 +964,6 @@ struct IRepeatBehaviorHelper :
     impl::consume<IRepeatBehaviorHelper>
 {
     IRepeatBehaviorHelper(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRepeatBehaviorHelper>(m_ptr); }
 };
 
 struct IRepeatBehaviorHelperStatics :
@@ -1083,7 +971,6 @@ struct IRepeatBehaviorHelperStatics :
     impl::consume<IRepeatBehaviorHelperStatics>
 {
     IRepeatBehaviorHelperStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRepeatBehaviorHelperStatics>(m_ptr); }
 };
 
 struct IRepositionThemeAnimation :
@@ -1091,7 +978,6 @@ struct IRepositionThemeAnimation :
     impl::consume<IRepositionThemeAnimation>
 {
     IRepositionThemeAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRepositionThemeAnimation>(m_ptr); }
 };
 
 struct IRepositionThemeAnimationStatics :
@@ -1099,7 +985,6 @@ struct IRepositionThemeAnimationStatics :
     impl::consume<IRepositionThemeAnimationStatics>
 {
     IRepositionThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRepositionThemeAnimationStatics>(m_ptr); }
 };
 
 struct IRepositionThemeTransition :
@@ -1107,7 +992,6 @@ struct IRepositionThemeTransition :
     impl::consume<IRepositionThemeTransition>
 {
     IRepositionThemeTransition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRepositionThemeTransition>(m_ptr); }
 };
 
 struct IRepositionThemeTransition2 :
@@ -1115,7 +999,6 @@ struct IRepositionThemeTransition2 :
     impl::consume<IRepositionThemeTransition2>
 {
     IRepositionThemeTransition2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRepositionThemeTransition2>(m_ptr); }
 };
 
 struct IRepositionThemeTransitionStatics2 :
@@ -1123,7 +1006,6 @@ struct IRepositionThemeTransitionStatics2 :
     impl::consume<IRepositionThemeTransitionStatics2>
 {
     IRepositionThemeTransitionStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRepositionThemeTransitionStatics2>(m_ptr); }
 };
 
 struct ISineEase :
@@ -1131,7 +1013,6 @@ struct ISineEase :
     impl::consume<ISineEase>
 {
     ISineEase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISineEase>(m_ptr); }
 };
 
 struct ISlideNavigationTransitionInfo :
@@ -1139,7 +1020,6 @@ struct ISlideNavigationTransitionInfo :
     impl::consume<ISlideNavigationTransitionInfo>
 {
     ISlideNavigationTransitionInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISlideNavigationTransitionInfo>(m_ptr); }
 };
 
 struct ISplineColorKeyFrame :
@@ -1147,7 +1027,6 @@ struct ISplineColorKeyFrame :
     impl::consume<ISplineColorKeyFrame>
 {
     ISplineColorKeyFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISplineColorKeyFrame>(m_ptr); }
 };
 
 struct ISplineColorKeyFrameStatics :
@@ -1155,7 +1034,6 @@ struct ISplineColorKeyFrameStatics :
     impl::consume<ISplineColorKeyFrameStatics>
 {
     ISplineColorKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISplineColorKeyFrameStatics>(m_ptr); }
 };
 
 struct ISplineDoubleKeyFrame :
@@ -1163,7 +1041,6 @@ struct ISplineDoubleKeyFrame :
     impl::consume<ISplineDoubleKeyFrame>
 {
     ISplineDoubleKeyFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISplineDoubleKeyFrame>(m_ptr); }
 };
 
 struct ISplineDoubleKeyFrameStatics :
@@ -1171,7 +1048,6 @@ struct ISplineDoubleKeyFrameStatics :
     impl::consume<ISplineDoubleKeyFrameStatics>
 {
     ISplineDoubleKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISplineDoubleKeyFrameStatics>(m_ptr); }
 };
 
 struct ISplinePointKeyFrame :
@@ -1179,7 +1055,6 @@ struct ISplinePointKeyFrame :
     impl::consume<ISplinePointKeyFrame>
 {
     ISplinePointKeyFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISplinePointKeyFrame>(m_ptr); }
 };
 
 struct ISplinePointKeyFrameStatics :
@@ -1187,7 +1062,6 @@ struct ISplinePointKeyFrameStatics :
     impl::consume<ISplinePointKeyFrameStatics>
 {
     ISplinePointKeyFrameStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISplinePointKeyFrameStatics>(m_ptr); }
 };
 
 struct ISplitCloseThemeAnimation :
@@ -1195,7 +1069,6 @@ struct ISplitCloseThemeAnimation :
     impl::consume<ISplitCloseThemeAnimation>
 {
     ISplitCloseThemeAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISplitCloseThemeAnimation>(m_ptr); }
 };
 
 struct ISplitCloseThemeAnimationStatics :
@@ -1203,7 +1076,6 @@ struct ISplitCloseThemeAnimationStatics :
     impl::consume<ISplitCloseThemeAnimationStatics>
 {
     ISplitCloseThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISplitCloseThemeAnimationStatics>(m_ptr); }
 };
 
 struct ISplitOpenThemeAnimation :
@@ -1211,7 +1083,6 @@ struct ISplitOpenThemeAnimation :
     impl::consume<ISplitOpenThemeAnimation>
 {
     ISplitOpenThemeAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISplitOpenThemeAnimation>(m_ptr); }
 };
 
 struct ISplitOpenThemeAnimationStatics :
@@ -1219,7 +1090,6 @@ struct ISplitOpenThemeAnimationStatics :
     impl::consume<ISplitOpenThemeAnimationStatics>
 {
     ISplitOpenThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISplitOpenThemeAnimationStatics>(m_ptr); }
 };
 
 struct IStoryboard :
@@ -1227,7 +1097,6 @@ struct IStoryboard :
     impl::consume<IStoryboard>
 {
     IStoryboard(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoryboard>(m_ptr); }
 };
 
 struct IStoryboardStatics :
@@ -1235,7 +1104,6 @@ struct IStoryboardStatics :
     impl::consume<IStoryboardStatics>
 {
     IStoryboardStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoryboardStatics>(m_ptr); }
 };
 
 struct ISuppressNavigationTransitionInfo :
@@ -1243,7 +1111,6 @@ struct ISuppressNavigationTransitionInfo :
     impl::consume<ISuppressNavigationTransitionInfo>
 {
     ISuppressNavigationTransitionInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISuppressNavigationTransitionInfo>(m_ptr); }
 };
 
 struct ISwipeBackThemeAnimation :
@@ -1251,7 +1118,6 @@ struct ISwipeBackThemeAnimation :
     impl::consume<ISwipeBackThemeAnimation>
 {
     ISwipeBackThemeAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISwipeBackThemeAnimation>(m_ptr); }
 };
 
 struct ISwipeBackThemeAnimationStatics :
@@ -1259,7 +1125,6 @@ struct ISwipeBackThemeAnimationStatics :
     impl::consume<ISwipeBackThemeAnimationStatics>
 {
     ISwipeBackThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISwipeBackThemeAnimationStatics>(m_ptr); }
 };
 
 struct ISwipeHintThemeAnimation :
@@ -1267,7 +1132,6 @@ struct ISwipeHintThemeAnimation :
     impl::consume<ISwipeHintThemeAnimation>
 {
     ISwipeHintThemeAnimation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISwipeHintThemeAnimation>(m_ptr); }
 };
 
 struct ISwipeHintThemeAnimationStatics :
@@ -1275,7 +1139,6 @@ struct ISwipeHintThemeAnimationStatics :
     impl::consume<ISwipeHintThemeAnimationStatics>
 {
     ISwipeHintThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISwipeHintThemeAnimationStatics>(m_ptr); }
 };
 
 struct ITimeline :
@@ -1283,7 +1146,6 @@ struct ITimeline :
     impl::consume<ITimeline>
 {
     ITimeline(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimeline>(m_ptr); }
 };
 
 struct ITimelineFactory :
@@ -1291,7 +1153,6 @@ struct ITimelineFactory :
     impl::consume<ITimelineFactory>
 {
     ITimelineFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimelineFactory>(m_ptr); }
 };
 
 struct ITimelineStatics :
@@ -1299,7 +1160,6 @@ struct ITimelineStatics :
     impl::consume<ITimelineStatics>
 {
     ITimelineStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimelineStatics>(m_ptr); }
 };
 
 struct ITransition :
@@ -1307,7 +1167,6 @@ struct ITransition :
     impl::consume<ITransition>
 {
     ITransition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITransition>(m_ptr); }
 };
 
 struct ITransitionFactory :
@@ -1315,7 +1174,6 @@ struct ITransitionFactory :
     impl::consume<ITransitionFactory>
 {
     ITransitionFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITransitionFactory>(m_ptr); }
 };
 
 }

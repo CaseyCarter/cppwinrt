@@ -28,7 +28,7 @@ template <typename O, typename M> ComponentLoadFailedEventHandler::ComponentLoad
 
 inline void ComponentLoadFailedEventHandler::operator()(const Windows::Media::Protection::MediaProtectionManager & sender, const Windows::Media::Protection::ComponentLoadFailedEventArgs & e) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<ComponentLoadFailedEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
 }
 
 template <typename L> RebootNeededEventHandler::RebootNeededEventHandler(L lambda) :
@@ -45,7 +45,7 @@ template <typename O, typename M> RebootNeededEventHandler::RebootNeededEventHan
 
 inline void RebootNeededEventHandler::operator()(const Windows::Media::Protection::MediaProtectionManager & sender) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender)));
+    check_hresult((*(abi<RebootNeededEventHandler> **)this)->abi_Invoke(get(sender)));
 }
 
 template <typename L> ServiceRequestedEventHandler::ServiceRequestedEventHandler(L lambda) :
@@ -62,7 +62,7 @@ template <typename O, typename M> ServiceRequestedEventHandler::ServiceRequested
 
 inline void ServiceRequestedEventHandler::operator()(const Windows::Media::Protection::MediaProtectionManager & sender, const Windows::Media::Protection::ServiceRequestedEventArgs & e) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<ServiceRequestedEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
 }
 
 }
@@ -545,7 +545,7 @@ namespace Windows::Media::Protection {
 template <typename D> event_token impl_IMediaProtectionManager<D>::ServiceRequested(const Windows::Media::Protection::ServiceRequestedEventHandler & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IMediaProtectionManager &>(static_cast<const D &>(*this))->add_ServiceRequested(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IMediaProtectionManager)->add_ServiceRequested(get(handler), &cookie));
     return cookie;
 }
 
@@ -556,13 +556,13 @@ template <typename D> event_revoker<IMediaProtectionManager> impl_IMediaProtecti
 
 template <typename D> void impl_IMediaProtectionManager<D>::ServiceRequested(event_token cookie) const
 {
-    check_hresult(static_cast<const IMediaProtectionManager &>(static_cast<const D &>(*this))->remove_ServiceRequested(cookie));
+    check_hresult(WINRT_SHIM(IMediaProtectionManager)->remove_ServiceRequested(cookie));
 }
 
 template <typename D> event_token impl_IMediaProtectionManager<D>::RebootNeeded(const Windows::Media::Protection::RebootNeededEventHandler & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IMediaProtectionManager &>(static_cast<const D &>(*this))->add_RebootNeeded(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IMediaProtectionManager)->add_RebootNeeded(get(handler), &cookie));
     return cookie;
 }
 
@@ -573,13 +573,13 @@ template <typename D> event_revoker<IMediaProtectionManager> impl_IMediaProtecti
 
 template <typename D> void impl_IMediaProtectionManager<D>::RebootNeeded(event_token cookie) const
 {
-    check_hresult(static_cast<const IMediaProtectionManager &>(static_cast<const D &>(*this))->remove_RebootNeeded(cookie));
+    check_hresult(WINRT_SHIM(IMediaProtectionManager)->remove_RebootNeeded(cookie));
 }
 
 template <typename D> event_token impl_IMediaProtectionManager<D>::ComponentLoadFailed(const Windows::Media::Protection::ComponentLoadFailedEventHandler & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IMediaProtectionManager &>(static_cast<const D &>(*this))->add_ComponentLoadFailed(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IMediaProtectionManager)->add_ComponentLoadFailed(get(handler), &cookie));
     return cookie;
 }
 
@@ -590,158 +590,158 @@ template <typename D> event_revoker<IMediaProtectionManager> impl_IMediaProtecti
 
 template <typename D> void impl_IMediaProtectionManager<D>::ComponentLoadFailed(event_token cookie) const
 {
-    check_hresult(static_cast<const IMediaProtectionManager &>(static_cast<const D &>(*this))->remove_ComponentLoadFailed(cookie));
+    check_hresult(WINRT_SHIM(IMediaProtectionManager)->remove_ComponentLoadFailed(cookie));
 }
 
 template <typename D> Windows::Foundation::Collections::IPropertySet impl_IMediaProtectionManager<D>::Properties() const
 {
     Windows::Foundation::Collections::IPropertySet value;
-    check_hresult(static_cast<const IMediaProtectionManager &>(static_cast<const D &>(*this))->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(IMediaProtectionManager)->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaProtectionServiceCompletion<D>::Complete(bool success) const
 {
-    check_hresult(static_cast<const IMediaProtectionServiceCompletion &>(static_cast<const D &>(*this))->abi_Complete(success));
+    check_hresult(WINRT_SHIM(IMediaProtectionServiceCompletion)->abi_Complete(success));
 }
 
 template <typename D> Windows::Media::Protection::IMediaProtectionServiceRequest impl_IServiceRequestedEventArgs<D>::Request() const
 {
     Windows::Media::Protection::IMediaProtectionServiceRequest value;
-    check_hresult(static_cast<const IServiceRequestedEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IServiceRequestedEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Protection::MediaProtectionServiceCompletion impl_IServiceRequestedEventArgs<D>::Completion() const
 {
     Windows::Media::Protection::MediaProtectionServiceCompletion value { nullptr };
-    check_hresult(static_cast<const IServiceRequestedEventArgs &>(static_cast<const D &>(*this))->get_Completion(put(value)));
+    check_hresult(WINRT_SHIM(IServiceRequestedEventArgs)->get_Completion(put(value)));
     return value;
 }
 
 template <typename D> GUID impl_IMediaProtectionServiceRequest<D>::ProtectionSystem() const
 {
     GUID system {};
-    check_hresult(static_cast<const IMediaProtectionServiceRequest &>(static_cast<const D &>(*this))->get_ProtectionSystem(&system));
+    check_hresult(WINRT_SHIM(IMediaProtectionServiceRequest)->get_ProtectionSystem(&system));
     return system;
 }
 
 template <typename D> GUID impl_IMediaProtectionServiceRequest<D>::Type() const
 {
     GUID type {};
-    check_hresult(static_cast<const IMediaProtectionServiceRequest &>(static_cast<const D &>(*this))->get_Type(&type));
+    check_hresult(WINRT_SHIM(IMediaProtectionServiceRequest)->get_Type(&type));
     return type;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_IServiceRequestedEventArgs2<D>::MediaPlaybackItem() const
 {
     Windows::Media::Playback::MediaPlaybackItem value { nullptr };
-    check_hresult(static_cast<const IServiceRequestedEventArgs2 &>(static_cast<const D &>(*this))->get_MediaPlaybackItem(put(value)));
+    check_hresult(WINRT_SHIM(IServiceRequestedEventArgs2)->get_MediaPlaybackItem(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Protection::RevocationAndRenewalInformation impl_IComponentLoadFailedEventArgs<D>::Information() const
 {
     Windows::Media::Protection::RevocationAndRenewalInformation value { nullptr };
-    check_hresult(static_cast<const IComponentLoadFailedEventArgs &>(static_cast<const D &>(*this))->get_Information(put(value)));
+    check_hresult(WINRT_SHIM(IComponentLoadFailedEventArgs)->get_Information(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Protection::MediaProtectionServiceCompletion impl_IComponentLoadFailedEventArgs<D>::Completion() const
 {
     Windows::Media::Protection::MediaProtectionServiceCompletion value { nullptr };
-    check_hresult(static_cast<const IComponentLoadFailedEventArgs &>(static_cast<const D &>(*this))->get_Completion(put(value)));
+    check_hresult(WINRT_SHIM(IComponentLoadFailedEventArgs)->get_Completion(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::Protection::RevocationAndRenewalItem> impl_IRevocationAndRenewalInformation<D>::Items() const
 {
     Windows::Foundation::Collections::IVector<Windows::Media::Protection::RevocationAndRenewalItem> items;
-    check_hresult(static_cast<const IRevocationAndRenewalInformation &>(static_cast<const D &>(*this))->get_Items(put(items)));
+    check_hresult(WINRT_SHIM(IRevocationAndRenewalInformation)->get_Items(put(items)));
     return items;
 }
 
 template <typename D> Windows::Media::Protection::RevocationAndRenewalReasons impl_IRevocationAndRenewalItem<D>::Reasons() const
 {
     Windows::Media::Protection::RevocationAndRenewalReasons reasons {};
-    check_hresult(static_cast<const IRevocationAndRenewalItem &>(static_cast<const D &>(*this))->get_Reasons(&reasons));
+    check_hresult(WINRT_SHIM(IRevocationAndRenewalItem)->get_Reasons(&reasons));
     return reasons;
 }
 
 template <typename D> hstring impl_IRevocationAndRenewalItem<D>::HeaderHash() const
 {
     hstring value;
-    check_hresult(static_cast<const IRevocationAndRenewalItem &>(static_cast<const D &>(*this))->get_HeaderHash(put(value)));
+    check_hresult(WINRT_SHIM(IRevocationAndRenewalItem)->get_HeaderHash(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IRevocationAndRenewalItem<D>::PublicKeyHash() const
 {
     hstring value;
-    check_hresult(static_cast<const IRevocationAndRenewalItem &>(static_cast<const D &>(*this))->get_PublicKeyHash(put(value)));
+    check_hresult(WINRT_SHIM(IRevocationAndRenewalItem)->get_PublicKeyHash(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IRevocationAndRenewalItem<D>::Name() const
 {
     hstring name;
-    check_hresult(static_cast<const IRevocationAndRenewalItem &>(static_cast<const D &>(*this))->get_Name(put(name)));
+    check_hresult(WINRT_SHIM(IRevocationAndRenewalItem)->get_Name(put(name)));
     return name;
 }
 
 template <typename D> hstring impl_IRevocationAndRenewalItem<D>::RenewalId() const
 {
     hstring value;
-    check_hresult(static_cast<const IRevocationAndRenewalItem &>(static_cast<const D &>(*this))->get_RenewalId(put(value)));
+    check_hresult(WINRT_SHIM(IRevocationAndRenewalItem)->get_RenewalId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Protection::MediaProtectionPMPServer impl_IMediaProtectionPMPServerFactory<D>::CreatePMPServer(const Windows::Foundation::Collections::IPropertySet & pProperties) const
 {
     Windows::Media::Protection::MediaProtectionPMPServer ppObject { nullptr };
-    check_hresult(static_cast<const IMediaProtectionPMPServerFactory &>(static_cast<const D &>(*this))->abi_CreatePMPServer(get(pProperties), put(ppObject)));
+    check_hresult(WINRT_SHIM(IMediaProtectionPMPServerFactory)->abi_CreatePMPServer(get(pProperties), put(ppObject)));
     return ppObject;
 }
 
 template <typename D> Windows::Foundation::Collections::IPropertySet impl_IMediaProtectionPMPServer<D>::Properties() const
 {
     Windows::Foundation::Collections::IPropertySet ppProperties;
-    check_hresult(static_cast<const IMediaProtectionPMPServer &>(static_cast<const D &>(*this))->get_Properties(put(ppProperties)));
+    check_hresult(WINRT_SHIM(IMediaProtectionPMPServer)->get_Properties(put(ppProperties)));
     return ppProperties;
 }
 
 template <typename D> Windows::Media::Protection::ProtectionCapabilityResult impl_IProtectionCapabilities<D>::IsTypeSupported(hstring_ref type, hstring_ref keySystem) const
 {
     Windows::Media::Protection::ProtectionCapabilityResult value {};
-    check_hresult(static_cast<const IProtectionCapabilities &>(static_cast<const D &>(*this))->abi_IsTypeSupported(get(type), get(keySystem), &value));
+    check_hresult(WINRT_SHIM(IProtectionCapabilities)->abi_IsTypeSupported(get(type), get(keySystem), &value));
     return value;
 }
 
 template <typename D> bool impl_IHdcpSession<D>::IsEffectiveProtectionAtLeast(Windows::Media::Protection::HdcpProtection protection) const
 {
     bool value {};
-    check_hresult(static_cast<const IHdcpSession &>(static_cast<const D &>(*this))->abi_IsEffectiveProtectionAtLeast(protection, &value));
+    check_hresult(WINRT_SHIM(IHdcpSession)->abi_IsEffectiveProtectionAtLeast(protection, &value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<winrt::Windows::Media::Protection::HdcpProtection> impl_IHdcpSession<D>::GetEffectiveProtection() const
 {
     Windows::Foundation::IReference<winrt::Windows::Media::Protection::HdcpProtection> value;
-    check_hresult(static_cast<const IHdcpSession &>(static_cast<const D &>(*this))->abi_GetEffectiveProtection(put(value)));
+    check_hresult(WINRT_SHIM(IHdcpSession)->abi_GetEffectiveProtection(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Protection::HdcpSetProtectionResult> impl_IHdcpSession<D>::SetDesiredMinProtectionAsync(Windows::Media::Protection::HdcpProtection protection) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Protection::HdcpSetProtectionResult> value;
-    check_hresult(static_cast<const IHdcpSession &>(static_cast<const D &>(*this))->abi_SetDesiredMinProtectionAsync(protection, put(value)));
+    check_hresult(WINRT_SHIM(IHdcpSession)->abi_SetDesiredMinProtectionAsync(protection, put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IHdcpSession<D>::ProtectionChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IHdcpSession &>(static_cast<const D &>(*this))->add_ProtectionChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IHdcpSession)->add_ProtectionChanged(get(handler), &token));
     return token;
 }
 
@@ -752,7 +752,7 @@ template <typename D> event_revoker<IHdcpSession> impl_IHdcpSession<D>::Protecti
 
 template <typename D> void impl_IHdcpSession<D>::ProtectionChanged(event_token token) const
 {
-    check_hresult(static_cast<const IHdcpSession &>(static_cast<const D &>(*this))->remove_ProtectionChanged(token));
+    check_hresult(WINRT_SHIM(IHdcpSession)->remove_ProtectionChanged(token));
 }
 
 inline HdcpSession::HdcpSession() :

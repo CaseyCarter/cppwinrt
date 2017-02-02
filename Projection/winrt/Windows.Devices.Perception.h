@@ -3393,7 +3393,7 @@ namespace Windows::Devices::Perception {
 template <typename D> event_token impl_IPerceptionColorFrameSourceWatcher<D>::SourceAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceAddedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionColorFrameSourceWatcher &>(static_cast<const D &>(*this))->add_SourceAdded(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->add_SourceAdded(get(handler), &token));
     return token;
 }
 
@@ -3404,13 +3404,13 @@ template <typename D> event_revoker<IPerceptionColorFrameSourceWatcher> impl_IPe
 
 template <typename D> void impl_IPerceptionColorFrameSourceWatcher<D>::SourceAdded(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionColorFrameSourceWatcher &>(static_cast<const D &>(*this))->remove_SourceAdded(token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->remove_SourceAdded(token));
 }
 
 template <typename D> event_token impl_IPerceptionColorFrameSourceWatcher<D>::SourceRemoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceRemovedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionColorFrameSourceWatcher &>(static_cast<const D &>(*this))->add_SourceRemoved(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->add_SourceRemoved(get(handler), &token));
     return token;
 }
 
@@ -3421,13 +3421,13 @@ template <typename D> event_revoker<IPerceptionColorFrameSourceWatcher> impl_IPe
 
 template <typename D> void impl_IPerceptionColorFrameSourceWatcher<D>::SourceRemoved(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionColorFrameSourceWatcher &>(static_cast<const D &>(*this))->remove_SourceRemoved(token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->remove_SourceRemoved(token));
 }
 
 template <typename D> event_token impl_IPerceptionColorFrameSourceWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionColorFrameSourceWatcher &>(static_cast<const D &>(*this))->add_Stopped(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->add_Stopped(get(handler), &token));
     return token;
 }
 
@@ -3438,13 +3438,13 @@ template <typename D> event_revoker<IPerceptionColorFrameSourceWatcher> impl_IPe
 
 template <typename D> void impl_IPerceptionColorFrameSourceWatcher<D>::Stopped(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionColorFrameSourceWatcher &>(static_cast<const D &>(*this))->remove_Stopped(token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->remove_Stopped(token));
 }
 
 template <typename D> event_token impl_IPerceptionColorFrameSourceWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionColorFrameSourceWatcher &>(static_cast<const D &>(*this))->add_EnumerationCompleted(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->add_EnumerationCompleted(get(handler), &token));
     return token;
 }
 
@@ -3455,30 +3455,30 @@ template <typename D> event_revoker<IPerceptionColorFrameSourceWatcher> impl_IPe
 
 template <typename D> void impl_IPerceptionColorFrameSourceWatcher<D>::EnumerationCompleted(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionColorFrameSourceWatcher &>(static_cast<const D &>(*this))->remove_EnumerationCompleted(token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->remove_EnumerationCompleted(token));
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceWatcherStatus impl_IPerceptionColorFrameSourceWatcher<D>::Status() const
 {
     Windows::Devices::Enumeration::DeviceWatcherStatus value {};
-    check_hresult(static_cast<const IPerceptionColorFrameSourceWatcher &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->get_Status(&value));
     return value;
 }
 
 template <typename D> void impl_IPerceptionColorFrameSourceWatcher<D>::Start() const
 {
-    check_hresult(static_cast<const IPerceptionColorFrameSourceWatcher &>(static_cast<const D &>(*this))->abi_Start());
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->abi_Start());
 }
 
 template <typename D> void impl_IPerceptionColorFrameSourceWatcher<D>::Stop() const
 {
-    check_hresult(static_cast<const IPerceptionColorFrameSourceWatcher &>(static_cast<const D &>(*this))->abi_Stop());
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceWatcher)->abi_Stop());
 }
 
 template <typename D> event_token impl_IPerceptionDepthFrameSourceWatcher<D>::SourceAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceAddedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionDepthFrameSourceWatcher &>(static_cast<const D &>(*this))->add_SourceAdded(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->add_SourceAdded(get(handler), &token));
     return token;
 }
 
@@ -3489,13 +3489,13 @@ template <typename D> event_revoker<IPerceptionDepthFrameSourceWatcher> impl_IPe
 
 template <typename D> void impl_IPerceptionDepthFrameSourceWatcher<D>::SourceAdded(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionDepthFrameSourceWatcher &>(static_cast<const D &>(*this))->remove_SourceAdded(token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->remove_SourceAdded(token));
 }
 
 template <typename D> event_token impl_IPerceptionDepthFrameSourceWatcher<D>::SourceRemoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceRemovedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionDepthFrameSourceWatcher &>(static_cast<const D &>(*this))->add_SourceRemoved(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->add_SourceRemoved(get(handler), &token));
     return token;
 }
 
@@ -3506,13 +3506,13 @@ template <typename D> event_revoker<IPerceptionDepthFrameSourceWatcher> impl_IPe
 
 template <typename D> void impl_IPerceptionDepthFrameSourceWatcher<D>::SourceRemoved(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionDepthFrameSourceWatcher &>(static_cast<const D &>(*this))->remove_SourceRemoved(token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->remove_SourceRemoved(token));
 }
 
 template <typename D> event_token impl_IPerceptionDepthFrameSourceWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionDepthFrameSourceWatcher &>(static_cast<const D &>(*this))->add_Stopped(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->add_Stopped(get(handler), &token));
     return token;
 }
 
@@ -3523,13 +3523,13 @@ template <typename D> event_revoker<IPerceptionDepthFrameSourceWatcher> impl_IPe
 
 template <typename D> void impl_IPerceptionDepthFrameSourceWatcher<D>::Stopped(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionDepthFrameSourceWatcher &>(static_cast<const D &>(*this))->remove_Stopped(token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->remove_Stopped(token));
 }
 
 template <typename D> event_token impl_IPerceptionDepthFrameSourceWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionDepthFrameSourceWatcher &>(static_cast<const D &>(*this))->add_EnumerationCompleted(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->add_EnumerationCompleted(get(handler), &token));
     return token;
 }
 
@@ -3540,30 +3540,30 @@ template <typename D> event_revoker<IPerceptionDepthFrameSourceWatcher> impl_IPe
 
 template <typename D> void impl_IPerceptionDepthFrameSourceWatcher<D>::EnumerationCompleted(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionDepthFrameSourceWatcher &>(static_cast<const D &>(*this))->remove_EnumerationCompleted(token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->remove_EnumerationCompleted(token));
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceWatcherStatus impl_IPerceptionDepthFrameSourceWatcher<D>::Status() const
 {
     Windows::Devices::Enumeration::DeviceWatcherStatus value {};
-    check_hresult(static_cast<const IPerceptionDepthFrameSourceWatcher &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->get_Status(&value));
     return value;
 }
 
 template <typename D> void impl_IPerceptionDepthFrameSourceWatcher<D>::Start() const
 {
-    check_hresult(static_cast<const IPerceptionDepthFrameSourceWatcher &>(static_cast<const D &>(*this))->abi_Start());
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->abi_Start());
 }
 
 template <typename D> void impl_IPerceptionDepthFrameSourceWatcher<D>::Stop() const
 {
-    check_hresult(static_cast<const IPerceptionDepthFrameSourceWatcher &>(static_cast<const D &>(*this))->abi_Stop());
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceWatcher)->abi_Stop());
 }
 
 template <typename D> event_token impl_IPerceptionInfraredFrameSourceWatcher<D>::SourceAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceAddedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameSourceWatcher &>(static_cast<const D &>(*this))->add_SourceAdded(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->add_SourceAdded(get(handler), &token));
     return token;
 }
 
@@ -3574,13 +3574,13 @@ template <typename D> event_revoker<IPerceptionInfraredFrameSourceWatcher> impl_
 
 template <typename D> void impl_IPerceptionInfraredFrameSourceWatcher<D>::SourceAdded(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionInfraredFrameSourceWatcher &>(static_cast<const D &>(*this))->remove_SourceAdded(token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->remove_SourceAdded(token));
 }
 
 template <typename D> event_token impl_IPerceptionInfraredFrameSourceWatcher<D>::SourceRemoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceRemovedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameSourceWatcher &>(static_cast<const D &>(*this))->add_SourceRemoved(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->add_SourceRemoved(get(handler), &token));
     return token;
 }
 
@@ -3591,13 +3591,13 @@ template <typename D> event_revoker<IPerceptionInfraredFrameSourceWatcher> impl_
 
 template <typename D> void impl_IPerceptionInfraredFrameSourceWatcher<D>::SourceRemoved(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionInfraredFrameSourceWatcher &>(static_cast<const D &>(*this))->remove_SourceRemoved(token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->remove_SourceRemoved(token));
 }
 
 template <typename D> event_token impl_IPerceptionInfraredFrameSourceWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameSourceWatcher &>(static_cast<const D &>(*this))->add_Stopped(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->add_Stopped(get(handler), &token));
     return token;
 }
 
@@ -3608,13 +3608,13 @@ template <typename D> event_revoker<IPerceptionInfraredFrameSourceWatcher> impl_
 
 template <typename D> void impl_IPerceptionInfraredFrameSourceWatcher<D>::Stopped(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionInfraredFrameSourceWatcher &>(static_cast<const D &>(*this))->remove_Stopped(token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->remove_Stopped(token));
 }
 
 template <typename D> event_token impl_IPerceptionInfraredFrameSourceWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameSourceWatcher &>(static_cast<const D &>(*this))->add_EnumerationCompleted(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->add_EnumerationCompleted(get(handler), &token));
     return token;
 }
 
@@ -3625,408 +3625,408 @@ template <typename D> event_revoker<IPerceptionInfraredFrameSourceWatcher> impl_
 
 template <typename D> void impl_IPerceptionInfraredFrameSourceWatcher<D>::EnumerationCompleted(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionInfraredFrameSourceWatcher &>(static_cast<const D &>(*this))->remove_EnumerationCompleted(token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->remove_EnumerationCompleted(token));
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceWatcherStatus impl_IPerceptionInfraredFrameSourceWatcher<D>::Status() const
 {
     Windows::Devices::Enumeration::DeviceWatcherStatus value {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameSourceWatcher &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->get_Status(&value));
     return value;
 }
 
 template <typename D> void impl_IPerceptionInfraredFrameSourceWatcher<D>::Start() const
 {
-    check_hresult(static_cast<const IPerceptionInfraredFrameSourceWatcher &>(static_cast<const D &>(*this))->abi_Start());
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->abi_Start());
 }
 
 template <typename D> void impl_IPerceptionInfraredFrameSourceWatcher<D>::Stop() const
 {
-    check_hresult(static_cast<const IPerceptionInfraredFrameSourceWatcher &>(static_cast<const D &>(*this))->abi_Stop());
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceWatcher)->abi_Stop());
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionColorFrameSource impl_IPerceptionColorFrameSourceAddedEventArgs<D>::FrameSource() const
 {
     Windows::Devices::Perception::PerceptionColorFrameSource value { nullptr };
-    check_hresult(static_cast<const IPerceptionColorFrameSourceAddedEventArgs &>(static_cast<const D &>(*this))->get_FrameSource(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceAddedEventArgs)->get_FrameSource(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionColorFrameSource impl_IPerceptionColorFrameSourceRemovedEventArgs<D>::FrameSource() const
 {
     Windows::Devices::Perception::PerceptionColorFrameSource value { nullptr };
-    check_hresult(static_cast<const IPerceptionColorFrameSourceRemovedEventArgs &>(static_cast<const D &>(*this))->get_FrameSource(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceRemovedEventArgs)->get_FrameSource(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionDepthFrameSource impl_IPerceptionDepthFrameSourceAddedEventArgs<D>::FrameSource() const
 {
     Windows::Devices::Perception::PerceptionDepthFrameSource value { nullptr };
-    check_hresult(static_cast<const IPerceptionDepthFrameSourceAddedEventArgs &>(static_cast<const D &>(*this))->get_FrameSource(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceAddedEventArgs)->get_FrameSource(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionDepthFrameSource impl_IPerceptionDepthFrameSourceRemovedEventArgs<D>::FrameSource() const
 {
     Windows::Devices::Perception::PerceptionDepthFrameSource value { nullptr };
-    check_hresult(static_cast<const IPerceptionDepthFrameSourceRemovedEventArgs &>(static_cast<const D &>(*this))->get_FrameSource(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceRemovedEventArgs)->get_FrameSource(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionInfraredFrameSource impl_IPerceptionInfraredFrameSourceAddedEventArgs<D>::FrameSource() const
 {
     Windows::Devices::Perception::PerceptionInfraredFrameSource value { nullptr };
-    check_hresult(static_cast<const IPerceptionInfraredFrameSourceAddedEventArgs &>(static_cast<const D &>(*this))->get_FrameSource(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceAddedEventArgs)->get_FrameSource(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionInfraredFrameSource impl_IPerceptionInfraredFrameSourceRemovedEventArgs<D>::FrameSource() const
 {
     Windows::Devices::Perception::PerceptionInfraredFrameSource value { nullptr };
-    check_hresult(static_cast<const IPerceptionInfraredFrameSourceRemovedEventArgs &>(static_cast<const D &>(*this))->get_FrameSource(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceRemovedEventArgs)->get_FrameSource(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionFrameSourcePropertiesStatics<D>::Id() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionFrameSourcePropertiesStatics)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionFrameSourcePropertiesStatics<D>::PhysicalDeviceIds() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_PhysicalDeviceIds(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionFrameSourcePropertiesStatics)->get_PhysicalDeviceIds(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionFrameSourcePropertiesStatics<D>::FrameKind() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_FrameKind(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionFrameSourcePropertiesStatics)->get_FrameKind(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionFrameSourcePropertiesStatics<D>::DeviceModelVersion() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_DeviceModelVersion(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionFrameSourcePropertiesStatics)->get_DeviceModelVersion(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionFrameSourcePropertiesStatics<D>::EnclosureLocation() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_EnclosureLocation(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionFrameSourcePropertiesStatics)->get_EnclosureLocation(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionFrameSourcePropertiesStatics2<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionFrameSourcePropertiesStatics2 &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionFrameSourcePropertiesStatics2)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoFrameSourcePropertiesStatics<D>::VideoProfile() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionVideoFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_VideoProfile(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoFrameSourcePropertiesStatics)->get_VideoProfile(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoFrameSourcePropertiesStatics<D>::SupportedVideoProfiles() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionVideoFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_SupportedVideoProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoFrameSourcePropertiesStatics)->get_SupportedVideoProfiles(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoFrameSourcePropertiesStatics<D>::AvailableVideoProfiles() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionVideoFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_AvailableVideoProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoFrameSourcePropertiesStatics)->get_AvailableVideoProfiles(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoFrameSourcePropertiesStatics<D>::IsMirrored() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionVideoFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_IsMirrored(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoFrameSourcePropertiesStatics)->get_IsMirrored(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoFrameSourcePropertiesStatics<D>::CameraIntrinsics() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionVideoFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_CameraIntrinsics(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoFrameSourcePropertiesStatics)->get_CameraIntrinsics(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics<D>::Exposure() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionInfraredFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_Exposure(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_Exposure(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics<D>::AutoExposureEnabled() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionInfraredFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_AutoExposureEnabled(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_AutoExposureEnabled(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics<D>::ExposureCompensation() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionInfraredFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_ExposureCompensation(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_ExposureCompensation(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics<D>::ActiveIlluminationEnabled() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionInfraredFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_ActiveIlluminationEnabled(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_ActiveIlluminationEnabled(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics<D>::AmbientSubtractionEnabled() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionInfraredFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_AmbientSubtractionEnabled(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_AmbientSubtractionEnabled(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics<D>::StructureLightPatternEnabled() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionInfraredFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_StructureLightPatternEnabled(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_StructureLightPatternEnabled(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics<D>::InterleavedIlluminationEnabled() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionInfraredFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_InterleavedIlluminationEnabled(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionInfraredFrameSourcePropertiesStatics)->get_InterleavedIlluminationEnabled(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionDepthFrameSourcePropertiesStatics<D>::MinDepth() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionDepthFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_MinDepth(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionDepthFrameSourcePropertiesStatics)->get_MinDepth(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionDepthFrameSourcePropertiesStatics<D>::MaxDepth() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionDepthFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_MaxDepth(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionDepthFrameSourcePropertiesStatics)->get_MaxDepth(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionColorFrameSourcePropertiesStatics<D>::Exposure() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionColorFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_Exposure(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionColorFrameSourcePropertiesStatics)->get_Exposure(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionColorFrameSourcePropertiesStatics<D>::AutoExposureEnabled() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionColorFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_AutoExposureEnabled(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionColorFrameSourcePropertiesStatics)->get_AutoExposureEnabled(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionColorFrameSourcePropertiesStatics<D>::ExposureCompensation() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionColorFrameSourcePropertiesStatics &>(static_cast<const D &>(*this))->get_ExposureCompensation(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionColorFrameSourcePropertiesStatics)->get_ExposureCompensation(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoProfilePropertiesStatics<D>::BitmapPixelFormat() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionVideoProfilePropertiesStatics &>(static_cast<const D &>(*this))->get_BitmapPixelFormat(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoProfilePropertiesStatics)->get_BitmapPixelFormat(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoProfilePropertiesStatics<D>::BitmapAlphaMode() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionVideoProfilePropertiesStatics &>(static_cast<const D &>(*this))->get_BitmapAlphaMode(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoProfilePropertiesStatics)->get_BitmapAlphaMode(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoProfilePropertiesStatics<D>::Width() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionVideoProfilePropertiesStatics &>(static_cast<const D &>(*this))->get_Width(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoProfilePropertiesStatics)->get_Width(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoProfilePropertiesStatics<D>::Height() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionVideoProfilePropertiesStatics &>(static_cast<const D &>(*this))->get_Height(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoProfilePropertiesStatics)->get_Height(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionVideoProfilePropertiesStatics<D>::FrameDuration() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownPerceptionVideoProfilePropertiesStatics &>(static_cast<const D &>(*this))->get_FrameDuration(put(value)));
+    check_hresult(WINRT_SHIM(IKnownPerceptionVideoProfilePropertiesStatics)->get_FrameDuration(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownCameraIntrinsicsPropertiesStatics<D>::FocalLength() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownCameraIntrinsicsPropertiesStatics &>(static_cast<const D &>(*this))->get_FocalLength(put(value)));
+    check_hresult(WINRT_SHIM(IKnownCameraIntrinsicsPropertiesStatics)->get_FocalLength(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownCameraIntrinsicsPropertiesStatics<D>::PrincipalPoint() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownCameraIntrinsicsPropertiesStatics &>(static_cast<const D &>(*this))->get_PrincipalPoint(put(value)));
+    check_hresult(WINRT_SHIM(IKnownCameraIntrinsicsPropertiesStatics)->get_PrincipalPoint(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownCameraIntrinsicsPropertiesStatics<D>::RadialDistortion() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownCameraIntrinsicsPropertiesStatics &>(static_cast<const D &>(*this))->get_RadialDistortion(put(value)));
+    check_hresult(WINRT_SHIM(IKnownCameraIntrinsicsPropertiesStatics)->get_RadialDistortion(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownCameraIntrinsicsPropertiesStatics<D>::TangentialDistortion() const
 {
     hstring value;
-    check_hresult(static_cast<const IKnownCameraIntrinsicsPropertiesStatics &>(static_cast<const D &>(*this))->get_TangentialDistortion(put(value)));
+    check_hresult(WINRT_SHIM(IKnownCameraIntrinsicsPropertiesStatics)->get_TangentialDistortion(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeStatus impl_IPerceptionFrameSourcePropertyChangeResult<D>::Status() const
 {
     Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeStatus value {};
-    check_hresult(static_cast<const IPerceptionFrameSourcePropertyChangeResult &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IPerceptionFrameSourcePropertyChangeResult)->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IPerceptionFrameSourcePropertyChangeResult<D>::NewValue() const
 {
     Windows::IInspectable value;
-    check_hresult(static_cast<const IPerceptionFrameSourcePropertyChangeResult &>(static_cast<const D &>(*this))->get_NewValue(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionFrameSourcePropertyChangeResult)->get_NewValue(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::CollectionChange impl_IPerceptionFrameSourcePropertiesChangedEventArgs<D>::CollectionChange() const
 {
     Windows::Foundation::Collections::CollectionChange value {};
-    check_hresult(static_cast<const IPerceptionFrameSourcePropertiesChangedEventArgs &>(static_cast<const D &>(*this))->get_CollectionChange(&value));
+    check_hresult(WINRT_SHIM(IPerceptionFrameSourcePropertiesChangedEventArgs)->get_CollectionChange(&value));
     return value;
 }
 
 template <typename D> hstring impl_IPerceptionFrameSourcePropertiesChangedEventArgs<D>::Key() const
 {
     hstring value;
-    check_hresult(static_cast<const IPerceptionFrameSourcePropertiesChangedEventArgs &>(static_cast<const D &>(*this))->get_Key(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionFrameSourcePropertiesChangedEventArgs)->get_Key(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher impl_IPerceptionInfraredFrameSourceStatics<D>::CreateWatcher() const
 {
     Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher watcher { nullptr };
-    check_hresult(static_cast<const IPerceptionInfraredFrameSourceStatics &>(static_cast<const D &>(*this))->abi_CreateWatcher(put(watcher)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceStatics)->abi_CreateWatcher(put(watcher)));
     return watcher;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionInfraredFrameSource>> impl_IPerceptionInfraredFrameSourceStatics<D>::FindAllAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionInfraredFrameSource>> result;
-    check_hresult(static_cast<const IPerceptionInfraredFrameSourceStatics &>(static_cast<const D &>(*this))->abi_FindAllAsync(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceStatics)->abi_FindAllAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionInfraredFrameSource> impl_IPerceptionInfraredFrameSourceStatics<D>::FromIdAsync(hstring_ref id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionInfraredFrameSource> result;
-    check_hresult(static_cast<const IPerceptionInfraredFrameSourceStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(id), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceStatics)->abi_FromIdAsync(get(id), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> impl_IPerceptionInfraredFrameSourceStatics<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> result;
-    check_hresult(static_cast<const IPerceptionInfraredFrameSourceStatics &>(static_cast<const D &>(*this))->abi_RequestAccessAsync(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSourceStatics)->abi_RequestAccessAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher impl_IPerceptionDepthFrameSourceStatics<D>::CreateWatcher() const
 {
     Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher watcher { nullptr };
-    check_hresult(static_cast<const IPerceptionDepthFrameSourceStatics &>(static_cast<const D &>(*this))->abi_CreateWatcher(put(watcher)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceStatics)->abi_CreateWatcher(put(watcher)));
     return watcher;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionDepthFrameSource>> impl_IPerceptionDepthFrameSourceStatics<D>::FindAllAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionDepthFrameSource>> result;
-    check_hresult(static_cast<const IPerceptionDepthFrameSourceStatics &>(static_cast<const D &>(*this))->abi_FindAllAsync(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceStatics)->abi_FindAllAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthFrameSource> impl_IPerceptionDepthFrameSourceStatics<D>::FromIdAsync(hstring_ref id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthFrameSource> result;
-    check_hresult(static_cast<const IPerceptionDepthFrameSourceStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(id), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceStatics)->abi_FromIdAsync(get(id), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> impl_IPerceptionDepthFrameSourceStatics<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> result;
-    check_hresult(static_cast<const IPerceptionDepthFrameSourceStatics &>(static_cast<const D &>(*this))->abi_RequestAccessAsync(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSourceStatics)->abi_RequestAccessAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionColorFrameSourceWatcher impl_IPerceptionColorFrameSourceStatics<D>::CreateWatcher() const
 {
     Windows::Devices::Perception::PerceptionColorFrameSourceWatcher watcher { nullptr };
-    check_hresult(static_cast<const IPerceptionColorFrameSourceStatics &>(static_cast<const D &>(*this))->abi_CreateWatcher(put(watcher)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceStatics)->abi_CreateWatcher(put(watcher)));
     return watcher;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionColorFrameSource>> impl_IPerceptionColorFrameSourceStatics<D>::FindAllAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionColorFrameSource>> result;
-    check_hresult(static_cast<const IPerceptionColorFrameSourceStatics &>(static_cast<const D &>(*this))->abi_FindAllAsync(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceStatics)->abi_FindAllAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionColorFrameSource> impl_IPerceptionColorFrameSourceStatics<D>::FromIdAsync(hstring_ref id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionColorFrameSource> result;
-    check_hresult(static_cast<const IPerceptionColorFrameSourceStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(id), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceStatics)->abi_FromIdAsync(get(id), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> impl_IPerceptionColorFrameSourceStatics<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> result;
-    check_hresult(static_cast<const IPerceptionColorFrameSourceStatics &>(static_cast<const D &>(*this))->abi_RequestAccessAsync(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSourceStatics)->abi_RequestAccessAsync(put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IPerceptionColorFrameSource<D>::AvailableChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->add_AvailableChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->add_AvailableChanged(get(handler), &token));
     return token;
 }
 
@@ -4037,13 +4037,13 @@ template <typename D> event_revoker<IPerceptionColorFrameSource> impl_IPerceptio
 
 template <typename D> void impl_IPerceptionColorFrameSource<D>::AvailableChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->remove_AvailableChanged(token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->remove_AvailableChanged(token));
 }
 
 template <typename D> event_token impl_IPerceptionColorFrameSource<D>::ActiveChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->add_ActiveChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->add_ActiveChanged(get(handler), &token));
     return token;
 }
 
@@ -4054,13 +4054,13 @@ template <typename D> event_revoker<IPerceptionColorFrameSource> impl_IPerceptio
 
 template <typename D> void impl_IPerceptionColorFrameSource<D>::ActiveChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->remove_ActiveChanged(token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->remove_ActiveChanged(token));
 }
 
 template <typename D> event_token impl_IPerceptionColorFrameSource<D>::PropertiesChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->add_PropertiesChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->add_PropertiesChanged(get(handler), &token));
     return token;
 }
 
@@ -4071,13 +4071,13 @@ template <typename D> event_revoker<IPerceptionColorFrameSource> impl_IPerceptio
 
 template <typename D> void impl_IPerceptionColorFrameSource<D>::PropertiesChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->remove_PropertiesChanged(token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->remove_PropertiesChanged(token));
 }
 
 template <typename D> event_token impl_IPerceptionColorFrameSource<D>::VideoProfileChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->add_VideoProfileChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->add_VideoProfileChanged(get(handler), &token));
     return token;
 }
 
@@ -4088,13 +4088,13 @@ template <typename D> event_revoker<IPerceptionColorFrameSource> impl_IPerceptio
 
 template <typename D> void impl_IPerceptionColorFrameSource<D>::VideoProfileChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->remove_VideoProfileChanged(token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->remove_VideoProfileChanged(token));
 }
 
 template <typename D> event_token impl_IPerceptionColorFrameSource<D>::CameraIntrinsicsChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->add_CameraIntrinsicsChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->add_CameraIntrinsicsChanged(get(handler), &token));
     return token;
 }
 
@@ -4105,153 +4105,153 @@ template <typename D> event_revoker<IPerceptionColorFrameSource> impl_IPerceptio
 
 template <typename D> void impl_IPerceptionColorFrameSource<D>::CameraIntrinsicsChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->remove_CameraIntrinsicsChanged(token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->remove_CameraIntrinsicsChanged(token));
 }
 
 template <typename D> hstring impl_IPerceptionColorFrameSource<D>::Id() const
 {
     hstring value;
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPerceptionColorFrameSource<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPerceptionColorFrameSource<D>::DeviceKind() const
 {
     hstring value;
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->get_DeviceKind(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_DeviceKind(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPerceptionColorFrameSource<D>::Available() const
 {
     bool value {};
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->get_Available(&value));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_Available(&value));
     return value;
 }
 
 template <typename D> bool impl_IPerceptionColorFrameSource<D>::Active() const
 {
     bool value {};
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->get_Active(&value));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_Active(&value));
     return value;
 }
 
 template <typename D> bool impl_IPerceptionColorFrameSource<D>::IsControlled() const
 {
     bool value {};
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->get_IsControlled(&value));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_IsControlled(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_IPerceptionColorFrameSource<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> impl_IPerceptionColorFrameSource<D>::SupportedVideoProfiles() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> value;
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->get_SupportedVideoProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_SupportedVideoProfiles(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> impl_IPerceptionColorFrameSource<D>::AvailableVideoProfiles() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> value;
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->get_AvailableVideoProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_AvailableVideoProfiles(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionVideoProfile impl_IPerceptionColorFrameSource<D>::VideoProfile() const
 {
     Windows::Devices::Perception::PerceptionVideoProfile value { nullptr };
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->get_VideoProfile(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_VideoProfile(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::CameraIntrinsics impl_IPerceptionColorFrameSource<D>::CameraIntrinsics() const
 {
     Windows::Media::Devices::Core::CameraIntrinsics value { nullptr };
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->get_CameraIntrinsics(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->get_CameraIntrinsics(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionControlSession impl_IPerceptionColorFrameSource<D>::AcquireControlSession() const
 {
     Windows::Devices::Perception::PerceptionControlSession value { nullptr };
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->abi_AcquireControlSession(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_AcquireControlSession(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPerceptionColorFrameSource<D>::CanControlIndependentlyFrom(hstring_ref targetId) const
 {
     bool result {};
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->abi_CanControlIndependentlyFrom(get(targetId), &result));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_CanControlIndependentlyFrom(get(targetId), &result));
     return result;
 }
 
 template <typename D> bool impl_IPerceptionColorFrameSource<D>::IsCorrelatedWith(hstring_ref targetId) const
 {
     bool result {};
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->abi_IsCorrelatedWith(get(targetId), &result));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_IsCorrelatedWith(get(targetId), &result));
     return result;
 }
 
 template <typename D> bool impl_IPerceptionColorFrameSource<D>::TryGetTransformTo(hstring_ref targetId, Windows::Foundation::Numerics::float4x4 & result) const
 {
     bool hasResult {};
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->abi_TryGetTransformTo(get(targetId), put(result), &hasResult));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_TryGetTransformTo(get(targetId), put(result), &hasResult));
     return hasResult;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> impl_IPerceptionColorFrameSource<D>::TryGetDepthCorrelatedCameraIntrinsicsAsync(const Windows::Devices::Perception::PerceptionDepthFrameSource & correlatedDepthFrameSource) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> result;
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(get(correlatedDepthFrameSource), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(get(correlatedDepthFrameSource), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> impl_IPerceptionColorFrameSource<D>::TryGetDepthCorrelatedCoordinateMapperAsync(hstring_ref targetSourceId, const Windows::Devices::Perception::PerceptionDepthFrameSource & correlatedDepthFrameSource) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> result;
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->abi_TryGetDepthCorrelatedCoordinateMapperAsync(get(targetSourceId), get(correlatedDepthFrameSource), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_TryGetDepthCorrelatedCoordinateMapperAsync(get(targetSourceId), get(correlatedDepthFrameSource), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> impl_IPerceptionColorFrameSource<D>::TrySetVideoProfileAsync(const Windows::Devices::Perception::PerceptionControlSession & controlSession, const Windows::Devices::Perception::PerceptionVideoProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> result;
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->abi_TrySetVideoProfileAsync(get(controlSession), get(profile), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_TrySetVideoProfileAsync(get(controlSession), get(profile), put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionColorFrameReader impl_IPerceptionColorFrameSource<D>::OpenReader() const
 {
     Windows::Devices::Perception::PerceptionColorFrameReader result { nullptr };
-    check_hresult(static_cast<const IPerceptionColorFrameSource &>(static_cast<const D &>(*this))->abi_OpenReader(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource)->abi_OpenReader(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IPerceptionColorFrameSource2<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IPerceptionColorFrameSource2 &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameSource2)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IPerceptionDepthFrameSource<D>::AvailableChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->add_AvailableChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->add_AvailableChanged(get(handler), &token));
     return token;
 }
 
@@ -4262,13 +4262,13 @@ template <typename D> event_revoker<IPerceptionDepthFrameSource> impl_IPerceptio
 
 template <typename D> void impl_IPerceptionDepthFrameSource<D>::AvailableChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->remove_AvailableChanged(token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->remove_AvailableChanged(token));
 }
 
 template <typename D> event_token impl_IPerceptionDepthFrameSource<D>::ActiveChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->add_ActiveChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->add_ActiveChanged(get(handler), &token));
     return token;
 }
 
@@ -4279,13 +4279,13 @@ template <typename D> event_revoker<IPerceptionDepthFrameSource> impl_IPerceptio
 
 template <typename D> void impl_IPerceptionDepthFrameSource<D>::ActiveChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->remove_ActiveChanged(token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->remove_ActiveChanged(token));
 }
 
 template <typename D> event_token impl_IPerceptionDepthFrameSource<D>::PropertiesChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->add_PropertiesChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->add_PropertiesChanged(get(handler), &token));
     return token;
 }
 
@@ -4296,13 +4296,13 @@ template <typename D> event_revoker<IPerceptionDepthFrameSource> impl_IPerceptio
 
 template <typename D> void impl_IPerceptionDepthFrameSource<D>::PropertiesChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->remove_PropertiesChanged(token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->remove_PropertiesChanged(token));
 }
 
 template <typename D> event_token impl_IPerceptionDepthFrameSource<D>::VideoProfileChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->add_VideoProfileChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->add_VideoProfileChanged(get(handler), &token));
     return token;
 }
 
@@ -4313,13 +4313,13 @@ template <typename D> event_revoker<IPerceptionDepthFrameSource> impl_IPerceptio
 
 template <typename D> void impl_IPerceptionDepthFrameSource<D>::VideoProfileChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->remove_VideoProfileChanged(token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->remove_VideoProfileChanged(token));
 }
 
 template <typename D> event_token impl_IPerceptionDepthFrameSource<D>::CameraIntrinsicsChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->add_CameraIntrinsicsChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->add_CameraIntrinsicsChanged(get(handler), &token));
     return token;
 }
 
@@ -4330,153 +4330,153 @@ template <typename D> event_revoker<IPerceptionDepthFrameSource> impl_IPerceptio
 
 template <typename D> void impl_IPerceptionDepthFrameSource<D>::CameraIntrinsicsChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->remove_CameraIntrinsicsChanged(token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->remove_CameraIntrinsicsChanged(token));
 }
 
 template <typename D> hstring impl_IPerceptionDepthFrameSource<D>::Id() const
 {
     hstring value;
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPerceptionDepthFrameSource<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPerceptionDepthFrameSource<D>::DeviceKind() const
 {
     hstring value;
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->get_DeviceKind(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_DeviceKind(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPerceptionDepthFrameSource<D>::Available() const
 {
     bool value {};
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->get_Available(&value));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_Available(&value));
     return value;
 }
 
 template <typename D> bool impl_IPerceptionDepthFrameSource<D>::Active() const
 {
     bool value {};
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->get_Active(&value));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_Active(&value));
     return value;
 }
 
 template <typename D> bool impl_IPerceptionDepthFrameSource<D>::IsControlled() const
 {
     bool value {};
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->get_IsControlled(&value));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_IsControlled(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_IPerceptionDepthFrameSource<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> impl_IPerceptionDepthFrameSource<D>::SupportedVideoProfiles() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> value;
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->get_SupportedVideoProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_SupportedVideoProfiles(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> impl_IPerceptionDepthFrameSource<D>::AvailableVideoProfiles() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> value;
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->get_AvailableVideoProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_AvailableVideoProfiles(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionVideoProfile impl_IPerceptionDepthFrameSource<D>::VideoProfile() const
 {
     Windows::Devices::Perception::PerceptionVideoProfile value { nullptr };
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->get_VideoProfile(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_VideoProfile(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::CameraIntrinsics impl_IPerceptionDepthFrameSource<D>::CameraIntrinsics() const
 {
     Windows::Media::Devices::Core::CameraIntrinsics value { nullptr };
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->get_CameraIntrinsics(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->get_CameraIntrinsics(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionControlSession impl_IPerceptionDepthFrameSource<D>::AcquireControlSession() const
 {
     Windows::Devices::Perception::PerceptionControlSession result { nullptr };
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->abi_AcquireControlSession(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_AcquireControlSession(put(result)));
     return result;
 }
 
 template <typename D> bool impl_IPerceptionDepthFrameSource<D>::CanControlIndependentlyFrom(hstring_ref targetId) const
 {
     bool result {};
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->abi_CanControlIndependentlyFrom(get(targetId), &result));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_CanControlIndependentlyFrom(get(targetId), &result));
     return result;
 }
 
 template <typename D> bool impl_IPerceptionDepthFrameSource<D>::IsCorrelatedWith(hstring_ref targetId) const
 {
     bool result {};
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->abi_IsCorrelatedWith(get(targetId), &result));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_IsCorrelatedWith(get(targetId), &result));
     return result;
 }
 
 template <typename D> bool impl_IPerceptionDepthFrameSource<D>::TryGetTransformTo(hstring_ref targetId, Windows::Foundation::Numerics::float4x4 & result) const
 {
     bool hasResult {};
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->abi_TryGetTransformTo(get(targetId), put(result), &hasResult));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_TryGetTransformTo(get(targetId), put(result), &hasResult));
     return hasResult;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> impl_IPerceptionDepthFrameSource<D>::TryGetDepthCorrelatedCameraIntrinsicsAsync(const Windows::Devices::Perception::PerceptionDepthFrameSource & target) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> result;
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(get(target), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(get(target), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> impl_IPerceptionDepthFrameSource<D>::TryGetDepthCorrelatedCoordinateMapperAsync(hstring_ref targetId, const Windows::Devices::Perception::PerceptionDepthFrameSource & depthFrameSourceToMapWith) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> result;
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->abi_TryGetDepthCorrelatedCoordinateMapperAsync(get(targetId), get(depthFrameSourceToMapWith), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_TryGetDepthCorrelatedCoordinateMapperAsync(get(targetId), get(depthFrameSourceToMapWith), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> impl_IPerceptionDepthFrameSource<D>::TrySetVideoProfileAsync(const Windows::Devices::Perception::PerceptionControlSession & controlSession, const Windows::Devices::Perception::PerceptionVideoProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> result;
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->abi_TrySetVideoProfileAsync(get(controlSession), get(profile), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_TrySetVideoProfileAsync(get(controlSession), get(profile), put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionDepthFrameReader impl_IPerceptionDepthFrameSource<D>::OpenReader() const
 {
     Windows::Devices::Perception::PerceptionDepthFrameReader result { nullptr };
-    check_hresult(static_cast<const IPerceptionDepthFrameSource &>(static_cast<const D &>(*this))->abi_OpenReader(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource)->abi_OpenReader(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IPerceptionDepthFrameSource2<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IPerceptionDepthFrameSource2 &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameSource2)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IPerceptionInfraredFrameSource<D>::AvailableChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->add_AvailableChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->add_AvailableChanged(get(handler), &token));
     return token;
 }
 
@@ -4487,13 +4487,13 @@ template <typename D> event_revoker<IPerceptionInfraredFrameSource> impl_IPercep
 
 template <typename D> void impl_IPerceptionInfraredFrameSource<D>::AvailableChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->remove_AvailableChanged(token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->remove_AvailableChanged(token));
 }
 
 template <typename D> event_token impl_IPerceptionInfraredFrameSource<D>::ActiveChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->add_ActiveChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->add_ActiveChanged(get(handler), &token));
     return token;
 }
 
@@ -4504,13 +4504,13 @@ template <typename D> event_revoker<IPerceptionInfraredFrameSource> impl_IPercep
 
 template <typename D> void impl_IPerceptionInfraredFrameSource<D>::ActiveChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->remove_ActiveChanged(token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->remove_ActiveChanged(token));
 }
 
 template <typename D> event_token impl_IPerceptionInfraredFrameSource<D>::PropertiesChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->add_PropertiesChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->add_PropertiesChanged(get(handler), &token));
     return token;
 }
 
@@ -4521,13 +4521,13 @@ template <typename D> event_revoker<IPerceptionInfraredFrameSource> impl_IPercep
 
 template <typename D> void impl_IPerceptionInfraredFrameSource<D>::PropertiesChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->remove_PropertiesChanged(token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->remove_PropertiesChanged(token));
 }
 
 template <typename D> event_token impl_IPerceptionInfraredFrameSource<D>::VideoProfileChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->add_VideoProfileChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->add_VideoProfileChanged(get(handler), &token));
     return token;
 }
 
@@ -4538,13 +4538,13 @@ template <typename D> event_revoker<IPerceptionInfraredFrameSource> impl_IPercep
 
 template <typename D> void impl_IPerceptionInfraredFrameSource<D>::VideoProfileChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->remove_VideoProfileChanged(token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->remove_VideoProfileChanged(token));
 }
 
 template <typename D> event_token impl_IPerceptionInfraredFrameSource<D>::CameraIntrinsicsChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->add_CameraIntrinsicsChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->add_CameraIntrinsicsChanged(get(handler), &token));
     return token;
 }
 
@@ -4555,289 +4555,289 @@ template <typename D> event_revoker<IPerceptionInfraredFrameSource> impl_IPercep
 
 template <typename D> void impl_IPerceptionInfraredFrameSource<D>::CameraIntrinsicsChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->remove_CameraIntrinsicsChanged(token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->remove_CameraIntrinsicsChanged(token));
 }
 
 template <typename D> hstring impl_IPerceptionInfraredFrameSource<D>::Id() const
 {
     hstring value;
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPerceptionInfraredFrameSource<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPerceptionInfraredFrameSource<D>::DeviceKind() const
 {
     hstring value;
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->get_DeviceKind(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_DeviceKind(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPerceptionInfraredFrameSource<D>::Available() const
 {
     bool value {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->get_Available(&value));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_Available(&value));
     return value;
 }
 
 template <typename D> bool impl_IPerceptionInfraredFrameSource<D>::Active() const
 {
     bool value {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->get_Active(&value));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_Active(&value));
     return value;
 }
 
 template <typename D> bool impl_IPerceptionInfraredFrameSource<D>::IsControlled() const
 {
     bool value {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->get_IsControlled(&value));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_IsControlled(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_IPerceptionInfraredFrameSource<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> impl_IPerceptionInfraredFrameSource<D>::SupportedVideoProfiles() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> value;
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->get_SupportedVideoProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_SupportedVideoProfiles(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> impl_IPerceptionInfraredFrameSource<D>::AvailableVideoProfiles() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> value;
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->get_AvailableVideoProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_AvailableVideoProfiles(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionVideoProfile impl_IPerceptionInfraredFrameSource<D>::VideoProfile() const
 {
     Windows::Devices::Perception::PerceptionVideoProfile value { nullptr };
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->get_VideoProfile(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_VideoProfile(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::CameraIntrinsics impl_IPerceptionInfraredFrameSource<D>::CameraIntrinsics() const
 {
     Windows::Media::Devices::Core::CameraIntrinsics value { nullptr };
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->get_CameraIntrinsics(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->get_CameraIntrinsics(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionControlSession impl_IPerceptionInfraredFrameSource<D>::AcquireControlSession() const
 {
     Windows::Devices::Perception::PerceptionControlSession result { nullptr };
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->abi_AcquireControlSession(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_AcquireControlSession(put(result)));
     return result;
 }
 
 template <typename D> bool impl_IPerceptionInfraredFrameSource<D>::CanControlIndependentlyFrom(hstring_ref targetId) const
 {
     bool result {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->abi_CanControlIndependentlyFrom(get(targetId), &result));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_CanControlIndependentlyFrom(get(targetId), &result));
     return result;
 }
 
 template <typename D> bool impl_IPerceptionInfraredFrameSource<D>::IsCorrelatedWith(hstring_ref targetId) const
 {
     bool result {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->abi_IsCorrelatedWith(get(targetId), &result));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_IsCorrelatedWith(get(targetId), &result));
     return result;
 }
 
 template <typename D> bool impl_IPerceptionInfraredFrameSource<D>::TryGetTransformTo(hstring_ref targetId, Windows::Foundation::Numerics::float4x4 & result) const
 {
     bool hasResult {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->abi_TryGetTransformTo(get(targetId), put(result), &hasResult));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_TryGetTransformTo(get(targetId), put(result), &hasResult));
     return hasResult;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> impl_IPerceptionInfraredFrameSource<D>::TryGetDepthCorrelatedCameraIntrinsicsAsync(const Windows::Devices::Perception::PerceptionDepthFrameSource & target) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> result;
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(get(target), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(get(target), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> impl_IPerceptionInfraredFrameSource<D>::TryGetDepthCorrelatedCoordinateMapperAsync(hstring_ref targetId, const Windows::Devices::Perception::PerceptionDepthFrameSource & depthFrameSourceToMapWith) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> result;
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->abi_TryGetDepthCorrelatedCoordinateMapperAsync(get(targetId), get(depthFrameSourceToMapWith), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_TryGetDepthCorrelatedCoordinateMapperAsync(get(targetId), get(depthFrameSourceToMapWith), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> impl_IPerceptionInfraredFrameSource<D>::TrySetVideoProfileAsync(const Windows::Devices::Perception::PerceptionControlSession & controlSession, const Windows::Devices::Perception::PerceptionVideoProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> result;
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->abi_TrySetVideoProfileAsync(get(controlSession), get(profile), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_TrySetVideoProfileAsync(get(controlSession), get(profile), put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionInfraredFrameReader impl_IPerceptionInfraredFrameSource<D>::OpenReader() const
 {
     Windows::Devices::Perception::PerceptionInfraredFrameReader result { nullptr };
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource &>(static_cast<const D &>(*this))->abi_OpenReader(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource)->abi_OpenReader(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IPerceptionInfraredFrameSource2<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IPerceptionInfraredFrameSource2 &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameSource2)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapPixelFormat impl_IPerceptionVideoProfile<D>::BitmapPixelFormat() const
 {
     Windows::Graphics::Imaging::BitmapPixelFormat value {};
-    check_hresult(static_cast<const IPerceptionVideoProfile &>(static_cast<const D &>(*this))->get_BitmapPixelFormat(&value));
+    check_hresult(WINRT_SHIM(IPerceptionVideoProfile)->get_BitmapPixelFormat(&value));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapAlphaMode impl_IPerceptionVideoProfile<D>::BitmapAlphaMode() const
 {
     Windows::Graphics::Imaging::BitmapAlphaMode value {};
-    check_hresult(static_cast<const IPerceptionVideoProfile &>(static_cast<const D &>(*this))->get_BitmapAlphaMode(&value));
+    check_hresult(WINRT_SHIM(IPerceptionVideoProfile)->get_BitmapAlphaMode(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IPerceptionVideoProfile<D>::Width() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IPerceptionVideoProfile &>(static_cast<const D &>(*this))->get_Width(&value));
+    check_hresult(WINRT_SHIM(IPerceptionVideoProfile)->get_Width(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IPerceptionVideoProfile<D>::Height() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IPerceptionVideoProfile &>(static_cast<const D &>(*this))->get_Height(&value));
+    check_hresult(WINRT_SHIM(IPerceptionVideoProfile)->get_Height(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IPerceptionVideoProfile<D>::FrameDuration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IPerceptionVideoProfile &>(static_cast<const D &>(*this))->get_FrameDuration(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionVideoProfile)->get_FrameDuration(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPerceptionVideoProfile<D>::IsEqual(const Windows::Devices::Perception::PerceptionVideoProfile & other) const
 {
     bool result {};
-    check_hresult(static_cast<const IPerceptionVideoProfile &>(static_cast<const D &>(*this))->abi_IsEqual(get(other), &result));
+    check_hresult(WINRT_SHIM(IPerceptionVideoProfile)->abi_IsEqual(get(other), &result));
     return result;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IPerceptionColorFrameArrivedEventArgs<D>::RelativeTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IPerceptionColorFrameArrivedEventArgs &>(static_cast<const D &>(*this))->get_RelativeTime(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameArrivedEventArgs)->get_RelativeTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionColorFrame impl_IPerceptionColorFrameArrivedEventArgs<D>::TryOpenFrame() const
 {
     Windows::Devices::Perception::PerceptionColorFrame result { nullptr };
-    check_hresult(static_cast<const IPerceptionColorFrameArrivedEventArgs &>(static_cast<const D &>(*this))->abi_TryOpenFrame(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameArrivedEventArgs)->abi_TryOpenFrame(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IPerceptionDepthFrameArrivedEventArgs<D>::RelativeTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IPerceptionDepthFrameArrivedEventArgs &>(static_cast<const D &>(*this))->get_RelativeTime(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameArrivedEventArgs)->get_RelativeTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionDepthFrame impl_IPerceptionDepthFrameArrivedEventArgs<D>::TryOpenFrame() const
 {
     Windows::Devices::Perception::PerceptionDepthFrame result { nullptr };
-    check_hresult(static_cast<const IPerceptionDepthFrameArrivedEventArgs &>(static_cast<const D &>(*this))->abi_TryOpenFrame(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameArrivedEventArgs)->abi_TryOpenFrame(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IPerceptionInfraredFrameArrivedEventArgs<D>::RelativeTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameArrivedEventArgs &>(static_cast<const D &>(*this))->get_RelativeTime(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameArrivedEventArgs)->get_RelativeTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionInfraredFrame impl_IPerceptionInfraredFrameArrivedEventArgs<D>::TryOpenFrame() const
 {
     Windows::Devices::Perception::PerceptionInfraredFrame result { nullptr };
-    check_hresult(static_cast<const IPerceptionInfraredFrameArrivedEventArgs &>(static_cast<const D &>(*this))->abi_TryOpenFrame(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameArrivedEventArgs)->abi_TryOpenFrame(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectPixelAtCorrelatedDepth(const Windows::Foundation::Point & pixelCoordinate, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame) const
 {
     Windows::Foundation::Numerics::float3 result {};
-    check_hresult(static_cast<const IPerceptionDepthCorrelatedCameraIntrinsics &>(static_cast<const D &>(*this))->abi_UnprojectPixelAtCorrelatedDepth(get(pixelCoordinate), get(depthFrame), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectPixelAtCorrelatedDepth(get(pixelCoordinate), get(depthFrame), put(result)));
     return result;
 }
 
 template <typename D> void impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectPixelsAtCorrelatedDepth(array_ref<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Numerics::float3> results) const
 {
-    check_hresult(static_cast<const IPerceptionDepthCorrelatedCameraIntrinsics &>(static_cast<const D &>(*this))->abi_UnprojectPixelsAtCorrelatedDepth(sourceCoordinates.size(), get(sourceCoordinates), get(depthFrame), results.size(), get(results)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectPixelsAtCorrelatedDepth(sourceCoordinates.size(), get(sourceCoordinates), get(depthFrame), results.size(), get(results)));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectRegionPixelsAtCorrelatedDepthAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Numerics::float3> results) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IPerceptionDepthCorrelatedCameraIntrinsics &>(static_cast<const D &>(*this))->abi_UnprojectRegionPixelsAtCorrelatedDepthAsync(get(region), get(depthFrame), results.size(), get(results), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectRegionPixelsAtCorrelatedDepthAsync(get(region), get(depthFrame), results.size(), get(results), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectAllPixelsAtCorrelatedDepthAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Numerics::float3> results) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IPerceptionDepthCorrelatedCameraIntrinsics &>(static_cast<const D &>(*this))->abi_UnprojectAllPixelsAtCorrelatedDepthAsync(get(depthFrame), results.size(), get(results), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectAllPixelsAtCorrelatedDepthAsync(get(depthFrame), results.size(), get(results), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Point impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapPixelToTarget(const Windows::Foundation::Point & sourcePixelCoordinate, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame) const
 {
     Windows::Foundation::Point result {};
-    check_hresult(static_cast<const IPerceptionDepthCorrelatedCoordinateMapper &>(static_cast<const D &>(*this))->abi_MapPixelToTarget(get(sourcePixelCoordinate), get(depthFrame), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapPixelToTarget(get(sourcePixelCoordinate), get(depthFrame), put(result)));
     return result;
 }
 
 template <typename D> void impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapPixelsToTarget(array_ref<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Point> results) const
 {
-    check_hresult(static_cast<const IPerceptionDepthCorrelatedCoordinateMapper &>(static_cast<const D &>(*this))->abi_MapPixelsToTarget(sourceCoordinates.size(), get(sourceCoordinates), get(depthFrame), results.size(), get(results)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapPixelsToTarget(sourceCoordinates.size(), get(sourceCoordinates), get(depthFrame), results.size(), get(results)));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapRegionOfPixelsToTargetAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Point> targetCoordinates) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IPerceptionDepthCorrelatedCoordinateMapper &>(static_cast<const D &>(*this))->abi_MapRegionOfPixelsToTargetAsync(get(region), get(depthFrame), targetCoordinates.size(), get(targetCoordinates), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapRegionOfPixelsToTargetAsync(get(region), get(depthFrame), targetCoordinates.size(), get(targetCoordinates), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapAllPixelsToTargetAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Point> targetCoordinates) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IPerceptionDepthCorrelatedCoordinateMapper &>(static_cast<const D &>(*this))->abi_MapAllPixelsToTargetAsync(get(depthFrame), targetCoordinates.size(), get(targetCoordinates), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapAllPixelsToTargetAsync(get(depthFrame), targetCoordinates.size(), get(targetCoordinates), put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IPerceptionControlSession<D>::ControlLost(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionControlSession &>(static_cast<const D &>(*this))->add_ControlLost(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionControlSession)->add_ControlLost(get(handler), &token));
     return token;
 }
 
@@ -4848,20 +4848,20 @@ template <typename D> event_revoker<IPerceptionControlSession> impl_IPerceptionC
 
 template <typename D> void impl_IPerceptionControlSession<D>::ControlLost(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionControlSession &>(static_cast<const D &>(*this))->remove_ControlLost(token));
+    check_hresult(WINRT_SHIM(IPerceptionControlSession)->remove_ControlLost(token));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> impl_IPerceptionControlSession<D>::TrySetPropertyAsync(hstring_ref name, const Windows::IInspectable & value) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> result;
-    check_hresult(static_cast<const IPerceptionControlSession &>(static_cast<const D &>(*this))->abi_TrySetPropertyAsync(get(name), get(value), put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionControlSession)->abi_TrySetPropertyAsync(get(name), get(value), put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IPerceptionColorFrameReader<D>::FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameReader, Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionColorFrameReader &>(static_cast<const D &>(*this))->add_FrameArrived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameReader)->add_FrameArrived(get(handler), &token));
     return token;
 }
 
@@ -4872,39 +4872,39 @@ template <typename D> event_revoker<IPerceptionColorFrameReader> impl_IPerceptio
 
 template <typename D> void impl_IPerceptionColorFrameReader<D>::FrameArrived(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionColorFrameReader &>(static_cast<const D &>(*this))->remove_FrameArrived(token));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameReader)->remove_FrameArrived(token));
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionColorFrameSource impl_IPerceptionColorFrameReader<D>::Source() const
 {
     Windows::Devices::Perception::PerceptionColorFrameSource value { nullptr };
-    check_hresult(static_cast<const IPerceptionColorFrameReader &>(static_cast<const D &>(*this))->get_Source(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameReader)->get_Source(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPerceptionColorFrameReader<D>::IsPaused() const
 {
     bool value {};
-    check_hresult(static_cast<const IPerceptionColorFrameReader &>(static_cast<const D &>(*this))->get_IsPaused(&value));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameReader)->get_IsPaused(&value));
     return value;
 }
 
 template <typename D> void impl_IPerceptionColorFrameReader<D>::IsPaused(bool value) const
 {
-    check_hresult(static_cast<const IPerceptionColorFrameReader &>(static_cast<const D &>(*this))->put_IsPaused(value));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameReader)->put_IsPaused(value));
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionColorFrame impl_IPerceptionColorFrameReader<D>::TryReadLatestFrame() const
 {
     Windows::Devices::Perception::PerceptionColorFrame result { nullptr };
-    check_hresult(static_cast<const IPerceptionColorFrameReader &>(static_cast<const D &>(*this))->abi_TryReadLatestFrame(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameReader)->abi_TryReadLatestFrame(put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IPerceptionDepthFrameReader<D>::FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameReader, Windows::Devices::Perception::PerceptionDepthFrameArrivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionDepthFrameReader &>(static_cast<const D &>(*this))->add_FrameArrived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameReader)->add_FrameArrived(get(handler), &token));
     return token;
 }
 
@@ -4915,39 +4915,39 @@ template <typename D> event_revoker<IPerceptionDepthFrameReader> impl_IPerceptio
 
 template <typename D> void impl_IPerceptionDepthFrameReader<D>::FrameArrived(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionDepthFrameReader &>(static_cast<const D &>(*this))->remove_FrameArrived(token));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameReader)->remove_FrameArrived(token));
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionDepthFrameSource impl_IPerceptionDepthFrameReader<D>::Source() const
 {
     Windows::Devices::Perception::PerceptionDepthFrameSource value { nullptr };
-    check_hresult(static_cast<const IPerceptionDepthFrameReader &>(static_cast<const D &>(*this))->get_Source(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameReader)->get_Source(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPerceptionDepthFrameReader<D>::IsPaused() const
 {
     bool value {};
-    check_hresult(static_cast<const IPerceptionDepthFrameReader &>(static_cast<const D &>(*this))->get_IsPaused(&value));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameReader)->get_IsPaused(&value));
     return value;
 }
 
 template <typename D> void impl_IPerceptionDepthFrameReader<D>::IsPaused(bool value) const
 {
-    check_hresult(static_cast<const IPerceptionDepthFrameReader &>(static_cast<const D &>(*this))->put_IsPaused(value));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameReader)->put_IsPaused(value));
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionDepthFrame impl_IPerceptionDepthFrameReader<D>::TryReadLatestFrame() const
 {
     Windows::Devices::Perception::PerceptionDepthFrame result { nullptr };
-    check_hresult(static_cast<const IPerceptionDepthFrameReader &>(static_cast<const D &>(*this))->abi_TryReadLatestFrame(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameReader)->abi_TryReadLatestFrame(put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IPerceptionInfraredFrameReader<D>::FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameReader, Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameReader &>(static_cast<const D &>(*this))->add_FrameArrived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameReader)->add_FrameArrived(get(handler), &token));
     return token;
 }
 
@@ -4958,53 +4958,53 @@ template <typename D> event_revoker<IPerceptionInfraredFrameReader> impl_IPercep
 
 template <typename D> void impl_IPerceptionInfraredFrameReader<D>::FrameArrived(event_token token) const
 {
-    check_hresult(static_cast<const IPerceptionInfraredFrameReader &>(static_cast<const D &>(*this))->remove_FrameArrived(token));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameReader)->remove_FrameArrived(token));
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionInfraredFrameSource impl_IPerceptionInfraredFrameReader<D>::Source() const
 {
     Windows::Devices::Perception::PerceptionInfraredFrameSource value { nullptr };
-    check_hresult(static_cast<const IPerceptionInfraredFrameReader &>(static_cast<const D &>(*this))->get_Source(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameReader)->get_Source(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPerceptionInfraredFrameReader<D>::IsPaused() const
 {
     bool value {};
-    check_hresult(static_cast<const IPerceptionInfraredFrameReader &>(static_cast<const D &>(*this))->get_IsPaused(&value));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameReader)->get_IsPaused(&value));
     return value;
 }
 
 template <typename D> void impl_IPerceptionInfraredFrameReader<D>::IsPaused(bool value) const
 {
-    check_hresult(static_cast<const IPerceptionInfraredFrameReader &>(static_cast<const D &>(*this))->put_IsPaused(value));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameReader)->put_IsPaused(value));
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionInfraredFrame impl_IPerceptionInfraredFrameReader<D>::TryReadLatestFrame() const
 {
     Windows::Devices::Perception::PerceptionInfraredFrame result { nullptr };
-    check_hresult(static_cast<const IPerceptionInfraredFrameReader &>(static_cast<const D &>(*this))->abi_TryReadLatestFrame(put(result)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameReader)->abi_TryReadLatestFrame(put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::VideoFrame impl_IPerceptionColorFrame<D>::VideoFrame() const
 {
     Windows::Media::VideoFrame value { nullptr };
-    check_hresult(static_cast<const IPerceptionColorFrame &>(static_cast<const D &>(*this))->get_VideoFrame(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionColorFrame)->get_VideoFrame(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::VideoFrame impl_IPerceptionDepthFrame<D>::VideoFrame() const
 {
     Windows::Media::VideoFrame value { nullptr };
-    check_hresult(static_cast<const IPerceptionDepthFrame &>(static_cast<const D &>(*this))->get_VideoFrame(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrame)->get_VideoFrame(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::VideoFrame impl_IPerceptionInfraredFrame<D>::VideoFrame() const
 {
     Windows::Media::VideoFrame value { nullptr };
-    check_hresult(static_cast<const IPerceptionInfraredFrame &>(static_cast<const D &>(*this))->get_VideoFrame(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrame)->get_VideoFrame(put(value)));
     return value;
 }
 

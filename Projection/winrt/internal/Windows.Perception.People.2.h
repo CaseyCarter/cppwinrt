@@ -14,7 +14,6 @@ struct IHeadPose :
     impl::consume<IHeadPose>
 {
     IHeadPose(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHeadPose>(m_ptr); }
 };
 
 }

@@ -60,7 +60,6 @@ struct IDtdEntity :
     impl::require<IDtdEntity, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
     IDtdEntity(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDtdEntity>(m_ptr); }
 };
 
 struct IDtdNotation :
@@ -69,7 +68,6 @@ struct IDtdNotation :
     impl::require<IDtdNotation, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
     IDtdNotation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDtdNotation>(m_ptr); }
 };
 
 struct IXmlAttribute :
@@ -78,7 +76,6 @@ struct IXmlAttribute :
     impl::require<IXmlAttribute, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
     IXmlAttribute(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlAttribute>(m_ptr); }
 };
 
 struct IXmlCDataSection :
@@ -87,7 +84,6 @@ struct IXmlCDataSection :
     impl::require<IXmlCDataSection, Windows::Data::Xml::Dom::IXmlCharacterData, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer, Windows::Data::Xml::Dom::IXmlText>
 {
     IXmlCDataSection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlCDataSection>(m_ptr); }
 };
 
 struct IXmlCharacterData :
@@ -96,7 +92,6 @@ struct IXmlCharacterData :
     impl::require<IXmlCharacterData, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
     IXmlCharacterData(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlCharacterData>(m_ptr); }
 };
 
 struct IXmlComment :
@@ -105,7 +100,6 @@ struct IXmlComment :
     impl::require<IXmlComment, Windows::Data::Xml::Dom::IXmlCharacterData, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
     IXmlComment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlComment>(m_ptr); }
 };
 
 struct IXmlDocument :
@@ -114,7 +108,6 @@ struct IXmlDocument :
     impl::require<IXmlDocument, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
     IXmlDocument(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlDocument>(m_ptr); }
 };
 
 struct IXmlDocumentFragment :
@@ -123,7 +116,6 @@ struct IXmlDocumentFragment :
     impl::require<IXmlDocumentFragment, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
     IXmlDocumentFragment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlDocumentFragment>(m_ptr); }
 };
 
 struct IXmlDocumentIO :
@@ -131,7 +123,6 @@ struct IXmlDocumentIO :
     impl::consume<IXmlDocumentIO>
 {
     IXmlDocumentIO(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlDocumentIO>(m_ptr); }
 };
 
 struct IXmlDocumentIO2 :
@@ -139,7 +130,6 @@ struct IXmlDocumentIO2 :
     impl::consume<IXmlDocumentIO2>
 {
     IXmlDocumentIO2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlDocumentIO2>(m_ptr); }
 };
 
 struct IXmlDocumentStatics :
@@ -147,7 +137,6 @@ struct IXmlDocumentStatics :
     impl::consume<IXmlDocumentStatics>
 {
     IXmlDocumentStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlDocumentStatics>(m_ptr); }
 };
 
 struct IXmlDocumentType :
@@ -156,7 +145,6 @@ struct IXmlDocumentType :
     impl::require<IXmlDocumentType, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
     IXmlDocumentType(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlDocumentType>(m_ptr); }
 };
 
 struct IXmlDomImplementation :
@@ -164,7 +152,6 @@ struct IXmlDomImplementation :
     impl::consume<IXmlDomImplementation>
 {
     IXmlDomImplementation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlDomImplementation>(m_ptr); }
 };
 
 struct IXmlElement :
@@ -173,7 +160,6 @@ struct IXmlElement :
     impl::require<IXmlElement, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
     IXmlElement(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlElement>(m_ptr); }
 };
 
 struct IXmlEntityReference :
@@ -182,7 +168,6 @@ struct IXmlEntityReference :
     impl::require<IXmlEntityReference, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
     IXmlEntityReference(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlEntityReference>(m_ptr); }
 };
 
 struct IXmlLoadSettings :
@@ -190,7 +175,6 @@ struct IXmlLoadSettings :
     impl::consume<IXmlLoadSettings>
 {
     IXmlLoadSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlLoadSettings>(m_ptr); }
 };
 
 struct IXmlNamedNodeMap :
@@ -199,7 +183,6 @@ struct IXmlNamedNodeMap :
     impl::require<IXmlNamedNodeMap, Windows::Foundation::Collections::IIterable<Windows::Data::Xml::Dom::IXmlNode>, Windows::Foundation::Collections::IVectorView<Windows::Data::Xml::Dom::IXmlNode>>
 {
     IXmlNamedNodeMap(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlNamedNodeMap>(m_ptr); }
 };
 
 struct IXmlNode :
@@ -208,7 +191,6 @@ struct IXmlNode :
     impl::require<IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
     IXmlNode(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlNode>(m_ptr); }
 };
 
 struct IXmlNodeList :
@@ -217,7 +199,6 @@ struct IXmlNodeList :
     impl::require<IXmlNodeList, Windows::Foundation::Collections::IIterable<Windows::Data::Xml::Dom::IXmlNode>, Windows::Foundation::Collections::IVectorView<Windows::Data::Xml::Dom::IXmlNode>>
 {
     IXmlNodeList(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlNodeList>(m_ptr); }
 };
 
 struct IXmlNodeSelector :
@@ -225,7 +206,6 @@ struct IXmlNodeSelector :
     impl::consume<IXmlNodeSelector>
 {
     IXmlNodeSelector(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlNodeSelector>(m_ptr); }
 };
 
 struct IXmlNodeSerializer :
@@ -233,7 +213,6 @@ struct IXmlNodeSerializer :
     impl::consume<IXmlNodeSerializer>
 {
     IXmlNodeSerializer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlNodeSerializer>(m_ptr); }
 };
 
 struct IXmlProcessingInstruction :
@@ -242,7 +221,6 @@ struct IXmlProcessingInstruction :
     impl::require<IXmlProcessingInstruction, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
     IXmlProcessingInstruction(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlProcessingInstruction>(m_ptr); }
 };
 
 struct IXmlText :
@@ -251,7 +229,6 @@ struct IXmlText :
     impl::require<IXmlText, Windows::Data::Xml::Dom::IXmlCharacterData, Windows::Data::Xml::Dom::IXmlNode, Windows::Data::Xml::Dom::IXmlNodeSelector, Windows::Data::Xml::Dom::IXmlNodeSerializer>
 {
     IXmlText(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXmlText>(m_ptr); }
 };
 
 }

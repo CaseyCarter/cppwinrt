@@ -14,7 +14,6 @@ struct IFontWeights :
     impl::consume<IFontWeights>
 {
     IFontWeights(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFontWeights>(m_ptr); }
 };
 
 struct IFontWeightsStatics :
@@ -22,7 +21,6 @@ struct IFontWeightsStatics :
     impl::consume<IFontWeightsStatics>
 {
     IFontWeightsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFontWeightsStatics>(m_ptr); }
 };
 
 struct ITextCharacterFormat :
@@ -30,7 +28,6 @@ struct ITextCharacterFormat :
     impl::consume<ITextCharacterFormat>
 {
     ITextCharacterFormat(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextCharacterFormat>(m_ptr); }
 };
 
 struct ITextConstantsStatics :
@@ -38,7 +35,6 @@ struct ITextConstantsStatics :
     impl::consume<ITextConstantsStatics>
 {
     ITextConstantsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextConstantsStatics>(m_ptr); }
 };
 
 struct ITextDocument :
@@ -46,7 +42,6 @@ struct ITextDocument :
     impl::consume<ITextDocument>
 {
     ITextDocument(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextDocument>(m_ptr); }
 };
 
 struct ITextParagraphFormat :
@@ -54,7 +49,6 @@ struct ITextParagraphFormat :
     impl::consume<ITextParagraphFormat>
 {
     ITextParagraphFormat(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextParagraphFormat>(m_ptr); }
 };
 
 struct ITextRange :
@@ -62,7 +56,6 @@ struct ITextRange :
     impl::consume<ITextRange>
 {
     ITextRange(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextRange>(m_ptr); }
 };
 
 struct ITextSelection :
@@ -71,7 +64,6 @@ struct ITextSelection :
     impl::require<ITextSelection, Windows::UI::Text::ITextRange>
 {
     ITextSelection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextSelection>(m_ptr); }
 };
 
 }

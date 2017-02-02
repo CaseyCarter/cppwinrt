@@ -14,7 +14,6 @@ struct ICustomXamlResourceLoader :
     impl::consume<ICustomXamlResourceLoader>
 {
     ICustomXamlResourceLoader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICustomXamlResourceLoader>(m_ptr); }
 };
 
 struct ICustomXamlResourceLoaderFactory :
@@ -22,7 +21,6 @@ struct ICustomXamlResourceLoaderFactory :
     impl::consume<ICustomXamlResourceLoaderFactory>
 {
     ICustomXamlResourceLoaderFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICustomXamlResourceLoaderFactory>(m_ptr); }
 };
 
 struct ICustomXamlResourceLoaderOverrides :
@@ -30,7 +28,6 @@ struct ICustomXamlResourceLoaderOverrides :
     impl::consume<ICustomXamlResourceLoaderOverrides>
 {
     ICustomXamlResourceLoaderOverrides(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICustomXamlResourceLoaderOverrides>(m_ptr); }
 };
 
 struct ICustomXamlResourceLoaderStatics :
@@ -38,7 +35,6 @@ struct ICustomXamlResourceLoaderStatics :
     impl::consume<ICustomXamlResourceLoaderStatics>
 {
     ICustomXamlResourceLoaderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICustomXamlResourceLoaderStatics>(m_ptr); }
 };
 
 }

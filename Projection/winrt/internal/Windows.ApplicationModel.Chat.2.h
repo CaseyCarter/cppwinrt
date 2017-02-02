@@ -569,7 +569,6 @@ struct IChatCapabilities :
     impl::consume<IChatCapabilities>
 {
     IChatCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatCapabilities>(m_ptr); }
 };
 
 struct IChatCapabilitiesManagerStatics :
@@ -577,7 +576,6 @@ struct IChatCapabilitiesManagerStatics :
     impl::consume<IChatCapabilitiesManagerStatics>
 {
     IChatCapabilitiesManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatCapabilitiesManagerStatics>(m_ptr); }
 };
 
 struct IChatConversation :
@@ -585,7 +583,6 @@ struct IChatConversation :
     impl::consume<IChatConversation>
 {
     IChatConversation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatConversation>(m_ptr); }
 };
 
 struct IChatConversation2 :
@@ -593,7 +590,6 @@ struct IChatConversation2 :
     impl::consume<IChatConversation2>
 {
     IChatConversation2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatConversation2>(m_ptr); }
 };
 
 struct IChatConversationReader :
@@ -601,7 +597,6 @@ struct IChatConversationReader :
     impl::consume<IChatConversationReader>
 {
     IChatConversationReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatConversationReader>(m_ptr); }
 };
 
 struct IChatConversationThreadingInfo :
@@ -609,7 +604,6 @@ struct IChatConversationThreadingInfo :
     impl::consume<IChatConversationThreadingInfo>
 {
     IChatConversationThreadingInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatConversationThreadingInfo>(m_ptr); }
 };
 
 struct IChatItem :
@@ -617,7 +611,6 @@ struct IChatItem :
     impl::consume<IChatItem>
 {
     IChatItem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatItem>(m_ptr); }
 };
 
 struct IChatMessage :
@@ -625,7 +618,6 @@ struct IChatMessage :
     impl::consume<IChatMessage>
 {
     IChatMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessage>(m_ptr); }
 };
 
 struct IChatMessage2 :
@@ -634,7 +626,6 @@ struct IChatMessage2 :
     impl::require<IChatMessage2, Windows::ApplicationModel::Chat::IChatMessage, Windows::ApplicationModel::Chat::IChatMessage3>
 {
     IChatMessage2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessage2>(m_ptr); }
     using impl_IChatMessage::From;
     using impl_IChatMessage::IsForwardingDisabled;
     using impl_IChatMessage::IsIncoming;
@@ -661,7 +652,6 @@ struct IChatMessage3 :
     impl::require<IChatMessage3, Windows::ApplicationModel::Chat::IChatMessage>
 {
     IChatMessage3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessage3>(m_ptr); }
 };
 
 struct IChatMessage4 :
@@ -670,7 +660,6 @@ struct IChatMessage4 :
     impl::require<IChatMessage4, Windows::ApplicationModel::Chat::IChatMessage>
 {
     IChatMessage4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessage4>(m_ptr); }
 };
 
 struct IChatMessageAttachment :
@@ -678,7 +667,6 @@ struct IChatMessageAttachment :
     impl::consume<IChatMessageAttachment>
 {
     IChatMessageAttachment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageAttachment>(m_ptr); }
 };
 
 struct IChatMessageAttachment2 :
@@ -687,7 +675,6 @@ struct IChatMessageAttachment2 :
     impl::require<IChatMessageAttachment2, Windows::ApplicationModel::Chat::IChatMessageAttachment>
 {
     IChatMessageAttachment2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageAttachment2>(m_ptr); }
 };
 
 struct IChatMessageAttachmentFactory :
@@ -695,7 +682,6 @@ struct IChatMessageAttachmentFactory :
     impl::consume<IChatMessageAttachmentFactory>
 {
     IChatMessageAttachmentFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageAttachmentFactory>(m_ptr); }
 };
 
 struct IChatMessageBlockingStatic :
@@ -703,7 +689,6 @@ struct IChatMessageBlockingStatic :
     impl::consume<IChatMessageBlockingStatic>
 {
     IChatMessageBlockingStatic(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageBlockingStatic>(m_ptr); }
 };
 
 struct IChatMessageChange :
@@ -711,7 +696,6 @@ struct IChatMessageChange :
     impl::consume<IChatMessageChange>
 {
     IChatMessageChange(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageChange>(m_ptr); }
 };
 
 struct IChatMessageChangeReader :
@@ -719,7 +703,6 @@ struct IChatMessageChangeReader :
     impl::consume<IChatMessageChangeReader>
 {
     IChatMessageChangeReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageChangeReader>(m_ptr); }
 };
 
 struct IChatMessageChangeTracker :
@@ -727,7 +710,6 @@ struct IChatMessageChangeTracker :
     impl::consume<IChatMessageChangeTracker>
 {
     IChatMessageChangeTracker(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageChangeTracker>(m_ptr); }
 };
 
 struct IChatMessageChangedDeferral :
@@ -735,7 +717,6 @@ struct IChatMessageChangedDeferral :
     impl::consume<IChatMessageChangedDeferral>
 {
     IChatMessageChangedDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageChangedDeferral>(m_ptr); }
 };
 
 struct IChatMessageChangedEventArgs :
@@ -743,7 +724,6 @@ struct IChatMessageChangedEventArgs :
     impl::consume<IChatMessageChangedEventArgs>
 {
     IChatMessageChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageChangedEventArgs>(m_ptr); }
 };
 
 struct IChatMessageManager2Statics :
@@ -752,7 +732,6 @@ struct IChatMessageManager2Statics :
     impl::require<IChatMessageManager2Statics, Windows::ApplicationModel::Chat::IChatMessageManagerStatic>
 {
     IChatMessageManager2Statics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageManager2Statics>(m_ptr); }
 };
 
 struct IChatMessageManagerStatic :
@@ -760,7 +739,6 @@ struct IChatMessageManagerStatic :
     impl::consume<IChatMessageManagerStatic>
 {
     IChatMessageManagerStatic(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageManagerStatic>(m_ptr); }
 };
 
 struct IChatMessageManagerStatics3 :
@@ -769,7 +747,6 @@ struct IChatMessageManagerStatics3 :
     impl::require<IChatMessageManagerStatics3, Windows::ApplicationModel::Chat::IChatMessageManagerStatic>
 {
     IChatMessageManagerStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageManagerStatics3>(m_ptr); }
 };
 
 struct IChatMessageNotificationTriggerDetails :
@@ -777,7 +754,6 @@ struct IChatMessageNotificationTriggerDetails :
     impl::consume<IChatMessageNotificationTriggerDetails>
 {
     IChatMessageNotificationTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageNotificationTriggerDetails>(m_ptr); }
 };
 
 struct IChatMessageNotificationTriggerDetails2 :
@@ -786,7 +762,6 @@ struct IChatMessageNotificationTriggerDetails2 :
     impl::require<IChatMessageNotificationTriggerDetails2, Windows::ApplicationModel::Chat::IChatMessageNotificationTriggerDetails>
 {
     IChatMessageNotificationTriggerDetails2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageNotificationTriggerDetails2>(m_ptr); }
 };
 
 struct IChatMessageReader :
@@ -794,7 +769,6 @@ struct IChatMessageReader :
     impl::consume<IChatMessageReader>
 {
     IChatMessageReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageReader>(m_ptr); }
 };
 
 struct IChatMessageReader2 :
@@ -802,7 +776,6 @@ struct IChatMessageReader2 :
     impl::consume<IChatMessageReader2>
 {
     IChatMessageReader2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageReader2>(m_ptr); }
 };
 
 struct IChatMessageStore :
@@ -810,7 +783,6 @@ struct IChatMessageStore :
     impl::consume<IChatMessageStore>
 {
     IChatMessageStore(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageStore>(m_ptr); }
 };
 
 struct IChatMessageStore2 :
@@ -819,7 +791,6 @@ struct IChatMessageStore2 :
     impl::require<IChatMessageStore2, Windows::ApplicationModel::Chat::IChatMessageStore>
 {
     IChatMessageStore2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageStore2>(m_ptr); }
 };
 
 struct IChatMessageStore3 :
@@ -828,7 +799,6 @@ struct IChatMessageStore3 :
     impl::require<IChatMessageStore3, Windows::ApplicationModel::Chat::IChatMessageStore>
 {
     IChatMessageStore3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageStore3>(m_ptr); }
 };
 
 struct IChatMessageStoreChangedEventArgs :
@@ -836,7 +806,6 @@ struct IChatMessageStoreChangedEventArgs :
     impl::consume<IChatMessageStoreChangedEventArgs>
 {
     IChatMessageStoreChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageStoreChangedEventArgs>(m_ptr); }
 };
 
 struct IChatMessageTransport :
@@ -844,7 +813,6 @@ struct IChatMessageTransport :
     impl::consume<IChatMessageTransport>
 {
     IChatMessageTransport(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageTransport>(m_ptr); }
 };
 
 struct IChatMessageTransport2 :
@@ -853,7 +821,6 @@ struct IChatMessageTransport2 :
     impl::require<IChatMessageTransport2, Windows::ApplicationModel::Chat::IChatMessageTransport>
 {
     IChatMessageTransport2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageTransport2>(m_ptr); }
 };
 
 struct IChatMessageTransportConfiguration :
@@ -861,7 +828,6 @@ struct IChatMessageTransportConfiguration :
     impl::consume<IChatMessageTransportConfiguration>
 {
     IChatMessageTransportConfiguration(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageTransportConfiguration>(m_ptr); }
 };
 
 struct IChatMessageValidationResult :
@@ -869,7 +835,6 @@ struct IChatMessageValidationResult :
     impl::consume<IChatMessageValidationResult>
 {
     IChatMessageValidationResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageValidationResult>(m_ptr); }
 };
 
 struct IChatQueryOptions :
@@ -877,7 +842,6 @@ struct IChatQueryOptions :
     impl::consume<IChatQueryOptions>
 {
     IChatQueryOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatQueryOptions>(m_ptr); }
 };
 
 struct IChatRecipientDeliveryInfo :
@@ -885,7 +849,6 @@ struct IChatRecipientDeliveryInfo :
     impl::consume<IChatRecipientDeliveryInfo>
 {
     IChatRecipientDeliveryInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatRecipientDeliveryInfo>(m_ptr); }
 };
 
 struct IChatSearchReader :
@@ -893,7 +856,6 @@ struct IChatSearchReader :
     impl::consume<IChatSearchReader>
 {
     IChatSearchReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatSearchReader>(m_ptr); }
 };
 
 struct IChatSyncConfiguration :
@@ -901,7 +863,6 @@ struct IChatSyncConfiguration :
     impl::consume<IChatSyncConfiguration>
 {
     IChatSyncConfiguration(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatSyncConfiguration>(m_ptr); }
 };
 
 struct IChatSyncManager :
@@ -909,7 +870,6 @@ struct IChatSyncManager :
     impl::consume<IChatSyncManager>
 {
     IChatSyncManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatSyncManager>(m_ptr); }
 };
 
 struct IRcsEndUserMessage :
@@ -917,7 +877,6 @@ struct IRcsEndUserMessage :
     impl::consume<IRcsEndUserMessage>
 {
     IRcsEndUserMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRcsEndUserMessage>(m_ptr); }
 };
 
 struct IRcsEndUserMessageAction :
@@ -925,7 +884,6 @@ struct IRcsEndUserMessageAction :
     impl::consume<IRcsEndUserMessageAction>
 {
     IRcsEndUserMessageAction(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRcsEndUserMessageAction>(m_ptr); }
 };
 
 struct IRcsEndUserMessageAvailableEventArgs :
@@ -933,7 +891,6 @@ struct IRcsEndUserMessageAvailableEventArgs :
     impl::consume<IRcsEndUserMessageAvailableEventArgs>
 {
     IRcsEndUserMessageAvailableEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRcsEndUserMessageAvailableEventArgs>(m_ptr); }
 };
 
 struct IRcsEndUserMessageAvailableTriggerDetails :
@@ -941,7 +898,6 @@ struct IRcsEndUserMessageAvailableTriggerDetails :
     impl::consume<IRcsEndUserMessageAvailableTriggerDetails>
 {
     IRcsEndUserMessageAvailableTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRcsEndUserMessageAvailableTriggerDetails>(m_ptr); }
 };
 
 struct IRcsEndUserMessageManager :
@@ -949,7 +905,6 @@ struct IRcsEndUserMessageManager :
     impl::consume<IRcsEndUserMessageManager>
 {
     IRcsEndUserMessageManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRcsEndUserMessageManager>(m_ptr); }
 };
 
 struct IRcsManagerStatics :
@@ -957,7 +912,6 @@ struct IRcsManagerStatics :
     impl::consume<IRcsManagerStatics>
 {
     IRcsManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRcsManagerStatics>(m_ptr); }
 };
 
 struct IRcsServiceKindSupportedChangedEventArgs :
@@ -965,7 +919,6 @@ struct IRcsServiceKindSupportedChangedEventArgs :
     impl::consume<IRcsServiceKindSupportedChangedEventArgs>
 {
     IRcsServiceKindSupportedChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRcsServiceKindSupportedChangedEventArgs>(m_ptr); }
 };
 
 struct IRcsTransport :
@@ -973,7 +926,6 @@ struct IRcsTransport :
     impl::consume<IRcsTransport>
 {
     IRcsTransport(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRcsTransport>(m_ptr); }
 };
 
 struct IRcsTransportConfiguration :
@@ -981,7 +933,6 @@ struct IRcsTransportConfiguration :
     impl::consume<IRcsTransportConfiguration>
 {
     IRcsTransportConfiguration(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRcsTransportConfiguration>(m_ptr); }
 };
 
 struct IRemoteParticipantComposingChangedEventArgs :
@@ -989,7 +940,6 @@ struct IRemoteParticipantComposingChangedEventArgs :
     impl::consume<IRemoteParticipantComposingChangedEventArgs>
 {
     IRemoteParticipantComposingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteParticipantComposingChangedEventArgs>(m_ptr); }
 };
 
 }

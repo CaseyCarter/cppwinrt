@@ -567,80 +567,80 @@ namespace Windows::System::RemoteSystems {
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::System::RemoteSystems::RemoteSystem> impl_IRemoteSystemStatics<D>::FindByHostNameAsync(const Windows::Networking::HostName & hostName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::System::RemoteSystems::RemoteSystem> operation;
-    check_hresult(static_cast<const IRemoteSystemStatics &>(static_cast<const D &>(*this))->abi_FindByHostNameAsync(get(hostName), put(operation)));
+    check_hresult(WINRT_SHIM(IRemoteSystemStatics)->abi_FindByHostNameAsync(get(hostName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::System::RemoteSystems::RemoteSystemWatcher impl_IRemoteSystemStatics<D>::CreateWatcher() const
 {
     Windows::System::RemoteSystems::RemoteSystemWatcher result { nullptr };
-    check_hresult(static_cast<const IRemoteSystemStatics &>(static_cast<const D &>(*this))->abi_CreateWatcher(put(result)));
+    check_hresult(WINRT_SHIM(IRemoteSystemStatics)->abi_CreateWatcher(put(result)));
     return result;
 }
 
 template <typename D> Windows::System::RemoteSystems::RemoteSystemWatcher impl_IRemoteSystemStatics<D>::CreateWatcher(const Windows::Foundation::Collections::IIterable<Windows::System::RemoteSystems::IRemoteSystemFilter> & filters) const
 {
     Windows::System::RemoteSystems::RemoteSystemWatcher result { nullptr };
-    check_hresult(static_cast<const IRemoteSystemStatics &>(static_cast<const D &>(*this))->abi_CreateWatcherWithFilters(get(filters), put(result)));
+    check_hresult(WINRT_SHIM(IRemoteSystemStatics)->abi_CreateWatcherWithFilters(get(filters), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteSystems::RemoteSystemAccessStatus> impl_IRemoteSystemStatics<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteSystems::RemoteSystemAccessStatus> operation;
-    check_hresult(static_cast<const IRemoteSystemStatics &>(static_cast<const D &>(*this))->abi_RequestAccessAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IRemoteSystemStatics)->abi_RequestAccessAsync(put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IRemoteSystem<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const IRemoteSystem &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IRemoteSystem)->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IRemoteSystem<D>::Id() const
 {
     hstring value;
-    check_hresult(static_cast<const IRemoteSystem &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IRemoteSystem)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IRemoteSystem<D>::Kind() const
 {
     hstring value;
-    check_hresult(static_cast<const IRemoteSystem &>(static_cast<const D &>(*this))->get_Kind(put(value)));
+    check_hresult(WINRT_SHIM(IRemoteSystem)->get_Kind(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::RemoteSystems::RemoteSystemStatus impl_IRemoteSystem<D>::Status() const
 {
     Windows::System::RemoteSystems::RemoteSystemStatus value {};
-    check_hresult(static_cast<const IRemoteSystem &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IRemoteSystem)->get_Status(&value));
     return value;
 }
 
 template <typename D> bool impl_IRemoteSystem<D>::IsAvailableByProximity() const
 {
     bool value {};
-    check_hresult(static_cast<const IRemoteSystem &>(static_cast<const D &>(*this))->get_IsAvailableByProximity(&value));
+    check_hresult(WINRT_SHIM(IRemoteSystem)->get_IsAvailableByProximity(&value));
     return value;
 }
 
 template <typename D> void impl_IRemoteSystemWatcher<D>::Start() const
 {
-    check_hresult(static_cast<const IRemoteSystemWatcher &>(static_cast<const D &>(*this))->abi_Start());
+    check_hresult(WINRT_SHIM(IRemoteSystemWatcher)->abi_Start());
 }
 
 template <typename D> void impl_IRemoteSystemWatcher<D>::Stop() const
 {
-    check_hresult(static_cast<const IRemoteSystemWatcher &>(static_cast<const D &>(*this))->abi_Stop());
+    check_hresult(WINRT_SHIM(IRemoteSystemWatcher)->abi_Stop());
 }
 
 template <typename D> event_token impl_IRemoteSystemWatcher<D>::RemoteSystemAdded(const Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemAddedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IRemoteSystemWatcher &>(static_cast<const D &>(*this))->add_RemoteSystemAdded(get(handler), &token));
+    check_hresult(WINRT_SHIM(IRemoteSystemWatcher)->add_RemoteSystemAdded(get(handler), &token));
     return token;
 }
 
@@ -651,13 +651,13 @@ template <typename D> event_revoker<IRemoteSystemWatcher> impl_IRemoteSystemWatc
 
 template <typename D> void impl_IRemoteSystemWatcher<D>::RemoteSystemAdded(event_token token) const
 {
-    check_hresult(static_cast<const IRemoteSystemWatcher &>(static_cast<const D &>(*this))->remove_RemoteSystemAdded(token));
+    check_hresult(WINRT_SHIM(IRemoteSystemWatcher)->remove_RemoteSystemAdded(token));
 }
 
 template <typename D> event_token impl_IRemoteSystemWatcher<D>::RemoteSystemUpdated(const Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemUpdatedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IRemoteSystemWatcher &>(static_cast<const D &>(*this))->add_RemoteSystemUpdated(get(handler), &token));
+    check_hresult(WINRT_SHIM(IRemoteSystemWatcher)->add_RemoteSystemUpdated(get(handler), &token));
     return token;
 }
 
@@ -668,13 +668,13 @@ template <typename D> event_revoker<IRemoteSystemWatcher> impl_IRemoteSystemWatc
 
 template <typename D> void impl_IRemoteSystemWatcher<D>::RemoteSystemUpdated(event_token token) const
 {
-    check_hresult(static_cast<const IRemoteSystemWatcher &>(static_cast<const D &>(*this))->remove_RemoteSystemUpdated(token));
+    check_hresult(WINRT_SHIM(IRemoteSystemWatcher)->remove_RemoteSystemUpdated(token));
 }
 
 template <typename D> event_token impl_IRemoteSystemWatcher<D>::RemoteSystemRemoved(const Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemRemovedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IRemoteSystemWatcher &>(static_cast<const D &>(*this))->add_RemoteSystemRemoved(get(handler), &token));
+    check_hresult(WINRT_SHIM(IRemoteSystemWatcher)->add_RemoteSystemRemoved(get(handler), &token));
     return token;
 }
 
@@ -685,118 +685,118 @@ template <typename D> event_revoker<IRemoteSystemWatcher> impl_IRemoteSystemWatc
 
 template <typename D> void impl_IRemoteSystemWatcher<D>::RemoteSystemRemoved(event_token token) const
 {
-    check_hresult(static_cast<const IRemoteSystemWatcher &>(static_cast<const D &>(*this))->remove_RemoteSystemRemoved(token));
+    check_hresult(WINRT_SHIM(IRemoteSystemWatcher)->remove_RemoteSystemRemoved(token));
 }
 
 template <typename D> Windows::System::RemoteSystems::RemoteSystem impl_IRemoteSystemAddedEventArgs<D>::RemoteSystem() const
 {
     Windows::System::RemoteSystems::RemoteSystem value { nullptr };
-    check_hresult(static_cast<const IRemoteSystemAddedEventArgs &>(static_cast<const D &>(*this))->get_RemoteSystem(put(value)));
+    check_hresult(WINRT_SHIM(IRemoteSystemAddedEventArgs)->get_RemoteSystem(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::RemoteSystems::RemoteSystem impl_IRemoteSystemUpdatedEventArgs<D>::RemoteSystem() const
 {
     Windows::System::RemoteSystems::RemoteSystem value { nullptr };
-    check_hresult(static_cast<const IRemoteSystemUpdatedEventArgs &>(static_cast<const D &>(*this))->get_RemoteSystem(put(value)));
+    check_hresult(WINRT_SHIM(IRemoteSystemUpdatedEventArgs)->get_RemoteSystem(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IRemoteSystemRemovedEventArgs<D>::RemoteSystemId() const
 {
     hstring value;
-    check_hresult(static_cast<const IRemoteSystemRemovedEventArgs &>(static_cast<const D &>(*this))->get_RemoteSystemId(put(value)));
+    check_hresult(WINRT_SHIM(IRemoteSystemRemovedEventArgs)->get_RemoteSystemId(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::RemoteSystems::RemoteSystemConnectionRequest impl_IRemoteSystemConnectionRequestFactory<D>::Create(const Windows::System::RemoteSystems::RemoteSystem & remoteSystem) const
 {
     Windows::System::RemoteSystems::RemoteSystemConnectionRequest result { nullptr };
-    check_hresult(static_cast<const IRemoteSystemConnectionRequestFactory &>(static_cast<const D &>(*this))->abi_Create(get(remoteSystem), put(result)));
+    check_hresult(WINRT_SHIM(IRemoteSystemConnectionRequestFactory)->abi_Create(get(remoteSystem), put(result)));
     return result;
 }
 
 template <typename D> Windows::System::RemoteSystems::RemoteSystem impl_IRemoteSystemConnectionRequest<D>::RemoteSystem() const
 {
     Windows::System::RemoteSystems::RemoteSystem value { nullptr };
-    check_hresult(static_cast<const IRemoteSystemConnectionRequest &>(static_cast<const D &>(*this))->get_RemoteSystem(put(value)));
+    check_hresult(WINRT_SHIM(IRemoteSystemConnectionRequest)->get_RemoteSystem(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IRemoteSystemKindStatics<D>::Phone() const
 {
     hstring value;
-    check_hresult(static_cast<const IRemoteSystemKindStatics &>(static_cast<const D &>(*this))->get_Phone(put(value)));
+    check_hresult(WINRT_SHIM(IRemoteSystemKindStatics)->get_Phone(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IRemoteSystemKindStatics<D>::Hub() const
 {
     hstring value;
-    check_hresult(static_cast<const IRemoteSystemKindStatics &>(static_cast<const D &>(*this))->get_Hub(put(value)));
+    check_hresult(WINRT_SHIM(IRemoteSystemKindStatics)->get_Hub(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IRemoteSystemKindStatics<D>::Holographic() const
 {
     hstring value;
-    check_hresult(static_cast<const IRemoteSystemKindStatics &>(static_cast<const D &>(*this))->get_Holographic(put(value)));
+    check_hresult(WINRT_SHIM(IRemoteSystemKindStatics)->get_Holographic(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IRemoteSystemKindStatics<D>::Desktop() const
 {
     hstring value;
-    check_hresult(static_cast<const IRemoteSystemKindStatics &>(static_cast<const D &>(*this))->get_Desktop(put(value)));
+    check_hresult(WINRT_SHIM(IRemoteSystemKindStatics)->get_Desktop(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IRemoteSystemKindStatics<D>::Xbox() const
 {
     hstring value;
-    check_hresult(static_cast<const IRemoteSystemKindStatics &>(static_cast<const D &>(*this))->get_Xbox(put(value)));
+    check_hresult(WINRT_SHIM(IRemoteSystemKindStatics)->get_Xbox(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::RemoteSystems::RemoteSystemKindFilter impl_IRemoteSystemKindFilterFactory<D>::Create(const Windows::Foundation::Collections::IIterable<hstring> & remoteSystemKinds) const
 {
     Windows::System::RemoteSystems::RemoteSystemKindFilter result { nullptr };
-    check_hresult(static_cast<const IRemoteSystemKindFilterFactory &>(static_cast<const D &>(*this))->abi_Create(get(remoteSystemKinds), put(result)));
+    check_hresult(WINRT_SHIM(IRemoteSystemKindFilterFactory)->abi_Create(get(remoteSystemKinds), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IRemoteSystemKindFilter<D>::RemoteSystemKinds() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IRemoteSystemKindFilter &>(static_cast<const D &>(*this))->get_RemoteSystemKinds(put(value)));
+    check_hresult(WINRT_SHIM(IRemoteSystemKindFilter)->get_RemoteSystemKinds(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::RemoteSystems::RemoteSystemDiscoveryTypeFilter impl_IRemoteSystemDiscoveryTypeFilterFactory<D>::Create(Windows::System::RemoteSystems::RemoteSystemDiscoveryType discoveryType) const
 {
     Windows::System::RemoteSystems::RemoteSystemDiscoveryTypeFilter result { nullptr };
-    check_hresult(static_cast<const IRemoteSystemDiscoveryTypeFilterFactory &>(static_cast<const D &>(*this))->abi_Create(discoveryType, put(result)));
+    check_hresult(WINRT_SHIM(IRemoteSystemDiscoveryTypeFilterFactory)->abi_Create(discoveryType, put(result)));
     return result;
 }
 
 template <typename D> Windows::System::RemoteSystems::RemoteSystemDiscoveryType impl_IRemoteSystemDiscoveryTypeFilter<D>::RemoteSystemDiscoveryType() const
 {
     Windows::System::RemoteSystems::RemoteSystemDiscoveryType value {};
-    check_hresult(static_cast<const IRemoteSystemDiscoveryTypeFilter &>(static_cast<const D &>(*this))->get_RemoteSystemDiscoveryType(&value));
+    check_hresult(WINRT_SHIM(IRemoteSystemDiscoveryTypeFilter)->get_RemoteSystemDiscoveryType(&value));
     return value;
 }
 
 template <typename D> Windows::System::RemoteSystems::RemoteSystemStatusTypeFilter impl_IRemoteSystemStatusTypeFilterFactory<D>::Create(Windows::System::RemoteSystems::RemoteSystemStatusType remoteSystemStatusType) const
 {
     Windows::System::RemoteSystems::RemoteSystemStatusTypeFilter result { nullptr };
-    check_hresult(static_cast<const IRemoteSystemStatusTypeFilterFactory &>(static_cast<const D &>(*this))->abi_Create(remoteSystemStatusType, put(result)));
+    check_hresult(WINRT_SHIM(IRemoteSystemStatusTypeFilterFactory)->abi_Create(remoteSystemStatusType, put(result)));
     return result;
 }
 
 template <typename D> Windows::System::RemoteSystems::RemoteSystemStatusType impl_IRemoteSystemStatusTypeFilter<D>::RemoteSystemStatusType() const
 {
     Windows::System::RemoteSystems::RemoteSystemStatusType value {};
-    check_hresult(static_cast<const IRemoteSystemStatusTypeFilter &>(static_cast<const D &>(*this))->get_RemoteSystemStatusType(&value));
+    check_hresult(WINRT_SHIM(IRemoteSystemStatusTypeFilter)->get_RemoteSystemStatusType(&value));
     return value;
 }
 

@@ -32,7 +32,6 @@ struct ICompressor :
     impl::require<ICompressor, Windows::Foundation::IClosable, Windows::Storage::Streams::IOutputStream>
 {
     ICompressor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompressor>(m_ptr); }
 };
 
 struct ICompressorFactory :
@@ -40,7 +39,6 @@ struct ICompressorFactory :
     impl::consume<ICompressorFactory>
 {
     ICompressorFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompressorFactory>(m_ptr); }
 };
 
 struct IDecompressor :
@@ -49,7 +47,6 @@ struct IDecompressor :
     impl::require<IDecompressor, Windows::Foundation::IClosable, Windows::Storage::Streams::IInputStream>
 {
     IDecompressor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDecompressor>(m_ptr); }
 };
 
 struct IDecompressorFactory :
@@ -57,7 +54,6 @@ struct IDecompressorFactory :
     impl::consume<IDecompressorFactory>
 {
     IDecompressorFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDecompressorFactory>(m_ptr); }
 };
 
 }

@@ -84,7 +84,6 @@ struct IRadio :
     impl::consume<IRadio>
 {
     IRadio(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRadio>(m_ptr); }
 };
 
 struct IRadioStatics :
@@ -92,7 +91,6 @@ struct IRadioStatics :
     impl::consume<IRadioStatics>
 {
     IRadioStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRadioStatics>(m_ptr); }
 };
 
 }

@@ -121,7 +121,6 @@ struct IAudioBuffer :
     impl::require<IAudioBuffer, Windows::Foundation::IClosable, Windows::Foundation::IMemoryBuffer>
 {
     IAudioBuffer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioBuffer>(m_ptr); }
 };
 
 struct IAudioFrame :
@@ -130,7 +129,6 @@ struct IAudioFrame :
     impl::require<IAudioFrame, Windows::Foundation::IClosable, Windows::Media::IMediaFrame>
 {
     IAudioFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioFrame>(m_ptr); }
 };
 
 struct IAudioFrameFactory :
@@ -138,7 +136,6 @@ struct IAudioFrameFactory :
     impl::consume<IAudioFrameFactory>
 {
     IAudioFrameFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioFrameFactory>(m_ptr); }
 };
 
 struct IAutoRepeatModeChangeRequestedEventArgs :
@@ -146,7 +143,6 @@ struct IAutoRepeatModeChangeRequestedEventArgs :
     impl::consume<IAutoRepeatModeChangeRequestedEventArgs>
 {
     IAutoRepeatModeChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutoRepeatModeChangeRequestedEventArgs>(m_ptr); }
 };
 
 struct IImageDisplayProperties :
@@ -154,7 +150,6 @@ struct IImageDisplayProperties :
     impl::consume<IImageDisplayProperties>
 {
     IImageDisplayProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IImageDisplayProperties>(m_ptr); }
 };
 
 struct IMediaExtension :
@@ -162,7 +157,6 @@ struct IMediaExtension :
     impl::consume<IMediaExtension>
 {
     IMediaExtension(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaExtension>(m_ptr); }
 };
 
 struct IMediaExtensionManager :
@@ -170,7 +164,6 @@ struct IMediaExtensionManager :
     impl::consume<IMediaExtensionManager>
 {
     IMediaExtensionManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaExtensionManager>(m_ptr); }
 };
 
 struct IMediaFrame :
@@ -179,7 +172,6 @@ struct IMediaFrame :
     impl::require<IMediaFrame, Windows::Foundation::IClosable>
 {
     IMediaFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaFrame>(m_ptr); }
 };
 
 struct IMediaMarker :
@@ -187,7 +179,6 @@ struct IMediaMarker :
     impl::consume<IMediaMarker>
 {
     IMediaMarker(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaMarker>(m_ptr); }
 };
 
 struct IMediaMarkerTypesStatics :
@@ -195,7 +186,6 @@ struct IMediaMarkerTypesStatics :
     impl::consume<IMediaMarkerTypesStatics>
 {
     IMediaMarkerTypesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaMarkerTypesStatics>(m_ptr); }
 };
 
 struct IMediaMarkers :
@@ -203,7 +193,6 @@ struct IMediaMarkers :
     impl::consume<IMediaMarkers>
 {
     IMediaMarkers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaMarkers>(m_ptr); }
 };
 
 struct IMediaProcessingTriggerDetails :
@@ -211,7 +200,6 @@ struct IMediaProcessingTriggerDetails :
     impl::consume<IMediaProcessingTriggerDetails>
 {
     IMediaProcessingTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaProcessingTriggerDetails>(m_ptr); }
 };
 
 struct IMediaTimelineController :
@@ -219,7 +207,6 @@ struct IMediaTimelineController :
     impl::consume<IMediaTimelineController>
 {
     IMediaTimelineController(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaTimelineController>(m_ptr); }
 };
 
 struct IMusicDisplayProperties :
@@ -227,7 +214,6 @@ struct IMusicDisplayProperties :
     impl::consume<IMusicDisplayProperties>
 {
     IMusicDisplayProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMusicDisplayProperties>(m_ptr); }
 };
 
 struct IMusicDisplayProperties2 :
@@ -235,7 +221,6 @@ struct IMusicDisplayProperties2 :
     impl::consume<IMusicDisplayProperties2>
 {
     IMusicDisplayProperties2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMusicDisplayProperties2>(m_ptr); }
 };
 
 struct IMusicDisplayProperties3 :
@@ -243,7 +228,6 @@ struct IMusicDisplayProperties3 :
     impl::consume<IMusicDisplayProperties3>
 {
     IMusicDisplayProperties3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMusicDisplayProperties3>(m_ptr); }
 };
 
 struct IPlaybackPositionChangeRequestedEventArgs :
@@ -251,7 +235,6 @@ struct IPlaybackPositionChangeRequestedEventArgs :
     impl::consume<IPlaybackPositionChangeRequestedEventArgs>
 {
     IPlaybackPositionChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlaybackPositionChangeRequestedEventArgs>(m_ptr); }
 };
 
 struct IPlaybackRateChangeRequestedEventArgs :
@@ -259,7 +242,6 @@ struct IPlaybackRateChangeRequestedEventArgs :
     impl::consume<IPlaybackRateChangeRequestedEventArgs>
 {
     IPlaybackRateChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlaybackRateChangeRequestedEventArgs>(m_ptr); }
 };
 
 struct IShuffleEnabledChangeRequestedEventArgs :
@@ -267,7 +249,6 @@ struct IShuffleEnabledChangeRequestedEventArgs :
     impl::consume<IShuffleEnabledChangeRequestedEventArgs>
 {
     IShuffleEnabledChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IShuffleEnabledChangeRequestedEventArgs>(m_ptr); }
 };
 
 struct ISystemMediaTransportControls :
@@ -275,7 +256,6 @@ struct ISystemMediaTransportControls :
     impl::consume<ISystemMediaTransportControls>
 {
     ISystemMediaTransportControls(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemMediaTransportControls>(m_ptr); }
 };
 
 struct ISystemMediaTransportControls2 :
@@ -283,7 +263,6 @@ struct ISystemMediaTransportControls2 :
     impl::consume<ISystemMediaTransportControls2>
 {
     ISystemMediaTransportControls2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemMediaTransportControls2>(m_ptr); }
 };
 
 struct ISystemMediaTransportControlsButtonPressedEventArgs :
@@ -291,7 +270,6 @@ struct ISystemMediaTransportControlsButtonPressedEventArgs :
     impl::consume<ISystemMediaTransportControlsButtonPressedEventArgs>
 {
     ISystemMediaTransportControlsButtonPressedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemMediaTransportControlsButtonPressedEventArgs>(m_ptr); }
 };
 
 struct ISystemMediaTransportControlsDisplayUpdater :
@@ -299,7 +277,6 @@ struct ISystemMediaTransportControlsDisplayUpdater :
     impl::consume<ISystemMediaTransportControlsDisplayUpdater>
 {
     ISystemMediaTransportControlsDisplayUpdater(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemMediaTransportControlsDisplayUpdater>(m_ptr); }
 };
 
 struct ISystemMediaTransportControlsPropertyChangedEventArgs :
@@ -307,7 +284,6 @@ struct ISystemMediaTransportControlsPropertyChangedEventArgs :
     impl::consume<ISystemMediaTransportControlsPropertyChangedEventArgs>
 {
     ISystemMediaTransportControlsPropertyChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemMediaTransportControlsPropertyChangedEventArgs>(m_ptr); }
 };
 
 struct ISystemMediaTransportControlsStatics :
@@ -315,7 +291,6 @@ struct ISystemMediaTransportControlsStatics :
     impl::consume<ISystemMediaTransportControlsStatics>
 {
     ISystemMediaTransportControlsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemMediaTransportControlsStatics>(m_ptr); }
 };
 
 struct ISystemMediaTransportControlsTimelineProperties :
@@ -323,7 +298,6 @@ struct ISystemMediaTransportControlsTimelineProperties :
     impl::consume<ISystemMediaTransportControlsTimelineProperties>
 {
     ISystemMediaTransportControlsTimelineProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemMediaTransportControlsTimelineProperties>(m_ptr); }
 };
 
 struct IVideoDisplayProperties :
@@ -331,7 +305,6 @@ struct IVideoDisplayProperties :
     impl::consume<IVideoDisplayProperties>
 {
     IVideoDisplayProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoDisplayProperties>(m_ptr); }
 };
 
 struct IVideoDisplayProperties2 :
@@ -339,7 +312,6 @@ struct IVideoDisplayProperties2 :
     impl::consume<IVideoDisplayProperties2>
 {
     IVideoDisplayProperties2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoDisplayProperties2>(m_ptr); }
 };
 
 struct IVideoEffectsStatics :
@@ -347,7 +319,6 @@ struct IVideoEffectsStatics :
     impl::consume<IVideoEffectsStatics>
 {
     IVideoEffectsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoEffectsStatics>(m_ptr); }
 };
 
 struct IVideoFrame :
@@ -356,7 +327,6 @@ struct IVideoFrame :
     impl::require<IVideoFrame, Windows::Foundation::IClosable, Windows::Media::IMediaFrame>
 {
     IVideoFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoFrame>(m_ptr); }
 };
 
 struct IVideoFrameFactory :
@@ -364,7 +334,6 @@ struct IVideoFrameFactory :
     impl::consume<IVideoFrameFactory>
 {
     IVideoFrameFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoFrameFactory>(m_ptr); }
 };
 
 }

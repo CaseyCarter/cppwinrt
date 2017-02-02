@@ -84,7 +84,6 @@ struct IItemRemovedEventArgs :
     impl::consume<IItemRemovedEventArgs>
 {
     IItemRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IItemRemovedEventArgs>(m_ptr); }
 };
 
 struct IStorageApplicationPermissionsStatics :
@@ -92,7 +91,6 @@ struct IStorageApplicationPermissionsStatics :
     impl::consume<IStorageApplicationPermissionsStatics>
 {
     IStorageApplicationPermissionsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageApplicationPermissionsStatics>(m_ptr); }
 };
 
 struct IStorageItemAccessList :
@@ -100,7 +98,6 @@ struct IStorageItemAccessList :
     impl::consume<IStorageItemAccessList>
 {
     IStorageItemAccessList(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageItemAccessList>(m_ptr); }
 };
 
 struct IStorageItemMostRecentlyUsedList :
@@ -109,7 +106,6 @@ struct IStorageItemMostRecentlyUsedList :
     impl::require<IStorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::IStorageItemAccessList>
 {
     IStorageItemMostRecentlyUsedList(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageItemMostRecentlyUsedList>(m_ptr); }
 };
 
 struct IStorageItemMostRecentlyUsedList2 :
@@ -118,7 +114,6 @@ struct IStorageItemMostRecentlyUsedList2 :
     impl::require<IStorageItemMostRecentlyUsedList2, Windows::Storage::AccessCache::IStorageItemAccessList, Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList>
 {
     IStorageItemMostRecentlyUsedList2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageItemMostRecentlyUsedList2>(m_ptr); }
     using impl_IStorageItemAccessList::Add;
     using impl_IStorageItemAccessList::AddOrReplace;
     using impl_IStorageItemMostRecentlyUsedList2::Add;

@@ -234,7 +234,6 @@ namespace Windows::UI::Xaml::Media {
 struct RateChangedRoutedEventHandler : Windows::IUnknown
 {
     RateChangedRoutedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<RateChangedRoutedEventHandler>(m_ptr); }
     template <typename L> RateChangedRoutedEventHandler(L lambda);
     template <typename F> RateChangedRoutedEventHandler (F * function);
     template <typename O, typename M> RateChangedRoutedEventHandler(O * object, M method);
@@ -244,7 +243,6 @@ struct RateChangedRoutedEventHandler : Windows::IUnknown
 struct TimelineMarkerRoutedEventHandler : Windows::IUnknown
 {
     TimelineMarkerRoutedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<TimelineMarkerRoutedEventHandler>(m_ptr); }
     template <typename L> TimelineMarkerRoutedEventHandler(L lambda);
     template <typename F> TimelineMarkerRoutedEventHandler (F * function);
     template <typename O, typename M> TimelineMarkerRoutedEventHandler(O * object, M method);
@@ -256,7 +254,6 @@ struct IArcSegment :
     impl::consume<IArcSegment>
 {
     IArcSegment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IArcSegment>(m_ptr); }
 };
 
 struct IArcSegmentStatics :
@@ -264,7 +261,6 @@ struct IArcSegmentStatics :
     impl::consume<IArcSegmentStatics>
 {
     IArcSegmentStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IArcSegmentStatics>(m_ptr); }
 };
 
 struct IBezierSegment :
@@ -272,7 +268,6 @@ struct IBezierSegment :
     impl::consume<IBezierSegment>
 {
     IBezierSegment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBezierSegment>(m_ptr); }
 };
 
 struct IBezierSegmentStatics :
@@ -280,7 +275,6 @@ struct IBezierSegmentStatics :
     impl::consume<IBezierSegmentStatics>
 {
     IBezierSegmentStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBezierSegmentStatics>(m_ptr); }
 };
 
 struct IBitmapCache :
@@ -288,7 +282,6 @@ struct IBitmapCache :
     impl::consume<IBitmapCache>
 {
     IBitmapCache(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapCache>(m_ptr); }
 };
 
 struct IBrush :
@@ -296,7 +289,6 @@ struct IBrush :
     impl::consume<IBrush>
 {
     IBrush(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBrush>(m_ptr); }
 };
 
 struct IBrushFactory :
@@ -304,7 +296,6 @@ struct IBrushFactory :
     impl::consume<IBrushFactory>
 {
     IBrushFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBrushFactory>(m_ptr); }
 };
 
 struct IBrushStatics :
@@ -312,7 +303,6 @@ struct IBrushStatics :
     impl::consume<IBrushStatics>
 {
     IBrushStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBrushStatics>(m_ptr); }
 };
 
 struct ICacheMode :
@@ -320,7 +310,6 @@ struct ICacheMode :
     impl::consume<ICacheMode>
 {
     ICacheMode(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICacheMode>(m_ptr); }
 };
 
 struct ICacheModeFactory :
@@ -328,7 +317,6 @@ struct ICacheModeFactory :
     impl::consume<ICacheModeFactory>
 {
     ICacheModeFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICacheModeFactory>(m_ptr); }
 };
 
 struct ICompositeTransform :
@@ -336,7 +324,6 @@ struct ICompositeTransform :
     impl::consume<ICompositeTransform>
 {
     ICompositeTransform(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositeTransform>(m_ptr); }
 };
 
 struct ICompositeTransformStatics :
@@ -344,7 +331,6 @@ struct ICompositeTransformStatics :
     impl::consume<ICompositeTransformStatics>
 {
     ICompositeTransformStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositeTransformStatics>(m_ptr); }
 };
 
 struct ICompositionTarget :
@@ -352,7 +338,6 @@ struct ICompositionTarget :
     impl::consume<ICompositionTarget>
 {
     ICompositionTarget(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionTarget>(m_ptr); }
 };
 
 struct ICompositionTargetStatics :
@@ -360,7 +345,6 @@ struct ICompositionTargetStatics :
     impl::consume<ICompositionTargetStatics>
 {
     ICompositionTargetStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionTargetStatics>(m_ptr); }
 };
 
 struct IEllipseGeometry :
@@ -368,7 +352,6 @@ struct IEllipseGeometry :
     impl::consume<IEllipseGeometry>
 {
     IEllipseGeometry(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEllipseGeometry>(m_ptr); }
 };
 
 struct IEllipseGeometryStatics :
@@ -376,7 +359,6 @@ struct IEllipseGeometryStatics :
     impl::consume<IEllipseGeometryStatics>
 {
     IEllipseGeometryStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEllipseGeometryStatics>(m_ptr); }
 };
 
 struct IFontFamily :
@@ -384,7 +366,6 @@ struct IFontFamily :
     impl::consume<IFontFamily>
 {
     IFontFamily(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFontFamily>(m_ptr); }
 };
 
 struct IFontFamilyFactory :
@@ -392,7 +373,6 @@ struct IFontFamilyFactory :
     impl::consume<IFontFamilyFactory>
 {
     IFontFamilyFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFontFamilyFactory>(m_ptr); }
 };
 
 struct IFontFamilyStatics2 :
@@ -400,7 +380,6 @@ struct IFontFamilyStatics2 :
     impl::consume<IFontFamilyStatics2>
 {
     IFontFamilyStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFontFamilyStatics2>(m_ptr); }
 };
 
 struct IGeneralTransform :
@@ -408,7 +387,6 @@ struct IGeneralTransform :
     impl::consume<IGeneralTransform>
 {
     IGeneralTransform(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeneralTransform>(m_ptr); }
 };
 
 struct IGeneralTransformFactory :
@@ -416,7 +394,6 @@ struct IGeneralTransformFactory :
     impl::consume<IGeneralTransformFactory>
 {
     IGeneralTransformFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeneralTransformFactory>(m_ptr); }
 };
 
 struct IGeneralTransformOverrides :
@@ -424,7 +401,6 @@ struct IGeneralTransformOverrides :
     impl::consume<IGeneralTransformOverrides>
 {
     IGeneralTransformOverrides(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeneralTransformOverrides>(m_ptr); }
 };
 
 struct IGeometry :
@@ -432,7 +408,6 @@ struct IGeometry :
     impl::consume<IGeometry>
 {
     IGeometry(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeometry>(m_ptr); }
 };
 
 struct IGeometryFactory :
@@ -440,7 +415,6 @@ struct IGeometryFactory :
     impl::consume<IGeometryFactory>
 {
     IGeometryFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeometryFactory>(m_ptr); }
 };
 
 struct IGeometryGroup :
@@ -448,7 +422,6 @@ struct IGeometryGroup :
     impl::consume<IGeometryGroup>
 {
     IGeometryGroup(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeometryGroup>(m_ptr); }
 };
 
 struct IGeometryGroupStatics :
@@ -456,7 +429,6 @@ struct IGeometryGroupStatics :
     impl::consume<IGeometryGroupStatics>
 {
     IGeometryGroupStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeometryGroupStatics>(m_ptr); }
 };
 
 struct IGeometryStatics :
@@ -464,7 +436,6 @@ struct IGeometryStatics :
     impl::consume<IGeometryStatics>
 {
     IGeometryStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeometryStatics>(m_ptr); }
 };
 
 struct IGradientBrush :
@@ -472,7 +443,6 @@ struct IGradientBrush :
     impl::consume<IGradientBrush>
 {
     IGradientBrush(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGradientBrush>(m_ptr); }
 };
 
 struct IGradientBrushFactory :
@@ -480,7 +450,6 @@ struct IGradientBrushFactory :
     impl::consume<IGradientBrushFactory>
 {
     IGradientBrushFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGradientBrushFactory>(m_ptr); }
 };
 
 struct IGradientBrushStatics :
@@ -488,7 +457,6 @@ struct IGradientBrushStatics :
     impl::consume<IGradientBrushStatics>
 {
     IGradientBrushStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGradientBrushStatics>(m_ptr); }
 };
 
 struct IGradientStop :
@@ -496,7 +464,6 @@ struct IGradientStop :
     impl::consume<IGradientStop>
 {
     IGradientStop(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGradientStop>(m_ptr); }
 };
 
 struct IGradientStopStatics :
@@ -504,7 +471,6 @@ struct IGradientStopStatics :
     impl::consume<IGradientStopStatics>
 {
     IGradientStopStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGradientStopStatics>(m_ptr); }
 };
 
 struct IImageBrush :
@@ -512,7 +478,6 @@ struct IImageBrush :
     impl::consume<IImageBrush>
 {
     IImageBrush(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IImageBrush>(m_ptr); }
 };
 
 struct IImageBrushStatics :
@@ -520,7 +485,6 @@ struct IImageBrushStatics :
     impl::consume<IImageBrushStatics>
 {
     IImageBrushStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IImageBrushStatics>(m_ptr); }
 };
 
 struct IImageSource :
@@ -528,7 +492,6 @@ struct IImageSource :
     impl::consume<IImageSource>
 {
     IImageSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IImageSource>(m_ptr); }
 };
 
 struct IImageSourceFactory :
@@ -536,7 +499,6 @@ struct IImageSourceFactory :
     impl::consume<IImageSourceFactory>
 {
     IImageSourceFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IImageSourceFactory>(m_ptr); }
 };
 
 struct ILineGeometry :
@@ -544,7 +506,6 @@ struct ILineGeometry :
     impl::consume<ILineGeometry>
 {
     ILineGeometry(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILineGeometry>(m_ptr); }
 };
 
 struct ILineGeometryStatics :
@@ -552,7 +513,6 @@ struct ILineGeometryStatics :
     impl::consume<ILineGeometryStatics>
 {
     ILineGeometryStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILineGeometryStatics>(m_ptr); }
 };
 
 struct ILineSegment :
@@ -560,7 +520,6 @@ struct ILineSegment :
     impl::consume<ILineSegment>
 {
     ILineSegment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILineSegment>(m_ptr); }
 };
 
 struct ILineSegmentStatics :
@@ -568,7 +527,6 @@ struct ILineSegmentStatics :
     impl::consume<ILineSegmentStatics>
 {
     ILineSegmentStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILineSegmentStatics>(m_ptr); }
 };
 
 struct ILinearGradientBrush :
@@ -576,7 +534,6 @@ struct ILinearGradientBrush :
     impl::consume<ILinearGradientBrush>
 {
     ILinearGradientBrush(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILinearGradientBrush>(m_ptr); }
 };
 
 struct ILinearGradientBrushFactory :
@@ -584,7 +541,6 @@ struct ILinearGradientBrushFactory :
     impl::consume<ILinearGradientBrushFactory>
 {
     ILinearGradientBrushFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILinearGradientBrushFactory>(m_ptr); }
 };
 
 struct ILinearGradientBrushStatics :
@@ -592,7 +548,6 @@ struct ILinearGradientBrushStatics :
     impl::consume<ILinearGradientBrushStatics>
 {
     ILinearGradientBrushStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILinearGradientBrushStatics>(m_ptr); }
 };
 
 struct IMatrix3DProjection :
@@ -600,7 +555,6 @@ struct IMatrix3DProjection :
     impl::consume<IMatrix3DProjection>
 {
     IMatrix3DProjection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMatrix3DProjection>(m_ptr); }
 };
 
 struct IMatrix3DProjectionStatics :
@@ -608,7 +562,6 @@ struct IMatrix3DProjectionStatics :
     impl::consume<IMatrix3DProjectionStatics>
 {
     IMatrix3DProjectionStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMatrix3DProjectionStatics>(m_ptr); }
 };
 
 struct IMatrixHelper :
@@ -616,7 +569,6 @@ struct IMatrixHelper :
     impl::consume<IMatrixHelper>
 {
     IMatrixHelper(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMatrixHelper>(m_ptr); }
 };
 
 struct IMatrixHelperStatics :
@@ -624,7 +576,6 @@ struct IMatrixHelperStatics :
     impl::consume<IMatrixHelperStatics>
 {
     IMatrixHelperStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMatrixHelperStatics>(m_ptr); }
 };
 
 struct IMatrixTransform :
@@ -632,7 +583,6 @@ struct IMatrixTransform :
     impl::consume<IMatrixTransform>
 {
     IMatrixTransform(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMatrixTransform>(m_ptr); }
 };
 
 struct IMatrixTransformStatics :
@@ -640,7 +590,6 @@ struct IMatrixTransformStatics :
     impl::consume<IMatrixTransformStatics>
 {
     IMatrixTransformStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMatrixTransformStatics>(m_ptr); }
 };
 
 struct IMediaTransportControlsThumbnailRequestedEventArgs :
@@ -648,7 +597,6 @@ struct IMediaTransportControlsThumbnailRequestedEventArgs :
     impl::consume<IMediaTransportControlsThumbnailRequestedEventArgs>
 {
     IMediaTransportControlsThumbnailRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaTransportControlsThumbnailRequestedEventArgs>(m_ptr); }
 };
 
 struct IPartialMediaFailureDetectedEventArgs :
@@ -656,7 +604,6 @@ struct IPartialMediaFailureDetectedEventArgs :
     impl::consume<IPartialMediaFailureDetectedEventArgs>
 {
     IPartialMediaFailureDetectedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPartialMediaFailureDetectedEventArgs>(m_ptr); }
 };
 
 struct IPartialMediaFailureDetectedEventArgs2 :
@@ -664,7 +611,6 @@ struct IPartialMediaFailureDetectedEventArgs2 :
     impl::consume<IPartialMediaFailureDetectedEventArgs2>
 {
     IPartialMediaFailureDetectedEventArgs2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPartialMediaFailureDetectedEventArgs2>(m_ptr); }
 };
 
 struct IPathFigure :
@@ -672,7 +618,6 @@ struct IPathFigure :
     impl::consume<IPathFigure>
 {
     IPathFigure(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPathFigure>(m_ptr); }
 };
 
 struct IPathFigureStatics :
@@ -680,7 +625,6 @@ struct IPathFigureStatics :
     impl::consume<IPathFigureStatics>
 {
     IPathFigureStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPathFigureStatics>(m_ptr); }
 };
 
 struct IPathGeometry :
@@ -688,7 +632,6 @@ struct IPathGeometry :
     impl::consume<IPathGeometry>
 {
     IPathGeometry(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPathGeometry>(m_ptr); }
 };
 
 struct IPathGeometryStatics :
@@ -696,7 +639,6 @@ struct IPathGeometryStatics :
     impl::consume<IPathGeometryStatics>
 {
     IPathGeometryStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPathGeometryStatics>(m_ptr); }
 };
 
 struct IPathSegment :
@@ -704,7 +646,6 @@ struct IPathSegment :
     impl::consume<IPathSegment>
 {
     IPathSegment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPathSegment>(m_ptr); }
 };
 
 struct IPathSegmentFactory :
@@ -712,7 +653,6 @@ struct IPathSegmentFactory :
     impl::consume<IPathSegmentFactory>
 {
     IPathSegmentFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPathSegmentFactory>(m_ptr); }
 };
 
 struct IPlaneProjection :
@@ -720,7 +660,6 @@ struct IPlaneProjection :
     impl::consume<IPlaneProjection>
 {
     IPlaneProjection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlaneProjection>(m_ptr); }
 };
 
 struct IPlaneProjectionStatics :
@@ -728,7 +667,6 @@ struct IPlaneProjectionStatics :
     impl::consume<IPlaneProjectionStatics>
 {
     IPlaneProjectionStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlaneProjectionStatics>(m_ptr); }
 };
 
 struct IPolyBezierSegment :
@@ -736,7 +674,6 @@ struct IPolyBezierSegment :
     impl::consume<IPolyBezierSegment>
 {
     IPolyBezierSegment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPolyBezierSegment>(m_ptr); }
 };
 
 struct IPolyBezierSegmentStatics :
@@ -744,7 +681,6 @@ struct IPolyBezierSegmentStatics :
     impl::consume<IPolyBezierSegmentStatics>
 {
     IPolyBezierSegmentStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPolyBezierSegmentStatics>(m_ptr); }
 };
 
 struct IPolyLineSegment :
@@ -752,7 +688,6 @@ struct IPolyLineSegment :
     impl::consume<IPolyLineSegment>
 {
     IPolyLineSegment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPolyLineSegment>(m_ptr); }
 };
 
 struct IPolyLineSegmentStatics :
@@ -760,7 +695,6 @@ struct IPolyLineSegmentStatics :
     impl::consume<IPolyLineSegmentStatics>
 {
     IPolyLineSegmentStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPolyLineSegmentStatics>(m_ptr); }
 };
 
 struct IPolyQuadraticBezierSegment :
@@ -768,7 +702,6 @@ struct IPolyQuadraticBezierSegment :
     impl::consume<IPolyQuadraticBezierSegment>
 {
     IPolyQuadraticBezierSegment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPolyQuadraticBezierSegment>(m_ptr); }
 };
 
 struct IPolyQuadraticBezierSegmentStatics :
@@ -776,7 +709,6 @@ struct IPolyQuadraticBezierSegmentStatics :
     impl::consume<IPolyQuadraticBezierSegmentStatics>
 {
     IPolyQuadraticBezierSegmentStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPolyQuadraticBezierSegmentStatics>(m_ptr); }
 };
 
 struct IProjection :
@@ -784,7 +716,6 @@ struct IProjection :
     impl::consume<IProjection>
 {
     IProjection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProjection>(m_ptr); }
 };
 
 struct IProjectionFactory :
@@ -792,7 +723,6 @@ struct IProjectionFactory :
     impl::consume<IProjectionFactory>
 {
     IProjectionFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProjectionFactory>(m_ptr); }
 };
 
 struct IQuadraticBezierSegment :
@@ -800,7 +730,6 @@ struct IQuadraticBezierSegment :
     impl::consume<IQuadraticBezierSegment>
 {
     IQuadraticBezierSegment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IQuadraticBezierSegment>(m_ptr); }
 };
 
 struct IQuadraticBezierSegmentStatics :
@@ -808,7 +737,6 @@ struct IQuadraticBezierSegmentStatics :
     impl::consume<IQuadraticBezierSegmentStatics>
 {
     IQuadraticBezierSegmentStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IQuadraticBezierSegmentStatics>(m_ptr); }
 };
 
 struct IRateChangedRoutedEventArgs :
@@ -816,7 +744,6 @@ struct IRateChangedRoutedEventArgs :
     impl::consume<IRateChangedRoutedEventArgs>
 {
     IRateChangedRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRateChangedRoutedEventArgs>(m_ptr); }
 };
 
 struct IRectangleGeometry :
@@ -824,7 +751,6 @@ struct IRectangleGeometry :
     impl::consume<IRectangleGeometry>
 {
     IRectangleGeometry(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRectangleGeometry>(m_ptr); }
 };
 
 struct IRectangleGeometryStatics :
@@ -832,7 +758,6 @@ struct IRectangleGeometryStatics :
     impl::consume<IRectangleGeometryStatics>
 {
     IRectangleGeometryStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRectangleGeometryStatics>(m_ptr); }
 };
 
 struct IRenderingEventArgs :
@@ -840,7 +765,6 @@ struct IRenderingEventArgs :
     impl::consume<IRenderingEventArgs>
 {
     IRenderingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRenderingEventArgs>(m_ptr); }
 };
 
 struct IRotateTransform :
@@ -848,7 +772,6 @@ struct IRotateTransform :
     impl::consume<IRotateTransform>
 {
     IRotateTransform(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRotateTransform>(m_ptr); }
 };
 
 struct IRotateTransformStatics :
@@ -856,7 +779,6 @@ struct IRotateTransformStatics :
     impl::consume<IRotateTransformStatics>
 {
     IRotateTransformStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRotateTransformStatics>(m_ptr); }
 };
 
 struct IScaleTransform :
@@ -864,7 +786,6 @@ struct IScaleTransform :
     impl::consume<IScaleTransform>
 {
     IScaleTransform(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScaleTransform>(m_ptr); }
 };
 
 struct IScaleTransformStatics :
@@ -872,7 +793,6 @@ struct IScaleTransformStatics :
     impl::consume<IScaleTransformStatics>
 {
     IScaleTransformStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScaleTransformStatics>(m_ptr); }
 };
 
 struct ISkewTransform :
@@ -880,7 +800,6 @@ struct ISkewTransform :
     impl::consume<ISkewTransform>
 {
     ISkewTransform(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISkewTransform>(m_ptr); }
 };
 
 struct ISkewTransformStatics :
@@ -888,7 +807,6 @@ struct ISkewTransformStatics :
     impl::consume<ISkewTransformStatics>
 {
     ISkewTransformStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISkewTransformStatics>(m_ptr); }
 };
 
 struct ISolidColorBrush :
@@ -896,7 +814,6 @@ struct ISolidColorBrush :
     impl::consume<ISolidColorBrush>
 {
     ISolidColorBrush(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISolidColorBrush>(m_ptr); }
 };
 
 struct ISolidColorBrushFactory :
@@ -904,7 +821,6 @@ struct ISolidColorBrushFactory :
     impl::consume<ISolidColorBrushFactory>
 {
     ISolidColorBrushFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISolidColorBrushFactory>(m_ptr); }
 };
 
 struct ISolidColorBrushStatics :
@@ -912,7 +828,6 @@ struct ISolidColorBrushStatics :
     impl::consume<ISolidColorBrushStatics>
 {
     ISolidColorBrushStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISolidColorBrushStatics>(m_ptr); }
 };
 
 struct ITileBrush :
@@ -920,7 +835,6 @@ struct ITileBrush :
     impl::consume<ITileBrush>
 {
     ITileBrush(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITileBrush>(m_ptr); }
 };
 
 struct ITileBrushFactory :
@@ -928,7 +842,6 @@ struct ITileBrushFactory :
     impl::consume<ITileBrushFactory>
 {
     ITileBrushFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITileBrushFactory>(m_ptr); }
 };
 
 struct ITileBrushStatics :
@@ -936,7 +849,6 @@ struct ITileBrushStatics :
     impl::consume<ITileBrushStatics>
 {
     ITileBrushStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITileBrushStatics>(m_ptr); }
 };
 
 struct ITimelineMarker :
@@ -944,7 +856,6 @@ struct ITimelineMarker :
     impl::consume<ITimelineMarker>
 {
     ITimelineMarker(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimelineMarker>(m_ptr); }
 };
 
 struct ITimelineMarkerRoutedEventArgs :
@@ -952,7 +863,6 @@ struct ITimelineMarkerRoutedEventArgs :
     impl::consume<ITimelineMarkerRoutedEventArgs>
 {
     ITimelineMarkerRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimelineMarkerRoutedEventArgs>(m_ptr); }
 };
 
 struct ITimelineMarkerStatics :
@@ -960,7 +870,6 @@ struct ITimelineMarkerStatics :
     impl::consume<ITimelineMarkerStatics>
 {
     ITimelineMarkerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimelineMarkerStatics>(m_ptr); }
 };
 
 struct ITransform :
@@ -968,7 +877,6 @@ struct ITransform :
     impl::consume<ITransform>
 {
     ITransform(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITransform>(m_ptr); }
 };
 
 struct ITransformFactory :
@@ -976,7 +884,6 @@ struct ITransformFactory :
     impl::consume<ITransformFactory>
 {
     ITransformFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITransformFactory>(m_ptr); }
 };
 
 struct ITransformGroup :
@@ -984,7 +891,6 @@ struct ITransformGroup :
     impl::consume<ITransformGroup>
 {
     ITransformGroup(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITransformGroup>(m_ptr); }
 };
 
 struct ITransformGroupStatics :
@@ -992,7 +898,6 @@ struct ITransformGroupStatics :
     impl::consume<ITransformGroupStatics>
 {
     ITransformGroupStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITransformGroupStatics>(m_ptr); }
 };
 
 struct ITranslateTransform :
@@ -1000,7 +905,6 @@ struct ITranslateTransform :
     impl::consume<ITranslateTransform>
 {
     ITranslateTransform(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITranslateTransform>(m_ptr); }
 };
 
 struct ITranslateTransformStatics :
@@ -1008,7 +912,6 @@ struct ITranslateTransformStatics :
     impl::consume<ITranslateTransformStatics>
 {
     ITranslateTransformStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITranslateTransformStatics>(m_ptr); }
 };
 
 struct IVisualTreeHelper :
@@ -1016,7 +919,6 @@ struct IVisualTreeHelper :
     impl::consume<IVisualTreeHelper>
 {
     IVisualTreeHelper(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVisualTreeHelper>(m_ptr); }
 };
 
 struct IVisualTreeHelperStatics :
@@ -1024,7 +926,6 @@ struct IVisualTreeHelperStatics :
     impl::consume<IVisualTreeHelperStatics>
 {
     IVisualTreeHelperStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVisualTreeHelperStatics>(m_ptr); }
 };
 
 struct IVisualTreeHelperStatics2 :
@@ -1032,7 +933,6 @@ struct IVisualTreeHelperStatics2 :
     impl::consume<IVisualTreeHelperStatics2>
 {
     IVisualTreeHelperStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVisualTreeHelperStatics2>(m_ptr); }
 };
 
 }

@@ -142,7 +142,6 @@ namespace Windows::Networking::Proximity {
 struct DeviceArrivedEventHandler : Windows::IUnknown
 {
     DeviceArrivedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<DeviceArrivedEventHandler>(m_ptr); }
     template <typename L> DeviceArrivedEventHandler(L lambda);
     template <typename F> DeviceArrivedEventHandler (F * function);
     template <typename O, typename M> DeviceArrivedEventHandler(O * object, M method);
@@ -152,7 +151,6 @@ struct DeviceArrivedEventHandler : Windows::IUnknown
 struct DeviceDepartedEventHandler : Windows::IUnknown
 {
     DeviceDepartedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<DeviceDepartedEventHandler>(m_ptr); }
     template <typename L> DeviceDepartedEventHandler(L lambda);
     template <typename F> DeviceDepartedEventHandler (F * function);
     template <typename O, typename M> DeviceDepartedEventHandler(O * object, M method);
@@ -162,7 +160,6 @@ struct DeviceDepartedEventHandler : Windows::IUnknown
 struct MessageReceivedHandler : Windows::IUnknown
 {
     MessageReceivedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<MessageReceivedHandler>(m_ptr); }
     template <typename L> MessageReceivedHandler(L lambda);
     template <typename F> MessageReceivedHandler (F * function);
     template <typename O, typename M> MessageReceivedHandler(O * object, M method);
@@ -172,7 +169,6 @@ struct MessageReceivedHandler : Windows::IUnknown
 struct MessageTransmittedHandler : Windows::IUnknown
 {
     MessageTransmittedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<MessageTransmittedHandler>(m_ptr); }
     template <typename L> MessageTransmittedHandler(L lambda);
     template <typename F> MessageTransmittedHandler (F * function);
     template <typename O, typename M> MessageTransmittedHandler(O * object, M method);
@@ -184,7 +180,6 @@ struct IConnectionRequestedEventArgs :
     impl::consume<IConnectionRequestedEventArgs>
 {
     IConnectionRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IConnectionRequestedEventArgs>(m_ptr); }
 };
 
 struct IPeerFinderStatics :
@@ -192,7 +187,6 @@ struct IPeerFinderStatics :
     impl::consume<IPeerFinderStatics>
 {
     IPeerFinderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPeerFinderStatics>(m_ptr); }
 };
 
 struct IPeerFinderStatics2 :
@@ -200,7 +194,6 @@ struct IPeerFinderStatics2 :
     impl::consume<IPeerFinderStatics2>
 {
     IPeerFinderStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPeerFinderStatics2>(m_ptr); }
 };
 
 struct IPeerInformation :
@@ -208,7 +201,6 @@ struct IPeerInformation :
     impl::consume<IPeerInformation>
 {
     IPeerInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPeerInformation>(m_ptr); }
 };
 
 struct IPeerInformation3 :
@@ -216,7 +208,6 @@ struct IPeerInformation3 :
     impl::consume<IPeerInformation3>
 {
     IPeerInformation3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPeerInformation3>(m_ptr); }
 };
 
 struct IPeerInformationWithHostAndService :
@@ -224,7 +215,6 @@ struct IPeerInformationWithHostAndService :
     impl::consume<IPeerInformationWithHostAndService>
 {
     IPeerInformationWithHostAndService(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPeerInformationWithHostAndService>(m_ptr); }
 };
 
 struct IPeerWatcher :
@@ -232,7 +222,6 @@ struct IPeerWatcher :
     impl::consume<IPeerWatcher>
 {
     IPeerWatcher(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPeerWatcher>(m_ptr); }
 };
 
 struct IProximityDevice :
@@ -240,7 +229,6 @@ struct IProximityDevice :
     impl::consume<IProximityDevice>
 {
     IProximityDevice(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProximityDevice>(m_ptr); }
 };
 
 struct IProximityDeviceStatics :
@@ -248,7 +236,6 @@ struct IProximityDeviceStatics :
     impl::consume<IProximityDeviceStatics>
 {
     IProximityDeviceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProximityDeviceStatics>(m_ptr); }
 };
 
 struct IProximityMessage :
@@ -256,7 +243,6 @@ struct IProximityMessage :
     impl::consume<IProximityMessage>
 {
     IProximityMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProximityMessage>(m_ptr); }
 };
 
 struct ITriggeredConnectionStateChangedEventArgs :
@@ -264,7 +250,6 @@ struct ITriggeredConnectionStateChangedEventArgs :
     impl::consume<ITriggeredConnectionStateChangedEventArgs>
 {
     ITriggeredConnectionStateChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITriggeredConnectionStateChangedEventArgs>(m_ptr); }
 };
 
 }

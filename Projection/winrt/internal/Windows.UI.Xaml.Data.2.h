@@ -105,7 +105,6 @@ namespace Windows::UI::Xaml::Data {
 struct CurrentChangingEventHandler : Windows::IUnknown
 {
     CurrentChangingEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<CurrentChangingEventHandler>(m_ptr); }
     template <typename L> CurrentChangingEventHandler(L lambda);
     template <typename F> CurrentChangingEventHandler (F * function);
     template <typename O, typename M> CurrentChangingEventHandler(O * object, M method);
@@ -115,7 +114,6 @@ struct CurrentChangingEventHandler : Windows::IUnknown
 struct PropertyChangedEventHandler : Windows::IUnknown
 {
     PropertyChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<PropertyChangedEventHandler>(m_ptr); }
     template <typename L> PropertyChangedEventHandler(L lambda);
     template <typename F> PropertyChangedEventHandler (F * function);
     template <typename O, typename M> PropertyChangedEventHandler(O * object, M method);
@@ -127,7 +125,6 @@ struct IBinding :
     impl::consume<IBinding>
 {
     IBinding(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBinding>(m_ptr); }
 };
 
 struct IBinding2 :
@@ -135,7 +132,6 @@ struct IBinding2 :
     impl::consume<IBinding2>
 {
     IBinding2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBinding2>(m_ptr); }
 };
 
 struct IBindingBase :
@@ -143,7 +139,6 @@ struct IBindingBase :
     impl::consume<IBindingBase>
 {
     IBindingBase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBindingBase>(m_ptr); }
 };
 
 struct IBindingBaseFactory :
@@ -151,7 +146,6 @@ struct IBindingBaseFactory :
     impl::consume<IBindingBaseFactory>
 {
     IBindingBaseFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBindingBaseFactory>(m_ptr); }
 };
 
 struct IBindingExpression :
@@ -159,7 +153,6 @@ struct IBindingExpression :
     impl::consume<IBindingExpression>
 {
     IBindingExpression(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBindingExpression>(m_ptr); }
 };
 
 struct IBindingExpressionBase :
@@ -167,7 +160,6 @@ struct IBindingExpressionBase :
     impl::consume<IBindingExpressionBase>
 {
     IBindingExpressionBase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBindingExpressionBase>(m_ptr); }
 };
 
 struct IBindingExpressionBaseFactory :
@@ -175,7 +167,6 @@ struct IBindingExpressionBaseFactory :
     impl::consume<IBindingExpressionBaseFactory>
 {
     IBindingExpressionBaseFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBindingExpressionBaseFactory>(m_ptr); }
 };
 
 struct IBindingExpressionFactory :
@@ -183,7 +174,6 @@ struct IBindingExpressionFactory :
     impl::consume<IBindingExpressionFactory>
 {
     IBindingExpressionFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBindingExpressionFactory>(m_ptr); }
 };
 
 struct IBindingFactory :
@@ -191,7 +181,6 @@ struct IBindingFactory :
     impl::consume<IBindingFactory>
 {
     IBindingFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBindingFactory>(m_ptr); }
 };
 
 struct IBindingOperations :
@@ -199,7 +188,6 @@ struct IBindingOperations :
     impl::consume<IBindingOperations>
 {
     IBindingOperations(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBindingOperations>(m_ptr); }
 };
 
 struct IBindingOperationsStatics :
@@ -207,7 +195,6 @@ struct IBindingOperationsStatics :
     impl::consume<IBindingOperationsStatics>
 {
     IBindingOperationsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBindingOperationsStatics>(m_ptr); }
 };
 
 struct ICollectionView :
@@ -216,7 +203,6 @@ struct ICollectionView :
     impl::require<ICollectionView, Windows::Foundation::Collections::IIterable<Windows::IInspectable>, Windows::Foundation::Collections::IObservableVector<Windows::IInspectable>, Windows::Foundation::Collections::IVector<Windows::IInspectable>>
 {
     ICollectionView(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICollectionView>(m_ptr); }
 };
 
 struct ICollectionViewFactory :
@@ -224,7 +210,6 @@ struct ICollectionViewFactory :
     impl::consume<ICollectionViewFactory>
 {
     ICollectionViewFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICollectionViewFactory>(m_ptr); }
 };
 
 struct ICollectionViewGroup :
@@ -232,7 +217,6 @@ struct ICollectionViewGroup :
     impl::consume<ICollectionViewGroup>
 {
     ICollectionViewGroup(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICollectionViewGroup>(m_ptr); }
 };
 
 struct ICollectionViewSource :
@@ -240,7 +224,6 @@ struct ICollectionViewSource :
     impl::consume<ICollectionViewSource>
 {
     ICollectionViewSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICollectionViewSource>(m_ptr); }
 };
 
 struct ICollectionViewSourceStatics :
@@ -248,7 +231,6 @@ struct ICollectionViewSourceStatics :
     impl::consume<ICollectionViewSourceStatics>
 {
     ICollectionViewSourceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICollectionViewSourceStatics>(m_ptr); }
 };
 
 struct ICurrentChangingEventArgs :
@@ -256,7 +238,6 @@ struct ICurrentChangingEventArgs :
     impl::consume<ICurrentChangingEventArgs>
 {
     ICurrentChangingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICurrentChangingEventArgs>(m_ptr); }
 };
 
 struct ICurrentChangingEventArgsFactory :
@@ -264,7 +245,6 @@ struct ICurrentChangingEventArgsFactory :
     impl::consume<ICurrentChangingEventArgsFactory>
 {
     ICurrentChangingEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICurrentChangingEventArgsFactory>(m_ptr); }
 };
 
 struct ICustomProperty :
@@ -272,7 +252,6 @@ struct ICustomProperty :
     impl::consume<ICustomProperty>
 {
     ICustomProperty(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICustomProperty>(m_ptr); }
 };
 
 struct ICustomPropertyProvider :
@@ -280,7 +259,6 @@ struct ICustomPropertyProvider :
     impl::consume<ICustomPropertyProvider>
 {
     ICustomPropertyProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICustomPropertyProvider>(m_ptr); }
 };
 
 struct IItemIndexRange :
@@ -288,7 +266,6 @@ struct IItemIndexRange :
     impl::consume<IItemIndexRange>
 {
     IItemIndexRange(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IItemIndexRange>(m_ptr); }
 };
 
 struct IItemIndexRangeFactory :
@@ -296,7 +273,6 @@ struct IItemIndexRangeFactory :
     impl::consume<IItemIndexRangeFactory>
 {
     IItemIndexRangeFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IItemIndexRangeFactory>(m_ptr); }
 };
 
 struct IItemsRangeInfo :
@@ -305,7 +281,6 @@ struct IItemsRangeInfo :
     impl::require<IItemsRangeInfo, Windows::Foundation::IClosable>
 {
     IItemsRangeInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IItemsRangeInfo>(m_ptr); }
 };
 
 struct INotifyPropertyChanged :
@@ -313,7 +288,6 @@ struct INotifyPropertyChanged :
     impl::consume<INotifyPropertyChanged>
 {
     INotifyPropertyChanged(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INotifyPropertyChanged>(m_ptr); }
 };
 
 struct IPropertyChangedEventArgs :
@@ -321,7 +295,6 @@ struct IPropertyChangedEventArgs :
     impl::consume<IPropertyChangedEventArgs>
 {
     IPropertyChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPropertyChangedEventArgs>(m_ptr); }
 };
 
 struct IPropertyChangedEventArgsFactory :
@@ -329,7 +302,6 @@ struct IPropertyChangedEventArgsFactory :
     impl::consume<IPropertyChangedEventArgsFactory>
 {
     IPropertyChangedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPropertyChangedEventArgsFactory>(m_ptr); }
 };
 
 struct IRelativeSource :
@@ -337,7 +309,6 @@ struct IRelativeSource :
     impl::consume<IRelativeSource>
 {
     IRelativeSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRelativeSource>(m_ptr); }
 };
 
 struct IRelativeSourceFactory :
@@ -345,7 +316,6 @@ struct IRelativeSourceFactory :
     impl::consume<IRelativeSourceFactory>
 {
     IRelativeSourceFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRelativeSourceFactory>(m_ptr); }
 };
 
 struct ISelectionInfo :
@@ -353,7 +323,6 @@ struct ISelectionInfo :
     impl::consume<ISelectionInfo>
 {
     ISelectionInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectionInfo>(m_ptr); }
 };
 
 struct ISupportIncrementalLoading :
@@ -361,7 +330,6 @@ struct ISupportIncrementalLoading :
     impl::consume<ISupportIncrementalLoading>
 {
     ISupportIncrementalLoading(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISupportIncrementalLoading>(m_ptr); }
 };
 
 struct IValueConverter :
@@ -369,7 +337,6 @@ struct IValueConverter :
     impl::consume<IValueConverter>
 {
     IValueConverter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IValueConverter>(m_ptr); }
 };
 
 }

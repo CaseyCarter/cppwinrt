@@ -25,7 +25,7 @@ template <typename O, typename M> TimerDestroyedHandler::TimerDestroyedHandler(O
 
 inline void TimerDestroyedHandler::operator()(const Windows::System::Threading::ThreadPoolTimer & timer) const
 {
-    check_hresult((*this)->abi_Invoke(get(timer)));
+    check_hresult((*(abi<TimerDestroyedHandler> **)this)->abi_Invoke(get(timer)));
 }
 
 template <typename L> TimerElapsedHandler::TimerElapsedHandler(L lambda) :
@@ -42,7 +42,7 @@ template <typename O, typename M> TimerElapsedHandler::TimerElapsedHandler(O * o
 
 inline void TimerElapsedHandler::operator()(const Windows::System::Threading::ThreadPoolTimer & timer) const
 {
-    check_hresult((*this)->abi_Invoke(get(timer)));
+    check_hresult((*(abi<TimerElapsedHandler> **)this)->abi_Invoke(get(timer)));
 }
 
 template <typename L> WorkItemHandler::WorkItemHandler(L lambda) :
@@ -59,7 +59,7 @@ template <typename O, typename M> WorkItemHandler::WorkItemHandler(O * object, M
 
 inline void WorkItemHandler::operator()(const Windows::Foundation::IAsyncAction & operation) const
 {
-    check_hresult((*this)->abi_Invoke(get(operation)));
+    check_hresult((*(abi<WorkItemHandler> **)this)->abi_Invoke(get(operation)));
 }
 
 }
@@ -232,68 +232,68 @@ namespace Windows::System::Threading {
 template <typename D> Windows::Foundation::IAsyncAction impl_IThreadPoolStatics<D>::RunAsync(const Windows::System::Threading::WorkItemHandler & handler) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IThreadPoolStatics &>(static_cast<const D &>(*this))->abi_RunAsync(get(handler), put(operation)));
+    check_hresult(WINRT_SHIM(IThreadPoolStatics)->abi_RunAsync(get(handler), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IThreadPoolStatics<D>::RunAsync(const Windows::System::Threading::WorkItemHandler & handler, Windows::System::Threading::WorkItemPriority priority) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IThreadPoolStatics &>(static_cast<const D &>(*this))->abi_RunWithPriorityAsync(get(handler), priority, put(operation)));
+    check_hresult(WINRT_SHIM(IThreadPoolStatics)->abi_RunWithPriorityAsync(get(handler), priority, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IThreadPoolStatics<D>::RunAsync(const Windows::System::Threading::WorkItemHandler & handler, Windows::System::Threading::WorkItemPriority priority, Windows::System::Threading::WorkItemOptions options) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IThreadPoolStatics &>(static_cast<const D &>(*this))->abi_RunWithPriorityAndOptionsAsync(get(handler), priority, options, put(operation)));
+    check_hresult(WINRT_SHIM(IThreadPoolStatics)->abi_RunWithPriorityAndOptionsAsync(get(handler), priority, options, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IThreadPoolTimer<D>::Period() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IThreadPoolTimer &>(static_cast<const D &>(*this))->get_Period(put(value)));
+    check_hresult(WINRT_SHIM(IThreadPoolTimer)->get_Period(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IThreadPoolTimer<D>::Delay() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IThreadPoolTimer &>(static_cast<const D &>(*this))->get_Delay(put(value)));
+    check_hresult(WINRT_SHIM(IThreadPoolTimer)->get_Delay(put(value)));
     return value;
 }
 
 template <typename D> void impl_IThreadPoolTimer<D>::Cancel() const
 {
-    check_hresult(static_cast<const IThreadPoolTimer &>(static_cast<const D &>(*this))->abi_Cancel());
+    check_hresult(WINRT_SHIM(IThreadPoolTimer)->abi_Cancel());
 }
 
 template <typename D> Windows::System::Threading::ThreadPoolTimer impl_IThreadPoolTimerStatics<D>::CreatePeriodicTimer(const Windows::System::Threading::TimerElapsedHandler & handler, const Windows::Foundation::TimeSpan & period) const
 {
     Windows::System::Threading::ThreadPoolTimer timer { nullptr };
-    check_hresult(static_cast<const IThreadPoolTimerStatics &>(static_cast<const D &>(*this))->abi_CreatePeriodicTimer(get(handler), get(period), put(timer)));
+    check_hresult(WINRT_SHIM(IThreadPoolTimerStatics)->abi_CreatePeriodicTimer(get(handler), get(period), put(timer)));
     return timer;
 }
 
 template <typename D> Windows::System::Threading::ThreadPoolTimer impl_IThreadPoolTimerStatics<D>::CreateTimer(const Windows::System::Threading::TimerElapsedHandler & handler, const Windows::Foundation::TimeSpan & delay) const
 {
     Windows::System::Threading::ThreadPoolTimer timer { nullptr };
-    check_hresult(static_cast<const IThreadPoolTimerStatics &>(static_cast<const D &>(*this))->abi_CreateTimer(get(handler), get(delay), put(timer)));
+    check_hresult(WINRT_SHIM(IThreadPoolTimerStatics)->abi_CreateTimer(get(handler), get(delay), put(timer)));
     return timer;
 }
 
 template <typename D> Windows::System::Threading::ThreadPoolTimer impl_IThreadPoolTimerStatics<D>::CreatePeriodicTimer(const Windows::System::Threading::TimerElapsedHandler & handler, const Windows::Foundation::TimeSpan & period, const Windows::System::Threading::TimerDestroyedHandler & destroyed) const
 {
     Windows::System::Threading::ThreadPoolTimer timer { nullptr };
-    check_hresult(static_cast<const IThreadPoolTimerStatics &>(static_cast<const D &>(*this))->abi_CreatePeriodicTimerWithCompletion(get(handler), get(period), get(destroyed), put(timer)));
+    check_hresult(WINRT_SHIM(IThreadPoolTimerStatics)->abi_CreatePeriodicTimerWithCompletion(get(handler), get(period), get(destroyed), put(timer)));
     return timer;
 }
 
 template <typename D> Windows::System::Threading::ThreadPoolTimer impl_IThreadPoolTimerStatics<D>::CreateTimer(const Windows::System::Threading::TimerElapsedHandler & handler, const Windows::Foundation::TimeSpan & delay, const Windows::System::Threading::TimerDestroyedHandler & destroyed) const
 {
     Windows::System::Threading::ThreadPoolTimer timer { nullptr };
-    check_hresult(static_cast<const IThreadPoolTimerStatics &>(static_cast<const D &>(*this))->abi_CreateTimerWithCompletion(get(handler), get(delay), get(destroyed), put(timer)));
+    check_hresult(WINRT_SHIM(IThreadPoolTimerStatics)->abi_CreateTimerWithCompletion(get(handler), get(delay), get(destroyed), put(timer)));
     return timer;
 }
 

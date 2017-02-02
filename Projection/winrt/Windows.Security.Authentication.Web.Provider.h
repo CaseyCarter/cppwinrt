@@ -903,360 +903,360 @@ namespace Windows::Security::Authentication::Web::Provider {
 template <typename D> Windows::Security::Authentication::Web::Provider::WebAccountProviderOperationKind impl_IWebAccountProviderOperation<D>::Kind() const
 {
     Windows::Security::Authentication::Web::Provider::WebAccountProviderOperationKind value {};
-    check_hresult(static_cast<const IWebAccountProviderOperation &>(static_cast<const D &>(*this))->get_Kind(&value));
+    check_hresult(WINRT_SHIM(IWebAccountProviderOperation)->get_Kind(&value));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Core::WebTokenRequest impl_IWebProviderTokenRequest<D>::ClientRequest() const
 {
     Windows::Security::Authentication::Web::Core::WebTokenRequest value { nullptr };
-    check_hresult(static_cast<const IWebProviderTokenRequest &>(static_cast<const D &>(*this))->get_ClientRequest(put(value)));
+    check_hresult(WINRT_SHIM(IWebProviderTokenRequest)->get_ClientRequest(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::WebAccount> impl_IWebProviderTokenRequest<D>::WebAccounts() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::WebAccount> value;
-    check_hresult(static_cast<const IWebProviderTokenRequest &>(static_cast<const D &>(*this))->get_WebAccounts(put(value)));
+    check_hresult(WINRT_SHIM(IWebProviderTokenRequest)->get_WebAccounts(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Provider::WebAccountSelectionOptions impl_IWebProviderTokenRequest<D>::WebAccountSelectionOptions() const
 {
     Windows::Security::Authentication::Web::Provider::WebAccountSelectionOptions value {};
-    check_hresult(static_cast<const IWebProviderTokenRequest &>(static_cast<const D &>(*this))->get_WebAccountSelectionOptions(&value));
+    check_hresult(WINRT_SHIM(IWebProviderTokenRequest)->get_WebAccountSelectionOptions(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IWebProviderTokenRequest<D>::ApplicationCallbackUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const IWebProviderTokenRequest &>(static_cast<const D &>(*this))->get_ApplicationCallbackUri(put(value)));
+    check_hresult(WINRT_SHIM(IWebProviderTokenRequest)->get_ApplicationCallbackUri(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> impl_IWebProviderTokenRequest<D>::GetApplicationTokenBindingKeyAsync(Windows::Security::Authentication::Web::TokenBindingKeyType keyType, const Windows::Foundation::Uri & target) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> asyncInfo;
-    check_hresult(static_cast<const IWebProviderTokenRequest &>(static_cast<const D &>(*this))->abi_GetApplicationTokenBindingKeyAsync(keyType, get(target), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebProviderTokenRequest)->abi_GetApplicationTokenBindingKeyAsync(keyType, get(target), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IWebProviderTokenRequest2<D>::GetApplicationTokenBindingKeyIdAsync(Windows::Security::Authentication::Web::TokenBindingKeyType keyType, const Windows::Foundation::Uri & target) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> asyncInfo;
-    check_hresult(static_cast<const IWebProviderTokenRequest2 &>(static_cast<const D &>(*this))->abi_GetApplicationTokenBindingKeyIdAsync(keyType, get(target), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebProviderTokenRequest2)->abi_GetApplicationTokenBindingKeyIdAsync(keyType, get(target), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Core::WebTokenResponse impl_IWebProviderTokenResponse<D>::ClientResponse() const
 {
     Windows::Security::Authentication::Web::Core::WebTokenResponse value { nullptr };
-    check_hresult(static_cast<const IWebProviderTokenResponse &>(static_cast<const D &>(*this))->get_ClientResponse(put(value)));
+    check_hresult(WINRT_SHIM(IWebProviderTokenResponse)->get_ClientResponse(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Provider::WebProviderTokenResponse impl_IWebProviderTokenResponseFactory<D>::Create(const Windows::Security::Authentication::Web::Core::WebTokenResponse & webTokenResponse) const
 {
     Windows::Security::Authentication::Web::Provider::WebProviderTokenResponse webProviderTokenResponse { nullptr };
-    check_hresult(static_cast<const IWebProviderTokenResponseFactory &>(static_cast<const D &>(*this))->abi_Create(get(webTokenResponse), put(webProviderTokenResponse)));
+    check_hresult(WINRT_SHIM(IWebProviderTokenResponseFactory)->abi_Create(get(webTokenResponse), put(webProviderTokenResponse)));
     return webProviderTokenResponse;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IWebAccountClientView<D>::ApplicationCallbackUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const IWebAccountClientView &>(static_cast<const D &>(*this))->get_ApplicationCallbackUri(put(value)));
+    check_hresult(WINRT_SHIM(IWebAccountClientView)->get_ApplicationCallbackUri(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Provider::WebAccountClientViewType impl_IWebAccountClientView<D>::Type() const
 {
     Windows::Security::Authentication::Web::Provider::WebAccountClientViewType value {};
-    check_hresult(static_cast<const IWebAccountClientView &>(static_cast<const D &>(*this))->get_Type(&value));
+    check_hresult(WINRT_SHIM(IWebAccountClientView)->get_Type(&value));
     return value;
 }
 
 template <typename D> hstring impl_IWebAccountClientView<D>::AccountPairwiseId() const
 {
     hstring value;
-    check_hresult(static_cast<const IWebAccountClientView &>(static_cast<const D &>(*this))->get_AccountPairwiseId(put(value)));
+    check_hresult(WINRT_SHIM(IWebAccountClientView)->get_AccountPairwiseId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Provider::WebAccountClientView impl_IWebAccountClientViewFactory<D>::Create(Windows::Security::Authentication::Web::Provider::WebAccountClientViewType viewType, const Windows::Foundation::Uri & applicationCallbackUri) const
 {
     Windows::Security::Authentication::Web::Provider::WebAccountClientView view { nullptr };
-    check_hresult(static_cast<const IWebAccountClientViewFactory &>(static_cast<const D &>(*this))->abi_Create(viewType, get(applicationCallbackUri), put(view)));
+    check_hresult(WINRT_SHIM(IWebAccountClientViewFactory)->abi_Create(viewType, get(applicationCallbackUri), put(view)));
     return view;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Provider::WebAccountClientView impl_IWebAccountClientViewFactory<D>::CreateWithPairwiseId(Windows::Security::Authentication::Web::Provider::WebAccountClientViewType viewType, const Windows::Foundation::Uri & applicationCallbackUri, hstring_ref accountPairwiseId) const
 {
     Windows::Security::Authentication::Web::Provider::WebAccountClientView view { nullptr };
-    check_hresult(static_cast<const IWebAccountClientViewFactory &>(static_cast<const D &>(*this))->abi_CreateWithPairwiseId(viewType, get(applicationCallbackUri), get(accountPairwiseId), put(view)));
+    check_hresult(WINRT_SHIM(IWebAccountClientViewFactory)->abi_CreateWithPairwiseId(viewType, get(applicationCallbackUri), get(accountPairwiseId), put(view)));
     return view;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccountManagerStatics<D>::UpdateWebAccountPropertiesAsync(const Windows::Security::Credentials::WebAccount & webAccount, hstring_ref webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & additionalProperties) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(static_cast<const IWebAccountManagerStatics &>(static_cast<const D &>(*this))->abi_UpdateWebAccountPropertiesAsync(get(webAccount), get(webAccountUserName), get(additionalProperties), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebAccountManagerStatics)->abi_UpdateWebAccountPropertiesAsync(get(webAccount), get(webAccountUserName), get(additionalProperties), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> impl_IWebAccountManagerStatics<D>::AddWebAccountAsync(hstring_ref webAccountId, hstring_ref webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & props) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> asyncInfo;
-    check_hresult(static_cast<const IWebAccountManagerStatics &>(static_cast<const D &>(*this))->abi_AddWebAccountAsync(get(webAccountId), get(webAccountUserName), get(props), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebAccountManagerStatics)->abi_AddWebAccountAsync(get(webAccountId), get(webAccountUserName), get(props), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccountManagerStatics<D>::DeleteWebAccountAsync(const Windows::Security::Credentials::WebAccount & webAccount) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(static_cast<const IWebAccountManagerStatics &>(static_cast<const D &>(*this))->abi_DeleteWebAccountAsync(get(webAccount), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebAccountManagerStatics)->abi_DeleteWebAccountAsync(get(webAccount), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::WebAccount>> impl_IWebAccountManagerStatics<D>::FindAllProviderWebAccountsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::WebAccount>> asyncInfo;
-    check_hresult(static_cast<const IWebAccountManagerStatics &>(static_cast<const D &>(*this))->abi_FindAllProviderWebAccountsAsync(put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebAccountManagerStatics)->abi_FindAllProviderWebAccountsAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccountManagerStatics<D>::PushCookiesAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IVectorView<Windows::Web::Http::HttpCookie> & cookies) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(static_cast<const IWebAccountManagerStatics &>(static_cast<const D &>(*this))->abi_PushCookiesAsync(get(uri), get(cookies), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebAccountManagerStatics)->abi_PushCookiesAsync(get(uri), get(cookies), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccountManagerStatics<D>::SetViewAsync(const Windows::Security::Credentials::WebAccount & webAccount, const Windows::Security::Authentication::Web::Provider::WebAccountClientView & view) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(static_cast<const IWebAccountManagerStatics &>(static_cast<const D &>(*this))->abi_SetViewAsync(get(webAccount), get(view), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebAccountManagerStatics)->abi_SetViewAsync(get(webAccount), get(view), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccountManagerStatics<D>::ClearViewAsync(const Windows::Security::Credentials::WebAccount & webAccount, const Windows::Foundation::Uri & applicationCallbackUri) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(static_cast<const IWebAccountManagerStatics &>(static_cast<const D &>(*this))->abi_ClearViewAsync(get(webAccount), get(applicationCallbackUri), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebAccountManagerStatics)->abi_ClearViewAsync(get(webAccount), get(applicationCallbackUri), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Web::Provider::WebAccountClientView>> impl_IWebAccountManagerStatics<D>::GetViewsAsync(const Windows::Security::Credentials::WebAccount & webAccount) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Web::Provider::WebAccountClientView>> asyncInfo;
-    check_hresult(static_cast<const IWebAccountManagerStatics &>(static_cast<const D &>(*this))->abi_GetViewsAsync(get(webAccount), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebAccountManagerStatics)->abi_GetViewsAsync(get(webAccount), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccountManagerStatics<D>::SetWebAccountPictureAsync(const Windows::Security::Credentials::WebAccount & webAccount, const Windows::Storage::Streams::IRandomAccessStream & webAccountPicture) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(static_cast<const IWebAccountManagerStatics &>(static_cast<const D &>(*this))->abi_SetWebAccountPictureAsync(get(webAccount), get(webAccountPicture), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebAccountManagerStatics)->abi_SetWebAccountPictureAsync(get(webAccount), get(webAccountPicture), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccountManagerStatics<D>::ClearWebAccountPictureAsync(const Windows::Security::Credentials::WebAccount & webAccount) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(static_cast<const IWebAccountManagerStatics &>(static_cast<const D &>(*this))->abi_ClearWebAccountPictureAsync(get(webAccount), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebAccountManagerStatics)->abi_ClearWebAccountPictureAsync(get(webAccount), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccountManagerStatics2<D>::PullCookiesAsync(hstring_ref uriString, hstring_ref callerPFN) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(static_cast<const IWebAccountManagerStatics2 &>(static_cast<const D &>(*this))->abi_PullCookiesAsync(get(uriString), get(callerPFN), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebAccountManagerStatics2)->abi_PullCookiesAsync(get(uriString), get(callerPFN), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> impl_IWebAccountScopeManagerStatics<D>::AddWebAccountAsync(hstring_ref webAccountId, hstring_ref webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> asyncInfo;
-    check_hresult(static_cast<const IWebAccountScopeManagerStatics &>(static_cast<const D &>(*this))->abi_AddWebAccountWithScopeAsync(get(webAccountId), get(webAccountUserName), get(props), scope, put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebAccountScopeManagerStatics)->abi_AddWebAccountWithScopeAsync(get(webAccountId), get(webAccountUserName), get(props), scope, put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccountScopeManagerStatics<D>::SetScopeAsync(const Windows::Security::Credentials::WebAccount & webAccount, Windows::Security::Authentication::Web::Provider::WebAccountScope scope) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(static_cast<const IWebAccountScopeManagerStatics &>(static_cast<const D &>(*this))->abi_SetScopeAsync(get(webAccount), scope, put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebAccountScopeManagerStatics)->abi_SetScopeAsync(get(webAccount), scope, put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Provider::WebAccountScope impl_IWebAccountScopeManagerStatics<D>::GetScope(const Windows::Security::Credentials::WebAccount & webAccount) const
 {
     Windows::Security::Authentication::Web::Provider::WebAccountScope scope {};
-    check_hresult(static_cast<const IWebAccountScopeManagerStatics &>(static_cast<const D &>(*this))->abi_GetScope(get(webAccount), &scope));
+    check_hresult(WINRT_SHIM(IWebAccountScopeManagerStatics)->abi_GetScope(get(webAccount), &scope));
     return scope;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> impl_IWebAccountMapManagerStatics<D>::AddWebAccountAsync(hstring_ref webAccountId, hstring_ref webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope, hstring_ref perUserWebAccountId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> asyncInfo;
-    check_hresult(static_cast<const IWebAccountMapManagerStatics &>(static_cast<const D &>(*this))->abi_AddWebAccountWithScopeAndMapAsync(get(webAccountId), get(webAccountUserName), get(props), scope, get(perUserWebAccountId), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebAccountMapManagerStatics)->abi_AddWebAccountWithScopeAndMapAsync(get(webAccountId), get(webAccountUserName), get(props), scope, get(perUserWebAccountId), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccountMapManagerStatics<D>::SetPerAppToPerUserAccountAsync(const Windows::Security::Credentials::WebAccount & perAppAccount, hstring_ref perUserWebAccountId) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(static_cast<const IWebAccountMapManagerStatics &>(static_cast<const D &>(*this))->abi_SetPerAppToPerUserAccountAsync(get(perAppAccount), get(perUserWebAccountId), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebAccountMapManagerStatics)->abi_SetPerAppToPerUserAccountAsync(get(perAppAccount), get(perUserWebAccountId), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> impl_IWebAccountMapManagerStatics<D>::GetPerUserFromPerAppAccountAsync(const Windows::Security::Credentials::WebAccount & perAppAccount) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> asyncInfo;
-    check_hresult(static_cast<const IWebAccountMapManagerStatics &>(static_cast<const D &>(*this))->abi_GetPerUserFromPerAppAccountAsync(get(perAppAccount), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebAccountMapManagerStatics)->abi_GetPerUserFromPerAppAccountAsync(get(perAppAccount), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccountMapManagerStatics<D>::ClearPerUserFromPerAppAccountAsync(const Windows::Security::Credentials::WebAccount & perAppAccount) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(static_cast<const IWebAccountMapManagerStatics &>(static_cast<const D &>(*this))->abi_ClearPerUserFromPerAppAccountAsync(get(perAppAccount), put(asyncInfo)));
+    check_hresult(WINRT_SHIM(IWebAccountMapManagerStatics)->abi_ClearPerUserFromPerAppAccountAsync(get(perAppAccount), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> void impl_IWebAccountProviderBaseReportOperation<D>::ReportCompleted() const
 {
-    check_hresult(static_cast<const IWebAccountProviderBaseReportOperation &>(static_cast<const D &>(*this))->abi_ReportCompleted());
+    check_hresult(WINRT_SHIM(IWebAccountProviderBaseReportOperation)->abi_ReportCompleted());
 }
 
 template <typename D> void impl_IWebAccountProviderBaseReportOperation<D>::ReportError(const Windows::Security::Authentication::Web::Core::WebProviderError & value) const
 {
-    check_hresult(static_cast<const IWebAccountProviderBaseReportOperation &>(static_cast<const D &>(*this))->abi_ReportError(get(value)));
+    check_hresult(WINRT_SHIM(IWebAccountProviderBaseReportOperation)->abi_ReportError(get(value)));
 }
 
 template <typename D> void impl_IWebAccountProviderUIReportOperation<D>::ReportUserCanceled() const
 {
-    check_hresult(static_cast<const IWebAccountProviderUIReportOperation &>(static_cast<const D &>(*this))->abi_ReportUserCanceled());
+    check_hresult(WINRT_SHIM(IWebAccountProviderUIReportOperation)->abi_ReportUserCanceled());
 }
 
 template <typename D> void impl_IWebAccountProviderSilentReportOperation<D>::ReportUserInteractionRequired() const
 {
-    check_hresult(static_cast<const IWebAccountProviderSilentReportOperation &>(static_cast<const D &>(*this))->abi_ReportUserInteractionRequired());
+    check_hresult(WINRT_SHIM(IWebAccountProviderSilentReportOperation)->abi_ReportUserInteractionRequired());
 }
 
 template <typename D> void impl_IWebAccountProviderSilentReportOperation<D>::ReportUserInteractionRequired(const Windows::Security::Authentication::Web::Core::WebProviderError & value) const
 {
-    check_hresult(static_cast<const IWebAccountProviderSilentReportOperation &>(static_cast<const D &>(*this))->abi_ReportUserInteractionRequiredWithError(get(value)));
+    check_hresult(WINRT_SHIM(IWebAccountProviderSilentReportOperation)->abi_ReportUserInteractionRequiredWithError(get(value)));
 }
 
 template <typename D> Windows::Security::Authentication::Web::Provider::WebProviderTokenRequest impl_IWebAccountProviderTokenOperation<D>::ProviderRequest() const
 {
     Windows::Security::Authentication::Web::Provider::WebProviderTokenRequest webTokenRequest { nullptr };
-    check_hresult(static_cast<const IWebAccountProviderTokenOperation &>(static_cast<const D &>(*this))->get_ProviderRequest(put(webTokenRequest)));
+    check_hresult(WINRT_SHIM(IWebAccountProviderTokenOperation)->get_ProviderRequest(put(webTokenRequest)));
     return webTokenRequest;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Security::Authentication::Web::Provider::WebProviderTokenResponse> impl_IWebAccountProviderTokenOperation<D>::ProviderResponses() const
 {
     Windows::Foundation::Collections::IVector<Windows::Security::Authentication::Web::Provider::WebProviderTokenResponse> value;
-    check_hresult(static_cast<const IWebAccountProviderTokenOperation &>(static_cast<const D &>(*this))->get_ProviderResponses(put(value)));
+    check_hresult(WINRT_SHIM(IWebAccountProviderTokenOperation)->get_ProviderResponses(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWebAccountProviderTokenOperation<D>::CacheExpirationTime(const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(static_cast<const IWebAccountProviderTokenOperation &>(static_cast<const D &>(*this))->put_CacheExpirationTime(get(value)));
+    check_hresult(WINRT_SHIM(IWebAccountProviderTokenOperation)->put_CacheExpirationTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IWebAccountProviderTokenOperation<D>::CacheExpirationTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IWebAccountProviderTokenOperation &>(static_cast<const D &>(*this))->get_CacheExpirationTime(put(value)));
+    check_hresult(WINRT_SHIM(IWebAccountProviderTokenOperation)->get_CacheExpirationTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWebAccountProviderAddAccountOperation<D>::ReportCompleted() const
 {
-    check_hresult(static_cast<const IWebAccountProviderAddAccountOperation &>(static_cast<const D &>(*this))->abi_ReportCompleted());
+    check_hresult(WINRT_SHIM(IWebAccountProviderAddAccountOperation)->abi_ReportCompleted());
 }
 
 template <typename D> Windows::Security::Credentials::WebAccount impl_IWebAccountProviderManageAccountOperation<D>::WebAccount() const
 {
     Windows::Security::Credentials::WebAccount value { nullptr };
-    check_hresult(static_cast<const IWebAccountProviderManageAccountOperation &>(static_cast<const D &>(*this))->get_WebAccount(put(value)));
+    check_hresult(WINRT_SHIM(IWebAccountProviderManageAccountOperation)->get_WebAccount(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWebAccountProviderManageAccountOperation<D>::ReportCompleted() const
 {
-    check_hresult(static_cast<const IWebAccountProviderManageAccountOperation &>(static_cast<const D &>(*this))->abi_ReportCompleted());
+    check_hresult(WINRT_SHIM(IWebAccountProviderManageAccountOperation)->abi_ReportCompleted());
 }
 
 template <typename D> Windows::Security::Credentials::WebAccount impl_IWebAccountProviderDeleteAccountOperation<D>::WebAccount() const
 {
     Windows::Security::Credentials::WebAccount value { nullptr };
-    check_hresult(static_cast<const IWebAccountProviderDeleteAccountOperation &>(static_cast<const D &>(*this))->get_WebAccount(put(value)));
+    check_hresult(WINRT_SHIM(IWebAccountProviderDeleteAccountOperation)->get_WebAccount(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Credentials::WebAccount impl_IWebAccountProviderSignOutAccountOperation<D>::WebAccount() const
 {
     Windows::Security::Credentials::WebAccount value { nullptr };
-    check_hresult(static_cast<const IWebAccountProviderSignOutAccountOperation &>(static_cast<const D &>(*this))->get_WebAccount(put(value)));
+    check_hresult(WINRT_SHIM(IWebAccountProviderSignOutAccountOperation)->get_WebAccount(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IWebAccountProviderSignOutAccountOperation<D>::ApplicationCallbackUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const IWebAccountProviderSignOutAccountOperation &>(static_cast<const D &>(*this))->get_ApplicationCallbackUri(put(value)));
+    check_hresult(WINRT_SHIM(IWebAccountProviderSignOutAccountOperation)->get_ApplicationCallbackUri(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IWebAccountProviderSignOutAccountOperation<D>::ClientId() const
 {
     hstring value;
-    check_hresult(static_cast<const IWebAccountProviderSignOutAccountOperation &>(static_cast<const D &>(*this))->get_ClientId(put(value)));
+    check_hresult(WINRT_SHIM(IWebAccountProviderSignOutAccountOperation)->get_ClientId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IWebAccountProviderRetrieveCookiesOperation<D>::Context() const
 {
     Windows::Foundation::Uri webCookieRequestContext { nullptr };
-    check_hresult(static_cast<const IWebAccountProviderRetrieveCookiesOperation &>(static_cast<const D &>(*this))->get_Context(put(webCookieRequestContext)));
+    check_hresult(WINRT_SHIM(IWebAccountProviderRetrieveCookiesOperation)->get_Context(put(webCookieRequestContext)));
     return webCookieRequestContext;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Http::HttpCookie> impl_IWebAccountProviderRetrieveCookiesOperation<D>::Cookies() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Http::HttpCookie> cookies;
-    check_hresult(static_cast<const IWebAccountProviderRetrieveCookiesOperation &>(static_cast<const D &>(*this))->get_Cookies(put(cookies)));
+    check_hresult(WINRT_SHIM(IWebAccountProviderRetrieveCookiesOperation)->get_Cookies(put(cookies)));
     return cookies;
 }
 
 template <typename D> void impl_IWebAccountProviderRetrieveCookiesOperation<D>::Uri(const Windows::Foundation::Uri & uri) const
 {
-    check_hresult(static_cast<const IWebAccountProviderRetrieveCookiesOperation &>(static_cast<const D &>(*this))->put_Uri(get(uri)));
+    check_hresult(WINRT_SHIM(IWebAccountProviderRetrieveCookiesOperation)->put_Uri(get(uri)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IWebAccountProviderRetrieveCookiesOperation<D>::Uri() const
 {
     Windows::Foundation::Uri uri { nullptr };
-    check_hresult(static_cast<const IWebAccountProviderRetrieveCookiesOperation &>(static_cast<const D &>(*this))->get_Uri(put(uri)));
+    check_hresult(WINRT_SHIM(IWebAccountProviderRetrieveCookiesOperation)->get_Uri(put(uri)));
     return uri;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IWebAccountProviderRetrieveCookiesOperation<D>::ApplicationCallbackUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const IWebAccountProviderRetrieveCookiesOperation &>(static_cast<const D &>(*this))->get_ApplicationCallbackUri(put(value)));
+    check_hresult(WINRT_SHIM(IWebAccountProviderRetrieveCookiesOperation)->get_ApplicationCallbackUri(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation impl_IWebAccountProviderTokenObjects<D>::Operation() const
 {
     Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation value;
-    check_hresult(static_cast<const IWebAccountProviderTokenObjects &>(static_cast<const D &>(*this))->get_Operation(put(value)));
+    check_hresult(WINRT_SHIM(IWebAccountProviderTokenObjects)->get_Operation(put(value)));
     return value;
 }
 

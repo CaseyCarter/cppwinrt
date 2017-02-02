@@ -49,7 +49,6 @@ struct ICredentialPickerOptions :
     impl::consume<ICredentialPickerOptions>
 {
     ICredentialPickerOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICredentialPickerOptions>(m_ptr); }
 };
 
 struct ICredentialPickerResults :
@@ -57,7 +56,6 @@ struct ICredentialPickerResults :
     impl::consume<ICredentialPickerResults>
 {
     ICredentialPickerResults(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICredentialPickerResults>(m_ptr); }
 };
 
 struct ICredentialPickerStatics :
@@ -65,7 +63,6 @@ struct ICredentialPickerStatics :
     impl::consume<ICredentialPickerStatics>
 {
     ICredentialPickerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICredentialPickerStatics>(m_ptr); }
 };
 
 struct IUserConsentVerifierStatics :
@@ -73,7 +70,6 @@ struct IUserConsentVerifierStatics :
     impl::consume<IUserConsentVerifierStatics>
 {
     IUserConsentVerifierStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserConsentVerifierStatics>(m_ptr); }
 };
 
 }

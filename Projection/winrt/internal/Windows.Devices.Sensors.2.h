@@ -336,7 +336,6 @@ struct IAccelerometer :
     impl::consume<IAccelerometer>
 {
     IAccelerometer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccelerometer>(m_ptr); }
 };
 
 struct IAccelerometer2 :
@@ -344,7 +343,6 @@ struct IAccelerometer2 :
     impl::consume<IAccelerometer2>
 {
     IAccelerometer2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccelerometer2>(m_ptr); }
 };
 
 struct IAccelerometer3 :
@@ -352,7 +350,6 @@ struct IAccelerometer3 :
     impl::consume<IAccelerometer3>
 {
     IAccelerometer3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccelerometer3>(m_ptr); }
 };
 
 struct IAccelerometer4 :
@@ -360,7 +357,6 @@ struct IAccelerometer4 :
     impl::consume<IAccelerometer4>
 {
     IAccelerometer4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccelerometer4>(m_ptr); }
 };
 
 struct IAccelerometerDeviceId :
@@ -368,7 +364,6 @@ struct IAccelerometerDeviceId :
     impl::consume<IAccelerometerDeviceId>
 {
     IAccelerometerDeviceId(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccelerometerDeviceId>(m_ptr); }
 };
 
 struct IAccelerometerReading :
@@ -376,7 +371,6 @@ struct IAccelerometerReading :
     impl::consume<IAccelerometerReading>
 {
     IAccelerometerReading(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccelerometerReading>(m_ptr); }
 };
 
 struct IAccelerometerReadingChangedEventArgs :
@@ -384,7 +378,6 @@ struct IAccelerometerReadingChangedEventArgs :
     impl::consume<IAccelerometerReadingChangedEventArgs>
 {
     IAccelerometerReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccelerometerReadingChangedEventArgs>(m_ptr); }
 };
 
 struct IAccelerometerShakenEventArgs :
@@ -392,7 +385,6 @@ struct IAccelerometerShakenEventArgs :
     impl::consume<IAccelerometerShakenEventArgs>
 {
     IAccelerometerShakenEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccelerometerShakenEventArgs>(m_ptr); }
 };
 
 struct IAccelerometerStatics :
@@ -400,7 +392,6 @@ struct IAccelerometerStatics :
     impl::consume<IAccelerometerStatics>
 {
     IAccelerometerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccelerometerStatics>(m_ptr); }
 };
 
 struct IAccelerometerStatics2 :
@@ -408,7 +399,6 @@ struct IAccelerometerStatics2 :
     impl::consume<IAccelerometerStatics2>
 {
     IAccelerometerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccelerometerStatics2>(m_ptr); }
 };
 
 struct IActivitySensor :
@@ -416,7 +406,6 @@ struct IActivitySensor :
     impl::consume<IActivitySensor>
 {
     IActivitySensor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IActivitySensor>(m_ptr); }
 };
 
 struct IActivitySensorReading :
@@ -424,7 +413,6 @@ struct IActivitySensorReading :
     impl::consume<IActivitySensorReading>
 {
     IActivitySensorReading(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IActivitySensorReading>(m_ptr); }
 };
 
 struct IActivitySensorReadingChangeReport :
@@ -432,7 +420,6 @@ struct IActivitySensorReadingChangeReport :
     impl::consume<IActivitySensorReadingChangeReport>
 {
     IActivitySensorReadingChangeReport(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IActivitySensorReadingChangeReport>(m_ptr); }
 };
 
 struct IActivitySensorReadingChangedEventArgs :
@@ -440,7 +427,6 @@ struct IActivitySensorReadingChangedEventArgs :
     impl::consume<IActivitySensorReadingChangedEventArgs>
 {
     IActivitySensorReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IActivitySensorReadingChangedEventArgs>(m_ptr); }
 };
 
 struct IActivitySensorStatics :
@@ -448,7 +434,6 @@ struct IActivitySensorStatics :
     impl::consume<IActivitySensorStatics>
 {
     IActivitySensorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IActivitySensorStatics>(m_ptr); }
 };
 
 struct IActivitySensorTriggerDetails :
@@ -456,7 +441,6 @@ struct IActivitySensorTriggerDetails :
     impl::consume<IActivitySensorTriggerDetails>
 {
     IActivitySensorTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IActivitySensorTriggerDetails>(m_ptr); }
 };
 
 struct IAltimeter :
@@ -464,7 +448,6 @@ struct IAltimeter :
     impl::consume<IAltimeter>
 {
     IAltimeter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAltimeter>(m_ptr); }
 };
 
 struct IAltimeterReading :
@@ -472,7 +455,6 @@ struct IAltimeterReading :
     impl::consume<IAltimeterReading>
 {
     IAltimeterReading(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAltimeterReading>(m_ptr); }
 };
 
 struct IAltimeterReadingChangedEventArgs :
@@ -480,7 +462,6 @@ struct IAltimeterReadingChangedEventArgs :
     impl::consume<IAltimeterReadingChangedEventArgs>
 {
     IAltimeterReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAltimeterReadingChangedEventArgs>(m_ptr); }
 };
 
 struct IAltimeterStatics :
@@ -488,7 +469,6 @@ struct IAltimeterStatics :
     impl::consume<IAltimeterStatics>
 {
     IAltimeterStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAltimeterStatics>(m_ptr); }
 };
 
 struct IBarometer :
@@ -496,7 +476,6 @@ struct IBarometer :
     impl::consume<IBarometer>
 {
     IBarometer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBarometer>(m_ptr); }
 };
 
 struct IBarometerReading :
@@ -504,7 +483,6 @@ struct IBarometerReading :
     impl::consume<IBarometerReading>
 {
     IBarometerReading(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBarometerReading>(m_ptr); }
 };
 
 struct IBarometerReadingChangedEventArgs :
@@ -512,7 +490,6 @@ struct IBarometerReadingChangedEventArgs :
     impl::consume<IBarometerReadingChangedEventArgs>
 {
     IBarometerReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBarometerReadingChangedEventArgs>(m_ptr); }
 };
 
 struct IBarometerStatics :
@@ -520,7 +497,6 @@ struct IBarometerStatics :
     impl::consume<IBarometerStatics>
 {
     IBarometerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBarometerStatics>(m_ptr); }
 };
 
 struct ICompass :
@@ -528,7 +504,6 @@ struct ICompass :
     impl::consume<ICompass>
 {
     ICompass(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompass>(m_ptr); }
 };
 
 struct ICompass2 :
@@ -536,7 +511,6 @@ struct ICompass2 :
     impl::consume<ICompass2>
 {
     ICompass2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompass2>(m_ptr); }
 };
 
 struct ICompassDeviceId :
@@ -544,7 +518,6 @@ struct ICompassDeviceId :
     impl::consume<ICompassDeviceId>
 {
     ICompassDeviceId(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompassDeviceId>(m_ptr); }
 };
 
 struct ICompassReading :
@@ -552,7 +525,6 @@ struct ICompassReading :
     impl::consume<ICompassReading>
 {
     ICompassReading(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompassReading>(m_ptr); }
 };
 
 struct ICompassReadingChangedEventArgs :
@@ -560,7 +532,6 @@ struct ICompassReadingChangedEventArgs :
     impl::consume<ICompassReadingChangedEventArgs>
 {
     ICompassReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompassReadingChangedEventArgs>(m_ptr); }
 };
 
 struct ICompassReadingHeadingAccuracy :
@@ -568,7 +539,6 @@ struct ICompassReadingHeadingAccuracy :
     impl::consume<ICompassReadingHeadingAccuracy>
 {
     ICompassReadingHeadingAccuracy(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompassReadingHeadingAccuracy>(m_ptr); }
 };
 
 struct ICompassStatics :
@@ -576,7 +546,6 @@ struct ICompassStatics :
     impl::consume<ICompassStatics>
 {
     ICompassStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompassStatics>(m_ptr); }
 };
 
 struct IGyrometer :
@@ -584,7 +553,6 @@ struct IGyrometer :
     impl::consume<IGyrometer>
 {
     IGyrometer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGyrometer>(m_ptr); }
 };
 
 struct IGyrometer2 :
@@ -592,7 +560,6 @@ struct IGyrometer2 :
     impl::consume<IGyrometer2>
 {
     IGyrometer2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGyrometer2>(m_ptr); }
 };
 
 struct IGyrometerDeviceId :
@@ -600,7 +567,6 @@ struct IGyrometerDeviceId :
     impl::consume<IGyrometerDeviceId>
 {
     IGyrometerDeviceId(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGyrometerDeviceId>(m_ptr); }
 };
 
 struct IGyrometerReading :
@@ -608,7 +574,6 @@ struct IGyrometerReading :
     impl::consume<IGyrometerReading>
 {
     IGyrometerReading(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGyrometerReading>(m_ptr); }
 };
 
 struct IGyrometerReadingChangedEventArgs :
@@ -616,7 +581,6 @@ struct IGyrometerReadingChangedEventArgs :
     impl::consume<IGyrometerReadingChangedEventArgs>
 {
     IGyrometerReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGyrometerReadingChangedEventArgs>(m_ptr); }
 };
 
 struct IGyrometerStatics :
@@ -624,7 +588,6 @@ struct IGyrometerStatics :
     impl::consume<IGyrometerStatics>
 {
     IGyrometerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGyrometerStatics>(m_ptr); }
 };
 
 struct IInclinometer :
@@ -632,7 +595,6 @@ struct IInclinometer :
     impl::consume<IInclinometer>
 {
     IInclinometer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInclinometer>(m_ptr); }
 };
 
 struct IInclinometer2 :
@@ -640,7 +602,6 @@ struct IInclinometer2 :
     impl::consume<IInclinometer2>
 {
     IInclinometer2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInclinometer2>(m_ptr); }
 };
 
 struct IInclinometerDeviceId :
@@ -648,7 +609,6 @@ struct IInclinometerDeviceId :
     impl::consume<IInclinometerDeviceId>
 {
     IInclinometerDeviceId(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInclinometerDeviceId>(m_ptr); }
 };
 
 struct IInclinometerReading :
@@ -656,7 +616,6 @@ struct IInclinometerReading :
     impl::consume<IInclinometerReading>
 {
     IInclinometerReading(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInclinometerReading>(m_ptr); }
 };
 
 struct IInclinometerReadingChangedEventArgs :
@@ -664,7 +623,6 @@ struct IInclinometerReadingChangedEventArgs :
     impl::consume<IInclinometerReadingChangedEventArgs>
 {
     IInclinometerReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInclinometerReadingChangedEventArgs>(m_ptr); }
 };
 
 struct IInclinometerReadingYawAccuracy :
@@ -672,7 +630,6 @@ struct IInclinometerReadingYawAccuracy :
     impl::consume<IInclinometerReadingYawAccuracy>
 {
     IInclinometerReadingYawAccuracy(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInclinometerReadingYawAccuracy>(m_ptr); }
 };
 
 struct IInclinometerStatics :
@@ -680,7 +637,6 @@ struct IInclinometerStatics :
     impl::consume<IInclinometerStatics>
 {
     IInclinometerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInclinometerStatics>(m_ptr); }
 };
 
 struct IInclinometerStatics2 :
@@ -688,7 +644,6 @@ struct IInclinometerStatics2 :
     impl::consume<IInclinometerStatics2>
 {
     IInclinometerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInclinometerStatics2>(m_ptr); }
 };
 
 struct IInclinometerStatics3 :
@@ -696,7 +651,6 @@ struct IInclinometerStatics3 :
     impl::consume<IInclinometerStatics3>
 {
     IInclinometerStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInclinometerStatics3>(m_ptr); }
 };
 
 struct ILightSensor :
@@ -704,7 +658,6 @@ struct ILightSensor :
     impl::consume<ILightSensor>
 {
     ILightSensor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILightSensor>(m_ptr); }
 };
 
 struct ILightSensorDeviceId :
@@ -712,7 +665,6 @@ struct ILightSensorDeviceId :
     impl::consume<ILightSensorDeviceId>
 {
     ILightSensorDeviceId(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILightSensorDeviceId>(m_ptr); }
 };
 
 struct ILightSensorReading :
@@ -720,7 +672,6 @@ struct ILightSensorReading :
     impl::consume<ILightSensorReading>
 {
     ILightSensorReading(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILightSensorReading>(m_ptr); }
 };
 
 struct ILightSensorReadingChangedEventArgs :
@@ -728,7 +679,6 @@ struct ILightSensorReadingChangedEventArgs :
     impl::consume<ILightSensorReadingChangedEventArgs>
 {
     ILightSensorReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILightSensorReadingChangedEventArgs>(m_ptr); }
 };
 
 struct ILightSensorStatics :
@@ -736,7 +686,6 @@ struct ILightSensorStatics :
     impl::consume<ILightSensorStatics>
 {
     ILightSensorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILightSensorStatics>(m_ptr); }
 };
 
 struct IMagnetometer :
@@ -744,7 +693,6 @@ struct IMagnetometer :
     impl::consume<IMagnetometer>
 {
     IMagnetometer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMagnetometer>(m_ptr); }
 };
 
 struct IMagnetometer2 :
@@ -752,7 +700,6 @@ struct IMagnetometer2 :
     impl::consume<IMagnetometer2>
 {
     IMagnetometer2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMagnetometer2>(m_ptr); }
 };
 
 struct IMagnetometerDeviceId :
@@ -760,7 +707,6 @@ struct IMagnetometerDeviceId :
     impl::consume<IMagnetometerDeviceId>
 {
     IMagnetometerDeviceId(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMagnetometerDeviceId>(m_ptr); }
 };
 
 struct IMagnetometerReading :
@@ -768,7 +714,6 @@ struct IMagnetometerReading :
     impl::consume<IMagnetometerReading>
 {
     IMagnetometerReading(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMagnetometerReading>(m_ptr); }
 };
 
 struct IMagnetometerReadingChangedEventArgs :
@@ -776,7 +721,6 @@ struct IMagnetometerReadingChangedEventArgs :
     impl::consume<IMagnetometerReadingChangedEventArgs>
 {
     IMagnetometerReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMagnetometerReadingChangedEventArgs>(m_ptr); }
 };
 
 struct IMagnetometerStatics :
@@ -784,7 +728,6 @@ struct IMagnetometerStatics :
     impl::consume<IMagnetometerStatics>
 {
     IMagnetometerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMagnetometerStatics>(m_ptr); }
 };
 
 struct IOrientationSensor :
@@ -792,7 +735,6 @@ struct IOrientationSensor :
     impl::consume<IOrientationSensor>
 {
     IOrientationSensor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOrientationSensor>(m_ptr); }
 };
 
 struct IOrientationSensor2 :
@@ -800,7 +742,6 @@ struct IOrientationSensor2 :
     impl::consume<IOrientationSensor2>
 {
     IOrientationSensor2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOrientationSensor2>(m_ptr); }
 };
 
 struct IOrientationSensorDeviceId :
@@ -808,7 +749,6 @@ struct IOrientationSensorDeviceId :
     impl::consume<IOrientationSensorDeviceId>
 {
     IOrientationSensorDeviceId(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOrientationSensorDeviceId>(m_ptr); }
 };
 
 struct IOrientationSensorReading :
@@ -816,7 +756,6 @@ struct IOrientationSensorReading :
     impl::consume<IOrientationSensorReading>
 {
     IOrientationSensorReading(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOrientationSensorReading>(m_ptr); }
 };
 
 struct IOrientationSensorReadingChangedEventArgs :
@@ -824,7 +763,6 @@ struct IOrientationSensorReadingChangedEventArgs :
     impl::consume<IOrientationSensorReadingChangedEventArgs>
 {
     IOrientationSensorReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOrientationSensorReadingChangedEventArgs>(m_ptr); }
 };
 
 struct IOrientationSensorReadingYawAccuracy :
@@ -832,7 +770,6 @@ struct IOrientationSensorReadingYawAccuracy :
     impl::consume<IOrientationSensorReadingYawAccuracy>
 {
     IOrientationSensorReadingYawAccuracy(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOrientationSensorReadingYawAccuracy>(m_ptr); }
 };
 
 struct IOrientationSensorStatics :
@@ -840,7 +777,6 @@ struct IOrientationSensorStatics :
     impl::consume<IOrientationSensorStatics>
 {
     IOrientationSensorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOrientationSensorStatics>(m_ptr); }
 };
 
 struct IOrientationSensorStatics2 :
@@ -848,7 +784,6 @@ struct IOrientationSensorStatics2 :
     impl::consume<IOrientationSensorStatics2>
 {
     IOrientationSensorStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOrientationSensorStatics2>(m_ptr); }
 };
 
 struct IOrientationSensorStatics3 :
@@ -856,7 +791,6 @@ struct IOrientationSensorStatics3 :
     impl::consume<IOrientationSensorStatics3>
 {
     IOrientationSensorStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOrientationSensorStatics3>(m_ptr); }
 };
 
 struct IPedometer :
@@ -864,7 +798,6 @@ struct IPedometer :
     impl::consume<IPedometer>
 {
     IPedometer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPedometer>(m_ptr); }
 };
 
 struct IPedometer2 :
@@ -872,7 +805,6 @@ struct IPedometer2 :
     impl::consume<IPedometer2>
 {
     IPedometer2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPedometer2>(m_ptr); }
 };
 
 struct IPedometerDataThresholdFactory :
@@ -880,7 +812,6 @@ struct IPedometerDataThresholdFactory :
     impl::consume<IPedometerDataThresholdFactory>
 {
     IPedometerDataThresholdFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPedometerDataThresholdFactory>(m_ptr); }
 };
 
 struct IPedometerReading :
@@ -888,7 +819,6 @@ struct IPedometerReading :
     impl::consume<IPedometerReading>
 {
     IPedometerReading(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPedometerReading>(m_ptr); }
 };
 
 struct IPedometerReadingChangedEventArgs :
@@ -896,7 +826,6 @@ struct IPedometerReadingChangedEventArgs :
     impl::consume<IPedometerReadingChangedEventArgs>
 {
     IPedometerReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPedometerReadingChangedEventArgs>(m_ptr); }
 };
 
 struct IPedometerStatics :
@@ -904,7 +833,6 @@ struct IPedometerStatics :
     impl::consume<IPedometerStatics>
 {
     IPedometerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPedometerStatics>(m_ptr); }
 };
 
 struct IPedometerStatics2 :
@@ -912,7 +840,6 @@ struct IPedometerStatics2 :
     impl::consume<IPedometerStatics2>
 {
     IPedometerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPedometerStatics2>(m_ptr); }
 };
 
 struct IProximitySensor :
@@ -920,7 +847,6 @@ struct IProximitySensor :
     impl::consume<IProximitySensor>
 {
     IProximitySensor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProximitySensor>(m_ptr); }
 };
 
 struct IProximitySensorDataThresholdFactory :
@@ -928,7 +854,6 @@ struct IProximitySensorDataThresholdFactory :
     impl::consume<IProximitySensorDataThresholdFactory>
 {
     IProximitySensorDataThresholdFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProximitySensorDataThresholdFactory>(m_ptr); }
 };
 
 struct IProximitySensorReading :
@@ -936,7 +861,6 @@ struct IProximitySensorReading :
     impl::consume<IProximitySensorReading>
 {
     IProximitySensorReading(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProximitySensorReading>(m_ptr); }
 };
 
 struct IProximitySensorReadingChangedEventArgs :
@@ -944,7 +868,6 @@ struct IProximitySensorReadingChangedEventArgs :
     impl::consume<IProximitySensorReadingChangedEventArgs>
 {
     IProximitySensorReadingChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProximitySensorReadingChangedEventArgs>(m_ptr); }
 };
 
 struct IProximitySensorStatics :
@@ -952,7 +875,6 @@ struct IProximitySensorStatics :
     impl::consume<IProximitySensorStatics>
 {
     IProximitySensorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProximitySensorStatics>(m_ptr); }
 };
 
 struct IProximitySensorStatics2 :
@@ -960,7 +882,6 @@ struct IProximitySensorStatics2 :
     impl::consume<IProximitySensorStatics2>
 {
     IProximitySensorStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProximitySensorStatics2>(m_ptr); }
 };
 
 struct ISensorDataThreshold :
@@ -968,7 +889,6 @@ struct ISensorDataThreshold :
     impl::consume<ISensorDataThreshold>
 {
     ISensorDataThreshold(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISensorDataThreshold>(m_ptr); }
 };
 
 struct ISensorDataThresholdTriggerDetails :
@@ -976,7 +896,6 @@ struct ISensorDataThresholdTriggerDetails :
     impl::consume<ISensorDataThresholdTriggerDetails>
 {
     ISensorDataThresholdTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISensorDataThresholdTriggerDetails>(m_ptr); }
 };
 
 struct ISensorQuaternion :
@@ -984,7 +903,6 @@ struct ISensorQuaternion :
     impl::consume<ISensorQuaternion>
 {
     ISensorQuaternion(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISensorQuaternion>(m_ptr); }
 };
 
 struct ISensorRotationMatrix :
@@ -992,7 +910,6 @@ struct ISensorRotationMatrix :
     impl::consume<ISensorRotationMatrix>
 {
     ISensorRotationMatrix(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISensorRotationMatrix>(m_ptr); }
 };
 
 struct ISimpleOrientationSensor :
@@ -1000,7 +917,6 @@ struct ISimpleOrientationSensor :
     impl::consume<ISimpleOrientationSensor>
 {
     ISimpleOrientationSensor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISimpleOrientationSensor>(m_ptr); }
 };
 
 struct ISimpleOrientationSensor2 :
@@ -1008,7 +924,6 @@ struct ISimpleOrientationSensor2 :
     impl::consume<ISimpleOrientationSensor2>
 {
     ISimpleOrientationSensor2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISimpleOrientationSensor2>(m_ptr); }
 };
 
 struct ISimpleOrientationSensorDeviceId :
@@ -1016,7 +931,6 @@ struct ISimpleOrientationSensorDeviceId :
     impl::consume<ISimpleOrientationSensorDeviceId>
 {
     ISimpleOrientationSensorDeviceId(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISimpleOrientationSensorDeviceId>(m_ptr); }
 };
 
 struct ISimpleOrientationSensorOrientationChangedEventArgs :
@@ -1024,7 +938,6 @@ struct ISimpleOrientationSensorOrientationChangedEventArgs :
     impl::consume<ISimpleOrientationSensorOrientationChangedEventArgs>
 {
     ISimpleOrientationSensorOrientationChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISimpleOrientationSensorOrientationChangedEventArgs>(m_ptr); }
 };
 
 struct ISimpleOrientationSensorStatics :
@@ -1032,7 +945,6 @@ struct ISimpleOrientationSensorStatics :
     impl::consume<ISimpleOrientationSensorStatics>
 {
     ISimpleOrientationSensorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISimpleOrientationSensorStatics>(m_ptr); }
 };
 
 }

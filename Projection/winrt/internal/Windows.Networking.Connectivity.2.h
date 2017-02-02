@@ -328,7 +328,6 @@ namespace Windows::Networking::Connectivity {
 struct NetworkStatusChangedEventHandler : Windows::IUnknown
 {
     NetworkStatusChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<NetworkStatusChangedEventHandler>(m_ptr); }
     template <typename L> NetworkStatusChangedEventHandler(L lambda);
     template <typename F> NetworkStatusChangedEventHandler (F * function);
     template <typename O, typename M> NetworkStatusChangedEventHandler(O * object, M method);
@@ -340,7 +339,6 @@ struct IAttributedNetworkUsage :
     impl::consume<IAttributedNetworkUsage>
 {
     IAttributedNetworkUsage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAttributedNetworkUsage>(m_ptr); }
 };
 
 struct ICellularApnContext :
@@ -348,7 +346,6 @@ struct ICellularApnContext :
     impl::consume<ICellularApnContext>
 {
     ICellularApnContext(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICellularApnContext>(m_ptr); }
 };
 
 struct IConnectionCost :
@@ -356,7 +353,6 @@ struct IConnectionCost :
     impl::consume<IConnectionCost>
 {
     IConnectionCost(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IConnectionCost>(m_ptr); }
 };
 
 struct IConnectionCost2 :
@@ -364,7 +360,6 @@ struct IConnectionCost2 :
     impl::consume<IConnectionCost2>
 {
     IConnectionCost2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IConnectionCost2>(m_ptr); }
 };
 
 struct IConnectionProfile :
@@ -372,7 +367,6 @@ struct IConnectionProfile :
     impl::consume<IConnectionProfile>
 {
     IConnectionProfile(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IConnectionProfile>(m_ptr); }
 };
 
 struct IConnectionProfile2 :
@@ -380,7 +374,6 @@ struct IConnectionProfile2 :
     impl::consume<IConnectionProfile2>
 {
     IConnectionProfile2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IConnectionProfile2>(m_ptr); }
 };
 
 struct IConnectionProfile3 :
@@ -388,7 +381,6 @@ struct IConnectionProfile3 :
     impl::consume<IConnectionProfile3>
 {
     IConnectionProfile3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IConnectionProfile3>(m_ptr); }
 };
 
 struct IConnectionProfileFilter :
@@ -396,7 +388,6 @@ struct IConnectionProfileFilter :
     impl::consume<IConnectionProfileFilter>
 {
     IConnectionProfileFilter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IConnectionProfileFilter>(m_ptr); }
 };
 
 struct IConnectionProfileFilter2 :
@@ -404,7 +395,6 @@ struct IConnectionProfileFilter2 :
     impl::consume<IConnectionProfileFilter2>
 {
     IConnectionProfileFilter2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IConnectionProfileFilter2>(m_ptr); }
 };
 
 struct IConnectionSession :
@@ -413,7 +403,6 @@ struct IConnectionSession :
     impl::require<IConnectionSession, Windows::Foundation::IClosable>
 {
     IConnectionSession(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IConnectionSession>(m_ptr); }
 };
 
 struct IConnectivityInterval :
@@ -421,7 +410,6 @@ struct IConnectivityInterval :
     impl::consume<IConnectivityInterval>
 {
     IConnectivityInterval(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IConnectivityInterval>(m_ptr); }
 };
 
 struct IConnectivityManagerStatics :
@@ -429,7 +417,6 @@ struct IConnectivityManagerStatics :
     impl::consume<IConnectivityManagerStatics>
 {
     IConnectivityManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IConnectivityManagerStatics>(m_ptr); }
 };
 
 struct IDataPlanStatus :
@@ -437,7 +424,6 @@ struct IDataPlanStatus :
     impl::consume<IDataPlanStatus>
 {
     IDataPlanStatus(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataPlanStatus>(m_ptr); }
 };
 
 struct IDataPlanUsage :
@@ -445,7 +431,6 @@ struct IDataPlanUsage :
     impl::consume<IDataPlanUsage>
 {
     IDataPlanUsage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataPlanUsage>(m_ptr); }
 };
 
 struct IDataUsage :
@@ -453,7 +438,6 @@ struct IDataUsage :
     impl::consume<IDataUsage>
 {
     IDataUsage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataUsage>(m_ptr); }
 };
 
 struct IIPInformation :
@@ -461,7 +445,6 @@ struct IIPInformation :
     impl::consume<IIPInformation>
 {
     IIPInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IIPInformation>(m_ptr); }
 };
 
 struct ILanIdentifier :
@@ -469,7 +452,6 @@ struct ILanIdentifier :
     impl::consume<ILanIdentifier>
 {
     ILanIdentifier(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILanIdentifier>(m_ptr); }
 };
 
 struct ILanIdentifierData :
@@ -477,7 +459,6 @@ struct ILanIdentifierData :
     impl::consume<ILanIdentifierData>
 {
     ILanIdentifierData(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILanIdentifierData>(m_ptr); }
 };
 
 struct INetworkAdapter :
@@ -485,7 +466,6 @@ struct INetworkAdapter :
     impl::consume<INetworkAdapter>
 {
     INetworkAdapter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkAdapter>(m_ptr); }
 };
 
 struct INetworkInformationStatics :
@@ -493,7 +473,6 @@ struct INetworkInformationStatics :
     impl::consume<INetworkInformationStatics>
 {
     INetworkInformationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkInformationStatics>(m_ptr); }
 };
 
 struct INetworkInformationStatics2 :
@@ -501,7 +480,6 @@ struct INetworkInformationStatics2 :
     impl::consume<INetworkInformationStatics2>
 {
     INetworkInformationStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkInformationStatics2>(m_ptr); }
 };
 
 struct INetworkItem :
@@ -509,7 +487,6 @@ struct INetworkItem :
     impl::consume<INetworkItem>
 {
     INetworkItem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkItem>(m_ptr); }
 };
 
 struct INetworkSecuritySettings :
@@ -517,7 +494,6 @@ struct INetworkSecuritySettings :
     impl::consume<INetworkSecuritySettings>
 {
     INetworkSecuritySettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkSecuritySettings>(m_ptr); }
 };
 
 struct INetworkStateChangeEventDetails :
@@ -525,7 +501,6 @@ struct INetworkStateChangeEventDetails :
     impl::consume<INetworkStateChangeEventDetails>
 {
     INetworkStateChangeEventDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkStateChangeEventDetails>(m_ptr); }
 };
 
 struct INetworkStateChangeEventDetails2 :
@@ -533,7 +508,6 @@ struct INetworkStateChangeEventDetails2 :
     impl::consume<INetworkStateChangeEventDetails2>
 {
     INetworkStateChangeEventDetails2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkStateChangeEventDetails2>(m_ptr); }
 };
 
 struct INetworkUsage :
@@ -541,7 +515,6 @@ struct INetworkUsage :
     impl::consume<INetworkUsage>
 {
     INetworkUsage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkUsage>(m_ptr); }
 };
 
 struct IProxyConfiguration :
@@ -549,7 +522,6 @@ struct IProxyConfiguration :
     impl::consume<IProxyConfiguration>
 {
     IProxyConfiguration(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProxyConfiguration>(m_ptr); }
 };
 
 struct IRoutePolicy :
@@ -557,7 +529,6 @@ struct IRoutePolicy :
     impl::consume<IRoutePolicy>
 {
     IRoutePolicy(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRoutePolicy>(m_ptr); }
 };
 
 struct IRoutePolicyFactory :
@@ -565,7 +536,6 @@ struct IRoutePolicyFactory :
     impl::consume<IRoutePolicyFactory>
 {
     IRoutePolicyFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRoutePolicyFactory>(m_ptr); }
 };
 
 struct IWlanConnectionProfileDetails :
@@ -573,7 +543,6 @@ struct IWlanConnectionProfileDetails :
     impl::consume<IWlanConnectionProfileDetails>
 {
     IWlanConnectionProfileDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWlanConnectionProfileDetails>(m_ptr); }
 };
 
 struct IWwanConnectionProfileDetails :
@@ -581,7 +550,6 @@ struct IWwanConnectionProfileDetails :
     impl::consume<IWwanConnectionProfileDetails>
 {
     IWwanConnectionProfileDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWwanConnectionProfileDetails>(m_ptr); }
 };
 
 }

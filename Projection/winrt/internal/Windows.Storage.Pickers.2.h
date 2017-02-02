@@ -149,7 +149,6 @@ struct IFileOpenPicker :
     impl::consume<IFileOpenPicker>
 {
     IFileOpenPicker(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileOpenPicker>(m_ptr); }
 };
 
 struct IFileOpenPicker2 :
@@ -158,7 +157,6 @@ struct IFileOpenPicker2 :
     impl::require<IFileOpenPicker2, Windows::Storage::Pickers::IFileOpenPicker>
 {
     IFileOpenPicker2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileOpenPicker2>(m_ptr); }
 };
 
 struct IFileOpenPickerStatics :
@@ -166,7 +164,6 @@ struct IFileOpenPickerStatics :
     impl::consume<IFileOpenPickerStatics>
 {
     IFileOpenPickerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileOpenPickerStatics>(m_ptr); }
 };
 
 struct IFileOpenPickerWithOperationId :
@@ -174,7 +171,6 @@ struct IFileOpenPickerWithOperationId :
     impl::consume<IFileOpenPickerWithOperationId>
 {
     IFileOpenPickerWithOperationId(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileOpenPickerWithOperationId>(m_ptr); }
 };
 
 struct IFileSavePicker :
@@ -182,7 +178,6 @@ struct IFileSavePicker :
     impl::consume<IFileSavePicker>
 {
     IFileSavePicker(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileSavePicker>(m_ptr); }
 };
 
 struct IFileSavePicker2 :
@@ -191,7 +186,6 @@ struct IFileSavePicker2 :
     impl::require<IFileSavePicker2, Windows::Storage::Pickers::IFileSavePicker>
 {
     IFileSavePicker2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileSavePicker2>(m_ptr); }
 };
 
 struct IFileSavePicker3 :
@@ -200,7 +194,6 @@ struct IFileSavePicker3 :
     impl::require<IFileSavePicker3, Windows::Storage::Pickers::IFileSavePicker>
 {
     IFileSavePicker3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileSavePicker3>(m_ptr); }
 };
 
 struct IFolderPicker :
@@ -208,7 +201,6 @@ struct IFolderPicker :
     impl::consume<IFolderPicker>
 {
     IFolderPicker(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFolderPicker>(m_ptr); }
 };
 
 struct IFolderPicker2 :
@@ -217,7 +209,6 @@ struct IFolderPicker2 :
     impl::require<IFolderPicker2, Windows::Storage::Pickers::IFolderPicker>
 {
     IFolderPicker2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFolderPicker2>(m_ptr); }
 };
 
 }

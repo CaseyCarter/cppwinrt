@@ -70,7 +70,6 @@ struct IPwmController :
     impl::consume<IPwmController>
 {
     IPwmController(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPwmController>(m_ptr); }
 };
 
 struct IPwmControllerStatics :
@@ -78,7 +77,6 @@ struct IPwmControllerStatics :
     impl::consume<IPwmControllerStatics>
 {
     IPwmControllerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPwmControllerStatics>(m_ptr); }
 };
 
 struct IPwmControllerStatics2 :
@@ -86,7 +84,6 @@ struct IPwmControllerStatics2 :
     impl::consume<IPwmControllerStatics2>
 {
     IPwmControllerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPwmControllerStatics2>(m_ptr); }
 };
 
 struct IPwmPin :
@@ -95,7 +92,6 @@ struct IPwmPin :
     impl::require<IPwmPin, Windows::Foundation::IClosable>
 {
     IPwmPin(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPwmPin>(m_ptr); }
 };
 
 }

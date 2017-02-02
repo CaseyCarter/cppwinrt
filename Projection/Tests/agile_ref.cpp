@@ -7,7 +7,7 @@ using namespace Windows::System::Threading;
 
 std::future<void> test_agile_ref()
 {
-    Uri object = L"http://host/path";
+    Uri object(L"http://host/path");
 
     //
     // Here we're creating an agile_ref explicitly and using a traditional lambda variable capture

@@ -441,7 +441,7 @@ namespace Windows::Networking::ServiceDiscovery::Dnssd {
 template <typename D> event_token impl_IDnssdServiceWatcher<D>::Added(const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IDnssdServiceWatcher &>(static_cast<const D &>(*this))->add_Added(get(handler), &token));
+    check_hresult(WINRT_SHIM(IDnssdServiceWatcher)->add_Added(get(handler), &token));
     return token;
 }
 
@@ -452,13 +452,13 @@ template <typename D> event_revoker<IDnssdServiceWatcher> impl_IDnssdServiceWatc
 
 template <typename D> void impl_IDnssdServiceWatcher<D>::Added(event_token token) const
 {
-    check_hresult(static_cast<const IDnssdServiceWatcher &>(static_cast<const D &>(*this))->remove_Added(token));
+    check_hresult(WINRT_SHIM(IDnssdServiceWatcher)->remove_Added(token));
 }
 
 template <typename D> event_token impl_IDnssdServiceWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IDnssdServiceWatcher &>(static_cast<const D &>(*this))->add_EnumerationCompleted(get(handler), &token));
+    check_hresult(WINRT_SHIM(IDnssdServiceWatcher)->add_EnumerationCompleted(get(handler), &token));
     return token;
 }
 
@@ -469,13 +469,13 @@ template <typename D> event_revoker<IDnssdServiceWatcher> impl_IDnssdServiceWatc
 
 template <typename D> void impl_IDnssdServiceWatcher<D>::EnumerationCompleted(event_token token) const
 {
-    check_hresult(static_cast<const IDnssdServiceWatcher &>(static_cast<const D &>(*this))->remove_EnumerationCompleted(token));
+    check_hresult(WINRT_SHIM(IDnssdServiceWatcher)->remove_EnumerationCompleted(token));
 }
 
 template <typename D> event_token impl_IDnssdServiceWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IDnssdServiceWatcher &>(static_cast<const D &>(*this))->add_Stopped(get(handler), &token));
+    check_hresult(WINRT_SHIM(IDnssdServiceWatcher)->add_Stopped(get(handler), &token));
     return token;
 }
 
@@ -486,146 +486,146 @@ template <typename D> event_revoker<IDnssdServiceWatcher> impl_IDnssdServiceWatc
 
 template <typename D> void impl_IDnssdServiceWatcher<D>::Stopped(event_token token) const
 {
-    check_hresult(static_cast<const IDnssdServiceWatcher &>(static_cast<const D &>(*this))->remove_Stopped(token));
+    check_hresult(WINRT_SHIM(IDnssdServiceWatcher)->remove_Stopped(token));
 }
 
 template <typename D> Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcherStatus impl_IDnssdServiceWatcher<D>::Status() const
 {
     Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcherStatus status {};
-    check_hresult(static_cast<const IDnssdServiceWatcher &>(static_cast<const D &>(*this))->get_Status(&status));
+    check_hresult(WINRT_SHIM(IDnssdServiceWatcher)->get_Status(&status));
     return status;
 }
 
 template <typename D> void impl_IDnssdServiceWatcher<D>::Start() const
 {
-    check_hresult(static_cast<const IDnssdServiceWatcher &>(static_cast<const D &>(*this))->abi_Start());
+    check_hresult(WINRT_SHIM(IDnssdServiceWatcher)->abi_Start());
 }
 
 template <typename D> void impl_IDnssdServiceWatcher<D>::Stop() const
 {
-    check_hresult(static_cast<const IDnssdServiceWatcher &>(static_cast<const D &>(*this))->abi_Stop());
+    check_hresult(WINRT_SHIM(IDnssdServiceWatcher)->abi_Stop());
 }
 
 template <typename D> Windows::Networking::ServiceDiscovery::Dnssd::DnssdRegistrationStatus impl_IDnssdRegistrationResult<D>::Status() const
 {
     Windows::Networking::ServiceDiscovery::Dnssd::DnssdRegistrationStatus value {};
-    check_hresult(static_cast<const IDnssdRegistrationResult &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IDnssdRegistrationResult)->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::HostName impl_IDnssdRegistrationResult<D>::IPAddress() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(static_cast<const IDnssdRegistrationResult &>(static_cast<const D &>(*this))->get_IPAddress(put(value)));
+    check_hresult(WINRT_SHIM(IDnssdRegistrationResult)->get_IPAddress(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IDnssdRegistrationResult<D>::HasInstanceNameChanged() const
 {
     bool value {};
-    check_hresult(static_cast<const IDnssdRegistrationResult &>(static_cast<const D &>(*this))->get_HasInstanceNameChanged(&value));
+    check_hresult(WINRT_SHIM(IDnssdRegistrationResult)->get_HasInstanceNameChanged(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance impl_IDnssdServiceInstanceFactory<D>::Create(hstring_ref dnssdServiceInstanceName, const Windows::Networking::HostName & hostName, uint16_t port) const
 {
     Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance result { nullptr };
-    check_hresult(static_cast<const IDnssdServiceInstanceFactory &>(static_cast<const D &>(*this))->abi_Create(get(dnssdServiceInstanceName), get(hostName), port, put(result)));
+    check_hresult(WINRT_SHIM(IDnssdServiceInstanceFactory)->abi_Create(get(dnssdServiceInstanceName), get(hostName), port, put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IDnssdServiceInstance<D>::DnssdServiceInstanceName() const
 {
     hstring value;
-    check_hresult(static_cast<const IDnssdServiceInstance &>(static_cast<const D &>(*this))->get_DnssdServiceInstanceName(put(value)));
+    check_hresult(WINRT_SHIM(IDnssdServiceInstance)->get_DnssdServiceInstanceName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDnssdServiceInstance<D>::DnssdServiceInstanceName(hstring_ref value) const
 {
-    check_hresult(static_cast<const IDnssdServiceInstance &>(static_cast<const D &>(*this))->put_DnssdServiceInstanceName(get(value)));
+    check_hresult(WINRT_SHIM(IDnssdServiceInstance)->put_DnssdServiceInstanceName(get(value)));
 }
 
 template <typename D> Windows::Networking::HostName impl_IDnssdServiceInstance<D>::HostName() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(static_cast<const IDnssdServiceInstance &>(static_cast<const D &>(*this))->get_HostName(put(value)));
+    check_hresult(WINRT_SHIM(IDnssdServiceInstance)->get_HostName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDnssdServiceInstance<D>::HostName(const Windows::Networking::HostName & value) const
 {
-    check_hresult(static_cast<const IDnssdServiceInstance &>(static_cast<const D &>(*this))->put_HostName(get(value)));
+    check_hresult(WINRT_SHIM(IDnssdServiceInstance)->put_HostName(get(value)));
 }
 
 template <typename D> uint16_t impl_IDnssdServiceInstance<D>::Port() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IDnssdServiceInstance &>(static_cast<const D &>(*this))->get_Port(&value));
+    check_hresult(WINRT_SHIM(IDnssdServiceInstance)->get_Port(&value));
     return value;
 }
 
 template <typename D> void impl_IDnssdServiceInstance<D>::Port(uint16_t value) const
 {
-    check_hresult(static_cast<const IDnssdServiceInstance &>(static_cast<const D &>(*this))->put_Port(value));
+    check_hresult(WINRT_SHIM(IDnssdServiceInstance)->put_Port(value));
 }
 
 template <typename D> uint16_t impl_IDnssdServiceInstance<D>::Priority() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IDnssdServiceInstance &>(static_cast<const D &>(*this))->get_Priority(&value));
+    check_hresult(WINRT_SHIM(IDnssdServiceInstance)->get_Priority(&value));
     return value;
 }
 
 template <typename D> void impl_IDnssdServiceInstance<D>::Priority(uint16_t value) const
 {
-    check_hresult(static_cast<const IDnssdServiceInstance &>(static_cast<const D &>(*this))->put_Priority(value));
+    check_hresult(WINRT_SHIM(IDnssdServiceInstance)->put_Priority(value));
 }
 
 template <typename D> uint16_t impl_IDnssdServiceInstance<D>::Weight() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IDnssdServiceInstance &>(static_cast<const D &>(*this))->get_Weight(&value));
+    check_hresult(WINRT_SHIM(IDnssdServiceInstance)->get_Weight(&value));
     return value;
 }
 
 template <typename D> void impl_IDnssdServiceInstance<D>::Weight(uint16_t value) const
 {
-    check_hresult(static_cast<const IDnssdServiceInstance &>(static_cast<const D &>(*this))->put_Weight(value));
+    check_hresult(WINRT_SHIM(IDnssdServiceInstance)->put_Weight(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_IDnssdServiceInstance<D>::TextAttributes() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> value;
-    check_hresult(static_cast<const IDnssdServiceInstance &>(static_cast<const D &>(*this))->get_TextAttributes(put(value)));
+    check_hresult(WINRT_SHIM(IDnssdServiceInstance)->get_TextAttributes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::ServiceDiscovery::Dnssd::DnssdRegistrationResult> impl_IDnssdServiceInstance<D>::RegisterStreamSocketListenerAsync(const Windows::Networking::Sockets::StreamSocketListener & socket) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::ServiceDiscovery::Dnssd::DnssdRegistrationResult> result;
-    check_hresult(static_cast<const IDnssdServiceInstance &>(static_cast<const D &>(*this))->abi_RegisterStreamSocketListenerAsync1(get(socket), put(result)));
+    check_hresult(WINRT_SHIM(IDnssdServiceInstance)->abi_RegisterStreamSocketListenerAsync1(get(socket), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::ServiceDiscovery::Dnssd::DnssdRegistrationResult> impl_IDnssdServiceInstance<D>::RegisterStreamSocketListenerAsync(const Windows::Networking::Sockets::StreamSocketListener & socket, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::ServiceDiscovery::Dnssd::DnssdRegistrationResult> result;
-    check_hresult(static_cast<const IDnssdServiceInstance &>(static_cast<const D &>(*this))->abi_RegisterStreamSocketListenerAsync2(get(socket), get(adapter), put(result)));
+    check_hresult(WINRT_SHIM(IDnssdServiceInstance)->abi_RegisterStreamSocketListenerAsync2(get(socket), get(adapter), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::ServiceDiscovery::Dnssd::DnssdRegistrationResult> impl_IDnssdServiceInstance<D>::RegisterDatagramSocketAsync(const Windows::Networking::Sockets::DatagramSocket & socket) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::ServiceDiscovery::Dnssd::DnssdRegistrationResult> result;
-    check_hresult(static_cast<const IDnssdServiceInstance &>(static_cast<const D &>(*this))->abi_RegisterDatagramSocketAsync1(get(socket), put(result)));
+    check_hresult(WINRT_SHIM(IDnssdServiceInstance)->abi_RegisterDatagramSocketAsync1(get(socket), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::ServiceDiscovery::Dnssd::DnssdRegistrationResult> impl_IDnssdServiceInstance<D>::RegisterDatagramSocketAsync(const Windows::Networking::Sockets::DatagramSocket & socket, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::ServiceDiscovery::Dnssd::DnssdRegistrationResult> result;
-    check_hresult(static_cast<const IDnssdServiceInstance &>(static_cast<const D &>(*this))->abi_RegisterDatagramSocketAsync2(get(socket), get(adapter), put(result)));
+    check_hresult(WINRT_SHIM(IDnssdServiceInstance)->abi_RegisterDatagramSocketAsync2(get(socket), get(adapter), put(result)));
     return result;
 }
 

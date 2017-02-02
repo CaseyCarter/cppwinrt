@@ -461,7 +461,6 @@ template <typename T>
 struct WINRT_EBO VectorChangedEventHandler : IUnknown
 {
     VectorChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<VectorChangedEventHandler>(m_ptr); }
     template <typename L> VectorChangedEventHandler(L handler);
     template <typename F> VectorChangedEventHandler(F * handler);
     template <typename O, typename M> VectorChangedEventHandler(O * object, M method);
@@ -472,7 +471,6 @@ template <typename K, typename V>
 struct WINRT_EBO MapChangedEventHandler : IUnknown
 {
     MapChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<MapChangedEventHandler>(m_ptr); }
     template <typename L> MapChangedEventHandler(L handler);
     template <typename F> MapChangedEventHandler(F * handler);
     template <typename O, typename M> MapChangedEventHandler(O * object, M method);
@@ -484,7 +482,6 @@ struct IVectorChangedEventArgs :
     impl::consume<IVectorChangedEventArgs>
 {
     IVectorChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVectorChangedEventArgs>(m_ptr); }
 };
 
 template <typename T>
@@ -493,7 +490,6 @@ struct WINRT_EBO IIterator :
     impl::consume<IIterator<T>>
 {
     IIterator(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IIterator>(m_ptr); }
 };
 
 template <typename T>
@@ -502,7 +498,6 @@ struct WINRT_EBO IIterable :
     impl::consume<IIterable<T>>
 {
     IIterable(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IIterable>(m_ptr); }
 
     IIterable(std::vector<T> && values) : IIterable(make<impl::iterable<T, std::vector<T>>>(std::forward<std::vector<T>>(values)))
     {}
@@ -527,7 +522,6 @@ struct WINRT_EBO IIterable<IKeyValuePair<K, V>> :
     impl::consume<IIterable<IKeyValuePair<K, V>>>
 {
     IIterable(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IIterable>(m_ptr); }
 
     IIterable(std::map<K, V> && values) : IIterable(make<impl::iterable<IKeyValuePair<K, V>, std::map<K, V>>>(std::forward<std::map<K, V>>(values)))
     {}
@@ -558,7 +552,6 @@ struct WINRT_EBO IKeyValuePair :
     impl::consume<IKeyValuePair<K, V>>
 {
     IKeyValuePair(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyValuePair>(m_ptr); }
 };
 
 template <typename T>
@@ -568,7 +561,6 @@ struct WINRT_EBO IVectorView :
     impl::require<IVectorView<T>, IIterable<T>>
 {
     IVectorView(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVectorView>(m_ptr); }
 
     IVectorView(std::vector<T> && values) : IVectorView(make<impl::vector_view_standalone<T>>(std::forward<std::vector<T>>(values)))
     {}
@@ -594,7 +586,6 @@ struct WINRT_EBO IVector :
     impl::require<IVector<T>, IIterable<T>>
 {
     IVector(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVector>(m_ptr); }
 
     IVector(std::vector<T> && values) : IVector(make<impl::vector<T>>(std::forward<std::vector<T>>(values)))
     {}
@@ -620,7 +611,6 @@ struct WINRT_EBO IMapView :
     impl::require<IMapView<K, V>, IIterable<IKeyValuePair<K, V>>>
 {
     IMapView(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapView>(m_ptr); }
 
     IMapView(std::map<K, V> && values) : IMapView(make<impl::map_view_standalone<K, V, std::map<K, V>>>(std::forward<std::map<K, V>>(values)))
     {}
@@ -652,7 +642,6 @@ struct WINRT_EBO IMap :
     impl::require<IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
 {
     IMap(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMap>(m_ptr); }
 
     IMap(std::map<K, V> && values) : IMap(make<impl::map<K, V, std::map<K, V>>>(std::forward<std::map<K, V>>(values)))
     {}
@@ -683,7 +672,6 @@ struct WINRT_EBO IMapChangedEventArgs :
     impl::consume<IMapChangedEventArgs<K>>
 {
     IMapChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapChangedEventArgs>(m_ptr); }
 };
 
 template <typename K, typename V>
@@ -693,7 +681,6 @@ struct WINRT_EBO IObservableMap :
     impl::require<IObservableMap<K, V>, IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
 {
     IObservableMap(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IObservableMap>(m_ptr); }
 };
 
 template <typename T>
@@ -703,14 +690,13 @@ struct WINRT_EBO IObservableVector :
     impl::require<IObservableVector<T>, IVector<T>, IIterable<T>>
 {
     IObservableVector(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IObservableVector>(m_ptr); }
 };
 
 template <typename D>
 CollectionChange impl_IVectorChangedEventArgs<D>::CollectionChange() const
 {
     Collections::CollectionChange value{};
-    check_hresult(static_cast<const IVectorChangedEventArgs &>(static_cast<const D &>(*this))->get_CollectionChange(&value));
+    check_hresult((*(abi<IVectorChangedEventArgs> **)&static_cast<const IVectorChangedEventArgs &>(static_cast<const D &>(*this)))->get_CollectionChange(&value));
     return value;
 }
 
@@ -718,7 +704,7 @@ template <typename D>
 uint32_t impl_IVectorChangedEventArgs<D>::Index() const
 {
     uint32_t index = 0;
-    check_hresult(static_cast<const IVectorChangedEventArgs &>(static_cast<const D &>(*this))->get_Index(&index));
+    check_hresult((*(abi<IVectorChangedEventArgs> **)&static_cast<const IVectorChangedEventArgs &>(static_cast<const D &>(*this)))->get_Index(&index));
     return index;
 }
 
@@ -726,7 +712,7 @@ template <typename D, typename T>
 T impl_IIterator<D, T>::Current() const
 {
     T result = impl::empty_value<T>();
-    check_hresult(static_cast<const IIterator<T> &>(static_cast<const D &>(*this))->get_Current(put(result)));
+    check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->get_Current(put(result)));
     return result;
 }
 
@@ -734,7 +720,7 @@ template <typename D, typename T>
 bool impl_IIterator<D, T>::HasCurrent() const
 {
     bool temp = false;
-    check_hresult(static_cast<const IIterator<T> &>(static_cast<const D &>(*this))->get_HasCurrent(put(temp)));
+    check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->get_HasCurrent(put(temp)));
     return temp;
 }
 
@@ -742,7 +728,7 @@ template <typename D, typename T>
 bool impl_IIterator<D, T>::MoveNext() const
 {
     bool temp = false;
-    check_hresult(static_cast<const IIterator<T> &>(static_cast<const D &>(*this))->abi_MoveNext(put(temp)));
+    check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->abi_MoveNext(put(temp)));
     return temp;
 }
 
@@ -750,7 +736,7 @@ template <typename D, typename T>
 uint32_t impl_IIterator<D, T>::GetMany(array_ref<T> values) const
 {
     uint32_t actual = 0;
-    check_hresult(static_cast<const IIterator<T> &>(static_cast<const D &>(*this))->abi_GetMany(values.size(), get(values), &actual));
+    check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->abi_GetMany(values.size(), get(values), &actual));
     return actual;
 }
 
@@ -758,7 +744,7 @@ template <typename D, typename T>
 IIterator<T> impl_IIterable<D, T>::First() const
 {
     IIterator<T> iterator;
-    check_hresult(static_cast<const IIterable<T> &>(static_cast<const D &>(*this))->abi_First(put(iterator)));
+    check_hresult((*(abi<IIterable<T>> **)&static_cast<const IIterable<T> &>(static_cast<const D &>(*this)))->abi_First(put(iterator)));
     return iterator;
 }
 
@@ -766,7 +752,7 @@ template <typename D, typename K, typename V>
 K impl_IKeyValuePair<D, K, V>::Key() const
 {
     K result = impl::empty_value<K>();
-    check_hresult(static_cast<const IKeyValuePair<K, V> &>(static_cast<const D &>(*this))->get_Key(put(result)));
+    check_hresult((*(abi<IKeyValuePair<K, V>> **)&static_cast<const IKeyValuePair<K, V> &>(static_cast<const D &>(*this)))->get_Key(put(result)));
     return result;
 }
 
@@ -774,7 +760,7 @@ template <typename D, typename K, typename V>
 V impl_IKeyValuePair<D, K, V>::Value() const
 {
     V result = impl::empty_value<V>();
-    check_hresult(static_cast<const IKeyValuePair<K, V> &>(static_cast<const D &>(*this))->get_Value(put(result)));
+    check_hresult((*(abi<IKeyValuePair<K, V>> **)&static_cast<const IKeyValuePair<K, V> &>(static_cast<const D &>(*this)))->get_Value(put(result)));
     return result;
 }
 
@@ -782,7 +768,7 @@ template <typename D, typename T>
 T impl_IVectorView<D, T>::GetAt(const uint32_t index) const
 {
     T result = impl::empty_value<T>();
-    check_hresult(static_cast<const IVectorView<T> &>(static_cast<const D &>(*this))->abi_GetAt(index, put(result)));
+    check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->abi_GetAt(index, put(result)));
     return result;
 }
 
@@ -790,7 +776,7 @@ template <typename D, typename T>
 uint32_t impl_IVectorView<D, T>::Size() const
 {
     uint32_t size = 0;
-    check_hresult(static_cast<const IVectorView<T> &>(static_cast<const D &>(*this))->get_Size(&size));
+    check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->get_Size(&size));
     return size;
 }
 
@@ -798,7 +784,7 @@ template <typename D, typename T>
 bool impl_IVectorView<D, T>::IndexOf(const T & value, uint32_t & index) const
 {
     bool found = false;
-    check_hresult(static_cast<const IVectorView<T> &>(static_cast<const D &>(*this))->abi_IndexOf(get(value), &index, put(found)));
+    check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->abi_IndexOf(get(value), &index, put(found)));
     return found;
 }
 
@@ -806,7 +792,7 @@ template <typename D, typename T>
 uint32_t impl_IVectorView<D, T>::GetMany(uint32_t startIndex, array_ref<T> values) const
 {
     uint32_t actual = 0;
-    check_hresult(static_cast<const IVectorView<T> &>(static_cast<const D &>(*this))->abi_GetMany(startIndex, values.size(), get(values), &actual));
+    check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->abi_GetMany(startIndex, values.size(), get(values), &actual));
     return actual;
 }
 
@@ -814,7 +800,7 @@ template <typename D, typename T>
 T impl_IVector<D, T>::GetAt(const uint32_t index) const
 {
     T result = impl::empty_value<T>();
-    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_GetAt(index, put(result)));
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_GetAt(index, put(result)));
     return result;
 }
 
@@ -822,7 +808,7 @@ template <typename D, typename T>
 uint32_t impl_IVector<D, T>::Size() const
 {
     uint32_t size = 0;
-    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->get_Size(&size));
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->get_Size(&size));
     return size;
 }
 
@@ -830,7 +816,7 @@ template <typename D, typename T>
 IVectorView<T> impl_IVector<D, T>::GetView() const
 {
     IVectorView<T> view;
-    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_GetView(put(view)));
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_GetView(put(view)));
     return view;
 }
 
@@ -838,65 +824,65 @@ template <typename D, typename T>
 bool impl_IVector<D, T>::IndexOf(const T & value, uint32_t & index) const
 {
     bool found = false;
-    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_IndexOf(get(value), &index, put(found)));
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_IndexOf(get(value), &index, put(found)));
     return found;
 }
 
 template <typename D, typename T>
 void impl_IVector<D, T>::SetAt(const uint32_t index, const T & value) const
 {
-    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_SetAt(index, get(value)));
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_SetAt(index, get(value)));
 }
 
 template <typename D, typename T>
 void impl_IVector<D, T>::InsertAt(const uint32_t index, const T & value) const
 {
-    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_InsertAt(index, get(value)));
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_InsertAt(index, get(value)));
 }
 
 template <typename D, typename T>
 void impl_IVector<D, T>::RemoveAt(const uint32_t index) const
 {
-    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_RemoveAt(index));
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_RemoveAt(index));
 }
 
 template <typename D, typename T>
 void impl_IVector<D, T>::Append(const T & value) const
 {
-    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_Append(get(value)));
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_Append(get(value)));
 }
 
 template <typename D, typename T>
 void impl_IVector<D, T>::RemoveAtEnd() const
 {
-    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_RemoveAtEnd());
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_RemoveAtEnd());
 }
 
 template <typename D, typename T>
 void impl_IVector<D, T>::Clear() const
 {
-    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_Clear());
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_Clear());
 }
 
 template <typename D, typename T>
 uint32_t impl_IVector<D, T>::GetMany(uint32_t startIndex, array_ref<T> values) const
 {
     uint32_t actual = 0;
-    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_GetMany(startIndex, values.size(), get(values), &actual));
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_GetMany(startIndex, values.size(), get(values), &actual));
     return actual;
 }
 
 template <typename D, typename T>
 void impl_IVector<D, T>::ReplaceAll(array_ref<const T> value) const
 {
-    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_ReplaceAll(value.size(), get(value)));
+    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_ReplaceAll(value.size(), get(value)));
 }
 
 template <typename D, typename K, typename V>
 V impl_IMapView<D, K, V>::Lookup(const K & key) const
 {
     V result = impl::empty_value<V>();
-    check_hresult(static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this))->abi_Lookup(get(key), put(result)));
+    check_hresult((*(abi<IMapView<K, V>> **)&static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this)))->abi_Lookup(get(key), put(result)));
     return result;
 }
 
@@ -904,7 +890,7 @@ template <typename D, typename K, typename V>
 uint32_t impl_IMapView<D, K, V>::Size() const
 {
     uint32_t size = 0;
-    check_hresult(static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this))->get_Size(&size));
+    check_hresult((*(abi<IMapView<K, V>> **)&static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this)))->get_Size(&size));
     return size;
 }
 
@@ -912,21 +898,21 @@ template <typename D, typename K, typename V>
 bool impl_IMapView<D, K, V>::HasKey(const K & key) const
 {
     bool found = false;
-    check_hresult(static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this))->abi_HasKey(get(key), put(found)));
+    check_hresult((*(abi<IMapView<K, V>> **)&static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this)))->abi_HasKey(get(key), put(found)));
     return found;
 }
 
 template <typename D, typename K, typename V>
 void impl_IMapView<D, K, V>::Split(IMapView<K, V> & firstPartition, IMapView<K, V> & secondPartition)
 {
-    check_hresult(static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this))->abi_Split(put(firstPartition), put(secondPartition)));
+    check_hresult((*(abi<IMapView<K, V>> **)&static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this)))->abi_Split(put(firstPartition), put(secondPartition)));
 }
 
 template <typename D, typename K, typename V>
 V impl_IMap<D, K, V>::Lookup(const K & key) const
 {
     V result = impl::empty_value<V>();
-    check_hresult(static_cast<const IMap<K, V> &>(static_cast<const D &>(*this))->abi_Lookup(get(key), put(result)));
+    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_Lookup(get(key), put(result)));
     return result;
 }
 
@@ -934,7 +920,7 @@ template <typename D, typename K, typename V>
 uint32_t impl_IMap<D, K, V>::Size() const
 {
     uint32_t size = 0;
-    check_hresult(static_cast<const IMap<K, V> &>(static_cast<const D &>(*this))->get_Size(&size));
+    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->get_Size(&size));
     return size;
 }
 
@@ -942,7 +928,7 @@ template <typename D, typename K, typename V>
 bool impl_IMap<D, K, V>::HasKey(const K & key) const
 {
     bool found = false;
-    check_hresult(static_cast<const IMap<K, V> &>(static_cast<const D &>(*this))->abi_HasKey(get(key), put(found)));
+    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_HasKey(get(key), put(found)));
     return found;
 }
 
@@ -950,7 +936,7 @@ template <typename D, typename K, typename V>
 IMapView<K, V> impl_IMap<D, K, V>::GetView() const
 {
     IMapView<K, V> view;
-    check_hresult(static_cast<const IMap<K, V> &>(static_cast<const D &>(*this))->abi_GetView(put(view)));
+    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_GetView(put(view)));
     return view;
 }
 
@@ -958,27 +944,27 @@ template <typename D, typename K, typename V>
 bool impl_IMap<D, K, V>::Insert(const K & key, const V & value) const
 {
     bool replaced = false;
-    check_hresult(static_cast<const IMap<K, V> &>(static_cast<const D &>(*this))->abi_Insert(get(key), get(value), put(replaced)));
+    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_Insert(get(key), get(value), put(replaced)));
     return replaced;
 }
 
 template <typename D, typename K, typename V>
 void impl_IMap<D, K, V>::Remove(const K & key) const
 {
-    check_hresult(static_cast<const IMap<K, V> &>(static_cast<const D &>(*this))->abi_Remove(get(key)));
+    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_Remove(get(key)));
 }
 
 template <typename D, typename K, typename V>
 void impl_IMap<D, K, V>::Clear() const
 {
-    check_hresult(static_cast<const IMap<K, V> &>(static_cast<const D &>(*this))->abi_Clear());
+    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_Clear());
 }
 
 template <typename D, typename K>
 CollectionChange impl_IMapChangedEventArgs<D, K>::CollectionChange() const
 {
     Collections::CollectionChange value{};
-    check_hresult(static_cast<const IMapChangedEventArgs<K> &>(static_cast<const D &>(*this))->get_CollectionChange(&value));
+    check_hresult((*(abi<IMapChangedEventArgs<K>> **)&static_cast<const IMapChangedEventArgs<K> &>(static_cast<const D &>(*this)))->get_CollectionChange(&value));
     return value;
 }
 
@@ -986,7 +972,7 @@ template <typename D, typename K>
 K impl_IMapChangedEventArgs<D, K>::Key() const
 {
     K result = impl::empty_value<K>();
-    check_hresult(static_cast<const IMapChangedEventArgs<K> &>(static_cast<const D &>(*this))->get_Key(put(result)));
+    check_hresult((*(abi<IMapChangedEventArgs<K>> **)&static_cast<const IMapChangedEventArgs<K> &>(static_cast<const D &>(*this)))->get_Key(put(result)));
     return result;
 }
 
@@ -994,28 +980,28 @@ template <typename D, typename K, typename V>
 event_token impl_IObservableMap<D, K, V>::MapChanged(const MapChangedEventHandler<K, V> & handler) const
 {
     event_token cookie{};
-    check_hresult(static_cast<const IObservableMap<K, V> &>(static_cast<const D &>(*this))->add_MapChanged(get(handler), &cookie));
+    check_hresult((*(abi<IObservableMap<K, V>> **)&static_cast<const IObservableMap<K, V> &>(static_cast<const D &>(*this)))->add_MapChanged(get(handler), &cookie));
     return cookie;
 }
 
 template <typename D, typename K, typename V>
 void impl_IObservableMap<D, K, V>::MapChanged(const event_token cookie) const
 {
-    check_hresult(static_cast<const IObservableMap<K, V> &>(static_cast<const D &>(*this))->remove_MapChanged(cookie));
+    check_hresult((*(abi<IObservableMap<K, V>> **)&static_cast<const IObservableMap<K, V> &>(static_cast<const D &>(*this)))->remove_MapChanged(cookie));
 }
 
 template <typename D, typename T>
 event_token impl_IObservableVector<D, T>::VectorChanged(const VectorChangedEventHandler<T> & handler) const
 {
     event_token cookie{};
-    check_hresult(static_cast<const IObservableVector<T> &>(static_cast<const D &>(*this))->add_VectorChanged(get(handler), &cookie));
+    check_hresult((*(abi<IObservableVector<T>> **)&static_cast<const IObservableVector<T> &>(static_cast<const D &>(*this)))->add_VectorChanged(get(handler), &cookie));
     return cookie;
 }
 
 template <typename D, typename T>
 void impl_IObservableVector<D, T>::VectorChanged(const event_token cookie) const
 {
-    check_hresult(static_cast<const IObservableVector<T> &>(static_cast<const D &>(*this))->remove_VectorChanged(cookie));
+    check_hresult((*(abi<IObservableVector<T>> **)&static_cast<const IObservableVector<T> &>(static_cast<const D &>(*this)))->remove_VectorChanged(cookie));
 }
 
 
@@ -1073,7 +1059,7 @@ template <typename K, typename V> template <typename O, typename M> MapChangedEv
 
 template <typename K, typename V> void MapChangedEventHandler<K, V>::operator()(const IObservableMap<K, V> & sender, const IMapChangedEventArgs<K> & args) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(args)));
+    check_hresult((*(abi<MapChangedEventHandler<K, V>> **)this)->abi_Invoke(get(sender), get(args)));
 }
 
 template <typename T> template <typename L> VectorChangedEventHandler<T>::VectorChangedEventHandler(L handler) :
@@ -1090,7 +1076,7 @@ template <typename T> template <typename O, typename M> VectorChangedEventHandle
 
 template <typename T> void VectorChangedEventHandler<T>::operator()(const IObservableVector<T> & sender, const IVectorChangedEventArgs & args) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(args)));
+    check_hresult((*(abi<VectorChangedEventHandler<T>> **)this)->abi_Invoke(get(sender), get(args)));
 }
 
 template <typename T, std::enable_if_t<!impl::has_GetAt<T>::value> * = nullptr>

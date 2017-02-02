@@ -104,7 +104,6 @@ struct IMicrosoftAccountMultiFactorAuthenticationManager :
     impl::consume<IMicrosoftAccountMultiFactorAuthenticationManager>
 {
     IMicrosoftAccountMultiFactorAuthenticationManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMicrosoftAccountMultiFactorAuthenticationManager>(m_ptr); }
 };
 
 struct IMicrosoftAccountMultiFactorAuthenticatorStatics :
@@ -112,7 +111,6 @@ struct IMicrosoftAccountMultiFactorAuthenticatorStatics :
     impl::consume<IMicrosoftAccountMultiFactorAuthenticatorStatics>
 {
     IMicrosoftAccountMultiFactorAuthenticatorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMicrosoftAccountMultiFactorAuthenticatorStatics>(m_ptr); }
 };
 
 struct IMicrosoftAccountMultiFactorGetSessionsResult :
@@ -120,7 +118,6 @@ struct IMicrosoftAccountMultiFactorGetSessionsResult :
     impl::consume<IMicrosoftAccountMultiFactorGetSessionsResult>
 {
     IMicrosoftAccountMultiFactorGetSessionsResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMicrosoftAccountMultiFactorGetSessionsResult>(m_ptr); }
 };
 
 struct IMicrosoftAccountMultiFactorOneTimeCodedInfo :
@@ -128,7 +125,6 @@ struct IMicrosoftAccountMultiFactorOneTimeCodedInfo :
     impl::consume<IMicrosoftAccountMultiFactorOneTimeCodedInfo>
 {
     IMicrosoftAccountMultiFactorOneTimeCodedInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMicrosoftAccountMultiFactorOneTimeCodedInfo>(m_ptr); }
 };
 
 struct IMicrosoftAccountMultiFactorSessionInfo :
@@ -136,7 +132,6 @@ struct IMicrosoftAccountMultiFactorSessionInfo :
     impl::consume<IMicrosoftAccountMultiFactorSessionInfo>
 {
     IMicrosoftAccountMultiFactorSessionInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMicrosoftAccountMultiFactorSessionInfo>(m_ptr); }
 };
 
 struct IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo :
@@ -144,7 +139,6 @@ struct IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo :
     impl::consume<IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo>
 {
     IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo>(m_ptr); }
 };
 
 }

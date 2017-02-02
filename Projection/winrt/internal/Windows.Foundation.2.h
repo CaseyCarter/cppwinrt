@@ -47,7 +47,6 @@ namespace Windows::Foundation {
 struct DeferralCompletedHandler : Windows::IUnknown
 {
     DeferralCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<DeferralCompletedHandler>(m_ptr); }
     template <typename L> DeferralCompletedHandler(L lambda);
     template <typename F> DeferralCompletedHandler (F * function);
     template <typename O, typename M> DeferralCompletedHandler(O * object, M method);
@@ -59,7 +58,6 @@ struct IClosable :
     impl::consume<IClosable>
 {
     IClosable(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IClosable>(m_ptr); }
 };
 
 struct IDeferral :
@@ -68,7 +66,6 @@ struct IDeferral :
     impl::require<IDeferral, Windows::Foundation::IClosable>
 {
     IDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeferral>(m_ptr); }
 };
 
 struct IDeferralFactory :
@@ -76,7 +73,6 @@ struct IDeferralFactory :
     impl::consume<IDeferralFactory>
 {
     IDeferralFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeferralFactory>(m_ptr); }
 };
 
 struct IGetActivationFactory :
@@ -84,7 +80,6 @@ struct IGetActivationFactory :
     impl::consume<IGetActivationFactory>
 {
     IGetActivationFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGetActivationFactory>(m_ptr); }
 };
 
 struct IMemoryBuffer :
@@ -93,7 +88,6 @@ struct IMemoryBuffer :
     impl::require<IMemoryBuffer, Windows::Foundation::IClosable>
 {
     IMemoryBuffer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMemoryBuffer>(m_ptr); }
 };
 
 struct IMemoryBufferFactory :
@@ -101,7 +95,6 @@ struct IMemoryBufferFactory :
     impl::consume<IMemoryBufferFactory>
 {
     IMemoryBufferFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMemoryBufferFactory>(m_ptr); }
 };
 
 struct IMemoryBufferReference :
@@ -110,7 +103,6 @@ struct IMemoryBufferReference :
     impl::require<IMemoryBufferReference, Windows::Foundation::IClosable>
 {
     IMemoryBufferReference(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMemoryBufferReference>(m_ptr); }
 };
 
 struct IPropertyValue :
@@ -118,7 +110,6 @@ struct IPropertyValue :
     impl::consume<IPropertyValue>
 {
     IPropertyValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPropertyValue>(m_ptr); }
 };
 
 struct IPropertyValueStatics :
@@ -126,7 +117,6 @@ struct IPropertyValueStatics :
     impl::consume<IPropertyValueStatics>
 {
     IPropertyValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPropertyValueStatics>(m_ptr); }
 };
 
 struct IStringable :
@@ -134,7 +124,6 @@ struct IStringable :
     impl::consume<IStringable>
 {
     IStringable(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStringable>(m_ptr); }
 };
 
 struct IUriEscapeStatics :
@@ -142,7 +131,6 @@ struct IUriEscapeStatics :
     impl::consume<IUriEscapeStatics>
 {
     IUriEscapeStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUriEscapeStatics>(m_ptr); }
 };
 
 struct IUriRuntimeClass :
@@ -150,7 +138,6 @@ struct IUriRuntimeClass :
     impl::consume<IUriRuntimeClass>
 {
     IUriRuntimeClass(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUriRuntimeClass>(m_ptr); }
 };
 
 struct IUriRuntimeClassFactory :
@@ -158,7 +145,6 @@ struct IUriRuntimeClassFactory :
     impl::consume<IUriRuntimeClassFactory>
 {
     IUriRuntimeClassFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUriRuntimeClassFactory>(m_ptr); }
 };
 
 struct IUriRuntimeClassWithAbsoluteCanonicalUri :
@@ -166,7 +152,6 @@ struct IUriRuntimeClassWithAbsoluteCanonicalUri :
     impl::consume<IUriRuntimeClassWithAbsoluteCanonicalUri>
 {
     IUriRuntimeClassWithAbsoluteCanonicalUri(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUriRuntimeClassWithAbsoluteCanonicalUri>(m_ptr); }
 };
 
 struct IWwwFormUrlDecoderEntry :
@@ -174,7 +159,6 @@ struct IWwwFormUrlDecoderEntry :
     impl::consume<IWwwFormUrlDecoderEntry>
 {
     IWwwFormUrlDecoderEntry(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWwwFormUrlDecoderEntry>(m_ptr); }
 };
 
 struct IWwwFormUrlDecoderRuntimeClass :
@@ -183,7 +167,6 @@ struct IWwwFormUrlDecoderRuntimeClass :
     impl::require<IWwwFormUrlDecoderRuntimeClass, Windows::Foundation::Collections::IIterable<Windows::Foundation::IWwwFormUrlDecoderEntry>, Windows::Foundation::Collections::IVectorView<Windows::Foundation::IWwwFormUrlDecoderEntry>>
 {
     IWwwFormUrlDecoderRuntimeClass(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWwwFormUrlDecoderRuntimeClass>(m_ptr); }
 };
 
 struct IWwwFormUrlDecoderRuntimeClassFactory :
@@ -191,7 +174,6 @@ struct IWwwFormUrlDecoderRuntimeClassFactory :
     impl::consume<IWwwFormUrlDecoderRuntimeClassFactory>
 {
     IWwwFormUrlDecoderRuntimeClassFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWwwFormUrlDecoderRuntimeClassFactory>(m_ptr); }
 };
 
 }

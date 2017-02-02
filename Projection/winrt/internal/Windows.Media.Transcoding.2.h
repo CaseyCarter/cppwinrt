@@ -44,7 +44,6 @@ struct IMediaTranscoder :
     impl::consume<IMediaTranscoder>
 {
     IMediaTranscoder(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaTranscoder>(m_ptr); }
 };
 
 struct IMediaTranscoder2 :
@@ -52,7 +51,6 @@ struct IMediaTranscoder2 :
     impl::consume<IMediaTranscoder2>
 {
     IMediaTranscoder2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaTranscoder2>(m_ptr); }
 };
 
 struct IPrepareTranscodeResult :
@@ -60,7 +58,6 @@ struct IPrepareTranscodeResult :
     impl::consume<IPrepareTranscodeResult>
 {
     IPrepareTranscodeResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrepareTranscodeResult>(m_ptr); }
 };
 
 }

@@ -68,21 +68,21 @@ namespace Windows::Perception {
 template <typename D> Windows::Foundation::DateTime impl_IPerceptionTimestamp<D>::TargetTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IPerceptionTimestamp &>(static_cast<const D &>(*this))->get_TargetTime(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionTimestamp)->get_TargetTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IPerceptionTimestamp<D>::PredictionAmount() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IPerceptionTimestamp &>(static_cast<const D &>(*this))->get_PredictionAmount(put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionTimestamp)->get_PredictionAmount(put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::PerceptionTimestamp impl_IPerceptionTimestampHelperStatics<D>::FromHistoricalTargetTime(const Windows::Foundation::DateTime & targetTime) const
 {
     Windows::Perception::PerceptionTimestamp value { nullptr };
-    check_hresult(static_cast<const IPerceptionTimestampHelperStatics &>(static_cast<const D &>(*this))->abi_FromHistoricalTargetTime(get(targetTime), put(value)));
+    check_hresult(WINRT_SHIM(IPerceptionTimestampHelperStatics)->abi_FromHistoricalTargetTime(get(targetTime), put(value)));
     return value;
 }
 

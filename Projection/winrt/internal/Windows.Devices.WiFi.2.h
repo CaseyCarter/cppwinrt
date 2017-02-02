@@ -119,7 +119,6 @@ struct IWiFiAdapter :
     impl::consume<IWiFiAdapter>
 {
     IWiFiAdapter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiAdapter>(m_ptr); }
 };
 
 struct IWiFiAdapterStatics :
@@ -127,7 +126,6 @@ struct IWiFiAdapterStatics :
     impl::consume<IWiFiAdapterStatics>
 {
     IWiFiAdapterStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiAdapterStatics>(m_ptr); }
 };
 
 struct IWiFiAvailableNetwork :
@@ -135,7 +133,6 @@ struct IWiFiAvailableNetwork :
     impl::consume<IWiFiAvailableNetwork>
 {
     IWiFiAvailableNetwork(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiAvailableNetwork>(m_ptr); }
 };
 
 struct IWiFiConnectionResult :
@@ -143,7 +140,6 @@ struct IWiFiConnectionResult :
     impl::consume<IWiFiConnectionResult>
 {
     IWiFiConnectionResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiConnectionResult>(m_ptr); }
 };
 
 struct IWiFiNetworkReport :
@@ -151,7 +147,6 @@ struct IWiFiNetworkReport :
     impl::consume<IWiFiNetworkReport>
 {
     IWiFiNetworkReport(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWiFiNetworkReport>(m_ptr); }
 };
 
 }

@@ -65,7 +65,6 @@ struct ICameraIntrinsics :
     impl::consume<ICameraIntrinsics>
 {
     ICameraIntrinsics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICameraIntrinsics>(m_ptr); }
 };
 
 struct ICameraIntrinsics2 :
@@ -73,7 +72,6 @@ struct ICameraIntrinsics2 :
     impl::consume<ICameraIntrinsics2>
 {
     ICameraIntrinsics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICameraIntrinsics2>(m_ptr); }
 };
 
 struct ICameraIntrinsicsFactory :
@@ -81,7 +79,6 @@ struct ICameraIntrinsicsFactory :
     impl::consume<ICameraIntrinsicsFactory>
 {
     ICameraIntrinsicsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICameraIntrinsicsFactory>(m_ptr); }
 };
 
 struct IDepthCorrelatedCoordinateMapper :
@@ -90,7 +87,6 @@ struct IDepthCorrelatedCoordinateMapper :
     impl::require<IDepthCorrelatedCoordinateMapper, Windows::Foundation::IClosable>
 {
     IDepthCorrelatedCoordinateMapper(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDepthCorrelatedCoordinateMapper>(m_ptr); }
 };
 
 struct IFrameControlCapabilities :
@@ -98,7 +94,6 @@ struct IFrameControlCapabilities :
     impl::consume<IFrameControlCapabilities>
 {
     IFrameControlCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameControlCapabilities>(m_ptr); }
 };
 
 struct IFrameControlCapabilities2 :
@@ -106,7 +101,6 @@ struct IFrameControlCapabilities2 :
     impl::consume<IFrameControlCapabilities2>
 {
     IFrameControlCapabilities2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameControlCapabilities2>(m_ptr); }
 };
 
 struct IFrameController :
@@ -114,7 +108,6 @@ struct IFrameController :
     impl::consume<IFrameController>
 {
     IFrameController(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameController>(m_ptr); }
 };
 
 struct IFrameController2 :
@@ -122,7 +115,6 @@ struct IFrameController2 :
     impl::consume<IFrameController2>
 {
     IFrameController2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameController2>(m_ptr); }
 };
 
 struct IFrameExposureCapabilities :
@@ -130,7 +122,6 @@ struct IFrameExposureCapabilities :
     impl::consume<IFrameExposureCapabilities>
 {
     IFrameExposureCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameExposureCapabilities>(m_ptr); }
 };
 
 struct IFrameExposureCompensationCapabilities :
@@ -138,7 +129,6 @@ struct IFrameExposureCompensationCapabilities :
     impl::consume<IFrameExposureCompensationCapabilities>
 {
     IFrameExposureCompensationCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameExposureCompensationCapabilities>(m_ptr); }
 };
 
 struct IFrameExposureCompensationControl :
@@ -146,7 +136,6 @@ struct IFrameExposureCompensationControl :
     impl::consume<IFrameExposureCompensationControl>
 {
     IFrameExposureCompensationControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameExposureCompensationControl>(m_ptr); }
 };
 
 struct IFrameExposureControl :
@@ -154,7 +143,6 @@ struct IFrameExposureControl :
     impl::consume<IFrameExposureControl>
 {
     IFrameExposureControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameExposureControl>(m_ptr); }
 };
 
 struct IFrameFlashCapabilities :
@@ -162,7 +150,6 @@ struct IFrameFlashCapabilities :
     impl::consume<IFrameFlashCapabilities>
 {
     IFrameFlashCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameFlashCapabilities>(m_ptr); }
 };
 
 struct IFrameFlashControl :
@@ -170,7 +157,6 @@ struct IFrameFlashControl :
     impl::consume<IFrameFlashControl>
 {
     IFrameFlashControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameFlashControl>(m_ptr); }
 };
 
 struct IFrameFocusCapabilities :
@@ -178,7 +164,6 @@ struct IFrameFocusCapabilities :
     impl::consume<IFrameFocusCapabilities>
 {
     IFrameFocusCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameFocusCapabilities>(m_ptr); }
 };
 
 struct IFrameFocusControl :
@@ -186,7 +171,6 @@ struct IFrameFocusControl :
     impl::consume<IFrameFocusControl>
 {
     IFrameFocusControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameFocusControl>(m_ptr); }
 };
 
 struct IFrameIsoSpeedCapabilities :
@@ -194,7 +178,6 @@ struct IFrameIsoSpeedCapabilities :
     impl::consume<IFrameIsoSpeedCapabilities>
 {
     IFrameIsoSpeedCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameIsoSpeedCapabilities>(m_ptr); }
 };
 
 struct IFrameIsoSpeedControl :
@@ -202,7 +185,6 @@ struct IFrameIsoSpeedControl :
     impl::consume<IFrameIsoSpeedControl>
 {
     IFrameIsoSpeedControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameIsoSpeedControl>(m_ptr); }
 };
 
 struct IVariablePhotoSequenceController :
@@ -210,7 +192,6 @@ struct IVariablePhotoSequenceController :
     impl::consume<IVariablePhotoSequenceController>
 {
     IVariablePhotoSequenceController(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVariablePhotoSequenceController>(m_ptr); }
 };
 
 }

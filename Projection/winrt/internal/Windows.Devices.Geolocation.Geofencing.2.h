@@ -69,7 +69,6 @@ struct IGeofence :
     impl::consume<IGeofence>
 {
     IGeofence(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeofence>(m_ptr); }
 };
 
 struct IGeofenceFactory :
@@ -77,7 +76,6 @@ struct IGeofenceFactory :
     impl::consume<IGeofenceFactory>
 {
     IGeofenceFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeofenceFactory>(m_ptr); }
 };
 
 struct IGeofenceMonitor :
@@ -85,7 +83,6 @@ struct IGeofenceMonitor :
     impl::consume<IGeofenceMonitor>
 {
     IGeofenceMonitor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeofenceMonitor>(m_ptr); }
 };
 
 struct IGeofenceMonitorStatics :
@@ -93,7 +90,6 @@ struct IGeofenceMonitorStatics :
     impl::consume<IGeofenceMonitorStatics>
 {
     IGeofenceMonitorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeofenceMonitorStatics>(m_ptr); }
 };
 
 struct IGeofenceStateChangeReport :
@@ -101,7 +97,6 @@ struct IGeofenceStateChangeReport :
     impl::consume<IGeofenceStateChangeReport>
 {
     IGeofenceStateChangeReport(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeofenceStateChangeReport>(m_ptr); }
 };
 
 }

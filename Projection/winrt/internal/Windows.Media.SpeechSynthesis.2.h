@@ -76,7 +76,6 @@ struct IInstalledVoicesStatic :
     impl::consume<IInstalledVoicesStatic>
 {
     IInstalledVoicesStatic(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInstalledVoicesStatic>(m_ptr); }
 };
 
 struct ISpeechSynthesisStream :
@@ -85,7 +84,6 @@ struct ISpeechSynthesisStream :
     impl::require<ISpeechSynthesisStream, Windows::Foundation::IClosable, Windows::Storage::Streams::IContentTypeProvider, Windows::Storage::Streams::IInputStream, Windows::Storage::Streams::IOutputStream, Windows::Storage::Streams::IRandomAccessStream, Windows::Storage::Streams::IRandomAccessStreamWithContentType>
 {
     ISpeechSynthesisStream(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechSynthesisStream>(m_ptr); }
 };
 
 struct ISpeechSynthesizer :
@@ -93,7 +91,6 @@ struct ISpeechSynthesizer :
     impl::consume<ISpeechSynthesizer>
 {
     ISpeechSynthesizer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechSynthesizer>(m_ptr); }
 };
 
 struct IVoiceInformation :
@@ -101,7 +98,6 @@ struct IVoiceInformation :
     impl::consume<IVoiceInformation>
 {
     IVoiceInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVoiceInformation>(m_ptr); }
 };
 
 }

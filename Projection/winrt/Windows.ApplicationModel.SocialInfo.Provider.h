@@ -310,123 +310,123 @@ namespace Windows::ApplicationModel::SocialInfo::Provider {
 template <typename D> hstring impl_ISocialFeedUpdater<D>::OwnerRemoteId() const
 {
     hstring value;
-    check_hresult(static_cast<const ISocialFeedUpdater &>(static_cast<const D &>(*this))->get_OwnerRemoteId(put(value)));
+    check_hresult(WINRT_SHIM(ISocialFeedUpdater)->get_OwnerRemoteId(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::SocialInfo::SocialFeedKind impl_ISocialFeedUpdater<D>::Kind() const
 {
     Windows::ApplicationModel::SocialInfo::SocialFeedKind value {};
-    check_hresult(static_cast<const ISocialFeedUpdater &>(static_cast<const D &>(*this))->get_Kind(&value));
+    check_hresult(WINRT_SHIM(ISocialFeedUpdater)->get_Kind(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::SocialInfo::SocialFeedItem> impl_ISocialFeedUpdater<D>::Items() const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::SocialInfo::SocialFeedItem> value;
-    check_hresult(static_cast<const ISocialFeedUpdater &>(static_cast<const D &>(*this))->get_Items(put(value)));
+    check_hresult(WINRT_SHIM(ISocialFeedUpdater)->get_Items(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ISocialFeedUpdater<D>::CommitAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const ISocialFeedUpdater &>(static_cast<const D &>(*this))->abi_CommitAsync(put(operation)));
+    check_hresult(WINRT_SHIM(ISocialFeedUpdater)->abi_CommitAsync(put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_ISocialDashboardItemUpdater<D>::OwnerRemoteId() const
 {
     hstring value;
-    check_hresult(static_cast<const ISocialDashboardItemUpdater &>(static_cast<const D &>(*this))->get_OwnerRemoteId(put(value)));
+    check_hresult(WINRT_SHIM(ISocialDashboardItemUpdater)->get_OwnerRemoteId(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::SocialInfo::SocialFeedContent impl_ISocialDashboardItemUpdater<D>::Content() const
 {
     Windows::ApplicationModel::SocialInfo::SocialFeedContent value { nullptr };
-    check_hresult(static_cast<const ISocialDashboardItemUpdater &>(static_cast<const D &>(*this))->get_Content(put(value)));
+    check_hresult(WINRT_SHIM(ISocialDashboardItemUpdater)->get_Content(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISocialDashboardItemUpdater<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const ISocialDashboardItemUpdater &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(ISocialDashboardItemUpdater)->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialDashboardItemUpdater<D>::Timestamp(const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(static_cast<const ISocialDashboardItemUpdater &>(static_cast<const D &>(*this))->put_Timestamp(get(value)));
+    check_hresult(WINRT_SHIM(ISocialDashboardItemUpdater)->put_Timestamp(get(value)));
 }
 
 template <typename D> void impl_ISocialDashboardItemUpdater<D>::Thumbnail(const Windows::ApplicationModel::SocialInfo::SocialItemThumbnail & value) const
 {
-    check_hresult(static_cast<const ISocialDashboardItemUpdater &>(static_cast<const D &>(*this))->put_Thumbnail(get(value)));
+    check_hresult(WINRT_SHIM(ISocialDashboardItemUpdater)->put_Thumbnail(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::SocialInfo::SocialItemThumbnail impl_ISocialDashboardItemUpdater<D>::Thumbnail() const
 {
     Windows::ApplicationModel::SocialInfo::SocialItemThumbnail value { nullptr };
-    check_hresult(static_cast<const ISocialDashboardItemUpdater &>(static_cast<const D &>(*this))->get_Thumbnail(put(value)));
+    check_hresult(WINRT_SHIM(ISocialDashboardItemUpdater)->get_Thumbnail(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ISocialDashboardItemUpdater<D>::CommitAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const ISocialDashboardItemUpdater &>(static_cast<const D &>(*this))->abi_CommitAsync(put(operation)));
+    check_hresult(WINRT_SHIM(ISocialDashboardItemUpdater)->abi_CommitAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISocialDashboardItemUpdater<D>::TargetUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISocialDashboardItemUpdater &>(static_cast<const D &>(*this))->get_TargetUri(put(value)));
+    check_hresult(WINRT_SHIM(ISocialDashboardItemUpdater)->get_TargetUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialDashboardItemUpdater<D>::TargetUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISocialDashboardItemUpdater &>(static_cast<const D &>(*this))->put_TargetUri(get(value)));
+    check_hresult(WINRT_SHIM(ISocialDashboardItemUpdater)->put_TargetUri(get(value)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater> impl_ISocialInfoProviderManagerStatics<D>::CreateSocialFeedUpdaterAsync(Windows::ApplicationModel::SocialInfo::SocialFeedKind kind, Windows::ApplicationModel::SocialInfo::SocialFeedUpdateMode mode, hstring_ref ownerRemoteId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater> operation;
-    check_hresult(static_cast<const ISocialInfoProviderManagerStatics &>(static_cast<const D &>(*this))->abi_CreateSocialFeedUpdaterAsync(kind, mode, get(ownerRemoteId), put(operation)));
+    check_hresult(WINRT_SHIM(ISocialInfoProviderManagerStatics)->abi_CreateSocialFeedUpdaterAsync(kind, mode, get(ownerRemoteId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater> impl_ISocialInfoProviderManagerStatics<D>::CreateDashboardItemUpdaterAsync(hstring_ref ownerRemoteId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater> operation;
-    check_hresult(static_cast<const ISocialInfoProviderManagerStatics &>(static_cast<const D &>(*this))->abi_CreateDashboardItemUpdaterAsync(get(ownerRemoteId), put(operation)));
+    check_hresult(WINRT_SHIM(ISocialInfoProviderManagerStatics)->abi_CreateDashboardItemUpdaterAsync(get(ownerRemoteId), put(operation)));
     return operation;
 }
 
 template <typename D> void impl_ISocialInfoProviderManagerStatics<D>::UpdateBadgeCountValue(hstring_ref itemRemoteId, int32_t newCount) const
 {
-    check_hresult(static_cast<const ISocialInfoProviderManagerStatics &>(static_cast<const D &>(*this))->abi_UpdateBadgeCountValue(get(itemRemoteId), newCount));
+    check_hresult(WINRT_SHIM(ISocialInfoProviderManagerStatics)->abi_UpdateBadgeCountValue(get(itemRemoteId), newCount));
 }
 
 template <typename D> void impl_ISocialInfoProviderManagerStatics<D>::ReportNewContentAvailable(hstring_ref contactRemoteId, Windows::ApplicationModel::SocialInfo::SocialFeedKind kind) const
 {
-    check_hresult(static_cast<const ISocialInfoProviderManagerStatics &>(static_cast<const D &>(*this))->abi_ReportNewContentAvailable(get(contactRemoteId), kind));
+    check_hresult(WINRT_SHIM(ISocialInfoProviderManagerStatics)->abi_ReportNewContentAvailable(get(contactRemoteId), kind));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISocialInfoProviderManagerStatics<D>::ProvisionAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const ISocialInfoProviderManagerStatics &>(static_cast<const D &>(*this))->abi_ProvisionAsync(put(operation)));
+    check_hresult(WINRT_SHIM(ISocialInfoProviderManagerStatics)->abi_ProvisionAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ISocialInfoProviderManagerStatics<D>::DeprovisionAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const ISocialInfoProviderManagerStatics &>(static_cast<const D &>(*this))->abi_DeprovisionAsync(put(operation)));
+    check_hresult(WINRT_SHIM(ISocialInfoProviderManagerStatics)->abi_DeprovisionAsync(put(operation)));
     return operation;
 }
 

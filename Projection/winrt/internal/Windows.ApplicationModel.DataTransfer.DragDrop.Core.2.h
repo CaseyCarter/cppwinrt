@@ -34,7 +34,6 @@ struct ICoreDragDropManager :
     impl::consume<ICoreDragDropManager>
 {
     ICoreDragDropManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreDragDropManager>(m_ptr); }
 };
 
 struct ICoreDragDropManagerStatics :
@@ -42,7 +41,6 @@ struct ICoreDragDropManagerStatics :
     impl::consume<ICoreDragDropManagerStatics>
 {
     ICoreDragDropManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreDragDropManagerStatics>(m_ptr); }
 };
 
 struct ICoreDragInfo :
@@ -50,7 +48,6 @@ struct ICoreDragInfo :
     impl::consume<ICoreDragInfo>
 {
     ICoreDragInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreDragInfo>(m_ptr); }
 };
 
 struct ICoreDragInfo2 :
@@ -59,7 +56,6 @@ struct ICoreDragInfo2 :
     impl::require<ICoreDragInfo2, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragInfo>
 {
     ICoreDragInfo2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreDragInfo2>(m_ptr); }
 };
 
 struct ICoreDragOperation :
@@ -67,7 +63,6 @@ struct ICoreDragOperation :
     impl::consume<ICoreDragOperation>
 {
     ICoreDragOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreDragOperation>(m_ptr); }
 };
 
 struct ICoreDragOperation2 :
@@ -76,7 +71,6 @@ struct ICoreDragOperation2 :
     impl::require<ICoreDragOperation2, Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragOperation>
 {
     ICoreDragOperation2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreDragOperation2>(m_ptr); }
 };
 
 struct ICoreDragUIOverride :
@@ -84,7 +78,6 @@ struct ICoreDragUIOverride :
     impl::consume<ICoreDragUIOverride>
 {
     ICoreDragUIOverride(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreDragUIOverride>(m_ptr); }
 };
 
 struct ICoreDropOperationTarget :
@@ -92,7 +85,6 @@ struct ICoreDropOperationTarget :
     impl::consume<ICoreDropOperationTarget>
 {
     ICoreDropOperationTarget(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreDropOperationTarget>(m_ptr); }
 };
 
 struct ICoreDropOperationTargetRequestedEventArgs :
@@ -100,7 +92,6 @@ struct ICoreDropOperationTargetRequestedEventArgs :
     impl::consume<ICoreDropOperationTargetRequestedEventArgs>
 {
     ICoreDropOperationTargetRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreDropOperationTargetRequestedEventArgs>(m_ptr); }
 };
 
 }

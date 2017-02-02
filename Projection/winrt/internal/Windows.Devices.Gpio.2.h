@@ -75,7 +75,6 @@ struct IGpioController :
     impl::consume<IGpioController>
 {
     IGpioController(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGpioController>(m_ptr); }
 };
 
 struct IGpioControllerStatics :
@@ -83,7 +82,6 @@ struct IGpioControllerStatics :
     impl::consume<IGpioControllerStatics>
 {
     IGpioControllerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGpioControllerStatics>(m_ptr); }
 };
 
 struct IGpioControllerStatics2 :
@@ -91,7 +89,6 @@ struct IGpioControllerStatics2 :
     impl::consume<IGpioControllerStatics2>
 {
     IGpioControllerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGpioControllerStatics2>(m_ptr); }
 };
 
 struct IGpioPin :
@@ -100,7 +97,6 @@ struct IGpioPin :
     impl::require<IGpioPin, Windows::Foundation::IClosable>
 {
     IGpioPin(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGpioPin>(m_ptr); }
 };
 
 struct IGpioPinValueChangedEventArgs :
@@ -108,7 +104,6 @@ struct IGpioPinValueChangedEventArgs :
     impl::consume<IGpioPinValueChangedEventArgs>
 {
     IGpioPinValueChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGpioPinValueChangedEventArgs>(m_ptr); }
 };
 
 }

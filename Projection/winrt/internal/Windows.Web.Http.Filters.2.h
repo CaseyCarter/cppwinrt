@@ -91,7 +91,6 @@ struct IHttpBaseProtocolFilter :
     impl::require<IHttpBaseProtocolFilter, Windows::Foundation::IClosable, Windows::Web::Http::Filters::IHttpFilter>
 {
     IHttpBaseProtocolFilter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpBaseProtocolFilter>(m_ptr); }
 };
 
 struct IHttpBaseProtocolFilter2 :
@@ -100,7 +99,6 @@ struct IHttpBaseProtocolFilter2 :
     impl::require<IHttpBaseProtocolFilter2, Windows::Foundation::IClosable, Windows::Web::Http::Filters::IHttpFilter>
 {
     IHttpBaseProtocolFilter2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpBaseProtocolFilter2>(m_ptr); }
 };
 
 struct IHttpBaseProtocolFilter3 :
@@ -109,7 +107,6 @@ struct IHttpBaseProtocolFilter3 :
     impl::require<IHttpBaseProtocolFilter3, Windows::Foundation::IClosable, Windows::Web::Http::Filters::IHttpFilter>
 {
     IHttpBaseProtocolFilter3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpBaseProtocolFilter3>(m_ptr); }
 };
 
 struct IHttpBaseProtocolFilter4 :
@@ -118,7 +115,6 @@ struct IHttpBaseProtocolFilter4 :
     impl::require<IHttpBaseProtocolFilter4, Windows::Foundation::IClosable, Windows::Web::Http::Filters::IHttpFilter>
 {
     IHttpBaseProtocolFilter4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpBaseProtocolFilter4>(m_ptr); }
 };
 
 struct IHttpCacheControl :
@@ -126,7 +122,6 @@ struct IHttpCacheControl :
     impl::consume<IHttpCacheControl>
 {
     IHttpCacheControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpCacheControl>(m_ptr); }
 };
 
 struct IHttpFilter :
@@ -135,7 +130,6 @@ struct IHttpFilter :
     impl::require<IHttpFilter, Windows::Foundation::IClosable>
 {
     IHttpFilter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpFilter>(m_ptr); }
 };
 
 struct IHttpServerCustomValidationRequestedEventArgs :
@@ -143,7 +137,6 @@ struct IHttpServerCustomValidationRequestedEventArgs :
     impl::consume<IHttpServerCustomValidationRequestedEventArgs>
 {
     IHttpServerCustomValidationRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpServerCustomValidationRequestedEventArgs>(m_ptr); }
 };
 
 }

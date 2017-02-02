@@ -319,7 +319,6 @@ struct IAppMemoryReport :
     impl::consume<IAppMemoryReport>
 {
     IAppMemoryReport(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppMemoryReport>(m_ptr); }
 };
 
 struct IAppMemoryUsageLimitChangingEventArgs :
@@ -327,7 +326,6 @@ struct IAppMemoryUsageLimitChangingEventArgs :
     impl::consume<IAppMemoryUsageLimitChangingEventArgs>
 {
     IAppMemoryUsageLimitChangingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppMemoryUsageLimitChangingEventArgs>(m_ptr); }
 };
 
 struct IFolderLauncherOptions :
@@ -335,7 +333,6 @@ struct IFolderLauncherOptions :
     impl::consume<IFolderLauncherOptions>
 {
     IFolderLauncherOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFolderLauncherOptions>(m_ptr); }
 };
 
 struct IKnownUserPropertiesStatics :
@@ -343,7 +340,6 @@ struct IKnownUserPropertiesStatics :
     impl::consume<IKnownUserPropertiesStatics>
 {
     IKnownUserPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownUserPropertiesStatics>(m_ptr); }
 };
 
 struct ILaunchUriResult :
@@ -351,7 +347,6 @@ struct ILaunchUriResult :
     impl::consume<ILaunchUriResult>
 {
     ILaunchUriResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILaunchUriResult>(m_ptr); }
 };
 
 struct ILauncherOptions :
@@ -359,7 +354,6 @@ struct ILauncherOptions :
     impl::consume<ILauncherOptions>
 {
     ILauncherOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILauncherOptions>(m_ptr); }
 };
 
 struct ILauncherOptions2 :
@@ -367,7 +361,6 @@ struct ILauncherOptions2 :
     impl::consume<ILauncherOptions2>
 {
     ILauncherOptions2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILauncherOptions2>(m_ptr); }
 };
 
 struct ILauncherOptions3 :
@@ -375,7 +368,6 @@ struct ILauncherOptions3 :
     impl::consume<ILauncherOptions3>
 {
     ILauncherOptions3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILauncherOptions3>(m_ptr); }
 };
 
 struct ILauncherStatics :
@@ -383,7 +375,6 @@ struct ILauncherStatics :
     impl::consume<ILauncherStatics>
 {
     ILauncherStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILauncherStatics>(m_ptr); }
 };
 
 struct ILauncherStatics2 :
@@ -391,7 +382,6 @@ struct ILauncherStatics2 :
     impl::consume<ILauncherStatics2>
 {
     ILauncherStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILauncherStatics2>(m_ptr); }
 };
 
 struct ILauncherStatics3 :
@@ -399,7 +389,6 @@ struct ILauncherStatics3 :
     impl::consume<ILauncherStatics3>
 {
     ILauncherStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILauncherStatics3>(m_ptr); }
 };
 
 struct ILauncherStatics4 :
@@ -407,7 +396,6 @@ struct ILauncherStatics4 :
     impl::consume<ILauncherStatics4>
 {
     ILauncherStatics4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILauncherStatics4>(m_ptr); }
 };
 
 struct ILauncherUIOptions :
@@ -415,7 +403,6 @@ struct ILauncherUIOptions :
     impl::consume<ILauncherUIOptions>
 {
     ILauncherUIOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILauncherUIOptions>(m_ptr); }
 };
 
 struct ILauncherViewOptions :
@@ -423,7 +410,6 @@ struct ILauncherViewOptions :
     impl::consume<ILauncherViewOptions>
 {
     ILauncherViewOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILauncherViewOptions>(m_ptr); }
 };
 
 struct IMemoryManagerStatics :
@@ -431,7 +417,6 @@ struct IMemoryManagerStatics :
     impl::consume<IMemoryManagerStatics>
 {
     IMemoryManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMemoryManagerStatics>(m_ptr); }
 };
 
 struct IMemoryManagerStatics2 :
@@ -439,7 +424,6 @@ struct IMemoryManagerStatics2 :
     impl::consume<IMemoryManagerStatics2>
 {
     IMemoryManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMemoryManagerStatics2>(m_ptr); }
 };
 
 struct IMemoryManagerStatics3 :
@@ -447,7 +431,6 @@ struct IMemoryManagerStatics3 :
     impl::consume<IMemoryManagerStatics3>
 {
     IMemoryManagerStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMemoryManagerStatics3>(m_ptr); }
 };
 
 struct IProcessMemoryReport :
@@ -455,7 +438,6 @@ struct IProcessMemoryReport :
     impl::consume<IProcessMemoryReport>
 {
     IProcessMemoryReport(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProcessMemoryReport>(m_ptr); }
 };
 
 struct IProtocolForResultsOperation :
@@ -463,7 +445,6 @@ struct IProtocolForResultsOperation :
     impl::consume<IProtocolForResultsOperation>
 {
     IProtocolForResultsOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProtocolForResultsOperation>(m_ptr); }
 };
 
 struct IRemoteLauncherOptions :
@@ -471,7 +452,6 @@ struct IRemoteLauncherOptions :
     impl::consume<IRemoteLauncherOptions>
 {
     IRemoteLauncherOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteLauncherOptions>(m_ptr); }
 };
 
 struct IRemoteLauncherStatics :
@@ -479,7 +459,6 @@ struct IRemoteLauncherStatics :
     impl::consume<IRemoteLauncherStatics>
 {
     IRemoteLauncherStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteLauncherStatics>(m_ptr); }
 };
 
 struct IUser :
@@ -487,7 +466,6 @@ struct IUser :
     impl::consume<IUser>
 {
     IUser(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUser>(m_ptr); }
 };
 
 struct IUserAuthenticationStatusChangeDeferral :
@@ -495,7 +473,6 @@ struct IUserAuthenticationStatusChangeDeferral :
     impl::consume<IUserAuthenticationStatusChangeDeferral>
 {
     IUserAuthenticationStatusChangeDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserAuthenticationStatusChangeDeferral>(m_ptr); }
 };
 
 struct IUserAuthenticationStatusChangingEventArgs :
@@ -503,7 +480,6 @@ struct IUserAuthenticationStatusChangingEventArgs :
     impl::consume<IUserAuthenticationStatusChangingEventArgs>
 {
     IUserAuthenticationStatusChangingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserAuthenticationStatusChangingEventArgs>(m_ptr); }
 };
 
 struct IUserChangedEventArgs :
@@ -511,7 +487,6 @@ struct IUserChangedEventArgs :
     impl::consume<IUserChangedEventArgs>
 {
     IUserChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserChangedEventArgs>(m_ptr); }
 };
 
 struct IUserDeviceAssociationChangedEventArgs :
@@ -519,7 +494,6 @@ struct IUserDeviceAssociationChangedEventArgs :
     impl::consume<IUserDeviceAssociationChangedEventArgs>
 {
     IUserDeviceAssociationChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDeviceAssociationChangedEventArgs>(m_ptr); }
 };
 
 struct IUserDeviceAssociationStatics :
@@ -527,7 +501,6 @@ struct IUserDeviceAssociationStatics :
     impl::consume<IUserDeviceAssociationStatics>
 {
     IUserDeviceAssociationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDeviceAssociationStatics>(m_ptr); }
 };
 
 struct IUserPicker :
@@ -535,7 +508,6 @@ struct IUserPicker :
     impl::consume<IUserPicker>
 {
     IUserPicker(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserPicker>(m_ptr); }
 };
 
 struct IUserPickerStatics :
@@ -543,7 +515,6 @@ struct IUserPickerStatics :
     impl::consume<IUserPickerStatics>
 {
     IUserPickerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserPickerStatics>(m_ptr); }
 };
 
 struct IUserStatics :
@@ -551,7 +522,6 @@ struct IUserStatics :
     impl::consume<IUserStatics>
 {
     IUserStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserStatics>(m_ptr); }
 };
 
 struct IUserWatcher :
@@ -559,7 +529,6 @@ struct IUserWatcher :
     impl::consume<IUserWatcher>
 {
     IUserWatcher(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserWatcher>(m_ptr); }
 };
 
 }

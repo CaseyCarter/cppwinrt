@@ -34,7 +34,7 @@ template <typename O, typename M> RateChangedRoutedEventHandler::RateChangedRout
 
 inline void RateChangedRoutedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Media::RateChangedRoutedEventArgs & e) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<RateChangedRoutedEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
 }
 
 template <typename L> TimelineMarkerRoutedEventHandler::TimelineMarkerRoutedEventHandler(L lambda) :
@@ -51,7 +51,7 @@ template <typename O, typename M> TimelineMarkerRoutedEventHandler::TimelineMark
 
 inline void TimelineMarkerRoutedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Media::TimelineMarkerRoutedEventArgs & e) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<TimelineMarkerRoutedEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
 }
 
 }
@@ -4885,110 +4885,110 @@ namespace Windows::UI::Xaml::Media {
 template <typename D> Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> impl_IVisualTreeHelperStatics<D>::FindElementsInHostCoordinates(const Windows::Foundation::Point & intersectingPoint, const Windows::UI::Xaml::UIElement & subtree) const
 {
     Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> elements;
-    check_hresult(static_cast<const IVisualTreeHelperStatics &>(static_cast<const D &>(*this))->abi_FindElementsInHostCoordinatesPoint(get(intersectingPoint), get(subtree), put(elements)));
+    check_hresult(WINRT_SHIM(IVisualTreeHelperStatics)->abi_FindElementsInHostCoordinatesPoint(get(intersectingPoint), get(subtree), put(elements)));
     return elements;
 }
 
 template <typename D> Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> impl_IVisualTreeHelperStatics<D>::FindElementsInHostCoordinates(const Windows::Foundation::Rect & intersectingRect, const Windows::UI::Xaml::UIElement & subtree) const
 {
     Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> elements;
-    check_hresult(static_cast<const IVisualTreeHelperStatics &>(static_cast<const D &>(*this))->abi_FindElementsInHostCoordinatesRect(get(intersectingRect), get(subtree), put(elements)));
+    check_hresult(WINRT_SHIM(IVisualTreeHelperStatics)->abi_FindElementsInHostCoordinatesRect(get(intersectingRect), get(subtree), put(elements)));
     return elements;
 }
 
 template <typename D> Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> impl_IVisualTreeHelperStatics<D>::FindElementsInHostCoordinates(const Windows::Foundation::Point & intersectingPoint, const Windows::UI::Xaml::UIElement & subtree, bool includeAllElements) const
 {
     Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> elements;
-    check_hresult(static_cast<const IVisualTreeHelperStatics &>(static_cast<const D &>(*this))->abi_FindAllElementsInHostCoordinatesPoint(get(intersectingPoint), get(subtree), includeAllElements, put(elements)));
+    check_hresult(WINRT_SHIM(IVisualTreeHelperStatics)->abi_FindAllElementsInHostCoordinatesPoint(get(intersectingPoint), get(subtree), includeAllElements, put(elements)));
     return elements;
 }
 
 template <typename D> Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> impl_IVisualTreeHelperStatics<D>::FindElementsInHostCoordinates(const Windows::Foundation::Rect & intersectingRect, const Windows::UI::Xaml::UIElement & subtree, bool includeAllElements) const
 {
     Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> elements;
-    check_hresult(static_cast<const IVisualTreeHelperStatics &>(static_cast<const D &>(*this))->abi_FindAllElementsInHostCoordinatesRect(get(intersectingRect), get(subtree), includeAllElements, put(elements)));
+    check_hresult(WINRT_SHIM(IVisualTreeHelperStatics)->abi_FindAllElementsInHostCoordinatesRect(get(intersectingRect), get(subtree), includeAllElements, put(elements)));
     return elements;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyObject impl_IVisualTreeHelperStatics<D>::GetChild(const Windows::UI::Xaml::DependencyObject & reference, int32_t childIndex) const
 {
     Windows::UI::Xaml::DependencyObject child { nullptr };
-    check_hresult(static_cast<const IVisualTreeHelperStatics &>(static_cast<const D &>(*this))->abi_GetChild(get(reference), childIndex, put(child)));
+    check_hresult(WINRT_SHIM(IVisualTreeHelperStatics)->abi_GetChild(get(reference), childIndex, put(child)));
     return child;
 }
 
 template <typename D> int32_t impl_IVisualTreeHelperStatics<D>::GetChildrenCount(const Windows::UI::Xaml::DependencyObject & reference) const
 {
     int32_t count {};
-    check_hresult(static_cast<const IVisualTreeHelperStatics &>(static_cast<const D &>(*this))->abi_GetChildrenCount(get(reference), &count));
+    check_hresult(WINRT_SHIM(IVisualTreeHelperStatics)->abi_GetChildrenCount(get(reference), &count));
     return count;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyObject impl_IVisualTreeHelperStatics<D>::GetParent(const Windows::UI::Xaml::DependencyObject & reference) const
 {
     Windows::UI::Xaml::DependencyObject parent { nullptr };
-    check_hresult(static_cast<const IVisualTreeHelperStatics &>(static_cast<const D &>(*this))->abi_GetParent(get(reference), put(parent)));
+    check_hresult(WINRT_SHIM(IVisualTreeHelperStatics)->abi_GetParent(get(reference), put(parent)));
     return parent;
 }
 
 template <typename D> void impl_IVisualTreeHelperStatics<D>::DisconnectChildrenRecursive(const Windows::UI::Xaml::UIElement & element) const
 {
-    check_hresult(static_cast<const IVisualTreeHelperStatics &>(static_cast<const D &>(*this))->abi_DisconnectChildrenRecursive(get(element)));
+    check_hresult(WINRT_SHIM(IVisualTreeHelperStatics)->abi_DisconnectChildrenRecursive(get(element)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Primitives::Popup> impl_IVisualTreeHelperStatics2<D>::GetOpenPopups(const Windows::UI::Xaml::Window & window) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Primitives::Popup> popups;
-    check_hresult(static_cast<const IVisualTreeHelperStatics2 &>(static_cast<const D &>(*this))->abi_GetOpenPopups(get(window), put(popups)));
+    check_hresult(WINRT_SHIM(IVisualTreeHelperStatics2)->abi_GetOpenPopups(get(window), put(popups)));
     return popups;
 }
 
 template <typename D> Windows::Media::Playback::FailedMediaStreamKind impl_IPartialMediaFailureDetectedEventArgs<D>::StreamKind() const
 {
     Windows::Media::Playback::FailedMediaStreamKind value {};
-    check_hresult(static_cast<const IPartialMediaFailureDetectedEventArgs &>(static_cast<const D &>(*this))->get_StreamKind(&value));
+    check_hresult(WINRT_SHIM(IPartialMediaFailureDetectedEventArgs)->get_StreamKind(&value));
     return value;
 }
 
 template <typename D> HRESULT impl_IPartialMediaFailureDetectedEventArgs2<D>::ExtendedError() const
 {
     HRESULT value {};
-    check_hresult(static_cast<const IPartialMediaFailureDetectedEventArgs2 &>(static_cast<const D &>(*this))->get_ExtendedError(&value));
+    check_hresult(WINRT_SHIM(IPartialMediaFailureDetectedEventArgs2)->get_ExtendedError(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Matrix impl_IMatrixHelperStatics<D>::Identity() const
 {
     Windows::UI::Xaml::Media::Matrix value {};
-    check_hresult(static_cast<const IMatrixHelperStatics &>(static_cast<const D &>(*this))->get_Identity(put(value)));
+    check_hresult(WINRT_SHIM(IMatrixHelperStatics)->get_Identity(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Matrix impl_IMatrixHelperStatics<D>::FromElements(double m11, double m12, double m21, double m22, double offsetX, double offsetY) const
 {
     Windows::UI::Xaml::Media::Matrix returnValue {};
-    check_hresult(static_cast<const IMatrixHelperStatics &>(static_cast<const D &>(*this))->abi_FromElements(m11, m12, m21, m22, offsetX, offsetY, put(returnValue)));
+    check_hresult(WINRT_SHIM(IMatrixHelperStatics)->abi_FromElements(m11, m12, m21, m22, offsetX, offsetY, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> bool impl_IMatrixHelperStatics<D>::GetIsIdentity(const Windows::UI::Xaml::Media::Matrix & target) const
 {
     bool value {};
-    check_hresult(static_cast<const IMatrixHelperStatics &>(static_cast<const D &>(*this))->abi_GetIsIdentity(get(target), &value));
+    check_hresult(WINRT_SHIM(IMatrixHelperStatics)->abi_GetIsIdentity(get(target), &value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IMatrixHelperStatics<D>::Transform(const Windows::UI::Xaml::Media::Matrix & target, const Windows::Foundation::Point & point) const
 {
     Windows::Foundation::Point returnValue {};
-    check_hresult(static_cast<const IMatrixHelperStatics &>(static_cast<const D &>(*this))->abi_Transform(get(target), get(point), put(returnValue)));
+    check_hresult(WINRT_SHIM(IMatrixHelperStatics)->abi_Transform(get(target), get(point), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> event_token impl_ICompositionTargetStatics<D>::Rendering(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const ICompositionTargetStatics &>(static_cast<const D &>(*this))->add_Rendering(get(value), &token));
+    check_hresult(WINRT_SHIM(ICompositionTargetStatics)->add_Rendering(get(value), &token));
     return token;
 }
 
@@ -4999,13 +4999,13 @@ template <typename D> event_revoker<ICompositionTargetStatics> impl_IComposition
 
 template <typename D> void impl_ICompositionTargetStatics<D>::Rendering(event_token token) const
 {
-    check_hresult(static_cast<const ICompositionTargetStatics &>(static_cast<const D &>(*this))->remove_Rendering(token));
+    check_hresult(WINRT_SHIM(ICompositionTargetStatics)->remove_Rendering(token));
 }
 
 template <typename D> event_token impl_ICompositionTargetStatics<D>::SurfaceContentsLost(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const ICompositionTargetStatics &>(static_cast<const D &>(*this))->add_SurfaceContentsLost(get(value), &token));
+    check_hresult(WINRT_SHIM(ICompositionTargetStatics)->add_SurfaceContentsLost(get(value), &token));
     return token;
 }
 
@@ -5016,1775 +5016,1775 @@ template <typename D> event_revoker<ICompositionTargetStatics> impl_IComposition
 
 template <typename D> void impl_ICompositionTargetStatics<D>::SurfaceContentsLost(event_token token) const
 {
-    check_hresult(static_cast<const ICompositionTargetStatics &>(static_cast<const D &>(*this))->remove_SurfaceContentsLost(token));
+    check_hresult(WINRT_SHIM(ICompositionTargetStatics)->remove_SurfaceContentsLost(token));
 }
 
 template <typename D> hstring impl_IFontFamily<D>::Source() const
 {
     hstring value;
-    check_hresult(static_cast<const IFontFamily &>(static_cast<const D &>(*this))->get_Source(put(value)));
+    check_hresult(WINRT_SHIM(IFontFamily)->get_Source(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::FontFamily impl_IFontFamilyFactory<D>::CreateInstanceWithName(hstring_ref familyName, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::FontFamily instance { nullptr };
-    check_hresult(static_cast<const IFontFamilyFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithName(get(familyName), get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(IFontFamilyFactory)->abi_CreateInstanceWithName(get(familyName), get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Media::FontFamily impl_IFontFamilyStatics2<D>::XamlAutoFontFamily() const
 {
     Windows::UI::Xaml::Media::FontFamily value { nullptr };
-    check_hresult(static_cast<const IFontFamilyStatics2 &>(static_cast<const D &>(*this))->get_XamlAutoFontFamily(put(value)));
+    check_hresult(WINRT_SHIM(IFontFamilyStatics2)->get_XamlAutoFontFamily(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaTransportControlsThumbnailRequestedEventArgs<D>::SetThumbnailImage(const Windows::Storage::Streams::IInputStream & source) const
 {
-    check_hresult(static_cast<const IMediaTransportControlsThumbnailRequestedEventArgs &>(static_cast<const D &>(*this))->abi_SetThumbnailImage(get(source)));
+    check_hresult(WINRT_SHIM(IMediaTransportControlsThumbnailRequestedEventArgs)->abi_SetThumbnailImage(get(source)));
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IMediaTransportControlsThumbnailRequestedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral returnValue { nullptr };
-    check_hresult(static_cast<const IMediaTransportControlsThumbnailRequestedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(returnValue)));
+    check_hresult(WINRT_SHIM(IMediaTransportControlsThumbnailRequestedEventArgs)->abi_GetDeferral(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IRenderingEventArgs<D>::RenderingTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IRenderingEventArgs &>(static_cast<const D &>(*this))->get_RenderingTime(put(value)));
+    check_hresult(WINRT_SHIM(IRenderingEventArgs)->get_RenderingTime(put(value)));
     return value;
 }
 
 template <typename D> double impl_IBrush<D>::Opacity() const
 {
     double value {};
-    check_hresult(static_cast<const IBrush &>(static_cast<const D &>(*this))->get_Opacity(&value));
+    check_hresult(WINRT_SHIM(IBrush)->get_Opacity(&value));
     return value;
 }
 
 template <typename D> void impl_IBrush<D>::Opacity(double value) const
 {
-    check_hresult(static_cast<const IBrush &>(static_cast<const D &>(*this))->put_Opacity(value));
+    check_hresult(WINRT_SHIM(IBrush)->put_Opacity(value));
 }
 
 template <typename D> Windows::UI::Xaml::Media::Transform impl_IBrush<D>::Transform() const
 {
     Windows::UI::Xaml::Media::Transform value { nullptr };
-    check_hresult(static_cast<const IBrush &>(static_cast<const D &>(*this))->get_Transform(put(value)));
+    check_hresult(WINRT_SHIM(IBrush)->get_Transform(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBrush<D>::Transform(const Windows::UI::Xaml::Media::Transform & value) const
 {
-    check_hresult(static_cast<const IBrush &>(static_cast<const D &>(*this))->put_Transform(get(value)));
+    check_hresult(WINRT_SHIM(IBrush)->put_Transform(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Media::Transform impl_IBrush<D>::RelativeTransform() const
 {
     Windows::UI::Xaml::Media::Transform value { nullptr };
-    check_hresult(static_cast<const IBrush &>(static_cast<const D &>(*this))->get_RelativeTransform(put(value)));
+    check_hresult(WINRT_SHIM(IBrush)->get_RelativeTransform(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBrush<D>::RelativeTransform(const Windows::UI::Xaml::Media::Transform & value) const
 {
-    check_hresult(static_cast<const IBrush &>(static_cast<const D &>(*this))->put_RelativeTransform(get(value)));
+    check_hresult(WINRT_SHIM(IBrush)->put_RelativeTransform(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBrushStatics<D>::OpacityProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IBrushStatics &>(static_cast<const D &>(*this))->get_OpacityProperty(put(value)));
+    check_hresult(WINRT_SHIM(IBrushStatics)->get_OpacityProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBrushStatics<D>::TransformProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IBrushStatics &>(static_cast<const D &>(*this))->get_TransformProperty(put(value)));
+    check_hresult(WINRT_SHIM(IBrushStatics)->get_TransformProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBrushStatics<D>::RelativeTransformProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IBrushStatics &>(static_cast<const D &>(*this))->get_RelativeTransformProperty(put(value)));
+    check_hresult(WINRT_SHIM(IBrushStatics)->get_RelativeTransformProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Brush impl_IBrushFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::Brush instance { nullptr };
-    check_hresult(static_cast<const IBrushFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(IBrushFactory)->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Media::CacheMode impl_ICacheModeFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::CacheMode instance { nullptr };
-    check_hresult(static_cast<const ICacheModeFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(ICacheModeFactory)->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Media::GeneralTransform impl_IGeneralTransform<D>::Inverse() const
 {
     Windows::UI::Xaml::Media::GeneralTransform value { nullptr };
-    check_hresult(static_cast<const IGeneralTransform &>(static_cast<const D &>(*this))->get_Inverse(put(value)));
+    check_hresult(WINRT_SHIM(IGeneralTransform)->get_Inverse(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IGeneralTransform<D>::TransformPoint(const Windows::Foundation::Point & point) const
 {
     Windows::Foundation::Point returnValue {};
-    check_hresult(static_cast<const IGeneralTransform &>(static_cast<const D &>(*this))->abi_TransformPoint(get(point), put(returnValue)));
+    check_hresult(WINRT_SHIM(IGeneralTransform)->abi_TransformPoint(get(point), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> bool impl_IGeneralTransform<D>::TryTransform(const Windows::Foundation::Point & inPoint, Windows::Foundation::Point & outPoint) const
 {
     bool returnValue {};
-    check_hresult(static_cast<const IGeneralTransform &>(static_cast<const D &>(*this))->abi_TryTransform(get(inPoint), put(outPoint), &returnValue));
+    check_hresult(WINRT_SHIM(IGeneralTransform)->abi_TryTransform(get(inPoint), put(outPoint), &returnValue));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IGeneralTransform<D>::TransformBounds(const Windows::Foundation::Rect & rect) const
 {
     Windows::Foundation::Rect returnValue {};
-    check_hresult(static_cast<const IGeneralTransform &>(static_cast<const D &>(*this))->abi_TransformBounds(get(rect), put(returnValue)));
+    check_hresult(WINRT_SHIM(IGeneralTransform)->abi_TransformBounds(get(rect), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Media::GeneralTransform impl_IGeneralTransformOverrides<D>::InverseCore() const
 {
     Windows::UI::Xaml::Media::GeneralTransform value { nullptr };
-    check_hresult(static_cast<const IGeneralTransformOverrides &>(static_cast<const D &>(*this))->get_InverseCore(put(value)));
+    check_hresult(WINRT_SHIM(IGeneralTransformOverrides)->get_InverseCore(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IGeneralTransformOverrides<D>::TryTransformCore(const Windows::Foundation::Point & inPoint, Windows::Foundation::Point & outPoint) const
 {
     bool returnValue {};
-    check_hresult(static_cast<const IGeneralTransformOverrides &>(static_cast<const D &>(*this))->abi_TryTransformCore(get(inPoint), put(outPoint), &returnValue));
+    check_hresult(WINRT_SHIM(IGeneralTransformOverrides)->abi_TryTransformCore(get(inPoint), put(outPoint), &returnValue));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IGeneralTransformOverrides<D>::TransformBoundsCore(const Windows::Foundation::Rect & rect) const
 {
     Windows::Foundation::Rect returnValue {};
-    check_hresult(static_cast<const IGeneralTransformOverrides &>(static_cast<const D &>(*this))->abi_TransformBoundsCore(get(rect), put(returnValue)));
+    check_hresult(WINRT_SHIM(IGeneralTransformOverrides)->abi_TransformBoundsCore(get(rect), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Media::GeneralTransform impl_IGeneralTransformFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::GeneralTransform instance { nullptr };
-    check_hresult(static_cast<const IGeneralTransformFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(IGeneralTransformFactory)->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Transform impl_IGeometry<D>::Transform() const
 {
     Windows::UI::Xaml::Media::Transform value { nullptr };
-    check_hresult(static_cast<const IGeometry &>(static_cast<const D &>(*this))->get_Transform(put(value)));
+    check_hresult(WINRT_SHIM(IGeometry)->get_Transform(put(value)));
     return value;
 }
 
 template <typename D> void impl_IGeometry<D>::Transform(const Windows::UI::Xaml::Media::Transform & value) const
 {
-    check_hresult(static_cast<const IGeometry &>(static_cast<const D &>(*this))->put_Transform(get(value)));
+    check_hresult(WINRT_SHIM(IGeometry)->put_Transform(get(value)));
 }
 
 template <typename D> Windows::Foundation::Rect impl_IGeometry<D>::Bounds() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(static_cast<const IGeometry &>(static_cast<const D &>(*this))->get_Bounds(put(value)));
+    check_hresult(WINRT_SHIM(IGeometry)->get_Bounds(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Geometry impl_IGeometryStatics<D>::Empty() const
 {
     Windows::UI::Xaml::Media::Geometry value { nullptr };
-    check_hresult(static_cast<const IGeometryStatics &>(static_cast<const D &>(*this))->get_Empty(put(value)));
+    check_hresult(WINRT_SHIM(IGeometryStatics)->get_Empty(put(value)));
     return value;
 }
 
 template <typename D> double impl_IGeometryStatics<D>::StandardFlatteningTolerance() const
 {
     double value {};
-    check_hresult(static_cast<const IGeometryStatics &>(static_cast<const D &>(*this))->get_StandardFlatteningTolerance(&value));
+    check_hresult(WINRT_SHIM(IGeometryStatics)->get_StandardFlatteningTolerance(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGeometryStatics<D>::TransformProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IGeometryStatics &>(static_cast<const D &>(*this))->get_TransformProperty(put(value)));
+    check_hresult(WINRT_SHIM(IGeometryStatics)->get_TransformProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Projection impl_IProjectionFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::Projection instance { nullptr };
-    check_hresult(static_cast<const IProjectionFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(IProjectionFactory)->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_ITimelineMarker<D>::Time() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const ITimelineMarker &>(static_cast<const D &>(*this))->get_Time(put(value)));
+    check_hresult(WINRT_SHIM(ITimelineMarker)->get_Time(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimelineMarker<D>::Time(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const ITimelineMarker &>(static_cast<const D &>(*this))->put_Time(get(value)));
+    check_hresult(WINRT_SHIM(ITimelineMarker)->put_Time(get(value)));
 }
 
 template <typename D> hstring impl_ITimelineMarker<D>::Type() const
 {
     hstring value;
-    check_hresult(static_cast<const ITimelineMarker &>(static_cast<const D &>(*this))->get_Type(put(value)));
+    check_hresult(WINRT_SHIM(ITimelineMarker)->get_Type(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimelineMarker<D>::Type(hstring_ref value) const
 {
-    check_hresult(static_cast<const ITimelineMarker &>(static_cast<const D &>(*this))->put_Type(get(value)));
+    check_hresult(WINRT_SHIM(ITimelineMarker)->put_Type(get(value)));
 }
 
 template <typename D> hstring impl_ITimelineMarker<D>::Text() const
 {
     hstring value;
-    check_hresult(static_cast<const ITimelineMarker &>(static_cast<const D &>(*this))->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(ITimelineMarker)->get_Text(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimelineMarker<D>::Text(hstring_ref value) const
 {
-    check_hresult(static_cast<const ITimelineMarker &>(static_cast<const D &>(*this))->put_Text(get(value)));
+    check_hresult(WINRT_SHIM(ITimelineMarker)->put_Text(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITimelineMarkerStatics<D>::TimeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ITimelineMarkerStatics &>(static_cast<const D &>(*this))->get_TimeProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITimelineMarkerStatics)->get_TimeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITimelineMarkerStatics<D>::TypeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ITimelineMarkerStatics &>(static_cast<const D &>(*this))->get_TypeProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITimelineMarkerStatics)->get_TypeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITimelineMarkerStatics<D>::TextProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ITimelineMarkerStatics &>(static_cast<const D &>(*this))->get_TextProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITimelineMarkerStatics)->get_TextProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::TimelineMarker impl_ITimelineMarkerRoutedEventArgs<D>::Marker() const
 {
     Windows::UI::Xaml::Media::TimelineMarker value { nullptr };
-    check_hresult(static_cast<const ITimelineMarkerRoutedEventArgs &>(static_cast<const D &>(*this))->get_Marker(put(value)));
+    check_hresult(WINRT_SHIM(ITimelineMarkerRoutedEventArgs)->get_Marker(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimelineMarkerRoutedEventArgs<D>::Marker(const Windows::UI::Xaml::Media::TimelineMarker & value) const
 {
-    check_hresult(static_cast<const ITimelineMarkerRoutedEventArgs &>(static_cast<const D &>(*this))->put_Marker(get(value)));
+    check_hresult(WINRT_SHIM(ITimelineMarkerRoutedEventArgs)->put_Marker(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Media::Media3D::Matrix3D impl_IMatrix3DProjection<D>::ProjectionMatrix() const
 {
     Windows::UI::Xaml::Media::Media3D::Matrix3D value {};
-    check_hresult(static_cast<const IMatrix3DProjection &>(static_cast<const D &>(*this))->get_ProjectionMatrix(put(value)));
+    check_hresult(WINRT_SHIM(IMatrix3DProjection)->get_ProjectionMatrix(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMatrix3DProjection<D>::ProjectionMatrix(const Windows::UI::Xaml::Media::Media3D::Matrix3D & value) const
 {
-    check_hresult(static_cast<const IMatrix3DProjection &>(static_cast<const D &>(*this))->put_ProjectionMatrix(get(value)));
+    check_hresult(WINRT_SHIM(IMatrix3DProjection)->put_ProjectionMatrix(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMatrix3DProjectionStatics<D>::ProjectionMatrixProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMatrix3DProjectionStatics &>(static_cast<const D &>(*this))->get_ProjectionMatrixProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMatrix3DProjectionStatics)->get_ProjectionMatrixProperty(put(value)));
     return value;
 }
 
 template <typename D> double impl_IPlaneProjection<D>::LocalOffsetX() const
 {
     double value {};
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->get_LocalOffsetX(&value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->get_LocalOffsetX(&value));
     return value;
 }
 
 template <typename D> void impl_IPlaneProjection<D>::LocalOffsetX(double value) const
 {
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->put_LocalOffsetX(value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->put_LocalOffsetX(value));
 }
 
 template <typename D> double impl_IPlaneProjection<D>::LocalOffsetY() const
 {
     double value {};
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->get_LocalOffsetY(&value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->get_LocalOffsetY(&value));
     return value;
 }
 
 template <typename D> void impl_IPlaneProjection<D>::LocalOffsetY(double value) const
 {
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->put_LocalOffsetY(value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->put_LocalOffsetY(value));
 }
 
 template <typename D> double impl_IPlaneProjection<D>::LocalOffsetZ() const
 {
     double value {};
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->get_LocalOffsetZ(&value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->get_LocalOffsetZ(&value));
     return value;
 }
 
 template <typename D> void impl_IPlaneProjection<D>::LocalOffsetZ(double value) const
 {
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->put_LocalOffsetZ(value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->put_LocalOffsetZ(value));
 }
 
 template <typename D> double impl_IPlaneProjection<D>::RotationX() const
 {
     double value {};
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->get_RotationX(&value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->get_RotationX(&value));
     return value;
 }
 
 template <typename D> void impl_IPlaneProjection<D>::RotationX(double value) const
 {
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->put_RotationX(value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->put_RotationX(value));
 }
 
 template <typename D> double impl_IPlaneProjection<D>::RotationY() const
 {
     double value {};
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->get_RotationY(&value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->get_RotationY(&value));
     return value;
 }
 
 template <typename D> void impl_IPlaneProjection<D>::RotationY(double value) const
 {
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->put_RotationY(value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->put_RotationY(value));
 }
 
 template <typename D> double impl_IPlaneProjection<D>::RotationZ() const
 {
     double value {};
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->get_RotationZ(&value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->get_RotationZ(&value));
     return value;
 }
 
 template <typename D> void impl_IPlaneProjection<D>::RotationZ(double value) const
 {
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->put_RotationZ(value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->put_RotationZ(value));
 }
 
 template <typename D> double impl_IPlaneProjection<D>::CenterOfRotationX() const
 {
     double value {};
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->get_CenterOfRotationX(&value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->get_CenterOfRotationX(&value));
     return value;
 }
 
 template <typename D> void impl_IPlaneProjection<D>::CenterOfRotationX(double value) const
 {
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->put_CenterOfRotationX(value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->put_CenterOfRotationX(value));
 }
 
 template <typename D> double impl_IPlaneProjection<D>::CenterOfRotationY() const
 {
     double value {};
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->get_CenterOfRotationY(&value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->get_CenterOfRotationY(&value));
     return value;
 }
 
 template <typename D> void impl_IPlaneProjection<D>::CenterOfRotationY(double value) const
 {
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->put_CenterOfRotationY(value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->put_CenterOfRotationY(value));
 }
 
 template <typename D> double impl_IPlaneProjection<D>::CenterOfRotationZ() const
 {
     double value {};
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->get_CenterOfRotationZ(&value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->get_CenterOfRotationZ(&value));
     return value;
 }
 
 template <typename D> void impl_IPlaneProjection<D>::CenterOfRotationZ(double value) const
 {
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->put_CenterOfRotationZ(value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->put_CenterOfRotationZ(value));
 }
 
 template <typename D> double impl_IPlaneProjection<D>::GlobalOffsetX() const
 {
     double value {};
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->get_GlobalOffsetX(&value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->get_GlobalOffsetX(&value));
     return value;
 }
 
 template <typename D> void impl_IPlaneProjection<D>::GlobalOffsetX(double value) const
 {
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->put_GlobalOffsetX(value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->put_GlobalOffsetX(value));
 }
 
 template <typename D> double impl_IPlaneProjection<D>::GlobalOffsetY() const
 {
     double value {};
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->get_GlobalOffsetY(&value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->get_GlobalOffsetY(&value));
     return value;
 }
 
 template <typename D> void impl_IPlaneProjection<D>::GlobalOffsetY(double value) const
 {
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->put_GlobalOffsetY(value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->put_GlobalOffsetY(value));
 }
 
 template <typename D> double impl_IPlaneProjection<D>::GlobalOffsetZ() const
 {
     double value {};
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->get_GlobalOffsetZ(&value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->get_GlobalOffsetZ(&value));
     return value;
 }
 
 template <typename D> void impl_IPlaneProjection<D>::GlobalOffsetZ(double value) const
 {
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->put_GlobalOffsetZ(value));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->put_GlobalOffsetZ(value));
 }
 
 template <typename D> Windows::UI::Xaml::Media::Media3D::Matrix3D impl_IPlaneProjection<D>::ProjectionMatrix() const
 {
     Windows::UI::Xaml::Media::Media3D::Matrix3D value {};
-    check_hresult(static_cast<const IPlaneProjection &>(static_cast<const D &>(*this))->get_ProjectionMatrix(put(value)));
+    check_hresult(WINRT_SHIM(IPlaneProjection)->get_ProjectionMatrix(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPlaneProjectionStatics<D>::LocalOffsetXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPlaneProjectionStatics &>(static_cast<const D &>(*this))->get_LocalOffsetXProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPlaneProjectionStatics)->get_LocalOffsetXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPlaneProjectionStatics<D>::LocalOffsetYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPlaneProjectionStatics &>(static_cast<const D &>(*this))->get_LocalOffsetYProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPlaneProjectionStatics)->get_LocalOffsetYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPlaneProjectionStatics<D>::LocalOffsetZProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPlaneProjectionStatics &>(static_cast<const D &>(*this))->get_LocalOffsetZProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPlaneProjectionStatics)->get_LocalOffsetZProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPlaneProjectionStatics<D>::RotationXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPlaneProjectionStatics &>(static_cast<const D &>(*this))->get_RotationXProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPlaneProjectionStatics)->get_RotationXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPlaneProjectionStatics<D>::RotationYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPlaneProjectionStatics &>(static_cast<const D &>(*this))->get_RotationYProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPlaneProjectionStatics)->get_RotationYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPlaneProjectionStatics<D>::RotationZProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPlaneProjectionStatics &>(static_cast<const D &>(*this))->get_RotationZProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPlaneProjectionStatics)->get_RotationZProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPlaneProjectionStatics<D>::CenterOfRotationXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPlaneProjectionStatics &>(static_cast<const D &>(*this))->get_CenterOfRotationXProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPlaneProjectionStatics)->get_CenterOfRotationXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPlaneProjectionStatics<D>::CenterOfRotationYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPlaneProjectionStatics &>(static_cast<const D &>(*this))->get_CenterOfRotationYProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPlaneProjectionStatics)->get_CenterOfRotationYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPlaneProjectionStatics<D>::CenterOfRotationZProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPlaneProjectionStatics &>(static_cast<const D &>(*this))->get_CenterOfRotationZProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPlaneProjectionStatics)->get_CenterOfRotationZProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPlaneProjectionStatics<D>::GlobalOffsetXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPlaneProjectionStatics &>(static_cast<const D &>(*this))->get_GlobalOffsetXProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPlaneProjectionStatics)->get_GlobalOffsetXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPlaneProjectionStatics<D>::GlobalOffsetYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPlaneProjectionStatics &>(static_cast<const D &>(*this))->get_GlobalOffsetYProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPlaneProjectionStatics)->get_GlobalOffsetYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPlaneProjectionStatics<D>::GlobalOffsetZProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPlaneProjectionStatics &>(static_cast<const D &>(*this))->get_GlobalOffsetZProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPlaneProjectionStatics)->get_GlobalOffsetZProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPlaneProjectionStatics<D>::ProjectionMatrixProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPlaneProjectionStatics &>(static_cast<const D &>(*this))->get_ProjectionMatrixProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPlaneProjectionStatics)->get_ProjectionMatrixProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IRectangleGeometry<D>::Rect() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(static_cast<const IRectangleGeometry &>(static_cast<const D &>(*this))->get_Rect(put(value)));
+    check_hresult(WINRT_SHIM(IRectangleGeometry)->get_Rect(put(value)));
     return value;
 }
 
 template <typename D> void impl_IRectangleGeometry<D>::Rect(const Windows::Foundation::Rect & value) const
 {
-    check_hresult(static_cast<const IRectangleGeometry &>(static_cast<const D &>(*this))->put_Rect(get(value)));
+    check_hresult(WINRT_SHIM(IRectangleGeometry)->put_Rect(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRectangleGeometryStatics<D>::RectProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IRectangleGeometryStatics &>(static_cast<const D &>(*this))->get_RectProperty(put(value)));
+    check_hresult(WINRT_SHIM(IRectangleGeometryStatics)->get_RectProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_ISolidColorBrush<D>::Color() const
 {
     Windows::UI::Color value {};
-    check_hresult(static_cast<const ISolidColorBrush &>(static_cast<const D &>(*this))->get_Color(put(value)));
+    check_hresult(WINRT_SHIM(ISolidColorBrush)->get_Color(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISolidColorBrush<D>::Color(const Windows::UI::Color & value) const
 {
-    check_hresult(static_cast<const ISolidColorBrush &>(static_cast<const D &>(*this))->put_Color(get(value)));
+    check_hresult(WINRT_SHIM(ISolidColorBrush)->put_Color(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ISolidColorBrushStatics<D>::ColorProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ISolidColorBrushStatics &>(static_cast<const D &>(*this))->get_ColorProperty(put(value)));
+    check_hresult(WINRT_SHIM(ISolidColorBrushStatics)->get_ColorProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::SolidColorBrush impl_ISolidColorBrushFactory<D>::CreateInstanceWithColor(const Windows::UI::Color & color) const
 {
     Windows::UI::Xaml::Media::SolidColorBrush instance { nullptr };
-    check_hresult(static_cast<const ISolidColorBrushFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithColor(get(color), put(instance)));
+    check_hresult(WINRT_SHIM(ISolidColorBrushFactory)->abi_CreateInstanceWithColor(get(color), put(instance)));
     return instance;
 }
 
 template <typename D> double impl_ICompositeTransform<D>::CenterX() const
 {
     double value {};
-    check_hresult(static_cast<const ICompositeTransform &>(static_cast<const D &>(*this))->get_CenterX(&value));
+    check_hresult(WINRT_SHIM(ICompositeTransform)->get_CenterX(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform<D>::CenterX(double value) const
 {
-    check_hresult(static_cast<const ICompositeTransform &>(static_cast<const D &>(*this))->put_CenterX(value));
+    check_hresult(WINRT_SHIM(ICompositeTransform)->put_CenterX(value));
 }
 
 template <typename D> double impl_ICompositeTransform<D>::CenterY() const
 {
     double value {};
-    check_hresult(static_cast<const ICompositeTransform &>(static_cast<const D &>(*this))->get_CenterY(&value));
+    check_hresult(WINRT_SHIM(ICompositeTransform)->get_CenterY(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform<D>::CenterY(double value) const
 {
-    check_hresult(static_cast<const ICompositeTransform &>(static_cast<const D &>(*this))->put_CenterY(value));
+    check_hresult(WINRT_SHIM(ICompositeTransform)->put_CenterY(value));
 }
 
 template <typename D> double impl_ICompositeTransform<D>::ScaleX() const
 {
     double value {};
-    check_hresult(static_cast<const ICompositeTransform &>(static_cast<const D &>(*this))->get_ScaleX(&value));
+    check_hresult(WINRT_SHIM(ICompositeTransform)->get_ScaleX(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform<D>::ScaleX(double value) const
 {
-    check_hresult(static_cast<const ICompositeTransform &>(static_cast<const D &>(*this))->put_ScaleX(value));
+    check_hresult(WINRT_SHIM(ICompositeTransform)->put_ScaleX(value));
 }
 
 template <typename D> double impl_ICompositeTransform<D>::ScaleY() const
 {
     double value {};
-    check_hresult(static_cast<const ICompositeTransform &>(static_cast<const D &>(*this))->get_ScaleY(&value));
+    check_hresult(WINRT_SHIM(ICompositeTransform)->get_ScaleY(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform<D>::ScaleY(double value) const
 {
-    check_hresult(static_cast<const ICompositeTransform &>(static_cast<const D &>(*this))->put_ScaleY(value));
+    check_hresult(WINRT_SHIM(ICompositeTransform)->put_ScaleY(value));
 }
 
 template <typename D> double impl_ICompositeTransform<D>::SkewX() const
 {
     double value {};
-    check_hresult(static_cast<const ICompositeTransform &>(static_cast<const D &>(*this))->get_SkewX(&value));
+    check_hresult(WINRT_SHIM(ICompositeTransform)->get_SkewX(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform<D>::SkewX(double value) const
 {
-    check_hresult(static_cast<const ICompositeTransform &>(static_cast<const D &>(*this))->put_SkewX(value));
+    check_hresult(WINRT_SHIM(ICompositeTransform)->put_SkewX(value));
 }
 
 template <typename D> double impl_ICompositeTransform<D>::SkewY() const
 {
     double value {};
-    check_hresult(static_cast<const ICompositeTransform &>(static_cast<const D &>(*this))->get_SkewY(&value));
+    check_hresult(WINRT_SHIM(ICompositeTransform)->get_SkewY(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform<D>::SkewY(double value) const
 {
-    check_hresult(static_cast<const ICompositeTransform &>(static_cast<const D &>(*this))->put_SkewY(value));
+    check_hresult(WINRT_SHIM(ICompositeTransform)->put_SkewY(value));
 }
 
 template <typename D> double impl_ICompositeTransform<D>::Rotation() const
 {
     double value {};
-    check_hresult(static_cast<const ICompositeTransform &>(static_cast<const D &>(*this))->get_Rotation(&value));
+    check_hresult(WINRT_SHIM(ICompositeTransform)->get_Rotation(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform<D>::Rotation(double value) const
 {
-    check_hresult(static_cast<const ICompositeTransform &>(static_cast<const D &>(*this))->put_Rotation(value));
+    check_hresult(WINRT_SHIM(ICompositeTransform)->put_Rotation(value));
 }
 
 template <typename D> double impl_ICompositeTransform<D>::TranslateX() const
 {
     double value {};
-    check_hresult(static_cast<const ICompositeTransform &>(static_cast<const D &>(*this))->get_TranslateX(&value));
+    check_hresult(WINRT_SHIM(ICompositeTransform)->get_TranslateX(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform<D>::TranslateX(double value) const
 {
-    check_hresult(static_cast<const ICompositeTransform &>(static_cast<const D &>(*this))->put_TranslateX(value));
+    check_hresult(WINRT_SHIM(ICompositeTransform)->put_TranslateX(value));
 }
 
 template <typename D> double impl_ICompositeTransform<D>::TranslateY() const
 {
     double value {};
-    check_hresult(static_cast<const ICompositeTransform &>(static_cast<const D &>(*this))->get_TranslateY(&value));
+    check_hresult(WINRT_SHIM(ICompositeTransform)->get_TranslateY(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform<D>::TranslateY(double value) const
 {
-    check_hresult(static_cast<const ICompositeTransform &>(static_cast<const D &>(*this))->put_TranslateY(value));
+    check_hresult(WINRT_SHIM(ICompositeTransform)->put_TranslateY(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransformStatics<D>::CenterXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ICompositeTransformStatics &>(static_cast<const D &>(*this))->get_CenterXProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransformStatics)->get_CenterXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransformStatics<D>::CenterYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ICompositeTransformStatics &>(static_cast<const D &>(*this))->get_CenterYProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransformStatics)->get_CenterYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransformStatics<D>::ScaleXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ICompositeTransformStatics &>(static_cast<const D &>(*this))->get_ScaleXProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransformStatics)->get_ScaleXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransformStatics<D>::ScaleYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ICompositeTransformStatics &>(static_cast<const D &>(*this))->get_ScaleYProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransformStatics)->get_ScaleYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransformStatics<D>::SkewXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ICompositeTransformStatics &>(static_cast<const D &>(*this))->get_SkewXProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransformStatics)->get_SkewXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransformStatics<D>::SkewYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ICompositeTransformStatics &>(static_cast<const D &>(*this))->get_SkewYProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransformStatics)->get_SkewYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransformStatics<D>::RotationProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ICompositeTransformStatics &>(static_cast<const D &>(*this))->get_RotationProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransformStatics)->get_RotationProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransformStatics<D>::TranslateXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ICompositeTransformStatics &>(static_cast<const D &>(*this))->get_TranslateXProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransformStatics)->get_TranslateXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransformStatics<D>::TranslateYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ICompositeTransformStatics &>(static_cast<const D &>(*this))->get_TranslateYProperty(put(value)));
+    check_hresult(WINRT_SHIM(ICompositeTransformStatics)->get_TranslateYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Matrix impl_IMatrixTransform<D>::Matrix() const
 {
     Windows::UI::Xaml::Media::Matrix value {};
-    check_hresult(static_cast<const IMatrixTransform &>(static_cast<const D &>(*this))->get_Matrix(put(value)));
+    check_hresult(WINRT_SHIM(IMatrixTransform)->get_Matrix(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMatrixTransform<D>::Matrix(const Windows::UI::Xaml::Media::Matrix & value) const
 {
-    check_hresult(static_cast<const IMatrixTransform &>(static_cast<const D &>(*this))->put_Matrix(get(value)));
+    check_hresult(WINRT_SHIM(IMatrixTransform)->put_Matrix(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMatrixTransformStatics<D>::MatrixProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMatrixTransformStatics &>(static_cast<const D &>(*this))->get_MatrixProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMatrixTransformStatics)->get_MatrixProperty(put(value)));
     return value;
 }
 
 template <typename D> double impl_IRotateTransform<D>::CenterX() const
 {
     double value {};
-    check_hresult(static_cast<const IRotateTransform &>(static_cast<const D &>(*this))->get_CenterX(&value));
+    check_hresult(WINRT_SHIM(IRotateTransform)->get_CenterX(&value));
     return value;
 }
 
 template <typename D> void impl_IRotateTransform<D>::CenterX(double value) const
 {
-    check_hresult(static_cast<const IRotateTransform &>(static_cast<const D &>(*this))->put_CenterX(value));
+    check_hresult(WINRT_SHIM(IRotateTransform)->put_CenterX(value));
 }
 
 template <typename D> double impl_IRotateTransform<D>::CenterY() const
 {
     double value {};
-    check_hresult(static_cast<const IRotateTransform &>(static_cast<const D &>(*this))->get_CenterY(&value));
+    check_hresult(WINRT_SHIM(IRotateTransform)->get_CenterY(&value));
     return value;
 }
 
 template <typename D> void impl_IRotateTransform<D>::CenterY(double value) const
 {
-    check_hresult(static_cast<const IRotateTransform &>(static_cast<const D &>(*this))->put_CenterY(value));
+    check_hresult(WINRT_SHIM(IRotateTransform)->put_CenterY(value));
 }
 
 template <typename D> double impl_IRotateTransform<D>::Angle() const
 {
     double value {};
-    check_hresult(static_cast<const IRotateTransform &>(static_cast<const D &>(*this))->get_Angle(&value));
+    check_hresult(WINRT_SHIM(IRotateTransform)->get_Angle(&value));
     return value;
 }
 
 template <typename D> void impl_IRotateTransform<D>::Angle(double value) const
 {
-    check_hresult(static_cast<const IRotateTransform &>(static_cast<const D &>(*this))->put_Angle(value));
+    check_hresult(WINRT_SHIM(IRotateTransform)->put_Angle(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRotateTransformStatics<D>::CenterXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IRotateTransformStatics &>(static_cast<const D &>(*this))->get_CenterXProperty(put(value)));
+    check_hresult(WINRT_SHIM(IRotateTransformStatics)->get_CenterXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRotateTransformStatics<D>::CenterYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IRotateTransformStatics &>(static_cast<const D &>(*this))->get_CenterYProperty(put(value)));
+    check_hresult(WINRT_SHIM(IRotateTransformStatics)->get_CenterYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRotateTransformStatics<D>::AngleProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IRotateTransformStatics &>(static_cast<const D &>(*this))->get_AngleProperty(put(value)));
+    check_hresult(WINRT_SHIM(IRotateTransformStatics)->get_AngleProperty(put(value)));
     return value;
 }
 
 template <typename D> double impl_IScaleTransform<D>::CenterX() const
 {
     double value {};
-    check_hresult(static_cast<const IScaleTransform &>(static_cast<const D &>(*this))->get_CenterX(&value));
+    check_hresult(WINRT_SHIM(IScaleTransform)->get_CenterX(&value));
     return value;
 }
 
 template <typename D> void impl_IScaleTransform<D>::CenterX(double value) const
 {
-    check_hresult(static_cast<const IScaleTransform &>(static_cast<const D &>(*this))->put_CenterX(value));
+    check_hresult(WINRT_SHIM(IScaleTransform)->put_CenterX(value));
 }
 
 template <typename D> double impl_IScaleTransform<D>::CenterY() const
 {
     double value {};
-    check_hresult(static_cast<const IScaleTransform &>(static_cast<const D &>(*this))->get_CenterY(&value));
+    check_hresult(WINRT_SHIM(IScaleTransform)->get_CenterY(&value));
     return value;
 }
 
 template <typename D> void impl_IScaleTransform<D>::CenterY(double value) const
 {
-    check_hresult(static_cast<const IScaleTransform &>(static_cast<const D &>(*this))->put_CenterY(value));
+    check_hresult(WINRT_SHIM(IScaleTransform)->put_CenterY(value));
 }
 
 template <typename D> double impl_IScaleTransform<D>::ScaleX() const
 {
     double value {};
-    check_hresult(static_cast<const IScaleTransform &>(static_cast<const D &>(*this))->get_ScaleX(&value));
+    check_hresult(WINRT_SHIM(IScaleTransform)->get_ScaleX(&value));
     return value;
 }
 
 template <typename D> void impl_IScaleTransform<D>::ScaleX(double value) const
 {
-    check_hresult(static_cast<const IScaleTransform &>(static_cast<const D &>(*this))->put_ScaleX(value));
+    check_hresult(WINRT_SHIM(IScaleTransform)->put_ScaleX(value));
 }
 
 template <typename D> double impl_IScaleTransform<D>::ScaleY() const
 {
     double value {};
-    check_hresult(static_cast<const IScaleTransform &>(static_cast<const D &>(*this))->get_ScaleY(&value));
+    check_hresult(WINRT_SHIM(IScaleTransform)->get_ScaleY(&value));
     return value;
 }
 
 template <typename D> void impl_IScaleTransform<D>::ScaleY(double value) const
 {
-    check_hresult(static_cast<const IScaleTransform &>(static_cast<const D &>(*this))->put_ScaleY(value));
+    check_hresult(WINRT_SHIM(IScaleTransform)->put_ScaleY(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IScaleTransformStatics<D>::CenterXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IScaleTransformStatics &>(static_cast<const D &>(*this))->get_CenterXProperty(put(value)));
+    check_hresult(WINRT_SHIM(IScaleTransformStatics)->get_CenterXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IScaleTransformStatics<D>::CenterYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IScaleTransformStatics &>(static_cast<const D &>(*this))->get_CenterYProperty(put(value)));
+    check_hresult(WINRT_SHIM(IScaleTransformStatics)->get_CenterYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IScaleTransformStatics<D>::ScaleXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IScaleTransformStatics &>(static_cast<const D &>(*this))->get_ScaleXProperty(put(value)));
+    check_hresult(WINRT_SHIM(IScaleTransformStatics)->get_ScaleXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IScaleTransformStatics<D>::ScaleYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IScaleTransformStatics &>(static_cast<const D &>(*this))->get_ScaleYProperty(put(value)));
+    check_hresult(WINRT_SHIM(IScaleTransformStatics)->get_ScaleYProperty(put(value)));
     return value;
 }
 
 template <typename D> double impl_ISkewTransform<D>::CenterX() const
 {
     double value {};
-    check_hresult(static_cast<const ISkewTransform &>(static_cast<const D &>(*this))->get_CenterX(&value));
+    check_hresult(WINRT_SHIM(ISkewTransform)->get_CenterX(&value));
     return value;
 }
 
 template <typename D> void impl_ISkewTransform<D>::CenterX(double value) const
 {
-    check_hresult(static_cast<const ISkewTransform &>(static_cast<const D &>(*this))->put_CenterX(value));
+    check_hresult(WINRT_SHIM(ISkewTransform)->put_CenterX(value));
 }
 
 template <typename D> double impl_ISkewTransform<D>::CenterY() const
 {
     double value {};
-    check_hresult(static_cast<const ISkewTransform &>(static_cast<const D &>(*this))->get_CenterY(&value));
+    check_hresult(WINRT_SHIM(ISkewTransform)->get_CenterY(&value));
     return value;
 }
 
 template <typename D> void impl_ISkewTransform<D>::CenterY(double value) const
 {
-    check_hresult(static_cast<const ISkewTransform &>(static_cast<const D &>(*this))->put_CenterY(value));
+    check_hresult(WINRT_SHIM(ISkewTransform)->put_CenterY(value));
 }
 
 template <typename D> double impl_ISkewTransform<D>::AngleX() const
 {
     double value {};
-    check_hresult(static_cast<const ISkewTransform &>(static_cast<const D &>(*this))->get_AngleX(&value));
+    check_hresult(WINRT_SHIM(ISkewTransform)->get_AngleX(&value));
     return value;
 }
 
 template <typename D> void impl_ISkewTransform<D>::AngleX(double value) const
 {
-    check_hresult(static_cast<const ISkewTransform &>(static_cast<const D &>(*this))->put_AngleX(value));
+    check_hresult(WINRT_SHIM(ISkewTransform)->put_AngleX(value));
 }
 
 template <typename D> double impl_ISkewTransform<D>::AngleY() const
 {
     double value {};
-    check_hresult(static_cast<const ISkewTransform &>(static_cast<const D &>(*this))->get_AngleY(&value));
+    check_hresult(WINRT_SHIM(ISkewTransform)->get_AngleY(&value));
     return value;
 }
 
 template <typename D> void impl_ISkewTransform<D>::AngleY(double value) const
 {
-    check_hresult(static_cast<const ISkewTransform &>(static_cast<const D &>(*this))->put_AngleY(value));
+    check_hresult(WINRT_SHIM(ISkewTransform)->put_AngleY(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ISkewTransformStatics<D>::CenterXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ISkewTransformStatics &>(static_cast<const D &>(*this))->get_CenterXProperty(put(value)));
+    check_hresult(WINRT_SHIM(ISkewTransformStatics)->get_CenterXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ISkewTransformStatics<D>::CenterYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ISkewTransformStatics &>(static_cast<const D &>(*this))->get_CenterYProperty(put(value)));
+    check_hresult(WINRT_SHIM(ISkewTransformStatics)->get_CenterYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ISkewTransformStatics<D>::AngleXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ISkewTransformStatics &>(static_cast<const D &>(*this))->get_AngleXProperty(put(value)));
+    check_hresult(WINRT_SHIM(ISkewTransformStatics)->get_AngleXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ISkewTransformStatics<D>::AngleYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ISkewTransformStatics &>(static_cast<const D &>(*this))->get_AngleYProperty(put(value)));
+    check_hresult(WINRT_SHIM(ISkewTransformStatics)->get_AngleYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::TransformCollection impl_ITransformGroup<D>::Children() const
 {
     Windows::UI::Xaml::Media::TransformCollection value { nullptr };
-    check_hresult(static_cast<const ITransformGroup &>(static_cast<const D &>(*this))->get_Children(put(value)));
+    check_hresult(WINRT_SHIM(ITransformGroup)->get_Children(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITransformGroup<D>::Children(const Windows::UI::Xaml::Media::TransformCollection & value) const
 {
-    check_hresult(static_cast<const ITransformGroup &>(static_cast<const D &>(*this))->put_Children(get(value)));
+    check_hresult(WINRT_SHIM(ITransformGroup)->put_Children(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Media::Matrix impl_ITransformGroup<D>::Value() const
 {
     Windows::UI::Xaml::Media::Matrix value {};
-    check_hresult(static_cast<const ITransformGroup &>(static_cast<const D &>(*this))->get_Value(put(value)));
+    check_hresult(WINRT_SHIM(ITransformGroup)->get_Value(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITransformGroupStatics<D>::ChildrenProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ITransformGroupStatics &>(static_cast<const D &>(*this))->get_ChildrenProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITransformGroupStatics)->get_ChildrenProperty(put(value)));
     return value;
 }
 
 template <typename D> double impl_ITranslateTransform<D>::X() const
 {
     double value {};
-    check_hresult(static_cast<const ITranslateTransform &>(static_cast<const D &>(*this))->get_X(&value));
+    check_hresult(WINRT_SHIM(ITranslateTransform)->get_X(&value));
     return value;
 }
 
 template <typename D> void impl_ITranslateTransform<D>::X(double value) const
 {
-    check_hresult(static_cast<const ITranslateTransform &>(static_cast<const D &>(*this))->put_X(value));
+    check_hresult(WINRT_SHIM(ITranslateTransform)->put_X(value));
 }
 
 template <typename D> double impl_ITranslateTransform<D>::Y() const
 {
     double value {};
-    check_hresult(static_cast<const ITranslateTransform &>(static_cast<const D &>(*this))->get_Y(&value));
+    check_hresult(WINRT_SHIM(ITranslateTransform)->get_Y(&value));
     return value;
 }
 
 template <typename D> void impl_ITranslateTransform<D>::Y(double value) const
 {
-    check_hresult(static_cast<const ITranslateTransform &>(static_cast<const D &>(*this))->put_Y(value));
+    check_hresult(WINRT_SHIM(ITranslateTransform)->put_Y(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITranslateTransformStatics<D>::XProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ITranslateTransformStatics &>(static_cast<const D &>(*this))->get_XProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITranslateTransformStatics)->get_XProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITranslateTransformStatics<D>::YProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ITranslateTransformStatics &>(static_cast<const D &>(*this))->get_YProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITranslateTransformStatics)->get_YProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IGradientStop<D>::Color() const
 {
     Windows::UI::Color value {};
-    check_hresult(static_cast<const IGradientStop &>(static_cast<const D &>(*this))->get_Color(put(value)));
+    check_hresult(WINRT_SHIM(IGradientStop)->get_Color(put(value)));
     return value;
 }
 
 template <typename D> void impl_IGradientStop<D>::Color(const Windows::UI::Color & value) const
 {
-    check_hresult(static_cast<const IGradientStop &>(static_cast<const D &>(*this))->put_Color(get(value)));
+    check_hresult(WINRT_SHIM(IGradientStop)->put_Color(get(value)));
 }
 
 template <typename D> double impl_IGradientStop<D>::Offset() const
 {
     double value {};
-    check_hresult(static_cast<const IGradientStop &>(static_cast<const D &>(*this))->get_Offset(&value));
+    check_hresult(WINRT_SHIM(IGradientStop)->get_Offset(&value));
     return value;
 }
 
 template <typename D> void impl_IGradientStop<D>::Offset(double value) const
 {
-    check_hresult(static_cast<const IGradientStop &>(static_cast<const D &>(*this))->put_Offset(value));
+    check_hresult(WINRT_SHIM(IGradientStop)->put_Offset(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGradientStopStatics<D>::ColorProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IGradientStopStatics &>(static_cast<const D &>(*this))->get_ColorProperty(put(value)));
+    check_hresult(WINRT_SHIM(IGradientStopStatics)->get_ColorProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGradientStopStatics<D>::OffsetProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IGradientStopStatics &>(static_cast<const D &>(*this))->get_OffsetProperty(put(value)));
+    check_hresult(WINRT_SHIM(IGradientStopStatics)->get_OffsetProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::PathSegmentCollection impl_IPathFigure<D>::Segments() const
 {
     Windows::UI::Xaml::Media::PathSegmentCollection value { nullptr };
-    check_hresult(static_cast<const IPathFigure &>(static_cast<const D &>(*this))->get_Segments(put(value)));
+    check_hresult(WINRT_SHIM(IPathFigure)->get_Segments(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPathFigure<D>::Segments(const Windows::UI::Xaml::Media::PathSegmentCollection & value) const
 {
-    check_hresult(static_cast<const IPathFigure &>(static_cast<const D &>(*this))->put_Segments(get(value)));
+    check_hresult(WINRT_SHIM(IPathFigure)->put_Segments(get(value)));
 }
 
 template <typename D> Windows::Foundation::Point impl_IPathFigure<D>::StartPoint() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IPathFigure &>(static_cast<const D &>(*this))->get_StartPoint(put(value)));
+    check_hresult(WINRT_SHIM(IPathFigure)->get_StartPoint(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPathFigure<D>::StartPoint(const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const IPathFigure &>(static_cast<const D &>(*this))->put_StartPoint(get(value)));
+    check_hresult(WINRT_SHIM(IPathFigure)->put_StartPoint(get(value)));
 }
 
 template <typename D> bool impl_IPathFigure<D>::IsClosed() const
 {
     bool value {};
-    check_hresult(static_cast<const IPathFigure &>(static_cast<const D &>(*this))->get_IsClosed(&value));
+    check_hresult(WINRT_SHIM(IPathFigure)->get_IsClosed(&value));
     return value;
 }
 
 template <typename D> void impl_IPathFigure<D>::IsClosed(bool value) const
 {
-    check_hresult(static_cast<const IPathFigure &>(static_cast<const D &>(*this))->put_IsClosed(value));
+    check_hresult(WINRT_SHIM(IPathFigure)->put_IsClosed(value));
 }
 
 template <typename D> bool impl_IPathFigure<D>::IsFilled() const
 {
     bool value {};
-    check_hresult(static_cast<const IPathFigure &>(static_cast<const D &>(*this))->get_IsFilled(&value));
+    check_hresult(WINRT_SHIM(IPathFigure)->get_IsFilled(&value));
     return value;
 }
 
 template <typename D> void impl_IPathFigure<D>::IsFilled(bool value) const
 {
-    check_hresult(static_cast<const IPathFigure &>(static_cast<const D &>(*this))->put_IsFilled(value));
+    check_hresult(WINRT_SHIM(IPathFigure)->put_IsFilled(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPathFigureStatics<D>::SegmentsProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPathFigureStatics &>(static_cast<const D &>(*this))->get_SegmentsProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPathFigureStatics)->get_SegmentsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPathFigureStatics<D>::StartPointProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPathFigureStatics &>(static_cast<const D &>(*this))->get_StartPointProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPathFigureStatics)->get_StartPointProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPathFigureStatics<D>::IsClosedProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPathFigureStatics &>(static_cast<const D &>(*this))->get_IsClosedProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPathFigureStatics)->get_IsClosedProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPathFigureStatics<D>::IsFilledProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPathFigureStatics &>(static_cast<const D &>(*this))->get_IsFilledProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPathFigureStatics)->get_IsFilledProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IArcSegment<D>::Point() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IArcSegment &>(static_cast<const D &>(*this))->get_Point(put(value)));
+    check_hresult(WINRT_SHIM(IArcSegment)->get_Point(put(value)));
     return value;
 }
 
 template <typename D> void impl_IArcSegment<D>::Point(const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const IArcSegment &>(static_cast<const D &>(*this))->put_Point(get(value)));
+    check_hresult(WINRT_SHIM(IArcSegment)->put_Point(get(value)));
 }
 
 template <typename D> Windows::Foundation::Size impl_IArcSegment<D>::Size() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(static_cast<const IArcSegment &>(static_cast<const D &>(*this))->get_Size(put(value)));
+    check_hresult(WINRT_SHIM(IArcSegment)->get_Size(put(value)));
     return value;
 }
 
 template <typename D> void impl_IArcSegment<D>::Size(const Windows::Foundation::Size & value) const
 {
-    check_hresult(static_cast<const IArcSegment &>(static_cast<const D &>(*this))->put_Size(get(value)));
+    check_hresult(WINRT_SHIM(IArcSegment)->put_Size(get(value)));
 }
 
 template <typename D> double impl_IArcSegment<D>::RotationAngle() const
 {
     double value {};
-    check_hresult(static_cast<const IArcSegment &>(static_cast<const D &>(*this))->get_RotationAngle(&value));
+    check_hresult(WINRT_SHIM(IArcSegment)->get_RotationAngle(&value));
     return value;
 }
 
 template <typename D> void impl_IArcSegment<D>::RotationAngle(double value) const
 {
-    check_hresult(static_cast<const IArcSegment &>(static_cast<const D &>(*this))->put_RotationAngle(value));
+    check_hresult(WINRT_SHIM(IArcSegment)->put_RotationAngle(value));
 }
 
 template <typename D> bool impl_IArcSegment<D>::IsLargeArc() const
 {
     bool value {};
-    check_hresult(static_cast<const IArcSegment &>(static_cast<const D &>(*this))->get_IsLargeArc(&value));
+    check_hresult(WINRT_SHIM(IArcSegment)->get_IsLargeArc(&value));
     return value;
 }
 
 template <typename D> void impl_IArcSegment<D>::IsLargeArc(bool value) const
 {
-    check_hresult(static_cast<const IArcSegment &>(static_cast<const D &>(*this))->put_IsLargeArc(value));
+    check_hresult(WINRT_SHIM(IArcSegment)->put_IsLargeArc(value));
 }
 
 template <typename D> Windows::UI::Xaml::Media::SweepDirection impl_IArcSegment<D>::SweepDirection() const
 {
     Windows::UI::Xaml::Media::SweepDirection value {};
-    check_hresult(static_cast<const IArcSegment &>(static_cast<const D &>(*this))->get_SweepDirection(&value));
+    check_hresult(WINRT_SHIM(IArcSegment)->get_SweepDirection(&value));
     return value;
 }
 
 template <typename D> void impl_IArcSegment<D>::SweepDirection(Windows::UI::Xaml::Media::SweepDirection value) const
 {
-    check_hresult(static_cast<const IArcSegment &>(static_cast<const D &>(*this))->put_SweepDirection(value));
+    check_hresult(WINRT_SHIM(IArcSegment)->put_SweepDirection(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IArcSegmentStatics<D>::PointProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IArcSegmentStatics &>(static_cast<const D &>(*this))->get_PointProperty(put(value)));
+    check_hresult(WINRT_SHIM(IArcSegmentStatics)->get_PointProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IArcSegmentStatics<D>::SizeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IArcSegmentStatics &>(static_cast<const D &>(*this))->get_SizeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IArcSegmentStatics)->get_SizeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IArcSegmentStatics<D>::RotationAngleProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IArcSegmentStatics &>(static_cast<const D &>(*this))->get_RotationAngleProperty(put(value)));
+    check_hresult(WINRT_SHIM(IArcSegmentStatics)->get_RotationAngleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IArcSegmentStatics<D>::IsLargeArcProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IArcSegmentStatics &>(static_cast<const D &>(*this))->get_IsLargeArcProperty(put(value)));
+    check_hresult(WINRT_SHIM(IArcSegmentStatics)->get_IsLargeArcProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IArcSegmentStatics<D>::SweepDirectionProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IArcSegmentStatics &>(static_cast<const D &>(*this))->get_SweepDirectionProperty(put(value)));
+    check_hresult(WINRT_SHIM(IArcSegmentStatics)->get_SweepDirectionProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IBezierSegment<D>::Point1() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IBezierSegment &>(static_cast<const D &>(*this))->get_Point1(put(value)));
+    check_hresult(WINRT_SHIM(IBezierSegment)->get_Point1(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBezierSegment<D>::Point1(const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const IBezierSegment &>(static_cast<const D &>(*this))->put_Point1(get(value)));
+    check_hresult(WINRT_SHIM(IBezierSegment)->put_Point1(get(value)));
 }
 
 template <typename D> Windows::Foundation::Point impl_IBezierSegment<D>::Point2() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IBezierSegment &>(static_cast<const D &>(*this))->get_Point2(put(value)));
+    check_hresult(WINRT_SHIM(IBezierSegment)->get_Point2(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBezierSegment<D>::Point2(const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const IBezierSegment &>(static_cast<const D &>(*this))->put_Point2(get(value)));
+    check_hresult(WINRT_SHIM(IBezierSegment)->put_Point2(get(value)));
 }
 
 template <typename D> Windows::Foundation::Point impl_IBezierSegment<D>::Point3() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IBezierSegment &>(static_cast<const D &>(*this))->get_Point3(put(value)));
+    check_hresult(WINRT_SHIM(IBezierSegment)->get_Point3(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBezierSegment<D>::Point3(const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const IBezierSegment &>(static_cast<const D &>(*this))->put_Point3(get(value)));
+    check_hresult(WINRT_SHIM(IBezierSegment)->put_Point3(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBezierSegmentStatics<D>::Point1Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IBezierSegmentStatics &>(static_cast<const D &>(*this))->get_Point1Property(put(value)));
+    check_hresult(WINRT_SHIM(IBezierSegmentStatics)->get_Point1Property(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBezierSegmentStatics<D>::Point2Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IBezierSegmentStatics &>(static_cast<const D &>(*this))->get_Point2Property(put(value)));
+    check_hresult(WINRT_SHIM(IBezierSegmentStatics)->get_Point2Property(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBezierSegmentStatics<D>::Point3Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IBezierSegmentStatics &>(static_cast<const D &>(*this))->get_Point3Property(put(value)));
+    check_hresult(WINRT_SHIM(IBezierSegmentStatics)->get_Point3Property(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IEllipseGeometry<D>::Center() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IEllipseGeometry &>(static_cast<const D &>(*this))->get_Center(put(value)));
+    check_hresult(WINRT_SHIM(IEllipseGeometry)->get_Center(put(value)));
     return value;
 }
 
 template <typename D> void impl_IEllipseGeometry<D>::Center(const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const IEllipseGeometry &>(static_cast<const D &>(*this))->put_Center(get(value)));
+    check_hresult(WINRT_SHIM(IEllipseGeometry)->put_Center(get(value)));
 }
 
 template <typename D> double impl_IEllipseGeometry<D>::RadiusX() const
 {
     double value {};
-    check_hresult(static_cast<const IEllipseGeometry &>(static_cast<const D &>(*this))->get_RadiusX(&value));
+    check_hresult(WINRT_SHIM(IEllipseGeometry)->get_RadiusX(&value));
     return value;
 }
 
 template <typename D> void impl_IEllipseGeometry<D>::RadiusX(double value) const
 {
-    check_hresult(static_cast<const IEllipseGeometry &>(static_cast<const D &>(*this))->put_RadiusX(value));
+    check_hresult(WINRT_SHIM(IEllipseGeometry)->put_RadiusX(value));
 }
 
 template <typename D> double impl_IEllipseGeometry<D>::RadiusY() const
 {
     double value {};
-    check_hresult(static_cast<const IEllipseGeometry &>(static_cast<const D &>(*this))->get_RadiusY(&value));
+    check_hresult(WINRT_SHIM(IEllipseGeometry)->get_RadiusY(&value));
     return value;
 }
 
 template <typename D> void impl_IEllipseGeometry<D>::RadiusY(double value) const
 {
-    check_hresult(static_cast<const IEllipseGeometry &>(static_cast<const D &>(*this))->put_RadiusY(value));
+    check_hresult(WINRT_SHIM(IEllipseGeometry)->put_RadiusY(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IEllipseGeometryStatics<D>::CenterProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IEllipseGeometryStatics &>(static_cast<const D &>(*this))->get_CenterProperty(put(value)));
+    check_hresult(WINRT_SHIM(IEllipseGeometryStatics)->get_CenterProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IEllipseGeometryStatics<D>::RadiusXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IEllipseGeometryStatics &>(static_cast<const D &>(*this))->get_RadiusXProperty(put(value)));
+    check_hresult(WINRT_SHIM(IEllipseGeometryStatics)->get_RadiusXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IEllipseGeometryStatics<D>::RadiusYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IEllipseGeometryStatics &>(static_cast<const D &>(*this))->get_RadiusYProperty(put(value)));
+    check_hresult(WINRT_SHIM(IEllipseGeometryStatics)->get_RadiusYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::FillRule impl_IGeometryGroup<D>::FillRule() const
 {
     Windows::UI::Xaml::Media::FillRule value {};
-    check_hresult(static_cast<const IGeometryGroup &>(static_cast<const D &>(*this))->get_FillRule(&value));
+    check_hresult(WINRT_SHIM(IGeometryGroup)->get_FillRule(&value));
     return value;
 }
 
 template <typename D> void impl_IGeometryGroup<D>::FillRule(Windows::UI::Xaml::Media::FillRule value) const
 {
-    check_hresult(static_cast<const IGeometryGroup &>(static_cast<const D &>(*this))->put_FillRule(value));
+    check_hresult(WINRT_SHIM(IGeometryGroup)->put_FillRule(value));
 }
 
 template <typename D> Windows::UI::Xaml::Media::GeometryCollection impl_IGeometryGroup<D>::Children() const
 {
     Windows::UI::Xaml::Media::GeometryCollection value { nullptr };
-    check_hresult(static_cast<const IGeometryGroup &>(static_cast<const D &>(*this))->get_Children(put(value)));
+    check_hresult(WINRT_SHIM(IGeometryGroup)->get_Children(put(value)));
     return value;
 }
 
 template <typename D> void impl_IGeometryGroup<D>::Children(const Windows::UI::Xaml::Media::GeometryCollection & value) const
 {
-    check_hresult(static_cast<const IGeometryGroup &>(static_cast<const D &>(*this))->put_Children(get(value)));
+    check_hresult(WINRT_SHIM(IGeometryGroup)->put_Children(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGeometryGroupStatics<D>::FillRuleProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IGeometryGroupStatics &>(static_cast<const D &>(*this))->get_FillRuleProperty(put(value)));
+    check_hresult(WINRT_SHIM(IGeometryGroupStatics)->get_FillRuleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGeometryGroupStatics<D>::ChildrenProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IGeometryGroupStatics &>(static_cast<const D &>(*this))->get_ChildrenProperty(put(value)));
+    check_hresult(WINRT_SHIM(IGeometryGroupStatics)->get_ChildrenProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::GradientSpreadMethod impl_IGradientBrush<D>::SpreadMethod() const
 {
     Windows::UI::Xaml::Media::GradientSpreadMethod value {};
-    check_hresult(static_cast<const IGradientBrush &>(static_cast<const D &>(*this))->get_SpreadMethod(&value));
+    check_hresult(WINRT_SHIM(IGradientBrush)->get_SpreadMethod(&value));
     return value;
 }
 
 template <typename D> void impl_IGradientBrush<D>::SpreadMethod(Windows::UI::Xaml::Media::GradientSpreadMethod value) const
 {
-    check_hresult(static_cast<const IGradientBrush &>(static_cast<const D &>(*this))->put_SpreadMethod(value));
+    check_hresult(WINRT_SHIM(IGradientBrush)->put_SpreadMethod(value));
 }
 
 template <typename D> Windows::UI::Xaml::Media::BrushMappingMode impl_IGradientBrush<D>::MappingMode() const
 {
     Windows::UI::Xaml::Media::BrushMappingMode value {};
-    check_hresult(static_cast<const IGradientBrush &>(static_cast<const D &>(*this))->get_MappingMode(&value));
+    check_hresult(WINRT_SHIM(IGradientBrush)->get_MappingMode(&value));
     return value;
 }
 
 template <typename D> void impl_IGradientBrush<D>::MappingMode(Windows::UI::Xaml::Media::BrushMappingMode value) const
 {
-    check_hresult(static_cast<const IGradientBrush &>(static_cast<const D &>(*this))->put_MappingMode(value));
+    check_hresult(WINRT_SHIM(IGradientBrush)->put_MappingMode(value));
 }
 
 template <typename D> Windows::UI::Xaml::Media::ColorInterpolationMode impl_IGradientBrush<D>::ColorInterpolationMode() const
 {
     Windows::UI::Xaml::Media::ColorInterpolationMode value {};
-    check_hresult(static_cast<const IGradientBrush &>(static_cast<const D &>(*this))->get_ColorInterpolationMode(&value));
+    check_hresult(WINRT_SHIM(IGradientBrush)->get_ColorInterpolationMode(&value));
     return value;
 }
 
 template <typename D> void impl_IGradientBrush<D>::ColorInterpolationMode(Windows::UI::Xaml::Media::ColorInterpolationMode value) const
 {
-    check_hresult(static_cast<const IGradientBrush &>(static_cast<const D &>(*this))->put_ColorInterpolationMode(value));
+    check_hresult(WINRT_SHIM(IGradientBrush)->put_ColorInterpolationMode(value));
 }
 
 template <typename D> Windows::UI::Xaml::Media::GradientStopCollection impl_IGradientBrush<D>::GradientStops() const
 {
     Windows::UI::Xaml::Media::GradientStopCollection value { nullptr };
-    check_hresult(static_cast<const IGradientBrush &>(static_cast<const D &>(*this))->get_GradientStops(put(value)));
+    check_hresult(WINRT_SHIM(IGradientBrush)->get_GradientStops(put(value)));
     return value;
 }
 
 template <typename D> void impl_IGradientBrush<D>::GradientStops(const Windows::UI::Xaml::Media::GradientStopCollection & value) const
 {
-    check_hresult(static_cast<const IGradientBrush &>(static_cast<const D &>(*this))->put_GradientStops(get(value)));
+    check_hresult(WINRT_SHIM(IGradientBrush)->put_GradientStops(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGradientBrushStatics<D>::SpreadMethodProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IGradientBrushStatics &>(static_cast<const D &>(*this))->get_SpreadMethodProperty(put(value)));
+    check_hresult(WINRT_SHIM(IGradientBrushStatics)->get_SpreadMethodProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGradientBrushStatics<D>::MappingModeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IGradientBrushStatics &>(static_cast<const D &>(*this))->get_MappingModeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IGradientBrushStatics)->get_MappingModeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGradientBrushStatics<D>::ColorInterpolationModeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IGradientBrushStatics &>(static_cast<const D &>(*this))->get_ColorInterpolationModeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IGradientBrushStatics)->get_ColorInterpolationModeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGradientBrushStatics<D>::GradientStopsProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IGradientBrushStatics &>(static_cast<const D &>(*this))->get_GradientStopsProperty(put(value)));
+    check_hresult(WINRT_SHIM(IGradientBrushStatics)->get_GradientStopsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::GradientBrush impl_IGradientBrushFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::GradientBrush instance { nullptr };
-    check_hresult(static_cast<const IGradientBrushFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(IGradientBrushFactory)->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::Foundation::Point impl_ILineGeometry<D>::StartPoint() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const ILineGeometry &>(static_cast<const D &>(*this))->get_StartPoint(put(value)));
+    check_hresult(WINRT_SHIM(ILineGeometry)->get_StartPoint(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILineGeometry<D>::StartPoint(const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const ILineGeometry &>(static_cast<const D &>(*this))->put_StartPoint(get(value)));
+    check_hresult(WINRT_SHIM(ILineGeometry)->put_StartPoint(get(value)));
 }
 
 template <typename D> Windows::Foundation::Point impl_ILineGeometry<D>::EndPoint() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const ILineGeometry &>(static_cast<const D &>(*this))->get_EndPoint(put(value)));
+    check_hresult(WINRT_SHIM(ILineGeometry)->get_EndPoint(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILineGeometry<D>::EndPoint(const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const ILineGeometry &>(static_cast<const D &>(*this))->put_EndPoint(get(value)));
+    check_hresult(WINRT_SHIM(ILineGeometry)->put_EndPoint(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ILineGeometryStatics<D>::StartPointProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ILineGeometryStatics &>(static_cast<const D &>(*this))->get_StartPointProperty(put(value)));
+    check_hresult(WINRT_SHIM(ILineGeometryStatics)->get_StartPointProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ILineGeometryStatics<D>::EndPointProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ILineGeometryStatics &>(static_cast<const D &>(*this))->get_EndPointProperty(put(value)));
+    check_hresult(WINRT_SHIM(ILineGeometryStatics)->get_EndPointProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_ILineSegment<D>::Point() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const ILineSegment &>(static_cast<const D &>(*this))->get_Point(put(value)));
+    check_hresult(WINRT_SHIM(ILineSegment)->get_Point(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILineSegment<D>::Point(const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const ILineSegment &>(static_cast<const D &>(*this))->put_Point(get(value)));
+    check_hresult(WINRT_SHIM(ILineSegment)->put_Point(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ILineSegmentStatics<D>::PointProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ILineSegmentStatics &>(static_cast<const D &>(*this))->get_PointProperty(put(value)));
+    check_hresult(WINRT_SHIM(ILineSegmentStatics)->get_PointProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::FillRule impl_IPathGeometry<D>::FillRule() const
 {
     Windows::UI::Xaml::Media::FillRule value {};
-    check_hresult(static_cast<const IPathGeometry &>(static_cast<const D &>(*this))->get_FillRule(&value));
+    check_hresult(WINRT_SHIM(IPathGeometry)->get_FillRule(&value));
     return value;
 }
 
 template <typename D> void impl_IPathGeometry<D>::FillRule(Windows::UI::Xaml::Media::FillRule value) const
 {
-    check_hresult(static_cast<const IPathGeometry &>(static_cast<const D &>(*this))->put_FillRule(value));
+    check_hresult(WINRT_SHIM(IPathGeometry)->put_FillRule(value));
 }
 
 template <typename D> Windows::UI::Xaml::Media::PathFigureCollection impl_IPathGeometry<D>::Figures() const
 {
     Windows::UI::Xaml::Media::PathFigureCollection value { nullptr };
-    check_hresult(static_cast<const IPathGeometry &>(static_cast<const D &>(*this))->get_Figures(put(value)));
+    check_hresult(WINRT_SHIM(IPathGeometry)->get_Figures(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPathGeometry<D>::Figures(const Windows::UI::Xaml::Media::PathFigureCollection & value) const
 {
-    check_hresult(static_cast<const IPathGeometry &>(static_cast<const D &>(*this))->put_Figures(get(value)));
+    check_hresult(WINRT_SHIM(IPathGeometry)->put_Figures(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPathGeometryStatics<D>::FillRuleProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPathGeometryStatics &>(static_cast<const D &>(*this))->get_FillRuleProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPathGeometryStatics)->get_FillRuleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPathGeometryStatics<D>::FiguresProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPathGeometryStatics &>(static_cast<const D &>(*this))->get_FiguresProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPathGeometryStatics)->get_FiguresProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::PointCollection impl_IPolyBezierSegment<D>::Points() const
 {
     Windows::UI::Xaml::Media::PointCollection value { nullptr };
-    check_hresult(static_cast<const IPolyBezierSegment &>(static_cast<const D &>(*this))->get_Points(put(value)));
+    check_hresult(WINRT_SHIM(IPolyBezierSegment)->get_Points(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPolyBezierSegment<D>::Points(const Windows::UI::Xaml::Media::PointCollection & value) const
 {
-    check_hresult(static_cast<const IPolyBezierSegment &>(static_cast<const D &>(*this))->put_Points(get(value)));
+    check_hresult(WINRT_SHIM(IPolyBezierSegment)->put_Points(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPolyBezierSegmentStatics<D>::PointsProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPolyBezierSegmentStatics &>(static_cast<const D &>(*this))->get_PointsProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPolyBezierSegmentStatics)->get_PointsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::PointCollection impl_IPolyLineSegment<D>::Points() const
 {
     Windows::UI::Xaml::Media::PointCollection value { nullptr };
-    check_hresult(static_cast<const IPolyLineSegment &>(static_cast<const D &>(*this))->get_Points(put(value)));
+    check_hresult(WINRT_SHIM(IPolyLineSegment)->get_Points(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPolyLineSegment<D>::Points(const Windows::UI::Xaml::Media::PointCollection & value) const
 {
-    check_hresult(static_cast<const IPolyLineSegment &>(static_cast<const D &>(*this))->put_Points(get(value)));
+    check_hresult(WINRT_SHIM(IPolyLineSegment)->put_Points(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPolyLineSegmentStatics<D>::PointsProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPolyLineSegmentStatics &>(static_cast<const D &>(*this))->get_PointsProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPolyLineSegmentStatics)->get_PointsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::PointCollection impl_IPolyQuadraticBezierSegment<D>::Points() const
 {
     Windows::UI::Xaml::Media::PointCollection value { nullptr };
-    check_hresult(static_cast<const IPolyQuadraticBezierSegment &>(static_cast<const D &>(*this))->get_Points(put(value)));
+    check_hresult(WINRT_SHIM(IPolyQuadraticBezierSegment)->get_Points(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPolyQuadraticBezierSegment<D>::Points(const Windows::UI::Xaml::Media::PointCollection & value) const
 {
-    check_hresult(static_cast<const IPolyQuadraticBezierSegment &>(static_cast<const D &>(*this))->put_Points(get(value)));
+    check_hresult(WINRT_SHIM(IPolyQuadraticBezierSegment)->put_Points(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPolyQuadraticBezierSegmentStatics<D>::PointsProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPolyQuadraticBezierSegmentStatics &>(static_cast<const D &>(*this))->get_PointsProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPolyQuadraticBezierSegmentStatics)->get_PointsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IQuadraticBezierSegment<D>::Point1() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IQuadraticBezierSegment &>(static_cast<const D &>(*this))->get_Point1(put(value)));
+    check_hresult(WINRT_SHIM(IQuadraticBezierSegment)->get_Point1(put(value)));
     return value;
 }
 
 template <typename D> void impl_IQuadraticBezierSegment<D>::Point1(const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const IQuadraticBezierSegment &>(static_cast<const D &>(*this))->put_Point1(get(value)));
+    check_hresult(WINRT_SHIM(IQuadraticBezierSegment)->put_Point1(get(value)));
 }
 
 template <typename D> Windows::Foundation::Point impl_IQuadraticBezierSegment<D>::Point2() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IQuadraticBezierSegment &>(static_cast<const D &>(*this))->get_Point2(put(value)));
+    check_hresult(WINRT_SHIM(IQuadraticBezierSegment)->get_Point2(put(value)));
     return value;
 }
 
 template <typename D> void impl_IQuadraticBezierSegment<D>::Point2(const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const IQuadraticBezierSegment &>(static_cast<const D &>(*this))->put_Point2(get(value)));
+    check_hresult(WINRT_SHIM(IQuadraticBezierSegment)->put_Point2(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IQuadraticBezierSegmentStatics<D>::Point1Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IQuadraticBezierSegmentStatics &>(static_cast<const D &>(*this))->get_Point1Property(put(value)));
+    check_hresult(WINRT_SHIM(IQuadraticBezierSegmentStatics)->get_Point1Property(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IQuadraticBezierSegmentStatics<D>::Point2Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IQuadraticBezierSegmentStatics &>(static_cast<const D &>(*this))->get_Point2Property(put(value)));
+    check_hresult(WINRT_SHIM(IQuadraticBezierSegmentStatics)->get_Point2Property(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::AlignmentX impl_ITileBrush<D>::AlignmentX() const
 {
     Windows::UI::Xaml::Media::AlignmentX value {};
-    check_hresult(static_cast<const ITileBrush &>(static_cast<const D &>(*this))->get_AlignmentX(&value));
+    check_hresult(WINRT_SHIM(ITileBrush)->get_AlignmentX(&value));
     return value;
 }
 
 template <typename D> void impl_ITileBrush<D>::AlignmentX(Windows::UI::Xaml::Media::AlignmentX value) const
 {
-    check_hresult(static_cast<const ITileBrush &>(static_cast<const D &>(*this))->put_AlignmentX(value));
+    check_hresult(WINRT_SHIM(ITileBrush)->put_AlignmentX(value));
 }
 
 template <typename D> Windows::UI::Xaml::Media::AlignmentY impl_ITileBrush<D>::AlignmentY() const
 {
     Windows::UI::Xaml::Media::AlignmentY value {};
-    check_hresult(static_cast<const ITileBrush &>(static_cast<const D &>(*this))->get_AlignmentY(&value));
+    check_hresult(WINRT_SHIM(ITileBrush)->get_AlignmentY(&value));
     return value;
 }
 
 template <typename D> void impl_ITileBrush<D>::AlignmentY(Windows::UI::Xaml::Media::AlignmentY value) const
 {
-    check_hresult(static_cast<const ITileBrush &>(static_cast<const D &>(*this))->put_AlignmentY(value));
+    check_hresult(WINRT_SHIM(ITileBrush)->put_AlignmentY(value));
 }
 
 template <typename D> Windows::UI::Xaml::Media::Stretch impl_ITileBrush<D>::Stretch() const
 {
     Windows::UI::Xaml::Media::Stretch value {};
-    check_hresult(static_cast<const ITileBrush &>(static_cast<const D &>(*this))->get_Stretch(&value));
+    check_hresult(WINRT_SHIM(ITileBrush)->get_Stretch(&value));
     return value;
 }
 
 template <typename D> void impl_ITileBrush<D>::Stretch(Windows::UI::Xaml::Media::Stretch value) const
 {
-    check_hresult(static_cast<const ITileBrush &>(static_cast<const D &>(*this))->put_Stretch(value));
+    check_hresult(WINRT_SHIM(ITileBrush)->put_Stretch(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITileBrushStatics<D>::AlignmentXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ITileBrushStatics &>(static_cast<const D &>(*this))->get_AlignmentXProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITileBrushStatics)->get_AlignmentXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITileBrushStatics<D>::AlignmentYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ITileBrushStatics &>(static_cast<const D &>(*this))->get_AlignmentYProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITileBrushStatics)->get_AlignmentYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITileBrushStatics<D>::StretchProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ITileBrushStatics &>(static_cast<const D &>(*this))->get_StretchProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITileBrushStatics)->get_StretchProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::TileBrush impl_ITileBrushFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::TileBrush instance { nullptr };
-    check_hresult(static_cast<const ITileBrushFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(ITileBrushFactory)->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Media::ImageSource impl_IImageBrush<D>::ImageSource() const
 {
     Windows::UI::Xaml::Media::ImageSource value { nullptr };
-    check_hresult(static_cast<const IImageBrush &>(static_cast<const D &>(*this))->get_ImageSource(put(value)));
+    check_hresult(WINRT_SHIM(IImageBrush)->get_ImageSource(put(value)));
     return value;
 }
 
 template <typename D> void impl_IImageBrush<D>::ImageSource(const Windows::UI::Xaml::Media::ImageSource & value) const
 {
-    check_hresult(static_cast<const IImageBrush &>(static_cast<const D &>(*this))->put_ImageSource(get(value)));
+    check_hresult(WINRT_SHIM(IImageBrush)->put_ImageSource(get(value)));
 }
 
 template <typename D> event_token impl_IImageBrush<D>::ImageFailed(const Windows::UI::Xaml::ExceptionRoutedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IImageBrush &>(static_cast<const D &>(*this))->add_ImageFailed(get(value), &token));
+    check_hresult(WINRT_SHIM(IImageBrush)->add_ImageFailed(get(value), &token));
     return token;
 }
 
@@ -6795,13 +6795,13 @@ template <typename D> event_revoker<IImageBrush> impl_IImageBrush<D>::ImageFaile
 
 template <typename D> void impl_IImageBrush<D>::ImageFailed(event_token token) const
 {
-    check_hresult(static_cast<const IImageBrush &>(static_cast<const D &>(*this))->remove_ImageFailed(token));
+    check_hresult(WINRT_SHIM(IImageBrush)->remove_ImageFailed(token));
 }
 
 template <typename D> event_token impl_IImageBrush<D>::ImageOpened(const Windows::UI::Xaml::RoutedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IImageBrush &>(static_cast<const D &>(*this))->add_ImageOpened(get(value), &token));
+    check_hresult(WINRT_SHIM(IImageBrush)->add_ImageOpened(get(value), &token));
     return token;
 }
 
@@ -6812,58 +6812,58 @@ template <typename D> event_revoker<IImageBrush> impl_IImageBrush<D>::ImageOpene
 
 template <typename D> void impl_IImageBrush<D>::ImageOpened(event_token token) const
 {
-    check_hresult(static_cast<const IImageBrush &>(static_cast<const D &>(*this))->remove_ImageOpened(token));
+    check_hresult(WINRT_SHIM(IImageBrush)->remove_ImageOpened(token));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IImageBrushStatics<D>::ImageSourceProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IImageBrushStatics &>(static_cast<const D &>(*this))->get_ImageSourceProperty(put(value)));
+    check_hresult(WINRT_SHIM(IImageBrushStatics)->get_ImageSourceProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_ILinearGradientBrush<D>::StartPoint() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const ILinearGradientBrush &>(static_cast<const D &>(*this))->get_StartPoint(put(value)));
+    check_hresult(WINRT_SHIM(ILinearGradientBrush)->get_StartPoint(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILinearGradientBrush<D>::StartPoint(const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const ILinearGradientBrush &>(static_cast<const D &>(*this))->put_StartPoint(get(value)));
+    check_hresult(WINRT_SHIM(ILinearGradientBrush)->put_StartPoint(get(value)));
 }
 
 template <typename D> Windows::Foundation::Point impl_ILinearGradientBrush<D>::EndPoint() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const ILinearGradientBrush &>(static_cast<const D &>(*this))->get_EndPoint(put(value)));
+    check_hresult(WINRT_SHIM(ILinearGradientBrush)->get_EndPoint(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILinearGradientBrush<D>::EndPoint(const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const ILinearGradientBrush &>(static_cast<const D &>(*this))->put_EndPoint(get(value)));
+    check_hresult(WINRT_SHIM(ILinearGradientBrush)->put_EndPoint(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ILinearGradientBrushStatics<D>::StartPointProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ILinearGradientBrushStatics &>(static_cast<const D &>(*this))->get_StartPointProperty(put(value)));
+    check_hresult(WINRT_SHIM(ILinearGradientBrushStatics)->get_StartPointProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ILinearGradientBrushStatics<D>::EndPointProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const ILinearGradientBrushStatics &>(static_cast<const D &>(*this))->get_EndPointProperty(put(value)));
+    check_hresult(WINRT_SHIM(ILinearGradientBrushStatics)->get_EndPointProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::LinearGradientBrush impl_ILinearGradientBrushFactory<D>::CreateInstanceWithGradientStopCollectionAndAngle(const Windows::UI::Xaml::Media::GradientStopCollection & gradientStopCollection, double angle) const
 {
     Windows::UI::Xaml::Media::LinearGradientBrush instance { nullptr };
-    check_hresult(static_cast<const ILinearGradientBrushFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithGradientStopCollectionAndAngle(get(gradientStopCollection), angle, put(instance)));
+    check_hresult(WINRT_SHIM(ILinearGradientBrushFactory)->abi_CreateInstanceWithGradientStopCollectionAndAngle(get(gradientStopCollection), angle, put(instance)));
     return instance;
 }
 

@@ -184,7 +184,6 @@ struct IDeploymentResult :
     impl::consume<IDeploymentResult>
 {
     IDeploymentResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeploymentResult>(m_ptr); }
 };
 
 struct IPackageManager :
@@ -192,7 +191,6 @@ struct IPackageManager :
     impl::consume<IPackageManager>
 {
     IPackageManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageManager>(m_ptr); }
 };
 
 struct IPackageManager2 :
@@ -200,7 +198,6 @@ struct IPackageManager2 :
     impl::consume<IPackageManager2>
 {
     IPackageManager2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageManager2>(m_ptr); }
 };
 
 struct IPackageManager3 :
@@ -208,7 +205,6 @@ struct IPackageManager3 :
     impl::consume<IPackageManager3>
 {
     IPackageManager3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageManager3>(m_ptr); }
 };
 
 struct IPackageManager4 :
@@ -216,7 +212,6 @@ struct IPackageManager4 :
     impl::consume<IPackageManager4>
 {
     IPackageManager4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageManager4>(m_ptr); }
 };
 
 struct IPackageUserInformation :
@@ -224,7 +219,6 @@ struct IPackageUserInformation :
     impl::consume<IPackageUserInformation>
 {
     IPackageUserInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageUserInformation>(m_ptr); }
 };
 
 struct IPackageVolume :
@@ -232,7 +226,6 @@ struct IPackageVolume :
     impl::consume<IPackageVolume>
 {
     IPackageVolume(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageVolume>(m_ptr); }
 };
 
 struct IPackageVolume2 :
@@ -240,7 +233,6 @@ struct IPackageVolume2 :
     impl::consume<IPackageVolume2>
 {
     IPackageVolume2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPackageVolume2>(m_ptr); }
 };
 
 }

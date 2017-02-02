@@ -39,7 +39,6 @@ struct ISocialFeedChildItem :
     impl::consume<ISocialFeedChildItem>
 {
     ISocialFeedChildItem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISocialFeedChildItem>(m_ptr); }
 };
 
 struct ISocialFeedContent :
@@ -47,7 +46,6 @@ struct ISocialFeedContent :
     impl::consume<ISocialFeedContent>
 {
     ISocialFeedContent(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISocialFeedContent>(m_ptr); }
 };
 
 struct ISocialFeedItem :
@@ -55,7 +53,6 @@ struct ISocialFeedItem :
     impl::consume<ISocialFeedItem>
 {
     ISocialFeedItem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISocialFeedItem>(m_ptr); }
 };
 
 struct ISocialFeedSharedItem :
@@ -63,7 +60,6 @@ struct ISocialFeedSharedItem :
     impl::consume<ISocialFeedSharedItem>
 {
     ISocialFeedSharedItem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISocialFeedSharedItem>(m_ptr); }
 };
 
 struct ISocialItemThumbnail :
@@ -71,7 +67,6 @@ struct ISocialItemThumbnail :
     impl::consume<ISocialItemThumbnail>
 {
     ISocialItemThumbnail(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISocialItemThumbnail>(m_ptr); }
 };
 
 struct ISocialUserInfo :
@@ -79,7 +74,6 @@ struct ISocialUserInfo :
     impl::consume<ISocialUserInfo>
 {
     ISocialUserInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISocialUserInfo>(m_ptr); }
 };
 
 }

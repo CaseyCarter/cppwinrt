@@ -14,7 +14,6 @@ struct IXsltProcessor :
     impl::consume<IXsltProcessor>
 {
     IXsltProcessor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXsltProcessor>(m_ptr); }
 };
 
 struct IXsltProcessor2 :
@@ -22,7 +21,6 @@ struct IXsltProcessor2 :
     impl::consume<IXsltProcessor2>
 {
     IXsltProcessor2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXsltProcessor2>(m_ptr); }
 };
 
 struct IXsltProcessorFactory :
@@ -30,7 +28,6 @@ struct IXsltProcessorFactory :
     impl::consume<IXsltProcessorFactory>
 {
     IXsltProcessorFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXsltProcessorFactory>(m_ptr); }
 };
 
 }

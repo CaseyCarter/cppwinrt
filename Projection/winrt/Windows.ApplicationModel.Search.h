@@ -363,140 +363,140 @@ namespace Windows::ApplicationModel::Search {
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ISearchPaneQueryLinguisticDetails<D>::QueryTextAlternatives() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const ISearchPaneQueryLinguisticDetails &>(static_cast<const D &>(*this))->get_QueryTextAlternatives(put(value)));
+    check_hresult(WINRT_SHIM(ISearchPaneQueryLinguisticDetails)->get_QueryTextAlternatives(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_ISearchPaneQueryLinguisticDetails<D>::QueryTextCompositionStart() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ISearchPaneQueryLinguisticDetails &>(static_cast<const D &>(*this))->get_QueryTextCompositionStart(&value));
+    check_hresult(WINRT_SHIM(ISearchPaneQueryLinguisticDetails)->get_QueryTextCompositionStart(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_ISearchPaneQueryLinguisticDetails<D>::QueryTextCompositionLength() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ISearchPaneQueryLinguisticDetails &>(static_cast<const D &>(*this))->get_QueryTextCompositionLength(&value));
+    check_hresult(WINRT_SHIM(ISearchPaneQueryLinguisticDetails)->get_QueryTextCompositionLength(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_ISearchSuggestionCollection<D>::Size() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ISearchSuggestionCollection &>(static_cast<const D &>(*this))->get_Size(&value));
+    check_hresult(WINRT_SHIM(ISearchSuggestionCollection)->get_Size(&value));
     return value;
 }
 
 template <typename D> void impl_ISearchSuggestionCollection<D>::AppendQuerySuggestion(hstring_ref text) const
 {
-    check_hresult(static_cast<const ISearchSuggestionCollection &>(static_cast<const D &>(*this))->abi_AppendQuerySuggestion(get(text)));
+    check_hresult(WINRT_SHIM(ISearchSuggestionCollection)->abi_AppendQuerySuggestion(get(text)));
 }
 
 template <typename D> void impl_ISearchSuggestionCollection<D>::AppendQuerySuggestions(const Windows::Foundation::Collections::IIterable<hstring> & suggestions) const
 {
-    check_hresult(static_cast<const ISearchSuggestionCollection &>(static_cast<const D &>(*this))->abi_AppendQuerySuggestions(get(suggestions)));
+    check_hresult(WINRT_SHIM(ISearchSuggestionCollection)->abi_AppendQuerySuggestions(get(suggestions)));
 }
 
 template <typename D> void impl_ISearchSuggestionCollection<D>::AppendResultSuggestion(hstring_ref text, hstring_ref detailText, hstring_ref tag, const Windows::Storage::Streams::IRandomAccessStreamReference & image, hstring_ref imageAlternateText) const
 {
-    check_hresult(static_cast<const ISearchSuggestionCollection &>(static_cast<const D &>(*this))->abi_AppendResultSuggestion(get(text), get(detailText), get(tag), get(image), get(imageAlternateText)));
+    check_hresult(WINRT_SHIM(ISearchSuggestionCollection)->abi_AppendResultSuggestion(get(text), get(detailText), get(tag), get(image), get(imageAlternateText)));
 }
 
 template <typename D> void impl_ISearchSuggestionCollection<D>::AppendSearchSeparator(hstring_ref label) const
 {
-    check_hresult(static_cast<const ISearchSuggestionCollection &>(static_cast<const D &>(*this))->abi_AppendSearchSeparator(get(label)));
+    check_hresult(WINRT_SHIM(ISearchSuggestionCollection)->abi_AppendSearchSeparator(get(label)));
 }
 
 template <typename D> void impl_ILocalContentSuggestionSettings<D>::Enabled(bool value) const
 {
-    check_hresult(static_cast<const ILocalContentSuggestionSettings &>(static_cast<const D &>(*this))->put_Enabled(value));
+    check_hresult(WINRT_SHIM(ILocalContentSuggestionSettings)->put_Enabled(value));
 }
 
 template <typename D> bool impl_ILocalContentSuggestionSettings<D>::Enabled() const
 {
     bool value {};
-    check_hresult(static_cast<const ILocalContentSuggestionSettings &>(static_cast<const D &>(*this))->get_Enabled(&value));
+    check_hresult(WINRT_SHIM(ILocalContentSuggestionSettings)->get_Enabled(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Storage::StorageFolder> impl_ILocalContentSuggestionSettings<D>::Locations() const
 {
     Windows::Foundation::Collections::IVector<Windows::Storage::StorageFolder> value;
-    check_hresult(static_cast<const ILocalContentSuggestionSettings &>(static_cast<const D &>(*this))->get_Locations(put(value)));
+    check_hresult(WINRT_SHIM(ILocalContentSuggestionSettings)->get_Locations(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILocalContentSuggestionSettings<D>::AqsFilter(hstring_ref value) const
 {
-    check_hresult(static_cast<const ILocalContentSuggestionSettings &>(static_cast<const D &>(*this))->put_AqsFilter(get(value)));
+    check_hresult(WINRT_SHIM(ILocalContentSuggestionSettings)->put_AqsFilter(get(value)));
 }
 
 template <typename D> hstring impl_ILocalContentSuggestionSettings<D>::AqsFilter() const
 {
     hstring value;
-    check_hresult(static_cast<const ILocalContentSuggestionSettings &>(static_cast<const D &>(*this))->get_AqsFilter(put(value)));
+    check_hresult(WINRT_SHIM(ILocalContentSuggestionSettings)->get_AqsFilter(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_ILocalContentSuggestionSettings<D>::PropertiesToMatch() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const ILocalContentSuggestionSettings &>(static_cast<const D &>(*this))->get_PropertiesToMatch(put(value)));
+    check_hresult(WINRT_SHIM(ILocalContentSuggestionSettings)->get_PropertiesToMatch(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Search::SearchQueryLinguisticDetails impl_ISearchQueryLinguisticDetailsFactory<D>::CreateInstance(const Windows::Foundation::Collections::IIterable<hstring> & queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength) const
 {
     Windows::ApplicationModel::Search::SearchQueryLinguisticDetails value { nullptr };
-    check_hresult(static_cast<const ISearchQueryLinguisticDetailsFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(queryTextAlternatives), queryTextCompositionStart, queryTextCompositionLength, put(value)));
+    check_hresult(WINRT_SHIM(ISearchQueryLinguisticDetailsFactory)->abi_CreateInstance(get(queryTextAlternatives), queryTextCompositionStart, queryTextCompositionLength, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ISearchQueryLinguisticDetails<D>::QueryTextAlternatives() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const ISearchQueryLinguisticDetails &>(static_cast<const D &>(*this))->get_QueryTextAlternatives(put(value)));
+    check_hresult(WINRT_SHIM(ISearchQueryLinguisticDetails)->get_QueryTextAlternatives(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_ISearchQueryLinguisticDetails<D>::QueryTextCompositionStart() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ISearchQueryLinguisticDetails &>(static_cast<const D &>(*this))->get_QueryTextCompositionStart(&value));
+    check_hresult(WINRT_SHIM(ISearchQueryLinguisticDetails)->get_QueryTextCompositionStart(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_ISearchQueryLinguisticDetails<D>::QueryTextCompositionLength() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ISearchQueryLinguisticDetails &>(static_cast<const D &>(*this))->get_QueryTextCompositionLength(&value));
+    check_hresult(WINRT_SHIM(ISearchQueryLinguisticDetails)->get_QueryTextCompositionLength(&value));
     return value;
 }
 
 template <typename D> void impl_ISearchSuggestionsRequestDeferral<D>::Complete() const
 {
-    check_hresult(static_cast<const ISearchSuggestionsRequestDeferral &>(static_cast<const D &>(*this))->abi_Complete());
+    check_hresult(WINRT_SHIM(ISearchSuggestionsRequestDeferral)->abi_Complete());
 }
 
 template <typename D> bool impl_ISearchSuggestionsRequest<D>::IsCanceled() const
 {
     bool value {};
-    check_hresult(static_cast<const ISearchSuggestionsRequest &>(static_cast<const D &>(*this))->get_IsCanceled(&value));
+    check_hresult(WINRT_SHIM(ISearchSuggestionsRequest)->get_IsCanceled(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Search::SearchSuggestionCollection impl_ISearchSuggestionsRequest<D>::SearchSuggestionCollection() const
 {
     Windows::ApplicationModel::Search::SearchSuggestionCollection collection { nullptr };
-    check_hresult(static_cast<const ISearchSuggestionsRequest &>(static_cast<const D &>(*this))->get_SearchSuggestionCollection(put(collection)));
+    check_hresult(WINRT_SHIM(ISearchSuggestionsRequest)->get_SearchSuggestionCollection(put(collection)));
     return collection;
 }
 
 template <typename D> Windows::ApplicationModel::Search::SearchSuggestionsRequestDeferral impl_ISearchSuggestionsRequest<D>::GetDeferral() const
 {
     Windows::ApplicationModel::Search::SearchSuggestionsRequestDeferral deferral { nullptr };
-    check_hresult(static_cast<const ISearchSuggestionsRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(deferral)));
+    check_hresult(WINRT_SHIM(ISearchSuggestionsRequest)->abi_GetDeferral(put(deferral)));
     return deferral;
 }
 

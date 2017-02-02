@@ -29,7 +29,6 @@ struct IPrint3DWorkflow :
     impl::consume<IPrint3DWorkflow>
 {
     IPrint3DWorkflow(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrint3DWorkflow>(m_ptr); }
 };
 
 struct IPrint3DWorkflow2 :
@@ -37,7 +36,6 @@ struct IPrint3DWorkflow2 :
     impl::consume<IPrint3DWorkflow2>
 {
     IPrint3DWorkflow2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrint3DWorkflow2>(m_ptr); }
 };
 
 struct IPrint3DWorkflowPrintRequestedEventArgs :
@@ -45,7 +43,6 @@ struct IPrint3DWorkflowPrintRequestedEventArgs :
     impl::consume<IPrint3DWorkflowPrintRequestedEventArgs>
 {
     IPrint3DWorkflowPrintRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrint3DWorkflowPrintRequestedEventArgs>(m_ptr); }
 };
 
 struct IPrint3DWorkflowPrinterChangedEventArgs :
@@ -53,7 +50,6 @@ struct IPrint3DWorkflowPrinterChangedEventArgs :
     impl::consume<IPrint3DWorkflowPrinterChangedEventArgs>
 {
     IPrint3DWorkflowPrinterChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrint3DWorkflowPrinterChangedEventArgs>(m_ptr); }
 };
 
 }

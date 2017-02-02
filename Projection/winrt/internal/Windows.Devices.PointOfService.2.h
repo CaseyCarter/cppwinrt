@@ -375,7 +375,6 @@ struct IBarcodeScanner :
     impl::consume<IBarcodeScanner>
 {
     IBarcodeScanner(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBarcodeScanner>(m_ptr); }
 };
 
 struct IBarcodeScanner2 :
@@ -383,7 +382,6 @@ struct IBarcodeScanner2 :
     impl::consume<IBarcodeScanner2>
 {
     IBarcodeScanner2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBarcodeScanner2>(m_ptr); }
 };
 
 struct IBarcodeScannerCapabilities :
@@ -391,7 +389,6 @@ struct IBarcodeScannerCapabilities :
     impl::consume<IBarcodeScannerCapabilities>
 {
     IBarcodeScannerCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBarcodeScannerCapabilities>(m_ptr); }
 };
 
 struct IBarcodeScannerCapabilities1 :
@@ -399,7 +396,6 @@ struct IBarcodeScannerCapabilities1 :
     impl::consume<IBarcodeScannerCapabilities1>
 {
     IBarcodeScannerCapabilities1(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBarcodeScannerCapabilities1>(m_ptr); }
 };
 
 struct IBarcodeScannerDataReceivedEventArgs :
@@ -407,7 +403,6 @@ struct IBarcodeScannerDataReceivedEventArgs :
     impl::consume<IBarcodeScannerDataReceivedEventArgs>
 {
     IBarcodeScannerDataReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBarcodeScannerDataReceivedEventArgs>(m_ptr); }
 };
 
 struct IBarcodeScannerErrorOccurredEventArgs :
@@ -415,7 +410,6 @@ struct IBarcodeScannerErrorOccurredEventArgs :
     impl::consume<IBarcodeScannerErrorOccurredEventArgs>
 {
     IBarcodeScannerErrorOccurredEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBarcodeScannerErrorOccurredEventArgs>(m_ptr); }
 };
 
 struct IBarcodeScannerImagePreviewReceivedEventArgs :
@@ -423,7 +417,6 @@ struct IBarcodeScannerImagePreviewReceivedEventArgs :
     impl::consume<IBarcodeScannerImagePreviewReceivedEventArgs>
 {
     IBarcodeScannerImagePreviewReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBarcodeScannerImagePreviewReceivedEventArgs>(m_ptr); }
 };
 
 struct IBarcodeScannerReport :
@@ -431,7 +424,6 @@ struct IBarcodeScannerReport :
     impl::consume<IBarcodeScannerReport>
 {
     IBarcodeScannerReport(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBarcodeScannerReport>(m_ptr); }
 };
 
 struct IBarcodeScannerStatics :
@@ -439,7 +431,6 @@ struct IBarcodeScannerStatics :
     impl::consume<IBarcodeScannerStatics>
 {
     IBarcodeScannerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBarcodeScannerStatics>(m_ptr); }
 };
 
 struct IBarcodeScannerStatusUpdatedEventArgs :
@@ -447,7 +438,6 @@ struct IBarcodeScannerStatusUpdatedEventArgs :
     impl::consume<IBarcodeScannerStatusUpdatedEventArgs>
 {
     IBarcodeScannerStatusUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBarcodeScannerStatusUpdatedEventArgs>(m_ptr); }
 };
 
 struct IBarcodeSymbologiesStatics :
@@ -455,7 +445,6 @@ struct IBarcodeSymbologiesStatics :
     impl::consume<IBarcodeSymbologiesStatics>
 {
     IBarcodeSymbologiesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBarcodeSymbologiesStatics>(m_ptr); }
 };
 
 struct ICashDrawer :
@@ -463,7 +452,6 @@ struct ICashDrawer :
     impl::consume<ICashDrawer>
 {
     ICashDrawer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICashDrawer>(m_ptr); }
 };
 
 struct ICashDrawerCapabilities :
@@ -471,7 +459,6 @@ struct ICashDrawerCapabilities :
     impl::consume<ICashDrawerCapabilities>
 {
     ICashDrawerCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICashDrawerCapabilities>(m_ptr); }
 };
 
 struct ICashDrawerCloseAlarm :
@@ -479,7 +466,6 @@ struct ICashDrawerCloseAlarm :
     impl::consume<ICashDrawerCloseAlarm>
 {
     ICashDrawerCloseAlarm(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICashDrawerCloseAlarm>(m_ptr); }
 };
 
 struct ICashDrawerEventSource :
@@ -487,7 +473,6 @@ struct ICashDrawerEventSource :
     impl::consume<ICashDrawerEventSource>
 {
     ICashDrawerEventSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICashDrawerEventSource>(m_ptr); }
 };
 
 struct ICashDrawerEventSourceEventArgs :
@@ -495,7 +480,6 @@ struct ICashDrawerEventSourceEventArgs :
     impl::consume<ICashDrawerEventSourceEventArgs>
 {
     ICashDrawerEventSourceEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICashDrawerEventSourceEventArgs>(m_ptr); }
 };
 
 struct ICashDrawerStatics :
@@ -503,7 +487,6 @@ struct ICashDrawerStatics :
     impl::consume<ICashDrawerStatics>
 {
     ICashDrawerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICashDrawerStatics>(m_ptr); }
 };
 
 struct ICashDrawerStatus :
@@ -511,7 +494,6 @@ struct ICashDrawerStatus :
     impl::consume<ICashDrawerStatus>
 {
     ICashDrawerStatus(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICashDrawerStatus>(m_ptr); }
 };
 
 struct ICashDrawerStatusUpdatedEventArgs :
@@ -519,7 +501,6 @@ struct ICashDrawerStatusUpdatedEventArgs :
     impl::consume<ICashDrawerStatusUpdatedEventArgs>
 {
     ICashDrawerStatusUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICashDrawerStatusUpdatedEventArgs>(m_ptr); }
 };
 
 struct IClaimedBarcodeScanner :
@@ -528,7 +509,6 @@ struct IClaimedBarcodeScanner :
     impl::require<IClaimedBarcodeScanner, Windows::Foundation::IClosable>
 {
     IClaimedBarcodeScanner(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IClaimedBarcodeScanner>(m_ptr); }
 };
 
 struct IClaimedBarcodeScanner1 :
@@ -537,7 +517,6 @@ struct IClaimedBarcodeScanner1 :
     impl::require<IClaimedBarcodeScanner1, Windows::Foundation::IClosable>
 {
     IClaimedBarcodeScanner1(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IClaimedBarcodeScanner1>(m_ptr); }
 };
 
 struct IClaimedCashDrawer :
@@ -546,7 +525,6 @@ struct IClaimedCashDrawer :
     impl::require<IClaimedCashDrawer, Windows::Foundation::IClosable>
 {
     IClaimedCashDrawer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IClaimedCashDrawer>(m_ptr); }
 };
 
 struct IClaimedJournalPrinter :
@@ -555,7 +533,6 @@ struct IClaimedJournalPrinter :
     impl::require<IClaimedJournalPrinter, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStation>
 {
     IClaimedJournalPrinter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IClaimedJournalPrinter>(m_ptr); }
 };
 
 struct IClaimedMagneticStripeReader :
@@ -564,7 +541,6 @@ struct IClaimedMagneticStripeReader :
     impl::require<IClaimedMagneticStripeReader, Windows::Foundation::IClosable>
 {
     IClaimedMagneticStripeReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IClaimedMagneticStripeReader>(m_ptr); }
 };
 
 struct IClaimedPosPrinter :
@@ -573,7 +549,6 @@ struct IClaimedPosPrinter :
     impl::require<IClaimedPosPrinter, Windows::Foundation::IClosable>
 {
     IClaimedPosPrinter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IClaimedPosPrinter>(m_ptr); }
 };
 
 struct IClaimedReceiptPrinter :
@@ -582,7 +557,6 @@ struct IClaimedReceiptPrinter :
     impl::require<IClaimedReceiptPrinter, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStation>
 {
     IClaimedReceiptPrinter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IClaimedReceiptPrinter>(m_ptr); }
 };
 
 struct IClaimedSlipPrinter :
@@ -591,7 +565,6 @@ struct IClaimedSlipPrinter :
     impl::require<IClaimedSlipPrinter, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStation>
 {
     IClaimedSlipPrinter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IClaimedSlipPrinter>(m_ptr); }
 };
 
 struct ICommonClaimedPosPrinterStation :
@@ -599,7 +572,6 @@ struct ICommonClaimedPosPrinterStation :
     impl::consume<ICommonClaimedPosPrinterStation>
 {
     ICommonClaimedPosPrinterStation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICommonClaimedPosPrinterStation>(m_ptr); }
 };
 
 struct ICommonPosPrintStationCapabilities :
@@ -607,7 +579,6 @@ struct ICommonPosPrintStationCapabilities :
     impl::consume<ICommonPosPrintStationCapabilities>
 {
     ICommonPosPrintStationCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICommonPosPrintStationCapabilities>(m_ptr); }
 };
 
 struct ICommonReceiptSlipCapabilities :
@@ -616,7 +587,6 @@ struct ICommonReceiptSlipCapabilities :
     impl::require<ICommonReceiptSlipCapabilities, Windows::Devices::PointOfService::ICommonPosPrintStationCapabilities>
 {
     ICommonReceiptSlipCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICommonReceiptSlipCapabilities>(m_ptr); }
 };
 
 struct IJournalPrinterCapabilities :
@@ -625,7 +595,6 @@ struct IJournalPrinterCapabilities :
     impl::require<IJournalPrinterCapabilities, Windows::Devices::PointOfService::ICommonPosPrintStationCapabilities>
 {
     IJournalPrinterCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IJournalPrinterCapabilities>(m_ptr); }
 };
 
 struct IMagneticStripeReader :
@@ -633,7 +602,6 @@ struct IMagneticStripeReader :
     impl::consume<IMagneticStripeReader>
 {
     IMagneticStripeReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMagneticStripeReader>(m_ptr); }
 };
 
 struct IMagneticStripeReaderAamvaCardDataReceivedEventArgs :
@@ -641,7 +609,6 @@ struct IMagneticStripeReaderAamvaCardDataReceivedEventArgs :
     impl::consume<IMagneticStripeReaderAamvaCardDataReceivedEventArgs>
 {
     IMagneticStripeReaderAamvaCardDataReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMagneticStripeReaderAamvaCardDataReceivedEventArgs>(m_ptr); }
 };
 
 struct IMagneticStripeReaderBankCardDataReceivedEventArgs :
@@ -649,7 +616,6 @@ struct IMagneticStripeReaderBankCardDataReceivedEventArgs :
     impl::consume<IMagneticStripeReaderBankCardDataReceivedEventArgs>
 {
     IMagneticStripeReaderBankCardDataReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMagneticStripeReaderBankCardDataReceivedEventArgs>(m_ptr); }
 };
 
 struct IMagneticStripeReaderCapabilities :
@@ -657,7 +623,6 @@ struct IMagneticStripeReaderCapabilities :
     impl::consume<IMagneticStripeReaderCapabilities>
 {
     IMagneticStripeReaderCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMagneticStripeReaderCapabilities>(m_ptr); }
 };
 
 struct IMagneticStripeReaderCardTypesStatics :
@@ -665,7 +630,6 @@ struct IMagneticStripeReaderCardTypesStatics :
     impl::consume<IMagneticStripeReaderCardTypesStatics>
 {
     IMagneticStripeReaderCardTypesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMagneticStripeReaderCardTypesStatics>(m_ptr); }
 };
 
 struct IMagneticStripeReaderEncryptionAlgorithmsStatics :
@@ -673,7 +637,6 @@ struct IMagneticStripeReaderEncryptionAlgorithmsStatics :
     impl::consume<IMagneticStripeReaderEncryptionAlgorithmsStatics>
 {
     IMagneticStripeReaderEncryptionAlgorithmsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMagneticStripeReaderEncryptionAlgorithmsStatics>(m_ptr); }
 };
 
 struct IMagneticStripeReaderErrorOccurredEventArgs :
@@ -681,7 +644,6 @@ struct IMagneticStripeReaderErrorOccurredEventArgs :
     impl::consume<IMagneticStripeReaderErrorOccurredEventArgs>
 {
     IMagneticStripeReaderErrorOccurredEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMagneticStripeReaderErrorOccurredEventArgs>(m_ptr); }
 };
 
 struct IMagneticStripeReaderReport :
@@ -689,7 +651,6 @@ struct IMagneticStripeReaderReport :
     impl::consume<IMagneticStripeReaderReport>
 {
     IMagneticStripeReaderReport(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMagneticStripeReaderReport>(m_ptr); }
 };
 
 struct IMagneticStripeReaderStatics :
@@ -697,7 +658,6 @@ struct IMagneticStripeReaderStatics :
     impl::consume<IMagneticStripeReaderStatics>
 {
     IMagneticStripeReaderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMagneticStripeReaderStatics>(m_ptr); }
 };
 
 struct IMagneticStripeReaderStatusUpdatedEventArgs :
@@ -705,7 +665,6 @@ struct IMagneticStripeReaderStatusUpdatedEventArgs :
     impl::consume<IMagneticStripeReaderStatusUpdatedEventArgs>
 {
     IMagneticStripeReaderStatusUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMagneticStripeReaderStatusUpdatedEventArgs>(m_ptr); }
 };
 
 struct IMagneticStripeReaderTrackData :
@@ -713,7 +672,6 @@ struct IMagneticStripeReaderTrackData :
     impl::consume<IMagneticStripeReaderTrackData>
 {
     IMagneticStripeReaderTrackData(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMagneticStripeReaderTrackData>(m_ptr); }
 };
 
 struct IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs :
@@ -721,7 +679,6 @@ struct IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs :
     impl::consume<IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs>
 {
     IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs>(m_ptr); }
 };
 
 struct IPosPrinter :
@@ -729,7 +686,6 @@ struct IPosPrinter :
     impl::consume<IPosPrinter>
 {
     IPosPrinter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPosPrinter>(m_ptr); }
 };
 
 struct IPosPrinterCapabilities :
@@ -737,7 +693,6 @@ struct IPosPrinterCapabilities :
     impl::consume<IPosPrinterCapabilities>
 {
     IPosPrinterCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPosPrinterCapabilities>(m_ptr); }
 };
 
 struct IPosPrinterCharacterSetIdsStatics :
@@ -745,7 +700,6 @@ struct IPosPrinterCharacterSetIdsStatics :
     impl::consume<IPosPrinterCharacterSetIdsStatics>
 {
     IPosPrinterCharacterSetIdsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPosPrinterCharacterSetIdsStatics>(m_ptr); }
 };
 
 struct IPosPrinterJob :
@@ -753,7 +707,6 @@ struct IPosPrinterJob :
     impl::consume<IPosPrinterJob>
 {
     IPosPrinterJob(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPosPrinterJob>(m_ptr); }
 };
 
 struct IPosPrinterReleaseDeviceRequestedEventArgs :
@@ -761,7 +714,6 @@ struct IPosPrinterReleaseDeviceRequestedEventArgs :
     impl::consume<IPosPrinterReleaseDeviceRequestedEventArgs>
 {
     IPosPrinterReleaseDeviceRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPosPrinterReleaseDeviceRequestedEventArgs>(m_ptr); }
 };
 
 struct IPosPrinterStatics :
@@ -769,7 +721,6 @@ struct IPosPrinterStatics :
     impl::consume<IPosPrinterStatics>
 {
     IPosPrinterStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPosPrinterStatics>(m_ptr); }
 };
 
 struct IPosPrinterStatus :
@@ -777,7 +728,6 @@ struct IPosPrinterStatus :
     impl::consume<IPosPrinterStatus>
 {
     IPosPrinterStatus(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPosPrinterStatus>(m_ptr); }
 };
 
 struct IPosPrinterStatusUpdatedEventArgs :
@@ -785,7 +735,6 @@ struct IPosPrinterStatusUpdatedEventArgs :
     impl::consume<IPosPrinterStatusUpdatedEventArgs>
 {
     IPosPrinterStatusUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPosPrinterStatusUpdatedEventArgs>(m_ptr); }
 };
 
 struct IReceiptOrSlipJob :
@@ -794,7 +743,6 @@ struct IReceiptOrSlipJob :
     impl::require<IReceiptOrSlipJob, Windows::Devices::PointOfService::IPosPrinterJob>
 {
     IReceiptOrSlipJob(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IReceiptOrSlipJob>(m_ptr); }
 };
 
 struct IReceiptPrintJob :
@@ -803,7 +751,6 @@ struct IReceiptPrintJob :
     impl::require<IReceiptPrintJob, Windows::Devices::PointOfService::IPosPrinterJob, Windows::Devices::PointOfService::IReceiptOrSlipJob>
 {
     IReceiptPrintJob(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IReceiptPrintJob>(m_ptr); }
 };
 
 struct IReceiptPrinterCapabilities :
@@ -812,7 +759,6 @@ struct IReceiptPrinterCapabilities :
     impl::require<IReceiptPrinterCapabilities, Windows::Devices::PointOfService::ICommonPosPrintStationCapabilities, Windows::Devices::PointOfService::ICommonReceiptSlipCapabilities>
 {
     IReceiptPrinterCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IReceiptPrinterCapabilities>(m_ptr); }
 };
 
 struct ISlipPrinterCapabilities :
@@ -821,7 +767,6 @@ struct ISlipPrinterCapabilities :
     impl::require<ISlipPrinterCapabilities, Windows::Devices::PointOfService::ICommonPosPrintStationCapabilities, Windows::Devices::PointOfService::ICommonReceiptSlipCapabilities>
 {
     ISlipPrinterCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISlipPrinterCapabilities>(m_ptr); }
 };
 
 struct IUnifiedPosErrorData :
@@ -829,7 +774,6 @@ struct IUnifiedPosErrorData :
     impl::consume<IUnifiedPosErrorData>
 {
     IUnifiedPosErrorData(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUnifiedPosErrorData>(m_ptr); }
 };
 
 }

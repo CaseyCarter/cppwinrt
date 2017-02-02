@@ -5263,2385 +5263,2385 @@ namespace Windows::Globalization {
 template <typename D> hstring impl_ICalendarIdentifiersStatics<D>::Gregorian() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendarIdentifiersStatics &>(static_cast<const D &>(*this))->get_Gregorian(put(value)));
+    check_hresult(WINRT_SHIM(ICalendarIdentifiersStatics)->get_Gregorian(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICalendarIdentifiersStatics<D>::Hebrew() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendarIdentifiersStatics &>(static_cast<const D &>(*this))->get_Hebrew(put(value)));
+    check_hresult(WINRT_SHIM(ICalendarIdentifiersStatics)->get_Hebrew(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICalendarIdentifiersStatics<D>::Hijri() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendarIdentifiersStatics &>(static_cast<const D &>(*this))->get_Hijri(put(value)));
+    check_hresult(WINRT_SHIM(ICalendarIdentifiersStatics)->get_Hijri(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICalendarIdentifiersStatics<D>::Japanese() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendarIdentifiersStatics &>(static_cast<const D &>(*this))->get_Japanese(put(value)));
+    check_hresult(WINRT_SHIM(ICalendarIdentifiersStatics)->get_Japanese(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICalendarIdentifiersStatics<D>::Julian() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendarIdentifiersStatics &>(static_cast<const D &>(*this))->get_Julian(put(value)));
+    check_hresult(WINRT_SHIM(ICalendarIdentifiersStatics)->get_Julian(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICalendarIdentifiersStatics<D>::Korean() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendarIdentifiersStatics &>(static_cast<const D &>(*this))->get_Korean(put(value)));
+    check_hresult(WINRT_SHIM(ICalendarIdentifiersStatics)->get_Korean(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICalendarIdentifiersStatics<D>::Taiwan() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendarIdentifiersStatics &>(static_cast<const D &>(*this))->get_Taiwan(put(value)));
+    check_hresult(WINRT_SHIM(ICalendarIdentifiersStatics)->get_Taiwan(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICalendarIdentifiersStatics<D>::Thai() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendarIdentifiersStatics &>(static_cast<const D &>(*this))->get_Thai(put(value)));
+    check_hresult(WINRT_SHIM(ICalendarIdentifiersStatics)->get_Thai(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICalendarIdentifiersStatics<D>::UmAlQura() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendarIdentifiersStatics &>(static_cast<const D &>(*this))->get_UmAlQura(put(value)));
+    check_hresult(WINRT_SHIM(ICalendarIdentifiersStatics)->get_UmAlQura(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICalendarIdentifiersStatics2<D>::Persian() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendarIdentifiersStatics2 &>(static_cast<const D &>(*this))->get_Persian(put(value)));
+    check_hresult(WINRT_SHIM(ICalendarIdentifiersStatics2)->get_Persian(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICalendarIdentifiersStatics3<D>::ChineseLunar() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendarIdentifiersStatics3 &>(static_cast<const D &>(*this))->get_ChineseLunar(put(value)));
+    check_hresult(WINRT_SHIM(ICalendarIdentifiersStatics3)->get_ChineseLunar(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICalendarIdentifiersStatics3<D>::JapaneseLunar() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendarIdentifiersStatics3 &>(static_cast<const D &>(*this))->get_JapaneseLunar(put(value)));
+    check_hresult(WINRT_SHIM(ICalendarIdentifiersStatics3)->get_JapaneseLunar(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICalendarIdentifiersStatics3<D>::KoreanLunar() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendarIdentifiersStatics3 &>(static_cast<const D &>(*this))->get_KoreanLunar(put(value)));
+    check_hresult(WINRT_SHIM(ICalendarIdentifiersStatics3)->get_KoreanLunar(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICalendarIdentifiersStatics3<D>::TaiwanLunar() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendarIdentifiersStatics3 &>(static_cast<const D &>(*this))->get_TaiwanLunar(put(value)));
+    check_hresult(WINRT_SHIM(ICalendarIdentifiersStatics3)->get_TaiwanLunar(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICalendarIdentifiersStatics3<D>::VietnameseLunar() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendarIdentifiersStatics3 &>(static_cast<const D &>(*this))->get_VietnameseLunar(put(value)));
+    check_hresult(WINRT_SHIM(ICalendarIdentifiersStatics3)->get_VietnameseLunar(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IClockIdentifiersStatics<D>::TwelveHour() const
 {
     hstring value;
-    check_hresult(static_cast<const IClockIdentifiersStatics &>(static_cast<const D &>(*this))->get_TwelveHour(put(value)));
+    check_hresult(WINRT_SHIM(IClockIdentifiersStatics)->get_TwelveHour(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IClockIdentifiersStatics<D>::TwentyFourHour() const
 {
     hstring value;
-    check_hresult(static_cast<const IClockIdentifiersStatics &>(static_cast<const D &>(*this))->get_TwentyFourHour(put(value)));
+    check_hresult(WINRT_SHIM(IClockIdentifiersStatics)->get_TwentyFourHour(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Arab() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Arab(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Arab(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::ArabExt() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_ArabExt(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_ArabExt(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Bali() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Bali(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Bali(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Beng() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Beng(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Beng(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Cham() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Cham(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Cham(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Deva() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Deva(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Deva(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::FullWide() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_FullWide(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_FullWide(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Gujr() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Gujr(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Gujr(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Guru() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Guru(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Guru(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::HaniDec() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_HaniDec(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_HaniDec(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Java() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Java(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Java(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Kali() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Kali(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Kali(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Khmr() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Khmr(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Khmr(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Knda() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Knda(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Knda(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Lana() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Lana(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Lana(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::LanaTham() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_LanaTham(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_LanaTham(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Laoo() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Laoo(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Laoo(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Latn() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Latn(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Latn(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Lepc() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Lepc(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Lepc(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Limb() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Limb(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Limb(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Mlym() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Mlym(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Mlym(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Mong() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Mong(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Mong(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Mtei() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Mtei(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Mtei(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Mymr() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Mymr(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Mymr(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::MymrShan() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_MymrShan(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_MymrShan(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Nkoo() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Nkoo(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Nkoo(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Olck() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Olck(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Olck(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Orya() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Orya(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Orya(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Saur() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Saur(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Saur(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Sund() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Sund(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Sund(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Talu() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Talu(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Talu(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::TamlDec() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_TamlDec(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_TamlDec(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Telu() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Telu(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Telu(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Thai() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Thai(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Thai(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Tibt() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Tibt(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Tibt(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics<D>::Vaii() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics &>(static_cast<const D &>(*this))->get_Vaii(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics)->get_Vaii(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics2<D>::Brah() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics2 &>(static_cast<const D &>(*this))->get_Brah(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics2)->get_Brah(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics2<D>::Osma() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics2 &>(static_cast<const D &>(*this))->get_Osma(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics2)->get_Osma(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics2<D>::MathBold() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics2 &>(static_cast<const D &>(*this))->get_MathBold(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics2)->get_MathBold(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics2<D>::MathDbl() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics2 &>(static_cast<const D &>(*this))->get_MathDbl(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics2)->get_MathDbl(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics2<D>::MathSans() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics2 &>(static_cast<const D &>(*this))->get_MathSans(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics2)->get_MathSans(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics2<D>::MathSanb() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics2 &>(static_cast<const D &>(*this))->get_MathSanb(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics2)->get_MathSanb(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics2<D>::MathMono() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics2 &>(static_cast<const D &>(*this))->get_MathMono(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics2)->get_MathMono(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics2<D>::ZmthBold() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics2 &>(static_cast<const D &>(*this))->get_ZmthBold(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics2)->get_ZmthBold(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics2<D>::ZmthDbl() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics2 &>(static_cast<const D &>(*this))->get_ZmthDbl(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics2)->get_ZmthDbl(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics2<D>::ZmthSans() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics2 &>(static_cast<const D &>(*this))->get_ZmthSans(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics2)->get_ZmthSans(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics2<D>::ZmthSanb() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics2 &>(static_cast<const D &>(*this))->get_ZmthSanb(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics2)->get_ZmthSanb(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemIdentifiersStatics2<D>::ZmthMono() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemIdentifiersStatics2 &>(static_cast<const D &>(*this))->get_ZmthMono(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemIdentifiersStatics2)->get_ZmthMono(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::AED() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_AED(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_AED(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::AFN() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_AFN(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_AFN(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::ALL() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_ALL(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_ALL(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::AMD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_AMD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_AMD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::ANG() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_ANG(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_ANG(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::AOA() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_AOA(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_AOA(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::ARS() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_ARS(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_ARS(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::AUD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_AUD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_AUD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::AWG() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_AWG(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_AWG(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::AZN() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_AZN(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_AZN(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::BAM() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_BAM(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_BAM(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::BBD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_BBD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_BBD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::BDT() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_BDT(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_BDT(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::BGN() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_BGN(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_BGN(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::BHD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_BHD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_BHD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::BIF() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_BIF(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_BIF(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::BMD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_BMD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_BMD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::BND() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_BND(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_BND(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::BOB() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_BOB(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_BOB(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::BRL() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_BRL(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_BRL(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::BSD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_BSD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_BSD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::BTN() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_BTN(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_BTN(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::BWP() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_BWP(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_BWP(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::BYR() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_BYR(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_BYR(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::BZD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_BZD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_BZD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::CAD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_CAD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_CAD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::CDF() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_CDF(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_CDF(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::CHF() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_CHF(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_CHF(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::CLP() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_CLP(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_CLP(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::CNY() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_CNY(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_CNY(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::COP() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_COP(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_COP(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::CRC() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_CRC(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_CRC(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::CUP() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_CUP(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_CUP(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::CVE() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_CVE(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_CVE(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::CZK() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_CZK(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_CZK(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::DJF() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_DJF(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_DJF(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::DKK() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_DKK(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_DKK(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::DOP() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_DOP(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_DOP(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::DZD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_DZD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_DZD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::EGP() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_EGP(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_EGP(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::ERN() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_ERN(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_ERN(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::ETB() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_ETB(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_ETB(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::EUR() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_EUR(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_EUR(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::FJD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_FJD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_FJD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::FKP() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_FKP(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_FKP(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::GBP() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_GBP(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_GBP(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::GEL() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_GEL(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_GEL(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::GHS() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_GHS(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_GHS(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::GIP() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_GIP(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_GIP(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::GMD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_GMD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_GMD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::GNF() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_GNF(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_GNF(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::GTQ() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_GTQ(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_GTQ(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::GYD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_GYD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_GYD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::HKD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_HKD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_HKD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::HNL() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_HNL(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_HNL(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::HRK() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_HRK(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_HRK(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::HTG() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_HTG(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_HTG(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::HUF() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_HUF(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_HUF(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::IDR() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_IDR(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_IDR(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::ILS() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_ILS(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_ILS(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::INR() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_INR(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_INR(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::IQD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_IQD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_IQD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::IRR() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_IRR(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_IRR(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::ISK() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_ISK(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_ISK(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::JMD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_JMD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_JMD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::JOD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_JOD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_JOD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::JPY() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_JPY(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_JPY(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::KES() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_KES(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_KES(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::KGS() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_KGS(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_KGS(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::KHR() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_KHR(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_KHR(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::KMF() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_KMF(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_KMF(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::KPW() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_KPW(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_KPW(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::KRW() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_KRW(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_KRW(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::KWD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_KWD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_KWD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::KYD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_KYD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_KYD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::KZT() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_KZT(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_KZT(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::LAK() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_LAK(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_LAK(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::LBP() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_LBP(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_LBP(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::LKR() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_LKR(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_LKR(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::LRD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_LRD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_LRD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::LSL() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_LSL(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_LSL(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::LTL() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_LTL(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_LTL(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::LVL() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_LVL(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_LVL(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::LYD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_LYD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_LYD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::MAD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_MAD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_MAD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::MDL() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_MDL(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_MDL(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::MGA() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_MGA(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_MGA(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::MKD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_MKD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_MKD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::MMK() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_MMK(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_MMK(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::MNT() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_MNT(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_MNT(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::MOP() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_MOP(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_MOP(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::MRO() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_MRO(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_MRO(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::MUR() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_MUR(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_MUR(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::MVR() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_MVR(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_MVR(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::MWK() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_MWK(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_MWK(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::MXN() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_MXN(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_MXN(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::MYR() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_MYR(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_MYR(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::MZN() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_MZN(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_MZN(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::NAD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_NAD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_NAD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::NGN() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_NGN(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_NGN(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::NIO() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_NIO(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_NIO(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::NOK() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_NOK(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_NOK(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::NPR() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_NPR(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_NPR(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::NZD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_NZD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_NZD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::OMR() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_OMR(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_OMR(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::PAB() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_PAB(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_PAB(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::PEN() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_PEN(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_PEN(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::PGK() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_PGK(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_PGK(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::PHP() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_PHP(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_PHP(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::PKR() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_PKR(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_PKR(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::PLN() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_PLN(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_PLN(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::PYG() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_PYG(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_PYG(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::QAR() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_QAR(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_QAR(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::RON() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_RON(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_RON(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::RSD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_RSD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_RSD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::RUB() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_RUB(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_RUB(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::RWF() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_RWF(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_RWF(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::SAR() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_SAR(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_SAR(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::SBD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_SBD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_SBD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::SCR() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_SCR(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_SCR(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::SDG() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_SDG(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_SDG(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::SEK() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_SEK(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_SEK(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::SGD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_SGD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_SGD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::SHP() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_SHP(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_SHP(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::SLL() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_SLL(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_SLL(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::SOS() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_SOS(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_SOS(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::SRD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_SRD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_SRD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::STD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_STD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_STD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::SYP() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_SYP(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_SYP(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::SZL() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_SZL(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_SZL(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::THB() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_THB(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_THB(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::TJS() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_TJS(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_TJS(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::TMT() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_TMT(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_TMT(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::TND() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_TND(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_TND(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::TOP() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_TOP(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_TOP(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::TRY() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_TRY(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_TRY(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::TTD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_TTD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_TTD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::TWD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_TWD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_TWD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::TZS() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_TZS(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_TZS(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::UAH() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_UAH(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_UAH(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::UGX() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_UGX(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_UGX(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::USD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_USD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_USD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::UYU() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_UYU(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_UYU(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::UZS() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_UZS(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_UZS(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::VEF() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_VEF(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_VEF(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::VND() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_VND(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_VND(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::VUV() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_VUV(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_VUV(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::WST() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_WST(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_WST(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::XAF() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_XAF(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_XAF(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::XCD() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_XCD(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_XCD(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::XOF() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_XOF(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_XOF(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::XPF() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_XPF(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_XPF(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::XXX() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_XXX(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_XXX(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::YER() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_YER(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_YER(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::ZAR() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_ZAR(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_ZAR(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::ZMW() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_ZMW(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_ZMW(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::ZWL() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyIdentifiersStatics &>(static_cast<const D &>(*this))->get_ZWL(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics)->get_ZWL(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IGeographicRegion<D>::Code() const
 {
     hstring value;
-    check_hresult(static_cast<const IGeographicRegion &>(static_cast<const D &>(*this))->get_Code(put(value)));
+    check_hresult(WINRT_SHIM(IGeographicRegion)->get_Code(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IGeographicRegion<D>::CodeTwoLetter() const
 {
     hstring value;
-    check_hresult(static_cast<const IGeographicRegion &>(static_cast<const D &>(*this))->get_CodeTwoLetter(put(value)));
+    check_hresult(WINRT_SHIM(IGeographicRegion)->get_CodeTwoLetter(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IGeographicRegion<D>::CodeThreeLetter() const
 {
     hstring value;
-    check_hresult(static_cast<const IGeographicRegion &>(static_cast<const D &>(*this))->get_CodeThreeLetter(put(value)));
+    check_hresult(WINRT_SHIM(IGeographicRegion)->get_CodeThreeLetter(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IGeographicRegion<D>::CodeThreeDigit() const
 {
     hstring value;
-    check_hresult(static_cast<const IGeographicRegion &>(static_cast<const D &>(*this))->get_CodeThreeDigit(put(value)));
+    check_hresult(WINRT_SHIM(IGeographicRegion)->get_CodeThreeDigit(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IGeographicRegion<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const IGeographicRegion &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IGeographicRegion)->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IGeographicRegion<D>::NativeName() const
 {
     hstring value;
-    check_hresult(static_cast<const IGeographicRegion &>(static_cast<const D &>(*this))->get_NativeName(put(value)));
+    check_hresult(WINRT_SHIM(IGeographicRegion)->get_NativeName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IGeographicRegion<D>::CurrenciesInUse() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IGeographicRegion &>(static_cast<const D &>(*this))->get_CurrenciesInUse(put(value)));
+    check_hresult(WINRT_SHIM(IGeographicRegion)->get_CurrenciesInUse(put(value)));
     return value;
 }
 
 template <typename D> Windows::Globalization::GeographicRegion impl_IGeographicRegionFactory<D>::CreateGeographicRegion(hstring_ref geographicRegionCode) const
 {
     Windows::Globalization::GeographicRegion result { nullptr };
-    check_hresult(static_cast<const IGeographicRegionFactory &>(static_cast<const D &>(*this))->abi_CreateGeographicRegion(get(geographicRegionCode), put(result)));
+    check_hresult(WINRT_SHIM(IGeographicRegionFactory)->abi_CreateGeographicRegion(get(geographicRegionCode), put(result)));
     return result;
 }
 
 template <typename D> bool impl_IGeographicRegionStatics<D>::IsSupported(hstring_ref geographicRegionCode) const
 {
     bool result {};
-    check_hresult(static_cast<const IGeographicRegionStatics &>(static_cast<const D &>(*this))->abi_IsSupported(get(geographicRegionCode), &result));
+    check_hresult(WINRT_SHIM(IGeographicRegionStatics)->abi_IsSupported(get(geographicRegionCode), &result));
     return result;
 }
 
 template <typename D> hstring impl_ILanguage<D>::LanguageTag() const
 {
     hstring value;
-    check_hresult(static_cast<const ILanguage &>(static_cast<const D &>(*this))->get_LanguageTag(put(value)));
+    check_hresult(WINRT_SHIM(ILanguage)->get_LanguageTag(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ILanguage<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const ILanguage &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(ILanguage)->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ILanguage<D>::NativeName() const
 {
     hstring value;
-    check_hresult(static_cast<const ILanguage &>(static_cast<const D &>(*this))->get_NativeName(put(value)));
+    check_hresult(WINRT_SHIM(ILanguage)->get_NativeName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ILanguage<D>::Script() const
 {
     hstring value;
-    check_hresult(static_cast<const ILanguage &>(static_cast<const D &>(*this))->get_Script(put(value)));
+    check_hresult(WINRT_SHIM(ILanguage)->get_Script(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ILanguageExtensionSubtags<D>::GetExtensionSubtags(hstring_ref singleton) const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const ILanguageExtensionSubtags &>(static_cast<const D &>(*this))->abi_GetExtensionSubtags(get(singleton), put(value)));
+    check_hresult(WINRT_SHIM(ILanguageExtensionSubtags)->abi_GetExtensionSubtags(get(singleton), put(value)));
     return value;
 }
 
 template <typename D> Windows::Globalization::Language impl_ILanguageFactory<D>::CreateLanguage(hstring_ref languageTag) const
 {
     Windows::Globalization::Language result { nullptr };
-    check_hresult(static_cast<const ILanguageFactory &>(static_cast<const D &>(*this))->abi_CreateLanguage(get(languageTag), put(result)));
+    check_hresult(WINRT_SHIM(ILanguageFactory)->abi_CreateLanguage(get(languageTag), put(result)));
     return result;
 }
 
 template <typename D> bool impl_ILanguageStatics<D>::IsWellFormed(hstring_ref languageTag) const
 {
     bool result {};
-    check_hresult(static_cast<const ILanguageStatics &>(static_cast<const D &>(*this))->abi_IsWellFormed(get(languageTag), &result));
+    check_hresult(WINRT_SHIM(ILanguageStatics)->abi_IsWellFormed(get(languageTag), &result));
     return result;
 }
 
 template <typename D> hstring impl_ILanguageStatics<D>::CurrentInputMethodLanguageTag() const
 {
     hstring value;
-    check_hresult(static_cast<const ILanguageStatics &>(static_cast<const D &>(*this))->get_CurrentInputMethodLanguageTag(put(value)));
+    check_hresult(WINRT_SHIM(ILanguageStatics)->get_CurrentInputMethodLanguageTag(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ILanguageStatics2<D>::TrySetInputMethodLanguageTag(hstring_ref languageTag) const
 {
     bool result {};
-    check_hresult(static_cast<const ILanguageStatics2 &>(static_cast<const D &>(*this))->abi_TrySetInputMethodLanguageTag(get(languageTag), &result));
+    check_hresult(WINRT_SHIM(ILanguageStatics2)->abi_TrySetInputMethodLanguageTag(get(languageTag), &result));
     return result;
 }
 
 template <typename D> Windows::Globalization::Calendar impl_ICalendar<D>::Clone() const
 {
     Windows::Globalization::Calendar value { nullptr };
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_Clone(put(value)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_Clone(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICalendar<D>::SetToMin() const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_SetToMin());
+    check_hresult(WINRT_SHIM(ICalendar)->abi_SetToMin());
 }
 
 template <typename D> void impl_ICalendar<D>::SetToMax() const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_SetToMax());
+    check_hresult(WINRT_SHIM(ICalendar)->abi_SetToMax());
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ICalendar<D>::Languages() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_Languages(put(value)));
+    check_hresult(WINRT_SHIM(ICalendar)->get_Languages(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICalendar<D>::NumeralSystem() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_NumeralSystem(put(value)));
+    check_hresult(WINRT_SHIM(ICalendar)->get_NumeralSystem(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICalendar<D>::NumeralSystem(hstring_ref value) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->put_NumeralSystem(get(value)));
+    check_hresult(WINRT_SHIM(ICalendar)->put_NumeralSystem(get(value)));
 }
 
 template <typename D> hstring impl_ICalendar<D>::GetCalendarSystem() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_GetCalendarSystem(put(value)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_GetCalendarSystem(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICalendar<D>::ChangeCalendarSystem(hstring_ref value) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_ChangeCalendarSystem(get(value)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_ChangeCalendarSystem(get(value)));
 }
 
 template <typename D> hstring impl_ICalendar<D>::GetClock() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_GetClock(put(value)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_GetClock(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICalendar<D>::ChangeClock(hstring_ref value) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_ChangeClock(get(value)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_ChangeClock(get(value)));
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ICalendar<D>::GetDateTime() const
 {
     Windows::Foundation::DateTime result {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_GetDateTime(put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_GetDateTime(put(result)));
     return result;
 }
 
 template <typename D> void impl_ICalendar<D>::SetDateTime(const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_SetDateTime(get(value)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_SetDateTime(get(value)));
 }
 
 template <typename D> void impl_ICalendar<D>::SetToNow() const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_SetToNow());
+    check_hresult(WINRT_SHIM(ICalendar)->abi_SetToNow());
 }
 
 template <typename D> int32_t impl_ICalendar<D>::FirstEra() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_FirstEra(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_FirstEra(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::LastEra() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_LastEra(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_LastEra(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::NumberOfEras() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_NumberOfEras(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_NumberOfEras(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::Era() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_Era(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_Era(&value));
     return value;
 }
 
 template <typename D> void impl_ICalendar<D>::Era(int32_t value) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->put_Era(value));
+    check_hresult(WINRT_SHIM(ICalendar)->put_Era(value));
 }
 
 template <typename D> void impl_ICalendar<D>::AddEras(int32_t eras) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_AddEras(eras));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_AddEras(eras));
 }
 
 template <typename D> hstring impl_ICalendar<D>::EraAsString() const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_EraAsFullString(put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_EraAsFullString(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICalendar<D>::EraAsString(int32_t idealLength) const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_EraAsString(idealLength, put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_EraAsString(idealLength, put(result)));
     return result;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::FirstYearInThisEra() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_FirstYearInThisEra(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_FirstYearInThisEra(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::LastYearInThisEra() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_LastYearInThisEra(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_LastYearInThisEra(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::NumberOfYearsInThisEra() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_NumberOfYearsInThisEra(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_NumberOfYearsInThisEra(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::Year() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_Year(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_Year(&value));
     return value;
 }
 
 template <typename D> void impl_ICalendar<D>::Year(int32_t value) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->put_Year(value));
+    check_hresult(WINRT_SHIM(ICalendar)->put_Year(value));
 }
 
 template <typename D> void impl_ICalendar<D>::AddYears(int32_t years) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_AddYears(years));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_AddYears(years));
 }
 
 template <typename D> hstring impl_ICalendar<D>::YearAsString() const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_YearAsString(put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_YearAsString(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICalendar<D>::YearAsTruncatedString(int32_t remainingDigits) const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_YearAsTruncatedString(remainingDigits, put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_YearAsTruncatedString(remainingDigits, put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICalendar<D>::YearAsPaddedString(int32_t minDigits) const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_YearAsPaddedString(minDigits, put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_YearAsPaddedString(minDigits, put(result)));
     return result;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::FirstMonthInThisYear() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_FirstMonthInThisYear(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_FirstMonthInThisYear(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::LastMonthInThisYear() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_LastMonthInThisYear(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_LastMonthInThisYear(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::NumberOfMonthsInThisYear() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_NumberOfMonthsInThisYear(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_NumberOfMonthsInThisYear(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::Month() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_Month(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_Month(&value));
     return value;
 }
 
 template <typename D> void impl_ICalendar<D>::Month(int32_t value) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->put_Month(value));
+    check_hresult(WINRT_SHIM(ICalendar)->put_Month(value));
 }
 
 template <typename D> void impl_ICalendar<D>::AddMonths(int32_t months) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_AddMonths(months));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_AddMonths(months));
 }
 
 template <typename D> hstring impl_ICalendar<D>::MonthAsString() const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_MonthAsFullString(put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_MonthAsFullString(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICalendar<D>::MonthAsString(int32_t idealLength) const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_MonthAsString(idealLength, put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_MonthAsString(idealLength, put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICalendar<D>::MonthAsSoloString() const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_MonthAsFullSoloString(put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_MonthAsFullSoloString(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICalendar<D>::MonthAsSoloString(int32_t idealLength) const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_MonthAsSoloString(idealLength, put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_MonthAsSoloString(idealLength, put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICalendar<D>::MonthAsNumericString() const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_MonthAsNumericString(put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_MonthAsNumericString(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICalendar<D>::MonthAsPaddedNumericString(int32_t minDigits) const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_MonthAsPaddedNumericString(minDigits, put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_MonthAsPaddedNumericString(minDigits, put(result)));
     return result;
 }
 
 template <typename D> void impl_ICalendar<D>::AddWeeks(int32_t weeks) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_AddWeeks(weeks));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_AddWeeks(weeks));
 }
 
 template <typename D> int32_t impl_ICalendar<D>::FirstDayInThisMonth() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_FirstDayInThisMonth(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_FirstDayInThisMonth(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::LastDayInThisMonth() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_LastDayInThisMonth(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_LastDayInThisMonth(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::NumberOfDaysInThisMonth() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_NumberOfDaysInThisMonth(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_NumberOfDaysInThisMonth(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::Day() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_Day(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_Day(&value));
     return value;
 }
 
 template <typename D> void impl_ICalendar<D>::Day(int32_t value) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->put_Day(value));
+    check_hresult(WINRT_SHIM(ICalendar)->put_Day(value));
 }
 
 template <typename D> void impl_ICalendar<D>::AddDays(int32_t days) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_AddDays(days));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_AddDays(days));
 }
 
 template <typename D> hstring impl_ICalendar<D>::DayAsString() const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_DayAsString(put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_DayAsString(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICalendar<D>::DayAsPaddedString(int32_t minDigits) const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_DayAsPaddedString(minDigits, put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_DayAsPaddedString(minDigits, put(result)));
     return result;
 }
 
 template <typename D> Windows::Globalization::DayOfWeek impl_ICalendar<D>::DayOfWeek() const
 {
     Windows::Globalization::DayOfWeek value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_DayOfWeek(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_DayOfWeek(&value));
     return value;
 }
 
 template <typename D> hstring impl_ICalendar<D>::DayOfWeekAsString() const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_DayOfWeekAsFullString(put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_DayOfWeekAsFullString(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICalendar<D>::DayOfWeekAsString(int32_t idealLength) const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_DayOfWeekAsString(idealLength, put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_DayOfWeekAsString(idealLength, put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICalendar<D>::DayOfWeekAsSoloString() const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_DayOfWeekAsFullSoloString(put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_DayOfWeekAsFullSoloString(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICalendar<D>::DayOfWeekAsSoloString(int32_t idealLength) const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_DayOfWeekAsSoloString(idealLength, put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_DayOfWeekAsSoloString(idealLength, put(result)));
     return result;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::FirstPeriodInThisDay() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_FirstPeriodInThisDay(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_FirstPeriodInThisDay(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::LastPeriodInThisDay() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_LastPeriodInThisDay(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_LastPeriodInThisDay(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::NumberOfPeriodsInThisDay() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_NumberOfPeriodsInThisDay(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_NumberOfPeriodsInThisDay(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::Period() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_Period(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_Period(&value));
     return value;
 }
 
 template <typename D> void impl_ICalendar<D>::Period(int32_t value) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->put_Period(value));
+    check_hresult(WINRT_SHIM(ICalendar)->put_Period(value));
 }
 
 template <typename D> void impl_ICalendar<D>::AddPeriods(int32_t periods) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_AddPeriods(periods));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_AddPeriods(periods));
 }
 
 template <typename D> hstring impl_ICalendar<D>::PeriodAsString() const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_PeriodAsFullString(put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_PeriodAsFullString(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICalendar<D>::PeriodAsString(int32_t idealLength) const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_PeriodAsString(idealLength, put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_PeriodAsString(idealLength, put(result)));
     return result;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::FirstHourInThisPeriod() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_FirstHourInThisPeriod(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_FirstHourInThisPeriod(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::LastHourInThisPeriod() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_LastHourInThisPeriod(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_LastHourInThisPeriod(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::NumberOfHoursInThisPeriod() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_NumberOfHoursInThisPeriod(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_NumberOfHoursInThisPeriod(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::Hour() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_Hour(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_Hour(&value));
     return value;
 }
 
 template <typename D> void impl_ICalendar<D>::Hour(int32_t value) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->put_Hour(value));
+    check_hresult(WINRT_SHIM(ICalendar)->put_Hour(value));
 }
 
 template <typename D> void impl_ICalendar<D>::AddHours(int32_t hours) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_AddHours(hours));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_AddHours(hours));
 }
 
 template <typename D> hstring impl_ICalendar<D>::HourAsString() const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_HourAsString(put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_HourAsString(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICalendar<D>::HourAsPaddedString(int32_t minDigits) const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_HourAsPaddedString(minDigits, put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_HourAsPaddedString(minDigits, put(result)));
     return result;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::Minute() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_Minute(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_Minute(&value));
     return value;
 }
 
 template <typename D> void impl_ICalendar<D>::Minute(int32_t value) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->put_Minute(value));
+    check_hresult(WINRT_SHIM(ICalendar)->put_Minute(value));
 }
 
 template <typename D> void impl_ICalendar<D>::AddMinutes(int32_t minutes) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_AddMinutes(minutes));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_AddMinutes(minutes));
 }
 
 template <typename D> hstring impl_ICalendar<D>::MinuteAsString() const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_MinuteAsString(put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_MinuteAsString(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICalendar<D>::MinuteAsPaddedString(int32_t minDigits) const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_MinuteAsPaddedString(minDigits, put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_MinuteAsPaddedString(minDigits, put(result)));
     return result;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::Second() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_Second(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_Second(&value));
     return value;
 }
 
 template <typename D> void impl_ICalendar<D>::Second(int32_t value) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->put_Second(value));
+    check_hresult(WINRT_SHIM(ICalendar)->put_Second(value));
 }
 
 template <typename D> void impl_ICalendar<D>::AddSeconds(int32_t seconds) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_AddSeconds(seconds));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_AddSeconds(seconds));
 }
 
 template <typename D> hstring impl_ICalendar<D>::SecondAsString() const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_SecondAsString(put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_SecondAsString(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICalendar<D>::SecondAsPaddedString(int32_t minDigits) const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_SecondAsPaddedString(minDigits, put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_SecondAsPaddedString(minDigits, put(result)));
     return result;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::Nanosecond() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_Nanosecond(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_Nanosecond(&value));
     return value;
 }
 
 template <typename D> void impl_ICalendar<D>::Nanosecond(int32_t value) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->put_Nanosecond(value));
+    check_hresult(WINRT_SHIM(ICalendar)->put_Nanosecond(value));
 }
 
 template <typename D> void impl_ICalendar<D>::AddNanoseconds(int32_t nanoseconds) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_AddNanoseconds(nanoseconds));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_AddNanoseconds(nanoseconds));
 }
 
 template <typename D> hstring impl_ICalendar<D>::NanosecondAsString() const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_NanosecondAsString(put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_NanosecondAsString(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICalendar<D>::NanosecondAsPaddedString(int32_t minDigits) const
 {
     hstring result;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_NanosecondAsPaddedString(minDigits, put(result)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_NanosecondAsPaddedString(minDigits, put(result)));
     return result;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::Compare(const Windows::Globalization::Calendar & other) const
 {
     int32_t result {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_Compare(get(other), &result));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_Compare(get(other), &result));
     return result;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::CompareDateTime(const Windows::Foundation::DateTime & other) const
 {
     int32_t result {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_CompareDateTime(get(other), &result));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_CompareDateTime(get(other), &result));
     return result;
 }
 
 template <typename D> void impl_ICalendar<D>::CopyTo(const Windows::Globalization::Calendar & other) const
 {
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->abi_CopyTo(get(other)));
+    check_hresult(WINRT_SHIM(ICalendar)->abi_CopyTo(get(other)));
 }
 
 template <typename D> int32_t impl_ICalendar<D>::FirstMinuteInThisHour() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_FirstMinuteInThisHour(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_FirstMinuteInThisHour(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::LastMinuteInThisHour() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_LastMinuteInThisHour(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_LastMinuteInThisHour(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::NumberOfMinutesInThisHour() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_NumberOfMinutesInThisHour(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_NumberOfMinutesInThisHour(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::FirstSecondInThisMinute() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_FirstSecondInThisMinute(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_FirstSecondInThisMinute(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::LastSecondInThisMinute() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_LastSecondInThisMinute(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_LastSecondInThisMinute(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ICalendar<D>::NumberOfSecondsInThisMinute() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_NumberOfSecondsInThisMinute(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_NumberOfSecondsInThisMinute(&value));
     return value;
 }
 
 template <typename D> hstring impl_ICalendar<D>::ResolvedLanguage() const
 {
     hstring value;
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_ResolvedLanguage(put(value)));
+    check_hresult(WINRT_SHIM(ICalendar)->get_ResolvedLanguage(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ICalendar<D>::IsDaylightSavingTime() const
 {
     bool value {};
-    check_hresult(static_cast<const ICalendar &>(static_cast<const D &>(*this))->get_IsDaylightSavingTime(&value));
+    check_hresult(WINRT_SHIM(ICalendar)->get_IsDaylightSavingTime(&value));
     return value;
 }
 
 template <typename D> Windows::Globalization::Calendar impl_ICalendarFactory2<D>::CreateCalendarWithTimeZone(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref calendar, hstring_ref clock, hstring_ref timeZoneId) const
 {
     Windows::Globalization::Calendar result { nullptr };
-    check_hresult(static_cast<const ICalendarFactory2 &>(static_cast<const D &>(*this))->abi_CreateCalendarWithTimeZone(get(languages), get(calendar), get(clock), get(timeZoneId), put(result)));
+    check_hresult(WINRT_SHIM(ICalendarFactory2)->abi_CreateCalendarWithTimeZone(get(languages), get(calendar), get(clock), get(timeZoneId), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ITimeZoneOnCalendar<D>::GetTimeZone() const
 {
     hstring value;
-    check_hresult(static_cast<const ITimeZoneOnCalendar &>(static_cast<const D &>(*this))->abi_GetTimeZone(put(value)));
+    check_hresult(WINRT_SHIM(ITimeZoneOnCalendar)->abi_GetTimeZone(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimeZoneOnCalendar<D>::ChangeTimeZone(hstring_ref timeZoneId) const
 {
-    check_hresult(static_cast<const ITimeZoneOnCalendar &>(static_cast<const D &>(*this))->abi_ChangeTimeZone(get(timeZoneId)));
+    check_hresult(WINRT_SHIM(ITimeZoneOnCalendar)->abi_ChangeTimeZone(get(timeZoneId)));
 }
 
 template <typename D> hstring impl_ITimeZoneOnCalendar<D>::TimeZoneAsString() const
 {
     hstring result;
-    check_hresult(static_cast<const ITimeZoneOnCalendar &>(static_cast<const D &>(*this))->abi_TimeZoneAsFullString(put(result)));
+    check_hresult(WINRT_SHIM(ITimeZoneOnCalendar)->abi_TimeZoneAsFullString(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ITimeZoneOnCalendar<D>::TimeZoneAsString(int32_t idealLength) const
 {
     hstring result;
-    check_hresult(static_cast<const ITimeZoneOnCalendar &>(static_cast<const D &>(*this))->abi_TimeZoneAsString(idealLength, put(result)));
+    check_hresult(WINRT_SHIM(ITimeZoneOnCalendar)->abi_TimeZoneAsString(idealLength, put(result)));
     return result;
 }
 
 template <typename D> Windows::Globalization::Calendar impl_ICalendarFactory<D>::CreateCalendarDefaultCalendarAndClock(const Windows::Foundation::Collections::IIterable<hstring> & languages) const
 {
     Windows::Globalization::Calendar result { nullptr };
-    check_hresult(static_cast<const ICalendarFactory &>(static_cast<const D &>(*this))->abi_CreateCalendarDefaultCalendarAndClock(get(languages), put(result)));
+    check_hresult(WINRT_SHIM(ICalendarFactory)->abi_CreateCalendarDefaultCalendarAndClock(get(languages), put(result)));
     return result;
 }
 
 template <typename D> Windows::Globalization::Calendar impl_ICalendarFactory<D>::CreateCalendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref calendar, hstring_ref clock) const
 {
     Windows::Globalization::Calendar result { nullptr };
-    check_hresult(static_cast<const ICalendarFactory &>(static_cast<const D &>(*this))->abi_CreateCalendar(get(languages), get(calendar), get(clock), put(result)));
+    check_hresult(WINRT_SHIM(ICalendarFactory)->abi_CreateCalendar(get(languages), get(calendar), get(clock), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IApplicationLanguagesStatics<D>::PrimaryLanguageOverride() const
 {
     hstring value;
-    check_hresult(static_cast<const IApplicationLanguagesStatics &>(static_cast<const D &>(*this))->get_PrimaryLanguageOverride(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationLanguagesStatics)->get_PrimaryLanguageOverride(put(value)));
     return value;
 }
 
 template <typename D> void impl_IApplicationLanguagesStatics<D>::PrimaryLanguageOverride(hstring_ref value) const
 {
-    check_hresult(static_cast<const IApplicationLanguagesStatics &>(static_cast<const D &>(*this))->put_PrimaryLanguageOverride(get(value)));
+    check_hresult(WINRT_SHIM(IApplicationLanguagesStatics)->put_PrimaryLanguageOverride(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IApplicationLanguagesStatics<D>::Languages() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IApplicationLanguagesStatics &>(static_cast<const D &>(*this))->get_Languages(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationLanguagesStatics)->get_Languages(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IApplicationLanguagesStatics<D>::ManifestLanguages() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IApplicationLanguagesStatics &>(static_cast<const D &>(*this))->get_ManifestLanguages(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationLanguagesStatics)->get_ManifestLanguages(put(value)));
     return value;
 }
 

@@ -149,7 +149,6 @@ struct IVoiceCommand :
     impl::consume<IVoiceCommand>
 {
     IVoiceCommand(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVoiceCommand>(m_ptr); }
 };
 
 struct IVoiceCommandCompletedEventArgs :
@@ -157,7 +156,6 @@ struct IVoiceCommandCompletedEventArgs :
     impl::consume<IVoiceCommandCompletedEventArgs>
 {
     IVoiceCommandCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVoiceCommandCompletedEventArgs>(m_ptr); }
 };
 
 struct IVoiceCommandConfirmationResult :
@@ -165,7 +163,6 @@ struct IVoiceCommandConfirmationResult :
     impl::consume<IVoiceCommandConfirmationResult>
 {
     IVoiceCommandConfirmationResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVoiceCommandConfirmationResult>(m_ptr); }
 };
 
 struct IVoiceCommandContentTile :
@@ -173,7 +170,6 @@ struct IVoiceCommandContentTile :
     impl::consume<IVoiceCommandContentTile>
 {
     IVoiceCommandContentTile(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVoiceCommandContentTile>(m_ptr); }
 };
 
 struct IVoiceCommandDefinition :
@@ -181,7 +177,6 @@ struct IVoiceCommandDefinition :
     impl::consume<IVoiceCommandDefinition>
 {
     IVoiceCommandDefinition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVoiceCommandDefinition>(m_ptr); }
 };
 
 struct IVoiceCommandDefinitionManagerStatics :
@@ -189,7 +184,6 @@ struct IVoiceCommandDefinitionManagerStatics :
     impl::consume<IVoiceCommandDefinitionManagerStatics>
 {
     IVoiceCommandDefinitionManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVoiceCommandDefinitionManagerStatics>(m_ptr); }
 };
 
 struct IVoiceCommandDisambiguationResult :
@@ -197,7 +191,6 @@ struct IVoiceCommandDisambiguationResult :
     impl::consume<IVoiceCommandDisambiguationResult>
 {
     IVoiceCommandDisambiguationResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVoiceCommandDisambiguationResult>(m_ptr); }
 };
 
 struct IVoiceCommandResponse :
@@ -205,7 +198,6 @@ struct IVoiceCommandResponse :
     impl::consume<IVoiceCommandResponse>
 {
     IVoiceCommandResponse(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVoiceCommandResponse>(m_ptr); }
 };
 
 struct IVoiceCommandResponseStatics :
@@ -213,7 +205,6 @@ struct IVoiceCommandResponseStatics :
     impl::consume<IVoiceCommandResponseStatics>
 {
     IVoiceCommandResponseStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVoiceCommandResponseStatics>(m_ptr); }
 };
 
 struct IVoiceCommandServiceConnection :
@@ -221,7 +212,6 @@ struct IVoiceCommandServiceConnection :
     impl::consume<IVoiceCommandServiceConnection>
 {
     IVoiceCommandServiceConnection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVoiceCommandServiceConnection>(m_ptr); }
 };
 
 struct IVoiceCommandServiceConnectionStatics :
@@ -229,7 +219,6 @@ struct IVoiceCommandServiceConnectionStatics :
     impl::consume<IVoiceCommandServiceConnectionStatics>
 {
     IVoiceCommandServiceConnectionStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVoiceCommandServiceConnectionStatics>(m_ptr); }
 };
 
 struct IVoiceCommandUserMessage :
@@ -237,7 +226,6 @@ struct IVoiceCommandUserMessage :
     impl::consume<IVoiceCommandUserMessage>
 {
     IVoiceCommandUserMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVoiceCommandUserMessage>(m_ptr); }
 };
 
 }

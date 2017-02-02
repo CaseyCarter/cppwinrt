@@ -34,7 +34,6 @@ struct ICustomGameControllerFactory :
     impl::consume<ICustomGameControllerFactory>
 {
     ICustomGameControllerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICustomGameControllerFactory>(m_ptr); }
 };
 
 struct IGameControllerFactoryManagerStatics :
@@ -42,7 +41,6 @@ struct IGameControllerFactoryManagerStatics :
     impl::consume<IGameControllerFactoryManagerStatics>
 {
     IGameControllerFactoryManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGameControllerFactoryManagerStatics>(m_ptr); }
 };
 
 struct IGameControllerInputSink :
@@ -50,7 +48,6 @@ struct IGameControllerInputSink :
     impl::consume<IGameControllerInputSink>
 {
     IGameControllerInputSink(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGameControllerInputSink>(m_ptr); }
 };
 
 struct IGameControllerProvider :
@@ -58,7 +55,6 @@ struct IGameControllerProvider :
     impl::consume<IGameControllerProvider>
 {
     IGameControllerProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGameControllerProvider>(m_ptr); }
 };
 
 struct IGipFirmwareUpdateResult :
@@ -66,7 +62,6 @@ struct IGipFirmwareUpdateResult :
     impl::consume<IGipFirmwareUpdateResult>
 {
     IGipFirmwareUpdateResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGipFirmwareUpdateResult>(m_ptr); }
 };
 
 struct IGipGameControllerInputSink :
@@ -75,7 +70,6 @@ struct IGipGameControllerInputSink :
     impl::require<IGipGameControllerInputSink, Windows::Gaming::Input::Custom::IGameControllerInputSink>
 {
     IGipGameControllerInputSink(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGipGameControllerInputSink>(m_ptr); }
 };
 
 struct IGipGameControllerProvider :
@@ -84,7 +78,6 @@ struct IGipGameControllerProvider :
     impl::require<IGipGameControllerProvider, Windows::Gaming::Input::Custom::IGameControllerProvider>
 {
     IGipGameControllerProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGipGameControllerProvider>(m_ptr); }
 };
 
 struct IXusbGameControllerInputSink :
@@ -93,7 +86,6 @@ struct IXusbGameControllerInputSink :
     impl::require<IXusbGameControllerInputSink, Windows::Gaming::Input::Custom::IGameControllerInputSink>
 {
     IXusbGameControllerInputSink(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXusbGameControllerInputSink>(m_ptr); }
 };
 
 struct IXusbGameControllerProvider :
@@ -102,7 +94,6 @@ struct IXusbGameControllerProvider :
     impl::require<IXusbGameControllerProvider, Windows::Gaming::Input::Custom::IGameControllerProvider>
 {
     IXusbGameControllerProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXusbGameControllerProvider>(m_ptr); }
 };
 
 }

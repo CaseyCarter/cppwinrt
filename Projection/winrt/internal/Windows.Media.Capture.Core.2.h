@@ -34,7 +34,6 @@ struct IVariablePhotoCapturedEventArgs :
     impl::consume<IVariablePhotoCapturedEventArgs>
 {
     IVariablePhotoCapturedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVariablePhotoCapturedEventArgs>(m_ptr); }
 };
 
 struct IVariablePhotoSequenceCapture :
@@ -42,7 +41,6 @@ struct IVariablePhotoSequenceCapture :
     impl::consume<IVariablePhotoSequenceCapture>
 {
     IVariablePhotoSequenceCapture(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVariablePhotoSequenceCapture>(m_ptr); }
 };
 
 struct IVariablePhotoSequenceCapture2 :
@@ -50,7 +48,6 @@ struct IVariablePhotoSequenceCapture2 :
     impl::consume<IVariablePhotoSequenceCapture2>
 {
     IVariablePhotoSequenceCapture2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVariablePhotoSequenceCapture2>(m_ptr); }
 };
 
 }

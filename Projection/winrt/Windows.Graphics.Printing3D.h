@@ -27,7 +27,7 @@ template <typename O, typename M> Print3DTaskSourceRequestedHandler::Print3DTask
 
 inline void Print3DTaskSourceRequestedHandler::operator()(const Windows::Graphics::Printing3D::Print3DTaskSourceRequestedArgs & args) const
 {
-    check_hresult((*this)->abi_Invoke(get(args)));
+    check_hresult((*(abi<Print3DTaskSourceRequestedHandler> **)this)->abi_Invoke(get(args)));
 }
 
 }
@@ -2371,35 +2371,35 @@ namespace Windows::Graphics::Printing3D {
 template <typename D> Windows::Graphics::Printing3D::Print3DTaskCompletion impl_IPrint3DTaskCompletedEventArgs<D>::Completion() const
 {
     Windows::Graphics::Printing3D::Print3DTaskCompletion value {};
-    check_hresult(static_cast<const IPrint3DTaskCompletedEventArgs &>(static_cast<const D &>(*this))->get_Completion(&value));
+    check_hresult(WINRT_SHIM(IPrint3DTaskCompletedEventArgs)->get_Completion(&value));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing3D::Print3DTaskDetail impl_IPrint3DTaskCompletedEventArgs<D>::ExtendedStatus() const
 {
     Windows::Graphics::Printing3D::Print3DTaskDetail value {};
-    check_hresult(static_cast<const IPrint3DTaskCompletedEventArgs &>(static_cast<const D &>(*this))->get_ExtendedStatus(&value));
+    check_hresult(WINRT_SHIM(IPrint3DTaskCompletedEventArgs)->get_ExtendedStatus(&value));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3D3MFPackage impl_IPrint3DTaskSourceChangedEventArgs<D>::Source() const
 {
     Windows::Graphics::Printing3D::Printing3D3MFPackage value { nullptr };
-    check_hresult(static_cast<const IPrint3DTaskSourceChangedEventArgs &>(static_cast<const D &>(*this))->get_Source(put(value)));
+    check_hresult(WINRT_SHIM(IPrint3DTaskSourceChangedEventArgs)->get_Source(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3D3MFPackage impl_IPrint3DTask<D>::Source() const
 {
     Windows::Graphics::Printing3D::Printing3D3MFPackage value { nullptr };
-    check_hresult(static_cast<const IPrint3DTask &>(static_cast<const D &>(*this))->get_Source(put(value)));
+    check_hresult(WINRT_SHIM(IPrint3DTask)->get_Source(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IPrint3DTask<D>::Submitting(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::IInspectable> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(static_cast<const IPrint3DTask &>(static_cast<const D &>(*this))->add_Submitting(get(eventHandler), &eventCookie));
+    check_hresult(WINRT_SHIM(IPrint3DTask)->add_Submitting(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -2410,13 +2410,13 @@ template <typename D> event_revoker<IPrint3DTask> impl_IPrint3DTask<D>::Submitti
 
 template <typename D> void impl_IPrint3DTask<D>::Submitting(event_token eventCookie) const
 {
-    check_hresult(static_cast<const IPrint3DTask &>(static_cast<const D &>(*this))->remove_Submitting(eventCookie));
+    check_hresult(WINRT_SHIM(IPrint3DTask)->remove_Submitting(eventCookie));
 }
 
 template <typename D> event_token impl_IPrint3DTask<D>::Completed(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Graphics::Printing3D::Print3DTaskCompletedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(static_cast<const IPrint3DTask &>(static_cast<const D &>(*this))->add_Completed(get(eventHandler), &eventCookie));
+    check_hresult(WINRT_SHIM(IPrint3DTask)->add_Completed(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -2427,13 +2427,13 @@ template <typename D> event_revoker<IPrint3DTask> impl_IPrint3DTask<D>::Complete
 
 template <typename D> void impl_IPrint3DTask<D>::Completed(event_token eventCookie) const
 {
-    check_hresult(static_cast<const IPrint3DTask &>(static_cast<const D &>(*this))->remove_Completed(eventCookie));
+    check_hresult(WINRT_SHIM(IPrint3DTask)->remove_Completed(eventCookie));
 }
 
 template <typename D> event_token impl_IPrint3DTask<D>::SourceChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Graphics::Printing3D::Print3DTaskSourceChangedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(static_cast<const IPrint3DTask &>(static_cast<const D &>(*this))->add_SourceChanged(get(eventHandler), &eventCookie));
+    check_hresult(WINRT_SHIM(IPrint3DTask)->add_SourceChanged(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -2444,46 +2444,46 @@ template <typename D> event_revoker<IPrint3DTask> impl_IPrint3DTask<D>::SourceCh
 
 template <typename D> void impl_IPrint3DTask<D>::SourceChanged(event_token eventCookie) const
 {
-    check_hresult(static_cast<const IPrint3DTask &>(static_cast<const D &>(*this))->remove_SourceChanged(eventCookie));
+    check_hresult(WINRT_SHIM(IPrint3DTask)->remove_SourceChanged(eventCookie));
 }
 
 template <typename D> void impl_IPrint3DTaskSourceRequestedArgs<D>::SetSource(const Windows::Graphics::Printing3D::Printing3D3MFPackage & source) const
 {
-    check_hresult(static_cast<const IPrint3DTaskSourceRequestedArgs &>(static_cast<const D &>(*this))->abi_SetSource(get(source)));
+    check_hresult(WINRT_SHIM(IPrint3DTaskSourceRequestedArgs)->abi_SetSource(get(source)));
 }
 
 template <typename D> Windows::Graphics::Printing3D::Print3DTask impl_IPrint3DTaskRequest<D>::CreateTask(hstring_ref title, hstring_ref printerId, const Windows::Graphics::Printing3D::Print3DTaskSourceRequestedHandler & handler) const
 {
     Windows::Graphics::Printing3D::Print3DTask result { nullptr };
-    check_hresult(static_cast<const IPrint3DTaskRequest &>(static_cast<const D &>(*this))->abi_CreateTask(get(title), get(printerId), get(handler), put(result)));
+    check_hresult(WINRT_SHIM(IPrint3DTaskRequest)->abi_CreateTask(get(title), get(printerId), get(handler), put(result)));
     return result;
 }
 
 template <typename D> Windows::Graphics::Printing3D::Print3DTaskRequest impl_IPrint3DTaskRequestedEventArgs<D>::Request() const
 {
     Windows::Graphics::Printing3D::Print3DTaskRequest value { nullptr };
-    check_hresult(static_cast<const IPrint3DTaskRequestedEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IPrint3DTaskRequestedEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing3D::Print3DManager impl_IPrint3DManagerStatics<D>::GetForCurrentView() const
 {
     Windows::Graphics::Printing3D::Print3DManager result { nullptr };
-    check_hresult(static_cast<const IPrint3DManagerStatics &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(result)));
+    check_hresult(WINRT_SHIM(IPrint3DManagerStatics)->abi_GetForCurrentView(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IPrint3DManagerStatics<D>::ShowPrintUIAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const IPrint3DManagerStatics &>(static_cast<const D &>(*this))->abi_ShowPrintUIAsync(put(result)));
+    check_hresult(WINRT_SHIM(IPrint3DManagerStatics)->abi_ShowPrintUIAsync(put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IPrint3DManager<D>::TaskRequested(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DManager, Windows::Graphics::Printing3D::Print3DTaskRequestedEventArgs> & eventHandler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPrint3DManager &>(static_cast<const D &>(*this))->add_TaskRequested(get(eventHandler), &token));
+    check_hresult(WINRT_SHIM(IPrint3DManager)->add_TaskRequested(get(eventHandler), &token));
     return token;
 }
 
@@ -2494,855 +2494,855 @@ template <typename D> event_revoker<IPrint3DManager> impl_IPrint3DManager<D>::Ta
 
 template <typename D> void impl_IPrint3DManager<D>::TaskRequested(event_token token) const
 {
-    check_hresult(static_cast<const IPrint3DManager &>(static_cast<const D &>(*this))->remove_TaskRequested(token));
+    check_hresult(WINRT_SHIM(IPrint3DManager)->remove_TaskRequested(token));
 }
 
 template <typename D> uint32_t impl_IPrinting3DMesh<D>::VertexCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->get_VertexCount(&value));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->get_VertexCount(&value));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DMesh<D>::VertexCount(uint32_t value) const
 {
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->put_VertexCount(value));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->put_VertexCount(value));
 }
 
 template <typename D> uint32_t impl_IPrinting3DMesh<D>::IndexCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->get_IndexCount(&value));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->get_IndexCount(&value));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DMesh<D>::IndexCount(uint32_t value) const
 {
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->put_IndexCount(value));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->put_IndexCount(value));
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DBufferDescription impl_IPrinting3DMesh<D>::VertexPositionsDescription() const
 {
     Windows::Graphics::Printing3D::Printing3DBufferDescription value {};
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->get_VertexPositionsDescription(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->get_VertexPositionsDescription(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DMesh<D>::VertexPositionsDescription(const Windows::Graphics::Printing3D::Printing3DBufferDescription & value) const
 {
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->put_VertexPositionsDescription(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->put_VertexPositionsDescription(get(value)));
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DBufferDescription impl_IPrinting3DMesh<D>::VertexNormalsDescription() const
 {
     Windows::Graphics::Printing3D::Printing3DBufferDescription value {};
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->get_VertexNormalsDescription(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->get_VertexNormalsDescription(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DMesh<D>::VertexNormalsDescription(const Windows::Graphics::Printing3D::Printing3DBufferDescription & value) const
 {
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->put_VertexNormalsDescription(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->put_VertexNormalsDescription(get(value)));
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DBufferDescription impl_IPrinting3DMesh<D>::TriangleIndicesDescription() const
 {
     Windows::Graphics::Printing3D::Printing3DBufferDescription value {};
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->get_TriangleIndicesDescription(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->get_TriangleIndicesDescription(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DMesh<D>::TriangleIndicesDescription(const Windows::Graphics::Printing3D::Printing3DBufferDescription & value) const
 {
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->put_TriangleIndicesDescription(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->put_TriangleIndicesDescription(get(value)));
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DBufferDescription impl_IPrinting3DMesh<D>::TriangleMaterialIndicesDescription() const
 {
     Windows::Graphics::Printing3D::Printing3DBufferDescription value {};
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->get_TriangleMaterialIndicesDescription(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->get_TriangleMaterialIndicesDescription(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DMesh<D>::TriangleMaterialIndicesDescription(const Windows::Graphics::Printing3D::Printing3DBufferDescription & value) const
 {
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->put_TriangleMaterialIndicesDescription(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->put_TriangleMaterialIndicesDescription(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IPrinting3DMesh<D>::GetVertexPositions() const
 {
     Windows::Storage::Streams::IBuffer buffer;
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->abi_GetVertexPositions(put(buffer)));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->abi_GetVertexPositions(put(buffer)));
     return buffer;
 }
 
 template <typename D> void impl_IPrinting3DMesh<D>::CreateVertexPositions(uint32_t value) const
 {
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->abi_CreateVertexPositions(value));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->abi_CreateVertexPositions(value));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IPrinting3DMesh<D>::GetVertexNormals() const
 {
     Windows::Storage::Streams::IBuffer buffer;
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->abi_GetVertexNormals(put(buffer)));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->abi_GetVertexNormals(put(buffer)));
     return buffer;
 }
 
 template <typename D> void impl_IPrinting3DMesh<D>::CreateVertexNormals(uint32_t value) const
 {
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->abi_CreateVertexNormals(value));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->abi_CreateVertexNormals(value));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IPrinting3DMesh<D>::GetTriangleIndices() const
 {
     Windows::Storage::Streams::IBuffer buffer;
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->abi_GetTriangleIndices(put(buffer)));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->abi_GetTriangleIndices(put(buffer)));
     return buffer;
 }
 
 template <typename D> void impl_IPrinting3DMesh<D>::CreateTriangleIndices(uint32_t value) const
 {
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->abi_CreateTriangleIndices(value));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->abi_CreateTriangleIndices(value));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IPrinting3DMesh<D>::GetTriangleMaterialIndices() const
 {
     Windows::Storage::Streams::IBuffer buffer;
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->abi_GetTriangleMaterialIndices(put(buffer)));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->abi_GetTriangleMaterialIndices(put(buffer)));
     return buffer;
 }
 
 template <typename D> void impl_IPrinting3DMesh<D>::CreateTriangleMaterialIndices(uint32_t value) const
 {
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->abi_CreateTriangleMaterialIndices(value));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->abi_CreateTriangleMaterialIndices(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IPropertySet impl_IPrinting3DMesh<D>::BufferDescriptionSet() const
 {
     Windows::Foundation::Collections::IPropertySet value;
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->get_BufferDescriptionSet(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->get_BufferDescriptionSet(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IPropertySet impl_IPrinting3DMesh<D>::BufferSet() const
 {
     Windows::Foundation::Collections::IPropertySet value;
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->get_BufferSet(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->get_BufferSet(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Printing3D::Printing3DMeshVerificationResult> impl_IPrinting3DMesh<D>::VerifyAsync(Windows::Graphics::Printing3D::Printing3DMeshVerificationMode value) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Printing3D::Printing3DMeshVerificationResult> operation;
-    check_hresult(static_cast<const IPrinting3DMesh &>(static_cast<const D &>(*this))->abi_VerifyAsync(value, put(operation)));
+    check_hresult(WINRT_SHIM(IPrinting3DMesh)->abi_VerifyAsync(value, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DTextureResource impl_IPrinting3DModelTexture<D>::TextureResource() const
 {
     Windows::Graphics::Printing3D::Printing3DTextureResource value { nullptr };
-    check_hresult(static_cast<const IPrinting3DModelTexture &>(static_cast<const D &>(*this))->get_TextureResource(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DModelTexture)->get_TextureResource(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DModelTexture<D>::TextureResource(const Windows::Graphics::Printing3D::Printing3DTextureResource & value) const
 {
-    check_hresult(static_cast<const IPrinting3DModelTexture &>(static_cast<const D &>(*this))->put_TextureResource(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DModelTexture)->put_TextureResource(get(value)));
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DTextureEdgeBehavior impl_IPrinting3DModelTexture<D>::TileStyleU() const
 {
     Windows::Graphics::Printing3D::Printing3DTextureEdgeBehavior value {};
-    check_hresult(static_cast<const IPrinting3DModelTexture &>(static_cast<const D &>(*this))->get_TileStyleU(&value));
+    check_hresult(WINRT_SHIM(IPrinting3DModelTexture)->get_TileStyleU(&value));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DModelTexture<D>::TileStyleU(Windows::Graphics::Printing3D::Printing3DTextureEdgeBehavior value) const
 {
-    check_hresult(static_cast<const IPrinting3DModelTexture &>(static_cast<const D &>(*this))->put_TileStyleU(value));
+    check_hresult(WINRT_SHIM(IPrinting3DModelTexture)->put_TileStyleU(value));
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DTextureEdgeBehavior impl_IPrinting3DModelTexture<D>::TileStyleV() const
 {
     Windows::Graphics::Printing3D::Printing3DTextureEdgeBehavior value {};
-    check_hresult(static_cast<const IPrinting3DModelTexture &>(static_cast<const D &>(*this))->get_TileStyleV(&value));
+    check_hresult(WINRT_SHIM(IPrinting3DModelTexture)->get_TileStyleV(&value));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DModelTexture<D>::TileStyleV(Windows::Graphics::Printing3D::Printing3DTextureEdgeBehavior value) const
 {
-    check_hresult(static_cast<const IPrinting3DModelTexture &>(static_cast<const D &>(*this))->put_TileStyleV(value));
+    check_hresult(WINRT_SHIM(IPrinting3DModelTexture)->put_TileStyleV(value));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamWithContentType impl_IPrinting3DTextureResource<D>::TextureData() const
 {
     Windows::Storage::Streams::IRandomAccessStreamWithContentType value;
-    check_hresult(static_cast<const IPrinting3DTextureResource &>(static_cast<const D &>(*this))->get_TextureData(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DTextureResource)->get_TextureData(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DTextureResource<D>::TextureData(const Windows::Storage::Streams::IRandomAccessStreamWithContentType & value) const
 {
-    check_hresult(static_cast<const IPrinting3DTextureResource &>(static_cast<const D &>(*this))->put_TextureData(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DTextureResource)->put_TextureData(get(value)));
 }
 
 template <typename D> hstring impl_IPrinting3DTextureResource<D>::Name() const
 {
     hstring value;
-    check_hresult(static_cast<const IPrinting3DTextureResource &>(static_cast<const D &>(*this))->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DTextureResource)->get_Name(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DTextureResource<D>::Name(hstring_ref value) const
 {
-    check_hresult(static_cast<const IPrinting3DTextureResource &>(static_cast<const D &>(*this))->put_Name(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DTextureResource)->put_Name(get(value)));
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DComponent impl_IPrinting3DComponentWithMatrix<D>::Component() const
 {
     Windows::Graphics::Printing3D::Printing3DComponent value { nullptr };
-    check_hresult(static_cast<const IPrinting3DComponentWithMatrix &>(static_cast<const D &>(*this))->get_Component(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DComponentWithMatrix)->get_Component(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DComponentWithMatrix<D>::Component(const Windows::Graphics::Printing3D::Printing3DComponent & value) const
 {
-    check_hresult(static_cast<const IPrinting3DComponentWithMatrix &>(static_cast<const D &>(*this))->put_Component(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DComponentWithMatrix)->put_Component(get(value)));
 }
 
 template <typename D> Windows::Foundation::Numerics::float4x4 impl_IPrinting3DComponentWithMatrix<D>::Matrix() const
 {
     Windows::Foundation::Numerics::float4x4 value {};
-    check_hresult(static_cast<const IPrinting3DComponentWithMatrix &>(static_cast<const D &>(*this))->get_Matrix(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DComponentWithMatrix)->get_Matrix(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DComponentWithMatrix<D>::Matrix(const Windows::Foundation::Numerics::float4x4 & value) const
 {
-    check_hresult(static_cast<const IPrinting3DComponentWithMatrix &>(static_cast<const D &>(*this))->put_Matrix(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DComponentWithMatrix)->put_Matrix(get(value)));
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DMesh impl_IPrinting3DComponent<D>::Mesh() const
 {
     Windows::Graphics::Printing3D::Printing3DMesh value { nullptr };
-    check_hresult(static_cast<const IPrinting3DComponent &>(static_cast<const D &>(*this))->get_Mesh(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DComponent)->get_Mesh(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DComponent<D>::Mesh(const Windows::Graphics::Printing3D::Printing3DMesh & value) const
 {
-    check_hresult(static_cast<const IPrinting3DComponent &>(static_cast<const D &>(*this))->put_Mesh(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DComponent)->put_Mesh(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DComponentWithMatrix> impl_IPrinting3DComponent<D>::Components() const
 {
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DComponentWithMatrix> value;
-    check_hresult(static_cast<const IPrinting3DComponent &>(static_cast<const D &>(*this))->get_Components(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DComponent)->get_Components(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DTextureResource impl_IPrinting3DComponent<D>::Thumbnail() const
 {
     Windows::Graphics::Printing3D::Printing3DTextureResource value { nullptr };
-    check_hresult(static_cast<const IPrinting3DComponent &>(static_cast<const D &>(*this))->get_Thumbnail(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DComponent)->get_Thumbnail(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DComponent<D>::Thumbnail(const Windows::Graphics::Printing3D::Printing3DTextureResource & value) const
 {
-    check_hresult(static_cast<const IPrinting3DComponent &>(static_cast<const D &>(*this))->put_Thumbnail(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DComponent)->put_Thumbnail(get(value)));
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DObjectType impl_IPrinting3DComponent<D>::Type() const
 {
     Windows::Graphics::Printing3D::Printing3DObjectType value {};
-    check_hresult(static_cast<const IPrinting3DComponent &>(static_cast<const D &>(*this))->get_Type(&value));
+    check_hresult(WINRT_SHIM(IPrinting3DComponent)->get_Type(&value));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DComponent<D>::Type(Windows::Graphics::Printing3D::Printing3DObjectType value) const
 {
-    check_hresult(static_cast<const IPrinting3DComponent &>(static_cast<const D &>(*this))->put_Type(value));
+    check_hresult(WINRT_SHIM(IPrinting3DComponent)->put_Type(value));
 }
 
 template <typename D> hstring impl_IPrinting3DComponent<D>::Name() const
 {
     hstring value;
-    check_hresult(static_cast<const IPrinting3DComponent &>(static_cast<const D &>(*this))->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DComponent)->get_Name(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DComponent<D>::Name(hstring_ref value) const
 {
-    check_hresult(static_cast<const IPrinting3DComponent &>(static_cast<const D &>(*this))->put_Name(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DComponent)->put_Name(get(value)));
 }
 
 template <typename D> hstring impl_IPrinting3DComponent<D>::PartNumber() const
 {
     hstring value;
-    check_hresult(static_cast<const IPrinting3DComponent &>(static_cast<const D &>(*this))->get_PartNumber(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DComponent)->get_PartNumber(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DComponent<D>::PartNumber(hstring_ref value) const
 {
-    check_hresult(static_cast<const IPrinting3DComponent &>(static_cast<const D &>(*this))->put_PartNumber(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DComponent)->put_PartNumber(get(value)));
 }
 
 template <typename D> hstring impl_IPrinting3DBaseMaterialStatics<D>::Abs() const
 {
     hstring value;
-    check_hresult(static_cast<const IPrinting3DBaseMaterialStatics &>(static_cast<const D &>(*this))->get_Abs(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DBaseMaterialStatics)->get_Abs(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPrinting3DBaseMaterialStatics<D>::Pla() const
 {
     hstring value;
-    check_hresult(static_cast<const IPrinting3DBaseMaterialStatics &>(static_cast<const D &>(*this))->get_Pla(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DBaseMaterialStatics)->get_Pla(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPrinting3DBaseMaterial<D>::Name() const
 {
     hstring value;
-    check_hresult(static_cast<const IPrinting3DBaseMaterial &>(static_cast<const D &>(*this))->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DBaseMaterial)->get_Name(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DBaseMaterial<D>::Name(hstring_ref value) const
 {
-    check_hresult(static_cast<const IPrinting3DBaseMaterial &>(static_cast<const D &>(*this))->put_Name(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DBaseMaterial)->put_Name(get(value)));
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DColorMaterial impl_IPrinting3DBaseMaterial<D>::Color() const
 {
     Windows::Graphics::Printing3D::Printing3DColorMaterial value { nullptr };
-    check_hresult(static_cast<const IPrinting3DBaseMaterial &>(static_cast<const D &>(*this))->get_Color(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DBaseMaterial)->get_Color(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DBaseMaterial<D>::Color(const Windows::Graphics::Printing3D::Printing3DColorMaterial & value) const
 {
-    check_hresult(static_cast<const IPrinting3DBaseMaterial &>(static_cast<const D &>(*this))->put_Color(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DBaseMaterial)->put_Color(get(value)));
 }
 
 template <typename D> uint32_t impl_IPrinting3DColorMaterial<D>::Value() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrinting3DColorMaterial &>(static_cast<const D &>(*this))->get_Value(&value));
+    check_hresult(WINRT_SHIM(IPrinting3DColorMaterial)->get_Value(&value));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DColorMaterial<D>::Value(uint32_t value) const
 {
-    check_hresult(static_cast<const IPrinting3DColorMaterial &>(static_cast<const D &>(*this))->put_Value(value));
+    check_hresult(WINRT_SHIM(IPrinting3DColorMaterial)->put_Value(value));
 }
 
 template <typename D> Windows::UI::Color impl_IPrinting3DColorMaterial2<D>::Color() const
 {
     Windows::UI::Color value {};
-    check_hresult(static_cast<const IPrinting3DColorMaterial2 &>(static_cast<const D &>(*this))->get_Color(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DColorMaterial2)->get_Color(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DColorMaterial2<D>::Color(const Windows::UI::Color & value) const
 {
-    check_hresult(static_cast<const IPrinting3DColorMaterial2 &>(static_cast<const D &>(*this))->put_Color(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DColorMaterial2)->put_Color(get(value)));
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DModelTexture impl_IPrinting3DTexture2CoordMaterial<D>::Texture() const
 {
     Windows::Graphics::Printing3D::Printing3DModelTexture value { nullptr };
-    check_hresult(static_cast<const IPrinting3DTexture2CoordMaterial &>(static_cast<const D &>(*this))->get_Texture(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DTexture2CoordMaterial)->get_Texture(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DTexture2CoordMaterial<D>::Texture(const Windows::Graphics::Printing3D::Printing3DModelTexture & value) const
 {
-    check_hresult(static_cast<const IPrinting3DTexture2CoordMaterial &>(static_cast<const D &>(*this))->put_Texture(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DTexture2CoordMaterial)->put_Texture(get(value)));
 }
 
 template <typename D> double impl_IPrinting3DTexture2CoordMaterial<D>::U() const
 {
     double value {};
-    check_hresult(static_cast<const IPrinting3DTexture2CoordMaterial &>(static_cast<const D &>(*this))->get_U(&value));
+    check_hresult(WINRT_SHIM(IPrinting3DTexture2CoordMaterial)->get_U(&value));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DTexture2CoordMaterial<D>::U(double value) const
 {
-    check_hresult(static_cast<const IPrinting3DTexture2CoordMaterial &>(static_cast<const D &>(*this))->put_U(value));
+    check_hresult(WINRT_SHIM(IPrinting3DTexture2CoordMaterial)->put_U(value));
 }
 
 template <typename D> double impl_IPrinting3DTexture2CoordMaterial<D>::V() const
 {
     double value {};
-    check_hresult(static_cast<const IPrinting3DTexture2CoordMaterial &>(static_cast<const D &>(*this))->get_V(&value));
+    check_hresult(WINRT_SHIM(IPrinting3DTexture2CoordMaterial)->get_V(&value));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DTexture2CoordMaterial<D>::V(double value) const
 {
-    check_hresult(static_cast<const IPrinting3DTexture2CoordMaterial &>(static_cast<const D &>(*this))->put_V(value));
+    check_hresult(WINRT_SHIM(IPrinting3DTexture2CoordMaterial)->put_V(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<double> impl_IPrinting3DCompositeMaterial<D>::Values() const
 {
     Windows::Foundation::Collections::IVector<double> value;
-    check_hresult(static_cast<const IPrinting3DCompositeMaterial &>(static_cast<const D &>(*this))->get_Values(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DCompositeMaterial)->get_Values(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<uint32_t> impl_IPrinting3DMultiplePropertyMaterial<D>::MaterialIndices() const
 {
     Windows::Foundation::Collections::IVector<uint32_t> value;
-    check_hresult(static_cast<const IPrinting3DMultiplePropertyMaterial &>(static_cast<const D &>(*this))->get_MaterialIndices(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMultiplePropertyMaterial)->get_MaterialIndices(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DBaseMaterialGroup impl_IPrinting3DBaseMaterialGroupFactory<D>::Create(uint32_t MaterialGroupId) const
 {
     Windows::Graphics::Printing3D::Printing3DBaseMaterialGroup result { nullptr };
-    check_hresult(static_cast<const IPrinting3DBaseMaterialGroupFactory &>(static_cast<const D &>(*this))->abi_Create(MaterialGroupId, put(result)));
+    check_hresult(WINRT_SHIM(IPrinting3DBaseMaterialGroupFactory)->abi_Create(MaterialGroupId, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DBaseMaterial> impl_IPrinting3DBaseMaterialGroup<D>::Bases() const
 {
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DBaseMaterial> value;
-    check_hresult(static_cast<const IPrinting3DBaseMaterialGroup &>(static_cast<const D &>(*this))->get_Bases(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DBaseMaterialGroup)->get_Bases(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IPrinting3DBaseMaterialGroup<D>::MaterialGroupId() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrinting3DBaseMaterialGroup &>(static_cast<const D &>(*this))->get_MaterialGroupId(&value));
+    check_hresult(WINRT_SHIM(IPrinting3DBaseMaterialGroup)->get_MaterialGroupId(&value));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DColorMaterialGroup impl_IPrinting3DColorMaterialGroupFactory<D>::Create(uint32_t MaterialGroupId) const
 {
     Windows::Graphics::Printing3D::Printing3DColorMaterialGroup result { nullptr };
-    check_hresult(static_cast<const IPrinting3DColorMaterialGroupFactory &>(static_cast<const D &>(*this))->abi_Create(MaterialGroupId, put(result)));
+    check_hresult(WINRT_SHIM(IPrinting3DColorMaterialGroupFactory)->abi_Create(MaterialGroupId, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DColorMaterial> impl_IPrinting3DColorMaterialGroup<D>::Colors() const
 {
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DColorMaterial> value;
-    check_hresult(static_cast<const IPrinting3DColorMaterialGroup &>(static_cast<const D &>(*this))->get_Colors(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DColorMaterialGroup)->get_Colors(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IPrinting3DColorMaterialGroup<D>::MaterialGroupId() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrinting3DColorMaterialGroup &>(static_cast<const D &>(*this))->get_MaterialGroupId(&value));
+    check_hresult(WINRT_SHIM(IPrinting3DColorMaterialGroup)->get_MaterialGroupId(&value));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DTexture2CoordMaterialGroup impl_IPrinting3DTexture2CoordMaterialGroupFactory<D>::Create(uint32_t MaterialGroupId) const
 {
     Windows::Graphics::Printing3D::Printing3DTexture2CoordMaterialGroup result { nullptr };
-    check_hresult(static_cast<const IPrinting3DTexture2CoordMaterialGroupFactory &>(static_cast<const D &>(*this))->abi_Create(MaterialGroupId, put(result)));
+    check_hresult(WINRT_SHIM(IPrinting3DTexture2CoordMaterialGroupFactory)->abi_Create(MaterialGroupId, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DTexture2CoordMaterial> impl_IPrinting3DTexture2CoordMaterialGroup<D>::Texture2Coords() const
 {
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DTexture2CoordMaterial> value;
-    check_hresult(static_cast<const IPrinting3DTexture2CoordMaterialGroup &>(static_cast<const D &>(*this))->get_Texture2Coords(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DTexture2CoordMaterialGroup)->get_Texture2Coords(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IPrinting3DTexture2CoordMaterialGroup<D>::MaterialGroupId() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrinting3DTexture2CoordMaterialGroup &>(static_cast<const D &>(*this))->get_MaterialGroupId(&value));
+    check_hresult(WINRT_SHIM(IPrinting3DTexture2CoordMaterialGroup)->get_MaterialGroupId(&value));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DModelTexture impl_IPrinting3DTexture2CoordMaterialGroup2<D>::Texture() const
 {
     Windows::Graphics::Printing3D::Printing3DModelTexture value { nullptr };
-    check_hresult(static_cast<const IPrinting3DTexture2CoordMaterialGroup2 &>(static_cast<const D &>(*this))->get_Texture(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DTexture2CoordMaterialGroup2)->get_Texture(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DTexture2CoordMaterialGroup2<D>::Texture(const Windows::Graphics::Printing3D::Printing3DModelTexture & value) const
 {
-    check_hresult(static_cast<const IPrinting3DTexture2CoordMaterialGroup2 &>(static_cast<const D &>(*this))->put_Texture(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DTexture2CoordMaterialGroup2)->put_Texture(get(value)));
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DCompositeMaterialGroup impl_IPrinting3DCompositeMaterialGroupFactory<D>::Create(uint32_t MaterialGroupId) const
 {
     Windows::Graphics::Printing3D::Printing3DCompositeMaterialGroup result { nullptr };
-    check_hresult(static_cast<const IPrinting3DCompositeMaterialGroupFactory &>(static_cast<const D &>(*this))->abi_Create(MaterialGroupId, put(result)));
+    check_hresult(WINRT_SHIM(IPrinting3DCompositeMaterialGroupFactory)->abi_Create(MaterialGroupId, put(result)));
     return result;
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DBaseMaterialGroup impl_IPrinting3DCompositeMaterialGroup2<D>::BaseMaterialGroup() const
 {
     Windows::Graphics::Printing3D::Printing3DBaseMaterialGroup value { nullptr };
-    check_hresult(static_cast<const IPrinting3DCompositeMaterialGroup2 &>(static_cast<const D &>(*this))->get_BaseMaterialGroup(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DCompositeMaterialGroup2)->get_BaseMaterialGroup(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DCompositeMaterialGroup2<D>::BaseMaterialGroup(const Windows::Graphics::Printing3D::Printing3DBaseMaterialGroup & value) const
 {
-    check_hresult(static_cast<const IPrinting3DCompositeMaterialGroup2 &>(static_cast<const D &>(*this))->put_BaseMaterialGroup(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DCompositeMaterialGroup2)->put_BaseMaterialGroup(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DCompositeMaterial> impl_IPrinting3DCompositeMaterialGroup<D>::Composites() const
 {
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DCompositeMaterial> value;
-    check_hresult(static_cast<const IPrinting3DCompositeMaterialGroup &>(static_cast<const D &>(*this))->get_Composites(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DCompositeMaterialGroup)->get_Composites(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IPrinting3DCompositeMaterialGroup<D>::MaterialGroupId() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrinting3DCompositeMaterialGroup &>(static_cast<const D &>(*this))->get_MaterialGroupId(&value));
+    check_hresult(WINRT_SHIM(IPrinting3DCompositeMaterialGroup)->get_MaterialGroupId(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<uint32_t> impl_IPrinting3DCompositeMaterialGroup<D>::MaterialIndices() const
 {
     Windows::Foundation::Collections::IVector<uint32_t> value;
-    check_hresult(static_cast<const IPrinting3DCompositeMaterialGroup &>(static_cast<const D &>(*this))->get_MaterialIndices(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DCompositeMaterialGroup)->get_MaterialIndices(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DMultiplePropertyMaterialGroup impl_IPrinting3DMultiplePropertyMaterialGroupFactory<D>::Create(uint32_t MaterialGroupId) const
 {
     Windows::Graphics::Printing3D::Printing3DMultiplePropertyMaterialGroup result { nullptr };
-    check_hresult(static_cast<const IPrinting3DMultiplePropertyMaterialGroupFactory &>(static_cast<const D &>(*this))->abi_Create(MaterialGroupId, put(result)));
+    check_hresult(WINRT_SHIM(IPrinting3DMultiplePropertyMaterialGroupFactory)->abi_Create(MaterialGroupId, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DMultiplePropertyMaterial> impl_IPrinting3DMultiplePropertyMaterialGroup<D>::MultipleProperties() const
 {
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DMultiplePropertyMaterial> value;
-    check_hresult(static_cast<const IPrinting3DMultiplePropertyMaterialGroup &>(static_cast<const D &>(*this))->get_MultipleProperties(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMultiplePropertyMaterialGroup)->get_MultipleProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<uint32_t> impl_IPrinting3DMultiplePropertyMaterialGroup<D>::MaterialGroupIndices() const
 {
     Windows::Foundation::Collections::IVector<uint32_t> value;
-    check_hresult(static_cast<const IPrinting3DMultiplePropertyMaterialGroup &>(static_cast<const D &>(*this))->get_MaterialGroupIndices(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMultiplePropertyMaterialGroup)->get_MaterialGroupIndices(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IPrinting3DMultiplePropertyMaterialGroup<D>::MaterialGroupId() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrinting3DMultiplePropertyMaterialGroup &>(static_cast<const D &>(*this))->get_MaterialGroupId(&value));
+    check_hresult(WINRT_SHIM(IPrinting3DMultiplePropertyMaterialGroup)->get_MaterialGroupId(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DBaseMaterialGroup> impl_IPrinting3DMaterial<D>::BaseGroups() const
 {
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DBaseMaterialGroup> value;
-    check_hresult(static_cast<const IPrinting3DMaterial &>(static_cast<const D &>(*this))->get_BaseGroups(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMaterial)->get_BaseGroups(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DColorMaterialGroup> impl_IPrinting3DMaterial<D>::ColorGroups() const
 {
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DColorMaterialGroup> value;
-    check_hresult(static_cast<const IPrinting3DMaterial &>(static_cast<const D &>(*this))->get_ColorGroups(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMaterial)->get_ColorGroups(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DTexture2CoordMaterialGroup> impl_IPrinting3DMaterial<D>::Texture2CoordGroups() const
 {
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DTexture2CoordMaterialGroup> value;
-    check_hresult(static_cast<const IPrinting3DMaterial &>(static_cast<const D &>(*this))->get_Texture2CoordGroups(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMaterial)->get_Texture2CoordGroups(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DCompositeMaterialGroup> impl_IPrinting3DMaterial<D>::CompositeGroups() const
 {
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DCompositeMaterialGroup> value;
-    check_hresult(static_cast<const IPrinting3DMaterial &>(static_cast<const D &>(*this))->get_CompositeGroups(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMaterial)->get_CompositeGroups(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DMultiplePropertyMaterialGroup> impl_IPrinting3DMaterial<D>::MultiplePropertyGroups() const
 {
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DMultiplePropertyMaterialGroup> value;
-    check_hresult(static_cast<const IPrinting3DMaterial &>(static_cast<const D &>(*this))->get_MultiplePropertyGroups(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMaterial)->get_MultiplePropertyGroups(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPrinting3DMeshVerificationResult<D>::IsValid() const
 {
     bool value {};
-    check_hresult(static_cast<const IPrinting3DMeshVerificationResult &>(static_cast<const D &>(*this))->get_IsValid(&value));
+    check_hresult(WINRT_SHIM(IPrinting3DMeshVerificationResult)->get_IsValid(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IPrinting3DMeshVerificationResult<D>::NonmanifoldTriangles() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IPrinting3DMeshVerificationResult &>(static_cast<const D &>(*this))->get_NonmanifoldTriangles(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMeshVerificationResult)->get_NonmanifoldTriangles(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IPrinting3DMeshVerificationResult<D>::ReversedNormalTriangles() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IPrinting3DMeshVerificationResult &>(static_cast<const D &>(*this))->get_ReversedNormalTriangles(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DMeshVerificationResult)->get_ReversedNormalTriangles(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DModelUnit impl_IPrinting3DModel<D>::Unit() const
 {
     Windows::Graphics::Printing3D::Printing3DModelUnit value {};
-    check_hresult(static_cast<const IPrinting3DModel &>(static_cast<const D &>(*this))->get_Unit(&value));
+    check_hresult(WINRT_SHIM(IPrinting3DModel)->get_Unit(&value));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DModel<D>::Unit(Windows::Graphics::Printing3D::Printing3DModelUnit value) const
 {
-    check_hresult(static_cast<const IPrinting3DModel &>(static_cast<const D &>(*this))->put_Unit(value));
+    check_hresult(WINRT_SHIM(IPrinting3DModel)->put_Unit(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DModelTexture> impl_IPrinting3DModel<D>::Textures() const
 {
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DModelTexture> value;
-    check_hresult(static_cast<const IPrinting3DModel &>(static_cast<const D &>(*this))->get_Textures(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel)->get_Textures(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DMesh> impl_IPrinting3DModel<D>::Meshes() const
 {
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DMesh> value;
-    check_hresult(static_cast<const IPrinting3DModel &>(static_cast<const D &>(*this))->get_Meshes(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel)->get_Meshes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DComponent> impl_IPrinting3DModel<D>::Components() const
 {
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DComponent> value;
-    check_hresult(static_cast<const IPrinting3DModel &>(static_cast<const D &>(*this))->get_Components(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel)->get_Components(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DMaterial impl_IPrinting3DModel<D>::Material() const
 {
     Windows::Graphics::Printing3D::Printing3DMaterial value { nullptr };
-    check_hresult(static_cast<const IPrinting3DModel &>(static_cast<const D &>(*this))->get_Material(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel)->get_Material(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DModel<D>::Material(const Windows::Graphics::Printing3D::Printing3DMaterial & value) const
 {
-    check_hresult(static_cast<const IPrinting3DModel &>(static_cast<const D &>(*this))->put_Material(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel)->put_Material(get(value)));
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DComponent impl_IPrinting3DModel<D>::Build() const
 {
     Windows::Graphics::Printing3D::Printing3DComponent value { nullptr };
-    check_hresult(static_cast<const IPrinting3DModel &>(static_cast<const D &>(*this))->get_Build(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel)->get_Build(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DModel<D>::Build(const Windows::Graphics::Printing3D::Printing3DComponent & value) const
 {
-    check_hresult(static_cast<const IPrinting3DModel &>(static_cast<const D &>(*this))->put_Build(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel)->put_Build(get(value)));
 }
 
 template <typename D> hstring impl_IPrinting3DModel<D>::Version() const
 {
     hstring value;
-    check_hresult(static_cast<const IPrinting3DModel &>(static_cast<const D &>(*this))->get_Version(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel)->get_Version(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DModel<D>::Version(hstring_ref value) const
 {
-    check_hresult(static_cast<const IPrinting3DModel &>(static_cast<const D &>(*this))->put_Version(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel)->put_Version(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IPrinting3DModel<D>::RequiredExtensions() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IPrinting3DModel &>(static_cast<const D &>(*this))->get_RequiredExtensions(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel)->get_RequiredExtensions(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_IPrinting3DModel<D>::Metadata() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> value;
-    check_hresult(static_cast<const IPrinting3DModel &>(static_cast<const D &>(*this))->get_Metadata(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel)->get_Metadata(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPrinting3DModel<D>::RepairAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IPrinting3DModel &>(static_cast<const D &>(*this))->abi_RepairAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel)->abi_RepairAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DModel impl_IPrinting3DModel<D>::Clone() const
 {
     Windows::Graphics::Printing3D::Printing3DModel value { nullptr };
-    check_hresult(static_cast<const IPrinting3DModel &>(static_cast<const D &>(*this))->abi_Clone(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel)->abi_Clone(put(value)));
     return value;
 }
 
 template <typename D> double impl_IPrinting3DFaceReductionOptions<D>::MaxReductionArea() const
 {
     double value {};
-    check_hresult(static_cast<const IPrinting3DFaceReductionOptions &>(static_cast<const D &>(*this))->get_MaxReductionArea(&value));
+    check_hresult(WINRT_SHIM(IPrinting3DFaceReductionOptions)->get_MaxReductionArea(&value));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DFaceReductionOptions<D>::MaxReductionArea(double value) const
 {
-    check_hresult(static_cast<const IPrinting3DFaceReductionOptions &>(static_cast<const D &>(*this))->put_MaxReductionArea(value));
+    check_hresult(WINRT_SHIM(IPrinting3DFaceReductionOptions)->put_MaxReductionArea(value));
 }
 
 template <typename D> uint32_t impl_IPrinting3DFaceReductionOptions<D>::TargetTriangleCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrinting3DFaceReductionOptions &>(static_cast<const D &>(*this))->get_TargetTriangleCount(&value));
+    check_hresult(WINRT_SHIM(IPrinting3DFaceReductionOptions)->get_TargetTriangleCount(&value));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DFaceReductionOptions<D>::TargetTriangleCount(uint32_t value) const
 {
-    check_hresult(static_cast<const IPrinting3DFaceReductionOptions &>(static_cast<const D &>(*this))->put_TargetTriangleCount(value));
+    check_hresult(WINRT_SHIM(IPrinting3DFaceReductionOptions)->put_TargetTriangleCount(value));
 }
 
 template <typename D> double impl_IPrinting3DFaceReductionOptions<D>::MaxEdgeLength() const
 {
     double value {};
-    check_hresult(static_cast<const IPrinting3DFaceReductionOptions &>(static_cast<const D &>(*this))->get_MaxEdgeLength(&value));
+    check_hresult(WINRT_SHIM(IPrinting3DFaceReductionOptions)->get_MaxEdgeLength(&value));
     return value;
 }
 
 template <typename D> void impl_IPrinting3DFaceReductionOptions<D>::MaxEdgeLength(double value) const
 {
-    check_hresult(static_cast<const IPrinting3DFaceReductionOptions &>(static_cast<const D &>(*this))->put_MaxEdgeLength(value));
+    check_hresult(WINRT_SHIM(IPrinting3DFaceReductionOptions)->put_MaxEdgeLength(value));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IPrinting3DModel2<D>::TryPartialRepairAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const IPrinting3DModel2 &>(static_cast<const D &>(*this))->abi_TryPartialRepairAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel2)->abi_TryPartialRepairAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IPrinting3DModel2<D>::TryPartialRepairAsync(const Windows::Foundation::TimeSpan & maxWaitTime) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const IPrinting3DModel2 &>(static_cast<const D &>(*this))->abi_TryPartialRepairWithTimeAsync(get(maxWaitTime), put(operation)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel2)->abi_TryPartialRepairWithTimeAsync(get(maxWaitTime), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<bool, double> impl_IPrinting3DModel2<D>::TryReduceFacesAsync() const
 {
     Windows::Foundation::IAsyncOperationWithProgress<bool, double> operation;
-    check_hresult(static_cast<const IPrinting3DModel2 &>(static_cast<const D &>(*this))->abi_TryReduceFacesAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel2)->abi_TryReduceFacesAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<bool, double> impl_IPrinting3DModel2<D>::TryReduceFacesAsync(const Windows::Graphics::Printing3D::Printing3DFaceReductionOptions & printing3DFaceReductionOptions) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<bool, double> operation;
-    check_hresult(static_cast<const IPrinting3DModel2 &>(static_cast<const D &>(*this))->abi_TryReduceFacesWithOptionsAsync(get(printing3DFaceReductionOptions), put(operation)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel2)->abi_TryReduceFacesWithOptionsAsync(get(printing3DFaceReductionOptions), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<bool, double> impl_IPrinting3DModel2<D>::TryReduceFacesAsync(const Windows::Graphics::Printing3D::Printing3DFaceReductionOptions & printing3DFaceReductionOptions, const Windows::Foundation::TimeSpan & maxWait) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<bool, double> operation;
-    check_hresult(static_cast<const IPrinting3DModel2 &>(static_cast<const D &>(*this))->abi_TryReduceFacesWithOptionsAndTimeAsync(get(printing3DFaceReductionOptions), get(maxWait), put(operation)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel2)->abi_TryReduceFacesWithOptionsAndTimeAsync(get(printing3DFaceReductionOptions), get(maxWait), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<bool, double> impl_IPrinting3DModel2<D>::RepairWithProgressAsync() const
 {
     Windows::Foundation::IAsyncOperationWithProgress<bool, double> operation;
-    check_hresult(static_cast<const IPrinting3DModel2 &>(static_cast<const D &>(*this))->abi_RepairWithProgressAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPrinting3DModel2)->abi_RepairWithProgressAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Printing3D::Printing3D3MFPackage> impl_IPrinting3D3MFPackageStatics<D>::LoadAsync(const Windows::Storage::Streams::IRandomAccessStream & value) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Printing3D::Printing3D3MFPackage> operation;
-    check_hresult(static_cast<const IPrinting3D3MFPackageStatics &>(static_cast<const D &>(*this))->abi_LoadAsync(get(value), put(operation)));
+    check_hresult(WINRT_SHIM(IPrinting3D3MFPackageStatics)->abi_LoadAsync(get(value), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> impl_IPrinting3D3MFPackage<D>::SaveAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> operation;
-    check_hresult(static_cast<const IPrinting3D3MFPackage &>(static_cast<const D &>(*this))->abi_SaveAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPrinting3D3MFPackage)->abi_SaveAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStream impl_IPrinting3D3MFPackage<D>::PrintTicket() const
 {
     Windows::Storage::Streams::IRandomAccessStream value;
-    check_hresult(static_cast<const IPrinting3D3MFPackage &>(static_cast<const D &>(*this))->get_PrintTicket(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3D3MFPackage)->get_PrintTicket(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3D3MFPackage<D>::PrintTicket(const Windows::Storage::Streams::IRandomAccessStream & value) const
 {
-    check_hresult(static_cast<const IPrinting3D3MFPackage &>(static_cast<const D &>(*this))->put_PrintTicket(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3D3MFPackage)->put_PrintTicket(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStream impl_IPrinting3D3MFPackage<D>::ModelPart() const
 {
     Windows::Storage::Streams::IRandomAccessStream value;
-    check_hresult(static_cast<const IPrinting3D3MFPackage &>(static_cast<const D &>(*this))->get_ModelPart(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3D3MFPackage)->get_ModelPart(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3D3MFPackage<D>::ModelPart(const Windows::Storage::Streams::IRandomAccessStream & value) const
 {
-    check_hresult(static_cast<const IPrinting3D3MFPackage &>(static_cast<const D &>(*this))->put_ModelPart(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3D3MFPackage)->put_ModelPart(get(value)));
 }
 
 template <typename D> Windows::Graphics::Printing3D::Printing3DTextureResource impl_IPrinting3D3MFPackage<D>::Thumbnail() const
 {
     Windows::Graphics::Printing3D::Printing3DTextureResource value { nullptr };
-    check_hresult(static_cast<const IPrinting3D3MFPackage &>(static_cast<const D &>(*this))->get_Thumbnail(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3D3MFPackage)->get_Thumbnail(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrinting3D3MFPackage<D>::Thumbnail(const Windows::Graphics::Printing3D::Printing3DTextureResource & value) const
 {
-    check_hresult(static_cast<const IPrinting3D3MFPackage &>(static_cast<const D &>(*this))->put_Thumbnail(get(value)));
+    check_hresult(WINRT_SHIM(IPrinting3D3MFPackage)->put_Thumbnail(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DTextureResource> impl_IPrinting3D3MFPackage<D>::Textures() const
 {
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DTextureResource> value;
-    check_hresult(static_cast<const IPrinting3D3MFPackage &>(static_cast<const D &>(*this))->get_Textures(put(value)));
+    check_hresult(WINRT_SHIM(IPrinting3D3MFPackage)->get_Textures(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Printing3D::Printing3DModel> impl_IPrinting3D3MFPackage<D>::LoadModelFromPackageAsync(const Windows::Storage::Streams::IRandomAccessStream & value) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Printing3D::Printing3DModel> operation;
-    check_hresult(static_cast<const IPrinting3D3MFPackage &>(static_cast<const D &>(*this))->abi_LoadModelFromPackageAsync(get(value), put(operation)));
+    check_hresult(WINRT_SHIM(IPrinting3D3MFPackage)->abi_LoadModelFromPackageAsync(get(value), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPrinting3D3MFPackage<D>::SaveModelToPackageAsync(const Windows::Graphics::Printing3D::Printing3DModel & value) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IPrinting3D3MFPackage &>(static_cast<const D &>(*this))->abi_SaveModelToPackageAsync(get(value), put(operation)));
+    check_hresult(WINRT_SHIM(IPrinting3D3MFPackage)->abi_SaveModelToPackageAsync(get(value), put(operation)));
     return operation;
 }
 

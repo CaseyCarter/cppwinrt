@@ -84,7 +84,6 @@ struct ISocialDashboardItemUpdater :
     impl::consume<ISocialDashboardItemUpdater>
 {
     ISocialDashboardItemUpdater(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISocialDashboardItemUpdater>(m_ptr); }
 };
 
 struct ISocialFeedUpdater :
@@ -92,7 +91,6 @@ struct ISocialFeedUpdater :
     impl::consume<ISocialFeedUpdater>
 {
     ISocialFeedUpdater(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISocialFeedUpdater>(m_ptr); }
 };
 
 struct ISocialInfoProviderManagerStatics :
@@ -100,7 +98,6 @@ struct ISocialInfoProviderManagerStatics :
     impl::consume<ISocialInfoProviderManagerStatics>
 {
     ISocialInfoProviderManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISocialInfoProviderManagerStatics>(m_ptr); }
 };
 
 }

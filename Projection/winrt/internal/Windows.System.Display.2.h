@@ -14,7 +14,6 @@ struct IDisplayRequest :
     impl::consume<IDisplayRequest>
 {
     IDisplayRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDisplayRequest>(m_ptr); }
 };
 
 }

@@ -329,7 +329,6 @@ namespace Windows::Media::Capture {
 struct MediaCaptureFailedEventHandler : Windows::IUnknown
 {
     MediaCaptureFailedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<MediaCaptureFailedEventHandler>(m_ptr); }
     template <typename L> MediaCaptureFailedEventHandler(L lambda);
     template <typename F> MediaCaptureFailedEventHandler (F * function);
     template <typename O, typename M> MediaCaptureFailedEventHandler(O * object, M method);
@@ -339,7 +338,6 @@ struct MediaCaptureFailedEventHandler : Windows::IUnknown
 struct RecordLimitationExceededEventHandler : Windows::IUnknown
 {
     RecordLimitationExceededEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<RecordLimitationExceededEventHandler>(m_ptr); }
     template <typename L> RecordLimitationExceededEventHandler(L lambda);
     template <typename F> RecordLimitationExceededEventHandler (F * function);
     template <typename O, typename M> RecordLimitationExceededEventHandler(O * object, M method);
@@ -351,7 +349,6 @@ struct IAdvancedCapturedPhoto :
     impl::consume<IAdvancedCapturedPhoto>
 {
     IAdvancedCapturedPhoto(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdvancedCapturedPhoto>(m_ptr); }
 };
 
 struct IAdvancedCapturedPhoto2 :
@@ -359,7 +356,6 @@ struct IAdvancedCapturedPhoto2 :
     impl::consume<IAdvancedCapturedPhoto2>
 {
     IAdvancedCapturedPhoto2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdvancedCapturedPhoto2>(m_ptr); }
 };
 
 struct IAdvancedPhotoCapture :
@@ -367,7 +363,6 @@ struct IAdvancedPhotoCapture :
     impl::consume<IAdvancedPhotoCapture>
 {
     IAdvancedPhotoCapture(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdvancedPhotoCapture>(m_ptr); }
 };
 
 struct IAppCapture :
@@ -375,7 +370,6 @@ struct IAppCapture :
     impl::consume<IAppCapture>
 {
     IAppCapture(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppCapture>(m_ptr); }
 };
 
 struct IAppCaptureStatics :
@@ -383,7 +377,6 @@ struct IAppCaptureStatics :
     impl::consume<IAppCaptureStatics>
 {
     IAppCaptureStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppCaptureStatics>(m_ptr); }
 };
 
 struct ICameraCaptureUI :
@@ -391,7 +384,6 @@ struct ICameraCaptureUI :
     impl::consume<ICameraCaptureUI>
 {
     ICameraCaptureUI(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICameraCaptureUI>(m_ptr); }
 };
 
 struct ICameraCaptureUIPhotoCaptureSettings :
@@ -399,7 +391,6 @@ struct ICameraCaptureUIPhotoCaptureSettings :
     impl::consume<ICameraCaptureUIPhotoCaptureSettings>
 {
     ICameraCaptureUIPhotoCaptureSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICameraCaptureUIPhotoCaptureSettings>(m_ptr); }
 };
 
 struct ICameraCaptureUIVideoCaptureSettings :
@@ -407,7 +398,6 @@ struct ICameraCaptureUIVideoCaptureSettings :
     impl::consume<ICameraCaptureUIVideoCaptureSettings>
 {
     ICameraCaptureUIVideoCaptureSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICameraCaptureUIVideoCaptureSettings>(m_ptr); }
 };
 
 struct ICapturedFrame :
@@ -416,7 +406,6 @@ struct ICapturedFrame :
     impl::require<ICapturedFrame, Windows::Foundation::IClosable, Windows::Storage::Streams::IContentTypeProvider, Windows::Storage::Streams::IInputStream, Windows::Storage::Streams::IOutputStream, Windows::Storage::Streams::IRandomAccessStream, Windows::Storage::Streams::IRandomAccessStreamWithContentType>
 {
     ICapturedFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICapturedFrame>(m_ptr); }
 };
 
 struct ICapturedFrameControlValues :
@@ -424,7 +413,6 @@ struct ICapturedFrameControlValues :
     impl::consume<ICapturedFrameControlValues>
 {
     ICapturedFrameControlValues(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICapturedFrameControlValues>(m_ptr); }
 };
 
 struct ICapturedFrameControlValues2 :
@@ -432,7 +420,6 @@ struct ICapturedFrameControlValues2 :
     impl::consume<ICapturedFrameControlValues2>
 {
     ICapturedFrameControlValues2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICapturedFrameControlValues2>(m_ptr); }
 };
 
 struct ICapturedFrameWithSoftwareBitmap :
@@ -440,7 +427,6 @@ struct ICapturedFrameWithSoftwareBitmap :
     impl::consume<ICapturedFrameWithSoftwareBitmap>
 {
     ICapturedFrameWithSoftwareBitmap(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICapturedFrameWithSoftwareBitmap>(m_ptr); }
 };
 
 struct ICapturedPhoto :
@@ -448,7 +434,6 @@ struct ICapturedPhoto :
     impl::consume<ICapturedPhoto>
 {
     ICapturedPhoto(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICapturedPhoto>(m_ptr); }
 };
 
 struct ILowLagMediaRecording :
@@ -456,7 +441,6 @@ struct ILowLagMediaRecording :
     impl::consume<ILowLagMediaRecording>
 {
     ILowLagMediaRecording(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILowLagMediaRecording>(m_ptr); }
 };
 
 struct ILowLagMediaRecording2 :
@@ -464,7 +448,6 @@ struct ILowLagMediaRecording2 :
     impl::consume<ILowLagMediaRecording2>
 {
     ILowLagMediaRecording2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILowLagMediaRecording2>(m_ptr); }
 };
 
 struct ILowLagMediaRecording3 :
@@ -472,7 +455,6 @@ struct ILowLagMediaRecording3 :
     impl::consume<ILowLagMediaRecording3>
 {
     ILowLagMediaRecording3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILowLagMediaRecording3>(m_ptr); }
 };
 
 struct ILowLagPhotoCapture :
@@ -480,7 +462,6 @@ struct ILowLagPhotoCapture :
     impl::consume<ILowLagPhotoCapture>
 {
     ILowLagPhotoCapture(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILowLagPhotoCapture>(m_ptr); }
 };
 
 struct ILowLagPhotoSequenceCapture :
@@ -488,7 +469,6 @@ struct ILowLagPhotoSequenceCapture :
     impl::consume<ILowLagPhotoSequenceCapture>
 {
     ILowLagPhotoSequenceCapture(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILowLagPhotoSequenceCapture>(m_ptr); }
 };
 
 struct IMediaCapture :
@@ -496,7 +476,6 @@ struct IMediaCapture :
     impl::consume<IMediaCapture>
 {
     IMediaCapture(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCapture>(m_ptr); }
 };
 
 struct IMediaCapture2 :
@@ -504,7 +483,6 @@ struct IMediaCapture2 :
     impl::consume<IMediaCapture2>
 {
     IMediaCapture2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCapture2>(m_ptr); }
 };
 
 struct IMediaCapture3 :
@@ -512,7 +490,6 @@ struct IMediaCapture3 :
     impl::consume<IMediaCapture3>
 {
     IMediaCapture3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCapture3>(m_ptr); }
 };
 
 struct IMediaCapture4 :
@@ -520,7 +497,6 @@ struct IMediaCapture4 :
     impl::consume<IMediaCapture4>
 {
     IMediaCapture4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCapture4>(m_ptr); }
 };
 
 struct IMediaCapture5 :
@@ -528,7 +504,6 @@ struct IMediaCapture5 :
     impl::consume<IMediaCapture5>
 {
     IMediaCapture5(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCapture5>(m_ptr); }
 };
 
 struct IMediaCaptureFailedEventArgs :
@@ -536,7 +511,6 @@ struct IMediaCaptureFailedEventArgs :
     impl::consume<IMediaCaptureFailedEventArgs>
 {
     IMediaCaptureFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCaptureFailedEventArgs>(m_ptr); }
 };
 
 struct IMediaCaptureFocusChangedEventArgs :
@@ -544,7 +518,6 @@ struct IMediaCaptureFocusChangedEventArgs :
     impl::consume<IMediaCaptureFocusChangedEventArgs>
 {
     IMediaCaptureFocusChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCaptureFocusChangedEventArgs>(m_ptr); }
 };
 
 struct IMediaCaptureInitializationSettings :
@@ -552,7 +525,6 @@ struct IMediaCaptureInitializationSettings :
     impl::consume<IMediaCaptureInitializationSettings>
 {
     IMediaCaptureInitializationSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCaptureInitializationSettings>(m_ptr); }
 };
 
 struct IMediaCaptureInitializationSettings2 :
@@ -560,7 +532,6 @@ struct IMediaCaptureInitializationSettings2 :
     impl::consume<IMediaCaptureInitializationSettings2>
 {
     IMediaCaptureInitializationSettings2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCaptureInitializationSettings2>(m_ptr); }
 };
 
 struct IMediaCaptureInitializationSettings3 :
@@ -568,7 +539,6 @@ struct IMediaCaptureInitializationSettings3 :
     impl::consume<IMediaCaptureInitializationSettings3>
 {
     IMediaCaptureInitializationSettings3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCaptureInitializationSettings3>(m_ptr); }
 };
 
 struct IMediaCaptureInitializationSettings4 :
@@ -576,7 +546,6 @@ struct IMediaCaptureInitializationSettings4 :
     impl::consume<IMediaCaptureInitializationSettings4>
 {
     IMediaCaptureInitializationSettings4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCaptureInitializationSettings4>(m_ptr); }
 };
 
 struct IMediaCaptureInitializationSettings5 :
@@ -584,7 +553,6 @@ struct IMediaCaptureInitializationSettings5 :
     impl::consume<IMediaCaptureInitializationSettings5>
 {
     IMediaCaptureInitializationSettings5(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCaptureInitializationSettings5>(m_ptr); }
 };
 
 struct IMediaCapturePauseResult :
@@ -592,7 +560,6 @@ struct IMediaCapturePauseResult :
     impl::consume<IMediaCapturePauseResult>
 {
     IMediaCapturePauseResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCapturePauseResult>(m_ptr); }
 };
 
 struct IMediaCaptureSettings :
@@ -600,7 +567,6 @@ struct IMediaCaptureSettings :
     impl::consume<IMediaCaptureSettings>
 {
     IMediaCaptureSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCaptureSettings>(m_ptr); }
 };
 
 struct IMediaCaptureSettings2 :
@@ -608,7 +574,6 @@ struct IMediaCaptureSettings2 :
     impl::consume<IMediaCaptureSettings2>
 {
     IMediaCaptureSettings2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCaptureSettings2>(m_ptr); }
 };
 
 struct IMediaCaptureStatics :
@@ -616,7 +581,6 @@ struct IMediaCaptureStatics :
     impl::consume<IMediaCaptureStatics>
 {
     IMediaCaptureStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCaptureStatics>(m_ptr); }
 };
 
 struct IMediaCaptureStopResult :
@@ -624,7 +588,6 @@ struct IMediaCaptureStopResult :
     impl::consume<IMediaCaptureStopResult>
 {
     IMediaCaptureStopResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCaptureStopResult>(m_ptr); }
 };
 
 struct IMediaCaptureVideoPreview :
@@ -632,7 +595,6 @@ struct IMediaCaptureVideoPreview :
     impl::consume<IMediaCaptureVideoPreview>
 {
     IMediaCaptureVideoPreview(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCaptureVideoPreview>(m_ptr); }
 };
 
 struct IMediaCaptureVideoProfile :
@@ -640,7 +602,6 @@ struct IMediaCaptureVideoProfile :
     impl::consume<IMediaCaptureVideoProfile>
 {
     IMediaCaptureVideoProfile(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCaptureVideoProfile>(m_ptr); }
 };
 
 struct IMediaCaptureVideoProfileMediaDescription :
@@ -648,7 +609,6 @@ struct IMediaCaptureVideoProfileMediaDescription :
     impl::consume<IMediaCaptureVideoProfileMediaDescription>
 {
     IMediaCaptureVideoProfileMediaDescription(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCaptureVideoProfileMediaDescription>(m_ptr); }
 };
 
 struct IOptionalReferencePhotoCapturedEventArgs :
@@ -656,7 +616,6 @@ struct IOptionalReferencePhotoCapturedEventArgs :
     impl::consume<IOptionalReferencePhotoCapturedEventArgs>
 {
     IOptionalReferencePhotoCapturedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOptionalReferencePhotoCapturedEventArgs>(m_ptr); }
 };
 
 struct IPhotoCapturedEventArgs :
@@ -664,7 +623,6 @@ struct IPhotoCapturedEventArgs :
     impl::consume<IPhotoCapturedEventArgs>
 {
     IPhotoCapturedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoCapturedEventArgs>(m_ptr); }
 };
 
 struct IPhotoConfirmationCapturedEventArgs :
@@ -672,7 +630,6 @@ struct IPhotoConfirmationCapturedEventArgs :
     impl::consume<IPhotoConfirmationCapturedEventArgs>
 {
     IPhotoConfirmationCapturedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoConfirmationCapturedEventArgs>(m_ptr); }
 };
 
 struct IVideoStreamConfiguration :
@@ -680,7 +637,6 @@ struct IVideoStreamConfiguration :
     impl::consume<IVideoStreamConfiguration>
 {
     IVideoStreamConfiguration(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoStreamConfiguration>(m_ptr); }
 };
 
 }

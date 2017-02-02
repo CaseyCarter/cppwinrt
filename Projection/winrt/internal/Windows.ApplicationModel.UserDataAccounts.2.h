@@ -219,7 +219,6 @@ struct IUserDataAccount :
     impl::consume<IUserDataAccount>
 {
     IUserDataAccount(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDataAccount>(m_ptr); }
 };
 
 struct IUserDataAccount2 :
@@ -228,7 +227,6 @@ struct IUserDataAccount2 :
     impl::require<IUserDataAccount2, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
 {
     IUserDataAccount2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDataAccount2>(m_ptr); }
 };
 
 struct IUserDataAccount3 :
@@ -236,7 +234,6 @@ struct IUserDataAccount3 :
     impl::consume<IUserDataAccount3>
 {
     IUserDataAccount3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDataAccount3>(m_ptr); }
 };
 
 struct IUserDataAccountManagerForUser :
@@ -244,7 +241,6 @@ struct IUserDataAccountManagerForUser :
     impl::consume<IUserDataAccountManagerForUser>
 {
     IUserDataAccountManagerForUser(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDataAccountManagerForUser>(m_ptr); }
 };
 
 struct IUserDataAccountManagerStatics :
@@ -252,7 +248,6 @@ struct IUserDataAccountManagerStatics :
     impl::consume<IUserDataAccountManagerStatics>
 {
     IUserDataAccountManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDataAccountManagerStatics>(m_ptr); }
 };
 
 struct IUserDataAccountManagerStatics2 :
@@ -260,7 +255,6 @@ struct IUserDataAccountManagerStatics2 :
     impl::consume<IUserDataAccountManagerStatics2>
 {
     IUserDataAccountManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDataAccountManagerStatics2>(m_ptr); }
 };
 
 struct IUserDataAccountStore :
@@ -268,7 +262,6 @@ struct IUserDataAccountStore :
     impl::consume<IUserDataAccountStore>
 {
     IUserDataAccountStore(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDataAccountStore>(m_ptr); }
 };
 
 struct IUserDataAccountStore2 :
@@ -277,7 +270,6 @@ struct IUserDataAccountStore2 :
     impl::require<IUserDataAccountStore2, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore>
 {
     IUserDataAccountStore2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDataAccountStore2>(m_ptr); }
     using impl_IUserDataAccountStore::CreateAccountAsync;
     using impl_IUserDataAccountStore2::CreateAccountAsync;
 };
@@ -287,7 +279,6 @@ struct IUserDataAccountStoreChangedEventArgs :
     impl::consume<IUserDataAccountStoreChangedEventArgs>
 {
     IUserDataAccountStoreChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDataAccountStoreChangedEventArgs>(m_ptr); }
 };
 
 }

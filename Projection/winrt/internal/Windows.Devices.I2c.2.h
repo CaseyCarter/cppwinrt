@@ -85,7 +85,6 @@ struct II2cConnectionSettings :
     impl::consume<II2cConnectionSettings>
 {
     II2cConnectionSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<II2cConnectionSettings>(m_ptr); }
 };
 
 struct II2cConnectionSettingsFactory :
@@ -93,7 +92,6 @@ struct II2cConnectionSettingsFactory :
     impl::consume<II2cConnectionSettingsFactory>
 {
     II2cConnectionSettingsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<II2cConnectionSettingsFactory>(m_ptr); }
 };
 
 struct II2cController :
@@ -101,7 +99,6 @@ struct II2cController :
     impl::consume<II2cController>
 {
     II2cController(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<II2cController>(m_ptr); }
 };
 
 struct II2cControllerStatics :
@@ -109,7 +106,6 @@ struct II2cControllerStatics :
     impl::consume<II2cControllerStatics>
 {
     II2cControllerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<II2cControllerStatics>(m_ptr); }
 };
 
 struct II2cDevice :
@@ -118,7 +114,6 @@ struct II2cDevice :
     impl::require<II2cDevice, Windows::Foundation::IClosable>
 {
     II2cDevice(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<II2cDevice>(m_ptr); }
 };
 
 struct II2cDeviceStatics :
@@ -126,7 +121,6 @@ struct II2cDeviceStatics :
     impl::consume<II2cDeviceStatics>
 {
     II2cDeviceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<II2cDeviceStatics>(m_ptr); }
 };
 
 }

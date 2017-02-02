@@ -39,7 +39,6 @@ struct IComponentConnector :
     impl::consume<IComponentConnector>
 {
     IComponentConnector(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IComponentConnector>(m_ptr); }
 };
 
 struct IComponentConnector2 :
@@ -47,7 +46,6 @@ struct IComponentConnector2 :
     impl::consume<IComponentConnector2>
 {
     IComponentConnector2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IComponentConnector2>(m_ptr); }
 };
 
 struct IDataTemplateComponent :
@@ -55,7 +53,6 @@ struct IDataTemplateComponent :
     impl::consume<IDataTemplateComponent>
 {
     IDataTemplateComponent(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataTemplateComponent>(m_ptr); }
 };
 
 struct IXamlBinaryWriter :
@@ -63,7 +60,6 @@ struct IXamlBinaryWriter :
     impl::consume<IXamlBinaryWriter>
 {
     IXamlBinaryWriter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXamlBinaryWriter>(m_ptr); }
 };
 
 struct IXamlBinaryWriterStatics :
@@ -71,7 +67,6 @@ struct IXamlBinaryWriterStatics :
     impl::consume<IXamlBinaryWriterStatics>
 {
     IXamlBinaryWriterStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXamlBinaryWriterStatics>(m_ptr); }
 };
 
 struct IXamlBindingHelper :
@@ -79,7 +74,6 @@ struct IXamlBindingHelper :
     impl::consume<IXamlBindingHelper>
 {
     IXamlBindingHelper(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXamlBindingHelper>(m_ptr); }
 };
 
 struct IXamlBindingHelperStatics :
@@ -87,7 +81,6 @@ struct IXamlBindingHelperStatics :
     impl::consume<IXamlBindingHelperStatics>
 {
     IXamlBindingHelperStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXamlBindingHelperStatics>(m_ptr); }
 };
 
 struct IXamlMember :
@@ -95,7 +88,6 @@ struct IXamlMember :
     impl::consume<IXamlMember>
 {
     IXamlMember(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXamlMember>(m_ptr); }
 };
 
 struct IXamlMetadataProvider :
@@ -103,7 +95,6 @@ struct IXamlMetadataProvider :
     impl::consume<IXamlMetadataProvider>
 {
     IXamlMetadataProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXamlMetadataProvider>(m_ptr); }
 };
 
 struct IXamlReader :
@@ -111,7 +102,6 @@ struct IXamlReader :
     impl::consume<IXamlReader>
 {
     IXamlReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXamlReader>(m_ptr); }
 };
 
 struct IXamlReaderStatics :
@@ -119,7 +109,6 @@ struct IXamlReaderStatics :
     impl::consume<IXamlReaderStatics>
 {
     IXamlReaderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXamlReaderStatics>(m_ptr); }
 };
 
 struct IXamlType :
@@ -127,7 +116,6 @@ struct IXamlType :
     impl::consume<IXamlType>
 {
     IXamlType(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IXamlType>(m_ptr); }
 };
 
 }

@@ -179,7 +179,6 @@ struct IAdaptiveNotificationContent :
     impl::consume<IAdaptiveNotificationContent>
 {
     IAdaptiveNotificationContent(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdaptiveNotificationContent>(m_ptr); }
 };
 
 struct IAdaptiveNotificationText :
@@ -188,7 +187,6 @@ struct IAdaptiveNotificationText :
     impl::require<IAdaptiveNotificationText, Windows::UI::Notifications::IAdaptiveNotificationContent>
 {
     IAdaptiveNotificationText(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdaptiveNotificationText>(m_ptr); }
 };
 
 struct IBadgeNotification :
@@ -196,7 +194,6 @@ struct IBadgeNotification :
     impl::consume<IBadgeNotification>
 {
     IBadgeNotification(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBadgeNotification>(m_ptr); }
 };
 
 struct IBadgeNotificationFactory :
@@ -204,7 +201,6 @@ struct IBadgeNotificationFactory :
     impl::consume<IBadgeNotificationFactory>
 {
     IBadgeNotificationFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBadgeNotificationFactory>(m_ptr); }
 };
 
 struct IBadgeUpdateManagerForUser :
@@ -212,7 +208,6 @@ struct IBadgeUpdateManagerForUser :
     impl::consume<IBadgeUpdateManagerForUser>
 {
     IBadgeUpdateManagerForUser(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBadgeUpdateManagerForUser>(m_ptr); }
 };
 
 struct IBadgeUpdateManagerStatics :
@@ -220,7 +215,6 @@ struct IBadgeUpdateManagerStatics :
     impl::consume<IBadgeUpdateManagerStatics>
 {
     IBadgeUpdateManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBadgeUpdateManagerStatics>(m_ptr); }
 };
 
 struct IBadgeUpdateManagerStatics2 :
@@ -228,7 +222,6 @@ struct IBadgeUpdateManagerStatics2 :
     impl::consume<IBadgeUpdateManagerStatics2>
 {
     IBadgeUpdateManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBadgeUpdateManagerStatics2>(m_ptr); }
 };
 
 struct IBadgeUpdater :
@@ -236,7 +229,6 @@ struct IBadgeUpdater :
     impl::consume<IBadgeUpdater>
 {
     IBadgeUpdater(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBadgeUpdater>(m_ptr); }
 };
 
 struct IKnownAdaptiveNotificationHintsStatics :
@@ -244,7 +236,6 @@ struct IKnownAdaptiveNotificationHintsStatics :
     impl::consume<IKnownAdaptiveNotificationHintsStatics>
 {
     IKnownAdaptiveNotificationHintsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownAdaptiveNotificationHintsStatics>(m_ptr); }
 };
 
 struct IKnownAdaptiveNotificationTextStylesStatics :
@@ -252,7 +243,6 @@ struct IKnownAdaptiveNotificationTextStylesStatics :
     impl::consume<IKnownAdaptiveNotificationTextStylesStatics>
 {
     IKnownAdaptiveNotificationTextStylesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownAdaptiveNotificationTextStylesStatics>(m_ptr); }
 };
 
 struct IKnownNotificationBindingsStatics :
@@ -260,7 +250,6 @@ struct IKnownNotificationBindingsStatics :
     impl::consume<IKnownNotificationBindingsStatics>
 {
     IKnownNotificationBindingsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownNotificationBindingsStatics>(m_ptr); }
 };
 
 struct INotification :
@@ -268,7 +257,6 @@ struct INotification :
     impl::consume<INotification>
 {
     INotification(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INotification>(m_ptr); }
 };
 
 struct INotificationBinding :
@@ -276,7 +264,6 @@ struct INotificationBinding :
     impl::consume<INotificationBinding>
 {
     INotificationBinding(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INotificationBinding>(m_ptr); }
 };
 
 struct INotificationVisual :
@@ -284,7 +271,6 @@ struct INotificationVisual :
     impl::consume<INotificationVisual>
 {
     INotificationVisual(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INotificationVisual>(m_ptr); }
 };
 
 struct IScheduledTileNotification :
@@ -292,7 +278,6 @@ struct IScheduledTileNotification :
     impl::consume<IScheduledTileNotification>
 {
     IScheduledTileNotification(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScheduledTileNotification>(m_ptr); }
 };
 
 struct IScheduledTileNotificationFactory :
@@ -300,7 +285,6 @@ struct IScheduledTileNotificationFactory :
     impl::consume<IScheduledTileNotificationFactory>
 {
     IScheduledTileNotificationFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScheduledTileNotificationFactory>(m_ptr); }
 };
 
 struct IScheduledToastNotification :
@@ -308,7 +292,6 @@ struct IScheduledToastNotification :
     impl::consume<IScheduledToastNotification>
 {
     IScheduledToastNotification(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScheduledToastNotification>(m_ptr); }
 };
 
 struct IScheduledToastNotification2 :
@@ -316,7 +299,6 @@ struct IScheduledToastNotification2 :
     impl::consume<IScheduledToastNotification2>
 {
     IScheduledToastNotification2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScheduledToastNotification2>(m_ptr); }
 };
 
 struct IScheduledToastNotification3 :
@@ -324,7 +306,6 @@ struct IScheduledToastNotification3 :
     impl::consume<IScheduledToastNotification3>
 {
     IScheduledToastNotification3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScheduledToastNotification3>(m_ptr); }
 };
 
 struct IScheduledToastNotificationFactory :
@@ -332,7 +313,6 @@ struct IScheduledToastNotificationFactory :
     impl::consume<IScheduledToastNotificationFactory>
 {
     IScheduledToastNotificationFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScheduledToastNotificationFactory>(m_ptr); }
 };
 
 struct IShownTileNotification :
@@ -340,7 +320,6 @@ struct IShownTileNotification :
     impl::consume<IShownTileNotification>
 {
     IShownTileNotification(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IShownTileNotification>(m_ptr); }
 };
 
 struct ITileFlyoutNotification :
@@ -348,7 +327,6 @@ struct ITileFlyoutNotification :
     impl::consume<ITileFlyoutNotification>
 {
     ITileFlyoutNotification(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITileFlyoutNotification>(m_ptr); }
 };
 
 struct ITileFlyoutNotificationFactory :
@@ -356,7 +334,6 @@ struct ITileFlyoutNotificationFactory :
     impl::consume<ITileFlyoutNotificationFactory>
 {
     ITileFlyoutNotificationFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITileFlyoutNotificationFactory>(m_ptr); }
 };
 
 struct ITileFlyoutUpdateManagerStatics :
@@ -364,7 +341,6 @@ struct ITileFlyoutUpdateManagerStatics :
     impl::consume<ITileFlyoutUpdateManagerStatics>
 {
     ITileFlyoutUpdateManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITileFlyoutUpdateManagerStatics>(m_ptr); }
 };
 
 struct ITileFlyoutUpdater :
@@ -372,7 +348,6 @@ struct ITileFlyoutUpdater :
     impl::consume<ITileFlyoutUpdater>
 {
     ITileFlyoutUpdater(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITileFlyoutUpdater>(m_ptr); }
 };
 
 struct ITileNotification :
@@ -380,7 +355,6 @@ struct ITileNotification :
     impl::consume<ITileNotification>
 {
     ITileNotification(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITileNotification>(m_ptr); }
 };
 
 struct ITileNotificationFactory :
@@ -388,7 +362,6 @@ struct ITileNotificationFactory :
     impl::consume<ITileNotificationFactory>
 {
     ITileNotificationFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITileNotificationFactory>(m_ptr); }
 };
 
 struct ITileUpdateManagerForUser :
@@ -396,7 +369,6 @@ struct ITileUpdateManagerForUser :
     impl::consume<ITileUpdateManagerForUser>
 {
     ITileUpdateManagerForUser(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITileUpdateManagerForUser>(m_ptr); }
 };
 
 struct ITileUpdateManagerStatics :
@@ -404,7 +376,6 @@ struct ITileUpdateManagerStatics :
     impl::consume<ITileUpdateManagerStatics>
 {
     ITileUpdateManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITileUpdateManagerStatics>(m_ptr); }
 };
 
 struct ITileUpdateManagerStatics2 :
@@ -412,7 +383,6 @@ struct ITileUpdateManagerStatics2 :
     impl::consume<ITileUpdateManagerStatics2>
 {
     ITileUpdateManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITileUpdateManagerStatics2>(m_ptr); }
 };
 
 struct ITileUpdater :
@@ -420,7 +390,6 @@ struct ITileUpdater :
     impl::consume<ITileUpdater>
 {
     ITileUpdater(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITileUpdater>(m_ptr); }
 };
 
 struct ITileUpdater2 :
@@ -428,7 +397,6 @@ struct ITileUpdater2 :
     impl::consume<ITileUpdater2>
 {
     ITileUpdater2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITileUpdater2>(m_ptr); }
 };
 
 struct IToastActivatedEventArgs :
@@ -436,7 +404,6 @@ struct IToastActivatedEventArgs :
     impl::consume<IToastActivatedEventArgs>
 {
     IToastActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastActivatedEventArgs>(m_ptr); }
 };
 
 struct IToastDismissedEventArgs :
@@ -444,7 +411,6 @@ struct IToastDismissedEventArgs :
     impl::consume<IToastDismissedEventArgs>
 {
     IToastDismissedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastDismissedEventArgs>(m_ptr); }
 };
 
 struct IToastFailedEventArgs :
@@ -452,7 +418,6 @@ struct IToastFailedEventArgs :
     impl::consume<IToastFailedEventArgs>
 {
     IToastFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastFailedEventArgs>(m_ptr); }
 };
 
 struct IToastNotification :
@@ -460,7 +425,6 @@ struct IToastNotification :
     impl::consume<IToastNotification>
 {
     IToastNotification(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastNotification>(m_ptr); }
 };
 
 struct IToastNotification2 :
@@ -468,7 +432,6 @@ struct IToastNotification2 :
     impl::consume<IToastNotification2>
 {
     IToastNotification2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastNotification2>(m_ptr); }
 };
 
 struct IToastNotification3 :
@@ -476,7 +439,6 @@ struct IToastNotification3 :
     impl::consume<IToastNotification3>
 {
     IToastNotification3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastNotification3>(m_ptr); }
 };
 
 struct IToastNotificationActionTriggerDetail :
@@ -484,7 +446,6 @@ struct IToastNotificationActionTriggerDetail :
     impl::consume<IToastNotificationActionTriggerDetail>
 {
     IToastNotificationActionTriggerDetail(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastNotificationActionTriggerDetail>(m_ptr); }
 };
 
 struct IToastNotificationFactory :
@@ -492,7 +453,6 @@ struct IToastNotificationFactory :
     impl::consume<IToastNotificationFactory>
 {
     IToastNotificationFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastNotificationFactory>(m_ptr); }
 };
 
 struct IToastNotificationHistory :
@@ -500,7 +460,6 @@ struct IToastNotificationHistory :
     impl::consume<IToastNotificationHistory>
 {
     IToastNotificationHistory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastNotificationHistory>(m_ptr); }
 };
 
 struct IToastNotificationHistory2 :
@@ -508,7 +467,6 @@ struct IToastNotificationHistory2 :
     impl::consume<IToastNotificationHistory2>
 {
     IToastNotificationHistory2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastNotificationHistory2>(m_ptr); }
 };
 
 struct IToastNotificationHistoryChangedTriggerDetail :
@@ -516,7 +474,6 @@ struct IToastNotificationHistoryChangedTriggerDetail :
     impl::consume<IToastNotificationHistoryChangedTriggerDetail>
 {
     IToastNotificationHistoryChangedTriggerDetail(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastNotificationHistoryChangedTriggerDetail>(m_ptr); }
 };
 
 struct IToastNotificationManagerForUser :
@@ -524,7 +481,6 @@ struct IToastNotificationManagerForUser :
     impl::consume<IToastNotificationManagerForUser>
 {
     IToastNotificationManagerForUser(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastNotificationManagerForUser>(m_ptr); }
 };
 
 struct IToastNotificationManagerStatics :
@@ -532,7 +488,6 @@ struct IToastNotificationManagerStatics :
     impl::consume<IToastNotificationManagerStatics>
 {
     IToastNotificationManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastNotificationManagerStatics>(m_ptr); }
 };
 
 struct IToastNotificationManagerStatics2 :
@@ -540,7 +495,6 @@ struct IToastNotificationManagerStatics2 :
     impl::consume<IToastNotificationManagerStatics2>
 {
     IToastNotificationManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastNotificationManagerStatics2>(m_ptr); }
 };
 
 struct IToastNotificationManagerStatics4 :
@@ -548,7 +502,6 @@ struct IToastNotificationManagerStatics4 :
     impl::consume<IToastNotificationManagerStatics4>
 {
     IToastNotificationManagerStatics4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastNotificationManagerStatics4>(m_ptr); }
 };
 
 struct IToastNotifier :
@@ -556,7 +509,6 @@ struct IToastNotifier :
     impl::consume<IToastNotifier>
 {
     IToastNotifier(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastNotifier>(m_ptr); }
 };
 
 struct IUserNotification :
@@ -564,7 +516,6 @@ struct IUserNotification :
     impl::consume<IUserNotification>
 {
     IUserNotification(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserNotification>(m_ptr); }
 };
 
 struct IUserNotificationChangedEventArgs :
@@ -572,7 +523,6 @@ struct IUserNotificationChangedEventArgs :
     impl::consume<IUserNotificationChangedEventArgs>
 {
     IUserNotificationChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserNotificationChangedEventArgs>(m_ptr); }
 };
 
 }

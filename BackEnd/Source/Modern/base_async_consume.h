@@ -280,7 +280,6 @@ namespace Windows::Foundation {
 struct AsyncActionCompletedHandler : IUnknown
 {
     AsyncActionCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<AsyncActionCompletedHandler>(m_ptr); }
     template <typename L> AsyncActionCompletedHandler(L handler);
     template <typename F> AsyncActionCompletedHandler(F * handler);
     template <typename O, typename M> AsyncActionCompletedHandler(O * object, M method);
@@ -291,7 +290,6 @@ template <typename TProgress>
 struct WINRT_EBO AsyncActionProgressHandler : IUnknown
 {
     AsyncActionProgressHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<AsyncActionProgressHandler>(m_ptr); }
     template <typename L> AsyncActionProgressHandler(L handler);
     template <typename F> AsyncActionProgressHandler(F * handler);
     template <typename O, typename M> AsyncActionProgressHandler(O * object, M method);
@@ -302,7 +300,6 @@ template <typename TProgress>
 struct WINRT_EBO AsyncActionWithProgressCompletedHandler : IUnknown
 {
     AsyncActionWithProgressCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<AsyncActionWithProgressCompletedHandler>(m_ptr); }
     template <typename L> AsyncActionWithProgressCompletedHandler(L handler);
     template <typename F> AsyncActionWithProgressCompletedHandler(F * handler);
     template <typename O, typename M> AsyncActionWithProgressCompletedHandler(O * object, M method);
@@ -313,7 +310,6 @@ template <typename TResult, typename TProgress>
 struct WINRT_EBO AsyncOperationProgressHandler : IUnknown
 {
     AsyncOperationProgressHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<AsyncOperationProgressHandler>(m_ptr); }
     template <typename L> AsyncOperationProgressHandler(L handler);
     template <typename F> AsyncOperationProgressHandler(F * handler);
     template <typename O, typename M> AsyncOperationProgressHandler(O * object, M method);
@@ -324,7 +320,6 @@ template <typename TResult, typename TProgress>
 struct WINRT_EBO AsyncOperationWithProgressCompletedHandler : IUnknown
 {
     AsyncOperationWithProgressCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<AsyncOperationWithProgressCompletedHandler>(m_ptr); }
     template <typename L> AsyncOperationWithProgressCompletedHandler(L handler);
     template <typename F> AsyncOperationWithProgressCompletedHandler(F * handler);
     template <typename O, typename M> AsyncOperationWithProgressCompletedHandler(O * object, M method);
@@ -335,7 +330,6 @@ template <typename TResult>
 struct WINRT_EBO AsyncOperationCompletedHandler : IUnknown
 {
     AsyncOperationCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<AsyncOperationCompletedHandler>(m_ptr); }
     template <typename L> AsyncOperationCompletedHandler(L handler);
     template <typename F> AsyncOperationCompletedHandler(F * handler);
     template <typename O, typename M> AsyncOperationCompletedHandler(O * object, M method);
@@ -347,7 +341,6 @@ struct IAsyncInfo :
     impl::consume<IAsyncInfo>
 {
     IAsyncInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAsyncInfo>(m_ptr); }
 };
 
 struct IAsyncAction :
@@ -356,7 +349,6 @@ struct IAsyncAction :
     impl::require<IAsyncAction, IAsyncInfo>
 {
     IAsyncAction(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAsyncAction>(m_ptr); }
 };
 
 template <typename TProgress>
@@ -366,7 +358,6 @@ struct WINRT_EBO IAsyncActionWithProgress :
     impl::require<IAsyncActionWithProgress<TProgress>, IAsyncInfo>
 {
     IAsyncActionWithProgress(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAsyncActionWithProgress>(m_ptr); }
 };
 
 template <typename TResult>
@@ -376,7 +367,6 @@ struct WINRT_EBO IAsyncOperation :
     impl::require<IAsyncOperation<TResult>, IAsyncInfo>
 {
     IAsyncOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAsyncOperation>(m_ptr); }
 };
 
 template <typename TResult, typename TProgress>
@@ -386,14 +376,13 @@ struct WINRT_EBO IAsyncOperationWithProgress :
     impl::require<IAsyncOperationWithProgress<TResult, TProgress>, IAsyncInfo>
 {
     IAsyncOperationWithProgress(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAsyncOperationWithProgress>(m_ptr); }
 };
 
 template <typename D>
 uint32_t impl_IAsyncInfo<D>::Id() const
 {
     uint32_t id = 0;
-    check_hresult(static_cast<const IAsyncInfo &>(static_cast<const D &>(*this))->get_Id(&id));
+    check_hresult((*(abi<IAsyncInfo> **)&static_cast<const IAsyncInfo &>(static_cast<const D &>(*this)))->get_Id(&id));
     return id;
 }
 
@@ -401,7 +390,7 @@ template <typename D>
 AsyncStatus impl_IAsyncInfo<D>::Status() const
 {
     AsyncStatus status{};
-    check_hresult(static_cast<const IAsyncInfo &>(static_cast<const D &>(*this))->get_Status(&status));
+    check_hresult((*(abi<IAsyncInfo> **)&static_cast<const IAsyncInfo &>(static_cast<const D &>(*this)))->get_Status(&status));
     return status;
 }
 
@@ -409,40 +398,40 @@ template <typename D>
 HRESULT impl_IAsyncInfo<D>::ErrorCode() const
 {
     HRESULT code = S_OK;
-    check_hresult(static_cast<const IAsyncInfo &>(static_cast<const D &>(*this))->get_ErrorCode(&code));
+    check_hresult((*(abi<IAsyncInfo> **)&static_cast<const IAsyncInfo &>(static_cast<const D &>(*this)))->get_ErrorCode(&code));
     return code;
 }
 
 template <typename D>
 void impl_IAsyncInfo<D>::Cancel() const
 {
-    check_hresult(static_cast<const IAsyncInfo &>(static_cast<const D &>(*this))->abi_Cancel());
+    check_hresult((*(abi<IAsyncInfo> **)&static_cast<const IAsyncInfo &>(static_cast<const D &>(*this)))->abi_Cancel());
 }
 
 template <typename D>
 void impl_IAsyncInfo<D>::Close() const
 {
-    check_hresult(static_cast<const IAsyncInfo &>(static_cast<const D &>(*this))->abi_Close());
+    check_hresult((*(abi<IAsyncInfo> **)&static_cast<const IAsyncInfo &>(static_cast<const D &>(*this)))->abi_Close());
 }
 
 template <typename D>
 void impl_IAsyncAction<D>::Completed(const AsyncActionCompletedHandler & handler) const
 {
-    check_hresult(static_cast<const IAsyncAction &>(static_cast<const D &>(*this))->put_Completed(winrt::get(handler)));
+    check_hresult((*(abi<IAsyncAction> **)&static_cast<const IAsyncAction &>(static_cast<const D &>(*this)))->put_Completed(winrt::get(handler)));
 }
 
 template <typename D>
 AsyncActionCompletedHandler impl_IAsyncAction<D>::Completed() const
 {
     AsyncActionCompletedHandler handler{};
-    check_hresult(static_cast<const IAsyncAction &>(static_cast<const D &>(*this))->get_Completed(put(handler)));
+    check_hresult((*(abi<IAsyncAction> **)&static_cast<const IAsyncAction &>(static_cast<const D &>(*this)))->get_Completed(put(handler)));
     return handler;
 }
 
 template <typename D>
 void impl_IAsyncAction<D>::GetResults() const
 {
-    check_hresult(static_cast<const IAsyncAction &>(static_cast<const D &>(*this))->abi_GetResults());
+    check_hresult((*(abi<IAsyncAction> **)&static_cast<const IAsyncAction &>(static_cast<const D &>(*this)))->abi_GetResults());
 }
 
 template <typename D>
@@ -455,35 +444,35 @@ void impl_IAsyncAction<D>::get() const
 template <typename D, typename TProgress>
 void impl_IAsyncActionWithProgress<D, TProgress>::Progress(const AsyncActionProgressHandler<TProgress> & handler) const
 {
-    check_hresult(static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this))->put_Progress(winrt::get(handler)));
+    check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->put_Progress(winrt::get(handler)));
 }
 
 template <typename D, typename TProgress>
 AsyncActionProgressHandler<TProgress> impl_IAsyncActionWithProgress<D, TProgress>::Progress() const
 {
     AsyncActionProgressHandler<TProgress> handler;
-    check_hresult(static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this))->get_Progress(put(handler)));
+    check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->get_Progress(put(handler)));
     return handler;
 }
 
 template <typename D, typename TProgress>
 void impl_IAsyncActionWithProgress<D, TProgress>::Completed(const AsyncActionWithProgressCompletedHandler<TProgress> & handler) const
 {
-    check_hresult(static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this))->put_Completed(winrt::get(handler)));
+    check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->put_Completed(winrt::get(handler)));
 }
 
 template <typename D, typename TProgress>
 AsyncActionWithProgressCompletedHandler<TProgress> impl_IAsyncActionWithProgress<D, TProgress>::Completed() const
 {
     AsyncActionWithProgressCompletedHandler<TProgress> handler;
-    check_hresult(static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this))->get_Completed(put(handler)));
+    check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->get_Completed(put(handler)));
     return handler;
 }
 
 template <typename D, typename TProgress>
 void impl_IAsyncActionWithProgress<D, TProgress>::GetResults() const
 {
-    check_hresult(static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this))->abi_GetResults());
+    check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->abi_GetResults());
 }
 
 template <typename D, typename TProgress>
@@ -496,14 +485,14 @@ void impl_IAsyncActionWithProgress<D, TProgress>::get() const
 template <typename D, typename TResult>
 void impl_IAsyncOperation<D, TResult>::Completed(const AsyncOperationCompletedHandler<TResult> & handler) const
 {
-    check_hresult(static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this))->put_Completed(winrt::get(handler)));
+    check_hresult((*(abi<IAsyncOperation<TResult>> **)&static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this)))->put_Completed(winrt::get(handler)));
 }
 
 template <typename D, typename TResult>
 AsyncOperationCompletedHandler<TResult> impl_IAsyncOperation<D, TResult>::Completed() const
 {
     AsyncOperationCompletedHandler<TResult> temp;
-    check_hresult(static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this))->get_Completed(put(temp)));
+    check_hresult((*(abi<IAsyncOperation<TResult>> **)&static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this)))->get_Completed(put(temp)));
     return temp;
 }
 
@@ -511,7 +500,7 @@ template <typename D, typename TResult>
 TResult impl_IAsyncOperation<D, TResult>::GetResults() const
 {
     TResult result = impl::empty_value<TResult>();
-    check_hresult(static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this))->abi_GetResults(put(result)));
+    check_hresult((*(abi<IAsyncOperation<TResult>> **)&static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this)))->abi_GetResults(put(result)));
     return result;
 }
 
@@ -525,28 +514,28 @@ TResult impl_IAsyncOperation<D, TResult>::get() const
 template <typename D, typename TResult, typename TProgress>
 void impl_IAsyncOperationWithProgress<D, TResult, TProgress>::Progress(const AsyncOperationProgressHandler<TResult, TProgress> & handler) const
 {
-    check_hresult(static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this))->put_Progress(winrt::get(handler)));
+    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->put_Progress(winrt::get(handler)));
 }
 
 template <typename D, typename TResult, typename TProgress>
 AsyncOperationProgressHandler<TResult, TProgress> impl_IAsyncOperationWithProgress<D, TResult, TProgress>::Progress() const
 {
     AsyncOperationProgressHandler<TResult, TProgress> handler;
-    check_hresult(static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this))->get_Progress(put(handler)));
+    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->get_Progress(put(handler)));
     return handler;
 }
 
 template <typename D, typename TResult, typename TProgress>
 void impl_IAsyncOperationWithProgress<D, TResult, TProgress>::Completed(const AsyncOperationWithProgressCompletedHandler<TResult, TProgress> & handler) const
 {
-    check_hresult(static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this))->put_Completed(winrt::get(handler)));
+    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->put_Completed(winrt::get(handler)));
 }
 
 template <typename D, typename TResult, typename TProgress>
 AsyncOperationWithProgressCompletedHandler<TResult, TProgress> impl_IAsyncOperationWithProgress<D, TResult, TProgress>::Completed() const
 {
     AsyncOperationWithProgressCompletedHandler<TResult, TProgress> handler;
-    check_hresult(static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this))->get_Completed(put(handler)));
+    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->get_Completed(put(handler)));
     return handler;
 }
 
@@ -554,7 +543,7 @@ template <typename D, typename TResult, typename TProgress>
 TResult impl_IAsyncOperationWithProgress<D, TResult, TProgress>::GetResults() const
 {
     TResult result = impl::empty_value<TResult>();
-    check_hresult(static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this))->abi_GetResults(put(result)));
+    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->abi_GetResults(put(result)));
     return result;
 }
 
@@ -685,7 +674,7 @@ template <typename O, typename M> AsyncActionCompletedHandler::AsyncActionComple
 
 inline void AsyncActionCompletedHandler::operator()(const IAsyncAction & asyncInfo, const AsyncStatus asyncStatus) const
 {
-    check_hresult((*this)->abi_Invoke(get(asyncInfo), asyncStatus));
+    check_hresult((*(abi<AsyncActionCompletedHandler> **)this)->abi_Invoke(get(asyncInfo), asyncStatus));
 }
 
 template <typename TProgress> template <typename L> AsyncActionProgressHandler<TProgress>::AsyncActionProgressHandler(L handler) :
@@ -702,7 +691,7 @@ template <typename TProgress> template <typename O, typename M> AsyncActionProgr
 
 template <typename TProgress> void AsyncActionProgressHandler<TProgress>::operator()(const IAsyncActionWithProgress<TProgress> & sender, const TProgress & args) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(args)));
+    check_hresult((*(abi<AsyncActionProgressHandler<TProgress>> **)this)->abi_Invoke(get(sender), get(args)));
 }
 
 template <typename TProgress> template <typename L> AsyncActionWithProgressCompletedHandler<TProgress>::AsyncActionWithProgressCompletedHandler(L handler) :
@@ -719,7 +708,7 @@ template <typename TProgress> template <typename O, typename M> AsyncActionWithP
 
 template <typename TProgress> void AsyncActionWithProgressCompletedHandler<TProgress>::operator()(const IAsyncActionWithProgress<TProgress> & sender, const AsyncStatus args) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), args));
+    check_hresult((*(abi<AsyncActionWithProgressCompletedHandler<TProgress>> **)this)->abi_Invoke(get(sender), args));
 }
 
 template <typename TResult, typename TProgress> template <typename L> AsyncOperationProgressHandler<TResult, TProgress>::AsyncOperationProgressHandler(L handler) :
@@ -736,7 +725,7 @@ template <typename TResult, typename TProgress> template <typename O, typename M
 
 template <typename TResult, typename TProgress> void AsyncOperationProgressHandler<TResult, TProgress>::operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const TProgress & args) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(args)));
+    check_hresult((*(abi<AsyncOperationProgressHandler<TResult, TProgress>> **)this)->abi_Invoke(get(sender), get(args)));
 }
 
 template <typename TResult, typename TProgress> template <typename L> AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::AsyncOperationWithProgressCompletedHandler(L handler) :
@@ -753,7 +742,7 @@ template <typename TResult, typename TProgress> template <typename O, typename M
 
 template <typename TResult, typename TProgress> void AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const AsyncStatus args) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), args));
+    check_hresult((*(abi<AsyncOperationWithProgressCompletedHandler<TResult, TProgress>> **)this)->abi_Invoke(get(sender), args));
 }
 
 template <typename TResult> template <typename L> AsyncOperationCompletedHandler<TResult>::AsyncOperationCompletedHandler(L handler) :
@@ -770,7 +759,7 @@ template <typename TResult> template <typename O, typename M> AsyncOperationComp
 
 template <typename TResult> void AsyncOperationCompletedHandler<TResult>::operator()(const IAsyncOperation<TResult> & sender, const AsyncStatus args) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), args));
+    check_hresult((*(abi<AsyncOperationCompletedHandler<TResult>> **)this)->abi_Invoke(get(sender), args));
 }
 
 }

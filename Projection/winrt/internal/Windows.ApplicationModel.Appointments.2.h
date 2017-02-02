@@ -344,7 +344,6 @@ struct IAppointment :
     impl::consume<IAppointment>
 {
     IAppointment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointment>(m_ptr); }
 };
 
 struct IAppointment2 :
@@ -353,7 +352,6 @@ struct IAppointment2 :
     impl::require<IAppointment2, Windows::ApplicationModel::Appointments::IAppointment>
 {
     IAppointment2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointment2>(m_ptr); }
 };
 
 struct IAppointment3 :
@@ -362,7 +360,6 @@ struct IAppointment3 :
     impl::require<IAppointment3, Windows::ApplicationModel::Appointments::IAppointment, Windows::ApplicationModel::Appointments::IAppointment2>
 {
     IAppointment3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointment3>(m_ptr); }
 };
 
 struct IAppointmentCalendar :
@@ -370,7 +367,6 @@ struct IAppointmentCalendar :
     impl::consume<IAppointmentCalendar>
 {
     IAppointmentCalendar(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentCalendar>(m_ptr); }
 };
 
 struct IAppointmentCalendar2 :
@@ -379,7 +375,6 @@ struct IAppointmentCalendar2 :
     impl::require<IAppointmentCalendar2, Windows::ApplicationModel::Appointments::IAppointmentCalendar>
 {
     IAppointmentCalendar2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentCalendar2>(m_ptr); }
     using impl_IAppointmentCalendar::DisplayColor;
     using impl_IAppointmentCalendar::IsHidden;
     using impl_IAppointmentCalendar2::DisplayColor;
@@ -391,7 +386,6 @@ struct IAppointmentCalendar3 :
     impl::consume<IAppointmentCalendar3>
 {
     IAppointmentCalendar3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentCalendar3>(m_ptr); }
 };
 
 struct IAppointmentCalendarSyncManager :
@@ -399,7 +393,6 @@ struct IAppointmentCalendarSyncManager :
     impl::consume<IAppointmentCalendarSyncManager>
 {
     IAppointmentCalendarSyncManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentCalendarSyncManager>(m_ptr); }
 };
 
 struct IAppointmentCalendarSyncManager2 :
@@ -407,7 +400,6 @@ struct IAppointmentCalendarSyncManager2 :
     impl::consume<IAppointmentCalendarSyncManager2>
 {
     IAppointmentCalendarSyncManager2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentCalendarSyncManager2>(m_ptr); }
 };
 
 struct IAppointmentConflictResult :
@@ -415,7 +407,6 @@ struct IAppointmentConflictResult :
     impl::consume<IAppointmentConflictResult>
 {
     IAppointmentConflictResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentConflictResult>(m_ptr); }
 };
 
 struct IAppointmentException :
@@ -423,7 +414,6 @@ struct IAppointmentException :
     impl::consume<IAppointmentException>
 {
     IAppointmentException(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentException>(m_ptr); }
 };
 
 struct IAppointmentInvitee :
@@ -432,7 +422,6 @@ struct IAppointmentInvitee :
     impl::require<IAppointmentInvitee, Windows::ApplicationModel::Appointments::IAppointmentParticipant>
 {
     IAppointmentInvitee(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentInvitee>(m_ptr); }
 };
 
 struct IAppointmentManagerForUser :
@@ -440,7 +429,6 @@ struct IAppointmentManagerForUser :
     impl::consume<IAppointmentManagerForUser>
 {
     IAppointmentManagerForUser(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentManagerForUser>(m_ptr); }
 };
 
 struct IAppointmentManagerStatics :
@@ -448,7 +436,6 @@ struct IAppointmentManagerStatics :
     impl::consume<IAppointmentManagerStatics>
 {
     IAppointmentManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentManagerStatics>(m_ptr); }
 };
 
 struct IAppointmentManagerStatics2 :
@@ -456,7 +443,6 @@ struct IAppointmentManagerStatics2 :
     impl::consume<IAppointmentManagerStatics2>
 {
     IAppointmentManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentManagerStatics2>(m_ptr); }
 };
 
 struct IAppointmentManagerStatics3 :
@@ -464,7 +450,6 @@ struct IAppointmentManagerStatics3 :
     impl::consume<IAppointmentManagerStatics3>
 {
     IAppointmentManagerStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentManagerStatics3>(m_ptr); }
 };
 
 struct IAppointmentParticipant :
@@ -472,7 +457,6 @@ struct IAppointmentParticipant :
     impl::consume<IAppointmentParticipant>
 {
     IAppointmentParticipant(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentParticipant>(m_ptr); }
 };
 
 struct IAppointmentPropertiesStatics :
@@ -480,7 +464,6 @@ struct IAppointmentPropertiesStatics :
     impl::consume<IAppointmentPropertiesStatics>
 {
     IAppointmentPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentPropertiesStatics>(m_ptr); }
 };
 
 struct IAppointmentPropertiesStatics2 :
@@ -489,7 +472,6 @@ struct IAppointmentPropertiesStatics2 :
     impl::require<IAppointmentPropertiesStatics2, Windows::ApplicationModel::Appointments::IAppointmentPropertiesStatics>
 {
     IAppointmentPropertiesStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentPropertiesStatics2>(m_ptr); }
 };
 
 struct IAppointmentRecurrence :
@@ -497,7 +479,6 @@ struct IAppointmentRecurrence :
     impl::consume<IAppointmentRecurrence>
 {
     IAppointmentRecurrence(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentRecurrence>(m_ptr); }
 };
 
 struct IAppointmentRecurrence2 :
@@ -506,7 +487,6 @@ struct IAppointmentRecurrence2 :
     impl::require<IAppointmentRecurrence2, Windows::ApplicationModel::Appointments::IAppointmentRecurrence>
 {
     IAppointmentRecurrence2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentRecurrence2>(m_ptr); }
 };
 
 struct IAppointmentRecurrence3 :
@@ -515,7 +495,6 @@ struct IAppointmentRecurrence3 :
     impl::require<IAppointmentRecurrence3, Windows::ApplicationModel::Appointments::IAppointmentRecurrence, Windows::ApplicationModel::Appointments::IAppointmentRecurrence2>
 {
     IAppointmentRecurrence3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentRecurrence3>(m_ptr); }
 };
 
 struct IAppointmentStore :
@@ -523,7 +502,6 @@ struct IAppointmentStore :
     impl::consume<IAppointmentStore>
 {
     IAppointmentStore(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentStore>(m_ptr); }
 };
 
 struct IAppointmentStore2 :
@@ -532,7 +510,6 @@ struct IAppointmentStore2 :
     impl::require<IAppointmentStore2, Windows::ApplicationModel::Appointments::IAppointmentStore>
 {
     IAppointmentStore2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentStore2>(m_ptr); }
     using impl_IAppointmentStore::CreateAppointmentCalendarAsync;
     using impl_IAppointmentStore2::CreateAppointmentCalendarAsync;
 };
@@ -542,7 +519,6 @@ struct IAppointmentStoreChange :
     impl::consume<IAppointmentStoreChange>
 {
     IAppointmentStoreChange(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentStoreChange>(m_ptr); }
 };
 
 struct IAppointmentStoreChange2 :
@@ -551,7 +527,6 @@ struct IAppointmentStoreChange2 :
     impl::require<IAppointmentStoreChange2, Windows::ApplicationModel::Appointments::IAppointmentStoreChange>
 {
     IAppointmentStoreChange2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentStoreChange2>(m_ptr); }
 };
 
 struct IAppointmentStoreChangeReader :
@@ -559,7 +534,6 @@ struct IAppointmentStoreChangeReader :
     impl::consume<IAppointmentStoreChangeReader>
 {
     IAppointmentStoreChangeReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentStoreChangeReader>(m_ptr); }
 };
 
 struct IAppointmentStoreChangeTracker :
@@ -567,7 +541,6 @@ struct IAppointmentStoreChangeTracker :
     impl::consume<IAppointmentStoreChangeTracker>
 {
     IAppointmentStoreChangeTracker(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentStoreChangeTracker>(m_ptr); }
 };
 
 struct IAppointmentStoreChangedDeferral :
@@ -575,7 +548,6 @@ struct IAppointmentStoreChangedDeferral :
     impl::consume<IAppointmentStoreChangedDeferral>
 {
     IAppointmentStoreChangedDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentStoreChangedDeferral>(m_ptr); }
 };
 
 struct IAppointmentStoreChangedEventArgs :
@@ -583,7 +555,6 @@ struct IAppointmentStoreChangedEventArgs :
     impl::consume<IAppointmentStoreChangedEventArgs>
 {
     IAppointmentStoreChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentStoreChangedEventArgs>(m_ptr); }
 };
 
 struct IAppointmentStoreNotificationTriggerDetails :
@@ -591,7 +562,6 @@ struct IAppointmentStoreNotificationTriggerDetails :
     impl::consume<IAppointmentStoreNotificationTriggerDetails>
 {
     IAppointmentStoreNotificationTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentStoreNotificationTriggerDetails>(m_ptr); }
 };
 
 struct IFindAppointmentsOptions :
@@ -599,7 +569,6 @@ struct IFindAppointmentsOptions :
     impl::consume<IFindAppointmentsOptions>
 {
     IFindAppointmentsOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFindAppointmentsOptions>(m_ptr); }
 };
 
 }

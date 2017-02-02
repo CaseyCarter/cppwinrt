@@ -2240,14 +2240,14 @@ namespace Windows::ApplicationModel::Email::DataProvider {
 template <typename D> Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection impl_IEmailDataProviderTriggerDetails<D>::Connection() const
 {
     Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection value { nullptr };
-    check_hresult(static_cast<const IEmailDataProviderTriggerDetails &>(static_cast<const D &>(*this))->get_Connection(put(value)));
+    check_hresult(WINRT_SHIM(IEmailDataProviderTriggerDetails)->get_Connection(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IEmailDataProviderConnection<D>::MailboxSyncRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxSyncManagerSyncRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->add_MailboxSyncRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->add_MailboxSyncRequested(get(handler), &token));
     return token;
 }
 
@@ -2258,13 +2258,13 @@ template <typename D> event_revoker<IEmailDataProviderConnection> impl_IEmailDat
 
 template <typename D> void impl_IEmailDataProviderConnection<D>::MailboxSyncRequested(event_token token) const
 {
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->remove_MailboxSyncRequested(token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->remove_MailboxSyncRequested(token));
 }
 
 template <typename D> event_token impl_IEmailDataProviderConnection<D>::DownloadMessageRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxDownloadMessageRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->add_DownloadMessageRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->add_DownloadMessageRequested(get(handler), &token));
     return token;
 }
 
@@ -2275,13 +2275,13 @@ template <typename D> event_revoker<IEmailDataProviderConnection> impl_IEmailDat
 
 template <typename D> void impl_IEmailDataProviderConnection<D>::DownloadMessageRequested(event_token token) const
 {
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->remove_DownloadMessageRequested(token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->remove_DownloadMessageRequested(token));
 }
 
 template <typename D> event_token impl_IEmailDataProviderConnection<D>::DownloadAttachmentRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxDownloadAttachmentRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->add_DownloadAttachmentRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->add_DownloadAttachmentRequested(get(handler), &token));
     return token;
 }
 
@@ -2292,13 +2292,13 @@ template <typename D> event_revoker<IEmailDataProviderConnection> impl_IEmailDat
 
 template <typename D> void impl_IEmailDataProviderConnection<D>::DownloadAttachmentRequested(event_token token) const
 {
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->remove_DownloadAttachmentRequested(token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->remove_DownloadAttachmentRequested(token));
 }
 
 template <typename D> event_token impl_IEmailDataProviderConnection<D>::CreateFolderRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxCreateFolderRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->add_CreateFolderRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->add_CreateFolderRequested(get(handler), &token));
     return token;
 }
 
@@ -2309,13 +2309,13 @@ template <typename D> event_revoker<IEmailDataProviderConnection> impl_IEmailDat
 
 template <typename D> void impl_IEmailDataProviderConnection<D>::CreateFolderRequested(event_token token) const
 {
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->remove_CreateFolderRequested(token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->remove_CreateFolderRequested(token));
 }
 
 template <typename D> event_token impl_IEmailDataProviderConnection<D>::DeleteFolderRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxDeleteFolderRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->add_DeleteFolderRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->add_DeleteFolderRequested(get(handler), &token));
     return token;
 }
 
@@ -2326,13 +2326,13 @@ template <typename D> event_revoker<IEmailDataProviderConnection> impl_IEmailDat
 
 template <typename D> void impl_IEmailDataProviderConnection<D>::DeleteFolderRequested(event_token token) const
 {
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->remove_DeleteFolderRequested(token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->remove_DeleteFolderRequested(token));
 }
 
 template <typename D> event_token impl_IEmailDataProviderConnection<D>::EmptyFolderRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxEmptyFolderRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->add_EmptyFolderRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->add_EmptyFolderRequested(get(handler), &token));
     return token;
 }
 
@@ -2343,13 +2343,13 @@ template <typename D> event_revoker<IEmailDataProviderConnection> impl_IEmailDat
 
 template <typename D> void impl_IEmailDataProviderConnection<D>::EmptyFolderRequested(event_token token) const
 {
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->remove_EmptyFolderRequested(token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->remove_EmptyFolderRequested(token));
 }
 
 template <typename D> event_token impl_IEmailDataProviderConnection<D>::MoveFolderRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxMoveFolderRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->add_MoveFolderRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->add_MoveFolderRequested(get(handler), &token));
     return token;
 }
 
@@ -2360,13 +2360,13 @@ template <typename D> event_revoker<IEmailDataProviderConnection> impl_IEmailDat
 
 template <typename D> void impl_IEmailDataProviderConnection<D>::MoveFolderRequested(event_token token) const
 {
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->remove_MoveFolderRequested(token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->remove_MoveFolderRequested(token));
 }
 
 template <typename D> event_token impl_IEmailDataProviderConnection<D>::UpdateMeetingResponseRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxUpdateMeetingResponseRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->add_UpdateMeetingResponseRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->add_UpdateMeetingResponseRequested(get(handler), &token));
     return token;
 }
 
@@ -2377,13 +2377,13 @@ template <typename D> event_revoker<IEmailDataProviderConnection> impl_IEmailDat
 
 template <typename D> void impl_IEmailDataProviderConnection<D>::UpdateMeetingResponseRequested(event_token token) const
 {
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->remove_UpdateMeetingResponseRequested(token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->remove_UpdateMeetingResponseRequested(token));
 }
 
 template <typename D> event_token impl_IEmailDataProviderConnection<D>::ForwardMeetingRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxForwardMeetingRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->add_ForwardMeetingRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->add_ForwardMeetingRequested(get(handler), &token));
     return token;
 }
 
@@ -2394,13 +2394,13 @@ template <typename D> event_revoker<IEmailDataProviderConnection> impl_IEmailDat
 
 template <typename D> void impl_IEmailDataProviderConnection<D>::ForwardMeetingRequested(event_token token) const
 {
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->remove_ForwardMeetingRequested(token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->remove_ForwardMeetingRequested(token));
 }
 
 template <typename D> event_token impl_IEmailDataProviderConnection<D>::ProposeNewTimeForMeetingRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxProposeNewTimeForMeetingRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->add_ProposeNewTimeForMeetingRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->add_ProposeNewTimeForMeetingRequested(get(handler), &token));
     return token;
 }
 
@@ -2411,13 +2411,13 @@ template <typename D> event_revoker<IEmailDataProviderConnection> impl_IEmailDat
 
 template <typename D> void impl_IEmailDataProviderConnection<D>::ProposeNewTimeForMeetingRequested(event_token token) const
 {
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->remove_ProposeNewTimeForMeetingRequested(token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->remove_ProposeNewTimeForMeetingRequested(token));
 }
 
 template <typename D> event_token impl_IEmailDataProviderConnection<D>::SetAutoReplySettingsRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxSetAutoReplySettingsRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->add_SetAutoReplySettingsRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->add_SetAutoReplySettingsRequested(get(handler), &token));
     return token;
 }
 
@@ -2428,13 +2428,13 @@ template <typename D> event_revoker<IEmailDataProviderConnection> impl_IEmailDat
 
 template <typename D> void impl_IEmailDataProviderConnection<D>::SetAutoReplySettingsRequested(event_token token) const
 {
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->remove_SetAutoReplySettingsRequested(token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->remove_SetAutoReplySettingsRequested(token));
 }
 
 template <typename D> event_token impl_IEmailDataProviderConnection<D>::GetAutoReplySettingsRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxGetAutoReplySettingsRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->add_GetAutoReplySettingsRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->add_GetAutoReplySettingsRequested(get(handler), &token));
     return token;
 }
 
@@ -2445,13 +2445,13 @@ template <typename D> event_revoker<IEmailDataProviderConnection> impl_IEmailDat
 
 template <typename D> void impl_IEmailDataProviderConnection<D>::GetAutoReplySettingsRequested(event_token token) const
 {
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->remove_GetAutoReplySettingsRequested(token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->remove_GetAutoReplySettingsRequested(token));
 }
 
 template <typename D> event_token impl_IEmailDataProviderConnection<D>::ResolveRecipientsRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxResolveRecipientsRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->add_ResolveRecipientsRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->add_ResolveRecipientsRequested(get(handler), &token));
     return token;
 }
 
@@ -2462,13 +2462,13 @@ template <typename D> event_revoker<IEmailDataProviderConnection> impl_IEmailDat
 
 template <typename D> void impl_IEmailDataProviderConnection<D>::ResolveRecipientsRequested(event_token token) const
 {
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->remove_ResolveRecipientsRequested(token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->remove_ResolveRecipientsRequested(token));
 }
 
 template <typename D> event_token impl_IEmailDataProviderConnection<D>::ValidateCertificatesRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxValidateCertificatesRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->add_ValidateCertificatesRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->add_ValidateCertificatesRequested(get(handler), &token));
     return token;
 }
 
@@ -2479,13 +2479,13 @@ template <typename D> event_revoker<IEmailDataProviderConnection> impl_IEmailDat
 
 template <typename D> void impl_IEmailDataProviderConnection<D>::ValidateCertificatesRequested(event_token token) const
 {
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->remove_ValidateCertificatesRequested(token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->remove_ValidateCertificatesRequested(token));
 }
 
 template <typename D> event_token impl_IEmailDataProviderConnection<D>::ServerSearchReadBatchRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::DataProvider::EmailDataProviderConnection, Windows::ApplicationModel::Email::DataProvider::EmailMailboxServerSearchReadBatchRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->add_ServerSearchReadBatchRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->add_ServerSearchReadBatchRequested(get(handler), &token));
     return token;
 }
 
@@ -2496,781 +2496,781 @@ template <typename D> event_revoker<IEmailDataProviderConnection> impl_IEmailDat
 
 template <typename D> void impl_IEmailDataProviderConnection<D>::ServerSearchReadBatchRequested(event_token token) const
 {
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->remove_ServerSearchReadBatchRequested(token));
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->remove_ServerSearchReadBatchRequested(token));
 }
 
 template <typename D> void impl_IEmailDataProviderConnection<D>::Start() const
 {
-    check_hresult(static_cast<const IEmailDataProviderConnection &>(static_cast<const D &>(*this))->abi_Start());
+    check_hresult(WINRT_SHIM(IEmailDataProviderConnection)->abi_Start());
 }
 
 template <typename D> hstring impl_IEmailMailboxSyncManagerSyncRequest<D>::EmailMailboxId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxSyncManagerSyncRequest &>(static_cast<const D &>(*this))->get_EmailMailboxId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxSyncManagerSyncRequest)->get_EmailMailboxId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxSyncManagerSyncRequest<D>::ReportCompletedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxSyncManagerSyncRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxSyncManagerSyncRequest)->abi_ReportCompletedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxSyncManagerSyncRequest<D>::ReportFailedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxSyncManagerSyncRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxSyncManagerSyncRequest)->abi_ReportFailedAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IEmailMailboxDownloadMessageRequest<D>::EmailMailboxId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxDownloadMessageRequest &>(static_cast<const D &>(*this))->get_EmailMailboxId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDownloadMessageRequest)->get_EmailMailboxId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxDownloadMessageRequest<D>::EmailMessageId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxDownloadMessageRequest &>(static_cast<const D &>(*this))->get_EmailMessageId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDownloadMessageRequest)->get_EmailMessageId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxDownloadMessageRequest<D>::ReportCompletedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxDownloadMessageRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDownloadMessageRequest)->abi_ReportCompletedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxDownloadMessageRequest<D>::ReportFailedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxDownloadMessageRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDownloadMessageRequest)->abi_ReportFailedAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IEmailMailboxDownloadAttachmentRequest<D>::EmailMailboxId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxDownloadAttachmentRequest &>(static_cast<const D &>(*this))->get_EmailMailboxId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDownloadAttachmentRequest)->get_EmailMailboxId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxDownloadAttachmentRequest<D>::EmailMessageId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxDownloadAttachmentRequest &>(static_cast<const D &>(*this))->get_EmailMessageId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDownloadAttachmentRequest)->get_EmailMessageId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxDownloadAttachmentRequest<D>::EmailAttachmentId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxDownloadAttachmentRequest &>(static_cast<const D &>(*this))->get_EmailAttachmentId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDownloadAttachmentRequest)->get_EmailAttachmentId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxDownloadAttachmentRequest<D>::ReportCompletedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxDownloadAttachmentRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDownloadAttachmentRequest)->abi_ReportCompletedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxDownloadAttachmentRequest<D>::ReportFailedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxDownloadAttachmentRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDownloadAttachmentRequest)->abi_ReportFailedAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IEmailMailboxCreateFolderRequest<D>::EmailMailboxId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxCreateFolderRequest &>(static_cast<const D &>(*this))->get_EmailMailboxId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxCreateFolderRequest)->get_EmailMailboxId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxCreateFolderRequest<D>::ParentFolderId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxCreateFolderRequest &>(static_cast<const D &>(*this))->get_ParentFolderId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxCreateFolderRequest)->get_ParentFolderId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxCreateFolderRequest<D>::Name() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxCreateFolderRequest &>(static_cast<const D &>(*this))->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxCreateFolderRequest)->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxCreateFolderRequest<D>::ReportCompletedAsync(const Windows::ApplicationModel::Email::EmailFolder & folder) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxCreateFolderRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(get(folder), put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxCreateFolderRequest)->abi_ReportCompletedAsync(get(folder), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxCreateFolderRequest<D>::ReportFailedAsync(Windows::ApplicationModel::Email::EmailMailboxCreateFolderStatus status) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxCreateFolderRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(status, put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxCreateFolderRequest)->abi_ReportFailedAsync(status, put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IEmailMailboxDeleteFolderRequest<D>::EmailMailboxId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxDeleteFolderRequest &>(static_cast<const D &>(*this))->get_EmailMailboxId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDeleteFolderRequest)->get_EmailMailboxId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxDeleteFolderRequest<D>::EmailFolderId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxDeleteFolderRequest &>(static_cast<const D &>(*this))->get_EmailFolderId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDeleteFolderRequest)->get_EmailFolderId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxDeleteFolderRequest<D>::ReportCompletedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxDeleteFolderRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDeleteFolderRequest)->abi_ReportCompletedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxDeleteFolderRequest<D>::ReportFailedAsync(Windows::ApplicationModel::Email::EmailMailboxDeleteFolderStatus status) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxDeleteFolderRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(status, put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDeleteFolderRequest)->abi_ReportFailedAsync(status, put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IEmailMailboxEmptyFolderRequest<D>::EmailMailboxId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxEmptyFolderRequest &>(static_cast<const D &>(*this))->get_EmailMailboxId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxEmptyFolderRequest)->get_EmailMailboxId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxEmptyFolderRequest<D>::EmailFolderId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxEmptyFolderRequest &>(static_cast<const D &>(*this))->get_EmailFolderId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxEmptyFolderRequest)->get_EmailFolderId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxEmptyFolderRequest<D>::ReportCompletedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxEmptyFolderRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxEmptyFolderRequest)->abi_ReportCompletedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxEmptyFolderRequest<D>::ReportFailedAsync(Windows::ApplicationModel::Email::EmailMailboxEmptyFolderStatus status) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxEmptyFolderRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(status, put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxEmptyFolderRequest)->abi_ReportFailedAsync(status, put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IEmailMailboxMoveFolderRequest<D>::EmailMailboxId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxMoveFolderRequest &>(static_cast<const D &>(*this))->get_EmailMailboxId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxMoveFolderRequest)->get_EmailMailboxId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxMoveFolderRequest<D>::EmailFolderId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxMoveFolderRequest &>(static_cast<const D &>(*this))->get_EmailFolderId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxMoveFolderRequest)->get_EmailFolderId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxMoveFolderRequest<D>::NewParentFolderId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxMoveFolderRequest &>(static_cast<const D &>(*this))->get_NewParentFolderId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxMoveFolderRequest)->get_NewParentFolderId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxMoveFolderRequest<D>::NewFolderName() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxMoveFolderRequest &>(static_cast<const D &>(*this))->get_NewFolderName(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxMoveFolderRequest)->get_NewFolderName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxMoveFolderRequest<D>::ReportCompletedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxMoveFolderRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxMoveFolderRequest)->abi_ReportCompletedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxMoveFolderRequest<D>::ReportFailedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxMoveFolderRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxMoveFolderRequest)->abi_ReportFailedAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IEmailMailboxUpdateMeetingResponseRequest<D>::EmailMailboxId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxUpdateMeetingResponseRequest &>(static_cast<const D &>(*this))->get_EmailMailboxId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxUpdateMeetingResponseRequest)->get_EmailMailboxId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxUpdateMeetingResponseRequest<D>::EmailMessageId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxUpdateMeetingResponseRequest &>(static_cast<const D &>(*this))->get_EmailMessageId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxUpdateMeetingResponseRequest)->get_EmailMessageId(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::EmailMeetingResponseType impl_IEmailMailboxUpdateMeetingResponseRequest<D>::Response() const
 {
     Windows::ApplicationModel::Email::EmailMeetingResponseType response {};
-    check_hresult(static_cast<const IEmailMailboxUpdateMeetingResponseRequest &>(static_cast<const D &>(*this))->get_Response(&response));
+    check_hresult(WINRT_SHIM(IEmailMailboxUpdateMeetingResponseRequest)->get_Response(&response));
     return response;
 }
 
 template <typename D> hstring impl_IEmailMailboxUpdateMeetingResponseRequest<D>::Subject() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxUpdateMeetingResponseRequest &>(static_cast<const D &>(*this))->get_Subject(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxUpdateMeetingResponseRequest)->get_Subject(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxUpdateMeetingResponseRequest<D>::Comment() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxUpdateMeetingResponseRequest &>(static_cast<const D &>(*this))->get_Comment(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxUpdateMeetingResponseRequest)->get_Comment(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IEmailMailboxUpdateMeetingResponseRequest<D>::SendUpdate() const
 {
     bool value {};
-    check_hresult(static_cast<const IEmailMailboxUpdateMeetingResponseRequest &>(static_cast<const D &>(*this))->get_SendUpdate(&value));
+    check_hresult(WINRT_SHIM(IEmailMailboxUpdateMeetingResponseRequest)->get_SendUpdate(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxUpdateMeetingResponseRequest<D>::ReportCompletedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxUpdateMeetingResponseRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxUpdateMeetingResponseRequest)->abi_ReportCompletedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxUpdateMeetingResponseRequest<D>::ReportFailedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxUpdateMeetingResponseRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxUpdateMeetingResponseRequest)->abi_ReportFailedAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IEmailMailboxForwardMeetingRequest<D>::EmailMailboxId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxForwardMeetingRequest &>(static_cast<const D &>(*this))->get_EmailMailboxId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxForwardMeetingRequest)->get_EmailMailboxId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxForwardMeetingRequest<D>::EmailMessageId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxForwardMeetingRequest &>(static_cast<const D &>(*this))->get_EmailMessageId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxForwardMeetingRequest)->get_EmailMessageId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailRecipient> impl_IEmailMailboxForwardMeetingRequest<D>::Recipients() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailRecipient> value;
-    check_hresult(static_cast<const IEmailMailboxForwardMeetingRequest &>(static_cast<const D &>(*this))->get_Recipients(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxForwardMeetingRequest)->get_Recipients(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxForwardMeetingRequest<D>::Subject() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxForwardMeetingRequest &>(static_cast<const D &>(*this))->get_Subject(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxForwardMeetingRequest)->get_Subject(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::EmailMessageBodyKind impl_IEmailMailboxForwardMeetingRequest<D>::ForwardHeaderType() const
 {
     Windows::ApplicationModel::Email::EmailMessageBodyKind value {};
-    check_hresult(static_cast<const IEmailMailboxForwardMeetingRequest &>(static_cast<const D &>(*this))->get_ForwardHeaderType(&value));
+    check_hresult(WINRT_SHIM(IEmailMailboxForwardMeetingRequest)->get_ForwardHeaderType(&value));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxForwardMeetingRequest<D>::ForwardHeader() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxForwardMeetingRequest &>(static_cast<const D &>(*this))->get_ForwardHeader(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxForwardMeetingRequest)->get_ForwardHeader(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxForwardMeetingRequest<D>::Comment() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxForwardMeetingRequest &>(static_cast<const D &>(*this))->get_Comment(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxForwardMeetingRequest)->get_Comment(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxForwardMeetingRequest<D>::ReportCompletedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxForwardMeetingRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxForwardMeetingRequest)->abi_ReportCompletedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxForwardMeetingRequest<D>::ReportFailedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxForwardMeetingRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxForwardMeetingRequest)->abi_ReportFailedAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IEmailMailboxProposeNewTimeForMeetingRequest<D>::EmailMailboxId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxProposeNewTimeForMeetingRequest &>(static_cast<const D &>(*this))->get_EmailMailboxId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxProposeNewTimeForMeetingRequest)->get_EmailMailboxId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxProposeNewTimeForMeetingRequest<D>::EmailMessageId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxProposeNewTimeForMeetingRequest &>(static_cast<const D &>(*this))->get_EmailMessageId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxProposeNewTimeForMeetingRequest)->get_EmailMessageId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IEmailMailboxProposeNewTimeForMeetingRequest<D>::NewStartTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IEmailMailboxProposeNewTimeForMeetingRequest &>(static_cast<const D &>(*this))->get_NewStartTime(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxProposeNewTimeForMeetingRequest)->get_NewStartTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IEmailMailboxProposeNewTimeForMeetingRequest<D>::NewDuration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IEmailMailboxProposeNewTimeForMeetingRequest &>(static_cast<const D &>(*this))->get_NewDuration(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxProposeNewTimeForMeetingRequest)->get_NewDuration(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxProposeNewTimeForMeetingRequest<D>::Subject() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxProposeNewTimeForMeetingRequest &>(static_cast<const D &>(*this))->get_Subject(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxProposeNewTimeForMeetingRequest)->get_Subject(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxProposeNewTimeForMeetingRequest<D>::Comment() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxProposeNewTimeForMeetingRequest &>(static_cast<const D &>(*this))->get_Comment(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxProposeNewTimeForMeetingRequest)->get_Comment(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxProposeNewTimeForMeetingRequest<D>::ReportCompletedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxProposeNewTimeForMeetingRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxProposeNewTimeForMeetingRequest)->abi_ReportCompletedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxProposeNewTimeForMeetingRequest<D>::ReportFailedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxProposeNewTimeForMeetingRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxProposeNewTimeForMeetingRequest)->abi_ReportFailedAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IEmailMailboxSetAutoReplySettingsRequest<D>::EmailMailboxId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxSetAutoReplySettingsRequest &>(static_cast<const D &>(*this))->get_EmailMailboxId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxSetAutoReplySettingsRequest)->get_EmailMailboxId(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::EmailMailboxAutoReplySettings impl_IEmailMailboxSetAutoReplySettingsRequest<D>::AutoReplySettings() const
 {
     Windows::ApplicationModel::Email::EmailMailboxAutoReplySettings value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxSetAutoReplySettingsRequest &>(static_cast<const D &>(*this))->get_AutoReplySettings(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxSetAutoReplySettingsRequest)->get_AutoReplySettings(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxSetAutoReplySettingsRequest<D>::ReportCompletedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxSetAutoReplySettingsRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxSetAutoReplySettingsRequest)->abi_ReportCompletedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxSetAutoReplySettingsRequest<D>::ReportFailedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxSetAutoReplySettingsRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxSetAutoReplySettingsRequest)->abi_ReportFailedAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IEmailMailboxGetAutoReplySettingsRequest<D>::EmailMailboxId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxGetAutoReplySettingsRequest &>(static_cast<const D &>(*this))->get_EmailMailboxId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxGetAutoReplySettingsRequest)->get_EmailMailboxId(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind impl_IEmailMailboxGetAutoReplySettingsRequest<D>::RequestedFormat() const
 {
     Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind value {};
-    check_hresult(static_cast<const IEmailMailboxGetAutoReplySettingsRequest &>(static_cast<const D &>(*this))->get_RequestedFormat(&value));
+    check_hresult(WINRT_SHIM(IEmailMailboxGetAutoReplySettingsRequest)->get_RequestedFormat(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxGetAutoReplySettingsRequest<D>::ReportCompletedAsync(const Windows::ApplicationModel::Email::EmailMailboxAutoReplySettings & autoReplySettings) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxGetAutoReplySettingsRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(get(autoReplySettings), put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxGetAutoReplySettingsRequest)->abi_ReportCompletedAsync(get(autoReplySettings), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxGetAutoReplySettingsRequest<D>::ReportFailedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxGetAutoReplySettingsRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxGetAutoReplySettingsRequest)->abi_ReportFailedAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IEmailMailboxResolveRecipientsRequest<D>::EmailMailboxId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxResolveRecipientsRequest &>(static_cast<const D &>(*this))->get_EmailMailboxId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxResolveRecipientsRequest)->get_EmailMailboxId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IEmailMailboxResolveRecipientsRequest<D>::Recipients() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IEmailMailboxResolveRecipientsRequest &>(static_cast<const D &>(*this))->get_Recipients(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxResolveRecipientsRequest)->get_Recipients(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxResolveRecipientsRequest<D>::ReportCompletedAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Email::EmailRecipientResolutionResult> & resolutionResults) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxResolveRecipientsRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(get(resolutionResults), put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxResolveRecipientsRequest)->abi_ReportCompletedAsync(get(resolutionResults), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxResolveRecipientsRequest<D>::ReportFailedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxResolveRecipientsRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxResolveRecipientsRequest)->abi_ReportFailedAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IEmailMailboxValidateCertificatesRequest<D>::EmailMailboxId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxValidateCertificatesRequest &>(static_cast<const D &>(*this))->get_EmailMailboxId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxValidateCertificatesRequest)->get_EmailMailboxId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> impl_IEmailMailboxValidateCertificatesRequest<D>::Certificates() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> value;
-    check_hresult(static_cast<const IEmailMailboxValidateCertificatesRequest &>(static_cast<const D &>(*this))->get_Certificates(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxValidateCertificatesRequest)->get_Certificates(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxValidateCertificatesRequest<D>::ReportCompletedAsync(const Windows::Foundation::Collections::IIterable<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> & validationStatuses) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxValidateCertificatesRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(get(validationStatuses), put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxValidateCertificatesRequest)->abi_ReportCompletedAsync(get(validationStatuses), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxValidateCertificatesRequest<D>::ReportFailedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxValidateCertificatesRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxValidateCertificatesRequest)->abi_ReportFailedAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IEmailMailboxServerSearchReadBatchRequest<D>::SessionId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxServerSearchReadBatchRequest &>(static_cast<const D &>(*this))->get_SessionId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxServerSearchReadBatchRequest)->get_SessionId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxServerSearchReadBatchRequest<D>::EmailMailboxId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxServerSearchReadBatchRequest &>(static_cast<const D &>(*this))->get_EmailMailboxId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxServerSearchReadBatchRequest)->get_EmailMailboxId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEmailMailboxServerSearchReadBatchRequest<D>::EmailFolderId() const
 {
     hstring value;
-    check_hresult(static_cast<const IEmailMailboxServerSearchReadBatchRequest &>(static_cast<const D &>(*this))->get_EmailFolderId(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxServerSearchReadBatchRequest)->get_EmailFolderId(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::EmailQueryOptions impl_IEmailMailboxServerSearchReadBatchRequest<D>::Options() const
 {
     Windows::ApplicationModel::Email::EmailQueryOptions value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxServerSearchReadBatchRequest &>(static_cast<const D &>(*this))->get_Options(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxServerSearchReadBatchRequest)->get_Options(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IEmailMailboxServerSearchReadBatchRequest<D>::SuggestedBatchSize() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IEmailMailboxServerSearchReadBatchRequest &>(static_cast<const D &>(*this))->get_SuggestedBatchSize(&value));
+    check_hresult(WINRT_SHIM(IEmailMailboxServerSearchReadBatchRequest)->get_SuggestedBatchSize(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxServerSearchReadBatchRequest<D>::SaveMessageAsync(const Windows::ApplicationModel::Email::EmailMessage & message) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxServerSearchReadBatchRequest &>(static_cast<const D &>(*this))->abi_SaveMessageAsync(get(message), put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxServerSearchReadBatchRequest)->abi_SaveMessageAsync(get(message), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxServerSearchReadBatchRequest<D>::ReportCompletedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxServerSearchReadBatchRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxServerSearchReadBatchRequest)->abi_ReportCompletedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxServerSearchReadBatchRequest<D>::ReportFailedAsync(Windows::ApplicationModel::Email::EmailBatchStatus batchStatus) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IEmailMailboxServerSearchReadBatchRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(batchStatus, put(result)));
+    check_hresult(WINRT_SHIM(IEmailMailboxServerSearchReadBatchRequest)->abi_ReportFailedAsync(batchStatus, put(result)));
     return result;
 }
 
 template <typename D> Windows::ApplicationModel::Email::DataProvider::EmailMailboxSyncManagerSyncRequest impl_IEmailMailboxSyncManagerSyncRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Email::DataProvider::EmailMailboxSyncManagerSyncRequest value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxSyncManagerSyncRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxSyncManagerSyncRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IEmailMailboxSyncManagerSyncRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxSyncManagerSyncRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxSyncManagerSyncRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::DataProvider::EmailMailboxDownloadMessageRequest impl_IEmailMailboxDownloadMessageRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Email::DataProvider::EmailMailboxDownloadMessageRequest value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxDownloadMessageRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDownloadMessageRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IEmailMailboxDownloadMessageRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxDownloadMessageRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDownloadMessageRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::DataProvider::EmailMailboxDownloadAttachmentRequest impl_IEmailMailboxDownloadAttachmentRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Email::DataProvider::EmailMailboxDownloadAttachmentRequest value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxDownloadAttachmentRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDownloadAttachmentRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IEmailMailboxDownloadAttachmentRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxDownloadAttachmentRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDownloadAttachmentRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::DataProvider::EmailMailboxCreateFolderRequest impl_IEmailMailboxCreateFolderRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Email::DataProvider::EmailMailboxCreateFolderRequest value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxCreateFolderRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxCreateFolderRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IEmailMailboxCreateFolderRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxCreateFolderRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxCreateFolderRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::DataProvider::EmailMailboxDeleteFolderRequest impl_IEmailMailboxDeleteFolderRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Email::DataProvider::EmailMailboxDeleteFolderRequest value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxDeleteFolderRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDeleteFolderRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IEmailMailboxDeleteFolderRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxDeleteFolderRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxDeleteFolderRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::DataProvider::EmailMailboxEmptyFolderRequest impl_IEmailMailboxEmptyFolderRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Email::DataProvider::EmailMailboxEmptyFolderRequest value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxEmptyFolderRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxEmptyFolderRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IEmailMailboxEmptyFolderRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxEmptyFolderRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxEmptyFolderRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::DataProvider::EmailMailboxMoveFolderRequest impl_IEmailMailboxMoveFolderRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Email::DataProvider::EmailMailboxMoveFolderRequest value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxMoveFolderRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxMoveFolderRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IEmailMailboxMoveFolderRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxMoveFolderRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxMoveFolderRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::DataProvider::EmailMailboxUpdateMeetingResponseRequest impl_IEmailMailboxUpdateMeetingResponseRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Email::DataProvider::EmailMailboxUpdateMeetingResponseRequest value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxUpdateMeetingResponseRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxUpdateMeetingResponseRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IEmailMailboxUpdateMeetingResponseRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxUpdateMeetingResponseRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxUpdateMeetingResponseRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::DataProvider::EmailMailboxForwardMeetingRequest impl_IEmailMailboxForwardMeetingRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Email::DataProvider::EmailMailboxForwardMeetingRequest value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxForwardMeetingRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxForwardMeetingRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IEmailMailboxForwardMeetingRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxForwardMeetingRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxForwardMeetingRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::DataProvider::EmailMailboxProposeNewTimeForMeetingRequest impl_IEmailMailboxProposeNewTimeForMeetingRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Email::DataProvider::EmailMailboxProposeNewTimeForMeetingRequest value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxProposeNewTimeForMeetingRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxProposeNewTimeForMeetingRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IEmailMailboxProposeNewTimeForMeetingRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxProposeNewTimeForMeetingRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxProposeNewTimeForMeetingRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::DataProvider::EmailMailboxSetAutoReplySettingsRequest impl_IEmailMailboxSetAutoReplySettingsRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Email::DataProvider::EmailMailboxSetAutoReplySettingsRequest value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxSetAutoReplySettingsRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxSetAutoReplySettingsRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IEmailMailboxSetAutoReplySettingsRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxSetAutoReplySettingsRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxSetAutoReplySettingsRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::DataProvider::EmailMailboxGetAutoReplySettingsRequest impl_IEmailMailboxGetAutoReplySettingsRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Email::DataProvider::EmailMailboxGetAutoReplySettingsRequest value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxGetAutoReplySettingsRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxGetAutoReplySettingsRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IEmailMailboxGetAutoReplySettingsRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxGetAutoReplySettingsRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxGetAutoReplySettingsRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::DataProvider::EmailMailboxResolveRecipientsRequest impl_IEmailMailboxResolveRecipientsRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Email::DataProvider::EmailMailboxResolveRecipientsRequest value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxResolveRecipientsRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxResolveRecipientsRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IEmailMailboxResolveRecipientsRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxResolveRecipientsRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxResolveRecipientsRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::DataProvider::EmailMailboxValidateCertificatesRequest impl_IEmailMailboxValidateCertificatesRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Email::DataProvider::EmailMailboxValidateCertificatesRequest value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxValidateCertificatesRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxValidateCertificatesRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IEmailMailboxValidateCertificatesRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxValidateCertificatesRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxValidateCertificatesRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Email::DataProvider::EmailMailboxServerSearchReadBatchRequest impl_IEmailMailboxServerSearchReadBatchRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Email::DataProvider::EmailMailboxServerSearchReadBatchRequest value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxServerSearchReadBatchRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxServerSearchReadBatchRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IEmailMailboxServerSearchReadBatchRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IEmailMailboxServerSearchReadBatchRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IEmailMailboxServerSearchReadBatchRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 

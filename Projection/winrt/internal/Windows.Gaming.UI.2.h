@@ -24,7 +24,6 @@ struct IGameBarStatics :
     impl::consume<IGameBarStatics>
 {
     IGameBarStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGameBarStatics>(m_ptr); }
 };
 
 }

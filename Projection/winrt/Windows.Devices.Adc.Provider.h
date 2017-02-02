@@ -181,71 +181,71 @@ namespace Windows::Devices::Adc::Provider {
 template <typename D> int32_t impl_IAdcControllerProvider<D>::ChannelCount() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAdcControllerProvider &>(static_cast<const D &>(*this))->get_ChannelCount(&value));
+    check_hresult(WINRT_SHIM(IAdcControllerProvider)->get_ChannelCount(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAdcControllerProvider<D>::ResolutionInBits() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAdcControllerProvider &>(static_cast<const D &>(*this))->get_ResolutionInBits(&value));
+    check_hresult(WINRT_SHIM(IAdcControllerProvider)->get_ResolutionInBits(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAdcControllerProvider<D>::MinValue() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAdcControllerProvider &>(static_cast<const D &>(*this))->get_MinValue(&value));
+    check_hresult(WINRT_SHIM(IAdcControllerProvider)->get_MinValue(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IAdcControllerProvider<D>::MaxValue() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAdcControllerProvider &>(static_cast<const D &>(*this))->get_MaxValue(&value));
+    check_hresult(WINRT_SHIM(IAdcControllerProvider)->get_MaxValue(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Adc::Provider::ProviderAdcChannelMode impl_IAdcControllerProvider<D>::ChannelMode() const
 {
     Windows::Devices::Adc::Provider::ProviderAdcChannelMode value {};
-    check_hresult(static_cast<const IAdcControllerProvider &>(static_cast<const D &>(*this))->get_ChannelMode(&value));
+    check_hresult(WINRT_SHIM(IAdcControllerProvider)->get_ChannelMode(&value));
     return value;
 }
 
 template <typename D> void impl_IAdcControllerProvider<D>::ChannelMode(Windows::Devices::Adc::Provider::ProviderAdcChannelMode value) const
 {
-    check_hresult(static_cast<const IAdcControllerProvider &>(static_cast<const D &>(*this))->put_ChannelMode(value));
+    check_hresult(WINRT_SHIM(IAdcControllerProvider)->put_ChannelMode(value));
 }
 
 template <typename D> bool impl_IAdcControllerProvider<D>::IsChannelModeSupported(Windows::Devices::Adc::Provider::ProviderAdcChannelMode channelMode) const
 {
     bool result {};
-    check_hresult(static_cast<const IAdcControllerProvider &>(static_cast<const D &>(*this))->abi_IsChannelModeSupported(channelMode, &result));
+    check_hresult(WINRT_SHIM(IAdcControllerProvider)->abi_IsChannelModeSupported(channelMode, &result));
     return result;
 }
 
 template <typename D> void impl_IAdcControllerProvider<D>::AcquireChannel(int32_t channel) const
 {
-    check_hresult(static_cast<const IAdcControllerProvider &>(static_cast<const D &>(*this))->abi_AcquireChannel(channel));
+    check_hresult(WINRT_SHIM(IAdcControllerProvider)->abi_AcquireChannel(channel));
 }
 
 template <typename D> void impl_IAdcControllerProvider<D>::ReleaseChannel(int32_t channel) const
 {
-    check_hresult(static_cast<const IAdcControllerProvider &>(static_cast<const D &>(*this))->abi_ReleaseChannel(channel));
+    check_hresult(WINRT_SHIM(IAdcControllerProvider)->abi_ReleaseChannel(channel));
 }
 
 template <typename D> int32_t impl_IAdcControllerProvider<D>::ReadValue(int32_t channelNumber) const
 {
     int32_t result {};
-    check_hresult(static_cast<const IAdcControllerProvider &>(static_cast<const D &>(*this))->abi_ReadValue(channelNumber, &result));
+    check_hresult(WINRT_SHIM(IAdcControllerProvider)->abi_ReadValue(channelNumber, &result));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::Provider::IAdcControllerProvider> impl_IAdcProvider<D>::GetControllers() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::Provider::IAdcControllerProvider> result;
-    check_hresult(static_cast<const IAdcProvider &>(static_cast<const D &>(*this))->abi_GetControllers(put(result)));
+    check_hresult(WINRT_SHIM(IAdcProvider)->abi_GetControllers(put(result)));
     return result;
 }
 

@@ -224,7 +224,6 @@ struct INamedResource :
     impl::consume<INamedResource>
 {
     INamedResource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INamedResource>(m_ptr); }
 };
 
 struct IResourceCandidate :
@@ -232,7 +231,6 @@ struct IResourceCandidate :
     impl::consume<IResourceCandidate>
 {
     IResourceCandidate(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IResourceCandidate>(m_ptr); }
 };
 
 struct IResourceCandidate2 :
@@ -240,7 +238,6 @@ struct IResourceCandidate2 :
     impl::consume<IResourceCandidate2>
 {
     IResourceCandidate2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IResourceCandidate2>(m_ptr); }
 };
 
 struct IResourceContext :
@@ -248,7 +245,6 @@ struct IResourceContext :
     impl::consume<IResourceContext>
 {
     IResourceContext(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IResourceContext>(m_ptr); }
 };
 
 struct IResourceContextStatics :
@@ -256,7 +252,6 @@ struct IResourceContextStatics :
     impl::consume<IResourceContextStatics>
 {
     IResourceContextStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IResourceContextStatics>(m_ptr); }
 };
 
 struct IResourceContextStatics2 :
@@ -264,7 +259,6 @@ struct IResourceContextStatics2 :
     impl::consume<IResourceContextStatics2>
 {
     IResourceContextStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IResourceContextStatics2>(m_ptr); }
 };
 
 struct IResourceContextStatics3 :
@@ -272,7 +266,6 @@ struct IResourceContextStatics3 :
     impl::consume<IResourceContextStatics3>
 {
     IResourceContextStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IResourceContextStatics3>(m_ptr); }
 };
 
 struct IResourceManager :
@@ -280,7 +273,6 @@ struct IResourceManager :
     impl::consume<IResourceManager>
 {
     IResourceManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IResourceManager>(m_ptr); }
 };
 
 struct IResourceManager2 :
@@ -288,7 +280,6 @@ struct IResourceManager2 :
     impl::consume<IResourceManager2>
 {
     IResourceManager2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IResourceManager2>(m_ptr); }
 };
 
 struct IResourceManagerStatics :
@@ -296,7 +287,6 @@ struct IResourceManagerStatics :
     impl::consume<IResourceManagerStatics>
 {
     IResourceManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IResourceManagerStatics>(m_ptr); }
 };
 
 struct IResourceMap :
@@ -305,7 +295,6 @@ struct IResourceMap :
     impl::require<IResourceMap, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::ApplicationModel::Resources::Core::NamedResource>>, Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Resources::Core::NamedResource>>
 {
     IResourceMap(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IResourceMap>(m_ptr); }
 };
 
 struct IResourceQualifier :
@@ -313,7 +302,6 @@ struct IResourceQualifier :
     impl::consume<IResourceQualifier>
 {
     IResourceQualifier(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IResourceQualifier>(m_ptr); }
 };
 
 }

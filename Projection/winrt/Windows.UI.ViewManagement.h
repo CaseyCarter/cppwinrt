@@ -1982,197 +1982,197 @@ namespace Windows::UI::ViewManagement {
 
 template <typename D> void impl_IApplicationViewSwitcherStatics<D>::DisableShowingMainViewOnActivation() const
 {
-    check_hresult(static_cast<const IApplicationViewSwitcherStatics &>(static_cast<const D &>(*this))->abi_DisableShowingMainViewOnActivation());
+    check_hresult(WINRT_SHIM(IApplicationViewSwitcherStatics)->abi_DisableShowingMainViewOnActivation());
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IApplicationViewSwitcherStatics<D>::TryShowAsStandaloneAsync(int32_t viewId) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const IApplicationViewSwitcherStatics &>(static_cast<const D &>(*this))->abi_TryShowAsStandaloneAsync(viewId, put(operation)));
+    check_hresult(WINRT_SHIM(IApplicationViewSwitcherStatics)->abi_TryShowAsStandaloneAsync(viewId, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IApplicationViewSwitcherStatics<D>::TryShowAsStandaloneAsync(int32_t viewId, Windows::UI::ViewManagement::ViewSizePreference sizePreference) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const IApplicationViewSwitcherStatics &>(static_cast<const D &>(*this))->abi_TryShowAsStandaloneWithSizePreferenceAsync(viewId, sizePreference, put(operation)));
+    check_hresult(WINRT_SHIM(IApplicationViewSwitcherStatics)->abi_TryShowAsStandaloneWithSizePreferenceAsync(viewId, sizePreference, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IApplicationViewSwitcherStatics<D>::TryShowAsStandaloneAsync(int32_t viewId, Windows::UI::ViewManagement::ViewSizePreference sizePreference, int32_t anchorViewId, Windows::UI::ViewManagement::ViewSizePreference anchorSizePreference) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const IApplicationViewSwitcherStatics &>(static_cast<const D &>(*this))->abi_TryShowAsStandaloneWithAnchorViewAndSizePreferenceAsync(viewId, sizePreference, anchorViewId, anchorSizePreference, put(operation)));
+    check_hresult(WINRT_SHIM(IApplicationViewSwitcherStatics)->abi_TryShowAsStandaloneWithAnchorViewAndSizePreferenceAsync(viewId, sizePreference, anchorViewId, anchorSizePreference, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IApplicationViewSwitcherStatics<D>::SwitchAsync(int32_t viewId) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IApplicationViewSwitcherStatics &>(static_cast<const D &>(*this))->abi_SwitchAsync(viewId, put(operation)));
+    check_hresult(WINRT_SHIM(IApplicationViewSwitcherStatics)->abi_SwitchAsync(viewId, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IApplicationViewSwitcherStatics<D>::SwitchAsync(int32_t toViewId, int32_t fromViewId) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IApplicationViewSwitcherStatics &>(static_cast<const D &>(*this))->abi_SwitchFromViewAsync(toViewId, fromViewId, put(operation)));
+    check_hresult(WINRT_SHIM(IApplicationViewSwitcherStatics)->abi_SwitchFromViewAsync(toViewId, fromViewId, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IApplicationViewSwitcherStatics<D>::SwitchAsync(int32_t toViewId, int32_t fromViewId, Windows::UI::ViewManagement::ApplicationViewSwitchingOptions options) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IApplicationViewSwitcherStatics &>(static_cast<const D &>(*this))->abi_SwitchFromViewWithOptionsAsync(toViewId, fromViewId, options, put(operation)));
+    check_hresult(WINRT_SHIM(IApplicationViewSwitcherStatics)->abi_SwitchFromViewWithOptionsAsync(toViewId, fromViewId, options, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IApplicationViewSwitcherStatics<D>::PrepareForCustomAnimatedSwitchAsync(int32_t toViewId, int32_t fromViewId, Windows::UI::ViewManagement::ApplicationViewSwitchingOptions options) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const IApplicationViewSwitcherStatics &>(static_cast<const D &>(*this))->abi_PrepareForCustomAnimatedSwitchAsync(toViewId, fromViewId, options, put(operation)));
+    check_hresult(WINRT_SHIM(IApplicationViewSwitcherStatics)->abi_PrepareForCustomAnimatedSwitchAsync(toViewId, fromViewId, options, put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IApplicationViewSwitcherStatics2<D>::DisableSystemViewActivationPolicy() const
 {
-    check_hresult(static_cast<const IApplicationViewSwitcherStatics2 &>(static_cast<const D &>(*this))->abi_DisableSystemViewActivationPolicy());
+    check_hresult(WINRT_SHIM(IApplicationViewSwitcherStatics2)->abi_DisableSystemViewActivationPolicy());
 }
 
 template <typename D> int32_t impl_IApplicationViewInteropStatics<D>::GetApplicationViewIdForWindow(const Windows::UI::Core::ICoreWindow & window) const
 {
     int32_t id {};
-    check_hresult(static_cast<const IApplicationViewInteropStatics &>(static_cast<const D &>(*this))->abi_GetApplicationViewIdForWindow(get(window), &id));
+    check_hresult(WINRT_SHIM(IApplicationViewInteropStatics)->abi_GetApplicationViewIdForWindow(get(window), &id));
     return id;
 }
 
 template <typename D> Windows::UI::ViewManagement::ApplicationViewState impl_IApplicationViewStatics<D>::Value() const
 {
     Windows::UI::ViewManagement::ApplicationViewState value {};
-    check_hresult(static_cast<const IApplicationViewStatics &>(static_cast<const D &>(*this))->get_Value(&value));
+    check_hresult(WINRT_SHIM(IApplicationViewStatics)->get_Value(&value));
     return value;
 }
 
 template <typename D> bool impl_IApplicationViewStatics<D>::TryUnsnap() const
 {
     bool success {};
-    check_hresult(static_cast<const IApplicationViewStatics &>(static_cast<const D &>(*this))->abi_TryUnsnap(&success));
+    check_hresult(WINRT_SHIM(IApplicationViewStatics)->abi_TryUnsnap(&success));
     return success;
 }
 
 template <typename D> Windows::UI::ViewManagement::ApplicationView impl_IApplicationViewStatics2<D>::GetForCurrentView() const
 {
     Windows::UI::ViewManagement::ApplicationView current { nullptr };
-    check_hresult(static_cast<const IApplicationViewStatics2 &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(current)));
+    check_hresult(WINRT_SHIM(IApplicationViewStatics2)->abi_GetForCurrentView(put(current)));
     return current;
 }
 
 template <typename D> bool impl_IApplicationViewStatics2<D>::TerminateAppOnFinalViewClose() const
 {
     bool value {};
-    check_hresult(static_cast<const IApplicationViewStatics2 &>(static_cast<const D &>(*this))->get_TerminateAppOnFinalViewClose(&value));
+    check_hresult(WINRT_SHIM(IApplicationViewStatics2)->get_TerminateAppOnFinalViewClose(&value));
     return value;
 }
 
 template <typename D> void impl_IApplicationViewStatics2<D>::TerminateAppOnFinalViewClose(bool value) const
 {
-    check_hresult(static_cast<const IApplicationViewStatics2 &>(static_cast<const D &>(*this))->put_TerminateAppOnFinalViewClose(value));
+    check_hresult(WINRT_SHIM(IApplicationViewStatics2)->put_TerminateAppOnFinalViewClose(value));
 }
 
 template <typename D> Windows::UI::ViewManagement::ApplicationViewWindowingMode impl_IApplicationViewStatics3<D>::PreferredLaunchWindowingMode() const
 {
     Windows::UI::ViewManagement::ApplicationViewWindowingMode value {};
-    check_hresult(static_cast<const IApplicationViewStatics3 &>(static_cast<const D &>(*this))->get_PreferredLaunchWindowingMode(&value));
+    check_hresult(WINRT_SHIM(IApplicationViewStatics3)->get_PreferredLaunchWindowingMode(&value));
     return value;
 }
 
 template <typename D> void impl_IApplicationViewStatics3<D>::PreferredLaunchWindowingMode(Windows::UI::ViewManagement::ApplicationViewWindowingMode value) const
 {
-    check_hresult(static_cast<const IApplicationViewStatics3 &>(static_cast<const D &>(*this))->put_PreferredLaunchWindowingMode(value));
+    check_hresult(WINRT_SHIM(IApplicationViewStatics3)->put_PreferredLaunchWindowingMode(value));
 }
 
 template <typename D> Windows::Foundation::Size impl_IApplicationViewStatics3<D>::PreferredLaunchViewSize() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(static_cast<const IApplicationViewStatics3 &>(static_cast<const D &>(*this))->get_PreferredLaunchViewSize(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewStatics3)->get_PreferredLaunchViewSize(put(value)));
     return value;
 }
 
 template <typename D> void impl_IApplicationViewStatics3<D>::PreferredLaunchViewSize(const Windows::Foundation::Size & value) const
 {
-    check_hresult(static_cast<const IApplicationViewStatics3 &>(static_cast<const D &>(*this))->put_PreferredLaunchViewSize(get(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewStatics3)->put_PreferredLaunchViewSize(get(value)));
 }
 
 template <typename D> Windows::UI::ViewManagement::ApplicationViewOrientation impl_IApplicationView<D>::Orientation() const
 {
     Windows::UI::ViewManagement::ApplicationViewOrientation value {};
-    check_hresult(static_cast<const IApplicationView &>(static_cast<const D &>(*this))->get_Orientation(&value));
+    check_hresult(WINRT_SHIM(IApplicationView)->get_Orientation(&value));
     return value;
 }
 
 template <typename D> bool impl_IApplicationView<D>::AdjacentToLeftDisplayEdge() const
 {
     bool value {};
-    check_hresult(static_cast<const IApplicationView &>(static_cast<const D &>(*this))->get_AdjacentToLeftDisplayEdge(&value));
+    check_hresult(WINRT_SHIM(IApplicationView)->get_AdjacentToLeftDisplayEdge(&value));
     return value;
 }
 
 template <typename D> bool impl_IApplicationView<D>::AdjacentToRightDisplayEdge() const
 {
     bool value {};
-    check_hresult(static_cast<const IApplicationView &>(static_cast<const D &>(*this))->get_AdjacentToRightDisplayEdge(&value));
+    check_hresult(WINRT_SHIM(IApplicationView)->get_AdjacentToRightDisplayEdge(&value));
     return value;
 }
 
 template <typename D> bool impl_IApplicationView<D>::IsFullScreen() const
 {
     bool value {};
-    check_hresult(static_cast<const IApplicationView &>(static_cast<const D &>(*this))->get_IsFullScreen(&value));
+    check_hresult(WINRT_SHIM(IApplicationView)->get_IsFullScreen(&value));
     return value;
 }
 
 template <typename D> bool impl_IApplicationView<D>::IsOnLockScreen() const
 {
     bool value {};
-    check_hresult(static_cast<const IApplicationView &>(static_cast<const D &>(*this))->get_IsOnLockScreen(&value));
+    check_hresult(WINRT_SHIM(IApplicationView)->get_IsOnLockScreen(&value));
     return value;
 }
 
 template <typename D> bool impl_IApplicationView<D>::IsScreenCaptureEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IApplicationView &>(static_cast<const D &>(*this))->get_IsScreenCaptureEnabled(&value));
+    check_hresult(WINRT_SHIM(IApplicationView)->get_IsScreenCaptureEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IApplicationView<D>::IsScreenCaptureEnabled(bool value) const
 {
-    check_hresult(static_cast<const IApplicationView &>(static_cast<const D &>(*this))->put_IsScreenCaptureEnabled(value));
+    check_hresult(WINRT_SHIM(IApplicationView)->put_IsScreenCaptureEnabled(value));
 }
 
 template <typename D> void impl_IApplicationView<D>::Title(hstring_ref value) const
 {
-    check_hresult(static_cast<const IApplicationView &>(static_cast<const D &>(*this))->put_Title(get(value)));
+    check_hresult(WINRT_SHIM(IApplicationView)->put_Title(get(value)));
 }
 
 template <typename D> hstring impl_IApplicationView<D>::Title() const
 {
     hstring value;
-    check_hresult(static_cast<const IApplicationView &>(static_cast<const D &>(*this))->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationView)->get_Title(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IApplicationView<D>::Id() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IApplicationView &>(static_cast<const D &>(*this))->get_Id(&value));
+    check_hresult(WINRT_SHIM(IApplicationView)->get_Id(&value));
     return value;
 }
 
 template <typename D> event_token impl_IApplicationView<D>::Consolidated(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IApplicationView &>(static_cast<const D &>(*this))->add_Consolidated(get(handler), &token));
+    check_hresult(WINRT_SHIM(IApplicationView)->add_Consolidated(get(handler), &token));
     return token;
 }
 
@@ -2183,32 +2183,32 @@ template <typename D> event_revoker<IApplicationView> impl_IApplicationView<D>::
 
 template <typename D> void impl_IApplicationView<D>::Consolidated(event_token token) const
 {
-    check_hresult(static_cast<const IApplicationView &>(static_cast<const D &>(*this))->remove_Consolidated(token));
+    check_hresult(WINRT_SHIM(IApplicationView)->remove_Consolidated(token));
 }
 
 template <typename D> bool impl_IApplicationView2<D>::SuppressSystemOverlays() const
 {
     bool value {};
-    check_hresult(static_cast<const IApplicationView2 &>(static_cast<const D &>(*this))->get_SuppressSystemOverlays(&value));
+    check_hresult(WINRT_SHIM(IApplicationView2)->get_SuppressSystemOverlays(&value));
     return value;
 }
 
 template <typename D> void impl_IApplicationView2<D>::SuppressSystemOverlays(bool value) const
 {
-    check_hresult(static_cast<const IApplicationView2 &>(static_cast<const D &>(*this))->put_SuppressSystemOverlays(value));
+    check_hresult(WINRT_SHIM(IApplicationView2)->put_SuppressSystemOverlays(value));
 }
 
 template <typename D> Windows::Foundation::Rect impl_IApplicationView2<D>::VisibleBounds() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(static_cast<const IApplicationView2 &>(static_cast<const D &>(*this))->get_VisibleBounds(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationView2)->get_VisibleBounds(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IApplicationView2<D>::VisibleBoundsChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IApplicationView2 &>(static_cast<const D &>(*this))->add_VisibleBoundsChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IApplicationView2)->add_VisibleBoundsChanged(get(handler), &token));
     return token;
 }
 
@@ -2219,299 +2219,299 @@ template <typename D> event_revoker<IApplicationView2> impl_IApplicationView2<D>
 
 template <typename D> void impl_IApplicationView2<D>::VisibleBoundsChanged(event_token token) const
 {
-    check_hresult(static_cast<const IApplicationView2 &>(static_cast<const D &>(*this))->remove_VisibleBoundsChanged(token));
+    check_hresult(WINRT_SHIM(IApplicationView2)->remove_VisibleBoundsChanged(token));
 }
 
 template <typename D> bool impl_IApplicationView2<D>::SetDesiredBoundsMode(Windows::UI::ViewManagement::ApplicationViewBoundsMode boundsMode) const
 {
     bool success {};
-    check_hresult(static_cast<const IApplicationView2 &>(static_cast<const D &>(*this))->abi_SetDesiredBoundsMode(boundsMode, &success));
+    check_hresult(WINRT_SHIM(IApplicationView2)->abi_SetDesiredBoundsMode(boundsMode, &success));
     return success;
 }
 
 template <typename D> Windows::UI::ViewManagement::ApplicationViewBoundsMode impl_IApplicationView2<D>::DesiredBoundsMode() const
 {
     Windows::UI::ViewManagement::ApplicationViewBoundsMode value {};
-    check_hresult(static_cast<const IApplicationView2 &>(static_cast<const D &>(*this))->get_DesiredBoundsMode(&value));
+    check_hresult(WINRT_SHIM(IApplicationView2)->get_DesiredBoundsMode(&value));
     return value;
 }
 
 template <typename D> void impl_IApplicationViewTitleBar<D>::ForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
 {
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->put_ForegroundColor(get(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_ForegroundColor(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_IApplicationViewTitleBar<D>::ForegroundColor() const
 {
     Windows::Foundation::IReference<Windows::UI::Color> value;
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->get_ForegroundColor(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->get_ForegroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IApplicationViewTitleBar<D>::BackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
 {
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->put_BackgroundColor(get(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_BackgroundColor(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_IApplicationViewTitleBar<D>::BackgroundColor() const
 {
     Windows::Foundation::IReference<Windows::UI::Color> value;
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->get_BackgroundColor(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->get_BackgroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
 {
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->put_ButtonForegroundColor(get(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_ButtonForegroundColor(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_IApplicationViewTitleBar<D>::ButtonForegroundColor() const
 {
     Windows::Foundation::IReference<Windows::UI::Color> value;
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->get_ButtonForegroundColor(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->get_ButtonForegroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
 {
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->put_ButtonBackgroundColor(get(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_ButtonBackgroundColor(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_IApplicationViewTitleBar<D>::ButtonBackgroundColor() const
 {
     Windows::Foundation::IReference<Windows::UI::Color> value;
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->get_ButtonBackgroundColor(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->get_ButtonBackgroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonHoverForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
 {
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->put_ButtonHoverForegroundColor(get(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_ButtonHoverForegroundColor(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_IApplicationViewTitleBar<D>::ButtonHoverForegroundColor() const
 {
     Windows::Foundation::IReference<Windows::UI::Color> value;
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->get_ButtonHoverForegroundColor(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->get_ButtonHoverForegroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonHoverBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
 {
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->put_ButtonHoverBackgroundColor(get(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_ButtonHoverBackgroundColor(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_IApplicationViewTitleBar<D>::ButtonHoverBackgroundColor() const
 {
     Windows::Foundation::IReference<Windows::UI::Color> value;
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->get_ButtonHoverBackgroundColor(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->get_ButtonHoverBackgroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonPressedForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
 {
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->put_ButtonPressedForegroundColor(get(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_ButtonPressedForegroundColor(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_IApplicationViewTitleBar<D>::ButtonPressedForegroundColor() const
 {
     Windows::Foundation::IReference<Windows::UI::Color> value;
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->get_ButtonPressedForegroundColor(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->get_ButtonPressedForegroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonPressedBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
 {
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->put_ButtonPressedBackgroundColor(get(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_ButtonPressedBackgroundColor(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_IApplicationViewTitleBar<D>::ButtonPressedBackgroundColor() const
 {
     Windows::Foundation::IReference<Windows::UI::Color> value;
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->get_ButtonPressedBackgroundColor(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->get_ButtonPressedBackgroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IApplicationViewTitleBar<D>::InactiveForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
 {
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->put_InactiveForegroundColor(get(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_InactiveForegroundColor(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_IApplicationViewTitleBar<D>::InactiveForegroundColor() const
 {
     Windows::Foundation::IReference<Windows::UI::Color> value;
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->get_InactiveForegroundColor(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->get_InactiveForegroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IApplicationViewTitleBar<D>::InactiveBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
 {
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->put_InactiveBackgroundColor(get(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_InactiveBackgroundColor(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_IApplicationViewTitleBar<D>::InactiveBackgroundColor() const
 {
     Windows::Foundation::IReference<Windows::UI::Color> value;
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->get_InactiveBackgroundColor(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->get_InactiveBackgroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonInactiveForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
 {
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->put_ButtonInactiveForegroundColor(get(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_ButtonInactiveForegroundColor(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_IApplicationViewTitleBar<D>::ButtonInactiveForegroundColor() const
 {
     Windows::Foundation::IReference<Windows::UI::Color> value;
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->get_ButtonInactiveForegroundColor(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->get_ButtonInactiveForegroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IApplicationViewTitleBar<D>::ButtonInactiveBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const
 {
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->put_ButtonInactiveBackgroundColor(get(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->put_ButtonInactiveBackgroundColor(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::UI::Color> impl_IApplicationViewTitleBar<D>::ButtonInactiveBackgroundColor() const
 {
     Windows::Foundation::IReference<Windows::UI::Color> value;
-    check_hresult(static_cast<const IApplicationViewTitleBar &>(static_cast<const D &>(*this))->get_ButtonInactiveBackgroundColor(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTitleBar)->get_ButtonInactiveBackgroundColor(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::ViewManagement::ApplicationViewTitleBar impl_IApplicationView3<D>::TitleBar() const
 {
     Windows::UI::ViewManagement::ApplicationViewTitleBar value { nullptr };
-    check_hresult(static_cast<const IApplicationView3 &>(static_cast<const D &>(*this))->get_TitleBar(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationView3)->get_TitleBar(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::ViewManagement::FullScreenSystemOverlayMode impl_IApplicationView3<D>::FullScreenSystemOverlayMode() const
 {
     Windows::UI::ViewManagement::FullScreenSystemOverlayMode value {};
-    check_hresult(static_cast<const IApplicationView3 &>(static_cast<const D &>(*this))->get_FullScreenSystemOverlayMode(&value));
+    check_hresult(WINRT_SHIM(IApplicationView3)->get_FullScreenSystemOverlayMode(&value));
     return value;
 }
 
 template <typename D> void impl_IApplicationView3<D>::FullScreenSystemOverlayMode(Windows::UI::ViewManagement::FullScreenSystemOverlayMode value) const
 {
-    check_hresult(static_cast<const IApplicationView3 &>(static_cast<const D &>(*this))->put_FullScreenSystemOverlayMode(value));
+    check_hresult(WINRT_SHIM(IApplicationView3)->put_FullScreenSystemOverlayMode(value));
 }
 
 template <typename D> bool impl_IApplicationView3<D>::IsFullScreenMode() const
 {
     bool value {};
-    check_hresult(static_cast<const IApplicationView3 &>(static_cast<const D &>(*this))->get_IsFullScreenMode(&value));
+    check_hresult(WINRT_SHIM(IApplicationView3)->get_IsFullScreenMode(&value));
     return value;
 }
 
 template <typename D> bool impl_IApplicationView3<D>::TryEnterFullScreenMode() const
 {
     bool success {};
-    check_hresult(static_cast<const IApplicationView3 &>(static_cast<const D &>(*this))->abi_TryEnterFullScreenMode(&success));
+    check_hresult(WINRT_SHIM(IApplicationView3)->abi_TryEnterFullScreenMode(&success));
     return success;
 }
 
 template <typename D> void impl_IApplicationView3<D>::ExitFullScreenMode() const
 {
-    check_hresult(static_cast<const IApplicationView3 &>(static_cast<const D &>(*this))->abi_ExitFullScreenMode());
+    check_hresult(WINRT_SHIM(IApplicationView3)->abi_ExitFullScreenMode());
 }
 
 template <typename D> void impl_IApplicationView3<D>::ShowStandardSystemOverlays() const
 {
-    check_hresult(static_cast<const IApplicationView3 &>(static_cast<const D &>(*this))->abi_ShowStandardSystemOverlays());
+    check_hresult(WINRT_SHIM(IApplicationView3)->abi_ShowStandardSystemOverlays());
 }
 
 template <typename D> bool impl_IApplicationView3<D>::TryResizeView(const Windows::Foundation::Size & value) const
 {
     bool success {};
-    check_hresult(static_cast<const IApplicationView3 &>(static_cast<const D &>(*this))->abi_TryResizeView(get(value), &success));
+    check_hresult(WINRT_SHIM(IApplicationView3)->abi_TryResizeView(get(value), &success));
     return success;
 }
 
 template <typename D> void impl_IApplicationView3<D>::SetPreferredMinSize(const Windows::Foundation::Size & minSize) const
 {
-    check_hresult(static_cast<const IApplicationView3 &>(static_cast<const D &>(*this))->abi_SetPreferredMinSize(get(minSize)));
+    check_hresult(WINRT_SHIM(IApplicationView3)->abi_SetPreferredMinSize(get(minSize)));
 }
 
 template <typename D> bool impl_IApplicationViewFullscreenStatics<D>::TryUnsnapToFullscreen() const
 {
     bool success {};
-    check_hresult(static_cast<const IApplicationViewFullscreenStatics &>(static_cast<const D &>(*this))->abi_TryUnsnapToFullscreen(&success));
+    check_hresult(WINRT_SHIM(IApplicationViewFullscreenStatics)->abi_TryUnsnapToFullscreen(&success));
     return success;
 }
 
 template <typename D> bool impl_IApplicationViewConsolidatedEventArgs<D>::IsUserInitiated() const
 {
     bool value {};
-    check_hresult(static_cast<const IApplicationViewConsolidatedEventArgs &>(static_cast<const D &>(*this))->get_IsUserInitiated(&value));
+    check_hresult(WINRT_SHIM(IApplicationViewConsolidatedEventArgs)->get_IsUserInitiated(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IActivationViewSwitcher<D>::ShowAsStandaloneAsync(int32_t viewId) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IActivationViewSwitcher &>(static_cast<const D &>(*this))->abi_ShowAsStandaloneAsync(viewId, put(operation)));
+    check_hresult(WINRT_SHIM(IActivationViewSwitcher)->abi_ShowAsStandaloneAsync(viewId, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IActivationViewSwitcher<D>::ShowAsStandaloneAsync(int32_t viewId, Windows::UI::ViewManagement::ViewSizePreference sizePreference) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IActivationViewSwitcher &>(static_cast<const D &>(*this))->abi_ShowAsStandaloneWithSizePreferenceAsync(viewId, sizePreference, put(operation)));
+    check_hresult(WINRT_SHIM(IActivationViewSwitcher)->abi_ShowAsStandaloneWithSizePreferenceAsync(viewId, sizePreference, put(operation)));
     return operation;
 }
 
 template <typename D> bool impl_IActivationViewSwitcher<D>::IsViewPresentedOnActivationVirtualDesktop(int32_t viewId) const
 {
     bool value {};
-    check_hresult(static_cast<const IActivationViewSwitcher &>(static_cast<const D &>(*this))->abi_IsViewPresentedOnActivationVirtualDesktop(viewId, &value));
+    check_hresult(WINRT_SHIM(IActivationViewSwitcher)->abi_IsViewPresentedOnActivationVirtualDesktop(viewId, &value));
     return value;
 }
 
 template <typename D> int32_t impl_IApplicationViewTransferContext<D>::ViewId() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IApplicationViewTransferContext &>(static_cast<const D &>(*this))->get_ViewId(&value));
+    check_hresult(WINRT_SHIM(IApplicationViewTransferContext)->get_ViewId(&value));
     return value;
 }
 
 template <typename D> void impl_IApplicationViewTransferContext<D>::ViewId(int32_t value) const
 {
-    check_hresult(static_cast<const IApplicationViewTransferContext &>(static_cast<const D &>(*this))->put_ViewId(value));
+    check_hresult(WINRT_SHIM(IApplicationViewTransferContext)->put_ViewId(value));
 }
 
 template <typename D> hstring impl_IApplicationViewTransferContextStatics<D>::DataPackageFormatId() const
 {
     hstring value;
-    check_hresult(static_cast<const IApplicationViewTransferContextStatics &>(static_cast<const D &>(*this))->get_DataPackageFormatId(put(value)));
+    check_hresult(WINRT_SHIM(IApplicationViewTransferContextStatics)->get_DataPackageFormatId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IInputPaneVisibilityEventArgs<D>::OccludedRect() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(static_cast<const IInputPaneVisibilityEventArgs &>(static_cast<const D &>(*this))->get_OccludedRect(put(value)));
+    check_hresult(WINRT_SHIM(IInputPaneVisibilityEventArgs)->get_OccludedRect(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInputPaneVisibilityEventArgs<D>::EnsuredFocusedElementInView(bool value) const
 {
-    check_hresult(static_cast<const IInputPaneVisibilityEventArgs &>(static_cast<const D &>(*this))->put_EnsuredFocusedElementInView(value));
+    check_hresult(WINRT_SHIM(IInputPaneVisibilityEventArgs)->put_EnsuredFocusedElementInView(value));
 }
 
 template <typename D> bool impl_IInputPaneVisibilityEventArgs<D>::EnsuredFocusedElementInView() const
 {
     bool value {};
-    check_hresult(static_cast<const IInputPaneVisibilityEventArgs &>(static_cast<const D &>(*this))->get_EnsuredFocusedElementInView(&value));
+    check_hresult(WINRT_SHIM(IInputPaneVisibilityEventArgs)->get_EnsuredFocusedElementInView(&value));
     return value;
 }
 
 template <typename D> event_token impl_IInputPane<D>::Showing(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IInputPane &>(static_cast<const D &>(*this))->add_Showing(get(handler), &token));
+    check_hresult(WINRT_SHIM(IInputPane)->add_Showing(get(handler), &token));
     return token;
 }
 
@@ -2522,13 +2522,13 @@ template <typename D> event_revoker<IInputPane> impl_IInputPane<D>::Showing(auto
 
 template <typename D> void impl_IInputPane<D>::Showing(event_token token) const
 {
-    check_hresult(static_cast<const IInputPane &>(static_cast<const D &>(*this))->remove_Showing(token));
+    check_hresult(WINRT_SHIM(IInputPane)->remove_Showing(token));
 }
 
 template <typename D> event_token impl_IInputPane<D>::Hiding(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IInputPane &>(static_cast<const D &>(*this))->add_Hiding(get(handler), &token));
+    check_hresult(WINRT_SHIM(IInputPane)->add_Hiding(get(handler), &token));
     return token;
 }
 
@@ -2539,81 +2539,81 @@ template <typename D> event_revoker<IInputPane> impl_IInputPane<D>::Hiding(auto_
 
 template <typename D> void impl_IInputPane<D>::Hiding(event_token token) const
 {
-    check_hresult(static_cast<const IInputPane &>(static_cast<const D &>(*this))->remove_Hiding(token));
+    check_hresult(WINRT_SHIM(IInputPane)->remove_Hiding(token));
 }
 
 template <typename D> Windows::Foundation::Rect impl_IInputPane<D>::OccludedRect() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(static_cast<const IInputPane &>(static_cast<const D &>(*this))->get_OccludedRect(put(value)));
+    check_hresult(WINRT_SHIM(IInputPane)->get_OccludedRect(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IInputPane2<D>::TryShow() const
 {
     bool result {};
-    check_hresult(static_cast<const IInputPane2 &>(static_cast<const D &>(*this))->abi_TryShow(&result));
+    check_hresult(WINRT_SHIM(IInputPane2)->abi_TryShow(&result));
     return result;
 }
 
 template <typename D> bool impl_IInputPane2<D>::TryHide() const
 {
     bool result {};
-    check_hresult(static_cast<const IInputPane2 &>(static_cast<const D &>(*this))->abi_TryHide(&result));
+    check_hresult(WINRT_SHIM(IInputPane2)->abi_TryHide(&result));
     return result;
 }
 
 template <typename D> bool impl_IInputPaneControl<D>::Visible() const
 {
     bool value {};
-    check_hresult(static_cast<const IInputPaneControl &>(static_cast<const D &>(*this))->get_Visible(&value));
+    check_hresult(WINRT_SHIM(IInputPaneControl)->get_Visible(&value));
     return value;
 }
 
 template <typename D> void impl_IInputPaneControl<D>::Visible(bool value) const
 {
-    check_hresult(static_cast<const IInputPaneControl &>(static_cast<const D &>(*this))->put_Visible(value));
+    check_hresult(WINRT_SHIM(IInputPaneControl)->put_Visible(value));
 }
 
 template <typename D> Windows::UI::ViewManagement::InputPane impl_IInputPaneStatics<D>::GetForCurrentView() const
 {
     Windows::UI::ViewManagement::InputPane inputPane { nullptr };
-    check_hresult(static_cast<const IInputPaneStatics &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(inputPane)));
+    check_hresult(WINRT_SHIM(IInputPaneStatics)->abi_GetForCurrentView(put(inputPane)));
     return inputPane;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IProjectionManagerStatics<D>::StartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IProjectionManagerStatics &>(static_cast<const D &>(*this))->abi_StartProjectingAsync(projectionViewId, anchorViewId, put(operation)));
+    check_hresult(WINRT_SHIM(IProjectionManagerStatics)->abi_StartProjectingAsync(projectionViewId, anchorViewId, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IProjectionManagerStatics<D>::SwapDisplaysForViewsAsync(int32_t projectionViewId, int32_t anchorViewId) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IProjectionManagerStatics &>(static_cast<const D &>(*this))->abi_SwapDisplaysForViewsAsync(projectionViewId, anchorViewId, put(operation)));
+    check_hresult(WINRT_SHIM(IProjectionManagerStatics)->abi_SwapDisplaysForViewsAsync(projectionViewId, anchorViewId, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IProjectionManagerStatics<D>::StopProjectingAsync(int32_t projectionViewId, int32_t anchorViewId) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IProjectionManagerStatics &>(static_cast<const D &>(*this))->abi_StopProjectingAsync(projectionViewId, anchorViewId, put(operation)));
+    check_hresult(WINRT_SHIM(IProjectionManagerStatics)->abi_StopProjectingAsync(projectionViewId, anchorViewId, put(operation)));
     return operation;
 }
 
 template <typename D> bool impl_IProjectionManagerStatics<D>::ProjectionDisplayAvailable() const
 {
     bool value {};
-    check_hresult(static_cast<const IProjectionManagerStatics &>(static_cast<const D &>(*this))->get_ProjectionDisplayAvailable(&value));
+    check_hresult(WINRT_SHIM(IProjectionManagerStatics)->get_ProjectionDisplayAvailable(&value));
     return value;
 }
 
 template <typename D> event_token impl_IProjectionManagerStatics<D>::ProjectionDisplayAvailableChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IProjectionManagerStatics &>(static_cast<const D &>(*this))->add_ProjectionDisplayAvailableChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IProjectionManagerStatics)->add_ProjectionDisplayAvailableChanged(get(handler), &token));
     return token;
 }
 
@@ -2624,69 +2624,69 @@ template <typename D> event_revoker<IProjectionManagerStatics> impl_IProjectionM
 
 template <typename D> void impl_IProjectionManagerStatics<D>::ProjectionDisplayAvailableChanged(event_token token) const
 {
-    check_hresult(static_cast<const IProjectionManagerStatics &>(static_cast<const D &>(*this))->remove_ProjectionDisplayAvailableChanged(token));
+    check_hresult(WINRT_SHIM(IProjectionManagerStatics)->remove_ProjectionDisplayAvailableChanged(token));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IProjectionManagerStatics2<D>::StartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, const Windows::Devices::Enumeration::DeviceInformation & displayDeviceInfo) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IProjectionManagerStatics2 &>(static_cast<const D &>(*this))->abi_StartProjectingWithDeviceInfoAsync(projectionViewId, anchorViewId, get(displayDeviceInfo), put(operation)));
+    check_hresult(WINRT_SHIM(IProjectionManagerStatics2)->abi_StartProjectingWithDeviceInfoAsync(projectionViewId, anchorViewId, get(displayDeviceInfo), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IProjectionManagerStatics2<D>::RequestStartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, const Windows::Foundation::Rect & selection) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const IProjectionManagerStatics2 &>(static_cast<const D &>(*this))->abi_RequestStartProjectingAsync(projectionViewId, anchorViewId, get(selection), put(operation)));
+    check_hresult(WINRT_SHIM(IProjectionManagerStatics2)->abi_RequestStartProjectingAsync(projectionViewId, anchorViewId, get(selection), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IProjectionManagerStatics2<D>::RequestStartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement prefferedPlacement) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const IProjectionManagerStatics2 &>(static_cast<const D &>(*this))->abi_RequestStartProjectingWithPlacementAsync(projectionViewId, anchorViewId, get(selection), prefferedPlacement, put(operation)));
+    check_hresult(WINRT_SHIM(IProjectionManagerStatics2)->abi_RequestStartProjectingWithPlacementAsync(projectionViewId, anchorViewId, get(selection), prefferedPlacement, put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IProjectionManagerStatics2<D>::GetDeviceSelector() const
 {
     hstring selector;
-    check_hresult(static_cast<const IProjectionManagerStatics2 &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(selector)));
+    check_hresult(WINRT_SHIM(IProjectionManagerStatics2)->abi_GetDeviceSelector(put(selector)));
     return selector;
 }
 
 template <typename D> Windows::UI::ViewManagement::UserInteractionMode impl_IUIViewSettings<D>::UserInteractionMode() const
 {
     Windows::UI::ViewManagement::UserInteractionMode value {};
-    check_hresult(static_cast<const IUIViewSettings &>(static_cast<const D &>(*this))->get_UserInteractionMode(&value));
+    check_hresult(WINRT_SHIM(IUIViewSettings)->get_UserInteractionMode(&value));
     return value;
 }
 
 template <typename D> Windows::UI::ViewManagement::UIViewSettings impl_IUIViewSettingsStatics<D>::GetForCurrentView() const
 {
     Windows::UI::ViewManagement::UIViewSettings current { nullptr };
-    check_hresult(static_cast<const IUIViewSettingsStatics &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(current)));
+    check_hresult(WINRT_SHIM(IUIViewSettingsStatics)->abi_GetForCurrentView(put(current)));
     return current;
 }
 
 template <typename D> bool impl_IAccessibilitySettings<D>::HighContrast() const
 {
     bool value {};
-    check_hresult(static_cast<const IAccessibilitySettings &>(static_cast<const D &>(*this))->get_HighContrast(&value));
+    check_hresult(WINRT_SHIM(IAccessibilitySettings)->get_HighContrast(&value));
     return value;
 }
 
 template <typename D> hstring impl_IAccessibilitySettings<D>::HighContrastScheme() const
 {
     hstring value;
-    check_hresult(static_cast<const IAccessibilitySettings &>(static_cast<const D &>(*this))->get_HighContrastScheme(put(value)));
+    check_hresult(WINRT_SHIM(IAccessibilitySettings)->get_HighContrastScheme(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IAccessibilitySettings<D>::HighContrastChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IAccessibilitySettings &>(static_cast<const D &>(*this))->add_HighContrastChanged(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IAccessibilitySettings)->add_HighContrastChanged(get(handler), &cookie));
     return cookie;
 }
 
@@ -2697,111 +2697,111 @@ template <typename D> event_revoker<IAccessibilitySettings> impl_IAccessibilityS
 
 template <typename D> void impl_IAccessibilitySettings<D>::HighContrastChanged(event_token cookie) const
 {
-    check_hresult(static_cast<const IAccessibilitySettings &>(static_cast<const D &>(*this))->remove_HighContrastChanged(cookie));
+    check_hresult(WINRT_SHIM(IAccessibilitySettings)->remove_HighContrastChanged(cookie));
 }
 
 template <typename D> Windows::UI::ViewManagement::HandPreference impl_IUISettings<D>::HandPreference() const
 {
     Windows::UI::ViewManagement::HandPreference value {};
-    check_hresult(static_cast<const IUISettings &>(static_cast<const D &>(*this))->get_HandPreference(&value));
+    check_hresult(WINRT_SHIM(IUISettings)->get_HandPreference(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Size impl_IUISettings<D>::CursorSize() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(static_cast<const IUISettings &>(static_cast<const D &>(*this))->get_CursorSize(put(value)));
+    check_hresult(WINRT_SHIM(IUISettings)->get_CursorSize(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Size impl_IUISettings<D>::ScrollBarSize() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(static_cast<const IUISettings &>(static_cast<const D &>(*this))->get_ScrollBarSize(put(value)));
+    check_hresult(WINRT_SHIM(IUISettings)->get_ScrollBarSize(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Size impl_IUISettings<D>::ScrollBarArrowSize() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(static_cast<const IUISettings &>(static_cast<const D &>(*this))->get_ScrollBarArrowSize(put(value)));
+    check_hresult(WINRT_SHIM(IUISettings)->get_ScrollBarArrowSize(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Size impl_IUISettings<D>::ScrollBarThumbBoxSize() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(static_cast<const IUISettings &>(static_cast<const D &>(*this))->get_ScrollBarThumbBoxSize(put(value)));
+    check_hresult(WINRT_SHIM(IUISettings)->get_ScrollBarThumbBoxSize(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IUISettings<D>::MessageDuration() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IUISettings &>(static_cast<const D &>(*this))->get_MessageDuration(&value));
+    check_hresult(WINRT_SHIM(IUISettings)->get_MessageDuration(&value));
     return value;
 }
 
 template <typename D> bool impl_IUISettings<D>::AnimationsEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IUISettings &>(static_cast<const D &>(*this))->get_AnimationsEnabled(&value));
+    check_hresult(WINRT_SHIM(IUISettings)->get_AnimationsEnabled(&value));
     return value;
 }
 
 template <typename D> bool impl_IUISettings<D>::CaretBrowsingEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IUISettings &>(static_cast<const D &>(*this))->get_CaretBrowsingEnabled(&value));
+    check_hresult(WINRT_SHIM(IUISettings)->get_CaretBrowsingEnabled(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IUISettings<D>::CaretBlinkRate() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IUISettings &>(static_cast<const D &>(*this))->get_CaretBlinkRate(&value));
+    check_hresult(WINRT_SHIM(IUISettings)->get_CaretBlinkRate(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IUISettings<D>::CaretWidth() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IUISettings &>(static_cast<const D &>(*this))->get_CaretWidth(&value));
+    check_hresult(WINRT_SHIM(IUISettings)->get_CaretWidth(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IUISettings<D>::DoubleClickTime() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IUISettings &>(static_cast<const D &>(*this))->get_DoubleClickTime(&value));
+    check_hresult(WINRT_SHIM(IUISettings)->get_DoubleClickTime(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IUISettings<D>::MouseHoverTime() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IUISettings &>(static_cast<const D &>(*this))->get_MouseHoverTime(&value));
+    check_hresult(WINRT_SHIM(IUISettings)->get_MouseHoverTime(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IUISettings<D>::UIElementColor(Windows::UI::ViewManagement::UIElementType desiredElement) const
 {
     Windows::UI::Color value {};
-    check_hresult(static_cast<const IUISettings &>(static_cast<const D &>(*this))->abi_UIElementColor(desiredElement, put(value)));
+    check_hresult(WINRT_SHIM(IUISettings)->abi_UIElementColor(desiredElement, put(value)));
     return value;
 }
 
 template <typename D> double impl_IUISettings2<D>::TextScaleFactor() const
 {
     double value {};
-    check_hresult(static_cast<const IUISettings2 &>(static_cast<const D &>(*this))->get_TextScaleFactor(&value));
+    check_hresult(WINRT_SHIM(IUISettings2)->get_TextScaleFactor(&value));
     return value;
 }
 
 template <typename D> event_token impl_IUISettings2<D>::TextScaleFactorChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IUISettings2 &>(static_cast<const D &>(*this))->add_TextScaleFactorChanged(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IUISettings2)->add_TextScaleFactorChanged(get(handler), &cookie));
     return cookie;
 }
 
@@ -2812,20 +2812,20 @@ template <typename D> event_revoker<IUISettings2> impl_IUISettings2<D>::TextScal
 
 template <typename D> void impl_IUISettings2<D>::TextScaleFactorChanged(event_token cookie) const
 {
-    check_hresult(static_cast<const IUISettings2 &>(static_cast<const D &>(*this))->remove_TextScaleFactorChanged(cookie));
+    check_hresult(WINRT_SHIM(IUISettings2)->remove_TextScaleFactorChanged(cookie));
 }
 
 template <typename D> Windows::UI::Color impl_IUISettings3<D>::GetColorValue(Windows::UI::ViewManagement::UIColorType desiredColor) const
 {
     Windows::UI::Color value {};
-    check_hresult(static_cast<const IUISettings3 &>(static_cast<const D &>(*this))->abi_GetColorValue(desiredColor, put(value)));
+    check_hresult(WINRT_SHIM(IUISettings3)->abi_GetColorValue(desiredColor, put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IUISettings3<D>::ColorValuesChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IUISettings3 &>(static_cast<const D &>(*this))->add_ColorValuesChanged(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IUISettings3)->add_ColorValuesChanged(get(handler), &cookie));
     return cookie;
 }
 
@@ -2836,20 +2836,20 @@ template <typename D> event_revoker<IUISettings3> impl_IUISettings3<D>::ColorVal
 
 template <typename D> void impl_IUISettings3<D>::ColorValuesChanged(event_token cookie) const
 {
-    check_hresult(static_cast<const IUISettings3 &>(static_cast<const D &>(*this))->remove_ColorValuesChanged(cookie));
+    check_hresult(WINRT_SHIM(IUISettings3)->remove_ColorValuesChanged(cookie));
 }
 
 template <typename D> bool impl_IApplicationViewScalingStatics<D>::DisableLayoutScaling() const
 {
     bool value {};
-    check_hresult(static_cast<const IApplicationViewScalingStatics &>(static_cast<const D &>(*this))->get_DisableLayoutScaling(&value));
+    check_hresult(WINRT_SHIM(IApplicationViewScalingStatics)->get_DisableLayoutScaling(&value));
     return value;
 }
 
 template <typename D> bool impl_IApplicationViewScalingStatics<D>::TrySetDisableLayoutScaling(bool disableLayoutScaling) const
 {
     bool success {};
-    check_hresult(static_cast<const IApplicationViewScalingStatics &>(static_cast<const D &>(*this))->abi_TrySetDisableLayoutScaling(disableLayoutScaling, &success));
+    check_hresult(WINRT_SHIM(IApplicationViewScalingStatics)->abi_TrySetDisableLayoutScaling(disableLayoutScaling, &success));
     return success;
 }
 

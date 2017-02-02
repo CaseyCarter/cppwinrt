@@ -16,7 +16,6 @@ struct IAnnotationProvider :
     impl::consume<IAnnotationProvider>
 {
     IAnnotationProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAnnotationProvider>(m_ptr); }
 };
 
 struct ICustomNavigationProvider :
@@ -24,7 +23,6 @@ struct ICustomNavigationProvider :
     impl::consume<ICustomNavigationProvider>
 {
     ICustomNavigationProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICustomNavigationProvider>(m_ptr); }
 };
 
 struct IDockProvider :
@@ -32,7 +30,6 @@ struct IDockProvider :
     impl::consume<IDockProvider>
 {
     IDockProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDockProvider>(m_ptr); }
 };
 
 struct IDragProvider :
@@ -40,7 +37,6 @@ struct IDragProvider :
     impl::consume<IDragProvider>
 {
     IDragProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDragProvider>(m_ptr); }
 };
 
 struct IDropTargetProvider :
@@ -48,7 +44,6 @@ struct IDropTargetProvider :
     impl::consume<IDropTargetProvider>
 {
     IDropTargetProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDropTargetProvider>(m_ptr); }
 };
 
 struct IExpandCollapseProvider :
@@ -56,7 +51,6 @@ struct IExpandCollapseProvider :
     impl::consume<IExpandCollapseProvider>
 {
     IExpandCollapseProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IExpandCollapseProvider>(m_ptr); }
 };
 
 struct IGridItemProvider :
@@ -64,7 +58,6 @@ struct IGridItemProvider :
     impl::consume<IGridItemProvider>
 {
     IGridItemProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGridItemProvider>(m_ptr); }
 };
 
 struct IGridProvider :
@@ -72,7 +65,6 @@ struct IGridProvider :
     impl::consume<IGridProvider>
 {
     IGridProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGridProvider>(m_ptr); }
 };
 
 struct IIRawElementProviderSimple :
@@ -80,7 +72,6 @@ struct IIRawElementProviderSimple :
     impl::consume<IIRawElementProviderSimple>
 {
     IIRawElementProviderSimple(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IIRawElementProviderSimple>(m_ptr); }
 };
 
 struct IInvokeProvider :
@@ -88,7 +79,6 @@ struct IInvokeProvider :
     impl::consume<IInvokeProvider>
 {
     IInvokeProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInvokeProvider>(m_ptr); }
 };
 
 struct IItemContainerProvider :
@@ -96,7 +86,6 @@ struct IItemContainerProvider :
     impl::consume<IItemContainerProvider>
 {
     IItemContainerProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IItemContainerProvider>(m_ptr); }
 };
 
 struct IMultipleViewProvider :
@@ -104,7 +93,6 @@ struct IMultipleViewProvider :
     impl::consume<IMultipleViewProvider>
 {
     IMultipleViewProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMultipleViewProvider>(m_ptr); }
 };
 
 struct IObjectModelProvider :
@@ -112,7 +100,6 @@ struct IObjectModelProvider :
     impl::consume<IObjectModelProvider>
 {
     IObjectModelProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IObjectModelProvider>(m_ptr); }
 };
 
 struct IRangeValueProvider :
@@ -120,7 +107,6 @@ struct IRangeValueProvider :
     impl::consume<IRangeValueProvider>
 {
     IRangeValueProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRangeValueProvider>(m_ptr); }
 };
 
 struct IScrollItemProvider :
@@ -128,7 +114,6 @@ struct IScrollItemProvider :
     impl::consume<IScrollItemProvider>
 {
     IScrollItemProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScrollItemProvider>(m_ptr); }
 };
 
 struct IScrollProvider :
@@ -136,7 +121,6 @@ struct IScrollProvider :
     impl::consume<IScrollProvider>
 {
     IScrollProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScrollProvider>(m_ptr); }
 };
 
 struct ISelectionItemProvider :
@@ -144,7 +128,6 @@ struct ISelectionItemProvider :
     impl::consume<ISelectionItemProvider>
 {
     ISelectionItemProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectionItemProvider>(m_ptr); }
 };
 
 struct ISelectionProvider :
@@ -152,7 +135,6 @@ struct ISelectionProvider :
     impl::consume<ISelectionProvider>
 {
     ISelectionProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectionProvider>(m_ptr); }
 };
 
 struct ISpreadsheetItemProvider :
@@ -160,7 +142,6 @@ struct ISpreadsheetItemProvider :
     impl::consume<ISpreadsheetItemProvider>
 {
     ISpreadsheetItemProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpreadsheetItemProvider>(m_ptr); }
 };
 
 struct ISpreadsheetProvider :
@@ -168,7 +149,6 @@ struct ISpreadsheetProvider :
     impl::consume<ISpreadsheetProvider>
 {
     ISpreadsheetProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpreadsheetProvider>(m_ptr); }
 };
 
 struct IStylesProvider :
@@ -176,7 +156,6 @@ struct IStylesProvider :
     impl::consume<IStylesProvider>
 {
     IStylesProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStylesProvider>(m_ptr); }
 };
 
 struct ISynchronizedInputProvider :
@@ -184,7 +163,6 @@ struct ISynchronizedInputProvider :
     impl::consume<ISynchronizedInputProvider>
 {
     ISynchronizedInputProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISynchronizedInputProvider>(m_ptr); }
 };
 
 struct ITableItemProvider :
@@ -192,7 +170,6 @@ struct ITableItemProvider :
     impl::consume<ITableItemProvider>
 {
     ITableItemProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITableItemProvider>(m_ptr); }
 };
 
 struct ITableProvider :
@@ -200,7 +177,6 @@ struct ITableProvider :
     impl::consume<ITableProvider>
 {
     ITableProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITableProvider>(m_ptr); }
 };
 
 struct ITextChildProvider :
@@ -208,7 +184,6 @@ struct ITextChildProvider :
     impl::consume<ITextChildProvider>
 {
     ITextChildProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextChildProvider>(m_ptr); }
 };
 
 struct ITextEditProvider :
@@ -217,7 +192,6 @@ struct ITextEditProvider :
     impl::require<ITextEditProvider, Windows::UI::Xaml::Automation::Provider::ITextProvider>
 {
     ITextEditProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextEditProvider>(m_ptr); }
 };
 
 struct ITextProvider :
@@ -225,7 +199,6 @@ struct ITextProvider :
     impl::consume<ITextProvider>
 {
     ITextProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextProvider>(m_ptr); }
 };
 
 struct ITextProvider2 :
@@ -234,7 +207,6 @@ struct ITextProvider2 :
     impl::require<ITextProvider2, Windows::UI::Xaml::Automation::Provider::ITextProvider>
 {
     ITextProvider2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextProvider2>(m_ptr); }
 };
 
 struct ITextRangeProvider :
@@ -242,7 +214,6 @@ struct ITextRangeProvider :
     impl::consume<ITextRangeProvider>
 {
     ITextRangeProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextRangeProvider>(m_ptr); }
 };
 
 struct ITextRangeProvider2 :
@@ -251,7 +222,6 @@ struct ITextRangeProvider2 :
     impl::require<ITextRangeProvider2, Windows::UI::Xaml::Automation::Provider::ITextRangeProvider>
 {
     ITextRangeProvider2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextRangeProvider2>(m_ptr); }
 };
 
 struct IToggleProvider :
@@ -259,7 +229,6 @@ struct IToggleProvider :
     impl::consume<IToggleProvider>
 {
     IToggleProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToggleProvider>(m_ptr); }
 };
 
 struct ITransformProvider :
@@ -267,7 +236,6 @@ struct ITransformProvider :
     impl::consume<ITransformProvider>
 {
     ITransformProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITransformProvider>(m_ptr); }
 };
 
 struct ITransformProvider2 :
@@ -276,7 +244,6 @@ struct ITransformProvider2 :
     impl::require<ITransformProvider2, Windows::UI::Xaml::Automation::Provider::ITransformProvider>
 {
     ITransformProvider2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITransformProvider2>(m_ptr); }
 };
 
 struct IValueProvider :
@@ -284,7 +251,6 @@ struct IValueProvider :
     impl::consume<IValueProvider>
 {
     IValueProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IValueProvider>(m_ptr); }
 };
 
 struct IVirtualizedItemProvider :
@@ -292,7 +258,6 @@ struct IVirtualizedItemProvider :
     impl::consume<IVirtualizedItemProvider>
 {
     IVirtualizedItemProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVirtualizedItemProvider>(m_ptr); }
 };
 
 struct IWindowProvider :
@@ -300,7 +265,6 @@ struct IWindowProvider :
     impl::consume<IWindowProvider>
 {
     IWindowProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWindowProvider>(m_ptr); }
 };
 
 }

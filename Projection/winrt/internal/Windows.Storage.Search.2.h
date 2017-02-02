@@ -374,7 +374,6 @@ struct IContentIndexer :
     impl::consume<IContentIndexer>
 {
     IContentIndexer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContentIndexer>(m_ptr); }
 };
 
 struct IContentIndexerQuery :
@@ -382,7 +381,6 @@ struct IContentIndexerQuery :
     impl::consume<IContentIndexerQuery>
 {
     IContentIndexerQuery(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContentIndexerQuery>(m_ptr); }
 };
 
 struct IContentIndexerQueryOperations :
@@ -390,7 +388,6 @@ struct IContentIndexerQueryOperations :
     impl::consume<IContentIndexerQueryOperations>
 {
     IContentIndexerQueryOperations(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContentIndexerQueryOperations>(m_ptr); }
 };
 
 struct IContentIndexerStatics :
@@ -398,7 +395,6 @@ struct IContentIndexerStatics :
     impl::consume<IContentIndexerStatics>
 {
     IContentIndexerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContentIndexerStatics>(m_ptr); }
 };
 
 struct IIndexableContent :
@@ -406,7 +402,6 @@ struct IIndexableContent :
     impl::consume<IIndexableContent>
 {
     IIndexableContent(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IIndexableContent>(m_ptr); }
 };
 
 struct IQueryOptions :
@@ -414,7 +409,6 @@ struct IQueryOptions :
     impl::consume<IQueryOptions>
 {
     IQueryOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IQueryOptions>(m_ptr); }
 };
 
 struct IQueryOptionsFactory :
@@ -422,7 +416,6 @@ struct IQueryOptionsFactory :
     impl::consume<IQueryOptionsFactory>
 {
     IQueryOptionsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IQueryOptionsFactory>(m_ptr); }
 };
 
 struct IQueryOptionsWithProviderFilter :
@@ -430,7 +423,6 @@ struct IQueryOptionsWithProviderFilter :
     impl::consume<IQueryOptionsWithProviderFilter>
 {
     IQueryOptionsWithProviderFilter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IQueryOptionsWithProviderFilter>(m_ptr); }
 };
 
 struct IStorageFileQueryResult :
@@ -439,7 +431,6 @@ struct IStorageFileQueryResult :
     impl::require<IStorageFileQueryResult, Windows::Storage::Search::IStorageQueryResultBase>
 {
     IStorageFileQueryResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageFileQueryResult>(m_ptr); }
 };
 
 struct IStorageFileQueryResult2 :
@@ -448,7 +439,6 @@ struct IStorageFileQueryResult2 :
     impl::require<IStorageFileQueryResult2, Windows::Storage::Search::IStorageQueryResultBase>
 {
     IStorageFileQueryResult2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageFileQueryResult2>(m_ptr); }
 };
 
 struct IStorageFolderQueryOperations :
@@ -456,7 +446,6 @@ struct IStorageFolderQueryOperations :
     impl::consume<IStorageFolderQueryOperations>
 {
     IStorageFolderQueryOperations(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageFolderQueryOperations>(m_ptr); }
 };
 
 struct IStorageFolderQueryResult :
@@ -465,7 +454,6 @@ struct IStorageFolderQueryResult :
     impl::require<IStorageFolderQueryResult, Windows::Storage::Search::IStorageQueryResultBase>
 {
     IStorageFolderQueryResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageFolderQueryResult>(m_ptr); }
 };
 
 struct IStorageItemQueryResult :
@@ -474,7 +462,6 @@ struct IStorageItemQueryResult :
     impl::require<IStorageItemQueryResult, Windows::Storage::Search::IStorageQueryResultBase>
 {
     IStorageItemQueryResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageItemQueryResult>(m_ptr); }
 };
 
 struct IStorageLibraryContentChangedTriggerDetails :
@@ -482,7 +469,6 @@ struct IStorageLibraryContentChangedTriggerDetails :
     impl::consume<IStorageLibraryContentChangedTriggerDetails>
 {
     IStorageLibraryContentChangedTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageLibraryContentChangedTriggerDetails>(m_ptr); }
 };
 
 struct IStorageQueryResultBase :
@@ -490,7 +476,6 @@ struct IStorageQueryResultBase :
     impl::consume<IStorageQueryResultBase>
 {
     IStorageQueryResultBase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageQueryResultBase>(m_ptr); }
 };
 
 struct IValueAndLanguage :
@@ -498,7 +483,6 @@ struct IValueAndLanguage :
     impl::consume<IValueAndLanguage>
 {
     IValueAndLanguage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IValueAndLanguage>(m_ptr); }
 };
 
 }

@@ -35,7 +35,6 @@ struct IExtendedExecutionRevokedEventArgs :
     impl::consume<IExtendedExecutionRevokedEventArgs>
 {
     IExtendedExecutionRevokedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IExtendedExecutionRevokedEventArgs>(m_ptr); }
 };
 
 struct IExtendedExecutionSession :
@@ -44,7 +43,6 @@ struct IExtendedExecutionSession :
     impl::require<IExtendedExecutionSession, Windows::Foundation::IClosable>
 {
     IExtendedExecutionSession(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IExtendedExecutionSession>(m_ptr); }
 };
 
 }

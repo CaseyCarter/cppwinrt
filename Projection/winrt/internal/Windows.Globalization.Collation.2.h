@@ -34,7 +34,6 @@ struct ICharacterGrouping :
     impl::consume<ICharacterGrouping>
 {
     ICharacterGrouping(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICharacterGrouping>(m_ptr); }
 };
 
 struct ICharacterGroupings :
@@ -43,7 +42,6 @@ struct ICharacterGroupings :
     impl::require<ICharacterGroupings, Windows::Foundation::Collections::IIterable<Windows::Globalization::Collation::CharacterGrouping>, Windows::Foundation::Collections::IVectorView<Windows::Globalization::Collation::CharacterGrouping>>
 {
     ICharacterGroupings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICharacterGroupings>(m_ptr); }
 };
 
 }

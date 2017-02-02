@@ -40,7 +40,6 @@ struct IConditionForceEffect :
     impl::require<IConditionForceEffect, Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect>
 {
     IConditionForceEffect(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IConditionForceEffect>(m_ptr); }
 };
 
 struct IConditionForceEffectFactory :
@@ -48,7 +47,6 @@ struct IConditionForceEffectFactory :
     impl::consume<IConditionForceEffectFactory>
 {
     IConditionForceEffectFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IConditionForceEffectFactory>(m_ptr); }
 };
 
 struct IConstantForceEffect :
@@ -57,7 +55,6 @@ struct IConstantForceEffect :
     impl::require<IConstantForceEffect, Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect>
 {
     IConstantForceEffect(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IConstantForceEffect>(m_ptr); }
 };
 
 struct IForceFeedbackEffect :
@@ -65,7 +62,6 @@ struct IForceFeedbackEffect :
     impl::consume<IForceFeedbackEffect>
 {
     IForceFeedbackEffect(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IForceFeedbackEffect>(m_ptr); }
 };
 
 struct IForceFeedbackMotor :
@@ -73,7 +69,6 @@ struct IForceFeedbackMotor :
     impl::consume<IForceFeedbackMotor>
 {
     IForceFeedbackMotor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IForceFeedbackMotor>(m_ptr); }
 };
 
 struct IPeriodicForceEffect :
@@ -82,7 +77,6 @@ struct IPeriodicForceEffect :
     impl::require<IPeriodicForceEffect, Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect>
 {
     IPeriodicForceEffect(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPeriodicForceEffect>(m_ptr); }
 };
 
 struct IPeriodicForceEffectFactory :
@@ -90,7 +84,6 @@ struct IPeriodicForceEffectFactory :
     impl::consume<IPeriodicForceEffectFactory>
 {
     IPeriodicForceEffectFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPeriodicForceEffectFactory>(m_ptr); }
 };
 
 struct IRampForceEffect :
@@ -99,7 +92,6 @@ struct IRampForceEffect :
     impl::require<IRampForceEffect, Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect>
 {
     IRampForceEffect(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRampForceEffect>(m_ptr); }
 };
 
 }

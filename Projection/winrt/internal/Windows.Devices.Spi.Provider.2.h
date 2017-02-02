@@ -50,7 +50,6 @@ struct IProviderSpiConnectionSettings :
     impl::consume<IProviderSpiConnectionSettings>
 {
     IProviderSpiConnectionSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProviderSpiConnectionSettings>(m_ptr); }
 };
 
 struct IProviderSpiConnectionSettingsFactory :
@@ -58,7 +57,6 @@ struct IProviderSpiConnectionSettingsFactory :
     impl::consume<IProviderSpiConnectionSettingsFactory>
 {
     IProviderSpiConnectionSettingsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProviderSpiConnectionSettingsFactory>(m_ptr); }
 };
 
 struct ISpiControllerProvider :
@@ -66,7 +64,6 @@ struct ISpiControllerProvider :
     impl::consume<ISpiControllerProvider>
 {
     ISpiControllerProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpiControllerProvider>(m_ptr); }
 };
 
 struct ISpiDeviceProvider :
@@ -75,7 +72,6 @@ struct ISpiDeviceProvider :
     impl::require<ISpiDeviceProvider, Windows::Foundation::IClosable>
 {
     ISpiDeviceProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpiDeviceProvider>(m_ptr); }
 };
 
 struct ISpiProvider :
@@ -83,7 +79,6 @@ struct ISpiProvider :
     impl::consume<ISpiProvider>
 {
     ISpiProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpiProvider>(m_ptr); }
 };
 
 }

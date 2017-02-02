@@ -545,162 +545,162 @@ namespace Windows::ApplicationModel::UserDataAccounts {
 template <typename D> hstring impl_IUserDataAccount<D>::Id() const
 {
     hstring value;
-    check_hresult(static_cast<const IUserDataAccount &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IUserDataAccount)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUserDataAccount<D>::UserDisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const IUserDataAccount &>(static_cast<const D &>(*this))->get_UserDisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IUserDataAccount)->get_UserDisplayName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUserDataAccount<D>::UserDisplayName(hstring_ref value) const
 {
-    check_hresult(static_cast<const IUserDataAccount &>(static_cast<const D &>(*this))->put_UserDisplayName(get(value)));
+    check_hresult(WINRT_SHIM(IUserDataAccount)->put_UserDisplayName(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::UserDataAccounts::UserDataAccountOtherAppReadAccess impl_IUserDataAccount<D>::OtherAppReadAccess() const
 {
     Windows::ApplicationModel::UserDataAccounts::UserDataAccountOtherAppReadAccess value {};
-    check_hresult(static_cast<const IUserDataAccount &>(static_cast<const D &>(*this))->get_OtherAppReadAccess(&value));
+    check_hresult(WINRT_SHIM(IUserDataAccount)->get_OtherAppReadAccess(&value));
     return value;
 }
 
 template <typename D> void impl_IUserDataAccount<D>::OtherAppReadAccess(Windows::ApplicationModel::UserDataAccounts::UserDataAccountOtherAppReadAccess value) const
 {
-    check_hresult(static_cast<const IUserDataAccount &>(static_cast<const D &>(*this))->put_OtherAppReadAccess(value));
+    check_hresult(WINRT_SHIM(IUserDataAccount)->put_OtherAppReadAccess(value));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IUserDataAccount<D>::Icon() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(static_cast<const IUserDataAccount &>(static_cast<const D &>(*this))->get_Icon(put(value)));
+    check_hresult(WINRT_SHIM(IUserDataAccount)->get_Icon(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUserDataAccount<D>::DeviceAccountTypeId() const
 {
     hstring value;
-    check_hresult(static_cast<const IUserDataAccount &>(static_cast<const D &>(*this))->get_DeviceAccountTypeId(put(value)));
+    check_hresult(WINRT_SHIM(IUserDataAccount)->get_DeviceAccountTypeId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUserDataAccount<D>::PackageFamilyName() const
 {
     hstring value;
-    check_hresult(static_cast<const IUserDataAccount &>(static_cast<const D &>(*this))->get_PackageFamilyName(put(value)));
+    check_hresult(WINRT_SHIM(IUserDataAccount)->get_PackageFamilyName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUserDataAccount<D>::SaveAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IUserDataAccount &>(static_cast<const D &>(*this))->abi_SaveAsync(put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccount)->abi_SaveAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUserDataAccount<D>::DeleteAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IUserDataAccount &>(static_cast<const D &>(*this))->abi_DeleteAsync(put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccount)->abi_DeleteAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::AppointmentCalendar>> impl_IUserDataAccount<D>::FindAppointmentCalendarsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::AppointmentCalendar>> result;
-    check_hresult(static_cast<const IUserDataAccount &>(static_cast<const D &>(*this))->abi_FindAppointmentCalendarsAsync(put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccount)->abi_FindAppointmentCalendarsAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMailbox>> impl_IUserDataAccount<D>::FindEmailMailboxesAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMailbox>> result;
-    check_hresult(static_cast<const IUserDataAccount &>(static_cast<const D &>(*this))->abi_FindEmailMailboxesAsync(put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccount)->abi_FindEmailMailboxesAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactList>> impl_IUserDataAccount<D>::FindContactListsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactList>> result;
-    check_hresult(static_cast<const IUserDataAccount &>(static_cast<const D &>(*this))->abi_FindContactListsAsync(put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccount)->abi_FindContactListsAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotationList>> impl_IUserDataAccount<D>::FindContactAnnotationListsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotationList>> result;
-    check_hresult(static_cast<const IUserDataAccount &>(static_cast<const D &>(*this))->abi_FindContactAnnotationListsAsync(put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccount)->abi_FindContactAnnotationListsAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IUserDataAccount2<D>::EnterpriseId() const
 {
     hstring value;
-    check_hresult(static_cast<const IUserDataAccount2 &>(static_cast<const D &>(*this))->get_EnterpriseId(put(value)));
+    check_hresult(WINRT_SHIM(IUserDataAccount2)->get_EnterpriseId(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IUserDataAccount2<D>::IsProtectedUnderLock() const
 {
     bool value {};
-    check_hresult(static_cast<const IUserDataAccount2 &>(static_cast<const D &>(*this))->get_IsProtectedUnderLock(&value));
+    check_hresult(WINRT_SHIM(IUserDataAccount2)->get_IsProtectedUnderLock(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IUserDataAccount3<D>::ExplictReadAccessPackageFamilyNames() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IUserDataAccount3 &>(static_cast<const D &>(*this))->get_ExplictReadAccessPackageFamilyNames(put(value)));
+    check_hresult(WINRT_SHIM(IUserDataAccount3)->get_ExplictReadAccessPackageFamilyNames(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUserDataAccount3<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const IUserDataAccount3 &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IUserDataAccount3)->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUserDataAccount3<D>::DisplayName(hstring_ref value) const
 {
-    check_hresult(static_cast<const IUserDataAccount3 &>(static_cast<const D &>(*this))->put_DisplayName(get(value)));
+    check_hresult(WINRT_SHIM(IUserDataAccount3)->put_DisplayName(get(value)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataAccounts::UserDataAccount>> impl_IUserDataAccountStore<D>::FindAccountsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataAccounts::UserDataAccount>> result;
-    check_hresult(static_cast<const IUserDataAccountStore &>(static_cast<const D &>(*this))->abi_FindAccountsAsync(put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccountStore)->abi_FindAccountsAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> impl_IUserDataAccountStore<D>::GetAccountAsync(hstring_ref id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> result;
-    check_hresult(static_cast<const IUserDataAccountStore &>(static_cast<const D &>(*this))->abi_GetAccountAsync(get(id), put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccountStore)->abi_GetAccountAsync(get(id), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> impl_IUserDataAccountStore<D>::CreateAccountAsync(hstring_ref userDisplayName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> result;
-    check_hresult(static_cast<const IUserDataAccountStore &>(static_cast<const D &>(*this))->abi_CreateAccountAsync(get(userDisplayName), put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccountStore)->abi_CreateAccountAsync(get(userDisplayName), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> impl_IUserDataAccountStore2<D>::CreateAccountAsync(hstring_ref userDisplayName, hstring_ref packageRelativeAppId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> result;
-    check_hresult(static_cast<const IUserDataAccountStore2 &>(static_cast<const D &>(*this))->abi_CreateAccountWithPackageRelativeAppIdAsync(get(userDisplayName), get(packageRelativeAppId), put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccountStore2)->abi_CreateAccountWithPackageRelativeAppIdAsync(get(userDisplayName), get(packageRelativeAppId), put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IUserDataAccountStore2<D>::StoreChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore, Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IUserDataAccountStore2 &>(static_cast<const D &>(*this))->add_StoreChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IUserDataAccountStore2)->add_StoreChanged(get(handler), &token));
     return token;
 }
 
@@ -711,62 +711,62 @@ template <typename D> event_revoker<IUserDataAccountStore2> impl_IUserDataAccoun
 
 template <typename D> void impl_IUserDataAccountStore2<D>::StoreChanged(event_token token) const
 {
-    check_hresult(static_cast<const IUserDataAccountStore2 &>(static_cast<const D &>(*this))->remove_StoreChanged(token));
+    check_hresult(WINRT_SHIM(IUserDataAccountStore2)->remove_StoreChanged(token));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore> impl_IUserDataAccountManagerStatics<D>::RequestStoreAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType storeAccessType) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore> result;
-    check_hresult(static_cast<const IUserDataAccountManagerStatics &>(static_cast<const D &>(*this))->abi_RequestStoreAsync(storeAccessType, put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccountManagerStatics)->abi_RequestStoreAsync(storeAccessType, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IUserDataAccountManagerStatics<D>::ShowAddAccountAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountContentKinds contentKinds) const
 {
     Windows::Foundation::IAsyncOperation<hstring> result;
-    check_hresult(static_cast<const IUserDataAccountManagerStatics &>(static_cast<const D &>(*this))->abi_ShowAddAccountAsync(contentKinds, put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccountManagerStatics)->abi_ShowAddAccountAsync(contentKinds, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUserDataAccountManagerStatics<D>::ShowAccountSettingsAsync(hstring_ref id) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IUserDataAccountManagerStatics &>(static_cast<const D &>(*this))->abi_ShowAccountSettingsAsync(get(id), put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccountManagerStatics)->abi_ShowAccountSettingsAsync(get(id), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUserDataAccountManagerStatics<D>::ShowAccountErrorResolverAsync(hstring_ref id) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IUserDataAccountManagerStatics &>(static_cast<const D &>(*this))->abi_ShowAccountErrorResolverAsync(get(id), put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccountManagerStatics)->abi_ShowAccountErrorResolverAsync(get(id), put(result)));
     return result;
 }
 
 template <typename D> Windows::ApplicationModel::UserDataAccounts::UserDataAccountManagerForUser impl_IUserDataAccountManagerStatics2<D>::GetForUser(const Windows::System::User & user) const
 {
     Windows::ApplicationModel::UserDataAccounts::UserDataAccountManagerForUser result { nullptr };
-    check_hresult(static_cast<const IUserDataAccountManagerStatics2 &>(static_cast<const D &>(*this))->abi_GetForUser(get(user), put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccountManagerStatics2)->abi_GetForUser(get(user), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore> impl_IUserDataAccountManagerForUser<D>::RequestStoreAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType storeAccessType) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore> result;
-    check_hresult(static_cast<const IUserDataAccountManagerForUser &>(static_cast<const D &>(*this))->abi_RequestStoreAsync(storeAccessType, put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccountManagerForUser)->abi_RequestStoreAsync(storeAccessType, put(result)));
     return result;
 }
 
 template <typename D> Windows::System::User impl_IUserDataAccountManagerForUser<D>::User() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(static_cast<const IUserDataAccountManagerForUser &>(static_cast<const D &>(*this))->get_User(put(value)));
+    check_hresult(WINRT_SHIM(IUserDataAccountManagerForUser)->get_User(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IUserDataAccountStoreChangedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral result { nullptr };
-    check_hresult(static_cast<const IUserDataAccountStoreChangedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(result)));
+    check_hresult(WINRT_SHIM(IUserDataAccountStoreChangedEventArgs)->abi_GetDeferral(put(result)));
     return result;
 }
 

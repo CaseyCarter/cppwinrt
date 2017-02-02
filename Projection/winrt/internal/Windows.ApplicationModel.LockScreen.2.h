@@ -89,7 +89,6 @@ struct ILockApplicationHost :
     impl::consume<ILockApplicationHost>
 {
     ILockApplicationHost(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILockApplicationHost>(m_ptr); }
 };
 
 struct ILockApplicationHostStatics :
@@ -97,7 +96,6 @@ struct ILockApplicationHostStatics :
     impl::consume<ILockApplicationHostStatics>
 {
     ILockApplicationHostStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILockApplicationHostStatics>(m_ptr); }
 };
 
 struct ILockScreenBadge :
@@ -105,7 +103,6 @@ struct ILockScreenBadge :
     impl::consume<ILockScreenBadge>
 {
     ILockScreenBadge(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILockScreenBadge>(m_ptr); }
 };
 
 struct ILockScreenInfo :
@@ -113,7 +110,6 @@ struct ILockScreenInfo :
     impl::consume<ILockScreenInfo>
 {
     ILockScreenInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILockScreenInfo>(m_ptr); }
 };
 
 struct ILockScreenUnlockingDeferral :
@@ -121,7 +117,6 @@ struct ILockScreenUnlockingDeferral :
     impl::consume<ILockScreenUnlockingDeferral>
 {
     ILockScreenUnlockingDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILockScreenUnlockingDeferral>(m_ptr); }
 };
 
 struct ILockScreenUnlockingEventArgs :
@@ -129,7 +124,6 @@ struct ILockScreenUnlockingEventArgs :
     impl::consume<ILockScreenUnlockingEventArgs>
 {
     ILockScreenUnlockingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILockScreenUnlockingEventArgs>(m_ptr); }
 };
 
 }

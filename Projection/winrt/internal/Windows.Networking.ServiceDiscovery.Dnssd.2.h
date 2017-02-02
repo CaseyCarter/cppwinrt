@@ -100,7 +100,6 @@ struct IDnssdRegistrationResult :
     impl::consume<IDnssdRegistrationResult>
 {
     IDnssdRegistrationResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDnssdRegistrationResult>(m_ptr); }
 };
 
 struct IDnssdServiceInstance :
@@ -108,7 +107,6 @@ struct IDnssdServiceInstance :
     impl::consume<IDnssdServiceInstance>
 {
     IDnssdServiceInstance(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDnssdServiceInstance>(m_ptr); }
 };
 
 struct IDnssdServiceInstanceFactory :
@@ -116,7 +114,6 @@ struct IDnssdServiceInstanceFactory :
     impl::consume<IDnssdServiceInstanceFactory>
 {
     IDnssdServiceInstanceFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDnssdServiceInstanceFactory>(m_ptr); }
 };
 
 struct IDnssdServiceWatcher :
@@ -124,7 +121,6 @@ struct IDnssdServiceWatcher :
     impl::consume<IDnssdServiceWatcher>
 {
     IDnssdServiceWatcher(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDnssdServiceWatcher>(m_ptr); }
 };
 
 }

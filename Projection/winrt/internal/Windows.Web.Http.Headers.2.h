@@ -351,7 +351,6 @@ struct IHttpCacheDirectiveHeaderValueCollection :
     impl::require<IHttpCacheDirectiveHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpNameValueHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue>>
 {
     IHttpCacheDirectiveHeaderValueCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpCacheDirectiveHeaderValueCollection>(m_ptr); }
 };
 
 struct IHttpChallengeHeaderValue :
@@ -359,7 +358,6 @@ struct IHttpChallengeHeaderValue :
     impl::consume<IHttpChallengeHeaderValue>
 {
     IHttpChallengeHeaderValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpChallengeHeaderValue>(m_ptr); }
 };
 
 struct IHttpChallengeHeaderValueCollection :
@@ -368,7 +366,6 @@ struct IHttpChallengeHeaderValueCollection :
     impl::require<IHttpChallengeHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpChallengeHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpChallengeHeaderValue>>
 {
     IHttpChallengeHeaderValueCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpChallengeHeaderValueCollection>(m_ptr); }
 };
 
 struct IHttpChallengeHeaderValueFactory :
@@ -376,7 +373,6 @@ struct IHttpChallengeHeaderValueFactory :
     impl::consume<IHttpChallengeHeaderValueFactory>
 {
     IHttpChallengeHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpChallengeHeaderValueFactory>(m_ptr); }
 };
 
 struct IHttpChallengeHeaderValueStatics :
@@ -384,7 +380,6 @@ struct IHttpChallengeHeaderValueStatics :
     impl::consume<IHttpChallengeHeaderValueStatics>
 {
     IHttpChallengeHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpChallengeHeaderValueStatics>(m_ptr); }
 };
 
 struct IHttpConnectionOptionHeaderValue :
@@ -392,7 +387,6 @@ struct IHttpConnectionOptionHeaderValue :
     impl::consume<IHttpConnectionOptionHeaderValue>
 {
     IHttpConnectionOptionHeaderValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpConnectionOptionHeaderValue>(m_ptr); }
 };
 
 struct IHttpConnectionOptionHeaderValueCollection :
@@ -401,7 +395,6 @@ struct IHttpConnectionOptionHeaderValueCollection :
     impl::require<IHttpConnectionOptionHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue>>
 {
     IHttpConnectionOptionHeaderValueCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpConnectionOptionHeaderValueCollection>(m_ptr); }
 };
 
 struct IHttpConnectionOptionHeaderValueFactory :
@@ -409,7 +402,6 @@ struct IHttpConnectionOptionHeaderValueFactory :
     impl::consume<IHttpConnectionOptionHeaderValueFactory>
 {
     IHttpConnectionOptionHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpConnectionOptionHeaderValueFactory>(m_ptr); }
 };
 
 struct IHttpConnectionOptionHeaderValueStatics :
@@ -417,7 +409,6 @@ struct IHttpConnectionOptionHeaderValueStatics :
     impl::consume<IHttpConnectionOptionHeaderValueStatics>
 {
     IHttpConnectionOptionHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpConnectionOptionHeaderValueStatics>(m_ptr); }
 };
 
 struct IHttpContentCodingHeaderValue :
@@ -425,7 +416,6 @@ struct IHttpContentCodingHeaderValue :
     impl::consume<IHttpContentCodingHeaderValue>
 {
     IHttpContentCodingHeaderValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpContentCodingHeaderValue>(m_ptr); }
 };
 
 struct IHttpContentCodingHeaderValueCollection :
@@ -434,7 +424,6 @@ struct IHttpContentCodingHeaderValueCollection :
     impl::require<IHttpContentCodingHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpContentCodingHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpContentCodingHeaderValue>>
 {
     IHttpContentCodingHeaderValueCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpContentCodingHeaderValueCollection>(m_ptr); }
 };
 
 struct IHttpContentCodingHeaderValueFactory :
@@ -442,7 +431,6 @@ struct IHttpContentCodingHeaderValueFactory :
     impl::consume<IHttpContentCodingHeaderValueFactory>
 {
     IHttpContentCodingHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpContentCodingHeaderValueFactory>(m_ptr); }
 };
 
 struct IHttpContentCodingHeaderValueStatics :
@@ -450,7 +438,6 @@ struct IHttpContentCodingHeaderValueStatics :
     impl::consume<IHttpContentCodingHeaderValueStatics>
 {
     IHttpContentCodingHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpContentCodingHeaderValueStatics>(m_ptr); }
 };
 
 struct IHttpContentCodingWithQualityHeaderValue :
@@ -458,7 +445,6 @@ struct IHttpContentCodingWithQualityHeaderValue :
     impl::consume<IHttpContentCodingWithQualityHeaderValue>
 {
     IHttpContentCodingWithQualityHeaderValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpContentCodingWithQualityHeaderValue>(m_ptr); }
 };
 
 struct IHttpContentCodingWithQualityHeaderValueCollection :
@@ -467,7 +453,6 @@ struct IHttpContentCodingWithQualityHeaderValueCollection :
     impl::require<IHttpContentCodingWithQualityHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue>>
 {
     IHttpContentCodingWithQualityHeaderValueCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpContentCodingWithQualityHeaderValueCollection>(m_ptr); }
 };
 
 struct IHttpContentCodingWithQualityHeaderValueFactory :
@@ -475,7 +460,6 @@ struct IHttpContentCodingWithQualityHeaderValueFactory :
     impl::consume<IHttpContentCodingWithQualityHeaderValueFactory>
 {
     IHttpContentCodingWithQualityHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpContentCodingWithQualityHeaderValueFactory>(m_ptr); }
 };
 
 struct IHttpContentCodingWithQualityHeaderValueStatics :
@@ -483,7 +467,6 @@ struct IHttpContentCodingWithQualityHeaderValueStatics :
     impl::consume<IHttpContentCodingWithQualityHeaderValueStatics>
 {
     IHttpContentCodingWithQualityHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpContentCodingWithQualityHeaderValueStatics>(m_ptr); }
 };
 
 struct IHttpContentDispositionHeaderValue :
@@ -491,7 +474,6 @@ struct IHttpContentDispositionHeaderValue :
     impl::consume<IHttpContentDispositionHeaderValue>
 {
     IHttpContentDispositionHeaderValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpContentDispositionHeaderValue>(m_ptr); }
 };
 
 struct IHttpContentDispositionHeaderValueFactory :
@@ -499,7 +481,6 @@ struct IHttpContentDispositionHeaderValueFactory :
     impl::consume<IHttpContentDispositionHeaderValueFactory>
 {
     IHttpContentDispositionHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpContentDispositionHeaderValueFactory>(m_ptr); }
 };
 
 struct IHttpContentDispositionHeaderValueStatics :
@@ -507,7 +488,6 @@ struct IHttpContentDispositionHeaderValueStatics :
     impl::consume<IHttpContentDispositionHeaderValueStatics>
 {
     IHttpContentDispositionHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpContentDispositionHeaderValueStatics>(m_ptr); }
 };
 
 struct IHttpContentHeaderCollection :
@@ -516,7 +496,6 @@ struct IHttpContentHeaderCollection :
     impl::require<IHttpContentHeaderCollection, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>>, Windows::Foundation::Collections::IMap<hstring, hstring>>
 {
     IHttpContentHeaderCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpContentHeaderCollection>(m_ptr); }
 };
 
 struct IHttpContentRangeHeaderValue :
@@ -524,7 +503,6 @@ struct IHttpContentRangeHeaderValue :
     impl::consume<IHttpContentRangeHeaderValue>
 {
     IHttpContentRangeHeaderValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpContentRangeHeaderValue>(m_ptr); }
 };
 
 struct IHttpContentRangeHeaderValueFactory :
@@ -532,7 +510,6 @@ struct IHttpContentRangeHeaderValueFactory :
     impl::consume<IHttpContentRangeHeaderValueFactory>
 {
     IHttpContentRangeHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpContentRangeHeaderValueFactory>(m_ptr); }
 };
 
 struct IHttpContentRangeHeaderValueStatics :
@@ -540,7 +517,6 @@ struct IHttpContentRangeHeaderValueStatics :
     impl::consume<IHttpContentRangeHeaderValueStatics>
 {
     IHttpContentRangeHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpContentRangeHeaderValueStatics>(m_ptr); }
 };
 
 struct IHttpCookiePairHeaderValue :
@@ -548,7 +524,6 @@ struct IHttpCookiePairHeaderValue :
     impl::consume<IHttpCookiePairHeaderValue>
 {
     IHttpCookiePairHeaderValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpCookiePairHeaderValue>(m_ptr); }
 };
 
 struct IHttpCookiePairHeaderValueCollection :
@@ -557,7 +532,6 @@ struct IHttpCookiePairHeaderValueCollection :
     impl::require<IHttpCookiePairHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpCookiePairHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpCookiePairHeaderValue>>
 {
     IHttpCookiePairHeaderValueCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpCookiePairHeaderValueCollection>(m_ptr); }
 };
 
 struct IHttpCookiePairHeaderValueFactory :
@@ -565,7 +539,6 @@ struct IHttpCookiePairHeaderValueFactory :
     impl::consume<IHttpCookiePairHeaderValueFactory>
 {
     IHttpCookiePairHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpCookiePairHeaderValueFactory>(m_ptr); }
 };
 
 struct IHttpCookiePairHeaderValueStatics :
@@ -573,7 +546,6 @@ struct IHttpCookiePairHeaderValueStatics :
     impl::consume<IHttpCookiePairHeaderValueStatics>
 {
     IHttpCookiePairHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpCookiePairHeaderValueStatics>(m_ptr); }
 };
 
 struct IHttpCredentialsHeaderValue :
@@ -581,7 +553,6 @@ struct IHttpCredentialsHeaderValue :
     impl::consume<IHttpCredentialsHeaderValue>
 {
     IHttpCredentialsHeaderValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpCredentialsHeaderValue>(m_ptr); }
 };
 
 struct IHttpCredentialsHeaderValueFactory :
@@ -589,7 +560,6 @@ struct IHttpCredentialsHeaderValueFactory :
     impl::consume<IHttpCredentialsHeaderValueFactory>
 {
     IHttpCredentialsHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpCredentialsHeaderValueFactory>(m_ptr); }
 };
 
 struct IHttpCredentialsHeaderValueStatics :
@@ -597,7 +567,6 @@ struct IHttpCredentialsHeaderValueStatics :
     impl::consume<IHttpCredentialsHeaderValueStatics>
 {
     IHttpCredentialsHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpCredentialsHeaderValueStatics>(m_ptr); }
 };
 
 struct IHttpDateOrDeltaHeaderValue :
@@ -605,7 +574,6 @@ struct IHttpDateOrDeltaHeaderValue :
     impl::consume<IHttpDateOrDeltaHeaderValue>
 {
     IHttpDateOrDeltaHeaderValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpDateOrDeltaHeaderValue>(m_ptr); }
 };
 
 struct IHttpDateOrDeltaHeaderValueStatics :
@@ -613,7 +581,6 @@ struct IHttpDateOrDeltaHeaderValueStatics :
     impl::consume<IHttpDateOrDeltaHeaderValueStatics>
 {
     IHttpDateOrDeltaHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpDateOrDeltaHeaderValueStatics>(m_ptr); }
 };
 
 struct IHttpExpectationHeaderValue :
@@ -621,7 +588,6 @@ struct IHttpExpectationHeaderValue :
     impl::consume<IHttpExpectationHeaderValue>
 {
     IHttpExpectationHeaderValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpExpectationHeaderValue>(m_ptr); }
 };
 
 struct IHttpExpectationHeaderValueCollection :
@@ -630,7 +596,6 @@ struct IHttpExpectationHeaderValueCollection :
     impl::require<IHttpExpectationHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpExpectationHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpExpectationHeaderValue>>
 {
     IHttpExpectationHeaderValueCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpExpectationHeaderValueCollection>(m_ptr); }
 };
 
 struct IHttpExpectationHeaderValueFactory :
@@ -638,7 +603,6 @@ struct IHttpExpectationHeaderValueFactory :
     impl::consume<IHttpExpectationHeaderValueFactory>
 {
     IHttpExpectationHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpExpectationHeaderValueFactory>(m_ptr); }
 };
 
 struct IHttpExpectationHeaderValueStatics :
@@ -646,7 +610,6 @@ struct IHttpExpectationHeaderValueStatics :
     impl::consume<IHttpExpectationHeaderValueStatics>
 {
     IHttpExpectationHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpExpectationHeaderValueStatics>(m_ptr); }
 };
 
 struct IHttpLanguageHeaderValueCollection :
@@ -655,7 +618,6 @@ struct IHttpLanguageHeaderValueCollection :
     impl::require<IHttpLanguageHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Globalization::Language>, Windows::Foundation::Collections::IVector<Windows::Globalization::Language>>
 {
     IHttpLanguageHeaderValueCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpLanguageHeaderValueCollection>(m_ptr); }
 };
 
 struct IHttpLanguageRangeWithQualityHeaderValue :
@@ -663,7 +625,6 @@ struct IHttpLanguageRangeWithQualityHeaderValue :
     impl::consume<IHttpLanguageRangeWithQualityHeaderValue>
 {
     IHttpLanguageRangeWithQualityHeaderValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpLanguageRangeWithQualityHeaderValue>(m_ptr); }
 };
 
 struct IHttpLanguageRangeWithQualityHeaderValueCollection :
@@ -672,7 +633,6 @@ struct IHttpLanguageRangeWithQualityHeaderValueCollection :
     impl::require<IHttpLanguageRangeWithQualityHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue>>
 {
     IHttpLanguageRangeWithQualityHeaderValueCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpLanguageRangeWithQualityHeaderValueCollection>(m_ptr); }
 };
 
 struct IHttpLanguageRangeWithQualityHeaderValueFactory :
@@ -680,7 +640,6 @@ struct IHttpLanguageRangeWithQualityHeaderValueFactory :
     impl::consume<IHttpLanguageRangeWithQualityHeaderValueFactory>
 {
     IHttpLanguageRangeWithQualityHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpLanguageRangeWithQualityHeaderValueFactory>(m_ptr); }
 };
 
 struct IHttpLanguageRangeWithQualityHeaderValueStatics :
@@ -688,7 +647,6 @@ struct IHttpLanguageRangeWithQualityHeaderValueStatics :
     impl::consume<IHttpLanguageRangeWithQualityHeaderValueStatics>
 {
     IHttpLanguageRangeWithQualityHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpLanguageRangeWithQualityHeaderValueStatics>(m_ptr); }
 };
 
 struct IHttpMediaTypeHeaderValue :
@@ -696,7 +654,6 @@ struct IHttpMediaTypeHeaderValue :
     impl::consume<IHttpMediaTypeHeaderValue>
 {
     IHttpMediaTypeHeaderValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpMediaTypeHeaderValue>(m_ptr); }
 };
 
 struct IHttpMediaTypeHeaderValueFactory :
@@ -704,7 +661,6 @@ struct IHttpMediaTypeHeaderValueFactory :
     impl::consume<IHttpMediaTypeHeaderValueFactory>
 {
     IHttpMediaTypeHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpMediaTypeHeaderValueFactory>(m_ptr); }
 };
 
 struct IHttpMediaTypeHeaderValueStatics :
@@ -712,7 +668,6 @@ struct IHttpMediaTypeHeaderValueStatics :
     impl::consume<IHttpMediaTypeHeaderValueStatics>
 {
     IHttpMediaTypeHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpMediaTypeHeaderValueStatics>(m_ptr); }
 };
 
 struct IHttpMediaTypeWithQualityHeaderValue :
@@ -720,7 +675,6 @@ struct IHttpMediaTypeWithQualityHeaderValue :
     impl::consume<IHttpMediaTypeWithQualityHeaderValue>
 {
     IHttpMediaTypeWithQualityHeaderValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpMediaTypeWithQualityHeaderValue>(m_ptr); }
 };
 
 struct IHttpMediaTypeWithQualityHeaderValueCollection :
@@ -729,7 +683,6 @@ struct IHttpMediaTypeWithQualityHeaderValueCollection :
     impl::require<IHttpMediaTypeWithQualityHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue>>
 {
     IHttpMediaTypeWithQualityHeaderValueCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpMediaTypeWithQualityHeaderValueCollection>(m_ptr); }
 };
 
 struct IHttpMediaTypeWithQualityHeaderValueFactory :
@@ -737,7 +690,6 @@ struct IHttpMediaTypeWithQualityHeaderValueFactory :
     impl::consume<IHttpMediaTypeWithQualityHeaderValueFactory>
 {
     IHttpMediaTypeWithQualityHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpMediaTypeWithQualityHeaderValueFactory>(m_ptr); }
 };
 
 struct IHttpMediaTypeWithQualityHeaderValueStatics :
@@ -745,7 +697,6 @@ struct IHttpMediaTypeWithQualityHeaderValueStatics :
     impl::consume<IHttpMediaTypeWithQualityHeaderValueStatics>
 {
     IHttpMediaTypeWithQualityHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpMediaTypeWithQualityHeaderValueStatics>(m_ptr); }
 };
 
 struct IHttpMethodHeaderValueCollection :
@@ -754,7 +705,6 @@ struct IHttpMethodHeaderValueCollection :
     impl::require<IHttpMethodHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::HttpMethod>, Windows::Foundation::Collections::IVector<Windows::Web::Http::HttpMethod>>
 {
     IHttpMethodHeaderValueCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpMethodHeaderValueCollection>(m_ptr); }
 };
 
 struct IHttpNameValueHeaderValue :
@@ -762,7 +712,6 @@ struct IHttpNameValueHeaderValue :
     impl::consume<IHttpNameValueHeaderValue>
 {
     IHttpNameValueHeaderValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpNameValueHeaderValue>(m_ptr); }
 };
 
 struct IHttpNameValueHeaderValueFactory :
@@ -770,7 +719,6 @@ struct IHttpNameValueHeaderValueFactory :
     impl::consume<IHttpNameValueHeaderValueFactory>
 {
     IHttpNameValueHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpNameValueHeaderValueFactory>(m_ptr); }
 };
 
 struct IHttpNameValueHeaderValueStatics :
@@ -778,7 +726,6 @@ struct IHttpNameValueHeaderValueStatics :
     impl::consume<IHttpNameValueHeaderValueStatics>
 {
     IHttpNameValueHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpNameValueHeaderValueStatics>(m_ptr); }
 };
 
 struct IHttpProductHeaderValue :
@@ -786,7 +733,6 @@ struct IHttpProductHeaderValue :
     impl::consume<IHttpProductHeaderValue>
 {
     IHttpProductHeaderValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpProductHeaderValue>(m_ptr); }
 };
 
 struct IHttpProductHeaderValueFactory :
@@ -794,7 +740,6 @@ struct IHttpProductHeaderValueFactory :
     impl::consume<IHttpProductHeaderValueFactory>
 {
     IHttpProductHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpProductHeaderValueFactory>(m_ptr); }
 };
 
 struct IHttpProductHeaderValueStatics :
@@ -802,7 +747,6 @@ struct IHttpProductHeaderValueStatics :
     impl::consume<IHttpProductHeaderValueStatics>
 {
     IHttpProductHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpProductHeaderValueStatics>(m_ptr); }
 };
 
 struct IHttpProductInfoHeaderValue :
@@ -810,7 +754,6 @@ struct IHttpProductInfoHeaderValue :
     impl::consume<IHttpProductInfoHeaderValue>
 {
     IHttpProductInfoHeaderValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpProductInfoHeaderValue>(m_ptr); }
 };
 
 struct IHttpProductInfoHeaderValueCollection :
@@ -819,7 +762,6 @@ struct IHttpProductInfoHeaderValueCollection :
     impl::require<IHttpProductInfoHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpProductInfoHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpProductInfoHeaderValue>>
 {
     IHttpProductInfoHeaderValueCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpProductInfoHeaderValueCollection>(m_ptr); }
 };
 
 struct IHttpProductInfoHeaderValueFactory :
@@ -827,7 +769,6 @@ struct IHttpProductInfoHeaderValueFactory :
     impl::consume<IHttpProductInfoHeaderValueFactory>
 {
     IHttpProductInfoHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpProductInfoHeaderValueFactory>(m_ptr); }
 };
 
 struct IHttpProductInfoHeaderValueStatics :
@@ -835,7 +776,6 @@ struct IHttpProductInfoHeaderValueStatics :
     impl::consume<IHttpProductInfoHeaderValueStatics>
 {
     IHttpProductInfoHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpProductInfoHeaderValueStatics>(m_ptr); }
 };
 
 struct IHttpRequestHeaderCollection :
@@ -844,7 +784,6 @@ struct IHttpRequestHeaderCollection :
     impl::require<IHttpRequestHeaderCollection, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>>, Windows::Foundation::Collections::IMap<hstring, hstring>>
 {
     IHttpRequestHeaderCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpRequestHeaderCollection>(m_ptr); }
 };
 
 struct IHttpResponseHeaderCollection :
@@ -853,7 +792,6 @@ struct IHttpResponseHeaderCollection :
     impl::require<IHttpResponseHeaderCollection, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>>, Windows::Foundation::Collections::IMap<hstring, hstring>>
 {
     IHttpResponseHeaderCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpResponseHeaderCollection>(m_ptr); }
 };
 
 struct IHttpTransferCodingHeaderValue :
@@ -861,7 +799,6 @@ struct IHttpTransferCodingHeaderValue :
     impl::consume<IHttpTransferCodingHeaderValue>
 {
     IHttpTransferCodingHeaderValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpTransferCodingHeaderValue>(m_ptr); }
 };
 
 struct IHttpTransferCodingHeaderValueCollection :
@@ -870,7 +807,6 @@ struct IHttpTransferCodingHeaderValueCollection :
     impl::require<IHttpTransferCodingHeaderValueCollection, Windows::Foundation::Collections::IIterable<Windows::Web::Http::Headers::HttpTransferCodingHeaderValue>, Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpTransferCodingHeaderValue>>
 {
     IHttpTransferCodingHeaderValueCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpTransferCodingHeaderValueCollection>(m_ptr); }
 };
 
 struct IHttpTransferCodingHeaderValueFactory :
@@ -878,7 +814,6 @@ struct IHttpTransferCodingHeaderValueFactory :
     impl::consume<IHttpTransferCodingHeaderValueFactory>
 {
     IHttpTransferCodingHeaderValueFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpTransferCodingHeaderValueFactory>(m_ptr); }
 };
 
 struct IHttpTransferCodingHeaderValueStatics :
@@ -886,7 +821,6 @@ struct IHttpTransferCodingHeaderValueStatics :
     impl::consume<IHttpTransferCodingHeaderValueStatics>
 {
     IHttpTransferCodingHeaderValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpTransferCodingHeaderValueStatics>(m_ptr); }
 };
 
 }

@@ -44,7 +44,6 @@ struct IGpioControllerProvider :
     impl::consume<IGpioControllerProvider>
 {
     IGpioControllerProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGpioControllerProvider>(m_ptr); }
 };
 
 struct IGpioPinProvider :
@@ -52,7 +51,6 @@ struct IGpioPinProvider :
     impl::consume<IGpioPinProvider>
 {
     IGpioPinProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGpioPinProvider>(m_ptr); }
 };
 
 struct IGpioPinProviderValueChangedEventArgs :
@@ -60,7 +58,6 @@ struct IGpioPinProviderValueChangedEventArgs :
     impl::consume<IGpioPinProviderValueChangedEventArgs>
 {
     IGpioPinProviderValueChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGpioPinProviderValueChangedEventArgs>(m_ptr); }
 };
 
 struct IGpioPinProviderValueChangedEventArgsFactory :
@@ -68,7 +65,6 @@ struct IGpioPinProviderValueChangedEventArgsFactory :
     impl::consume<IGpioPinProviderValueChangedEventArgsFactory>
 {
     IGpioPinProviderValueChangedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGpioPinProviderValueChangedEventArgsFactory>(m_ptr); }
 };
 
 struct IGpioProvider :
@@ -76,7 +72,6 @@ struct IGpioProvider :
     impl::consume<IGpioProvider>
 {
     IGpioProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGpioProvider>(m_ptr); }
 };
 
 }

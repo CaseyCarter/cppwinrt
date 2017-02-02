@@ -60,7 +60,6 @@ struct ICurrencyFormatter :
     impl::require<ICurrencyFormatter, Windows::Globalization::NumberFormatting::INumberFormatter, Windows::Globalization::NumberFormatting::INumberFormatter2, Windows::Globalization::NumberFormatting::INumberFormatterOptions, Windows::Globalization::NumberFormatting::INumberParser>
 {
     ICurrencyFormatter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICurrencyFormatter>(m_ptr); }
 };
 
 struct ICurrencyFormatter2 :
@@ -68,7 +67,6 @@ struct ICurrencyFormatter2 :
     impl::consume<ICurrencyFormatter2>
 {
     ICurrencyFormatter2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICurrencyFormatter2>(m_ptr); }
 };
 
 struct ICurrencyFormatterFactory :
@@ -76,7 +74,6 @@ struct ICurrencyFormatterFactory :
     impl::consume<ICurrencyFormatterFactory>
 {
     ICurrencyFormatterFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICurrencyFormatterFactory>(m_ptr); }
 };
 
 struct IDecimalFormatterFactory :
@@ -84,7 +81,6 @@ struct IDecimalFormatterFactory :
     impl::consume<IDecimalFormatterFactory>
 {
     IDecimalFormatterFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDecimalFormatterFactory>(m_ptr); }
 };
 
 struct IIncrementNumberRounder :
@@ -92,7 +88,6 @@ struct IIncrementNumberRounder :
     impl::consume<IIncrementNumberRounder>
 {
     IIncrementNumberRounder(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IIncrementNumberRounder>(m_ptr); }
 };
 
 struct INumberFormatter :
@@ -100,7 +95,6 @@ struct INumberFormatter :
     impl::consume<INumberFormatter>
 {
     INumberFormatter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INumberFormatter>(m_ptr); }
 };
 
 struct INumberFormatter2 :
@@ -108,7 +102,6 @@ struct INumberFormatter2 :
     impl::consume<INumberFormatter2>
 {
     INumberFormatter2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INumberFormatter2>(m_ptr); }
 };
 
 struct INumberFormatterOptions :
@@ -116,7 +109,6 @@ struct INumberFormatterOptions :
     impl::consume<INumberFormatterOptions>
 {
     INumberFormatterOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INumberFormatterOptions>(m_ptr); }
 };
 
 struct INumberParser :
@@ -124,7 +116,6 @@ struct INumberParser :
     impl::consume<INumberParser>
 {
     INumberParser(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INumberParser>(m_ptr); }
 };
 
 struct INumberRounder :
@@ -132,7 +123,6 @@ struct INumberRounder :
     impl::consume<INumberRounder>
 {
     INumberRounder(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INumberRounder>(m_ptr); }
 };
 
 struct INumberRounderOption :
@@ -140,7 +130,6 @@ struct INumberRounderOption :
     impl::consume<INumberRounderOption>
 {
     INumberRounderOption(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INumberRounderOption>(m_ptr); }
 };
 
 struct INumeralSystemTranslator :
@@ -148,7 +137,6 @@ struct INumeralSystemTranslator :
     impl::consume<INumeralSystemTranslator>
 {
     INumeralSystemTranslator(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INumeralSystemTranslator>(m_ptr); }
 };
 
 struct INumeralSystemTranslatorFactory :
@@ -156,7 +144,6 @@ struct INumeralSystemTranslatorFactory :
     impl::consume<INumeralSystemTranslatorFactory>
 {
     INumeralSystemTranslatorFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INumeralSystemTranslatorFactory>(m_ptr); }
 };
 
 struct IPercentFormatterFactory :
@@ -164,7 +151,6 @@ struct IPercentFormatterFactory :
     impl::consume<IPercentFormatterFactory>
 {
     IPercentFormatterFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPercentFormatterFactory>(m_ptr); }
 };
 
 struct IPermilleFormatterFactory :
@@ -172,7 +158,6 @@ struct IPermilleFormatterFactory :
     impl::consume<IPermilleFormatterFactory>
 {
     IPermilleFormatterFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPermilleFormatterFactory>(m_ptr); }
 };
 
 struct ISignedZeroOption :
@@ -180,7 +165,6 @@ struct ISignedZeroOption :
     impl::consume<ISignedZeroOption>
 {
     ISignedZeroOption(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISignedZeroOption>(m_ptr); }
 };
 
 struct ISignificantDigitsNumberRounder :
@@ -188,7 +172,6 @@ struct ISignificantDigitsNumberRounder :
     impl::consume<ISignificantDigitsNumberRounder>
 {
     ISignificantDigitsNumberRounder(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISignificantDigitsNumberRounder>(m_ptr); }
 };
 
 struct ISignificantDigitsOption :
@@ -196,7 +179,6 @@ struct ISignificantDigitsOption :
     impl::consume<ISignificantDigitsOption>
 {
     ISignificantDigitsOption(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISignificantDigitsOption>(m_ptr); }
 };
 
 }

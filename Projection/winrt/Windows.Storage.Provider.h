@@ -349,26 +349,26 @@ namespace Windows::Storage::Provider {
 template <typename D> hstring impl_ICachedFileUpdaterUI<D>::Title() const
 {
     hstring value;
-    check_hresult(static_cast<const ICachedFileUpdaterUI &>(static_cast<const D &>(*this))->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICachedFileUpdaterUI<D>::Title(hstring_ref value) const
 {
-    check_hresult(static_cast<const ICachedFileUpdaterUI &>(static_cast<const D &>(*this))->put_Title(get(value)));
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->put_Title(get(value)));
 }
 
 template <typename D> Windows::Storage::Provider::CachedFileTarget impl_ICachedFileUpdaterUI<D>::UpdateTarget() const
 {
     Windows::Storage::Provider::CachedFileTarget value {};
-    check_hresult(static_cast<const ICachedFileUpdaterUI &>(static_cast<const D &>(*this))->get_UpdateTarget(&value));
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->get_UpdateTarget(&value));
     return value;
 }
 
 template <typename D> event_token impl_ICachedFileUpdaterUI<D>::FileUpdateRequested(const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::Storage::Provider::FileUpdateRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ICachedFileUpdaterUI &>(static_cast<const D &>(*this))->add_FileUpdateRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->add_FileUpdateRequested(get(handler), &token));
     return token;
 }
 
@@ -379,13 +379,13 @@ template <typename D> event_revoker<ICachedFileUpdaterUI> impl_ICachedFileUpdate
 
 template <typename D> void impl_ICachedFileUpdaterUI<D>::FileUpdateRequested(event_token token) const
 {
-    check_hresult(static_cast<const ICachedFileUpdaterUI &>(static_cast<const D &>(*this))->remove_FileUpdateRequested(token));
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->remove_FileUpdateRequested(token));
 }
 
 template <typename D> event_token impl_ICachedFileUpdaterUI<D>::UIRequested(const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ICachedFileUpdaterUI &>(static_cast<const D &>(*this))->add_UIRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->add_UIRequested(get(handler), &token));
     return token;
 }
 
@@ -396,95 +396,95 @@ template <typename D> event_revoker<ICachedFileUpdaterUI> impl_ICachedFileUpdate
 
 template <typename D> void impl_ICachedFileUpdaterUI<D>::UIRequested(event_token token) const
 {
-    check_hresult(static_cast<const ICachedFileUpdaterUI &>(static_cast<const D &>(*this))->remove_UIRequested(token));
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->remove_UIRequested(token));
 }
 
 template <typename D> Windows::Storage::Provider::UIStatus impl_ICachedFileUpdaterUI<D>::UIStatus() const
 {
     Windows::Storage::Provider::UIStatus value {};
-    check_hresult(static_cast<const ICachedFileUpdaterUI &>(static_cast<const D &>(*this))->get_UIStatus(&value));
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI)->get_UIStatus(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Provider::FileUpdateRequest impl_IFileUpdateRequestedEventArgs<D>::Request() const
 {
     Windows::Storage::Provider::FileUpdateRequest value { nullptr };
-    check_hresult(static_cast<const IFileUpdateRequestedEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IFileUpdateRequestedEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IFileUpdateRequest<D>::ContentId() const
 {
     hstring value;
-    check_hresult(static_cast<const IFileUpdateRequest &>(static_cast<const D &>(*this))->get_ContentId(put(value)));
+    check_hresult(WINRT_SHIM(IFileUpdateRequest)->get_ContentId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFile impl_IFileUpdateRequest<D>::File() const
 {
     Windows::Storage::StorageFile value { nullptr };
-    check_hresult(static_cast<const IFileUpdateRequest &>(static_cast<const D &>(*this))->get_File(put(value)));
+    check_hresult(WINRT_SHIM(IFileUpdateRequest)->get_File(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Provider::FileUpdateStatus impl_IFileUpdateRequest<D>::Status() const
 {
     Windows::Storage::Provider::FileUpdateStatus value {};
-    check_hresult(static_cast<const IFileUpdateRequest &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IFileUpdateRequest)->get_Status(&value));
     return value;
 }
 
 template <typename D> void impl_IFileUpdateRequest<D>::Status(Windows::Storage::Provider::FileUpdateStatus value) const
 {
-    check_hresult(static_cast<const IFileUpdateRequest &>(static_cast<const D &>(*this))->put_Status(value));
+    check_hresult(WINRT_SHIM(IFileUpdateRequest)->put_Status(value));
 }
 
 template <typename D> Windows::Storage::Provider::FileUpdateRequestDeferral impl_IFileUpdateRequest<D>::GetDeferral() const
 {
     Windows::Storage::Provider::FileUpdateRequestDeferral value { nullptr };
-    check_hresult(static_cast<const IFileUpdateRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IFileUpdateRequest)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFileUpdateRequest<D>::UpdateLocalFile(const Windows::Storage::IStorageFile & value) const
 {
-    check_hresult(static_cast<const IFileUpdateRequest &>(static_cast<const D &>(*this))->abi_UpdateLocalFile(get(value)));
+    check_hresult(WINRT_SHIM(IFileUpdateRequest)->abi_UpdateLocalFile(get(value)));
 }
 
 template <typename D> void impl_IFileUpdateRequestDeferral<D>::Complete() const
 {
-    check_hresult(static_cast<const IFileUpdateRequestDeferral &>(static_cast<const D &>(*this))->abi_Complete());
+    check_hresult(WINRT_SHIM(IFileUpdateRequestDeferral)->abi_Complete());
 }
 
 template <typename D> Windows::Storage::Provider::FileUpdateRequest impl_ICachedFileUpdaterUI2<D>::UpdateRequest() const
 {
     Windows::Storage::Provider::FileUpdateRequest value { nullptr };
-    check_hresult(static_cast<const ICachedFileUpdaterUI2 &>(static_cast<const D &>(*this))->get_UpdateRequest(put(value)));
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI2)->get_UpdateRequest(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Provider::FileUpdateRequestDeferral impl_ICachedFileUpdaterUI2<D>::GetDeferral() const
 {
     Windows::Storage::Provider::FileUpdateRequestDeferral value { nullptr };
-    check_hresult(static_cast<const ICachedFileUpdaterUI2 &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterUI2)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IFileUpdateRequest2<D>::UserInputNeededMessage() const
 {
     hstring value;
-    check_hresult(static_cast<const IFileUpdateRequest2 &>(static_cast<const D &>(*this))->get_UserInputNeededMessage(put(value)));
+    check_hresult(WINRT_SHIM(IFileUpdateRequest2)->get_UserInputNeededMessage(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFileUpdateRequest2<D>::UserInputNeededMessage(hstring_ref value) const
 {
-    check_hresult(static_cast<const IFileUpdateRequest2 &>(static_cast<const D &>(*this))->put_UserInputNeededMessage(get(value)));
+    check_hresult(WINRT_SHIM(IFileUpdateRequest2)->put_UserInputNeededMessage(get(value)));
 }
 
 template <typename D> void impl_ICachedFileUpdaterStatics<D>::SetUpdateInformation(const Windows::Storage::IStorageFile & file, hstring_ref contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options) const
 {
-    check_hresult(static_cast<const ICachedFileUpdaterStatics &>(static_cast<const D &>(*this))->abi_SetUpdateInformation(get(file), get(contentId), readMode, writeMode, options));
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterStatics)->abi_SetUpdateInformation(get(file), get(contentId), readMode, writeMode, options));
 }
 
 inline void CachedFileUpdater::SetUpdateInformation(const Windows::Storage::IStorageFile & file, hstring_ref contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options)

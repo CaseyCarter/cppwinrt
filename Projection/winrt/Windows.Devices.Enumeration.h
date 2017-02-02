@@ -1808,147 +1808,147 @@ namespace Windows::Devices::Enumeration {
 template <typename D> hstring impl_IDeviceConnectionChangeTriggerDetails<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IDeviceConnectionChangeTriggerDetails &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceConnectionChangeTriggerDetails)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDevicePickerAppearance<D>::Title() const
 {
     hstring value;
-    check_hresult(static_cast<const IDevicePickerAppearance &>(static_cast<const D &>(*this))->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(IDevicePickerAppearance)->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDevicePickerAppearance<D>::Title(hstring_ref value) const
 {
-    check_hresult(static_cast<const IDevicePickerAppearance &>(static_cast<const D &>(*this))->put_Title(get(value)));
+    check_hresult(WINRT_SHIM(IDevicePickerAppearance)->put_Title(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_IDevicePickerAppearance<D>::ForegroundColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(static_cast<const IDevicePickerAppearance &>(static_cast<const D &>(*this))->get_ForegroundColor(put(value)));
+    check_hresult(WINRT_SHIM(IDevicePickerAppearance)->get_ForegroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDevicePickerAppearance<D>::ForegroundColor(const Windows::UI::Color & value) const
 {
-    check_hresult(static_cast<const IDevicePickerAppearance &>(static_cast<const D &>(*this))->put_ForegroundColor(get(value)));
+    check_hresult(WINRT_SHIM(IDevicePickerAppearance)->put_ForegroundColor(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_IDevicePickerAppearance<D>::BackgroundColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(static_cast<const IDevicePickerAppearance &>(static_cast<const D &>(*this))->get_BackgroundColor(put(value)));
+    check_hresult(WINRT_SHIM(IDevicePickerAppearance)->get_BackgroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDevicePickerAppearance<D>::BackgroundColor(const Windows::UI::Color & value) const
 {
-    check_hresult(static_cast<const IDevicePickerAppearance &>(static_cast<const D &>(*this))->put_BackgroundColor(get(value)));
+    check_hresult(WINRT_SHIM(IDevicePickerAppearance)->put_BackgroundColor(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_IDevicePickerAppearance<D>::AccentColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(static_cast<const IDevicePickerAppearance &>(static_cast<const D &>(*this))->get_AccentColor(put(value)));
+    check_hresult(WINRT_SHIM(IDevicePickerAppearance)->get_AccentColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDevicePickerAppearance<D>::AccentColor(const Windows::UI::Color & value) const
 {
-    check_hresult(static_cast<const IDevicePickerAppearance &>(static_cast<const D &>(*this))->put_AccentColor(get(value)));
+    check_hresult(WINRT_SHIM(IDevicePickerAppearance)->put_AccentColor(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_IDevicePickerAppearance<D>::SelectedForegroundColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(static_cast<const IDevicePickerAppearance &>(static_cast<const D &>(*this))->get_SelectedForegroundColor(put(value)));
+    check_hresult(WINRT_SHIM(IDevicePickerAppearance)->get_SelectedForegroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDevicePickerAppearance<D>::SelectedForegroundColor(const Windows::UI::Color & value) const
 {
-    check_hresult(static_cast<const IDevicePickerAppearance &>(static_cast<const D &>(*this))->put_SelectedForegroundColor(get(value)));
+    check_hresult(WINRT_SHIM(IDevicePickerAppearance)->put_SelectedForegroundColor(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_IDevicePickerAppearance<D>::SelectedBackgroundColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(static_cast<const IDevicePickerAppearance &>(static_cast<const D &>(*this))->get_SelectedBackgroundColor(put(value)));
+    check_hresult(WINRT_SHIM(IDevicePickerAppearance)->get_SelectedBackgroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDevicePickerAppearance<D>::SelectedBackgroundColor(const Windows::UI::Color & value) const
 {
-    check_hresult(static_cast<const IDevicePickerAppearance &>(static_cast<const D &>(*this))->put_SelectedBackgroundColor(get(value)));
+    check_hresult(WINRT_SHIM(IDevicePickerAppearance)->put_SelectedBackgroundColor(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_IDevicePickerAppearance<D>::SelectedAccentColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(static_cast<const IDevicePickerAppearance &>(static_cast<const D &>(*this))->get_SelectedAccentColor(put(value)));
+    check_hresult(WINRT_SHIM(IDevicePickerAppearance)->get_SelectedAccentColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDevicePickerAppearance<D>::SelectedAccentColor(const Windows::UI::Color & value) const
 {
-    check_hresult(static_cast<const IDevicePickerAppearance &>(static_cast<const D &>(*this))->put_SelectedAccentColor(get(value)));
+    check_hresult(WINRT_SHIM(IDevicePickerAppearance)->put_SelectedAccentColor(get(value)));
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IDeviceSelectedEventArgs<D>::SelectedDevice() const
 {
     Windows::Devices::Enumeration::DeviceInformation value { nullptr };
-    check_hresult(static_cast<const IDeviceSelectedEventArgs &>(static_cast<const D &>(*this))->get_SelectedDevice(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceSelectedEventArgs)->get_SelectedDevice(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IDeviceDisconnectButtonClickedEventArgs<D>::Device() const
 {
     Windows::Devices::Enumeration::DeviceInformation value { nullptr };
-    check_hresult(static_cast<const IDeviceDisconnectButtonClickedEventArgs &>(static_cast<const D &>(*this))->get_Device(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceDisconnectButtonClickedEventArgs)->get_Device(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Enumeration::DeviceClass> impl_IDevicePickerFilter<D>::SupportedDeviceClasses() const
 {
     Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Enumeration::DeviceClass> value;
-    check_hresult(static_cast<const IDevicePickerFilter &>(static_cast<const D &>(*this))->get_SupportedDeviceClasses(put(value)));
+    check_hresult(WINRT_SHIM(IDevicePickerFilter)->get_SupportedDeviceClasses(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IDevicePickerFilter<D>::SupportedDeviceSelectors() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IDevicePickerFilter &>(static_cast<const D &>(*this))->get_SupportedDeviceSelectors(put(value)));
+    check_hresult(WINRT_SHIM(IDevicePickerFilter)->get_SupportedDeviceSelectors(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DevicePickerFilter impl_IDevicePicker<D>::Filter() const
 {
     Windows::Devices::Enumeration::DevicePickerFilter filter { nullptr };
-    check_hresult(static_cast<const IDevicePicker &>(static_cast<const D &>(*this))->get_Filter(put(filter)));
+    check_hresult(WINRT_SHIM(IDevicePicker)->get_Filter(put(filter)));
     return filter;
 }
 
 template <typename D> Windows::Devices::Enumeration::DevicePickerAppearance impl_IDevicePicker<D>::Appearance() const
 {
     Windows::Devices::Enumeration::DevicePickerAppearance value { nullptr };
-    check_hresult(static_cast<const IDevicePicker &>(static_cast<const D &>(*this))->get_Appearance(put(value)));
+    check_hresult(WINRT_SHIM(IDevicePicker)->get_Appearance(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IDevicePicker<D>::RequestedProperties() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IDevicePicker &>(static_cast<const D &>(*this))->get_RequestedProperties(put(value)));
+    check_hresult(WINRT_SHIM(IDevicePicker)->get_RequestedProperties(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IDevicePicker<D>::DeviceSelected(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceSelectedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IDevicePicker &>(static_cast<const D &>(*this))->add_DeviceSelected(get(handler), &token));
+    check_hresult(WINRT_SHIM(IDevicePicker)->add_DeviceSelected(get(handler), &token));
     return token;
 }
 
@@ -1959,13 +1959,13 @@ template <typename D> event_revoker<IDevicePicker> impl_IDevicePicker<D>::Device
 
 template <typename D> void impl_IDevicePicker<D>::DeviceSelected(event_token token) const
 {
-    check_hresult(static_cast<const IDevicePicker &>(static_cast<const D &>(*this))->remove_DeviceSelected(token));
+    check_hresult(WINRT_SHIM(IDevicePicker)->remove_DeviceSelected(token));
 }
 
 template <typename D> event_token impl_IDevicePicker<D>::DisconnectButtonClicked(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IDevicePicker &>(static_cast<const D &>(*this))->add_DisconnectButtonClicked(get(handler), &token));
+    check_hresult(WINRT_SHIM(IDevicePicker)->add_DisconnectButtonClicked(get(handler), &token));
     return token;
 }
 
@@ -1976,13 +1976,13 @@ template <typename D> event_revoker<IDevicePicker> impl_IDevicePicker<D>::Discon
 
 template <typename D> void impl_IDevicePicker<D>::DisconnectButtonClicked(event_token token) const
 {
-    check_hresult(static_cast<const IDevicePicker &>(static_cast<const D &>(*this))->remove_DisconnectButtonClicked(token));
+    check_hresult(WINRT_SHIM(IDevicePicker)->remove_DisconnectButtonClicked(token));
 }
 
 template <typename D> event_token impl_IDevicePicker<D>::DevicePickerDismissed(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IDevicePicker &>(static_cast<const D &>(*this))->add_DevicePickerDismissed(get(handler), &token));
+    check_hresult(WINRT_SHIM(IDevicePicker)->add_DevicePickerDismissed(get(handler), &token));
     return token;
 }
 
@@ -1993,96 +1993,96 @@ template <typename D> event_revoker<IDevicePicker> impl_IDevicePicker<D>::Device
 
 template <typename D> void impl_IDevicePicker<D>::DevicePickerDismissed(event_token token) const
 {
-    check_hresult(static_cast<const IDevicePicker &>(static_cast<const D &>(*this))->remove_DevicePickerDismissed(token));
+    check_hresult(WINRT_SHIM(IDevicePicker)->remove_DevicePickerDismissed(token));
 }
 
 template <typename D> void impl_IDevicePicker<D>::Show(const Windows::Foundation::Rect & selection) const
 {
-    check_hresult(static_cast<const IDevicePicker &>(static_cast<const D &>(*this))->abi_Show(get(selection)));
+    check_hresult(WINRT_SHIM(IDevicePicker)->abi_Show(get(selection)));
 }
 
 template <typename D> void impl_IDevicePicker<D>::Show(const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement placement) const
 {
-    check_hresult(static_cast<const IDevicePicker &>(static_cast<const D &>(*this))->abi_ShowWithPlacement(get(selection), placement));
+    check_hresult(WINRT_SHIM(IDevicePicker)->abi_ShowWithPlacement(get(selection), placement));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> impl_IDevicePicker<D>::PickSingleDeviceAsync(const Windows::Foundation::Rect & selection) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> operation;
-    check_hresult(static_cast<const IDevicePicker &>(static_cast<const D &>(*this))->abi_PickSingleDeviceAsync(get(selection), put(operation)));
+    check_hresult(WINRT_SHIM(IDevicePicker)->abi_PickSingleDeviceAsync(get(selection), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> impl_IDevicePicker<D>::PickSingleDeviceAsync(const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement placement) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> operation;
-    check_hresult(static_cast<const IDevicePicker &>(static_cast<const D &>(*this))->abi_PickSingleDeviceAsyncWithPlacement(get(selection), placement, put(operation)));
+    check_hresult(WINRT_SHIM(IDevicePicker)->abi_PickSingleDeviceAsyncWithPlacement(get(selection), placement, put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IDevicePicker<D>::Hide() const
 {
-    check_hresult(static_cast<const IDevicePicker &>(static_cast<const D &>(*this))->abi_Hide());
+    check_hresult(WINRT_SHIM(IDevicePicker)->abi_Hide());
 }
 
 template <typename D> void impl_IDevicePicker<D>::SetDisplayStatus(const Windows::Devices::Enumeration::DeviceInformation & device, hstring_ref status, Windows::Devices::Enumeration::DevicePickerDisplayStatusOptions options) const
 {
-    check_hresult(static_cast<const IDevicePicker &>(static_cast<const D &>(*this))->abi_SetDisplayStatus(get(device), get(status), options));
+    check_hresult(WINRT_SHIM(IDevicePicker)->abi_SetDisplayStatus(get(device), get(status), options));
 }
 
 template <typename D> bool impl_IEnclosureLocation<D>::InDock() const
 {
     bool value {};
-    check_hresult(static_cast<const IEnclosureLocation &>(static_cast<const D &>(*this))->get_InDock(&value));
+    check_hresult(WINRT_SHIM(IEnclosureLocation)->get_InDock(&value));
     return value;
 }
 
 template <typename D> bool impl_IEnclosureLocation<D>::InLid() const
 {
     bool value {};
-    check_hresult(static_cast<const IEnclosureLocation &>(static_cast<const D &>(*this))->get_InLid(&value));
+    check_hresult(WINRT_SHIM(IEnclosureLocation)->get_InLid(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::Panel impl_IEnclosureLocation<D>::Panel() const
 {
     Windows::Devices::Enumeration::Panel value {};
-    check_hresult(static_cast<const IEnclosureLocation &>(static_cast<const D &>(*this))->get_Panel(&value));
+    check_hresult(WINRT_SHIM(IEnclosureLocation)->get_Panel(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IEnclosureLocation2<D>::RotationAngleInDegreesClockwise() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IEnclosureLocation2 &>(static_cast<const D &>(*this))->get_RotationAngleInDegreesClockwise(&value));
+    check_hresult(WINRT_SHIM(IEnclosureLocation2)->get_RotationAngleInDegreesClockwise(&value));
     return value;
 }
 
 template <typename D> hstring impl_IDeviceInformationUpdate<D>::Id() const
 {
     hstring value;
-    check_hresult(static_cast<const IDeviceInformationUpdate &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceInformationUpdate)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_IDeviceInformationUpdate<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
-    check_hresult(static_cast<const IDeviceInformationUpdate &>(static_cast<const D &>(*this))->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceInformationUpdate)->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformationKind impl_IDeviceInformationUpdate2<D>::Kind() const
 {
     Windows::Devices::Enumeration::DeviceInformationKind value {};
-    check_hresult(static_cast<const IDeviceInformationUpdate2 &>(static_cast<const D &>(*this))->get_Kind(&value));
+    check_hresult(WINRT_SHIM(IDeviceInformationUpdate2)->get_Kind(&value));
     return value;
 }
 
 template <typename D> event_token impl_IDeviceWatcher<D>::Added(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformation> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IDeviceWatcher &>(static_cast<const D &>(*this))->add_Added(get(handler), &token));
+    check_hresult(WINRT_SHIM(IDeviceWatcher)->add_Added(get(handler), &token));
     return token;
 }
 
@@ -2093,13 +2093,13 @@ template <typename D> event_revoker<IDeviceWatcher> impl_IDeviceWatcher<D>::Adde
 
 template <typename D> void impl_IDeviceWatcher<D>::Added(event_token token) const
 {
-    check_hresult(static_cast<const IDeviceWatcher &>(static_cast<const D &>(*this))->remove_Added(token));
+    check_hresult(WINRT_SHIM(IDeviceWatcher)->remove_Added(token));
 }
 
 template <typename D> event_token impl_IDeviceWatcher<D>::Updated(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IDeviceWatcher &>(static_cast<const D &>(*this))->add_Updated(get(handler), &token));
+    check_hresult(WINRT_SHIM(IDeviceWatcher)->add_Updated(get(handler), &token));
     return token;
 }
 
@@ -2110,13 +2110,13 @@ template <typename D> event_revoker<IDeviceWatcher> impl_IDeviceWatcher<D>::Upda
 
 template <typename D> void impl_IDeviceWatcher<D>::Updated(event_token token) const
 {
-    check_hresult(static_cast<const IDeviceWatcher &>(static_cast<const D &>(*this))->remove_Updated(token));
+    check_hresult(WINRT_SHIM(IDeviceWatcher)->remove_Updated(token));
 }
 
 template <typename D> event_token impl_IDeviceWatcher<D>::Removed(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IDeviceWatcher &>(static_cast<const D &>(*this))->add_Removed(get(handler), &token));
+    check_hresult(WINRT_SHIM(IDeviceWatcher)->add_Removed(get(handler), &token));
     return token;
 }
 
@@ -2127,13 +2127,13 @@ template <typename D> event_revoker<IDeviceWatcher> impl_IDeviceWatcher<D>::Remo
 
 template <typename D> void impl_IDeviceWatcher<D>::Removed(event_token token) const
 {
-    check_hresult(static_cast<const IDeviceWatcher &>(static_cast<const D &>(*this))->remove_Removed(token));
+    check_hresult(WINRT_SHIM(IDeviceWatcher)->remove_Removed(token));
 }
 
 template <typename D> event_token impl_IDeviceWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IDeviceWatcher &>(static_cast<const D &>(*this))->add_EnumerationCompleted(get(handler), &token));
+    check_hresult(WINRT_SHIM(IDeviceWatcher)->add_EnumerationCompleted(get(handler), &token));
     return token;
 }
 
@@ -2144,13 +2144,13 @@ template <typename D> event_revoker<IDeviceWatcher> impl_IDeviceWatcher<D>::Enum
 
 template <typename D> void impl_IDeviceWatcher<D>::EnumerationCompleted(event_token token) const
 {
-    check_hresult(static_cast<const IDeviceWatcher &>(static_cast<const D &>(*this))->remove_EnumerationCompleted(token));
+    check_hresult(WINRT_SHIM(IDeviceWatcher)->remove_EnumerationCompleted(token));
 }
 
 template <typename D> event_token impl_IDeviceWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IDeviceWatcher &>(static_cast<const D &>(*this))->add_Stopped(get(handler), &token));
+    check_hresult(WINRT_SHIM(IDeviceWatcher)->add_Stopped(get(handler), &token));
     return token;
 }
 
@@ -2161,276 +2161,276 @@ template <typename D> event_revoker<IDeviceWatcher> impl_IDeviceWatcher<D>::Stop
 
 template <typename D> void impl_IDeviceWatcher<D>::Stopped(event_token token) const
 {
-    check_hresult(static_cast<const IDeviceWatcher &>(static_cast<const D &>(*this))->remove_Stopped(token));
+    check_hresult(WINRT_SHIM(IDeviceWatcher)->remove_Stopped(token));
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceWatcherStatus impl_IDeviceWatcher<D>::Status() const
 {
     Windows::Devices::Enumeration::DeviceWatcherStatus status {};
-    check_hresult(static_cast<const IDeviceWatcher &>(static_cast<const D &>(*this))->get_Status(&status));
+    check_hresult(WINRT_SHIM(IDeviceWatcher)->get_Status(&status));
     return status;
 }
 
 template <typename D> void impl_IDeviceWatcher<D>::Start() const
 {
-    check_hresult(static_cast<const IDeviceWatcher &>(static_cast<const D &>(*this))->abi_Start());
+    check_hresult(WINRT_SHIM(IDeviceWatcher)->abi_Start());
 }
 
 template <typename D> void impl_IDeviceWatcher<D>::Stop() const
 {
-    check_hresult(static_cast<const IDeviceWatcher &>(static_cast<const D &>(*this))->abi_Stop());
+    check_hresult(WINRT_SHIM(IDeviceWatcher)->abi_Stop());
 }
 
 template <typename D> Windows::ApplicationModel::Background::DeviceWatcherTrigger impl_IDeviceWatcher2<D>::GetBackgroundTrigger(const Windows::Foundation::Collections::IIterable<winrt::Windows::Devices::Enumeration::DeviceWatcherEventKind> & requestedEventKinds) const
 {
     Windows::ApplicationModel::Background::DeviceWatcherTrigger trigger { nullptr };
-    check_hresult(static_cast<const IDeviceWatcher2 &>(static_cast<const D &>(*this))->abi_GetBackgroundTrigger(get(requestedEventKinds), put(trigger)));
+    check_hresult(WINRT_SHIM(IDeviceWatcher2)->abi_GetBackgroundTrigger(get(requestedEventKinds), put(trigger)));
     return trigger;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> impl_IDeviceInformationStatics<D>::CreateFromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> asyncOp;
-    check_hresult(static_cast<const IDeviceInformationStatics &>(static_cast<const D &>(*this))->abi_CreateFromIdAsync(get(deviceId), put(asyncOp)));
+    check_hresult(WINRT_SHIM(IDeviceInformationStatics)->abi_CreateFromIdAsync(get(deviceId), put(asyncOp)));
     return asyncOp;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> impl_IDeviceInformationStatics<D>::CreateFromIdAsync(hstring_ref deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> asyncOp;
-    check_hresult(static_cast<const IDeviceInformationStatics &>(static_cast<const D &>(*this))->abi_CreateFromIdAsyncAdditionalProperties(get(deviceId), get(additionalProperties), put(asyncOp)));
+    check_hresult(WINRT_SHIM(IDeviceInformationStatics)->abi_CreateFromIdAsyncAdditionalProperties(get(deviceId), get(additionalProperties), put(asyncOp)));
     return asyncOp;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> impl_IDeviceInformationStatics<D>::FindAllAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> asyncOp;
-    check_hresult(static_cast<const IDeviceInformationStatics &>(static_cast<const D &>(*this))->abi_FindAllAsync(put(asyncOp)));
+    check_hresult(WINRT_SHIM(IDeviceInformationStatics)->abi_FindAllAsync(put(asyncOp)));
     return asyncOp;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> impl_IDeviceInformationStatics<D>::FindAllAsync(Windows::Devices::Enumeration::DeviceClass deviceClass) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> asyncOp;
-    check_hresult(static_cast<const IDeviceInformationStatics &>(static_cast<const D &>(*this))->abi_FindAllAsyncDeviceClass(deviceClass, put(asyncOp)));
+    check_hresult(WINRT_SHIM(IDeviceInformationStatics)->abi_FindAllAsyncDeviceClass(deviceClass, put(asyncOp)));
     return asyncOp;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> impl_IDeviceInformationStatics<D>::FindAllAsync(hstring_ref aqsFilter) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> asyncOp;
-    check_hresult(static_cast<const IDeviceInformationStatics &>(static_cast<const D &>(*this))->abi_FindAllAsyncAqsFilter(get(aqsFilter), put(asyncOp)));
+    check_hresult(WINRT_SHIM(IDeviceInformationStatics)->abi_FindAllAsyncAqsFilter(get(aqsFilter), put(asyncOp)));
     return asyncOp;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> impl_IDeviceInformationStatics<D>::FindAllAsync(hstring_ref aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> asyncOp;
-    check_hresult(static_cast<const IDeviceInformationStatics &>(static_cast<const D &>(*this))->abi_FindAllAsyncAqsFilterAndAdditionalProperties(get(aqsFilter), get(additionalProperties), put(asyncOp)));
+    check_hresult(WINRT_SHIM(IDeviceInformationStatics)->abi_FindAllAsyncAqsFilterAndAdditionalProperties(get(aqsFilter), get(additionalProperties), put(asyncOp)));
     return asyncOp;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceWatcher impl_IDeviceInformationStatics<D>::CreateWatcher() const
 {
     Windows::Devices::Enumeration::DeviceWatcher watcher { nullptr };
-    check_hresult(static_cast<const IDeviceInformationStatics &>(static_cast<const D &>(*this))->abi_CreateWatcher(put(watcher)));
+    check_hresult(WINRT_SHIM(IDeviceInformationStatics)->abi_CreateWatcher(put(watcher)));
     return watcher;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceWatcher impl_IDeviceInformationStatics<D>::CreateWatcher(Windows::Devices::Enumeration::DeviceClass deviceClass) const
 {
     Windows::Devices::Enumeration::DeviceWatcher watcher { nullptr };
-    check_hresult(static_cast<const IDeviceInformationStatics &>(static_cast<const D &>(*this))->abi_CreateWatcherDeviceClass(deviceClass, put(watcher)));
+    check_hresult(WINRT_SHIM(IDeviceInformationStatics)->abi_CreateWatcherDeviceClass(deviceClass, put(watcher)));
     return watcher;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceWatcher impl_IDeviceInformationStatics<D>::CreateWatcher(hstring_ref aqsFilter) const
 {
     Windows::Devices::Enumeration::DeviceWatcher watcher { nullptr };
-    check_hresult(static_cast<const IDeviceInformationStatics &>(static_cast<const D &>(*this))->abi_CreateWatcherAqsFilter(get(aqsFilter), put(watcher)));
+    check_hresult(WINRT_SHIM(IDeviceInformationStatics)->abi_CreateWatcherAqsFilter(get(aqsFilter), put(watcher)));
     return watcher;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceWatcher impl_IDeviceInformationStatics<D>::CreateWatcher(hstring_ref aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const
 {
     Windows::Devices::Enumeration::DeviceWatcher watcher { nullptr };
-    check_hresult(static_cast<const IDeviceInformationStatics &>(static_cast<const D &>(*this))->abi_CreateWatcherAqsFilterAndAdditionalProperties(get(aqsFilter), get(additionalProperties), put(watcher)));
+    check_hresult(WINRT_SHIM(IDeviceInformationStatics)->abi_CreateWatcherAqsFilterAndAdditionalProperties(get(aqsFilter), get(additionalProperties), put(watcher)));
     return watcher;
 }
 
 template <typename D> hstring impl_IDeviceInformationStatics2<D>::GetAqsFilterFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass) const
 {
     hstring aqsFilter;
-    check_hresult(static_cast<const IDeviceInformationStatics2 &>(static_cast<const D &>(*this))->abi_GetAqsFilterFromDeviceClass(deviceClass, put(aqsFilter)));
+    check_hresult(WINRT_SHIM(IDeviceInformationStatics2)->abi_GetAqsFilterFromDeviceClass(deviceClass, put(aqsFilter)));
     return aqsFilter;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> impl_IDeviceInformationStatics2<D>::CreateFromIdAsync(hstring_ref deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> asyncOp;
-    check_hresult(static_cast<const IDeviceInformationStatics2 &>(static_cast<const D &>(*this))->abi_CreateFromIdAsyncWithKindAndAdditionalProperties(get(deviceId), get(additionalProperties), kind, put(asyncOp)));
+    check_hresult(WINRT_SHIM(IDeviceInformationStatics2)->abi_CreateFromIdAsyncWithKindAndAdditionalProperties(get(deviceId), get(additionalProperties), kind, put(asyncOp)));
     return asyncOp;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> impl_IDeviceInformationStatics2<D>::FindAllAsync(hstring_ref aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> asyncOp;
-    check_hresult(static_cast<const IDeviceInformationStatics2 &>(static_cast<const D &>(*this))->abi_FindAllAsyncWithKindAqsFilterAndAdditionalProperties(get(aqsFilter), get(additionalProperties), kind, put(asyncOp)));
+    check_hresult(WINRT_SHIM(IDeviceInformationStatics2)->abi_FindAllAsyncWithKindAqsFilterAndAdditionalProperties(get(aqsFilter), get(additionalProperties), kind, put(asyncOp)));
     return asyncOp;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceWatcher impl_IDeviceInformationStatics2<D>::CreateWatcher(hstring_ref aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const
 {
     Windows::Devices::Enumeration::DeviceWatcher watcher { nullptr };
-    check_hresult(static_cast<const IDeviceInformationStatics2 &>(static_cast<const D &>(*this))->abi_CreateWatcherWithKindAqsFilterAndAdditionalProperties(get(aqsFilter), get(additionalProperties), kind, put(watcher)));
+    check_hresult(WINRT_SHIM(IDeviceInformationStatics2)->abi_CreateWatcherWithKindAqsFilterAndAdditionalProperties(get(aqsFilter), get(additionalProperties), kind, put(watcher)));
     return watcher;
 }
 
 template <typename D> hstring impl_IDeviceInformation<D>::Id() const
 {
     hstring value;
-    check_hresult(static_cast<const IDeviceInformation &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceInformation)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDeviceInformation<D>::Name() const
 {
     hstring value;
-    check_hresult(static_cast<const IDeviceInformation &>(static_cast<const D &>(*this))->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceInformation)->get_Name(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IDeviceInformation<D>::IsEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IDeviceInformation &>(static_cast<const D &>(*this))->get_IsEnabled(&value));
+    check_hresult(WINRT_SHIM(IDeviceInformation)->get_IsEnabled(&value));
     return value;
 }
 
 template <typename D> bool impl_IDeviceInformation<D>::IsDefault() const
 {
     bool value {};
-    check_hresult(static_cast<const IDeviceInformation &>(static_cast<const D &>(*this))->get_IsDefault(&value));
+    check_hresult(WINRT_SHIM(IDeviceInformation)->get_IsDefault(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::EnclosureLocation impl_IDeviceInformation<D>::EnclosureLocation() const
 {
     Windows::Devices::Enumeration::EnclosureLocation value { nullptr };
-    check_hresult(static_cast<const IDeviceInformation &>(static_cast<const D &>(*this))->get_EnclosureLocation(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceInformation)->get_EnclosureLocation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_IDeviceInformation<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
-    check_hresult(static_cast<const IDeviceInformation &>(static_cast<const D &>(*this))->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceInformation)->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceInformation<D>::Update(const Windows::Devices::Enumeration::DeviceInformationUpdate & updateInfo) const
 {
-    check_hresult(static_cast<const IDeviceInformation &>(static_cast<const D &>(*this))->abi_Update(get(updateInfo)));
+    check_hresult(WINRT_SHIM(IDeviceInformation)->abi_Update(get(updateInfo)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceThumbnail> impl_IDeviceInformation<D>::GetThumbnailAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceThumbnail> asyncOp;
-    check_hresult(static_cast<const IDeviceInformation &>(static_cast<const D &>(*this))->abi_GetThumbnailAsync(put(asyncOp)));
+    check_hresult(WINRT_SHIM(IDeviceInformation)->abi_GetThumbnailAsync(put(asyncOp)));
     return asyncOp;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceThumbnail> impl_IDeviceInformation<D>::GetGlyphThumbnailAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceThumbnail> asyncOp;
-    check_hresult(static_cast<const IDeviceInformation &>(static_cast<const D &>(*this))->abi_GetGlyphThumbnailAsync(put(asyncOp)));
+    check_hresult(WINRT_SHIM(IDeviceInformation)->abi_GetGlyphThumbnailAsync(put(asyncOp)));
     return asyncOp;
 }
 
 template <typename D> Windows::Devices::Enumeration::DevicePairingResultStatus impl_IDevicePairingResult<D>::Status() const
 {
     Windows::Devices::Enumeration::DevicePairingResultStatus status {};
-    check_hresult(static_cast<const IDevicePairingResult &>(static_cast<const D &>(*this))->get_Status(&status));
+    check_hresult(WINRT_SHIM(IDevicePairingResult)->get_Status(&status));
     return status;
 }
 
 template <typename D> Windows::Devices::Enumeration::DevicePairingProtectionLevel impl_IDevicePairingResult<D>::ProtectionLevelUsed() const
 {
     Windows::Devices::Enumeration::DevicePairingProtectionLevel value {};
-    check_hresult(static_cast<const IDevicePairingResult &>(static_cast<const D &>(*this))->get_ProtectionLevelUsed(&value));
+    check_hresult(WINRT_SHIM(IDevicePairingResult)->get_ProtectionLevelUsed(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceUnpairingResultStatus impl_IDeviceUnpairingResult<D>::Status() const
 {
     Windows::Devices::Enumeration::DeviceUnpairingResultStatus status {};
-    check_hresult(static_cast<const IDeviceUnpairingResult &>(static_cast<const D &>(*this))->get_Status(&status));
+    check_hresult(WINRT_SHIM(IDeviceUnpairingResult)->get_Status(&status));
     return status;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IDevicePairingRequestedEventArgs<D>::DeviceInformation() const
 {
     Windows::Devices::Enumeration::DeviceInformation value { nullptr };
-    check_hresult(static_cast<const IDevicePairingRequestedEventArgs &>(static_cast<const D &>(*this))->get_DeviceInformation(put(value)));
+    check_hresult(WINRT_SHIM(IDevicePairingRequestedEventArgs)->get_DeviceInformation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DevicePairingKinds impl_IDevicePairingRequestedEventArgs<D>::PairingKind() const
 {
     Windows::Devices::Enumeration::DevicePairingKinds value {};
-    check_hresult(static_cast<const IDevicePairingRequestedEventArgs &>(static_cast<const D &>(*this))->get_PairingKind(&value));
+    check_hresult(WINRT_SHIM(IDevicePairingRequestedEventArgs)->get_PairingKind(&value));
     return value;
 }
 
 template <typename D> hstring impl_IDevicePairingRequestedEventArgs<D>::Pin() const
 {
     hstring value;
-    check_hresult(static_cast<const IDevicePairingRequestedEventArgs &>(static_cast<const D &>(*this))->get_Pin(put(value)));
+    check_hresult(WINRT_SHIM(IDevicePairingRequestedEventArgs)->get_Pin(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDevicePairingRequestedEventArgs<D>::Accept() const
 {
-    check_hresult(static_cast<const IDevicePairingRequestedEventArgs &>(static_cast<const D &>(*this))->abi_Accept());
+    check_hresult(WINRT_SHIM(IDevicePairingRequestedEventArgs)->abi_Accept());
 }
 
 template <typename D> void impl_IDevicePairingRequestedEventArgs<D>::Accept(hstring_ref pin) const
 {
-    check_hresult(static_cast<const IDevicePairingRequestedEventArgs &>(static_cast<const D &>(*this))->abi_AcceptWithPin(get(pin)));
+    check_hresult(WINRT_SHIM(IDevicePairingRequestedEventArgs)->abi_AcceptWithPin(get(pin)));
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IDevicePairingRequestedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral result { nullptr };
-    check_hresult(static_cast<const IDevicePairingRequestedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(result)));
+    check_hresult(WINRT_SHIM(IDevicePairingRequestedEventArgs)->abi_GetDeferral(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> impl_IDeviceInformationCustomPairing<D>::PairAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> result;
-    check_hresult(static_cast<const IDeviceInformationCustomPairing &>(static_cast<const D &>(*this))->abi_PairAsync(pairingKindsSupported, put(result)));
+    check_hresult(WINRT_SHIM(IDeviceInformationCustomPairing)->abi_PairAsync(pairingKindsSupported, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> impl_IDeviceInformationCustomPairing<D>::PairAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> result;
-    check_hresult(static_cast<const IDeviceInformationCustomPairing &>(static_cast<const D &>(*this))->abi_PairWithProtectionLevelAsync(pairingKindsSupported, minProtectionLevel, put(result)));
+    check_hresult(WINRT_SHIM(IDeviceInformationCustomPairing)->abi_PairWithProtectionLevelAsync(pairingKindsSupported, minProtectionLevel, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> impl_IDeviceInformationCustomPairing<D>::PairAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, const Windows::Devices::Enumeration::IDevicePairingSettings & devicePairingSettings) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> result;
-    check_hresult(static_cast<const IDeviceInformationCustomPairing &>(static_cast<const D &>(*this))->abi_PairWithProtectionLevelAndSettingsAsync(pairingKindsSupported, minProtectionLevel, get(devicePairingSettings), put(result)));
+    check_hresult(WINRT_SHIM(IDeviceInformationCustomPairing)->abi_PairWithProtectionLevelAndSettingsAsync(pairingKindsSupported, minProtectionLevel, get(devicePairingSettings), put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IDeviceInformationCustomPairing<D>::PairingRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceInformationCustomPairing, Windows::Devices::Enumeration::DevicePairingRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IDeviceInformationCustomPairing &>(static_cast<const D &>(*this))->add_PairingRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IDeviceInformationCustomPairing)->add_PairingRequested(get(handler), &token));
     return token;
 }
 
@@ -2441,104 +2441,104 @@ template <typename D> event_revoker<IDeviceInformationCustomPairing> impl_IDevic
 
 template <typename D> void impl_IDeviceInformationCustomPairing<D>::PairingRequested(event_token token) const
 {
-    check_hresult(static_cast<const IDeviceInformationCustomPairing &>(static_cast<const D &>(*this))->remove_PairingRequested(token));
+    check_hresult(WINRT_SHIM(IDeviceInformationCustomPairing)->remove_PairingRequested(token));
 }
 
 template <typename D> bool impl_IDeviceInformationPairing<D>::IsPaired() const
 {
     bool value {};
-    check_hresult(static_cast<const IDeviceInformationPairing &>(static_cast<const D &>(*this))->get_IsPaired(&value));
+    check_hresult(WINRT_SHIM(IDeviceInformationPairing)->get_IsPaired(&value));
     return value;
 }
 
 template <typename D> bool impl_IDeviceInformationPairing<D>::CanPair() const
 {
     bool value {};
-    check_hresult(static_cast<const IDeviceInformationPairing &>(static_cast<const D &>(*this))->get_CanPair(&value));
+    check_hresult(WINRT_SHIM(IDeviceInformationPairing)->get_CanPair(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> impl_IDeviceInformationPairing<D>::PairAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> result;
-    check_hresult(static_cast<const IDeviceInformationPairing &>(static_cast<const D &>(*this))->abi_PairAsync(put(result)));
+    check_hresult(WINRT_SHIM(IDeviceInformationPairing)->abi_PairAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> impl_IDeviceInformationPairing<D>::PairAsync(Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> result;
-    check_hresult(static_cast<const IDeviceInformationPairing &>(static_cast<const D &>(*this))->abi_PairWithProtectionLevelAsync(minProtectionLevel, put(result)));
+    check_hresult(WINRT_SHIM(IDeviceInformationPairing)->abi_PairWithProtectionLevelAsync(minProtectionLevel, put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Enumeration::DevicePairingProtectionLevel impl_IDeviceInformationPairing2<D>::ProtectionLevel() const
 {
     Windows::Devices::Enumeration::DevicePairingProtectionLevel value {};
-    check_hresult(static_cast<const IDeviceInformationPairing2 &>(static_cast<const D &>(*this))->get_ProtectionLevel(&value));
+    check_hresult(WINRT_SHIM(IDeviceInformationPairing2)->get_ProtectionLevel(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformationCustomPairing impl_IDeviceInformationPairing2<D>::Custom() const
 {
     Windows::Devices::Enumeration::DeviceInformationCustomPairing value { nullptr };
-    check_hresult(static_cast<const IDeviceInformationPairing2 &>(static_cast<const D &>(*this))->get_Custom(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceInformationPairing2)->get_Custom(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> impl_IDeviceInformationPairing2<D>::PairAsync(Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, const Windows::Devices::Enumeration::IDevicePairingSettings & devicePairingSettings) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> result;
-    check_hresult(static_cast<const IDeviceInformationPairing2 &>(static_cast<const D &>(*this))->abi_PairWithProtectionLevelAndSettingsAsync(minProtectionLevel, get(devicePairingSettings), put(result)));
+    check_hresult(WINRT_SHIM(IDeviceInformationPairing2)->abi_PairWithProtectionLevelAndSettingsAsync(minProtectionLevel, get(devicePairingSettings), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceUnpairingResult> impl_IDeviceInformationPairing2<D>::UnpairAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceUnpairingResult> result;
-    check_hresult(static_cast<const IDeviceInformationPairing2 &>(static_cast<const D &>(*this))->abi_UnpairAsync(put(result)));
+    check_hresult(WINRT_SHIM(IDeviceInformationPairing2)->abi_UnpairAsync(put(result)));
     return result;
 }
 
 template <typename D> bool impl_IDeviceInformationPairingStatics<D>::TryRegisterForAllInboundPairingRequests(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported) const
 {
     bool result {};
-    check_hresult(static_cast<const IDeviceInformationPairingStatics &>(static_cast<const D &>(*this))->abi_TryRegisterForAllInboundPairingRequests(pairingKindsSupported, &result));
+    check_hresult(WINRT_SHIM(IDeviceInformationPairingStatics)->abi_TryRegisterForAllInboundPairingRequests(pairingKindsSupported, &result));
     return result;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformationKind impl_IDeviceInformation2<D>::Kind() const
 {
     Windows::Devices::Enumeration::DeviceInformationKind value {};
-    check_hresult(static_cast<const IDeviceInformation2 &>(static_cast<const D &>(*this))->get_Kind(&value));
+    check_hresult(WINRT_SHIM(IDeviceInformation2)->get_Kind(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformationPairing impl_IDeviceInformation2<D>::Pairing() const
 {
     Windows::Devices::Enumeration::DeviceInformationPairing value { nullptr };
-    check_hresult(static_cast<const IDeviceInformation2 &>(static_cast<const D &>(*this))->get_Pairing(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceInformation2)->get_Pairing(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceAccessStatus impl_IDeviceAccessChangedEventArgs<D>::Status() const
 {
     Windows::Devices::Enumeration::DeviceAccessStatus value {};
-    check_hresult(static_cast<const IDeviceAccessChangedEventArgs &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IDeviceAccessChangedEventArgs)->get_Status(&value));
     return value;
 }
 
 template <typename D> hstring impl_IDeviceAccessChangedEventArgs2<D>::Id() const
 {
     hstring value;
-    check_hresult(static_cast<const IDeviceAccessChangedEventArgs2 &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccessChangedEventArgs2)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IDeviceAccessInformation<D>::AccessChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceAccessInformation, Windows::Devices::Enumeration::DeviceAccessChangedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IDeviceAccessInformation &>(static_cast<const D &>(*this))->add_AccessChanged(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IDeviceAccessInformation)->add_AccessChanged(get(handler), &cookie));
     return cookie;
 }
 
@@ -2549,62 +2549,62 @@ template <typename D> event_revoker<IDeviceAccessInformation> impl_IDeviceAccess
 
 template <typename D> void impl_IDeviceAccessInformation<D>::AccessChanged(event_token cookie) const
 {
-    check_hresult(static_cast<const IDeviceAccessInformation &>(static_cast<const D &>(*this))->remove_AccessChanged(cookie));
+    check_hresult(WINRT_SHIM(IDeviceAccessInformation)->remove_AccessChanged(cookie));
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceAccessStatus impl_IDeviceAccessInformation<D>::CurrentStatus() const
 {
     Windows::Devices::Enumeration::DeviceAccessStatus status {};
-    check_hresult(static_cast<const IDeviceAccessInformation &>(static_cast<const D &>(*this))->get_CurrentStatus(&status));
+    check_hresult(WINRT_SHIM(IDeviceAccessInformation)->get_CurrentStatus(&status));
     return status;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceAccessInformation impl_IDeviceAccessInformationStatics<D>::CreateFromId(hstring_ref deviceId) const
 {
     Windows::Devices::Enumeration::DeviceAccessInformation value { nullptr };
-    check_hresult(static_cast<const IDeviceAccessInformationStatics &>(static_cast<const D &>(*this))->abi_CreateFromId(get(deviceId), put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccessInformationStatics)->abi_CreateFromId(get(deviceId), put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceAccessInformation impl_IDeviceAccessInformationStatics<D>::CreateFromDeviceClassId(GUID deviceClassId) const
 {
     Windows::Devices::Enumeration::DeviceAccessInformation value { nullptr };
-    check_hresult(static_cast<const IDeviceAccessInformationStatics &>(static_cast<const D &>(*this))->abi_CreateFromDeviceClassId(deviceClassId, put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccessInformationStatics)->abi_CreateFromDeviceClassId(deviceClassId, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceAccessInformation impl_IDeviceAccessInformationStatics<D>::CreateFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass) const
 {
     Windows::Devices::Enumeration::DeviceAccessInformation value { nullptr };
-    check_hresult(static_cast<const IDeviceAccessInformationStatics &>(static_cast<const D &>(*this))->abi_CreateFromDeviceClass(deviceClass, put(value)));
+    check_hresult(WINRT_SHIM(IDeviceAccessInformationStatics)->abi_CreateFromDeviceClass(deviceClass, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceWatcherEventKind impl_IDeviceWatcherEvent<D>::Kind() const
 {
     Windows::Devices::Enumeration::DeviceWatcherEventKind value {};
-    check_hresult(static_cast<const IDeviceWatcherEvent &>(static_cast<const D &>(*this))->get_Kind(&value));
+    check_hresult(WINRT_SHIM(IDeviceWatcherEvent)->get_Kind(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IDeviceWatcherEvent<D>::DeviceInformation() const
 {
     Windows::Devices::Enumeration::DeviceInformation value { nullptr };
-    check_hresult(static_cast<const IDeviceWatcherEvent &>(static_cast<const D &>(*this))->get_DeviceInformation(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceWatcherEvent)->get_DeviceInformation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformationUpdate impl_IDeviceWatcherEvent<D>::DeviceInformationUpdate() const
 {
     Windows::Devices::Enumeration::DeviceInformationUpdate value { nullptr };
-    check_hresult(static_cast<const IDeviceWatcherEvent &>(static_cast<const D &>(*this))->get_DeviceInformationUpdate(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceWatcherEvent)->get_DeviceInformationUpdate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Enumeration::DeviceWatcherEvent> impl_IDeviceWatcherTriggerDetails<D>::DeviceWatcherEvents() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Enumeration::DeviceWatcherEvent> value;
-    check_hresult(static_cast<const IDeviceWatcherTriggerDetails &>(static_cast<const D &>(*this))->get_DeviceWatcherEvents(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceWatcherTriggerDetails)->get_DeviceWatcherEvents(put(value)));
     return value;
 }
 

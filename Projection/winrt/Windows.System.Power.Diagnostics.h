@@ -109,39 +109,39 @@ namespace Windows::System::Power::Diagnostics {
 template <typename D> double impl_IBackgroundEnergyDiagnosticsStatics<D>::DeviceSpecificConversionFactor() const
 {
     double value {};
-    check_hresult(static_cast<const IBackgroundEnergyDiagnosticsStatics &>(static_cast<const D &>(*this))->get_DeviceSpecificConversionFactor(&value));
+    check_hresult(WINRT_SHIM(IBackgroundEnergyDiagnosticsStatics)->get_DeviceSpecificConversionFactor(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IBackgroundEnergyDiagnosticsStatics<D>::ComputeTotalEnergyUsage() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IBackgroundEnergyDiagnosticsStatics &>(static_cast<const D &>(*this))->abi_ComputeTotalEnergyUsage(&value));
+    check_hresult(WINRT_SHIM(IBackgroundEnergyDiagnosticsStatics)->abi_ComputeTotalEnergyUsage(&value));
     return value;
 }
 
 template <typename D> void impl_IBackgroundEnergyDiagnosticsStatics<D>::ResetTotalEnergyUsage() const
 {
-    check_hresult(static_cast<const IBackgroundEnergyDiagnosticsStatics &>(static_cast<const D &>(*this))->abi_ResetTotalEnergyUsage());
+    check_hresult(WINRT_SHIM(IBackgroundEnergyDiagnosticsStatics)->abi_ResetTotalEnergyUsage());
 }
 
 template <typename D> double impl_IForegroundEnergyDiagnosticsStatics<D>::DeviceSpecificConversionFactor() const
 {
     double value {};
-    check_hresult(static_cast<const IForegroundEnergyDiagnosticsStatics &>(static_cast<const D &>(*this))->get_DeviceSpecificConversionFactor(&value));
+    check_hresult(WINRT_SHIM(IForegroundEnergyDiagnosticsStatics)->get_DeviceSpecificConversionFactor(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IForegroundEnergyDiagnosticsStatics<D>::ComputeTotalEnergyUsage() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IForegroundEnergyDiagnosticsStatics &>(static_cast<const D &>(*this))->abi_ComputeTotalEnergyUsage(&value));
+    check_hresult(WINRT_SHIM(IForegroundEnergyDiagnosticsStatics)->abi_ComputeTotalEnergyUsage(&value));
     return value;
 }
 
 template <typename D> void impl_IForegroundEnergyDiagnosticsStatics<D>::ResetTotalEnergyUsage() const
 {
-    check_hresult(static_cast<const IForegroundEnergyDiagnosticsStatics &>(static_cast<const D &>(*this))->abi_ResetTotalEnergyUsage());
+    check_hresult(WINRT_SHIM(IForegroundEnergyDiagnosticsStatics)->abi_ResetTotalEnergyUsage());
 }
 
 inline double BackgroundEnergyDiagnostics::DeviceSpecificConversionFactor()

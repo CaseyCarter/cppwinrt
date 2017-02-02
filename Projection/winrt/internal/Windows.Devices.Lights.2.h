@@ -36,7 +36,6 @@ struct ILamp :
     impl::require<ILamp, Windows::Foundation::IClosable>
 {
     ILamp(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILamp>(m_ptr); }
 };
 
 struct ILampAvailabilityChangedEventArgs :
@@ -44,7 +43,6 @@ struct ILampAvailabilityChangedEventArgs :
     impl::consume<ILampAvailabilityChangedEventArgs>
 {
     ILampAvailabilityChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILampAvailabilityChangedEventArgs>(m_ptr); }
 };
 
 struct ILampStatics :
@@ -52,7 +50,6 @@ struct ILampStatics :
     impl::consume<ILampStatics>
 {
     ILampStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILampStatics>(m_ptr); }
 };
 
 }

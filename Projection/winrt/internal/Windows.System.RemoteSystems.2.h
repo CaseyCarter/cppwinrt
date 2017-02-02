@@ -114,7 +114,6 @@ struct IRemoteSystem :
     impl::consume<IRemoteSystem>
 {
     IRemoteSystem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteSystem>(m_ptr); }
 };
 
 struct IRemoteSystemAddedEventArgs :
@@ -122,7 +121,6 @@ struct IRemoteSystemAddedEventArgs :
     impl::consume<IRemoteSystemAddedEventArgs>
 {
     IRemoteSystemAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteSystemAddedEventArgs>(m_ptr); }
 };
 
 struct IRemoteSystemConnectionRequest :
@@ -130,7 +128,6 @@ struct IRemoteSystemConnectionRequest :
     impl::consume<IRemoteSystemConnectionRequest>
 {
     IRemoteSystemConnectionRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteSystemConnectionRequest>(m_ptr); }
 };
 
 struct IRemoteSystemConnectionRequestFactory :
@@ -138,7 +135,6 @@ struct IRemoteSystemConnectionRequestFactory :
     impl::consume<IRemoteSystemConnectionRequestFactory>
 {
     IRemoteSystemConnectionRequestFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteSystemConnectionRequestFactory>(m_ptr); }
 };
 
 struct IRemoteSystemDiscoveryTypeFilter :
@@ -146,7 +142,6 @@ struct IRemoteSystemDiscoveryTypeFilter :
     impl::consume<IRemoteSystemDiscoveryTypeFilter>
 {
     IRemoteSystemDiscoveryTypeFilter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteSystemDiscoveryTypeFilter>(m_ptr); }
 };
 
 struct IRemoteSystemDiscoveryTypeFilterFactory :
@@ -154,7 +149,6 @@ struct IRemoteSystemDiscoveryTypeFilterFactory :
     impl::consume<IRemoteSystemDiscoveryTypeFilterFactory>
 {
     IRemoteSystemDiscoveryTypeFilterFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteSystemDiscoveryTypeFilterFactory>(m_ptr); }
 };
 
 struct IRemoteSystemFilter :
@@ -162,7 +156,6 @@ struct IRemoteSystemFilter :
     impl::consume<IRemoteSystemFilter>
 {
     IRemoteSystemFilter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteSystemFilter>(m_ptr); }
 };
 
 struct IRemoteSystemKindFilter :
@@ -170,7 +163,6 @@ struct IRemoteSystemKindFilter :
     impl::consume<IRemoteSystemKindFilter>
 {
     IRemoteSystemKindFilter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteSystemKindFilter>(m_ptr); }
 };
 
 struct IRemoteSystemKindFilterFactory :
@@ -178,7 +170,6 @@ struct IRemoteSystemKindFilterFactory :
     impl::consume<IRemoteSystemKindFilterFactory>
 {
     IRemoteSystemKindFilterFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteSystemKindFilterFactory>(m_ptr); }
 };
 
 struct IRemoteSystemKindStatics :
@@ -186,7 +177,6 @@ struct IRemoteSystemKindStatics :
     impl::consume<IRemoteSystemKindStatics>
 {
     IRemoteSystemKindStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteSystemKindStatics>(m_ptr); }
 };
 
 struct IRemoteSystemRemovedEventArgs :
@@ -194,7 +184,6 @@ struct IRemoteSystemRemovedEventArgs :
     impl::consume<IRemoteSystemRemovedEventArgs>
 {
     IRemoteSystemRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteSystemRemovedEventArgs>(m_ptr); }
 };
 
 struct IRemoteSystemStatics :
@@ -202,7 +191,6 @@ struct IRemoteSystemStatics :
     impl::consume<IRemoteSystemStatics>
 {
     IRemoteSystemStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteSystemStatics>(m_ptr); }
 };
 
 struct IRemoteSystemStatusTypeFilter :
@@ -210,7 +198,6 @@ struct IRemoteSystemStatusTypeFilter :
     impl::consume<IRemoteSystemStatusTypeFilter>
 {
     IRemoteSystemStatusTypeFilter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteSystemStatusTypeFilter>(m_ptr); }
 };
 
 struct IRemoteSystemStatusTypeFilterFactory :
@@ -218,7 +205,6 @@ struct IRemoteSystemStatusTypeFilterFactory :
     impl::consume<IRemoteSystemStatusTypeFilterFactory>
 {
     IRemoteSystemStatusTypeFilterFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteSystemStatusTypeFilterFactory>(m_ptr); }
 };
 
 struct IRemoteSystemUpdatedEventArgs :
@@ -226,7 +212,6 @@ struct IRemoteSystemUpdatedEventArgs :
     impl::consume<IRemoteSystemUpdatedEventArgs>
 {
     IRemoteSystemUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteSystemUpdatedEventArgs>(m_ptr); }
 };
 
 struct IRemoteSystemWatcher :
@@ -234,7 +219,6 @@ struct IRemoteSystemWatcher :
     impl::consume<IRemoteSystemWatcher>
 {
     IRemoteSystemWatcher(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoteSystemWatcher>(m_ptr); }
 };
 
 }

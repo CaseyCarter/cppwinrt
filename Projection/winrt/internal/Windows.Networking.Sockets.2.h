@@ -198,7 +198,6 @@ struct IDatagramSocket :
     impl::require<IDatagramSocket, Windows::Foundation::IClosable>
 {
     IDatagramSocket(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDatagramSocket>(m_ptr); }
 };
 
 struct IDatagramSocket2 :
@@ -207,7 +206,6 @@ struct IDatagramSocket2 :
     impl::require<IDatagramSocket2, Windows::Foundation::IClosable>
 {
     IDatagramSocket2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDatagramSocket2>(m_ptr); }
 };
 
 struct IDatagramSocket3 :
@@ -215,7 +213,6 @@ struct IDatagramSocket3 :
     impl::consume<IDatagramSocket3>
 {
     IDatagramSocket3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDatagramSocket3>(m_ptr); }
 };
 
 struct IDatagramSocketControl :
@@ -223,7 +220,6 @@ struct IDatagramSocketControl :
     impl::consume<IDatagramSocketControl>
 {
     IDatagramSocketControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDatagramSocketControl>(m_ptr); }
 };
 
 struct IDatagramSocketControl2 :
@@ -231,7 +227,6 @@ struct IDatagramSocketControl2 :
     impl::consume<IDatagramSocketControl2>
 {
     IDatagramSocketControl2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDatagramSocketControl2>(m_ptr); }
 };
 
 struct IDatagramSocketControl3 :
@@ -239,7 +234,6 @@ struct IDatagramSocketControl3 :
     impl::consume<IDatagramSocketControl3>
 {
     IDatagramSocketControl3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDatagramSocketControl3>(m_ptr); }
 };
 
 struct IDatagramSocketInformation :
@@ -247,7 +241,6 @@ struct IDatagramSocketInformation :
     impl::consume<IDatagramSocketInformation>
 {
     IDatagramSocketInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDatagramSocketInformation>(m_ptr); }
 };
 
 struct IDatagramSocketMessageReceivedEventArgs :
@@ -255,7 +248,6 @@ struct IDatagramSocketMessageReceivedEventArgs :
     impl::consume<IDatagramSocketMessageReceivedEventArgs>
 {
     IDatagramSocketMessageReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDatagramSocketMessageReceivedEventArgs>(m_ptr); }
 };
 
 struct IDatagramSocketStatics :
@@ -263,7 +255,6 @@ struct IDatagramSocketStatics :
     impl::consume<IDatagramSocketStatics>
 {
     IDatagramSocketStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDatagramSocketStatics>(m_ptr); }
 };
 
 struct IMessageWebSocket :
@@ -272,7 +263,6 @@ struct IMessageWebSocket :
     impl::require<IMessageWebSocket, Windows::Foundation::IClosable, Windows::Networking::Sockets::IWebSocket>
 {
     IMessageWebSocket(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMessageWebSocket>(m_ptr); }
     using impl_IClosable::Close;
     using impl_IWebSocket::Close;
 };
@@ -283,7 +273,6 @@ struct IMessageWebSocket2 :
     impl::require<IMessageWebSocket2, Windows::Foundation::IClosable, Windows::Networking::Sockets::IMessageWebSocket, Windows::Networking::Sockets::IWebSocket>
 {
     IMessageWebSocket2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMessageWebSocket2>(m_ptr); }
     using impl_IClosable::Close;
     using impl_IWebSocket::Close;
 };
@@ -294,7 +283,6 @@ struct IMessageWebSocketControl :
     impl::require<IMessageWebSocketControl, Windows::Networking::Sockets::IWebSocketControl>
 {
     IMessageWebSocketControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMessageWebSocketControl>(m_ptr); }
 };
 
 struct IMessageWebSocketMessageReceivedEventArgs :
@@ -302,7 +290,6 @@ struct IMessageWebSocketMessageReceivedEventArgs :
     impl::consume<IMessageWebSocketMessageReceivedEventArgs>
 {
     IMessageWebSocketMessageReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMessageWebSocketMessageReceivedEventArgs>(m_ptr); }
 };
 
 struct ISocketActivityContext :
@@ -310,7 +297,6 @@ struct ISocketActivityContext :
     impl::consume<ISocketActivityContext>
 {
     ISocketActivityContext(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISocketActivityContext>(m_ptr); }
 };
 
 struct ISocketActivityContextFactory :
@@ -318,7 +304,6 @@ struct ISocketActivityContextFactory :
     impl::consume<ISocketActivityContextFactory>
 {
     ISocketActivityContextFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISocketActivityContextFactory>(m_ptr); }
 };
 
 struct ISocketActivityInformation :
@@ -326,7 +311,6 @@ struct ISocketActivityInformation :
     impl::consume<ISocketActivityInformation>
 {
     ISocketActivityInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISocketActivityInformation>(m_ptr); }
 };
 
 struct ISocketActivityInformationStatics :
@@ -334,7 +318,6 @@ struct ISocketActivityInformationStatics :
     impl::consume<ISocketActivityInformationStatics>
 {
     ISocketActivityInformationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISocketActivityInformationStatics>(m_ptr); }
 };
 
 struct ISocketActivityTriggerDetails :
@@ -342,7 +325,6 @@ struct ISocketActivityTriggerDetails :
     impl::consume<ISocketActivityTriggerDetails>
 {
     ISocketActivityTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISocketActivityTriggerDetails>(m_ptr); }
 };
 
 struct ISocketErrorStatics :
@@ -350,7 +332,6 @@ struct ISocketErrorStatics :
     impl::consume<ISocketErrorStatics>
 {
     ISocketErrorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISocketErrorStatics>(m_ptr); }
 };
 
 struct IStreamSocket :
@@ -359,7 +340,6 @@ struct IStreamSocket :
     impl::require<IStreamSocket, Windows::Foundation::IClosable>
 {
     IStreamSocket(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamSocket>(m_ptr); }
 };
 
 struct IStreamSocket2 :
@@ -368,7 +348,6 @@ struct IStreamSocket2 :
     impl::require<IStreamSocket2, Windows::Foundation::IClosable>
 {
     IStreamSocket2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamSocket2>(m_ptr); }
 };
 
 struct IStreamSocket3 :
@@ -376,7 +355,6 @@ struct IStreamSocket3 :
     impl::consume<IStreamSocket3>
 {
     IStreamSocket3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamSocket3>(m_ptr); }
 };
 
 struct IStreamSocketControl :
@@ -384,7 +362,6 @@ struct IStreamSocketControl :
     impl::consume<IStreamSocketControl>
 {
     IStreamSocketControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamSocketControl>(m_ptr); }
 };
 
 struct IStreamSocketControl2 :
@@ -392,7 +369,6 @@ struct IStreamSocketControl2 :
     impl::consume<IStreamSocketControl2>
 {
     IStreamSocketControl2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamSocketControl2>(m_ptr); }
 };
 
 struct IStreamSocketControl3 :
@@ -400,7 +376,6 @@ struct IStreamSocketControl3 :
     impl::consume<IStreamSocketControl3>
 {
     IStreamSocketControl3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamSocketControl3>(m_ptr); }
 };
 
 struct IStreamSocketInformation :
@@ -408,7 +383,6 @@ struct IStreamSocketInformation :
     impl::consume<IStreamSocketInformation>
 {
     IStreamSocketInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamSocketInformation>(m_ptr); }
 };
 
 struct IStreamSocketInformation2 :
@@ -416,7 +390,6 @@ struct IStreamSocketInformation2 :
     impl::consume<IStreamSocketInformation2>
 {
     IStreamSocketInformation2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamSocketInformation2>(m_ptr); }
 };
 
 struct IStreamSocketListener :
@@ -425,7 +398,6 @@ struct IStreamSocketListener :
     impl::require<IStreamSocketListener, Windows::Foundation::IClosable>
 {
     IStreamSocketListener(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamSocketListener>(m_ptr); }
 };
 
 struct IStreamSocketListener2 :
@@ -434,7 +406,6 @@ struct IStreamSocketListener2 :
     impl::require<IStreamSocketListener2, Windows::Foundation::IClosable>
 {
     IStreamSocketListener2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamSocketListener2>(m_ptr); }
 };
 
 struct IStreamSocketListener3 :
@@ -442,7 +413,6 @@ struct IStreamSocketListener3 :
     impl::consume<IStreamSocketListener3>
 {
     IStreamSocketListener3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamSocketListener3>(m_ptr); }
 };
 
 struct IStreamSocketListenerConnectionReceivedEventArgs :
@@ -450,7 +420,6 @@ struct IStreamSocketListenerConnectionReceivedEventArgs :
     impl::consume<IStreamSocketListenerConnectionReceivedEventArgs>
 {
     IStreamSocketListenerConnectionReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamSocketListenerConnectionReceivedEventArgs>(m_ptr); }
 };
 
 struct IStreamSocketListenerControl :
@@ -458,7 +427,6 @@ struct IStreamSocketListenerControl :
     impl::consume<IStreamSocketListenerControl>
 {
     IStreamSocketListenerControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamSocketListenerControl>(m_ptr); }
 };
 
 struct IStreamSocketListenerControl2 :
@@ -466,7 +434,6 @@ struct IStreamSocketListenerControl2 :
     impl::consume<IStreamSocketListenerControl2>
 {
     IStreamSocketListenerControl2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamSocketListenerControl2>(m_ptr); }
 };
 
 struct IStreamSocketListenerInformation :
@@ -474,7 +441,6 @@ struct IStreamSocketListenerInformation :
     impl::consume<IStreamSocketListenerInformation>
 {
     IStreamSocketListenerInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamSocketListenerInformation>(m_ptr); }
 };
 
 struct IStreamSocketStatics :
@@ -482,7 +448,6 @@ struct IStreamSocketStatics :
     impl::consume<IStreamSocketStatics>
 {
     IStreamSocketStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamSocketStatics>(m_ptr); }
 };
 
 struct IStreamWebSocket :
@@ -491,7 +456,6 @@ struct IStreamWebSocket :
     impl::require<IStreamWebSocket, Windows::Foundation::IClosable, Windows::Networking::Sockets::IWebSocket>
 {
     IStreamWebSocket(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamWebSocket>(m_ptr); }
     using impl_IClosable::Close;
     using impl_IWebSocket::Close;
 };
@@ -502,7 +466,6 @@ struct IStreamWebSocket2 :
     impl::require<IStreamWebSocket2, Windows::Foundation::IClosable, Windows::Networking::Sockets::IStreamWebSocket, Windows::Networking::Sockets::IWebSocket>
 {
     IStreamWebSocket2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamWebSocket2>(m_ptr); }
     using impl_IClosable::Close;
     using impl_IWebSocket::Close;
 };
@@ -513,7 +476,6 @@ struct IStreamWebSocketControl :
     impl::require<IStreamWebSocketControl, Windows::Networking::Sockets::IWebSocketControl>
 {
     IStreamWebSocketControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamWebSocketControl>(m_ptr); }
 };
 
 struct IWebSocket :
@@ -522,7 +484,6 @@ struct IWebSocket :
     impl::require<IWebSocket, Windows::Foundation::IClosable>
 {
     IWebSocket(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebSocket>(m_ptr); }
     using impl_IClosable::Close;
     using impl_IWebSocket::Close;
 };
@@ -532,7 +493,6 @@ struct IWebSocketClosedEventArgs :
     impl::consume<IWebSocketClosedEventArgs>
 {
     IWebSocketClosedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebSocketClosedEventArgs>(m_ptr); }
 };
 
 struct IWebSocketControl :
@@ -540,7 +500,6 @@ struct IWebSocketControl :
     impl::consume<IWebSocketControl>
 {
     IWebSocketControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebSocketControl>(m_ptr); }
 };
 
 struct IWebSocketControl2 :
@@ -549,7 +508,6 @@ struct IWebSocketControl2 :
     impl::require<IWebSocketControl2, Windows::Networking::Sockets::IWebSocketControl>
 {
     IWebSocketControl2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebSocketControl2>(m_ptr); }
 };
 
 struct IWebSocketErrorStatics :
@@ -557,7 +515,6 @@ struct IWebSocketErrorStatics :
     impl::consume<IWebSocketErrorStatics>
 {
     IWebSocketErrorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebSocketErrorStatics>(m_ptr); }
 };
 
 struct IWebSocketInformation :
@@ -565,7 +522,6 @@ struct IWebSocketInformation :
     impl::consume<IWebSocketInformation>
 {
     IWebSocketInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebSocketInformation>(m_ptr); }
 };
 
 struct IWebSocketInformation2 :
@@ -574,7 +530,6 @@ struct IWebSocketInformation2 :
     impl::require<IWebSocketInformation2, Windows::Networking::Sockets::IWebSocketInformation>
 {
     IWebSocketInformation2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebSocketInformation2>(m_ptr); }
 };
 
 struct IWebSocketServerCustomValidationRequestedEventArgs :
@@ -582,7 +537,6 @@ struct IWebSocketServerCustomValidationRequestedEventArgs :
     impl::consume<IWebSocketServerCustomValidationRequestedEventArgs>
 {
     IWebSocketServerCustomValidationRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebSocketServerCustomValidationRequestedEventArgs>(m_ptr); }
 };
 
 }

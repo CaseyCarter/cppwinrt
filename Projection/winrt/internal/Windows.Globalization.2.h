@@ -34,7 +34,6 @@ struct IApplicationLanguagesStatics :
     impl::consume<IApplicationLanguagesStatics>
 {
     IApplicationLanguagesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationLanguagesStatics>(m_ptr); }
 };
 
 struct ICalendar :
@@ -42,7 +41,6 @@ struct ICalendar :
     impl::consume<ICalendar>
 {
     ICalendar(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICalendar>(m_ptr); }
 };
 
 struct ICalendarFactory :
@@ -50,7 +48,6 @@ struct ICalendarFactory :
     impl::consume<ICalendarFactory>
 {
     ICalendarFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICalendarFactory>(m_ptr); }
 };
 
 struct ICalendarFactory2 :
@@ -58,7 +55,6 @@ struct ICalendarFactory2 :
     impl::consume<ICalendarFactory2>
 {
     ICalendarFactory2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICalendarFactory2>(m_ptr); }
 };
 
 struct ICalendarIdentifiersStatics :
@@ -66,7 +62,6 @@ struct ICalendarIdentifiersStatics :
     impl::consume<ICalendarIdentifiersStatics>
 {
     ICalendarIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICalendarIdentifiersStatics>(m_ptr); }
 };
 
 struct ICalendarIdentifiersStatics2 :
@@ -74,7 +69,6 @@ struct ICalendarIdentifiersStatics2 :
     impl::consume<ICalendarIdentifiersStatics2>
 {
     ICalendarIdentifiersStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICalendarIdentifiersStatics2>(m_ptr); }
 };
 
 struct ICalendarIdentifiersStatics3 :
@@ -82,7 +76,6 @@ struct ICalendarIdentifiersStatics3 :
     impl::consume<ICalendarIdentifiersStatics3>
 {
     ICalendarIdentifiersStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICalendarIdentifiersStatics3>(m_ptr); }
 };
 
 struct IClockIdentifiersStatics :
@@ -90,7 +83,6 @@ struct IClockIdentifiersStatics :
     impl::consume<IClockIdentifiersStatics>
 {
     IClockIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IClockIdentifiersStatics>(m_ptr); }
 };
 
 struct ICurrencyIdentifiersStatics :
@@ -98,7 +90,6 @@ struct ICurrencyIdentifiersStatics :
     impl::consume<ICurrencyIdentifiersStatics>
 {
     ICurrencyIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICurrencyIdentifiersStatics>(m_ptr); }
 };
 
 struct IGeographicRegion :
@@ -106,7 +97,6 @@ struct IGeographicRegion :
     impl::consume<IGeographicRegion>
 {
     IGeographicRegion(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeographicRegion>(m_ptr); }
 };
 
 struct IGeographicRegionFactory :
@@ -114,7 +104,6 @@ struct IGeographicRegionFactory :
     impl::consume<IGeographicRegionFactory>
 {
     IGeographicRegionFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeographicRegionFactory>(m_ptr); }
 };
 
 struct IGeographicRegionStatics :
@@ -122,7 +111,6 @@ struct IGeographicRegionStatics :
     impl::consume<IGeographicRegionStatics>
 {
     IGeographicRegionStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeographicRegionStatics>(m_ptr); }
 };
 
 struct ILanguage :
@@ -130,7 +118,6 @@ struct ILanguage :
     impl::consume<ILanguage>
 {
     ILanguage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILanguage>(m_ptr); }
 };
 
 struct ILanguageExtensionSubtags :
@@ -138,7 +125,6 @@ struct ILanguageExtensionSubtags :
     impl::consume<ILanguageExtensionSubtags>
 {
     ILanguageExtensionSubtags(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILanguageExtensionSubtags>(m_ptr); }
 };
 
 struct ILanguageFactory :
@@ -146,7 +132,6 @@ struct ILanguageFactory :
     impl::consume<ILanguageFactory>
 {
     ILanguageFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILanguageFactory>(m_ptr); }
 };
 
 struct ILanguageStatics :
@@ -154,7 +139,6 @@ struct ILanguageStatics :
     impl::consume<ILanguageStatics>
 {
     ILanguageStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILanguageStatics>(m_ptr); }
 };
 
 struct ILanguageStatics2 :
@@ -162,7 +146,6 @@ struct ILanguageStatics2 :
     impl::consume<ILanguageStatics2>
 {
     ILanguageStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILanguageStatics2>(m_ptr); }
 };
 
 struct INumeralSystemIdentifiersStatics :
@@ -170,7 +153,6 @@ struct INumeralSystemIdentifiersStatics :
     impl::consume<INumeralSystemIdentifiersStatics>
 {
     INumeralSystemIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INumeralSystemIdentifiersStatics>(m_ptr); }
 };
 
 struct INumeralSystemIdentifiersStatics2 :
@@ -178,7 +160,6 @@ struct INumeralSystemIdentifiersStatics2 :
     impl::consume<INumeralSystemIdentifiersStatics2>
 {
     INumeralSystemIdentifiersStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INumeralSystemIdentifiersStatics2>(m_ptr); }
 };
 
 struct ITimeZoneOnCalendar :
@@ -186,7 +167,6 @@ struct ITimeZoneOnCalendar :
     impl::consume<ITimeZoneOnCalendar>
 {
     ITimeZoneOnCalendar(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimeZoneOnCalendar>(m_ptr); }
 };
 
 }

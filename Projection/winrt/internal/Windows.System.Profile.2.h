@@ -24,7 +24,6 @@ struct IAnalyticsInfoStatics :
     impl::consume<IAnalyticsInfoStatics>
 {
     IAnalyticsInfoStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAnalyticsInfoStatics>(m_ptr); }
 };
 
 struct IAnalyticsVersionInfo :
@@ -32,7 +31,6 @@ struct IAnalyticsVersionInfo :
     impl::consume<IAnalyticsVersionInfo>
 {
     IAnalyticsVersionInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAnalyticsVersionInfo>(m_ptr); }
 };
 
 struct IHardwareIdentificationStatics :
@@ -40,7 +38,6 @@ struct IHardwareIdentificationStatics :
     impl::consume<IHardwareIdentificationStatics>
 {
     IHardwareIdentificationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHardwareIdentificationStatics>(m_ptr); }
 };
 
 struct IHardwareToken :
@@ -48,7 +45,6 @@ struct IHardwareToken :
     impl::consume<IHardwareToken>
 {
     IHardwareToken(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHardwareToken>(m_ptr); }
 };
 
 struct IPlatformDiagnosticsAndUsageDataSettingsStatics :
@@ -56,7 +52,6 @@ struct IPlatformDiagnosticsAndUsageDataSettingsStatics :
     impl::consume<IPlatformDiagnosticsAndUsageDataSettingsStatics>
 {
     IPlatformDiagnosticsAndUsageDataSettingsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlatformDiagnosticsAndUsageDataSettingsStatics>(m_ptr); }
 };
 
 struct ISharedModeSettingsStatics :
@@ -64,7 +59,6 @@ struct ISharedModeSettingsStatics :
     impl::consume<ISharedModeSettingsStatics>
 {
     ISharedModeSettingsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISharedModeSettingsStatics>(m_ptr); }
 };
 
 struct ISystemIdentificationInfo :
@@ -72,7 +66,6 @@ struct ISystemIdentificationInfo :
     impl::consume<ISystemIdentificationInfo>
 {
     ISystemIdentificationInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemIdentificationInfo>(m_ptr); }
 };
 
 struct ISystemIdentificationStatics :
@@ -80,7 +73,6 @@ struct ISystemIdentificationStatics :
     impl::consume<ISystemIdentificationStatics>
 {
     ISystemIdentificationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemIdentificationStatics>(m_ptr); }
 };
 
 }

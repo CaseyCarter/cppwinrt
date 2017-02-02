@@ -14,7 +14,6 @@ struct IApplicationDataManager :
     impl::consume<IApplicationDataManager>
 {
     IApplicationDataManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationDataManager>(m_ptr); }
 };
 
 struct IApplicationDataManagerStatics :
@@ -22,7 +21,6 @@ struct IApplicationDataManagerStatics :
     impl::consume<IApplicationDataManagerStatics>
 {
     IApplicationDataManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationDataManagerStatics>(m_ptr); }
 };
 
 }

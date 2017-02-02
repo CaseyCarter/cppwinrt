@@ -109,7 +109,6 @@ struct ICoreTextCompositionCompletedEventArgs :
     impl::consume<ICoreTextCompositionCompletedEventArgs>
 {
     ICoreTextCompositionCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTextCompositionCompletedEventArgs>(m_ptr); }
 };
 
 struct ICoreTextCompositionSegment :
@@ -117,7 +116,6 @@ struct ICoreTextCompositionSegment :
     impl::consume<ICoreTextCompositionSegment>
 {
     ICoreTextCompositionSegment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTextCompositionSegment>(m_ptr); }
 };
 
 struct ICoreTextCompositionStartedEventArgs :
@@ -125,7 +123,6 @@ struct ICoreTextCompositionStartedEventArgs :
     impl::consume<ICoreTextCompositionStartedEventArgs>
 {
     ICoreTextCompositionStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTextCompositionStartedEventArgs>(m_ptr); }
 };
 
 struct ICoreTextEditContext :
@@ -133,7 +130,6 @@ struct ICoreTextEditContext :
     impl::consume<ICoreTextEditContext>
 {
     ICoreTextEditContext(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTextEditContext>(m_ptr); }
 };
 
 struct ICoreTextEditContext2 :
@@ -141,7 +137,6 @@ struct ICoreTextEditContext2 :
     impl::consume<ICoreTextEditContext2>
 {
     ICoreTextEditContext2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTextEditContext2>(m_ptr); }
 };
 
 struct ICoreTextFormatUpdatingEventArgs :
@@ -149,7 +144,6 @@ struct ICoreTextFormatUpdatingEventArgs :
     impl::consume<ICoreTextFormatUpdatingEventArgs>
 {
     ICoreTextFormatUpdatingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTextFormatUpdatingEventArgs>(m_ptr); }
 };
 
 struct ICoreTextLayoutBounds :
@@ -157,7 +151,6 @@ struct ICoreTextLayoutBounds :
     impl::consume<ICoreTextLayoutBounds>
 {
     ICoreTextLayoutBounds(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTextLayoutBounds>(m_ptr); }
 };
 
 struct ICoreTextLayoutRequest :
@@ -165,7 +158,6 @@ struct ICoreTextLayoutRequest :
     impl::consume<ICoreTextLayoutRequest>
 {
     ICoreTextLayoutRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTextLayoutRequest>(m_ptr); }
 };
 
 struct ICoreTextLayoutRequestedEventArgs :
@@ -173,7 +165,6 @@ struct ICoreTextLayoutRequestedEventArgs :
     impl::consume<ICoreTextLayoutRequestedEventArgs>
 {
     ICoreTextLayoutRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTextLayoutRequestedEventArgs>(m_ptr); }
 };
 
 struct ICoreTextSelectionRequest :
@@ -181,7 +172,6 @@ struct ICoreTextSelectionRequest :
     impl::consume<ICoreTextSelectionRequest>
 {
     ICoreTextSelectionRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTextSelectionRequest>(m_ptr); }
 };
 
 struct ICoreTextSelectionRequestedEventArgs :
@@ -189,7 +179,6 @@ struct ICoreTextSelectionRequestedEventArgs :
     impl::consume<ICoreTextSelectionRequestedEventArgs>
 {
     ICoreTextSelectionRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTextSelectionRequestedEventArgs>(m_ptr); }
 };
 
 struct ICoreTextSelectionUpdatingEventArgs :
@@ -197,7 +186,6 @@ struct ICoreTextSelectionUpdatingEventArgs :
     impl::consume<ICoreTextSelectionUpdatingEventArgs>
 {
     ICoreTextSelectionUpdatingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTextSelectionUpdatingEventArgs>(m_ptr); }
 };
 
 struct ICoreTextServicesManager :
@@ -205,7 +193,6 @@ struct ICoreTextServicesManager :
     impl::consume<ICoreTextServicesManager>
 {
     ICoreTextServicesManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTextServicesManager>(m_ptr); }
 };
 
 struct ICoreTextServicesManagerStatics :
@@ -213,7 +200,6 @@ struct ICoreTextServicesManagerStatics :
     impl::consume<ICoreTextServicesManagerStatics>
 {
     ICoreTextServicesManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTextServicesManagerStatics>(m_ptr); }
 };
 
 struct ICoreTextServicesStatics :
@@ -221,7 +207,6 @@ struct ICoreTextServicesStatics :
     impl::consume<ICoreTextServicesStatics>
 {
     ICoreTextServicesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTextServicesStatics>(m_ptr); }
 };
 
 struct ICoreTextTextRequest :
@@ -229,7 +214,6 @@ struct ICoreTextTextRequest :
     impl::consume<ICoreTextTextRequest>
 {
     ICoreTextTextRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTextTextRequest>(m_ptr); }
 };
 
 struct ICoreTextTextRequestedEventArgs :
@@ -237,7 +221,6 @@ struct ICoreTextTextRequestedEventArgs :
     impl::consume<ICoreTextTextRequestedEventArgs>
 {
     ICoreTextTextRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTextTextRequestedEventArgs>(m_ptr); }
 };
 
 struct ICoreTextTextUpdatingEventArgs :
@@ -245,7 +228,6 @@ struct ICoreTextTextUpdatingEventArgs :
     impl::consume<ICoreTextTextUpdatingEventArgs>
 {
     ICoreTextTextUpdatingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreTextTextUpdatingEventArgs>(m_ptr); }
 };
 
 }

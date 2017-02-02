@@ -14,7 +14,6 @@ struct IMdmAllowPolicyStatics :
     impl::consume<IMdmAllowPolicyStatics>
 {
     IMdmAllowPolicyStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMdmAllowPolicyStatics>(m_ptr); }
 };
 
 struct IMdmPolicyStatics2 :
@@ -22,7 +21,6 @@ struct IMdmPolicyStatics2 :
     impl::consume<IMdmPolicyStatics2>
 {
     IMdmPolicyStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMdmPolicyStatics2>(m_ptr); }
 };
 
 }

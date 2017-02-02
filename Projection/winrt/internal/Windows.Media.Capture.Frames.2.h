@@ -210,7 +210,6 @@ struct IBufferMediaFrame :
     impl::consume<IBufferMediaFrame>
 {
     IBufferMediaFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBufferMediaFrame>(m_ptr); }
 };
 
 struct IDepthMediaFrame :
@@ -218,7 +217,6 @@ struct IDepthMediaFrame :
     impl::consume<IDepthMediaFrame>
 {
     IDepthMediaFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDepthMediaFrame>(m_ptr); }
 };
 
 struct IDepthMediaFrameFormat :
@@ -226,7 +224,6 @@ struct IDepthMediaFrameFormat :
     impl::consume<IDepthMediaFrameFormat>
 {
     IDepthMediaFrameFormat(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDepthMediaFrameFormat>(m_ptr); }
 };
 
 struct IInfraredMediaFrame :
@@ -234,7 +231,6 @@ struct IInfraredMediaFrame :
     impl::consume<IInfraredMediaFrame>
 {
     IInfraredMediaFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInfraredMediaFrame>(m_ptr); }
 };
 
 struct IMediaFrameArrivedEventArgs :
@@ -242,7 +238,6 @@ struct IMediaFrameArrivedEventArgs :
     impl::consume<IMediaFrameArrivedEventArgs>
 {
     IMediaFrameArrivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaFrameArrivedEventArgs>(m_ptr); }
 };
 
 struct IMediaFrameFormat :
@@ -250,7 +245,6 @@ struct IMediaFrameFormat :
     impl::consume<IMediaFrameFormat>
 {
     IMediaFrameFormat(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaFrameFormat>(m_ptr); }
 };
 
 struct IMediaFrameReader :
@@ -259,7 +253,6 @@ struct IMediaFrameReader :
     impl::require<IMediaFrameReader, Windows::Foundation::IClosable>
 {
     IMediaFrameReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaFrameReader>(m_ptr); }
 };
 
 struct IMediaFrameReference :
@@ -268,7 +261,6 @@ struct IMediaFrameReference :
     impl::require<IMediaFrameReference, Windows::Foundation::IClosable>
 {
     IMediaFrameReference(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaFrameReference>(m_ptr); }
 };
 
 struct IMediaFrameSource :
@@ -276,7 +268,6 @@ struct IMediaFrameSource :
     impl::consume<IMediaFrameSource>
 {
     IMediaFrameSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaFrameSource>(m_ptr); }
 };
 
 struct IMediaFrameSourceController :
@@ -284,7 +275,6 @@ struct IMediaFrameSourceController :
     impl::consume<IMediaFrameSourceController>
 {
     IMediaFrameSourceController(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaFrameSourceController>(m_ptr); }
 };
 
 struct IMediaFrameSourceGetPropertyResult :
@@ -292,7 +282,6 @@ struct IMediaFrameSourceGetPropertyResult :
     impl::consume<IMediaFrameSourceGetPropertyResult>
 {
     IMediaFrameSourceGetPropertyResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaFrameSourceGetPropertyResult>(m_ptr); }
 };
 
 struct IMediaFrameSourceGroup :
@@ -300,7 +289,6 @@ struct IMediaFrameSourceGroup :
     impl::consume<IMediaFrameSourceGroup>
 {
     IMediaFrameSourceGroup(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaFrameSourceGroup>(m_ptr); }
 };
 
 struct IMediaFrameSourceGroupStatics :
@@ -308,7 +296,6 @@ struct IMediaFrameSourceGroupStatics :
     impl::consume<IMediaFrameSourceGroupStatics>
 {
     IMediaFrameSourceGroupStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaFrameSourceGroupStatics>(m_ptr); }
 };
 
 struct IMediaFrameSourceInfo :
@@ -316,7 +303,6 @@ struct IMediaFrameSourceInfo :
     impl::consume<IMediaFrameSourceInfo>
 {
     IMediaFrameSourceInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaFrameSourceInfo>(m_ptr); }
 };
 
 struct IVideoMediaFrame :
@@ -324,7 +310,6 @@ struct IVideoMediaFrame :
     impl::consume<IVideoMediaFrame>
 {
     IVideoMediaFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoMediaFrame>(m_ptr); }
 };
 
 struct IVideoMediaFrameFormat :
@@ -332,7 +317,6 @@ struct IVideoMediaFrameFormat :
     impl::consume<IVideoMediaFrameFormat>
 {
     IVideoMediaFrameFormat(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoMediaFrameFormat>(m_ptr); }
 };
 
 }

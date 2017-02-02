@@ -16,7 +16,6 @@ struct ICompositeTransform3D :
     impl::consume<ICompositeTransform3D>
 {
     ICompositeTransform3D(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositeTransform3D>(m_ptr); }
 };
 
 struct ICompositeTransform3DStatics :
@@ -24,7 +23,6 @@ struct ICompositeTransform3DStatics :
     impl::consume<ICompositeTransform3DStatics>
 {
     ICompositeTransform3DStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositeTransform3DStatics>(m_ptr); }
 };
 
 struct IMatrix3DHelper :
@@ -32,7 +30,6 @@ struct IMatrix3DHelper :
     impl::consume<IMatrix3DHelper>
 {
     IMatrix3DHelper(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMatrix3DHelper>(m_ptr); }
 };
 
 struct IMatrix3DHelperStatics :
@@ -40,7 +37,6 @@ struct IMatrix3DHelperStatics :
     impl::consume<IMatrix3DHelperStatics>
 {
     IMatrix3DHelperStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMatrix3DHelperStatics>(m_ptr); }
 };
 
 struct IPerspectiveTransform3D :
@@ -48,7 +44,6 @@ struct IPerspectiveTransform3D :
     impl::consume<IPerspectiveTransform3D>
 {
     IPerspectiveTransform3D(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerspectiveTransform3D>(m_ptr); }
 };
 
 struct IPerspectiveTransform3DStatics :
@@ -56,7 +51,6 @@ struct IPerspectiveTransform3DStatics :
     impl::consume<IPerspectiveTransform3DStatics>
 {
     IPerspectiveTransform3DStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerspectiveTransform3DStatics>(m_ptr); }
 };
 
 struct ITransform3D :
@@ -64,7 +58,6 @@ struct ITransform3D :
     impl::consume<ITransform3D>
 {
     ITransform3D(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITransform3D>(m_ptr); }
 };
 
 struct ITransform3DFactory :
@@ -72,7 +65,6 @@ struct ITransform3DFactory :
     impl::consume<ITransform3DFactory>
 {
     ITransform3DFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITransform3DFactory>(m_ptr); }
 };
 
 }

@@ -35,7 +35,7 @@ namespace Windows::Data::Html {
 template <typename D> hstring impl_IHtmlUtilities<D>::ConvertToText(hstring_ref html) const
 {
     hstring text;
-    check_hresult(static_cast<const IHtmlUtilities &>(static_cast<const D &>(*this))->abi_ConvertToText(get(html), put(text)));
+    check_hresult(WINRT_SHIM(IHtmlUtilities)->abi_ConvertToText(get(html), put(text)));
     return text;
 }
 

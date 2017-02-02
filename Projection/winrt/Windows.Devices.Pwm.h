@@ -264,104 +264,104 @@ namespace Windows::Devices::Pwm {
 template <typename D> int32_t impl_IPwmController<D>::PinCount() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IPwmController &>(static_cast<const D &>(*this))->get_PinCount(&value));
+    check_hresult(WINRT_SHIM(IPwmController)->get_PinCount(&value));
     return value;
 }
 
 template <typename D> double impl_IPwmController<D>::ActualFrequency() const
 {
     double value {};
-    check_hresult(static_cast<const IPwmController &>(static_cast<const D &>(*this))->get_ActualFrequency(&value));
+    check_hresult(WINRT_SHIM(IPwmController)->get_ActualFrequency(&value));
     return value;
 }
 
 template <typename D> double impl_IPwmController<D>::SetDesiredFrequency(double desiredFrequency) const
 {
     double value {};
-    check_hresult(static_cast<const IPwmController &>(static_cast<const D &>(*this))->abi_SetDesiredFrequency(desiredFrequency, &value));
+    check_hresult(WINRT_SHIM(IPwmController)->abi_SetDesiredFrequency(desiredFrequency, &value));
     return value;
 }
 
 template <typename D> double impl_IPwmController<D>::MinFrequency() const
 {
     double value {};
-    check_hresult(static_cast<const IPwmController &>(static_cast<const D &>(*this))->get_MinFrequency(&value));
+    check_hresult(WINRT_SHIM(IPwmController)->get_MinFrequency(&value));
     return value;
 }
 
 template <typename D> double impl_IPwmController<D>::MaxFrequency() const
 {
     double value {};
-    check_hresult(static_cast<const IPwmController &>(static_cast<const D &>(*this))->get_MaxFrequency(&value));
+    check_hresult(WINRT_SHIM(IPwmController)->get_MaxFrequency(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Pwm::PwmPin impl_IPwmController<D>::OpenPin(int32_t pinNumber) const
 {
     Windows::Devices::Pwm::PwmPin pin { nullptr };
-    check_hresult(static_cast<const IPwmController &>(static_cast<const D &>(*this))->abi_OpenPin(pinNumber, put(pin)));
+    check_hresult(WINRT_SHIM(IPwmController)->abi_OpenPin(pinNumber, put(pin)));
     return pin;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::PwmController>> impl_IPwmControllerStatics<D>::GetControllersAsync(const Windows::Devices::Pwm::Provider::IPwmProvider & provider) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::PwmController>> operation;
-    check_hresult(static_cast<const IPwmControllerStatics &>(static_cast<const D &>(*this))->abi_GetControllersAsync(get(provider), put(operation)));
+    check_hresult(WINRT_SHIM(IPwmControllerStatics)->abi_GetControllersAsync(get(provider), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController> impl_IPwmControllerStatics2<D>::GetDefaultAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController> operation;
-    check_hresult(static_cast<const IPwmControllerStatics2 &>(static_cast<const D &>(*this))->abi_GetDefaultAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPwmControllerStatics2)->abi_GetDefaultAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Devices::Pwm::PwmController impl_IPwmPin<D>::Controller() const
 {
     Windows::Devices::Pwm::PwmController value { nullptr };
-    check_hresult(static_cast<const IPwmPin &>(static_cast<const D &>(*this))->get_Controller(put(value)));
+    check_hresult(WINRT_SHIM(IPwmPin)->get_Controller(put(value)));
     return value;
 }
 
 template <typename D> double impl_IPwmPin<D>::GetActiveDutyCyclePercentage() const
 {
     double result {};
-    check_hresult(static_cast<const IPwmPin &>(static_cast<const D &>(*this))->abi_GetActiveDutyCyclePercentage(&result));
+    check_hresult(WINRT_SHIM(IPwmPin)->abi_GetActiveDutyCyclePercentage(&result));
     return result;
 }
 
 template <typename D> void impl_IPwmPin<D>::SetActiveDutyCyclePercentage(double dutyCyclePercentage) const
 {
-    check_hresult(static_cast<const IPwmPin &>(static_cast<const D &>(*this))->abi_SetActiveDutyCyclePercentage(dutyCyclePercentage));
+    check_hresult(WINRT_SHIM(IPwmPin)->abi_SetActiveDutyCyclePercentage(dutyCyclePercentage));
 }
 
 template <typename D> Windows::Devices::Pwm::PwmPulsePolarity impl_IPwmPin<D>::Polarity() const
 {
     Windows::Devices::Pwm::PwmPulsePolarity value {};
-    check_hresult(static_cast<const IPwmPin &>(static_cast<const D &>(*this))->get_Polarity(&value));
+    check_hresult(WINRT_SHIM(IPwmPin)->get_Polarity(&value));
     return value;
 }
 
 template <typename D> void impl_IPwmPin<D>::Polarity(Windows::Devices::Pwm::PwmPulsePolarity value) const
 {
-    check_hresult(static_cast<const IPwmPin &>(static_cast<const D &>(*this))->put_Polarity(value));
+    check_hresult(WINRT_SHIM(IPwmPin)->put_Polarity(value));
 }
 
 template <typename D> void impl_IPwmPin<D>::Start() const
 {
-    check_hresult(static_cast<const IPwmPin &>(static_cast<const D &>(*this))->abi_Start());
+    check_hresult(WINRT_SHIM(IPwmPin)->abi_Start());
 }
 
 template <typename D> void impl_IPwmPin<D>::Stop() const
 {
-    check_hresult(static_cast<const IPwmPin &>(static_cast<const D &>(*this))->abi_Stop());
+    check_hresult(WINRT_SHIM(IPwmPin)->abi_Stop());
 }
 
 template <typename D> bool impl_IPwmPin<D>::IsStarted() const
 {
     bool value {};
-    check_hresult(static_cast<const IPwmPin &>(static_cast<const D &>(*this))->get_IsStarted(&value));
+    check_hresult(WINRT_SHIM(IPwmPin)->get_IsStarted(&value));
     return value;
 }
 

@@ -34,7 +34,6 @@ struct IPushNotificationChannel :
     impl::consume<IPushNotificationChannel>
 {
     IPushNotificationChannel(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPushNotificationChannel>(m_ptr); }
 };
 
 struct IPushNotificationChannelManagerForUser :
@@ -42,7 +41,6 @@ struct IPushNotificationChannelManagerForUser :
     impl::consume<IPushNotificationChannelManagerForUser>
 {
     IPushNotificationChannelManagerForUser(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPushNotificationChannelManagerForUser>(m_ptr); }
 };
 
 struct IPushNotificationChannelManagerStatics :
@@ -50,7 +48,6 @@ struct IPushNotificationChannelManagerStatics :
     impl::consume<IPushNotificationChannelManagerStatics>
 {
     IPushNotificationChannelManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPushNotificationChannelManagerStatics>(m_ptr); }
 };
 
 struct IPushNotificationChannelManagerStatics2 :
@@ -58,7 +55,6 @@ struct IPushNotificationChannelManagerStatics2 :
     impl::consume<IPushNotificationChannelManagerStatics2>
 {
     IPushNotificationChannelManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPushNotificationChannelManagerStatics2>(m_ptr); }
 };
 
 struct IPushNotificationReceivedEventArgs :
@@ -66,7 +62,6 @@ struct IPushNotificationReceivedEventArgs :
     impl::consume<IPushNotificationReceivedEventArgs>
 {
     IPushNotificationReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPushNotificationReceivedEventArgs>(m_ptr); }
 };
 
 struct IRawNotification :
@@ -74,7 +69,6 @@ struct IRawNotification :
     impl::consume<IRawNotification>
 {
     IRawNotification(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRawNotification>(m_ptr); }
 };
 
 }

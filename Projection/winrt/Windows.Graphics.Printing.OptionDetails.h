@@ -482,163 +482,163 @@ namespace Windows::Graphics::Printing::OptionDetails {
 template <typename D> hstring impl_IPrintOptionDetails<D>::OptionId() const
 {
     hstring value;
-    check_hresult(static_cast<const IPrintOptionDetails &>(static_cast<const D &>(*this))->get_OptionId(put(value)));
+    check_hresult(WINRT_SHIM(IPrintOptionDetails)->get_OptionId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing::OptionDetails::PrintOptionType impl_IPrintOptionDetails<D>::OptionType() const
 {
     Windows::Graphics::Printing::OptionDetails::PrintOptionType value {};
-    check_hresult(static_cast<const IPrintOptionDetails &>(static_cast<const D &>(*this))->get_OptionType(&value));
+    check_hresult(WINRT_SHIM(IPrintOptionDetails)->get_OptionType(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintOptionDetails<D>::ErrorText(hstring_ref value) const
 {
-    check_hresult(static_cast<const IPrintOptionDetails &>(static_cast<const D &>(*this))->put_ErrorText(get(value)));
+    check_hresult(WINRT_SHIM(IPrintOptionDetails)->put_ErrorText(get(value)));
 }
 
 template <typename D> hstring impl_IPrintOptionDetails<D>::ErrorText() const
 {
     hstring value;
-    check_hresult(static_cast<const IPrintOptionDetails &>(static_cast<const D &>(*this))->get_ErrorText(put(value)));
+    check_hresult(WINRT_SHIM(IPrintOptionDetails)->get_ErrorText(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrintOptionDetails<D>::State(Windows::Graphics::Printing::OptionDetails::PrintOptionStates value) const
 {
-    check_hresult(static_cast<const IPrintOptionDetails &>(static_cast<const D &>(*this))->put_State(value));
+    check_hresult(WINRT_SHIM(IPrintOptionDetails)->put_State(value));
 }
 
 template <typename D> Windows::Graphics::Printing::OptionDetails::PrintOptionStates impl_IPrintOptionDetails<D>::State() const
 {
     Windows::Graphics::Printing::OptionDetails::PrintOptionStates value {};
-    check_hresult(static_cast<const IPrintOptionDetails &>(static_cast<const D &>(*this))->get_State(&value));
+    check_hresult(WINRT_SHIM(IPrintOptionDetails)->get_State(&value));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IPrintOptionDetails<D>::Value() const
 {
     Windows::IInspectable value;
-    check_hresult(static_cast<const IPrintOptionDetails &>(static_cast<const D &>(*this))->get_Value(put(value)));
+    check_hresult(WINRT_SHIM(IPrintOptionDetails)->get_Value(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPrintOptionDetails<D>::TrySetValue(const Windows::IInspectable & value) const
 {
     bool succeeded {};
-    check_hresult(static_cast<const IPrintOptionDetails &>(static_cast<const D &>(*this))->abi_TrySetValue(get(value), &succeeded));
+    check_hresult(WINRT_SHIM(IPrintOptionDetails)->abi_TrySetValue(get(value), &succeeded));
     return succeeded;
 }
 
 template <typename D> uint32_t impl_IPrintNumberOptionDetails<D>::MinValue() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrintNumberOptionDetails &>(static_cast<const D &>(*this))->get_MinValue(&value));
+    check_hresult(WINRT_SHIM(IPrintNumberOptionDetails)->get_MinValue(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPrintNumberOptionDetails<D>::MaxValue() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrintNumberOptionDetails &>(static_cast<const D &>(*this))->get_MaxValue(&value));
+    check_hresult(WINRT_SHIM(IPrintNumberOptionDetails)->get_MaxValue(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPrintTextOptionDetails<D>::MaxCharacters() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrintTextOptionDetails &>(static_cast<const D &>(*this))->get_MaxCharacters(&value));
+    check_hresult(WINRT_SHIM(IPrintTextOptionDetails)->get_MaxCharacters(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::IInspectable> impl_IPrintItemListOptionDetails<D>::Items() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::IInspectable> value;
-    check_hresult(static_cast<const IPrintItemListOptionDetails &>(static_cast<const D &>(*this))->get_Items(put(value)));
+    check_hresult(WINRT_SHIM(IPrintItemListOptionDetails)->get_Items(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrintCustomOptionDetails<D>::DisplayName(hstring_ref value) const
 {
-    check_hresult(static_cast<const IPrintCustomOptionDetails &>(static_cast<const D &>(*this))->put_DisplayName(get(value)));
+    check_hresult(WINRT_SHIM(IPrintCustomOptionDetails)->put_DisplayName(get(value)));
 }
 
 template <typename D> hstring impl_IPrintCustomOptionDetails<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const IPrintCustomOptionDetails &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IPrintCustomOptionDetails)->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrintCustomTextOptionDetails<D>::MaxCharacters(uint32_t value) const
 {
-    check_hresult(static_cast<const IPrintCustomTextOptionDetails &>(static_cast<const D &>(*this))->put_MaxCharacters(value));
+    check_hresult(WINRT_SHIM(IPrintCustomTextOptionDetails)->put_MaxCharacters(value));
 }
 
 template <typename D> uint32_t impl_IPrintCustomTextOptionDetails<D>::MaxCharacters() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrintCustomTextOptionDetails &>(static_cast<const D &>(*this))->get_MaxCharacters(&value));
+    check_hresult(WINRT_SHIM(IPrintCustomTextOptionDetails)->get_MaxCharacters(&value));
     return value;
 }
 
 template <typename D> hstring impl_IPrintCustomItemDetails<D>::ItemId() const
 {
     hstring value;
-    check_hresult(static_cast<const IPrintCustomItemDetails &>(static_cast<const D &>(*this))->get_ItemId(put(value)));
+    check_hresult(WINRT_SHIM(IPrintCustomItemDetails)->get_ItemId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrintCustomItemDetails<D>::ItemDisplayName(hstring_ref value) const
 {
-    check_hresult(static_cast<const IPrintCustomItemDetails &>(static_cast<const D &>(*this))->put_ItemDisplayName(get(value)));
+    check_hresult(WINRT_SHIM(IPrintCustomItemDetails)->put_ItemDisplayName(get(value)));
 }
 
 template <typename D> hstring impl_IPrintCustomItemDetails<D>::ItemDisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const IPrintCustomItemDetails &>(static_cast<const D &>(*this))->get_ItemDisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IPrintCustomItemDetails)->get_ItemDisplayName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrintCustomItemListOptionDetails<D>::AddItem(hstring_ref itemId, hstring_ref displayName) const
 {
-    check_hresult(static_cast<const IPrintCustomItemListOptionDetails &>(static_cast<const D &>(*this))->abi_AddItem(get(itemId), get(displayName)));
+    check_hresult(WINRT_SHIM(IPrintCustomItemListOptionDetails)->abi_AddItem(get(itemId), get(displayName)));
 }
 
 template <typename D> Windows::IInspectable impl_IPrintTaskOptionChangedEventArgs<D>::OptionId() const
 {
     Windows::IInspectable value;
-    check_hresult(static_cast<const IPrintTaskOptionChangedEventArgs &>(static_cast<const D &>(*this))->get_OptionId(put(value)));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionChangedEventArgs)->get_OptionId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails> impl_IPrintTaskOptionDetails<D>::Options() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails> value;
-    check_hresult(static_cast<const IPrintTaskOptionDetails &>(static_cast<const D &>(*this))->get_Options(put(value)));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->get_Options(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing::OptionDetails::PrintCustomItemListOptionDetails impl_IPrintTaskOptionDetails<D>::CreateItemListOption(hstring_ref optionId, hstring_ref displayName) const
 {
     Windows::Graphics::Printing::OptionDetails::PrintCustomItemListOptionDetails itemListOption { nullptr };
-    check_hresult(static_cast<const IPrintTaskOptionDetails &>(static_cast<const D &>(*this))->abi_CreateItemListOption(get(optionId), get(displayName), put(itemListOption)));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->abi_CreateItemListOption(get(optionId), get(displayName), put(itemListOption)));
     return itemListOption;
 }
 
 template <typename D> Windows::Graphics::Printing::OptionDetails::PrintCustomTextOptionDetails impl_IPrintTaskOptionDetails<D>::CreateTextOption(hstring_ref optionId, hstring_ref displayName) const
 {
     Windows::Graphics::Printing::OptionDetails::PrintCustomTextOptionDetails textOption { nullptr };
-    check_hresult(static_cast<const IPrintTaskOptionDetails &>(static_cast<const D &>(*this))->abi_CreateTextOption(get(optionId), get(displayName), put(textOption)));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->abi_CreateTextOption(get(optionId), get(displayName), put(textOption)));
     return textOption;
 }
 
 template <typename D> event_token impl_IPrintTaskOptionDetails<D>::OptionChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(static_cast<const IPrintTaskOptionDetails &>(static_cast<const D &>(*this))->add_OptionChanged(get(eventHandler), &eventCookie));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->add_OptionChanged(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -649,13 +649,13 @@ template <typename D> event_revoker<IPrintTaskOptionDetails> impl_IPrintTaskOpti
 
 template <typename D> void impl_IPrintTaskOptionDetails<D>::OptionChanged(event_token eventCookie) const
 {
-    check_hresult(static_cast<const IPrintTaskOptionDetails &>(static_cast<const D &>(*this))->remove_OptionChanged(eventCookie));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->remove_OptionChanged(eventCookie));
 }
 
 template <typename D> event_token impl_IPrintTaskOptionDetails<D>::BeginValidation(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::IInspectable> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(static_cast<const IPrintTaskOptionDetails &>(static_cast<const D &>(*this))->add_BeginValidation(get(eventHandler), &eventCookie));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->add_BeginValidation(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -666,13 +666,13 @@ template <typename D> event_revoker<IPrintTaskOptionDetails> impl_IPrintTaskOpti
 
 template <typename D> void impl_IPrintTaskOptionDetails<D>::BeginValidation(event_token eventCookie) const
 {
-    check_hresult(static_cast<const IPrintTaskOptionDetails &>(static_cast<const D &>(*this))->remove_BeginValidation(eventCookie));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionDetails)->remove_BeginValidation(eventCookie));
 }
 
 template <typename D> Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails impl_IPrintTaskOptionDetailsStatic<D>::GetFromPrintTaskOptions(const Windows::Graphics::Printing::PrintTaskOptions & printTaskOptions) const
 {
     Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails printTaskOptionDetails { nullptr };
-    check_hresult(static_cast<const IPrintTaskOptionDetailsStatic &>(static_cast<const D &>(*this))->abi_GetFromPrintTaskOptions(get(printTaskOptions), put(printTaskOptionDetails)));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionDetailsStatic)->abi_GetFromPrintTaskOptions(get(printTaskOptions), put(printTaskOptionDetails)));
     return printTaskOptionDetails;
 }
 

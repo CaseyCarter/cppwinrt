@@ -79,7 +79,6 @@ struct ILicenseManagerStatics :
     impl::consume<ILicenseManagerStatics>
 {
     ILicenseManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILicenseManagerStatics>(m_ptr); }
 };
 
 struct ILicenseSatisfactionInfo :
@@ -87,7 +86,6 @@ struct ILicenseSatisfactionInfo :
     impl::consume<ILicenseSatisfactionInfo>
 {
     ILicenseSatisfactionInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILicenseSatisfactionInfo>(m_ptr); }
 };
 
 struct ILicenseSatisfactionResult :
@@ -95,7 +93,6 @@ struct ILicenseSatisfactionResult :
     impl::consume<ILicenseSatisfactionResult>
 {
     ILicenseSatisfactionResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILicenseSatisfactionResult>(m_ptr); }
 };
 
 }

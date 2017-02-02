@@ -270,7 +270,6 @@ struct IBackgroundDownloader :
     impl::require<IBackgroundDownloader, Windows::Networking::BackgroundTransfer::IBackgroundTransferBase>
 {
     IBackgroundDownloader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundDownloader>(m_ptr); }
 };
 
 struct IBackgroundDownloader2 :
@@ -278,7 +277,6 @@ struct IBackgroundDownloader2 :
     impl::consume<IBackgroundDownloader2>
 {
     IBackgroundDownloader2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundDownloader2>(m_ptr); }
 };
 
 struct IBackgroundDownloader3 :
@@ -286,7 +284,6 @@ struct IBackgroundDownloader3 :
     impl::consume<IBackgroundDownloader3>
 {
     IBackgroundDownloader3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundDownloader3>(m_ptr); }
 };
 
 struct IBackgroundDownloaderFactory :
@@ -294,7 +291,6 @@ struct IBackgroundDownloaderFactory :
     impl::consume<IBackgroundDownloaderFactory>
 {
     IBackgroundDownloaderFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundDownloaderFactory>(m_ptr); }
 };
 
 struct IBackgroundDownloaderStaticMethods :
@@ -302,7 +298,6 @@ struct IBackgroundDownloaderStaticMethods :
     impl::consume<IBackgroundDownloaderStaticMethods>
 {
     IBackgroundDownloaderStaticMethods(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundDownloaderStaticMethods>(m_ptr); }
 };
 
 struct IBackgroundDownloaderStaticMethods2 :
@@ -310,7 +305,6 @@ struct IBackgroundDownloaderStaticMethods2 :
     impl::consume<IBackgroundDownloaderStaticMethods2>
 {
     IBackgroundDownloaderStaticMethods2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundDownloaderStaticMethods2>(m_ptr); }
 };
 
 struct IBackgroundDownloaderUserConsent :
@@ -318,7 +312,6 @@ struct IBackgroundDownloaderUserConsent :
     impl::consume<IBackgroundDownloaderUserConsent>
 {
     IBackgroundDownloaderUserConsent(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundDownloaderUserConsent>(m_ptr); }
 };
 
 struct IBackgroundTransferBase :
@@ -326,7 +319,6 @@ struct IBackgroundTransferBase :
     impl::consume<IBackgroundTransferBase>
 {
     IBackgroundTransferBase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTransferBase>(m_ptr); }
 };
 
 struct IBackgroundTransferCompletionGroup :
@@ -334,7 +326,6 @@ struct IBackgroundTransferCompletionGroup :
     impl::consume<IBackgroundTransferCompletionGroup>
 {
     IBackgroundTransferCompletionGroup(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTransferCompletionGroup>(m_ptr); }
 };
 
 struct IBackgroundTransferCompletionGroupTriggerDetails :
@@ -342,7 +333,6 @@ struct IBackgroundTransferCompletionGroupTriggerDetails :
     impl::consume<IBackgroundTransferCompletionGroupTriggerDetails>
 {
     IBackgroundTransferCompletionGroupTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTransferCompletionGroupTriggerDetails>(m_ptr); }
 };
 
 struct IBackgroundTransferContentPart :
@@ -350,7 +340,6 @@ struct IBackgroundTransferContentPart :
     impl::consume<IBackgroundTransferContentPart>
 {
     IBackgroundTransferContentPart(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTransferContentPart>(m_ptr); }
 };
 
 struct IBackgroundTransferContentPartFactory :
@@ -358,7 +347,6 @@ struct IBackgroundTransferContentPartFactory :
     impl::consume<IBackgroundTransferContentPartFactory>
 {
     IBackgroundTransferContentPartFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTransferContentPartFactory>(m_ptr); }
 };
 
 struct IBackgroundTransferErrorStaticMethods :
@@ -366,7 +354,6 @@ struct IBackgroundTransferErrorStaticMethods :
     impl::consume<IBackgroundTransferErrorStaticMethods>
 {
     IBackgroundTransferErrorStaticMethods(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTransferErrorStaticMethods>(m_ptr); }
 };
 
 struct IBackgroundTransferGroup :
@@ -374,7 +361,6 @@ struct IBackgroundTransferGroup :
     impl::consume<IBackgroundTransferGroup>
 {
     IBackgroundTransferGroup(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTransferGroup>(m_ptr); }
 };
 
 struct IBackgroundTransferGroupStatics :
@@ -382,7 +368,6 @@ struct IBackgroundTransferGroupStatics :
     impl::consume<IBackgroundTransferGroupStatics>
 {
     IBackgroundTransferGroupStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTransferGroupStatics>(m_ptr); }
 };
 
 struct IBackgroundTransferOperation :
@@ -390,7 +375,6 @@ struct IBackgroundTransferOperation :
     impl::consume<IBackgroundTransferOperation>
 {
     IBackgroundTransferOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTransferOperation>(m_ptr); }
 };
 
 struct IBackgroundTransferOperationPriority :
@@ -398,7 +382,6 @@ struct IBackgroundTransferOperationPriority :
     impl::consume<IBackgroundTransferOperationPriority>
 {
     IBackgroundTransferOperationPriority(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTransferOperationPriority>(m_ptr); }
 };
 
 struct IBackgroundUploader :
@@ -407,7 +390,6 @@ struct IBackgroundUploader :
     impl::require<IBackgroundUploader, Windows::Networking::BackgroundTransfer::IBackgroundTransferBase>
 {
     IBackgroundUploader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundUploader>(m_ptr); }
 };
 
 struct IBackgroundUploader2 :
@@ -415,7 +397,6 @@ struct IBackgroundUploader2 :
     impl::consume<IBackgroundUploader2>
 {
     IBackgroundUploader2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundUploader2>(m_ptr); }
 };
 
 struct IBackgroundUploader3 :
@@ -423,7 +404,6 @@ struct IBackgroundUploader3 :
     impl::consume<IBackgroundUploader3>
 {
     IBackgroundUploader3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundUploader3>(m_ptr); }
 };
 
 struct IBackgroundUploaderFactory :
@@ -431,7 +411,6 @@ struct IBackgroundUploaderFactory :
     impl::consume<IBackgroundUploaderFactory>
 {
     IBackgroundUploaderFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundUploaderFactory>(m_ptr); }
 };
 
 struct IBackgroundUploaderStaticMethods :
@@ -439,7 +418,6 @@ struct IBackgroundUploaderStaticMethods :
     impl::consume<IBackgroundUploaderStaticMethods>
 {
     IBackgroundUploaderStaticMethods(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundUploaderStaticMethods>(m_ptr); }
 };
 
 struct IBackgroundUploaderStaticMethods2 :
@@ -447,7 +425,6 @@ struct IBackgroundUploaderStaticMethods2 :
     impl::consume<IBackgroundUploaderStaticMethods2>
 {
     IBackgroundUploaderStaticMethods2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundUploaderStaticMethods2>(m_ptr); }
 };
 
 struct IBackgroundUploaderUserConsent :
@@ -455,7 +432,6 @@ struct IBackgroundUploaderUserConsent :
     impl::consume<IBackgroundUploaderUserConsent>
 {
     IBackgroundUploaderUserConsent(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundUploaderUserConsent>(m_ptr); }
 };
 
 struct IContentPrefetcher :
@@ -463,7 +439,6 @@ struct IContentPrefetcher :
     impl::consume<IContentPrefetcher>
 {
     IContentPrefetcher(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContentPrefetcher>(m_ptr); }
 };
 
 struct IContentPrefetcherTime :
@@ -471,7 +446,6 @@ struct IContentPrefetcherTime :
     impl::consume<IContentPrefetcherTime>
 {
     IContentPrefetcherTime(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContentPrefetcherTime>(m_ptr); }
 };
 
 struct IDownloadOperation :
@@ -480,7 +454,6 @@ struct IDownloadOperation :
     impl::require<IDownloadOperation, Windows::Networking::BackgroundTransfer::IBackgroundTransferOperation>
 {
     IDownloadOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDownloadOperation>(m_ptr); }
 };
 
 struct IDownloadOperation2 :
@@ -488,7 +461,6 @@ struct IDownloadOperation2 :
     impl::consume<IDownloadOperation2>
 {
     IDownloadOperation2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDownloadOperation2>(m_ptr); }
 };
 
 struct IResponseInformation :
@@ -496,7 +468,6 @@ struct IResponseInformation :
     impl::consume<IResponseInformation>
 {
     IResponseInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IResponseInformation>(m_ptr); }
 };
 
 struct IUnconstrainedTransferRequestResult :
@@ -504,7 +475,6 @@ struct IUnconstrainedTransferRequestResult :
     impl::consume<IUnconstrainedTransferRequestResult>
 {
     IUnconstrainedTransferRequestResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUnconstrainedTransferRequestResult>(m_ptr); }
 };
 
 struct IUploadOperation :
@@ -513,7 +483,6 @@ struct IUploadOperation :
     impl::require<IUploadOperation, Windows::Networking::BackgroundTransfer::IBackgroundTransferOperation>
 {
     IUploadOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUploadOperation>(m_ptr); }
 };
 
 struct IUploadOperation2 :
@@ -521,7 +490,6 @@ struct IUploadOperation2 :
     impl::consume<IUploadOperation2>
 {
     IUploadOperation2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUploadOperation2>(m_ptr); }
 };
 
 }

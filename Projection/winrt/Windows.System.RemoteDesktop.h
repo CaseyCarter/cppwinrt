@@ -35,7 +35,7 @@ namespace Windows::System::RemoteDesktop {
 template <typename D> bool impl_IInteractiveSessionStatics<D>::IsRemote() const
 {
     bool value {};
-    check_hresult(static_cast<const IInteractiveSessionStatics &>(static_cast<const D &>(*this))->get_IsRemote(&value));
+    check_hresult(WINRT_SHIM(IInteractiveSessionStatics)->get_IsRemote(&value));
     return value;
 }
 

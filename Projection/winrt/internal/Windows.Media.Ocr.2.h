@@ -99,7 +99,6 @@ struct IOcrEngine :
     impl::consume<IOcrEngine>
 {
     IOcrEngine(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOcrEngine>(m_ptr); }
 };
 
 struct IOcrEngineStatics :
@@ -107,7 +106,6 @@ struct IOcrEngineStatics :
     impl::consume<IOcrEngineStatics>
 {
     IOcrEngineStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOcrEngineStatics>(m_ptr); }
 };
 
 struct IOcrLine :
@@ -115,7 +113,6 @@ struct IOcrLine :
     impl::consume<IOcrLine>
 {
     IOcrLine(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOcrLine>(m_ptr); }
 };
 
 struct IOcrResult :
@@ -123,7 +120,6 @@ struct IOcrResult :
     impl::consume<IOcrResult>
 {
     IOcrResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOcrResult>(m_ptr); }
 };
 
 struct IOcrWord :
@@ -131,7 +127,6 @@ struct IOcrWord :
     impl::consume<IOcrWord>
 {
     IOcrWord(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOcrWord>(m_ptr); }
 };
 
 }

@@ -313,7 +313,6 @@ struct ICustomMapTileDataSource :
     impl::consume<ICustomMapTileDataSource>
 {
     ICustomMapTileDataSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICustomMapTileDataSource>(m_ptr); }
 };
 
 struct ICustomMapTileDataSourceFactory :
@@ -321,7 +320,6 @@ struct ICustomMapTileDataSourceFactory :
     impl::consume<ICustomMapTileDataSourceFactory>
 {
     ICustomMapTileDataSourceFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICustomMapTileDataSourceFactory>(m_ptr); }
 };
 
 struct IHttpMapTileDataSource :
@@ -329,7 +327,6 @@ struct IHttpMapTileDataSource :
     impl::consume<IHttpMapTileDataSource>
 {
     IHttpMapTileDataSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpMapTileDataSource>(m_ptr); }
 };
 
 struct IHttpMapTileDataSourceFactory :
@@ -337,7 +334,6 @@ struct IHttpMapTileDataSourceFactory :
     impl::consume<IHttpMapTileDataSourceFactory>
 {
     IHttpMapTileDataSourceFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpMapTileDataSourceFactory>(m_ptr); }
 };
 
 struct ILocalMapTileDataSource :
@@ -345,7 +341,6 @@ struct ILocalMapTileDataSource :
     impl::consume<ILocalMapTileDataSource>
 {
     ILocalMapTileDataSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILocalMapTileDataSource>(m_ptr); }
 };
 
 struct ILocalMapTileDataSourceFactory :
@@ -353,7 +348,6 @@ struct ILocalMapTileDataSourceFactory :
     impl::consume<ILocalMapTileDataSourceFactory>
 {
     ILocalMapTileDataSourceFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILocalMapTileDataSourceFactory>(m_ptr); }
 };
 
 struct IMapActualCameraChangedEventArgs :
@@ -361,7 +355,6 @@ struct IMapActualCameraChangedEventArgs :
     impl::consume<IMapActualCameraChangedEventArgs>
 {
     IMapActualCameraChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapActualCameraChangedEventArgs>(m_ptr); }
 };
 
 struct IMapActualCameraChangedEventArgs2 :
@@ -369,7 +362,6 @@ struct IMapActualCameraChangedEventArgs2 :
     impl::consume<IMapActualCameraChangedEventArgs2>
 {
     IMapActualCameraChangedEventArgs2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapActualCameraChangedEventArgs2>(m_ptr); }
 };
 
 struct IMapActualCameraChangingEventArgs :
@@ -377,7 +369,6 @@ struct IMapActualCameraChangingEventArgs :
     impl::consume<IMapActualCameraChangingEventArgs>
 {
     IMapActualCameraChangingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapActualCameraChangingEventArgs>(m_ptr); }
 };
 
 struct IMapActualCameraChangingEventArgs2 :
@@ -385,7 +376,6 @@ struct IMapActualCameraChangingEventArgs2 :
     impl::consume<IMapActualCameraChangingEventArgs2>
 {
     IMapActualCameraChangingEventArgs2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapActualCameraChangingEventArgs2>(m_ptr); }
 };
 
 struct IMapCamera :
@@ -393,7 +383,6 @@ struct IMapCamera :
     impl::consume<IMapCamera>
 {
     IMapCamera(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapCamera>(m_ptr); }
 };
 
 struct IMapCameraFactory :
@@ -401,7 +390,6 @@ struct IMapCameraFactory :
     impl::consume<IMapCameraFactory>
 {
     IMapCameraFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapCameraFactory>(m_ptr); }
 };
 
 struct IMapControl :
@@ -409,7 +397,6 @@ struct IMapControl :
     impl::consume<IMapControl>
 {
     IMapControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapControl>(m_ptr); }
 };
 
 struct IMapControl2 :
@@ -417,7 +404,6 @@ struct IMapControl2 :
     impl::consume<IMapControl2>
 {
     IMapControl2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapControl2>(m_ptr); }
 };
 
 struct IMapControl3 :
@@ -425,7 +411,6 @@ struct IMapControl3 :
     impl::consume<IMapControl3>
 {
     IMapControl3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapControl3>(m_ptr); }
 };
 
 struct IMapControl4 :
@@ -433,7 +418,6 @@ struct IMapControl4 :
     impl::consume<IMapControl4>
 {
     IMapControl4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapControl4>(m_ptr); }
 };
 
 struct IMapControlStatics :
@@ -441,7 +425,6 @@ struct IMapControlStatics :
     impl::consume<IMapControlStatics>
 {
     IMapControlStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapControlStatics>(m_ptr); }
 };
 
 struct IMapControlStatics2 :
@@ -449,7 +432,6 @@ struct IMapControlStatics2 :
     impl::consume<IMapControlStatics2>
 {
     IMapControlStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapControlStatics2>(m_ptr); }
 };
 
 struct IMapControlStatics4 :
@@ -457,7 +439,6 @@ struct IMapControlStatics4 :
     impl::consume<IMapControlStatics4>
 {
     IMapControlStatics4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapControlStatics4>(m_ptr); }
 };
 
 struct IMapCustomExperience :
@@ -465,7 +446,6 @@ struct IMapCustomExperience :
     impl::consume<IMapCustomExperience>
 {
     IMapCustomExperience(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapCustomExperience>(m_ptr); }
 };
 
 struct IMapCustomExperienceChangedEventArgs :
@@ -473,7 +453,6 @@ struct IMapCustomExperienceChangedEventArgs :
     impl::consume<IMapCustomExperienceChangedEventArgs>
 {
     IMapCustomExperienceChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapCustomExperienceChangedEventArgs>(m_ptr); }
 };
 
 struct IMapCustomExperienceFactory :
@@ -481,7 +460,6 @@ struct IMapCustomExperienceFactory :
     impl::consume<IMapCustomExperienceFactory>
 {
     IMapCustomExperienceFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapCustomExperienceFactory>(m_ptr); }
 };
 
 struct IMapElement :
@@ -489,7 +467,6 @@ struct IMapElement :
     impl::consume<IMapElement>
 {
     IMapElement(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapElement>(m_ptr); }
 };
 
 struct IMapElement2 :
@@ -497,7 +474,6 @@ struct IMapElement2 :
     impl::consume<IMapElement2>
 {
     IMapElement2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapElement2>(m_ptr); }
 };
 
 struct IMapElementClickEventArgs :
@@ -505,7 +481,6 @@ struct IMapElementClickEventArgs :
     impl::consume<IMapElementClickEventArgs>
 {
     IMapElementClickEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapElementClickEventArgs>(m_ptr); }
 };
 
 struct IMapElementFactory :
@@ -513,7 +488,6 @@ struct IMapElementFactory :
     impl::consume<IMapElementFactory>
 {
     IMapElementFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapElementFactory>(m_ptr); }
 };
 
 struct IMapElementPointerEnteredEventArgs :
@@ -521,7 +495,6 @@ struct IMapElementPointerEnteredEventArgs :
     impl::consume<IMapElementPointerEnteredEventArgs>
 {
     IMapElementPointerEnteredEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapElementPointerEnteredEventArgs>(m_ptr); }
 };
 
 struct IMapElementPointerExitedEventArgs :
@@ -529,7 +502,6 @@ struct IMapElementPointerExitedEventArgs :
     impl::consume<IMapElementPointerExitedEventArgs>
 {
     IMapElementPointerExitedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapElementPointerExitedEventArgs>(m_ptr); }
 };
 
 struct IMapElementStatics :
@@ -537,7 +509,6 @@ struct IMapElementStatics :
     impl::consume<IMapElementStatics>
 {
     IMapElementStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapElementStatics>(m_ptr); }
 };
 
 struct IMapElementStatics2 :
@@ -545,7 +516,6 @@ struct IMapElementStatics2 :
     impl::consume<IMapElementStatics2>
 {
     IMapElementStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapElementStatics2>(m_ptr); }
 };
 
 struct IMapIcon :
@@ -553,7 +523,6 @@ struct IMapIcon :
     impl::consume<IMapIcon>
 {
     IMapIcon(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapIcon>(m_ptr); }
 };
 
 struct IMapIcon2 :
@@ -561,7 +530,6 @@ struct IMapIcon2 :
     impl::consume<IMapIcon2>
 {
     IMapIcon2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapIcon2>(m_ptr); }
 };
 
 struct IMapIconStatics :
@@ -569,7 +537,6 @@ struct IMapIconStatics :
     impl::consume<IMapIconStatics>
 {
     IMapIconStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapIconStatics>(m_ptr); }
 };
 
 struct IMapIconStatics2 :
@@ -577,7 +544,6 @@ struct IMapIconStatics2 :
     impl::consume<IMapIconStatics2>
 {
     IMapIconStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapIconStatics2>(m_ptr); }
 };
 
 struct IMapInputEventArgs :
@@ -585,7 +551,6 @@ struct IMapInputEventArgs :
     impl::consume<IMapInputEventArgs>
 {
     IMapInputEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapInputEventArgs>(m_ptr); }
 };
 
 struct IMapItemsControl :
@@ -593,7 +558,6 @@ struct IMapItemsControl :
     impl::consume<IMapItemsControl>
 {
     IMapItemsControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapItemsControl>(m_ptr); }
 };
 
 struct IMapItemsControlStatics :
@@ -601,7 +565,6 @@ struct IMapItemsControlStatics :
     impl::consume<IMapItemsControlStatics>
 {
     IMapItemsControlStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapItemsControlStatics>(m_ptr); }
 };
 
 struct IMapPolygon :
@@ -609,7 +572,6 @@ struct IMapPolygon :
     impl::consume<IMapPolygon>
 {
     IMapPolygon(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapPolygon>(m_ptr); }
 };
 
 struct IMapPolygon2 :
@@ -617,7 +579,6 @@ struct IMapPolygon2 :
     impl::consume<IMapPolygon2>
 {
     IMapPolygon2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapPolygon2>(m_ptr); }
 };
 
 struct IMapPolygonStatics :
@@ -625,7 +586,6 @@ struct IMapPolygonStatics :
     impl::consume<IMapPolygonStatics>
 {
     IMapPolygonStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapPolygonStatics>(m_ptr); }
 };
 
 struct IMapPolyline :
@@ -633,7 +593,6 @@ struct IMapPolyline :
     impl::consume<IMapPolyline>
 {
     IMapPolyline(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapPolyline>(m_ptr); }
 };
 
 struct IMapPolylineStatics :
@@ -641,7 +600,6 @@ struct IMapPolylineStatics :
     impl::consume<IMapPolylineStatics>
 {
     IMapPolylineStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapPolylineStatics>(m_ptr); }
 };
 
 struct IMapRightTappedEventArgs :
@@ -649,7 +607,6 @@ struct IMapRightTappedEventArgs :
     impl::consume<IMapRightTappedEventArgs>
 {
     IMapRightTappedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapRightTappedEventArgs>(m_ptr); }
 };
 
 struct IMapRouteView :
@@ -657,7 +614,6 @@ struct IMapRouteView :
     impl::consume<IMapRouteView>
 {
     IMapRouteView(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapRouteView>(m_ptr); }
 };
 
 struct IMapRouteViewFactory :
@@ -665,7 +621,6 @@ struct IMapRouteViewFactory :
     impl::consume<IMapRouteViewFactory>
 {
     IMapRouteViewFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapRouteViewFactory>(m_ptr); }
 };
 
 struct IMapScene :
@@ -673,7 +628,6 @@ struct IMapScene :
     impl::consume<IMapScene>
 {
     IMapScene(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapScene>(m_ptr); }
 };
 
 struct IMapSceneStatics :
@@ -681,7 +635,6 @@ struct IMapSceneStatics :
     impl::consume<IMapSceneStatics>
 {
     IMapSceneStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapSceneStatics>(m_ptr); }
 };
 
 struct IMapTargetCameraChangedEventArgs :
@@ -689,7 +642,6 @@ struct IMapTargetCameraChangedEventArgs :
     impl::consume<IMapTargetCameraChangedEventArgs>
 {
     IMapTargetCameraChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapTargetCameraChangedEventArgs>(m_ptr); }
 };
 
 struct IMapTargetCameraChangedEventArgs2 :
@@ -697,7 +649,6 @@ struct IMapTargetCameraChangedEventArgs2 :
     impl::consume<IMapTargetCameraChangedEventArgs2>
 {
     IMapTargetCameraChangedEventArgs2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapTargetCameraChangedEventArgs2>(m_ptr); }
 };
 
 struct IMapTileBitmapRequest :
@@ -705,7 +656,6 @@ struct IMapTileBitmapRequest :
     impl::consume<IMapTileBitmapRequest>
 {
     IMapTileBitmapRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapTileBitmapRequest>(m_ptr); }
 };
 
 struct IMapTileBitmapRequestDeferral :
@@ -713,7 +663,6 @@ struct IMapTileBitmapRequestDeferral :
     impl::consume<IMapTileBitmapRequestDeferral>
 {
     IMapTileBitmapRequestDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapTileBitmapRequestDeferral>(m_ptr); }
 };
 
 struct IMapTileBitmapRequestedEventArgs :
@@ -721,7 +670,6 @@ struct IMapTileBitmapRequestedEventArgs :
     impl::consume<IMapTileBitmapRequestedEventArgs>
 {
     IMapTileBitmapRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapTileBitmapRequestedEventArgs>(m_ptr); }
 };
 
 struct IMapTileDataSource :
@@ -729,7 +677,6 @@ struct IMapTileDataSource :
     impl::consume<IMapTileDataSource>
 {
     IMapTileDataSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapTileDataSource>(m_ptr); }
 };
 
 struct IMapTileDataSourceFactory :
@@ -737,7 +684,6 @@ struct IMapTileDataSourceFactory :
     impl::consume<IMapTileDataSourceFactory>
 {
     IMapTileDataSourceFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapTileDataSourceFactory>(m_ptr); }
 };
 
 struct IMapTileSource :
@@ -745,7 +691,6 @@ struct IMapTileSource :
     impl::consume<IMapTileSource>
 {
     IMapTileSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapTileSource>(m_ptr); }
 };
 
 struct IMapTileSourceFactory :
@@ -753,7 +698,6 @@ struct IMapTileSourceFactory :
     impl::consume<IMapTileSourceFactory>
 {
     IMapTileSourceFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapTileSourceFactory>(m_ptr); }
 };
 
 struct IMapTileSourceStatics :
@@ -761,7 +705,6 @@ struct IMapTileSourceStatics :
     impl::consume<IMapTileSourceStatics>
 {
     IMapTileSourceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapTileSourceStatics>(m_ptr); }
 };
 
 struct IMapTileUriRequest :
@@ -769,7 +712,6 @@ struct IMapTileUriRequest :
     impl::consume<IMapTileUriRequest>
 {
     IMapTileUriRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapTileUriRequest>(m_ptr); }
 };
 
 struct IMapTileUriRequestDeferral :
@@ -777,7 +719,6 @@ struct IMapTileUriRequestDeferral :
     impl::consume<IMapTileUriRequestDeferral>
 {
     IMapTileUriRequestDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapTileUriRequestDeferral>(m_ptr); }
 };
 
 struct IMapTileUriRequestedEventArgs :
@@ -785,7 +726,6 @@ struct IMapTileUriRequestedEventArgs :
     impl::consume<IMapTileUriRequestedEventArgs>
 {
     IMapTileUriRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapTileUriRequestedEventArgs>(m_ptr); }
 };
 
 struct IStreetsideExperience :
@@ -793,7 +733,6 @@ struct IStreetsideExperience :
     impl::consume<IStreetsideExperience>
 {
     IStreetsideExperience(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreetsideExperience>(m_ptr); }
 };
 
 struct IStreetsideExperienceFactory :
@@ -801,7 +740,6 @@ struct IStreetsideExperienceFactory :
     impl::consume<IStreetsideExperienceFactory>
 {
     IStreetsideExperienceFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreetsideExperienceFactory>(m_ptr); }
 };
 
 struct IStreetsidePanorama :
@@ -809,7 +747,6 @@ struct IStreetsidePanorama :
     impl::consume<IStreetsidePanorama>
 {
     IStreetsidePanorama(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreetsidePanorama>(m_ptr); }
 };
 
 struct IStreetsidePanoramaStatics :
@@ -817,7 +754,6 @@ struct IStreetsidePanoramaStatics :
     impl::consume<IStreetsidePanoramaStatics>
 {
     IStreetsidePanoramaStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreetsidePanoramaStatics>(m_ptr); }
 };
 
 }

@@ -171,7 +171,6 @@ struct IAtomPubClient :
     impl::require<IAtomPubClient, Windows::Web::Syndication::ISyndicationClient>
 {
     IAtomPubClient(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAtomPubClient>(m_ptr); }
 };
 
 struct IAtomPubClientFactory :
@@ -179,7 +178,6 @@ struct IAtomPubClientFactory :
     impl::consume<IAtomPubClientFactory>
 {
     IAtomPubClientFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAtomPubClientFactory>(m_ptr); }
 };
 
 struct IResourceCollection :
@@ -188,7 +186,6 @@ struct IResourceCollection :
     impl::require<IResourceCollection, Windows::Web::Syndication::ISyndicationNode>
 {
     IResourceCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IResourceCollection>(m_ptr); }
 };
 
 struct IServiceDocument :
@@ -197,7 +194,6 @@ struct IServiceDocument :
     impl::require<IServiceDocument, Windows::Web::Syndication::ISyndicationNode>
 {
     IServiceDocument(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IServiceDocument>(m_ptr); }
 };
 
 struct IWorkspace :
@@ -206,7 +202,6 @@ struct IWorkspace :
     impl::require<IWorkspace, Windows::Web::Syndication::ISyndicationNode>
 {
     IWorkspace(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWorkspace>(m_ptr); }
 };
 
 }

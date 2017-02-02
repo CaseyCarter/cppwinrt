@@ -663,83 +663,83 @@ namespace Windows::Graphics::Holographic {
 template <typename D> Windows::Foundation::Size impl_IHolographicCamera<D>::RenderTargetSize() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(static_cast<const IHolographicCamera &>(static_cast<const D &>(*this))->get_RenderTargetSize(put(value)));
+    check_hresult(WINRT_SHIM(IHolographicCamera)->get_RenderTargetSize(put(value)));
     return value;
 }
 
 template <typename D> double impl_IHolographicCamera<D>::ViewportScaleFactor() const
 {
     double value {};
-    check_hresult(static_cast<const IHolographicCamera &>(static_cast<const D &>(*this))->get_ViewportScaleFactor(&value));
+    check_hresult(WINRT_SHIM(IHolographicCamera)->get_ViewportScaleFactor(&value));
     return value;
 }
 
 template <typename D> void impl_IHolographicCamera<D>::ViewportScaleFactor(double value) const
 {
-    check_hresult(static_cast<const IHolographicCamera &>(static_cast<const D &>(*this))->put_ViewportScaleFactor(value));
+    check_hresult(WINRT_SHIM(IHolographicCamera)->put_ViewportScaleFactor(value));
 }
 
 template <typename D> bool impl_IHolographicCamera<D>::IsStereo() const
 {
     bool value {};
-    check_hresult(static_cast<const IHolographicCamera &>(static_cast<const D &>(*this))->get_IsStereo(&value));
+    check_hresult(WINRT_SHIM(IHolographicCamera)->get_IsStereo(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IHolographicCamera<D>::Id() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IHolographicCamera &>(static_cast<const D &>(*this))->get_Id(&value));
+    check_hresult(WINRT_SHIM(IHolographicCamera)->get_Id(&value));
     return value;
 }
 
 template <typename D> void impl_IHolographicCamera<D>::SetNearPlaneDistance(double value) const
 {
-    check_hresult(static_cast<const IHolographicCamera &>(static_cast<const D &>(*this))->abi_SetNearPlaneDistance(value));
+    check_hresult(WINRT_SHIM(IHolographicCamera)->abi_SetNearPlaneDistance(value));
 }
 
 template <typename D> void impl_IHolographicCamera<D>::SetFarPlaneDistance(double value) const
 {
-    check_hresult(static_cast<const IHolographicCamera &>(static_cast<const D &>(*this))->abi_SetFarPlaneDistance(value));
+    check_hresult(WINRT_SHIM(IHolographicCamera)->abi_SetFarPlaneDistance(value));
 }
 
 template <typename D> Windows::Graphics::Holographic::HolographicCamera impl_IHolographicSpaceCameraAddedEventArgs<D>::Camera() const
 {
     Windows::Graphics::Holographic::HolographicCamera value { nullptr };
-    check_hresult(static_cast<const IHolographicSpaceCameraAddedEventArgs &>(static_cast<const D &>(*this))->get_Camera(put(value)));
+    check_hresult(WINRT_SHIM(IHolographicSpaceCameraAddedEventArgs)->get_Camera(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IHolographicSpaceCameraAddedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IHolographicSpaceCameraAddedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IHolographicSpaceCameraAddedEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Holographic::HolographicCamera impl_IHolographicSpaceCameraRemovedEventArgs<D>::Camera() const
 {
     Windows::Graphics::Holographic::HolographicCamera value { nullptr };
-    check_hresult(static_cast<const IHolographicSpaceCameraRemovedEventArgs &>(static_cast<const D &>(*this))->get_Camera(put(value)));
+    check_hresult(WINRT_SHIM(IHolographicSpaceCameraRemovedEventArgs)->get_Camera(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Holographic::HolographicAdapterId impl_IHolographicSpace<D>::PrimaryAdapterId() const
 {
     Windows::Graphics::Holographic::HolographicAdapterId value {};
-    check_hresult(static_cast<const IHolographicSpace &>(static_cast<const D &>(*this))->get_PrimaryAdapterId(put(value)));
+    check_hresult(WINRT_SHIM(IHolographicSpace)->get_PrimaryAdapterId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHolographicSpace<D>::SetDirect3D11Device(const Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice & value) const
 {
-    check_hresult(static_cast<const IHolographicSpace &>(static_cast<const D &>(*this))->abi_SetDirect3D11Device(get(value)));
+    check_hresult(WINRT_SHIM(IHolographicSpace)->abi_SetDirect3D11Device(get(value)));
 }
 
 template <typename D> event_token impl_IHolographicSpace<D>::CameraAdded(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraAddedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IHolographicSpace &>(static_cast<const D &>(*this))->add_CameraAdded(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IHolographicSpace)->add_CameraAdded(get(handler), &cookie));
     return cookie;
 }
 
@@ -750,13 +750,13 @@ template <typename D> event_revoker<IHolographicSpace> impl_IHolographicSpace<D>
 
 template <typename D> void impl_IHolographicSpace<D>::CameraAdded(event_token cookie) const
 {
-    check_hresult(static_cast<const IHolographicSpace &>(static_cast<const D &>(*this))->remove_CameraAdded(cookie));
+    check_hresult(WINRT_SHIM(IHolographicSpace)->remove_CameraAdded(cookie));
 }
 
 template <typename D> event_token impl_IHolographicSpace<D>::CameraRemoved(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraRemovedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IHolographicSpace &>(static_cast<const D &>(*this))->add_CameraRemoved(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IHolographicSpace)->add_CameraRemoved(get(handler), &cookie));
     return cookie;
 }
 
@@ -767,179 +767,179 @@ template <typename D> event_revoker<IHolographicSpace> impl_IHolographicSpace<D>
 
 template <typename D> void impl_IHolographicSpace<D>::CameraRemoved(event_token cookie) const
 {
-    check_hresult(static_cast<const IHolographicSpace &>(static_cast<const D &>(*this))->remove_CameraRemoved(cookie));
+    check_hresult(WINRT_SHIM(IHolographicSpace)->remove_CameraRemoved(cookie));
 }
 
 template <typename D> Windows::Graphics::Holographic::HolographicFrame impl_IHolographicSpace<D>::CreateNextFrame() const
 {
     Windows::Graphics::Holographic::HolographicFrame value { nullptr };
-    check_hresult(static_cast<const IHolographicSpace &>(static_cast<const D &>(*this))->abi_CreateNextFrame(put(value)));
+    check_hresult(WINRT_SHIM(IHolographicSpace)->abi_CreateNextFrame(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Holographic::HolographicSpace impl_IHolographicSpaceStatics<D>::CreateForCoreWindow(const Windows::UI::Core::CoreWindow & window) const
 {
     Windows::Graphics::Holographic::HolographicSpace value { nullptr };
-    check_hresult(static_cast<const IHolographicSpaceStatics &>(static_cast<const D &>(*this))->abi_CreateForCoreWindow(get(window), put(value)));
+    check_hresult(WINRT_SHIM(IHolographicSpaceStatics)->abi_CreateForCoreWindow(get(window), put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Holographic::HolographicCamera impl_IHolographicCameraPose<D>::HolographicCamera() const
 {
     Windows::Graphics::Holographic::HolographicCamera value { nullptr };
-    check_hresult(static_cast<const IHolographicCameraPose &>(static_cast<const D &>(*this))->get_HolographicCamera(put(value)));
+    check_hresult(WINRT_SHIM(IHolographicCameraPose)->get_HolographicCamera(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IHolographicCameraPose<D>::Viewport() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(static_cast<const IHolographicCameraPose &>(static_cast<const D &>(*this))->get_Viewport(put(value)));
+    check_hresult(WINRT_SHIM(IHolographicCameraPose)->get_Viewport(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Graphics::Holographic::HolographicStereoTransform> impl_IHolographicCameraPose<D>::TryGetViewTransform(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
 {
     Windows::Foundation::IReference<Windows::Graphics::Holographic::HolographicStereoTransform> value;
-    check_hresult(static_cast<const IHolographicCameraPose &>(static_cast<const D &>(*this))->abi_TryGetViewTransform(get(coordinateSystem), put(value)));
+    check_hresult(WINRT_SHIM(IHolographicCameraPose)->abi_TryGetViewTransform(get(coordinateSystem), put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Holographic::HolographicStereoTransform impl_IHolographicCameraPose<D>::ProjectionTransform() const
 {
     Windows::Graphics::Holographic::HolographicStereoTransform value {};
-    check_hresult(static_cast<const IHolographicCameraPose &>(static_cast<const D &>(*this))->get_ProjectionTransform(put(value)));
+    check_hresult(WINRT_SHIM(IHolographicCameraPose)->get_ProjectionTransform(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingFrustum> impl_IHolographicCameraPose<D>::TryGetCullingFrustum(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
 {
     Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingFrustum> value;
-    check_hresult(static_cast<const IHolographicCameraPose &>(static_cast<const D &>(*this))->abi_TryGetCullingFrustum(get(coordinateSystem), put(value)));
+    check_hresult(WINRT_SHIM(IHolographicCameraPose)->abi_TryGetCullingFrustum(get(coordinateSystem), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingFrustum> impl_IHolographicCameraPose<D>::TryGetVisibleFrustum(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
 {
     Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingFrustum> value;
-    check_hresult(static_cast<const IHolographicCameraPose &>(static_cast<const D &>(*this))->abi_TryGetVisibleFrustum(get(coordinateSystem), put(value)));
+    check_hresult(WINRT_SHIM(IHolographicCameraPose)->abi_TryGetVisibleFrustum(get(coordinateSystem), put(value)));
     return value;
 }
 
 template <typename D> double impl_IHolographicCameraPose<D>::NearPlaneDistance() const
 {
     double value {};
-    check_hresult(static_cast<const IHolographicCameraPose &>(static_cast<const D &>(*this))->get_NearPlaneDistance(&value));
+    check_hresult(WINRT_SHIM(IHolographicCameraPose)->get_NearPlaneDistance(&value));
     return value;
 }
 
 template <typename D> double impl_IHolographicCameraPose<D>::FarPlaneDistance() const
 {
     double value {};
-    check_hresult(static_cast<const IHolographicCameraPose &>(static_cast<const D &>(*this))->get_FarPlaneDistance(&value));
+    check_hresult(WINRT_SHIM(IHolographicCameraPose)->get_FarPlaneDistance(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicCameraPose> impl_IHolographicFramePrediction<D>::CameraPoses() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicCameraPose> value;
-    check_hresult(static_cast<const IHolographicFramePrediction &>(static_cast<const D &>(*this))->get_CameraPoses(put(value)));
+    check_hresult(WINRT_SHIM(IHolographicFramePrediction)->get_CameraPoses(put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::PerceptionTimestamp impl_IHolographicFramePrediction<D>::Timestamp() const
 {
     Windows::Perception::PerceptionTimestamp value { nullptr };
-    check_hresult(static_cast<const IHolographicFramePrediction &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
+    check_hresult(WINRT_SHIM(IHolographicFramePrediction)->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHolographicCameraRenderingParameters<D>::SetFocusPoint(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Foundation::Numerics::float3 & position) const
 {
-    check_hresult(static_cast<const IHolographicCameraRenderingParameters &>(static_cast<const D &>(*this))->abi_SetFocusPoint(get(coordinateSystem), get(position)));
+    check_hresult(WINRT_SHIM(IHolographicCameraRenderingParameters)->abi_SetFocusPoint(get(coordinateSystem), get(position)));
 }
 
 template <typename D> void impl_IHolographicCameraRenderingParameters<D>::SetFocusPoint(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::float3 & normal) const
 {
-    check_hresult(static_cast<const IHolographicCameraRenderingParameters &>(static_cast<const D &>(*this))->abi_SetFocusPointWithNormal(get(coordinateSystem), get(position), get(normal)));
+    check_hresult(WINRT_SHIM(IHolographicCameraRenderingParameters)->abi_SetFocusPointWithNormal(get(coordinateSystem), get(position), get(normal)));
 }
 
 template <typename D> void impl_IHolographicCameraRenderingParameters<D>::SetFocusPoint(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::float3 & normal, const Windows::Foundation::Numerics::float3 & linearVelocity) const
 {
-    check_hresult(static_cast<const IHolographicCameraRenderingParameters &>(static_cast<const D &>(*this))->abi_SetFocusPointWithNormalLinearVelocity(get(coordinateSystem), get(position), get(normal), get(linearVelocity)));
+    check_hresult(WINRT_SHIM(IHolographicCameraRenderingParameters)->abi_SetFocusPointWithNormalLinearVelocity(get(coordinateSystem), get(position), get(normal), get(linearVelocity)));
 }
 
 template <typename D> Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice impl_IHolographicCameraRenderingParameters<D>::Direct3D11Device() const
 {
     Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice value;
-    check_hresult(static_cast<const IHolographicCameraRenderingParameters &>(static_cast<const D &>(*this))->get_Direct3D11Device(put(value)));
+    check_hresult(WINRT_SHIM(IHolographicCameraRenderingParameters)->get_Direct3D11Device(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface impl_IHolographicCameraRenderingParameters<D>::Direct3D11BackBuffer() const
 {
     Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface value;
-    check_hresult(static_cast<const IHolographicCameraRenderingParameters &>(static_cast<const D &>(*this))->get_Direct3D11BackBuffer(put(value)));
+    check_hresult(WINRT_SHIM(IHolographicCameraRenderingParameters)->get_Direct3D11BackBuffer(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicCamera> impl_IHolographicFrame<D>::AddedCameras() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicCamera> value;
-    check_hresult(static_cast<const IHolographicFrame &>(static_cast<const D &>(*this))->get_AddedCameras(put(value)));
+    check_hresult(WINRT_SHIM(IHolographicFrame)->get_AddedCameras(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicCamera> impl_IHolographicFrame<D>::RemovedCameras() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicCamera> value;
-    check_hresult(static_cast<const IHolographicFrame &>(static_cast<const D &>(*this))->get_RemovedCameras(put(value)));
+    check_hresult(WINRT_SHIM(IHolographicFrame)->get_RemovedCameras(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Holographic::HolographicCameraRenderingParameters impl_IHolographicFrame<D>::GetRenderingParameters(const Windows::Graphics::Holographic::HolographicCameraPose & cameraPose) const
 {
     Windows::Graphics::Holographic::HolographicCameraRenderingParameters value { nullptr };
-    check_hresult(static_cast<const IHolographicFrame &>(static_cast<const D &>(*this))->abi_GetRenderingParameters(get(cameraPose), put(value)));
+    check_hresult(WINRT_SHIM(IHolographicFrame)->abi_GetRenderingParameters(get(cameraPose), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IHolographicFrame<D>::Duration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IHolographicFrame &>(static_cast<const D &>(*this))->get_Duration(put(value)));
+    check_hresult(WINRT_SHIM(IHolographicFrame)->get_Duration(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Holographic::HolographicFramePrediction impl_IHolographicFrame<D>::CurrentPrediction() const
 {
     Windows::Graphics::Holographic::HolographicFramePrediction value { nullptr };
-    check_hresult(static_cast<const IHolographicFrame &>(static_cast<const D &>(*this))->get_CurrentPrediction(put(value)));
+    check_hresult(WINRT_SHIM(IHolographicFrame)->get_CurrentPrediction(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHolographicFrame<D>::UpdateCurrentPrediction() const
 {
-    check_hresult(static_cast<const IHolographicFrame &>(static_cast<const D &>(*this))->abi_UpdateCurrentPrediction());
+    check_hresult(WINRT_SHIM(IHolographicFrame)->abi_UpdateCurrentPrediction());
 }
 
 template <typename D> Windows::Graphics::Holographic::HolographicFramePresentResult impl_IHolographicFrame<D>::PresentUsingCurrentPrediction() const
 {
     Windows::Graphics::Holographic::HolographicFramePresentResult result {};
-    check_hresult(static_cast<const IHolographicFrame &>(static_cast<const D &>(*this))->abi_PresentUsingCurrentPrediction(&result));
+    check_hresult(WINRT_SHIM(IHolographicFrame)->abi_PresentUsingCurrentPrediction(&result));
     return result;
 }
 
 template <typename D> Windows::Graphics::Holographic::HolographicFramePresentResult impl_IHolographicFrame<D>::PresentUsingCurrentPrediction(Windows::Graphics::Holographic::HolographicFramePresentWaitBehavior waitBehavior) const
 {
     Windows::Graphics::Holographic::HolographicFramePresentResult result {};
-    check_hresult(static_cast<const IHolographicFrame &>(static_cast<const D &>(*this))->abi_PresentUsingCurrentPredictionWithBehavior(waitBehavior, &result));
+    check_hresult(WINRT_SHIM(IHolographicFrame)->abi_PresentUsingCurrentPredictionWithBehavior(waitBehavior, &result));
     return result;
 }
 
 template <typename D> void impl_IHolographicFrame<D>::WaitForFrameToFinish() const
 {
-    check_hresult(static_cast<const IHolographicFrame &>(static_cast<const D &>(*this))->abi_WaitForFrameToFinish());
+    check_hresult(WINRT_SHIM(IHolographicFrame)->abi_WaitForFrameToFinish());
 }
 
 inline Windows::Graphics::Holographic::HolographicSpace HolographicSpace::CreateForCoreWindow(const Windows::UI::Core::CoreWindow & window)

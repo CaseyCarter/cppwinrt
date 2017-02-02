@@ -24,7 +24,6 @@ struct IAddAppointmentOperation :
     impl::consume<IAddAppointmentOperation>
 {
     IAddAppointmentOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAddAppointmentOperation>(m_ptr); }
 };
 
 struct IAppointmentsProviderLaunchActionVerbsStatics :
@@ -32,7 +31,6 @@ struct IAppointmentsProviderLaunchActionVerbsStatics :
     impl::consume<IAppointmentsProviderLaunchActionVerbsStatics>
 {
     IAppointmentsProviderLaunchActionVerbsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentsProviderLaunchActionVerbsStatics>(m_ptr); }
 };
 
 struct IAppointmentsProviderLaunchActionVerbsStatics2 :
@@ -40,7 +38,6 @@ struct IAppointmentsProviderLaunchActionVerbsStatics2 :
     impl::consume<IAppointmentsProviderLaunchActionVerbsStatics2>
 {
     IAppointmentsProviderLaunchActionVerbsStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentsProviderLaunchActionVerbsStatics2>(m_ptr); }
 };
 
 struct IRemoveAppointmentOperation :
@@ -48,7 +45,6 @@ struct IRemoveAppointmentOperation :
     impl::consume<IRemoveAppointmentOperation>
 {
     IRemoveAppointmentOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRemoveAppointmentOperation>(m_ptr); }
 };
 
 struct IReplaceAppointmentOperation :
@@ -56,7 +52,6 @@ struct IReplaceAppointmentOperation :
     impl::consume<IReplaceAppointmentOperation>
 {
     IReplaceAppointmentOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IReplaceAppointmentOperation>(m_ptr); }
 };
 
 }

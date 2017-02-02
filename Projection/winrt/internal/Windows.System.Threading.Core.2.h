@@ -12,7 +12,6 @@ namespace Windows::System::Threading::Core {
 struct SignalHandler : Windows::IUnknown
 {
     SignalHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<SignalHandler>(m_ptr); }
     template <typename L> SignalHandler(L lambda);
     template <typename F> SignalHandler (F * function);
     template <typename O, typename M> SignalHandler(O * object, M method);
@@ -24,7 +23,6 @@ struct IPreallocatedWorkItem :
     impl::consume<IPreallocatedWorkItem>
 {
     IPreallocatedWorkItem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPreallocatedWorkItem>(m_ptr); }
 };
 
 struct IPreallocatedWorkItemFactory :
@@ -32,7 +30,6 @@ struct IPreallocatedWorkItemFactory :
     impl::consume<IPreallocatedWorkItemFactory>
 {
     IPreallocatedWorkItemFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPreallocatedWorkItemFactory>(m_ptr); }
 };
 
 struct ISignalNotifier :
@@ -40,7 +37,6 @@ struct ISignalNotifier :
     impl::consume<ISignalNotifier>
 {
     ISignalNotifier(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISignalNotifier>(m_ptr); }
 };
 
 struct ISignalNotifierStatics :
@@ -48,7 +44,6 @@ struct ISignalNotifierStatics :
     impl::consume<ISignalNotifierStatics>
 {
     ISignalNotifierStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISignalNotifierStatics>(m_ptr); }
 };
 
 }

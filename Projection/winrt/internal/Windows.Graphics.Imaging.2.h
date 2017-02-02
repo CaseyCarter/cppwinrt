@@ -188,7 +188,6 @@ struct IBitmapBuffer :
     impl::require<IBitmapBuffer, Windows::Foundation::IClosable, Windows::Foundation::IMemoryBuffer>
 {
     IBitmapBuffer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapBuffer>(m_ptr); }
 };
 
 struct IBitmapCodecInformation :
@@ -196,7 +195,6 @@ struct IBitmapCodecInformation :
     impl::consume<IBitmapCodecInformation>
 {
     IBitmapCodecInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapCodecInformation>(m_ptr); }
 };
 
 struct IBitmapDecoder :
@@ -204,7 +202,6 @@ struct IBitmapDecoder :
     impl::consume<IBitmapDecoder>
 {
     IBitmapDecoder(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapDecoder>(m_ptr); }
 };
 
 struct IBitmapDecoderStatics :
@@ -212,7 +209,6 @@ struct IBitmapDecoderStatics :
     impl::consume<IBitmapDecoderStatics>
 {
     IBitmapDecoderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapDecoderStatics>(m_ptr); }
 };
 
 struct IBitmapEncoder :
@@ -220,7 +216,6 @@ struct IBitmapEncoder :
     impl::consume<IBitmapEncoder>
 {
     IBitmapEncoder(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapEncoder>(m_ptr); }
 };
 
 struct IBitmapEncoderStatics :
@@ -228,7 +223,6 @@ struct IBitmapEncoderStatics :
     impl::consume<IBitmapEncoderStatics>
 {
     IBitmapEncoderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapEncoderStatics>(m_ptr); }
 };
 
 struct IBitmapEncoderWithSoftwareBitmap :
@@ -236,7 +230,6 @@ struct IBitmapEncoderWithSoftwareBitmap :
     impl::consume<IBitmapEncoderWithSoftwareBitmap>
 {
     IBitmapEncoderWithSoftwareBitmap(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapEncoderWithSoftwareBitmap>(m_ptr); }
 };
 
 struct IBitmapFrame :
@@ -244,7 +237,6 @@ struct IBitmapFrame :
     impl::consume<IBitmapFrame>
 {
     IBitmapFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapFrame>(m_ptr); }
 };
 
 struct IBitmapFrameWithSoftwareBitmap :
@@ -253,7 +245,6 @@ struct IBitmapFrameWithSoftwareBitmap :
     impl::require<IBitmapFrameWithSoftwareBitmap, Windows::Graphics::Imaging::IBitmapFrame>
 {
     IBitmapFrameWithSoftwareBitmap(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapFrameWithSoftwareBitmap>(m_ptr); }
 };
 
 struct IBitmapProperties :
@@ -262,7 +253,6 @@ struct IBitmapProperties :
     impl::require<IBitmapProperties, Windows::Graphics::Imaging::IBitmapPropertiesView>
 {
     IBitmapProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapProperties>(m_ptr); }
 };
 
 struct IBitmapPropertiesView :
@@ -270,7 +260,6 @@ struct IBitmapPropertiesView :
     impl::consume<IBitmapPropertiesView>
 {
     IBitmapPropertiesView(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapPropertiesView>(m_ptr); }
 };
 
 struct IBitmapTransform :
@@ -278,7 +267,6 @@ struct IBitmapTransform :
     impl::consume<IBitmapTransform>
 {
     IBitmapTransform(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapTransform>(m_ptr); }
 };
 
 struct IBitmapTypedValue :
@@ -286,7 +274,6 @@ struct IBitmapTypedValue :
     impl::consume<IBitmapTypedValue>
 {
     IBitmapTypedValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapTypedValue>(m_ptr); }
 };
 
 struct IBitmapTypedValueFactory :
@@ -294,7 +281,6 @@ struct IBitmapTypedValueFactory :
     impl::consume<IBitmapTypedValueFactory>
 {
     IBitmapTypedValueFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBitmapTypedValueFactory>(m_ptr); }
 };
 
 struct IPixelDataProvider :
@@ -302,7 +288,6 @@ struct IPixelDataProvider :
     impl::consume<IPixelDataProvider>
 {
     IPixelDataProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPixelDataProvider>(m_ptr); }
 };
 
 struct ISoftwareBitmap :
@@ -311,7 +296,6 @@ struct ISoftwareBitmap :
     impl::require<ISoftwareBitmap, Windows::Foundation::IClosable>
 {
     ISoftwareBitmap(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISoftwareBitmap>(m_ptr); }
 };
 
 struct ISoftwareBitmapFactory :
@@ -319,7 +303,6 @@ struct ISoftwareBitmapFactory :
     impl::consume<ISoftwareBitmapFactory>
 {
     ISoftwareBitmapFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISoftwareBitmapFactory>(m_ptr); }
 };
 
 struct ISoftwareBitmapStatics :
@@ -327,7 +310,6 @@ struct ISoftwareBitmapStatics :
     impl::consume<ISoftwareBitmapStatics>
 {
     ISoftwareBitmapStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISoftwareBitmapStatics>(m_ptr); }
 };
 
 }

@@ -62,7 +62,6 @@ namespace Windows::UI::Popups {
 struct UICommandInvokedHandler : Windows::IUnknown
 {
     UICommandInvokedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<UICommandInvokedHandler>(m_ptr); }
     template <typename L> UICommandInvokedHandler(L lambda);
     template <typename F> UICommandInvokedHandler (F * function);
     template <typename O, typename M> UICommandInvokedHandler(O * object, M method);
@@ -74,7 +73,6 @@ struct IMessageDialog :
     impl::consume<IMessageDialog>
 {
     IMessageDialog(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMessageDialog>(m_ptr); }
 };
 
 struct IMessageDialogFactory :
@@ -82,7 +80,6 @@ struct IMessageDialogFactory :
     impl::consume<IMessageDialogFactory>
 {
     IMessageDialogFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMessageDialogFactory>(m_ptr); }
 };
 
 struct IPopupMenu :
@@ -90,7 +87,6 @@ struct IPopupMenu :
     impl::consume<IPopupMenu>
 {
     IPopupMenu(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPopupMenu>(m_ptr); }
 };
 
 struct IUICommand :
@@ -98,7 +94,6 @@ struct IUICommand :
     impl::consume<IUICommand>
 {
     IUICommand(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUICommand>(m_ptr); }
 };
 
 struct IUICommandFactory :
@@ -106,7 +101,6 @@ struct IUICommandFactory :
     impl::consume<IUICommandFactory>
 {
     IUICommandFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUICommandFactory>(m_ptr); }
 };
 
 }

@@ -4816,222 +4816,222 @@ namespace Windows::Media::Playback {
 template <typename D> Windows::Foundation::TimeSpan impl_IPlaybackMediaMarker<D>::Time() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IPlaybackMediaMarker &>(static_cast<const D &>(*this))->get_Time(put(value)));
+    check_hresult(WINRT_SHIM(IPlaybackMediaMarker)->get_Time(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPlaybackMediaMarker<D>::MediaMarkerType() const
 {
     hstring value;
-    check_hresult(static_cast<const IPlaybackMediaMarker &>(static_cast<const D &>(*this))->get_MediaMarkerType(put(value)));
+    check_hresult(WINRT_SHIM(IPlaybackMediaMarker)->get_MediaMarkerType(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPlaybackMediaMarker<D>::Text() const
 {
     hstring value;
-    check_hresult(static_cast<const IPlaybackMediaMarker &>(static_cast<const D &>(*this))->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(IPlaybackMediaMarker)->get_Text(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::PlaybackMediaMarker impl_IPlaybackMediaMarkerFactory<D>::CreateFromTime(const Windows::Foundation::TimeSpan & value) const
 {
     Windows::Media::Playback::PlaybackMediaMarker marker { nullptr };
-    check_hresult(static_cast<const IPlaybackMediaMarkerFactory &>(static_cast<const D &>(*this))->abi_CreateFromTime(get(value), put(marker)));
+    check_hresult(WINRT_SHIM(IPlaybackMediaMarkerFactory)->abi_CreateFromTime(get(value), put(marker)));
     return marker;
 }
 
 template <typename D> Windows::Media::Playback::PlaybackMediaMarker impl_IPlaybackMediaMarkerFactory<D>::Create(const Windows::Foundation::TimeSpan & value, hstring_ref mediaMarketType, hstring_ref text) const
 {
     Windows::Media::Playback::PlaybackMediaMarker marker { nullptr };
-    check_hresult(static_cast<const IPlaybackMediaMarkerFactory &>(static_cast<const D &>(*this))->abi_Create(get(value), get(mediaMarketType), get(text), put(marker)));
+    check_hresult(WINRT_SHIM(IPlaybackMediaMarkerFactory)->abi_Create(get(value), get(mediaMarketType), get(text), put(marker)));
     return marker;
 }
 
 template <typename D> uint32_t impl_IPlaybackMediaMarkerSequence<D>::Size() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPlaybackMediaMarkerSequence &>(static_cast<const D &>(*this))->get_Size(&value));
+    check_hresult(WINRT_SHIM(IPlaybackMediaMarkerSequence)->get_Size(&value));
     return value;
 }
 
 template <typename D> void impl_IPlaybackMediaMarkerSequence<D>::Insert(const Windows::Media::Playback::PlaybackMediaMarker & value) const
 {
-    check_hresult(static_cast<const IPlaybackMediaMarkerSequence &>(static_cast<const D &>(*this))->abi_Insert(get(value)));
+    check_hresult(WINRT_SHIM(IPlaybackMediaMarkerSequence)->abi_Insert(get(value)));
 }
 
 template <typename D> void impl_IPlaybackMediaMarkerSequence<D>::Clear() const
 {
-    check_hresult(static_cast<const IPlaybackMediaMarkerSequence &>(static_cast<const D &>(*this))->abi_Clear());
+    check_hresult(WINRT_SHIM(IPlaybackMediaMarkerSequence)->abi_Clear());
 }
 
 template <typename D> Windows::Media::Playback::MediaPlayerError impl_IMediaPlayerFailedEventArgs<D>::Error() const
 {
     Windows::Media::Playback::MediaPlayerError value {};
-    check_hresult(static_cast<const IMediaPlayerFailedEventArgs &>(static_cast<const D &>(*this))->get_Error(&value));
+    check_hresult(WINRT_SHIM(IMediaPlayerFailedEventArgs)->get_Error(&value));
     return value;
 }
 
 template <typename D> HRESULT impl_IMediaPlayerFailedEventArgs<D>::ExtendedErrorCode() const
 {
     HRESULT value {};
-    check_hresult(static_cast<const IMediaPlayerFailedEventArgs &>(static_cast<const D &>(*this))->get_ExtendedErrorCode(&value));
+    check_hresult(WINRT_SHIM(IMediaPlayerFailedEventArgs)->get_ExtendedErrorCode(&value));
     return value;
 }
 
 template <typename D> hstring impl_IMediaPlayerFailedEventArgs<D>::ErrorMessage() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaPlayerFailedEventArgs &>(static_cast<const D &>(*this))->get_ErrorMessage(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayerFailedEventArgs)->get_ErrorMessage(put(value)));
     return value;
 }
 
 template <typename D> double impl_IMediaPlayerRateChangedEventArgs<D>::NewRate() const
 {
     double value {};
-    check_hresult(static_cast<const IMediaPlayerRateChangedEventArgs &>(static_cast<const D &>(*this))->get_NewRate(&value));
+    check_hresult(WINRT_SHIM(IMediaPlayerRateChangedEventArgs)->get_NewRate(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::PlaybackMediaMarker impl_IPlaybackMediaMarkerReachedEventArgs<D>::PlaybackMediaMarker() const
 {
     Windows::Media::Playback::PlaybackMediaMarker value { nullptr };
-    check_hresult(static_cast<const IPlaybackMediaMarkerReachedEventArgs &>(static_cast<const D &>(*this))->get_PlaybackMediaMarker(put(value)));
+    check_hresult(WINRT_SHIM(IPlaybackMediaMarkerReachedEventArgs)->get_PlaybackMediaMarker(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::ValueSet impl_IMediaPlayerDataReceivedEventArgs<D>::Data() const
 {
     Windows::Foundation::Collections::ValueSet value { nullptr };
-    check_hresult(static_cast<const IMediaPlayerDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_Data(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayerDataReceivedEventArgs)->get_Data(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlayer<D>::AutoPlay() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->get_AutoPlay(&value));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->get_AutoPlay(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlayer<D>::AutoPlay(bool value) const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->put_AutoPlay(value));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->put_AutoPlay(value));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaPlayer<D>::NaturalDuration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->get_NaturalDuration(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->get_NaturalDuration(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaPlayer<D>::Position() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaPlayer<D>::Position(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->put_Position(get(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->put_Position(get(value)));
 }
 
 template <typename D> double impl_IMediaPlayer<D>::BufferingProgress() const
 {
     double value {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->get_BufferingProgress(&value));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->get_BufferingProgress(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlayerState impl_IMediaPlayer<D>::CurrentState() const
 {
     Windows::Media::Playback::MediaPlayerState value {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->get_CurrentState(&value));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->get_CurrentState(&value));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlayer<D>::CanSeek() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->get_CanSeek(&value));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->get_CanSeek(&value));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlayer<D>::CanPause() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->get_CanPause(&value));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->get_CanPause(&value));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlayer<D>::IsLoopingEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->get_IsLoopingEnabled(&value));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->get_IsLoopingEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlayer<D>::IsLoopingEnabled(bool value) const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->put_IsLoopingEnabled(value));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->put_IsLoopingEnabled(value));
 }
 
 template <typename D> bool impl_IMediaPlayer<D>::IsProtected() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->get_IsProtected(&value));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->get_IsProtected(&value));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlayer<D>::IsMuted() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->get_IsMuted(&value));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->get_IsMuted(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlayer<D>::IsMuted(bool value) const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->put_IsMuted(value));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->put_IsMuted(value));
 }
 
 template <typename D> double impl_IMediaPlayer<D>::PlaybackRate() const
 {
     double value {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->get_PlaybackRate(&value));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->get_PlaybackRate(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlayer<D>::PlaybackRate(double value) const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->put_PlaybackRate(value));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->put_PlaybackRate(value));
 }
 
 template <typename D> double impl_IMediaPlayer<D>::Volume() const
 {
     double value {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->get_Volume(&value));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->get_Volume(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlayer<D>::Volume(double value) const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->put_Volume(value));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->put_Volume(value));
 }
 
 template <typename D> Windows::Media::Playback::PlaybackMediaMarkerSequence impl_IMediaPlayer<D>::PlaybackMediaMarkers() const
 {
     Windows::Media::Playback::PlaybackMediaMarkerSequence value { nullptr };
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->get_PlaybackMediaMarkers(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->get_PlaybackMediaMarkers(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IMediaPlayer<D>::MediaOpened(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->add_MediaOpened(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->add_MediaOpened(get(value), &token));
     return token;
 }
 
@@ -5042,13 +5042,13 @@ template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::MediaOpe
 
 template <typename D> void impl_IMediaPlayer<D>::MediaOpened(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->remove_MediaOpened(token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->remove_MediaOpened(token));
 }
 
 template <typename D> event_token impl_IMediaPlayer<D>::MediaEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->add_MediaEnded(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->add_MediaEnded(get(value), &token));
     return token;
 }
 
@@ -5059,13 +5059,13 @@ template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::MediaEnd
 
 template <typename D> void impl_IMediaPlayer<D>::MediaEnded(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->remove_MediaEnded(token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->remove_MediaEnded(token));
 }
 
 template <typename D> event_token impl_IMediaPlayer<D>::MediaFailed(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::MediaPlayerFailedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->add_MediaFailed(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->add_MediaFailed(get(value), &token));
     return token;
 }
 
@@ -5076,13 +5076,13 @@ template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::MediaFai
 
 template <typename D> void impl_IMediaPlayer<D>::MediaFailed(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->remove_MediaFailed(token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->remove_MediaFailed(token));
 }
 
 template <typename D> event_token impl_IMediaPlayer<D>::CurrentStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->add_CurrentStateChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->add_CurrentStateChanged(get(value), &token));
     return token;
 }
 
@@ -5093,13 +5093,13 @@ template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::CurrentS
 
 template <typename D> void impl_IMediaPlayer<D>::CurrentStateChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->remove_CurrentStateChanged(token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->remove_CurrentStateChanged(token));
 }
 
 template <typename D> event_token impl_IMediaPlayer<D>::PlaybackMediaMarkerReached(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::PlaybackMediaMarkerReachedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->add_PlaybackMediaMarkerReached(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->add_PlaybackMediaMarkerReached(get(value), &token));
     return token;
 }
 
@@ -5110,13 +5110,13 @@ template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::Playback
 
 template <typename D> void impl_IMediaPlayer<D>::PlaybackMediaMarkerReached(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->remove_PlaybackMediaMarkerReached(token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->remove_PlaybackMediaMarkerReached(token));
 }
 
 template <typename D> event_token impl_IMediaPlayer<D>::MediaPlayerRateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Media::Playback::MediaPlayerRateChangedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->add_MediaPlayerRateChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->add_MediaPlayerRateChanged(get(value), &token));
     return token;
 }
 
@@ -5127,13 +5127,13 @@ template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::MediaPla
 
 template <typename D> void impl_IMediaPlayer<D>::MediaPlayerRateChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->remove_MediaPlayerRateChanged(token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->remove_MediaPlayerRateChanged(token));
 }
 
 template <typename D> event_token impl_IMediaPlayer<D>::VolumeChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->add_VolumeChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->add_VolumeChanged(get(value), &token));
     return token;
 }
 
@@ -5144,13 +5144,13 @@ template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::VolumeCh
 
 template <typename D> void impl_IMediaPlayer<D>::VolumeChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->remove_VolumeChanged(token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->remove_VolumeChanged(token));
 }
 
 template <typename D> event_token impl_IMediaPlayer<D>::SeekCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->add_SeekCompleted(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->add_SeekCompleted(get(value), &token));
     return token;
 }
 
@@ -5161,13 +5161,13 @@ template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::SeekComp
 
 template <typename D> void impl_IMediaPlayer<D>::SeekCompleted(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->remove_SeekCompleted(token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->remove_SeekCompleted(token));
 }
 
 template <typename D> event_token impl_IMediaPlayer<D>::BufferingStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->add_BufferingStarted(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->add_BufferingStarted(get(value), &token));
     return token;
 }
 
@@ -5178,13 +5178,13 @@ template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::Bufferin
 
 template <typename D> void impl_IMediaPlayer<D>::BufferingStarted(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->remove_BufferingStarted(token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->remove_BufferingStarted(token));
 }
 
 template <typename D> event_token impl_IMediaPlayer<D>::BufferingEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->add_BufferingEnded(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->add_BufferingEnded(get(value), &token));
     return token;
 }
 
@@ -5195,59 +5195,59 @@ template <typename D> event_revoker<IMediaPlayer> impl_IMediaPlayer<D>::Bufferin
 
 template <typename D> void impl_IMediaPlayer<D>::BufferingEnded(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->remove_BufferingEnded(token));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->remove_BufferingEnded(token));
 }
 
 template <typename D> void impl_IMediaPlayer<D>::Play() const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->abi_Play());
+    check_hresult(WINRT_SHIM(IMediaPlayer)->abi_Play());
 }
 
 template <typename D> void impl_IMediaPlayer<D>::Pause() const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->abi_Pause());
+    check_hresult(WINRT_SHIM(IMediaPlayer)->abi_Pause());
 }
 
 template <typename D> void impl_IMediaPlayer<D>::SetUriSource(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const IMediaPlayer &>(static_cast<const D &>(*this))->abi_SetUriSource(get(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayer)->abi_SetUriSource(get(value)));
 }
 
 template <typename D> Windows::Media::SystemMediaTransportControls impl_IMediaPlayer2<D>::SystemMediaTransportControls() const
 {
     Windows::Media::SystemMediaTransportControls value { nullptr };
-    check_hresult(static_cast<const IMediaPlayer2 &>(static_cast<const D &>(*this))->get_SystemMediaTransportControls(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayer2)->get_SystemMediaTransportControls(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlayerAudioCategory impl_IMediaPlayer2<D>::AudioCategory() const
 {
     Windows::Media::Playback::MediaPlayerAudioCategory value {};
-    check_hresult(static_cast<const IMediaPlayer2 &>(static_cast<const D &>(*this))->get_AudioCategory(&value));
+    check_hresult(WINRT_SHIM(IMediaPlayer2)->get_AudioCategory(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlayer2<D>::AudioCategory(Windows::Media::Playback::MediaPlayerAudioCategory value) const
 {
-    check_hresult(static_cast<const IMediaPlayer2 &>(static_cast<const D &>(*this))->put_AudioCategory(value));
+    check_hresult(WINRT_SHIM(IMediaPlayer2)->put_AudioCategory(value));
 }
 
 template <typename D> Windows::Media::Playback::MediaPlayerAudioDeviceType impl_IMediaPlayer2<D>::AudioDeviceType() const
 {
     Windows::Media::Playback::MediaPlayerAudioDeviceType value {};
-    check_hresult(static_cast<const IMediaPlayer2 &>(static_cast<const D &>(*this))->get_AudioDeviceType(&value));
+    check_hresult(WINRT_SHIM(IMediaPlayer2)->get_AudioDeviceType(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlayer2<D>::AudioDeviceType(Windows::Media::Playback::MediaPlayerAudioDeviceType value) const
 {
-    check_hresult(static_cast<const IMediaPlayer2 &>(static_cast<const D &>(*this))->put_AudioDeviceType(value));
+    check_hresult(WINRT_SHIM(IMediaPlayer2)->put_AudioDeviceType(value));
 }
 
 template <typename D> event_token impl_IMediaPlayer3<D>::IsMutedChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->add_IsMutedChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->add_IsMutedChanged(get(value), &token));
     return token;
 }
 
@@ -5258,13 +5258,13 @@ template <typename D> event_revoker<IMediaPlayer3> impl_IMediaPlayer3<D>::IsMute
 
 template <typename D> void impl_IMediaPlayer3<D>::IsMutedChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->remove_IsMutedChanged(token));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->remove_IsMutedChanged(token));
 }
 
 template <typename D> event_token impl_IMediaPlayer3<D>::SourceChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->add_SourceChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->add_SourceChanged(get(value), &token));
     return token;
 }
 
@@ -5275,135 +5275,135 @@ template <typename D> event_revoker<IMediaPlayer3> impl_IMediaPlayer3<D>::Source
 
 template <typename D> void impl_IMediaPlayer3<D>::SourceChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->remove_SourceChanged(token));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->remove_SourceChanged(token));
 }
 
 template <typename D> double impl_IMediaPlayer3<D>::AudioBalance() const
 {
     double value {};
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->get_AudioBalance(&value));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->get_AudioBalance(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlayer3<D>::AudioBalance(double value) const
 {
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->put_AudioBalance(value));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->put_AudioBalance(value));
 }
 
 template <typename D> bool impl_IMediaPlayer3<D>::RealTimePlayback() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->get_RealTimePlayback(&value));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->get_RealTimePlayback(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlayer3<D>::RealTimePlayback(bool value) const
 {
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->put_RealTimePlayback(value));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->put_RealTimePlayback(value));
 }
 
 template <typename D> Windows::Media::Playback::StereoscopicVideoRenderMode impl_IMediaPlayer3<D>::StereoscopicVideoRenderMode() const
 {
     Windows::Media::Playback::StereoscopicVideoRenderMode value {};
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->get_StereoscopicVideoRenderMode(&value));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->get_StereoscopicVideoRenderMode(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlayer3<D>::StereoscopicVideoRenderMode(Windows::Media::Playback::StereoscopicVideoRenderMode value) const
 {
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->put_StereoscopicVideoRenderMode(value));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->put_StereoscopicVideoRenderMode(value));
 }
 
 template <typename D> Windows::Media::Playback::MediaBreakManager impl_IMediaPlayer3<D>::BreakManager() const
 {
     Windows::Media::Playback::MediaBreakManager value { nullptr };
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->get_BreakManager(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->get_BreakManager(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackCommandManager impl_IMediaPlayer3<D>::CommandManager() const
 {
     Windows::Media::Playback::MediaPlaybackCommandManager value { nullptr };
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->get_CommandManager(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->get_CommandManager(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IMediaPlayer3<D>::AudioDevice() const
 {
     Windows::Devices::Enumeration::DeviceInformation value { nullptr };
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->get_AudioDevice(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->get_AudioDevice(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaPlayer3<D>::AudioDevice(const Windows::Devices::Enumeration::DeviceInformation & value) const
 {
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->put_AudioDevice(get(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->put_AudioDevice(get(value)));
 }
 
 template <typename D> Windows::Media::MediaTimelineController impl_IMediaPlayer3<D>::TimelineController() const
 {
     Windows::Media::MediaTimelineController value { nullptr };
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->get_TimelineController(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->get_TimelineController(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaPlayer3<D>::TimelineController(const Windows::Media::MediaTimelineController & value) const
 {
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->put_TimelineController(get(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->put_TimelineController(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaPlayer3<D>::TimelineControllerPositionOffset() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->get_TimelineControllerPositionOffset(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->get_TimelineControllerPositionOffset(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaPlayer3<D>::TimelineControllerPositionOffset(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->put_TimelineControllerPositionOffset(get(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->put_TimelineControllerPositionOffset(get(value)));
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackSession impl_IMediaPlayer3<D>::PlaybackSession() const
 {
     Windows::Media::Playback::MediaPlaybackSession value { nullptr };
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->get_PlaybackSession(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->get_PlaybackSession(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaPlayer3<D>::StepForwardOneFrame() const
 {
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->abi_StepForwardOneFrame());
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->abi_StepForwardOneFrame());
 }
 
 template <typename D> void impl_IMediaPlayer3<D>::StepBackwardOneFrame() const
 {
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->abi_StepBackwardOneFrame());
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->abi_StepBackwardOneFrame());
 }
 
 template <typename D> Windows::Media::Casting::CastingSource impl_IMediaPlayer3<D>::GetAsCastingSource() const
 {
     Windows::Media::Casting::CastingSource returnValue { nullptr };
-    check_hresult(static_cast<const IMediaPlayer3 &>(static_cast<const D &>(*this))->abi_GetAsCastingSource(put(returnValue)));
+    check_hresult(WINRT_SHIM(IMediaPlayer3)->abi_GetAsCastingSource(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IMediaPlayer4<D>::SetSurfaceSize(const Windows::Foundation::Size & size) const
 {
-    check_hresult(static_cast<const IMediaPlayer4 &>(static_cast<const D &>(*this))->abi_SetSurfaceSize(get(size)));
+    check_hresult(WINRT_SHIM(IMediaPlayer4)->abi_SetSurfaceSize(get(size)));
 }
 
 template <typename D> Windows::Media::Playback::MediaPlayerSurface impl_IMediaPlayer4<D>::GetSurface(const Windows::UI::Composition::Compositor & compositor) const
 {
     Windows::Media::Playback::MediaPlayerSurface result { nullptr };
-    check_hresult(static_cast<const IMediaPlayer4 &>(static_cast<const D &>(*this))->abi_GetSurface(get(compositor), put(result)));
+    check_hresult(WINRT_SHIM(IMediaPlayer4)->abi_GetSurface(get(compositor), put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IMediaPlaybackSession<D>::PlaybackStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->add_PlaybackStateChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_PlaybackStateChanged(get(value), &token));
     return token;
 }
 
@@ -5414,13 +5414,13 @@ template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSe
 
 template <typename D> void impl_IMediaPlaybackSession<D>::PlaybackStateChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->remove_PlaybackStateChanged(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_PlaybackStateChanged(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackSession<D>::PlaybackRateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->add_PlaybackRateChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_PlaybackRateChanged(get(value), &token));
     return token;
 }
 
@@ -5431,13 +5431,13 @@ template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSe
 
 template <typename D> void impl_IMediaPlaybackSession<D>::PlaybackRateChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->remove_PlaybackRateChanged(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_PlaybackRateChanged(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackSession<D>::SeekCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->add_SeekCompleted(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_SeekCompleted(get(value), &token));
     return token;
 }
 
@@ -5448,13 +5448,13 @@ template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSe
 
 template <typename D> void impl_IMediaPlaybackSession<D>::SeekCompleted(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->remove_SeekCompleted(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_SeekCompleted(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackSession<D>::BufferingStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->add_BufferingStarted(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_BufferingStarted(get(value), &token));
     return token;
 }
 
@@ -5465,13 +5465,13 @@ template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSe
 
 template <typename D> void impl_IMediaPlaybackSession<D>::BufferingStarted(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->remove_BufferingStarted(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_BufferingStarted(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackSession<D>::BufferingEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->add_BufferingEnded(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_BufferingEnded(get(value), &token));
     return token;
 }
 
@@ -5482,13 +5482,13 @@ template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSe
 
 template <typename D> void impl_IMediaPlaybackSession<D>::BufferingEnded(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->remove_BufferingEnded(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_BufferingEnded(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackSession<D>::BufferingProgressChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->add_BufferingProgressChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_BufferingProgressChanged(get(value), &token));
     return token;
 }
 
@@ -5499,13 +5499,13 @@ template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSe
 
 template <typename D> void impl_IMediaPlaybackSession<D>::BufferingProgressChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->remove_BufferingProgressChanged(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_BufferingProgressChanged(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackSession<D>::DownloadProgressChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->add_DownloadProgressChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_DownloadProgressChanged(get(value), &token));
     return token;
 }
 
@@ -5516,13 +5516,13 @@ template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSe
 
 template <typename D> void impl_IMediaPlaybackSession<D>::DownloadProgressChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->remove_DownloadProgressChanged(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_DownloadProgressChanged(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackSession<D>::NaturalDurationChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->add_NaturalDurationChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_NaturalDurationChanged(get(value), &token));
     return token;
 }
 
@@ -5533,13 +5533,13 @@ template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSe
 
 template <typename D> void impl_IMediaPlaybackSession<D>::NaturalDurationChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->remove_NaturalDurationChanged(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_NaturalDurationChanged(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackSession<D>::PositionChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->add_PositionChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_PositionChanged(get(value), &token));
     return token;
 }
 
@@ -5550,13 +5550,13 @@ template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSe
 
 template <typename D> void impl_IMediaPlaybackSession<D>::PositionChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->remove_PositionChanged(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_PositionChanged(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackSession<D>::NaturalVideoSizeChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->add_NaturalVideoSizeChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->add_NaturalVideoSizeChanged(get(value), &token));
     return token;
 }
 
@@ -5567,227 +5567,227 @@ template <typename D> event_revoker<IMediaPlaybackSession> impl_IMediaPlaybackSe
 
 template <typename D> void impl_IMediaPlaybackSession<D>::NaturalVideoSizeChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->remove_NaturalVideoSizeChanged(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->remove_NaturalVideoSizeChanged(token));
 }
 
 template <typename D> Windows::Media::Playback::MediaPlayer impl_IMediaPlaybackSession<D>::MediaPlayer() const
 {
     Windows::Media::Playback::MediaPlayer value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->get_MediaPlayer(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->get_MediaPlayer(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaPlaybackSession<D>::NaturalDuration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->get_NaturalDuration(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->get_NaturalDuration(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaPlaybackSession<D>::Position() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackSession<D>::Position(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->put_Position(get(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->put_Position(get(value)));
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackState impl_IMediaPlaybackSession<D>::PlaybackState() const
 {
     Windows::Media::Playback::MediaPlaybackState value {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->get_PlaybackState(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->get_PlaybackState(&value));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlaybackSession<D>::CanSeek() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->get_CanSeek(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->get_CanSeek(&value));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlaybackSession<D>::CanPause() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->get_CanPause(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->get_CanPause(&value));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlaybackSession<D>::IsProtected() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->get_IsProtected(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->get_IsProtected(&value));
     return value;
 }
 
 template <typename D> double impl_IMediaPlaybackSession<D>::PlaybackRate() const
 {
     double value {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->get_PlaybackRate(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->get_PlaybackRate(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackSession<D>::PlaybackRate(double value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->put_PlaybackRate(value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->put_PlaybackRate(value));
 }
 
 template <typename D> double impl_IMediaPlaybackSession<D>::BufferingProgress() const
 {
     double value {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->get_BufferingProgress(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->get_BufferingProgress(&value));
     return value;
 }
 
 template <typename D> double impl_IMediaPlaybackSession<D>::DownloadProgress() const
 {
     double value {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->get_DownloadProgress(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->get_DownloadProgress(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IMediaPlaybackSession<D>::NaturalVideoHeight() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->get_NaturalVideoHeight(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->get_NaturalVideoHeight(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IMediaPlaybackSession<D>::NaturalVideoWidth() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->get_NaturalVideoWidth(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->get_NaturalVideoWidth(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IMediaPlaybackSession<D>::NormalizedSourceRect() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->get_NormalizedSourceRect(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->get_NormalizedSourceRect(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackSession<D>::NormalizedSourceRect(const Windows::Foundation::Rect & value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->put_NormalizedSourceRect(get(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->put_NormalizedSourceRect(get(value)));
 }
 
 template <typename D> Windows::Media::MediaProperties::StereoscopicVideoPackingMode impl_IMediaPlaybackSession<D>::StereoscopicVideoPackingMode() const
 {
     Windows::Media::MediaProperties::StereoscopicVideoPackingMode value {};
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->get_StereoscopicVideoPackingMode(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->get_StereoscopicVideoPackingMode(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackSession<D>::StereoscopicVideoPackingMode(Windows::Media::MediaProperties::StereoscopicVideoPackingMode value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackSession &>(static_cast<const D &>(*this))->put_StereoscopicVideoPackingMode(value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession)->put_StereoscopicVideoPackingMode(value));
 }
 
 template <typename D> Windows::Media::Protection::MediaProtectionManager impl_IMediaPlayerSource<D>::ProtectionManager() const
 {
     Windows::Media::Protection::MediaProtectionManager value { nullptr };
-    check_hresult(static_cast<const IMediaPlayerSource &>(static_cast<const D &>(*this))->get_ProtectionManager(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayerSource)->get_ProtectionManager(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaPlayerSource<D>::ProtectionManager(const Windows::Media::Protection::MediaProtectionManager & value) const
 {
-    check_hresult(static_cast<const IMediaPlayerSource &>(static_cast<const D &>(*this))->put_ProtectionManager(get(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayerSource)->put_ProtectionManager(get(value)));
 }
 
 template <typename D> void impl_IMediaPlayerSource<D>::SetFileSource(const Windows::Storage::IStorageFile & file) const
 {
-    check_hresult(static_cast<const IMediaPlayerSource &>(static_cast<const D &>(*this))->abi_SetFileSource(get(file)));
+    check_hresult(WINRT_SHIM(IMediaPlayerSource)->abi_SetFileSource(get(file)));
 }
 
 template <typename D> void impl_IMediaPlayerSource<D>::SetStreamSource(const Windows::Storage::Streams::IRandomAccessStream & stream) const
 {
-    check_hresult(static_cast<const IMediaPlayerSource &>(static_cast<const D &>(*this))->abi_SetStreamSource(get(stream)));
+    check_hresult(WINRT_SHIM(IMediaPlayerSource)->abi_SetStreamSource(get(stream)));
 }
 
 template <typename D> void impl_IMediaPlayerSource<D>::SetMediaSource(const Windows::Media::Core::IMediaSource & source) const
 {
-    check_hresult(static_cast<const IMediaPlayerSource &>(static_cast<const D &>(*this))->abi_SetMediaSource(get(source)));
+    check_hresult(WINRT_SHIM(IMediaPlayerSource)->abi_SetMediaSource(get(source)));
 }
 
 template <typename D> Windows::Media::Playback::IMediaPlaybackSource impl_IMediaPlayerSource2<D>::Source() const
 {
     Windows::Media::Playback::IMediaPlaybackSource value;
-    check_hresult(static_cast<const IMediaPlayerSource2 &>(static_cast<const D &>(*this))->get_Source(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayerSource2)->get_Source(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaPlayerSource2<D>::Source(const Windows::Media::Playback::IMediaPlaybackSource & value) const
 {
-    check_hresult(static_cast<const IMediaPlayerSource2 &>(static_cast<const D &>(*this))->put_Source(get(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayerSource2)->put_Source(get(value)));
 }
 
 template <typename D> void impl_IMediaPlayerEffects<D>::AddAudioEffect(hstring_ref activatableClassId, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
-    check_hresult(static_cast<const IMediaPlayerEffects &>(static_cast<const D &>(*this))->abi_AddAudioEffect(get(activatableClassId), effectOptional, get(configuration)));
+    check_hresult(WINRT_SHIM(IMediaPlayerEffects)->abi_AddAudioEffect(get(activatableClassId), effectOptional, get(configuration)));
 }
 
 template <typename D> void impl_IMediaPlayerEffects<D>::RemoveAllEffects() const
 {
-    check_hresult(static_cast<const IMediaPlayerEffects &>(static_cast<const D &>(*this))->abi_RemoveAllEffects());
+    check_hresult(WINRT_SHIM(IMediaPlayerEffects)->abi_RemoveAllEffects());
 }
 
 template <typename D> void impl_IMediaPlayerEffects2<D>::AddVideoEffect(hstring_ref activatableClassId, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & effectConfiguration) const
 {
-    check_hresult(static_cast<const IMediaPlayerEffects2 &>(static_cast<const D &>(*this))->abi_AddVideoEffect(get(activatableClassId), effectOptional, get(effectConfiguration)));
+    check_hresult(WINRT_SHIM(IMediaPlayerEffects2)->abi_AddVideoEffect(get(activatableClassId), effectOptional, get(effectConfiguration)));
 }
 
 template <typename D> Windows::Media::Playback::MediaBreak impl_IMediaBreakStartedEventArgs<D>::MediaBreak() const
 {
     Windows::Media::Playback::MediaBreak value { nullptr };
-    check_hresult(static_cast<const IMediaBreakStartedEventArgs &>(static_cast<const D &>(*this))->get_MediaBreak(put(value)));
+    check_hresult(WINRT_SHIM(IMediaBreakStartedEventArgs)->get_MediaBreak(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaBreak impl_IMediaBreakEndedEventArgs<D>::MediaBreak() const
 {
     Windows::Media::Playback::MediaBreak value { nullptr };
-    check_hresult(static_cast<const IMediaBreakEndedEventArgs &>(static_cast<const D &>(*this))->get_MediaBreak(put(value)));
+    check_hresult(WINRT_SHIM(IMediaBreakEndedEventArgs)->get_MediaBreak(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaBreak impl_IMediaBreakSkippedEventArgs<D>::MediaBreak() const
 {
     Windows::Media::Playback::MediaBreak value { nullptr };
-    check_hresult(static_cast<const IMediaBreakSkippedEventArgs &>(static_cast<const D &>(*this))->get_MediaBreak(put(value)));
+    check_hresult(WINRT_SHIM(IMediaBreakSkippedEventArgs)->get_MediaBreak(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Playback::MediaBreak> impl_IMediaBreakSeekedOverEventArgs<D>::SeekedOverBreaks() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Playback::MediaBreak> value;
-    check_hresult(static_cast<const IMediaBreakSeekedOverEventArgs &>(static_cast<const D &>(*this))->get_SeekedOverBreaks(put(value)));
+    check_hresult(WINRT_SHIM(IMediaBreakSeekedOverEventArgs)->get_SeekedOverBreaks(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaBreakSeekedOverEventArgs<D>::OldPosition() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaBreakSeekedOverEventArgs &>(static_cast<const D &>(*this))->get_OldPosition(put(value)));
+    check_hresult(WINRT_SHIM(IMediaBreakSeekedOverEventArgs)->get_OldPosition(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaBreakSeekedOverEventArgs<D>::NewPosition() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaBreakSeekedOverEventArgs &>(static_cast<const D &>(*this))->get_NewPosition(put(value)));
+    check_hresult(WINRT_SHIM(IMediaBreakSeekedOverEventArgs)->get_NewPosition(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IMediaBreakManager<D>::BreaksSeekedOver(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakManager, Windows::Media::Playback::MediaBreakSeekedOverEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaBreakManager &>(static_cast<const D &>(*this))->add_BreaksSeekedOver(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaBreakManager)->add_BreaksSeekedOver(get(handler), &token));
     return token;
 }
 
@@ -5798,13 +5798,13 @@ template <typename D> event_revoker<IMediaBreakManager> impl_IMediaBreakManager<
 
 template <typename D> void impl_IMediaBreakManager<D>::BreaksSeekedOver(event_token token) const
 {
-    check_hresult(static_cast<const IMediaBreakManager &>(static_cast<const D &>(*this))->remove_BreaksSeekedOver(token));
+    check_hresult(WINRT_SHIM(IMediaBreakManager)->remove_BreaksSeekedOver(token));
 }
 
 template <typename D> event_token impl_IMediaBreakManager<D>::BreakStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakManager, Windows::Media::Playback::MediaBreakStartedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaBreakManager &>(static_cast<const D &>(*this))->add_BreakStarted(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaBreakManager)->add_BreakStarted(get(handler), &token));
     return token;
 }
 
@@ -5815,13 +5815,13 @@ template <typename D> event_revoker<IMediaBreakManager> impl_IMediaBreakManager<
 
 template <typename D> void impl_IMediaBreakManager<D>::BreakStarted(event_token token) const
 {
-    check_hresult(static_cast<const IMediaBreakManager &>(static_cast<const D &>(*this))->remove_BreakStarted(token));
+    check_hresult(WINRT_SHIM(IMediaBreakManager)->remove_BreakStarted(token));
 }
 
 template <typename D> event_token impl_IMediaBreakManager<D>::BreakEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakManager, Windows::Media::Playback::MediaBreakEndedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaBreakManager &>(static_cast<const D &>(*this))->add_BreakEnded(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaBreakManager)->add_BreakEnded(get(handler), &token));
     return token;
 }
 
@@ -5832,13 +5832,13 @@ template <typename D> event_revoker<IMediaBreakManager> impl_IMediaBreakManager<
 
 template <typename D> void impl_IMediaBreakManager<D>::BreakEnded(event_token token) const
 {
-    check_hresult(static_cast<const IMediaBreakManager &>(static_cast<const D &>(*this))->remove_BreakEnded(token));
+    check_hresult(WINRT_SHIM(IMediaBreakManager)->remove_BreakEnded(token));
 }
 
 template <typename D> event_token impl_IMediaBreakManager<D>::BreakSkipped(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakManager, Windows::Media::Playback::MediaBreakSkippedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaBreakManager &>(static_cast<const D &>(*this))->add_BreakSkipped(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaBreakManager)->add_BreakSkipped(get(handler), &token));
     return token;
 }
 
@@ -5849,65 +5849,65 @@ template <typename D> event_revoker<IMediaBreakManager> impl_IMediaBreakManager<
 
 template <typename D> void impl_IMediaBreakManager<D>::BreakSkipped(event_token token) const
 {
-    check_hresult(static_cast<const IMediaBreakManager &>(static_cast<const D &>(*this))->remove_BreakSkipped(token));
+    check_hresult(WINRT_SHIM(IMediaBreakManager)->remove_BreakSkipped(token));
 }
 
 template <typename D> Windows::Media::Playback::MediaBreak impl_IMediaBreakManager<D>::CurrentBreak() const
 {
     Windows::Media::Playback::MediaBreak value { nullptr };
-    check_hresult(static_cast<const IMediaBreakManager &>(static_cast<const D &>(*this))->get_CurrentBreak(put(value)));
+    check_hresult(WINRT_SHIM(IMediaBreakManager)->get_CurrentBreak(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackSession impl_IMediaBreakManager<D>::PlaybackSession() const
 {
     Windows::Media::Playback::MediaPlaybackSession value { nullptr };
-    check_hresult(static_cast<const IMediaBreakManager &>(static_cast<const D &>(*this))->get_PlaybackSession(put(value)));
+    check_hresult(WINRT_SHIM(IMediaBreakManager)->get_PlaybackSession(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaBreakManager<D>::PlayBreak(const Windows::Media::Playback::MediaBreak & value) const
 {
-    check_hresult(static_cast<const IMediaBreakManager &>(static_cast<const D &>(*this))->abi_PlayBreak(get(value)));
+    check_hresult(WINRT_SHIM(IMediaBreakManager)->abi_PlayBreak(get(value)));
 }
 
 template <typename D> void impl_IMediaBreakManager<D>::SkipCurrentBreak() const
 {
-    check_hresult(static_cast<const IMediaBreakManager &>(static_cast<const D &>(*this))->abi_SkipCurrentBreak());
+    check_hresult(WINRT_SHIM(IMediaBreakManager)->abi_SkipCurrentBreak());
 }
 
 template <typename D> Windows::UI::Composition::ICompositionSurface impl_IMediaPlayerSurface<D>::CompositionSurface() const
 {
     Windows::UI::Composition::ICompositionSurface value;
-    check_hresult(static_cast<const IMediaPlayerSurface &>(static_cast<const D &>(*this))->get_CompositionSurface(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayerSurface)->get_CompositionSurface(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Composition::Compositor impl_IMediaPlayerSurface<D>::Compositor() const
 {
     Windows::UI::Composition::Compositor value { nullptr };
-    check_hresult(static_cast<const IMediaPlayerSurface &>(static_cast<const D &>(*this))->get_Compositor(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayerSurface)->get_Compositor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlayer impl_IMediaPlayerSurface<D>::MediaPlayer() const
 {
     Windows::Media::Playback::MediaPlayer value { nullptr };
-    check_hresult(static_cast<const IMediaPlayerSurface &>(static_cast<const D &>(*this))->get_MediaPlayer(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlayerSurface)->get_MediaPlayer(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlayer impl_IBackgroundMediaPlayerStatics<D>::Current() const
 {
     Windows::Media::Playback::MediaPlayer player { nullptr };
-    check_hresult(static_cast<const IBackgroundMediaPlayerStatics &>(static_cast<const D &>(*this))->get_Current(put(player)));
+    check_hresult(WINRT_SHIM(IBackgroundMediaPlayerStatics)->get_Current(put(player)));
     return player;
 }
 
 template <typename D> event_token impl_IBackgroundMediaPlayerStatics<D>::MessageReceivedFromBackground(const Windows::Foundation::EventHandler<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IBackgroundMediaPlayerStatics &>(static_cast<const D &>(*this))->add_MessageReceivedFromBackground(get(value), &token));
+    check_hresult(WINRT_SHIM(IBackgroundMediaPlayerStatics)->add_MessageReceivedFromBackground(get(value), &token));
     return token;
 }
 
@@ -5918,13 +5918,13 @@ template <typename D> event_revoker<IBackgroundMediaPlayerStatics> impl_IBackgro
 
 template <typename D> void impl_IBackgroundMediaPlayerStatics<D>::MessageReceivedFromBackground(event_token token) const
 {
-    check_hresult(static_cast<const IBackgroundMediaPlayerStatics &>(static_cast<const D &>(*this))->remove_MessageReceivedFromBackground(token));
+    check_hresult(WINRT_SHIM(IBackgroundMediaPlayerStatics)->remove_MessageReceivedFromBackground(token));
 }
 
 template <typename D> event_token impl_IBackgroundMediaPlayerStatics<D>::MessageReceivedFromForeground(const Windows::Foundation::EventHandler<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IBackgroundMediaPlayerStatics &>(static_cast<const D &>(*this))->add_MessageReceivedFromForeground(get(value), &token));
+    check_hresult(WINRT_SHIM(IBackgroundMediaPlayerStatics)->add_MessageReceivedFromForeground(get(value), &token));
     return token;
 }
 
@@ -5935,279 +5935,279 @@ template <typename D> event_revoker<IBackgroundMediaPlayerStatics> impl_IBackgro
 
 template <typename D> void impl_IBackgroundMediaPlayerStatics<D>::MessageReceivedFromForeground(event_token token) const
 {
-    check_hresult(static_cast<const IBackgroundMediaPlayerStatics &>(static_cast<const D &>(*this))->remove_MessageReceivedFromForeground(token));
+    check_hresult(WINRT_SHIM(IBackgroundMediaPlayerStatics)->remove_MessageReceivedFromForeground(token));
 }
 
 template <typename D> void impl_IBackgroundMediaPlayerStatics<D>::SendMessageToBackground(const Windows::Foundation::Collections::ValueSet & value) const
 {
-    check_hresult(static_cast<const IBackgroundMediaPlayerStatics &>(static_cast<const D &>(*this))->abi_SendMessageToBackground(get(value)));
+    check_hresult(WINRT_SHIM(IBackgroundMediaPlayerStatics)->abi_SendMessageToBackground(get(value)));
 }
 
 template <typename D> void impl_IBackgroundMediaPlayerStatics<D>::SendMessageToForeground(const Windows::Foundation::Collections::ValueSet & value) const
 {
-    check_hresult(static_cast<const IBackgroundMediaPlayerStatics &>(static_cast<const D &>(*this))->abi_SendMessageToForeground(get(value)));
+    check_hresult(WINRT_SHIM(IBackgroundMediaPlayerStatics)->abi_SendMessageToForeground(get(value)));
 }
 
 template <typename D> bool impl_IBackgroundMediaPlayerStatics<D>::IsMediaPlaying() const
 {
     bool isMediaPlaying {};
-    check_hresult(static_cast<const IBackgroundMediaPlayerStatics &>(static_cast<const D &>(*this))->abi_IsMediaPlaying(&isMediaPlaying));
+    check_hresult(WINRT_SHIM(IBackgroundMediaPlayerStatics)->abi_IsMediaPlaying(&isMediaPlaying));
     return isMediaPlaying;
 }
 
 template <typename D> void impl_IBackgroundMediaPlayerStatics<D>::Shutdown() const
 {
-    check_hresult(static_cast<const IBackgroundMediaPlayerStatics &>(static_cast<const D &>(*this))->abi_Shutdown());
+    check_hresult(WINRT_SHIM(IBackgroundMediaPlayerStatics)->abi_Shutdown());
 }
 
 template <typename D> bool impl_IMediaPlaybackCommandManagerPlayReceivedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerPlayReceivedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerPlayReceivedEventArgs)->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackCommandManagerPlayReceivedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerPlayReceivedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerPlayReceivedEventArgs)->put_Handled(value));
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IMediaPlaybackCommandManagerPlayReceivedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerPlayReceivedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerPlayReceivedEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlaybackCommandManagerPauseReceivedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerPauseReceivedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerPauseReceivedEventArgs)->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackCommandManagerPauseReceivedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerPauseReceivedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerPauseReceivedEventArgs)->put_Handled(value));
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IMediaPlaybackCommandManagerPauseReceivedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerPauseReceivedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerPauseReceivedEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlaybackCommandManagerNextReceivedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerNextReceivedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerNextReceivedEventArgs)->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackCommandManagerNextReceivedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerNextReceivedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerNextReceivedEventArgs)->put_Handled(value));
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IMediaPlaybackCommandManagerNextReceivedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerNextReceivedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerNextReceivedEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlaybackCommandManagerPreviousReceivedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerPreviousReceivedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerPreviousReceivedEventArgs)->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackCommandManagerPreviousReceivedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerPreviousReceivedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerPreviousReceivedEventArgs)->put_Handled(value));
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IMediaPlaybackCommandManagerPreviousReceivedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerPreviousReceivedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerPreviousReceivedEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlaybackCommandManagerFastForwardReceivedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerFastForwardReceivedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerFastForwardReceivedEventArgs)->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackCommandManagerFastForwardReceivedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerFastForwardReceivedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerFastForwardReceivedEventArgs)->put_Handled(value));
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IMediaPlaybackCommandManagerFastForwardReceivedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerFastForwardReceivedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerFastForwardReceivedEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlaybackCommandManagerRewindReceivedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerRewindReceivedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerRewindReceivedEventArgs)->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackCommandManagerRewindReceivedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerRewindReceivedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerRewindReceivedEventArgs)->put_Handled(value));
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IMediaPlaybackCommandManagerRewindReceivedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerRewindReceivedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerRewindReceivedEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlaybackCommandManagerShuffleReceivedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerShuffleReceivedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerShuffleReceivedEventArgs)->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackCommandManagerShuffleReceivedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerShuffleReceivedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerShuffleReceivedEventArgs)->put_Handled(value));
 }
 
 template <typename D> bool impl_IMediaPlaybackCommandManagerShuffleReceivedEventArgs<D>::IsShuffleRequested() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerShuffleReceivedEventArgs &>(static_cast<const D &>(*this))->get_IsShuffleRequested(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerShuffleReceivedEventArgs)->get_IsShuffleRequested(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IMediaPlaybackCommandManagerShuffleReceivedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerShuffleReceivedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerShuffleReceivedEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs)->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs)->put_Handled(value));
 }
 
 template <typename D> Windows::Media::MediaPlaybackAutoRepeatMode impl_IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs<D>::AutoRepeatMode() const
 {
     Windows::Media::MediaPlaybackAutoRepeatMode value {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs &>(static_cast<const D &>(*this))->get_AutoRepeatMode(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs)->get_AutoRepeatMode(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlaybackCommandManagerPositionReceivedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerPositionReceivedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerPositionReceivedEventArgs)->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackCommandManagerPositionReceivedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerPositionReceivedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerPositionReceivedEventArgs)->put_Handled(value));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaPlaybackCommandManagerPositionReceivedEventArgs<D>::Position() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerPositionReceivedEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerPositionReceivedEventArgs)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IMediaPlaybackCommandManagerPositionReceivedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerPositionReceivedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerPositionReceivedEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlaybackCommandManagerRateReceivedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerRateReceivedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerRateReceivedEventArgs)->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackCommandManagerRateReceivedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerRateReceivedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerRateReceivedEventArgs)->put_Handled(value));
 }
 
 template <typename D> double impl_IMediaPlaybackCommandManagerRateReceivedEventArgs<D>::PlaybackRate() const
 {
     double value {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerRateReceivedEventArgs &>(static_cast<const D &>(*this))->get_PlaybackRate(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerRateReceivedEventArgs)->get_PlaybackRate(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IMediaPlaybackCommandManagerRateReceivedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerRateReceivedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerRateReceivedEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackCommandManager impl_IMediaPlaybackCommandManagerCommandBehavior<D>::CommandManager() const
 {
     Windows::Media::Playback::MediaPlaybackCommandManager value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerCommandBehavior &>(static_cast<const D &>(*this))->get_CommandManager(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerCommandBehavior)->get_CommandManager(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlaybackCommandManagerCommandBehavior<D>::IsEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerCommandBehavior &>(static_cast<const D &>(*this))->get_IsEnabled(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerCommandBehavior)->get_IsEnabled(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaCommandEnablingRule impl_IMediaPlaybackCommandManagerCommandBehavior<D>::EnablingRule() const
 {
     Windows::Media::Playback::MediaCommandEnablingRule value {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerCommandBehavior &>(static_cast<const D &>(*this))->get_EnablingRule(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerCommandBehavior)->get_EnablingRule(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackCommandManagerCommandBehavior<D>::EnablingRule(Windows::Media::Playback::MediaCommandEnablingRule value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerCommandBehavior &>(static_cast<const D &>(*this))->put_EnablingRule(value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerCommandBehavior)->put_EnablingRule(value));
 }
 
 template <typename D> event_token impl_IMediaPlaybackCommandManagerCommandBehavior<D>::IsEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerCommandBehavior &>(static_cast<const D &>(*this))->add_IsEnabledChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerCommandBehavior)->add_IsEnabledChanged(get(handler), &token));
     return token;
 }
 
@@ -6218,102 +6218,102 @@ template <typename D> event_revoker<IMediaPlaybackCommandManagerCommandBehavior>
 
 template <typename D> void impl_IMediaPlaybackCommandManagerCommandBehavior<D>::IsEnabledChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManagerCommandBehavior &>(static_cast<const D &>(*this))->remove_IsEnabledChanged(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManagerCommandBehavior)->remove_IsEnabledChanged(token));
 }
 
 template <typename D> bool impl_IMediaPlaybackCommandManager<D>::IsEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->get_IsEnabled(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->get_IsEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackCommandManager<D>::IsEnabled(bool value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->put_IsEnabled(value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->put_IsEnabled(value));
 }
 
 template <typename D> Windows::Media::Playback::MediaPlayer impl_IMediaPlaybackCommandManager<D>::MediaPlayer() const
 {
     Windows::Media::Playback::MediaPlayer value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->get_MediaPlayer(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->get_MediaPlayer(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior impl_IMediaPlaybackCommandManager<D>::PlayBehavior() const
 {
     Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->get_PlayBehavior(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->get_PlayBehavior(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior impl_IMediaPlaybackCommandManager<D>::PauseBehavior() const
 {
     Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->get_PauseBehavior(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->get_PauseBehavior(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior impl_IMediaPlaybackCommandManager<D>::NextBehavior() const
 {
     Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->get_NextBehavior(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->get_NextBehavior(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior impl_IMediaPlaybackCommandManager<D>::PreviousBehavior() const
 {
     Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->get_PreviousBehavior(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->get_PreviousBehavior(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior impl_IMediaPlaybackCommandManager<D>::FastForwardBehavior() const
 {
     Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->get_FastForwardBehavior(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->get_FastForwardBehavior(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior impl_IMediaPlaybackCommandManager<D>::RewindBehavior() const
 {
     Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->get_RewindBehavior(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->get_RewindBehavior(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior impl_IMediaPlaybackCommandManager<D>::ShuffleBehavior() const
 {
     Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->get_ShuffleBehavior(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->get_ShuffleBehavior(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior impl_IMediaPlaybackCommandManager<D>::AutoRepeatModeBehavior() const
 {
     Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->get_AutoRepeatModeBehavior(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->get_AutoRepeatModeBehavior(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior impl_IMediaPlaybackCommandManager<D>::PositionBehavior() const
 {
     Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->get_PositionBehavior(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->get_PositionBehavior(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior impl_IMediaPlaybackCommandManager<D>::RateBehavior() const
 {
     Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->get_RateBehavior(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->get_RateBehavior(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IMediaPlaybackCommandManager<D>::PlayReceived(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerPlayReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->add_PlayReceived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->add_PlayReceived(get(handler), &token));
     return token;
 }
 
@@ -6324,13 +6324,13 @@ template <typename D> event_revoker<IMediaPlaybackCommandManager> impl_IMediaPla
 
 template <typename D> void impl_IMediaPlaybackCommandManager<D>::PlayReceived(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->remove_PlayReceived(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->remove_PlayReceived(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackCommandManager<D>::PauseReceived(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerPauseReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->add_PauseReceived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->add_PauseReceived(get(handler), &token));
     return token;
 }
 
@@ -6341,13 +6341,13 @@ template <typename D> event_revoker<IMediaPlaybackCommandManager> impl_IMediaPla
 
 template <typename D> void impl_IMediaPlaybackCommandManager<D>::PauseReceived(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->remove_PauseReceived(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->remove_PauseReceived(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackCommandManager<D>::NextReceived(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerNextReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->add_NextReceived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->add_NextReceived(get(handler), &token));
     return token;
 }
 
@@ -6358,13 +6358,13 @@ template <typename D> event_revoker<IMediaPlaybackCommandManager> impl_IMediaPla
 
 template <typename D> void impl_IMediaPlaybackCommandManager<D>::NextReceived(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->remove_NextReceived(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->remove_NextReceived(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackCommandManager<D>::PreviousReceived(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerPreviousReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->add_PreviousReceived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->add_PreviousReceived(get(handler), &token));
     return token;
 }
 
@@ -6375,13 +6375,13 @@ template <typename D> event_revoker<IMediaPlaybackCommandManager> impl_IMediaPla
 
 template <typename D> void impl_IMediaPlaybackCommandManager<D>::PreviousReceived(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->remove_PreviousReceived(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->remove_PreviousReceived(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackCommandManager<D>::FastForwardReceived(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerFastForwardReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->add_FastForwardReceived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->add_FastForwardReceived(get(handler), &token));
     return token;
 }
 
@@ -6392,13 +6392,13 @@ template <typename D> event_revoker<IMediaPlaybackCommandManager> impl_IMediaPla
 
 template <typename D> void impl_IMediaPlaybackCommandManager<D>::FastForwardReceived(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->remove_FastForwardReceived(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->remove_FastForwardReceived(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackCommandManager<D>::RewindReceived(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerRewindReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->add_RewindReceived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->add_RewindReceived(get(handler), &token));
     return token;
 }
 
@@ -6409,13 +6409,13 @@ template <typename D> event_revoker<IMediaPlaybackCommandManager> impl_IMediaPla
 
 template <typename D> void impl_IMediaPlaybackCommandManager<D>::RewindReceived(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->remove_RewindReceived(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->remove_RewindReceived(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackCommandManager<D>::ShuffleReceived(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerShuffleReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->add_ShuffleReceived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->add_ShuffleReceived(get(handler), &token));
     return token;
 }
 
@@ -6426,13 +6426,13 @@ template <typename D> event_revoker<IMediaPlaybackCommandManager> impl_IMediaPla
 
 template <typename D> void impl_IMediaPlaybackCommandManager<D>::ShuffleReceived(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->remove_ShuffleReceived(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->remove_ShuffleReceived(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackCommandManager<D>::AutoRepeatModeReceived(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->add_AutoRepeatModeReceived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->add_AutoRepeatModeReceived(get(handler), &token));
     return token;
 }
 
@@ -6443,13 +6443,13 @@ template <typename D> event_revoker<IMediaPlaybackCommandManager> impl_IMediaPla
 
 template <typename D> void impl_IMediaPlaybackCommandManager<D>::AutoRepeatModeReceived(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->remove_AutoRepeatModeReceived(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->remove_AutoRepeatModeReceived(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackCommandManager<D>::PositionReceived(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerPositionReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->add_PositionReceived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->add_PositionReceived(get(handler), &token));
     return token;
 }
 
@@ -6460,13 +6460,13 @@ template <typename D> event_revoker<IMediaPlaybackCommandManager> impl_IMediaPla
 
 template <typename D> void impl_IMediaPlaybackCommandManager<D>::PositionReceived(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->remove_PositionReceived(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->remove_PositionReceived(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackCommandManager<D>::RateReceived(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackCommandManager, Windows::Media::Playback::MediaPlaybackCommandManagerRateReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->add_RateReceived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->add_RateReceived(get(handler), &token));
     return token;
 }
 
@@ -6477,41 +6477,41 @@ template <typename D> event_revoker<IMediaPlaybackCommandManager> impl_IMediaPla
 
 template <typename D> void impl_IMediaPlaybackCommandManager<D>::RateReceived(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackCommandManager &>(static_cast<const D &>(*this))->remove_RateReceived(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackCommandManager)->remove_RateReceived(token));
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_IMediaPlaybackItemFactory<D>::Create(const Windows::Media::Core::MediaSource & source) const
 {
     Windows::Media::Playback::MediaPlaybackItem value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackItemFactory &>(static_cast<const D &>(*this))->abi_Create(get(source), put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItemFactory)->abi_Create(get(source), put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_IMediaPlaybackItemFactory2<D>::CreateWithStartTime(const Windows::Media::Core::MediaSource & source, const Windows::Foundation::TimeSpan & startTime) const
 {
     Windows::Media::Playback::MediaPlaybackItem result { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackItemFactory2 &>(static_cast<const D &>(*this))->abi_CreateWithStartTime(get(source), get(startTime), put(result)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItemFactory2)->abi_CreateWithStartTime(get(source), get(startTime), put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_IMediaPlaybackItemFactory2<D>::CreateWithStartTimeAndDurationLimit(const Windows::Media::Core::MediaSource & source, const Windows::Foundation::TimeSpan & startTime, const Windows::Foundation::TimeSpan & durationLimit) const
 {
     Windows::Media::Playback::MediaPlaybackItem result { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackItemFactory2 &>(static_cast<const D &>(*this))->abi_CreateWithStartTimeAndDurationLimit(get(source), get(startTime), get(durationLimit), put(result)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItemFactory2)->abi_CreateWithStartTimeAndDurationLimit(get(source), get(startTime), get(durationLimit), put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_IMediaPlaybackItemStatics<D>::FindFromMediaSource(const Windows::Media::Core::MediaSource & source) const
 {
     Windows::Media::Playback::MediaPlaybackItem value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackItemStatics &>(static_cast<const D &>(*this))->abi_FindFromMediaSource(get(source), put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItemStatics)->abi_FindFromMediaSource(get(source), put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IMediaPlaybackItem<D>::AudioTracksChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackItem, Windows::Foundation::Collections::IVectorChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackItem &>(static_cast<const D &>(*this))->add_AudioTracksChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem)->add_AudioTracksChanged(get(handler), &token));
     return token;
 }
 
@@ -6522,13 +6522,13 @@ template <typename D> event_revoker<IMediaPlaybackItem> impl_IMediaPlaybackItem<
 
 template <typename D> void impl_IMediaPlaybackItem<D>::AudioTracksChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackItem &>(static_cast<const D &>(*this))->remove_AudioTracksChanged(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem)->remove_AudioTracksChanged(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackItem<D>::VideoTracksChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackItem, Windows::Foundation::Collections::IVectorChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackItem &>(static_cast<const D &>(*this))->add_VideoTracksChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem)->add_VideoTracksChanged(get(handler), &token));
     return token;
 }
 
@@ -6539,13 +6539,13 @@ template <typename D> event_revoker<IMediaPlaybackItem> impl_IMediaPlaybackItem<
 
 template <typename D> void impl_IMediaPlaybackItem<D>::VideoTracksChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackItem &>(static_cast<const D &>(*this))->remove_VideoTracksChanged(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem)->remove_VideoTracksChanged(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackItem<D>::TimedMetadataTracksChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackItem, Windows::Foundation::Collections::IVectorChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackItem &>(static_cast<const D &>(*this))->add_TimedMetadataTracksChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem)->add_TimedMetadataTracksChanged(get(handler), &token));
     return token;
 }
 
@@ -6556,183 +6556,183 @@ template <typename D> event_revoker<IMediaPlaybackItem> impl_IMediaPlaybackItem<
 
 template <typename D> void impl_IMediaPlaybackItem<D>::TimedMetadataTracksChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackItem &>(static_cast<const D &>(*this))->remove_TimedMetadataTracksChanged(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem)->remove_TimedMetadataTracksChanged(token));
 }
 
 template <typename D> Windows::Media::Core::MediaSource impl_IMediaPlaybackItem<D>::Source() const
 {
     Windows::Media::Core::MediaSource value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackItem &>(static_cast<const D &>(*this))->get_Source(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem)->get_Source(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackAudioTrackList impl_IMediaPlaybackItem<D>::AudioTracks() const
 {
     Windows::Media::Playback::MediaPlaybackAudioTrackList value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackItem &>(static_cast<const D &>(*this))->get_AudioTracks(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem)->get_AudioTracks(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackVideoTrackList impl_IMediaPlaybackItem<D>::VideoTracks() const
 {
     Windows::Media::Playback::MediaPlaybackVideoTrackList value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackItem &>(static_cast<const D &>(*this))->get_VideoTracks(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem)->get_VideoTracks(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackTimedMetadataTrackList impl_IMediaPlaybackItem<D>::TimedMetadataTracks() const
 {
     Windows::Media::Playback::MediaPlaybackTimedMetadataTrackList value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackItem &>(static_cast<const D &>(*this))->get_TimedMetadataTracks(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem)->get_TimedMetadataTracks(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaPlaybackType impl_IMediaItemDisplayProperties<D>::Type() const
 {
     Windows::Media::MediaPlaybackType value {};
-    check_hresult(static_cast<const IMediaItemDisplayProperties &>(static_cast<const D &>(*this))->get_Type(&value));
+    check_hresult(WINRT_SHIM(IMediaItemDisplayProperties)->get_Type(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaItemDisplayProperties<D>::Type(Windows::Media::MediaPlaybackType value) const
 {
-    check_hresult(static_cast<const IMediaItemDisplayProperties &>(static_cast<const D &>(*this))->put_Type(value));
+    check_hresult(WINRT_SHIM(IMediaItemDisplayProperties)->put_Type(value));
 }
 
 template <typename D> Windows::Media::MusicDisplayProperties impl_IMediaItemDisplayProperties<D>::MusicProperties() const
 {
     Windows::Media::MusicDisplayProperties value { nullptr };
-    check_hresult(static_cast<const IMediaItemDisplayProperties &>(static_cast<const D &>(*this))->get_MusicProperties(put(value)));
+    check_hresult(WINRT_SHIM(IMediaItemDisplayProperties)->get_MusicProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::VideoDisplayProperties impl_IMediaItemDisplayProperties<D>::VideoProperties() const
 {
     Windows::Media::VideoDisplayProperties value { nullptr };
-    check_hresult(static_cast<const IMediaItemDisplayProperties &>(static_cast<const D &>(*this))->get_VideoProperties(put(value)));
+    check_hresult(WINRT_SHIM(IMediaItemDisplayProperties)->get_VideoProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::RandomAccessStreamReference impl_IMediaItemDisplayProperties<D>::Thumbnail() const
 {
     Windows::Storage::Streams::RandomAccessStreamReference value { nullptr };
-    check_hresult(static_cast<const IMediaItemDisplayProperties &>(static_cast<const D &>(*this))->get_Thumbnail(put(value)));
+    check_hresult(WINRT_SHIM(IMediaItemDisplayProperties)->get_Thumbnail(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaItemDisplayProperties<D>::Thumbnail(const Windows::Storage::Streams::RandomAccessStreamReference & value) const
 {
-    check_hresult(static_cast<const IMediaItemDisplayProperties &>(static_cast<const D &>(*this))->put_Thumbnail(get(value)));
+    check_hresult(WINRT_SHIM(IMediaItemDisplayProperties)->put_Thumbnail(get(value)));
 }
 
 template <typename D> void impl_IMediaItemDisplayProperties<D>::ClearAll() const
 {
-    check_hresult(static_cast<const IMediaItemDisplayProperties &>(static_cast<const D &>(*this))->abi_ClearAll());
+    check_hresult(WINRT_SHIM(IMediaItemDisplayProperties)->abi_ClearAll());
 }
 
 template <typename D> Windows::Media::Playback::MediaBreakSchedule impl_IMediaPlaybackItem2<D>::BreakSchedule() const
 {
     Windows::Media::Playback::MediaBreakSchedule value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackItem2 &>(static_cast<const D &>(*this))->get_BreakSchedule(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem2)->get_BreakSchedule(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaPlaybackItem2<D>::StartTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaPlaybackItem2 &>(static_cast<const D &>(*this))->get_StartTime(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem2)->get_StartTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IMediaPlaybackItem2<D>::DurationLimit() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(static_cast<const IMediaPlaybackItem2 &>(static_cast<const D &>(*this))->get_DurationLimit(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem2)->get_DurationLimit(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlaybackItem2<D>::CanSkip() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackItem2 &>(static_cast<const D &>(*this))->get_CanSkip(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem2)->get_CanSkip(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackItem2<D>::CanSkip(bool value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackItem2 &>(static_cast<const D &>(*this))->put_CanSkip(value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem2)->put_CanSkip(value));
 }
 
 template <typename D> Windows::Media::Playback::MediaItemDisplayProperties impl_IMediaPlaybackItem2<D>::GetDisplayProperties() const
 {
     Windows::Media::Playback::MediaItemDisplayProperties value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackItem2 &>(static_cast<const D &>(*this))->abi_GetDisplayProperties(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem2)->abi_GetDisplayProperties(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackItem2<D>::ApplyDisplayProperties(const Windows::Media::Playback::MediaItemDisplayProperties & value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackItem2 &>(static_cast<const D &>(*this))->abi_ApplyDisplayProperties(get(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem2)->abi_ApplyDisplayProperties(get(value)));
 }
 
 template <typename D> Windows::Media::Playback::MediaBreak impl_IMediaBreakFactory<D>::Create(Windows::Media::Playback::MediaBreakInsertionMethod insertionMethod) const
 {
     Windows::Media::Playback::MediaBreak result { nullptr };
-    check_hresult(static_cast<const IMediaBreakFactory &>(static_cast<const D &>(*this))->abi_Create(insertionMethod, put(result)));
+    check_hresult(WINRT_SHIM(IMediaBreakFactory)->abi_Create(insertionMethod, put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Playback::MediaBreak impl_IMediaBreakFactory<D>::CreateWithPresentationPosition(Windows::Media::Playback::MediaBreakInsertionMethod insertionMethod, const Windows::Foundation::TimeSpan & presentationPosition) const
 {
     Windows::Media::Playback::MediaBreak result { nullptr };
-    check_hresult(static_cast<const IMediaBreakFactory &>(static_cast<const D &>(*this))->abi_CreateWithPresentationPosition(insertionMethod, get(presentationPosition), put(result)));
+    check_hresult(WINRT_SHIM(IMediaBreakFactory)->abi_CreateWithPresentationPosition(insertionMethod, get(presentationPosition), put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackList impl_IMediaBreak<D>::PlaybackList() const
 {
     Windows::Media::Playback::MediaPlaybackList value { nullptr };
-    check_hresult(static_cast<const IMediaBreak &>(static_cast<const D &>(*this))->get_PlaybackList(put(value)));
+    check_hresult(WINRT_SHIM(IMediaBreak)->get_PlaybackList(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IMediaBreak<D>::PresentationPosition() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(static_cast<const IMediaBreak &>(static_cast<const D &>(*this))->get_PresentationPosition(put(value)));
+    check_hresult(WINRT_SHIM(IMediaBreak)->get_PresentationPosition(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaBreakInsertionMethod impl_IMediaBreak<D>::InsertionMethod() const
 {
     Windows::Media::Playback::MediaBreakInsertionMethod value {};
-    check_hresult(static_cast<const IMediaBreak &>(static_cast<const D &>(*this))->get_InsertionMethod(&value));
+    check_hresult(WINRT_SHIM(IMediaBreak)->get_InsertionMethod(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::ValueSet impl_IMediaBreak<D>::CustomProperties() const
 {
     Windows::Foundation::Collections::ValueSet value { nullptr };
-    check_hresult(static_cast<const IMediaBreak &>(static_cast<const D &>(*this))->get_CustomProperties(put(value)));
+    check_hresult(WINRT_SHIM(IMediaBreak)->get_CustomProperties(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMediaBreak<D>::CanStart() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaBreak &>(static_cast<const D &>(*this))->get_CanStart(&value));
+    check_hresult(WINRT_SHIM(IMediaBreak)->get_CanStart(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaBreak<D>::CanStart(bool value) const
 {
-    check_hresult(static_cast<const IMediaBreak &>(static_cast<const D &>(*this))->put_CanStart(value));
+    check_hresult(WINRT_SHIM(IMediaBreak)->put_CanStart(value));
 }
 
 template <typename D> event_token impl_IMediaBreakSchedule<D>::ScheduleChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaBreakSchedule &>(static_cast<const D &>(*this))->add_ScheduleChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaBreakSchedule)->add_ScheduleChanged(get(handler), &token));
     return token;
 }
 
@@ -6743,122 +6743,122 @@ template <typename D> event_revoker<IMediaBreakSchedule> impl_IMediaBreakSchedul
 
 template <typename D> void impl_IMediaBreakSchedule<D>::ScheduleChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaBreakSchedule &>(static_cast<const D &>(*this))->remove_ScheduleChanged(token));
+    check_hresult(WINRT_SHIM(IMediaBreakSchedule)->remove_ScheduleChanged(token));
 }
 
 template <typename D> void impl_IMediaBreakSchedule<D>::InsertMidrollBreak(const Windows::Media::Playback::MediaBreak & mediaBreak) const
 {
-    check_hresult(static_cast<const IMediaBreakSchedule &>(static_cast<const D &>(*this))->abi_InsertMidrollBreak(get(mediaBreak)));
+    check_hresult(WINRT_SHIM(IMediaBreakSchedule)->abi_InsertMidrollBreak(get(mediaBreak)));
 }
 
 template <typename D> void impl_IMediaBreakSchedule<D>::RemoveMidrollBreak(const Windows::Media::Playback::MediaBreak & mediaBreak) const
 {
-    check_hresult(static_cast<const IMediaBreakSchedule &>(static_cast<const D &>(*this))->abi_RemoveMidrollBreak(get(mediaBreak)));
+    check_hresult(WINRT_SHIM(IMediaBreakSchedule)->abi_RemoveMidrollBreak(get(mediaBreak)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Playback::MediaBreak> impl_IMediaBreakSchedule<D>::MidrollBreaks() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Playback::MediaBreak> value;
-    check_hresult(static_cast<const IMediaBreakSchedule &>(static_cast<const D &>(*this))->get_MidrollBreaks(put(value)));
+    check_hresult(WINRT_SHIM(IMediaBreakSchedule)->get_MidrollBreaks(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaBreakSchedule<D>::PrerollBreak(const Windows::Media::Playback::MediaBreak & value) const
 {
-    check_hresult(static_cast<const IMediaBreakSchedule &>(static_cast<const D &>(*this))->put_PrerollBreak(get(value)));
+    check_hresult(WINRT_SHIM(IMediaBreakSchedule)->put_PrerollBreak(get(value)));
 }
 
 template <typename D> Windows::Media::Playback::MediaBreak impl_IMediaBreakSchedule<D>::PrerollBreak() const
 {
     Windows::Media::Playback::MediaBreak value { nullptr };
-    check_hresult(static_cast<const IMediaBreakSchedule &>(static_cast<const D &>(*this))->get_PrerollBreak(put(value)));
+    check_hresult(WINRT_SHIM(IMediaBreakSchedule)->get_PrerollBreak(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaBreakSchedule<D>::PostrollBreak(const Windows::Media::Playback::MediaBreak & value) const
 {
-    check_hresult(static_cast<const IMediaBreakSchedule &>(static_cast<const D &>(*this))->put_PostrollBreak(get(value)));
+    check_hresult(WINRT_SHIM(IMediaBreakSchedule)->put_PostrollBreak(get(value)));
 }
 
 template <typename D> Windows::Media::Playback::MediaBreak impl_IMediaBreakSchedule<D>::PostrollBreak() const
 {
     Windows::Media::Playback::MediaBreak value { nullptr };
-    check_hresult(static_cast<const IMediaBreakSchedule &>(static_cast<const D &>(*this))->get_PostrollBreak(put(value)));
+    check_hresult(WINRT_SHIM(IMediaBreakSchedule)->get_PostrollBreak(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_IMediaBreakSchedule<D>::PlaybackItem() const
 {
     Windows::Media::Playback::MediaPlaybackItem value { nullptr };
-    check_hresult(static_cast<const IMediaBreakSchedule &>(static_cast<const D &>(*this))->get_PlaybackItem(put(value)));
+    check_hresult(WINRT_SHIM(IMediaBreakSchedule)->get_PlaybackItem(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItemErrorCode impl_IMediaPlaybackItemError<D>::ErrorCode() const
 {
     Windows::Media::Playback::MediaPlaybackItemErrorCode value {};
-    check_hresult(static_cast<const IMediaPlaybackItemError &>(static_cast<const D &>(*this))->get_ErrorCode(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItemError)->get_ErrorCode(&value));
     return value;
 }
 
 template <typename D> HRESULT impl_IMediaPlaybackItemError<D>::ExtendedError() const
 {
     HRESULT value {};
-    check_hresult(static_cast<const IMediaPlaybackItemError &>(static_cast<const D &>(*this))->get_ExtendedError(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItemError)->get_ExtendedError(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_IMediaEnginePlaybackSource<D>::CurrentItem() const
 {
     Windows::Media::Playback::MediaPlaybackItem value { nullptr };
-    check_hresult(static_cast<const IMediaEnginePlaybackSource &>(static_cast<const D &>(*this))->get_CurrentItem(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEnginePlaybackSource)->get_CurrentItem(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaEnginePlaybackSource<D>::SetPlaybackSource(const Windows::Media::Playback::IMediaPlaybackSource & source) const
 {
-    check_hresult(static_cast<const IMediaEnginePlaybackSource &>(static_cast<const D &>(*this))->abi_SetPlaybackSource(get(source)));
+    check_hresult(WINRT_SHIM(IMediaEnginePlaybackSource)->abi_SetPlaybackSource(get(source)));
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_IMediaPlaybackItemOpenedEventArgs<D>::Item() const
 {
     Windows::Media::Playback::MediaPlaybackItem value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackItemOpenedEventArgs &>(static_cast<const D &>(*this))->get_Item(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItemOpenedEventArgs)->get_Item(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_IMediaPlaybackItemFailedEventArgs<D>::Item() const
 {
     Windows::Media::Playback::MediaPlaybackItem value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackItemFailedEventArgs &>(static_cast<const D &>(*this))->get_Item(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItemFailedEventArgs)->get_Item(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItemError impl_IMediaPlaybackItemFailedEventArgs<D>::Error() const
 {
     Windows::Media::Playback::MediaPlaybackItemError value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackItemFailedEventArgs &>(static_cast<const D &>(*this))->get_Error(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackItemFailedEventArgs)->get_Error(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_ICurrentMediaPlaybackItemChangedEventArgs<D>::NewItem() const
 {
     Windows::Media::Playback::MediaPlaybackItem value { nullptr };
-    check_hresult(static_cast<const ICurrentMediaPlaybackItemChangedEventArgs &>(static_cast<const D &>(*this))->get_NewItem(put(value)));
+    check_hresult(WINRT_SHIM(ICurrentMediaPlaybackItemChangedEventArgs)->get_NewItem(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_ICurrentMediaPlaybackItemChangedEventArgs<D>::OldItem() const
 {
     Windows::Media::Playback::MediaPlaybackItem value { nullptr };
-    check_hresult(static_cast<const ICurrentMediaPlaybackItemChangedEventArgs &>(static_cast<const D &>(*this))->get_OldItem(put(value)));
+    check_hresult(WINRT_SHIM(ICurrentMediaPlaybackItemChangedEventArgs)->get_OldItem(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IMediaPlaybackList<D>::ItemFailed(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackList, Windows::Media::Playback::MediaPlaybackItemFailedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackList &>(static_cast<const D &>(*this))->add_ItemFailed(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList)->add_ItemFailed(get(handler), &token));
     return token;
 }
 
@@ -6869,13 +6869,13 @@ template <typename D> event_revoker<IMediaPlaybackList> impl_IMediaPlaybackList<
 
 template <typename D> void impl_IMediaPlaybackList<D>::ItemFailed(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackList &>(static_cast<const D &>(*this))->remove_ItemFailed(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList)->remove_ItemFailed(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackList<D>::CurrentItemChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackList, Windows::Media::Playback::CurrentMediaPlaybackItemChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackList &>(static_cast<const D &>(*this))->add_CurrentItemChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList)->add_CurrentItemChanged(get(handler), &token));
     return token;
 }
 
@@ -6886,13 +6886,13 @@ template <typename D> event_revoker<IMediaPlaybackList> impl_IMediaPlaybackList<
 
 template <typename D> void impl_IMediaPlaybackList<D>::CurrentItemChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackList &>(static_cast<const D &>(*this))->remove_CurrentItemChanged(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList)->remove_CurrentItemChanged(token));
 }
 
 template <typename D> event_token impl_IMediaPlaybackList<D>::ItemOpened(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackList, Windows::Media::Playback::MediaPlaybackItemOpenedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackList &>(static_cast<const D &>(*this))->add_ItemOpened(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList)->add_ItemOpened(get(handler), &token));
     return token;
 }
 
@@ -6903,115 +6903,115 @@ template <typename D> event_revoker<IMediaPlaybackList> impl_IMediaPlaybackList<
 
 template <typename D> void impl_IMediaPlaybackList<D>::ItemOpened(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackList &>(static_cast<const D &>(*this))->remove_ItemOpened(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList)->remove_ItemOpened(token));
 }
 
 template <typename D> Windows::Foundation::Collections::IObservableVector<Windows::Media::Playback::MediaPlaybackItem> impl_IMediaPlaybackList<D>::Items() const
 {
     Windows::Foundation::Collections::IObservableVector<Windows::Media::Playback::MediaPlaybackItem> value;
-    check_hresult(static_cast<const IMediaPlaybackList &>(static_cast<const D &>(*this))->get_Items(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList)->get_Items(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMediaPlaybackList<D>::AutoRepeatEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackList &>(static_cast<const D &>(*this))->get_AutoRepeatEnabled(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList)->get_AutoRepeatEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackList<D>::AutoRepeatEnabled(bool value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackList &>(static_cast<const D &>(*this))->put_AutoRepeatEnabled(value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList)->put_AutoRepeatEnabled(value));
 }
 
 template <typename D> bool impl_IMediaPlaybackList<D>::ShuffleEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaPlaybackList &>(static_cast<const D &>(*this))->get_ShuffleEnabled(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList)->get_ShuffleEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackList<D>::ShuffleEnabled(bool value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackList &>(static_cast<const D &>(*this))->put_ShuffleEnabled(value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList)->put_ShuffleEnabled(value));
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_IMediaPlaybackList<D>::CurrentItem() const
 {
     Windows::Media::Playback::MediaPlaybackItem value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackList &>(static_cast<const D &>(*this))->get_CurrentItem(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList)->get_CurrentItem(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IMediaPlaybackList<D>::CurrentItemIndex() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMediaPlaybackList &>(static_cast<const D &>(*this))->get_CurrentItemIndex(&value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList)->get_CurrentItemIndex(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_IMediaPlaybackList<D>::MoveNext() const
 {
     Windows::Media::Playback::MediaPlaybackItem item { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackList &>(static_cast<const D &>(*this))->abi_MoveNext(put(item)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList)->abi_MoveNext(put(item)));
     return item;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_IMediaPlaybackList<D>::MovePrevious() const
 {
     Windows::Media::Playback::MediaPlaybackItem item { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackList &>(static_cast<const D &>(*this))->abi_MovePrevious(put(item)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList)->abi_MovePrevious(put(item)));
     return item;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_IMediaPlaybackList<D>::MoveTo(uint32_t itemIndex) const
 {
     Windows::Media::Playback::MediaPlaybackItem item { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackList &>(static_cast<const D &>(*this))->abi_MoveTo(itemIndex, put(item)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList)->abi_MoveTo(itemIndex, put(item)));
     return item;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IMediaPlaybackList2<D>::MaxPrefetchTime() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(static_cast<const IMediaPlaybackList2 &>(static_cast<const D &>(*this))->get_MaxPrefetchTime(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList2)->get_MaxPrefetchTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackList2<D>::MaxPrefetchTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackList2 &>(static_cast<const D &>(*this))->put_MaxPrefetchTime(get(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList2)->put_MaxPrefetchTime(get(value)));
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_IMediaPlaybackList2<D>::StartingItem() const
 {
     Windows::Media::Playback::MediaPlaybackItem value { nullptr };
-    check_hresult(static_cast<const IMediaPlaybackList2 &>(static_cast<const D &>(*this))->get_StartingItem(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList2)->get_StartingItem(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackList2<D>::StartingItem(const Windows::Media::Playback::MediaPlaybackItem & value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackList2 &>(static_cast<const D &>(*this))->put_StartingItem(get(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList2)->put_StartingItem(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Playback::MediaPlaybackItem> impl_IMediaPlaybackList2<D>::ShuffledItems() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Playback::MediaPlaybackItem> value;
-    check_hresult(static_cast<const IMediaPlaybackList2 &>(static_cast<const D &>(*this))->get_ShuffledItems(put(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList2)->get_ShuffledItems(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackList2<D>::SetShuffledItems(const Windows::Foundation::Collections::IIterable<Windows::Media::Playback::MediaPlaybackItem> & value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackList2 &>(static_cast<const D &>(*this))->abi_SetShuffledItems(get(value)));
+    check_hresult(WINRT_SHIM(IMediaPlaybackList2)->abi_SetShuffledItems(get(value)));
 }
 
 template <typename D> event_token impl_IMediaPlaybackTimedMetadataTrackList<D>::PresentationModeChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackTimedMetadataTrackList, Windows::Media::Playback::TimedMetadataPresentationModeChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMediaPlaybackTimedMetadataTrackList &>(static_cast<const D &>(*this))->add_PresentationModeChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackTimedMetadataTrackList)->add_PresentationModeChanged(get(handler), &token));
     return token;
 }
 
@@ -7022,39 +7022,39 @@ template <typename D> event_revoker<IMediaPlaybackTimedMetadataTrackList> impl_I
 
 template <typename D> void impl_IMediaPlaybackTimedMetadataTrackList<D>::PresentationModeChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMediaPlaybackTimedMetadataTrackList &>(static_cast<const D &>(*this))->remove_PresentationModeChanged(token));
+    check_hresult(WINRT_SHIM(IMediaPlaybackTimedMetadataTrackList)->remove_PresentationModeChanged(token));
 }
 
 template <typename D> Windows::Media::Playback::TimedMetadataTrackPresentationMode impl_IMediaPlaybackTimedMetadataTrackList<D>::GetPresentationMode(uint32_t index) const
 {
     Windows::Media::Playback::TimedMetadataTrackPresentationMode value {};
-    check_hresult(static_cast<const IMediaPlaybackTimedMetadataTrackList &>(static_cast<const D &>(*this))->abi_GetPresentationMode(index, &value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackTimedMetadataTrackList)->abi_GetPresentationMode(index, &value));
     return value;
 }
 
 template <typename D> void impl_IMediaPlaybackTimedMetadataTrackList<D>::SetPresentationMode(uint32_t index, Windows::Media::Playback::TimedMetadataTrackPresentationMode value) const
 {
-    check_hresult(static_cast<const IMediaPlaybackTimedMetadataTrackList &>(static_cast<const D &>(*this))->abi_SetPresentationMode(index, value));
+    check_hresult(WINRT_SHIM(IMediaPlaybackTimedMetadataTrackList)->abi_SetPresentationMode(index, value));
 }
 
 template <typename D> Windows::Media::Core::TimedMetadataTrack impl_ITimedMetadataPresentationModeChangedEventArgs<D>::Track() const
 {
     Windows::Media::Core::TimedMetadataTrack value { nullptr };
-    check_hresult(static_cast<const ITimedMetadataPresentationModeChangedEventArgs &>(static_cast<const D &>(*this))->get_Track(put(value)));
+    check_hresult(WINRT_SHIM(ITimedMetadataPresentationModeChangedEventArgs)->get_Track(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::TimedMetadataTrackPresentationMode impl_ITimedMetadataPresentationModeChangedEventArgs<D>::OldPresentationMode() const
 {
     Windows::Media::Playback::TimedMetadataTrackPresentationMode value {};
-    check_hresult(static_cast<const ITimedMetadataPresentationModeChangedEventArgs &>(static_cast<const D &>(*this))->get_OldPresentationMode(&value));
+    check_hresult(WINRT_SHIM(ITimedMetadataPresentationModeChangedEventArgs)->get_OldPresentationMode(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::TimedMetadataTrackPresentationMode impl_ITimedMetadataPresentationModeChangedEventArgs<D>::NewPresentationMode() const
 {
     Windows::Media::Playback::TimedMetadataTrackPresentationMode value {};
-    check_hresult(static_cast<const ITimedMetadataPresentationModeChangedEventArgs &>(static_cast<const D &>(*this))->get_NewPresentationMode(&value));
+    check_hresult(WINRT_SHIM(ITimedMetadataPresentationModeChangedEventArgs)->get_NewPresentationMode(&value));
     return value;
 }
 

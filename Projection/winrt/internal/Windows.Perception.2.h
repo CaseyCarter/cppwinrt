@@ -14,7 +14,6 @@ struct IPerceptionTimestamp :
     impl::consume<IPerceptionTimestamp>
 {
     IPerceptionTimestamp(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionTimestamp>(m_ptr); }
 };
 
 struct IPerceptionTimestampHelperStatics :
@@ -22,7 +21,6 @@ struct IPerceptionTimestampHelperStatics :
     impl::consume<IPerceptionTimestampHelperStatics>
 {
     IPerceptionTimestampHelperStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionTimestampHelperStatics>(m_ptr); }
 };
 
 }

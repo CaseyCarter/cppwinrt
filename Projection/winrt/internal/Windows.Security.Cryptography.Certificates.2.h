@@ -184,7 +184,6 @@ struct ICertificate :
     impl::consume<ICertificate>
 {
     ICertificate(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICertificate>(m_ptr); }
 };
 
 struct ICertificate2 :
@@ -192,7 +191,6 @@ struct ICertificate2 :
     impl::consume<ICertificate2>
 {
     ICertificate2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICertificate2>(m_ptr); }
 };
 
 struct ICertificate3 :
@@ -200,7 +198,6 @@ struct ICertificate3 :
     impl::consume<ICertificate3>
 {
     ICertificate3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICertificate3>(m_ptr); }
 };
 
 struct ICertificateChain :
@@ -208,7 +205,6 @@ struct ICertificateChain :
     impl::consume<ICertificateChain>
 {
     ICertificateChain(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICertificateChain>(m_ptr); }
 };
 
 struct ICertificateEnrollmentManagerStatics :
@@ -216,7 +212,6 @@ struct ICertificateEnrollmentManagerStatics :
     impl::consume<ICertificateEnrollmentManagerStatics>
 {
     ICertificateEnrollmentManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICertificateEnrollmentManagerStatics>(m_ptr); }
 };
 
 struct ICertificateEnrollmentManagerStatics2 :
@@ -224,7 +219,6 @@ struct ICertificateEnrollmentManagerStatics2 :
     impl::consume<ICertificateEnrollmentManagerStatics2>
 {
     ICertificateEnrollmentManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICertificateEnrollmentManagerStatics2>(m_ptr); }
 };
 
 struct ICertificateEnrollmentManagerStatics3 :
@@ -232,7 +226,6 @@ struct ICertificateEnrollmentManagerStatics3 :
     impl::consume<ICertificateEnrollmentManagerStatics3>
 {
     ICertificateEnrollmentManagerStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICertificateEnrollmentManagerStatics3>(m_ptr); }
 };
 
 struct ICertificateFactory :
@@ -240,7 +233,6 @@ struct ICertificateFactory :
     impl::consume<ICertificateFactory>
 {
     ICertificateFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICertificateFactory>(m_ptr); }
 };
 
 struct ICertificateKeyUsages :
@@ -248,7 +240,6 @@ struct ICertificateKeyUsages :
     impl::consume<ICertificateKeyUsages>
 {
     ICertificateKeyUsages(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICertificateKeyUsages>(m_ptr); }
 };
 
 struct ICertificateQuery :
@@ -256,7 +247,6 @@ struct ICertificateQuery :
     impl::consume<ICertificateQuery>
 {
     ICertificateQuery(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICertificateQuery>(m_ptr); }
 };
 
 struct ICertificateQuery2 :
@@ -264,7 +254,6 @@ struct ICertificateQuery2 :
     impl::consume<ICertificateQuery2>
 {
     ICertificateQuery2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICertificateQuery2>(m_ptr); }
 };
 
 struct ICertificateRequestProperties :
@@ -272,7 +261,6 @@ struct ICertificateRequestProperties :
     impl::consume<ICertificateRequestProperties>
 {
     ICertificateRequestProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICertificateRequestProperties>(m_ptr); }
 };
 
 struct ICertificateRequestProperties2 :
@@ -280,7 +268,6 @@ struct ICertificateRequestProperties2 :
     impl::consume<ICertificateRequestProperties2>
 {
     ICertificateRequestProperties2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICertificateRequestProperties2>(m_ptr); }
 };
 
 struct ICertificateRequestProperties3 :
@@ -288,7 +275,6 @@ struct ICertificateRequestProperties3 :
     impl::consume<ICertificateRequestProperties3>
 {
     ICertificateRequestProperties3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICertificateRequestProperties3>(m_ptr); }
 };
 
 struct ICertificateStore :
@@ -296,7 +282,6 @@ struct ICertificateStore :
     impl::consume<ICertificateStore>
 {
     ICertificateStore(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICertificateStore>(m_ptr); }
 };
 
 struct ICertificateStore2 :
@@ -304,7 +289,6 @@ struct ICertificateStore2 :
     impl::consume<ICertificateStore2>
 {
     ICertificateStore2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICertificateStore2>(m_ptr); }
 };
 
 struct ICertificateStoresStatics :
@@ -312,7 +296,6 @@ struct ICertificateStoresStatics :
     impl::consume<ICertificateStoresStatics>
 {
     ICertificateStoresStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICertificateStoresStatics>(m_ptr); }
 };
 
 struct ICertificateStoresStatics2 :
@@ -320,7 +303,6 @@ struct ICertificateStoresStatics2 :
     impl::consume<ICertificateStoresStatics2>
 {
     ICertificateStoresStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICertificateStoresStatics2>(m_ptr); }
 };
 
 struct IChainBuildingParameters :
@@ -328,7 +310,6 @@ struct IChainBuildingParameters :
     impl::consume<IChainBuildingParameters>
 {
     IChainBuildingParameters(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChainBuildingParameters>(m_ptr); }
 };
 
 struct IChainValidationParameters :
@@ -336,7 +317,6 @@ struct IChainValidationParameters :
     impl::consume<IChainValidationParameters>
 {
     IChainValidationParameters(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChainValidationParameters>(m_ptr); }
 };
 
 struct ICmsAttachedSignature :
@@ -344,7 +324,6 @@ struct ICmsAttachedSignature :
     impl::consume<ICmsAttachedSignature>
 {
     ICmsAttachedSignature(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICmsAttachedSignature>(m_ptr); }
 };
 
 struct ICmsAttachedSignatureFactory :
@@ -352,7 +331,6 @@ struct ICmsAttachedSignatureFactory :
     impl::consume<ICmsAttachedSignatureFactory>
 {
     ICmsAttachedSignatureFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICmsAttachedSignatureFactory>(m_ptr); }
 };
 
 struct ICmsAttachedSignatureStatics :
@@ -360,7 +338,6 @@ struct ICmsAttachedSignatureStatics :
     impl::consume<ICmsAttachedSignatureStatics>
 {
     ICmsAttachedSignatureStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICmsAttachedSignatureStatics>(m_ptr); }
 };
 
 struct ICmsDetachedSignature :
@@ -368,7 +345,6 @@ struct ICmsDetachedSignature :
     impl::consume<ICmsDetachedSignature>
 {
     ICmsDetachedSignature(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICmsDetachedSignature>(m_ptr); }
 };
 
 struct ICmsDetachedSignatureFactory :
@@ -376,7 +352,6 @@ struct ICmsDetachedSignatureFactory :
     impl::consume<ICmsDetachedSignatureFactory>
 {
     ICmsDetachedSignatureFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICmsDetachedSignatureFactory>(m_ptr); }
 };
 
 struct ICmsDetachedSignatureStatics :
@@ -384,7 +359,6 @@ struct ICmsDetachedSignatureStatics :
     impl::consume<ICmsDetachedSignatureStatics>
 {
     ICmsDetachedSignatureStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICmsDetachedSignatureStatics>(m_ptr); }
 };
 
 struct ICmsSignerInfo :
@@ -392,7 +366,6 @@ struct ICmsSignerInfo :
     impl::consume<ICmsSignerInfo>
 {
     ICmsSignerInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICmsSignerInfo>(m_ptr); }
 };
 
 struct ICmsTimestampInfo :
@@ -400,7 +373,6 @@ struct ICmsTimestampInfo :
     impl::consume<ICmsTimestampInfo>
 {
     ICmsTimestampInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICmsTimestampInfo>(m_ptr); }
 };
 
 struct IKeyAlgorithmNamesStatics :
@@ -408,7 +380,6 @@ struct IKeyAlgorithmNamesStatics :
     impl::consume<IKeyAlgorithmNamesStatics>
 {
     IKeyAlgorithmNamesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyAlgorithmNamesStatics>(m_ptr); }
 };
 
 struct IKeyAlgorithmNamesStatics2 :
@@ -416,7 +387,6 @@ struct IKeyAlgorithmNamesStatics2 :
     impl::consume<IKeyAlgorithmNamesStatics2>
 {
     IKeyAlgorithmNamesStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyAlgorithmNamesStatics2>(m_ptr); }
 };
 
 struct IKeyAttestationHelperStatics :
@@ -424,7 +394,6 @@ struct IKeyAttestationHelperStatics :
     impl::consume<IKeyAttestationHelperStatics>
 {
     IKeyAttestationHelperStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyAttestationHelperStatics>(m_ptr); }
 };
 
 struct IKeyAttestationHelperStatics2 :
@@ -432,7 +401,6 @@ struct IKeyAttestationHelperStatics2 :
     impl::consume<IKeyAttestationHelperStatics2>
 {
     IKeyAttestationHelperStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyAttestationHelperStatics2>(m_ptr); }
 };
 
 struct IKeyStorageProviderNamesStatics :
@@ -440,7 +408,6 @@ struct IKeyStorageProviderNamesStatics :
     impl::consume<IKeyStorageProviderNamesStatics>
 {
     IKeyStorageProviderNamesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyStorageProviderNamesStatics>(m_ptr); }
 };
 
 struct IKeyStorageProviderNamesStatics2 :
@@ -448,7 +415,6 @@ struct IKeyStorageProviderNamesStatics2 :
     impl::consume<IKeyStorageProviderNamesStatics2>
 {
     IKeyStorageProviderNamesStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyStorageProviderNamesStatics2>(m_ptr); }
 };
 
 struct IPfxImportParameters :
@@ -456,7 +422,6 @@ struct IPfxImportParameters :
     impl::consume<IPfxImportParameters>
 {
     IPfxImportParameters(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPfxImportParameters>(m_ptr); }
 };
 
 struct IStandardCertificateStoreNamesStatics :
@@ -464,7 +429,6 @@ struct IStandardCertificateStoreNamesStatics :
     impl::consume<IStandardCertificateStoreNamesStatics>
 {
     IStandardCertificateStoreNamesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStandardCertificateStoreNamesStatics>(m_ptr); }
 };
 
 struct ISubjectAlternativeNameInfo :
@@ -472,7 +436,6 @@ struct ISubjectAlternativeNameInfo :
     impl::consume<ISubjectAlternativeNameInfo>
 {
     ISubjectAlternativeNameInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISubjectAlternativeNameInfo>(m_ptr); }
 };
 
 struct IUserCertificateEnrollmentManager :
@@ -480,7 +443,6 @@ struct IUserCertificateEnrollmentManager :
     impl::consume<IUserCertificateEnrollmentManager>
 {
     IUserCertificateEnrollmentManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserCertificateEnrollmentManager>(m_ptr); }
 };
 
 struct IUserCertificateEnrollmentManager2 :
@@ -488,7 +450,6 @@ struct IUserCertificateEnrollmentManager2 :
     impl::consume<IUserCertificateEnrollmentManager2>
 {
     IUserCertificateEnrollmentManager2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserCertificateEnrollmentManager2>(m_ptr); }
 };
 
 struct IUserCertificateStore :
@@ -496,7 +457,6 @@ struct IUserCertificateStore :
     impl::consume<IUserCertificateStore>
 {
     IUserCertificateStore(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserCertificateStore>(m_ptr); }
 };
 
 }

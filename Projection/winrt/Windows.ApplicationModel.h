@@ -1430,549 +1430,549 @@ namespace Windows::ApplicationModel {
 template <typename D> hstring impl_IAppDisplayInfo<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppDisplayInfo &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IAppDisplayInfo)->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppDisplayInfo<D>::Description() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppDisplayInfo &>(static_cast<const D &>(*this))->get_Description(put(value)));
+    check_hresult(WINRT_SHIM(IAppDisplayInfo)->get_Description(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::RandomAccessStreamReference impl_IAppDisplayInfo<D>::GetLogo(const Windows::Foundation::Size & size) const
 {
     Windows::Storage::Streams::RandomAccessStreamReference value { nullptr };
-    check_hresult(static_cast<const IAppDisplayInfo &>(static_cast<const D &>(*this))->abi_GetLogo(get(size), put(value)));
+    check_hresult(WINRT_SHIM(IAppDisplayInfo)->abi_GetLogo(get(size), put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppInfo<D>::Id() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppInfo &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IAppInfo)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppInfo<D>::AppUserModelId() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppInfo &>(static_cast<const D &>(*this))->get_AppUserModelId(put(value)));
+    check_hresult(WINRT_SHIM(IAppInfo)->get_AppUserModelId(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::AppDisplayInfo impl_IAppInfo<D>::DisplayInfo() const
 {
     Windows::ApplicationModel::AppDisplayInfo value { nullptr };
-    check_hresult(static_cast<const IAppInfo &>(static_cast<const D &>(*this))->get_DisplayInfo(put(value)));
+    check_hresult(WINRT_SHIM(IAppInfo)->get_DisplayInfo(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppInfo<D>::PackageFamilyName() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppInfo &>(static_cast<const D &>(*this))->get_PackageFamilyName(put(value)));
+    check_hresult(WINRT_SHIM(IAppInfo)->get_PackageFamilyName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISuspendingDeferral<D>::Complete() const
 {
-    check_hresult(static_cast<const ISuspendingDeferral &>(static_cast<const D &>(*this))->abi_Complete());
+    check_hresult(WINRT_SHIM(ISuspendingDeferral)->abi_Complete());
 }
 
 template <typename D> Windows::ApplicationModel::SuspendingDeferral impl_ISuspendingOperation<D>::GetDeferral() const
 {
     Windows::ApplicationModel::SuspendingDeferral deferral { nullptr };
-    check_hresult(static_cast<const ISuspendingOperation &>(static_cast<const D &>(*this))->abi_GetDeferral(put(deferral)));
+    check_hresult(WINRT_SHIM(ISuspendingOperation)->abi_GetDeferral(put(deferral)));
     return deferral;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISuspendingOperation<D>::Deadline() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const ISuspendingOperation &>(static_cast<const D &>(*this))->get_Deadline(put(value)));
+    check_hresult(WINRT_SHIM(ISuspendingOperation)->get_Deadline(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::SuspendingOperation impl_ISuspendingEventArgs<D>::SuspendingOperation() const
 {
     Windows::ApplicationModel::SuspendingOperation value { nullptr };
-    check_hresult(static_cast<const ISuspendingEventArgs &>(static_cast<const D &>(*this))->get_SuspendingOperation(put(value)));
+    check_hresult(WINRT_SHIM(ISuspendingEventArgs)->get_SuspendingOperation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_ILeavingBackgroundEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const ILeavingBackgroundEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(ILeavingBackgroundEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IEnteredBackgroundEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IEnteredBackgroundEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IEnteredBackgroundEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPackageIdWithMetadata<D>::ProductId() const
 {
     hstring value;
-    check_hresult(static_cast<const IPackageIdWithMetadata &>(static_cast<const D &>(*this))->get_ProductId(put(value)));
+    check_hresult(WINRT_SHIM(IPackageIdWithMetadata)->get_ProductId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPackageIdWithMetadata<D>::Author() const
 {
     hstring value;
-    check_hresult(static_cast<const IPackageIdWithMetadata &>(static_cast<const D &>(*this))->get_Author(put(value)));
+    check_hresult(WINRT_SHIM(IPackageIdWithMetadata)->get_Author(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IPackageWithMetadata<D>::InstallDate() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IPackageWithMetadata &>(static_cast<const D &>(*this))->get_InstallDate(put(value)));
+    check_hresult(WINRT_SHIM(IPackageWithMetadata)->get_InstallDate(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPackageWithMetadata<D>::GetThumbnailToken() const
 {
     hstring value;
-    check_hresult(static_cast<const IPackageWithMetadata &>(static_cast<const D &>(*this))->abi_GetThumbnailToken(put(value)));
+    check_hresult(WINRT_SHIM(IPackageWithMetadata)->abi_GetThumbnailToken(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPackageWithMetadata<D>::Launch(hstring_ref parameters) const
 {
-    check_hresult(static_cast<const IPackageWithMetadata &>(static_cast<const D &>(*this))->abi_Launch(get(parameters)));
+    check_hresult(WINRT_SHIM(IPackageWithMetadata)->abi_Launch(get(parameters)));
 }
 
 template <typename D> bool impl_IPackageStatus<D>::VerifyIsOK() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackageStatus &>(static_cast<const D &>(*this))->abi_VerifyIsOK(&value));
+    check_hresult(WINRT_SHIM(IPackageStatus)->abi_VerifyIsOK(&value));
     return value;
 }
 
 template <typename D> bool impl_IPackageStatus<D>::NotAvailable() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackageStatus &>(static_cast<const D &>(*this))->get_NotAvailable(&value));
+    check_hresult(WINRT_SHIM(IPackageStatus)->get_NotAvailable(&value));
     return value;
 }
 
 template <typename D> bool impl_IPackageStatus<D>::PackageOffline() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackageStatus &>(static_cast<const D &>(*this))->get_PackageOffline(&value));
+    check_hresult(WINRT_SHIM(IPackageStatus)->get_PackageOffline(&value));
     return value;
 }
 
 template <typename D> bool impl_IPackageStatus<D>::DataOffline() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackageStatus &>(static_cast<const D &>(*this))->get_DataOffline(&value));
+    check_hresult(WINRT_SHIM(IPackageStatus)->get_DataOffline(&value));
     return value;
 }
 
 template <typename D> bool impl_IPackageStatus<D>::Disabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackageStatus &>(static_cast<const D &>(*this))->get_Disabled(&value));
+    check_hresult(WINRT_SHIM(IPackageStatus)->get_Disabled(&value));
     return value;
 }
 
 template <typename D> bool impl_IPackageStatus<D>::NeedsRemediation() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackageStatus &>(static_cast<const D &>(*this))->get_NeedsRemediation(&value));
+    check_hresult(WINRT_SHIM(IPackageStatus)->get_NeedsRemediation(&value));
     return value;
 }
 
 template <typename D> bool impl_IPackageStatus<D>::LicenseIssue() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackageStatus &>(static_cast<const D &>(*this))->get_LicenseIssue(&value));
+    check_hresult(WINRT_SHIM(IPackageStatus)->get_LicenseIssue(&value));
     return value;
 }
 
 template <typename D> bool impl_IPackageStatus<D>::Modified() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackageStatus &>(static_cast<const D &>(*this))->get_Modified(&value));
+    check_hresult(WINRT_SHIM(IPackageStatus)->get_Modified(&value));
     return value;
 }
 
 template <typename D> bool impl_IPackageStatus<D>::Tampered() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackageStatus &>(static_cast<const D &>(*this))->get_Tampered(&value));
+    check_hresult(WINRT_SHIM(IPackageStatus)->get_Tampered(&value));
     return value;
 }
 
 template <typename D> bool impl_IPackageStatus<D>::DependencyIssue() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackageStatus &>(static_cast<const D &>(*this))->get_DependencyIssue(&value));
+    check_hresult(WINRT_SHIM(IPackageStatus)->get_DependencyIssue(&value));
     return value;
 }
 
 template <typename D> bool impl_IPackageStatus<D>::Servicing() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackageStatus &>(static_cast<const D &>(*this))->get_Servicing(&value));
+    check_hresult(WINRT_SHIM(IPackageStatus)->get_Servicing(&value));
     return value;
 }
 
 template <typename D> bool impl_IPackageStatus<D>::DeploymentInProgress() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackageStatus &>(static_cast<const D &>(*this))->get_DeploymentInProgress(&value));
+    check_hresult(WINRT_SHIM(IPackageStatus)->get_DeploymentInProgress(&value));
     return value;
 }
 
 template <typename D> hstring impl_IPackageId<D>::Name() const
 {
     hstring value;
-    check_hresult(static_cast<const IPackageId &>(static_cast<const D &>(*this))->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(IPackageId)->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::PackageVersion impl_IPackageId<D>::Version() const
 {
     Windows::ApplicationModel::PackageVersion value {};
-    check_hresult(static_cast<const IPackageId &>(static_cast<const D &>(*this))->get_Version(put(value)));
+    check_hresult(WINRT_SHIM(IPackageId)->get_Version(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::ProcessorArchitecture impl_IPackageId<D>::Architecture() const
 {
     Windows::System::ProcessorArchitecture value {};
-    check_hresult(static_cast<const IPackageId &>(static_cast<const D &>(*this))->get_Architecture(&value));
+    check_hresult(WINRT_SHIM(IPackageId)->get_Architecture(&value));
     return value;
 }
 
 template <typename D> hstring impl_IPackageId<D>::ResourceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IPackageId &>(static_cast<const D &>(*this))->get_ResourceId(put(value)));
+    check_hresult(WINRT_SHIM(IPackageId)->get_ResourceId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPackageId<D>::Publisher() const
 {
     hstring value;
-    check_hresult(static_cast<const IPackageId &>(static_cast<const D &>(*this))->get_Publisher(put(value)));
+    check_hresult(WINRT_SHIM(IPackageId)->get_Publisher(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPackageId<D>::PublisherId() const
 {
     hstring value;
-    check_hresult(static_cast<const IPackageId &>(static_cast<const D &>(*this))->get_PublisherId(put(value)));
+    check_hresult(WINRT_SHIM(IPackageId)->get_PublisherId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPackageId<D>::FullName() const
 {
     hstring value;
-    check_hresult(static_cast<const IPackageId &>(static_cast<const D &>(*this))->get_FullName(put(value)));
+    check_hresult(WINRT_SHIM(IPackageId)->get_FullName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPackageId<D>::FamilyName() const
 {
     hstring value;
-    check_hresult(static_cast<const IPackageId &>(static_cast<const D &>(*this))->get_FamilyName(put(value)));
+    check_hresult(WINRT_SHIM(IPackageId)->get_FamilyName(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::PackageId impl_IPackage<D>::Id() const
 {
     Windows::ApplicationModel::PackageId value { nullptr };
-    check_hresult(static_cast<const IPackage &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IPackage)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IPackage<D>::InstalledLocation() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(static_cast<const IPackage &>(static_cast<const D &>(*this))->get_InstalledLocation(put(value)));
+    check_hresult(WINRT_SHIM(IPackage)->get_InstalledLocation(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPackage<D>::IsFramework() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackage &>(static_cast<const D &>(*this))->get_IsFramework(&value));
+    check_hresult(WINRT_SHIM(IPackage)->get_IsFramework(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Package> impl_IPackage<D>::Dependencies() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Package> value;
-    check_hresult(static_cast<const IPackage &>(static_cast<const D &>(*this))->get_Dependencies(put(value)));
+    check_hresult(WINRT_SHIM(IPackage)->get_Dependencies(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPackage2<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const IPackage2 &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IPackage2)->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPackage2<D>::PublisherDisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const IPackage2 &>(static_cast<const D &>(*this))->get_PublisherDisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IPackage2)->get_PublisherDisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPackage2<D>::Description() const
 {
     hstring value;
-    check_hresult(static_cast<const IPackage2 &>(static_cast<const D &>(*this))->get_Description(put(value)));
+    check_hresult(WINRT_SHIM(IPackage2)->get_Description(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IPackage2<D>::Logo() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const IPackage2 &>(static_cast<const D &>(*this))->get_Logo(put(value)));
+    check_hresult(WINRT_SHIM(IPackage2)->get_Logo(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPackage2<D>::IsResourcePackage() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackage2 &>(static_cast<const D &>(*this))->get_IsResourcePackage(&value));
+    check_hresult(WINRT_SHIM(IPackage2)->get_IsResourcePackage(&value));
     return value;
 }
 
 template <typename D> bool impl_IPackage2<D>::IsBundle() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackage2 &>(static_cast<const D &>(*this))->get_IsBundle(&value));
+    check_hresult(WINRT_SHIM(IPackage2)->get_IsBundle(&value));
     return value;
 }
 
 template <typename D> bool impl_IPackage2<D>::IsDevelopmentMode() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackage2 &>(static_cast<const D &>(*this))->get_IsDevelopmentMode(&value));
+    check_hresult(WINRT_SHIM(IPackage2)->get_IsDevelopmentMode(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::PackageStatus impl_IPackage3<D>::Status() const
 {
     Windows::ApplicationModel::PackageStatus value { nullptr };
-    check_hresult(static_cast<const IPackage3 &>(static_cast<const D &>(*this))->get_Status(put(value)));
+    check_hresult(WINRT_SHIM(IPackage3)->get_Status(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IPackage3<D>::InstalledDate() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IPackage3 &>(static_cast<const D &>(*this))->get_InstalledDate(put(value)));
+    check_hresult(WINRT_SHIM(IPackage3)->get_InstalledDate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Core::AppListEntry>> impl_IPackage3<D>::GetAppListEntriesAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Core::AppListEntry>> operation;
-    check_hresult(static_cast<const IPackage3 &>(static_cast<const D &>(*this))->abi_GetAppListEntriesAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPackage3)->abi_GetAppListEntriesAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::ApplicationModel::PackageSignatureKind impl_IPackage4<D>::SignatureKind() const
 {
     Windows::ApplicationModel::PackageSignatureKind value {};
-    check_hresult(static_cast<const IPackage4 &>(static_cast<const D &>(*this))->get_SignatureKind(&value));
+    check_hresult(WINRT_SHIM(IPackage4)->get_SignatureKind(&value));
     return value;
 }
 
 template <typename D> bool impl_IPackage4<D>::IsOptional() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackage4 &>(static_cast<const D &>(*this))->get_IsOptional(&value));
+    check_hresult(WINRT_SHIM(IPackage4)->get_IsOptional(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IPackage4<D>::VerifyContentIntegrityAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const IPackage4 &>(static_cast<const D &>(*this))->abi_VerifyContentIntegrityAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPackage4)->abi_VerifyContentIntegrityAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::ApplicationModel::Package impl_IPackageStatics<D>::Current() const
 {
     Windows::ApplicationModel::Package value { nullptr };
-    check_hresult(static_cast<const IPackageStatics &>(static_cast<const D &>(*this))->get_Current(put(value)));
+    check_hresult(WINRT_SHIM(IPackageStatics)->get_Current(put(value)));
     return value;
 }
 
 template <typename D> GUID impl_IPackageStagingEventArgs<D>::ActivityId() const
 {
     GUID value {};
-    check_hresult(static_cast<const IPackageStagingEventArgs &>(static_cast<const D &>(*this))->get_ActivityId(&value));
+    check_hresult(WINRT_SHIM(IPackageStagingEventArgs)->get_ActivityId(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Package impl_IPackageStagingEventArgs<D>::Package() const
 {
     Windows::ApplicationModel::Package value { nullptr };
-    check_hresult(static_cast<const IPackageStagingEventArgs &>(static_cast<const D &>(*this))->get_Package(put(value)));
+    check_hresult(WINRT_SHIM(IPackageStagingEventArgs)->get_Package(put(value)));
     return value;
 }
 
 template <typename D> double impl_IPackageStagingEventArgs<D>::Progress() const
 {
     double value {};
-    check_hresult(static_cast<const IPackageStagingEventArgs &>(static_cast<const D &>(*this))->get_Progress(&value));
+    check_hresult(WINRT_SHIM(IPackageStagingEventArgs)->get_Progress(&value));
     return value;
 }
 
 template <typename D> bool impl_IPackageStagingEventArgs<D>::IsComplete() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackageStagingEventArgs &>(static_cast<const D &>(*this))->get_IsComplete(&value));
+    check_hresult(WINRT_SHIM(IPackageStagingEventArgs)->get_IsComplete(&value));
     return value;
 }
 
 template <typename D> HRESULT impl_IPackageStagingEventArgs<D>::ErrorCode() const
 {
     HRESULT value {};
-    check_hresult(static_cast<const IPackageStagingEventArgs &>(static_cast<const D &>(*this))->get_ErrorCode(&value));
+    check_hresult(WINRT_SHIM(IPackageStagingEventArgs)->get_ErrorCode(&value));
     return value;
 }
 
 template <typename D> GUID impl_IPackageInstallingEventArgs<D>::ActivityId() const
 {
     GUID value {};
-    check_hresult(static_cast<const IPackageInstallingEventArgs &>(static_cast<const D &>(*this))->get_ActivityId(&value));
+    check_hresult(WINRT_SHIM(IPackageInstallingEventArgs)->get_ActivityId(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Package impl_IPackageInstallingEventArgs<D>::Package() const
 {
     Windows::ApplicationModel::Package value { nullptr };
-    check_hresult(static_cast<const IPackageInstallingEventArgs &>(static_cast<const D &>(*this))->get_Package(put(value)));
+    check_hresult(WINRT_SHIM(IPackageInstallingEventArgs)->get_Package(put(value)));
     return value;
 }
 
 template <typename D> double impl_IPackageInstallingEventArgs<D>::Progress() const
 {
     double value {};
-    check_hresult(static_cast<const IPackageInstallingEventArgs &>(static_cast<const D &>(*this))->get_Progress(&value));
+    check_hresult(WINRT_SHIM(IPackageInstallingEventArgs)->get_Progress(&value));
     return value;
 }
 
 template <typename D> bool impl_IPackageInstallingEventArgs<D>::IsComplete() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackageInstallingEventArgs &>(static_cast<const D &>(*this))->get_IsComplete(&value));
+    check_hresult(WINRT_SHIM(IPackageInstallingEventArgs)->get_IsComplete(&value));
     return value;
 }
 
 template <typename D> HRESULT impl_IPackageInstallingEventArgs<D>::ErrorCode() const
 {
     HRESULT value {};
-    check_hresult(static_cast<const IPackageInstallingEventArgs &>(static_cast<const D &>(*this))->get_ErrorCode(&value));
+    check_hresult(WINRT_SHIM(IPackageInstallingEventArgs)->get_ErrorCode(&value));
     return value;
 }
 
 template <typename D> GUID impl_IPackageUpdatingEventArgs<D>::ActivityId() const
 {
     GUID value {};
-    check_hresult(static_cast<const IPackageUpdatingEventArgs &>(static_cast<const D &>(*this))->get_ActivityId(&value));
+    check_hresult(WINRT_SHIM(IPackageUpdatingEventArgs)->get_ActivityId(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Package impl_IPackageUpdatingEventArgs<D>::SourcePackage() const
 {
     Windows::ApplicationModel::Package value { nullptr };
-    check_hresult(static_cast<const IPackageUpdatingEventArgs &>(static_cast<const D &>(*this))->get_SourcePackage(put(value)));
+    check_hresult(WINRT_SHIM(IPackageUpdatingEventArgs)->get_SourcePackage(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Package impl_IPackageUpdatingEventArgs<D>::TargetPackage() const
 {
     Windows::ApplicationModel::Package value { nullptr };
-    check_hresult(static_cast<const IPackageUpdatingEventArgs &>(static_cast<const D &>(*this))->get_TargetPackage(put(value)));
+    check_hresult(WINRT_SHIM(IPackageUpdatingEventArgs)->get_TargetPackage(put(value)));
     return value;
 }
 
 template <typename D> double impl_IPackageUpdatingEventArgs<D>::Progress() const
 {
     double value {};
-    check_hresult(static_cast<const IPackageUpdatingEventArgs &>(static_cast<const D &>(*this))->get_Progress(&value));
+    check_hresult(WINRT_SHIM(IPackageUpdatingEventArgs)->get_Progress(&value));
     return value;
 }
 
 template <typename D> bool impl_IPackageUpdatingEventArgs<D>::IsComplete() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackageUpdatingEventArgs &>(static_cast<const D &>(*this))->get_IsComplete(&value));
+    check_hresult(WINRT_SHIM(IPackageUpdatingEventArgs)->get_IsComplete(&value));
     return value;
 }
 
 template <typename D> HRESULT impl_IPackageUpdatingEventArgs<D>::ErrorCode() const
 {
     HRESULT value {};
-    check_hresult(static_cast<const IPackageUpdatingEventArgs &>(static_cast<const D &>(*this))->get_ErrorCode(&value));
+    check_hresult(WINRT_SHIM(IPackageUpdatingEventArgs)->get_ErrorCode(&value));
     return value;
 }
 
 template <typename D> GUID impl_IPackageUninstallingEventArgs<D>::ActivityId() const
 {
     GUID value {};
-    check_hresult(static_cast<const IPackageUninstallingEventArgs &>(static_cast<const D &>(*this))->get_ActivityId(&value));
+    check_hresult(WINRT_SHIM(IPackageUninstallingEventArgs)->get_ActivityId(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Package impl_IPackageUninstallingEventArgs<D>::Package() const
 {
     Windows::ApplicationModel::Package value { nullptr };
-    check_hresult(static_cast<const IPackageUninstallingEventArgs &>(static_cast<const D &>(*this))->get_Package(put(value)));
+    check_hresult(WINRT_SHIM(IPackageUninstallingEventArgs)->get_Package(put(value)));
     return value;
 }
 
 template <typename D> double impl_IPackageUninstallingEventArgs<D>::Progress() const
 {
     double value {};
-    check_hresult(static_cast<const IPackageUninstallingEventArgs &>(static_cast<const D &>(*this))->get_Progress(&value));
+    check_hresult(WINRT_SHIM(IPackageUninstallingEventArgs)->get_Progress(&value));
     return value;
 }
 
 template <typename D> bool impl_IPackageUninstallingEventArgs<D>::IsComplete() const
 {
     bool value {};
-    check_hresult(static_cast<const IPackageUninstallingEventArgs &>(static_cast<const D &>(*this))->get_IsComplete(&value));
+    check_hresult(WINRT_SHIM(IPackageUninstallingEventArgs)->get_IsComplete(&value));
     return value;
 }
 
 template <typename D> HRESULT impl_IPackageUninstallingEventArgs<D>::ErrorCode() const
 {
     HRESULT value {};
-    check_hresult(static_cast<const IPackageUninstallingEventArgs &>(static_cast<const D &>(*this))->get_ErrorCode(&value));
+    check_hresult(WINRT_SHIM(IPackageUninstallingEventArgs)->get_ErrorCode(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Package impl_IPackageStatusChangedEventArgs<D>::Package() const
 {
     Windows::ApplicationModel::Package value { nullptr };
-    check_hresult(static_cast<const IPackageStatusChangedEventArgs &>(static_cast<const D &>(*this))->get_Package(put(value)));
+    check_hresult(WINRT_SHIM(IPackageStatusChangedEventArgs)->get_Package(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IPackageCatalog<D>::PackageStaging(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStagingEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPackageCatalog &>(static_cast<const D &>(*this))->add_PackageStaging(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPackageCatalog)->add_PackageStaging(get(handler), &token));
     return token;
 }
 
@@ -1983,13 +1983,13 @@ template <typename D> event_revoker<IPackageCatalog> impl_IPackageCatalog<D>::Pa
 
 template <typename D> void impl_IPackageCatalog<D>::PackageStaging(event_token token) const
 {
-    check_hresult(static_cast<const IPackageCatalog &>(static_cast<const D &>(*this))->remove_PackageStaging(token));
+    check_hresult(WINRT_SHIM(IPackageCatalog)->remove_PackageStaging(token));
 }
 
 template <typename D> event_token impl_IPackageCatalog<D>::PackageInstalling(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageInstallingEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPackageCatalog &>(static_cast<const D &>(*this))->add_PackageInstalling(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPackageCatalog)->add_PackageInstalling(get(handler), &token));
     return token;
 }
 
@@ -2000,13 +2000,13 @@ template <typename D> event_revoker<IPackageCatalog> impl_IPackageCatalog<D>::Pa
 
 template <typename D> void impl_IPackageCatalog<D>::PackageInstalling(event_token token) const
 {
-    check_hresult(static_cast<const IPackageCatalog &>(static_cast<const D &>(*this))->remove_PackageInstalling(token));
+    check_hresult(WINRT_SHIM(IPackageCatalog)->remove_PackageInstalling(token));
 }
 
 template <typename D> event_token impl_IPackageCatalog<D>::PackageUpdating(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageUpdatingEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPackageCatalog &>(static_cast<const D &>(*this))->add_PackageUpdating(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPackageCatalog)->add_PackageUpdating(get(handler), &token));
     return token;
 }
 
@@ -2017,13 +2017,13 @@ template <typename D> event_revoker<IPackageCatalog> impl_IPackageCatalog<D>::Pa
 
 template <typename D> void impl_IPackageCatalog<D>::PackageUpdating(event_token token) const
 {
-    check_hresult(static_cast<const IPackageCatalog &>(static_cast<const D &>(*this))->remove_PackageUpdating(token));
+    check_hresult(WINRT_SHIM(IPackageCatalog)->remove_PackageUpdating(token));
 }
 
 template <typename D> event_token impl_IPackageCatalog<D>::PackageUninstalling(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageUninstallingEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPackageCatalog &>(static_cast<const D &>(*this))->add_PackageUninstalling(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPackageCatalog)->add_PackageUninstalling(get(handler), &token));
     return token;
 }
 
@@ -2034,13 +2034,13 @@ template <typename D> event_revoker<IPackageCatalog> impl_IPackageCatalog<D>::Pa
 
 template <typename D> void impl_IPackageCatalog<D>::PackageUninstalling(event_token token) const
 {
-    check_hresult(static_cast<const IPackageCatalog &>(static_cast<const D &>(*this))->remove_PackageUninstalling(token));
+    check_hresult(WINRT_SHIM(IPackageCatalog)->remove_PackageUninstalling(token));
 }
 
 template <typename D> event_token impl_IPackageCatalog<D>::PackageStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStatusChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPackageCatalog &>(static_cast<const D &>(*this))->add_PackageStatusChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPackageCatalog)->add_PackageStatusChanged(get(handler), &token));
     return token;
 }
 
@@ -2051,27 +2051,27 @@ template <typename D> event_revoker<IPackageCatalog> impl_IPackageCatalog<D>::Pa
 
 template <typename D> void impl_IPackageCatalog<D>::PackageStatusChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPackageCatalog &>(static_cast<const D &>(*this))->remove_PackageStatusChanged(token));
+    check_hresult(WINRT_SHIM(IPackageCatalog)->remove_PackageStatusChanged(token));
 }
 
 template <typename D> Windows::ApplicationModel::PackageCatalog impl_IPackageCatalogStatics<D>::OpenForCurrentPackage() const
 {
     Windows::ApplicationModel::PackageCatalog value { nullptr };
-    check_hresult(static_cast<const IPackageCatalogStatics &>(static_cast<const D &>(*this))->abi_OpenForCurrentPackage(put(value)));
+    check_hresult(WINRT_SHIM(IPackageCatalogStatics)->abi_OpenForCurrentPackage(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::PackageCatalog impl_IPackageCatalogStatics<D>::OpenForCurrentUser() const
 {
     Windows::ApplicationModel::PackageCatalog value { nullptr };
-    check_hresult(static_cast<const IPackageCatalogStatics &>(static_cast<const D &>(*this))->abi_OpenForCurrentUser(put(value)));
+    check_hresult(WINRT_SHIM(IPackageCatalogStatics)->abi_OpenForCurrentUser(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IDesignModeStatics<D>::DesignModeEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IDesignModeStatics &>(static_cast<const D &>(*this))->get_DesignModeEnabled(&value));
+    check_hresult(WINRT_SHIM(IDesignModeStatics)->get_DesignModeEnabled(&value));
     return value;
 }
 

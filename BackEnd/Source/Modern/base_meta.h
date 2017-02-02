@@ -134,9 +134,3 @@ using abi_arg_out = ABI::arg_out<abi<T>>;
 
 template <typename T>
 using abi_default_interface = ABI::default_interface<abi<T>>;
-
-template <typename T>
-auto ptr(::IUnknown * object) noexcept
-{
-    return static_cast<impl::no_ref<abi<T>> *>(object);
-}

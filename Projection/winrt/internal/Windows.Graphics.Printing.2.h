@@ -83,7 +83,6 @@ namespace Windows::Graphics::Printing {
 struct PrintTaskSourceRequestedHandler : Windows::IUnknown
 {
     PrintTaskSourceRequestedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<PrintTaskSourceRequestedHandler>(m_ptr); }
     template <typename L> PrintTaskSourceRequestedHandler(L lambda);
     template <typename F> PrintTaskSourceRequestedHandler (F * function);
     template <typename O, typename M> PrintTaskSourceRequestedHandler(O * object, M method);
@@ -95,7 +94,6 @@ struct IPrintDocumentSource :
     impl::consume<IPrintDocumentSource>
 {
     IPrintDocumentSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintDocumentSource>(m_ptr); }
 };
 
 struct IPrintManager :
@@ -103,7 +101,6 @@ struct IPrintManager :
     impl::consume<IPrintManager>
 {
     IPrintManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintManager>(m_ptr); }
 };
 
 struct IPrintManagerStatic :
@@ -111,7 +108,6 @@ struct IPrintManagerStatic :
     impl::consume<IPrintManagerStatic>
 {
     IPrintManagerStatic(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintManagerStatic>(m_ptr); }
 };
 
 struct IPrintManagerStatic2 :
@@ -119,7 +115,6 @@ struct IPrintManagerStatic2 :
     impl::consume<IPrintManagerStatic2>
 {
     IPrintManagerStatic2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintManagerStatic2>(m_ptr); }
 };
 
 struct IPrintPageInfo :
@@ -127,7 +122,6 @@ struct IPrintPageInfo :
     impl::consume<IPrintPageInfo>
 {
     IPrintPageInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintPageInfo>(m_ptr); }
 };
 
 struct IPrintTask :
@@ -135,7 +129,6 @@ struct IPrintTask :
     impl::consume<IPrintTask>
 {
     IPrintTask(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintTask>(m_ptr); }
 };
 
 struct IPrintTask2 :
@@ -143,7 +136,6 @@ struct IPrintTask2 :
     impl::consume<IPrintTask2>
 {
     IPrintTask2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintTask2>(m_ptr); }
 };
 
 struct IPrintTaskCompletedEventArgs :
@@ -151,7 +143,6 @@ struct IPrintTaskCompletedEventArgs :
     impl::consume<IPrintTaskCompletedEventArgs>
 {
     IPrintTaskCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintTaskCompletedEventArgs>(m_ptr); }
 };
 
 struct IPrintTaskOptions :
@@ -159,7 +150,6 @@ struct IPrintTaskOptions :
     impl::consume<IPrintTaskOptions>
 {
     IPrintTaskOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintTaskOptions>(m_ptr); }
 };
 
 struct IPrintTaskOptionsCore :
@@ -167,7 +157,6 @@ struct IPrintTaskOptionsCore :
     impl::consume<IPrintTaskOptionsCore>
 {
     IPrintTaskOptionsCore(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintTaskOptionsCore>(m_ptr); }
 };
 
 struct IPrintTaskOptionsCoreProperties :
@@ -175,7 +164,6 @@ struct IPrintTaskOptionsCoreProperties :
     impl::consume<IPrintTaskOptionsCoreProperties>
 {
     IPrintTaskOptionsCoreProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintTaskOptionsCoreProperties>(m_ptr); }
 };
 
 struct IPrintTaskOptionsCoreUIConfiguration :
@@ -183,7 +171,6 @@ struct IPrintTaskOptionsCoreUIConfiguration :
     impl::consume<IPrintTaskOptionsCoreUIConfiguration>
 {
     IPrintTaskOptionsCoreUIConfiguration(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintTaskOptionsCoreUIConfiguration>(m_ptr); }
 };
 
 struct IPrintTaskProgressingEventArgs :
@@ -191,7 +178,6 @@ struct IPrintTaskProgressingEventArgs :
     impl::consume<IPrintTaskProgressingEventArgs>
 {
     IPrintTaskProgressingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintTaskProgressingEventArgs>(m_ptr); }
 };
 
 struct IPrintTaskRequest :
@@ -199,7 +185,6 @@ struct IPrintTaskRequest :
     impl::consume<IPrintTaskRequest>
 {
     IPrintTaskRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintTaskRequest>(m_ptr); }
 };
 
 struct IPrintTaskRequestedDeferral :
@@ -207,7 +192,6 @@ struct IPrintTaskRequestedDeferral :
     impl::consume<IPrintTaskRequestedDeferral>
 {
     IPrintTaskRequestedDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintTaskRequestedDeferral>(m_ptr); }
 };
 
 struct IPrintTaskRequestedEventArgs :
@@ -215,7 +199,6 @@ struct IPrintTaskRequestedEventArgs :
     impl::consume<IPrintTaskRequestedEventArgs>
 {
     IPrintTaskRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintTaskRequestedEventArgs>(m_ptr); }
 };
 
 struct IPrintTaskSourceRequestedArgs :
@@ -223,7 +206,6 @@ struct IPrintTaskSourceRequestedArgs :
     impl::consume<IPrintTaskSourceRequestedArgs>
 {
     IPrintTaskSourceRequestedArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintTaskSourceRequestedArgs>(m_ptr); }
 };
 
 struct IPrintTaskSourceRequestedDeferral :
@@ -231,7 +213,6 @@ struct IPrintTaskSourceRequestedDeferral :
     impl::consume<IPrintTaskSourceRequestedDeferral>
 {
     IPrintTaskSourceRequestedDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintTaskSourceRequestedDeferral>(m_ptr); }
 };
 
 struct IPrintTaskTargetDeviceSupport :
@@ -239,7 +220,6 @@ struct IPrintTaskTargetDeviceSupport :
     impl::consume<IPrintTaskTargetDeviceSupport>
 {
     IPrintTaskTargetDeviceSupport(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintTaskTargetDeviceSupport>(m_ptr); }
 };
 
 struct IStandardPrintTaskOptionsStatic :
@@ -247,7 +227,6 @@ struct IStandardPrintTaskOptionsStatic :
     impl::consume<IStandardPrintTaskOptionsStatic>
 {
     IStandardPrintTaskOptionsStatic(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStandardPrintTaskOptionsStatic>(m_ptr); }
 };
 
 struct IStandardPrintTaskOptionsStatic2 :
@@ -255,7 +234,6 @@ struct IStandardPrintTaskOptionsStatic2 :
     impl::consume<IStandardPrintTaskOptionsStatic2>
 {
     IStandardPrintTaskOptionsStatic2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStandardPrintTaskOptionsStatic2>(m_ptr); }
 };
 
 }

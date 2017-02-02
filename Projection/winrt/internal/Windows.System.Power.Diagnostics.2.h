@@ -14,7 +14,6 @@ struct IBackgroundEnergyDiagnosticsStatics :
     impl::consume<IBackgroundEnergyDiagnosticsStatics>
 {
     IBackgroundEnergyDiagnosticsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundEnergyDiagnosticsStatics>(m_ptr); }
 };
 
 struct IForegroundEnergyDiagnosticsStatics :
@@ -22,7 +21,6 @@ struct IForegroundEnergyDiagnosticsStatics :
     impl::consume<IForegroundEnergyDiagnosticsStatics>
 {
     IForegroundEnergyDiagnosticsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IForegroundEnergyDiagnosticsStatics>(m_ptr); }
 };
 
 }

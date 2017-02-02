@@ -152,7 +152,6 @@ namespace Windows::ApplicationModel::Background {
 struct BackgroundTaskCanceledEventHandler : Windows::IUnknown
 {
     BackgroundTaskCanceledEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<BackgroundTaskCanceledEventHandler>(m_ptr); }
     template <typename L> BackgroundTaskCanceledEventHandler(L lambda);
     template <typename F> BackgroundTaskCanceledEventHandler (F * function);
     template <typename O, typename M> BackgroundTaskCanceledEventHandler(O * object, M method);
@@ -162,7 +161,6 @@ struct BackgroundTaskCanceledEventHandler : Windows::IUnknown
 struct BackgroundTaskCompletedEventHandler : Windows::IUnknown
 {
     BackgroundTaskCompletedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<BackgroundTaskCompletedEventHandler>(m_ptr); }
     template <typename L> BackgroundTaskCompletedEventHandler(L lambda);
     template <typename F> BackgroundTaskCompletedEventHandler (F * function);
     template <typename O, typename M> BackgroundTaskCompletedEventHandler(O * object, M method);
@@ -172,7 +170,6 @@ struct BackgroundTaskCompletedEventHandler : Windows::IUnknown
 struct BackgroundTaskProgressEventHandler : Windows::IUnknown
 {
     BackgroundTaskProgressEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<BackgroundTaskProgressEventHandler>(m_ptr); }
     template <typename L> BackgroundTaskProgressEventHandler(L lambda);
     template <typename F> BackgroundTaskProgressEventHandler (F * function);
     template <typename O, typename M> BackgroundTaskProgressEventHandler(O * object, M method);
@@ -185,7 +182,6 @@ struct IActivitySensorTrigger :
     impl::require<IActivitySensorTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IActivitySensorTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IActivitySensorTrigger>(m_ptr); }
 };
 
 struct IActivitySensorTriggerFactory :
@@ -193,7 +189,6 @@ struct IActivitySensorTriggerFactory :
     impl::consume<IActivitySensorTriggerFactory>
 {
     IActivitySensorTriggerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IActivitySensorTriggerFactory>(m_ptr); }
 };
 
 struct IApplicationTrigger :
@@ -202,7 +197,6 @@ struct IApplicationTrigger :
     impl::require<IApplicationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IApplicationTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationTrigger>(m_ptr); }
 };
 
 struct IApplicationTriggerDetails :
@@ -210,7 +204,6 @@ struct IApplicationTriggerDetails :
     impl::consume<IApplicationTriggerDetails>
 {
     IApplicationTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationTriggerDetails>(m_ptr); }
 };
 
 struct IAppointmentStoreNotificationTrigger :
@@ -219,7 +212,6 @@ struct IAppointmentStoreNotificationTrigger :
     impl::require<IAppointmentStoreNotificationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IAppointmentStoreNotificationTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentStoreNotificationTrigger>(m_ptr); }
 };
 
 struct IBackgroundCondition :
@@ -227,7 +219,6 @@ struct IBackgroundCondition :
     impl::consume<IBackgroundCondition>
 {
     IBackgroundCondition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundCondition>(m_ptr); }
 };
 
 struct IBackgroundExecutionManagerStatics :
@@ -235,7 +226,6 @@ struct IBackgroundExecutionManagerStatics :
     impl::consume<IBackgroundExecutionManagerStatics>
 {
     IBackgroundExecutionManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundExecutionManagerStatics>(m_ptr); }
 };
 
 struct IBackgroundTask :
@@ -243,7 +233,6 @@ struct IBackgroundTask :
     impl::consume<IBackgroundTask>
 {
     IBackgroundTask(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTask>(m_ptr); }
 };
 
 struct IBackgroundTaskBuilder :
@@ -251,7 +240,6 @@ struct IBackgroundTaskBuilder :
     impl::consume<IBackgroundTaskBuilder>
 {
     IBackgroundTaskBuilder(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTaskBuilder>(m_ptr); }
 };
 
 struct IBackgroundTaskBuilder2 :
@@ -260,7 +248,6 @@ struct IBackgroundTaskBuilder2 :
     impl::require<IBackgroundTaskBuilder2, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
 {
     IBackgroundTaskBuilder2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTaskBuilder2>(m_ptr); }
 };
 
 struct IBackgroundTaskBuilder3 :
@@ -269,7 +256,6 @@ struct IBackgroundTaskBuilder3 :
     impl::require<IBackgroundTaskBuilder3, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
 {
     IBackgroundTaskBuilder3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTaskBuilder3>(m_ptr); }
 };
 
 struct IBackgroundTaskCompletedEventArgs :
@@ -277,7 +263,6 @@ struct IBackgroundTaskCompletedEventArgs :
     impl::consume<IBackgroundTaskCompletedEventArgs>
 {
     IBackgroundTaskCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTaskCompletedEventArgs>(m_ptr); }
 };
 
 struct IBackgroundTaskDeferral :
@@ -285,7 +270,6 @@ struct IBackgroundTaskDeferral :
     impl::consume<IBackgroundTaskDeferral>
 {
     IBackgroundTaskDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTaskDeferral>(m_ptr); }
 };
 
 struct IBackgroundTaskInstance :
@@ -293,7 +277,6 @@ struct IBackgroundTaskInstance :
     impl::consume<IBackgroundTaskInstance>
 {
     IBackgroundTaskInstance(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTaskInstance>(m_ptr); }
 };
 
 struct IBackgroundTaskInstance2 :
@@ -302,7 +285,6 @@ struct IBackgroundTaskInstance2 :
     impl::require<IBackgroundTaskInstance2, Windows::ApplicationModel::Background::IBackgroundTaskInstance>
 {
     IBackgroundTaskInstance2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTaskInstance2>(m_ptr); }
 };
 
 struct IBackgroundTaskInstance4 :
@@ -311,7 +293,6 @@ struct IBackgroundTaskInstance4 :
     impl::require<IBackgroundTaskInstance4, Windows::ApplicationModel::Background::IBackgroundTaskInstance>
 {
     IBackgroundTaskInstance4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTaskInstance4>(m_ptr); }
 };
 
 struct IBackgroundTaskProgressEventArgs :
@@ -319,7 +300,6 @@ struct IBackgroundTaskProgressEventArgs :
     impl::consume<IBackgroundTaskProgressEventArgs>
 {
     IBackgroundTaskProgressEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTaskProgressEventArgs>(m_ptr); }
 };
 
 struct IBackgroundTaskRegistration :
@@ -327,7 +307,6 @@ struct IBackgroundTaskRegistration :
     impl::consume<IBackgroundTaskRegistration>
 {
     IBackgroundTaskRegistration(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTaskRegistration>(m_ptr); }
 };
 
 struct IBackgroundTaskRegistration2 :
@@ -336,7 +315,6 @@ struct IBackgroundTaskRegistration2 :
     impl::require<IBackgroundTaskRegistration2, Windows::ApplicationModel::Background::IBackgroundTaskRegistration>
 {
     IBackgroundTaskRegistration2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTaskRegistration2>(m_ptr); }
 };
 
 struct IBackgroundTaskRegistrationStatics :
@@ -344,7 +322,6 @@ struct IBackgroundTaskRegistrationStatics :
     impl::consume<IBackgroundTaskRegistrationStatics>
 {
     IBackgroundTaskRegistrationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTaskRegistrationStatics>(m_ptr); }
 };
 
 struct IBackgroundTrigger :
@@ -352,7 +329,6 @@ struct IBackgroundTrigger :
     impl::consume<IBackgroundTrigger>
 {
     IBackgroundTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundTrigger>(m_ptr); }
 };
 
 struct IBackgroundWorkCostStatics :
@@ -360,7 +336,6 @@ struct IBackgroundWorkCostStatics :
     impl::consume<IBackgroundWorkCostStatics>
 {
     IBackgroundWorkCostStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundWorkCostStatics>(m_ptr); }
 };
 
 struct IBluetoothLEAdvertisementPublisherTrigger :
@@ -369,7 +344,6 @@ struct IBluetoothLEAdvertisementPublisherTrigger :
     impl::require<IBluetoothLEAdvertisementPublisherTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IBluetoothLEAdvertisementPublisherTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAdvertisementPublisherTrigger>(m_ptr); }
 };
 
 struct IBluetoothLEAdvertisementWatcherTrigger :
@@ -378,7 +352,6 @@ struct IBluetoothLEAdvertisementWatcherTrigger :
     impl::require<IBluetoothLEAdvertisementWatcherTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IBluetoothLEAdvertisementWatcherTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBluetoothLEAdvertisementWatcherTrigger>(m_ptr); }
 };
 
 struct ICachedFileUpdaterTrigger :
@@ -387,7 +360,6 @@ struct ICachedFileUpdaterTrigger :
     impl::require<ICachedFileUpdaterTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     ICachedFileUpdaterTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICachedFileUpdaterTrigger>(m_ptr); }
 };
 
 struct ICachedFileUpdaterTriggerDetails :
@@ -395,7 +367,6 @@ struct ICachedFileUpdaterTriggerDetails :
     impl::consume<ICachedFileUpdaterTriggerDetails>
 {
     ICachedFileUpdaterTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICachedFileUpdaterTriggerDetails>(m_ptr); }
 };
 
 struct IChatMessageNotificationTrigger :
@@ -404,7 +375,6 @@ struct IChatMessageNotificationTrigger :
     impl::require<IChatMessageNotificationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IChatMessageNotificationTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageNotificationTrigger>(m_ptr); }
 };
 
 struct IChatMessageReceivedNotificationTrigger :
@@ -413,7 +383,6 @@ struct IChatMessageReceivedNotificationTrigger :
     impl::require<IChatMessageReceivedNotificationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IChatMessageReceivedNotificationTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IChatMessageReceivedNotificationTrigger>(m_ptr); }
 };
 
 struct IContactStoreNotificationTrigger :
@@ -422,7 +391,6 @@ struct IContactStoreNotificationTrigger :
     impl::require<IContactStoreNotificationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IContactStoreNotificationTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactStoreNotificationTrigger>(m_ptr); }
 };
 
 struct IContentPrefetchTrigger :
@@ -431,7 +399,6 @@ struct IContentPrefetchTrigger :
     impl::require<IContentPrefetchTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IContentPrefetchTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContentPrefetchTrigger>(m_ptr); }
 };
 
 struct IContentPrefetchTriggerFactory :
@@ -439,7 +406,6 @@ struct IContentPrefetchTriggerFactory :
     impl::consume<IContentPrefetchTriggerFactory>
 {
     IContentPrefetchTriggerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContentPrefetchTriggerFactory>(m_ptr); }
 };
 
 struct IDeviceConnectionChangeTrigger :
@@ -448,7 +414,6 @@ struct IDeviceConnectionChangeTrigger :
     impl::require<IDeviceConnectionChangeTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IDeviceConnectionChangeTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceConnectionChangeTrigger>(m_ptr); }
 };
 
 struct IDeviceConnectionChangeTriggerStatics :
@@ -456,7 +421,6 @@ struct IDeviceConnectionChangeTriggerStatics :
     impl::consume<IDeviceConnectionChangeTriggerStatics>
 {
     IDeviceConnectionChangeTriggerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceConnectionChangeTriggerStatics>(m_ptr); }
 };
 
 struct IDeviceManufacturerNotificationTrigger :
@@ -465,7 +429,6 @@ struct IDeviceManufacturerNotificationTrigger :
     impl::require<IDeviceManufacturerNotificationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IDeviceManufacturerNotificationTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceManufacturerNotificationTrigger>(m_ptr); }
 };
 
 struct IDeviceManufacturerNotificationTriggerFactory :
@@ -473,7 +436,6 @@ struct IDeviceManufacturerNotificationTriggerFactory :
     impl::consume<IDeviceManufacturerNotificationTriggerFactory>
 {
     IDeviceManufacturerNotificationTriggerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceManufacturerNotificationTriggerFactory>(m_ptr); }
 };
 
 struct IDeviceServicingTrigger :
@@ -482,7 +444,6 @@ struct IDeviceServicingTrigger :
     impl::require<IDeviceServicingTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IDeviceServicingTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceServicingTrigger>(m_ptr); }
 };
 
 struct IDeviceUseTrigger :
@@ -491,7 +452,6 @@ struct IDeviceUseTrigger :
     impl::require<IDeviceUseTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IDeviceUseTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceUseTrigger>(m_ptr); }
 };
 
 struct IDeviceWatcherTrigger :
@@ -500,7 +460,6 @@ struct IDeviceWatcherTrigger :
     impl::require<IDeviceWatcherTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IDeviceWatcherTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceWatcherTrigger>(m_ptr); }
 };
 
 struct IEmailStoreNotificationTrigger :
@@ -509,7 +468,6 @@ struct IEmailStoreNotificationTrigger :
     impl::require<IEmailStoreNotificationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IEmailStoreNotificationTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailStoreNotificationTrigger>(m_ptr); }
 };
 
 struct IGattCharacteristicNotificationTrigger :
@@ -518,7 +476,6 @@ struct IGattCharacteristicNotificationTrigger :
     impl::require<IGattCharacteristicNotificationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IGattCharacteristicNotificationTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattCharacteristicNotificationTrigger>(m_ptr); }
 };
 
 struct IGattCharacteristicNotificationTriggerFactory :
@@ -526,7 +483,6 @@ struct IGattCharacteristicNotificationTriggerFactory :
     impl::consume<IGattCharacteristicNotificationTriggerFactory>
 {
     IGattCharacteristicNotificationTriggerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattCharacteristicNotificationTriggerFactory>(m_ptr); }
 };
 
 struct ILocationTrigger :
@@ -535,7 +491,6 @@ struct ILocationTrigger :
     impl::require<ILocationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     ILocationTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILocationTrigger>(m_ptr); }
 };
 
 struct ILocationTriggerFactory :
@@ -543,7 +498,6 @@ struct ILocationTriggerFactory :
     impl::consume<ILocationTriggerFactory>
 {
     ILocationTriggerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILocationTriggerFactory>(m_ptr); }
 };
 
 struct IMaintenanceTrigger :
@@ -552,7 +506,6 @@ struct IMaintenanceTrigger :
     impl::require<IMaintenanceTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IMaintenanceTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMaintenanceTrigger>(m_ptr); }
 };
 
 struct IMaintenanceTriggerFactory :
@@ -560,7 +513,6 @@ struct IMaintenanceTriggerFactory :
     impl::consume<IMaintenanceTriggerFactory>
 {
     IMaintenanceTriggerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMaintenanceTriggerFactory>(m_ptr); }
 };
 
 struct IMediaProcessingTrigger :
@@ -569,7 +521,6 @@ struct IMediaProcessingTrigger :
     impl::require<IMediaProcessingTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IMediaProcessingTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaProcessingTrigger>(m_ptr); }
 };
 
 struct INetworkOperatorHotspotAuthenticationTrigger :
@@ -578,7 +529,6 @@ struct INetworkOperatorHotspotAuthenticationTrigger :
     impl::require<INetworkOperatorHotspotAuthenticationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     INetworkOperatorHotspotAuthenticationTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkOperatorHotspotAuthenticationTrigger>(m_ptr); }
 };
 
 struct INetworkOperatorNotificationTrigger :
@@ -587,7 +537,6 @@ struct INetworkOperatorNotificationTrigger :
     impl::require<INetworkOperatorNotificationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     INetworkOperatorNotificationTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkOperatorNotificationTrigger>(m_ptr); }
 };
 
 struct INetworkOperatorNotificationTriggerFactory :
@@ -595,7 +544,6 @@ struct INetworkOperatorNotificationTriggerFactory :
     impl::consume<INetworkOperatorNotificationTriggerFactory>
 {
     INetworkOperatorNotificationTriggerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INetworkOperatorNotificationTriggerFactory>(m_ptr); }
 };
 
 struct IPushNotificationTriggerFactory :
@@ -603,7 +551,6 @@ struct IPushNotificationTriggerFactory :
     impl::consume<IPushNotificationTriggerFactory>
 {
     IPushNotificationTriggerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPushNotificationTriggerFactory>(m_ptr); }
 };
 
 struct IRcsEndUserMessageAvailableTrigger :
@@ -612,7 +559,6 @@ struct IRcsEndUserMessageAvailableTrigger :
     impl::require<IRcsEndUserMessageAvailableTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IRcsEndUserMessageAvailableTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRcsEndUserMessageAvailableTrigger>(m_ptr); }
 };
 
 struct IRfcommConnectionTrigger :
@@ -621,7 +567,6 @@ struct IRfcommConnectionTrigger :
     impl::require<IRfcommConnectionTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IRfcommConnectionTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRfcommConnectionTrigger>(m_ptr); }
 };
 
 struct ISecondaryAuthenticationFactorAuthenticationTrigger :
@@ -630,7 +575,6 @@ struct ISecondaryAuthenticationFactorAuthenticationTrigger :
     impl::require<ISecondaryAuthenticationFactorAuthenticationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     ISecondaryAuthenticationFactorAuthenticationTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISecondaryAuthenticationFactorAuthenticationTrigger>(m_ptr); }
 };
 
 struct ISensorDataThresholdTrigger :
@@ -639,7 +583,6 @@ struct ISensorDataThresholdTrigger :
     impl::require<ISensorDataThresholdTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     ISensorDataThresholdTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISensorDataThresholdTrigger>(m_ptr); }
 };
 
 struct ISensorDataThresholdTriggerFactory :
@@ -647,7 +590,6 @@ struct ISensorDataThresholdTriggerFactory :
     impl::consume<ISensorDataThresholdTriggerFactory>
 {
     ISensorDataThresholdTriggerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISensorDataThresholdTriggerFactory>(m_ptr); }
 };
 
 struct ISmsMessageReceivedTriggerFactory :
@@ -655,7 +597,6 @@ struct ISmsMessageReceivedTriggerFactory :
     impl::consume<ISmsMessageReceivedTriggerFactory>
 {
     ISmsMessageReceivedTriggerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmsMessageReceivedTriggerFactory>(m_ptr); }
 };
 
 struct ISocketActivityTrigger :
@@ -663,7 +604,6 @@ struct ISocketActivityTrigger :
     impl::consume<ISocketActivityTrigger>
 {
     ISocketActivityTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISocketActivityTrigger>(m_ptr); }
 };
 
 struct IStorageLibraryContentChangedTrigger :
@@ -672,7 +612,6 @@ struct IStorageLibraryContentChangedTrigger :
     impl::require<IStorageLibraryContentChangedTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     IStorageLibraryContentChangedTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageLibraryContentChangedTrigger>(m_ptr); }
 };
 
 struct IStorageLibraryContentChangedTriggerStatics :
@@ -680,7 +619,6 @@ struct IStorageLibraryContentChangedTriggerStatics :
     impl::consume<IStorageLibraryContentChangedTriggerStatics>
 {
     IStorageLibraryContentChangedTriggerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageLibraryContentChangedTriggerStatics>(m_ptr); }
 };
 
 struct ISystemCondition :
@@ -689,7 +627,6 @@ struct ISystemCondition :
     impl::require<ISystemCondition, Windows::ApplicationModel::Background::IBackgroundCondition>
 {
     ISystemCondition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemCondition>(m_ptr); }
 };
 
 struct ISystemConditionFactory :
@@ -697,7 +634,6 @@ struct ISystemConditionFactory :
     impl::consume<ISystemConditionFactory>
 {
     ISystemConditionFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemConditionFactory>(m_ptr); }
 };
 
 struct ISystemTrigger :
@@ -706,7 +642,6 @@ struct ISystemTrigger :
     impl::require<ISystemTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     ISystemTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemTrigger>(m_ptr); }
 };
 
 struct ISystemTriggerFactory :
@@ -714,7 +649,6 @@ struct ISystemTriggerFactory :
     impl::consume<ISystemTriggerFactory>
 {
     ISystemTriggerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemTriggerFactory>(m_ptr); }
 };
 
 struct ITimeTrigger :
@@ -723,7 +657,6 @@ struct ITimeTrigger :
     impl::require<ITimeTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     ITimeTrigger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimeTrigger>(m_ptr); }
 };
 
 struct ITimeTriggerFactory :
@@ -731,7 +664,6 @@ struct ITimeTriggerFactory :
     impl::consume<ITimeTriggerFactory>
 {
     ITimeTriggerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimeTriggerFactory>(m_ptr); }
 };
 
 struct IToastNotificationActionTriggerFactory :
@@ -739,7 +671,6 @@ struct IToastNotificationActionTriggerFactory :
     impl::consume<IToastNotificationActionTriggerFactory>
 {
     IToastNotificationActionTriggerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastNotificationActionTriggerFactory>(m_ptr); }
 };
 
 struct IToastNotificationHistoryChangedTriggerFactory :
@@ -747,7 +678,6 @@ struct IToastNotificationHistoryChangedTriggerFactory :
     impl::consume<IToastNotificationHistoryChangedTriggerFactory>
 {
     IToastNotificationHistoryChangedTriggerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastNotificationHistoryChangedTriggerFactory>(m_ptr); }
 };
 
 struct IUserNotificationChangedTriggerFactory :
@@ -755,7 +685,6 @@ struct IUserNotificationChangedTriggerFactory :
     impl::consume<IUserNotificationChangedTriggerFactory>
 {
     IUserNotificationChangedTriggerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserNotificationChangedTriggerFactory>(m_ptr); }
 };
 
 }

@@ -124,7 +124,6 @@ struct ICurrentTimeChangeRequestedEventArgs :
     impl::consume<ICurrentTimeChangeRequestedEventArgs>
 {
     ICurrentTimeChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICurrentTimeChangeRequestedEventArgs>(m_ptr); }
 };
 
 struct IMuteChangeRequestedEventArgs :
@@ -132,7 +131,6 @@ struct IMuteChangeRequestedEventArgs :
     impl::consume<IMuteChangeRequestedEventArgs>
 {
     IMuteChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMuteChangeRequestedEventArgs>(m_ptr); }
 };
 
 struct IPlayToConnection :
@@ -140,7 +138,6 @@ struct IPlayToConnection :
     impl::consume<IPlayToConnection>
 {
     IPlayToConnection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayToConnection>(m_ptr); }
 };
 
 struct IPlayToConnectionErrorEventArgs :
@@ -148,7 +145,6 @@ struct IPlayToConnectionErrorEventArgs :
     impl::consume<IPlayToConnectionErrorEventArgs>
 {
     IPlayToConnectionErrorEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayToConnectionErrorEventArgs>(m_ptr); }
 };
 
 struct IPlayToConnectionStateChangedEventArgs :
@@ -156,7 +152,6 @@ struct IPlayToConnectionStateChangedEventArgs :
     impl::consume<IPlayToConnectionStateChangedEventArgs>
 {
     IPlayToConnectionStateChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayToConnectionStateChangedEventArgs>(m_ptr); }
 };
 
 struct IPlayToConnectionTransferredEventArgs :
@@ -164,7 +159,6 @@ struct IPlayToConnectionTransferredEventArgs :
     impl::consume<IPlayToConnectionTransferredEventArgs>
 {
     IPlayToConnectionTransferredEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayToConnectionTransferredEventArgs>(m_ptr); }
 };
 
 struct IPlayToManager :
@@ -172,7 +166,6 @@ struct IPlayToManager :
     impl::consume<IPlayToManager>
 {
     IPlayToManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayToManager>(m_ptr); }
 };
 
 struct IPlayToManagerStatics :
@@ -180,7 +173,6 @@ struct IPlayToManagerStatics :
     impl::consume<IPlayToManagerStatics>
 {
     IPlayToManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayToManagerStatics>(m_ptr); }
 };
 
 struct IPlayToReceiver :
@@ -188,7 +180,6 @@ struct IPlayToReceiver :
     impl::consume<IPlayToReceiver>
 {
     IPlayToReceiver(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayToReceiver>(m_ptr); }
 };
 
 struct IPlayToSource :
@@ -196,7 +187,6 @@ struct IPlayToSource :
     impl::consume<IPlayToSource>
 {
     IPlayToSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayToSource>(m_ptr); }
 };
 
 struct IPlayToSourceDeferral :
@@ -204,7 +194,6 @@ struct IPlayToSourceDeferral :
     impl::consume<IPlayToSourceDeferral>
 {
     IPlayToSourceDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayToSourceDeferral>(m_ptr); }
 };
 
 struct IPlayToSourceRequest :
@@ -212,7 +201,6 @@ struct IPlayToSourceRequest :
     impl::consume<IPlayToSourceRequest>
 {
     IPlayToSourceRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayToSourceRequest>(m_ptr); }
 };
 
 struct IPlayToSourceRequestedEventArgs :
@@ -220,7 +208,6 @@ struct IPlayToSourceRequestedEventArgs :
     impl::consume<IPlayToSourceRequestedEventArgs>
 {
     IPlayToSourceRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayToSourceRequestedEventArgs>(m_ptr); }
 };
 
 struct IPlayToSourceSelectedEventArgs :
@@ -228,7 +215,6 @@ struct IPlayToSourceSelectedEventArgs :
     impl::consume<IPlayToSourceSelectedEventArgs>
 {
     IPlayToSourceSelectedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayToSourceSelectedEventArgs>(m_ptr); }
 };
 
 struct IPlayToSourceWithPreferredSourceUri :
@@ -236,7 +222,6 @@ struct IPlayToSourceWithPreferredSourceUri :
     impl::consume<IPlayToSourceWithPreferredSourceUri>
 {
     IPlayToSourceWithPreferredSourceUri(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayToSourceWithPreferredSourceUri>(m_ptr); }
 };
 
 struct IPlaybackRateChangeRequestedEventArgs :
@@ -244,7 +229,6 @@ struct IPlaybackRateChangeRequestedEventArgs :
     impl::consume<IPlaybackRateChangeRequestedEventArgs>
 {
     IPlaybackRateChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlaybackRateChangeRequestedEventArgs>(m_ptr); }
 };
 
 struct ISourceChangeRequestedEventArgs :
@@ -252,7 +236,6 @@ struct ISourceChangeRequestedEventArgs :
     impl::consume<ISourceChangeRequestedEventArgs>
 {
     ISourceChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISourceChangeRequestedEventArgs>(m_ptr); }
 };
 
 struct IVolumeChangeRequestedEventArgs :
@@ -260,7 +243,6 @@ struct IVolumeChangeRequestedEventArgs :
     impl::consume<IVolumeChangeRequestedEventArgs>
 {
     IVolumeChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVolumeChangeRequestedEventArgs>(m_ptr); }
 };
 
 }

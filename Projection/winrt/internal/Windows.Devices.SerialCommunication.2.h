@@ -40,7 +40,6 @@ struct IErrorReceivedEventArgs :
     impl::consume<IErrorReceivedEventArgs>
 {
     IErrorReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IErrorReceivedEventArgs>(m_ptr); }
 };
 
 struct IPinChangedEventArgs :
@@ -48,7 +47,6 @@ struct IPinChangedEventArgs :
     impl::consume<IPinChangedEventArgs>
 {
     IPinChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPinChangedEventArgs>(m_ptr); }
 };
 
 struct ISerialDevice :
@@ -57,7 +55,6 @@ struct ISerialDevice :
     impl::require<ISerialDevice, Windows::Foundation::IClosable>
 {
     ISerialDevice(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISerialDevice>(m_ptr); }
 };
 
 struct ISerialDeviceStatics :
@@ -65,7 +62,6 @@ struct ISerialDeviceStatics :
     impl::consume<ISerialDeviceStatics>
 {
     ISerialDeviceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISerialDeviceStatics>(m_ptr); }
 };
 
 }

@@ -129,7 +129,6 @@ struct ISpatialGestureRecognizer :
     impl::consume<ISpatialGestureRecognizer>
 {
     ISpatialGestureRecognizer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialGestureRecognizer>(m_ptr); }
 };
 
 struct ISpatialGestureRecognizerFactory :
@@ -137,7 +136,6 @@ struct ISpatialGestureRecognizerFactory :
     impl::consume<ISpatialGestureRecognizerFactory>
 {
     ISpatialGestureRecognizerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialGestureRecognizerFactory>(m_ptr); }
 };
 
 struct ISpatialHoldCanceledEventArgs :
@@ -145,7 +143,6 @@ struct ISpatialHoldCanceledEventArgs :
     impl::consume<ISpatialHoldCanceledEventArgs>
 {
     ISpatialHoldCanceledEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialHoldCanceledEventArgs>(m_ptr); }
 };
 
 struct ISpatialHoldCompletedEventArgs :
@@ -153,7 +150,6 @@ struct ISpatialHoldCompletedEventArgs :
     impl::consume<ISpatialHoldCompletedEventArgs>
 {
     ISpatialHoldCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialHoldCompletedEventArgs>(m_ptr); }
 };
 
 struct ISpatialHoldStartedEventArgs :
@@ -161,7 +157,6 @@ struct ISpatialHoldStartedEventArgs :
     impl::consume<ISpatialHoldStartedEventArgs>
 {
     ISpatialHoldStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialHoldStartedEventArgs>(m_ptr); }
 };
 
 struct ISpatialInteraction :
@@ -169,7 +164,6 @@ struct ISpatialInteraction :
     impl::consume<ISpatialInteraction>
 {
     ISpatialInteraction(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialInteraction>(m_ptr); }
 };
 
 struct ISpatialInteractionDetectedEventArgs :
@@ -177,7 +171,6 @@ struct ISpatialInteractionDetectedEventArgs :
     impl::consume<ISpatialInteractionDetectedEventArgs>
 {
     ISpatialInteractionDetectedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialInteractionDetectedEventArgs>(m_ptr); }
 };
 
 struct ISpatialInteractionManager :
@@ -185,7 +178,6 @@ struct ISpatialInteractionManager :
     impl::consume<ISpatialInteractionManager>
 {
     ISpatialInteractionManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialInteractionManager>(m_ptr); }
 };
 
 struct ISpatialInteractionManagerStatics :
@@ -193,7 +185,6 @@ struct ISpatialInteractionManagerStatics :
     impl::consume<ISpatialInteractionManagerStatics>
 {
     ISpatialInteractionManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialInteractionManagerStatics>(m_ptr); }
 };
 
 struct ISpatialInteractionSource :
@@ -201,7 +192,6 @@ struct ISpatialInteractionSource :
     impl::consume<ISpatialInteractionSource>
 {
     ISpatialInteractionSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialInteractionSource>(m_ptr); }
 };
 
 struct ISpatialInteractionSourceEventArgs :
@@ -209,7 +199,6 @@ struct ISpatialInteractionSourceEventArgs :
     impl::consume<ISpatialInteractionSourceEventArgs>
 {
     ISpatialInteractionSourceEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialInteractionSourceEventArgs>(m_ptr); }
 };
 
 struct ISpatialInteractionSourceLocation :
@@ -217,7 +206,6 @@ struct ISpatialInteractionSourceLocation :
     impl::consume<ISpatialInteractionSourceLocation>
 {
     ISpatialInteractionSourceLocation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialInteractionSourceLocation>(m_ptr); }
 };
 
 struct ISpatialInteractionSourceLocation2 :
@@ -225,7 +213,6 @@ struct ISpatialInteractionSourceLocation2 :
     impl::consume<ISpatialInteractionSourceLocation2>
 {
     ISpatialInteractionSourceLocation2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialInteractionSourceLocation2>(m_ptr); }
 };
 
 struct ISpatialInteractionSourceProperties :
@@ -233,7 +220,6 @@ struct ISpatialInteractionSourceProperties :
     impl::consume<ISpatialInteractionSourceProperties>
 {
     ISpatialInteractionSourceProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialInteractionSourceProperties>(m_ptr); }
 };
 
 struct ISpatialInteractionSourceState :
@@ -241,7 +227,6 @@ struct ISpatialInteractionSourceState :
     impl::consume<ISpatialInteractionSourceState>
 {
     ISpatialInteractionSourceState(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialInteractionSourceState>(m_ptr); }
 };
 
 struct ISpatialManipulationCanceledEventArgs :
@@ -249,7 +234,6 @@ struct ISpatialManipulationCanceledEventArgs :
     impl::consume<ISpatialManipulationCanceledEventArgs>
 {
     ISpatialManipulationCanceledEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialManipulationCanceledEventArgs>(m_ptr); }
 };
 
 struct ISpatialManipulationCompletedEventArgs :
@@ -257,7 +241,6 @@ struct ISpatialManipulationCompletedEventArgs :
     impl::consume<ISpatialManipulationCompletedEventArgs>
 {
     ISpatialManipulationCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialManipulationCompletedEventArgs>(m_ptr); }
 };
 
 struct ISpatialManipulationDelta :
@@ -265,7 +248,6 @@ struct ISpatialManipulationDelta :
     impl::consume<ISpatialManipulationDelta>
 {
     ISpatialManipulationDelta(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialManipulationDelta>(m_ptr); }
 };
 
 struct ISpatialManipulationStartedEventArgs :
@@ -273,7 +255,6 @@ struct ISpatialManipulationStartedEventArgs :
     impl::consume<ISpatialManipulationStartedEventArgs>
 {
     ISpatialManipulationStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialManipulationStartedEventArgs>(m_ptr); }
 };
 
 struct ISpatialManipulationUpdatedEventArgs :
@@ -281,7 +262,6 @@ struct ISpatialManipulationUpdatedEventArgs :
     impl::consume<ISpatialManipulationUpdatedEventArgs>
 {
     ISpatialManipulationUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialManipulationUpdatedEventArgs>(m_ptr); }
 };
 
 struct ISpatialNavigationCanceledEventArgs :
@@ -289,7 +269,6 @@ struct ISpatialNavigationCanceledEventArgs :
     impl::consume<ISpatialNavigationCanceledEventArgs>
 {
     ISpatialNavigationCanceledEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialNavigationCanceledEventArgs>(m_ptr); }
 };
 
 struct ISpatialNavigationCompletedEventArgs :
@@ -297,7 +276,6 @@ struct ISpatialNavigationCompletedEventArgs :
     impl::consume<ISpatialNavigationCompletedEventArgs>
 {
     ISpatialNavigationCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialNavigationCompletedEventArgs>(m_ptr); }
 };
 
 struct ISpatialNavigationStartedEventArgs :
@@ -305,7 +283,6 @@ struct ISpatialNavigationStartedEventArgs :
     impl::consume<ISpatialNavigationStartedEventArgs>
 {
     ISpatialNavigationStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialNavigationStartedEventArgs>(m_ptr); }
 };
 
 struct ISpatialNavigationUpdatedEventArgs :
@@ -313,7 +290,6 @@ struct ISpatialNavigationUpdatedEventArgs :
     impl::consume<ISpatialNavigationUpdatedEventArgs>
 {
     ISpatialNavigationUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialNavigationUpdatedEventArgs>(m_ptr); }
 };
 
 struct ISpatialPointerPose :
@@ -321,7 +297,6 @@ struct ISpatialPointerPose :
     impl::consume<ISpatialPointerPose>
 {
     ISpatialPointerPose(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialPointerPose>(m_ptr); }
 };
 
 struct ISpatialPointerPoseStatics :
@@ -329,7 +304,6 @@ struct ISpatialPointerPoseStatics :
     impl::consume<ISpatialPointerPoseStatics>
 {
     ISpatialPointerPoseStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialPointerPoseStatics>(m_ptr); }
 };
 
 struct ISpatialRecognitionEndedEventArgs :
@@ -337,7 +311,6 @@ struct ISpatialRecognitionEndedEventArgs :
     impl::consume<ISpatialRecognitionEndedEventArgs>
 {
     ISpatialRecognitionEndedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialRecognitionEndedEventArgs>(m_ptr); }
 };
 
 struct ISpatialRecognitionStartedEventArgs :
@@ -345,7 +318,6 @@ struct ISpatialRecognitionStartedEventArgs :
     impl::consume<ISpatialRecognitionStartedEventArgs>
 {
     ISpatialRecognitionStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialRecognitionStartedEventArgs>(m_ptr); }
 };
 
 struct ISpatialTappedEventArgs :
@@ -353,7 +325,6 @@ struct ISpatialTappedEventArgs :
     impl::consume<ISpatialTappedEventArgs>
 {
     ISpatialTappedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpatialTappedEventArgs>(m_ptr); }
 };
 
 }

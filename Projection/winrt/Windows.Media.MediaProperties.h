@@ -1823,787 +1823,787 @@ namespace Windows::Media::MediaProperties {
 
 template <typename D> void impl_IMediaRatio<D>::Numerator(uint32_t value) const
 {
-    check_hresult(static_cast<const IMediaRatio &>(static_cast<const D &>(*this))->put_Numerator(value));
+    check_hresult(WINRT_SHIM(IMediaRatio)->put_Numerator(value));
 }
 
 template <typename D> uint32_t impl_IMediaRatio<D>::Numerator() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMediaRatio &>(static_cast<const D &>(*this))->get_Numerator(&value));
+    check_hresult(WINRT_SHIM(IMediaRatio)->get_Numerator(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaRatio<D>::Denominator(uint32_t value) const
 {
-    check_hresult(static_cast<const IMediaRatio &>(static_cast<const D &>(*this))->put_Denominator(value));
+    check_hresult(WINRT_SHIM(IMediaRatio)->put_Denominator(value));
 }
 
 template <typename D> uint32_t impl_IMediaRatio<D>::Denominator() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMediaRatio &>(static_cast<const D &>(*this))->get_Denominator(&value));
+    check_hresult(WINRT_SHIM(IMediaRatio)->get_Denominator(&value));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaPropertySet impl_IMediaEncodingProperties<D>::Properties() const
 {
     Windows::Media::MediaProperties::MediaPropertySet value { nullptr };
-    check_hresult(static_cast<const IMediaEncodingProperties &>(static_cast<const D &>(*this))->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProperties)->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingProperties<D>::Type() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingProperties &>(static_cast<const D &>(*this))->get_Type(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProperties)->get_Type(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaEncodingProperties<D>::Subtype(hstring_ref value) const
 {
-    check_hresult(static_cast<const IMediaEncodingProperties &>(static_cast<const D &>(*this))->put_Subtype(get(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProperties)->put_Subtype(get(value)));
 }
 
 template <typename D> hstring impl_IMediaEncodingProperties<D>::Subtype() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingProperties &>(static_cast<const D &>(*this))->get_Subtype(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProperties)->get_Subtype(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAudioEncodingProperties<D>::Bitrate(uint32_t value) const
 {
-    check_hresult(static_cast<const IAudioEncodingProperties &>(static_cast<const D &>(*this))->put_Bitrate(value));
+    check_hresult(WINRT_SHIM(IAudioEncodingProperties)->put_Bitrate(value));
 }
 
 template <typename D> uint32_t impl_IAudioEncodingProperties<D>::Bitrate() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IAudioEncodingProperties &>(static_cast<const D &>(*this))->get_Bitrate(&value));
+    check_hresult(WINRT_SHIM(IAudioEncodingProperties)->get_Bitrate(&value));
     return value;
 }
 
 template <typename D> void impl_IAudioEncodingProperties<D>::ChannelCount(uint32_t value) const
 {
-    check_hresult(static_cast<const IAudioEncodingProperties &>(static_cast<const D &>(*this))->put_ChannelCount(value));
+    check_hresult(WINRT_SHIM(IAudioEncodingProperties)->put_ChannelCount(value));
 }
 
 template <typename D> uint32_t impl_IAudioEncodingProperties<D>::ChannelCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IAudioEncodingProperties &>(static_cast<const D &>(*this))->get_ChannelCount(&value));
+    check_hresult(WINRT_SHIM(IAudioEncodingProperties)->get_ChannelCount(&value));
     return value;
 }
 
 template <typename D> void impl_IAudioEncodingProperties<D>::SampleRate(uint32_t value) const
 {
-    check_hresult(static_cast<const IAudioEncodingProperties &>(static_cast<const D &>(*this))->put_SampleRate(value));
+    check_hresult(WINRT_SHIM(IAudioEncodingProperties)->put_SampleRate(value));
 }
 
 template <typename D> uint32_t impl_IAudioEncodingProperties<D>::SampleRate() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IAudioEncodingProperties &>(static_cast<const D &>(*this))->get_SampleRate(&value));
+    check_hresult(WINRT_SHIM(IAudioEncodingProperties)->get_SampleRate(&value));
     return value;
 }
 
 template <typename D> void impl_IAudioEncodingProperties<D>::BitsPerSample(uint32_t value) const
 {
-    check_hresult(static_cast<const IAudioEncodingProperties &>(static_cast<const D &>(*this))->put_BitsPerSample(value));
+    check_hresult(WINRT_SHIM(IAudioEncodingProperties)->put_BitsPerSample(value));
 }
 
 template <typename D> uint32_t impl_IAudioEncodingProperties<D>::BitsPerSample() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IAudioEncodingProperties &>(static_cast<const D &>(*this))->get_BitsPerSample(&value));
+    check_hresult(WINRT_SHIM(IAudioEncodingProperties)->get_BitsPerSample(&value));
     return value;
 }
 
 template <typename D> void impl_IAudioEncodingPropertiesWithFormatUserData<D>::SetFormatUserData(array_ref<const uint8_t> value) const
 {
-    check_hresult(static_cast<const IAudioEncodingPropertiesWithFormatUserData &>(static_cast<const D &>(*this))->abi_SetFormatUserData(value.size(), get(value)));
+    check_hresult(WINRT_SHIM(IAudioEncodingPropertiesWithFormatUserData)->abi_SetFormatUserData(value.size(), get(value)));
 }
 
 template <typename D> void impl_IAudioEncodingPropertiesWithFormatUserData<D>::GetFormatUserData(com_array<uint8_t> & value) const
 {
-    check_hresult(static_cast<const IAudioEncodingPropertiesWithFormatUserData &>(static_cast<const D &>(*this))->abi_GetFormatUserData(put_size(value), put(value)));
+    check_hresult(WINRT_SHIM(IAudioEncodingPropertiesWithFormatUserData)->abi_GetFormatUserData(put_size(value), put(value)));
 }
 
 template <typename D> Windows::Media::MediaProperties::AudioEncodingProperties impl_IAudioEncodingPropertiesStatics<D>::CreateAac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const
 {
     Windows::Media::MediaProperties::AudioEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IAudioEncodingPropertiesStatics &>(static_cast<const D &>(*this))->abi_CreateAac(sampleRate, channelCount, bitrate, put(value)));
+    check_hresult(WINRT_SHIM(IAudioEncodingPropertiesStatics)->abi_CreateAac(sampleRate, channelCount, bitrate, put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::AudioEncodingProperties impl_IAudioEncodingPropertiesStatics<D>::CreateAacAdts(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const
 {
     Windows::Media::MediaProperties::AudioEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IAudioEncodingPropertiesStatics &>(static_cast<const D &>(*this))->abi_CreateAacAdts(sampleRate, channelCount, bitrate, put(value)));
+    check_hresult(WINRT_SHIM(IAudioEncodingPropertiesStatics)->abi_CreateAacAdts(sampleRate, channelCount, bitrate, put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::AudioEncodingProperties impl_IAudioEncodingPropertiesStatics<D>::CreateMp3(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const
 {
     Windows::Media::MediaProperties::AudioEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IAudioEncodingPropertiesStatics &>(static_cast<const D &>(*this))->abi_CreateMp3(sampleRate, channelCount, bitrate, put(value)));
+    check_hresult(WINRT_SHIM(IAudioEncodingPropertiesStatics)->abi_CreateMp3(sampleRate, channelCount, bitrate, put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::AudioEncodingProperties impl_IAudioEncodingPropertiesStatics<D>::CreatePcm(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample) const
 {
     Windows::Media::MediaProperties::AudioEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IAudioEncodingPropertiesStatics &>(static_cast<const D &>(*this))->abi_CreatePcm(sampleRate, channelCount, bitsPerSample, put(value)));
+    check_hresult(WINRT_SHIM(IAudioEncodingPropertiesStatics)->abi_CreatePcm(sampleRate, channelCount, bitsPerSample, put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::AudioEncodingProperties impl_IAudioEncodingPropertiesStatics<D>::CreateWma(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const
 {
     Windows::Media::MediaProperties::AudioEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IAudioEncodingPropertiesStatics &>(static_cast<const D &>(*this))->abi_CreateWma(sampleRate, channelCount, bitrate, put(value)));
+    check_hresult(WINRT_SHIM(IAudioEncodingPropertiesStatics)->abi_CreateWma(sampleRate, channelCount, bitrate, put(value)));
     return value;
 }
 
 template <typename D> void impl_IVideoEncodingProperties<D>::Bitrate(uint32_t value) const
 {
-    check_hresult(static_cast<const IVideoEncodingProperties &>(static_cast<const D &>(*this))->put_Bitrate(value));
+    check_hresult(WINRT_SHIM(IVideoEncodingProperties)->put_Bitrate(value));
 }
 
 template <typename D> uint32_t impl_IVideoEncodingProperties<D>::Bitrate() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IVideoEncodingProperties &>(static_cast<const D &>(*this))->get_Bitrate(&value));
+    check_hresult(WINRT_SHIM(IVideoEncodingProperties)->get_Bitrate(&value));
     return value;
 }
 
 template <typename D> void impl_IVideoEncodingProperties<D>::Width(uint32_t value) const
 {
-    check_hresult(static_cast<const IVideoEncodingProperties &>(static_cast<const D &>(*this))->put_Width(value));
+    check_hresult(WINRT_SHIM(IVideoEncodingProperties)->put_Width(value));
 }
 
 template <typename D> uint32_t impl_IVideoEncodingProperties<D>::Width() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IVideoEncodingProperties &>(static_cast<const D &>(*this))->get_Width(&value));
+    check_hresult(WINRT_SHIM(IVideoEncodingProperties)->get_Width(&value));
     return value;
 }
 
 template <typename D> void impl_IVideoEncodingProperties<D>::Height(uint32_t value) const
 {
-    check_hresult(static_cast<const IVideoEncodingProperties &>(static_cast<const D &>(*this))->put_Height(value));
+    check_hresult(WINRT_SHIM(IVideoEncodingProperties)->put_Height(value));
 }
 
 template <typename D> uint32_t impl_IVideoEncodingProperties<D>::Height() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IVideoEncodingProperties &>(static_cast<const D &>(*this))->get_Height(&value));
+    check_hresult(WINRT_SHIM(IVideoEncodingProperties)->get_Height(&value));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaRatio impl_IVideoEncodingProperties<D>::FrameRate() const
 {
     Windows::Media::MediaProperties::MediaRatio value { nullptr };
-    check_hresult(static_cast<const IVideoEncodingProperties &>(static_cast<const D &>(*this))->get_FrameRate(put(value)));
+    check_hresult(WINRT_SHIM(IVideoEncodingProperties)->get_FrameRate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaRatio impl_IVideoEncodingProperties<D>::PixelAspectRatio() const
 {
     Windows::Media::MediaProperties::MediaRatio value { nullptr };
-    check_hresult(static_cast<const IVideoEncodingProperties &>(static_cast<const D &>(*this))->get_PixelAspectRatio(put(value)));
+    check_hresult(WINRT_SHIM(IVideoEncodingProperties)->get_PixelAspectRatio(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Aac() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Aac(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Aac(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::AacAdts() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_AacAdts(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_AacAdts(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Ac3() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Ac3(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Ac3(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::AmrNb() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_AmrNb(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_AmrNb(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::AmrWb() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_AmrWb(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_AmrWb(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Argb32() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Argb32(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Argb32(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Asf() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Asf(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Asf(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Avi() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Avi(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Avi(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Bgra8() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Bgra8(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Bgra8(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Bmp() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Bmp(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Bmp(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Eac3() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Eac3(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Eac3(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Float() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Float(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Float(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Gif() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Gif(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Gif(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::H263() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_H263(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_H263(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::H264() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_H264(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_H264(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::H264Es() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_H264Es(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_H264Es(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Hevc() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Hevc(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Hevc(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::HevcEs() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_HevcEs(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_HevcEs(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Iyuv() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Iyuv(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Iyuv(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Jpeg() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Jpeg(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Jpeg(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::JpegXr() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_JpegXr(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_JpegXr(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Mjpg() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Mjpg(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Mjpg(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Mpeg() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Mpeg(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Mpeg(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Mpeg1() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Mpeg1(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Mpeg1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Mpeg2() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Mpeg2(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Mpeg2(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Mp3() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Mp3(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Mp3(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Mpeg4() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Mpeg4(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Mpeg4(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Nv12() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Nv12(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Nv12(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Pcm() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Pcm(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Pcm(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Png() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Png(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Png(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Rgb24() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Rgb24(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Rgb24(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Rgb32() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Rgb32(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Rgb32(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Tiff() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Tiff(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Tiff(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Wave() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Wave(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Wave(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Wma8() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Wma8(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Wma8(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Wma9() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Wma9(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Wma9(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Wmv3() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Wmv3(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Wmv3(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Wvc1() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Wvc1(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Wvc1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Yuy2() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Yuy2(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Yuy2(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Yv12() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaEncodingSubtypesStatics &>(static_cast<const D &>(*this))->get_Yv12(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics)->get_Yv12(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IH264ProfileIdsStatics<D>::ConstrainedBaseline() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IH264ProfileIdsStatics &>(static_cast<const D &>(*this))->get_ConstrainedBaseline(&value));
+    check_hresult(WINRT_SHIM(IH264ProfileIdsStatics)->get_ConstrainedBaseline(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IH264ProfileIdsStatics<D>::Baseline() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IH264ProfileIdsStatics &>(static_cast<const D &>(*this))->get_Baseline(&value));
+    check_hresult(WINRT_SHIM(IH264ProfileIdsStatics)->get_Baseline(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IH264ProfileIdsStatics<D>::Extended() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IH264ProfileIdsStatics &>(static_cast<const D &>(*this))->get_Extended(&value));
+    check_hresult(WINRT_SHIM(IH264ProfileIdsStatics)->get_Extended(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IH264ProfileIdsStatics<D>::Main() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IH264ProfileIdsStatics &>(static_cast<const D &>(*this))->get_Main(&value));
+    check_hresult(WINRT_SHIM(IH264ProfileIdsStatics)->get_Main(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IH264ProfileIdsStatics<D>::High() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IH264ProfileIdsStatics &>(static_cast<const D &>(*this))->get_High(&value));
+    check_hresult(WINRT_SHIM(IH264ProfileIdsStatics)->get_High(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IH264ProfileIdsStatics<D>::High10() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IH264ProfileIdsStatics &>(static_cast<const D &>(*this))->get_High10(&value));
+    check_hresult(WINRT_SHIM(IH264ProfileIdsStatics)->get_High10(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IH264ProfileIdsStatics<D>::High422() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IH264ProfileIdsStatics &>(static_cast<const D &>(*this))->get_High422(&value));
+    check_hresult(WINRT_SHIM(IH264ProfileIdsStatics)->get_High422(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IH264ProfileIdsStatics<D>::High444() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IH264ProfileIdsStatics &>(static_cast<const D &>(*this))->get_High444(&value));
+    check_hresult(WINRT_SHIM(IH264ProfileIdsStatics)->get_High444(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IH264ProfileIdsStatics<D>::StereoHigh() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IH264ProfileIdsStatics &>(static_cast<const D &>(*this))->get_StereoHigh(&value));
+    check_hresult(WINRT_SHIM(IH264ProfileIdsStatics)->get_StereoHigh(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IH264ProfileIdsStatics<D>::MultiviewHigh() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IH264ProfileIdsStatics &>(static_cast<const D &>(*this))->get_MultiviewHigh(&value));
+    check_hresult(WINRT_SHIM(IH264ProfileIdsStatics)->get_MultiviewHigh(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IMpeg2ProfileIdsStatics<D>::Simple() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMpeg2ProfileIdsStatics &>(static_cast<const D &>(*this))->get_Simple(&value));
+    check_hresult(WINRT_SHIM(IMpeg2ProfileIdsStatics)->get_Simple(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IMpeg2ProfileIdsStatics<D>::Main() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMpeg2ProfileIdsStatics &>(static_cast<const D &>(*this))->get_Main(&value));
+    check_hresult(WINRT_SHIM(IMpeg2ProfileIdsStatics)->get_Main(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IMpeg2ProfileIdsStatics<D>::SignalNoiseRatioScalable() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMpeg2ProfileIdsStatics &>(static_cast<const D &>(*this))->get_SignalNoiseRatioScalable(&value));
+    check_hresult(WINRT_SHIM(IMpeg2ProfileIdsStatics)->get_SignalNoiseRatioScalable(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IMpeg2ProfileIdsStatics<D>::SpatiallyScalable() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMpeg2ProfileIdsStatics &>(static_cast<const D &>(*this))->get_SpatiallyScalable(&value));
+    check_hresult(WINRT_SHIM(IMpeg2ProfileIdsStatics)->get_SpatiallyScalable(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IMpeg2ProfileIdsStatics<D>::High() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMpeg2ProfileIdsStatics &>(static_cast<const D &>(*this))->get_High(&value));
+    check_hresult(WINRT_SHIM(IMpeg2ProfileIdsStatics)->get_High(&value));
     return value;
 }
 
 template <typename D> void impl_IVideoEncodingProperties2<D>::SetFormatUserData(array_ref<const uint8_t> value) const
 {
-    check_hresult(static_cast<const IVideoEncodingProperties2 &>(static_cast<const D &>(*this))->abi_SetFormatUserData(value.size(), get(value)));
+    check_hresult(WINRT_SHIM(IVideoEncodingProperties2)->abi_SetFormatUserData(value.size(), get(value)));
 }
 
 template <typename D> void impl_IVideoEncodingProperties2<D>::GetFormatUserData(com_array<uint8_t> & value) const
 {
-    check_hresult(static_cast<const IVideoEncodingProperties2 &>(static_cast<const D &>(*this))->abi_GetFormatUserData(put_size(value), put(value)));
+    check_hresult(WINRT_SHIM(IVideoEncodingProperties2)->abi_GetFormatUserData(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IVideoEncodingProperties2<D>::ProfileId(int32_t value) const
 {
-    check_hresult(static_cast<const IVideoEncodingProperties2 &>(static_cast<const D &>(*this))->put_ProfileId(value));
+    check_hresult(WINRT_SHIM(IVideoEncodingProperties2)->put_ProfileId(value));
 }
 
 template <typename D> int32_t impl_IVideoEncodingProperties2<D>::ProfileId() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IVideoEncodingProperties2 &>(static_cast<const D &>(*this))->get_ProfileId(&value));
+    check_hresult(WINRT_SHIM(IVideoEncodingProperties2)->get_ProfileId(&value));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::StereoscopicVideoPackingMode impl_IVideoEncodingProperties3<D>::StereoscopicVideoPackingMode() const
 {
     Windows::Media::MediaProperties::StereoscopicVideoPackingMode value {};
-    check_hresult(static_cast<const IVideoEncodingProperties3 &>(static_cast<const D &>(*this))->get_StereoscopicVideoPackingMode(&value));
+    check_hresult(WINRT_SHIM(IVideoEncodingProperties3)->get_StereoscopicVideoPackingMode(&value));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::VideoEncodingProperties impl_IVideoEncodingPropertiesStatics<D>::CreateH264() const
 {
     Windows::Media::MediaProperties::VideoEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IVideoEncodingPropertiesStatics &>(static_cast<const D &>(*this))->abi_CreateH264(put(value)));
+    check_hresult(WINRT_SHIM(IVideoEncodingPropertiesStatics)->abi_CreateH264(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::VideoEncodingProperties impl_IVideoEncodingPropertiesStatics<D>::CreateMpeg2() const
 {
     Windows::Media::MediaProperties::VideoEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IVideoEncodingPropertiesStatics &>(static_cast<const D &>(*this))->abi_CreateMpeg2(put(value)));
+    check_hresult(WINRT_SHIM(IVideoEncodingPropertiesStatics)->abi_CreateMpeg2(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::VideoEncodingProperties impl_IVideoEncodingPropertiesStatics<D>::CreateUncompressed(hstring_ref subtype, uint32_t width, uint32_t height) const
 {
     Windows::Media::MediaProperties::VideoEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IVideoEncodingPropertiesStatics &>(static_cast<const D &>(*this))->abi_CreateUncompressed(get(subtype), width, height, put(value)));
+    check_hresult(WINRT_SHIM(IVideoEncodingPropertiesStatics)->abi_CreateUncompressed(get(subtype), width, height, put(value)));
     return value;
 }
 
 template <typename D> void impl_IImageEncodingProperties<D>::Width(uint32_t value) const
 {
-    check_hresult(static_cast<const IImageEncodingProperties &>(static_cast<const D &>(*this))->put_Width(value));
+    check_hresult(WINRT_SHIM(IImageEncodingProperties)->put_Width(value));
 }
 
 template <typename D> uint32_t impl_IImageEncodingProperties<D>::Width() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IImageEncodingProperties &>(static_cast<const D &>(*this))->get_Width(&value));
+    check_hresult(WINRT_SHIM(IImageEncodingProperties)->get_Width(&value));
     return value;
 }
 
 template <typename D> void impl_IImageEncodingProperties<D>::Height(uint32_t value) const
 {
-    check_hresult(static_cast<const IImageEncodingProperties &>(static_cast<const D &>(*this))->put_Height(value));
+    check_hresult(WINRT_SHIM(IImageEncodingProperties)->put_Height(value));
 }
 
 template <typename D> uint32_t impl_IImageEncodingProperties<D>::Height() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IImageEncodingProperties &>(static_cast<const D &>(*this))->get_Height(&value));
+    check_hresult(WINRT_SHIM(IImageEncodingProperties)->get_Height(&value));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::ImageEncodingProperties impl_IImageEncodingPropertiesStatics<D>::CreateJpeg() const
 {
     Windows::Media::MediaProperties::ImageEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IImageEncodingPropertiesStatics &>(static_cast<const D &>(*this))->abi_CreateJpeg(put(value)));
+    check_hresult(WINRT_SHIM(IImageEncodingPropertiesStatics)->abi_CreateJpeg(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::ImageEncodingProperties impl_IImageEncodingPropertiesStatics<D>::CreatePng() const
 {
     Windows::Media::MediaProperties::ImageEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IImageEncodingPropertiesStatics &>(static_cast<const D &>(*this))->abi_CreatePng(put(value)));
+    check_hresult(WINRT_SHIM(IImageEncodingPropertiesStatics)->abi_CreatePng(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::ImageEncodingProperties impl_IImageEncodingPropertiesStatics<D>::CreateJpegXR() const
 {
     Windows::Media::MediaProperties::ImageEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IImageEncodingPropertiesStatics &>(static_cast<const D &>(*this))->abi_CreateJpegXR(put(value)));
+    check_hresult(WINRT_SHIM(IImageEncodingPropertiesStatics)->abi_CreateJpegXR(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::ImageEncodingProperties impl_IImageEncodingPropertiesStatics2<D>::CreateUncompressed(Windows::Media::MediaProperties::MediaPixelFormat format) const
 {
     Windows::Media::MediaProperties::ImageEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IImageEncodingPropertiesStatics2 &>(static_cast<const D &>(*this))->abi_CreateUncompressed(format, put(value)));
+    check_hresult(WINRT_SHIM(IImageEncodingPropertiesStatics2)->abi_CreateUncompressed(format, put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::ImageEncodingProperties impl_IImageEncodingPropertiesStatics2<D>::CreateBmp() const
 {
     Windows::Media::MediaProperties::ImageEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IImageEncodingPropertiesStatics2 &>(static_cast<const D &>(*this))->abi_CreateBmp(put(value)));
+    check_hresult(WINRT_SHIM(IImageEncodingPropertiesStatics2)->abi_CreateBmp(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaEncodingProfile impl_IMediaEncodingProfileStatics<D>::CreateM4a(Windows::Media::MediaProperties::AudioEncodingQuality quality) const
 {
     Windows::Media::MediaProperties::MediaEncodingProfile value { nullptr };
-    check_hresult(static_cast<const IMediaEncodingProfileStatics &>(static_cast<const D &>(*this))->abi_CreateM4a(quality, put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProfileStatics)->abi_CreateM4a(quality, put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaEncodingProfile impl_IMediaEncodingProfileStatics<D>::CreateMp3(Windows::Media::MediaProperties::AudioEncodingQuality quality) const
 {
     Windows::Media::MediaProperties::MediaEncodingProfile value { nullptr };
-    check_hresult(static_cast<const IMediaEncodingProfileStatics &>(static_cast<const D &>(*this))->abi_CreateMp3(quality, put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProfileStatics)->abi_CreateMp3(quality, put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaEncodingProfile impl_IMediaEncodingProfileStatics<D>::CreateWma(Windows::Media::MediaProperties::AudioEncodingQuality quality) const
 {
     Windows::Media::MediaProperties::MediaEncodingProfile value { nullptr };
-    check_hresult(static_cast<const IMediaEncodingProfileStatics &>(static_cast<const D &>(*this))->abi_CreateWma(quality, put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProfileStatics)->abi_CreateWma(quality, put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaEncodingProfile impl_IMediaEncodingProfileStatics<D>::CreateMp4(Windows::Media::MediaProperties::VideoEncodingQuality quality) const
 {
     Windows::Media::MediaProperties::MediaEncodingProfile value { nullptr };
-    check_hresult(static_cast<const IMediaEncodingProfileStatics &>(static_cast<const D &>(*this))->abi_CreateMp4(quality, put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProfileStatics)->abi_CreateMp4(quality, put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaEncodingProfile impl_IMediaEncodingProfileStatics<D>::CreateWmv(Windows::Media::MediaProperties::VideoEncodingQuality quality) const
 {
     Windows::Media::MediaProperties::MediaEncodingProfile value { nullptr };
-    check_hresult(static_cast<const IMediaEncodingProfileStatics &>(static_cast<const D &>(*this))->abi_CreateWmv(quality, put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProfileStatics)->abi_CreateWmv(quality, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::MediaProperties::MediaEncodingProfile> impl_IMediaEncodingProfileStatics<D>::CreateFromFileAsync(const Windows::Storage::IStorageFile & file) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::MediaProperties::MediaEncodingProfile> operation;
-    check_hresult(static_cast<const IMediaEncodingProfileStatics &>(static_cast<const D &>(*this))->abi_CreateFromFileAsync(get(file), put(operation)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProfileStatics)->abi_CreateFromFileAsync(get(file), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::MediaProperties::MediaEncodingProfile> impl_IMediaEncodingProfileStatics<D>::CreateFromStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & stream) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::MediaProperties::MediaEncodingProfile> operation;
-    check_hresult(static_cast<const IMediaEncodingProfileStatics &>(static_cast<const D &>(*this))->abi_CreateFromStreamAsync(get(stream), put(operation)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProfileStatics)->abi_CreateFromStreamAsync(get(stream), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaEncodingProfile impl_IMediaEncodingProfileStatics2<D>::CreateWav(Windows::Media::MediaProperties::AudioEncodingQuality quality) const
 {
     Windows::Media::MediaProperties::MediaEncodingProfile value { nullptr };
-    check_hresult(static_cast<const IMediaEncodingProfileStatics2 &>(static_cast<const D &>(*this))->abi_CreateWav(quality, put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProfileStatics2)->abi_CreateWav(quality, put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaEncodingProfile impl_IMediaEncodingProfileStatics2<D>::CreateAvi(Windows::Media::MediaProperties::VideoEncodingQuality quality) const
 {
     Windows::Media::MediaProperties::MediaEncodingProfile value { nullptr };
-    check_hresult(static_cast<const IMediaEncodingProfileStatics2 &>(static_cast<const D &>(*this))->abi_CreateAvi(quality, put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProfileStatics2)->abi_CreateAvi(quality, put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaEncodingProfile<D>::Audio(const Windows::Media::MediaProperties::AudioEncodingProperties & value) const
 {
-    check_hresult(static_cast<const IMediaEncodingProfile &>(static_cast<const D &>(*this))->put_Audio(get(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProfile)->put_Audio(get(value)));
 }
 
 template <typename D> Windows::Media::MediaProperties::AudioEncodingProperties impl_IMediaEncodingProfile<D>::Audio() const
 {
     Windows::Media::MediaProperties::AudioEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IMediaEncodingProfile &>(static_cast<const D &>(*this))->get_Audio(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProfile)->get_Audio(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaEncodingProfile<D>::Video(const Windows::Media::MediaProperties::VideoEncodingProperties & value) const
 {
-    check_hresult(static_cast<const IMediaEncodingProfile &>(static_cast<const D &>(*this))->put_Video(get(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProfile)->put_Video(get(value)));
 }
 
 template <typename D> Windows::Media::MediaProperties::VideoEncodingProperties impl_IMediaEncodingProfile<D>::Video() const
 {
     Windows::Media::MediaProperties::VideoEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IMediaEncodingProfile &>(static_cast<const D &>(*this))->get_Video(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProfile)->get_Video(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaEncodingProfile<D>::Container(const Windows::Media::MediaProperties::ContainerEncodingProperties & value) const
 {
-    check_hresult(static_cast<const IMediaEncodingProfile &>(static_cast<const D &>(*this))->put_Container(get(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProfile)->put_Container(get(value)));
 }
 
 template <typename D> Windows::Media::MediaProperties::ContainerEncodingProperties impl_IMediaEncodingProfile<D>::Container() const
 {
     Windows::Media::MediaProperties::ContainerEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IMediaEncodingProfile &>(static_cast<const D &>(*this))->get_Container(put(value)));
+    check_hresult(WINRT_SHIM(IMediaEncodingProfile)->get_Container(put(value)));
     return value;
 }
 

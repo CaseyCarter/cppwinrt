@@ -160,7 +160,6 @@ struct IHidBooleanControl :
     impl::consume<IHidBooleanControl>
 {
     IHidBooleanControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHidBooleanControl>(m_ptr); }
 };
 
 struct IHidBooleanControlDescription :
@@ -168,7 +167,6 @@ struct IHidBooleanControlDescription :
     impl::consume<IHidBooleanControlDescription>
 {
     IHidBooleanControlDescription(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHidBooleanControlDescription>(m_ptr); }
 };
 
 struct IHidBooleanControlDescription2 :
@@ -176,7 +174,6 @@ struct IHidBooleanControlDescription2 :
     impl::consume<IHidBooleanControlDescription2>
 {
     IHidBooleanControlDescription2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHidBooleanControlDescription2>(m_ptr); }
 };
 
 struct IHidCollection :
@@ -184,7 +181,6 @@ struct IHidCollection :
     impl::consume<IHidCollection>
 {
     IHidCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHidCollection>(m_ptr); }
 };
 
 struct IHidDevice :
@@ -193,7 +189,6 @@ struct IHidDevice :
     impl::require<IHidDevice, Windows::Foundation::IClosable>
 {
     IHidDevice(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHidDevice>(m_ptr); }
 };
 
 struct IHidDeviceStatics :
@@ -201,7 +196,6 @@ struct IHidDeviceStatics :
     impl::consume<IHidDeviceStatics>
 {
     IHidDeviceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHidDeviceStatics>(m_ptr); }
 };
 
 struct IHidFeatureReport :
@@ -209,7 +203,6 @@ struct IHidFeatureReport :
     impl::consume<IHidFeatureReport>
 {
     IHidFeatureReport(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHidFeatureReport>(m_ptr); }
 };
 
 struct IHidInputReport :
@@ -217,7 +210,6 @@ struct IHidInputReport :
     impl::consume<IHidInputReport>
 {
     IHidInputReport(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHidInputReport>(m_ptr); }
 };
 
 struct IHidInputReportReceivedEventArgs :
@@ -225,7 +217,6 @@ struct IHidInputReportReceivedEventArgs :
     impl::consume<IHidInputReportReceivedEventArgs>
 {
     IHidInputReportReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHidInputReportReceivedEventArgs>(m_ptr); }
 };
 
 struct IHidNumericControl :
@@ -233,7 +224,6 @@ struct IHidNumericControl :
     impl::consume<IHidNumericControl>
 {
     IHidNumericControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHidNumericControl>(m_ptr); }
 };
 
 struct IHidNumericControlDescription :
@@ -241,7 +231,6 @@ struct IHidNumericControlDescription :
     impl::consume<IHidNumericControlDescription>
 {
     IHidNumericControlDescription(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHidNumericControlDescription>(m_ptr); }
 };
 
 struct IHidOutputReport :
@@ -249,7 +238,6 @@ struct IHidOutputReport :
     impl::consume<IHidOutputReport>
 {
     IHidOutputReport(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHidOutputReport>(m_ptr); }
 };
 
 }

@@ -77,7 +77,6 @@ struct IAppBarAutomationPeer :
     impl::consume<IAppBarAutomationPeer>
 {
     IAppBarAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppBarAutomationPeer>(m_ptr); }
 };
 
 struct IAppBarAutomationPeerFactory :
@@ -85,7 +84,6 @@ struct IAppBarAutomationPeerFactory :
     impl::consume<IAppBarAutomationPeerFactory>
 {
     IAppBarAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppBarAutomationPeerFactory>(m_ptr); }
 };
 
 struct IAppBarButtonAutomationPeer :
@@ -93,7 +91,6 @@ struct IAppBarButtonAutomationPeer :
     impl::consume<IAppBarButtonAutomationPeer>
 {
     IAppBarButtonAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppBarButtonAutomationPeer>(m_ptr); }
 };
 
 struct IAppBarButtonAutomationPeerFactory :
@@ -101,7 +98,6 @@ struct IAppBarButtonAutomationPeerFactory :
     impl::consume<IAppBarButtonAutomationPeerFactory>
 {
     IAppBarButtonAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppBarButtonAutomationPeerFactory>(m_ptr); }
 };
 
 struct IAppBarToggleButtonAutomationPeer :
@@ -109,7 +105,6 @@ struct IAppBarToggleButtonAutomationPeer :
     impl::consume<IAppBarToggleButtonAutomationPeer>
 {
     IAppBarToggleButtonAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppBarToggleButtonAutomationPeer>(m_ptr); }
 };
 
 struct IAppBarToggleButtonAutomationPeerFactory :
@@ -117,7 +112,6 @@ struct IAppBarToggleButtonAutomationPeerFactory :
     impl::consume<IAppBarToggleButtonAutomationPeerFactory>
 {
     IAppBarToggleButtonAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppBarToggleButtonAutomationPeerFactory>(m_ptr); }
 };
 
 struct IAutoSuggestBoxAutomationPeer :
@@ -125,7 +119,6 @@ struct IAutoSuggestBoxAutomationPeer :
     impl::consume<IAutoSuggestBoxAutomationPeer>
 {
     IAutoSuggestBoxAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutoSuggestBoxAutomationPeer>(m_ptr); }
 };
 
 struct IAutoSuggestBoxAutomationPeerFactory :
@@ -133,7 +126,6 @@ struct IAutoSuggestBoxAutomationPeerFactory :
     impl::consume<IAutoSuggestBoxAutomationPeerFactory>
 {
     IAutoSuggestBoxAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutoSuggestBoxAutomationPeerFactory>(m_ptr); }
 };
 
 struct IAutomationPeer :
@@ -141,7 +133,6 @@ struct IAutomationPeer :
     impl::consume<IAutomationPeer>
 {
     IAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPeer>(m_ptr); }
 };
 
 struct IAutomationPeer2 :
@@ -149,7 +140,6 @@ struct IAutomationPeer2 :
     impl::consume<IAutomationPeer2>
 {
     IAutomationPeer2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPeer2>(m_ptr); }
 };
 
 struct IAutomationPeer3 :
@@ -157,7 +147,6 @@ struct IAutomationPeer3 :
     impl::consume<IAutomationPeer3>
 {
     IAutomationPeer3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPeer3>(m_ptr); }
 };
 
 struct IAutomationPeer4 :
@@ -165,7 +154,6 @@ struct IAutomationPeer4 :
     impl::consume<IAutomationPeer4>
 {
     IAutomationPeer4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPeer4>(m_ptr); }
 };
 
 struct IAutomationPeer5 :
@@ -173,7 +161,6 @@ struct IAutomationPeer5 :
     impl::consume<IAutomationPeer5>
 {
     IAutomationPeer5(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPeer5>(m_ptr); }
 };
 
 struct IAutomationPeerAnnotation :
@@ -181,7 +168,6 @@ struct IAutomationPeerAnnotation :
     impl::consume<IAutomationPeerAnnotation>
 {
     IAutomationPeerAnnotation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPeerAnnotation>(m_ptr); }
 };
 
 struct IAutomationPeerAnnotationFactory :
@@ -189,7 +175,6 @@ struct IAutomationPeerAnnotationFactory :
     impl::consume<IAutomationPeerAnnotationFactory>
 {
     IAutomationPeerAnnotationFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPeerAnnotationFactory>(m_ptr); }
 };
 
 struct IAutomationPeerAnnotationStatics :
@@ -197,7 +182,6 @@ struct IAutomationPeerAnnotationStatics :
     impl::consume<IAutomationPeerAnnotationStatics>
 {
     IAutomationPeerAnnotationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPeerAnnotationStatics>(m_ptr); }
 };
 
 struct IAutomationPeerFactory :
@@ -205,7 +189,6 @@ struct IAutomationPeerFactory :
     impl::consume<IAutomationPeerFactory>
 {
     IAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPeerFactory>(m_ptr); }
 };
 
 struct IAutomationPeerOverrides :
@@ -213,7 +196,6 @@ struct IAutomationPeerOverrides :
     impl::consume<IAutomationPeerOverrides>
 {
     IAutomationPeerOverrides(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPeerOverrides>(m_ptr); }
 };
 
 struct IAutomationPeerOverrides2 :
@@ -221,7 +203,6 @@ struct IAutomationPeerOverrides2 :
     impl::consume<IAutomationPeerOverrides2>
 {
     IAutomationPeerOverrides2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPeerOverrides2>(m_ptr); }
 };
 
 struct IAutomationPeerOverrides3 :
@@ -229,7 +210,6 @@ struct IAutomationPeerOverrides3 :
     impl::consume<IAutomationPeerOverrides3>
 {
     IAutomationPeerOverrides3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPeerOverrides3>(m_ptr); }
 };
 
 struct IAutomationPeerOverrides4 :
@@ -237,7 +217,6 @@ struct IAutomationPeerOverrides4 :
     impl::consume<IAutomationPeerOverrides4>
 {
     IAutomationPeerOverrides4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPeerOverrides4>(m_ptr); }
 };
 
 struct IAutomationPeerOverrides5 :
@@ -245,7 +224,6 @@ struct IAutomationPeerOverrides5 :
     impl::consume<IAutomationPeerOverrides5>
 {
     IAutomationPeerOverrides5(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPeerOverrides5>(m_ptr); }
 };
 
 struct IAutomationPeerProtected :
@@ -253,7 +231,6 @@ struct IAutomationPeerProtected :
     impl::consume<IAutomationPeerProtected>
 {
     IAutomationPeerProtected(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPeerProtected>(m_ptr); }
 };
 
 struct IAutomationPeerStatics :
@@ -261,7 +238,6 @@ struct IAutomationPeerStatics :
     impl::consume<IAutomationPeerStatics>
 {
     IAutomationPeerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPeerStatics>(m_ptr); }
 };
 
 struct IAutomationPeerStatics3 :
@@ -269,7 +245,6 @@ struct IAutomationPeerStatics3 :
     impl::consume<IAutomationPeerStatics3>
 {
     IAutomationPeerStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPeerStatics3>(m_ptr); }
 };
 
 struct IButtonAutomationPeer :
@@ -277,7 +252,6 @@ struct IButtonAutomationPeer :
     impl::consume<IButtonAutomationPeer>
 {
     IButtonAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IButtonAutomationPeer>(m_ptr); }
 };
 
 struct IButtonAutomationPeerFactory :
@@ -285,7 +259,6 @@ struct IButtonAutomationPeerFactory :
     impl::consume<IButtonAutomationPeerFactory>
 {
     IButtonAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IButtonAutomationPeerFactory>(m_ptr); }
 };
 
 struct IButtonBaseAutomationPeer :
@@ -293,7 +266,6 @@ struct IButtonBaseAutomationPeer :
     impl::consume<IButtonBaseAutomationPeer>
 {
     IButtonBaseAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IButtonBaseAutomationPeer>(m_ptr); }
 };
 
 struct IButtonBaseAutomationPeerFactory :
@@ -301,7 +273,6 @@ struct IButtonBaseAutomationPeerFactory :
     impl::consume<IButtonBaseAutomationPeerFactory>
 {
     IButtonBaseAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IButtonBaseAutomationPeerFactory>(m_ptr); }
 };
 
 struct ICaptureElementAutomationPeer :
@@ -309,7 +280,6 @@ struct ICaptureElementAutomationPeer :
     impl::consume<ICaptureElementAutomationPeer>
 {
     ICaptureElementAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICaptureElementAutomationPeer>(m_ptr); }
 };
 
 struct ICaptureElementAutomationPeerFactory :
@@ -317,7 +287,6 @@ struct ICaptureElementAutomationPeerFactory :
     impl::consume<ICaptureElementAutomationPeerFactory>
 {
     ICaptureElementAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICaptureElementAutomationPeerFactory>(m_ptr); }
 };
 
 struct ICheckBoxAutomationPeer :
@@ -325,7 +294,6 @@ struct ICheckBoxAutomationPeer :
     impl::consume<ICheckBoxAutomationPeer>
 {
     ICheckBoxAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICheckBoxAutomationPeer>(m_ptr); }
 };
 
 struct ICheckBoxAutomationPeerFactory :
@@ -333,7 +301,6 @@ struct ICheckBoxAutomationPeerFactory :
     impl::consume<ICheckBoxAutomationPeerFactory>
 {
     ICheckBoxAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICheckBoxAutomationPeerFactory>(m_ptr); }
 };
 
 struct IComboBoxAutomationPeer :
@@ -341,7 +308,6 @@ struct IComboBoxAutomationPeer :
     impl::consume<IComboBoxAutomationPeer>
 {
     IComboBoxAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IComboBoxAutomationPeer>(m_ptr); }
 };
 
 struct IComboBoxAutomationPeerFactory :
@@ -349,7 +315,6 @@ struct IComboBoxAutomationPeerFactory :
     impl::consume<IComboBoxAutomationPeerFactory>
 {
     IComboBoxAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IComboBoxAutomationPeerFactory>(m_ptr); }
 };
 
 struct IComboBoxItemAutomationPeer :
@@ -357,7 +322,6 @@ struct IComboBoxItemAutomationPeer :
     impl::consume<IComboBoxItemAutomationPeer>
 {
     IComboBoxItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IComboBoxItemAutomationPeer>(m_ptr); }
 };
 
 struct IComboBoxItemAutomationPeerFactory :
@@ -365,7 +329,6 @@ struct IComboBoxItemAutomationPeerFactory :
     impl::consume<IComboBoxItemAutomationPeerFactory>
 {
     IComboBoxItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IComboBoxItemAutomationPeerFactory>(m_ptr); }
 };
 
 struct IComboBoxItemDataAutomationPeer :
@@ -373,7 +336,6 @@ struct IComboBoxItemDataAutomationPeer :
     impl::consume<IComboBoxItemDataAutomationPeer>
 {
     IComboBoxItemDataAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IComboBoxItemDataAutomationPeer>(m_ptr); }
 };
 
 struct IComboBoxItemDataAutomationPeerFactory :
@@ -381,7 +343,6 @@ struct IComboBoxItemDataAutomationPeerFactory :
     impl::consume<IComboBoxItemDataAutomationPeerFactory>
 {
     IComboBoxItemDataAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IComboBoxItemDataAutomationPeerFactory>(m_ptr); }
 };
 
 struct IDatePickerAutomationPeer :
@@ -389,7 +350,6 @@ struct IDatePickerAutomationPeer :
     impl::consume<IDatePickerAutomationPeer>
 {
     IDatePickerAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDatePickerAutomationPeer>(m_ptr); }
 };
 
 struct IDatePickerAutomationPeerFactory :
@@ -397,7 +357,6 @@ struct IDatePickerAutomationPeerFactory :
     impl::consume<IDatePickerAutomationPeerFactory>
 {
     IDatePickerAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDatePickerAutomationPeerFactory>(m_ptr); }
 };
 
 struct IDatePickerFlyoutPresenterAutomationPeer :
@@ -405,7 +364,6 @@ struct IDatePickerFlyoutPresenterAutomationPeer :
     impl::consume<IDatePickerFlyoutPresenterAutomationPeer>
 {
     IDatePickerFlyoutPresenterAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDatePickerFlyoutPresenterAutomationPeer>(m_ptr); }
 };
 
 struct IFlipViewAutomationPeer :
@@ -413,7 +371,6 @@ struct IFlipViewAutomationPeer :
     impl::consume<IFlipViewAutomationPeer>
 {
     IFlipViewAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFlipViewAutomationPeer>(m_ptr); }
 };
 
 struct IFlipViewAutomationPeerFactory :
@@ -421,7 +378,6 @@ struct IFlipViewAutomationPeerFactory :
     impl::consume<IFlipViewAutomationPeerFactory>
 {
     IFlipViewAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFlipViewAutomationPeerFactory>(m_ptr); }
 };
 
 struct IFlipViewItemAutomationPeer :
@@ -429,7 +385,6 @@ struct IFlipViewItemAutomationPeer :
     impl::consume<IFlipViewItemAutomationPeer>
 {
     IFlipViewItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFlipViewItemAutomationPeer>(m_ptr); }
 };
 
 struct IFlipViewItemAutomationPeerFactory :
@@ -437,7 +392,6 @@ struct IFlipViewItemAutomationPeerFactory :
     impl::consume<IFlipViewItemAutomationPeerFactory>
 {
     IFlipViewItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFlipViewItemAutomationPeerFactory>(m_ptr); }
 };
 
 struct IFlipViewItemDataAutomationPeer :
@@ -445,7 +399,6 @@ struct IFlipViewItemDataAutomationPeer :
     impl::consume<IFlipViewItemDataAutomationPeer>
 {
     IFlipViewItemDataAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFlipViewItemDataAutomationPeer>(m_ptr); }
 };
 
 struct IFlipViewItemDataAutomationPeerFactory :
@@ -453,7 +406,6 @@ struct IFlipViewItemDataAutomationPeerFactory :
     impl::consume<IFlipViewItemDataAutomationPeerFactory>
 {
     IFlipViewItemDataAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFlipViewItemDataAutomationPeerFactory>(m_ptr); }
 };
 
 struct IFlyoutPresenterAutomationPeer :
@@ -461,7 +413,6 @@ struct IFlyoutPresenterAutomationPeer :
     impl::consume<IFlyoutPresenterAutomationPeer>
 {
     IFlyoutPresenterAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFlyoutPresenterAutomationPeer>(m_ptr); }
 };
 
 struct IFlyoutPresenterAutomationPeerFactory :
@@ -469,7 +420,6 @@ struct IFlyoutPresenterAutomationPeerFactory :
     impl::consume<IFlyoutPresenterAutomationPeerFactory>
 {
     IFlyoutPresenterAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFlyoutPresenterAutomationPeerFactory>(m_ptr); }
 };
 
 struct IFrameworkElementAutomationPeer :
@@ -477,7 +427,6 @@ struct IFrameworkElementAutomationPeer :
     impl::consume<IFrameworkElementAutomationPeer>
 {
     IFrameworkElementAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameworkElementAutomationPeer>(m_ptr); }
 };
 
 struct IFrameworkElementAutomationPeerFactory :
@@ -485,7 +434,6 @@ struct IFrameworkElementAutomationPeerFactory :
     impl::consume<IFrameworkElementAutomationPeerFactory>
 {
     IFrameworkElementAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameworkElementAutomationPeerFactory>(m_ptr); }
 };
 
 struct IFrameworkElementAutomationPeerStatics :
@@ -493,7 +441,6 @@ struct IFrameworkElementAutomationPeerStatics :
     impl::consume<IFrameworkElementAutomationPeerStatics>
 {
     IFrameworkElementAutomationPeerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameworkElementAutomationPeerStatics>(m_ptr); }
 };
 
 struct IGridViewAutomationPeer :
@@ -501,7 +448,6 @@ struct IGridViewAutomationPeer :
     impl::consume<IGridViewAutomationPeer>
 {
     IGridViewAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGridViewAutomationPeer>(m_ptr); }
 };
 
 struct IGridViewAutomationPeerFactory :
@@ -509,7 +455,6 @@ struct IGridViewAutomationPeerFactory :
     impl::consume<IGridViewAutomationPeerFactory>
 {
     IGridViewAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGridViewAutomationPeerFactory>(m_ptr); }
 };
 
 struct IGridViewHeaderItemAutomationPeer :
@@ -517,7 +462,6 @@ struct IGridViewHeaderItemAutomationPeer :
     impl::consume<IGridViewHeaderItemAutomationPeer>
 {
     IGridViewHeaderItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGridViewHeaderItemAutomationPeer>(m_ptr); }
 };
 
 struct IGridViewHeaderItemAutomationPeerFactory :
@@ -525,7 +469,6 @@ struct IGridViewHeaderItemAutomationPeerFactory :
     impl::consume<IGridViewHeaderItemAutomationPeerFactory>
 {
     IGridViewHeaderItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGridViewHeaderItemAutomationPeerFactory>(m_ptr); }
 };
 
 struct IGridViewItemAutomationPeer :
@@ -533,7 +476,6 @@ struct IGridViewItemAutomationPeer :
     impl::consume<IGridViewItemAutomationPeer>
 {
     IGridViewItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGridViewItemAutomationPeer>(m_ptr); }
 };
 
 struct IGridViewItemAutomationPeerFactory :
@@ -541,7 +483,6 @@ struct IGridViewItemAutomationPeerFactory :
     impl::consume<IGridViewItemAutomationPeerFactory>
 {
     IGridViewItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGridViewItemAutomationPeerFactory>(m_ptr); }
 };
 
 struct IGridViewItemDataAutomationPeer :
@@ -549,7 +490,6 @@ struct IGridViewItemDataAutomationPeer :
     impl::consume<IGridViewItemDataAutomationPeer>
 {
     IGridViewItemDataAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGridViewItemDataAutomationPeer>(m_ptr); }
 };
 
 struct IGridViewItemDataAutomationPeerFactory :
@@ -557,7 +497,6 @@ struct IGridViewItemDataAutomationPeerFactory :
     impl::consume<IGridViewItemDataAutomationPeerFactory>
 {
     IGridViewItemDataAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGridViewItemDataAutomationPeerFactory>(m_ptr); }
 };
 
 struct IGroupItemAutomationPeer :
@@ -565,7 +504,6 @@ struct IGroupItemAutomationPeer :
     impl::consume<IGroupItemAutomationPeer>
 {
     IGroupItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGroupItemAutomationPeer>(m_ptr); }
 };
 
 struct IGroupItemAutomationPeerFactory :
@@ -573,7 +511,6 @@ struct IGroupItemAutomationPeerFactory :
     impl::consume<IGroupItemAutomationPeerFactory>
 {
     IGroupItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGroupItemAutomationPeerFactory>(m_ptr); }
 };
 
 struct IHubAutomationPeer :
@@ -581,7 +518,6 @@ struct IHubAutomationPeer :
     impl::consume<IHubAutomationPeer>
 {
     IHubAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHubAutomationPeer>(m_ptr); }
 };
 
 struct IHubAutomationPeerFactory :
@@ -589,7 +525,6 @@ struct IHubAutomationPeerFactory :
     impl::consume<IHubAutomationPeerFactory>
 {
     IHubAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHubAutomationPeerFactory>(m_ptr); }
 };
 
 struct IHubSectionAutomationPeer :
@@ -597,7 +532,6 @@ struct IHubSectionAutomationPeer :
     impl::consume<IHubSectionAutomationPeer>
 {
     IHubSectionAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHubSectionAutomationPeer>(m_ptr); }
 };
 
 struct IHubSectionAutomationPeerFactory :
@@ -605,7 +539,6 @@ struct IHubSectionAutomationPeerFactory :
     impl::consume<IHubSectionAutomationPeerFactory>
 {
     IHubSectionAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHubSectionAutomationPeerFactory>(m_ptr); }
 };
 
 struct IHyperlinkButtonAutomationPeer :
@@ -613,7 +546,6 @@ struct IHyperlinkButtonAutomationPeer :
     impl::consume<IHyperlinkButtonAutomationPeer>
 {
     IHyperlinkButtonAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHyperlinkButtonAutomationPeer>(m_ptr); }
 };
 
 struct IHyperlinkButtonAutomationPeerFactory :
@@ -621,7 +553,6 @@ struct IHyperlinkButtonAutomationPeerFactory :
     impl::consume<IHyperlinkButtonAutomationPeerFactory>
 {
     IHyperlinkButtonAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHyperlinkButtonAutomationPeerFactory>(m_ptr); }
 };
 
 struct IImageAutomationPeer :
@@ -629,7 +560,6 @@ struct IImageAutomationPeer :
     impl::consume<IImageAutomationPeer>
 {
     IImageAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IImageAutomationPeer>(m_ptr); }
 };
 
 struct IImageAutomationPeerFactory :
@@ -637,7 +567,6 @@ struct IImageAutomationPeerFactory :
     impl::consume<IImageAutomationPeerFactory>
 {
     IImageAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IImageAutomationPeerFactory>(m_ptr); }
 };
 
 struct IInkToolbarAutomationPeer :
@@ -645,7 +574,6 @@ struct IInkToolbarAutomationPeer :
     impl::consume<IInkToolbarAutomationPeer>
 {
     IInkToolbarAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInkToolbarAutomationPeer>(m_ptr); }
 };
 
 struct IItemAutomationPeer :
@@ -653,7 +581,6 @@ struct IItemAutomationPeer :
     impl::consume<IItemAutomationPeer>
 {
     IItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IItemAutomationPeer>(m_ptr); }
 };
 
 struct IItemAutomationPeerFactory :
@@ -661,7 +588,6 @@ struct IItemAutomationPeerFactory :
     impl::consume<IItemAutomationPeerFactory>
 {
     IItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IItemAutomationPeerFactory>(m_ptr); }
 };
 
 struct IItemsControlAutomationPeer :
@@ -669,7 +595,6 @@ struct IItemsControlAutomationPeer :
     impl::consume<IItemsControlAutomationPeer>
 {
     IItemsControlAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IItemsControlAutomationPeer>(m_ptr); }
 };
 
 struct IItemsControlAutomationPeer2 :
@@ -677,7 +602,6 @@ struct IItemsControlAutomationPeer2 :
     impl::consume<IItemsControlAutomationPeer2>
 {
     IItemsControlAutomationPeer2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IItemsControlAutomationPeer2>(m_ptr); }
 };
 
 struct IItemsControlAutomationPeerFactory :
@@ -685,7 +609,6 @@ struct IItemsControlAutomationPeerFactory :
     impl::consume<IItemsControlAutomationPeerFactory>
 {
     IItemsControlAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IItemsControlAutomationPeerFactory>(m_ptr); }
 };
 
 struct IItemsControlAutomationPeerOverrides2 :
@@ -693,7 +616,6 @@ struct IItemsControlAutomationPeerOverrides2 :
     impl::consume<IItemsControlAutomationPeerOverrides2>
 {
     IItemsControlAutomationPeerOverrides2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IItemsControlAutomationPeerOverrides2>(m_ptr); }
 };
 
 struct IListBoxAutomationPeer :
@@ -701,7 +623,6 @@ struct IListBoxAutomationPeer :
     impl::consume<IListBoxAutomationPeer>
 {
     IListBoxAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListBoxAutomationPeer>(m_ptr); }
 };
 
 struct IListBoxAutomationPeerFactory :
@@ -709,7 +630,6 @@ struct IListBoxAutomationPeerFactory :
     impl::consume<IListBoxAutomationPeerFactory>
 {
     IListBoxAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListBoxAutomationPeerFactory>(m_ptr); }
 };
 
 struct IListBoxItemAutomationPeer :
@@ -717,7 +637,6 @@ struct IListBoxItemAutomationPeer :
     impl::consume<IListBoxItemAutomationPeer>
 {
     IListBoxItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListBoxItemAutomationPeer>(m_ptr); }
 };
 
 struct IListBoxItemAutomationPeerFactory :
@@ -725,7 +644,6 @@ struct IListBoxItemAutomationPeerFactory :
     impl::consume<IListBoxItemAutomationPeerFactory>
 {
     IListBoxItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListBoxItemAutomationPeerFactory>(m_ptr); }
 };
 
 struct IListBoxItemDataAutomationPeer :
@@ -733,7 +651,6 @@ struct IListBoxItemDataAutomationPeer :
     impl::consume<IListBoxItemDataAutomationPeer>
 {
     IListBoxItemDataAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListBoxItemDataAutomationPeer>(m_ptr); }
 };
 
 struct IListBoxItemDataAutomationPeerFactory :
@@ -741,7 +658,6 @@ struct IListBoxItemDataAutomationPeerFactory :
     impl::consume<IListBoxItemDataAutomationPeerFactory>
 {
     IListBoxItemDataAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListBoxItemDataAutomationPeerFactory>(m_ptr); }
 };
 
 struct IListPickerFlyoutPresenterAutomationPeer :
@@ -749,7 +665,6 @@ struct IListPickerFlyoutPresenterAutomationPeer :
     impl::consume<IListPickerFlyoutPresenterAutomationPeer>
 {
     IListPickerFlyoutPresenterAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListPickerFlyoutPresenterAutomationPeer>(m_ptr); }
 };
 
 struct IListViewAutomationPeer :
@@ -757,7 +672,6 @@ struct IListViewAutomationPeer :
     impl::consume<IListViewAutomationPeer>
 {
     IListViewAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListViewAutomationPeer>(m_ptr); }
 };
 
 struct IListViewAutomationPeerFactory :
@@ -765,7 +679,6 @@ struct IListViewAutomationPeerFactory :
     impl::consume<IListViewAutomationPeerFactory>
 {
     IListViewAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListViewAutomationPeerFactory>(m_ptr); }
 };
 
 struct IListViewBaseAutomationPeer :
@@ -773,7 +686,6 @@ struct IListViewBaseAutomationPeer :
     impl::consume<IListViewBaseAutomationPeer>
 {
     IListViewBaseAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListViewBaseAutomationPeer>(m_ptr); }
 };
 
 struct IListViewBaseAutomationPeerFactory :
@@ -781,7 +693,6 @@ struct IListViewBaseAutomationPeerFactory :
     impl::consume<IListViewBaseAutomationPeerFactory>
 {
     IListViewBaseAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListViewBaseAutomationPeerFactory>(m_ptr); }
 };
 
 struct IListViewBaseHeaderItemAutomationPeer :
@@ -789,7 +700,6 @@ struct IListViewBaseHeaderItemAutomationPeer :
     impl::consume<IListViewBaseHeaderItemAutomationPeer>
 {
     IListViewBaseHeaderItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListViewBaseHeaderItemAutomationPeer>(m_ptr); }
 };
 
 struct IListViewBaseHeaderItemAutomationPeerFactory :
@@ -797,7 +707,6 @@ struct IListViewBaseHeaderItemAutomationPeerFactory :
     impl::consume<IListViewBaseHeaderItemAutomationPeerFactory>
 {
     IListViewBaseHeaderItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListViewBaseHeaderItemAutomationPeerFactory>(m_ptr); }
 };
 
 struct IListViewHeaderItemAutomationPeer :
@@ -805,7 +714,6 @@ struct IListViewHeaderItemAutomationPeer :
     impl::consume<IListViewHeaderItemAutomationPeer>
 {
     IListViewHeaderItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListViewHeaderItemAutomationPeer>(m_ptr); }
 };
 
 struct IListViewHeaderItemAutomationPeerFactory :
@@ -813,7 +721,6 @@ struct IListViewHeaderItemAutomationPeerFactory :
     impl::consume<IListViewHeaderItemAutomationPeerFactory>
 {
     IListViewHeaderItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListViewHeaderItemAutomationPeerFactory>(m_ptr); }
 };
 
 struct IListViewItemAutomationPeer :
@@ -821,7 +728,6 @@ struct IListViewItemAutomationPeer :
     impl::consume<IListViewItemAutomationPeer>
 {
     IListViewItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListViewItemAutomationPeer>(m_ptr); }
 };
 
 struct IListViewItemAutomationPeerFactory :
@@ -829,7 +735,6 @@ struct IListViewItemAutomationPeerFactory :
     impl::consume<IListViewItemAutomationPeerFactory>
 {
     IListViewItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListViewItemAutomationPeerFactory>(m_ptr); }
 };
 
 struct IListViewItemDataAutomationPeer :
@@ -837,7 +742,6 @@ struct IListViewItemDataAutomationPeer :
     impl::consume<IListViewItemDataAutomationPeer>
 {
     IListViewItemDataAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListViewItemDataAutomationPeer>(m_ptr); }
 };
 
 struct IListViewItemDataAutomationPeerFactory :
@@ -845,7 +749,6 @@ struct IListViewItemDataAutomationPeerFactory :
     impl::consume<IListViewItemDataAutomationPeerFactory>
 {
     IListViewItemDataAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListViewItemDataAutomationPeerFactory>(m_ptr); }
 };
 
 struct ILoopingSelectorAutomationPeer :
@@ -853,7 +756,6 @@ struct ILoopingSelectorAutomationPeer :
     impl::consume<ILoopingSelectorAutomationPeer>
 {
     ILoopingSelectorAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoopingSelectorAutomationPeer>(m_ptr); }
 };
 
 struct ILoopingSelectorItemAutomationPeer :
@@ -861,7 +763,6 @@ struct ILoopingSelectorItemAutomationPeer :
     impl::consume<ILoopingSelectorItemAutomationPeer>
 {
     ILoopingSelectorItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoopingSelectorItemAutomationPeer>(m_ptr); }
 };
 
 struct ILoopingSelectorItemDataAutomationPeer :
@@ -869,7 +770,6 @@ struct ILoopingSelectorItemDataAutomationPeer :
     impl::consume<ILoopingSelectorItemDataAutomationPeer>
 {
     ILoopingSelectorItemDataAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoopingSelectorItemDataAutomationPeer>(m_ptr); }
 };
 
 struct IMapControlAutomationPeer :
@@ -877,7 +777,6 @@ struct IMapControlAutomationPeer :
     impl::consume<IMapControlAutomationPeer>
 {
     IMapControlAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapControlAutomationPeer>(m_ptr); }
 };
 
 struct IMediaElementAutomationPeer :
@@ -885,7 +784,6 @@ struct IMediaElementAutomationPeer :
     impl::consume<IMediaElementAutomationPeer>
 {
     IMediaElementAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaElementAutomationPeer>(m_ptr); }
 };
 
 struct IMediaElementAutomationPeerFactory :
@@ -893,7 +791,6 @@ struct IMediaElementAutomationPeerFactory :
     impl::consume<IMediaElementAutomationPeerFactory>
 {
     IMediaElementAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaElementAutomationPeerFactory>(m_ptr); }
 };
 
 struct IMediaPlayerElementAutomationPeer :
@@ -901,7 +798,6 @@ struct IMediaPlayerElementAutomationPeer :
     impl::consume<IMediaPlayerElementAutomationPeer>
 {
     IMediaPlayerElementAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaPlayerElementAutomationPeer>(m_ptr); }
 };
 
 struct IMediaPlayerElementAutomationPeerFactory :
@@ -909,7 +805,6 @@ struct IMediaPlayerElementAutomationPeerFactory :
     impl::consume<IMediaPlayerElementAutomationPeerFactory>
 {
     IMediaPlayerElementAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaPlayerElementAutomationPeerFactory>(m_ptr); }
 };
 
 struct IMediaTransportControlsAutomationPeer :
@@ -917,7 +812,6 @@ struct IMediaTransportControlsAutomationPeer :
     impl::consume<IMediaTransportControlsAutomationPeer>
 {
     IMediaTransportControlsAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaTransportControlsAutomationPeer>(m_ptr); }
 };
 
 struct IMediaTransportControlsAutomationPeerFactory :
@@ -925,7 +819,6 @@ struct IMediaTransportControlsAutomationPeerFactory :
     impl::consume<IMediaTransportControlsAutomationPeerFactory>
 {
     IMediaTransportControlsAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaTransportControlsAutomationPeerFactory>(m_ptr); }
 };
 
 struct IMenuFlyoutItemAutomationPeer :
@@ -933,7 +826,6 @@ struct IMenuFlyoutItemAutomationPeer :
     impl::consume<IMenuFlyoutItemAutomationPeer>
 {
     IMenuFlyoutItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMenuFlyoutItemAutomationPeer>(m_ptr); }
 };
 
 struct IMenuFlyoutItemAutomationPeerFactory :
@@ -941,7 +833,6 @@ struct IMenuFlyoutItemAutomationPeerFactory :
     impl::consume<IMenuFlyoutItemAutomationPeerFactory>
 {
     IMenuFlyoutItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMenuFlyoutItemAutomationPeerFactory>(m_ptr); }
 };
 
 struct IMenuFlyoutPresenterAutomationPeer :
@@ -949,7 +840,6 @@ struct IMenuFlyoutPresenterAutomationPeer :
     impl::consume<IMenuFlyoutPresenterAutomationPeer>
 {
     IMenuFlyoutPresenterAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMenuFlyoutPresenterAutomationPeer>(m_ptr); }
 };
 
 struct IMenuFlyoutPresenterAutomationPeerFactory :
@@ -957,7 +847,6 @@ struct IMenuFlyoutPresenterAutomationPeerFactory :
     impl::consume<IMenuFlyoutPresenterAutomationPeerFactory>
 {
     IMenuFlyoutPresenterAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMenuFlyoutPresenterAutomationPeerFactory>(m_ptr); }
 };
 
 struct IPasswordBoxAutomationPeer :
@@ -965,7 +854,6 @@ struct IPasswordBoxAutomationPeer :
     impl::consume<IPasswordBoxAutomationPeer>
 {
     IPasswordBoxAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPasswordBoxAutomationPeer>(m_ptr); }
 };
 
 struct IPasswordBoxAutomationPeerFactory :
@@ -973,7 +861,6 @@ struct IPasswordBoxAutomationPeerFactory :
     impl::consume<IPasswordBoxAutomationPeerFactory>
 {
     IPasswordBoxAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPasswordBoxAutomationPeerFactory>(m_ptr); }
 };
 
 struct IPickerFlyoutPresenterAutomationPeer :
@@ -981,7 +868,6 @@ struct IPickerFlyoutPresenterAutomationPeer :
     impl::consume<IPickerFlyoutPresenterAutomationPeer>
 {
     IPickerFlyoutPresenterAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPickerFlyoutPresenterAutomationPeer>(m_ptr); }
 };
 
 struct IPivotAutomationPeer :
@@ -989,7 +875,6 @@ struct IPivotAutomationPeer :
     impl::consume<IPivotAutomationPeer>
 {
     IPivotAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPivotAutomationPeer>(m_ptr); }
 };
 
 struct IPivotAutomationPeerFactory :
@@ -997,7 +882,6 @@ struct IPivotAutomationPeerFactory :
     impl::consume<IPivotAutomationPeerFactory>
 {
     IPivotAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPivotAutomationPeerFactory>(m_ptr); }
 };
 
 struct IPivotItemAutomationPeer :
@@ -1005,7 +889,6 @@ struct IPivotItemAutomationPeer :
     impl::consume<IPivotItemAutomationPeer>
 {
     IPivotItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPivotItemAutomationPeer>(m_ptr); }
 };
 
 struct IPivotItemAutomationPeerFactory :
@@ -1013,7 +896,6 @@ struct IPivotItemAutomationPeerFactory :
     impl::consume<IPivotItemAutomationPeerFactory>
 {
     IPivotItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPivotItemAutomationPeerFactory>(m_ptr); }
 };
 
 struct IPivotItemDataAutomationPeer :
@@ -1021,7 +903,6 @@ struct IPivotItemDataAutomationPeer :
     impl::consume<IPivotItemDataAutomationPeer>
 {
     IPivotItemDataAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPivotItemDataAutomationPeer>(m_ptr); }
 };
 
 struct IPivotItemDataAutomationPeerFactory :
@@ -1029,7 +910,6 @@ struct IPivotItemDataAutomationPeerFactory :
     impl::consume<IPivotItemDataAutomationPeerFactory>
 {
     IPivotItemDataAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPivotItemDataAutomationPeerFactory>(m_ptr); }
 };
 
 struct IProgressBarAutomationPeer :
@@ -1037,7 +917,6 @@ struct IProgressBarAutomationPeer :
     impl::consume<IProgressBarAutomationPeer>
 {
     IProgressBarAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProgressBarAutomationPeer>(m_ptr); }
 };
 
 struct IProgressBarAutomationPeerFactory :
@@ -1045,7 +924,6 @@ struct IProgressBarAutomationPeerFactory :
     impl::consume<IProgressBarAutomationPeerFactory>
 {
     IProgressBarAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProgressBarAutomationPeerFactory>(m_ptr); }
 };
 
 struct IProgressRingAutomationPeer :
@@ -1053,7 +931,6 @@ struct IProgressRingAutomationPeer :
     impl::consume<IProgressRingAutomationPeer>
 {
     IProgressRingAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProgressRingAutomationPeer>(m_ptr); }
 };
 
 struct IProgressRingAutomationPeerFactory :
@@ -1061,7 +938,6 @@ struct IProgressRingAutomationPeerFactory :
     impl::consume<IProgressRingAutomationPeerFactory>
 {
     IProgressRingAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProgressRingAutomationPeerFactory>(m_ptr); }
 };
 
 struct IRadioButtonAutomationPeer :
@@ -1069,7 +945,6 @@ struct IRadioButtonAutomationPeer :
     impl::consume<IRadioButtonAutomationPeer>
 {
     IRadioButtonAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRadioButtonAutomationPeer>(m_ptr); }
 };
 
 struct IRadioButtonAutomationPeerFactory :
@@ -1077,7 +952,6 @@ struct IRadioButtonAutomationPeerFactory :
     impl::consume<IRadioButtonAutomationPeerFactory>
 {
     IRadioButtonAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRadioButtonAutomationPeerFactory>(m_ptr); }
 };
 
 struct IRangeBaseAutomationPeer :
@@ -1085,7 +959,6 @@ struct IRangeBaseAutomationPeer :
     impl::consume<IRangeBaseAutomationPeer>
 {
     IRangeBaseAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRangeBaseAutomationPeer>(m_ptr); }
 };
 
 struct IRangeBaseAutomationPeerFactory :
@@ -1093,7 +966,6 @@ struct IRangeBaseAutomationPeerFactory :
     impl::consume<IRangeBaseAutomationPeerFactory>
 {
     IRangeBaseAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRangeBaseAutomationPeerFactory>(m_ptr); }
 };
 
 struct IRepeatButtonAutomationPeer :
@@ -1101,7 +973,6 @@ struct IRepeatButtonAutomationPeer :
     impl::consume<IRepeatButtonAutomationPeer>
 {
     IRepeatButtonAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRepeatButtonAutomationPeer>(m_ptr); }
 };
 
 struct IRepeatButtonAutomationPeerFactory :
@@ -1109,7 +980,6 @@ struct IRepeatButtonAutomationPeerFactory :
     impl::consume<IRepeatButtonAutomationPeerFactory>
 {
     IRepeatButtonAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRepeatButtonAutomationPeerFactory>(m_ptr); }
 };
 
 struct IRichEditBoxAutomationPeer :
@@ -1117,7 +987,6 @@ struct IRichEditBoxAutomationPeer :
     impl::consume<IRichEditBoxAutomationPeer>
 {
     IRichEditBoxAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRichEditBoxAutomationPeer>(m_ptr); }
 };
 
 struct IRichEditBoxAutomationPeerFactory :
@@ -1125,7 +994,6 @@ struct IRichEditBoxAutomationPeerFactory :
     impl::consume<IRichEditBoxAutomationPeerFactory>
 {
     IRichEditBoxAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRichEditBoxAutomationPeerFactory>(m_ptr); }
 };
 
 struct IRichTextBlockAutomationPeer :
@@ -1133,7 +1001,6 @@ struct IRichTextBlockAutomationPeer :
     impl::consume<IRichTextBlockAutomationPeer>
 {
     IRichTextBlockAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRichTextBlockAutomationPeer>(m_ptr); }
 };
 
 struct IRichTextBlockAutomationPeerFactory :
@@ -1141,7 +1008,6 @@ struct IRichTextBlockAutomationPeerFactory :
     impl::consume<IRichTextBlockAutomationPeerFactory>
 {
     IRichTextBlockAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRichTextBlockAutomationPeerFactory>(m_ptr); }
 };
 
 struct IRichTextBlockOverflowAutomationPeer :
@@ -1149,7 +1015,6 @@ struct IRichTextBlockOverflowAutomationPeer :
     impl::consume<IRichTextBlockOverflowAutomationPeer>
 {
     IRichTextBlockOverflowAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRichTextBlockOverflowAutomationPeer>(m_ptr); }
 };
 
 struct IRichTextBlockOverflowAutomationPeerFactory :
@@ -1157,7 +1022,6 @@ struct IRichTextBlockOverflowAutomationPeerFactory :
     impl::consume<IRichTextBlockOverflowAutomationPeerFactory>
 {
     IRichTextBlockOverflowAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRichTextBlockOverflowAutomationPeerFactory>(m_ptr); }
 };
 
 struct IScrollBarAutomationPeer :
@@ -1165,7 +1029,6 @@ struct IScrollBarAutomationPeer :
     impl::consume<IScrollBarAutomationPeer>
 {
     IScrollBarAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScrollBarAutomationPeer>(m_ptr); }
 };
 
 struct IScrollBarAutomationPeerFactory :
@@ -1173,7 +1036,6 @@ struct IScrollBarAutomationPeerFactory :
     impl::consume<IScrollBarAutomationPeerFactory>
 {
     IScrollBarAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScrollBarAutomationPeerFactory>(m_ptr); }
 };
 
 struct IScrollViewerAutomationPeer :
@@ -1181,7 +1043,6 @@ struct IScrollViewerAutomationPeer :
     impl::consume<IScrollViewerAutomationPeer>
 {
     IScrollViewerAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScrollViewerAutomationPeer>(m_ptr); }
 };
 
 struct IScrollViewerAutomationPeerFactory :
@@ -1189,7 +1050,6 @@ struct IScrollViewerAutomationPeerFactory :
     impl::consume<IScrollViewerAutomationPeerFactory>
 {
     IScrollViewerAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScrollViewerAutomationPeerFactory>(m_ptr); }
 };
 
 struct ISearchBoxAutomationPeer :
@@ -1197,7 +1057,6 @@ struct ISearchBoxAutomationPeer :
     impl::consume<ISearchBoxAutomationPeer>
 {
     ISearchBoxAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISearchBoxAutomationPeer>(m_ptr); }
 };
 
 struct ISearchBoxAutomationPeerFactory :
@@ -1205,7 +1064,6 @@ struct ISearchBoxAutomationPeerFactory :
     impl::consume<ISearchBoxAutomationPeerFactory>
 {
     ISearchBoxAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISearchBoxAutomationPeerFactory>(m_ptr); }
 };
 
 struct ISelectorAutomationPeer :
@@ -1213,7 +1071,6 @@ struct ISelectorAutomationPeer :
     impl::consume<ISelectorAutomationPeer>
 {
     ISelectorAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectorAutomationPeer>(m_ptr); }
 };
 
 struct ISelectorAutomationPeerFactory :
@@ -1221,7 +1078,6 @@ struct ISelectorAutomationPeerFactory :
     impl::consume<ISelectorAutomationPeerFactory>
 {
     ISelectorAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectorAutomationPeerFactory>(m_ptr); }
 };
 
 struct ISelectorItemAutomationPeer :
@@ -1229,7 +1085,6 @@ struct ISelectorItemAutomationPeer :
     impl::consume<ISelectorItemAutomationPeer>
 {
     ISelectorItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectorItemAutomationPeer>(m_ptr); }
 };
 
 struct ISelectorItemAutomationPeerFactory :
@@ -1237,7 +1092,6 @@ struct ISelectorItemAutomationPeerFactory :
     impl::consume<ISelectorItemAutomationPeerFactory>
 {
     ISelectorItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectorItemAutomationPeerFactory>(m_ptr); }
 };
 
 struct ISemanticZoomAutomationPeer :
@@ -1245,7 +1099,6 @@ struct ISemanticZoomAutomationPeer :
     impl::consume<ISemanticZoomAutomationPeer>
 {
     ISemanticZoomAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISemanticZoomAutomationPeer>(m_ptr); }
 };
 
 struct ISemanticZoomAutomationPeerFactory :
@@ -1253,7 +1106,6 @@ struct ISemanticZoomAutomationPeerFactory :
     impl::consume<ISemanticZoomAutomationPeerFactory>
 {
     ISemanticZoomAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISemanticZoomAutomationPeerFactory>(m_ptr); }
 };
 
 struct ISettingsFlyoutAutomationPeer :
@@ -1261,7 +1113,6 @@ struct ISettingsFlyoutAutomationPeer :
     impl::consume<ISettingsFlyoutAutomationPeer>
 {
     ISettingsFlyoutAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISettingsFlyoutAutomationPeer>(m_ptr); }
 };
 
 struct ISettingsFlyoutAutomationPeerFactory :
@@ -1269,7 +1120,6 @@ struct ISettingsFlyoutAutomationPeerFactory :
     impl::consume<ISettingsFlyoutAutomationPeerFactory>
 {
     ISettingsFlyoutAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISettingsFlyoutAutomationPeerFactory>(m_ptr); }
 };
 
 struct ISliderAutomationPeer :
@@ -1277,7 +1127,6 @@ struct ISliderAutomationPeer :
     impl::consume<ISliderAutomationPeer>
 {
     ISliderAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISliderAutomationPeer>(m_ptr); }
 };
 
 struct ISliderAutomationPeerFactory :
@@ -1285,7 +1134,6 @@ struct ISliderAutomationPeerFactory :
     impl::consume<ISliderAutomationPeerFactory>
 {
     ISliderAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISliderAutomationPeerFactory>(m_ptr); }
 };
 
 struct ITextBlockAutomationPeer :
@@ -1293,7 +1141,6 @@ struct ITextBlockAutomationPeer :
     impl::consume<ITextBlockAutomationPeer>
 {
     ITextBlockAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextBlockAutomationPeer>(m_ptr); }
 };
 
 struct ITextBlockAutomationPeerFactory :
@@ -1301,7 +1148,6 @@ struct ITextBlockAutomationPeerFactory :
     impl::consume<ITextBlockAutomationPeerFactory>
 {
     ITextBlockAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextBlockAutomationPeerFactory>(m_ptr); }
 };
 
 struct ITextBoxAutomationPeer :
@@ -1309,7 +1155,6 @@ struct ITextBoxAutomationPeer :
     impl::consume<ITextBoxAutomationPeer>
 {
     ITextBoxAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextBoxAutomationPeer>(m_ptr); }
 };
 
 struct ITextBoxAutomationPeerFactory :
@@ -1317,7 +1162,6 @@ struct ITextBoxAutomationPeerFactory :
     impl::consume<ITextBoxAutomationPeerFactory>
 {
     ITextBoxAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextBoxAutomationPeerFactory>(m_ptr); }
 };
 
 struct IThumbAutomationPeer :
@@ -1325,7 +1169,6 @@ struct IThumbAutomationPeer :
     impl::consume<IThumbAutomationPeer>
 {
     IThumbAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IThumbAutomationPeer>(m_ptr); }
 };
 
 struct IThumbAutomationPeerFactory :
@@ -1333,7 +1176,6 @@ struct IThumbAutomationPeerFactory :
     impl::consume<IThumbAutomationPeerFactory>
 {
     IThumbAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IThumbAutomationPeerFactory>(m_ptr); }
 };
 
 struct ITimePickerAutomationPeer :
@@ -1341,7 +1183,6 @@ struct ITimePickerAutomationPeer :
     impl::consume<ITimePickerAutomationPeer>
 {
     ITimePickerAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimePickerAutomationPeer>(m_ptr); }
 };
 
 struct ITimePickerAutomationPeerFactory :
@@ -1349,7 +1190,6 @@ struct ITimePickerAutomationPeerFactory :
     impl::consume<ITimePickerAutomationPeerFactory>
 {
     ITimePickerAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimePickerAutomationPeerFactory>(m_ptr); }
 };
 
 struct ITimePickerFlyoutPresenterAutomationPeer :
@@ -1357,7 +1197,6 @@ struct ITimePickerFlyoutPresenterAutomationPeer :
     impl::consume<ITimePickerFlyoutPresenterAutomationPeer>
 {
     ITimePickerFlyoutPresenterAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimePickerFlyoutPresenterAutomationPeer>(m_ptr); }
 };
 
 struct IToggleButtonAutomationPeer :
@@ -1365,7 +1204,6 @@ struct IToggleButtonAutomationPeer :
     impl::consume<IToggleButtonAutomationPeer>
 {
     IToggleButtonAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToggleButtonAutomationPeer>(m_ptr); }
 };
 
 struct IToggleButtonAutomationPeerFactory :
@@ -1373,7 +1211,6 @@ struct IToggleButtonAutomationPeerFactory :
     impl::consume<IToggleButtonAutomationPeerFactory>
 {
     IToggleButtonAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToggleButtonAutomationPeerFactory>(m_ptr); }
 };
 
 struct IToggleMenuFlyoutItemAutomationPeer :
@@ -1381,7 +1218,6 @@ struct IToggleMenuFlyoutItemAutomationPeer :
     impl::consume<IToggleMenuFlyoutItemAutomationPeer>
 {
     IToggleMenuFlyoutItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToggleMenuFlyoutItemAutomationPeer>(m_ptr); }
 };
 
 struct IToggleMenuFlyoutItemAutomationPeerFactory :
@@ -1389,7 +1225,6 @@ struct IToggleMenuFlyoutItemAutomationPeerFactory :
     impl::consume<IToggleMenuFlyoutItemAutomationPeerFactory>
 {
     IToggleMenuFlyoutItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToggleMenuFlyoutItemAutomationPeerFactory>(m_ptr); }
 };
 
 struct IToggleSwitchAutomationPeer :
@@ -1397,7 +1232,6 @@ struct IToggleSwitchAutomationPeer :
     impl::consume<IToggleSwitchAutomationPeer>
 {
     IToggleSwitchAutomationPeer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToggleSwitchAutomationPeer>(m_ptr); }
 };
 
 struct IToggleSwitchAutomationPeerFactory :
@@ -1405,7 +1239,6 @@ struct IToggleSwitchAutomationPeerFactory :
     impl::consume<IToggleSwitchAutomationPeerFactory>
 {
     IToggleSwitchAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToggleSwitchAutomationPeerFactory>(m_ptr); }
 };
 
 }

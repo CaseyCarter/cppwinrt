@@ -943,381 +943,381 @@ namespace Windows::Globalization::NumberFormatting {
 template <typename D> int32_t impl_INumberRounder<D>::RoundInt32(int32_t value) const
 {
     int32_t result {};
-    check_hresult(static_cast<const INumberRounder &>(static_cast<const D &>(*this))->abi_RoundInt32(value, &result));
+    check_hresult(WINRT_SHIM(INumberRounder)->abi_RoundInt32(value, &result));
     return result;
 }
 
 template <typename D> uint32_t impl_INumberRounder<D>::RoundUInt32(uint32_t value) const
 {
     uint32_t result {};
-    check_hresult(static_cast<const INumberRounder &>(static_cast<const D &>(*this))->abi_RoundUInt32(value, &result));
+    check_hresult(WINRT_SHIM(INumberRounder)->abi_RoundUInt32(value, &result));
     return result;
 }
 
 template <typename D> int64_t impl_INumberRounder<D>::RoundInt64(int64_t value) const
 {
     int64_t result {};
-    check_hresult(static_cast<const INumberRounder &>(static_cast<const D &>(*this))->abi_RoundInt64(value, &result));
+    check_hresult(WINRT_SHIM(INumberRounder)->abi_RoundInt64(value, &result));
     return result;
 }
 
 template <typename D> uint64_t impl_INumberRounder<D>::RoundUInt64(uint64_t value) const
 {
     uint64_t result {};
-    check_hresult(static_cast<const INumberRounder &>(static_cast<const D &>(*this))->abi_RoundUInt64(value, &result));
+    check_hresult(WINRT_SHIM(INumberRounder)->abi_RoundUInt64(value, &result));
     return result;
 }
 
 template <typename D> float impl_INumberRounder<D>::RoundSingle(float value) const
 {
     float result {};
-    check_hresult(static_cast<const INumberRounder &>(static_cast<const D &>(*this))->abi_RoundSingle(value, &result));
+    check_hresult(WINRT_SHIM(INumberRounder)->abi_RoundSingle(value, &result));
     return result;
 }
 
 template <typename D> double impl_INumberRounder<D>::RoundDouble(double value) const
 {
     double result {};
-    check_hresult(static_cast<const INumberRounder &>(static_cast<const D &>(*this))->abi_RoundDouble(value, &result));
+    check_hresult(WINRT_SHIM(INumberRounder)->abi_RoundDouble(value, &result));
     return result;
 }
 
 template <typename D> Windows::Globalization::NumberFormatting::RoundingAlgorithm impl_ISignificantDigitsNumberRounder<D>::RoundingAlgorithm() const
 {
     Windows::Globalization::NumberFormatting::RoundingAlgorithm value {};
-    check_hresult(static_cast<const ISignificantDigitsNumberRounder &>(static_cast<const D &>(*this))->get_RoundingAlgorithm(&value));
+    check_hresult(WINRT_SHIM(ISignificantDigitsNumberRounder)->get_RoundingAlgorithm(&value));
     return value;
 }
 
 template <typename D> void impl_ISignificantDigitsNumberRounder<D>::RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm value) const
 {
-    check_hresult(static_cast<const ISignificantDigitsNumberRounder &>(static_cast<const D &>(*this))->put_RoundingAlgorithm(value));
+    check_hresult(WINRT_SHIM(ISignificantDigitsNumberRounder)->put_RoundingAlgorithm(value));
 }
 
 template <typename D> uint32_t impl_ISignificantDigitsNumberRounder<D>::SignificantDigits() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ISignificantDigitsNumberRounder &>(static_cast<const D &>(*this))->get_SignificantDigits(&value));
+    check_hresult(WINRT_SHIM(ISignificantDigitsNumberRounder)->get_SignificantDigits(&value));
     return value;
 }
 
 template <typename D> void impl_ISignificantDigitsNumberRounder<D>::SignificantDigits(uint32_t value) const
 {
-    check_hresult(static_cast<const ISignificantDigitsNumberRounder &>(static_cast<const D &>(*this))->put_SignificantDigits(value));
+    check_hresult(WINRT_SHIM(ISignificantDigitsNumberRounder)->put_SignificantDigits(value));
 }
 
 template <typename D> Windows::Globalization::NumberFormatting::RoundingAlgorithm impl_IIncrementNumberRounder<D>::RoundingAlgorithm() const
 {
     Windows::Globalization::NumberFormatting::RoundingAlgorithm value {};
-    check_hresult(static_cast<const IIncrementNumberRounder &>(static_cast<const D &>(*this))->get_RoundingAlgorithm(&value));
+    check_hresult(WINRT_SHIM(IIncrementNumberRounder)->get_RoundingAlgorithm(&value));
     return value;
 }
 
 template <typename D> void impl_IIncrementNumberRounder<D>::RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm value) const
 {
-    check_hresult(static_cast<const IIncrementNumberRounder &>(static_cast<const D &>(*this))->put_RoundingAlgorithm(value));
+    check_hresult(WINRT_SHIM(IIncrementNumberRounder)->put_RoundingAlgorithm(value));
 }
 
 template <typename D> double impl_IIncrementNumberRounder<D>::Increment() const
 {
     double value {};
-    check_hresult(static_cast<const IIncrementNumberRounder &>(static_cast<const D &>(*this))->get_Increment(&value));
+    check_hresult(WINRT_SHIM(IIncrementNumberRounder)->get_Increment(&value));
     return value;
 }
 
 template <typename D> void impl_IIncrementNumberRounder<D>::Increment(double value) const
 {
-    check_hresult(static_cast<const IIncrementNumberRounder &>(static_cast<const D &>(*this))->put_Increment(value));
+    check_hresult(WINRT_SHIM(IIncrementNumberRounder)->put_Increment(value));
 }
 
 template <typename D> hstring impl_INumberFormatter<D>::Format(int64_t value) const
 {
     hstring result;
-    check_hresult(static_cast<const INumberFormatter &>(static_cast<const D &>(*this))->abi_FormatInt(value, put(result)));
+    check_hresult(WINRT_SHIM(INumberFormatter)->abi_FormatInt(value, put(result)));
     return result;
 }
 
 template <typename D> hstring impl_INumberFormatter<D>::Format(uint64_t value) const
 {
     hstring result;
-    check_hresult(static_cast<const INumberFormatter &>(static_cast<const D &>(*this))->abi_FormatUInt(value, put(result)));
+    check_hresult(WINRT_SHIM(INumberFormatter)->abi_FormatUInt(value, put(result)));
     return result;
 }
 
 template <typename D> hstring impl_INumberFormatter<D>::Format(double value) const
 {
     hstring result;
-    check_hresult(static_cast<const INumberFormatter &>(static_cast<const D &>(*this))->abi_FormatDouble(value, put(result)));
+    check_hresult(WINRT_SHIM(INumberFormatter)->abi_FormatDouble(value, put(result)));
     return result;
 }
 
 template <typename D> hstring impl_INumberFormatter2<D>::FormatInt(int64_t value) const
 {
     hstring result;
-    check_hresult(static_cast<const INumberFormatter2 &>(static_cast<const D &>(*this))->abi_FormatInt(value, put(result)));
+    check_hresult(WINRT_SHIM(INumberFormatter2)->abi_FormatInt(value, put(result)));
     return result;
 }
 
 template <typename D> hstring impl_INumberFormatter2<D>::FormatUInt(uint64_t value) const
 {
     hstring result;
-    check_hresult(static_cast<const INumberFormatter2 &>(static_cast<const D &>(*this))->abi_FormatUInt(value, put(result)));
+    check_hresult(WINRT_SHIM(INumberFormatter2)->abi_FormatUInt(value, put(result)));
     return result;
 }
 
 template <typename D> hstring impl_INumberFormatter2<D>::FormatDouble(double value) const
 {
     hstring result;
-    check_hresult(static_cast<const INumberFormatter2 &>(static_cast<const D &>(*this))->abi_FormatDouble(value, put(result)));
+    check_hresult(WINRT_SHIM(INumberFormatter2)->abi_FormatDouble(value, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IReference<int64_t> impl_INumberParser<D>::ParseInt(hstring_ref text) const
 {
     Windows::Foundation::IReference<int64_t> result;
-    check_hresult(static_cast<const INumberParser &>(static_cast<const D &>(*this))->abi_ParseInt(get(text), put(result)));
+    check_hresult(WINRT_SHIM(INumberParser)->abi_ParseInt(get(text), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IReference<uint64_t> impl_INumberParser<D>::ParseUInt(hstring_ref text) const
 {
     Windows::Foundation::IReference<uint64_t> result;
-    check_hresult(static_cast<const INumberParser &>(static_cast<const D &>(*this))->abi_ParseUInt(get(text), put(result)));
+    check_hresult(WINRT_SHIM(INumberParser)->abi_ParseUInt(get(text), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_INumberParser<D>::ParseDouble(hstring_ref text) const
 {
     Windows::Foundation::IReference<double> result;
-    check_hresult(static_cast<const INumberParser &>(static_cast<const D &>(*this))->abi_ParseDouble(get(text), put(result)));
+    check_hresult(WINRT_SHIM(INumberParser)->abi_ParseDouble(get(text), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_INumberFormatterOptions<D>::Languages() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const INumberFormatterOptions &>(static_cast<const D &>(*this))->get_Languages(put(value)));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_Languages(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumberFormatterOptions<D>::GeographicRegion() const
 {
     hstring value;
-    check_hresult(static_cast<const INumberFormatterOptions &>(static_cast<const D &>(*this))->get_GeographicRegion(put(value)));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_GeographicRegion(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_INumberFormatterOptions<D>::IntegerDigits() const
 {
     int32_t value {};
-    check_hresult(static_cast<const INumberFormatterOptions &>(static_cast<const D &>(*this))->get_IntegerDigits(&value));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_IntegerDigits(&value));
     return value;
 }
 
 template <typename D> void impl_INumberFormatterOptions<D>::IntegerDigits(int32_t value) const
 {
-    check_hresult(static_cast<const INumberFormatterOptions &>(static_cast<const D &>(*this))->put_IntegerDigits(value));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->put_IntegerDigits(value));
 }
 
 template <typename D> int32_t impl_INumberFormatterOptions<D>::FractionDigits() const
 {
     int32_t value {};
-    check_hresult(static_cast<const INumberFormatterOptions &>(static_cast<const D &>(*this))->get_FractionDigits(&value));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_FractionDigits(&value));
     return value;
 }
 
 template <typename D> void impl_INumberFormatterOptions<D>::FractionDigits(int32_t value) const
 {
-    check_hresult(static_cast<const INumberFormatterOptions &>(static_cast<const D &>(*this))->put_FractionDigits(value));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->put_FractionDigits(value));
 }
 
 template <typename D> bool impl_INumberFormatterOptions<D>::IsGrouped() const
 {
     bool value {};
-    check_hresult(static_cast<const INumberFormatterOptions &>(static_cast<const D &>(*this))->get_IsGrouped(&value));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_IsGrouped(&value));
     return value;
 }
 
 template <typename D> void impl_INumberFormatterOptions<D>::IsGrouped(bool value) const
 {
-    check_hresult(static_cast<const INumberFormatterOptions &>(static_cast<const D &>(*this))->put_IsGrouped(value));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->put_IsGrouped(value));
 }
 
 template <typename D> bool impl_INumberFormatterOptions<D>::IsDecimalPointAlwaysDisplayed() const
 {
     bool value {};
-    check_hresult(static_cast<const INumberFormatterOptions &>(static_cast<const D &>(*this))->get_IsDecimalPointAlwaysDisplayed(&value));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_IsDecimalPointAlwaysDisplayed(&value));
     return value;
 }
 
 template <typename D> void impl_INumberFormatterOptions<D>::IsDecimalPointAlwaysDisplayed(bool value) const
 {
-    check_hresult(static_cast<const INumberFormatterOptions &>(static_cast<const D &>(*this))->put_IsDecimalPointAlwaysDisplayed(value));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->put_IsDecimalPointAlwaysDisplayed(value));
 }
 
 template <typename D> hstring impl_INumberFormatterOptions<D>::NumeralSystem() const
 {
     hstring value;
-    check_hresult(static_cast<const INumberFormatterOptions &>(static_cast<const D &>(*this))->get_NumeralSystem(put(value)));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_NumeralSystem(put(value)));
     return value;
 }
 
 template <typename D> void impl_INumberFormatterOptions<D>::NumeralSystem(hstring_ref value) const
 {
-    check_hresult(static_cast<const INumberFormatterOptions &>(static_cast<const D &>(*this))->put_NumeralSystem(get(value)));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->put_NumeralSystem(get(value)));
 }
 
 template <typename D> hstring impl_INumberFormatterOptions<D>::ResolvedLanguage() const
 {
     hstring value;
-    check_hresult(static_cast<const INumberFormatterOptions &>(static_cast<const D &>(*this))->get_ResolvedLanguage(put(value)));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_ResolvedLanguage(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumberFormatterOptions<D>::ResolvedGeographicRegion() const
 {
     hstring value;
-    check_hresult(static_cast<const INumberFormatterOptions &>(static_cast<const D &>(*this))->get_ResolvedGeographicRegion(put(value)));
+    check_hresult(WINRT_SHIM(INumberFormatterOptions)->get_ResolvedGeographicRegion(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_ISignificantDigitsOption<D>::SignificantDigits() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ISignificantDigitsOption &>(static_cast<const D &>(*this))->get_SignificantDigits(&value));
+    check_hresult(WINRT_SHIM(ISignificantDigitsOption)->get_SignificantDigits(&value));
     return value;
 }
 
 template <typename D> void impl_ISignificantDigitsOption<D>::SignificantDigits(int32_t value) const
 {
-    check_hresult(static_cast<const ISignificantDigitsOption &>(static_cast<const D &>(*this))->put_SignificantDigits(value));
+    check_hresult(WINRT_SHIM(ISignificantDigitsOption)->put_SignificantDigits(value));
 }
 
 template <typename D> Windows::Globalization::NumberFormatting::INumberRounder impl_INumberRounderOption<D>::NumberRounder() const
 {
     Windows::Globalization::NumberFormatting::INumberRounder value;
-    check_hresult(static_cast<const INumberRounderOption &>(static_cast<const D &>(*this))->get_NumberRounder(put(value)));
+    check_hresult(WINRT_SHIM(INumberRounderOption)->get_NumberRounder(put(value)));
     return value;
 }
 
 template <typename D> void impl_INumberRounderOption<D>::NumberRounder(const Windows::Globalization::NumberFormatting::INumberRounder & value) const
 {
-    check_hresult(static_cast<const INumberRounderOption &>(static_cast<const D &>(*this))->put_NumberRounder(get(value)));
+    check_hresult(WINRT_SHIM(INumberRounderOption)->put_NumberRounder(get(value)));
 }
 
 template <typename D> bool impl_ISignedZeroOption<D>::IsZeroSigned() const
 {
     bool value {};
-    check_hresult(static_cast<const ISignedZeroOption &>(static_cast<const D &>(*this))->get_IsZeroSigned(&value));
+    check_hresult(WINRT_SHIM(ISignedZeroOption)->get_IsZeroSigned(&value));
     return value;
 }
 
 template <typename D> void impl_ISignedZeroOption<D>::IsZeroSigned(bool value) const
 {
-    check_hresult(static_cast<const ISignedZeroOption &>(static_cast<const D &>(*this))->put_IsZeroSigned(value));
+    check_hresult(WINRT_SHIM(ISignedZeroOption)->put_IsZeroSigned(value));
 }
 
 template <typename D> Windows::Globalization::NumberFormatting::DecimalFormatter impl_IDecimalFormatterFactory<D>::CreateDecimalFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const
 {
     Windows::Globalization::NumberFormatting::DecimalFormatter result { nullptr };
-    check_hresult(static_cast<const IDecimalFormatterFactory &>(static_cast<const D &>(*this))->abi_CreateDecimalFormatter(get(languages), get(geographicRegion), put(result)));
+    check_hresult(WINRT_SHIM(IDecimalFormatterFactory)->abi_CreateDecimalFormatter(get(languages), get(geographicRegion), put(result)));
     return result;
 }
 
 template <typename D> Windows::Globalization::NumberFormatting::PercentFormatter impl_IPercentFormatterFactory<D>::CreatePercentFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const
 {
     Windows::Globalization::NumberFormatting::PercentFormatter result { nullptr };
-    check_hresult(static_cast<const IPercentFormatterFactory &>(static_cast<const D &>(*this))->abi_CreatePercentFormatter(get(languages), get(geographicRegion), put(result)));
+    check_hresult(WINRT_SHIM(IPercentFormatterFactory)->abi_CreatePercentFormatter(get(languages), get(geographicRegion), put(result)));
     return result;
 }
 
 template <typename D> Windows::Globalization::NumberFormatting::PermilleFormatter impl_IPermilleFormatterFactory<D>::CreatePermilleFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const
 {
     Windows::Globalization::NumberFormatting::PermilleFormatter result { nullptr };
-    check_hresult(static_cast<const IPermilleFormatterFactory &>(static_cast<const D &>(*this))->abi_CreatePermilleFormatter(get(languages), get(geographicRegion), put(result)));
+    check_hresult(WINRT_SHIM(IPermilleFormatterFactory)->abi_CreatePermilleFormatter(get(languages), get(geographicRegion), put(result)));
     return result;
 }
 
 template <typename D> Windows::Globalization::NumberFormatting::CurrencyFormatter impl_ICurrencyFormatterFactory<D>::CreateCurrencyFormatterCode(hstring_ref currencyCode) const
 {
     Windows::Globalization::NumberFormatting::CurrencyFormatter result { nullptr };
-    check_hresult(static_cast<const ICurrencyFormatterFactory &>(static_cast<const D &>(*this))->abi_CreateCurrencyFormatterCode(get(currencyCode), put(result)));
+    check_hresult(WINRT_SHIM(ICurrencyFormatterFactory)->abi_CreateCurrencyFormatterCode(get(currencyCode), put(result)));
     return result;
 }
 
 template <typename D> Windows::Globalization::NumberFormatting::CurrencyFormatter impl_ICurrencyFormatterFactory<D>::CreateCurrencyFormatterCodeContext(hstring_ref currencyCode, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const
 {
     Windows::Globalization::NumberFormatting::CurrencyFormatter result { nullptr };
-    check_hresult(static_cast<const ICurrencyFormatterFactory &>(static_cast<const D &>(*this))->abi_CreateCurrencyFormatterCodeContext(get(currencyCode), get(languages), get(geographicRegion), put(result)));
+    check_hresult(WINRT_SHIM(ICurrencyFormatterFactory)->abi_CreateCurrencyFormatterCodeContext(get(currencyCode), get(languages), get(geographicRegion), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICurrencyFormatter<D>::Currency() const
 {
     hstring value;
-    check_hresult(static_cast<const ICurrencyFormatter &>(static_cast<const D &>(*this))->get_Currency(put(value)));
+    check_hresult(WINRT_SHIM(ICurrencyFormatter)->get_Currency(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICurrencyFormatter<D>::Currency(hstring_ref value) const
 {
-    check_hresult(static_cast<const ICurrencyFormatter &>(static_cast<const D &>(*this))->put_Currency(get(value)));
+    check_hresult(WINRT_SHIM(ICurrencyFormatter)->put_Currency(get(value)));
 }
 
 template <typename D> Windows::Globalization::NumberFormatting::CurrencyFormatterMode impl_ICurrencyFormatter2<D>::Mode() const
 {
     Windows::Globalization::NumberFormatting::CurrencyFormatterMode value {};
-    check_hresult(static_cast<const ICurrencyFormatter2 &>(static_cast<const D &>(*this))->get_Mode(&value));
+    check_hresult(WINRT_SHIM(ICurrencyFormatter2)->get_Mode(&value));
     return value;
 }
 
 template <typename D> void impl_ICurrencyFormatter2<D>::Mode(Windows::Globalization::NumberFormatting::CurrencyFormatterMode value) const
 {
-    check_hresult(static_cast<const ICurrencyFormatter2 &>(static_cast<const D &>(*this))->put_Mode(value));
+    check_hresult(WINRT_SHIM(ICurrencyFormatter2)->put_Mode(value));
 }
 
 template <typename D> void impl_ICurrencyFormatter2<D>::ApplyRoundingForCurrency(Windows::Globalization::NumberFormatting::RoundingAlgorithm roundingAlgorithm) const
 {
-    check_hresult(static_cast<const ICurrencyFormatter2 &>(static_cast<const D &>(*this))->abi_ApplyRoundingForCurrency(roundingAlgorithm));
+    check_hresult(WINRT_SHIM(ICurrencyFormatter2)->abi_ApplyRoundingForCurrency(roundingAlgorithm));
 }
 
 template <typename D> Windows::Globalization::NumberFormatting::NumeralSystemTranslator impl_INumeralSystemTranslatorFactory<D>::Create(const Windows::Foundation::Collections::IIterable<hstring> & languages) const
 {
     Windows::Globalization::NumberFormatting::NumeralSystemTranslator result { nullptr };
-    check_hresult(static_cast<const INumeralSystemTranslatorFactory &>(static_cast<const D &>(*this))->abi_Create(get(languages), put(result)));
+    check_hresult(WINRT_SHIM(INumeralSystemTranslatorFactory)->abi_Create(get(languages), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_INumeralSystemTranslator<D>::Languages() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const INumeralSystemTranslator &>(static_cast<const D &>(*this))->get_Languages(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemTranslator)->get_Languages(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemTranslator<D>::ResolvedLanguage() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemTranslator &>(static_cast<const D &>(*this))->get_ResolvedLanguage(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemTranslator)->get_ResolvedLanguage(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INumeralSystemTranslator<D>::NumeralSystem() const
 {
     hstring value;
-    check_hresult(static_cast<const INumeralSystemTranslator &>(static_cast<const D &>(*this))->get_NumeralSystem(put(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemTranslator)->get_NumeralSystem(put(value)));
     return value;
 }
 
 template <typename D> void impl_INumeralSystemTranslator<D>::NumeralSystem(hstring_ref value) const
 {
-    check_hresult(static_cast<const INumeralSystemTranslator &>(static_cast<const D &>(*this))->put_NumeralSystem(get(value)));
+    check_hresult(WINRT_SHIM(INumeralSystemTranslator)->put_NumeralSystem(get(value)));
 }
 
 template <typename D> hstring impl_INumeralSystemTranslator<D>::TranslateNumerals(hstring_ref value) const
 {
     hstring result;
-    check_hresult(static_cast<const INumeralSystemTranslator &>(static_cast<const D &>(*this))->abi_TranslateNumerals(get(value), put(result)));
+    check_hresult(WINRT_SHIM(INumeralSystemTranslator)->abi_TranslateNumerals(get(value), put(result)));
     return result;
 }
 

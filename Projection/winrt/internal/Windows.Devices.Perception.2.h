@@ -400,7 +400,6 @@ struct IKnownCameraIntrinsicsPropertiesStatics :
     impl::consume<IKnownCameraIntrinsicsPropertiesStatics>
 {
     IKnownCameraIntrinsicsPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownCameraIntrinsicsPropertiesStatics>(m_ptr); }
 };
 
 struct IKnownPerceptionColorFrameSourcePropertiesStatics :
@@ -408,7 +407,6 @@ struct IKnownPerceptionColorFrameSourcePropertiesStatics :
     impl::consume<IKnownPerceptionColorFrameSourcePropertiesStatics>
 {
     IKnownPerceptionColorFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownPerceptionColorFrameSourcePropertiesStatics>(m_ptr); }
 };
 
 struct IKnownPerceptionDepthFrameSourcePropertiesStatics :
@@ -416,7 +414,6 @@ struct IKnownPerceptionDepthFrameSourcePropertiesStatics :
     impl::consume<IKnownPerceptionDepthFrameSourcePropertiesStatics>
 {
     IKnownPerceptionDepthFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownPerceptionDepthFrameSourcePropertiesStatics>(m_ptr); }
 };
 
 struct IKnownPerceptionFrameSourcePropertiesStatics :
@@ -424,7 +421,6 @@ struct IKnownPerceptionFrameSourcePropertiesStatics :
     impl::consume<IKnownPerceptionFrameSourcePropertiesStatics>
 {
     IKnownPerceptionFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownPerceptionFrameSourcePropertiesStatics>(m_ptr); }
 };
 
 struct IKnownPerceptionFrameSourcePropertiesStatics2 :
@@ -432,7 +428,6 @@ struct IKnownPerceptionFrameSourcePropertiesStatics2 :
     impl::consume<IKnownPerceptionFrameSourcePropertiesStatics2>
 {
     IKnownPerceptionFrameSourcePropertiesStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownPerceptionFrameSourcePropertiesStatics2>(m_ptr); }
 };
 
 struct IKnownPerceptionInfraredFrameSourcePropertiesStatics :
@@ -440,7 +435,6 @@ struct IKnownPerceptionInfraredFrameSourcePropertiesStatics :
     impl::consume<IKnownPerceptionInfraredFrameSourcePropertiesStatics>
 {
     IKnownPerceptionInfraredFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownPerceptionInfraredFrameSourcePropertiesStatics>(m_ptr); }
 };
 
 struct IKnownPerceptionVideoFrameSourcePropertiesStatics :
@@ -448,7 +442,6 @@ struct IKnownPerceptionVideoFrameSourcePropertiesStatics :
     impl::consume<IKnownPerceptionVideoFrameSourcePropertiesStatics>
 {
     IKnownPerceptionVideoFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownPerceptionVideoFrameSourcePropertiesStatics>(m_ptr); }
 };
 
 struct IKnownPerceptionVideoProfilePropertiesStatics :
@@ -456,7 +449,6 @@ struct IKnownPerceptionVideoProfilePropertiesStatics :
     impl::consume<IKnownPerceptionVideoProfilePropertiesStatics>
 {
     IKnownPerceptionVideoProfilePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownPerceptionVideoProfilePropertiesStatics>(m_ptr); }
 };
 
 struct IPerceptionColorFrame :
@@ -465,7 +457,6 @@ struct IPerceptionColorFrame :
     impl::require<IPerceptionColorFrame, Windows::Foundation::IClosable>
 {
     IPerceptionColorFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionColorFrame>(m_ptr); }
 };
 
 struct IPerceptionColorFrameArrivedEventArgs :
@@ -473,7 +464,6 @@ struct IPerceptionColorFrameArrivedEventArgs :
     impl::consume<IPerceptionColorFrameArrivedEventArgs>
 {
     IPerceptionColorFrameArrivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionColorFrameArrivedEventArgs>(m_ptr); }
 };
 
 struct IPerceptionColorFrameReader :
@@ -482,7 +472,6 @@ struct IPerceptionColorFrameReader :
     impl::require<IPerceptionColorFrameReader, Windows::Foundation::IClosable>
 {
     IPerceptionColorFrameReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionColorFrameReader>(m_ptr); }
 };
 
 struct IPerceptionColorFrameSource :
@@ -490,7 +479,6 @@ struct IPerceptionColorFrameSource :
     impl::consume<IPerceptionColorFrameSource>
 {
     IPerceptionColorFrameSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionColorFrameSource>(m_ptr); }
 };
 
 struct IPerceptionColorFrameSource2 :
@@ -498,7 +486,6 @@ struct IPerceptionColorFrameSource2 :
     impl::consume<IPerceptionColorFrameSource2>
 {
     IPerceptionColorFrameSource2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionColorFrameSource2>(m_ptr); }
 };
 
 struct IPerceptionColorFrameSourceAddedEventArgs :
@@ -506,7 +493,6 @@ struct IPerceptionColorFrameSourceAddedEventArgs :
     impl::consume<IPerceptionColorFrameSourceAddedEventArgs>
 {
     IPerceptionColorFrameSourceAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionColorFrameSourceAddedEventArgs>(m_ptr); }
 };
 
 struct IPerceptionColorFrameSourceRemovedEventArgs :
@@ -514,7 +500,6 @@ struct IPerceptionColorFrameSourceRemovedEventArgs :
     impl::consume<IPerceptionColorFrameSourceRemovedEventArgs>
 {
     IPerceptionColorFrameSourceRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionColorFrameSourceRemovedEventArgs>(m_ptr); }
 };
 
 struct IPerceptionColorFrameSourceStatics :
@@ -522,7 +507,6 @@ struct IPerceptionColorFrameSourceStatics :
     impl::consume<IPerceptionColorFrameSourceStatics>
 {
     IPerceptionColorFrameSourceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionColorFrameSourceStatics>(m_ptr); }
 };
 
 struct IPerceptionColorFrameSourceWatcher :
@@ -530,7 +514,6 @@ struct IPerceptionColorFrameSourceWatcher :
     impl::consume<IPerceptionColorFrameSourceWatcher>
 {
     IPerceptionColorFrameSourceWatcher(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionColorFrameSourceWatcher>(m_ptr); }
 };
 
 struct IPerceptionControlSession :
@@ -539,7 +522,6 @@ struct IPerceptionControlSession :
     impl::require<IPerceptionControlSession, Windows::Foundation::IClosable>
 {
     IPerceptionControlSession(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionControlSession>(m_ptr); }
 };
 
 struct IPerceptionDepthCorrelatedCameraIntrinsics :
@@ -547,7 +529,6 @@ struct IPerceptionDepthCorrelatedCameraIntrinsics :
     impl::consume<IPerceptionDepthCorrelatedCameraIntrinsics>
 {
     IPerceptionDepthCorrelatedCameraIntrinsics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionDepthCorrelatedCameraIntrinsics>(m_ptr); }
 };
 
 struct IPerceptionDepthCorrelatedCoordinateMapper :
@@ -555,7 +536,6 @@ struct IPerceptionDepthCorrelatedCoordinateMapper :
     impl::consume<IPerceptionDepthCorrelatedCoordinateMapper>
 {
     IPerceptionDepthCorrelatedCoordinateMapper(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionDepthCorrelatedCoordinateMapper>(m_ptr); }
 };
 
 struct IPerceptionDepthFrame :
@@ -564,7 +544,6 @@ struct IPerceptionDepthFrame :
     impl::require<IPerceptionDepthFrame, Windows::Foundation::IClosable>
 {
     IPerceptionDepthFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionDepthFrame>(m_ptr); }
 };
 
 struct IPerceptionDepthFrameArrivedEventArgs :
@@ -572,7 +551,6 @@ struct IPerceptionDepthFrameArrivedEventArgs :
     impl::consume<IPerceptionDepthFrameArrivedEventArgs>
 {
     IPerceptionDepthFrameArrivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionDepthFrameArrivedEventArgs>(m_ptr); }
 };
 
 struct IPerceptionDepthFrameReader :
@@ -581,7 +559,6 @@ struct IPerceptionDepthFrameReader :
     impl::require<IPerceptionDepthFrameReader, Windows::Foundation::IClosable>
 {
     IPerceptionDepthFrameReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionDepthFrameReader>(m_ptr); }
 };
 
 struct IPerceptionDepthFrameSource :
@@ -589,7 +566,6 @@ struct IPerceptionDepthFrameSource :
     impl::consume<IPerceptionDepthFrameSource>
 {
     IPerceptionDepthFrameSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionDepthFrameSource>(m_ptr); }
 };
 
 struct IPerceptionDepthFrameSource2 :
@@ -597,7 +573,6 @@ struct IPerceptionDepthFrameSource2 :
     impl::consume<IPerceptionDepthFrameSource2>
 {
     IPerceptionDepthFrameSource2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionDepthFrameSource2>(m_ptr); }
 };
 
 struct IPerceptionDepthFrameSourceAddedEventArgs :
@@ -605,7 +580,6 @@ struct IPerceptionDepthFrameSourceAddedEventArgs :
     impl::consume<IPerceptionDepthFrameSourceAddedEventArgs>
 {
     IPerceptionDepthFrameSourceAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionDepthFrameSourceAddedEventArgs>(m_ptr); }
 };
 
 struct IPerceptionDepthFrameSourceRemovedEventArgs :
@@ -613,7 +587,6 @@ struct IPerceptionDepthFrameSourceRemovedEventArgs :
     impl::consume<IPerceptionDepthFrameSourceRemovedEventArgs>
 {
     IPerceptionDepthFrameSourceRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionDepthFrameSourceRemovedEventArgs>(m_ptr); }
 };
 
 struct IPerceptionDepthFrameSourceStatics :
@@ -621,7 +594,6 @@ struct IPerceptionDepthFrameSourceStatics :
     impl::consume<IPerceptionDepthFrameSourceStatics>
 {
     IPerceptionDepthFrameSourceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionDepthFrameSourceStatics>(m_ptr); }
 };
 
 struct IPerceptionDepthFrameSourceWatcher :
@@ -629,7 +601,6 @@ struct IPerceptionDepthFrameSourceWatcher :
     impl::consume<IPerceptionDepthFrameSourceWatcher>
 {
     IPerceptionDepthFrameSourceWatcher(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionDepthFrameSourceWatcher>(m_ptr); }
 };
 
 struct IPerceptionFrameSourcePropertiesChangedEventArgs :
@@ -637,7 +608,6 @@ struct IPerceptionFrameSourcePropertiesChangedEventArgs :
     impl::consume<IPerceptionFrameSourcePropertiesChangedEventArgs>
 {
     IPerceptionFrameSourcePropertiesChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionFrameSourcePropertiesChangedEventArgs>(m_ptr); }
 };
 
 struct IPerceptionFrameSourcePropertyChangeResult :
@@ -645,7 +615,6 @@ struct IPerceptionFrameSourcePropertyChangeResult :
     impl::consume<IPerceptionFrameSourcePropertyChangeResult>
 {
     IPerceptionFrameSourcePropertyChangeResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionFrameSourcePropertyChangeResult>(m_ptr); }
 };
 
 struct IPerceptionInfraredFrame :
@@ -654,7 +623,6 @@ struct IPerceptionInfraredFrame :
     impl::require<IPerceptionInfraredFrame, Windows::Foundation::IClosable>
 {
     IPerceptionInfraredFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionInfraredFrame>(m_ptr); }
 };
 
 struct IPerceptionInfraredFrameArrivedEventArgs :
@@ -662,7 +630,6 @@ struct IPerceptionInfraredFrameArrivedEventArgs :
     impl::consume<IPerceptionInfraredFrameArrivedEventArgs>
 {
     IPerceptionInfraredFrameArrivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionInfraredFrameArrivedEventArgs>(m_ptr); }
 };
 
 struct IPerceptionInfraredFrameReader :
@@ -671,7 +638,6 @@ struct IPerceptionInfraredFrameReader :
     impl::require<IPerceptionInfraredFrameReader, Windows::Foundation::IClosable>
 {
     IPerceptionInfraredFrameReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionInfraredFrameReader>(m_ptr); }
 };
 
 struct IPerceptionInfraredFrameSource :
@@ -679,7 +645,6 @@ struct IPerceptionInfraredFrameSource :
     impl::consume<IPerceptionInfraredFrameSource>
 {
     IPerceptionInfraredFrameSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionInfraredFrameSource>(m_ptr); }
 };
 
 struct IPerceptionInfraredFrameSource2 :
@@ -687,7 +652,6 @@ struct IPerceptionInfraredFrameSource2 :
     impl::consume<IPerceptionInfraredFrameSource2>
 {
     IPerceptionInfraredFrameSource2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionInfraredFrameSource2>(m_ptr); }
 };
 
 struct IPerceptionInfraredFrameSourceAddedEventArgs :
@@ -695,7 +659,6 @@ struct IPerceptionInfraredFrameSourceAddedEventArgs :
     impl::consume<IPerceptionInfraredFrameSourceAddedEventArgs>
 {
     IPerceptionInfraredFrameSourceAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionInfraredFrameSourceAddedEventArgs>(m_ptr); }
 };
 
 struct IPerceptionInfraredFrameSourceRemovedEventArgs :
@@ -703,7 +666,6 @@ struct IPerceptionInfraredFrameSourceRemovedEventArgs :
     impl::consume<IPerceptionInfraredFrameSourceRemovedEventArgs>
 {
     IPerceptionInfraredFrameSourceRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionInfraredFrameSourceRemovedEventArgs>(m_ptr); }
 };
 
 struct IPerceptionInfraredFrameSourceStatics :
@@ -711,7 +673,6 @@ struct IPerceptionInfraredFrameSourceStatics :
     impl::consume<IPerceptionInfraredFrameSourceStatics>
 {
     IPerceptionInfraredFrameSourceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionInfraredFrameSourceStatics>(m_ptr); }
 };
 
 struct IPerceptionInfraredFrameSourceWatcher :
@@ -719,7 +680,6 @@ struct IPerceptionInfraredFrameSourceWatcher :
     impl::consume<IPerceptionInfraredFrameSourceWatcher>
 {
     IPerceptionInfraredFrameSourceWatcher(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionInfraredFrameSourceWatcher>(m_ptr); }
 };
 
 struct IPerceptionVideoProfile :
@@ -727,7 +687,6 @@ struct IPerceptionVideoProfile :
     impl::consume<IPerceptionVideoProfile>
 {
     IPerceptionVideoProfile(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionVideoProfile>(m_ptr); }
 };
 
 }

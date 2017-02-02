@@ -100,35 +100,35 @@ namespace Windows::Devices::Background {
 template <typename D> hstring impl_IDeviceUseDetails<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IDeviceUseDetails &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceUseDetails)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDeviceUseDetails<D>::Arguments() const
 {
     hstring value;
-    check_hresult(static_cast<const IDeviceUseDetails &>(static_cast<const D &>(*this))->get_Arguments(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceUseDetails)->get_Arguments(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDeviceServicingDetails<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IDeviceServicingDetails &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceServicingDetails)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDeviceServicingDetails<D>::Arguments() const
 {
     hstring value;
-    check_hresult(static_cast<const IDeviceServicingDetails &>(static_cast<const D &>(*this))->get_Arguments(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceServicingDetails)->get_Arguments(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IDeviceServicingDetails<D>::ExpectedDuration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IDeviceServicingDetails &>(static_cast<const D &>(*this))->get_ExpectedDuration(put(value)));
+    check_hresult(WINRT_SHIM(IDeviceServicingDetails)->get_ExpectedDuration(put(value)));
     return value;
 }
 

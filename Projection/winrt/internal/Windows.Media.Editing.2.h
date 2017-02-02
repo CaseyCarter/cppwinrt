@@ -324,7 +324,6 @@ struct IBackgroundAudioTrack :
     impl::consume<IBackgroundAudioTrack>
 {
     IBackgroundAudioTrack(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundAudioTrack>(m_ptr); }
 };
 
 struct IBackgroundAudioTrackStatics :
@@ -332,7 +331,6 @@ struct IBackgroundAudioTrackStatics :
     impl::consume<IBackgroundAudioTrackStatics>
 {
     IBackgroundAudioTrackStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundAudioTrackStatics>(m_ptr); }
 };
 
 struct IEmbeddedAudioTrack :
@@ -340,7 +338,6 @@ struct IEmbeddedAudioTrack :
     impl::consume<IEmbeddedAudioTrack>
 {
     IEmbeddedAudioTrack(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmbeddedAudioTrack>(m_ptr); }
 };
 
 struct IMediaClip :
@@ -348,7 +345,6 @@ struct IMediaClip :
     impl::consume<IMediaClip>
 {
     IMediaClip(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaClip>(m_ptr); }
 };
 
 struct IMediaClipStatics :
@@ -356,7 +352,6 @@ struct IMediaClipStatics :
     impl::consume<IMediaClipStatics>
 {
     IMediaClipStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaClipStatics>(m_ptr); }
 };
 
 struct IMediaClipStatics2 :
@@ -364,7 +359,6 @@ struct IMediaClipStatics2 :
     impl::consume<IMediaClipStatics2>
 {
     IMediaClipStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaClipStatics2>(m_ptr); }
 };
 
 struct IMediaComposition :
@@ -372,7 +366,6 @@ struct IMediaComposition :
     impl::consume<IMediaComposition>
 {
     IMediaComposition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaComposition>(m_ptr); }
 };
 
 struct IMediaComposition2 :
@@ -380,7 +373,6 @@ struct IMediaComposition2 :
     impl::consume<IMediaComposition2>
 {
     IMediaComposition2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaComposition2>(m_ptr); }
 };
 
 struct IMediaCompositionStatics :
@@ -388,7 +380,6 @@ struct IMediaCompositionStatics :
     impl::consume<IMediaCompositionStatics>
 {
     IMediaCompositionStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCompositionStatics>(m_ptr); }
 };
 
 struct IMediaOverlay :
@@ -396,7 +387,6 @@ struct IMediaOverlay :
     impl::consume<IMediaOverlay>
 {
     IMediaOverlay(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaOverlay>(m_ptr); }
 };
 
 struct IMediaOverlayFactory :
@@ -404,7 +394,6 @@ struct IMediaOverlayFactory :
     impl::consume<IMediaOverlayFactory>
 {
     IMediaOverlayFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaOverlayFactory>(m_ptr); }
 };
 
 struct IMediaOverlayLayer :
@@ -412,7 +401,6 @@ struct IMediaOverlayLayer :
     impl::consume<IMediaOverlayLayer>
 {
     IMediaOverlayLayer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaOverlayLayer>(m_ptr); }
 };
 
 struct IMediaOverlayLayerFactory :
@@ -420,7 +408,6 @@ struct IMediaOverlayLayerFactory :
     impl::consume<IMediaOverlayLayerFactory>
 {
     IMediaOverlayLayerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaOverlayLayerFactory>(m_ptr); }
 };
 
 }

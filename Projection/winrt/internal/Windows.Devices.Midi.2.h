@@ -56,7 +56,6 @@ struct IMidiChannelPressureMessage :
     impl::require<IMidiChannelPressureMessage, Windows::Devices::Midi::IMidiMessage>
 {
     IMidiChannelPressureMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiChannelPressureMessage>(m_ptr); }
 };
 
 struct IMidiChannelPressureMessageFactory :
@@ -64,7 +63,6 @@ struct IMidiChannelPressureMessageFactory :
     impl::consume<IMidiChannelPressureMessageFactory>
 {
     IMidiChannelPressureMessageFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiChannelPressureMessageFactory>(m_ptr); }
 };
 
 struct IMidiControlChangeMessage :
@@ -73,7 +71,6 @@ struct IMidiControlChangeMessage :
     impl::require<IMidiControlChangeMessage, Windows::Devices::Midi::IMidiMessage>
 {
     IMidiControlChangeMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiControlChangeMessage>(m_ptr); }
 };
 
 struct IMidiControlChangeMessageFactory :
@@ -81,7 +78,6 @@ struct IMidiControlChangeMessageFactory :
     impl::consume<IMidiControlChangeMessageFactory>
 {
     IMidiControlChangeMessageFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiControlChangeMessageFactory>(m_ptr); }
 };
 
 struct IMidiInPort :
@@ -90,7 +86,6 @@ struct IMidiInPort :
     impl::require<IMidiInPort, Windows::Foundation::IClosable>
 {
     IMidiInPort(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiInPort>(m_ptr); }
 };
 
 struct IMidiInPortStatics :
@@ -98,7 +93,6 @@ struct IMidiInPortStatics :
     impl::consume<IMidiInPortStatics>
 {
     IMidiInPortStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiInPortStatics>(m_ptr); }
 };
 
 struct IMidiMessage :
@@ -106,7 +100,6 @@ struct IMidiMessage :
     impl::consume<IMidiMessage>
 {
     IMidiMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiMessage>(m_ptr); }
 };
 
 struct IMidiMessageReceivedEventArgs :
@@ -114,7 +107,6 @@ struct IMidiMessageReceivedEventArgs :
     impl::consume<IMidiMessageReceivedEventArgs>
 {
     IMidiMessageReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiMessageReceivedEventArgs>(m_ptr); }
 };
 
 struct IMidiNoteOffMessage :
@@ -123,7 +115,6 @@ struct IMidiNoteOffMessage :
     impl::require<IMidiNoteOffMessage, Windows::Devices::Midi::IMidiMessage>
 {
     IMidiNoteOffMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiNoteOffMessage>(m_ptr); }
 };
 
 struct IMidiNoteOffMessageFactory :
@@ -131,7 +122,6 @@ struct IMidiNoteOffMessageFactory :
     impl::consume<IMidiNoteOffMessageFactory>
 {
     IMidiNoteOffMessageFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiNoteOffMessageFactory>(m_ptr); }
 };
 
 struct IMidiNoteOnMessage :
@@ -140,7 +130,6 @@ struct IMidiNoteOnMessage :
     impl::require<IMidiNoteOnMessage, Windows::Devices::Midi::IMidiMessage>
 {
     IMidiNoteOnMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiNoteOnMessage>(m_ptr); }
 };
 
 struct IMidiNoteOnMessageFactory :
@@ -148,7 +137,6 @@ struct IMidiNoteOnMessageFactory :
     impl::consume<IMidiNoteOnMessageFactory>
 {
     IMidiNoteOnMessageFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiNoteOnMessageFactory>(m_ptr); }
 };
 
 struct IMidiOutPort :
@@ -157,7 +145,6 @@ struct IMidiOutPort :
     impl::require<IMidiOutPort, Windows::Foundation::IClosable>
 {
     IMidiOutPort(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiOutPort>(m_ptr); }
 };
 
 struct IMidiOutPortStatics :
@@ -165,7 +152,6 @@ struct IMidiOutPortStatics :
     impl::consume<IMidiOutPortStatics>
 {
     IMidiOutPortStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiOutPortStatics>(m_ptr); }
 };
 
 struct IMidiPitchBendChangeMessage :
@@ -174,7 +160,6 @@ struct IMidiPitchBendChangeMessage :
     impl::require<IMidiPitchBendChangeMessage, Windows::Devices::Midi::IMidiMessage>
 {
     IMidiPitchBendChangeMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiPitchBendChangeMessage>(m_ptr); }
 };
 
 struct IMidiPitchBendChangeMessageFactory :
@@ -182,7 +167,6 @@ struct IMidiPitchBendChangeMessageFactory :
     impl::consume<IMidiPitchBendChangeMessageFactory>
 {
     IMidiPitchBendChangeMessageFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiPitchBendChangeMessageFactory>(m_ptr); }
 };
 
 struct IMidiPolyphonicKeyPressureMessage :
@@ -191,7 +175,6 @@ struct IMidiPolyphonicKeyPressureMessage :
     impl::require<IMidiPolyphonicKeyPressureMessage, Windows::Devices::Midi::IMidiMessage>
 {
     IMidiPolyphonicKeyPressureMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiPolyphonicKeyPressureMessage>(m_ptr); }
 };
 
 struct IMidiPolyphonicKeyPressureMessageFactory :
@@ -199,7 +182,6 @@ struct IMidiPolyphonicKeyPressureMessageFactory :
     impl::consume<IMidiPolyphonicKeyPressureMessageFactory>
 {
     IMidiPolyphonicKeyPressureMessageFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiPolyphonicKeyPressureMessageFactory>(m_ptr); }
 };
 
 struct IMidiProgramChangeMessage :
@@ -208,7 +190,6 @@ struct IMidiProgramChangeMessage :
     impl::require<IMidiProgramChangeMessage, Windows::Devices::Midi::IMidiMessage>
 {
     IMidiProgramChangeMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiProgramChangeMessage>(m_ptr); }
 };
 
 struct IMidiProgramChangeMessageFactory :
@@ -216,7 +197,6 @@ struct IMidiProgramChangeMessageFactory :
     impl::consume<IMidiProgramChangeMessageFactory>
 {
     IMidiProgramChangeMessageFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiProgramChangeMessageFactory>(m_ptr); }
 };
 
 struct IMidiSongPositionPointerMessage :
@@ -225,7 +205,6 @@ struct IMidiSongPositionPointerMessage :
     impl::require<IMidiSongPositionPointerMessage, Windows::Devices::Midi::IMidiMessage>
 {
     IMidiSongPositionPointerMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiSongPositionPointerMessage>(m_ptr); }
 };
 
 struct IMidiSongPositionPointerMessageFactory :
@@ -233,7 +212,6 @@ struct IMidiSongPositionPointerMessageFactory :
     impl::consume<IMidiSongPositionPointerMessageFactory>
 {
     IMidiSongPositionPointerMessageFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiSongPositionPointerMessageFactory>(m_ptr); }
 };
 
 struct IMidiSongSelectMessage :
@@ -242,7 +220,6 @@ struct IMidiSongSelectMessage :
     impl::require<IMidiSongSelectMessage, Windows::Devices::Midi::IMidiMessage>
 {
     IMidiSongSelectMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiSongSelectMessage>(m_ptr); }
 };
 
 struct IMidiSongSelectMessageFactory :
@@ -250,7 +227,6 @@ struct IMidiSongSelectMessageFactory :
     impl::consume<IMidiSongSelectMessageFactory>
 {
     IMidiSongSelectMessageFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiSongSelectMessageFactory>(m_ptr); }
 };
 
 struct IMidiSynthesizer :
@@ -259,7 +235,6 @@ struct IMidiSynthesizer :
     impl::require<IMidiSynthesizer, Windows::Devices::Midi::IMidiOutPort, Windows::Foundation::IClosable>
 {
     IMidiSynthesizer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiSynthesizer>(m_ptr); }
 };
 
 struct IMidiSynthesizerStatics :
@@ -267,7 +242,6 @@ struct IMidiSynthesizerStatics :
     impl::consume<IMidiSynthesizerStatics>
 {
     IMidiSynthesizerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiSynthesizerStatics>(m_ptr); }
 };
 
 struct IMidiSystemExclusiveMessageFactory :
@@ -275,7 +249,6 @@ struct IMidiSystemExclusiveMessageFactory :
     impl::consume<IMidiSystemExclusiveMessageFactory>
 {
     IMidiSystemExclusiveMessageFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiSystemExclusiveMessageFactory>(m_ptr); }
 };
 
 struct IMidiTimeCodeMessage :
@@ -284,7 +257,6 @@ struct IMidiTimeCodeMessage :
     impl::require<IMidiTimeCodeMessage, Windows::Devices::Midi::IMidiMessage>
 {
     IMidiTimeCodeMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiTimeCodeMessage>(m_ptr); }
 };
 
 struct IMidiTimeCodeMessageFactory :
@@ -292,7 +264,6 @@ struct IMidiTimeCodeMessageFactory :
     impl::consume<IMidiTimeCodeMessageFactory>
 {
     IMidiTimeCodeMessageFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMidiTimeCodeMessageFactory>(m_ptr); }
 };
 
 }

@@ -27,7 +27,7 @@ template <typename O, typename M> PrintTaskSourceRequestedHandler::PrintTaskSour
 
 inline void PrintTaskSourceRequestedHandler::operator()(const Windows::Graphics::Printing::PrintTaskSourceRequestedArgs & args) const
 {
-    check_hresult((*this)->abi_Invoke(get(args)));
+    check_hresult((*(abi<PrintTaskSourceRequestedHandler> **)this)->abi_Invoke(get(args)));
 }
 
 }
@@ -1353,380 +1353,380 @@ namespace Windows::Graphics::Printing {
 
 template <typename D> void impl_IPrintTaskOptionsCoreProperties<D>::MediaSize(Windows::Graphics::Printing::PrintMediaSize value) const
 {
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->put_MediaSize(value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->put_MediaSize(value));
 }
 
 template <typename D> Windows::Graphics::Printing::PrintMediaSize impl_IPrintTaskOptionsCoreProperties<D>::MediaSize() const
 {
     Windows::Graphics::Printing::PrintMediaSize value {};
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->get_MediaSize(&value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->get_MediaSize(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintTaskOptionsCoreProperties<D>::MediaType(Windows::Graphics::Printing::PrintMediaType value) const
 {
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->put_MediaType(value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->put_MediaType(value));
 }
 
 template <typename D> Windows::Graphics::Printing::PrintMediaType impl_IPrintTaskOptionsCoreProperties<D>::MediaType() const
 {
     Windows::Graphics::Printing::PrintMediaType value {};
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->get_MediaType(&value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->get_MediaType(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintTaskOptionsCoreProperties<D>::Orientation(Windows::Graphics::Printing::PrintOrientation value) const
 {
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->put_Orientation(value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->put_Orientation(value));
 }
 
 template <typename D> Windows::Graphics::Printing::PrintOrientation impl_IPrintTaskOptionsCoreProperties<D>::Orientation() const
 {
     Windows::Graphics::Printing::PrintOrientation value {};
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->get_Orientation(&value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->get_Orientation(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintTaskOptionsCoreProperties<D>::PrintQuality(Windows::Graphics::Printing::PrintQuality value) const
 {
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->put_PrintQuality(value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->put_PrintQuality(value));
 }
 
 template <typename D> Windows::Graphics::Printing::PrintQuality impl_IPrintTaskOptionsCoreProperties<D>::PrintQuality() const
 {
     Windows::Graphics::Printing::PrintQuality value {};
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->get_PrintQuality(&value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->get_PrintQuality(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintTaskOptionsCoreProperties<D>::ColorMode(Windows::Graphics::Printing::PrintColorMode value) const
 {
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->put_ColorMode(value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->put_ColorMode(value));
 }
 
 template <typename D> Windows::Graphics::Printing::PrintColorMode impl_IPrintTaskOptionsCoreProperties<D>::ColorMode() const
 {
     Windows::Graphics::Printing::PrintColorMode value {};
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->get_ColorMode(&value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->get_ColorMode(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintTaskOptionsCoreProperties<D>::Duplex(Windows::Graphics::Printing::PrintDuplex value) const
 {
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->put_Duplex(value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->put_Duplex(value));
 }
 
 template <typename D> Windows::Graphics::Printing::PrintDuplex impl_IPrintTaskOptionsCoreProperties<D>::Duplex() const
 {
     Windows::Graphics::Printing::PrintDuplex value {};
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->get_Duplex(&value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->get_Duplex(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintTaskOptionsCoreProperties<D>::Collation(Windows::Graphics::Printing::PrintCollation value) const
 {
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->put_Collation(value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->put_Collation(value));
 }
 
 template <typename D> Windows::Graphics::Printing::PrintCollation impl_IPrintTaskOptionsCoreProperties<D>::Collation() const
 {
     Windows::Graphics::Printing::PrintCollation value {};
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->get_Collation(&value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->get_Collation(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintTaskOptionsCoreProperties<D>::Staple(Windows::Graphics::Printing::PrintStaple value) const
 {
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->put_Staple(value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->put_Staple(value));
 }
 
 template <typename D> Windows::Graphics::Printing::PrintStaple impl_IPrintTaskOptionsCoreProperties<D>::Staple() const
 {
     Windows::Graphics::Printing::PrintStaple value {};
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->get_Staple(&value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->get_Staple(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintTaskOptionsCoreProperties<D>::HolePunch(Windows::Graphics::Printing::PrintHolePunch value) const
 {
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->put_HolePunch(value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->put_HolePunch(value));
 }
 
 template <typename D> Windows::Graphics::Printing::PrintHolePunch impl_IPrintTaskOptionsCoreProperties<D>::HolePunch() const
 {
     Windows::Graphics::Printing::PrintHolePunch value {};
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->get_HolePunch(&value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->get_HolePunch(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintTaskOptionsCoreProperties<D>::Binding(Windows::Graphics::Printing::PrintBinding value) const
 {
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->put_Binding(value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->put_Binding(value));
 }
 
 template <typename D> Windows::Graphics::Printing::PrintBinding impl_IPrintTaskOptionsCoreProperties<D>::Binding() const
 {
     Windows::Graphics::Printing::PrintBinding value {};
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->get_Binding(&value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->get_Binding(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPrintTaskOptionsCoreProperties<D>::MinCopies() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->get_MinCopies(&value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->get_MinCopies(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPrintTaskOptionsCoreProperties<D>::MaxCopies() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->get_MaxCopies(&value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->get_MaxCopies(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintTaskOptionsCoreProperties<D>::NumberOfCopies(uint32_t value) const
 {
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->put_NumberOfCopies(value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->put_NumberOfCopies(value));
 }
 
 template <typename D> uint32_t impl_IPrintTaskOptionsCoreProperties<D>::NumberOfCopies() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrintTaskOptionsCoreProperties &>(static_cast<const D &>(*this))->get_NumberOfCopies(&value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreProperties)->get_NumberOfCopies(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintPageInfo<D>::MediaSize(Windows::Graphics::Printing::PrintMediaSize value) const
 {
-    check_hresult(static_cast<const IPrintPageInfo &>(static_cast<const D &>(*this))->put_MediaSize(value));
+    check_hresult(WINRT_SHIM(IPrintPageInfo)->put_MediaSize(value));
 }
 
 template <typename D> Windows::Graphics::Printing::PrintMediaSize impl_IPrintPageInfo<D>::MediaSize() const
 {
     Windows::Graphics::Printing::PrintMediaSize value {};
-    check_hresult(static_cast<const IPrintPageInfo &>(static_cast<const D &>(*this))->get_MediaSize(&value));
+    check_hresult(WINRT_SHIM(IPrintPageInfo)->get_MediaSize(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintPageInfo<D>::PageSize(const Windows::Foundation::Size & value) const
 {
-    check_hresult(static_cast<const IPrintPageInfo &>(static_cast<const D &>(*this))->put_PageSize(get(value)));
+    check_hresult(WINRT_SHIM(IPrintPageInfo)->put_PageSize(get(value)));
 }
 
 template <typename D> Windows::Foundation::Size impl_IPrintPageInfo<D>::PageSize() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(static_cast<const IPrintPageInfo &>(static_cast<const D &>(*this))->get_PageSize(put(value)));
+    check_hresult(WINRT_SHIM(IPrintPageInfo)->get_PageSize(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrintPageInfo<D>::DpiX(uint32_t value) const
 {
-    check_hresult(static_cast<const IPrintPageInfo &>(static_cast<const D &>(*this))->put_DpiX(value));
+    check_hresult(WINRT_SHIM(IPrintPageInfo)->put_DpiX(value));
 }
 
 template <typename D> uint32_t impl_IPrintPageInfo<D>::DpiX() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrintPageInfo &>(static_cast<const D &>(*this))->get_DpiX(&value));
+    check_hresult(WINRT_SHIM(IPrintPageInfo)->get_DpiX(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintPageInfo<D>::DpiY(uint32_t value) const
 {
-    check_hresult(static_cast<const IPrintPageInfo &>(static_cast<const D &>(*this))->put_DpiY(value));
+    check_hresult(WINRT_SHIM(IPrintPageInfo)->put_DpiY(value));
 }
 
 template <typename D> uint32_t impl_IPrintPageInfo<D>::DpiY() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrintPageInfo &>(static_cast<const D &>(*this))->get_DpiY(&value));
+    check_hresult(WINRT_SHIM(IPrintPageInfo)->get_DpiY(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintPageInfo<D>::Orientation(Windows::Graphics::Printing::PrintOrientation value) const
 {
-    check_hresult(static_cast<const IPrintPageInfo &>(static_cast<const D &>(*this))->put_Orientation(value));
+    check_hresult(WINRT_SHIM(IPrintPageInfo)->put_Orientation(value));
 }
 
 template <typename D> Windows::Graphics::Printing::PrintOrientation impl_IPrintPageInfo<D>::Orientation() const
 {
     Windows::Graphics::Printing::PrintOrientation value {};
-    check_hresult(static_cast<const IPrintPageInfo &>(static_cast<const D &>(*this))->get_Orientation(&value));
+    check_hresult(WINRT_SHIM(IPrintPageInfo)->get_Orientation(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintTaskOptions<D>::Bordering(Windows::Graphics::Printing::PrintBordering value) const
 {
-    check_hresult(static_cast<const IPrintTaskOptions &>(static_cast<const D &>(*this))->put_Bordering(value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptions)->put_Bordering(value));
 }
 
 template <typename D> Windows::Graphics::Printing::PrintBordering impl_IPrintTaskOptions<D>::Bordering() const
 {
     Windows::Graphics::Printing::PrintBordering value {};
-    check_hresult(static_cast<const IPrintTaskOptions &>(static_cast<const D &>(*this))->get_Bordering(&value));
+    check_hresult(WINRT_SHIM(IPrintTaskOptions)->get_Bordering(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStream impl_IPrintTaskOptions<D>::GetPagePrintTicket(const Windows::Graphics::Printing::PrintPageInfo & printPageInfo) const
 {
     Windows::Storage::Streams::IRandomAccessStream printTicket;
-    check_hresult(static_cast<const IPrintTaskOptions &>(static_cast<const D &>(*this))->abi_GetPagePrintTicket(get(printPageInfo), put(printTicket)));
+    check_hresult(WINRT_SHIM(IPrintTaskOptions)->abi_GetPagePrintTicket(get(printPageInfo), put(printTicket)));
     return printTicket;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IPrintTaskOptionsCoreUIConfiguration<D>::DisplayedOptions() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IPrintTaskOptionsCoreUIConfiguration &>(static_cast<const D &>(*this))->get_DisplayedOptions(put(value)));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCoreUIConfiguration)->get_DisplayedOptions(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing::PrintPageDescription impl_IPrintTaskOptionsCore<D>::GetPageDescription(uint32_t jobPageNumber) const
 {
     Windows::Graphics::Printing::PrintPageDescription description {};
-    check_hresult(static_cast<const IPrintTaskOptionsCore &>(static_cast<const D &>(*this))->abi_GetPageDescription(jobPageNumber, put(description)));
+    check_hresult(WINRT_SHIM(IPrintTaskOptionsCore)->abi_GetPageDescription(jobPageNumber, put(description)));
     return description;
 }
 
 template <typename D> hstring impl_IStandardPrintTaskOptionsStatic<D>::MediaSize() const
 {
     hstring value;
-    check_hresult(static_cast<const IStandardPrintTaskOptionsStatic &>(static_cast<const D &>(*this))->get_MediaSize(put(value)));
+    check_hresult(WINRT_SHIM(IStandardPrintTaskOptionsStatic)->get_MediaSize(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardPrintTaskOptionsStatic<D>::MediaType() const
 {
     hstring value;
-    check_hresult(static_cast<const IStandardPrintTaskOptionsStatic &>(static_cast<const D &>(*this))->get_MediaType(put(value)));
+    check_hresult(WINRT_SHIM(IStandardPrintTaskOptionsStatic)->get_MediaType(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardPrintTaskOptionsStatic<D>::Orientation() const
 {
     hstring value;
-    check_hresult(static_cast<const IStandardPrintTaskOptionsStatic &>(static_cast<const D &>(*this))->get_Orientation(put(value)));
+    check_hresult(WINRT_SHIM(IStandardPrintTaskOptionsStatic)->get_Orientation(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardPrintTaskOptionsStatic<D>::PrintQuality() const
 {
     hstring value;
-    check_hresult(static_cast<const IStandardPrintTaskOptionsStatic &>(static_cast<const D &>(*this))->get_PrintQuality(put(value)));
+    check_hresult(WINRT_SHIM(IStandardPrintTaskOptionsStatic)->get_PrintQuality(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardPrintTaskOptionsStatic<D>::ColorMode() const
 {
     hstring value;
-    check_hresult(static_cast<const IStandardPrintTaskOptionsStatic &>(static_cast<const D &>(*this))->get_ColorMode(put(value)));
+    check_hresult(WINRT_SHIM(IStandardPrintTaskOptionsStatic)->get_ColorMode(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardPrintTaskOptionsStatic<D>::Duplex() const
 {
     hstring value;
-    check_hresult(static_cast<const IStandardPrintTaskOptionsStatic &>(static_cast<const D &>(*this))->get_Duplex(put(value)));
+    check_hresult(WINRT_SHIM(IStandardPrintTaskOptionsStatic)->get_Duplex(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardPrintTaskOptionsStatic<D>::Collation() const
 {
     hstring value;
-    check_hresult(static_cast<const IStandardPrintTaskOptionsStatic &>(static_cast<const D &>(*this))->get_Collation(put(value)));
+    check_hresult(WINRT_SHIM(IStandardPrintTaskOptionsStatic)->get_Collation(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardPrintTaskOptionsStatic<D>::Staple() const
 {
     hstring value;
-    check_hresult(static_cast<const IStandardPrintTaskOptionsStatic &>(static_cast<const D &>(*this))->get_Staple(put(value)));
+    check_hresult(WINRT_SHIM(IStandardPrintTaskOptionsStatic)->get_Staple(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardPrintTaskOptionsStatic<D>::HolePunch() const
 {
     hstring value;
-    check_hresult(static_cast<const IStandardPrintTaskOptionsStatic &>(static_cast<const D &>(*this))->get_HolePunch(put(value)));
+    check_hresult(WINRT_SHIM(IStandardPrintTaskOptionsStatic)->get_HolePunch(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardPrintTaskOptionsStatic<D>::Binding() const
 {
     hstring value;
-    check_hresult(static_cast<const IStandardPrintTaskOptionsStatic &>(static_cast<const D &>(*this))->get_Binding(put(value)));
+    check_hresult(WINRT_SHIM(IStandardPrintTaskOptionsStatic)->get_Binding(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardPrintTaskOptionsStatic<D>::Copies() const
 {
     hstring value;
-    check_hresult(static_cast<const IStandardPrintTaskOptionsStatic &>(static_cast<const D &>(*this))->get_Copies(put(value)));
+    check_hresult(WINRT_SHIM(IStandardPrintTaskOptionsStatic)->get_Copies(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardPrintTaskOptionsStatic<D>::NUp() const
 {
     hstring value;
-    check_hresult(static_cast<const IStandardPrintTaskOptionsStatic &>(static_cast<const D &>(*this))->get_NUp(put(value)));
+    check_hresult(WINRT_SHIM(IStandardPrintTaskOptionsStatic)->get_NUp(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardPrintTaskOptionsStatic<D>::InputBin() const
 {
     hstring value;
-    check_hresult(static_cast<const IStandardPrintTaskOptionsStatic &>(static_cast<const D &>(*this))->get_InputBin(put(value)));
+    check_hresult(WINRT_SHIM(IStandardPrintTaskOptionsStatic)->get_InputBin(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardPrintTaskOptionsStatic2<D>::Bordering() const
 {
     hstring value;
-    check_hresult(static_cast<const IStandardPrintTaskOptionsStatic2 &>(static_cast<const D &>(*this))->get_Bordering(put(value)));
+    check_hresult(WINRT_SHIM(IStandardPrintTaskOptionsStatic2)->get_Bordering(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IPrintTaskProgressingEventArgs<D>::DocumentPageCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPrintTaskProgressingEventArgs &>(static_cast<const D &>(*this))->get_DocumentPageCount(&value));
+    check_hresult(WINRT_SHIM(IPrintTaskProgressingEventArgs)->get_DocumentPageCount(&value));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing::PrintTaskCompletion impl_IPrintTaskCompletedEventArgs<D>::Completion() const
 {
     Windows::Graphics::Printing::PrintTaskCompletion value {};
-    check_hresult(static_cast<const IPrintTaskCompletedEventArgs &>(static_cast<const D &>(*this))->get_Completion(&value));
+    check_hresult(WINRT_SHIM(IPrintTaskCompletedEventArgs)->get_Completion(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackagePropertySet impl_IPrintTask<D>::Properties() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackagePropertySet value { nullptr };
-    check_hresult(static_cast<const IPrintTask &>(static_cast<const D &>(*this))->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(IPrintTask)->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing::IPrintDocumentSource impl_IPrintTask<D>::Source() const
 {
     Windows::Graphics::Printing::IPrintDocumentSource value;
-    check_hresult(static_cast<const IPrintTask &>(static_cast<const D &>(*this))->get_Source(put(value)));
+    check_hresult(WINRT_SHIM(IPrintTask)->get_Source(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing::PrintTaskOptions impl_IPrintTask<D>::Options() const
 {
     Windows::Graphics::Printing::PrintTaskOptions value { nullptr };
-    check_hresult(static_cast<const IPrintTask &>(static_cast<const D &>(*this))->get_Options(put(value)));
+    check_hresult(WINRT_SHIM(IPrintTask)->get_Options(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IPrintTask<D>::Previewing(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::IInspectable> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(static_cast<const IPrintTask &>(static_cast<const D &>(*this))->add_Previewing(get(eventHandler), &eventCookie));
+    check_hresult(WINRT_SHIM(IPrintTask)->add_Previewing(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -1737,13 +1737,13 @@ template <typename D> event_revoker<IPrintTask> impl_IPrintTask<D>::Previewing(a
 
 template <typename D> void impl_IPrintTask<D>::Previewing(event_token eventCookie) const
 {
-    check_hresult(static_cast<const IPrintTask &>(static_cast<const D &>(*this))->remove_Previewing(eventCookie));
+    check_hresult(WINRT_SHIM(IPrintTask)->remove_Previewing(eventCookie));
 }
 
 template <typename D> event_token impl_IPrintTask<D>::Submitting(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::IInspectable> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(static_cast<const IPrintTask &>(static_cast<const D &>(*this))->add_Submitting(get(eventHandler), &eventCookie));
+    check_hresult(WINRT_SHIM(IPrintTask)->add_Submitting(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -1754,13 +1754,13 @@ template <typename D> event_revoker<IPrintTask> impl_IPrintTask<D>::Submitting(a
 
 template <typename D> void impl_IPrintTask<D>::Submitting(event_token eventCookie) const
 {
-    check_hresult(static_cast<const IPrintTask &>(static_cast<const D &>(*this))->remove_Submitting(eventCookie));
+    check_hresult(WINRT_SHIM(IPrintTask)->remove_Submitting(eventCookie));
 }
 
 template <typename D> event_token impl_IPrintTask<D>::Progressing(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Graphics::Printing::PrintTaskProgressingEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(static_cast<const IPrintTask &>(static_cast<const D &>(*this))->add_Progressing(get(eventHandler), &eventCookie));
+    check_hresult(WINRT_SHIM(IPrintTask)->add_Progressing(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -1771,13 +1771,13 @@ template <typename D> event_revoker<IPrintTask> impl_IPrintTask<D>::Progressing(
 
 template <typename D> void impl_IPrintTask<D>::Progressing(event_token eventCookie) const
 {
-    check_hresult(static_cast<const IPrintTask &>(static_cast<const D &>(*this))->remove_Progressing(eventCookie));
+    check_hresult(WINRT_SHIM(IPrintTask)->remove_Progressing(eventCookie));
 }
 
 template <typename D> event_token impl_IPrintTask<D>::Completed(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Graphics::Printing::PrintTaskCompletedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(static_cast<const IPrintTask &>(static_cast<const D &>(*this))->add_Completed(get(eventHandler), &eventCookie));
+    check_hresult(WINRT_SHIM(IPrintTask)->add_Completed(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -1788,127 +1788,127 @@ template <typename D> event_revoker<IPrintTask> impl_IPrintTask<D>::Completed(au
 
 template <typename D> void impl_IPrintTask<D>::Completed(event_token eventCookie) const
 {
-    check_hresult(static_cast<const IPrintTask &>(static_cast<const D &>(*this))->remove_Completed(eventCookie));
+    check_hresult(WINRT_SHIM(IPrintTask)->remove_Completed(eventCookie));
 }
 
 template <typename D> void impl_IPrintTaskTargetDeviceSupport<D>::IsPrinterTargetEnabled(bool value) const
 {
-    check_hresult(static_cast<const IPrintTaskTargetDeviceSupport &>(static_cast<const D &>(*this))->put_IsPrinterTargetEnabled(value));
+    check_hresult(WINRT_SHIM(IPrintTaskTargetDeviceSupport)->put_IsPrinterTargetEnabled(value));
 }
 
 template <typename D> bool impl_IPrintTaskTargetDeviceSupport<D>::IsPrinterTargetEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IPrintTaskTargetDeviceSupport &>(static_cast<const D &>(*this))->get_IsPrinterTargetEnabled(&value));
+    check_hresult(WINRT_SHIM(IPrintTaskTargetDeviceSupport)->get_IsPrinterTargetEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintTaskTargetDeviceSupport<D>::Is3DManufacturingTargetEnabled(bool value) const
 {
-    check_hresult(static_cast<const IPrintTaskTargetDeviceSupport &>(static_cast<const D &>(*this))->put_Is3DManufacturingTargetEnabled(value));
+    check_hresult(WINRT_SHIM(IPrintTaskTargetDeviceSupport)->put_Is3DManufacturingTargetEnabled(value));
 }
 
 template <typename D> bool impl_IPrintTaskTargetDeviceSupport<D>::Is3DManufacturingTargetEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IPrintTaskTargetDeviceSupport &>(static_cast<const D &>(*this))->get_Is3DManufacturingTargetEnabled(&value));
+    check_hresult(WINRT_SHIM(IPrintTaskTargetDeviceSupport)->get_Is3DManufacturingTargetEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintTask2<D>::IsPreviewEnabled(bool value) const
 {
-    check_hresult(static_cast<const IPrintTask2 &>(static_cast<const D &>(*this))->put_IsPreviewEnabled(value));
+    check_hresult(WINRT_SHIM(IPrintTask2)->put_IsPreviewEnabled(value));
 }
 
 template <typename D> bool impl_IPrintTask2<D>::IsPreviewEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IPrintTask2 &>(static_cast<const D &>(*this))->get_IsPreviewEnabled(&value));
+    check_hresult(WINRT_SHIM(IPrintTask2)->get_IsPreviewEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IPrintTaskSourceRequestedDeferral<D>::Complete() const
 {
-    check_hresult(static_cast<const IPrintTaskSourceRequestedDeferral &>(static_cast<const D &>(*this))->abi_Complete());
+    check_hresult(WINRT_SHIM(IPrintTaskSourceRequestedDeferral)->abi_Complete());
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IPrintTaskSourceRequestedArgs<D>::Deadline() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IPrintTaskSourceRequestedArgs &>(static_cast<const D &>(*this))->get_Deadline(put(value)));
+    check_hresult(WINRT_SHIM(IPrintTaskSourceRequestedArgs)->get_Deadline(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPrintTaskSourceRequestedArgs<D>::SetSource(const Windows::Graphics::Printing::IPrintDocumentSource & source) const
 {
-    check_hresult(static_cast<const IPrintTaskSourceRequestedArgs &>(static_cast<const D &>(*this))->abi_SetSource(get(source)));
+    check_hresult(WINRT_SHIM(IPrintTaskSourceRequestedArgs)->abi_SetSource(get(source)));
 }
 
 template <typename D> Windows::Graphics::Printing::PrintTaskSourceRequestedDeferral impl_IPrintTaskSourceRequestedArgs<D>::GetDeferral() const
 {
     Windows::Graphics::Printing::PrintTaskSourceRequestedDeferral deferral { nullptr };
-    check_hresult(static_cast<const IPrintTaskSourceRequestedArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(deferral)));
+    check_hresult(WINRT_SHIM(IPrintTaskSourceRequestedArgs)->abi_GetDeferral(put(deferral)));
     return deferral;
 }
 
 template <typename D> void impl_IPrintTaskRequestedDeferral<D>::Complete() const
 {
-    check_hresult(static_cast<const IPrintTaskRequestedDeferral &>(static_cast<const D &>(*this))->abi_Complete());
+    check_hresult(WINRT_SHIM(IPrintTaskRequestedDeferral)->abi_Complete());
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IPrintTaskRequest<D>::Deadline() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IPrintTaskRequest &>(static_cast<const D &>(*this))->get_Deadline(put(value)));
+    check_hresult(WINRT_SHIM(IPrintTaskRequest)->get_Deadline(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing::PrintTask impl_IPrintTaskRequest<D>::CreatePrintTask(hstring_ref title, const Windows::Graphics::Printing::PrintTaskSourceRequestedHandler & handler) const
 {
     Windows::Graphics::Printing::PrintTask task { nullptr };
-    check_hresult(static_cast<const IPrintTaskRequest &>(static_cast<const D &>(*this))->abi_CreatePrintTask(get(title), get(handler), put(task)));
+    check_hresult(WINRT_SHIM(IPrintTaskRequest)->abi_CreatePrintTask(get(title), get(handler), put(task)));
     return task;
 }
 
 template <typename D> Windows::Graphics::Printing::PrintTaskRequestedDeferral impl_IPrintTaskRequest<D>::GetDeferral() const
 {
     Windows::Graphics::Printing::PrintTaskRequestedDeferral deferral { nullptr };
-    check_hresult(static_cast<const IPrintTaskRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(deferral)));
+    check_hresult(WINRT_SHIM(IPrintTaskRequest)->abi_GetDeferral(put(deferral)));
     return deferral;
 }
 
 template <typename D> Windows::Graphics::Printing::PrintTaskRequest impl_IPrintTaskRequestedEventArgs<D>::Request() const
 {
     Windows::Graphics::Printing::PrintTaskRequest value { nullptr };
-    check_hresult(static_cast<const IPrintTaskRequestedEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IPrintTaskRequestedEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Printing::PrintManager impl_IPrintManagerStatic<D>::GetForCurrentView() const
 {
     Windows::Graphics::Printing::PrintManager printingManager { nullptr };
-    check_hresult(static_cast<const IPrintManagerStatic &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(printingManager)));
+    check_hresult(WINRT_SHIM(IPrintManagerStatic)->abi_GetForCurrentView(put(printingManager)));
     return printingManager;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IPrintManagerStatic<D>::ShowPrintUIAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const IPrintManagerStatic &>(static_cast<const D &>(*this))->abi_ShowPrintUIAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPrintManagerStatic)->abi_ShowPrintUIAsync(put(operation)));
     return operation;
 }
 
 template <typename D> bool impl_IPrintManagerStatic2<D>::IsSupported() const
 {
     bool result {};
-    check_hresult(static_cast<const IPrintManagerStatic2 &>(static_cast<const D &>(*this))->abi_IsSupported(&result));
+    check_hresult(WINRT_SHIM(IPrintManagerStatic2)->abi_IsSupported(&result));
     return result;
 }
 
 template <typename D> event_token impl_IPrintManager<D>::PrintTaskRequested(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintManager, Windows::Graphics::Printing::PrintTaskRequestedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(static_cast<const IPrintManager &>(static_cast<const D &>(*this))->add_PrintTaskRequested(get(eventHandler), &eventCookie));
+    check_hresult(WINRT_SHIM(IPrintManager)->add_PrintTaskRequested(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -1919,7 +1919,7 @@ template <typename D> event_revoker<IPrintManager> impl_IPrintManager<D>::PrintT
 
 template <typename D> void impl_IPrintManager<D>::PrintTaskRequested(event_token eventCookie) const
 {
-    check_hresult(static_cast<const IPrintManager &>(static_cast<const D &>(*this))->remove_PrintTaskRequested(eventCookie));
+    check_hresult(WINRT_SHIM(IPrintManager)->remove_PrintTaskRequested(eventCookie));
 }
 
 inline Windows::Graphics::Printing::PrintManager PrintManager::GetForCurrentView()

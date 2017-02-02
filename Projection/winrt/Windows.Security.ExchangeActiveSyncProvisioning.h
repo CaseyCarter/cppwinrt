@@ -143,56 +143,56 @@ namespace Windows::Security::ExchangeActiveSyncProvisioning {
 template <typename D> GUID impl_IEasClientDeviceInformation<D>::Id() const
 {
     GUID value {};
-    check_hresult(static_cast<const IEasClientDeviceInformation &>(static_cast<const D &>(*this))->get_Id(&value));
+    check_hresult(WINRT_SHIM(IEasClientDeviceInformation)->get_Id(&value));
     return value;
 }
 
 template <typename D> hstring impl_IEasClientDeviceInformation<D>::OperatingSystem() const
 {
     hstring value;
-    check_hresult(static_cast<const IEasClientDeviceInformation &>(static_cast<const D &>(*this))->get_OperatingSystem(put(value)));
+    check_hresult(WINRT_SHIM(IEasClientDeviceInformation)->get_OperatingSystem(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEasClientDeviceInformation<D>::FriendlyName() const
 {
     hstring value;
-    check_hresult(static_cast<const IEasClientDeviceInformation &>(static_cast<const D &>(*this))->get_FriendlyName(put(value)));
+    check_hresult(WINRT_SHIM(IEasClientDeviceInformation)->get_FriendlyName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEasClientDeviceInformation<D>::SystemManufacturer() const
 {
     hstring value;
-    check_hresult(static_cast<const IEasClientDeviceInformation &>(static_cast<const D &>(*this))->get_SystemManufacturer(put(value)));
+    check_hresult(WINRT_SHIM(IEasClientDeviceInformation)->get_SystemManufacturer(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEasClientDeviceInformation<D>::SystemProductName() const
 {
     hstring value;
-    check_hresult(static_cast<const IEasClientDeviceInformation &>(static_cast<const D &>(*this))->get_SystemProductName(put(value)));
+    check_hresult(WINRT_SHIM(IEasClientDeviceInformation)->get_SystemProductName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEasClientDeviceInformation<D>::SystemSku() const
 {
     hstring value;
-    check_hresult(static_cast<const IEasClientDeviceInformation &>(static_cast<const D &>(*this))->get_SystemSku(put(value)));
+    check_hresult(WINRT_SHIM(IEasClientDeviceInformation)->get_SystemSku(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEasClientDeviceInformation2<D>::SystemHardwareVersion() const
 {
     hstring value;
-    check_hresult(static_cast<const IEasClientDeviceInformation2 &>(static_cast<const D &>(*this))->get_SystemHardwareVersion(put(value)));
+    check_hresult(WINRT_SHIM(IEasClientDeviceInformation2)->get_SystemHardwareVersion(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEasClientDeviceInformation2<D>::SystemFirmwareVersion() const
 {
     hstring value;
-    check_hresult(static_cast<const IEasClientDeviceInformation2 &>(static_cast<const D &>(*this))->get_SystemFirmwareVersion(put(value)));
+    check_hresult(WINRT_SHIM(IEasClientDeviceInformation2)->get_SystemFirmwareVersion(put(value)));
     return value;
 }
 

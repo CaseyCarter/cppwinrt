@@ -114,7 +114,6 @@ namespace Windows::UI::ApplicationSettings {
 struct CredentialCommandCredentialDeletedHandler : Windows::IUnknown
 {
     CredentialCommandCredentialDeletedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<CredentialCommandCredentialDeletedHandler>(m_ptr); }
     template <typename L> CredentialCommandCredentialDeletedHandler(L lambda);
     template <typename F> CredentialCommandCredentialDeletedHandler (F * function);
     template <typename O, typename M> CredentialCommandCredentialDeletedHandler(O * object, M method);
@@ -124,7 +123,6 @@ struct CredentialCommandCredentialDeletedHandler : Windows::IUnknown
 struct WebAccountCommandInvokedHandler : Windows::IUnknown
 {
     WebAccountCommandInvokedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<WebAccountCommandInvokedHandler>(m_ptr); }
     template <typename L> WebAccountCommandInvokedHandler(L lambda);
     template <typename F> WebAccountCommandInvokedHandler (F * function);
     template <typename O, typename M> WebAccountCommandInvokedHandler(O * object, M method);
@@ -134,7 +132,6 @@ struct WebAccountCommandInvokedHandler : Windows::IUnknown
 struct WebAccountProviderCommandInvokedHandler : Windows::IUnknown
 {
     WebAccountProviderCommandInvokedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<WebAccountProviderCommandInvokedHandler>(m_ptr); }
     template <typename L> WebAccountProviderCommandInvokedHandler(L lambda);
     template <typename F> WebAccountProviderCommandInvokedHandler (F * function);
     template <typename O, typename M> WebAccountProviderCommandInvokedHandler(O * object, M method);
@@ -146,7 +143,6 @@ struct IAccountsSettingsPane :
     impl::consume<IAccountsSettingsPane>
 {
     IAccountsSettingsPane(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccountsSettingsPane>(m_ptr); }
 };
 
 struct IAccountsSettingsPaneCommandsRequestedEventArgs :
@@ -154,7 +150,6 @@ struct IAccountsSettingsPaneCommandsRequestedEventArgs :
     impl::consume<IAccountsSettingsPaneCommandsRequestedEventArgs>
 {
     IAccountsSettingsPaneCommandsRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccountsSettingsPaneCommandsRequestedEventArgs>(m_ptr); }
 };
 
 struct IAccountsSettingsPaneEventDeferral :
@@ -162,7 +157,6 @@ struct IAccountsSettingsPaneEventDeferral :
     impl::consume<IAccountsSettingsPaneEventDeferral>
 {
     IAccountsSettingsPaneEventDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccountsSettingsPaneEventDeferral>(m_ptr); }
 };
 
 struct IAccountsSettingsPaneStatics :
@@ -170,7 +164,6 @@ struct IAccountsSettingsPaneStatics :
     impl::consume<IAccountsSettingsPaneStatics>
 {
     IAccountsSettingsPaneStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccountsSettingsPaneStatics>(m_ptr); }
 };
 
 struct IAccountsSettingsPaneStatics2 :
@@ -179,7 +172,6 @@ struct IAccountsSettingsPaneStatics2 :
     impl::require<IAccountsSettingsPaneStatics2, Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics>
 {
     IAccountsSettingsPaneStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccountsSettingsPaneStatics2>(m_ptr); }
 };
 
 struct ICredentialCommand :
@@ -187,7 +179,6 @@ struct ICredentialCommand :
     impl::consume<ICredentialCommand>
 {
     ICredentialCommand(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICredentialCommand>(m_ptr); }
 };
 
 struct ICredentialCommandFactory :
@@ -195,7 +186,6 @@ struct ICredentialCommandFactory :
     impl::consume<ICredentialCommandFactory>
 {
     ICredentialCommandFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICredentialCommandFactory>(m_ptr); }
 };
 
 struct ISettingsCommandFactory :
@@ -203,7 +193,6 @@ struct ISettingsCommandFactory :
     impl::consume<ISettingsCommandFactory>
 {
     ISettingsCommandFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISettingsCommandFactory>(m_ptr); }
 };
 
 struct ISettingsCommandStatics :
@@ -211,7 +200,6 @@ struct ISettingsCommandStatics :
     impl::consume<ISettingsCommandStatics>
 {
     ISettingsCommandStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISettingsCommandStatics>(m_ptr); }
 };
 
 struct IWebAccountCommand :
@@ -219,7 +207,6 @@ struct IWebAccountCommand :
     impl::consume<IWebAccountCommand>
 {
     IWebAccountCommand(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountCommand>(m_ptr); }
 };
 
 struct IWebAccountCommandFactory :
@@ -227,7 +214,6 @@ struct IWebAccountCommandFactory :
     impl::consume<IWebAccountCommandFactory>
 {
     IWebAccountCommandFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountCommandFactory>(m_ptr); }
 };
 
 struct IWebAccountInvokedArgs :
@@ -235,7 +221,6 @@ struct IWebAccountInvokedArgs :
     impl::consume<IWebAccountInvokedArgs>
 {
     IWebAccountInvokedArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountInvokedArgs>(m_ptr); }
 };
 
 struct IWebAccountProviderCommand :
@@ -243,7 +228,6 @@ struct IWebAccountProviderCommand :
     impl::consume<IWebAccountProviderCommand>
 {
     IWebAccountProviderCommand(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountProviderCommand>(m_ptr); }
 };
 
 struct IWebAccountProviderCommandFactory :
@@ -251,7 +235,6 @@ struct IWebAccountProviderCommandFactory :
     impl::consume<IWebAccountProviderCommandFactory>
 {
     IWebAccountProviderCommandFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountProviderCommandFactory>(m_ptr); }
 };
 
 }

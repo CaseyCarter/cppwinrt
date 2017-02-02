@@ -28,7 +28,7 @@ template <typename O, typename M> LoadCompletedEventHandler::LoadCompletedEventH
 
 inline void LoadCompletedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Navigation::NavigationEventArgs & e) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<LoadCompletedEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
 }
 
 template <typename L> NavigatedEventHandler::NavigatedEventHandler(L lambda) :
@@ -45,7 +45,7 @@ template <typename O, typename M> NavigatedEventHandler::NavigatedEventHandler(O
 
 inline void NavigatedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Navigation::NavigationEventArgs & e) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<NavigatedEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
 }
 
 template <typename L> NavigatingCancelEventHandler::NavigatingCancelEventHandler(L lambda) :
@@ -62,7 +62,7 @@ template <typename O, typename M> NavigatingCancelEventHandler::NavigatingCancel
 
 inline void NavigatingCancelEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs & e) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<NavigatingCancelEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
 }
 
 template <typename L> NavigationFailedEventHandler::NavigationFailedEventHandler(L lambda) :
@@ -79,7 +79,7 @@ template <typename O, typename M> NavigationFailedEventHandler::NavigationFailed
 
 inline void NavigationFailedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Navigation::NavigationFailedEventArgs & e) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<NavigationFailedEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
 }
 
 template <typename L> NavigationStoppedEventHandler::NavigationStoppedEventHandler(L lambda) :
@@ -96,7 +96,7 @@ template <typename O, typename M> NavigationStoppedEventHandler::NavigationStopp
 
 inline void NavigationStoppedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Navigation::NavigationEventArgs & e) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<NavigationStoppedEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
 }
 
 }
@@ -460,148 +460,148 @@ namespace Windows::UI::Xaml::Navigation {
 template <typename D> bool impl_INavigatingCancelEventArgs<D>::Cancel() const
 {
     bool value {};
-    check_hresult(static_cast<const INavigatingCancelEventArgs &>(static_cast<const D &>(*this))->get_Cancel(&value));
+    check_hresult(WINRT_SHIM(INavigatingCancelEventArgs)->get_Cancel(&value));
     return value;
 }
 
 template <typename D> void impl_INavigatingCancelEventArgs<D>::Cancel(bool value) const
 {
-    check_hresult(static_cast<const INavigatingCancelEventArgs &>(static_cast<const D &>(*this))->put_Cancel(value));
+    check_hresult(WINRT_SHIM(INavigatingCancelEventArgs)->put_Cancel(value));
 }
 
 template <typename D> Windows::UI::Xaml::Navigation::NavigationMode impl_INavigatingCancelEventArgs<D>::NavigationMode() const
 {
     Windows::UI::Xaml::Navigation::NavigationMode value {};
-    check_hresult(static_cast<const INavigatingCancelEventArgs &>(static_cast<const D &>(*this))->get_NavigationMode(&value));
+    check_hresult(WINRT_SHIM(INavigatingCancelEventArgs)->get_NavigationMode(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Interop::TypeName impl_INavigatingCancelEventArgs<D>::SourcePageType() const
 {
     Windows::UI::Xaml::Interop::TypeName value {};
-    check_hresult(static_cast<const INavigatingCancelEventArgs &>(static_cast<const D &>(*this))->get_SourcePageType(put(value)));
+    check_hresult(WINRT_SHIM(INavigatingCancelEventArgs)->get_SourcePageType(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_INavigatingCancelEventArgs2<D>::Parameter() const
 {
     Windows::IInspectable value;
-    check_hresult(static_cast<const INavigatingCancelEventArgs2 &>(static_cast<const D &>(*this))->get_Parameter(put(value)));
+    check_hresult(WINRT_SHIM(INavigatingCancelEventArgs2)->get_Parameter(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo impl_INavigatingCancelEventArgs2<D>::NavigationTransitionInfo() const
 {
     Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo value { nullptr };
-    check_hresult(static_cast<const INavigatingCancelEventArgs2 &>(static_cast<const D &>(*this))->get_NavigationTransitionInfo(put(value)));
+    check_hresult(WINRT_SHIM(INavigatingCancelEventArgs2)->get_NavigationTransitionInfo(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_INavigationEventArgs<D>::Content() const
 {
     Windows::IInspectable value;
-    check_hresult(static_cast<const INavigationEventArgs &>(static_cast<const D &>(*this))->get_Content(put(value)));
+    check_hresult(WINRT_SHIM(INavigationEventArgs)->get_Content(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_INavigationEventArgs<D>::Parameter() const
 {
     Windows::IInspectable value;
-    check_hresult(static_cast<const INavigationEventArgs &>(static_cast<const D &>(*this))->get_Parameter(put(value)));
+    check_hresult(WINRT_SHIM(INavigationEventArgs)->get_Parameter(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Interop::TypeName impl_INavigationEventArgs<D>::SourcePageType() const
 {
     Windows::UI::Xaml::Interop::TypeName value {};
-    check_hresult(static_cast<const INavigationEventArgs &>(static_cast<const D &>(*this))->get_SourcePageType(put(value)));
+    check_hresult(WINRT_SHIM(INavigationEventArgs)->get_SourcePageType(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Navigation::NavigationMode impl_INavigationEventArgs<D>::NavigationMode() const
 {
     Windows::UI::Xaml::Navigation::NavigationMode value {};
-    check_hresult(static_cast<const INavigationEventArgs &>(static_cast<const D &>(*this))->get_NavigationMode(&value));
+    check_hresult(WINRT_SHIM(INavigationEventArgs)->get_NavigationMode(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_INavigationEventArgs<D>::Uri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const INavigationEventArgs &>(static_cast<const D &>(*this))->get_Uri(put(value)));
+    check_hresult(WINRT_SHIM(INavigationEventArgs)->get_Uri(put(value)));
     return value;
 }
 
 template <typename D> void impl_INavigationEventArgs<D>::Uri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const INavigationEventArgs &>(static_cast<const D &>(*this))->put_Uri(get(value)));
+    check_hresult(WINRT_SHIM(INavigationEventArgs)->put_Uri(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo impl_INavigationEventArgs2<D>::NavigationTransitionInfo() const
 {
     Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo value { nullptr };
-    check_hresult(static_cast<const INavigationEventArgs2 &>(static_cast<const D &>(*this))->get_NavigationTransitionInfo(put(value)));
+    check_hresult(WINRT_SHIM(INavigationEventArgs2)->get_NavigationTransitionInfo(put(value)));
     return value;
 }
 
 template <typename D> HRESULT impl_INavigationFailedEventArgs<D>::Exception() const
 {
     HRESULT value {};
-    check_hresult(static_cast<const INavigationFailedEventArgs &>(static_cast<const D &>(*this))->get_Exception(&value));
+    check_hresult(WINRT_SHIM(INavigationFailedEventArgs)->get_Exception(&value));
     return value;
 }
 
 template <typename D> bool impl_INavigationFailedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(static_cast<const INavigationFailedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
+    check_hresult(WINRT_SHIM(INavigationFailedEventArgs)->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_INavigationFailedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(static_cast<const INavigationFailedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
+    check_hresult(WINRT_SHIM(INavigationFailedEventArgs)->put_Handled(value));
 }
 
 template <typename D> Windows::UI::Xaml::Interop::TypeName impl_INavigationFailedEventArgs<D>::SourcePageType() const
 {
     Windows::UI::Xaml::Interop::TypeName value {};
-    check_hresult(static_cast<const INavigationFailedEventArgs &>(static_cast<const D &>(*this))->get_SourcePageType(put(value)));
+    check_hresult(WINRT_SHIM(INavigationFailedEventArgs)->get_SourcePageType(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Interop::TypeName impl_IPageStackEntry<D>::SourcePageType() const
 {
     Windows::UI::Xaml::Interop::TypeName value {};
-    check_hresult(static_cast<const IPageStackEntry &>(static_cast<const D &>(*this))->get_SourcePageType(put(value)));
+    check_hresult(WINRT_SHIM(IPageStackEntry)->get_SourcePageType(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IPageStackEntry<D>::Parameter() const
 {
     Windows::IInspectable value;
-    check_hresult(static_cast<const IPageStackEntry &>(static_cast<const D &>(*this))->get_Parameter(put(value)));
+    check_hresult(WINRT_SHIM(IPageStackEntry)->get_Parameter(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo impl_IPageStackEntry<D>::NavigationTransitionInfo() const
 {
     Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo value { nullptr };
-    check_hresult(static_cast<const IPageStackEntry &>(static_cast<const D &>(*this))->get_NavigationTransitionInfo(put(value)));
+    check_hresult(WINRT_SHIM(IPageStackEntry)->get_NavigationTransitionInfo(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPageStackEntryStatics<D>::SourcePageTypeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IPageStackEntryStatics &>(static_cast<const D &>(*this))->get_SourcePageTypeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IPageStackEntryStatics)->get_SourcePageTypeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Navigation::PageStackEntry impl_IPageStackEntryFactory<D>::CreateInstance(const Windows::UI::Xaml::Interop::TypeName & sourcePageType, const Windows::IInspectable & parameter, const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo & navigationTransitionInfo) const
 {
     Windows::UI::Xaml::Navigation::PageStackEntry instance { nullptr };
-    check_hresult(static_cast<const IPageStackEntryFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(sourcePageType), get(parameter), get(navigationTransitionInfo), put(instance)));
+    check_hresult(WINRT_SHIM(IPageStackEntryFactory)->abi_CreateInstance(get(sourcePageType), get(parameter), get(navigationTransitionInfo), put(instance)));
     return instance;
 }
 

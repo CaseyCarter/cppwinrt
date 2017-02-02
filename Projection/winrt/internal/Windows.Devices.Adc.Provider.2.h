@@ -34,7 +34,6 @@ struct IAdcControllerProvider :
     impl::consume<IAdcControllerProvider>
 {
     IAdcControllerProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdcControllerProvider>(m_ptr); }
 };
 
 struct IAdcProvider :
@@ -42,7 +41,6 @@ struct IAdcProvider :
     impl::consume<IAdcProvider>
 {
     IAdcProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdcProvider>(m_ptr); }
 };
 
 }

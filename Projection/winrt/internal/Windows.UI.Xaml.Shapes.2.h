@@ -16,7 +16,6 @@ struct IEllipse :
     impl::consume<IEllipse>
 {
     IEllipse(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEllipse>(m_ptr); }
 };
 
 struct ILine :
@@ -24,7 +23,6 @@ struct ILine :
     impl::consume<ILine>
 {
     ILine(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILine>(m_ptr); }
 };
 
 struct ILineStatics :
@@ -32,7 +30,6 @@ struct ILineStatics :
     impl::consume<ILineStatics>
 {
     ILineStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILineStatics>(m_ptr); }
 };
 
 struct IPath :
@@ -40,7 +37,6 @@ struct IPath :
     impl::consume<IPath>
 {
     IPath(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPath>(m_ptr); }
 };
 
 struct IPathFactory :
@@ -48,7 +44,6 @@ struct IPathFactory :
     impl::consume<IPathFactory>
 {
     IPathFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPathFactory>(m_ptr); }
 };
 
 struct IPathStatics :
@@ -56,7 +51,6 @@ struct IPathStatics :
     impl::consume<IPathStatics>
 {
     IPathStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPathStatics>(m_ptr); }
 };
 
 struct IPolygon :
@@ -64,7 +58,6 @@ struct IPolygon :
     impl::consume<IPolygon>
 {
     IPolygon(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPolygon>(m_ptr); }
 };
 
 struct IPolygonStatics :
@@ -72,7 +65,6 @@ struct IPolygonStatics :
     impl::consume<IPolygonStatics>
 {
     IPolygonStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPolygonStatics>(m_ptr); }
 };
 
 struct IPolyline :
@@ -80,7 +72,6 @@ struct IPolyline :
     impl::consume<IPolyline>
 {
     IPolyline(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPolyline>(m_ptr); }
 };
 
 struct IPolylineStatics :
@@ -88,7 +79,6 @@ struct IPolylineStatics :
     impl::consume<IPolylineStatics>
 {
     IPolylineStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPolylineStatics>(m_ptr); }
 };
 
 struct IRectangle :
@@ -96,7 +86,6 @@ struct IRectangle :
     impl::consume<IRectangle>
 {
     IRectangle(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRectangle>(m_ptr); }
 };
 
 struct IRectangleStatics :
@@ -104,7 +93,6 @@ struct IRectangleStatics :
     impl::consume<IRectangleStatics>
 {
     IRectangleStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRectangleStatics>(m_ptr); }
 };
 
 struct IShape :
@@ -112,7 +100,6 @@ struct IShape :
     impl::consume<IShape>
 {
     IShape(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IShape>(m_ptr); }
 };
 
 struct IShape2 :
@@ -120,7 +107,6 @@ struct IShape2 :
     impl::consume<IShape2>
 {
     IShape2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IShape2>(m_ptr); }
 };
 
 struct IShapeFactory :
@@ -128,7 +114,6 @@ struct IShapeFactory :
     impl::consume<IShapeFactory>
 {
     IShapeFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IShapeFactory>(m_ptr); }
 };
 
 struct IShapeStatics :
@@ -136,7 +121,6 @@ struct IShapeStatics :
     impl::consume<IShapeStatics>
 {
     IShapeStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IShapeStatics>(m_ptr); }
 };
 
 }

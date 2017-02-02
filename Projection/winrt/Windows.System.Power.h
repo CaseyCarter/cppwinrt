@@ -548,14 +548,14 @@ namespace Windows::System::Power {
 template <typename D> Windows::System::Power::EnergySaverStatus impl_IPowerManagerStatics<D>::EnergySaverStatus() const
 {
     Windows::System::Power::EnergySaverStatus value {};
-    check_hresult(static_cast<const IPowerManagerStatics &>(static_cast<const D &>(*this))->get_EnergySaverStatus(&value));
+    check_hresult(WINRT_SHIM(IPowerManagerStatics)->get_EnergySaverStatus(&value));
     return value;
 }
 
 template <typename D> event_token impl_IPowerManagerStatics<D>::EnergySaverStatusChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPowerManagerStatics &>(static_cast<const D &>(*this))->add_EnergySaverStatusChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPowerManagerStatics)->add_EnergySaverStatusChanged(get(handler), &token));
     return token;
 }
 
@@ -566,20 +566,20 @@ template <typename D> event_revoker<IPowerManagerStatics> impl_IPowerManagerStat
 
 template <typename D> void impl_IPowerManagerStatics<D>::EnergySaverStatusChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPowerManagerStatics &>(static_cast<const D &>(*this))->remove_EnergySaverStatusChanged(token));
+    check_hresult(WINRT_SHIM(IPowerManagerStatics)->remove_EnergySaverStatusChanged(token));
 }
 
 template <typename D> Windows::System::Power::BatteryStatus impl_IPowerManagerStatics<D>::BatteryStatus() const
 {
     Windows::System::Power::BatteryStatus value {};
-    check_hresult(static_cast<const IPowerManagerStatics &>(static_cast<const D &>(*this))->get_BatteryStatus(&value));
+    check_hresult(WINRT_SHIM(IPowerManagerStatics)->get_BatteryStatus(&value));
     return value;
 }
 
 template <typename D> event_token impl_IPowerManagerStatics<D>::BatteryStatusChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPowerManagerStatics &>(static_cast<const D &>(*this))->add_BatteryStatusChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPowerManagerStatics)->add_BatteryStatusChanged(get(handler), &token));
     return token;
 }
 
@@ -590,20 +590,20 @@ template <typename D> event_revoker<IPowerManagerStatics> impl_IPowerManagerStat
 
 template <typename D> void impl_IPowerManagerStatics<D>::BatteryStatusChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPowerManagerStatics &>(static_cast<const D &>(*this))->remove_BatteryStatusChanged(token));
+    check_hresult(WINRT_SHIM(IPowerManagerStatics)->remove_BatteryStatusChanged(token));
 }
 
 template <typename D> Windows::System::Power::PowerSupplyStatus impl_IPowerManagerStatics<D>::PowerSupplyStatus() const
 {
     Windows::System::Power::PowerSupplyStatus value {};
-    check_hresult(static_cast<const IPowerManagerStatics &>(static_cast<const D &>(*this))->get_PowerSupplyStatus(&value));
+    check_hresult(WINRT_SHIM(IPowerManagerStatics)->get_PowerSupplyStatus(&value));
     return value;
 }
 
 template <typename D> event_token impl_IPowerManagerStatics<D>::PowerSupplyStatusChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPowerManagerStatics &>(static_cast<const D &>(*this))->add_PowerSupplyStatusChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPowerManagerStatics)->add_PowerSupplyStatusChanged(get(handler), &token));
     return token;
 }
 
@@ -614,20 +614,20 @@ template <typename D> event_revoker<IPowerManagerStatics> impl_IPowerManagerStat
 
 template <typename D> void impl_IPowerManagerStatics<D>::PowerSupplyStatusChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPowerManagerStatics &>(static_cast<const D &>(*this))->remove_PowerSupplyStatusChanged(token));
+    check_hresult(WINRT_SHIM(IPowerManagerStatics)->remove_PowerSupplyStatusChanged(token));
 }
 
 template <typename D> int32_t impl_IPowerManagerStatics<D>::RemainingChargePercent() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IPowerManagerStatics &>(static_cast<const D &>(*this))->get_RemainingChargePercent(&value));
+    check_hresult(WINRT_SHIM(IPowerManagerStatics)->get_RemainingChargePercent(&value));
     return value;
 }
 
 template <typename D> event_token impl_IPowerManagerStatics<D>::RemainingChargePercentChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPowerManagerStatics &>(static_cast<const D &>(*this))->add_RemainingChargePercentChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPowerManagerStatics)->add_RemainingChargePercentChanged(get(handler), &token));
     return token;
 }
 
@@ -638,20 +638,20 @@ template <typename D> event_revoker<IPowerManagerStatics> impl_IPowerManagerStat
 
 template <typename D> void impl_IPowerManagerStatics<D>::RemainingChargePercentChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPowerManagerStatics &>(static_cast<const D &>(*this))->remove_RemainingChargePercentChanged(token));
+    check_hresult(WINRT_SHIM(IPowerManagerStatics)->remove_RemainingChargePercentChanged(token));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IPowerManagerStatics<D>::RemainingDischargeTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IPowerManagerStatics &>(static_cast<const D &>(*this))->get_RemainingDischargeTime(put(value)));
+    check_hresult(WINRT_SHIM(IPowerManagerStatics)->get_RemainingDischargeTime(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IPowerManagerStatics<D>::RemainingDischargeTimeChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPowerManagerStatics &>(static_cast<const D &>(*this))->add_RemainingDischargeTimeChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPowerManagerStatics)->add_RemainingDischargeTimeChanged(get(handler), &token));
     return token;
 }
 
@@ -662,69 +662,69 @@ template <typename D> event_revoker<IPowerManagerStatics> impl_IPowerManagerStat
 
 template <typename D> void impl_IPowerManagerStatics<D>::RemainingDischargeTimeChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPowerManagerStatics &>(static_cast<const D &>(*this))->remove_RemainingDischargeTimeChanged(token));
+    check_hresult(WINRT_SHIM(IPowerManagerStatics)->remove_RemainingDischargeTimeChanged(token));
 }
 
 template <typename D> uint32_t impl_IBackgroundEnergyManagerStatics<D>::LowUsageLevel() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBackgroundEnergyManagerStatics &>(static_cast<const D &>(*this))->get_LowUsageLevel(&value));
+    check_hresult(WINRT_SHIM(IBackgroundEnergyManagerStatics)->get_LowUsageLevel(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBackgroundEnergyManagerStatics<D>::NearMaxAcceptableUsageLevel() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBackgroundEnergyManagerStatics &>(static_cast<const D &>(*this))->get_NearMaxAcceptableUsageLevel(&value));
+    check_hresult(WINRT_SHIM(IBackgroundEnergyManagerStatics)->get_NearMaxAcceptableUsageLevel(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBackgroundEnergyManagerStatics<D>::MaxAcceptableUsageLevel() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBackgroundEnergyManagerStatics &>(static_cast<const D &>(*this))->get_MaxAcceptableUsageLevel(&value));
+    check_hresult(WINRT_SHIM(IBackgroundEnergyManagerStatics)->get_MaxAcceptableUsageLevel(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBackgroundEnergyManagerStatics<D>::ExcessiveUsageLevel() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBackgroundEnergyManagerStatics &>(static_cast<const D &>(*this))->get_ExcessiveUsageLevel(&value));
+    check_hresult(WINRT_SHIM(IBackgroundEnergyManagerStatics)->get_ExcessiveUsageLevel(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBackgroundEnergyManagerStatics<D>::NearTerminationUsageLevel() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBackgroundEnergyManagerStatics &>(static_cast<const D &>(*this))->get_NearTerminationUsageLevel(&value));
+    check_hresult(WINRT_SHIM(IBackgroundEnergyManagerStatics)->get_NearTerminationUsageLevel(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBackgroundEnergyManagerStatics<D>::TerminationUsageLevel() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBackgroundEnergyManagerStatics &>(static_cast<const D &>(*this))->get_TerminationUsageLevel(&value));
+    check_hresult(WINRT_SHIM(IBackgroundEnergyManagerStatics)->get_TerminationUsageLevel(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBackgroundEnergyManagerStatics<D>::RecentEnergyUsage() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBackgroundEnergyManagerStatics &>(static_cast<const D &>(*this))->get_RecentEnergyUsage(&value));
+    check_hresult(WINRT_SHIM(IBackgroundEnergyManagerStatics)->get_RecentEnergyUsage(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBackgroundEnergyManagerStatics<D>::RecentEnergyUsageLevel() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBackgroundEnergyManagerStatics &>(static_cast<const D &>(*this))->get_RecentEnergyUsageLevel(&value));
+    check_hresult(WINRT_SHIM(IBackgroundEnergyManagerStatics)->get_RecentEnergyUsageLevel(&value));
     return value;
 }
 
 template <typename D> event_token impl_IBackgroundEnergyManagerStatics<D>::RecentEnergyUsageIncreased(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IBackgroundEnergyManagerStatics &>(static_cast<const D &>(*this))->add_RecentEnergyUsageIncreased(get(handler), &token));
+    check_hresult(WINRT_SHIM(IBackgroundEnergyManagerStatics)->add_RecentEnergyUsageIncreased(get(handler), &token));
     return token;
 }
 
@@ -735,13 +735,13 @@ template <typename D> event_revoker<IBackgroundEnergyManagerStatics> impl_IBackg
 
 template <typename D> void impl_IBackgroundEnergyManagerStatics<D>::RecentEnergyUsageIncreased(event_token token) const
 {
-    check_hresult(static_cast<const IBackgroundEnergyManagerStatics &>(static_cast<const D &>(*this))->remove_RecentEnergyUsageIncreased(token));
+    check_hresult(WINRT_SHIM(IBackgroundEnergyManagerStatics)->remove_RecentEnergyUsageIncreased(token));
 }
 
 template <typename D> event_token impl_IBackgroundEnergyManagerStatics<D>::RecentEnergyUsageReturnedToLow(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IBackgroundEnergyManagerStatics &>(static_cast<const D &>(*this))->add_RecentEnergyUsageReturnedToLow(get(handler), &token));
+    check_hresult(WINRT_SHIM(IBackgroundEnergyManagerStatics)->add_RecentEnergyUsageReturnedToLow(get(handler), &token));
     return token;
 }
 
@@ -752,55 +752,55 @@ template <typename D> event_revoker<IBackgroundEnergyManagerStatics> impl_IBackg
 
 template <typename D> void impl_IBackgroundEnergyManagerStatics<D>::RecentEnergyUsageReturnedToLow(event_token token) const
 {
-    check_hresult(static_cast<const IBackgroundEnergyManagerStatics &>(static_cast<const D &>(*this))->remove_RecentEnergyUsageReturnedToLow(token));
+    check_hresult(WINRT_SHIM(IBackgroundEnergyManagerStatics)->remove_RecentEnergyUsageReturnedToLow(token));
 }
 
 template <typename D> uint32_t impl_IForegroundEnergyManagerStatics<D>::LowUsageLevel() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IForegroundEnergyManagerStatics &>(static_cast<const D &>(*this))->get_LowUsageLevel(&value));
+    check_hresult(WINRT_SHIM(IForegroundEnergyManagerStatics)->get_LowUsageLevel(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IForegroundEnergyManagerStatics<D>::NearMaxAcceptableUsageLevel() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IForegroundEnergyManagerStatics &>(static_cast<const D &>(*this))->get_NearMaxAcceptableUsageLevel(&value));
+    check_hresult(WINRT_SHIM(IForegroundEnergyManagerStatics)->get_NearMaxAcceptableUsageLevel(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IForegroundEnergyManagerStatics<D>::MaxAcceptableUsageLevel() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IForegroundEnergyManagerStatics &>(static_cast<const D &>(*this))->get_MaxAcceptableUsageLevel(&value));
+    check_hresult(WINRT_SHIM(IForegroundEnergyManagerStatics)->get_MaxAcceptableUsageLevel(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IForegroundEnergyManagerStatics<D>::ExcessiveUsageLevel() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IForegroundEnergyManagerStatics &>(static_cast<const D &>(*this))->get_ExcessiveUsageLevel(&value));
+    check_hresult(WINRT_SHIM(IForegroundEnergyManagerStatics)->get_ExcessiveUsageLevel(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IForegroundEnergyManagerStatics<D>::RecentEnergyUsage() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IForegroundEnergyManagerStatics &>(static_cast<const D &>(*this))->get_RecentEnergyUsage(&value));
+    check_hresult(WINRT_SHIM(IForegroundEnergyManagerStatics)->get_RecentEnergyUsage(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IForegroundEnergyManagerStatics<D>::RecentEnergyUsageLevel() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IForegroundEnergyManagerStatics &>(static_cast<const D &>(*this))->get_RecentEnergyUsageLevel(&value));
+    check_hresult(WINRT_SHIM(IForegroundEnergyManagerStatics)->get_RecentEnergyUsageLevel(&value));
     return value;
 }
 
 template <typename D> event_token impl_IForegroundEnergyManagerStatics<D>::RecentEnergyUsageIncreased(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IForegroundEnergyManagerStatics &>(static_cast<const D &>(*this))->add_RecentEnergyUsageIncreased(get(handler), &token));
+    check_hresult(WINRT_SHIM(IForegroundEnergyManagerStatics)->add_RecentEnergyUsageIncreased(get(handler), &token));
     return token;
 }
 
@@ -811,13 +811,13 @@ template <typename D> event_revoker<IForegroundEnergyManagerStatics> impl_IForeg
 
 template <typename D> void impl_IForegroundEnergyManagerStatics<D>::RecentEnergyUsageIncreased(event_token token) const
 {
-    check_hresult(static_cast<const IForegroundEnergyManagerStatics &>(static_cast<const D &>(*this))->remove_RecentEnergyUsageIncreased(token));
+    check_hresult(WINRT_SHIM(IForegroundEnergyManagerStatics)->remove_RecentEnergyUsageIncreased(token));
 }
 
 template <typename D> event_token impl_IForegroundEnergyManagerStatics<D>::RecentEnergyUsageReturnedToLow(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IForegroundEnergyManagerStatics &>(static_cast<const D &>(*this))->add_RecentEnergyUsageReturnedToLow(get(handler), &token));
+    check_hresult(WINRT_SHIM(IForegroundEnergyManagerStatics)->add_RecentEnergyUsageReturnedToLow(get(handler), &token));
     return token;
 }
 
@@ -828,7 +828,7 @@ template <typename D> event_revoker<IForegroundEnergyManagerStatics> impl_IForeg
 
 template <typename D> void impl_IForegroundEnergyManagerStatics<D>::RecentEnergyUsageReturnedToLow(event_token token) const
 {
-    check_hresult(static_cast<const IForegroundEnergyManagerStatics &>(static_cast<const D &>(*this))->remove_RecentEnergyUsageReturnedToLow(token));
+    check_hresult(WINRT_SHIM(IForegroundEnergyManagerStatics)->remove_RecentEnergyUsageReturnedToLow(token));
 }
 
 inline uint32_t BackgroundEnergyManager::LowUsageLevel()

@@ -1238,525 +1238,525 @@ namespace Windows::Media::Devices::Core {
 template <typename D> bool impl_IFrameExposureCapabilities<D>::Supported() const
 {
     bool value {};
-    check_hresult(static_cast<const IFrameExposureCapabilities &>(static_cast<const D &>(*this))->get_Supported(&value));
+    check_hresult(WINRT_SHIM(IFrameExposureCapabilities)->get_Supported(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IFrameExposureCapabilities<D>::Min() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IFrameExposureCapabilities &>(static_cast<const D &>(*this))->get_Min(put(value)));
+    check_hresult(WINRT_SHIM(IFrameExposureCapabilities)->get_Min(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IFrameExposureCapabilities<D>::Max() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IFrameExposureCapabilities &>(static_cast<const D &>(*this))->get_Max(put(value)));
+    check_hresult(WINRT_SHIM(IFrameExposureCapabilities)->get_Max(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IFrameExposureCapabilities<D>::Step() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IFrameExposureCapabilities &>(static_cast<const D &>(*this))->get_Step(put(value)));
+    check_hresult(WINRT_SHIM(IFrameExposureCapabilities)->get_Step(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IFrameExposureCompensationCapabilities<D>::Supported() const
 {
     bool value {};
-    check_hresult(static_cast<const IFrameExposureCompensationCapabilities &>(static_cast<const D &>(*this))->get_Supported(&value));
+    check_hresult(WINRT_SHIM(IFrameExposureCompensationCapabilities)->get_Supported(&value));
     return value;
 }
 
 template <typename D> float impl_IFrameExposureCompensationCapabilities<D>::Min() const
 {
     float value {};
-    check_hresult(static_cast<const IFrameExposureCompensationCapabilities &>(static_cast<const D &>(*this))->get_Min(&value));
+    check_hresult(WINRT_SHIM(IFrameExposureCompensationCapabilities)->get_Min(&value));
     return value;
 }
 
 template <typename D> float impl_IFrameExposureCompensationCapabilities<D>::Max() const
 {
     float value {};
-    check_hresult(static_cast<const IFrameExposureCompensationCapabilities &>(static_cast<const D &>(*this))->get_Max(&value));
+    check_hresult(WINRT_SHIM(IFrameExposureCompensationCapabilities)->get_Max(&value));
     return value;
 }
 
 template <typename D> float impl_IFrameExposureCompensationCapabilities<D>::Step() const
 {
     float value {};
-    check_hresult(static_cast<const IFrameExposureCompensationCapabilities &>(static_cast<const D &>(*this))->get_Step(&value));
+    check_hresult(WINRT_SHIM(IFrameExposureCompensationCapabilities)->get_Step(&value));
     return value;
 }
 
 template <typename D> bool impl_IFrameIsoSpeedCapabilities<D>::Supported() const
 {
     bool value {};
-    check_hresult(static_cast<const IFrameIsoSpeedCapabilities &>(static_cast<const D &>(*this))->get_Supported(&value));
+    check_hresult(WINRT_SHIM(IFrameIsoSpeedCapabilities)->get_Supported(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IFrameIsoSpeedCapabilities<D>::Min() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IFrameIsoSpeedCapabilities &>(static_cast<const D &>(*this))->get_Min(&value));
+    check_hresult(WINRT_SHIM(IFrameIsoSpeedCapabilities)->get_Min(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IFrameIsoSpeedCapabilities<D>::Max() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IFrameIsoSpeedCapabilities &>(static_cast<const D &>(*this))->get_Max(&value));
+    check_hresult(WINRT_SHIM(IFrameIsoSpeedCapabilities)->get_Max(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IFrameIsoSpeedCapabilities<D>::Step() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IFrameIsoSpeedCapabilities &>(static_cast<const D &>(*this))->get_Step(&value));
+    check_hresult(WINRT_SHIM(IFrameIsoSpeedCapabilities)->get_Step(&value));
     return value;
 }
 
 template <typename D> bool impl_IFrameFocusCapabilities<D>::Supported() const
 {
     bool value {};
-    check_hresult(static_cast<const IFrameFocusCapabilities &>(static_cast<const D &>(*this))->get_Supported(&value));
+    check_hresult(WINRT_SHIM(IFrameFocusCapabilities)->get_Supported(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IFrameFocusCapabilities<D>::Min() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IFrameFocusCapabilities &>(static_cast<const D &>(*this))->get_Min(&value));
+    check_hresult(WINRT_SHIM(IFrameFocusCapabilities)->get_Min(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IFrameFocusCapabilities<D>::Max() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IFrameFocusCapabilities &>(static_cast<const D &>(*this))->get_Max(&value));
+    check_hresult(WINRT_SHIM(IFrameFocusCapabilities)->get_Max(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IFrameFocusCapabilities<D>::Step() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IFrameFocusCapabilities &>(static_cast<const D &>(*this))->get_Step(&value));
+    check_hresult(WINRT_SHIM(IFrameFocusCapabilities)->get_Step(&value));
     return value;
 }
 
 template <typename D> bool impl_IFrameFlashCapabilities<D>::Supported() const
 {
     bool value {};
-    check_hresult(static_cast<const IFrameFlashCapabilities &>(static_cast<const D &>(*this))->get_Supported(&value));
+    check_hresult(WINRT_SHIM(IFrameFlashCapabilities)->get_Supported(&value));
     return value;
 }
 
 template <typename D> bool impl_IFrameFlashCapabilities<D>::RedEyeReductionSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IFrameFlashCapabilities &>(static_cast<const D &>(*this))->get_RedEyeReductionSupported(&value));
+    check_hresult(WINRT_SHIM(IFrameFlashCapabilities)->get_RedEyeReductionSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IFrameFlashCapabilities<D>::PowerSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IFrameFlashCapabilities &>(static_cast<const D &>(*this))->get_PowerSupported(&value));
+    check_hresult(WINRT_SHIM(IFrameFlashCapabilities)->get_PowerSupported(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameExposureCapabilities impl_IFrameControlCapabilities<D>::Exposure() const
 {
     Windows::Media::Devices::Core::FrameExposureCapabilities value { nullptr };
-    check_hresult(static_cast<const IFrameControlCapabilities &>(static_cast<const D &>(*this))->get_Exposure(put(value)));
+    check_hresult(WINRT_SHIM(IFrameControlCapabilities)->get_Exposure(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameExposureCompensationCapabilities impl_IFrameControlCapabilities<D>::ExposureCompensation() const
 {
     Windows::Media::Devices::Core::FrameExposureCompensationCapabilities value { nullptr };
-    check_hresult(static_cast<const IFrameControlCapabilities &>(static_cast<const D &>(*this))->get_ExposureCompensation(put(value)));
+    check_hresult(WINRT_SHIM(IFrameControlCapabilities)->get_ExposureCompensation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameIsoSpeedCapabilities impl_IFrameControlCapabilities<D>::IsoSpeed() const
 {
     Windows::Media::Devices::Core::FrameIsoSpeedCapabilities value { nullptr };
-    check_hresult(static_cast<const IFrameControlCapabilities &>(static_cast<const D &>(*this))->get_IsoSpeed(put(value)));
+    check_hresult(WINRT_SHIM(IFrameControlCapabilities)->get_IsoSpeed(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameFocusCapabilities impl_IFrameControlCapabilities<D>::Focus() const
 {
     Windows::Media::Devices::Core::FrameFocusCapabilities value { nullptr };
-    check_hresult(static_cast<const IFrameControlCapabilities &>(static_cast<const D &>(*this))->get_Focus(put(value)));
+    check_hresult(WINRT_SHIM(IFrameControlCapabilities)->get_Focus(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IFrameControlCapabilities<D>::PhotoConfirmationSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IFrameControlCapabilities &>(static_cast<const D &>(*this))->get_PhotoConfirmationSupported(&value));
+    check_hresult(WINRT_SHIM(IFrameControlCapabilities)->get_PhotoConfirmationSupported(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameFlashCapabilities impl_IFrameControlCapabilities2<D>::Flash() const
 {
     Windows::Media::Devices::Core::FrameFlashCapabilities value { nullptr };
-    check_hresult(static_cast<const IFrameControlCapabilities2 &>(static_cast<const D &>(*this))->get_Flash(put(value)));
+    check_hresult(WINRT_SHIM(IFrameControlCapabilities2)->get_Flash(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IFrameExposureControl<D>::Auto() const
 {
     bool value {};
-    check_hresult(static_cast<const IFrameExposureControl &>(static_cast<const D &>(*this))->get_Auto(&value));
+    check_hresult(WINRT_SHIM(IFrameExposureControl)->get_Auto(&value));
     return value;
 }
 
 template <typename D> void impl_IFrameExposureControl<D>::Auto(bool value) const
 {
-    check_hresult(static_cast<const IFrameExposureControl &>(static_cast<const D &>(*this))->put_Auto(value));
+    check_hresult(WINRT_SHIM(IFrameExposureControl)->put_Auto(value));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IFrameExposureControl<D>::Value() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(static_cast<const IFrameExposureControl &>(static_cast<const D &>(*this))->get_Value(put(value)));
+    check_hresult(WINRT_SHIM(IFrameExposureControl)->get_Value(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameExposureControl<D>::Value(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(static_cast<const IFrameExposureControl &>(static_cast<const D &>(*this))->put_Value(get(value)));
+    check_hresult(WINRT_SHIM(IFrameExposureControl)->put_Value(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<float> impl_IFrameExposureCompensationControl<D>::Value() const
 {
     Windows::Foundation::IReference<float> value;
-    check_hresult(static_cast<const IFrameExposureCompensationControl &>(static_cast<const D &>(*this))->get_Value(put(value)));
+    check_hresult(WINRT_SHIM(IFrameExposureCompensationControl)->get_Value(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameExposureCompensationControl<D>::Value(const Windows::Foundation::IReference<float> & value) const
 {
-    check_hresult(static_cast<const IFrameExposureCompensationControl &>(static_cast<const D &>(*this))->put_Value(get(value)));
+    check_hresult(WINRT_SHIM(IFrameExposureCompensationControl)->put_Value(get(value)));
 }
 
 template <typename D> bool impl_IFrameIsoSpeedControl<D>::Auto() const
 {
     bool value {};
-    check_hresult(static_cast<const IFrameIsoSpeedControl &>(static_cast<const D &>(*this))->get_Auto(&value));
+    check_hresult(WINRT_SHIM(IFrameIsoSpeedControl)->get_Auto(&value));
     return value;
 }
 
 template <typename D> void impl_IFrameIsoSpeedControl<D>::Auto(bool value) const
 {
-    check_hresult(static_cast<const IFrameIsoSpeedControl &>(static_cast<const D &>(*this))->put_Auto(value));
+    check_hresult(WINRT_SHIM(IFrameIsoSpeedControl)->put_Auto(value));
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IFrameIsoSpeedControl<D>::Value() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(static_cast<const IFrameIsoSpeedControl &>(static_cast<const D &>(*this))->get_Value(put(value)));
+    check_hresult(WINRT_SHIM(IFrameIsoSpeedControl)->get_Value(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameIsoSpeedControl<D>::Value(const Windows::Foundation::IReference<uint32_t> & value) const
 {
-    check_hresult(static_cast<const IFrameIsoSpeedControl &>(static_cast<const D &>(*this))->put_Value(get(value)));
+    check_hresult(WINRT_SHIM(IFrameIsoSpeedControl)->put_Value(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IFrameFocusControl<D>::Value() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(static_cast<const IFrameFocusControl &>(static_cast<const D &>(*this))->get_Value(put(value)));
+    check_hresult(WINRT_SHIM(IFrameFocusControl)->get_Value(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameFocusControl<D>::Value(const Windows::Foundation::IReference<uint32_t> & value) const
 {
-    check_hresult(static_cast<const IFrameFocusControl &>(static_cast<const D &>(*this))->put_Value(get(value)));
+    check_hresult(WINRT_SHIM(IFrameFocusControl)->put_Value(get(value)));
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameFlashMode impl_IFrameFlashControl<D>::Mode() const
 {
     Windows::Media::Devices::Core::FrameFlashMode value {};
-    check_hresult(static_cast<const IFrameFlashControl &>(static_cast<const D &>(*this))->get_Mode(&value));
+    check_hresult(WINRT_SHIM(IFrameFlashControl)->get_Mode(&value));
     return value;
 }
 
 template <typename D> void impl_IFrameFlashControl<D>::Mode(Windows::Media::Devices::Core::FrameFlashMode value) const
 {
-    check_hresult(static_cast<const IFrameFlashControl &>(static_cast<const D &>(*this))->put_Mode(value));
+    check_hresult(WINRT_SHIM(IFrameFlashControl)->put_Mode(value));
 }
 
 template <typename D> bool impl_IFrameFlashControl<D>::Auto() const
 {
     bool value {};
-    check_hresult(static_cast<const IFrameFlashControl &>(static_cast<const D &>(*this))->get_Auto(&value));
+    check_hresult(WINRT_SHIM(IFrameFlashControl)->get_Auto(&value));
     return value;
 }
 
 template <typename D> void impl_IFrameFlashControl<D>::Auto(bool value) const
 {
-    check_hresult(static_cast<const IFrameFlashControl &>(static_cast<const D &>(*this))->put_Auto(value));
+    check_hresult(WINRT_SHIM(IFrameFlashControl)->put_Auto(value));
 }
 
 template <typename D> bool impl_IFrameFlashControl<D>::RedEyeReduction() const
 {
     bool value {};
-    check_hresult(static_cast<const IFrameFlashControl &>(static_cast<const D &>(*this))->get_RedEyeReduction(&value));
+    check_hresult(WINRT_SHIM(IFrameFlashControl)->get_RedEyeReduction(&value));
     return value;
 }
 
 template <typename D> void impl_IFrameFlashControl<D>::RedEyeReduction(bool value) const
 {
-    check_hresult(static_cast<const IFrameFlashControl &>(static_cast<const D &>(*this))->put_RedEyeReduction(value));
+    check_hresult(WINRT_SHIM(IFrameFlashControl)->put_RedEyeReduction(value));
 }
 
 template <typename D> float impl_IFrameFlashControl<D>::PowerPercent() const
 {
     float value {};
-    check_hresult(static_cast<const IFrameFlashControl &>(static_cast<const D &>(*this))->get_PowerPercent(&value));
+    check_hresult(WINRT_SHIM(IFrameFlashControl)->get_PowerPercent(&value));
     return value;
 }
 
 template <typename D> void impl_IFrameFlashControl<D>::PowerPercent(float value) const
 {
-    check_hresult(static_cast<const IFrameFlashControl &>(static_cast<const D &>(*this))->put_PowerPercent(value));
+    check_hresult(WINRT_SHIM(IFrameFlashControl)->put_PowerPercent(value));
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameExposureControl impl_IFrameController<D>::ExposureControl() const
 {
     Windows::Media::Devices::Core::FrameExposureControl value { nullptr };
-    check_hresult(static_cast<const IFrameController &>(static_cast<const D &>(*this))->get_ExposureControl(put(value)));
+    check_hresult(WINRT_SHIM(IFrameController)->get_ExposureControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameExposureCompensationControl impl_IFrameController<D>::ExposureCompensationControl() const
 {
     Windows::Media::Devices::Core::FrameExposureCompensationControl value { nullptr };
-    check_hresult(static_cast<const IFrameController &>(static_cast<const D &>(*this))->get_ExposureCompensationControl(put(value)));
+    check_hresult(WINRT_SHIM(IFrameController)->get_ExposureCompensationControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameIsoSpeedControl impl_IFrameController<D>::IsoSpeedControl() const
 {
     Windows::Media::Devices::Core::FrameIsoSpeedControl value { nullptr };
-    check_hresult(static_cast<const IFrameController &>(static_cast<const D &>(*this))->get_IsoSpeedControl(put(value)));
+    check_hresult(WINRT_SHIM(IFrameController)->get_IsoSpeedControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameFocusControl impl_IFrameController<D>::FocusControl() const
 {
     Windows::Media::Devices::Core::FrameFocusControl value { nullptr };
-    check_hresult(static_cast<const IFrameController &>(static_cast<const D &>(*this))->get_FocusControl(put(value)));
+    check_hresult(WINRT_SHIM(IFrameController)->get_FocusControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<bool> impl_IFrameController<D>::PhotoConfirmationEnabled() const
 {
     Windows::Foundation::IReference<bool> value;
-    check_hresult(static_cast<const IFrameController &>(static_cast<const D &>(*this))->get_PhotoConfirmationEnabled(put(value)));
+    check_hresult(WINRT_SHIM(IFrameController)->get_PhotoConfirmationEnabled(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameController<D>::PhotoConfirmationEnabled(const Windows::Foundation::IReference<bool> & value) const
 {
-    check_hresult(static_cast<const IFrameController &>(static_cast<const D &>(*this))->put_PhotoConfirmationEnabled(get(value)));
+    check_hresult(WINRT_SHIM(IFrameController)->put_PhotoConfirmationEnabled(get(value)));
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameFlashControl impl_IFrameController2<D>::FlashControl() const
 {
     Windows::Media::Devices::Core::FrameFlashControl value { nullptr };
-    check_hresult(static_cast<const IFrameController2 &>(static_cast<const D &>(*this))->get_FlashControl(put(value)));
+    check_hresult(WINRT_SHIM(IFrameController2)->get_FlashControl(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IVariablePhotoSequenceController<D>::Supported() const
 {
     bool value {};
-    check_hresult(static_cast<const IVariablePhotoSequenceController &>(static_cast<const D &>(*this))->get_Supported(&value));
+    check_hresult(WINRT_SHIM(IVariablePhotoSequenceController)->get_Supported(&value));
     return value;
 }
 
 template <typename D> float impl_IVariablePhotoSequenceController<D>::MaxPhotosPerSecond() const
 {
     float value {};
-    check_hresult(static_cast<const IVariablePhotoSequenceController &>(static_cast<const D &>(*this))->get_MaxPhotosPerSecond(&value));
+    check_hresult(WINRT_SHIM(IVariablePhotoSequenceController)->get_MaxPhotosPerSecond(&value));
     return value;
 }
 
 template <typename D> float impl_IVariablePhotoSequenceController<D>::PhotosPerSecondLimit() const
 {
     float value {};
-    check_hresult(static_cast<const IVariablePhotoSequenceController &>(static_cast<const D &>(*this))->get_PhotosPerSecondLimit(&value));
+    check_hresult(WINRT_SHIM(IVariablePhotoSequenceController)->get_PhotosPerSecondLimit(&value));
     return value;
 }
 
 template <typename D> void impl_IVariablePhotoSequenceController<D>::PhotosPerSecondLimit(float value) const
 {
-    check_hresult(static_cast<const IVariablePhotoSequenceController &>(static_cast<const D &>(*this))->put_PhotosPerSecondLimit(value));
+    check_hresult(WINRT_SHIM(IVariablePhotoSequenceController)->put_PhotosPerSecondLimit(value));
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaRatio impl_IVariablePhotoSequenceController<D>::GetHighestConcurrentFrameRate(const Windows::Media::MediaProperties::IMediaEncodingProperties & captureProperties) const
 {
     Windows::Media::MediaProperties::MediaRatio value { nullptr };
-    check_hresult(static_cast<const IVariablePhotoSequenceController &>(static_cast<const D &>(*this))->abi_GetHighestConcurrentFrameRate(get(captureProperties), put(value)));
+    check_hresult(WINRT_SHIM(IVariablePhotoSequenceController)->abi_GetHighestConcurrentFrameRate(get(captureProperties), put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaRatio impl_IVariablePhotoSequenceController<D>::GetCurrentFrameRate() const
 {
     Windows::Media::MediaProperties::MediaRatio value { nullptr };
-    check_hresult(static_cast<const IVariablePhotoSequenceController &>(static_cast<const D &>(*this))->abi_GetCurrentFrameRate(put(value)));
+    check_hresult(WINRT_SHIM(IVariablePhotoSequenceController)->abi_GetCurrentFrameRate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::FrameControlCapabilities impl_IVariablePhotoSequenceController<D>::FrameCapabilities() const
 {
     Windows::Media::Devices::Core::FrameControlCapabilities value { nullptr };
-    check_hresult(static_cast<const IVariablePhotoSequenceController &>(static_cast<const D &>(*this))->get_FrameCapabilities(put(value)));
+    check_hresult(WINRT_SHIM(IVariablePhotoSequenceController)->get_FrameCapabilities(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::Devices::Core::FrameController> impl_IVariablePhotoSequenceController<D>::DesiredFrameControllers() const
 {
     Windows::Foundation::Collections::IVector<Windows::Media::Devices::Core::FrameController> items;
-    check_hresult(static_cast<const IVariablePhotoSequenceController &>(static_cast<const D &>(*this))->get_DesiredFrameControllers(put(items)));
+    check_hresult(WINRT_SHIM(IVariablePhotoSequenceController)->get_DesiredFrameControllers(put(items)));
     return items;
 }
 
 template <typename D> Windows::Media::Devices::Core::CameraIntrinsics impl_ICameraIntrinsicsFactory<D>::Create(const Windows::Foundation::Numerics::float2 & focalLength, const Windows::Foundation::Numerics::float2 & principalPoint, const Windows::Foundation::Numerics::float3 & radialDistortion, const Windows::Foundation::Numerics::float2 & tangentialDistortion, uint32_t imageWidth, uint32_t imageHeight) const
 {
     Windows::Media::Devices::Core::CameraIntrinsics result { nullptr };
-    check_hresult(static_cast<const ICameraIntrinsicsFactory &>(static_cast<const D &>(*this))->abi_Create(get(focalLength), get(principalPoint), get(radialDistortion), get(tangentialDistortion), imageWidth, imageHeight, put(result)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsicsFactory)->abi_Create(get(focalLength), get(principalPoint), get(radialDistortion), get(tangentialDistortion), imageWidth, imageHeight, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Numerics::float2 impl_ICameraIntrinsics<D>::FocalLength() const
 {
     Windows::Foundation::Numerics::float2 value {};
-    check_hresult(static_cast<const ICameraIntrinsics &>(static_cast<const D &>(*this))->get_FocalLength(put(value)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics)->get_FocalLength(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float2 impl_ICameraIntrinsics<D>::PrincipalPoint() const
 {
     Windows::Foundation::Numerics::float2 value {};
-    check_hresult(static_cast<const ICameraIntrinsics &>(static_cast<const D &>(*this))->get_PrincipalPoint(put(value)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics)->get_PrincipalPoint(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_ICameraIntrinsics<D>::RadialDistortion() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(static_cast<const ICameraIntrinsics &>(static_cast<const D &>(*this))->get_RadialDistortion(put(value)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics)->get_RadialDistortion(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float2 impl_ICameraIntrinsics<D>::TangentialDistortion() const
 {
     Windows::Foundation::Numerics::float2 value {};
-    check_hresult(static_cast<const ICameraIntrinsics &>(static_cast<const D &>(*this))->get_TangentialDistortion(put(value)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics)->get_TangentialDistortion(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_ICameraIntrinsics<D>::ImageWidth() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ICameraIntrinsics &>(static_cast<const D &>(*this))->get_ImageWidth(&value));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics)->get_ImageWidth(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_ICameraIntrinsics<D>::ImageHeight() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ICameraIntrinsics &>(static_cast<const D &>(*this))->get_ImageHeight(&value));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics)->get_ImageHeight(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_ICameraIntrinsics<D>::ProjectOntoFrame(const Windows::Foundation::Numerics::float3 & coordinate) const
 {
     Windows::Foundation::Point result {};
-    check_hresult(static_cast<const ICameraIntrinsics &>(static_cast<const D &>(*this))->abi_ProjectOntoFrame(get(coordinate), put(result)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics)->abi_ProjectOntoFrame(get(coordinate), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Numerics::float2 impl_ICameraIntrinsics<D>::UnprojectAtUnitDepth(const Windows::Foundation::Point & pixelCoordinate) const
 {
     Windows::Foundation::Numerics::float2 result {};
-    check_hresult(static_cast<const ICameraIntrinsics &>(static_cast<const D &>(*this))->abi_UnprojectAtUnitDepth(get(pixelCoordinate), put(result)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics)->abi_UnprojectAtUnitDepth(get(pixelCoordinate), put(result)));
     return result;
 }
 
 template <typename D> void impl_ICameraIntrinsics<D>::ProjectManyOntoFrame(array_ref<const Windows::Foundation::Numerics::float3> coordinates, array_ref<Windows::Foundation::Point> results) const
 {
-    check_hresult(static_cast<const ICameraIntrinsics &>(static_cast<const D &>(*this))->abi_ProjectManyOntoFrame(coordinates.size(), get(coordinates), results.size(), get(results)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics)->abi_ProjectManyOntoFrame(coordinates.size(), get(coordinates), results.size(), get(results)));
 }
 
 template <typename D> void impl_ICameraIntrinsics<D>::UnprojectPixelsAtUnitDepth(array_ref<const Windows::Foundation::Point> pixelCoordinates, array_ref<Windows::Foundation::Numerics::float2> results) const
 {
-    check_hresult(static_cast<const ICameraIntrinsics &>(static_cast<const D &>(*this))->abi_UnprojectPixelsAtUnitDepth(pixelCoordinates.size(), get(pixelCoordinates), results.size(), get(results)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics)->abi_UnprojectPixelsAtUnitDepth(pixelCoordinates.size(), get(pixelCoordinates), results.size(), get(results)));
 }
 
 template <typename D> Windows::Foundation::Numerics::float4x4 impl_ICameraIntrinsics2<D>::UndistortedProjectionTransform() const
 {
     Windows::Foundation::Numerics::float4x4 value {};
-    check_hresult(static_cast<const ICameraIntrinsics2 &>(static_cast<const D &>(*this))->get_UndistortedProjectionTransform(put(value)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics2)->get_UndistortedProjectionTransform(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_ICameraIntrinsics2<D>::DistortPoint(const Windows::Foundation::Point & input) const
 {
     Windows::Foundation::Point result {};
-    check_hresult(static_cast<const ICameraIntrinsics2 &>(static_cast<const D &>(*this))->abi_DistortPoint(get(input), put(result)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics2)->abi_DistortPoint(get(input), put(result)));
     return result;
 }
 
 template <typename D> void impl_ICameraIntrinsics2<D>::DistortPoints(array_ref<const Windows::Foundation::Point> inputs, array_ref<Windows::Foundation::Point> results) const
 {
-    check_hresult(static_cast<const ICameraIntrinsics2 &>(static_cast<const D &>(*this))->abi_DistortPoints(inputs.size(), get(inputs), results.size(), get(results)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics2)->abi_DistortPoints(inputs.size(), get(inputs), results.size(), get(results)));
 }
 
 template <typename D> Windows::Foundation::Point impl_ICameraIntrinsics2<D>::UndistortPoint(const Windows::Foundation::Point & input) const
 {
     Windows::Foundation::Point result {};
-    check_hresult(static_cast<const ICameraIntrinsics2 &>(static_cast<const D &>(*this))->abi_UndistortPoint(get(input), put(result)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics2)->abi_UndistortPoint(get(input), put(result)));
     return result;
 }
 
 template <typename D> void impl_ICameraIntrinsics2<D>::UndistortPoints(array_ref<const Windows::Foundation::Point> inputs, array_ref<Windows::Foundation::Point> results) const
 {
-    check_hresult(static_cast<const ICameraIntrinsics2 &>(static_cast<const D &>(*this))->abi_UndistortPoints(inputs.size(), get(inputs), results.size(), get(results)));
+    check_hresult(WINRT_SHIM(ICameraIntrinsics2)->abi_UndistortPoints(inputs.size(), get(inputs), results.size(), get(results)));
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IDepthCorrelatedCoordinateMapper<D>::UnprojectPoint(const Windows::Foundation::Point & sourcePoint, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem) const
 {
     Windows::Foundation::Numerics::float3 result {};
-    check_hresult(static_cast<const IDepthCorrelatedCoordinateMapper &>(static_cast<const D &>(*this))->abi_UnprojectPoint(get(sourcePoint), get(targetCoordinateSystem), put(result)));
+    check_hresult(WINRT_SHIM(IDepthCorrelatedCoordinateMapper)->abi_UnprojectPoint(get(sourcePoint), get(targetCoordinateSystem), put(result)));
     return result;
 }
 
 template <typename D> void impl_IDepthCorrelatedCoordinateMapper<D>::UnprojectPoints(array_ref<const Windows::Foundation::Point> sourcePoints, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem, array_ref<Windows::Foundation::Numerics::float3> results) const
 {
-    check_hresult(static_cast<const IDepthCorrelatedCoordinateMapper &>(static_cast<const D &>(*this))->abi_UnprojectPoints(sourcePoints.size(), get(sourcePoints), get(targetCoordinateSystem), results.size(), get(results)));
+    check_hresult(WINRT_SHIM(IDepthCorrelatedCoordinateMapper)->abi_UnprojectPoints(sourcePoints.size(), get(sourcePoints), get(targetCoordinateSystem), results.size(), get(results)));
 }
 
 template <typename D> Windows::Foundation::Point impl_IDepthCorrelatedCoordinateMapper<D>::MapPoint(const Windows::Foundation::Point & sourcePoint, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem, const Windows::Media::Devices::Core::CameraIntrinsics & targetCameraIntrinsics) const
 {
     Windows::Foundation::Point result {};
-    check_hresult(static_cast<const IDepthCorrelatedCoordinateMapper &>(static_cast<const D &>(*this))->abi_MapPoint(get(sourcePoint), get(targetCoordinateSystem), get(targetCameraIntrinsics), put(result)));
+    check_hresult(WINRT_SHIM(IDepthCorrelatedCoordinateMapper)->abi_MapPoint(get(sourcePoint), get(targetCoordinateSystem), get(targetCameraIntrinsics), put(result)));
     return result;
 }
 
 template <typename D> void impl_IDepthCorrelatedCoordinateMapper<D>::MapPoints(array_ref<const Windows::Foundation::Point> sourcePoints, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem, const Windows::Media::Devices::Core::CameraIntrinsics & targetCameraIntrinsics, array_ref<Windows::Foundation::Point> results) const
 {
-    check_hresult(static_cast<const IDepthCorrelatedCoordinateMapper &>(static_cast<const D &>(*this))->abi_MapPoints(sourcePoints.size(), get(sourcePoints), get(targetCoordinateSystem), get(targetCameraIntrinsics), results.size(), get(results)));
+    check_hresult(WINRT_SHIM(IDepthCorrelatedCoordinateMapper)->abi_MapPoints(sourcePoints.size(), get(sourcePoints), get(targetCoordinateSystem), get(targetCameraIntrinsics), results.size(), get(results)));
 }
 
 inline FrameController::FrameController() :

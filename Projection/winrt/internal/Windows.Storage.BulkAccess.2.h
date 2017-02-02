@@ -112,7 +112,6 @@ struct IFileInformationFactory :
     impl::consume<IFileInformationFactory>
 {
     IFileInformationFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileInformationFactory>(m_ptr); }
 };
 
 struct IFileInformationFactoryFactory :
@@ -120,7 +119,6 @@ struct IFileInformationFactoryFactory :
     impl::consume<IFileInformationFactoryFactory>
 {
     IFileInformationFactoryFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileInformationFactoryFactory>(m_ptr); }
 };
 
 struct IStorageItemInformation :
@@ -128,7 +126,6 @@ struct IStorageItemInformation :
     impl::consume<IStorageItemInformation>
 {
     IStorageItemInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageItemInformation>(m_ptr); }
 };
 
 }

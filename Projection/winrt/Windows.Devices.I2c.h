@@ -347,135 +347,135 @@ namespace Windows::Devices::I2c {
 template <typename D> Windows::Devices::I2c::I2cConnectionSettings impl_II2cConnectionSettingsFactory<D>::Create(int32_t slaveAddress) const
 {
     Windows::Devices::I2c::I2cConnectionSettings value { nullptr };
-    check_hresult(static_cast<const II2cConnectionSettingsFactory &>(static_cast<const D &>(*this))->abi_Create(slaveAddress, put(value)));
+    check_hresult(WINRT_SHIM(II2cConnectionSettingsFactory)->abi_Create(slaveAddress, put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_II2cConnectionSettings<D>::SlaveAddress() const
 {
     int32_t value {};
-    check_hresult(static_cast<const II2cConnectionSettings &>(static_cast<const D &>(*this))->get_SlaveAddress(&value));
+    check_hresult(WINRT_SHIM(II2cConnectionSettings)->get_SlaveAddress(&value));
     return value;
 }
 
 template <typename D> void impl_II2cConnectionSettings<D>::SlaveAddress(int32_t value) const
 {
-    check_hresult(static_cast<const II2cConnectionSettings &>(static_cast<const D &>(*this))->put_SlaveAddress(value));
+    check_hresult(WINRT_SHIM(II2cConnectionSettings)->put_SlaveAddress(value));
 }
 
 template <typename D> Windows::Devices::I2c::I2cBusSpeed impl_II2cConnectionSettings<D>::BusSpeed() const
 {
     Windows::Devices::I2c::I2cBusSpeed value {};
-    check_hresult(static_cast<const II2cConnectionSettings &>(static_cast<const D &>(*this))->get_BusSpeed(&value));
+    check_hresult(WINRT_SHIM(II2cConnectionSettings)->get_BusSpeed(&value));
     return value;
 }
 
 template <typename D> void impl_II2cConnectionSettings<D>::BusSpeed(Windows::Devices::I2c::I2cBusSpeed value) const
 {
-    check_hresult(static_cast<const II2cConnectionSettings &>(static_cast<const D &>(*this))->put_BusSpeed(value));
+    check_hresult(WINRT_SHIM(II2cConnectionSettings)->put_BusSpeed(value));
 }
 
 template <typename D> Windows::Devices::I2c::I2cSharingMode impl_II2cConnectionSettings<D>::SharingMode() const
 {
     Windows::Devices::I2c::I2cSharingMode value {};
-    check_hresult(static_cast<const II2cConnectionSettings &>(static_cast<const D &>(*this))->get_SharingMode(&value));
+    check_hresult(WINRT_SHIM(II2cConnectionSettings)->get_SharingMode(&value));
     return value;
 }
 
 template <typename D> void impl_II2cConnectionSettings<D>::SharingMode(Windows::Devices::I2c::I2cSharingMode value) const
 {
-    check_hresult(static_cast<const II2cConnectionSettings &>(static_cast<const D &>(*this))->put_SharingMode(value));
+    check_hresult(WINRT_SHIM(II2cConnectionSettings)->put_SharingMode(value));
 }
 
 template <typename D> hstring impl_II2cDeviceStatics<D>::GetDeviceSelector() const
 {
     hstring value;
-    check_hresult(static_cast<const II2cDeviceStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(value)));
+    check_hresult(WINRT_SHIM(II2cDeviceStatics)->abi_GetDeviceSelector(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_II2cDeviceStatics<D>::GetDeviceSelector(hstring_ref friendlyName) const
 {
     hstring value;
-    check_hresult(static_cast<const II2cDeviceStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorFromFriendlyName(get(friendlyName), put(value)));
+    check_hresult(WINRT_SHIM(II2cDeviceStatics)->abi_GetDeviceSelectorFromFriendlyName(get(friendlyName), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cDevice> impl_II2cDeviceStatics<D>::FromIdAsync(hstring_ref deviceId, const Windows::Devices::I2c::I2cConnectionSettings & settings) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cDevice> operation;
-    check_hresult(static_cast<const II2cDeviceStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), get(settings), put(operation)));
+    check_hresult(WINRT_SHIM(II2cDeviceStatics)->abi_FromIdAsync(get(deviceId), get(settings), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Devices::I2c::I2cDevice impl_II2cController<D>::GetDevice(const Windows::Devices::I2c::I2cConnectionSettings & settings) const
 {
     Windows::Devices::I2c::I2cDevice device { nullptr };
-    check_hresult(static_cast<const II2cController &>(static_cast<const D &>(*this))->abi_GetDevice(get(settings), put(device)));
+    check_hresult(WINRT_SHIM(II2cController)->abi_GetDevice(get(settings), put(device)));
     return device;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::I2c::I2cController>> impl_II2cControllerStatics<D>::GetControllersAsync(const Windows::Devices::I2c::Provider::II2cProvider & provider) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::I2c::I2cController>> operation;
-    check_hresult(static_cast<const II2cControllerStatics &>(static_cast<const D &>(*this))->abi_GetControllersAsync(get(provider), put(operation)));
+    check_hresult(WINRT_SHIM(II2cControllerStatics)->abi_GetControllersAsync(get(provider), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cController> impl_II2cControllerStatics<D>::GetDefaultAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cController> operation;
-    check_hresult(static_cast<const II2cControllerStatics &>(static_cast<const D &>(*this))->abi_GetDefaultAsync(put(operation)));
+    check_hresult(WINRT_SHIM(II2cControllerStatics)->abi_GetDefaultAsync(put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_II2cDevice<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const II2cDevice &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(II2cDevice)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::I2c::I2cConnectionSettings impl_II2cDevice<D>::ConnectionSettings() const
 {
     Windows::Devices::I2c::I2cConnectionSettings value { nullptr };
-    check_hresult(static_cast<const II2cDevice &>(static_cast<const D &>(*this))->get_ConnectionSettings(put(value)));
+    check_hresult(WINRT_SHIM(II2cDevice)->get_ConnectionSettings(put(value)));
     return value;
 }
 
 template <typename D> void impl_II2cDevice<D>::Write(array_ref<const uint8_t> buffer) const
 {
-    check_hresult(static_cast<const II2cDevice &>(static_cast<const D &>(*this))->abi_Write(buffer.size(), get(buffer)));
+    check_hresult(WINRT_SHIM(II2cDevice)->abi_Write(buffer.size(), get(buffer)));
 }
 
 template <typename D> Windows::Devices::I2c::I2cTransferResult impl_II2cDevice<D>::WritePartial(array_ref<const uint8_t> buffer) const
 {
     Windows::Devices::I2c::I2cTransferResult result {};
-    check_hresult(static_cast<const II2cDevice &>(static_cast<const D &>(*this))->abi_WritePartial(buffer.size(), get(buffer), put(result)));
+    check_hresult(WINRT_SHIM(II2cDevice)->abi_WritePartial(buffer.size(), get(buffer), put(result)));
     return result;
 }
 
 template <typename D> void impl_II2cDevice<D>::Read(array_ref<uint8_t> buffer) const
 {
-    check_hresult(static_cast<const II2cDevice &>(static_cast<const D &>(*this))->abi_Read(buffer.size(), get(buffer)));
+    check_hresult(WINRT_SHIM(II2cDevice)->abi_Read(buffer.size(), get(buffer)));
 }
 
 template <typename D> Windows::Devices::I2c::I2cTransferResult impl_II2cDevice<D>::ReadPartial(array_ref<uint8_t> buffer) const
 {
     Windows::Devices::I2c::I2cTransferResult result {};
-    check_hresult(static_cast<const II2cDevice &>(static_cast<const D &>(*this))->abi_ReadPartial(buffer.size(), get(buffer), put(result)));
+    check_hresult(WINRT_SHIM(II2cDevice)->abi_ReadPartial(buffer.size(), get(buffer), put(result)));
     return result;
 }
 
 template <typename D> void impl_II2cDevice<D>::WriteRead(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const
 {
-    check_hresult(static_cast<const II2cDevice &>(static_cast<const D &>(*this))->abi_WriteRead(writeBuffer.size(), get(writeBuffer), readBuffer.size(), get(readBuffer)));
+    check_hresult(WINRT_SHIM(II2cDevice)->abi_WriteRead(writeBuffer.size(), get(writeBuffer), readBuffer.size(), get(readBuffer)));
 }
 
 template <typename D> Windows::Devices::I2c::I2cTransferResult impl_II2cDevice<D>::WriteReadPartial(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const
 {
     Windows::Devices::I2c::I2cTransferResult result {};
-    check_hresult(static_cast<const II2cDevice &>(static_cast<const D &>(*this))->abi_WriteReadPartial(writeBuffer.size(), get(writeBuffer), readBuffer.size(), get(readBuffer), put(result)));
+    check_hresult(WINRT_SHIM(II2cDevice)->abi_WriteReadPartial(writeBuffer.size(), get(writeBuffer), readBuffer.size(), get(readBuffer), put(result)));
     return result;
 }
 

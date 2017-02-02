@@ -29,7 +29,6 @@ struct IUriToStreamResolver :
     impl::consume<IUriToStreamResolver>
 {
     IUriToStreamResolver(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUriToStreamResolver>(m_ptr); }
 };
 
 struct IWebErrorStatics :
@@ -37,7 +36,6 @@ struct IWebErrorStatics :
     impl::consume<IWebErrorStatics>
 {
     IWebErrorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebErrorStatics>(m_ptr); }
 };
 
 }

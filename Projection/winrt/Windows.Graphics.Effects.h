@@ -53,13 +53,13 @@ namespace Windows::Graphics::Effects {
 template <typename D> hstring impl_IGraphicsEffect<D>::Name() const
 {
     hstring name;
-    check_hresult(static_cast<const IGraphicsEffect &>(static_cast<const D &>(*this))->get_Name(put(name)));
+    check_hresult(WINRT_SHIM(IGraphicsEffect)->get_Name(put(name)));
     return name;
 }
 
 template <typename D> void impl_IGraphicsEffect<D>::Name(hstring_ref name) const
 {
-    check_hresult(static_cast<const IGraphicsEffect &>(static_cast<const D &>(*this))->put_Name(get(name)));
+    check_hresult(WINRT_SHIM(IGraphicsEffect)->put_Name(get(name)));
 }
 
 }

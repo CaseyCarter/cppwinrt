@@ -97,7 +97,6 @@ namespace Windows::UI::Xaml::Controls::Primitives {
 struct DragCompletedEventHandler : Windows::IUnknown
 {
     DragCompletedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<DragCompletedEventHandler>(m_ptr); }
     template <typename L> DragCompletedEventHandler(L lambda);
     template <typename F> DragCompletedEventHandler (F * function);
     template <typename O, typename M> DragCompletedEventHandler(O * object, M method);
@@ -107,7 +106,6 @@ struct DragCompletedEventHandler : Windows::IUnknown
 struct DragDeltaEventHandler : Windows::IUnknown
 {
     DragDeltaEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<DragDeltaEventHandler>(m_ptr); }
     template <typename L> DragDeltaEventHandler(L lambda);
     template <typename F> DragDeltaEventHandler (F * function);
     template <typename O, typename M> DragDeltaEventHandler(O * object, M method);
@@ -117,7 +115,6 @@ struct DragDeltaEventHandler : Windows::IUnknown
 struct DragStartedEventHandler : Windows::IUnknown
 {
     DragStartedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<DragStartedEventHandler>(m_ptr); }
     template <typename L> DragStartedEventHandler(L lambda);
     template <typename F> DragStartedEventHandler (F * function);
     template <typename O, typename M> DragStartedEventHandler(O * object, M method);
@@ -127,7 +124,6 @@ struct DragStartedEventHandler : Windows::IUnknown
 struct ItemsChangedEventHandler : Windows::IUnknown
 {
     ItemsChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ItemsChangedEventHandler>(m_ptr); }
     template <typename L> ItemsChangedEventHandler(L lambda);
     template <typename F> ItemsChangedEventHandler (F * function);
     template <typename O, typename M> ItemsChangedEventHandler(O * object, M method);
@@ -137,7 +133,6 @@ struct ItemsChangedEventHandler : Windows::IUnknown
 struct RangeBaseValueChangedEventHandler : Windows::IUnknown
 {
     RangeBaseValueChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<RangeBaseValueChangedEventHandler>(m_ptr); }
     template <typename L> RangeBaseValueChangedEventHandler(L lambda);
     template <typename F> RangeBaseValueChangedEventHandler (F * function);
     template <typename O, typename M> RangeBaseValueChangedEventHandler(O * object, M method);
@@ -147,7 +142,6 @@ struct RangeBaseValueChangedEventHandler : Windows::IUnknown
 struct ScrollEventHandler : Windows::IUnknown
 {
     ScrollEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ScrollEventHandler>(m_ptr); }
     template <typename L> ScrollEventHandler(L lambda);
     template <typename F> ScrollEventHandler (F * function);
     template <typename O, typename M> ScrollEventHandler(O * object, M method);
@@ -159,7 +153,6 @@ struct IAppBarTemplateSettings :
     impl::consume<IAppBarTemplateSettings>
 {
     IAppBarTemplateSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppBarTemplateSettings>(m_ptr); }
 };
 
 struct IButtonBase :
@@ -167,7 +160,6 @@ struct IButtonBase :
     impl::consume<IButtonBase>
 {
     IButtonBase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IButtonBase>(m_ptr); }
 };
 
 struct IButtonBaseFactory :
@@ -175,7 +167,6 @@ struct IButtonBaseFactory :
     impl::consume<IButtonBaseFactory>
 {
     IButtonBaseFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IButtonBaseFactory>(m_ptr); }
 };
 
 struct IButtonBaseStatics :
@@ -183,7 +174,6 @@ struct IButtonBaseStatics :
     impl::consume<IButtonBaseStatics>
 {
     IButtonBaseStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IButtonBaseStatics>(m_ptr); }
 };
 
 struct ICalendarPanel :
@@ -191,7 +181,6 @@ struct ICalendarPanel :
     impl::consume<ICalendarPanel>
 {
     ICalendarPanel(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICalendarPanel>(m_ptr); }
 };
 
 struct ICalendarViewTemplateSettings :
@@ -199,7 +188,6 @@ struct ICalendarViewTemplateSettings :
     impl::consume<ICalendarViewTemplateSettings>
 {
     ICalendarViewTemplateSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICalendarViewTemplateSettings>(m_ptr); }
 };
 
 struct ICarouselPanel :
@@ -207,7 +195,6 @@ struct ICarouselPanel :
     impl::consume<ICarouselPanel>
 {
     ICarouselPanel(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICarouselPanel>(m_ptr); }
 };
 
 struct ICarouselPanelFactory :
@@ -215,7 +202,6 @@ struct ICarouselPanelFactory :
     impl::consume<ICarouselPanelFactory>
 {
     ICarouselPanelFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICarouselPanelFactory>(m_ptr); }
 };
 
 struct IComboBoxTemplateSettings :
@@ -223,7 +209,6 @@ struct IComboBoxTemplateSettings :
     impl::consume<IComboBoxTemplateSettings>
 {
     IComboBoxTemplateSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IComboBoxTemplateSettings>(m_ptr); }
 };
 
 struct IComboBoxTemplateSettings2 :
@@ -231,7 +216,6 @@ struct IComboBoxTemplateSettings2 :
     impl::consume<IComboBoxTemplateSettings2>
 {
     IComboBoxTemplateSettings2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IComboBoxTemplateSettings2>(m_ptr); }
 };
 
 struct ICommandBarTemplateSettings :
@@ -239,7 +223,6 @@ struct ICommandBarTemplateSettings :
     impl::consume<ICommandBarTemplateSettings>
 {
     ICommandBarTemplateSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICommandBarTemplateSettings>(m_ptr); }
 };
 
 struct ICommandBarTemplateSettings2 :
@@ -247,7 +230,6 @@ struct ICommandBarTemplateSettings2 :
     impl::consume<ICommandBarTemplateSettings2>
 {
     ICommandBarTemplateSettings2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICommandBarTemplateSettings2>(m_ptr); }
 };
 
 struct ICommandBarTemplateSettings3 :
@@ -255,7 +237,6 @@ struct ICommandBarTemplateSettings3 :
     impl::consume<ICommandBarTemplateSettings3>
 {
     ICommandBarTemplateSettings3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICommandBarTemplateSettings3>(m_ptr); }
 };
 
 struct IDragCompletedEventArgs :
@@ -263,7 +244,6 @@ struct IDragCompletedEventArgs :
     impl::consume<IDragCompletedEventArgs>
 {
     IDragCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDragCompletedEventArgs>(m_ptr); }
 };
 
 struct IDragCompletedEventArgsFactory :
@@ -271,7 +251,6 @@ struct IDragCompletedEventArgsFactory :
     impl::consume<IDragCompletedEventArgsFactory>
 {
     IDragCompletedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDragCompletedEventArgsFactory>(m_ptr); }
 };
 
 struct IDragDeltaEventArgs :
@@ -279,7 +258,6 @@ struct IDragDeltaEventArgs :
     impl::consume<IDragDeltaEventArgs>
 {
     IDragDeltaEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDragDeltaEventArgs>(m_ptr); }
 };
 
 struct IDragDeltaEventArgsFactory :
@@ -287,7 +265,6 @@ struct IDragDeltaEventArgsFactory :
     impl::consume<IDragDeltaEventArgsFactory>
 {
     IDragDeltaEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDragDeltaEventArgsFactory>(m_ptr); }
 };
 
 struct IDragStartedEventArgs :
@@ -295,7 +272,6 @@ struct IDragStartedEventArgs :
     impl::consume<IDragStartedEventArgs>
 {
     IDragStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDragStartedEventArgs>(m_ptr); }
 };
 
 struct IDragStartedEventArgsFactory :
@@ -303,7 +279,6 @@ struct IDragStartedEventArgsFactory :
     impl::consume<IDragStartedEventArgsFactory>
 {
     IDragStartedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDragStartedEventArgsFactory>(m_ptr); }
 };
 
 struct IFlyoutBase :
@@ -311,7 +286,6 @@ struct IFlyoutBase :
     impl::consume<IFlyoutBase>
 {
     IFlyoutBase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFlyoutBase>(m_ptr); }
 };
 
 struct IFlyoutBase2 :
@@ -319,7 +293,6 @@ struct IFlyoutBase2 :
     impl::consume<IFlyoutBase2>
 {
     IFlyoutBase2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFlyoutBase2>(m_ptr); }
 };
 
 struct IFlyoutBaseClosingEventArgs :
@@ -327,7 +300,6 @@ struct IFlyoutBaseClosingEventArgs :
     impl::consume<IFlyoutBaseClosingEventArgs>
 {
     IFlyoutBaseClosingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFlyoutBaseClosingEventArgs>(m_ptr); }
 };
 
 struct IFlyoutBaseFactory :
@@ -335,7 +307,6 @@ struct IFlyoutBaseFactory :
     impl::consume<IFlyoutBaseFactory>
 {
     IFlyoutBaseFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFlyoutBaseFactory>(m_ptr); }
 };
 
 struct IFlyoutBaseOverrides :
@@ -343,7 +314,6 @@ struct IFlyoutBaseOverrides :
     impl::consume<IFlyoutBaseOverrides>
 {
     IFlyoutBaseOverrides(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFlyoutBaseOverrides>(m_ptr); }
 };
 
 struct IFlyoutBaseStatics :
@@ -351,7 +321,6 @@ struct IFlyoutBaseStatics :
     impl::consume<IFlyoutBaseStatics>
 {
     IFlyoutBaseStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFlyoutBaseStatics>(m_ptr); }
 };
 
 struct IFlyoutBaseStatics2 :
@@ -359,7 +328,6 @@ struct IFlyoutBaseStatics2 :
     impl::consume<IFlyoutBaseStatics2>
 {
     IFlyoutBaseStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFlyoutBaseStatics2>(m_ptr); }
 };
 
 struct IGeneratorPositionHelper :
@@ -367,7 +335,6 @@ struct IGeneratorPositionHelper :
     impl::consume<IGeneratorPositionHelper>
 {
     IGeneratorPositionHelper(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeneratorPositionHelper>(m_ptr); }
 };
 
 struct IGeneratorPositionHelperStatics :
@@ -375,7 +342,6 @@ struct IGeneratorPositionHelperStatics :
     impl::consume<IGeneratorPositionHelperStatics>
 {
     IGeneratorPositionHelperStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeneratorPositionHelperStatics>(m_ptr); }
 };
 
 struct IGridViewItemPresenter :
@@ -383,7 +349,6 @@ struct IGridViewItemPresenter :
     impl::consume<IGridViewItemPresenter>
 {
     IGridViewItemPresenter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGridViewItemPresenter>(m_ptr); }
 };
 
 struct IGridViewItemPresenterFactory :
@@ -391,7 +356,6 @@ struct IGridViewItemPresenterFactory :
     impl::consume<IGridViewItemPresenterFactory>
 {
     IGridViewItemPresenterFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGridViewItemPresenterFactory>(m_ptr); }
 };
 
 struct IGridViewItemPresenterStatics :
@@ -399,7 +363,6 @@ struct IGridViewItemPresenterStatics :
     impl::consume<IGridViewItemPresenterStatics>
 {
     IGridViewItemPresenterStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGridViewItemPresenterStatics>(m_ptr); }
 };
 
 struct IGridViewItemTemplateSettings :
@@ -407,7 +370,6 @@ struct IGridViewItemTemplateSettings :
     impl::consume<IGridViewItemTemplateSettings>
 {
     IGridViewItemTemplateSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGridViewItemTemplateSettings>(m_ptr); }
 };
 
 struct IItemsChangedEventArgs :
@@ -415,7 +377,6 @@ struct IItemsChangedEventArgs :
     impl::consume<IItemsChangedEventArgs>
 {
     IItemsChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IItemsChangedEventArgs>(m_ptr); }
 };
 
 struct IJumpListItemBackgroundConverter :
@@ -423,7 +384,6 @@ struct IJumpListItemBackgroundConverter :
     impl::consume<IJumpListItemBackgroundConverter>
 {
     IJumpListItemBackgroundConverter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IJumpListItemBackgroundConverter>(m_ptr); }
 };
 
 struct IJumpListItemBackgroundConverterStatics :
@@ -431,7 +391,6 @@ struct IJumpListItemBackgroundConverterStatics :
     impl::consume<IJumpListItemBackgroundConverterStatics>
 {
     IJumpListItemBackgroundConverterStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IJumpListItemBackgroundConverterStatics>(m_ptr); }
 };
 
 struct IJumpListItemForegroundConverter :
@@ -439,7 +398,6 @@ struct IJumpListItemForegroundConverter :
     impl::consume<IJumpListItemForegroundConverter>
 {
     IJumpListItemForegroundConverter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IJumpListItemForegroundConverter>(m_ptr); }
 };
 
 struct IJumpListItemForegroundConverterStatics :
@@ -447,7 +405,6 @@ struct IJumpListItemForegroundConverterStatics :
     impl::consume<IJumpListItemForegroundConverterStatics>
 {
     IJumpListItemForegroundConverterStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IJumpListItemForegroundConverterStatics>(m_ptr); }
 };
 
 struct ILayoutInformation :
@@ -455,7 +412,6 @@ struct ILayoutInformation :
     impl::consume<ILayoutInformation>
 {
     ILayoutInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILayoutInformation>(m_ptr); }
 };
 
 struct ILayoutInformationStatics :
@@ -463,7 +419,6 @@ struct ILayoutInformationStatics :
     impl::consume<ILayoutInformationStatics>
 {
     ILayoutInformationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILayoutInformationStatics>(m_ptr); }
 };
 
 struct IListViewItemPresenter :
@@ -471,7 +426,6 @@ struct IListViewItemPresenter :
     impl::consume<IListViewItemPresenter>
 {
     IListViewItemPresenter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListViewItemPresenter>(m_ptr); }
 };
 
 struct IListViewItemPresenter2 :
@@ -479,7 +433,6 @@ struct IListViewItemPresenter2 :
     impl::consume<IListViewItemPresenter2>
 {
     IListViewItemPresenter2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListViewItemPresenter2>(m_ptr); }
 };
 
 struct IListViewItemPresenterFactory :
@@ -487,7 +440,6 @@ struct IListViewItemPresenterFactory :
     impl::consume<IListViewItemPresenterFactory>
 {
     IListViewItemPresenterFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListViewItemPresenterFactory>(m_ptr); }
 };
 
 struct IListViewItemPresenterStatics :
@@ -495,7 +447,6 @@ struct IListViewItemPresenterStatics :
     impl::consume<IListViewItemPresenterStatics>
 {
     IListViewItemPresenterStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListViewItemPresenterStatics>(m_ptr); }
 };
 
 struct IListViewItemPresenterStatics2 :
@@ -503,7 +454,6 @@ struct IListViewItemPresenterStatics2 :
     impl::consume<IListViewItemPresenterStatics2>
 {
     IListViewItemPresenterStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListViewItemPresenterStatics2>(m_ptr); }
 };
 
 struct IListViewItemTemplateSettings :
@@ -511,7 +461,6 @@ struct IListViewItemTemplateSettings :
     impl::consume<IListViewItemTemplateSettings>
 {
     IListViewItemTemplateSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListViewItemTemplateSettings>(m_ptr); }
 };
 
 struct ILoopingSelector :
@@ -519,7 +468,6 @@ struct ILoopingSelector :
     impl::consume<ILoopingSelector>
 {
     ILoopingSelector(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoopingSelector>(m_ptr); }
 };
 
 struct ILoopingSelectorItem :
@@ -527,7 +475,6 @@ struct ILoopingSelectorItem :
     impl::consume<ILoopingSelectorItem>
 {
     ILoopingSelectorItem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoopingSelectorItem>(m_ptr); }
 };
 
 struct ILoopingSelectorPanel :
@@ -535,7 +482,6 @@ struct ILoopingSelectorPanel :
     impl::consume<ILoopingSelectorPanel>
 {
     ILoopingSelectorPanel(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoopingSelectorPanel>(m_ptr); }
 };
 
 struct ILoopingSelectorStatics :
@@ -543,7 +489,6 @@ struct ILoopingSelectorStatics :
     impl::consume<ILoopingSelectorStatics>
 {
     ILoopingSelectorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILoopingSelectorStatics>(m_ptr); }
 };
 
 struct IMenuFlyoutPresenterTemplateSettings :
@@ -551,7 +496,6 @@ struct IMenuFlyoutPresenterTemplateSettings :
     impl::consume<IMenuFlyoutPresenterTemplateSettings>
 {
     IMenuFlyoutPresenterTemplateSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMenuFlyoutPresenterTemplateSettings>(m_ptr); }
 };
 
 struct IOrientedVirtualizingPanel :
@@ -559,7 +503,6 @@ struct IOrientedVirtualizingPanel :
     impl::consume<IOrientedVirtualizingPanel>
 {
     IOrientedVirtualizingPanel(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOrientedVirtualizingPanel>(m_ptr); }
 };
 
 struct IOrientedVirtualizingPanelFactory :
@@ -567,7 +510,6 @@ struct IOrientedVirtualizingPanelFactory :
     impl::consume<IOrientedVirtualizingPanelFactory>
 {
     IOrientedVirtualizingPanelFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOrientedVirtualizingPanelFactory>(m_ptr); }
 };
 
 struct IPickerFlyoutBase :
@@ -575,7 +517,6 @@ struct IPickerFlyoutBase :
     impl::consume<IPickerFlyoutBase>
 {
     IPickerFlyoutBase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPickerFlyoutBase>(m_ptr); }
 };
 
 struct IPickerFlyoutBaseFactory :
@@ -583,7 +524,6 @@ struct IPickerFlyoutBaseFactory :
     impl::consume<IPickerFlyoutBaseFactory>
 {
     IPickerFlyoutBaseFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPickerFlyoutBaseFactory>(m_ptr); }
 };
 
 struct IPickerFlyoutBaseOverrides :
@@ -591,7 +531,6 @@ struct IPickerFlyoutBaseOverrides :
     impl::consume<IPickerFlyoutBaseOverrides>
 {
     IPickerFlyoutBaseOverrides(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPickerFlyoutBaseOverrides>(m_ptr); }
 };
 
 struct IPickerFlyoutBaseStatics :
@@ -599,7 +538,6 @@ struct IPickerFlyoutBaseStatics :
     impl::consume<IPickerFlyoutBaseStatics>
 {
     IPickerFlyoutBaseStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPickerFlyoutBaseStatics>(m_ptr); }
 };
 
 struct IPivotHeaderItem :
@@ -607,7 +545,6 @@ struct IPivotHeaderItem :
     impl::consume<IPivotHeaderItem>
 {
     IPivotHeaderItem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPivotHeaderItem>(m_ptr); }
 };
 
 struct IPivotHeaderItemFactory :
@@ -615,7 +552,6 @@ struct IPivotHeaderItemFactory :
     impl::consume<IPivotHeaderItemFactory>
 {
     IPivotHeaderItemFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPivotHeaderItemFactory>(m_ptr); }
 };
 
 struct IPivotHeaderPanel :
@@ -623,7 +559,6 @@ struct IPivotHeaderPanel :
     impl::consume<IPivotHeaderPanel>
 {
     IPivotHeaderPanel(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPivotHeaderPanel>(m_ptr); }
 };
 
 struct IPivotPanel :
@@ -631,7 +566,6 @@ struct IPivotPanel :
     impl::consume<IPivotPanel>
 {
     IPivotPanel(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPivotPanel>(m_ptr); }
 };
 
 struct IPopup :
@@ -639,7 +573,6 @@ struct IPopup :
     impl::consume<IPopup>
 {
     IPopup(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPopup>(m_ptr); }
 };
 
 struct IPopup2 :
@@ -647,7 +580,6 @@ struct IPopup2 :
     impl::consume<IPopup2>
 {
     IPopup2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPopup2>(m_ptr); }
 };
 
 struct IPopupStatics :
@@ -655,7 +587,6 @@ struct IPopupStatics :
     impl::consume<IPopupStatics>
 {
     IPopupStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPopupStatics>(m_ptr); }
 };
 
 struct IPopupStatics2 :
@@ -663,7 +594,6 @@ struct IPopupStatics2 :
     impl::consume<IPopupStatics2>
 {
     IPopupStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPopupStatics2>(m_ptr); }
 };
 
 struct IProgressBarTemplateSettings :
@@ -671,7 +601,6 @@ struct IProgressBarTemplateSettings :
     impl::consume<IProgressBarTemplateSettings>
 {
     IProgressBarTemplateSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProgressBarTemplateSettings>(m_ptr); }
 };
 
 struct IProgressRingTemplateSettings :
@@ -679,7 +608,6 @@ struct IProgressRingTemplateSettings :
     impl::consume<IProgressRingTemplateSettings>
 {
     IProgressRingTemplateSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProgressRingTemplateSettings>(m_ptr); }
 };
 
 struct IRangeBase :
@@ -687,7 +615,6 @@ struct IRangeBase :
     impl::consume<IRangeBase>
 {
     IRangeBase(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRangeBase>(m_ptr); }
 };
 
 struct IRangeBaseFactory :
@@ -695,7 +622,6 @@ struct IRangeBaseFactory :
     impl::consume<IRangeBaseFactory>
 {
     IRangeBaseFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRangeBaseFactory>(m_ptr); }
 };
 
 struct IRangeBaseOverrides :
@@ -703,7 +629,6 @@ struct IRangeBaseOverrides :
     impl::consume<IRangeBaseOverrides>
 {
     IRangeBaseOverrides(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRangeBaseOverrides>(m_ptr); }
 };
 
 struct IRangeBaseStatics :
@@ -711,7 +636,6 @@ struct IRangeBaseStatics :
     impl::consume<IRangeBaseStatics>
 {
     IRangeBaseStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRangeBaseStatics>(m_ptr); }
 };
 
 struct IRangeBaseValueChangedEventArgs :
@@ -719,7 +643,6 @@ struct IRangeBaseValueChangedEventArgs :
     impl::consume<IRangeBaseValueChangedEventArgs>
 {
     IRangeBaseValueChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRangeBaseValueChangedEventArgs>(m_ptr); }
 };
 
 struct IRepeatButton :
@@ -727,7 +650,6 @@ struct IRepeatButton :
     impl::consume<IRepeatButton>
 {
     IRepeatButton(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRepeatButton>(m_ptr); }
 };
 
 struct IRepeatButtonStatics :
@@ -735,7 +657,6 @@ struct IRepeatButtonStatics :
     impl::consume<IRepeatButtonStatics>
 {
     IRepeatButtonStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRepeatButtonStatics>(m_ptr); }
 };
 
 struct IScrollBar :
@@ -743,7 +664,6 @@ struct IScrollBar :
     impl::consume<IScrollBar>
 {
     IScrollBar(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScrollBar>(m_ptr); }
 };
 
 struct IScrollBarStatics :
@@ -751,7 +671,6 @@ struct IScrollBarStatics :
     impl::consume<IScrollBarStatics>
 {
     IScrollBarStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScrollBarStatics>(m_ptr); }
 };
 
 struct IScrollEventArgs :
@@ -759,7 +678,6 @@ struct IScrollEventArgs :
     impl::consume<IScrollEventArgs>
 {
     IScrollEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScrollEventArgs>(m_ptr); }
 };
 
 struct IScrollSnapPointsInfo :
@@ -767,7 +685,6 @@ struct IScrollSnapPointsInfo :
     impl::consume<IScrollSnapPointsInfo>
 {
     IScrollSnapPointsInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScrollSnapPointsInfo>(m_ptr); }
 };
 
 struct ISelector :
@@ -775,7 +692,6 @@ struct ISelector :
     impl::consume<ISelector>
 {
     ISelector(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelector>(m_ptr); }
 };
 
 struct ISelectorFactory :
@@ -783,7 +699,6 @@ struct ISelectorFactory :
     impl::consume<ISelectorFactory>
 {
     ISelectorFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectorFactory>(m_ptr); }
 };
 
 struct ISelectorItem :
@@ -791,7 +706,6 @@ struct ISelectorItem :
     impl::consume<ISelectorItem>
 {
     ISelectorItem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectorItem>(m_ptr); }
 };
 
 struct ISelectorItemFactory :
@@ -799,7 +713,6 @@ struct ISelectorItemFactory :
     impl::consume<ISelectorItemFactory>
 {
     ISelectorItemFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectorItemFactory>(m_ptr); }
 };
 
 struct ISelectorItemStatics :
@@ -807,7 +720,6 @@ struct ISelectorItemStatics :
     impl::consume<ISelectorItemStatics>
 {
     ISelectorItemStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectorItemStatics>(m_ptr); }
 };
 
 struct ISelectorStatics :
@@ -815,7 +727,6 @@ struct ISelectorStatics :
     impl::consume<ISelectorStatics>
 {
     ISelectorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectorStatics>(m_ptr); }
 };
 
 struct ISettingsFlyoutTemplateSettings :
@@ -823,7 +734,6 @@ struct ISettingsFlyoutTemplateSettings :
     impl::consume<ISettingsFlyoutTemplateSettings>
 {
     ISettingsFlyoutTemplateSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISettingsFlyoutTemplateSettings>(m_ptr); }
 };
 
 struct ISplitViewTemplateSettings :
@@ -831,7 +741,6 @@ struct ISplitViewTemplateSettings :
     impl::consume<ISplitViewTemplateSettings>
 {
     ISplitViewTemplateSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISplitViewTemplateSettings>(m_ptr); }
 };
 
 struct IThumb :
@@ -839,7 +748,6 @@ struct IThumb :
     impl::consume<IThumb>
 {
     IThumb(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IThumb>(m_ptr); }
 };
 
 struct IThumbStatics :
@@ -847,7 +755,6 @@ struct IThumbStatics :
     impl::consume<IThumbStatics>
 {
     IThumbStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IThumbStatics>(m_ptr); }
 };
 
 struct ITickBar :
@@ -855,7 +762,6 @@ struct ITickBar :
     impl::consume<ITickBar>
 {
     ITickBar(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITickBar>(m_ptr); }
 };
 
 struct ITickBarStatics :
@@ -863,7 +769,6 @@ struct ITickBarStatics :
     impl::consume<ITickBarStatics>
 {
     ITickBarStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITickBarStatics>(m_ptr); }
 };
 
 struct IToggleButton :
@@ -871,7 +776,6 @@ struct IToggleButton :
     impl::consume<IToggleButton>
 {
     IToggleButton(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToggleButton>(m_ptr); }
 };
 
 struct IToggleButtonFactory :
@@ -879,7 +783,6 @@ struct IToggleButtonFactory :
     impl::consume<IToggleButtonFactory>
 {
     IToggleButtonFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToggleButtonFactory>(m_ptr); }
 };
 
 struct IToggleButtonOverrides :
@@ -887,7 +790,6 @@ struct IToggleButtonOverrides :
     impl::consume<IToggleButtonOverrides>
 {
     IToggleButtonOverrides(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToggleButtonOverrides>(m_ptr); }
 };
 
 struct IToggleButtonStatics :
@@ -895,7 +797,6 @@ struct IToggleButtonStatics :
     impl::consume<IToggleButtonStatics>
 {
     IToggleButtonStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToggleButtonStatics>(m_ptr); }
 };
 
 struct IToggleSwitchTemplateSettings :
@@ -903,7 +804,6 @@ struct IToggleSwitchTemplateSettings :
     impl::consume<IToggleSwitchTemplateSettings>
 {
     IToggleSwitchTemplateSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToggleSwitchTemplateSettings>(m_ptr); }
 };
 
 struct IToolTipTemplateSettings :
@@ -911,7 +811,6 @@ struct IToolTipTemplateSettings :
     impl::consume<IToolTipTemplateSettings>
 {
     IToolTipTemplateSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToolTipTemplateSettings>(m_ptr); }
 };
 
 }

@@ -278,105 +278,105 @@ namespace Windows::System::UserProfile {
 template <typename D> hstring impl_IAdvertisingManagerStatics<D>::AdvertisingId() const
 {
     hstring value;
-    check_hresult(static_cast<const IAdvertisingManagerStatics &>(static_cast<const D &>(*this))->get_AdvertisingId(put(value)));
+    check_hresult(WINRT_SHIM(IAdvertisingManagerStatics)->get_AdvertisingId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAdvertisingManagerForUser<D>::AdvertisingId() const
 {
     hstring value;
-    check_hresult(static_cast<const IAdvertisingManagerForUser &>(static_cast<const D &>(*this))->get_AdvertisingId(put(value)));
+    check_hresult(WINRT_SHIM(IAdvertisingManagerForUser)->get_AdvertisingId(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::User impl_IAdvertisingManagerForUser<D>::User() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(static_cast<const IAdvertisingManagerForUser &>(static_cast<const D &>(*this))->get_User(put(value)));
+    check_hresult(WINRT_SHIM(IAdvertisingManagerForUser)->get_User(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::UserProfile::AdvertisingManagerForUser impl_IAdvertisingManagerStatics2<D>::GetForUser(const Windows::System::User & user) const
 {
     Windows::System::UserProfile::AdvertisingManagerForUser value { nullptr };
-    check_hresult(static_cast<const IAdvertisingManagerStatics2 &>(static_cast<const D &>(*this))->abi_GetForUser(get(user), put(value)));
+    check_hresult(WINRT_SHIM(IAdvertisingManagerStatics2)->abi_GetForUser(get(user), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IUserProfilePersonalizationSettings<D>::TrySetLockScreenImageAsync(const Windows::Storage::StorageFile & imageFile) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const IUserProfilePersonalizationSettings &>(static_cast<const D &>(*this))->abi_TrySetLockScreenImageAsync(get(imageFile), put(operation)));
+    check_hresult(WINRT_SHIM(IUserProfilePersonalizationSettings)->abi_TrySetLockScreenImageAsync(get(imageFile), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IUserProfilePersonalizationSettings<D>::TrySetWallpaperImageAsync(const Windows::Storage::StorageFile & imageFile) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const IUserProfilePersonalizationSettings &>(static_cast<const D &>(*this))->abi_TrySetWallpaperImageAsync(get(imageFile), put(operation)));
+    check_hresult(WINRT_SHIM(IUserProfilePersonalizationSettings)->abi_TrySetWallpaperImageAsync(get(imageFile), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::System::UserProfile::UserProfilePersonalizationSettings impl_IUserProfilePersonalizationSettingsStatics<D>::Current() const
 {
     Windows::System::UserProfile::UserProfilePersonalizationSettings value { nullptr };
-    check_hresult(static_cast<const IUserProfilePersonalizationSettingsStatics &>(static_cast<const D &>(*this))->get_Current(put(value)));
+    check_hresult(WINRT_SHIM(IUserProfilePersonalizationSettingsStatics)->get_Current(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IUserProfilePersonalizationSettingsStatics<D>::IsSupported() const
 {
     bool result {};
-    check_hresult(static_cast<const IUserProfilePersonalizationSettingsStatics &>(static_cast<const D &>(*this))->abi_IsSupported(&result));
+    check_hresult(WINRT_SHIM(IUserProfilePersonalizationSettingsStatics)->abi_IsSupported(&result));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IGlobalizationPreferencesStatics<D>::Calendars() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IGlobalizationPreferencesStatics &>(static_cast<const D &>(*this))->get_Calendars(put(value)));
+    check_hresult(WINRT_SHIM(IGlobalizationPreferencesStatics)->get_Calendars(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IGlobalizationPreferencesStatics<D>::Clocks() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IGlobalizationPreferencesStatics &>(static_cast<const D &>(*this))->get_Clocks(put(value)));
+    check_hresult(WINRT_SHIM(IGlobalizationPreferencesStatics)->get_Clocks(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IGlobalizationPreferencesStatics<D>::Currencies() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IGlobalizationPreferencesStatics &>(static_cast<const D &>(*this))->get_Currencies(put(value)));
+    check_hresult(WINRT_SHIM(IGlobalizationPreferencesStatics)->get_Currencies(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IGlobalizationPreferencesStatics<D>::Languages() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IGlobalizationPreferencesStatics &>(static_cast<const D &>(*this))->get_Languages(put(value)));
+    check_hresult(WINRT_SHIM(IGlobalizationPreferencesStatics)->get_Languages(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IGlobalizationPreferencesStatics<D>::HomeGeographicRegion() const
 {
     hstring value;
-    check_hresult(static_cast<const IGlobalizationPreferencesStatics &>(static_cast<const D &>(*this))->get_HomeGeographicRegion(put(value)));
+    check_hresult(WINRT_SHIM(IGlobalizationPreferencesStatics)->get_HomeGeographicRegion(put(value)));
     return value;
 }
 
 template <typename D> Windows::Globalization::DayOfWeek impl_IGlobalizationPreferencesStatics<D>::WeekStartsOn() const
 {
     Windows::Globalization::DayOfWeek value {};
-    check_hresult(static_cast<const IGlobalizationPreferencesStatics &>(static_cast<const D &>(*this))->get_WeekStartsOn(&value));
+    check_hresult(WINRT_SHIM(IGlobalizationPreferencesStatics)->get_WeekStartsOn(&value));
     return value;
 }
 
 template <typename D> Windows::System::UserProfile::FirstSignInSettings impl_IFirstSignInSettingsStatics<D>::GetDefault() const
 {
     Windows::System::UserProfile::FirstSignInSettings result { nullptr };
-    check_hresult(static_cast<const IFirstSignInSettingsStatics &>(static_cast<const D &>(*this))->abi_GetDefault(put(result)));
+    check_hresult(WINRT_SHIM(IFirstSignInSettingsStatics)->abi_GetDefault(put(result)));
     return result;
 }
 

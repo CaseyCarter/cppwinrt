@@ -179,7 +179,6 @@ struct ICallAnswerEventArgs :
     impl::consume<ICallAnswerEventArgs>
 {
     ICallAnswerEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICallAnswerEventArgs>(m_ptr); }
 };
 
 struct ICallRejectEventArgs :
@@ -187,7 +186,6 @@ struct ICallRejectEventArgs :
     impl::consume<ICallRejectEventArgs>
 {
     ICallRejectEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICallRejectEventArgs>(m_ptr); }
 };
 
 struct ICallStateChangeEventArgs :
@@ -195,7 +193,6 @@ struct ICallStateChangeEventArgs :
     impl::consume<ICallStateChangeEventArgs>
 {
     ICallStateChangeEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICallStateChangeEventArgs>(m_ptr); }
 };
 
 struct IMuteChangeEventArgs :
@@ -203,7 +200,6 @@ struct IMuteChangeEventArgs :
     impl::consume<IMuteChangeEventArgs>
 {
     IMuteChangeEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMuteChangeEventArgs>(m_ptr); }
 };
 
 struct IPhoneCallHistoryEntry :
@@ -211,7 +207,6 @@ struct IPhoneCallHistoryEntry :
     impl::consume<IPhoneCallHistoryEntry>
 {
     IPhoneCallHistoryEntry(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhoneCallHistoryEntry>(m_ptr); }
 };
 
 struct IPhoneCallHistoryEntryAddress :
@@ -219,7 +214,6 @@ struct IPhoneCallHistoryEntryAddress :
     impl::consume<IPhoneCallHistoryEntryAddress>
 {
     IPhoneCallHistoryEntryAddress(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhoneCallHistoryEntryAddress>(m_ptr); }
 };
 
 struct IPhoneCallHistoryEntryAddressFactory :
@@ -227,7 +221,6 @@ struct IPhoneCallHistoryEntryAddressFactory :
     impl::consume<IPhoneCallHistoryEntryAddressFactory>
 {
     IPhoneCallHistoryEntryAddressFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhoneCallHistoryEntryAddressFactory>(m_ptr); }
 };
 
 struct IPhoneCallHistoryEntryQueryOptions :
@@ -235,7 +228,6 @@ struct IPhoneCallHistoryEntryQueryOptions :
     impl::consume<IPhoneCallHistoryEntryQueryOptions>
 {
     IPhoneCallHistoryEntryQueryOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhoneCallHistoryEntryQueryOptions>(m_ptr); }
 };
 
 struct IPhoneCallHistoryEntryReader :
@@ -243,7 +235,6 @@ struct IPhoneCallHistoryEntryReader :
     impl::consume<IPhoneCallHistoryEntryReader>
 {
     IPhoneCallHistoryEntryReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhoneCallHistoryEntryReader>(m_ptr); }
 };
 
 struct IPhoneCallHistoryManagerForUser :
@@ -251,7 +242,6 @@ struct IPhoneCallHistoryManagerForUser :
     impl::consume<IPhoneCallHistoryManagerForUser>
 {
     IPhoneCallHistoryManagerForUser(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhoneCallHistoryManagerForUser>(m_ptr); }
 };
 
 struct IPhoneCallHistoryManagerStatics :
@@ -259,7 +249,6 @@ struct IPhoneCallHistoryManagerStatics :
     impl::consume<IPhoneCallHistoryManagerStatics>
 {
     IPhoneCallHistoryManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhoneCallHistoryManagerStatics>(m_ptr); }
 };
 
 struct IPhoneCallHistoryManagerStatics2 :
@@ -267,7 +256,6 @@ struct IPhoneCallHistoryManagerStatics2 :
     impl::consume<IPhoneCallHistoryManagerStatics2>
 {
     IPhoneCallHistoryManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhoneCallHistoryManagerStatics2>(m_ptr); }
 };
 
 struct IPhoneCallHistoryStore :
@@ -275,7 +263,6 @@ struct IPhoneCallHistoryStore :
     impl::consume<IPhoneCallHistoryStore>
 {
     IPhoneCallHistoryStore(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhoneCallHistoryStore>(m_ptr); }
 };
 
 struct IVoipCallCoordinator :
@@ -283,7 +270,6 @@ struct IVoipCallCoordinator :
     impl::consume<IVoipCallCoordinator>
 {
     IVoipCallCoordinator(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVoipCallCoordinator>(m_ptr); }
 };
 
 struct IVoipCallCoordinatorStatics :
@@ -291,7 +277,6 @@ struct IVoipCallCoordinatorStatics :
     impl::consume<IVoipCallCoordinatorStatics>
 {
     IVoipCallCoordinatorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVoipCallCoordinatorStatics>(m_ptr); }
 };
 
 struct IVoipPhoneCall :
@@ -299,7 +284,6 @@ struct IVoipPhoneCall :
     impl::consume<IVoipPhoneCall>
 {
     IVoipPhoneCall(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVoipPhoneCall>(m_ptr); }
 };
 
 }

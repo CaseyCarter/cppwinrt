@@ -31,7 +31,7 @@ template <typename O, typename M> ActivatedEventHandler::ActivatedEventHandler(O
 
 inline void ActivatedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::ApplicationModel::Activation::IActivatedEventArgs & eventArgs) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(eventArgs)));
+    check_hresult((*(abi<ActivatedEventHandler> **)this)->abi_Invoke(get(sender), get(eventArgs)));
 }
 
 template <typename L> EnteredBackgroundEventHandler::EnteredBackgroundEventHandler(L lambda) :
@@ -48,7 +48,7 @@ template <typename O, typename M> EnteredBackgroundEventHandler::EnteredBackgrou
 
 inline void EnteredBackgroundEventHandler::operator()(const Windows::IInspectable & sender, const Windows::ApplicationModel::IEnteredBackgroundEventArgs & e) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<EnteredBackgroundEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
 }
 
 template <typename L> LeavingBackgroundEventHandler::LeavingBackgroundEventHandler(L lambda) :
@@ -65,7 +65,7 @@ template <typename O, typename M> LeavingBackgroundEventHandler::LeavingBackgrou
 
 inline void LeavingBackgroundEventHandler::operator()(const Windows::IInspectable & sender, const Windows::ApplicationModel::ILeavingBackgroundEventArgs & e) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<LeavingBackgroundEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
 }
 
 template <typename L> NavigatedEventHandler::NavigatedEventHandler(L lambda) :
@@ -82,7 +82,7 @@ template <typename O, typename M> NavigatedEventHandler::NavigatedEventHandler(O
 
 inline void NavigatedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::WebUI::IWebUINavigatedEventArgs & e) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<NavigatedEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
 }
 
 template <typename L> ResumingEventHandler::ResumingEventHandler(L lambda) :
@@ -99,7 +99,7 @@ template <typename O, typename M> ResumingEventHandler::ResumingEventHandler(O *
 
 inline void ResumingEventHandler::operator()(const Windows::IInspectable & sender) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender)));
+    check_hresult((*(abi<ResumingEventHandler> **)this)->abi_Invoke(get(sender)));
 }
 
 template <typename L> SuspendingEventHandler::SuspendingEventHandler(L lambda) :
@@ -116,7 +116,7 @@ template <typename O, typename M> SuspendingEventHandler::SuspendingEventHandler
 
 inline void SuspendingEventHandler::operator()(const Windows::IInspectable & sender, const Windows::ApplicationModel::ISuspendingEventArgs & e) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<SuspendingEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
 }
 
 }
@@ -739,65 +739,65 @@ namespace Windows::UI::WebUI {
 
 template <typename D> void impl_IActivatedDeferral<D>::Complete() const
 {
-    check_hresult(static_cast<const IActivatedDeferral &>(static_cast<const D &>(*this))->abi_Complete());
+    check_hresult(WINRT_SHIM(IActivatedDeferral)->abi_Complete());
 }
 
 template <typename D> Windows::UI::WebUI::ActivatedDeferral impl_IActivatedOperation<D>::GetDeferral() const
 {
     Windows::UI::WebUI::ActivatedDeferral deferral { nullptr };
-    check_hresult(static_cast<const IActivatedOperation &>(static_cast<const D &>(*this))->abi_GetDeferral(put(deferral)));
+    check_hresult(WINRT_SHIM(IActivatedOperation)->abi_GetDeferral(put(deferral)));
     return deferral;
 }
 
 template <typename D> Windows::UI::WebUI::ActivatedOperation impl_IActivatedEventArgsDeferral<D>::ActivatedOperation() const
 {
     Windows::UI::WebUI::ActivatedOperation value { nullptr };
-    check_hresult(static_cast<const IActivatedEventArgsDeferral &>(static_cast<const D &>(*this))->get_ActivatedOperation(put(value)));
+    check_hresult(WINRT_SHIM(IActivatedEventArgsDeferral)->get_ActivatedOperation(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::WebUI::WebUINavigatedOperation impl_IWebUINavigatedEventArgs<D>::NavigatedOperation() const
 {
     Windows::UI::WebUI::WebUINavigatedOperation value { nullptr };
-    check_hresult(static_cast<const IWebUINavigatedEventArgs &>(static_cast<const D &>(*this))->get_NavigatedOperation(put(value)));
+    check_hresult(WINRT_SHIM(IWebUINavigatedEventArgs)->get_NavigatedOperation(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IWebUIBackgroundTaskInstance<D>::Succeeded() const
 {
     bool succeeded {};
-    check_hresult(static_cast<const IWebUIBackgroundTaskInstance &>(static_cast<const D &>(*this))->get_Succeeded(&succeeded));
+    check_hresult(WINRT_SHIM(IWebUIBackgroundTaskInstance)->get_Succeeded(&succeeded));
     return succeeded;
 }
 
 template <typename D> void impl_IWebUIBackgroundTaskInstance<D>::Succeeded(bool succeeded) const
 {
-    check_hresult(static_cast<const IWebUIBackgroundTaskInstance &>(static_cast<const D &>(*this))->put_Succeeded(succeeded));
+    check_hresult(WINRT_SHIM(IWebUIBackgroundTaskInstance)->put_Succeeded(succeeded));
 }
 
 template <typename D> Windows::UI::WebUI::IWebUIBackgroundTaskInstance impl_IWebUIBackgroundTaskInstanceStatics<D>::Current() const
 {
     Windows::UI::WebUI::IWebUIBackgroundTaskInstance backgroundTaskInstance;
-    check_hresult(static_cast<const IWebUIBackgroundTaskInstanceStatics &>(static_cast<const D &>(*this))->get_Current(put(backgroundTaskInstance)));
+    check_hresult(WINRT_SHIM(IWebUIBackgroundTaskInstanceStatics)->get_Current(put(backgroundTaskInstance)));
     return backgroundTaskInstance;
 }
 
 template <typename D> void impl_IWebUINavigatedDeferral<D>::Complete() const
 {
-    check_hresult(static_cast<const IWebUINavigatedDeferral &>(static_cast<const D &>(*this))->abi_Complete());
+    check_hresult(WINRT_SHIM(IWebUINavigatedDeferral)->abi_Complete());
 }
 
 template <typename D> Windows::UI::WebUI::WebUINavigatedDeferral impl_IWebUINavigatedOperation<D>::GetDeferral() const
 {
     Windows::UI::WebUI::WebUINavigatedDeferral deferral { nullptr };
-    check_hresult(static_cast<const IWebUINavigatedOperation &>(static_cast<const D &>(*this))->abi_GetDeferral(put(deferral)));
+    check_hresult(WINRT_SHIM(IWebUINavigatedOperation)->abi_GetDeferral(put(deferral)));
     return deferral;
 }
 
 template <typename D> event_token impl_IWebUIActivationStatics<D>::Activated(const Windows::UI::WebUI::ActivatedEventHandler & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IWebUIActivationStatics &>(static_cast<const D &>(*this))->add_Activated(get(handler), &token));
+    check_hresult(WINRT_SHIM(IWebUIActivationStatics)->add_Activated(get(handler), &token));
     return token;
 }
 
@@ -808,13 +808,13 @@ template <typename D> event_revoker<IWebUIActivationStatics> impl_IWebUIActivati
 
 template <typename D> void impl_IWebUIActivationStatics<D>::Activated(event_token token) const
 {
-    check_hresult(static_cast<const IWebUIActivationStatics &>(static_cast<const D &>(*this))->remove_Activated(token));
+    check_hresult(WINRT_SHIM(IWebUIActivationStatics)->remove_Activated(token));
 }
 
 template <typename D> event_token impl_IWebUIActivationStatics<D>::Suspending(const Windows::UI::WebUI::SuspendingEventHandler & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IWebUIActivationStatics &>(static_cast<const D &>(*this))->add_Suspending(get(handler), &token));
+    check_hresult(WINRT_SHIM(IWebUIActivationStatics)->add_Suspending(get(handler), &token));
     return token;
 }
 
@@ -825,13 +825,13 @@ template <typename D> event_revoker<IWebUIActivationStatics> impl_IWebUIActivati
 
 template <typename D> void impl_IWebUIActivationStatics<D>::Suspending(event_token token) const
 {
-    check_hresult(static_cast<const IWebUIActivationStatics &>(static_cast<const D &>(*this))->remove_Suspending(token));
+    check_hresult(WINRT_SHIM(IWebUIActivationStatics)->remove_Suspending(token));
 }
 
 template <typename D> event_token impl_IWebUIActivationStatics<D>::Resuming(const Windows::UI::WebUI::ResumingEventHandler & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IWebUIActivationStatics &>(static_cast<const D &>(*this))->add_Resuming(get(handler), &token));
+    check_hresult(WINRT_SHIM(IWebUIActivationStatics)->add_Resuming(get(handler), &token));
     return token;
 }
 
@@ -842,13 +842,13 @@ template <typename D> event_revoker<IWebUIActivationStatics> impl_IWebUIActivati
 
 template <typename D> void impl_IWebUIActivationStatics<D>::Resuming(event_token token) const
 {
-    check_hresult(static_cast<const IWebUIActivationStatics &>(static_cast<const D &>(*this))->remove_Resuming(token));
+    check_hresult(WINRT_SHIM(IWebUIActivationStatics)->remove_Resuming(token));
 }
 
 template <typename D> event_token impl_IWebUIActivationStatics<D>::Navigated(const Windows::UI::WebUI::NavigatedEventHandler & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IWebUIActivationStatics &>(static_cast<const D &>(*this))->add_Navigated(get(handler), &token));
+    check_hresult(WINRT_SHIM(IWebUIActivationStatics)->add_Navigated(get(handler), &token));
     return token;
 }
 
@@ -859,13 +859,13 @@ template <typename D> event_revoker<IWebUIActivationStatics> impl_IWebUIActivati
 
 template <typename D> void impl_IWebUIActivationStatics<D>::Navigated(event_token token) const
 {
-    check_hresult(static_cast<const IWebUIActivationStatics &>(static_cast<const D &>(*this))->remove_Navigated(token));
+    check_hresult(WINRT_SHIM(IWebUIActivationStatics)->remove_Navigated(token));
 }
 
 template <typename D> event_token impl_IWebUIActivationStatics2<D>::LeavingBackground(const Windows::UI::WebUI::LeavingBackgroundEventHandler & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IWebUIActivationStatics2 &>(static_cast<const D &>(*this))->add_LeavingBackground(get(handler), &token));
+    check_hresult(WINRT_SHIM(IWebUIActivationStatics2)->add_LeavingBackground(get(handler), &token));
     return token;
 }
 
@@ -876,13 +876,13 @@ template <typename D> event_revoker<IWebUIActivationStatics2> impl_IWebUIActivat
 
 template <typename D> void impl_IWebUIActivationStatics2<D>::LeavingBackground(event_token token) const
 {
-    check_hresult(static_cast<const IWebUIActivationStatics2 &>(static_cast<const D &>(*this))->remove_LeavingBackground(token));
+    check_hresult(WINRT_SHIM(IWebUIActivationStatics2)->remove_LeavingBackground(token));
 }
 
 template <typename D> event_token impl_IWebUIActivationStatics2<D>::EnteredBackground(const Windows::UI::WebUI::EnteredBackgroundEventHandler & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IWebUIActivationStatics2 &>(static_cast<const D &>(*this))->add_EnteredBackground(get(handler), &token));
+    check_hresult(WINRT_SHIM(IWebUIActivationStatics2)->add_EnteredBackground(get(handler), &token));
     return token;
 }
 
@@ -893,121 +893,121 @@ template <typename D> event_revoker<IWebUIActivationStatics2> impl_IWebUIActivat
 
 template <typename D> void impl_IWebUIActivationStatics2<D>::EnteredBackground(event_token token) const
 {
-    check_hresult(static_cast<const IWebUIActivationStatics2 &>(static_cast<const D &>(*this))->remove_EnteredBackground(token));
+    check_hresult(WINRT_SHIM(IWebUIActivationStatics2)->remove_EnteredBackground(token));
 }
 
 template <typename D> void impl_IWebUIActivationStatics2<D>::EnablePrelaunch(bool value) const
 {
-    check_hresult(static_cast<const IWebUIActivationStatics2 &>(static_cast<const D &>(*this))->abi_EnablePrelaunch(value));
+    check_hresult(WINRT_SHIM(IWebUIActivationStatics2)->abi_EnablePrelaunch(value));
 }
 
 template <typename D> Windows::UI::WebUI::PrintContent impl_IHtmlPrintDocumentSource<D>::Content() const
 {
     Windows::UI::WebUI::PrintContent value {};
-    check_hresult(static_cast<const IHtmlPrintDocumentSource &>(static_cast<const D &>(*this))->get_Content(&value));
+    check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->get_Content(&value));
     return value;
 }
 
 template <typename D> void impl_IHtmlPrintDocumentSource<D>::Content(Windows::UI::WebUI::PrintContent value) const
 {
-    check_hresult(static_cast<const IHtmlPrintDocumentSource &>(static_cast<const D &>(*this))->put_Content(value));
+    check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->put_Content(value));
 }
 
 template <typename D> float impl_IHtmlPrintDocumentSource<D>::LeftMargin() const
 {
     float value {};
-    check_hresult(static_cast<const IHtmlPrintDocumentSource &>(static_cast<const D &>(*this))->get_LeftMargin(&value));
+    check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->get_LeftMargin(&value));
     return value;
 }
 
 template <typename D> void impl_IHtmlPrintDocumentSource<D>::LeftMargin(float value) const
 {
-    check_hresult(static_cast<const IHtmlPrintDocumentSource &>(static_cast<const D &>(*this))->put_LeftMargin(value));
+    check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->put_LeftMargin(value));
 }
 
 template <typename D> float impl_IHtmlPrintDocumentSource<D>::TopMargin() const
 {
     float value {};
-    check_hresult(static_cast<const IHtmlPrintDocumentSource &>(static_cast<const D &>(*this))->get_TopMargin(&value));
+    check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->get_TopMargin(&value));
     return value;
 }
 
 template <typename D> void impl_IHtmlPrintDocumentSource<D>::TopMargin(float value) const
 {
-    check_hresult(static_cast<const IHtmlPrintDocumentSource &>(static_cast<const D &>(*this))->put_TopMargin(value));
+    check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->put_TopMargin(value));
 }
 
 template <typename D> float impl_IHtmlPrintDocumentSource<D>::RightMargin() const
 {
     float value {};
-    check_hresult(static_cast<const IHtmlPrintDocumentSource &>(static_cast<const D &>(*this))->get_RightMargin(&value));
+    check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->get_RightMargin(&value));
     return value;
 }
 
 template <typename D> void impl_IHtmlPrintDocumentSource<D>::RightMargin(float value) const
 {
-    check_hresult(static_cast<const IHtmlPrintDocumentSource &>(static_cast<const D &>(*this))->put_RightMargin(value));
+    check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->put_RightMargin(value));
 }
 
 template <typename D> float impl_IHtmlPrintDocumentSource<D>::BottomMargin() const
 {
     float value {};
-    check_hresult(static_cast<const IHtmlPrintDocumentSource &>(static_cast<const D &>(*this))->get_BottomMargin(&value));
+    check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->get_BottomMargin(&value));
     return value;
 }
 
 template <typename D> void impl_IHtmlPrintDocumentSource<D>::BottomMargin(float value) const
 {
-    check_hresult(static_cast<const IHtmlPrintDocumentSource &>(static_cast<const D &>(*this))->put_BottomMargin(value));
+    check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->put_BottomMargin(value));
 }
 
 template <typename D> bool impl_IHtmlPrintDocumentSource<D>::EnableHeaderFooter() const
 {
     bool value {};
-    check_hresult(static_cast<const IHtmlPrintDocumentSource &>(static_cast<const D &>(*this))->get_EnableHeaderFooter(&value));
+    check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->get_EnableHeaderFooter(&value));
     return value;
 }
 
 template <typename D> void impl_IHtmlPrintDocumentSource<D>::EnableHeaderFooter(bool value) const
 {
-    check_hresult(static_cast<const IHtmlPrintDocumentSource &>(static_cast<const D &>(*this))->put_EnableHeaderFooter(value));
+    check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->put_EnableHeaderFooter(value));
 }
 
 template <typename D> bool impl_IHtmlPrintDocumentSource<D>::ShrinkToFit() const
 {
     bool value {};
-    check_hresult(static_cast<const IHtmlPrintDocumentSource &>(static_cast<const D &>(*this))->get_ShrinkToFit(&value));
+    check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->get_ShrinkToFit(&value));
     return value;
 }
 
 template <typename D> void impl_IHtmlPrintDocumentSource<D>::ShrinkToFit(bool value) const
 {
-    check_hresult(static_cast<const IHtmlPrintDocumentSource &>(static_cast<const D &>(*this))->put_ShrinkToFit(value));
+    check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->put_ShrinkToFit(value));
 }
 
 template <typename D> float impl_IHtmlPrintDocumentSource<D>::PercentScale() const
 {
     float pScalePercent {};
-    check_hresult(static_cast<const IHtmlPrintDocumentSource &>(static_cast<const D &>(*this))->get_PercentScale(&pScalePercent));
+    check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->get_PercentScale(&pScalePercent));
     return pScalePercent;
 }
 
 template <typename D> void impl_IHtmlPrintDocumentSource<D>::PercentScale(float scalePercent) const
 {
-    check_hresult(static_cast<const IHtmlPrintDocumentSource &>(static_cast<const D &>(*this))->put_PercentScale(scalePercent));
+    check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->put_PercentScale(scalePercent));
 }
 
 template <typename D> hstring impl_IHtmlPrintDocumentSource<D>::PageRange() const
 {
     hstring pstrPageRange;
-    check_hresult(static_cast<const IHtmlPrintDocumentSource &>(static_cast<const D &>(*this))->get_PageRange(put(pstrPageRange)));
+    check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->get_PageRange(put(pstrPageRange)));
     return pstrPageRange;
 }
 
 template <typename D> bool impl_IHtmlPrintDocumentSource<D>::TrySetPageRange(hstring_ref strPageRange) const
 {
     bool pfSuccess {};
-    check_hresult(static_cast<const IHtmlPrintDocumentSource &>(static_cast<const D &>(*this))->abi_TrySetPageRange(get(strPageRange), &pfSuccess));
+    check_hresult(WINRT_SHIM(IHtmlPrintDocumentSource)->abi_TrySetPageRange(get(strPageRange), &pfSuccess));
     return pfSuccess;
 }
 

@@ -66,7 +66,6 @@ struct IJsonArray :
     impl::require<IJsonArray, Windows::Data::Json::IJsonValue>
 {
     IJsonArray(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IJsonArray>(m_ptr); }
 };
 
 struct IJsonArrayStatics :
@@ -74,7 +73,6 @@ struct IJsonArrayStatics :
     impl::consume<IJsonArrayStatics>
 {
     IJsonArrayStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IJsonArrayStatics>(m_ptr); }
 };
 
 struct IJsonErrorStatics2 :
@@ -82,7 +80,6 @@ struct IJsonErrorStatics2 :
     impl::consume<IJsonErrorStatics2>
 {
     IJsonErrorStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IJsonErrorStatics2>(m_ptr); }
 };
 
 struct IJsonObject :
@@ -91,7 +88,6 @@ struct IJsonObject :
     impl::require<IJsonObject, Windows::Data::Json::IJsonValue>
 {
     IJsonObject(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IJsonObject>(m_ptr); }
 };
 
 struct IJsonObjectStatics :
@@ -99,7 +95,6 @@ struct IJsonObjectStatics :
     impl::consume<IJsonObjectStatics>
 {
     IJsonObjectStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IJsonObjectStatics>(m_ptr); }
 };
 
 struct IJsonObjectWithDefaultValues :
@@ -108,7 +103,6 @@ struct IJsonObjectWithDefaultValues :
     impl::require<IJsonObjectWithDefaultValues, Windows::Data::Json::IJsonObject, Windows::Data::Json::IJsonValue>
 {
     IJsonObjectWithDefaultValues(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IJsonObjectWithDefaultValues>(m_ptr); }
     using impl_IJsonObject::GetNamedArray;
     using impl_IJsonObject::GetNamedBoolean;
     using impl_IJsonObject::GetNamedNumber;
@@ -128,7 +122,6 @@ struct IJsonValue :
     impl::consume<IJsonValue>
 {
     IJsonValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IJsonValue>(m_ptr); }
 };
 
 struct IJsonValueStatics :
@@ -136,7 +129,6 @@ struct IJsonValueStatics :
     impl::consume<IJsonValueStatics>
 {
     IJsonValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IJsonValueStatics>(m_ptr); }
 };
 
 struct IJsonValueStatics2 :
@@ -144,7 +136,6 @@ struct IJsonValueStatics2 :
     impl::consume<IJsonValueStatics2>
 {
     IJsonValueStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IJsonValueStatics2>(m_ptr); }
 };
 
 }

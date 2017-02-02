@@ -15,7 +15,6 @@ struct IPhoneNumberFormatter :
     impl::consume<IPhoneNumberFormatter>
 {
     IPhoneNumberFormatter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhoneNumberFormatter>(m_ptr); }
 };
 
 struct IPhoneNumberFormatterStatics :
@@ -23,7 +22,6 @@ struct IPhoneNumberFormatterStatics :
     impl::consume<IPhoneNumberFormatterStatics>
 {
     IPhoneNumberFormatterStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhoneNumberFormatterStatics>(m_ptr); }
 };
 
 struct IPhoneNumberInfo :
@@ -31,7 +29,6 @@ struct IPhoneNumberInfo :
     impl::consume<IPhoneNumberInfo>
 {
     IPhoneNumberInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhoneNumberInfo>(m_ptr); }
 };
 
 struct IPhoneNumberInfoFactory :
@@ -39,7 +36,6 @@ struct IPhoneNumberInfoFactory :
     impl::consume<IPhoneNumberInfoFactory>
 {
     IPhoneNumberInfoFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhoneNumberInfoFactory>(m_ptr); }
 };
 
 struct IPhoneNumberInfoStatics :
@@ -47,7 +43,6 @@ struct IPhoneNumberInfoStatics :
     impl::consume<IPhoneNumberInfoStatics>
 {
     IPhoneNumberInfoStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhoneNumberInfoStatics>(m_ptr); }
 };
 
 }

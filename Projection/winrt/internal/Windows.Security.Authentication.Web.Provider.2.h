@@ -224,7 +224,6 @@ struct IWebAccountClientView :
     impl::consume<IWebAccountClientView>
 {
     IWebAccountClientView(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountClientView>(m_ptr); }
 };
 
 struct IWebAccountClientViewFactory :
@@ -232,7 +231,6 @@ struct IWebAccountClientViewFactory :
     impl::consume<IWebAccountClientViewFactory>
 {
     IWebAccountClientViewFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountClientViewFactory>(m_ptr); }
 };
 
 struct IWebAccountManagerStatics :
@@ -240,7 +238,6 @@ struct IWebAccountManagerStatics :
     impl::consume<IWebAccountManagerStatics>
 {
     IWebAccountManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountManagerStatics>(m_ptr); }
 };
 
 struct IWebAccountManagerStatics2 :
@@ -248,7 +245,6 @@ struct IWebAccountManagerStatics2 :
     impl::consume<IWebAccountManagerStatics2>
 {
     IWebAccountManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountManagerStatics2>(m_ptr); }
 };
 
 struct IWebAccountMapManagerStatics :
@@ -256,7 +252,6 @@ struct IWebAccountMapManagerStatics :
     impl::consume<IWebAccountMapManagerStatics>
 {
     IWebAccountMapManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountMapManagerStatics>(m_ptr); }
 };
 
 struct IWebAccountProviderAddAccountOperation :
@@ -265,7 +260,6 @@ struct IWebAccountProviderAddAccountOperation :
     impl::require<IWebAccountProviderAddAccountOperation, Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation>
 {
     IWebAccountProviderAddAccountOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountProviderAddAccountOperation>(m_ptr); }
 };
 
 struct IWebAccountProviderBaseReportOperation :
@@ -273,7 +267,6 @@ struct IWebAccountProviderBaseReportOperation :
     impl::consume<IWebAccountProviderBaseReportOperation>
 {
     IWebAccountProviderBaseReportOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountProviderBaseReportOperation>(m_ptr); }
 };
 
 struct IWebAccountProviderDeleteAccountOperation :
@@ -282,7 +275,6 @@ struct IWebAccountProviderDeleteAccountOperation :
     impl::require<IWebAccountProviderDeleteAccountOperation, Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation>
 {
     IWebAccountProviderDeleteAccountOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountProviderDeleteAccountOperation>(m_ptr); }
 };
 
 struct IWebAccountProviderManageAccountOperation :
@@ -291,7 +283,6 @@ struct IWebAccountProviderManageAccountOperation :
     impl::require<IWebAccountProviderManageAccountOperation, Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation>
 {
     IWebAccountProviderManageAccountOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountProviderManageAccountOperation>(m_ptr); }
 };
 
 struct IWebAccountProviderOperation :
@@ -299,7 +290,6 @@ struct IWebAccountProviderOperation :
     impl::consume<IWebAccountProviderOperation>
 {
     IWebAccountProviderOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountProviderOperation>(m_ptr); }
 };
 
 struct IWebAccountProviderRetrieveCookiesOperation :
@@ -308,7 +298,6 @@ struct IWebAccountProviderRetrieveCookiesOperation :
     impl::require<IWebAccountProviderRetrieveCookiesOperation, Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation>
 {
     IWebAccountProviderRetrieveCookiesOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountProviderRetrieveCookiesOperation>(m_ptr); }
 };
 
 struct IWebAccountProviderSignOutAccountOperation :
@@ -317,7 +306,6 @@ struct IWebAccountProviderSignOutAccountOperation :
     impl::require<IWebAccountProviderSignOutAccountOperation, Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation>
 {
     IWebAccountProviderSignOutAccountOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountProviderSignOutAccountOperation>(m_ptr); }
 };
 
 struct IWebAccountProviderSilentReportOperation :
@@ -326,7 +314,6 @@ struct IWebAccountProviderSilentReportOperation :
     impl::require<IWebAccountProviderSilentReportOperation, Windows::Security::Authentication::Web::Provider::IWebAccountProviderBaseReportOperation>
 {
     IWebAccountProviderSilentReportOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountProviderSilentReportOperation>(m_ptr); }
 };
 
 struct IWebAccountProviderTokenObjects :
@@ -334,7 +321,6 @@ struct IWebAccountProviderTokenObjects :
     impl::consume<IWebAccountProviderTokenObjects>
 {
     IWebAccountProviderTokenObjects(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountProviderTokenObjects>(m_ptr); }
 };
 
 struct IWebAccountProviderTokenOperation :
@@ -343,7 +329,6 @@ struct IWebAccountProviderTokenOperation :
     impl::require<IWebAccountProviderTokenOperation, Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation>
 {
     IWebAccountProviderTokenOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountProviderTokenOperation>(m_ptr); }
 };
 
 struct IWebAccountProviderUIReportOperation :
@@ -352,7 +337,6 @@ struct IWebAccountProviderUIReportOperation :
     impl::require<IWebAccountProviderUIReportOperation, Windows::Security::Authentication::Web::Provider::IWebAccountProviderBaseReportOperation>
 {
     IWebAccountProviderUIReportOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountProviderUIReportOperation>(m_ptr); }
 };
 
 struct IWebAccountScopeManagerStatics :
@@ -360,7 +344,6 @@ struct IWebAccountScopeManagerStatics :
     impl::consume<IWebAccountScopeManagerStatics>
 {
     IWebAccountScopeManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountScopeManagerStatics>(m_ptr); }
 };
 
 struct IWebProviderTokenRequest :
@@ -368,7 +351,6 @@ struct IWebProviderTokenRequest :
     impl::consume<IWebProviderTokenRequest>
 {
     IWebProviderTokenRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebProviderTokenRequest>(m_ptr); }
 };
 
 struct IWebProviderTokenRequest2 :
@@ -376,7 +358,6 @@ struct IWebProviderTokenRequest2 :
     impl::consume<IWebProviderTokenRequest2>
 {
     IWebProviderTokenRequest2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebProviderTokenRequest2>(m_ptr); }
 };
 
 struct IWebProviderTokenResponse :
@@ -384,7 +365,6 @@ struct IWebProviderTokenResponse :
     impl::consume<IWebProviderTokenResponse>
 {
     IWebProviderTokenResponse(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebProviderTokenResponse>(m_ptr); }
 };
 
 struct IWebProviderTokenResponseFactory :
@@ -392,7 +372,6 @@ struct IWebProviderTokenResponseFactory :
     impl::consume<IWebProviderTokenResponseFactory>
 {
     IWebProviderTokenResponseFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebProviderTokenResponseFactory>(m_ptr); }
 };
 
 }

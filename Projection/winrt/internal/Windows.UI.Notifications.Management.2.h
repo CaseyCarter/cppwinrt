@@ -79,7 +79,6 @@ struct IUserNotificationListener :
     impl::consume<IUserNotificationListener>
 {
     IUserNotificationListener(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserNotificationListener>(m_ptr); }
 };
 
 struct IUserNotificationListenerStatics :
@@ -87,7 +86,6 @@ struct IUserNotificationListenerStatics :
     impl::consume<IUserNotificationListenerStatics>
 {
     IUserNotificationListenerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserNotificationListenerStatics>(m_ptr); }
 };
 
 }

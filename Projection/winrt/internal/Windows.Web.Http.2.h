@@ -305,7 +305,6 @@ struct IHttpBufferContentFactory :
     impl::consume<IHttpBufferContentFactory>
 {
     IHttpBufferContentFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpBufferContentFactory>(m_ptr); }
 };
 
 struct IHttpClient :
@@ -314,7 +313,6 @@ struct IHttpClient :
     impl::require<IHttpClient, Windows::Foundation::IClosable>
 {
     IHttpClient(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpClient>(m_ptr); }
 };
 
 struct IHttpClientFactory :
@@ -322,7 +320,6 @@ struct IHttpClientFactory :
     impl::consume<IHttpClientFactory>
 {
     IHttpClientFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpClientFactory>(m_ptr); }
 };
 
 struct IHttpContent :
@@ -331,7 +328,6 @@ struct IHttpContent :
     impl::require<IHttpContent, Windows::Foundation::IClosable>
 {
     IHttpContent(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpContent>(m_ptr); }
 };
 
 struct IHttpCookie :
@@ -339,7 +335,6 @@ struct IHttpCookie :
     impl::consume<IHttpCookie>
 {
     IHttpCookie(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpCookie>(m_ptr); }
 };
 
 struct IHttpCookieFactory :
@@ -347,7 +342,6 @@ struct IHttpCookieFactory :
     impl::consume<IHttpCookieFactory>
 {
     IHttpCookieFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpCookieFactory>(m_ptr); }
 };
 
 struct IHttpCookieManager :
@@ -355,7 +349,6 @@ struct IHttpCookieManager :
     impl::consume<IHttpCookieManager>
 {
     IHttpCookieManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpCookieManager>(m_ptr); }
 };
 
 struct IHttpFormUrlEncodedContentFactory :
@@ -363,7 +356,6 @@ struct IHttpFormUrlEncodedContentFactory :
     impl::consume<IHttpFormUrlEncodedContentFactory>
 {
     IHttpFormUrlEncodedContentFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpFormUrlEncodedContentFactory>(m_ptr); }
 };
 
 struct IHttpMethod :
@@ -371,7 +363,6 @@ struct IHttpMethod :
     impl::consume<IHttpMethod>
 {
     IHttpMethod(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpMethod>(m_ptr); }
 };
 
 struct IHttpMethodFactory :
@@ -379,7 +370,6 @@ struct IHttpMethodFactory :
     impl::consume<IHttpMethodFactory>
 {
     IHttpMethodFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpMethodFactory>(m_ptr); }
 };
 
 struct IHttpMethodStatics :
@@ -387,7 +377,6 @@ struct IHttpMethodStatics :
     impl::consume<IHttpMethodStatics>
 {
     IHttpMethodStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpMethodStatics>(m_ptr); }
 };
 
 struct IHttpMultipartContent :
@@ -396,7 +385,6 @@ struct IHttpMultipartContent :
     impl::require<IHttpMultipartContent, Windows::Foundation::Collections::IIterable<Windows::Web::Http::IHttpContent>>
 {
     IHttpMultipartContent(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpMultipartContent>(m_ptr); }
 };
 
 struct IHttpMultipartContentFactory :
@@ -404,7 +392,6 @@ struct IHttpMultipartContentFactory :
     impl::consume<IHttpMultipartContentFactory>
 {
     IHttpMultipartContentFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpMultipartContentFactory>(m_ptr); }
 };
 
 struct IHttpMultipartFormDataContent :
@@ -413,7 +400,6 @@ struct IHttpMultipartFormDataContent :
     impl::require<IHttpMultipartFormDataContent, Windows::Foundation::Collections::IIterable<Windows::Web::Http::IHttpContent>>
 {
     IHttpMultipartFormDataContent(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpMultipartFormDataContent>(m_ptr); }
 };
 
 struct IHttpMultipartFormDataContentFactory :
@@ -421,7 +407,6 @@ struct IHttpMultipartFormDataContentFactory :
     impl::consume<IHttpMultipartFormDataContentFactory>
 {
     IHttpMultipartFormDataContentFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpMultipartFormDataContentFactory>(m_ptr); }
 };
 
 struct IHttpRequestMessage :
@@ -430,7 +415,6 @@ struct IHttpRequestMessage :
     impl::require<IHttpRequestMessage, Windows::Foundation::IClosable>
 {
     IHttpRequestMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpRequestMessage>(m_ptr); }
 };
 
 struct IHttpRequestMessageFactory :
@@ -438,7 +422,6 @@ struct IHttpRequestMessageFactory :
     impl::consume<IHttpRequestMessageFactory>
 {
     IHttpRequestMessageFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpRequestMessageFactory>(m_ptr); }
 };
 
 struct IHttpResponseMessage :
@@ -447,7 +430,6 @@ struct IHttpResponseMessage :
     impl::require<IHttpResponseMessage, Windows::Foundation::IClosable>
 {
     IHttpResponseMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpResponseMessage>(m_ptr); }
 };
 
 struct IHttpResponseMessageFactory :
@@ -455,7 +437,6 @@ struct IHttpResponseMessageFactory :
     impl::consume<IHttpResponseMessageFactory>
 {
     IHttpResponseMessageFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpResponseMessageFactory>(m_ptr); }
 };
 
 struct IHttpStreamContentFactory :
@@ -463,7 +444,6 @@ struct IHttpStreamContentFactory :
     impl::consume<IHttpStreamContentFactory>
 {
     IHttpStreamContentFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpStreamContentFactory>(m_ptr); }
 };
 
 struct IHttpStringContentFactory :
@@ -471,7 +451,6 @@ struct IHttpStringContentFactory :
     impl::consume<IHttpStringContentFactory>
 {
     IHttpStringContentFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpStringContentFactory>(m_ptr); }
 };
 
 struct IHttpTransportInformation :
@@ -479,7 +458,6 @@ struct IHttpTransportInformation :
     impl::consume<IHttpTransportInformation>
 {
     IHttpTransportInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHttpTransportInformation>(m_ptr); }
 };
 
 }

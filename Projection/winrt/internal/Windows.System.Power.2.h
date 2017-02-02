@@ -24,7 +24,6 @@ struct IBackgroundEnergyManagerStatics :
     impl::consume<IBackgroundEnergyManagerStatics>
 {
     IBackgroundEnergyManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundEnergyManagerStatics>(m_ptr); }
 };
 
 struct IForegroundEnergyManagerStatics :
@@ -32,7 +31,6 @@ struct IForegroundEnergyManagerStatics :
     impl::consume<IForegroundEnergyManagerStatics>
 {
     IForegroundEnergyManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IForegroundEnergyManagerStatics>(m_ptr); }
 };
 
 struct IPowerManagerStatics :
@@ -40,7 +38,6 @@ struct IPowerManagerStatics :
     impl::consume<IPowerManagerStatics>
 {
     IPowerManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPowerManagerStatics>(m_ptr); }
 };
 
 }

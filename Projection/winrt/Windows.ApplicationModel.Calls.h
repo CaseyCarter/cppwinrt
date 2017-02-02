@@ -1505,28 +1505,28 @@ namespace Windows::ApplicationModel::Calls {
 template <typename D> Windows::ApplicationModel::Calls::VoipPhoneCallState impl_ICallStateChangeEventArgs<D>::State() const
 {
     Windows::ApplicationModel::Calls::VoipPhoneCallState value {};
-    check_hresult(static_cast<const ICallStateChangeEventArgs &>(static_cast<const D &>(*this))->get_State(&value));
+    check_hresult(WINRT_SHIM(ICallStateChangeEventArgs)->get_State(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Calls::VoipPhoneCallMedia impl_ICallAnswerEventArgs<D>::AcceptedMedia() const
 {
     Windows::ApplicationModel::Calls::VoipPhoneCallMedia value {};
-    check_hresult(static_cast<const ICallAnswerEventArgs &>(static_cast<const D &>(*this))->get_AcceptedMedia(&value));
+    check_hresult(WINRT_SHIM(ICallAnswerEventArgs)->get_AcceptedMedia(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Calls::VoipPhoneCallRejectReason impl_ICallRejectEventArgs<D>::RejectReason() const
 {
     Windows::ApplicationModel::Calls::VoipPhoneCallRejectReason value {};
-    check_hresult(static_cast<const ICallRejectEventArgs &>(static_cast<const D &>(*this))->get_RejectReason(&value));
+    check_hresult(WINRT_SHIM(ICallRejectEventArgs)->get_RejectReason(&value));
     return value;
 }
 
 template <typename D> event_token impl_IVoipPhoneCall<D>::EndRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallStateChangeEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->add_EndRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->add_EndRequested(get(handler), &token));
     return token;
 }
 
@@ -1537,13 +1537,13 @@ template <typename D> event_revoker<IVoipPhoneCall> impl_IVoipPhoneCall<D>::EndR
 
 template <typename D> void impl_IVoipPhoneCall<D>::EndRequested(event_token token) const
 {
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->remove_EndRequested(token));
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->remove_EndRequested(token));
 }
 
 template <typename D> event_token impl_IVoipPhoneCall<D>::HoldRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallStateChangeEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->add_HoldRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->add_HoldRequested(get(handler), &token));
     return token;
 }
 
@@ -1554,13 +1554,13 @@ template <typename D> event_revoker<IVoipPhoneCall> impl_IVoipPhoneCall<D>::Hold
 
 template <typename D> void impl_IVoipPhoneCall<D>::HoldRequested(event_token token) const
 {
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->remove_HoldRequested(token));
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->remove_HoldRequested(token));
 }
 
 template <typename D> event_token impl_IVoipPhoneCall<D>::ResumeRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallStateChangeEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->add_ResumeRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->add_ResumeRequested(get(handler), &token));
     return token;
 }
 
@@ -1571,13 +1571,13 @@ template <typename D> event_revoker<IVoipPhoneCall> impl_IVoipPhoneCall<D>::Resu
 
 template <typename D> void impl_IVoipPhoneCall<D>::ResumeRequested(event_token token) const
 {
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->remove_ResumeRequested(token));
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->remove_ResumeRequested(token));
 }
 
 template <typename D> event_token impl_IVoipPhoneCall<D>::AnswerRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallAnswerEventArgs> & acceptHandler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->add_AnswerRequested(get(acceptHandler), &token));
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->add_AnswerRequested(get(acceptHandler), &token));
     return token;
 }
 
@@ -1588,13 +1588,13 @@ template <typename D> event_revoker<IVoipPhoneCall> impl_IVoipPhoneCall<D>::Answ
 
 template <typename D> void impl_IVoipPhoneCall<D>::AnswerRequested(event_token token) const
 {
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->remove_AnswerRequested(token));
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->remove_AnswerRequested(token));
 }
 
 template <typename D> event_token impl_IVoipPhoneCall<D>::RejectRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallRejectEventArgs> & rejectHandler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->add_RejectRequested(get(rejectHandler), &token));
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->add_RejectRequested(get(rejectHandler), &token));
     return token;
 }
 
@@ -1605,83 +1605,83 @@ template <typename D> event_revoker<IVoipPhoneCall> impl_IVoipPhoneCall<D>::Reje
 
 template <typename D> void impl_IVoipPhoneCall<D>::RejectRequested(event_token token) const
 {
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->remove_RejectRequested(token));
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->remove_RejectRequested(token));
 }
 
 template <typename D> void impl_IVoipPhoneCall<D>::NotifyCallHeld() const
 {
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->abi_NotifyCallHeld());
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->abi_NotifyCallHeld());
 }
 
 template <typename D> void impl_IVoipPhoneCall<D>::NotifyCallActive() const
 {
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->abi_NotifyCallActive());
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->abi_NotifyCallActive());
 }
 
 template <typename D> void impl_IVoipPhoneCall<D>::NotifyCallEnded() const
 {
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->abi_NotifyCallEnded());
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->abi_NotifyCallEnded());
 }
 
 template <typename D> hstring impl_IVoipPhoneCall<D>::ContactName() const
 {
     hstring value;
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->get_ContactName(put(value)));
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->get_ContactName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVoipPhoneCall<D>::ContactName(hstring_ref value) const
 {
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->put_ContactName(get(value)));
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->put_ContactName(get(value)));
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IVoipPhoneCall<D>::StartTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->get_StartTime(put(value)));
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->get_StartTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVoipPhoneCall<D>::StartTime(const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->put_StartTime(get(value)));
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->put_StartTime(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::Calls::VoipPhoneCallMedia impl_IVoipPhoneCall<D>::CallMedia() const
 {
     Windows::ApplicationModel::Calls::VoipPhoneCallMedia value {};
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->get_CallMedia(&value));
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->get_CallMedia(&value));
     return value;
 }
 
 template <typename D> void impl_IVoipPhoneCall<D>::CallMedia(Windows::ApplicationModel::Calls::VoipPhoneCallMedia value) const
 {
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->put_CallMedia(value));
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->put_CallMedia(value));
 }
 
 template <typename D> void impl_IVoipPhoneCall<D>::NotifyCallReady() const
 {
-    check_hresult(static_cast<const IVoipPhoneCall &>(static_cast<const D &>(*this))->abi_NotifyCallReady());
+    check_hresult(WINRT_SHIM(IVoipPhoneCall)->abi_NotifyCallReady());
 }
 
 template <typename D> bool impl_IMuteChangeEventArgs<D>::Muted() const
 {
     bool value {};
-    check_hresult(static_cast<const IMuteChangeEventArgs &>(static_cast<const D &>(*this))->get_Muted(&value));
+    check_hresult(WINRT_SHIM(IMuteChangeEventArgs)->get_Muted(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Calls::VoipPhoneCallResourceReservationStatus> impl_IVoipCallCoordinator<D>::ReserveCallResourcesAsync(hstring_ref taskEntryPoint) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Calls::VoipPhoneCallResourceReservationStatus> operation;
-    check_hresult(static_cast<const IVoipCallCoordinator &>(static_cast<const D &>(*this))->abi_ReserveCallResourcesAsync(get(taskEntryPoint), put(operation)));
+    check_hresult(WINRT_SHIM(IVoipCallCoordinator)->abi_ReserveCallResourcesAsync(get(taskEntryPoint), put(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IVoipCallCoordinator<D>::MuteStateChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipCallCoordinator, Windows::ApplicationModel::Calls::MuteChangeEventArgs> & muteChangeHandler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IVoipCallCoordinator &>(static_cast<const D &>(*this))->add_MuteStateChanged(get(muteChangeHandler), &token));
+    check_hresult(WINRT_SHIM(IVoipCallCoordinator)->add_MuteStateChanged(get(muteChangeHandler), &token));
     return token;
 }
 
@@ -1692,460 +1692,460 @@ template <typename D> event_revoker<IVoipCallCoordinator> impl_IVoipCallCoordina
 
 template <typename D> void impl_IVoipCallCoordinator<D>::MuteStateChanged(event_token token) const
 {
-    check_hresult(static_cast<const IVoipCallCoordinator &>(static_cast<const D &>(*this))->remove_MuteStateChanged(token));
+    check_hresult(WINRT_SHIM(IVoipCallCoordinator)->remove_MuteStateChanged(token));
 }
 
 template <typename D> Windows::ApplicationModel::Calls::VoipPhoneCall impl_IVoipCallCoordinator<D>::RequestNewIncomingCall(hstring_ref context, hstring_ref contactName, hstring_ref contactNumber, const Windows::Foundation::Uri & contactImage, hstring_ref serviceName, const Windows::Foundation::Uri & brandingImage, hstring_ref callDetails, const Windows::Foundation::Uri & ringtone, Windows::ApplicationModel::Calls::VoipPhoneCallMedia media, const Windows::Foundation::TimeSpan & ringTimeout) const
 {
     Windows::ApplicationModel::Calls::VoipPhoneCall call { nullptr };
-    check_hresult(static_cast<const IVoipCallCoordinator &>(static_cast<const D &>(*this))->abi_RequestNewIncomingCall(get(context), get(contactName), get(contactNumber), get(contactImage), get(serviceName), get(brandingImage), get(callDetails), get(ringtone), media, get(ringTimeout), put(call)));
+    check_hresult(WINRT_SHIM(IVoipCallCoordinator)->abi_RequestNewIncomingCall(get(context), get(contactName), get(contactNumber), get(contactImage), get(serviceName), get(brandingImage), get(callDetails), get(ringtone), media, get(ringTimeout), put(call)));
     return call;
 }
 
 template <typename D> Windows::ApplicationModel::Calls::VoipPhoneCall impl_IVoipCallCoordinator<D>::RequestNewOutgoingCall(hstring_ref context, hstring_ref contactName, hstring_ref serviceName, Windows::ApplicationModel::Calls::VoipPhoneCallMedia media) const
 {
     Windows::ApplicationModel::Calls::VoipPhoneCall call { nullptr };
-    check_hresult(static_cast<const IVoipCallCoordinator &>(static_cast<const D &>(*this))->abi_RequestNewOutgoingCall(get(context), get(contactName), get(serviceName), media, put(call)));
+    check_hresult(WINRT_SHIM(IVoipCallCoordinator)->abi_RequestNewOutgoingCall(get(context), get(contactName), get(serviceName), media, put(call)));
     return call;
 }
 
 template <typename D> void impl_IVoipCallCoordinator<D>::NotifyMuted() const
 {
-    check_hresult(static_cast<const IVoipCallCoordinator &>(static_cast<const D &>(*this))->abi_NotifyMuted());
+    check_hresult(WINRT_SHIM(IVoipCallCoordinator)->abi_NotifyMuted());
 }
 
 template <typename D> void impl_IVoipCallCoordinator<D>::NotifyUnmuted() const
 {
-    check_hresult(static_cast<const IVoipCallCoordinator &>(static_cast<const D &>(*this))->abi_NotifyUnmuted());
+    check_hresult(WINRT_SHIM(IVoipCallCoordinator)->abi_NotifyUnmuted());
 }
 
 template <typename D> Windows::ApplicationModel::Calls::VoipPhoneCall impl_IVoipCallCoordinator<D>::RequestOutgoingUpgradeToVideoCall(GUID callUpgradeGuid, hstring_ref context, hstring_ref contactName, hstring_ref serviceName) const
 {
     Windows::ApplicationModel::Calls::VoipPhoneCall call { nullptr };
-    check_hresult(static_cast<const IVoipCallCoordinator &>(static_cast<const D &>(*this))->abi_RequestOutgoingUpgradeToVideoCall(callUpgradeGuid, get(context), get(contactName), get(serviceName), put(call)));
+    check_hresult(WINRT_SHIM(IVoipCallCoordinator)->abi_RequestOutgoingUpgradeToVideoCall(callUpgradeGuid, get(context), get(contactName), get(serviceName), put(call)));
     return call;
 }
 
 template <typename D> Windows::ApplicationModel::Calls::VoipPhoneCall impl_IVoipCallCoordinator<D>::RequestIncomingUpgradeToVideoCall(hstring_ref context, hstring_ref contactName, hstring_ref contactNumber, const Windows::Foundation::Uri & contactImage, hstring_ref serviceName, const Windows::Foundation::Uri & brandingImage, hstring_ref callDetails, const Windows::Foundation::Uri & ringtone, const Windows::Foundation::TimeSpan & ringTimeout) const
 {
     Windows::ApplicationModel::Calls::VoipPhoneCall call { nullptr };
-    check_hresult(static_cast<const IVoipCallCoordinator &>(static_cast<const D &>(*this))->abi_RequestIncomingUpgradeToVideoCall(get(context), get(contactName), get(contactNumber), get(contactImage), get(serviceName), get(brandingImage), get(callDetails), get(ringtone), get(ringTimeout), put(call)));
+    check_hresult(WINRT_SHIM(IVoipCallCoordinator)->abi_RequestIncomingUpgradeToVideoCall(get(context), get(contactName), get(contactNumber), get(contactImage), get(serviceName), get(brandingImage), get(callDetails), get(ringtone), get(ringTimeout), put(call)));
     return call;
 }
 
 template <typename D> void impl_IVoipCallCoordinator<D>::TerminateCellularCall(GUID callUpgradeGuid) const
 {
-    check_hresult(static_cast<const IVoipCallCoordinator &>(static_cast<const D &>(*this))->abi_TerminateCellularCall(callUpgradeGuid));
+    check_hresult(WINRT_SHIM(IVoipCallCoordinator)->abi_TerminateCellularCall(callUpgradeGuid));
 }
 
 template <typename D> void impl_IVoipCallCoordinator<D>::CancelUpgrade(GUID callUpgradeGuid) const
 {
-    check_hresult(static_cast<const IVoipCallCoordinator &>(static_cast<const D &>(*this))->abi_CancelUpgrade(callUpgradeGuid));
+    check_hresult(WINRT_SHIM(IVoipCallCoordinator)->abi_CancelUpgrade(callUpgradeGuid));
 }
 
 template <typename D> Windows::ApplicationModel::Calls::VoipCallCoordinator impl_IVoipCallCoordinatorStatics<D>::GetDefault() const
 {
     Windows::ApplicationModel::Calls::VoipCallCoordinator coordinator { nullptr };
-    check_hresult(static_cast<const IVoipCallCoordinatorStatics &>(static_cast<const D &>(*this))->abi_GetDefault(put(coordinator)));
+    check_hresult(WINRT_SHIM(IVoipCallCoordinatorStatics)->abi_GetDefault(put(coordinator)));
     return coordinator;
 }
 
 template <typename D> hstring impl_IPhoneCallHistoryEntry<D>::Id() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress impl_IPhoneCallHistoryEntry<D>::Address() const
 {
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress value { nullptr };
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->get_Address(put(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->get_Address(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntry<D>::Address(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress & value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->put_Address(get(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_Address(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IPhoneCallHistoryEntry<D>::Duration() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->get_Duration(put(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->get_Duration(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntry<D>::Duration(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->put_Duration(get(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_Duration(get(value)));
 }
 
 template <typename D> bool impl_IPhoneCallHistoryEntry<D>::IsCallerIdBlocked() const
 {
     bool value {};
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->get_IsCallerIdBlocked(&value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->get_IsCallerIdBlocked(&value));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntry<D>::IsCallerIdBlocked(bool value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->put_IsCallerIdBlocked(value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_IsCallerIdBlocked(value));
 }
 
 template <typename D> bool impl_IPhoneCallHistoryEntry<D>::IsEmergency() const
 {
     bool value {};
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->get_IsEmergency(&value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->get_IsEmergency(&value));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntry<D>::IsEmergency(bool value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->put_IsEmergency(value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_IsEmergency(value));
 }
 
 template <typename D> bool impl_IPhoneCallHistoryEntry<D>::IsIncoming() const
 {
     bool value {};
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->get_IsIncoming(&value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->get_IsIncoming(&value));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntry<D>::IsIncoming(bool value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->put_IsIncoming(value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_IsIncoming(value));
 }
 
 template <typename D> bool impl_IPhoneCallHistoryEntry<D>::IsMissed() const
 {
     bool value {};
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->get_IsMissed(&value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->get_IsMissed(&value));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntry<D>::IsMissed(bool value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->put_IsMissed(value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_IsMissed(value));
 }
 
 template <typename D> bool impl_IPhoneCallHistoryEntry<D>::IsRinging() const
 {
     bool value {};
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->get_IsRinging(&value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->get_IsRinging(&value));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntry<D>::IsRinging(bool value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->put_IsRinging(value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_IsRinging(value));
 }
 
 template <typename D> bool impl_IPhoneCallHistoryEntry<D>::IsSeen() const
 {
     bool value {};
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->get_IsSeen(&value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->get_IsSeen(&value));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntry<D>::IsSeen(bool value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->put_IsSeen(value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_IsSeen(value));
 }
 
 template <typename D> bool impl_IPhoneCallHistoryEntry<D>::IsSuppressed() const
 {
     bool value {};
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->get_IsSuppressed(&value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->get_IsSuppressed(&value));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntry<D>::IsSuppressed(bool value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->put_IsSuppressed(value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_IsSuppressed(value));
 }
 
 template <typename D> bool impl_IPhoneCallHistoryEntry<D>::IsVoicemail() const
 {
     bool value {};
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->get_IsVoicemail(&value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->get_IsVoicemail(&value));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntry<D>::IsVoicemail(bool value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->put_IsVoicemail(value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_IsVoicemail(value));
 }
 
 template <typename D> Windows::ApplicationModel::Calls::PhoneCallHistoryEntryMedia impl_IPhoneCallHistoryEntry<D>::Media() const
 {
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryMedia value {};
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->get_Media(&value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->get_Media(&value));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntry<D>::Media(Windows::ApplicationModel::Calls::PhoneCallHistoryEntryMedia value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->put_Media(value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_Media(value));
 }
 
 template <typename D> Windows::ApplicationModel::Calls::PhoneCallHistoryEntryOtherAppReadAccess impl_IPhoneCallHistoryEntry<D>::OtherAppReadAccess() const
 {
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryOtherAppReadAccess value {};
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->get_OtherAppReadAccess(&value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->get_OtherAppReadAccess(&value));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntry<D>::OtherAppReadAccess(Windows::ApplicationModel::Calls::PhoneCallHistoryEntryOtherAppReadAccess value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->put_OtherAppReadAccess(value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_OtherAppReadAccess(value));
 }
 
 template <typename D> hstring impl_IPhoneCallHistoryEntry<D>::RemoteId() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->get_RemoteId(put(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->get_RemoteId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntry<D>::RemoteId(hstring_ref value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->put_RemoteId(get(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_RemoteId(get(value)));
 }
 
 template <typename D> hstring impl_IPhoneCallHistoryEntry<D>::SourceDisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->get_SourceDisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->get_SourceDisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPhoneCallHistoryEntry<D>::SourceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->get_SourceId(put(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->get_SourceId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntry<D>::SourceId(hstring_ref value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->put_SourceId(get(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_SourceId(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::Calls::PhoneCallHistorySourceIdKind impl_IPhoneCallHistoryEntry<D>::SourceIdKind() const
 {
     Windows::ApplicationModel::Calls::PhoneCallHistorySourceIdKind value {};
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->get_SourceIdKind(&value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->get_SourceIdKind(&value));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntry<D>::SourceIdKind(Windows::ApplicationModel::Calls::PhoneCallHistorySourceIdKind value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->put_SourceIdKind(value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_SourceIdKind(value));
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IPhoneCallHistoryEntry<D>::StartTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->get_StartTime(put(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->get_StartTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntry<D>::StartTime(const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntry &>(static_cast<const D &>(*this))->put_StartTime(get(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntry)->put_StartTime(get(value)));
 }
 
 template <typename D> hstring impl_IPhoneCallHistoryEntryAddress<D>::ContactId() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhoneCallHistoryEntryAddress &>(static_cast<const D &>(*this))->get_ContactId(put(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntryAddress)->get_ContactId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntryAddress<D>::ContactId(hstring_ref value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntryAddress &>(static_cast<const D &>(*this))->put_ContactId(get(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntryAddress)->put_ContactId(get(value)));
 }
 
 template <typename D> hstring impl_IPhoneCallHistoryEntryAddress<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhoneCallHistoryEntryAddress &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntryAddress)->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntryAddress<D>::DisplayName(hstring_ref value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntryAddress &>(static_cast<const D &>(*this))->put_DisplayName(get(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntryAddress)->put_DisplayName(get(value)));
 }
 
 template <typename D> hstring impl_IPhoneCallHistoryEntryAddress<D>::RawAddress() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhoneCallHistoryEntryAddress &>(static_cast<const D &>(*this))->get_RawAddress(put(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntryAddress)->get_RawAddress(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntryAddress<D>::RawAddress(hstring_ref value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntryAddress &>(static_cast<const D &>(*this))->put_RawAddress(get(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntryAddress)->put_RawAddress(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind impl_IPhoneCallHistoryEntryAddress<D>::RawAddressKind() const
 {
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind value {};
-    check_hresult(static_cast<const IPhoneCallHistoryEntryAddress &>(static_cast<const D &>(*this))->get_RawAddressKind(&value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntryAddress)->get_RawAddressKind(&value));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntryAddress<D>::RawAddressKind(Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntryAddress &>(static_cast<const D &>(*this))->put_RawAddressKind(value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntryAddress)->put_RawAddressKind(value));
 }
 
 template <typename D> Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress impl_IPhoneCallHistoryEntryAddressFactory<D>::Create(hstring_ref rawAddress, Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind) const
 {
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress result { nullptr };
-    check_hresult(static_cast<const IPhoneCallHistoryEntryAddressFactory &>(static_cast<const D &>(*this))->abi_Create(get(rawAddress), rawAddressKind, put(result)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntryAddressFactory)->abi_Create(get(rawAddress), rawAddressKind, put(result)));
     return result;
 }
 
 template <typename D> Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryDesiredMedia impl_IPhoneCallHistoryEntryQueryOptions<D>::DesiredMedia() const
 {
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryDesiredMedia value {};
-    check_hresult(static_cast<const IPhoneCallHistoryEntryQueryOptions &>(static_cast<const D &>(*this))->get_DesiredMedia(&value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntryQueryOptions)->get_DesiredMedia(&value));
     return value;
 }
 
 template <typename D> void impl_IPhoneCallHistoryEntryQueryOptions<D>::DesiredMedia(Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryDesiredMedia value) const
 {
-    check_hresult(static_cast<const IPhoneCallHistoryEntryQueryOptions &>(static_cast<const D &>(*this))->put_DesiredMedia(value));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntryQueryOptions)->put_DesiredMedia(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IPhoneCallHistoryEntryQueryOptions<D>::SourceIds() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IPhoneCallHistoryEntryQueryOptions &>(static_cast<const D &>(*this))->get_SourceIds(put(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntryQueryOptions)->get_SourceIds(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry>> impl_IPhoneCallHistoryEntryReader<D>::ReadBatchAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry>> result;
-    check_hresult(static_cast<const IPhoneCallHistoryEntryReader &>(static_cast<const D &>(*this))->abi_ReadBatchAsync(put(result)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryEntryReader)->abi_ReadBatchAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> impl_IPhoneCallHistoryStore<D>::GetEntryAsync(hstring_ref callHistoryEntryId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> result;
-    check_hresult(static_cast<const IPhoneCallHistoryStore &>(static_cast<const D &>(*this))->abi_GetEntryAsync(get(callHistoryEntryId), put(result)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryStore)->abi_GetEntryAsync(get(callHistoryEntryId), put(result)));
     return result;
 }
 
 template <typename D> Windows::ApplicationModel::Calls::PhoneCallHistoryEntryReader impl_IPhoneCallHistoryStore<D>::GetEntryReader() const
 {
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryReader result { nullptr };
-    check_hresult(static_cast<const IPhoneCallHistoryStore &>(static_cast<const D &>(*this))->abi_GetEntryReader(put(result)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryStore)->abi_GetEntryReader(put(result)));
     return result;
 }
 
 template <typename D> Windows::ApplicationModel::Calls::PhoneCallHistoryEntryReader impl_IPhoneCallHistoryStore<D>::GetEntryReader(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryOptions & queryOptions) const
 {
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryReader result { nullptr };
-    check_hresult(static_cast<const IPhoneCallHistoryStore &>(static_cast<const D &>(*this))->abi_GetEntryReaderWithOptions(get(queryOptions), put(result)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryStore)->abi_GetEntryReaderWithOptions(get(queryOptions), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPhoneCallHistoryStore<D>::SaveEntryAsync(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntry & callHistoryEntry) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IPhoneCallHistoryStore &>(static_cast<const D &>(*this))->abi_SaveEntryAsync(get(callHistoryEntry), put(result)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryStore)->abi_SaveEntryAsync(get(callHistoryEntry), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPhoneCallHistoryStore<D>::DeleteEntryAsync(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntry & callHistoryEntry) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IPhoneCallHistoryStore &>(static_cast<const D &>(*this))->abi_DeleteEntryAsync(get(callHistoryEntry), put(result)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryStore)->abi_DeleteEntryAsync(get(callHistoryEntry), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPhoneCallHistoryStore<D>::DeleteEntriesAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> & callHistoryEntries) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IPhoneCallHistoryStore &>(static_cast<const D &>(*this))->abi_DeleteEntriesAsync(get(callHistoryEntries), put(result)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryStore)->abi_DeleteEntriesAsync(get(callHistoryEntries), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPhoneCallHistoryStore<D>::MarkEntryAsSeenAsync(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntry & callHistoryEntry) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IPhoneCallHistoryStore &>(static_cast<const D &>(*this))->abi_MarkEntryAsSeenAsync(get(callHistoryEntry), put(result)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryStore)->abi_MarkEntryAsSeenAsync(get(callHistoryEntry), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPhoneCallHistoryStore<D>::MarkEntriesAsSeenAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> & callHistoryEntries) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IPhoneCallHistoryStore &>(static_cast<const D &>(*this))->abi_MarkEntriesAsSeenAsync(get(callHistoryEntries), put(result)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryStore)->abi_MarkEntriesAsSeenAsync(get(callHistoryEntries), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<uint32_t> impl_IPhoneCallHistoryStore<D>::GetUnseenCountAsync() const
 {
     Windows::Foundation::IAsyncOperation<uint32_t> result;
-    check_hresult(static_cast<const IPhoneCallHistoryStore &>(static_cast<const D &>(*this))->abi_GetUnseenCountAsync(put(result)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryStore)->abi_GetUnseenCountAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPhoneCallHistoryStore<D>::MarkAllAsSeenAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IPhoneCallHistoryStore &>(static_cast<const D &>(*this))->abi_MarkAllAsSeenAsync(put(result)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryStore)->abi_MarkAllAsSeenAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<uint32_t> impl_IPhoneCallHistoryStore<D>::GetSourcesUnseenCountAsync(const Windows::Foundation::Collections::IIterable<hstring> & sourceIds) const
 {
     Windows::Foundation::IAsyncOperation<uint32_t> result;
-    check_hresult(static_cast<const IPhoneCallHistoryStore &>(static_cast<const D &>(*this))->abi_GetSourcesUnseenCountAsync(get(sourceIds), put(result)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryStore)->abi_GetSourcesUnseenCountAsync(get(sourceIds), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPhoneCallHistoryStore<D>::MarkSourcesAsSeenAsync(const Windows::Foundation::Collections::IIterable<hstring> & sourceIds) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IPhoneCallHistoryStore &>(static_cast<const D &>(*this))->abi_MarkSourcesAsSeenAsync(get(sourceIds), put(result)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryStore)->abi_MarkSourcesAsSeenAsync(get(sourceIds), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryStore> impl_IPhoneCallHistoryManagerStatics<D>::RequestStoreAsync(Windows::ApplicationModel::Calls::PhoneCallHistoryStoreAccessType accessType) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryStore> result;
-    check_hresult(static_cast<const IPhoneCallHistoryManagerStatics &>(static_cast<const D &>(*this))->abi_RequestStoreAsync(accessType, put(result)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryManagerStatics)->abi_RequestStoreAsync(accessType, put(result)));
     return result;
 }
 
 template <typename D> Windows::ApplicationModel::Calls::PhoneCallHistoryManagerForUser impl_IPhoneCallHistoryManagerStatics2<D>::GetForUser(const Windows::System::User & user) const
 {
     Windows::ApplicationModel::Calls::PhoneCallHistoryManagerForUser result { nullptr };
-    check_hresult(static_cast<const IPhoneCallHistoryManagerStatics2 &>(static_cast<const D &>(*this))->abi_GetForUser(get(user), put(result)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryManagerStatics2)->abi_GetForUser(get(user), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryStore> impl_IPhoneCallHistoryManagerForUser<D>::RequestStoreAsync(Windows::ApplicationModel::Calls::PhoneCallHistoryStoreAccessType accessType) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryStore> result;
-    check_hresult(static_cast<const IPhoneCallHistoryManagerForUser &>(static_cast<const D &>(*this))->abi_RequestStoreAsync(accessType, put(result)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryManagerForUser)->abi_RequestStoreAsync(accessType, put(result)));
     return result;
 }
 
 template <typename D> Windows::System::User impl_IPhoneCallHistoryManagerForUser<D>::User() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(static_cast<const IPhoneCallHistoryManagerForUser &>(static_cast<const D &>(*this))->get_User(put(value)));
+    check_hresult(WINRT_SHIM(IPhoneCallHistoryManagerForUser)->get_User(put(value)));
     return value;
 }
 

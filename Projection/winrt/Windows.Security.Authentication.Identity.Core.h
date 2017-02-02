@@ -439,189 +439,189 @@ namespace Windows::Security::Authentication::Identity::Core {
 template <typename D> hstring impl_IMicrosoftAccountMultiFactorSessionInfo<D>::UserAccountId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorSessionInfo &>(static_cast<const D &>(*this))->get_UserAccountId(put(value)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorSessionInfo)->get_UserAccountId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMicrosoftAccountMultiFactorSessionInfo<D>::SessionId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorSessionInfo &>(static_cast<const D &>(*this))->get_SessionId(put(value)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorSessionInfo)->get_SessionId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMicrosoftAccountMultiFactorSessionInfo<D>::DisplaySessionId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorSessionInfo &>(static_cast<const D &>(*this))->get_DisplaySessionId(put(value)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorSessionInfo)->get_DisplaySessionId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionApprovalStatus impl_IMicrosoftAccountMultiFactorSessionInfo<D>::ApprovalStatus() const
 {
     Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionApprovalStatus value {};
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorSessionInfo &>(static_cast<const D &>(*this))->get_ApprovalStatus(&value));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorSessionInfo)->get_ApprovalStatus(&value));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationType impl_IMicrosoftAccountMultiFactorSessionInfo<D>::AuthenticationType() const
 {
     Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationType value {};
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorSessionInfo &>(static_cast<const D &>(*this))->get_AuthenticationType(&value));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorSessionInfo)->get_AuthenticationType(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IMicrosoftAccountMultiFactorSessionInfo<D>::RequestTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorSessionInfo &>(static_cast<const D &>(*this))->get_RequestTime(put(value)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorSessionInfo)->get_RequestTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IMicrosoftAccountMultiFactorSessionInfo<D>::ExpirationTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorSessionInfo &>(static_cast<const D &>(*this))->get_ExpirationTime(put(value)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorSessionInfo)->get_ExpirationTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo> impl_IMicrosoftAccountMultiFactorGetSessionsResult<D>::Sessions() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo> value;
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorGetSessionsResult &>(static_cast<const D &>(*this))->get_Sessions(put(value)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorGetSessionsResult)->get_Sessions(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse impl_IMicrosoftAccountMultiFactorGetSessionsResult<D>::ServiceResponse() const
 {
     Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse value {};
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorGetSessionsResult &>(static_cast<const D &>(*this))->get_ServiceResponse(&value));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorGetSessionsResult)->get_ServiceResponse(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo> impl_IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo<D>::Sessions() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo> value;
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo &>(static_cast<const D &>(*this))->get_Sessions(put(value)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo)->get_Sessions(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo<D>::UnregisteredAccounts() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo &>(static_cast<const D &>(*this))->get_UnregisteredAccounts(put(value)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo)->get_UnregisteredAccounts(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse impl_IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo<D>::ServiceResponse() const
 {
     Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse value {};
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo &>(static_cast<const D &>(*this))->get_ServiceResponse(&value));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo)->get_ServiceResponse(&value));
     return value;
 }
 
 template <typename D> hstring impl_IMicrosoftAccountMultiFactorOneTimeCodedInfo<D>::Code() const
 {
     hstring value;
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorOneTimeCodedInfo &>(static_cast<const D &>(*this))->get_Code(put(value)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorOneTimeCodedInfo)->get_Code(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMicrosoftAccountMultiFactorOneTimeCodedInfo<D>::TimeInterval() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorOneTimeCodedInfo &>(static_cast<const D &>(*this))->get_TimeInterval(put(value)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorOneTimeCodedInfo)->get_TimeInterval(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMicrosoftAccountMultiFactorOneTimeCodedInfo<D>::TimeToLive() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorOneTimeCodedInfo &>(static_cast<const D &>(*this))->get_TimeToLive(put(value)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorOneTimeCodedInfo)->get_TimeToLive(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse impl_IMicrosoftAccountMultiFactorOneTimeCodedInfo<D>::ServiceResponse() const
 {
     Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse value {};
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorOneTimeCodedInfo &>(static_cast<const D &>(*this))->get_ServiceResponse(&value));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorOneTimeCodedInfo)->get_ServiceResponse(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorOneTimeCodedInfo> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::GetOneTimePassCodeAsync(hstring_ref userAccountId, uint32_t codeLength) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorOneTimeCodedInfo> asyncOperation;
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorAuthenticationManager &>(static_cast<const D &>(*this))->abi_GetOneTimePassCodeAsync(get(userAccountId), codeLength, put(asyncOperation)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticationManager)->abi_GetOneTimePassCodeAsync(get(userAccountId), codeLength, put(asyncOperation)));
     return asyncOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::AddDeviceAsync(hstring_ref userAccountId, hstring_ref authenticationToken, hstring_ref wnsChannelId) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> asyncOperation;
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorAuthenticationManager &>(static_cast<const D &>(*this))->abi_AddDeviceAsync(get(userAccountId), get(authenticationToken), get(wnsChannelId), put(asyncOperation)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticationManager)->abi_AddDeviceAsync(get(userAccountId), get(authenticationToken), get(wnsChannelId), put(asyncOperation)));
     return asyncOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::RemoveDeviceAsync(hstring_ref userAccountId) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> asyncOperation;
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorAuthenticationManager &>(static_cast<const D &>(*this))->abi_RemoveDeviceAsync(get(userAccountId), put(asyncOperation)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticationManager)->abi_RemoveDeviceAsync(get(userAccountId), put(asyncOperation)));
     return asyncOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::UpdateWnsChannelAsync(hstring_ref userAccountId, hstring_ref channelUri) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> asyncOperation;
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorAuthenticationManager &>(static_cast<const D &>(*this))->abi_UpdateWnsChannelAsync(get(userAccountId), get(channelUri), put(asyncOperation)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticationManager)->abi_UpdateWnsChannelAsync(get(userAccountId), get(channelUri), put(asyncOperation)));
     return asyncOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorGetSessionsResult> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::GetSessionsAsync(const Windows::Foundation::Collections::IIterable<hstring> & userAccountIdList) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorGetSessionsResult> asyncOperation;
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorAuthenticationManager &>(static_cast<const D &>(*this))->abi_GetSessionsAsync(get(userAccountIdList), put(asyncOperation)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticationManager)->abi_GetSessionsAsync(get(userAccountIdList), put(asyncOperation)));
     return asyncOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::GetSessionsAndUnregisteredAccountsAsync(const Windows::Foundation::Collections::IIterable<hstring> & userAccountIdList) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo> asyncOperation;
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorAuthenticationManager &>(static_cast<const D &>(*this))->abi_GetSessionsAndUnregisteredAccountsAsync(get(userAccountIdList), put(asyncOperation)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticationManager)->abi_GetSessionsAndUnregisteredAccountsAsync(get(userAccountIdList), put(asyncOperation)));
     return asyncOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::ApproveSessionAsync(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionAuthenticationStatus sessionAuthentictionStatus, const Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo & authenticationSessionInfo) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> asyncOperation;
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorAuthenticationManager &>(static_cast<const D &>(*this))->abi_ApproveSessionUsingAuthSessionInfoAsync(sessionAuthentictionStatus, get(authenticationSessionInfo), put(asyncOperation)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticationManager)->abi_ApproveSessionUsingAuthSessionInfoAsync(sessionAuthentictionStatus, get(authenticationSessionInfo), put(asyncOperation)));
     return asyncOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::ApproveSessionAsync(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionAuthenticationStatus sessionAuthentictionStatus, hstring_ref userAccountId, hstring_ref sessionId, Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> asyncOperation;
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorAuthenticationManager &>(static_cast<const D &>(*this))->abi_ApproveSessionAsync(sessionAuthentictionStatus, get(userAccountId), get(sessionId), sessionAuthenticationType, put(asyncOperation)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticationManager)->abi_ApproveSessionAsync(sessionAuthentictionStatus, get(userAccountId), get(sessionId), sessionAuthenticationType, put(asyncOperation)));
     return asyncOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::DenySessionAsync(const Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo & authenticationSessionInfo) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> asyncOperation;
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorAuthenticationManager &>(static_cast<const D &>(*this))->abi_DenySessionUsingAuthSessionInfoAsync(get(authenticationSessionInfo), put(asyncOperation)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticationManager)->abi_DenySessionUsingAuthSessionInfoAsync(get(authenticationSessionInfo), put(asyncOperation)));
     return asyncOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::DenySessionAsync(hstring_ref userAccountId, hstring_ref sessionId, Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> asyncOperation;
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorAuthenticationManager &>(static_cast<const D &>(*this))->abi_DenySessionAsync(get(userAccountId), get(sessionId), sessionAuthenticationType, put(asyncOperation)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticationManager)->abi_DenySessionAsync(get(userAccountId), get(sessionId), sessionAuthenticationType, put(asyncOperation)));
     return asyncOperation;
 }
 
 template <typename D> Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationManager impl_IMicrosoftAccountMultiFactorAuthenticatorStatics<D>::Current() const
 {
     Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationManager value { nullptr };
-    check_hresult(static_cast<const IMicrosoftAccountMultiFactorAuthenticatorStatics &>(static_cast<const D &>(*this))->get_Current(put(value)));
+    check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticatorStatics)->get_Current(put(value)));
     return value;
 }
 

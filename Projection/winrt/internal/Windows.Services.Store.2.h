@@ -410,7 +410,6 @@ struct IStoreAcquireLicenseResult :
     impl::consume<IStoreAcquireLicenseResult>
 {
     IStoreAcquireLicenseResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoreAcquireLicenseResult>(m_ptr); }
 };
 
 struct IStoreAppLicense :
@@ -418,7 +417,6 @@ struct IStoreAppLicense :
     impl::consume<IStoreAppLicense>
 {
     IStoreAppLicense(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoreAppLicense>(m_ptr); }
 };
 
 struct IStoreAvailability :
@@ -426,7 +424,6 @@ struct IStoreAvailability :
     impl::consume<IStoreAvailability>
 {
     IStoreAvailability(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoreAvailability>(m_ptr); }
 };
 
 struct IStoreCollectionData :
@@ -434,7 +431,6 @@ struct IStoreCollectionData :
     impl::consume<IStoreCollectionData>
 {
     IStoreCollectionData(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoreCollectionData>(m_ptr); }
 };
 
 struct IStoreConsumableResult :
@@ -442,7 +438,6 @@ struct IStoreConsumableResult :
     impl::consume<IStoreConsumableResult>
 {
     IStoreConsumableResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoreConsumableResult>(m_ptr); }
 };
 
 struct IStoreContext :
@@ -450,7 +445,6 @@ struct IStoreContext :
     impl::consume<IStoreContext>
 {
     IStoreContext(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoreContext>(m_ptr); }
 };
 
 struct IStoreContextStatics :
@@ -458,7 +452,6 @@ struct IStoreContextStatics :
     impl::consume<IStoreContextStatics>
 {
     IStoreContextStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoreContextStatics>(m_ptr); }
 };
 
 struct IStoreImage :
@@ -466,7 +459,6 @@ struct IStoreImage :
     impl::consume<IStoreImage>
 {
     IStoreImage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoreImage>(m_ptr); }
 };
 
 struct IStoreLicense :
@@ -474,7 +466,6 @@ struct IStoreLicense :
     impl::consume<IStoreLicense>
 {
     IStoreLicense(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoreLicense>(m_ptr); }
 };
 
 struct IStorePackageLicense :
@@ -483,7 +474,6 @@ struct IStorePackageLicense :
     impl::require<IStorePackageLicense, Windows::Foundation::IClosable>
 {
     IStorePackageLicense(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorePackageLicense>(m_ptr); }
 };
 
 struct IStorePackageUpdate :
@@ -491,7 +481,6 @@ struct IStorePackageUpdate :
     impl::consume<IStorePackageUpdate>
 {
     IStorePackageUpdate(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorePackageUpdate>(m_ptr); }
 };
 
 struct IStorePackageUpdateResult :
@@ -499,7 +488,6 @@ struct IStorePackageUpdateResult :
     impl::consume<IStorePackageUpdateResult>
 {
     IStorePackageUpdateResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorePackageUpdateResult>(m_ptr); }
 };
 
 struct IStorePrice :
@@ -507,7 +495,6 @@ struct IStorePrice :
     impl::consume<IStorePrice>
 {
     IStorePrice(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorePrice>(m_ptr); }
 };
 
 struct IStoreProduct :
@@ -515,7 +502,6 @@ struct IStoreProduct :
     impl::consume<IStoreProduct>
 {
     IStoreProduct(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoreProduct>(m_ptr); }
 };
 
 struct IStoreProductPagedQueryResult :
@@ -523,7 +509,6 @@ struct IStoreProductPagedQueryResult :
     impl::consume<IStoreProductPagedQueryResult>
 {
     IStoreProductPagedQueryResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoreProductPagedQueryResult>(m_ptr); }
 };
 
 struct IStoreProductQueryResult :
@@ -531,7 +516,6 @@ struct IStoreProductQueryResult :
     impl::consume<IStoreProductQueryResult>
 {
     IStoreProductQueryResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoreProductQueryResult>(m_ptr); }
 };
 
 struct IStoreProductResult :
@@ -539,7 +523,6 @@ struct IStoreProductResult :
     impl::consume<IStoreProductResult>
 {
     IStoreProductResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoreProductResult>(m_ptr); }
 };
 
 struct IStorePurchaseProperties :
@@ -547,7 +530,6 @@ struct IStorePurchaseProperties :
     impl::consume<IStorePurchaseProperties>
 {
     IStorePurchaseProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorePurchaseProperties>(m_ptr); }
 };
 
 struct IStorePurchasePropertiesFactory :
@@ -555,7 +537,6 @@ struct IStorePurchasePropertiesFactory :
     impl::consume<IStorePurchasePropertiesFactory>
 {
     IStorePurchasePropertiesFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorePurchasePropertiesFactory>(m_ptr); }
 };
 
 struct IStorePurchaseResult :
@@ -563,7 +544,6 @@ struct IStorePurchaseResult :
     impl::consume<IStorePurchaseResult>
 {
     IStorePurchaseResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorePurchaseResult>(m_ptr); }
 };
 
 struct IStoreRequestHelperStatics :
@@ -571,7 +551,6 @@ struct IStoreRequestHelperStatics :
     impl::consume<IStoreRequestHelperStatics>
 {
     IStoreRequestHelperStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoreRequestHelperStatics>(m_ptr); }
 };
 
 struct IStoreSendRequestResult :
@@ -579,7 +558,6 @@ struct IStoreSendRequestResult :
     impl::consume<IStoreSendRequestResult>
 {
     IStoreSendRequestResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoreSendRequestResult>(m_ptr); }
 };
 
 struct IStoreSku :
@@ -587,7 +565,6 @@ struct IStoreSku :
     impl::consume<IStoreSku>
 {
     IStoreSku(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoreSku>(m_ptr); }
 };
 
 struct IStoreSubscriptionInfo :
@@ -595,7 +572,6 @@ struct IStoreSubscriptionInfo :
     impl::consume<IStoreSubscriptionInfo>
 {
     IStoreSubscriptionInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoreSubscriptionInfo>(m_ptr); }
 };
 
 struct IStoreVideo :
@@ -603,7 +579,6 @@ struct IStoreVideo :
     impl::consume<IStoreVideo>
 {
     IStoreVideo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStoreVideo>(m_ptr); }
 };
 
 }

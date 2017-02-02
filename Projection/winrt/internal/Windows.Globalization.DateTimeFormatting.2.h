@@ -34,7 +34,6 @@ struct IDateTimeFormatter :
     impl::consume<IDateTimeFormatter>
 {
     IDateTimeFormatter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDateTimeFormatter>(m_ptr); }
 };
 
 struct IDateTimeFormatter2 :
@@ -42,7 +41,6 @@ struct IDateTimeFormatter2 :
     impl::consume<IDateTimeFormatter2>
 {
     IDateTimeFormatter2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDateTimeFormatter2>(m_ptr); }
 };
 
 struct IDateTimeFormatterFactory :
@@ -50,7 +48,6 @@ struct IDateTimeFormatterFactory :
     impl::consume<IDateTimeFormatterFactory>
 {
     IDateTimeFormatterFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDateTimeFormatterFactory>(m_ptr); }
 };
 
 struct IDateTimeFormatterStatics :
@@ -58,7 +55,6 @@ struct IDateTimeFormatterStatics :
     impl::consume<IDateTimeFormatterStatics>
 {
     IDateTimeFormatterStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDateTimeFormatterStatics>(m_ptr); }
 };
 
 }

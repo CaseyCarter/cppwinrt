@@ -93,21 +93,21 @@ TEST_CASE("produce_IInspectable")
         // Basic query works for IUnknown.
 
         com_ptr<Windows::IUnknown> qi;
-        REQUIRE(S_OK == p->QueryInterface(put(qi)));
+        REQUIRE(S_OK == get(p)->QueryInterface(put(qi)));
         REQUIRE(qi);
     }
     {
         // Query works for IInspectable.
 
         com_ptr<Windows::IInspectable> qi;
-        REQUIRE(S_OK == p->QueryInterface(put(qi)));
+        REQUIRE(S_OK == get(p)->QueryInterface(put(qi)));
         REQUIRE(qi);
     }
     {
         // Query for unsupported interface is rejected.
 
         com_ptr<IActivationFactory> qi;
-        REQUIRE(E_NOINTERFACE == p->QueryInterface(put(qi)));
+        REQUIRE(E_NOINTERFACE == get(p)->QueryInterface(put(qi)));
         REQUIRE(!qi);
     }
 

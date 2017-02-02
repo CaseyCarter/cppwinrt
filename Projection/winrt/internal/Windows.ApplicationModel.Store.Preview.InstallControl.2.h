@@ -94,7 +94,6 @@ struct IAppInstallItem :
     impl::consume<IAppInstallItem>
 {
     IAppInstallItem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppInstallItem>(m_ptr); }
 };
 
 struct IAppInstallItem2 :
@@ -102,7 +101,6 @@ struct IAppInstallItem2 :
     impl::consume<IAppInstallItem2>
 {
     IAppInstallItem2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppInstallItem2>(m_ptr); }
 };
 
 struct IAppInstallManager :
@@ -110,7 +108,6 @@ struct IAppInstallManager :
     impl::consume<IAppInstallManager>
 {
     IAppInstallManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppInstallManager>(m_ptr); }
 };
 
 struct IAppInstallManager2 :
@@ -118,7 +115,6 @@ struct IAppInstallManager2 :
     impl::consume<IAppInstallManager2>
 {
     IAppInstallManager2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppInstallManager2>(m_ptr); }
 };
 
 struct IAppInstallManager3 :
@@ -126,7 +122,6 @@ struct IAppInstallManager3 :
     impl::consume<IAppInstallManager3>
 {
     IAppInstallManager3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppInstallManager3>(m_ptr); }
 };
 
 struct IAppInstallManagerItemEventArgs :
@@ -134,7 +129,6 @@ struct IAppInstallManagerItemEventArgs :
     impl::consume<IAppInstallManagerItemEventArgs>
 {
     IAppInstallManagerItemEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppInstallManagerItemEventArgs>(m_ptr); }
 };
 
 struct IAppInstallStatus :
@@ -142,7 +136,6 @@ struct IAppInstallStatus :
     impl::consume<IAppInstallStatus>
 {
     IAppInstallStatus(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppInstallStatus>(m_ptr); }
 };
 
 struct IAppInstallStatus2 :
@@ -150,7 +143,6 @@ struct IAppInstallStatus2 :
     impl::consume<IAppInstallStatus2>
 {
     IAppInstallStatus2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppInstallStatus2>(m_ptr); }
 };
 
 }

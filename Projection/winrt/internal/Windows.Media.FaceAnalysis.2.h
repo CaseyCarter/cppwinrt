@@ -119,7 +119,6 @@ struct IDetectedFace :
     impl::consume<IDetectedFace>
 {
     IDetectedFace(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDetectedFace>(m_ptr); }
 };
 
 struct IFaceDetector :
@@ -127,7 +126,6 @@ struct IFaceDetector :
     impl::consume<IFaceDetector>
 {
     IFaceDetector(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFaceDetector>(m_ptr); }
 };
 
 struct IFaceDetectorStatics :
@@ -135,7 +133,6 @@ struct IFaceDetectorStatics :
     impl::consume<IFaceDetectorStatics>
 {
     IFaceDetectorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFaceDetectorStatics>(m_ptr); }
 };
 
 struct IFaceTracker :
@@ -143,7 +140,6 @@ struct IFaceTracker :
     impl::consume<IFaceTracker>
 {
     IFaceTracker(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFaceTracker>(m_ptr); }
 };
 
 struct IFaceTrackerStatics :
@@ -151,7 +147,6 @@ struct IFaceTrackerStatics :
     impl::consume<IFaceTrackerStatics>
 {
     IFaceTrackerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFaceTrackerStatics>(m_ptr); }
 };
 
 }

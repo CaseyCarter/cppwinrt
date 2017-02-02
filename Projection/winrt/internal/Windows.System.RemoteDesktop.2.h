@@ -14,7 +14,6 @@ struct IInteractiveSessionStatics :
     impl::consume<IInteractiveSessionStatics>
 {
     IInteractiveSessionStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInteractiveSessionStatics>(m_ptr); }
 };
 
 }

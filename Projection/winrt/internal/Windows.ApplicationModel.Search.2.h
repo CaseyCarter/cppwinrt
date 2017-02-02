@@ -59,7 +59,6 @@ struct ILocalContentSuggestionSettings :
     impl::consume<ILocalContentSuggestionSettings>
 {
     ILocalContentSuggestionSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILocalContentSuggestionSettings>(m_ptr); }
 };
 
 struct ISearchPaneQueryLinguisticDetails :
@@ -67,7 +66,6 @@ struct ISearchPaneQueryLinguisticDetails :
     impl::consume<ISearchPaneQueryLinguisticDetails>
 {
     ISearchPaneQueryLinguisticDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISearchPaneQueryLinguisticDetails>(m_ptr); }
 };
 
 struct ISearchQueryLinguisticDetails :
@@ -75,7 +73,6 @@ struct ISearchQueryLinguisticDetails :
     impl::consume<ISearchQueryLinguisticDetails>
 {
     ISearchQueryLinguisticDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISearchQueryLinguisticDetails>(m_ptr); }
 };
 
 struct ISearchQueryLinguisticDetailsFactory :
@@ -83,7 +80,6 @@ struct ISearchQueryLinguisticDetailsFactory :
     impl::consume<ISearchQueryLinguisticDetailsFactory>
 {
     ISearchQueryLinguisticDetailsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISearchQueryLinguisticDetailsFactory>(m_ptr); }
 };
 
 struct ISearchSuggestionCollection :
@@ -91,7 +87,6 @@ struct ISearchSuggestionCollection :
     impl::consume<ISearchSuggestionCollection>
 {
     ISearchSuggestionCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISearchSuggestionCollection>(m_ptr); }
 };
 
 struct ISearchSuggestionsRequest :
@@ -99,7 +94,6 @@ struct ISearchSuggestionsRequest :
     impl::consume<ISearchSuggestionsRequest>
 {
     ISearchSuggestionsRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISearchSuggestionsRequest>(m_ptr); }
 };
 
 struct ISearchSuggestionsRequestDeferral :
@@ -107,7 +101,6 @@ struct ISearchSuggestionsRequestDeferral :
     impl::consume<ISearchSuggestionsRequestDeferral>
 {
     ISearchSuggestionsRequestDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISearchSuggestionsRequestDeferral>(m_ptr); }
 };
 
 }

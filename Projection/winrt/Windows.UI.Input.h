@@ -3033,21 +3033,21 @@ namespace Windows::UI::Input {
 template <typename D> Windows::UI::Input::EdgeGestureKind impl_IEdgeGestureEventArgs<D>::Kind() const
 {
     Windows::UI::Input::EdgeGestureKind value {};
-    check_hresult(static_cast<const IEdgeGestureEventArgs &>(static_cast<const D &>(*this))->get_Kind(&value));
+    check_hresult(WINRT_SHIM(IEdgeGestureEventArgs)->get_Kind(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::EdgeGesture impl_IEdgeGestureStatics<D>::GetForCurrentView() const
 {
     Windows::UI::Input::EdgeGesture current { nullptr };
-    check_hresult(static_cast<const IEdgeGestureStatics &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(current)));
+    check_hresult(WINRT_SHIM(IEdgeGestureStatics)->abi_GetForCurrentView(put(current)));
     return current;
 }
 
 template <typename D> event_token impl_IEdgeGesture<D>::Starting(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IEdgeGesture &>(static_cast<const D &>(*this))->add_Starting(get(handler), &token));
+    check_hresult(WINRT_SHIM(IEdgeGesture)->add_Starting(get(handler), &token));
     return token;
 }
 
@@ -3058,13 +3058,13 @@ template <typename D> event_revoker<IEdgeGesture> impl_IEdgeGesture<D>::Starting
 
 template <typename D> void impl_IEdgeGesture<D>::Starting(event_token token) const
 {
-    check_hresult(static_cast<const IEdgeGesture &>(static_cast<const D &>(*this))->remove_Starting(token));
+    check_hresult(WINRT_SHIM(IEdgeGesture)->remove_Starting(token));
 }
 
 template <typename D> event_token impl_IEdgeGesture<D>::Completed(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IEdgeGesture &>(static_cast<const D &>(*this))->add_Completed(get(handler), &token));
+    check_hresult(WINRT_SHIM(IEdgeGesture)->add_Completed(get(handler), &token));
     return token;
 }
 
@@ -3075,13 +3075,13 @@ template <typename D> event_revoker<IEdgeGesture> impl_IEdgeGesture<D>::Complete
 
 template <typename D> void impl_IEdgeGesture<D>::Completed(event_token token) const
 {
-    check_hresult(static_cast<const IEdgeGesture &>(static_cast<const D &>(*this))->remove_Completed(token));
+    check_hresult(WINRT_SHIM(IEdgeGesture)->remove_Completed(token));
 }
 
 template <typename D> event_token impl_IEdgeGesture<D>::Canceled(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IEdgeGesture &>(static_cast<const D &>(*this))->add_Canceled(get(handler), &token));
+    check_hresult(WINRT_SHIM(IEdgeGesture)->add_Canceled(get(handler), &token));
     return token;
 }
 
@@ -3092,25 +3092,25 @@ template <typename D> event_revoker<IEdgeGesture> impl_IEdgeGesture<D>::Canceled
 
 template <typename D> void impl_IEdgeGesture<D>::Canceled(event_token token) const
 {
-    check_hresult(static_cast<const IEdgeGesture &>(static_cast<const D &>(*this))->remove_Canceled(token));
+    check_hresult(WINRT_SHIM(IEdgeGesture)->remove_Canceled(token));
 }
 
 template <typename D> bool impl_IKeyboardDeliveryInterceptor<D>::IsInterceptionEnabledWhenInForeground() const
 {
     bool value {};
-    check_hresult(static_cast<const IKeyboardDeliveryInterceptor &>(static_cast<const D &>(*this))->get_IsInterceptionEnabledWhenInForeground(&value));
+    check_hresult(WINRT_SHIM(IKeyboardDeliveryInterceptor)->get_IsInterceptionEnabledWhenInForeground(&value));
     return value;
 }
 
 template <typename D> void impl_IKeyboardDeliveryInterceptor<D>::IsInterceptionEnabledWhenInForeground(bool value) const
 {
-    check_hresult(static_cast<const IKeyboardDeliveryInterceptor &>(static_cast<const D &>(*this))->put_IsInterceptionEnabledWhenInForeground(value));
+    check_hresult(WINRT_SHIM(IKeyboardDeliveryInterceptor)->put_IsInterceptionEnabledWhenInForeground(value));
 }
 
 template <typename D> event_token impl_IKeyboardDeliveryInterceptor<D>::KeyDown(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IKeyboardDeliveryInterceptor &>(static_cast<const D &>(*this))->add_KeyDown(get(handler), &token));
+    check_hresult(WINRT_SHIM(IKeyboardDeliveryInterceptor)->add_KeyDown(get(handler), &token));
     return token;
 }
 
@@ -3121,13 +3121,13 @@ template <typename D> event_revoker<IKeyboardDeliveryInterceptor> impl_IKeyboard
 
 template <typename D> void impl_IKeyboardDeliveryInterceptor<D>::KeyDown(event_token token) const
 {
-    check_hresult(static_cast<const IKeyboardDeliveryInterceptor &>(static_cast<const D &>(*this))->remove_KeyDown(token));
+    check_hresult(WINRT_SHIM(IKeyboardDeliveryInterceptor)->remove_KeyDown(token));
 }
 
 template <typename D> event_token impl_IKeyboardDeliveryInterceptor<D>::KeyUp(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IKeyboardDeliveryInterceptor &>(static_cast<const D &>(*this))->add_KeyUp(get(handler), &token));
+    check_hresult(WINRT_SHIM(IKeyboardDeliveryInterceptor)->add_KeyUp(get(handler), &token));
     return token;
 }
 
@@ -3138,523 +3138,523 @@ template <typename D> event_revoker<IKeyboardDeliveryInterceptor> impl_IKeyboard
 
 template <typename D> void impl_IKeyboardDeliveryInterceptor<D>::KeyUp(event_token token) const
 {
-    check_hresult(static_cast<const IKeyboardDeliveryInterceptor &>(static_cast<const D &>(*this))->remove_KeyUp(token));
+    check_hresult(WINRT_SHIM(IKeyboardDeliveryInterceptor)->remove_KeyUp(token));
 }
 
 template <typename D> Windows::UI::Input::KeyboardDeliveryInterceptor impl_IKeyboardDeliveryInterceptorStatics<D>::GetForCurrentView() const
 {
     Windows::UI::Input::KeyboardDeliveryInterceptor keyboardDeliverySettings { nullptr };
-    check_hresult(static_cast<const IKeyboardDeliveryInterceptorStatics &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(keyboardDeliverySettings)));
+    check_hresult(WINRT_SHIM(IKeyboardDeliveryInterceptorStatics)->abi_GetForCurrentView(put(keyboardDeliverySettings)));
     return keyboardDeliverySettings;
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_ITappedEventArgs<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(static_cast<const ITappedEventArgs &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
+    check_hresult(WINRT_SHIM(ITappedEventArgs)->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_ITappedEventArgs<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const ITappedEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(ITappedEventArgs)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_ITappedEventArgs<D>::TapCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ITappedEventArgs &>(static_cast<const D &>(*this))->get_TapCount(&value));
+    check_hresult(WINRT_SHIM(ITappedEventArgs)->get_TapCount(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_IRightTappedEventArgs<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(static_cast<const IRightTappedEventArgs &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
+    check_hresult(WINRT_SHIM(IRightTappedEventArgs)->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IRightTappedEventArgs<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IRightTappedEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IRightTappedEventArgs)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_IHoldingEventArgs<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(static_cast<const IHoldingEventArgs &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
+    check_hresult(WINRT_SHIM(IHoldingEventArgs)->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IHoldingEventArgs<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IHoldingEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IHoldingEventArgs)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::HoldingState impl_IHoldingEventArgs<D>::HoldingState() const
 {
     Windows::UI::Input::HoldingState value {};
-    check_hresult(static_cast<const IHoldingEventArgs &>(static_cast<const D &>(*this))->get_HoldingState(&value));
+    check_hresult(WINRT_SHIM(IHoldingEventArgs)->get_HoldingState(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_IDraggingEventArgs<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(static_cast<const IDraggingEventArgs &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
+    check_hresult(WINRT_SHIM(IDraggingEventArgs)->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IDraggingEventArgs<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IDraggingEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IDraggingEventArgs)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::DraggingState impl_IDraggingEventArgs<D>::DraggingState() const
 {
     Windows::UI::Input::DraggingState value {};
-    check_hresult(static_cast<const IDraggingEventArgs &>(static_cast<const D &>(*this))->get_DraggingState(&value));
+    check_hresult(WINRT_SHIM(IDraggingEventArgs)->get_DraggingState(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_IManipulationStartedEventArgs<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(static_cast<const IManipulationStartedEventArgs &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
+    check_hresult(WINRT_SHIM(IManipulationStartedEventArgs)->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IManipulationStartedEventArgs<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IManipulationStartedEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IManipulationStartedEventArgs)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::ManipulationDelta impl_IManipulationStartedEventArgs<D>::Cumulative() const
 {
     Windows::UI::Input::ManipulationDelta value {};
-    check_hresult(static_cast<const IManipulationStartedEventArgs &>(static_cast<const D &>(*this))->get_Cumulative(put(value)));
+    check_hresult(WINRT_SHIM(IManipulationStartedEventArgs)->get_Cumulative(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_IManipulationUpdatedEventArgs<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(static_cast<const IManipulationUpdatedEventArgs &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
+    check_hresult(WINRT_SHIM(IManipulationUpdatedEventArgs)->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IManipulationUpdatedEventArgs<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IManipulationUpdatedEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IManipulationUpdatedEventArgs)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::ManipulationDelta impl_IManipulationUpdatedEventArgs<D>::Delta() const
 {
     Windows::UI::Input::ManipulationDelta value {};
-    check_hresult(static_cast<const IManipulationUpdatedEventArgs &>(static_cast<const D &>(*this))->get_Delta(put(value)));
+    check_hresult(WINRT_SHIM(IManipulationUpdatedEventArgs)->get_Delta(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::ManipulationDelta impl_IManipulationUpdatedEventArgs<D>::Cumulative() const
 {
     Windows::UI::Input::ManipulationDelta value {};
-    check_hresult(static_cast<const IManipulationUpdatedEventArgs &>(static_cast<const D &>(*this))->get_Cumulative(put(value)));
+    check_hresult(WINRT_SHIM(IManipulationUpdatedEventArgs)->get_Cumulative(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::ManipulationVelocities impl_IManipulationUpdatedEventArgs<D>::Velocities() const
 {
     Windows::UI::Input::ManipulationVelocities value {};
-    check_hresult(static_cast<const IManipulationUpdatedEventArgs &>(static_cast<const D &>(*this))->get_Velocities(put(value)));
+    check_hresult(WINRT_SHIM(IManipulationUpdatedEventArgs)->get_Velocities(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_IManipulationInertiaStartingEventArgs<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(static_cast<const IManipulationInertiaStartingEventArgs &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
+    check_hresult(WINRT_SHIM(IManipulationInertiaStartingEventArgs)->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IManipulationInertiaStartingEventArgs<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IManipulationInertiaStartingEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IManipulationInertiaStartingEventArgs)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::ManipulationDelta impl_IManipulationInertiaStartingEventArgs<D>::Delta() const
 {
     Windows::UI::Input::ManipulationDelta value {};
-    check_hresult(static_cast<const IManipulationInertiaStartingEventArgs &>(static_cast<const D &>(*this))->get_Delta(put(value)));
+    check_hresult(WINRT_SHIM(IManipulationInertiaStartingEventArgs)->get_Delta(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::ManipulationDelta impl_IManipulationInertiaStartingEventArgs<D>::Cumulative() const
 {
     Windows::UI::Input::ManipulationDelta value {};
-    check_hresult(static_cast<const IManipulationInertiaStartingEventArgs &>(static_cast<const D &>(*this))->get_Cumulative(put(value)));
+    check_hresult(WINRT_SHIM(IManipulationInertiaStartingEventArgs)->get_Cumulative(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::ManipulationVelocities impl_IManipulationInertiaStartingEventArgs<D>::Velocities() const
 {
     Windows::UI::Input::ManipulationVelocities value {};
-    check_hresult(static_cast<const IManipulationInertiaStartingEventArgs &>(static_cast<const D &>(*this))->get_Velocities(put(value)));
+    check_hresult(WINRT_SHIM(IManipulationInertiaStartingEventArgs)->get_Velocities(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_IManipulationCompletedEventArgs<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(static_cast<const IManipulationCompletedEventArgs &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
+    check_hresult(WINRT_SHIM(IManipulationCompletedEventArgs)->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IManipulationCompletedEventArgs<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IManipulationCompletedEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IManipulationCompletedEventArgs)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::ManipulationDelta impl_IManipulationCompletedEventArgs<D>::Cumulative() const
 {
     Windows::UI::Input::ManipulationDelta value {};
-    check_hresult(static_cast<const IManipulationCompletedEventArgs &>(static_cast<const D &>(*this))->get_Cumulative(put(value)));
+    check_hresult(WINRT_SHIM(IManipulationCompletedEventArgs)->get_Cumulative(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::ManipulationVelocities impl_IManipulationCompletedEventArgs<D>::Velocities() const
 {
     Windows::UI::Input::ManipulationVelocities value {};
-    check_hresult(static_cast<const IManipulationCompletedEventArgs &>(static_cast<const D &>(*this))->get_Velocities(put(value)));
+    check_hresult(WINRT_SHIM(IManipulationCompletedEventArgs)->get_Velocities(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_ICrossSlidingEventArgs<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(static_cast<const ICrossSlidingEventArgs &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
+    check_hresult(WINRT_SHIM(ICrossSlidingEventArgs)->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_ICrossSlidingEventArgs<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const ICrossSlidingEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(ICrossSlidingEventArgs)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::CrossSlidingState impl_ICrossSlidingEventArgs<D>::CrossSlidingState() const
 {
     Windows::UI::Input::CrossSlidingState value {};
-    check_hresult(static_cast<const ICrossSlidingEventArgs &>(static_cast<const D &>(*this))->get_CrossSlidingState(&value));
+    check_hresult(WINRT_SHIM(ICrossSlidingEventArgs)->get_CrossSlidingState(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IMouseWheelParameters<D>::CharTranslation() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IMouseWheelParameters &>(static_cast<const D &>(*this))->get_CharTranslation(put(value)));
+    check_hresult(WINRT_SHIM(IMouseWheelParameters)->get_CharTranslation(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMouseWheelParameters<D>::CharTranslation(const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const IMouseWheelParameters &>(static_cast<const D &>(*this))->put_CharTranslation(get(value)));
+    check_hresult(WINRT_SHIM(IMouseWheelParameters)->put_CharTranslation(get(value)));
 }
 
 template <typename D> float impl_IMouseWheelParameters<D>::DeltaScale() const
 {
     float value {};
-    check_hresult(static_cast<const IMouseWheelParameters &>(static_cast<const D &>(*this))->get_DeltaScale(&value));
+    check_hresult(WINRT_SHIM(IMouseWheelParameters)->get_DeltaScale(&value));
     return value;
 }
 
 template <typename D> void impl_IMouseWheelParameters<D>::DeltaScale(float value) const
 {
-    check_hresult(static_cast<const IMouseWheelParameters &>(static_cast<const D &>(*this))->put_DeltaScale(value));
+    check_hresult(WINRT_SHIM(IMouseWheelParameters)->put_DeltaScale(value));
 }
 
 template <typename D> float impl_IMouseWheelParameters<D>::DeltaRotationAngle() const
 {
     float value {};
-    check_hresult(static_cast<const IMouseWheelParameters &>(static_cast<const D &>(*this))->get_DeltaRotationAngle(&value));
+    check_hresult(WINRT_SHIM(IMouseWheelParameters)->get_DeltaRotationAngle(&value));
     return value;
 }
 
 template <typename D> void impl_IMouseWheelParameters<D>::DeltaRotationAngle(float value) const
 {
-    check_hresult(static_cast<const IMouseWheelParameters &>(static_cast<const D &>(*this))->put_DeltaRotationAngle(value));
+    check_hresult(WINRT_SHIM(IMouseWheelParameters)->put_DeltaRotationAngle(value));
 }
 
 template <typename D> Windows::Foundation::Point impl_IMouseWheelParameters<D>::PageTranslation() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IMouseWheelParameters &>(static_cast<const D &>(*this))->get_PageTranslation(put(value)));
+    check_hresult(WINRT_SHIM(IMouseWheelParameters)->get_PageTranslation(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMouseWheelParameters<D>::PageTranslation(const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const IMouseWheelParameters &>(static_cast<const D &>(*this))->put_PageTranslation(get(value)));
+    check_hresult(WINRT_SHIM(IMouseWheelParameters)->put_PageTranslation(get(value)));
 }
 
 template <typename D> Windows::UI::Input::GestureSettings impl_IGestureRecognizer<D>::GestureSettings() const
 {
     Windows::UI::Input::GestureSettings value {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->get_GestureSettings(&value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->get_GestureSettings(&value));
     return value;
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::GestureSettings(Windows::UI::Input::GestureSettings value) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->put_GestureSettings(value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->put_GestureSettings(value));
 }
 
 template <typename D> bool impl_IGestureRecognizer<D>::IsInertial() const
 {
     bool value {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->get_IsInertial(&value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->get_IsInertial(&value));
     return value;
 }
 
 template <typename D> bool impl_IGestureRecognizer<D>::IsActive() const
 {
     bool value {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->get_IsActive(&value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->get_IsActive(&value));
     return value;
 }
 
 template <typename D> bool impl_IGestureRecognizer<D>::ShowGestureFeedback() const
 {
     bool value {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->get_ShowGestureFeedback(&value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->get_ShowGestureFeedback(&value));
     return value;
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::ShowGestureFeedback(bool value) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->put_ShowGestureFeedback(value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->put_ShowGestureFeedback(value));
 }
 
 template <typename D> Windows::Foundation::Point impl_IGestureRecognizer<D>::PivotCenter() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->get_PivotCenter(put(value)));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->get_PivotCenter(put(value)));
     return value;
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::PivotCenter(const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->put_PivotCenter(get(value)));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->put_PivotCenter(get(value)));
 }
 
 template <typename D> float impl_IGestureRecognizer<D>::PivotRadius() const
 {
     float value {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->get_PivotRadius(&value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->get_PivotRadius(&value));
     return value;
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::PivotRadius(float value) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->put_PivotRadius(value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->put_PivotRadius(value));
 }
 
 template <typename D> float impl_IGestureRecognizer<D>::InertiaTranslationDeceleration() const
 {
     float value {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->get_InertiaTranslationDeceleration(&value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->get_InertiaTranslationDeceleration(&value));
     return value;
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::InertiaTranslationDeceleration(float value) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->put_InertiaTranslationDeceleration(value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->put_InertiaTranslationDeceleration(value));
 }
 
 template <typename D> float impl_IGestureRecognizer<D>::InertiaRotationDeceleration() const
 {
     float value {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->get_InertiaRotationDeceleration(&value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->get_InertiaRotationDeceleration(&value));
     return value;
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::InertiaRotationDeceleration(float value) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->put_InertiaRotationDeceleration(value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->put_InertiaRotationDeceleration(value));
 }
 
 template <typename D> float impl_IGestureRecognizer<D>::InertiaExpansionDeceleration() const
 {
     float value {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->get_InertiaExpansionDeceleration(&value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->get_InertiaExpansionDeceleration(&value));
     return value;
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::InertiaExpansionDeceleration(float value) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->put_InertiaExpansionDeceleration(value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->put_InertiaExpansionDeceleration(value));
 }
 
 template <typename D> float impl_IGestureRecognizer<D>::InertiaTranslationDisplacement() const
 {
     float value {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->get_InertiaTranslationDisplacement(&value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->get_InertiaTranslationDisplacement(&value));
     return value;
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::InertiaTranslationDisplacement(float value) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->put_InertiaTranslationDisplacement(value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->put_InertiaTranslationDisplacement(value));
 }
 
 template <typename D> float impl_IGestureRecognizer<D>::InertiaRotationAngle() const
 {
     float value {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->get_InertiaRotationAngle(&value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->get_InertiaRotationAngle(&value));
     return value;
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::InertiaRotationAngle(float value) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->put_InertiaRotationAngle(value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->put_InertiaRotationAngle(value));
 }
 
 template <typename D> float impl_IGestureRecognizer<D>::InertiaExpansion() const
 {
     float value {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->get_InertiaExpansion(&value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->get_InertiaExpansion(&value));
     return value;
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::InertiaExpansion(float value) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->put_InertiaExpansion(value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->put_InertiaExpansion(value));
 }
 
 template <typename D> bool impl_IGestureRecognizer<D>::ManipulationExact() const
 {
     bool value {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->get_ManipulationExact(&value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->get_ManipulationExact(&value));
     return value;
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::ManipulationExact(bool value) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->put_ManipulationExact(value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->put_ManipulationExact(value));
 }
 
 template <typename D> Windows::UI::Input::CrossSlideThresholds impl_IGestureRecognizer<D>::CrossSlideThresholds() const
 {
     Windows::UI::Input::CrossSlideThresholds value {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->get_CrossSlideThresholds(put(value)));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->get_CrossSlideThresholds(put(value)));
     return value;
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::CrossSlideThresholds(const Windows::UI::Input::CrossSlideThresholds & value) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->put_CrossSlideThresholds(get(value)));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->put_CrossSlideThresholds(get(value)));
 }
 
 template <typename D> bool impl_IGestureRecognizer<D>::CrossSlideHorizontally() const
 {
     bool value {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->get_CrossSlideHorizontally(&value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->get_CrossSlideHorizontally(&value));
     return value;
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::CrossSlideHorizontally(bool value) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->put_CrossSlideHorizontally(value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->put_CrossSlideHorizontally(value));
 }
 
 template <typename D> bool impl_IGestureRecognizer<D>::CrossSlideExact() const
 {
     bool value {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->get_CrossSlideExact(&value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->get_CrossSlideExact(&value));
     return value;
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::CrossSlideExact(bool value) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->put_CrossSlideExact(value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->put_CrossSlideExact(value));
 }
 
 template <typename D> bool impl_IGestureRecognizer<D>::AutoProcessInertia() const
 {
     bool value {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->get_AutoProcessInertia(&value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->get_AutoProcessInertia(&value));
     return value;
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::AutoProcessInertia(bool value) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->put_AutoProcessInertia(value));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->put_AutoProcessInertia(value));
 }
 
 template <typename D> Windows::UI::Input::MouseWheelParameters impl_IGestureRecognizer<D>::MouseWheelParameters() const
 {
     Windows::UI::Input::MouseWheelParameters value { nullptr };
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->get_MouseWheelParameters(put(value)));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->get_MouseWheelParameters(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IGestureRecognizer<D>::CanBeDoubleTap(const Windows::UI::Input::PointerPoint & value) const
 {
     bool canBeDoubleTap {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->abi_CanBeDoubleTap(get(value), &canBeDoubleTap));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->abi_CanBeDoubleTap(get(value), &canBeDoubleTap));
     return canBeDoubleTap;
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::ProcessDownEvent(const Windows::UI::Input::PointerPoint & value) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->abi_ProcessDownEvent(get(value)));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->abi_ProcessDownEvent(get(value)));
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::ProcessMoveEvents(const Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> & value) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->abi_ProcessMoveEvents(get(value)));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->abi_ProcessMoveEvents(get(value)));
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::ProcessUpEvent(const Windows::UI::Input::PointerPoint & value) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->abi_ProcessUpEvent(get(value)));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->abi_ProcessUpEvent(get(value)));
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::ProcessMouseWheelEvent(const Windows::UI::Input::PointerPoint & value, bool isShiftKeyDown, bool isControlKeyDown) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->abi_ProcessMouseWheelEvent(get(value), isShiftKeyDown, isControlKeyDown));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->abi_ProcessMouseWheelEvent(get(value), isShiftKeyDown, isControlKeyDown));
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::ProcessInertia() const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->abi_ProcessInertia());
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->abi_ProcessInertia());
 }
 
 template <typename D> void impl_IGestureRecognizer<D>::CompleteGesture() const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->abi_CompleteGesture());
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->abi_CompleteGesture());
 }
 
 template <typename D> event_token impl_IGestureRecognizer<D>::Tapped(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::TappedEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->add_Tapped(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->add_Tapped(get(handler), &pCookie));
     return pCookie;
 }
 
@@ -3665,13 +3665,13 @@ template <typename D> event_revoker<IGestureRecognizer> impl_IGestureRecognizer<
 
 template <typename D> void impl_IGestureRecognizer<D>::Tapped(event_token cookie) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->remove_Tapped(cookie));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->remove_Tapped(cookie));
 }
 
 template <typename D> event_token impl_IGestureRecognizer<D>::RightTapped(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::RightTappedEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->add_RightTapped(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->add_RightTapped(get(handler), &pCookie));
     return pCookie;
 }
 
@@ -3682,13 +3682,13 @@ template <typename D> event_revoker<IGestureRecognizer> impl_IGestureRecognizer<
 
 template <typename D> void impl_IGestureRecognizer<D>::RightTapped(event_token cookie) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->remove_RightTapped(cookie));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->remove_RightTapped(cookie));
 }
 
 template <typename D> event_token impl_IGestureRecognizer<D>::Holding(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::HoldingEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->add_Holding(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->add_Holding(get(handler), &pCookie));
     return pCookie;
 }
 
@@ -3699,13 +3699,13 @@ template <typename D> event_revoker<IGestureRecognizer> impl_IGestureRecognizer<
 
 template <typename D> void impl_IGestureRecognizer<D>::Holding(event_token cookie) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->remove_Holding(cookie));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->remove_Holding(cookie));
 }
 
 template <typename D> event_token impl_IGestureRecognizer<D>::Dragging(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::DraggingEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->add_Dragging(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->add_Dragging(get(handler), &pCookie));
     return pCookie;
 }
 
@@ -3716,13 +3716,13 @@ template <typename D> event_revoker<IGestureRecognizer> impl_IGestureRecognizer<
 
 template <typename D> void impl_IGestureRecognizer<D>::Dragging(event_token cookie) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->remove_Dragging(cookie));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->remove_Dragging(cookie));
 }
 
 template <typename D> event_token impl_IGestureRecognizer<D>::ManipulationStarted(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationStartedEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->add_ManipulationStarted(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->add_ManipulationStarted(get(handler), &pCookie));
     return pCookie;
 }
 
@@ -3733,13 +3733,13 @@ template <typename D> event_revoker<IGestureRecognizer> impl_IGestureRecognizer<
 
 template <typename D> void impl_IGestureRecognizer<D>::ManipulationStarted(event_token cookie) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->remove_ManipulationStarted(cookie));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->remove_ManipulationStarted(cookie));
 }
 
 template <typename D> event_token impl_IGestureRecognizer<D>::ManipulationUpdated(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationUpdatedEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->add_ManipulationUpdated(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->add_ManipulationUpdated(get(handler), &pCookie));
     return pCookie;
 }
 
@@ -3750,13 +3750,13 @@ template <typename D> event_revoker<IGestureRecognizer> impl_IGestureRecognizer<
 
 template <typename D> void impl_IGestureRecognizer<D>::ManipulationUpdated(event_token cookie) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->remove_ManipulationUpdated(cookie));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->remove_ManipulationUpdated(cookie));
 }
 
 template <typename D> event_token impl_IGestureRecognizer<D>::ManipulationInertiaStarting(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationInertiaStartingEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->add_ManipulationInertiaStarting(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->add_ManipulationInertiaStarting(get(handler), &pCookie));
     return pCookie;
 }
 
@@ -3767,13 +3767,13 @@ template <typename D> event_revoker<IGestureRecognizer> impl_IGestureRecognizer<
 
 template <typename D> void impl_IGestureRecognizer<D>::ManipulationInertiaStarting(event_token cookie) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->remove_ManipulationInertiaStarting(cookie));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->remove_ManipulationInertiaStarting(cookie));
 }
 
 template <typename D> event_token impl_IGestureRecognizer<D>::ManipulationCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationCompletedEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->add_ManipulationCompleted(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->add_ManipulationCompleted(get(handler), &pCookie));
     return pCookie;
 }
 
@@ -3784,13 +3784,13 @@ template <typename D> event_revoker<IGestureRecognizer> impl_IGestureRecognizer<
 
 template <typename D> void impl_IGestureRecognizer<D>::ManipulationCompleted(event_token cookie) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->remove_ManipulationCompleted(cookie));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->remove_ManipulationCompleted(cookie));
 }
 
 template <typename D> event_token impl_IGestureRecognizer<D>::CrossSliding(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::CrossSlidingEventArgs> & handler) const
 {
     event_token pCookie {};
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->add_CrossSliding(get(handler), &pCookie));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->add_CrossSliding(get(handler), &pCookie));
     return pCookie;
 }
 
@@ -3801,411 +3801,411 @@ template <typename D> event_revoker<IGestureRecognizer> impl_IGestureRecognizer<
 
 template <typename D> void impl_IGestureRecognizer<D>::CrossSliding(event_token cookie) const
 {
-    check_hresult(static_cast<const IGestureRecognizer &>(static_cast<const D &>(*this))->remove_CrossSliding(cookie));
+    check_hresult(WINRT_SHIM(IGestureRecognizer)->remove_CrossSliding(cookie));
 }
 
 template <typename D> Windows::UI::Input::PointerPoint impl_IPointerPointStatics<D>::GetCurrentPoint(uint32_t pointerId) const
 {
     Windows::UI::Input::PointerPoint pointerPoint { nullptr };
-    check_hresult(static_cast<const IPointerPointStatics &>(static_cast<const D &>(*this))->abi_GetCurrentPoint(pointerId, put(pointerPoint)));
+    check_hresult(WINRT_SHIM(IPointerPointStatics)->abi_GetCurrentPoint(pointerId, put(pointerPoint)));
     return pointerPoint;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> impl_IPointerPointStatics<D>::GetIntermediatePoints(uint32_t pointerId) const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> pointerPoints;
-    check_hresult(static_cast<const IPointerPointStatics &>(static_cast<const D &>(*this))->abi_GetIntermediatePoints(pointerId, put(pointerPoints)));
+    check_hresult(WINRT_SHIM(IPointerPointStatics)->abi_GetIntermediatePoints(pointerId, put(pointerPoints)));
     return pointerPoints;
 }
 
 template <typename D> Windows::UI::Input::PointerPoint impl_IPointerPointStatics<D>::GetCurrentPoint(uint32_t pointerId, const Windows::UI::Input::IPointerPointTransform & transform) const
 {
     Windows::UI::Input::PointerPoint pointerPoint { nullptr };
-    check_hresult(static_cast<const IPointerPointStatics &>(static_cast<const D &>(*this))->abi_GetCurrentPointTransformed(pointerId, get(transform), put(pointerPoint)));
+    check_hresult(WINRT_SHIM(IPointerPointStatics)->abi_GetCurrentPointTransformed(pointerId, get(transform), put(pointerPoint)));
     return pointerPoint;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> impl_IPointerPointStatics<D>::GetIntermediatePoints(uint32_t pointerId, const Windows::UI::Input::IPointerPointTransform & transform) const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> pointerPoints;
-    check_hresult(static_cast<const IPointerPointStatics &>(static_cast<const D &>(*this))->abi_GetIntermediatePointsTransformed(pointerId, get(transform), put(pointerPoints)));
+    check_hresult(WINRT_SHIM(IPointerPointStatics)->abi_GetIntermediatePointsTransformed(pointerId, get(transform), put(pointerPoints)));
     return pointerPoints;
 }
 
 template <typename D> Windows::UI::Input::IPointerPointTransform impl_IPointerPointTransform<D>::Inverse() const
 {
     Windows::UI::Input::IPointerPointTransform value;
-    check_hresult(static_cast<const IPointerPointTransform &>(static_cast<const D &>(*this))->get_Inverse(put(value)));
+    check_hresult(WINRT_SHIM(IPointerPointTransform)->get_Inverse(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPointerPointTransform<D>::TryTransform(const Windows::Foundation::Point & inPoint, Windows::Foundation::Point & outPoint) const
 {
     bool returnValue {};
-    check_hresult(static_cast<const IPointerPointTransform &>(static_cast<const D &>(*this))->abi_TryTransform(get(inPoint), put(outPoint), &returnValue));
+    check_hresult(WINRT_SHIM(IPointerPointTransform)->abi_TryTransform(get(inPoint), put(outPoint), &returnValue));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IPointerPointTransform<D>::TransformBounds(const Windows::Foundation::Rect & rect) const
 {
     Windows::Foundation::Rect returnValue {};
-    check_hresult(static_cast<const IPointerPointTransform &>(static_cast<const D &>(*this))->abi_TransformBounds(get(rect), put(returnValue)));
+    check_hresult(WINRT_SHIM(IPointerPointTransform)->abi_TransformBounds(get(rect), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Devices::Input::PointerDevice impl_IPointerPoint<D>::PointerDevice() const
 {
     Windows::Devices::Input::PointerDevice value { nullptr };
-    check_hresult(static_cast<const IPointerPoint &>(static_cast<const D &>(*this))->get_PointerDevice(put(value)));
+    check_hresult(WINRT_SHIM(IPointerPoint)->get_PointerDevice(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IPointerPoint<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IPointerPoint &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IPointerPoint)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IPointerPoint<D>::RawPosition() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IPointerPoint &>(static_cast<const D &>(*this))->get_RawPosition(put(value)));
+    check_hresult(WINRT_SHIM(IPointerPoint)->get_RawPosition(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IPointerPoint<D>::PointerId() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPointerPoint &>(static_cast<const D &>(*this))->get_PointerId(&value));
+    check_hresult(WINRT_SHIM(IPointerPoint)->get_PointerId(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPointerPoint<D>::FrameId() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPointerPoint &>(static_cast<const D &>(*this))->get_FrameId(&value));
+    check_hresult(WINRT_SHIM(IPointerPoint)->get_FrameId(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPointerPoint<D>::Timestamp() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPointerPoint &>(static_cast<const D &>(*this))->get_Timestamp(&value));
+    check_hresult(WINRT_SHIM(IPointerPoint)->get_Timestamp(&value));
     return value;
 }
 
 template <typename D> bool impl_IPointerPoint<D>::IsInContact() const
 {
     bool value {};
-    check_hresult(static_cast<const IPointerPoint &>(static_cast<const D &>(*this))->get_IsInContact(&value));
+    check_hresult(WINRT_SHIM(IPointerPoint)->get_IsInContact(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::PointerPointProperties impl_IPointerPoint<D>::Properties() const
 {
     Windows::UI::Input::PointerPointProperties value { nullptr };
-    check_hresult(static_cast<const IPointerPoint &>(static_cast<const D &>(*this))->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(IPointerPoint)->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> float impl_IPointerPointProperties<D>::Pressure() const
 {
     float value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_Pressure(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_Pressure(&value));
     return value;
 }
 
 template <typename D> bool impl_IPointerPointProperties<D>::IsInverted() const
 {
     bool value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_IsInverted(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_IsInverted(&value));
     return value;
 }
 
 template <typename D> bool impl_IPointerPointProperties<D>::IsEraser() const
 {
     bool value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_IsEraser(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_IsEraser(&value));
     return value;
 }
 
 template <typename D> float impl_IPointerPointProperties<D>::Orientation() const
 {
     float value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_Orientation(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_Orientation(&value));
     return value;
 }
 
 template <typename D> float impl_IPointerPointProperties<D>::XTilt() const
 {
     float value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_XTilt(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_XTilt(&value));
     return value;
 }
 
 template <typename D> float impl_IPointerPointProperties<D>::YTilt() const
 {
     float value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_YTilt(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_YTilt(&value));
     return value;
 }
 
 template <typename D> float impl_IPointerPointProperties<D>::Twist() const
 {
     float value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_Twist(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_Twist(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IPointerPointProperties<D>::ContactRect() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_ContactRect(put(value)));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_ContactRect(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IPointerPointProperties<D>::ContactRectRaw() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_ContactRectRaw(put(value)));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_ContactRectRaw(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPointerPointProperties<D>::TouchConfidence() const
 {
     bool value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_TouchConfidence(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_TouchConfidence(&value));
     return value;
 }
 
 template <typename D> bool impl_IPointerPointProperties<D>::IsLeftButtonPressed() const
 {
     bool value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_IsLeftButtonPressed(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_IsLeftButtonPressed(&value));
     return value;
 }
 
 template <typename D> bool impl_IPointerPointProperties<D>::IsRightButtonPressed() const
 {
     bool value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_IsRightButtonPressed(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_IsRightButtonPressed(&value));
     return value;
 }
 
 template <typename D> bool impl_IPointerPointProperties<D>::IsMiddleButtonPressed() const
 {
     bool value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_IsMiddleButtonPressed(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_IsMiddleButtonPressed(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IPointerPointProperties<D>::MouseWheelDelta() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_MouseWheelDelta(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_MouseWheelDelta(&value));
     return value;
 }
 
 template <typename D> bool impl_IPointerPointProperties<D>::IsHorizontalMouseWheel() const
 {
     bool value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_IsHorizontalMouseWheel(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_IsHorizontalMouseWheel(&value));
     return value;
 }
 
 template <typename D> bool impl_IPointerPointProperties<D>::IsPrimary() const
 {
     bool value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_IsPrimary(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_IsPrimary(&value));
     return value;
 }
 
 template <typename D> bool impl_IPointerPointProperties<D>::IsInRange() const
 {
     bool value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_IsInRange(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_IsInRange(&value));
     return value;
 }
 
 template <typename D> bool impl_IPointerPointProperties<D>::IsCanceled() const
 {
     bool value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_IsCanceled(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_IsCanceled(&value));
     return value;
 }
 
 template <typename D> bool impl_IPointerPointProperties<D>::IsBarrelButtonPressed() const
 {
     bool value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_IsBarrelButtonPressed(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_IsBarrelButtonPressed(&value));
     return value;
 }
 
 template <typename D> bool impl_IPointerPointProperties<D>::IsXButton1Pressed() const
 {
     bool value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_IsXButton1Pressed(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_IsXButton1Pressed(&value));
     return value;
 }
 
 template <typename D> bool impl_IPointerPointProperties<D>::IsXButton2Pressed() const
 {
     bool value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_IsXButton2Pressed(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_IsXButton2Pressed(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::PointerUpdateKind impl_IPointerPointProperties<D>::PointerUpdateKind() const
 {
     Windows::UI::Input::PointerUpdateKind value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->get_PointerUpdateKind(&value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->get_PointerUpdateKind(&value));
     return value;
 }
 
 template <typename D> bool impl_IPointerPointProperties<D>::HasUsage(uint32_t usagePage, uint32_t usageId) const
 {
     bool value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->abi_HasUsage(usagePage, usageId, &value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->abi_HasUsage(usagePage, usageId, &value));
     return value;
 }
 
 template <typename D> int32_t impl_IPointerPointProperties<D>::GetUsageValue(uint32_t usagePage, uint32_t usageId) const
 {
     int32_t value {};
-    check_hresult(static_cast<const IPointerPointProperties &>(static_cast<const D &>(*this))->abi_GetUsageValue(usagePage, usageId, &value));
+    check_hresult(WINRT_SHIM(IPointerPointProperties)->abi_GetUsageValue(usagePage, usageId, &value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<float> impl_IPointerPointProperties2<D>::ZDistance() const
 {
     Windows::Foundation::IReference<float> value;
-    check_hresult(static_cast<const IPointerPointProperties2 &>(static_cast<const D &>(*this))->get_ZDistance(put(value)));
+    check_hresult(WINRT_SHIM(IPointerPointProperties2)->get_ZDistance(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPointerVisualizationSettings<D>::IsContactFeedbackEnabled(bool value) const
 {
-    check_hresult(static_cast<const IPointerVisualizationSettings &>(static_cast<const D &>(*this))->put_IsContactFeedbackEnabled(value));
+    check_hresult(WINRT_SHIM(IPointerVisualizationSettings)->put_IsContactFeedbackEnabled(value));
 }
 
 template <typename D> bool impl_IPointerVisualizationSettings<D>::IsContactFeedbackEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IPointerVisualizationSettings &>(static_cast<const D &>(*this))->get_IsContactFeedbackEnabled(&value));
+    check_hresult(WINRT_SHIM(IPointerVisualizationSettings)->get_IsContactFeedbackEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IPointerVisualizationSettings<D>::IsBarrelButtonFeedbackEnabled(bool value) const
 {
-    check_hresult(static_cast<const IPointerVisualizationSettings &>(static_cast<const D &>(*this))->put_IsBarrelButtonFeedbackEnabled(value));
+    check_hresult(WINRT_SHIM(IPointerVisualizationSettings)->put_IsBarrelButtonFeedbackEnabled(value));
 }
 
 template <typename D> bool impl_IPointerVisualizationSettings<D>::IsBarrelButtonFeedbackEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IPointerVisualizationSettings &>(static_cast<const D &>(*this))->get_IsBarrelButtonFeedbackEnabled(&value));
+    check_hresult(WINRT_SHIM(IPointerVisualizationSettings)->get_IsBarrelButtonFeedbackEnabled(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::PointerVisualizationSettings impl_IPointerVisualizationSettingsStatics<D>::GetForCurrentView() const
 {
     Windows::UI::Input::PointerVisualizationSettings visualizationSettings { nullptr };
-    check_hresult(static_cast<const IPointerVisualizationSettingsStatics &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(visualizationSettings)));
+    check_hresult(WINRT_SHIM(IPointerVisualizationSettingsStatics)->abi_GetForCurrentView(put(visualizationSettings)));
     return visualizationSettings;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IRadialControllerScreenContact<D>::Bounds() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(static_cast<const IRadialControllerScreenContact &>(static_cast<const D &>(*this))->get_Bounds(put(value)));
+    check_hresult(WINRT_SHIM(IRadialControllerScreenContact)->get_Bounds(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IRadialControllerScreenContact<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IRadialControllerScreenContact &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IRadialControllerScreenContact)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> double impl_IRadialControllerRotationChangedEventArgs<D>::RotationDeltaInDegrees() const
 {
     double value {};
-    check_hresult(static_cast<const IRadialControllerRotationChangedEventArgs &>(static_cast<const D &>(*this))->get_RotationDeltaInDegrees(&value));
+    check_hresult(WINRT_SHIM(IRadialControllerRotationChangedEventArgs)->get_RotationDeltaInDegrees(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::RadialControllerScreenContact impl_IRadialControllerRotationChangedEventArgs<D>::Contact() const
 {
     Windows::UI::Input::RadialControllerScreenContact value { nullptr };
-    check_hresult(static_cast<const IRadialControllerRotationChangedEventArgs &>(static_cast<const D &>(*this))->get_Contact(put(value)));
+    check_hresult(WINRT_SHIM(IRadialControllerRotationChangedEventArgs)->get_Contact(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::RadialControllerScreenContact impl_IRadialControllerScreenContactStartedEventArgs<D>::Contact() const
 {
     Windows::UI::Input::RadialControllerScreenContact value { nullptr };
-    check_hresult(static_cast<const IRadialControllerScreenContactStartedEventArgs &>(static_cast<const D &>(*this))->get_Contact(put(value)));
+    check_hresult(WINRT_SHIM(IRadialControllerScreenContactStartedEventArgs)->get_Contact(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::RadialControllerScreenContact impl_IRadialControllerScreenContactContinuedEventArgs<D>::Contact() const
 {
     Windows::UI::Input::RadialControllerScreenContact value { nullptr };
-    check_hresult(static_cast<const IRadialControllerScreenContactContinuedEventArgs &>(static_cast<const D &>(*this))->get_Contact(put(value)));
+    check_hresult(WINRT_SHIM(IRadialControllerScreenContactContinuedEventArgs)->get_Contact(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::RadialControllerScreenContact impl_IRadialControllerButtonClickedEventArgs<D>::Contact() const
 {
     Windows::UI::Input::RadialControllerScreenContact value { nullptr };
-    check_hresult(static_cast<const IRadialControllerButtonClickedEventArgs &>(static_cast<const D &>(*this))->get_Contact(put(value)));
+    check_hresult(WINRT_SHIM(IRadialControllerButtonClickedEventArgs)->get_Contact(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::RadialControllerScreenContact impl_IRadialControllerControlAcquiredEventArgs<D>::Contact() const
 {
     Windows::UI::Input::RadialControllerScreenContact value { nullptr };
-    check_hresult(static_cast<const IRadialControllerControlAcquiredEventArgs &>(static_cast<const D &>(*this))->get_Contact(put(value)));
+    check_hresult(WINRT_SHIM(IRadialControllerControlAcquiredEventArgs)->get_Contact(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::RadialControllerMenu impl_IRadialController<D>::Menu() const
 {
     Windows::UI::Input::RadialControllerMenu value { nullptr };
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->get_Menu(put(value)));
+    check_hresult(WINRT_SHIM(IRadialController)->get_Menu(put(value)));
     return value;
 }
 
 template <typename D> double impl_IRadialController<D>::RotationResolutionInDegrees() const
 {
     double value {};
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->get_RotationResolutionInDegrees(&value));
+    check_hresult(WINRT_SHIM(IRadialController)->get_RotationResolutionInDegrees(&value));
     return value;
 }
 
 template <typename D> void impl_IRadialController<D>::RotationResolutionInDegrees(double value) const
 {
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->put_RotationResolutionInDegrees(value));
+    check_hresult(WINRT_SHIM(IRadialController)->put_RotationResolutionInDegrees(value));
 }
 
 template <typename D> bool impl_IRadialController<D>::UseAutomaticHapticFeedback() const
 {
     bool value {};
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->get_UseAutomaticHapticFeedback(&value));
+    check_hresult(WINRT_SHIM(IRadialController)->get_UseAutomaticHapticFeedback(&value));
     return value;
 }
 
 template <typename D> void impl_IRadialController<D>::UseAutomaticHapticFeedback(bool value) const
 {
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->put_UseAutomaticHapticFeedback(value));
+    check_hresult(WINRT_SHIM(IRadialController)->put_UseAutomaticHapticFeedback(value));
 }
 
 template <typename D> event_token impl_IRadialController<D>::ScreenContactStarted(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactStartedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->add_ScreenContactStarted(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IRadialController)->add_ScreenContactStarted(get(handler), &cookie));
     return cookie;
 }
 
@@ -4216,13 +4216,13 @@ template <typename D> event_revoker<IRadialController> impl_IRadialController<D>
 
 template <typename D> void impl_IRadialController<D>::ScreenContactStarted(event_token cookie) const
 {
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->remove_ScreenContactStarted(cookie));
+    check_hresult(WINRT_SHIM(IRadialController)->remove_ScreenContactStarted(cookie));
 }
 
 template <typename D> event_token impl_IRadialController<D>::ScreenContactEnded(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->add_ScreenContactEnded(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IRadialController)->add_ScreenContactEnded(get(handler), &cookie));
     return cookie;
 }
 
@@ -4233,13 +4233,13 @@ template <typename D> event_revoker<IRadialController> impl_IRadialController<D>
 
 template <typename D> void impl_IRadialController<D>::ScreenContactEnded(event_token cookie) const
 {
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->remove_ScreenContactEnded(cookie));
+    check_hresult(WINRT_SHIM(IRadialController)->remove_ScreenContactEnded(cookie));
 }
 
 template <typename D> event_token impl_IRadialController<D>::ScreenContactContinued(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->add_ScreenContactContinued(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IRadialController)->add_ScreenContactContinued(get(handler), &cookie));
     return cookie;
 }
 
@@ -4250,13 +4250,13 @@ template <typename D> event_revoker<IRadialController> impl_IRadialController<D>
 
 template <typename D> void impl_IRadialController<D>::ScreenContactContinued(event_token cookie) const
 {
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->remove_ScreenContactContinued(cookie));
+    check_hresult(WINRT_SHIM(IRadialController)->remove_ScreenContactContinued(cookie));
 }
 
 template <typename D> event_token impl_IRadialController<D>::ControlLost(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->add_ControlLost(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IRadialController)->add_ControlLost(get(handler), &cookie));
     return cookie;
 }
 
@@ -4267,13 +4267,13 @@ template <typename D> event_revoker<IRadialController> impl_IRadialController<D>
 
 template <typename D> void impl_IRadialController<D>::ControlLost(event_token cookie) const
 {
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->remove_ControlLost(cookie));
+    check_hresult(WINRT_SHIM(IRadialController)->remove_ControlLost(cookie));
 }
 
 template <typename D> event_token impl_IRadialController<D>::RotationChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerRotationChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->add_RotationChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(IRadialController)->add_RotationChanged(get(handler), &token));
     return token;
 }
 
@@ -4284,13 +4284,13 @@ template <typename D> event_revoker<IRadialController> impl_IRadialController<D>
 
 template <typename D> void impl_IRadialController<D>::RotationChanged(event_token token) const
 {
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->remove_RotationChanged(token));
+    check_hresult(WINRT_SHIM(IRadialController)->remove_RotationChanged(token));
 }
 
 template <typename D> event_token impl_IRadialController<D>::ButtonClicked(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonClickedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->add_ButtonClicked(get(handler), &token));
+    check_hresult(WINRT_SHIM(IRadialController)->add_ButtonClicked(get(handler), &token));
     return token;
 }
 
@@ -4301,13 +4301,13 @@ template <typename D> event_revoker<IRadialController> impl_IRadialController<D>
 
 template <typename D> void impl_IRadialController<D>::ButtonClicked(event_token token) const
 {
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->remove_ButtonClicked(token));
+    check_hresult(WINRT_SHIM(IRadialController)->remove_ButtonClicked(token));
 }
 
 template <typename D> event_token impl_IRadialController<D>::ControlAcquired(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerControlAcquiredEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->add_ControlAcquired(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IRadialController)->add_ControlAcquired(get(handler), &cookie));
     return cookie;
 }
 
@@ -4318,98 +4318,98 @@ template <typename D> event_revoker<IRadialController> impl_IRadialController<D>
 
 template <typename D> void impl_IRadialController<D>::ControlAcquired(event_token cookie) const
 {
-    check_hresult(static_cast<const IRadialController &>(static_cast<const D &>(*this))->remove_ControlAcquired(cookie));
+    check_hresult(WINRT_SHIM(IRadialController)->remove_ControlAcquired(cookie));
 }
 
 template <typename D> bool impl_IRadialControllerStatics<D>::IsSupported() const
 {
     bool result {};
-    check_hresult(static_cast<const IRadialControllerStatics &>(static_cast<const D &>(*this))->abi_IsSupported(&result));
+    check_hresult(WINRT_SHIM(IRadialControllerStatics)->abi_IsSupported(&result));
     return result;
 }
 
 template <typename D> Windows::UI::Input::RadialController impl_IRadialControllerStatics<D>::CreateForCurrentView() const
 {
     Windows::UI::Input::RadialController result { nullptr };
-    check_hresult(static_cast<const IRadialControllerStatics &>(static_cast<const D &>(*this))->abi_CreateForCurrentView(put(result)));
+    check_hresult(WINRT_SHIM(IRadialControllerStatics)->abi_CreateForCurrentView(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Input::RadialControllerMenuItem> impl_IRadialControllerMenu<D>::Items() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Input::RadialControllerMenuItem> value;
-    check_hresult(static_cast<const IRadialControllerMenu &>(static_cast<const D &>(*this))->get_Items(put(value)));
+    check_hresult(WINRT_SHIM(IRadialControllerMenu)->get_Items(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IRadialControllerMenu<D>::IsEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IRadialControllerMenu &>(static_cast<const D &>(*this))->get_IsEnabled(&value));
+    check_hresult(WINRT_SHIM(IRadialControllerMenu)->get_IsEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IRadialControllerMenu<D>::IsEnabled(bool value) const
 {
-    check_hresult(static_cast<const IRadialControllerMenu &>(static_cast<const D &>(*this))->put_IsEnabled(value));
+    check_hresult(WINRT_SHIM(IRadialControllerMenu)->put_IsEnabled(value));
 }
 
 template <typename D> Windows::UI::Input::RadialControllerMenuItem impl_IRadialControllerMenu<D>::GetSelectedMenuItem() const
 {
     Windows::UI::Input::RadialControllerMenuItem result { nullptr };
-    check_hresult(static_cast<const IRadialControllerMenu &>(static_cast<const D &>(*this))->abi_GetSelectedMenuItem(put(result)));
+    check_hresult(WINRT_SHIM(IRadialControllerMenu)->abi_GetSelectedMenuItem(put(result)));
     return result;
 }
 
 template <typename D> void impl_IRadialControllerMenu<D>::SelectMenuItem(const Windows::UI::Input::RadialControllerMenuItem & menuItem) const
 {
-    check_hresult(static_cast<const IRadialControllerMenu &>(static_cast<const D &>(*this))->abi_SelectMenuItem(get(menuItem)));
+    check_hresult(WINRT_SHIM(IRadialControllerMenu)->abi_SelectMenuItem(get(menuItem)));
 }
 
 template <typename D> bool impl_IRadialControllerMenu<D>::TrySelectPreviouslySelectedMenuItem() const
 {
     bool result {};
-    check_hresult(static_cast<const IRadialControllerMenu &>(static_cast<const D &>(*this))->abi_TrySelectPreviouslySelectedMenuItem(&result));
+    check_hresult(WINRT_SHIM(IRadialControllerMenu)->abi_TrySelectPreviouslySelectedMenuItem(&result));
     return result;
 }
 
 template <typename D> Windows::UI::Input::RadialControllerMenuItem impl_IRadialControllerMenuItemStatics<D>::CreateFromIcon(hstring_ref displayText, const Windows::Storage::Streams::RandomAccessStreamReference & icon) const
 {
     Windows::UI::Input::RadialControllerMenuItem result { nullptr };
-    check_hresult(static_cast<const IRadialControllerMenuItemStatics &>(static_cast<const D &>(*this))->abi_CreateFromIcon(get(displayText), get(icon), put(result)));
+    check_hresult(WINRT_SHIM(IRadialControllerMenuItemStatics)->abi_CreateFromIcon(get(displayText), get(icon), put(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Input::RadialControllerMenuItem impl_IRadialControllerMenuItemStatics<D>::CreateFromKnownIcon(hstring_ref displayText, Windows::UI::Input::RadialControllerMenuKnownIcon value) const
 {
     Windows::UI::Input::RadialControllerMenuItem result { nullptr };
-    check_hresult(static_cast<const IRadialControllerMenuItemStatics &>(static_cast<const D &>(*this))->abi_CreateFromKnownIcon(get(displayText), value, put(result)));
+    check_hresult(WINRT_SHIM(IRadialControllerMenuItemStatics)->abi_CreateFromKnownIcon(get(displayText), value, put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IRadialControllerMenuItem<D>::DisplayText() const
 {
     hstring value;
-    check_hresult(static_cast<const IRadialControllerMenuItem &>(static_cast<const D &>(*this))->get_DisplayText(put(value)));
+    check_hresult(WINRT_SHIM(IRadialControllerMenuItem)->get_DisplayText(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IRadialControllerMenuItem<D>::Tag() const
 {
     Windows::IInspectable value;
-    check_hresult(static_cast<const IRadialControllerMenuItem &>(static_cast<const D &>(*this))->get_Tag(put(value)));
+    check_hresult(WINRT_SHIM(IRadialControllerMenuItem)->get_Tag(put(value)));
     return value;
 }
 
 template <typename D> void impl_IRadialControllerMenuItem<D>::Tag(const Windows::IInspectable & value) const
 {
-    check_hresult(static_cast<const IRadialControllerMenuItem &>(static_cast<const D &>(*this))->put_Tag(get(value)));
+    check_hresult(WINRT_SHIM(IRadialControllerMenuItem)->put_Tag(get(value)));
 }
 
 template <typename D> event_token impl_IRadialControllerMenuItem<D>::Invoked(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IRadialControllerMenuItem &>(static_cast<const D &>(*this))->add_Invoked(get(handler), &token));
+    check_hresult(WINRT_SHIM(IRadialControllerMenuItem)->add_Invoked(get(handler), &token));
     return token;
 }
 
@@ -4420,30 +4420,30 @@ template <typename D> event_revoker<IRadialControllerMenuItem> impl_IRadialContr
 
 template <typename D> void impl_IRadialControllerMenuItem<D>::Invoked(event_token token) const
 {
-    check_hresult(static_cast<const IRadialControllerMenuItem &>(static_cast<const D &>(*this))->remove_Invoked(token));
+    check_hresult(WINRT_SHIM(IRadialControllerMenuItem)->remove_Invoked(token));
 }
 
 template <typename D> void impl_IRadialControllerConfiguration<D>::SetDefaultMenuItems(const Windows::Foundation::Collections::IIterable<winrt::Windows::UI::Input::RadialControllerSystemMenuItemKind> & buttons) const
 {
-    check_hresult(static_cast<const IRadialControllerConfiguration &>(static_cast<const D &>(*this))->abi_SetDefaultMenuItems(get(buttons)));
+    check_hresult(WINRT_SHIM(IRadialControllerConfiguration)->abi_SetDefaultMenuItems(get(buttons)));
 }
 
 template <typename D> void impl_IRadialControllerConfiguration<D>::ResetToDefaultMenuItems() const
 {
-    check_hresult(static_cast<const IRadialControllerConfiguration &>(static_cast<const D &>(*this))->abi_ResetToDefaultMenuItems());
+    check_hresult(WINRT_SHIM(IRadialControllerConfiguration)->abi_ResetToDefaultMenuItems());
 }
 
 template <typename D> bool impl_IRadialControllerConfiguration<D>::TrySelectDefaultMenuItem(Windows::UI::Input::RadialControllerSystemMenuItemKind type) const
 {
     bool result {};
-    check_hresult(static_cast<const IRadialControllerConfiguration &>(static_cast<const D &>(*this))->abi_TrySelectDefaultMenuItem(type, &result));
+    check_hresult(WINRT_SHIM(IRadialControllerConfiguration)->abi_TrySelectDefaultMenuItem(type, &result));
     return result;
 }
 
 template <typename D> Windows::UI::Input::RadialControllerConfiguration impl_IRadialControllerConfigurationStatics<D>::GetForCurrentView() const
 {
     Windows::UI::Input::RadialControllerConfiguration configuration { nullptr };
-    check_hresult(static_cast<const IRadialControllerConfigurationStatics &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(configuration)));
+    check_hresult(WINRT_SHIM(IRadialControllerConfigurationStatics)->abi_GetForCurrentView(put(configuration)));
     return configuration;
 }
 

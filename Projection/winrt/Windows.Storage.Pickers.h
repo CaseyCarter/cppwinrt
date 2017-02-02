@@ -723,285 +723,285 @@ namespace Windows::Storage::Pickers {
 template <typename D> Windows::Storage::Pickers::PickerViewMode impl_IFileOpenPicker<D>::ViewMode() const
 {
     Windows::Storage::Pickers::PickerViewMode value {};
-    check_hresult(static_cast<const IFileOpenPicker &>(static_cast<const D &>(*this))->get_ViewMode(&value));
+    check_hresult(WINRT_SHIM(IFileOpenPicker)->get_ViewMode(&value));
     return value;
 }
 
 template <typename D> void impl_IFileOpenPicker<D>::ViewMode(Windows::Storage::Pickers::PickerViewMode value) const
 {
-    check_hresult(static_cast<const IFileOpenPicker &>(static_cast<const D &>(*this))->put_ViewMode(value));
+    check_hresult(WINRT_SHIM(IFileOpenPicker)->put_ViewMode(value));
 }
 
 template <typename D> hstring impl_IFileOpenPicker<D>::SettingsIdentifier() const
 {
     hstring value;
-    check_hresult(static_cast<const IFileOpenPicker &>(static_cast<const D &>(*this))->get_SettingsIdentifier(put(value)));
+    check_hresult(WINRT_SHIM(IFileOpenPicker)->get_SettingsIdentifier(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFileOpenPicker<D>::SettingsIdentifier(hstring_ref value) const
 {
-    check_hresult(static_cast<const IFileOpenPicker &>(static_cast<const D &>(*this))->put_SettingsIdentifier(get(value)));
+    check_hresult(WINRT_SHIM(IFileOpenPicker)->put_SettingsIdentifier(get(value)));
 }
 
 template <typename D> Windows::Storage::Pickers::PickerLocationId impl_IFileOpenPicker<D>::SuggestedStartLocation() const
 {
     Windows::Storage::Pickers::PickerLocationId value {};
-    check_hresult(static_cast<const IFileOpenPicker &>(static_cast<const D &>(*this))->get_SuggestedStartLocation(&value));
+    check_hresult(WINRT_SHIM(IFileOpenPicker)->get_SuggestedStartLocation(&value));
     return value;
 }
 
 template <typename D> void impl_IFileOpenPicker<D>::SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId value) const
 {
-    check_hresult(static_cast<const IFileOpenPicker &>(static_cast<const D &>(*this))->put_SuggestedStartLocation(value));
+    check_hresult(WINRT_SHIM(IFileOpenPicker)->put_SuggestedStartLocation(value));
 }
 
 template <typename D> hstring impl_IFileOpenPicker<D>::CommitButtonText() const
 {
     hstring value;
-    check_hresult(static_cast<const IFileOpenPicker &>(static_cast<const D &>(*this))->get_CommitButtonText(put(value)));
+    check_hresult(WINRT_SHIM(IFileOpenPicker)->get_CommitButtonText(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFileOpenPicker<D>::CommitButtonText(hstring_ref value) const
 {
-    check_hresult(static_cast<const IFileOpenPicker &>(static_cast<const D &>(*this))->put_CommitButtonText(get(value)));
+    check_hresult(WINRT_SHIM(IFileOpenPicker)->put_CommitButtonText(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IFileOpenPicker<D>::FileTypeFilter() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IFileOpenPicker &>(static_cast<const D &>(*this))->get_FileTypeFilter(put(value)));
+    check_hresult(WINRT_SHIM(IFileOpenPicker)->get_FileTypeFilter(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IFileOpenPicker<D>::PickSingleFileAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> pickSingleFileOperation;
-    check_hresult(static_cast<const IFileOpenPicker &>(static_cast<const D &>(*this))->abi_PickSingleFileAsync(put(pickSingleFileOperation)));
+    check_hresult(WINRT_SHIM(IFileOpenPicker)->abi_PickSingleFileAsync(put(pickSingleFileOperation)));
     return pickSingleFileOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>> impl_IFileOpenPicker<D>::PickMultipleFilesAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>> pickMultipleFilesOperation;
-    check_hresult(static_cast<const IFileOpenPicker &>(static_cast<const D &>(*this))->abi_PickMultipleFilesAsync(put(pickMultipleFilesOperation)));
+    check_hresult(WINRT_SHIM(IFileOpenPicker)->abi_PickMultipleFilesAsync(put(pickMultipleFilesOperation)));
     return pickMultipleFilesOperation;
 }
 
 template <typename D> Windows::Foundation::Collections::ValueSet impl_IFileOpenPicker2<D>::ContinuationData() const
 {
     Windows::Foundation::Collections::ValueSet value { nullptr };
-    check_hresult(static_cast<const IFileOpenPicker2 &>(static_cast<const D &>(*this))->get_ContinuationData(put(value)));
+    check_hresult(WINRT_SHIM(IFileOpenPicker2)->get_ContinuationData(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFileOpenPicker2<D>::PickSingleFileAndContinue() const
 {
-    check_hresult(static_cast<const IFileOpenPicker2 &>(static_cast<const D &>(*this))->abi_PickSingleFileAndContinue());
+    check_hresult(WINRT_SHIM(IFileOpenPicker2)->abi_PickSingleFileAndContinue());
 }
 
 template <typename D> void impl_IFileOpenPicker2<D>::PickMultipleFilesAndContinue() const
 {
-    check_hresult(static_cast<const IFileOpenPicker2 &>(static_cast<const D &>(*this))->abi_PickMultipleFilesAndContinue());
+    check_hresult(WINRT_SHIM(IFileOpenPicker2)->abi_PickMultipleFilesAndContinue());
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IFileOpenPickerWithOperationId<D>::PickSingleFileAsync(hstring_ref pickerOperationId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> pickSingleFileOperation;
-    check_hresult(static_cast<const IFileOpenPickerWithOperationId &>(static_cast<const D &>(*this))->abi_PickSingleFileAsync(get(pickerOperationId), put(pickSingleFileOperation)));
+    check_hresult(WINRT_SHIM(IFileOpenPickerWithOperationId)->abi_PickSingleFileAsync(get(pickerOperationId), put(pickSingleFileOperation)));
     return pickSingleFileOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IFileOpenPickerStatics<D>::ResumePickSingleFileAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> pickSingleFileOperation;
-    check_hresult(static_cast<const IFileOpenPickerStatics &>(static_cast<const D &>(*this))->abi_ResumePickSingleFileAsync(put(pickSingleFileOperation)));
+    check_hresult(WINRT_SHIM(IFileOpenPickerStatics)->abi_ResumePickSingleFileAsync(put(pickSingleFileOperation)));
     return pickSingleFileOperation;
 }
 
 template <typename D> hstring impl_IFileSavePicker<D>::SettingsIdentifier() const
 {
     hstring value;
-    check_hresult(static_cast<const IFileSavePicker &>(static_cast<const D &>(*this))->get_SettingsIdentifier(put(value)));
+    check_hresult(WINRT_SHIM(IFileSavePicker)->get_SettingsIdentifier(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFileSavePicker<D>::SettingsIdentifier(hstring_ref value) const
 {
-    check_hresult(static_cast<const IFileSavePicker &>(static_cast<const D &>(*this))->put_SettingsIdentifier(get(value)));
+    check_hresult(WINRT_SHIM(IFileSavePicker)->put_SettingsIdentifier(get(value)));
 }
 
 template <typename D> Windows::Storage::Pickers::PickerLocationId impl_IFileSavePicker<D>::SuggestedStartLocation() const
 {
     Windows::Storage::Pickers::PickerLocationId value {};
-    check_hresult(static_cast<const IFileSavePicker &>(static_cast<const D &>(*this))->get_SuggestedStartLocation(&value));
+    check_hresult(WINRT_SHIM(IFileSavePicker)->get_SuggestedStartLocation(&value));
     return value;
 }
 
 template <typename D> void impl_IFileSavePicker<D>::SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId value) const
 {
-    check_hresult(static_cast<const IFileSavePicker &>(static_cast<const D &>(*this))->put_SuggestedStartLocation(value));
+    check_hresult(WINRT_SHIM(IFileSavePicker)->put_SuggestedStartLocation(value));
 }
 
 template <typename D> hstring impl_IFileSavePicker<D>::CommitButtonText() const
 {
     hstring value;
-    check_hresult(static_cast<const IFileSavePicker &>(static_cast<const D &>(*this))->get_CommitButtonText(put(value)));
+    check_hresult(WINRT_SHIM(IFileSavePicker)->get_CommitButtonText(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFileSavePicker<D>::CommitButtonText(hstring_ref value) const
 {
-    check_hresult(static_cast<const IFileSavePicker &>(static_cast<const D &>(*this))->put_CommitButtonText(get(value)));
+    check_hresult(WINRT_SHIM(IFileSavePicker)->put_CommitButtonText(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVector<hstring>> impl_IFileSavePicker<D>::FileTypeChoices() const
 {
     Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVector<hstring>> value;
-    check_hresult(static_cast<const IFileSavePicker &>(static_cast<const D &>(*this))->get_FileTypeChoices(put(value)));
+    check_hresult(WINRT_SHIM(IFileSavePicker)->get_FileTypeChoices(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IFileSavePicker<D>::DefaultFileExtension() const
 {
     hstring value;
-    check_hresult(static_cast<const IFileSavePicker &>(static_cast<const D &>(*this))->get_DefaultFileExtension(put(value)));
+    check_hresult(WINRT_SHIM(IFileSavePicker)->get_DefaultFileExtension(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFileSavePicker<D>::DefaultFileExtension(hstring_ref value) const
 {
-    check_hresult(static_cast<const IFileSavePicker &>(static_cast<const D &>(*this))->put_DefaultFileExtension(get(value)));
+    check_hresult(WINRT_SHIM(IFileSavePicker)->put_DefaultFileExtension(get(value)));
 }
 
 template <typename D> Windows::Storage::StorageFile impl_IFileSavePicker<D>::SuggestedSaveFile() const
 {
     Windows::Storage::StorageFile value { nullptr };
-    check_hresult(static_cast<const IFileSavePicker &>(static_cast<const D &>(*this))->get_SuggestedSaveFile(put(value)));
+    check_hresult(WINRT_SHIM(IFileSavePicker)->get_SuggestedSaveFile(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFileSavePicker<D>::SuggestedSaveFile(const Windows::Storage::StorageFile & value) const
 {
-    check_hresult(static_cast<const IFileSavePicker &>(static_cast<const D &>(*this))->put_SuggestedSaveFile(get(value)));
+    check_hresult(WINRT_SHIM(IFileSavePicker)->put_SuggestedSaveFile(get(value)));
 }
 
 template <typename D> hstring impl_IFileSavePicker<D>::SuggestedFileName() const
 {
     hstring value;
-    check_hresult(static_cast<const IFileSavePicker &>(static_cast<const D &>(*this))->get_SuggestedFileName(put(value)));
+    check_hresult(WINRT_SHIM(IFileSavePicker)->get_SuggestedFileName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFileSavePicker<D>::SuggestedFileName(hstring_ref value) const
 {
-    check_hresult(static_cast<const IFileSavePicker &>(static_cast<const D &>(*this))->put_SuggestedFileName(get(value)));
+    check_hresult(WINRT_SHIM(IFileSavePicker)->put_SuggestedFileName(get(value)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IFileSavePicker<D>::PickSaveFileAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> pickSaveFileOperation;
-    check_hresult(static_cast<const IFileSavePicker &>(static_cast<const D &>(*this))->abi_PickSaveFileAsync(put(pickSaveFileOperation)));
+    check_hresult(WINRT_SHIM(IFileSavePicker)->abi_PickSaveFileAsync(put(pickSaveFileOperation)));
     return pickSaveFileOperation;
 }
 
 template <typename D> Windows::Foundation::Collections::ValueSet impl_IFileSavePicker2<D>::ContinuationData() const
 {
     Windows::Foundation::Collections::ValueSet value { nullptr };
-    check_hresult(static_cast<const IFileSavePicker2 &>(static_cast<const D &>(*this))->get_ContinuationData(put(value)));
+    check_hresult(WINRT_SHIM(IFileSavePicker2)->get_ContinuationData(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFileSavePicker2<D>::PickSaveFileAndContinue() const
 {
-    check_hresult(static_cast<const IFileSavePicker2 &>(static_cast<const D &>(*this))->abi_PickSaveFileAndContinue());
+    check_hresult(WINRT_SHIM(IFileSavePicker2)->abi_PickSaveFileAndContinue());
 }
 
 template <typename D> hstring impl_IFileSavePicker3<D>::EnterpriseId() const
 {
     hstring value;
-    check_hresult(static_cast<const IFileSavePicker3 &>(static_cast<const D &>(*this))->get_EnterpriseId(put(value)));
+    check_hresult(WINRT_SHIM(IFileSavePicker3)->get_EnterpriseId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFileSavePicker3<D>::EnterpriseId(hstring_ref value) const
 {
-    check_hresult(static_cast<const IFileSavePicker3 &>(static_cast<const D &>(*this))->put_EnterpriseId(get(value)));
+    check_hresult(WINRT_SHIM(IFileSavePicker3)->put_EnterpriseId(get(value)));
 }
 
 template <typename D> Windows::Storage::Pickers::PickerViewMode impl_IFolderPicker<D>::ViewMode() const
 {
     Windows::Storage::Pickers::PickerViewMode value {};
-    check_hresult(static_cast<const IFolderPicker &>(static_cast<const D &>(*this))->get_ViewMode(&value));
+    check_hresult(WINRT_SHIM(IFolderPicker)->get_ViewMode(&value));
     return value;
 }
 
 template <typename D> void impl_IFolderPicker<D>::ViewMode(Windows::Storage::Pickers::PickerViewMode value) const
 {
-    check_hresult(static_cast<const IFolderPicker &>(static_cast<const D &>(*this))->put_ViewMode(value));
+    check_hresult(WINRT_SHIM(IFolderPicker)->put_ViewMode(value));
 }
 
 template <typename D> hstring impl_IFolderPicker<D>::SettingsIdentifier() const
 {
     hstring value;
-    check_hresult(static_cast<const IFolderPicker &>(static_cast<const D &>(*this))->get_SettingsIdentifier(put(value)));
+    check_hresult(WINRT_SHIM(IFolderPicker)->get_SettingsIdentifier(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFolderPicker<D>::SettingsIdentifier(hstring_ref value) const
 {
-    check_hresult(static_cast<const IFolderPicker &>(static_cast<const D &>(*this))->put_SettingsIdentifier(get(value)));
+    check_hresult(WINRT_SHIM(IFolderPicker)->put_SettingsIdentifier(get(value)));
 }
 
 template <typename D> Windows::Storage::Pickers::PickerLocationId impl_IFolderPicker<D>::SuggestedStartLocation() const
 {
     Windows::Storage::Pickers::PickerLocationId value {};
-    check_hresult(static_cast<const IFolderPicker &>(static_cast<const D &>(*this))->get_SuggestedStartLocation(&value));
+    check_hresult(WINRT_SHIM(IFolderPicker)->get_SuggestedStartLocation(&value));
     return value;
 }
 
 template <typename D> void impl_IFolderPicker<D>::SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId value) const
 {
-    check_hresult(static_cast<const IFolderPicker &>(static_cast<const D &>(*this))->put_SuggestedStartLocation(value));
+    check_hresult(WINRT_SHIM(IFolderPicker)->put_SuggestedStartLocation(value));
 }
 
 template <typename D> hstring impl_IFolderPicker<D>::CommitButtonText() const
 {
     hstring value;
-    check_hresult(static_cast<const IFolderPicker &>(static_cast<const D &>(*this))->get_CommitButtonText(put(value)));
+    check_hresult(WINRT_SHIM(IFolderPicker)->get_CommitButtonText(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFolderPicker<D>::CommitButtonText(hstring_ref value) const
 {
-    check_hresult(static_cast<const IFolderPicker &>(static_cast<const D &>(*this))->put_CommitButtonText(get(value)));
+    check_hresult(WINRT_SHIM(IFolderPicker)->put_CommitButtonText(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IFolderPicker<D>::FileTypeFilter() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IFolderPicker &>(static_cast<const D &>(*this))->get_FileTypeFilter(put(value)));
+    check_hresult(WINRT_SHIM(IFolderPicker)->get_FileTypeFilter(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IFolderPicker<D>::PickSingleFolderAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> pickSingleFolderOperation;
-    check_hresult(static_cast<const IFolderPicker &>(static_cast<const D &>(*this))->abi_PickSingleFolderAsync(put(pickSingleFolderOperation)));
+    check_hresult(WINRT_SHIM(IFolderPicker)->abi_PickSingleFolderAsync(put(pickSingleFolderOperation)));
     return pickSingleFolderOperation;
 }
 
 template <typename D> Windows::Foundation::Collections::ValueSet impl_IFolderPicker2<D>::ContinuationData() const
 {
     Windows::Foundation::Collections::ValueSet value { nullptr };
-    check_hresult(static_cast<const IFolderPicker2 &>(static_cast<const D &>(*this))->get_ContinuationData(put(value)));
+    check_hresult(WINRT_SHIM(IFolderPicker2)->get_ContinuationData(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFolderPicker2<D>::PickFolderAndContinue() const
 {
-    check_hresult(static_cast<const IFolderPicker2 &>(static_cast<const D &>(*this))->abi_PickFolderAndContinue());
+    check_hresult(WINRT_SHIM(IFolderPicker2)->abi_PickFolderAndContinue());
 }
 
 inline FileOpenPicker::FileOpenPicker() :

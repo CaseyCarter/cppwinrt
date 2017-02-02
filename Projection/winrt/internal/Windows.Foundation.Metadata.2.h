@@ -14,7 +14,6 @@ struct IApiInformationStatics :
     impl::consume<IApiInformationStatics>
 {
     IApiInformationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApiInformationStatics>(m_ptr); }
 };
 
 }

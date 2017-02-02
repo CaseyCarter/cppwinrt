@@ -1126,480 +1126,480 @@ namespace Windows::Media::Editing {
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaClip<D>::TrimTimeFromStart() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaClip &>(static_cast<const D &>(*this))->get_TrimTimeFromStart(put(value)));
+    check_hresult(WINRT_SHIM(IMediaClip)->get_TrimTimeFromStart(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaClip<D>::TrimTimeFromStart(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const IMediaClip &>(static_cast<const D &>(*this))->put_TrimTimeFromStart(get(value)));
+    check_hresult(WINRT_SHIM(IMediaClip)->put_TrimTimeFromStart(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaClip<D>::TrimTimeFromEnd() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaClip &>(static_cast<const D &>(*this))->get_TrimTimeFromEnd(put(value)));
+    check_hresult(WINRT_SHIM(IMediaClip)->get_TrimTimeFromEnd(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaClip<D>::TrimTimeFromEnd(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const IMediaClip &>(static_cast<const D &>(*this))->put_TrimTimeFromEnd(get(value)));
+    check_hresult(WINRT_SHIM(IMediaClip)->put_TrimTimeFromEnd(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaClip<D>::OriginalDuration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaClip &>(static_cast<const D &>(*this))->get_OriginalDuration(put(value)));
+    check_hresult(WINRT_SHIM(IMediaClip)->get_OriginalDuration(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaClip<D>::TrimmedDuration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaClip &>(static_cast<const D &>(*this))->get_TrimmedDuration(put(value)));
+    check_hresult(WINRT_SHIM(IMediaClip)->get_TrimmedDuration(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_IMediaClip<D>::UserData() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> value;
-    check_hresult(static_cast<const IMediaClip &>(static_cast<const D &>(*this))->get_UserData(put(value)));
+    check_hresult(WINRT_SHIM(IMediaClip)->get_UserData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Editing::MediaClip impl_IMediaClip<D>::Clone() const
 {
     Windows::Media::Editing::MediaClip result { nullptr };
-    check_hresult(static_cast<const IMediaClip &>(static_cast<const D &>(*this))->abi_Clone(put(result)));
+    check_hresult(WINRT_SHIM(IMediaClip)->abi_Clone(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaClip<D>::StartTimeInComposition() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaClip &>(static_cast<const D &>(*this))->get_StartTimeInComposition(put(value)));
+    check_hresult(WINRT_SHIM(IMediaClip)->get_StartTimeInComposition(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaClip<D>::EndTimeInComposition() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaClip &>(static_cast<const D &>(*this))->get_EndTimeInComposition(put(value)));
+    check_hresult(WINRT_SHIM(IMediaClip)->get_EndTimeInComposition(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Editing::EmbeddedAudioTrack> impl_IMediaClip<D>::EmbeddedAudioTracks() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Editing::EmbeddedAudioTrack> value;
-    check_hresult(static_cast<const IMediaClip &>(static_cast<const D &>(*this))->get_EmbeddedAudioTracks(put(value)));
+    check_hresult(WINRT_SHIM(IMediaClip)->get_EmbeddedAudioTracks(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IMediaClip<D>::SelectedEmbeddedAudioTrackIndex() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMediaClip &>(static_cast<const D &>(*this))->get_SelectedEmbeddedAudioTrackIndex(&value));
+    check_hresult(WINRT_SHIM(IMediaClip)->get_SelectedEmbeddedAudioTrackIndex(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaClip<D>::SelectedEmbeddedAudioTrackIndex(uint32_t value) const
 {
-    check_hresult(static_cast<const IMediaClip &>(static_cast<const D &>(*this))->put_SelectedEmbeddedAudioTrackIndex(value));
+    check_hresult(WINRT_SHIM(IMediaClip)->put_SelectedEmbeddedAudioTrackIndex(value));
 }
 
 template <typename D> void impl_IMediaClip<D>::Volume(double value) const
 {
-    check_hresult(static_cast<const IMediaClip &>(static_cast<const D &>(*this))->put_Volume(value));
+    check_hresult(WINRT_SHIM(IMediaClip)->put_Volume(value));
 }
 
 template <typename D> double impl_IMediaClip<D>::Volume() const
 {
     double value {};
-    check_hresult(static_cast<const IMediaClip &>(static_cast<const D &>(*this))->get_Volume(&value));
+    check_hresult(WINRT_SHIM(IMediaClip)->get_Volume(&value));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::VideoEncodingProperties impl_IMediaClip<D>::GetVideoEncodingProperties() const
 {
     Windows::Media::MediaProperties::VideoEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IMediaClip &>(static_cast<const D &>(*this))->abi_GetVideoEncodingProperties(put(value)));
+    check_hresult(WINRT_SHIM(IMediaClip)->abi_GetVideoEncodingProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::Effects::IAudioEffectDefinition> impl_IMediaClip<D>::AudioEffectDefinitions() const
 {
     Windows::Foundation::Collections::IVector<Windows::Media::Effects::IAudioEffectDefinition> value;
-    check_hresult(static_cast<const IMediaClip &>(static_cast<const D &>(*this))->get_AudioEffectDefinitions(put(value)));
+    check_hresult(WINRT_SHIM(IMediaClip)->get_AudioEffectDefinitions(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::Effects::IVideoEffectDefinition> impl_IMediaClip<D>::VideoEffectDefinitions() const
 {
     Windows::Foundation::Collections::IVector<Windows::Media::Effects::IVideoEffectDefinition> value;
-    check_hresult(static_cast<const IMediaClip &>(static_cast<const D &>(*this))->get_VideoEffectDefinitions(put(value)));
+    check_hresult(WINRT_SHIM(IMediaClip)->get_VideoEffectDefinitions(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaComposition<D>::Duration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaComposition &>(static_cast<const D &>(*this))->get_Duration(put(value)));
+    check_hresult(WINRT_SHIM(IMediaComposition)->get_Duration(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::Editing::MediaClip> impl_IMediaComposition<D>::Clips() const
 {
     Windows::Foundation::Collections::IVector<Windows::Media::Editing::MediaClip> value;
-    check_hresult(static_cast<const IMediaComposition &>(static_cast<const D &>(*this))->get_Clips(put(value)));
+    check_hresult(WINRT_SHIM(IMediaComposition)->get_Clips(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::Editing::BackgroundAudioTrack> impl_IMediaComposition<D>::BackgroundAudioTracks() const
 {
     Windows::Foundation::Collections::IVector<Windows::Media::Editing::BackgroundAudioTrack> value;
-    check_hresult(static_cast<const IMediaComposition &>(static_cast<const D &>(*this))->get_BackgroundAudioTracks(put(value)));
+    check_hresult(WINRT_SHIM(IMediaComposition)->get_BackgroundAudioTracks(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_IMediaComposition<D>::UserData() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> value;
-    check_hresult(static_cast<const IMediaComposition &>(static_cast<const D &>(*this))->get_UserData(put(value)));
+    check_hresult(WINRT_SHIM(IMediaComposition)->get_UserData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Editing::MediaComposition impl_IMediaComposition<D>::Clone() const
 {
     Windows::Media::Editing::MediaComposition result { nullptr };
-    check_hresult(static_cast<const IMediaComposition &>(static_cast<const D &>(*this))->abi_Clone(put(result)));
+    check_hresult(WINRT_SHIM(IMediaComposition)->abi_Clone(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IMediaComposition<D>::SaveAsync(const Windows::Storage::IStorageFile & file) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IMediaComposition &>(static_cast<const D &>(*this))->abi_SaveAsync(get(file), put(operation)));
+    check_hresult(WINRT_SHIM(IMediaComposition)->abi_SaveAsync(get(file), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::ImageStream> impl_IMediaComposition<D>::GetThumbnailAsync(const Windows::Foundation::TimeSpan & timeFromStart, int32_t scaledWidth, int32_t scaledHeight, Windows::Media::Editing::VideoFramePrecision framePrecision) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::ImageStream> operation;
-    check_hresult(static_cast<const IMediaComposition &>(static_cast<const D &>(*this))->abi_GetThumbnailAsync(get(timeFromStart), scaledWidth, scaledHeight, framePrecision, put(operation)));
+    check_hresult(WINRT_SHIM(IMediaComposition)->abi_GetThumbnailAsync(get(timeFromStart), scaledWidth, scaledHeight, framePrecision, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::ImageStream>> impl_IMediaComposition<D>::GetThumbnailsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::TimeSpan> & timesFromStart, int32_t scaledWidth, int32_t scaledHeight, Windows::Media::Editing::VideoFramePrecision framePrecision) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::ImageStream>> operation;
-    check_hresult(static_cast<const IMediaComposition &>(static_cast<const D &>(*this))->abi_GetThumbnailsAsync(get(timesFromStart), scaledWidth, scaledHeight, framePrecision, put(operation)));
+    check_hresult(WINRT_SHIM(IMediaComposition)->abi_GetThumbnailsAsync(get(timesFromStart), scaledWidth, scaledHeight, framePrecision, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<winrt::Windows::Media::Transcoding::TranscodeFailureReason, double> impl_IMediaComposition<D>::RenderToFileAsync(const Windows::Storage::IStorageFile & destination) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<winrt::Windows::Media::Transcoding::TranscodeFailureReason, double> operation;
-    check_hresult(static_cast<const IMediaComposition &>(static_cast<const D &>(*this))->abi_RenderToFileAsync(get(destination), put(operation)));
+    check_hresult(WINRT_SHIM(IMediaComposition)->abi_RenderToFileAsync(get(destination), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<winrt::Windows::Media::Transcoding::TranscodeFailureReason, double> impl_IMediaComposition<D>::RenderToFileAsync(const Windows::Storage::IStorageFile & destination, Windows::Media::Editing::MediaTrimmingPreference trimmingPreference) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<winrt::Windows::Media::Transcoding::TranscodeFailureReason, double> operation;
-    check_hresult(static_cast<const IMediaComposition &>(static_cast<const D &>(*this))->abi_RenderToFileWithTrimmingPreferenceAsync(get(destination), trimmingPreference, put(operation)));
+    check_hresult(WINRT_SHIM(IMediaComposition)->abi_RenderToFileWithTrimmingPreferenceAsync(get(destination), trimmingPreference, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<winrt::Windows::Media::Transcoding::TranscodeFailureReason, double> impl_IMediaComposition<D>::RenderToFileAsync(const Windows::Storage::IStorageFile & destination, Windows::Media::Editing::MediaTrimmingPreference trimmingPreference, const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<winrt::Windows::Media::Transcoding::TranscodeFailureReason, double> operation;
-    check_hresult(static_cast<const IMediaComposition &>(static_cast<const D &>(*this))->abi_RenderToFileWithProfileAsync(get(destination), trimmingPreference, get(encodingProfile), put(operation)));
+    check_hresult(WINRT_SHIM(IMediaComposition)->abi_RenderToFileWithProfileAsync(get(destination), trimmingPreference, get(encodingProfile), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaEncodingProfile impl_IMediaComposition<D>::CreateDefaultEncodingProfile() const
 {
     Windows::Media::MediaProperties::MediaEncodingProfile value { nullptr };
-    check_hresult(static_cast<const IMediaComposition &>(static_cast<const D &>(*this))->abi_CreateDefaultEncodingProfile(put(value)));
+    check_hresult(WINRT_SHIM(IMediaComposition)->abi_CreateDefaultEncodingProfile(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaStreamSource impl_IMediaComposition<D>::GenerateMediaStreamSource() const
 {
     Windows::Media::Core::MediaStreamSource value { nullptr };
-    check_hresult(static_cast<const IMediaComposition &>(static_cast<const D &>(*this))->abi_GenerateMediaStreamSource(put(value)));
+    check_hresult(WINRT_SHIM(IMediaComposition)->abi_GenerateMediaStreamSource(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaStreamSource impl_IMediaComposition<D>::GenerateMediaStreamSource(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile) const
 {
     Windows::Media::Core::MediaStreamSource value { nullptr };
-    check_hresult(static_cast<const IMediaComposition &>(static_cast<const D &>(*this))->abi_GenerateMediaStreamSourceWithProfile(get(encodingProfile), put(value)));
+    check_hresult(WINRT_SHIM(IMediaComposition)->abi_GenerateMediaStreamSourceWithProfile(get(encodingProfile), put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaStreamSource impl_IMediaComposition<D>::GeneratePreviewMediaStreamSource(int32_t scaledWidth, int32_t scaledHeight) const
 {
     Windows::Media::Core::MediaStreamSource value { nullptr };
-    check_hresult(static_cast<const IMediaComposition &>(static_cast<const D &>(*this))->abi_GeneratePreviewMediaStreamSource(scaledWidth, scaledHeight, put(value)));
+    check_hresult(WINRT_SHIM(IMediaComposition)->abi_GeneratePreviewMediaStreamSource(scaledWidth, scaledHeight, put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Editing::MediaClip impl_IMediaClipStatics<D>::CreateFromColor(const Windows::UI::Color & color, const Windows::Foundation::TimeSpan & originalDuration) const
 {
     Windows::Media::Editing::MediaClip value { nullptr };
-    check_hresult(static_cast<const IMediaClipStatics &>(static_cast<const D &>(*this))->abi_CreateFromColor(get(color), get(originalDuration), put(value)));
+    check_hresult(WINRT_SHIM(IMediaClipStatics)->abi_CreateFromColor(get(color), get(originalDuration), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaClip> impl_IMediaClipStatics<D>::CreateFromFileAsync(const Windows::Storage::IStorageFile & file) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaClip> operation;
-    check_hresult(static_cast<const IMediaClipStatics &>(static_cast<const D &>(*this))->abi_CreateFromFileAsync(get(file), put(operation)));
+    check_hresult(WINRT_SHIM(IMediaClipStatics)->abi_CreateFromFileAsync(get(file), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaClip> impl_IMediaClipStatics<D>::CreateFromImageFileAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::TimeSpan & originalDuration) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaClip> operation;
-    check_hresult(static_cast<const IMediaClipStatics &>(static_cast<const D &>(*this))->abi_CreateFromImageFileAsync(get(file), get(originalDuration), put(operation)));
+    check_hresult(WINRT_SHIM(IMediaClipStatics)->abi_CreateFromImageFileAsync(get(file), get(originalDuration), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Media::Editing::MediaClip impl_IMediaClipStatics2<D>::CreateFromSurface(const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & surface, const Windows::Foundation::TimeSpan & originalDuration) const
 {
     Windows::Media::Editing::MediaClip value { nullptr };
-    check_hresult(static_cast<const IMediaClipStatics2 &>(static_cast<const D &>(*this))->abi_CreateFromSurface(get(surface), get(originalDuration), put(value)));
+    check_hresult(WINRT_SHIM(IMediaClipStatics2)->abi_CreateFromSurface(get(surface), get(originalDuration), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaComposition> impl_IMediaCompositionStatics<D>::LoadAsync(const Windows::Storage::StorageFile & file) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaComposition> operation;
-    check_hresult(static_cast<const IMediaCompositionStatics &>(static_cast<const D &>(*this))->abi_LoadAsync(get(file), put(operation)));
+    check_hresult(WINRT_SHIM(IMediaCompositionStatics)->abi_LoadAsync(get(file), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Media::MediaProperties::AudioEncodingProperties impl_IEmbeddedAudioTrack<D>::GetAudioEncodingProperties() const
 {
     Windows::Media::MediaProperties::AudioEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IEmbeddedAudioTrack &>(static_cast<const D &>(*this))->abi_GetAudioEncodingProperties(put(value)));
+    check_hresult(WINRT_SHIM(IEmbeddedAudioTrack)->abi_GetAudioEncodingProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IBackgroundAudioTrack<D>::TrimTimeFromStart() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IBackgroundAudioTrack &>(static_cast<const D &>(*this))->get_TrimTimeFromStart(put(value)));
+    check_hresult(WINRT_SHIM(IBackgroundAudioTrack)->get_TrimTimeFromStart(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBackgroundAudioTrack<D>::TrimTimeFromStart(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const IBackgroundAudioTrack &>(static_cast<const D &>(*this))->put_TrimTimeFromStart(get(value)));
+    check_hresult(WINRT_SHIM(IBackgroundAudioTrack)->put_TrimTimeFromStart(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IBackgroundAudioTrack<D>::TrimTimeFromEnd() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IBackgroundAudioTrack &>(static_cast<const D &>(*this))->get_TrimTimeFromEnd(put(value)));
+    check_hresult(WINRT_SHIM(IBackgroundAudioTrack)->get_TrimTimeFromEnd(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBackgroundAudioTrack<D>::TrimTimeFromEnd(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const IBackgroundAudioTrack &>(static_cast<const D &>(*this))->put_TrimTimeFromEnd(get(value)));
+    check_hresult(WINRT_SHIM(IBackgroundAudioTrack)->put_TrimTimeFromEnd(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IBackgroundAudioTrack<D>::OriginalDuration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IBackgroundAudioTrack &>(static_cast<const D &>(*this))->get_OriginalDuration(put(value)));
+    check_hresult(WINRT_SHIM(IBackgroundAudioTrack)->get_OriginalDuration(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IBackgroundAudioTrack<D>::TrimmedDuration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IBackgroundAudioTrack &>(static_cast<const D &>(*this))->get_TrimmedDuration(put(value)));
+    check_hresult(WINRT_SHIM(IBackgroundAudioTrack)->get_TrimmedDuration(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_IBackgroundAudioTrack<D>::UserData() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> value;
-    check_hresult(static_cast<const IBackgroundAudioTrack &>(static_cast<const D &>(*this))->get_UserData(put(value)));
+    check_hresult(WINRT_SHIM(IBackgroundAudioTrack)->get_UserData(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBackgroundAudioTrack<D>::Delay(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const IBackgroundAudioTrack &>(static_cast<const D &>(*this))->put_Delay(get(value)));
+    check_hresult(WINRT_SHIM(IBackgroundAudioTrack)->put_Delay(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IBackgroundAudioTrack<D>::Delay() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IBackgroundAudioTrack &>(static_cast<const D &>(*this))->get_Delay(put(value)));
+    check_hresult(WINRT_SHIM(IBackgroundAudioTrack)->get_Delay(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBackgroundAudioTrack<D>::Volume(double value) const
 {
-    check_hresult(static_cast<const IBackgroundAudioTrack &>(static_cast<const D &>(*this))->put_Volume(value));
+    check_hresult(WINRT_SHIM(IBackgroundAudioTrack)->put_Volume(value));
 }
 
 template <typename D> double impl_IBackgroundAudioTrack<D>::Volume() const
 {
     double value {};
-    check_hresult(static_cast<const IBackgroundAudioTrack &>(static_cast<const D &>(*this))->get_Volume(&value));
+    check_hresult(WINRT_SHIM(IBackgroundAudioTrack)->get_Volume(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Editing::BackgroundAudioTrack impl_IBackgroundAudioTrack<D>::Clone() const
 {
     Windows::Media::Editing::BackgroundAudioTrack value { nullptr };
-    check_hresult(static_cast<const IBackgroundAudioTrack &>(static_cast<const D &>(*this))->abi_Clone(put(value)));
+    check_hresult(WINRT_SHIM(IBackgroundAudioTrack)->abi_Clone(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::AudioEncodingProperties impl_IBackgroundAudioTrack<D>::GetAudioEncodingProperties() const
 {
     Windows::Media::MediaProperties::AudioEncodingProperties value { nullptr };
-    check_hresult(static_cast<const IBackgroundAudioTrack &>(static_cast<const D &>(*this))->abi_GetAudioEncodingProperties(put(value)));
+    check_hresult(WINRT_SHIM(IBackgroundAudioTrack)->abi_GetAudioEncodingProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::Effects::IAudioEffectDefinition> impl_IBackgroundAudioTrack<D>::AudioEffectDefinitions() const
 {
     Windows::Foundation::Collections::IVector<Windows::Media::Effects::IAudioEffectDefinition> value;
-    check_hresult(static_cast<const IBackgroundAudioTrack &>(static_cast<const D &>(*this))->get_AudioEffectDefinitions(put(value)));
+    check_hresult(WINRT_SHIM(IBackgroundAudioTrack)->get_AudioEffectDefinitions(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Editing::BackgroundAudioTrack impl_IBackgroundAudioTrackStatics<D>::CreateFromEmbeddedAudioTrack(const Windows::Media::Editing::EmbeddedAudioTrack & embeddedAudioTrack) const
 {
     Windows::Media::Editing::BackgroundAudioTrack value { nullptr };
-    check_hresult(static_cast<const IBackgroundAudioTrackStatics &>(static_cast<const D &>(*this))->abi_CreateFromEmbeddedAudioTrack(get(embeddedAudioTrack), put(value)));
+    check_hresult(WINRT_SHIM(IBackgroundAudioTrackStatics)->abi_CreateFromEmbeddedAudioTrack(get(embeddedAudioTrack), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Editing::BackgroundAudioTrack> impl_IBackgroundAudioTrackStatics<D>::CreateFromFileAsync(const Windows::Storage::IStorageFile & file) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Editing::BackgroundAudioTrack> operation;
-    check_hresult(static_cast<const IBackgroundAudioTrackStatics &>(static_cast<const D &>(*this))->abi_CreateFromFileAsync(get(file), put(operation)));
+    check_hresult(WINRT_SHIM(IBackgroundAudioTrackStatics)->abi_CreateFromFileAsync(get(file), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::Editing::MediaOverlayLayer> impl_IMediaComposition2<D>::OverlayLayers() const
 {
     Windows::Foundation::Collections::IVector<Windows::Media::Editing::MediaOverlayLayer> value;
-    check_hresult(static_cast<const IMediaComposition2 &>(static_cast<const D &>(*this))->get_OverlayLayers(put(value)));
+    check_hresult(WINRT_SHIM(IMediaComposition2)->get_OverlayLayers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IMediaOverlay<D>::Position() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(static_cast<const IMediaOverlay &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IMediaOverlay)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaOverlay<D>::Position(const Windows::Foundation::Rect & value) const
 {
-    check_hresult(static_cast<const IMediaOverlay &>(static_cast<const D &>(*this))->put_Position(get(value)));
+    check_hresult(WINRT_SHIM(IMediaOverlay)->put_Position(get(value)));
 }
 
 template <typename D> void impl_IMediaOverlay<D>::Delay(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const IMediaOverlay &>(static_cast<const D &>(*this))->put_Delay(get(value)));
+    check_hresult(WINRT_SHIM(IMediaOverlay)->put_Delay(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaOverlay<D>::Delay() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaOverlay &>(static_cast<const D &>(*this))->get_Delay(put(value)));
+    check_hresult(WINRT_SHIM(IMediaOverlay)->get_Delay(put(value)));
     return value;
 }
 
 template <typename D> double impl_IMediaOverlay<D>::Opacity() const
 {
     double value {};
-    check_hresult(static_cast<const IMediaOverlay &>(static_cast<const D &>(*this))->get_Opacity(&value));
+    check_hresult(WINRT_SHIM(IMediaOverlay)->get_Opacity(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaOverlay<D>::Opacity(double value) const
 {
-    check_hresult(static_cast<const IMediaOverlay &>(static_cast<const D &>(*this))->put_Opacity(value));
+    check_hresult(WINRT_SHIM(IMediaOverlay)->put_Opacity(value));
 }
 
 template <typename D> Windows::Media::Editing::MediaOverlay impl_IMediaOverlay<D>::Clone() const
 {
     Windows::Media::Editing::MediaOverlay result { nullptr };
-    check_hresult(static_cast<const IMediaOverlay &>(static_cast<const D &>(*this))->abi_Clone(put(result)));
+    check_hresult(WINRT_SHIM(IMediaOverlay)->abi_Clone(put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Editing::MediaClip impl_IMediaOverlay<D>::Clip() const
 {
     Windows::Media::Editing::MediaClip value { nullptr };
-    check_hresult(static_cast<const IMediaOverlay &>(static_cast<const D &>(*this))->get_Clip(put(value)));
+    check_hresult(WINRT_SHIM(IMediaOverlay)->get_Clip(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMediaOverlay<D>::AudioEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaOverlay &>(static_cast<const D &>(*this))->get_AudioEnabled(&value));
+    check_hresult(WINRT_SHIM(IMediaOverlay)->get_AudioEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaOverlay<D>::AudioEnabled(bool value) const
 {
-    check_hresult(static_cast<const IMediaOverlay &>(static_cast<const D &>(*this))->put_AudioEnabled(value));
+    check_hresult(WINRT_SHIM(IMediaOverlay)->put_AudioEnabled(value));
 }
 
 template <typename D> Windows::Media::Editing::MediaOverlay impl_IMediaOverlayFactory<D>::Create(const Windows::Media::Editing::MediaClip & clip) const
 {
     Windows::Media::Editing::MediaOverlay mediaOverlay { nullptr };
-    check_hresult(static_cast<const IMediaOverlayFactory &>(static_cast<const D &>(*this))->abi_Create(get(clip), put(mediaOverlay)));
+    check_hresult(WINRT_SHIM(IMediaOverlayFactory)->abi_Create(get(clip), put(mediaOverlay)));
     return mediaOverlay;
 }
 
 template <typename D> Windows::Media::Editing::MediaOverlay impl_IMediaOverlayFactory<D>::CreateWithPositionAndOpacity(const Windows::Media::Editing::MediaClip & clip, const Windows::Foundation::Rect & position, double opacity) const
 {
     Windows::Media::Editing::MediaOverlay mediaOverlay { nullptr };
-    check_hresult(static_cast<const IMediaOverlayFactory &>(static_cast<const D &>(*this))->abi_CreateWithPositionAndOpacity(get(clip), get(position), opacity, put(mediaOverlay)));
+    check_hresult(WINRT_SHIM(IMediaOverlayFactory)->abi_CreateWithPositionAndOpacity(get(clip), get(position), opacity, put(mediaOverlay)));
     return mediaOverlay;
 }
 
 template <typename D> Windows::Media::Editing::MediaOverlayLayer impl_IMediaOverlayLayerFactory<D>::CreateWithCompositorDefinition(const Windows::Media::Effects::IVideoCompositorDefinition & compositorDefinition) const
 {
     Windows::Media::Editing::MediaOverlayLayer mediaOverlayLayer { nullptr };
-    check_hresult(static_cast<const IMediaOverlayLayerFactory &>(static_cast<const D &>(*this))->abi_CreateWithCompositorDefinition(get(compositorDefinition), put(mediaOverlayLayer)));
+    check_hresult(WINRT_SHIM(IMediaOverlayLayerFactory)->abi_CreateWithCompositorDefinition(get(compositorDefinition), put(mediaOverlayLayer)));
     return mediaOverlayLayer;
 }
 
 template <typename D> Windows::Media::Editing::MediaOverlayLayer impl_IMediaOverlayLayer<D>::Clone() const
 {
     Windows::Media::Editing::MediaOverlayLayer result { nullptr };
-    check_hresult(static_cast<const IMediaOverlayLayer &>(static_cast<const D &>(*this))->abi_Clone(put(result)));
+    check_hresult(WINRT_SHIM(IMediaOverlayLayer)->abi_Clone(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::Editing::MediaOverlay> impl_IMediaOverlayLayer<D>::Overlays() const
 {
     Windows::Foundation::Collections::IVector<Windows::Media::Editing::MediaOverlay> value;
-    check_hresult(static_cast<const IMediaOverlayLayer &>(static_cast<const D &>(*this))->get_Overlays(put(value)));
+    check_hresult(WINRT_SHIM(IMediaOverlayLayer)->get_Overlays(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Effects::IVideoCompositorDefinition impl_IMediaOverlayLayer<D>::CustomCompositorDefinition() const
 {
     Windows::Media::Effects::IVideoCompositorDefinition value;
-    check_hresult(static_cast<const IMediaOverlayLayer &>(static_cast<const D &>(*this))->get_CustomCompositorDefinition(put(value)));
+    check_hresult(WINRT_SHIM(IMediaOverlayLayer)->get_CustomCompositorDefinition(put(value)));
     return value;
 }
 

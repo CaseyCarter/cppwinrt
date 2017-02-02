@@ -72,11 +72,6 @@ struct IUnknown
         return nullptr != m_ptr;
     }
 
-    auto operator->() const noexcept
-    {
-        return static_cast<impl::no_ref< ::IUnknown> *>(m_ptr);
-    }
-
     IUnknown & operator=(std::nullptr_t) noexcept
     {
         impl_release();
@@ -293,27 +288,26 @@ namespace Windows {
 struct IInspectable : IUnknown
 {
     IInspectable(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInspectable>(m_ptr); }
 };
 
 inline com_array<GUID> GetIids(const IInspectable & object)
 {
     com_array<GUID> value;
-    check_hresult(object->abi_GetIids(put_size(value), put(value)));
+    check_hresult((*(abi<IInspectable> **)&object)->abi_GetIids(put_size(value), put(value)));
     return value;
 }
 
 inline hstring GetRuntimeClassName(const IInspectable & object)
 {
     hstring value;
-    check_hresult(object->abi_GetRuntimeClassName(put(value)));
+    check_hresult((*(abi<IInspectable> **)&object)->abi_GetRuntimeClassName(put(value)));
     return value;
 }
 
 inline TrustLevel GetTrustLevel(const IInspectable & object)
 {
     Windows::TrustLevel value{};
-    check_hresult(object->abi_GetTrustLevel(&value));
+    check_hresult((*(abi<IInspectable> **)&object)->abi_GetTrustLevel(&value));
     return value;
 }
 

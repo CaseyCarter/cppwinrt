@@ -119,7 +119,6 @@ struct IAppExtension :
     impl::consume<IAppExtension>
 {
     IAppExtension(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppExtension>(m_ptr); }
 };
 
 struct IAppExtensionCatalog :
@@ -127,7 +126,6 @@ struct IAppExtensionCatalog :
     impl::consume<IAppExtensionCatalog>
 {
     IAppExtensionCatalog(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppExtensionCatalog>(m_ptr); }
 };
 
 struct IAppExtensionCatalogStatics :
@@ -135,7 +133,6 @@ struct IAppExtensionCatalogStatics :
     impl::consume<IAppExtensionCatalogStatics>
 {
     IAppExtensionCatalogStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppExtensionCatalogStatics>(m_ptr); }
 };
 
 struct IAppExtensionPackageInstalledEventArgs :
@@ -143,7 +140,6 @@ struct IAppExtensionPackageInstalledEventArgs :
     impl::consume<IAppExtensionPackageInstalledEventArgs>
 {
     IAppExtensionPackageInstalledEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppExtensionPackageInstalledEventArgs>(m_ptr); }
 };
 
 struct IAppExtensionPackageStatusChangedEventArgs :
@@ -151,7 +147,6 @@ struct IAppExtensionPackageStatusChangedEventArgs :
     impl::consume<IAppExtensionPackageStatusChangedEventArgs>
 {
     IAppExtensionPackageStatusChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppExtensionPackageStatusChangedEventArgs>(m_ptr); }
 };
 
 struct IAppExtensionPackageUninstallingEventArgs :
@@ -159,7 +154,6 @@ struct IAppExtensionPackageUninstallingEventArgs :
     impl::consume<IAppExtensionPackageUninstallingEventArgs>
 {
     IAppExtensionPackageUninstallingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppExtensionPackageUninstallingEventArgs>(m_ptr); }
 };
 
 struct IAppExtensionPackageUpdatedEventArgs :
@@ -167,7 +161,6 @@ struct IAppExtensionPackageUpdatedEventArgs :
     impl::consume<IAppExtensionPackageUpdatedEventArgs>
 {
     IAppExtensionPackageUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppExtensionPackageUpdatedEventArgs>(m_ptr); }
 };
 
 struct IAppExtensionPackageUpdatingEventArgs :
@@ -175,7 +168,6 @@ struct IAppExtensionPackageUpdatingEventArgs :
     impl::consume<IAppExtensionPackageUpdatingEventArgs>
 {
     IAppExtensionPackageUpdatingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppExtensionPackageUpdatingEventArgs>(m_ptr); }
 };
 
 }

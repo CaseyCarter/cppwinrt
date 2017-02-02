@@ -5318,500 +5318,500 @@ namespace Windows::UI::Xaml::Controls::Maps {
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapCamera impl_IMapActualCameraChangedEventArgs<D>::Camera() const
 {
     Windows::UI::Xaml::Controls::Maps::MapCamera value { nullptr };
-    check_hresult(static_cast<const IMapActualCameraChangedEventArgs &>(static_cast<const D &>(*this))->get_Camera(put(value)));
+    check_hresult(WINRT_SHIM(IMapActualCameraChangedEventArgs)->get_Camera(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapCameraChangeReason impl_IMapActualCameraChangedEventArgs2<D>::ChangeReason() const
 {
     Windows::UI::Xaml::Controls::Maps::MapCameraChangeReason value {};
-    check_hresult(static_cast<const IMapActualCameraChangedEventArgs2 &>(static_cast<const D &>(*this))->get_ChangeReason(&value));
+    check_hresult(WINRT_SHIM(IMapActualCameraChangedEventArgs2)->get_ChangeReason(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapCamera impl_IMapActualCameraChangingEventArgs<D>::Camera() const
 {
     Windows::UI::Xaml::Controls::Maps::MapCamera value { nullptr };
-    check_hresult(static_cast<const IMapActualCameraChangingEventArgs &>(static_cast<const D &>(*this))->get_Camera(put(value)));
+    check_hresult(WINRT_SHIM(IMapActualCameraChangingEventArgs)->get_Camera(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapCameraChangeReason impl_IMapActualCameraChangingEventArgs2<D>::ChangeReason() const
 {
     Windows::UI::Xaml::Controls::Maps::MapCameraChangeReason value {};
-    check_hresult(static_cast<const IMapActualCameraChangingEventArgs2 &>(static_cast<const D &>(*this))->get_ChangeReason(&value));
+    check_hresult(WINRT_SHIM(IMapActualCameraChangingEventArgs2)->get_ChangeReason(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IMapElementClickEventArgs<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IMapElementClickEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IMapElementClickEventArgs)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IMapElementClickEventArgs<D>::Location() const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(static_cast<const IMapElementClickEventArgs &>(static_cast<const D &>(*this))->get_Location(put(value)));
+    check_hresult(WINRT_SHIM(IMapElementClickEventArgs)->get_Location(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::Maps::MapElement> impl_IMapElementClickEventArgs<D>::MapElements() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::Maps::MapElement> value;
-    check_hresult(static_cast<const IMapElementClickEventArgs &>(static_cast<const D &>(*this))->get_MapElements(put(value)));
+    check_hresult(WINRT_SHIM(IMapElementClickEventArgs)->get_MapElements(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IMapElementPointerEnteredEventArgs<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IMapElementPointerEnteredEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IMapElementPointerEnteredEventArgs)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IMapElementPointerEnteredEventArgs<D>::Location() const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(static_cast<const IMapElementPointerEnteredEventArgs &>(static_cast<const D &>(*this))->get_Location(put(value)));
+    check_hresult(WINRT_SHIM(IMapElementPointerEnteredEventArgs)->get_Location(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapElement impl_IMapElementPointerEnteredEventArgs<D>::MapElement() const
 {
     Windows::UI::Xaml::Controls::Maps::MapElement value { nullptr };
-    check_hresult(static_cast<const IMapElementPointerEnteredEventArgs &>(static_cast<const D &>(*this))->get_MapElement(put(value)));
+    check_hresult(WINRT_SHIM(IMapElementPointerEnteredEventArgs)->get_MapElement(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IMapElementPointerExitedEventArgs<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IMapElementPointerExitedEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IMapElementPointerExitedEventArgs)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IMapElementPointerExitedEventArgs<D>::Location() const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(static_cast<const IMapElementPointerExitedEventArgs &>(static_cast<const D &>(*this))->get_Location(put(value)));
+    check_hresult(WINRT_SHIM(IMapElementPointerExitedEventArgs)->get_Location(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapElement impl_IMapElementPointerExitedEventArgs<D>::MapElement() const
 {
     Windows::UI::Xaml::Controls::Maps::MapElement value { nullptr };
-    check_hresult(static_cast<const IMapElementPointerExitedEventArgs &>(static_cast<const D &>(*this))->get_MapElement(put(value)));
+    check_hresult(WINRT_SHIM(IMapElementPointerExitedEventArgs)->get_MapElement(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IMapRightTappedEventArgs<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IMapRightTappedEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IMapRightTappedEventArgs)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IMapRightTappedEventArgs<D>::Location() const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(static_cast<const IMapRightTappedEventArgs &>(static_cast<const D &>(*this))->get_Location(put(value)));
+    check_hresult(WINRT_SHIM(IMapRightTappedEventArgs)->get_Location(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapCamera impl_IMapTargetCameraChangedEventArgs<D>::Camera() const
 {
     Windows::UI::Xaml::Controls::Maps::MapCamera value { nullptr };
-    check_hresult(static_cast<const IMapTargetCameraChangedEventArgs &>(static_cast<const D &>(*this))->get_Camera(put(value)));
+    check_hresult(WINRT_SHIM(IMapTargetCameraChangedEventArgs)->get_Camera(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapCameraChangeReason impl_IMapTargetCameraChangedEventArgs2<D>::ChangeReason() const
 {
     Windows::UI::Xaml::Controls::Maps::MapCameraChangeReason value {};
-    check_hresult(static_cast<const IMapTargetCameraChangedEventArgs2 &>(static_cast<const D &>(*this))->get_ChangeReason(&value));
+    check_hresult(WINRT_SHIM(IMapTargetCameraChangedEventArgs2)->get_ChangeReason(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IMapTileBitmapRequest<D>::PixelData() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(static_cast<const IMapTileBitmapRequest &>(static_cast<const D &>(*this))->get_PixelData(put(value)));
+    check_hresult(WINRT_SHIM(IMapTileBitmapRequest)->get_PixelData(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapTileBitmapRequest<D>::PixelData(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const
 {
-    check_hresult(static_cast<const IMapTileBitmapRequest &>(static_cast<const D &>(*this))->put_PixelData(get(value)));
+    check_hresult(WINRT_SHIM(IMapTileBitmapRequest)->put_PixelData(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequestDeferral impl_IMapTileBitmapRequest<D>::GetDeferral() const
 {
     Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequestDeferral returnValue { nullptr };
-    check_hresult(static_cast<const IMapTileBitmapRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapTileBitmapRequest)->abi_GetDeferral(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IMapTileBitmapRequestDeferral<D>::Complete() const
 {
-    check_hresult(static_cast<const IMapTileBitmapRequestDeferral &>(static_cast<const D &>(*this))->abi_Complete());
+    check_hresult(WINRT_SHIM(IMapTileBitmapRequestDeferral)->abi_Complete());
 }
 
 template <typename D> int32_t impl_IMapTileBitmapRequestedEventArgs<D>::X() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMapTileBitmapRequestedEventArgs &>(static_cast<const D &>(*this))->get_X(&value));
+    check_hresult(WINRT_SHIM(IMapTileBitmapRequestedEventArgs)->get_X(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IMapTileBitmapRequestedEventArgs<D>::Y() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMapTileBitmapRequestedEventArgs &>(static_cast<const D &>(*this))->get_Y(&value));
+    check_hresult(WINRT_SHIM(IMapTileBitmapRequestedEventArgs)->get_Y(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IMapTileBitmapRequestedEventArgs<D>::ZoomLevel() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMapTileBitmapRequestedEventArgs &>(static_cast<const D &>(*this))->get_ZoomLevel(&value));
+    check_hresult(WINRT_SHIM(IMapTileBitmapRequestedEventArgs)->get_ZoomLevel(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequest impl_IMapTileBitmapRequestedEventArgs<D>::Request() const
 {
     Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequest value { nullptr };
-    check_hresult(static_cast<const IMapTileBitmapRequestedEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IMapTileBitmapRequestedEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IMapTileUriRequest<D>::Uri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const IMapTileUriRequest &>(static_cast<const D &>(*this))->get_Uri(put(value)));
+    check_hresult(WINRT_SHIM(IMapTileUriRequest)->get_Uri(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapTileUriRequest<D>::Uri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const IMapTileUriRequest &>(static_cast<const D &>(*this))->put_Uri(get(value)));
+    check_hresult(WINRT_SHIM(IMapTileUriRequest)->put_Uri(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapTileUriRequestDeferral impl_IMapTileUriRequest<D>::GetDeferral() const
 {
     Windows::UI::Xaml::Controls::Maps::MapTileUriRequestDeferral returnValue { nullptr };
-    check_hresult(static_cast<const IMapTileUriRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapTileUriRequest)->abi_GetDeferral(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IMapTileUriRequestDeferral<D>::Complete() const
 {
-    check_hresult(static_cast<const IMapTileUriRequestDeferral &>(static_cast<const D &>(*this))->abi_Complete());
+    check_hresult(WINRT_SHIM(IMapTileUriRequestDeferral)->abi_Complete());
 }
 
 template <typename D> int32_t impl_IMapTileUriRequestedEventArgs<D>::X() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMapTileUriRequestedEventArgs &>(static_cast<const D &>(*this))->get_X(&value));
+    check_hresult(WINRT_SHIM(IMapTileUriRequestedEventArgs)->get_X(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IMapTileUriRequestedEventArgs<D>::Y() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMapTileUriRequestedEventArgs &>(static_cast<const D &>(*this))->get_Y(&value));
+    check_hresult(WINRT_SHIM(IMapTileUriRequestedEventArgs)->get_Y(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IMapTileUriRequestedEventArgs<D>::ZoomLevel() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMapTileUriRequestedEventArgs &>(static_cast<const D &>(*this))->get_ZoomLevel(&value));
+    check_hresult(WINRT_SHIM(IMapTileUriRequestedEventArgs)->get_ZoomLevel(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapTileUriRequest impl_IMapTileUriRequestedEventArgs<D>::Request() const
 {
     Windows::UI::Xaml::Controls::Maps::MapTileUriRequest value { nullptr };
-    check_hresult(static_cast<const IMapTileUriRequestedEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IMapTileUriRequestedEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IMapCamera<D>::Location() const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(static_cast<const IMapCamera &>(static_cast<const D &>(*this))->get_Location(put(value)));
+    check_hresult(WINRT_SHIM(IMapCamera)->get_Location(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapCamera<D>::Location(const Windows::Devices::Geolocation::Geopoint & value) const
 {
-    check_hresult(static_cast<const IMapCamera &>(static_cast<const D &>(*this))->put_Location(get(value)));
+    check_hresult(WINRT_SHIM(IMapCamera)->put_Location(get(value)));
 }
 
 template <typename D> double impl_IMapCamera<D>::Heading() const
 {
     double value {};
-    check_hresult(static_cast<const IMapCamera &>(static_cast<const D &>(*this))->get_Heading(&value));
+    check_hresult(WINRT_SHIM(IMapCamera)->get_Heading(&value));
     return value;
 }
 
 template <typename D> void impl_IMapCamera<D>::Heading(double value) const
 {
-    check_hresult(static_cast<const IMapCamera &>(static_cast<const D &>(*this))->put_Heading(value));
+    check_hresult(WINRT_SHIM(IMapCamera)->put_Heading(value));
 }
 
 template <typename D> double impl_IMapCamera<D>::Pitch() const
 {
     double value {};
-    check_hresult(static_cast<const IMapCamera &>(static_cast<const D &>(*this))->get_Pitch(&value));
+    check_hresult(WINRT_SHIM(IMapCamera)->get_Pitch(&value));
     return value;
 }
 
 template <typename D> void impl_IMapCamera<D>::Pitch(double value) const
 {
-    check_hresult(static_cast<const IMapCamera &>(static_cast<const D &>(*this))->put_Pitch(value));
+    check_hresult(WINRT_SHIM(IMapCamera)->put_Pitch(value));
 }
 
 template <typename D> double impl_IMapCamera<D>::Roll() const
 {
     double value {};
-    check_hresult(static_cast<const IMapCamera &>(static_cast<const D &>(*this))->get_Roll(&value));
+    check_hresult(WINRT_SHIM(IMapCamera)->get_Roll(&value));
     return value;
 }
 
 template <typename D> void impl_IMapCamera<D>::Roll(double value) const
 {
-    check_hresult(static_cast<const IMapCamera &>(static_cast<const D &>(*this))->put_Roll(value));
+    check_hresult(WINRT_SHIM(IMapCamera)->put_Roll(value));
 }
 
 template <typename D> double impl_IMapCamera<D>::FieldOfView() const
 {
     double value {};
-    check_hresult(static_cast<const IMapCamera &>(static_cast<const D &>(*this))->get_FieldOfView(&value));
+    check_hresult(WINRT_SHIM(IMapCamera)->get_FieldOfView(&value));
     return value;
 }
 
 template <typename D> void impl_IMapCamera<D>::FieldOfView(double value) const
 {
-    check_hresult(static_cast<const IMapCamera &>(static_cast<const D &>(*this))->put_FieldOfView(value));
+    check_hresult(WINRT_SHIM(IMapCamera)->put_FieldOfView(value));
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapCamera impl_IMapCameraFactory<D>::CreateInstanceWithLocation(const Windows::Devices::Geolocation::Geopoint & location) const
 {
     Windows::UI::Xaml::Controls::Maps::MapCamera instance { nullptr };
-    check_hresult(static_cast<const IMapCameraFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithLocation(get(location), put(instance)));
+    check_hresult(WINRT_SHIM(IMapCameraFactory)->abi_CreateInstanceWithLocation(get(location), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapCamera impl_IMapCameraFactory<D>::CreateInstanceWithLocationAndHeading(const Windows::Devices::Geolocation::Geopoint & location, double headingInDegrees) const
 {
     Windows::UI::Xaml::Controls::Maps::MapCamera instance { nullptr };
-    check_hresult(static_cast<const IMapCameraFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithLocationAndHeading(get(location), headingInDegrees, put(instance)));
+    check_hresult(WINRT_SHIM(IMapCameraFactory)->abi_CreateInstanceWithLocationAndHeading(get(location), headingInDegrees, put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapCamera impl_IMapCameraFactory<D>::CreateInstanceWithLocationHeadingAndPitch(const Windows::Devices::Geolocation::Geopoint & location, double headingInDegrees, double pitchInDegrees) const
 {
     Windows::UI::Xaml::Controls::Maps::MapCamera instance { nullptr };
-    check_hresult(static_cast<const IMapCameraFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithLocationHeadingAndPitch(get(location), headingInDegrees, pitchInDegrees, put(instance)));
+    check_hresult(WINRT_SHIM(IMapCameraFactory)->abi_CreateInstanceWithLocationHeadingAndPitch(get(location), headingInDegrees, pitchInDegrees, put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapCamera impl_IMapCameraFactory<D>::CreateInstanceWithLocationHeadingPitchRollAndFieldOfView(const Windows::Devices::Geolocation::Geopoint & location, double headingInDegrees, double pitchInDegrees, double rollInDegrees, double fieldOfViewInDegrees) const
 {
     Windows::UI::Xaml::Controls::Maps::MapCamera instance { nullptr };
-    check_hresult(static_cast<const IMapCameraFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithLocationHeadingPitchRollAndFieldOfView(get(location), headingInDegrees, pitchInDegrees, rollInDegrees, fieldOfViewInDegrees, put(instance)));
+    check_hresult(WINRT_SHIM(IMapCameraFactory)->abi_CreateInstanceWithLocationHeadingPitchRollAndFieldOfView(get(location), headingInDegrees, pitchInDegrees, rollInDegrees, fieldOfViewInDegrees, put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapCustomExperience impl_IMapCustomExperienceFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::Maps::MapCustomExperience instance { nullptr };
-    check_hresult(static_cast<const IMapCustomExperienceFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(IMapCustomExperienceFactory)->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> int32_t impl_IMapElement<D>::ZIndex() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMapElement &>(static_cast<const D &>(*this))->get_ZIndex(&value));
+    check_hresult(WINRT_SHIM(IMapElement)->get_ZIndex(&value));
     return value;
 }
 
 template <typename D> void impl_IMapElement<D>::ZIndex(int32_t value) const
 {
-    check_hresult(static_cast<const IMapElement &>(static_cast<const D &>(*this))->put_ZIndex(value));
+    check_hresult(WINRT_SHIM(IMapElement)->put_ZIndex(value));
 }
 
 template <typename D> bool impl_IMapElement<D>::Visible() const
 {
     bool value {};
-    check_hresult(static_cast<const IMapElement &>(static_cast<const D &>(*this))->get_Visible(&value));
+    check_hresult(WINRT_SHIM(IMapElement)->get_Visible(&value));
     return value;
 }
 
 template <typename D> void impl_IMapElement<D>::Visible(bool value) const
 {
-    check_hresult(static_cast<const IMapElement &>(static_cast<const D &>(*this))->put_Visible(value));
+    check_hresult(WINRT_SHIM(IMapElement)->put_Visible(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapElementStatics<D>::ZIndexProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapElementStatics &>(static_cast<const D &>(*this))->get_ZIndexProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapElementStatics)->get_ZIndexProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapElementStatics<D>::VisibleProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapElementStatics &>(static_cast<const D &>(*this))->get_VisibleProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapElementStatics)->get_VisibleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapElement impl_IMapElementFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::Maps::MapElement instance { nullptr };
-    check_hresult(static_cast<const IMapElementFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(IMapElementFactory)->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> int32_t impl_IMapElement2<D>::MapTabIndex() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMapElement2 &>(static_cast<const D &>(*this))->get_MapTabIndex(&value));
+    check_hresult(WINRT_SHIM(IMapElement2)->get_MapTabIndex(&value));
     return value;
 }
 
 template <typename D> void impl_IMapElement2<D>::MapTabIndex(int32_t value) const
 {
-    check_hresult(static_cast<const IMapElement2 &>(static_cast<const D &>(*this))->put_MapTabIndex(value));
+    check_hresult(WINRT_SHIM(IMapElement2)->put_MapTabIndex(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapElementStatics2<D>::MapTabIndexProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapElementStatics2 &>(static_cast<const D &>(*this))->get_MapTabIndexProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapElementStatics2)->get_MapTabIndexProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IMapInputEventArgs<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IMapInputEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IMapInputEventArgs)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IMapInputEventArgs<D>::Location() const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(static_cast<const IMapInputEventArgs &>(static_cast<const D &>(*this))->get_Location(put(value)));
+    check_hresult(WINRT_SHIM(IMapInputEventArgs)->get_Location(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IMapItemsControl<D>::ItemsSource() const
 {
     Windows::IInspectable value;
-    check_hresult(static_cast<const IMapItemsControl &>(static_cast<const D &>(*this))->get_ItemsSource(put(value)));
+    check_hresult(WINRT_SHIM(IMapItemsControl)->get_ItemsSource(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapItemsControl<D>::ItemsSource(const Windows::IInspectable & value) const
 {
-    check_hresult(static_cast<const IMapItemsControl &>(static_cast<const D &>(*this))->put_ItemsSource(get(value)));
+    check_hresult(WINRT_SHIM(IMapItemsControl)->put_ItemsSource(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> impl_IMapItemsControl<D>::Items() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> value;
-    check_hresult(static_cast<const IMapItemsControl &>(static_cast<const D &>(*this))->get_Items(put(value)));
+    check_hresult(WINRT_SHIM(IMapItemsControl)->get_Items(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DataTemplate impl_IMapItemsControl<D>::ItemTemplate() const
 {
     Windows::UI::Xaml::DataTemplate value { nullptr };
-    check_hresult(static_cast<const IMapItemsControl &>(static_cast<const D &>(*this))->get_ItemTemplate(put(value)));
+    check_hresult(WINRT_SHIM(IMapItemsControl)->get_ItemTemplate(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapItemsControl<D>::ItemTemplate(const Windows::UI::Xaml::DataTemplate & value) const
 {
-    check_hresult(static_cast<const IMapItemsControl &>(static_cast<const D &>(*this))->put_ItemTemplate(get(value)));
+    check_hresult(WINRT_SHIM(IMapItemsControl)->put_ItemTemplate(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapItemsControlStatics<D>::ItemsSourceProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapItemsControlStatics &>(static_cast<const D &>(*this))->get_ItemsSourceProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapItemsControlStatics)->get_ItemsSourceProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapItemsControlStatics<D>::ItemsProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapItemsControlStatics &>(static_cast<const D &>(*this))->get_ItemsProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapItemsControlStatics)->get_ItemsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapItemsControlStatics<D>::ItemTemplateProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapItemsControlStatics &>(static_cast<const D &>(*this))->get_ItemTemplateProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapItemsControlStatics)->get_ItemTemplateProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IMapRouteView<D>::RouteColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(static_cast<const IMapRouteView &>(static_cast<const D &>(*this))->get_RouteColor(put(value)));
+    check_hresult(WINRT_SHIM(IMapRouteView)->get_RouteColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapRouteView<D>::RouteColor(const Windows::UI::Color & value) const
 {
-    check_hresult(static_cast<const IMapRouteView &>(static_cast<const D &>(*this))->put_RouteColor(get(value)));
+    check_hresult(WINRT_SHIM(IMapRouteView)->put_RouteColor(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_IMapRouteView<D>::OutlineColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(static_cast<const IMapRouteView &>(static_cast<const D &>(*this))->get_OutlineColor(put(value)));
+    check_hresult(WINRT_SHIM(IMapRouteView)->get_OutlineColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapRouteView<D>::OutlineColor(const Windows::UI::Color & value) const
 {
-    check_hresult(static_cast<const IMapRouteView &>(static_cast<const D &>(*this))->put_OutlineColor(get(value)));
+    check_hresult(WINRT_SHIM(IMapRouteView)->put_OutlineColor(get(value)));
 }
 
 template <typename D> Windows::Services::Maps::MapRoute impl_IMapRouteView<D>::Route() const
 {
     Windows::Services::Maps::MapRoute value { nullptr };
-    check_hresult(static_cast<const IMapRouteView &>(static_cast<const D &>(*this))->get_Route(put(value)));
+    check_hresult(WINRT_SHIM(IMapRouteView)->get_Route(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapRouteView impl_IMapRouteViewFactory<D>::CreateInstanceWithMapRoute(const Windows::Services::Maps::MapRoute & route, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::Maps::MapRouteView instance { nullptr };
-    check_hresult(static_cast<const IMapRouteViewFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithMapRoute(get(route), get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(IMapRouteViewFactory)->abi_CreateInstanceWithMapRoute(get(route), get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapCamera impl_IMapScene<D>::TargetCamera() const
 {
     Windows::UI::Xaml::Controls::Maps::MapCamera value { nullptr };
-    check_hresult(static_cast<const IMapScene &>(static_cast<const D &>(*this))->get_TargetCamera(put(value)));
+    check_hresult(WINRT_SHIM(IMapScene)->get_TargetCamera(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IMapScene<D>::TargetCameraChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapScene, Windows::UI::Xaml::Controls::Maps::MapTargetCameraChangedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMapScene &>(static_cast<const D &>(*this))->add_TargetCameraChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMapScene)->add_TargetCameraChanged(get(value), &token));
     return token;
 }
 
@@ -5822,348 +5822,348 @@ template <typename D> event_revoker<IMapScene> impl_IMapScene<D>::TargetCameraCh
 
 template <typename D> void impl_IMapScene<D>::TargetCameraChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMapScene &>(static_cast<const D &>(*this))->remove_TargetCameraChanged(token));
+    check_hresult(WINRT_SHIM(IMapScene)->remove_TargetCameraChanged(token));
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapScene impl_IMapSceneStatics<D>::CreateFromBoundingBox(const Windows::Devices::Geolocation::GeoboundingBox & bounds) const
 {
     Windows::UI::Xaml::Controls::Maps::MapScene returnValue { nullptr };
-    check_hresult(static_cast<const IMapSceneStatics &>(static_cast<const D &>(*this))->abi_CreateFromBoundingBox(get(bounds), put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapSceneStatics)->abi_CreateFromBoundingBox(get(bounds), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapScene impl_IMapSceneStatics<D>::CreateFromBoundingBox(const Windows::Devices::Geolocation::GeoboundingBox & bounds, double headingInDegrees, double pitchInDegrees) const
 {
     Windows::UI::Xaml::Controls::Maps::MapScene returnValue { nullptr };
-    check_hresult(static_cast<const IMapSceneStatics &>(static_cast<const D &>(*this))->abi_CreateFromBoundingBoxWithHeadingAndPitch(get(bounds), headingInDegrees, pitchInDegrees, put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapSceneStatics)->abi_CreateFromBoundingBoxWithHeadingAndPitch(get(bounds), headingInDegrees, pitchInDegrees, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapScene impl_IMapSceneStatics<D>::CreateFromCamera(const Windows::UI::Xaml::Controls::Maps::MapCamera & camera) const
 {
     Windows::UI::Xaml::Controls::Maps::MapScene returnValue { nullptr };
-    check_hresult(static_cast<const IMapSceneStatics &>(static_cast<const D &>(*this))->abi_CreateFromCamera(get(camera), put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapSceneStatics)->abi_CreateFromCamera(get(camera), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapScene impl_IMapSceneStatics<D>::CreateFromLocation(const Windows::Devices::Geolocation::Geopoint & location) const
 {
     Windows::UI::Xaml::Controls::Maps::MapScene returnValue { nullptr };
-    check_hresult(static_cast<const IMapSceneStatics &>(static_cast<const D &>(*this))->abi_CreateFromLocation(get(location), put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapSceneStatics)->abi_CreateFromLocation(get(location), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapScene impl_IMapSceneStatics<D>::CreateFromLocation(const Windows::Devices::Geolocation::Geopoint & location, double headingInDegrees, double pitchInDegrees) const
 {
     Windows::UI::Xaml::Controls::Maps::MapScene returnValue { nullptr };
-    check_hresult(static_cast<const IMapSceneStatics &>(static_cast<const D &>(*this))->abi_CreateFromLocationWithHeadingAndPitch(get(location), headingInDegrees, pitchInDegrees, put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapSceneStatics)->abi_CreateFromLocationWithHeadingAndPitch(get(location), headingInDegrees, pitchInDegrees, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapScene impl_IMapSceneStatics<D>::CreateFromLocationAndRadius(const Windows::Devices::Geolocation::Geopoint & location, double radiusInMeters) const
 {
     Windows::UI::Xaml::Controls::Maps::MapScene returnValue { nullptr };
-    check_hresult(static_cast<const IMapSceneStatics &>(static_cast<const D &>(*this))->abi_CreateFromLocationAndRadius(get(location), radiusInMeters, put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapSceneStatics)->abi_CreateFromLocationAndRadius(get(location), radiusInMeters, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapScene impl_IMapSceneStatics<D>::CreateFromLocationAndRadius(const Windows::Devices::Geolocation::Geopoint & location, double radiusInMeters, double headingInDegrees, double pitchInDegrees) const
 {
     Windows::UI::Xaml::Controls::Maps::MapScene returnValue { nullptr };
-    check_hresult(static_cast<const IMapSceneStatics &>(static_cast<const D &>(*this))->abi_CreateFromLocationAndRadiusWithHeadingAndPitch(get(location), radiusInMeters, headingInDegrees, pitchInDegrees, put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapSceneStatics)->abi_CreateFromLocationAndRadiusWithHeadingAndPitch(get(location), radiusInMeters, headingInDegrees, pitchInDegrees, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapScene impl_IMapSceneStatics<D>::CreateFromLocations(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & locations) const
 {
     Windows::UI::Xaml::Controls::Maps::MapScene returnValue { nullptr };
-    check_hresult(static_cast<const IMapSceneStatics &>(static_cast<const D &>(*this))->abi_CreateFromLocations(get(locations), put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapSceneStatics)->abi_CreateFromLocations(get(locations), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapScene impl_IMapSceneStatics<D>::CreateFromLocations(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & locations, double headingInDegrees, double pitchInDegrees) const
 {
     Windows::UI::Xaml::Controls::Maps::MapScene returnValue { nullptr };
-    check_hresult(static_cast<const IMapSceneStatics &>(static_cast<const D &>(*this))->abi_CreateFromLocationsWithHeadingAndPitch(get(locations), headingInDegrees, pitchInDegrees, put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapSceneStatics)->abi_CreateFromLocationsWithHeadingAndPitch(get(locations), headingInDegrees, pitchInDegrees, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapTileDataSource impl_IMapTileDataSourceFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::Maps::MapTileDataSource instance { nullptr };
-    check_hresult(static_cast<const IMapTileDataSourceFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(IMapTileDataSourceFactory)->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapTileDataSource impl_IMapTileSource<D>::DataSource() const
 {
     Windows::UI::Xaml::Controls::Maps::MapTileDataSource value { nullptr };
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->get_DataSource(put(value)));
+    check_hresult(WINRT_SHIM(IMapTileSource)->get_DataSource(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapTileSource<D>::DataSource(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & value) const
 {
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->put_DataSource(get(value)));
+    check_hresult(WINRT_SHIM(IMapTileSource)->put_DataSource(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapTileLayer impl_IMapTileSource<D>::Layer() const
 {
     Windows::UI::Xaml::Controls::Maps::MapTileLayer value {};
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->get_Layer(&value));
+    check_hresult(WINRT_SHIM(IMapTileSource)->get_Layer(&value));
     return value;
 }
 
 template <typename D> void impl_IMapTileSource<D>::Layer(Windows::UI::Xaml::Controls::Maps::MapTileLayer value) const
 {
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->put_Layer(value));
+    check_hresult(WINRT_SHIM(IMapTileSource)->put_Layer(value));
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange impl_IMapTileSource<D>::ZoomLevelRange() const
 {
     Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange value {};
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->get_ZoomLevelRange(put(value)));
+    check_hresult(WINRT_SHIM(IMapTileSource)->get_ZoomLevelRange(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapTileSource<D>::ZoomLevelRange(const Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange & value) const
 {
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->put_ZoomLevelRange(get(value)));
+    check_hresult(WINRT_SHIM(IMapTileSource)->put_ZoomLevelRange(get(value)));
 }
 
 template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IMapTileSource<D>::Bounds() const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->get_Bounds(put(value)));
+    check_hresult(WINRT_SHIM(IMapTileSource)->get_Bounds(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapTileSource<D>::Bounds(const Windows::Devices::Geolocation::GeoboundingBox & value) const
 {
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->put_Bounds(get(value)));
+    check_hresult(WINRT_SHIM(IMapTileSource)->put_Bounds(get(value)));
 }
 
 template <typename D> bool impl_IMapTileSource<D>::AllowOverstretch() const
 {
     bool value {};
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->get_AllowOverstretch(&value));
+    check_hresult(WINRT_SHIM(IMapTileSource)->get_AllowOverstretch(&value));
     return value;
 }
 
 template <typename D> void impl_IMapTileSource<D>::AllowOverstretch(bool value) const
 {
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->put_AllowOverstretch(value));
+    check_hresult(WINRT_SHIM(IMapTileSource)->put_AllowOverstretch(value));
 }
 
 template <typename D> bool impl_IMapTileSource<D>::IsFadingEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->get_IsFadingEnabled(&value));
+    check_hresult(WINRT_SHIM(IMapTileSource)->get_IsFadingEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IMapTileSource<D>::IsFadingEnabled(bool value) const
 {
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->put_IsFadingEnabled(value));
+    check_hresult(WINRT_SHIM(IMapTileSource)->put_IsFadingEnabled(value));
 }
 
 template <typename D> bool impl_IMapTileSource<D>::IsTransparencyEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->get_IsTransparencyEnabled(&value));
+    check_hresult(WINRT_SHIM(IMapTileSource)->get_IsTransparencyEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IMapTileSource<D>::IsTransparencyEnabled(bool value) const
 {
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->put_IsTransparencyEnabled(value));
+    check_hresult(WINRT_SHIM(IMapTileSource)->put_IsTransparencyEnabled(value));
 }
 
 template <typename D> bool impl_IMapTileSource<D>::IsRetryEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->get_IsRetryEnabled(&value));
+    check_hresult(WINRT_SHIM(IMapTileSource)->get_IsRetryEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IMapTileSource<D>::IsRetryEnabled(bool value) const
 {
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->put_IsRetryEnabled(value));
+    check_hresult(WINRT_SHIM(IMapTileSource)->put_IsRetryEnabled(value));
 }
 
 template <typename D> int32_t impl_IMapTileSource<D>::ZIndex() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->get_ZIndex(&value));
+    check_hresult(WINRT_SHIM(IMapTileSource)->get_ZIndex(&value));
     return value;
 }
 
 template <typename D> void impl_IMapTileSource<D>::ZIndex(int32_t value) const
 {
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->put_ZIndex(value));
+    check_hresult(WINRT_SHIM(IMapTileSource)->put_ZIndex(value));
 }
 
 template <typename D> int32_t impl_IMapTileSource<D>::TilePixelSize() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->get_TilePixelSize(&value));
+    check_hresult(WINRT_SHIM(IMapTileSource)->get_TilePixelSize(&value));
     return value;
 }
 
 template <typename D> void impl_IMapTileSource<D>::TilePixelSize(int32_t value) const
 {
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->put_TilePixelSize(value));
+    check_hresult(WINRT_SHIM(IMapTileSource)->put_TilePixelSize(value));
 }
 
 template <typename D> bool impl_IMapTileSource<D>::Visible() const
 {
     bool value {};
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->get_Visible(&value));
+    check_hresult(WINRT_SHIM(IMapTileSource)->get_Visible(&value));
     return value;
 }
 
 template <typename D> void impl_IMapTileSource<D>::Visible(bool value) const
 {
-    check_hresult(static_cast<const IMapTileSource &>(static_cast<const D &>(*this))->put_Visible(value));
+    check_hresult(WINRT_SHIM(IMapTileSource)->put_Visible(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapTileSourceStatics<D>::DataSourceProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapTileSourceStatics &>(static_cast<const D &>(*this))->get_DataSourceProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapTileSourceStatics)->get_DataSourceProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapTileSourceStatics<D>::LayerProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapTileSourceStatics &>(static_cast<const D &>(*this))->get_LayerProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapTileSourceStatics)->get_LayerProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapTileSourceStatics<D>::ZoomLevelRangeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapTileSourceStatics &>(static_cast<const D &>(*this))->get_ZoomLevelRangeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapTileSourceStatics)->get_ZoomLevelRangeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapTileSourceStatics<D>::BoundsProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapTileSourceStatics &>(static_cast<const D &>(*this))->get_BoundsProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapTileSourceStatics)->get_BoundsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapTileSourceStatics<D>::AllowOverstretchProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapTileSourceStatics &>(static_cast<const D &>(*this))->get_AllowOverstretchProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapTileSourceStatics)->get_AllowOverstretchProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapTileSourceStatics<D>::IsFadingEnabledProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapTileSourceStatics &>(static_cast<const D &>(*this))->get_IsFadingEnabledProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapTileSourceStatics)->get_IsFadingEnabledProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapTileSourceStatics<D>::IsTransparencyEnabledProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapTileSourceStatics &>(static_cast<const D &>(*this))->get_IsTransparencyEnabledProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapTileSourceStatics)->get_IsTransparencyEnabledProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapTileSourceStatics<D>::IsRetryEnabledProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapTileSourceStatics &>(static_cast<const D &>(*this))->get_IsRetryEnabledProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapTileSourceStatics)->get_IsRetryEnabledProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapTileSourceStatics<D>::ZIndexProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapTileSourceStatics &>(static_cast<const D &>(*this))->get_ZIndexProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapTileSourceStatics)->get_ZIndexProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapTileSourceStatics<D>::TilePixelSizeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapTileSourceStatics &>(static_cast<const D &>(*this))->get_TilePixelSizeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapTileSourceStatics)->get_TilePixelSizeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapTileSourceStatics<D>::VisibleProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapTileSourceStatics &>(static_cast<const D &>(*this))->get_VisibleProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapTileSourceStatics)->get_VisibleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapTileSource impl_IMapTileSourceFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::Maps::MapTileSource instance { nullptr };
-    check_hresult(static_cast<const IMapTileSourceFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(IMapTileSourceFactory)->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapTileSource impl_IMapTileSourceFactory<D>::CreateInstanceWithDataSource(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & dataSource, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::Maps::MapTileSource instance { nullptr };
-    check_hresult(static_cast<const IMapTileSourceFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithDataSource(get(dataSource), get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(IMapTileSourceFactory)->abi_CreateInstanceWithDataSource(get(dataSource), get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapTileSource impl_IMapTileSourceFactory<D>::CreateInstanceWithDataSourceAndZoomRange(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & dataSource, const Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange & zoomLevelRange, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::Maps::MapTileSource instance { nullptr };
-    check_hresult(static_cast<const IMapTileSourceFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithDataSourceAndZoomRange(get(dataSource), get(zoomLevelRange), get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(IMapTileSourceFactory)->abi_CreateInstanceWithDataSourceAndZoomRange(get(dataSource), get(zoomLevelRange), get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapTileSource impl_IMapTileSourceFactory<D>::CreateInstanceWithDataSourceZoomRangeAndBounds(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & dataSource, const Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange & zoomLevelRange, const Windows::Devices::Geolocation::GeoboundingBox & bounds, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::Maps::MapTileSource instance { nullptr };
-    check_hresult(static_cast<const IMapTileSourceFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithDataSourceZoomRangeAndBounds(get(dataSource), get(zoomLevelRange), get(bounds), get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(IMapTileSourceFactory)->abi_CreateInstanceWithDataSourceZoomRangeAndBounds(get(dataSource), get(zoomLevelRange), get(bounds), get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapTileSource impl_IMapTileSourceFactory<D>::CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & dataSource, const Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange & zoomLevelRange, const Windows::Devices::Geolocation::GeoboundingBox & bounds, int32_t tileSizeInPixels, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::Maps::MapTileSource instance { nullptr };
-    check_hresult(static_cast<const IMapTileSourceFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize(get(dataSource), get(zoomLevelRange), get(bounds), tileSizeInPixels, get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(IMapTileSourceFactory)->abi_CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize(get(dataSource), get(zoomLevelRange), get(bounds), tileSizeInPixels, get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IStreetsidePanorama<D>::Location() const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(static_cast<const IStreetsidePanorama &>(static_cast<const D &>(*this))->get_Location(put(value)));
+    check_hresult(WINRT_SHIM(IStreetsidePanorama)->get_Location(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Controls::Maps::StreetsidePanorama> impl_IStreetsidePanoramaStatics<D>::FindNearbyAsync(const Windows::Devices::Geolocation::Geopoint & location) const
 {
     Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Controls::Maps::StreetsidePanorama> returnValue;
-    check_hresult(static_cast<const IStreetsidePanoramaStatics &>(static_cast<const D &>(*this))->abi_FindNearbyWithLocationAsync(get(location), put(returnValue)));
+    check_hresult(WINRT_SHIM(IStreetsidePanoramaStatics)->abi_FindNearbyWithLocationAsync(get(location), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Controls::Maps::StreetsidePanorama> impl_IStreetsidePanoramaStatics<D>::FindNearbyAsync(const Windows::Devices::Geolocation::Geopoint & location, double radiusInMeters) const
 {
     Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Controls::Maps::StreetsidePanorama> returnValue;
-    check_hresult(static_cast<const IStreetsidePanoramaStatics &>(static_cast<const D &>(*this))->abi_FindNearbyWithLocationAndRadiusAsync(get(location), radiusInMeters, put(returnValue)));
+    check_hresult(WINRT_SHIM(IStreetsidePanoramaStatics)->abi_FindNearbyWithLocationAndRadiusAsync(get(location), radiusInMeters, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> event_token impl_ICustomMapTileDataSource<D>::BitmapRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::CustomMapTileDataSource, Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequestedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const ICustomMapTileDataSource &>(static_cast<const D &>(*this))->add_BitmapRequested(get(value), &token));
+    check_hresult(WINRT_SHIM(ICustomMapTileDataSource)->add_BitmapRequested(get(value), &token));
     return token;
 }
 
@@ -6174,51 +6174,51 @@ template <typename D> event_revoker<ICustomMapTileDataSource> impl_ICustomMapTil
 
 template <typename D> void impl_ICustomMapTileDataSource<D>::BitmapRequested(event_token token) const
 {
-    check_hresult(static_cast<const ICustomMapTileDataSource &>(static_cast<const D &>(*this))->remove_BitmapRequested(token));
+    check_hresult(WINRT_SHIM(ICustomMapTileDataSource)->remove_BitmapRequested(token));
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::CustomMapTileDataSource impl_ICustomMapTileDataSourceFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::Maps::CustomMapTileDataSource instance { nullptr };
-    check_hresult(static_cast<const ICustomMapTileDataSourceFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(ICustomMapTileDataSourceFactory)->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> hstring impl_IHttpMapTileDataSource<D>::UriFormatString() const
 {
     hstring value;
-    check_hresult(static_cast<const IHttpMapTileDataSource &>(static_cast<const D &>(*this))->get_UriFormatString(put(value)));
+    check_hresult(WINRT_SHIM(IHttpMapTileDataSource)->get_UriFormatString(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpMapTileDataSource<D>::UriFormatString(hstring_ref value) const
 {
-    check_hresult(static_cast<const IHttpMapTileDataSource &>(static_cast<const D &>(*this))->put_UriFormatString(get(value)));
+    check_hresult(WINRT_SHIM(IHttpMapTileDataSource)->put_UriFormatString(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_IHttpMapTileDataSource<D>::AdditionalRequestHeaders() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> value;
-    check_hresult(static_cast<const IHttpMapTileDataSource &>(static_cast<const D &>(*this))->get_AdditionalRequestHeaders(put(value)));
+    check_hresult(WINRT_SHIM(IHttpMapTileDataSource)->get_AdditionalRequestHeaders(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IHttpMapTileDataSource<D>::AllowCaching() const
 {
     bool value {};
-    check_hresult(static_cast<const IHttpMapTileDataSource &>(static_cast<const D &>(*this))->get_AllowCaching(&value));
+    check_hresult(WINRT_SHIM(IHttpMapTileDataSource)->get_AllowCaching(&value));
     return value;
 }
 
 template <typename D> void impl_IHttpMapTileDataSource<D>::AllowCaching(bool value) const
 {
-    check_hresult(static_cast<const IHttpMapTileDataSource &>(static_cast<const D &>(*this))->put_AllowCaching(value));
+    check_hresult(WINRT_SHIM(IHttpMapTileDataSource)->put_AllowCaching(value));
 }
 
 template <typename D> event_token impl_IHttpMapTileDataSource<D>::UriRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource, Windows::UI::Xaml::Controls::Maps::MapTileUriRequestedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IHttpMapTileDataSource &>(static_cast<const D &>(*this))->add_UriRequested(get(value), &token));
+    check_hresult(WINRT_SHIM(IHttpMapTileDataSource)->add_UriRequested(get(value), &token));
     return token;
 }
 
@@ -6229,39 +6229,39 @@ template <typename D> event_revoker<IHttpMapTileDataSource> impl_IHttpMapTileDat
 
 template <typename D> void impl_IHttpMapTileDataSource<D>::UriRequested(event_token token) const
 {
-    check_hresult(static_cast<const IHttpMapTileDataSource &>(static_cast<const D &>(*this))->remove_UriRequested(token));
+    check_hresult(WINRT_SHIM(IHttpMapTileDataSource)->remove_UriRequested(token));
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource impl_IHttpMapTileDataSourceFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource instance { nullptr };
-    check_hresult(static_cast<const IHttpMapTileDataSourceFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(IHttpMapTileDataSourceFactory)->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource impl_IHttpMapTileDataSourceFactory<D>::CreateInstanceWithUriFormatString(hstring_ref uriFormatString, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource instance { nullptr };
-    check_hresult(static_cast<const IHttpMapTileDataSourceFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithUriFormatString(get(uriFormatString), get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(IHttpMapTileDataSourceFactory)->abi_CreateInstanceWithUriFormatString(get(uriFormatString), get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> hstring impl_ILocalMapTileDataSource<D>::UriFormatString() const
 {
     hstring value;
-    check_hresult(static_cast<const ILocalMapTileDataSource &>(static_cast<const D &>(*this))->get_UriFormatString(put(value)));
+    check_hresult(WINRT_SHIM(ILocalMapTileDataSource)->get_UriFormatString(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILocalMapTileDataSource<D>::UriFormatString(hstring_ref value) const
 {
-    check_hresult(static_cast<const ILocalMapTileDataSource &>(static_cast<const D &>(*this))->put_UriFormatString(get(value)));
+    check_hresult(WINRT_SHIM(ILocalMapTileDataSource)->put_UriFormatString(get(value)));
 }
 
 template <typename D> event_token impl_ILocalMapTileDataSource<D>::UriRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource, Windows::UI::Xaml::Controls::Maps::MapTileUriRequestedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const ILocalMapTileDataSource &>(static_cast<const D &>(*this))->add_UriRequested(get(value), &token));
+    check_hresult(WINRT_SHIM(ILocalMapTileDataSource)->add_UriRequested(get(value), &token));
     return token;
 }
 
@@ -6272,551 +6272,551 @@ template <typename D> event_revoker<ILocalMapTileDataSource> impl_ILocalMapTileD
 
 template <typename D> void impl_ILocalMapTileDataSource<D>::UriRequested(event_token token) const
 {
-    check_hresult(static_cast<const ILocalMapTileDataSource &>(static_cast<const D &>(*this))->remove_UriRequested(token));
+    check_hresult(WINRT_SHIM(ILocalMapTileDataSource)->remove_UriRequested(token));
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource impl_ILocalMapTileDataSourceFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource instance { nullptr };
-    check_hresult(static_cast<const ILocalMapTileDataSourceFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(ILocalMapTileDataSourceFactory)->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource impl_ILocalMapTileDataSourceFactory<D>::CreateInstanceWithUriFormatString(hstring_ref uriFormatString, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource instance { nullptr };
-    check_hresult(static_cast<const ILocalMapTileDataSourceFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithUriFormatString(get(uriFormatString), get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(ILocalMapTileDataSourceFactory)->abi_CreateInstanceWithUriFormatString(get(uriFormatString), get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IMapIcon<D>::Location() const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(static_cast<const IMapIcon &>(static_cast<const D &>(*this))->get_Location(put(value)));
+    check_hresult(WINRT_SHIM(IMapIcon)->get_Location(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapIcon<D>::Location(const Windows::Devices::Geolocation::Geopoint & value) const
 {
-    check_hresult(static_cast<const IMapIcon &>(static_cast<const D &>(*this))->put_Location(get(value)));
+    check_hresult(WINRT_SHIM(IMapIcon)->put_Location(get(value)));
 }
 
 template <typename D> hstring impl_IMapIcon<D>::Title() const
 {
     hstring value;
-    check_hresult(static_cast<const IMapIcon &>(static_cast<const D &>(*this))->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(IMapIcon)->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapIcon<D>::Title(hstring_ref value) const
 {
-    check_hresult(static_cast<const IMapIcon &>(static_cast<const D &>(*this))->put_Title(get(value)));
+    check_hresult(WINRT_SHIM(IMapIcon)->put_Title(get(value)));
 }
 
 template <typename D> Windows::Foundation::Point impl_IMapIcon<D>::NormalizedAnchorPoint() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IMapIcon &>(static_cast<const D &>(*this))->get_NormalizedAnchorPoint(put(value)));
+    check_hresult(WINRT_SHIM(IMapIcon)->get_NormalizedAnchorPoint(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapIcon<D>::NormalizedAnchorPoint(const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const IMapIcon &>(static_cast<const D &>(*this))->put_NormalizedAnchorPoint(get(value)));
+    check_hresult(WINRT_SHIM(IMapIcon)->put_NormalizedAnchorPoint(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IMapIcon<D>::Image() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(static_cast<const IMapIcon &>(static_cast<const D &>(*this))->get_Image(put(value)));
+    check_hresult(WINRT_SHIM(IMapIcon)->get_Image(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapIcon<D>::Image(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const
 {
-    check_hresult(static_cast<const IMapIcon &>(static_cast<const D &>(*this))->put_Image(get(value)));
+    check_hresult(WINRT_SHIM(IMapIcon)->put_Image(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapIconStatics<D>::LocationProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapIconStatics &>(static_cast<const D &>(*this))->get_LocationProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapIconStatics)->get_LocationProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapIconStatics<D>::TitleProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapIconStatics &>(static_cast<const D &>(*this))->get_TitleProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapIconStatics)->get_TitleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapIconStatics<D>::NormalizedAnchorPointProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapIconStatics &>(static_cast<const D &>(*this))->get_NormalizedAnchorPointProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapIconStatics)->get_NormalizedAnchorPointProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapElementCollisionBehavior impl_IMapIcon2<D>::CollisionBehaviorDesired() const
 {
     Windows::UI::Xaml::Controls::Maps::MapElementCollisionBehavior value {};
-    check_hresult(static_cast<const IMapIcon2 &>(static_cast<const D &>(*this))->get_CollisionBehaviorDesired(&value));
+    check_hresult(WINRT_SHIM(IMapIcon2)->get_CollisionBehaviorDesired(&value));
     return value;
 }
 
 template <typename D> void impl_IMapIcon2<D>::CollisionBehaviorDesired(Windows::UI::Xaml::Controls::Maps::MapElementCollisionBehavior value) const
 {
-    check_hresult(static_cast<const IMapIcon2 &>(static_cast<const D &>(*this))->put_CollisionBehaviorDesired(value));
+    check_hresult(WINRT_SHIM(IMapIcon2)->put_CollisionBehaviorDesired(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapIconStatics2<D>::CollisionBehaviorDesiredProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapIconStatics2 &>(static_cast<const D &>(*this))->get_CollisionBehaviorDesiredProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapIconStatics2)->get_CollisionBehaviorDesiredProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopath impl_IMapPolygon<D>::Path() const
 {
     Windows::Devices::Geolocation::Geopath value { nullptr };
-    check_hresult(static_cast<const IMapPolygon &>(static_cast<const D &>(*this))->get_Path(put(value)));
+    check_hresult(WINRT_SHIM(IMapPolygon)->get_Path(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapPolygon<D>::Path(const Windows::Devices::Geolocation::Geopath & value) const
 {
-    check_hresult(static_cast<const IMapPolygon &>(static_cast<const D &>(*this))->put_Path(get(value)));
+    check_hresult(WINRT_SHIM(IMapPolygon)->put_Path(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_IMapPolygon<D>::StrokeColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(static_cast<const IMapPolygon &>(static_cast<const D &>(*this))->get_StrokeColor(put(value)));
+    check_hresult(WINRT_SHIM(IMapPolygon)->get_StrokeColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapPolygon<D>::StrokeColor(const Windows::UI::Color & value) const
 {
-    check_hresult(static_cast<const IMapPolygon &>(static_cast<const D &>(*this))->put_StrokeColor(get(value)));
+    check_hresult(WINRT_SHIM(IMapPolygon)->put_StrokeColor(get(value)));
 }
 
 template <typename D> double impl_IMapPolygon<D>::StrokeThickness() const
 {
     double value {};
-    check_hresult(static_cast<const IMapPolygon &>(static_cast<const D &>(*this))->get_StrokeThickness(&value));
+    check_hresult(WINRT_SHIM(IMapPolygon)->get_StrokeThickness(&value));
     return value;
 }
 
 template <typename D> void impl_IMapPolygon<D>::StrokeThickness(double value) const
 {
-    check_hresult(static_cast<const IMapPolygon &>(static_cast<const D &>(*this))->put_StrokeThickness(value));
+    check_hresult(WINRT_SHIM(IMapPolygon)->put_StrokeThickness(value));
 }
 
 template <typename D> bool impl_IMapPolygon<D>::StrokeDashed() const
 {
     bool value {};
-    check_hresult(static_cast<const IMapPolygon &>(static_cast<const D &>(*this))->get_StrokeDashed(&value));
+    check_hresult(WINRT_SHIM(IMapPolygon)->get_StrokeDashed(&value));
     return value;
 }
 
 template <typename D> void impl_IMapPolygon<D>::StrokeDashed(bool value) const
 {
-    check_hresult(static_cast<const IMapPolygon &>(static_cast<const D &>(*this))->put_StrokeDashed(value));
+    check_hresult(WINRT_SHIM(IMapPolygon)->put_StrokeDashed(value));
 }
 
 template <typename D> Windows::UI::Color impl_IMapPolygon<D>::FillColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(static_cast<const IMapPolygon &>(static_cast<const D &>(*this))->get_FillColor(put(value)));
+    check_hresult(WINRT_SHIM(IMapPolygon)->get_FillColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapPolygon<D>::FillColor(const Windows::UI::Color & value) const
 {
-    check_hresult(static_cast<const IMapPolygon &>(static_cast<const D &>(*this))->put_FillColor(get(value)));
+    check_hresult(WINRT_SHIM(IMapPolygon)->put_FillColor(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapPolygonStatics<D>::PathProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapPolygonStatics &>(static_cast<const D &>(*this))->get_PathProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapPolygonStatics)->get_PathProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapPolygonStatics<D>::StrokeThicknessProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapPolygonStatics &>(static_cast<const D &>(*this))->get_StrokeThicknessProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapPolygonStatics)->get_StrokeThicknessProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapPolygonStatics<D>::StrokeDashedProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapPolygonStatics &>(static_cast<const D &>(*this))->get_StrokeDashedProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapPolygonStatics)->get_StrokeDashedProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Devices::Geolocation::Geopath> impl_IMapPolygon2<D>::Paths() const
 {
     Windows::Foundation::Collections::IVector<Windows::Devices::Geolocation::Geopath> value;
-    check_hresult(static_cast<const IMapPolygon2 &>(static_cast<const D &>(*this))->get_Paths(put(value)));
+    check_hresult(WINRT_SHIM(IMapPolygon2)->get_Paths(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopath impl_IMapPolyline<D>::Path() const
 {
     Windows::Devices::Geolocation::Geopath value { nullptr };
-    check_hresult(static_cast<const IMapPolyline &>(static_cast<const D &>(*this))->get_Path(put(value)));
+    check_hresult(WINRT_SHIM(IMapPolyline)->get_Path(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapPolyline<D>::Path(const Windows::Devices::Geolocation::Geopath & value) const
 {
-    check_hresult(static_cast<const IMapPolyline &>(static_cast<const D &>(*this))->put_Path(get(value)));
+    check_hresult(WINRT_SHIM(IMapPolyline)->put_Path(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_IMapPolyline<D>::StrokeColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(static_cast<const IMapPolyline &>(static_cast<const D &>(*this))->get_StrokeColor(put(value)));
+    check_hresult(WINRT_SHIM(IMapPolyline)->get_StrokeColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapPolyline<D>::StrokeColor(const Windows::UI::Color & value) const
 {
-    check_hresult(static_cast<const IMapPolyline &>(static_cast<const D &>(*this))->put_StrokeColor(get(value)));
+    check_hresult(WINRT_SHIM(IMapPolyline)->put_StrokeColor(get(value)));
 }
 
 template <typename D> double impl_IMapPolyline<D>::StrokeThickness() const
 {
     double value {};
-    check_hresult(static_cast<const IMapPolyline &>(static_cast<const D &>(*this))->get_StrokeThickness(&value));
+    check_hresult(WINRT_SHIM(IMapPolyline)->get_StrokeThickness(&value));
     return value;
 }
 
 template <typename D> void impl_IMapPolyline<D>::StrokeThickness(double value) const
 {
-    check_hresult(static_cast<const IMapPolyline &>(static_cast<const D &>(*this))->put_StrokeThickness(value));
+    check_hresult(WINRT_SHIM(IMapPolyline)->put_StrokeThickness(value));
 }
 
 template <typename D> bool impl_IMapPolyline<D>::StrokeDashed() const
 {
     bool value {};
-    check_hresult(static_cast<const IMapPolyline &>(static_cast<const D &>(*this))->get_StrokeDashed(&value));
+    check_hresult(WINRT_SHIM(IMapPolyline)->get_StrokeDashed(&value));
     return value;
 }
 
 template <typename D> void impl_IMapPolyline<D>::StrokeDashed(bool value) const
 {
-    check_hresult(static_cast<const IMapPolyline &>(static_cast<const D &>(*this))->put_StrokeDashed(value));
+    check_hresult(WINRT_SHIM(IMapPolyline)->put_StrokeDashed(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapPolylineStatics<D>::PathProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapPolylineStatics &>(static_cast<const D &>(*this))->get_PathProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapPolylineStatics)->get_PathProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapPolylineStatics<D>::StrokeDashedProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapPolylineStatics &>(static_cast<const D &>(*this))->get_StrokeDashedProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapPolylineStatics)->get_StrokeDashedProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IStreetsideExperience<D>::AddressTextVisible() const
 {
     bool value {};
-    check_hresult(static_cast<const IStreetsideExperience &>(static_cast<const D &>(*this))->get_AddressTextVisible(&value));
+    check_hresult(WINRT_SHIM(IStreetsideExperience)->get_AddressTextVisible(&value));
     return value;
 }
 
 template <typename D> void impl_IStreetsideExperience<D>::AddressTextVisible(bool value) const
 {
-    check_hresult(static_cast<const IStreetsideExperience &>(static_cast<const D &>(*this))->put_AddressTextVisible(value));
+    check_hresult(WINRT_SHIM(IStreetsideExperience)->put_AddressTextVisible(value));
 }
 
 template <typename D> bool impl_IStreetsideExperience<D>::CursorVisible() const
 {
     bool value {};
-    check_hresult(static_cast<const IStreetsideExperience &>(static_cast<const D &>(*this))->get_CursorVisible(&value));
+    check_hresult(WINRT_SHIM(IStreetsideExperience)->get_CursorVisible(&value));
     return value;
 }
 
 template <typename D> void impl_IStreetsideExperience<D>::CursorVisible(bool value) const
 {
-    check_hresult(static_cast<const IStreetsideExperience &>(static_cast<const D &>(*this))->put_CursorVisible(value));
+    check_hresult(WINRT_SHIM(IStreetsideExperience)->put_CursorVisible(value));
 }
 
 template <typename D> bool impl_IStreetsideExperience<D>::OverviewMapVisible() const
 {
     bool value {};
-    check_hresult(static_cast<const IStreetsideExperience &>(static_cast<const D &>(*this))->get_OverviewMapVisible(&value));
+    check_hresult(WINRT_SHIM(IStreetsideExperience)->get_OverviewMapVisible(&value));
     return value;
 }
 
 template <typename D> void impl_IStreetsideExperience<D>::OverviewMapVisible(bool value) const
 {
-    check_hresult(static_cast<const IStreetsideExperience &>(static_cast<const D &>(*this))->put_OverviewMapVisible(value));
+    check_hresult(WINRT_SHIM(IStreetsideExperience)->put_OverviewMapVisible(value));
 }
 
 template <typename D> bool impl_IStreetsideExperience<D>::StreetLabelsVisible() const
 {
     bool value {};
-    check_hresult(static_cast<const IStreetsideExperience &>(static_cast<const D &>(*this))->get_StreetLabelsVisible(&value));
+    check_hresult(WINRT_SHIM(IStreetsideExperience)->get_StreetLabelsVisible(&value));
     return value;
 }
 
 template <typename D> void impl_IStreetsideExperience<D>::StreetLabelsVisible(bool value) const
 {
-    check_hresult(static_cast<const IStreetsideExperience &>(static_cast<const D &>(*this))->put_StreetLabelsVisible(value));
+    check_hresult(WINRT_SHIM(IStreetsideExperience)->put_StreetLabelsVisible(value));
 }
 
 template <typename D> bool impl_IStreetsideExperience<D>::ExitButtonVisible() const
 {
     bool value {};
-    check_hresult(static_cast<const IStreetsideExperience &>(static_cast<const D &>(*this))->get_ExitButtonVisible(&value));
+    check_hresult(WINRT_SHIM(IStreetsideExperience)->get_ExitButtonVisible(&value));
     return value;
 }
 
 template <typename D> void impl_IStreetsideExperience<D>::ExitButtonVisible(bool value) const
 {
-    check_hresult(static_cast<const IStreetsideExperience &>(static_cast<const D &>(*this))->put_ExitButtonVisible(value));
+    check_hresult(WINRT_SHIM(IStreetsideExperience)->put_ExitButtonVisible(value));
 }
 
 template <typename D> bool impl_IStreetsideExperience<D>::ZoomButtonsVisible() const
 {
     bool value {};
-    check_hresult(static_cast<const IStreetsideExperience &>(static_cast<const D &>(*this))->get_ZoomButtonsVisible(&value));
+    check_hresult(WINRT_SHIM(IStreetsideExperience)->get_ZoomButtonsVisible(&value));
     return value;
 }
 
 template <typename D> void impl_IStreetsideExperience<D>::ZoomButtonsVisible(bool value) const
 {
-    check_hresult(static_cast<const IStreetsideExperience &>(static_cast<const D &>(*this))->put_ZoomButtonsVisible(value));
+    check_hresult(WINRT_SHIM(IStreetsideExperience)->put_ZoomButtonsVisible(value));
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::StreetsideExperience impl_IStreetsideExperienceFactory<D>::CreateInstanceWithPanorama(const Windows::UI::Xaml::Controls::Maps::StreetsidePanorama & panorama) const
 {
     Windows::UI::Xaml::Controls::Maps::StreetsideExperience instance { nullptr };
-    check_hresult(static_cast<const IStreetsideExperienceFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithPanorama(get(panorama), put(instance)));
+    check_hresult(WINRT_SHIM(IStreetsideExperienceFactory)->abi_CreateInstanceWithPanorama(get(panorama), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::StreetsideExperience impl_IStreetsideExperienceFactory<D>::CreateInstanceWithPanoramaHeadingPitchAndFieldOfView(const Windows::UI::Xaml::Controls::Maps::StreetsidePanorama & panorama, double headingInDegrees, double pitchInDegrees, double fieldOfViewInDegrees) const
 {
     Windows::UI::Xaml::Controls::Maps::StreetsideExperience instance { nullptr };
-    check_hresult(static_cast<const IStreetsideExperienceFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithPanoramaHeadingPitchAndFieldOfView(get(panorama), headingInDegrees, pitchInDegrees, fieldOfViewInDegrees, put(instance)));
+    check_hresult(WINRT_SHIM(IStreetsideExperienceFactory)->abi_CreateInstanceWithPanoramaHeadingPitchAndFieldOfView(get(panorama), headingInDegrees, pitchInDegrees, fieldOfViewInDegrees, put(instance)));
     return instance;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IMapControl<D>::Center() const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_Center(put(value)));
+    check_hresult(WINRT_SHIM(IMapControl)->get_Center(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapControl<D>::Center(const Windows::Devices::Geolocation::Geopoint & value) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->put_Center(get(value)));
+    check_hresult(WINRT_SHIM(IMapControl)->put_Center(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> impl_IMapControl<D>::Children() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> value;
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_Children(put(value)));
+    check_hresult(WINRT_SHIM(IMapControl)->get_Children(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapColorScheme impl_IMapControl<D>::ColorScheme() const
 {
     Windows::UI::Xaml::Controls::Maps::MapColorScheme value {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_ColorScheme(&value));
+    check_hresult(WINRT_SHIM(IMapControl)->get_ColorScheme(&value));
     return value;
 }
 
 template <typename D> void impl_IMapControl<D>::ColorScheme(Windows::UI::Xaml::Controls::Maps::MapColorScheme value) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->put_ColorScheme(value));
+    check_hresult(WINRT_SHIM(IMapControl)->put_ColorScheme(value));
 }
 
 template <typename D> double impl_IMapControl<D>::DesiredPitch() const
 {
     double value {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_DesiredPitch(&value));
+    check_hresult(WINRT_SHIM(IMapControl)->get_DesiredPitch(&value));
     return value;
 }
 
 template <typename D> void impl_IMapControl<D>::DesiredPitch(double value) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->put_DesiredPitch(value));
+    check_hresult(WINRT_SHIM(IMapControl)->put_DesiredPitch(value));
 }
 
 template <typename D> double impl_IMapControl<D>::Heading() const
 {
     double value {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_Heading(&value));
+    check_hresult(WINRT_SHIM(IMapControl)->get_Heading(&value));
     return value;
 }
 
 template <typename D> void impl_IMapControl<D>::Heading(double value) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->put_Heading(value));
+    check_hresult(WINRT_SHIM(IMapControl)->put_Heading(value));
 }
 
 template <typename D> bool impl_IMapControl<D>::LandmarksVisible() const
 {
     bool value {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_LandmarksVisible(&value));
+    check_hresult(WINRT_SHIM(IMapControl)->get_LandmarksVisible(&value));
     return value;
 }
 
 template <typename D> void impl_IMapControl<D>::LandmarksVisible(bool value) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->put_LandmarksVisible(value));
+    check_hresult(WINRT_SHIM(IMapControl)->put_LandmarksVisible(value));
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapLoadingStatus impl_IMapControl<D>::LoadingStatus() const
 {
     Windows::UI::Xaml::Controls::Maps::MapLoadingStatus value {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_LoadingStatus(&value));
+    check_hresult(WINRT_SHIM(IMapControl)->get_LoadingStatus(&value));
     return value;
 }
 
 template <typename D> hstring impl_IMapControl<D>::MapServiceToken() const
 {
     hstring value;
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_MapServiceToken(put(value)));
+    check_hresult(WINRT_SHIM(IMapControl)->get_MapServiceToken(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapControl<D>::MapServiceToken(hstring_ref value) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->put_MapServiceToken(get(value)));
+    check_hresult(WINRT_SHIM(IMapControl)->put_MapServiceToken(get(value)));
 }
 
 template <typename D> double impl_IMapControl<D>::MaxZoomLevel() const
 {
     double value {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_MaxZoomLevel(&value));
+    check_hresult(WINRT_SHIM(IMapControl)->get_MaxZoomLevel(&value));
     return value;
 }
 
 template <typename D> double impl_IMapControl<D>::MinZoomLevel() const
 {
     double value {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_MinZoomLevel(&value));
+    check_hresult(WINRT_SHIM(IMapControl)->get_MinZoomLevel(&value));
     return value;
 }
 
 template <typename D> bool impl_IMapControl<D>::PedestrianFeaturesVisible() const
 {
     bool value {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_PedestrianFeaturesVisible(&value));
+    check_hresult(WINRT_SHIM(IMapControl)->get_PedestrianFeaturesVisible(&value));
     return value;
 }
 
 template <typename D> void impl_IMapControl<D>::PedestrianFeaturesVisible(bool value) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->put_PedestrianFeaturesVisible(value));
+    check_hresult(WINRT_SHIM(IMapControl)->put_PedestrianFeaturesVisible(value));
 }
 
 template <typename D> double impl_IMapControl<D>::Pitch() const
 {
     double value {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_Pitch(&value));
+    check_hresult(WINRT_SHIM(IMapControl)->get_Pitch(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapStyle impl_IMapControl<D>::Style() const
 {
     Windows::UI::Xaml::Controls::Maps::MapStyle value {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_Style(&value));
+    check_hresult(WINRT_SHIM(IMapControl)->get_Style(&value));
     return value;
 }
 
 template <typename D> void impl_IMapControl<D>::Style(Windows::UI::Xaml::Controls::Maps::MapStyle value) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->put_Style(value));
+    check_hresult(WINRT_SHIM(IMapControl)->put_Style(value));
 }
 
 template <typename D> bool impl_IMapControl<D>::TrafficFlowVisible() const
 {
     bool value {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_TrafficFlowVisible(&value));
+    check_hresult(WINRT_SHIM(IMapControl)->get_TrafficFlowVisible(&value));
     return value;
 }
 
 template <typename D> void impl_IMapControl<D>::TrafficFlowVisible(bool value) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->put_TrafficFlowVisible(value));
+    check_hresult(WINRT_SHIM(IMapControl)->put_TrafficFlowVisible(value));
 }
 
 template <typename D> Windows::Foundation::Point impl_IMapControl<D>::TransformOrigin() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_TransformOrigin(put(value)));
+    check_hresult(WINRT_SHIM(IMapControl)->get_TransformOrigin(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapControl<D>::TransformOrigin(const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->put_TransformOrigin(get(value)));
+    check_hresult(WINRT_SHIM(IMapControl)->put_TransformOrigin(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapWatermarkMode impl_IMapControl<D>::WatermarkMode() const
 {
     Windows::UI::Xaml::Controls::Maps::MapWatermarkMode value {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_WatermarkMode(&value));
+    check_hresult(WINRT_SHIM(IMapControl)->get_WatermarkMode(&value));
     return value;
 }
 
 template <typename D> void impl_IMapControl<D>::WatermarkMode(Windows::UI::Xaml::Controls::Maps::MapWatermarkMode value) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->put_WatermarkMode(value));
+    check_hresult(WINRT_SHIM(IMapControl)->put_WatermarkMode(value));
 }
 
 template <typename D> double impl_IMapControl<D>::ZoomLevel() const
 {
     double value {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_ZoomLevel(&value));
+    check_hresult(WINRT_SHIM(IMapControl)->get_ZoomLevel(&value));
     return value;
 }
 
 template <typename D> void impl_IMapControl<D>::ZoomLevel(double value) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->put_ZoomLevel(value));
+    check_hresult(WINRT_SHIM(IMapControl)->put_ZoomLevel(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::Maps::MapElement> impl_IMapControl<D>::MapElements() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::Maps::MapElement> value;
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_MapElements(put(value)));
+    check_hresult(WINRT_SHIM(IMapControl)->get_MapElements(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::Maps::MapRouteView> impl_IMapControl<D>::Routes() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::Maps::MapRouteView> value;
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_Routes(put(value)));
+    check_hresult(WINRT_SHIM(IMapControl)->get_Routes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::Maps::MapTileSource> impl_IMapControl<D>::TileSources() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::Maps::MapTileSource> value;
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->get_TileSources(put(value)));
+    check_hresult(WINRT_SHIM(IMapControl)->get_TileSources(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IMapControl<D>::CenterChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->add_CenterChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMapControl)->add_CenterChanged(get(value), &token));
     return token;
 }
 
@@ -6827,13 +6827,13 @@ template <typename D> event_revoker<IMapControl> impl_IMapControl<D>::CenterChan
 
 template <typename D> void impl_IMapControl<D>::CenterChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->remove_CenterChanged(token));
+    check_hresult(WINRT_SHIM(IMapControl)->remove_CenterChanged(token));
 }
 
 template <typename D> event_token impl_IMapControl<D>::HeadingChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->add_HeadingChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMapControl)->add_HeadingChanged(get(value), &token));
     return token;
 }
 
@@ -6844,13 +6844,13 @@ template <typename D> event_revoker<IMapControl> impl_IMapControl<D>::HeadingCha
 
 template <typename D> void impl_IMapControl<D>::HeadingChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->remove_HeadingChanged(token));
+    check_hresult(WINRT_SHIM(IMapControl)->remove_HeadingChanged(token));
 }
 
 template <typename D> event_token impl_IMapControl<D>::LoadingStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->add_LoadingStatusChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMapControl)->add_LoadingStatusChanged(get(value), &token));
     return token;
 }
 
@@ -6861,13 +6861,13 @@ template <typename D> event_revoker<IMapControl> impl_IMapControl<D>::LoadingSta
 
 template <typename D> void impl_IMapControl<D>::LoadingStatusChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->remove_LoadingStatusChanged(token));
+    check_hresult(WINRT_SHIM(IMapControl)->remove_LoadingStatusChanged(token));
 }
 
 template <typename D> event_token impl_IMapControl<D>::MapDoubleTapped(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapInputEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->add_MapDoubleTapped(get(value), &token));
+    check_hresult(WINRT_SHIM(IMapControl)->add_MapDoubleTapped(get(value), &token));
     return token;
 }
 
@@ -6878,13 +6878,13 @@ template <typename D> event_revoker<IMapControl> impl_IMapControl<D>::MapDoubleT
 
 template <typename D> void impl_IMapControl<D>::MapDoubleTapped(event_token token) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->remove_MapDoubleTapped(token));
+    check_hresult(WINRT_SHIM(IMapControl)->remove_MapDoubleTapped(token));
 }
 
 template <typename D> event_token impl_IMapControl<D>::MapHolding(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapInputEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->add_MapHolding(get(value), &token));
+    check_hresult(WINRT_SHIM(IMapControl)->add_MapHolding(get(value), &token));
     return token;
 }
 
@@ -6895,13 +6895,13 @@ template <typename D> event_revoker<IMapControl> impl_IMapControl<D>::MapHolding
 
 template <typename D> void impl_IMapControl<D>::MapHolding(event_token token) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->remove_MapHolding(token));
+    check_hresult(WINRT_SHIM(IMapControl)->remove_MapHolding(token));
 }
 
 template <typename D> event_token impl_IMapControl<D>::MapTapped(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapInputEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->add_MapTapped(get(value), &token));
+    check_hresult(WINRT_SHIM(IMapControl)->add_MapTapped(get(value), &token));
     return token;
 }
 
@@ -6912,13 +6912,13 @@ template <typename D> event_revoker<IMapControl> impl_IMapControl<D>::MapTapped(
 
 template <typename D> void impl_IMapControl<D>::MapTapped(event_token token) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->remove_MapTapped(token));
+    check_hresult(WINRT_SHIM(IMapControl)->remove_MapTapped(token));
 }
 
 template <typename D> event_token impl_IMapControl<D>::PitchChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->add_PitchChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMapControl)->add_PitchChanged(get(value), &token));
     return token;
 }
 
@@ -6929,13 +6929,13 @@ template <typename D> event_revoker<IMapControl> impl_IMapControl<D>::PitchChang
 
 template <typename D> void impl_IMapControl<D>::PitchChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->remove_PitchChanged(token));
+    check_hresult(WINRT_SHIM(IMapControl)->remove_PitchChanged(token));
 }
 
 template <typename D> event_token impl_IMapControl<D>::TransformOriginChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->add_TransformOriginChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMapControl)->add_TransformOriginChanged(get(value), &token));
     return token;
 }
 
@@ -6946,13 +6946,13 @@ template <typename D> event_revoker<IMapControl> impl_IMapControl<D>::TransformO
 
 template <typename D> void impl_IMapControl<D>::TransformOriginChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->remove_TransformOriginChanged(token));
+    check_hresult(WINRT_SHIM(IMapControl)->remove_TransformOriginChanged(token));
 }
 
 template <typename D> event_token impl_IMapControl<D>::ZoomLevelChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->add_ZoomLevelChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMapControl)->add_ZoomLevelChanged(get(value), &token));
     return token;
 }
 
@@ -6963,358 +6963,358 @@ template <typename D> event_revoker<IMapControl> impl_IMapControl<D>::ZoomLevelC
 
 template <typename D> void impl_IMapControl<D>::ZoomLevelChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->remove_ZoomLevelChanged(token));
+    check_hresult(WINRT_SHIM(IMapControl)->remove_ZoomLevelChanged(token));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Maps::MapElement> impl_IMapControl<D>::FindMapElementsAtOffset(const Windows::Foundation::Point & offset) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Maps::MapElement> returnValue;
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->abi_FindMapElementsAtOffset(get(offset), put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapControl)->abi_FindMapElementsAtOffset(get(offset), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IMapControl<D>::GetLocationFromOffset(const Windows::Foundation::Point & offset, Windows::Devices::Geolocation::Geopoint & location) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->abi_GetLocationFromOffset(get(offset), put(location)));
+    check_hresult(WINRT_SHIM(IMapControl)->abi_GetLocationFromOffset(get(offset), put(location)));
 }
 
 template <typename D> void impl_IMapControl<D>::GetOffsetFromLocation(const Windows::Devices::Geolocation::Geopoint & location, Windows::Foundation::Point & offset) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->abi_GetOffsetFromLocation(get(location), put(offset)));
+    check_hresult(WINRT_SHIM(IMapControl)->abi_GetOffsetFromLocation(get(location), put(offset)));
 }
 
 template <typename D> void impl_IMapControl<D>::IsLocationInView(const Windows::Devices::Geolocation::Geopoint & location, bool & isInView) const
 {
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->abi_IsLocationInView(get(location), &isInView));
+    check_hresult(WINRT_SHIM(IMapControl)->abi_IsLocationInView(get(location), &isInView));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl<D>::TrySetViewBoundsAsync(const Windows::Devices::Geolocation::GeoboundingBox & bounds, const Windows::Foundation::IReference<Windows::UI::Xaml::Thickness> & margin, Windows::UI::Xaml::Controls::Maps::MapAnimationKind animation) const
 {
     Windows::Foundation::IAsyncOperation<bool> returnValue;
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->abi_TrySetViewBoundsAsync(get(bounds), get(margin), animation, put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapControl)->abi_TrySetViewBoundsAsync(get(bounds), get(margin), animation, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl<D>::TrySetViewAsync(const Windows::Devices::Geolocation::Geopoint & center) const
 {
     Windows::Foundation::IAsyncOperation<bool> returnValue;
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->abi_TrySetViewWithCenterAsync(get(center), put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapControl)->abi_TrySetViewWithCenterAsync(get(center), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl<D>::TrySetViewAsync(const Windows::Devices::Geolocation::Geopoint & center, const Windows::Foundation::IReference<double> & zoomLevel) const
 {
     Windows::Foundation::IAsyncOperation<bool> returnValue;
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->abi_TrySetViewWithCenterAndZoomAsync(get(center), get(zoomLevel), put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapControl)->abi_TrySetViewWithCenterAndZoomAsync(get(center), get(zoomLevel), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl<D>::TrySetViewAsync(const Windows::Devices::Geolocation::Geopoint & center, const Windows::Foundation::IReference<double> & zoomLevel, const Windows::Foundation::IReference<double> & heading, const Windows::Foundation::IReference<double> & desiredPitch) const
 {
     Windows::Foundation::IAsyncOperation<bool> returnValue;
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->abi_TrySetViewWithCenterZoomHeadingAndPitchAsync(get(center), get(zoomLevel), get(heading), get(desiredPitch), put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapControl)->abi_TrySetViewWithCenterZoomHeadingAndPitchAsync(get(center), get(zoomLevel), get(heading), get(desiredPitch), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl<D>::TrySetViewAsync(const Windows::Devices::Geolocation::Geopoint & center, const Windows::Foundation::IReference<double> & zoomLevel, const Windows::Foundation::IReference<double> & heading, const Windows::Foundation::IReference<double> & desiredPitch, Windows::UI::Xaml::Controls::Maps::MapAnimationKind animation) const
 {
     Windows::Foundation::IAsyncOperation<bool> returnValue;
-    check_hresult(static_cast<const IMapControl &>(static_cast<const D &>(*this))->abi_TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync(get(center), get(zoomLevel), get(heading), get(desiredPitch), animation, put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapControl)->abi_TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync(get(center), get(zoomLevel), get(heading), get(desiredPitch), animation, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::CenterProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_CenterProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_CenterProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::ChildrenProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_ChildrenProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_ChildrenProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::ColorSchemeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_ColorSchemeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_ColorSchemeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::DesiredPitchProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_DesiredPitchProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_DesiredPitchProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::HeadingProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_HeadingProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_HeadingProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::LandmarksVisibleProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_LandmarksVisibleProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_LandmarksVisibleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::LoadingStatusProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_LoadingStatusProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_LoadingStatusProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::MapServiceTokenProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_MapServiceTokenProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_MapServiceTokenProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::PedestrianFeaturesVisibleProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_PedestrianFeaturesVisibleProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_PedestrianFeaturesVisibleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::PitchProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_PitchProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_PitchProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::StyleProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_StyleProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_StyleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::TrafficFlowVisibleProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_TrafficFlowVisibleProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_TrafficFlowVisibleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::TransformOriginProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_TransformOriginProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_TransformOriginProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::WatermarkModeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_WatermarkModeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_WatermarkModeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::ZoomLevelProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_ZoomLevelProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_ZoomLevelProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::MapElementsProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_MapElementsProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_MapElementsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::RoutesProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_RoutesProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_RoutesProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::TileSourcesProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_TileSourcesProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_TileSourcesProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::LocationProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_LocationProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_LocationProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IMapControlStatics<D>::GetLocation(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->abi_GetLocation(get(element), put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->abi_GetLocation(get(element), put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapControlStatics<D>::SetLocation(const Windows::UI::Xaml::DependencyObject & element, const Windows::Devices::Geolocation::Geopoint & value) const
 {
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->abi_SetLocation(get(element), get(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->abi_SetLocation(get(element), get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics<D>::NormalizedAnchorPointProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->get_NormalizedAnchorPointProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->get_NormalizedAnchorPointProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IMapControlStatics<D>::GetNormalizedAnchorPoint(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::Foundation::Point value {};
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->abi_GetNormalizedAnchorPoint(get(element), put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->abi_GetNormalizedAnchorPoint(get(element), put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapControlStatics<D>::SetNormalizedAnchorPoint(const Windows::UI::Xaml::DependencyObject & element, const Windows::Foundation::Point & value) const
 {
-    check_hresult(static_cast<const IMapControlStatics &>(static_cast<const D &>(*this))->abi_SetNormalizedAnchorPoint(get(element), get(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics)->abi_SetNormalizedAnchorPoint(get(element), get(value)));
 }
 
 template <typename D> bool impl_IMapControl2<D>::BusinessLandmarksVisible() const
 {
     bool value {};
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->get_BusinessLandmarksVisible(&value));
+    check_hresult(WINRT_SHIM(IMapControl2)->get_BusinessLandmarksVisible(&value));
     return value;
 }
 
 template <typename D> void impl_IMapControl2<D>::BusinessLandmarksVisible(bool value) const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->put_BusinessLandmarksVisible(value));
+    check_hresult(WINRT_SHIM(IMapControl2)->put_BusinessLandmarksVisible(value));
 }
 
 template <typename D> bool impl_IMapControl2<D>::TransitFeaturesVisible() const
 {
     bool value {};
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->get_TransitFeaturesVisible(&value));
+    check_hresult(WINRT_SHIM(IMapControl2)->get_TransitFeaturesVisible(&value));
     return value;
 }
 
 template <typename D> void impl_IMapControl2<D>::TransitFeaturesVisible(bool value) const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->put_TransitFeaturesVisible(value));
+    check_hresult(WINRT_SHIM(IMapControl2)->put_TransitFeaturesVisible(value));
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapPanInteractionMode impl_IMapControl2<D>::PanInteractionMode() const
 {
     Windows::UI::Xaml::Controls::Maps::MapPanInteractionMode value {};
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->get_PanInteractionMode(&value));
+    check_hresult(WINRT_SHIM(IMapControl2)->get_PanInteractionMode(&value));
     return value;
 }
 
 template <typename D> void impl_IMapControl2<D>::PanInteractionMode(Windows::UI::Xaml::Controls::Maps::MapPanInteractionMode value) const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->put_PanInteractionMode(value));
+    check_hresult(WINRT_SHIM(IMapControl2)->put_PanInteractionMode(value));
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapInteractionMode impl_IMapControl2<D>::RotateInteractionMode() const
 {
     Windows::UI::Xaml::Controls::Maps::MapInteractionMode value {};
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->get_RotateInteractionMode(&value));
+    check_hresult(WINRT_SHIM(IMapControl2)->get_RotateInteractionMode(&value));
     return value;
 }
 
 template <typename D> void impl_IMapControl2<D>::RotateInteractionMode(Windows::UI::Xaml::Controls::Maps::MapInteractionMode value) const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->put_RotateInteractionMode(value));
+    check_hresult(WINRT_SHIM(IMapControl2)->put_RotateInteractionMode(value));
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapInteractionMode impl_IMapControl2<D>::TiltInteractionMode() const
 {
     Windows::UI::Xaml::Controls::Maps::MapInteractionMode value {};
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->get_TiltInteractionMode(&value));
+    check_hresult(WINRT_SHIM(IMapControl2)->get_TiltInteractionMode(&value));
     return value;
 }
 
 template <typename D> void impl_IMapControl2<D>::TiltInteractionMode(Windows::UI::Xaml::Controls::Maps::MapInteractionMode value) const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->put_TiltInteractionMode(value));
+    check_hresult(WINRT_SHIM(IMapControl2)->put_TiltInteractionMode(value));
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapInteractionMode impl_IMapControl2<D>::ZoomInteractionMode() const
 {
     Windows::UI::Xaml::Controls::Maps::MapInteractionMode value {};
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->get_ZoomInteractionMode(&value));
+    check_hresult(WINRT_SHIM(IMapControl2)->get_ZoomInteractionMode(&value));
     return value;
 }
 
 template <typename D> void impl_IMapControl2<D>::ZoomInteractionMode(Windows::UI::Xaml::Controls::Maps::MapInteractionMode value) const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->put_ZoomInteractionMode(value));
+    check_hresult(WINRT_SHIM(IMapControl2)->put_ZoomInteractionMode(value));
 }
 
 template <typename D> bool impl_IMapControl2<D>::Is3DSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->get_Is3DSupported(&value));
+    check_hresult(WINRT_SHIM(IMapControl2)->get_Is3DSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IMapControl2<D>::IsStreetsideSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->get_IsStreetsideSupported(&value));
+    check_hresult(WINRT_SHIM(IMapControl2)->get_IsStreetsideSupported(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapScene impl_IMapControl2<D>::Scene() const
 {
     Windows::UI::Xaml::Controls::Maps::MapScene value { nullptr };
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->get_Scene(put(value)));
+    check_hresult(WINRT_SHIM(IMapControl2)->get_Scene(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapControl2<D>::Scene(const Windows::UI::Xaml::Controls::Maps::MapScene & value) const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->put_Scene(get(value)));
+    check_hresult(WINRT_SHIM(IMapControl2)->put_Scene(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapCamera impl_IMapControl2<D>::ActualCamera() const
 {
     Windows::UI::Xaml::Controls::Maps::MapCamera value { nullptr };
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->get_ActualCamera(put(value)));
+    check_hresult(WINRT_SHIM(IMapControl2)->get_ActualCamera(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapCamera impl_IMapControl2<D>::TargetCamera() const
 {
     Windows::UI::Xaml::Controls::Maps::MapCamera value { nullptr };
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->get_TargetCamera(put(value)));
+    check_hresult(WINRT_SHIM(IMapControl2)->get_TargetCamera(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapCustomExperience impl_IMapControl2<D>::CustomExperience() const
 {
     Windows::UI::Xaml::Controls::Maps::MapCustomExperience value { nullptr };
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->get_CustomExperience(put(value)));
+    check_hresult(WINRT_SHIM(IMapControl2)->get_CustomExperience(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapControl2<D>::CustomExperience(const Windows::UI::Xaml::Controls::Maps::MapCustomExperience & value) const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->put_CustomExperience(get(value)));
+    check_hresult(WINRT_SHIM(IMapControl2)->put_CustomExperience(get(value)));
 }
 
 template <typename D> event_token impl_IMapControl2<D>::MapElementClick(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapElementClickEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->add_MapElementClick(get(value), &token));
+    check_hresult(WINRT_SHIM(IMapControl2)->add_MapElementClick(get(value), &token));
     return token;
 }
 
@@ -7325,13 +7325,13 @@ template <typename D> event_revoker<IMapControl2> impl_IMapControl2<D>::MapEleme
 
 template <typename D> void impl_IMapControl2<D>::MapElementClick(event_token token) const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->remove_MapElementClick(token));
+    check_hresult(WINRT_SHIM(IMapControl2)->remove_MapElementClick(token));
 }
 
 template <typename D> event_token impl_IMapControl2<D>::MapElementPointerEntered(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapElementPointerEnteredEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->add_MapElementPointerEntered(get(value), &token));
+    check_hresult(WINRT_SHIM(IMapControl2)->add_MapElementPointerEntered(get(value), &token));
     return token;
 }
 
@@ -7342,13 +7342,13 @@ template <typename D> event_revoker<IMapControl2> impl_IMapControl2<D>::MapEleme
 
 template <typename D> void impl_IMapControl2<D>::MapElementPointerEntered(event_token token) const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->remove_MapElementPointerEntered(token));
+    check_hresult(WINRT_SHIM(IMapControl2)->remove_MapElementPointerEntered(token));
 }
 
 template <typename D> event_token impl_IMapControl2<D>::MapElementPointerExited(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapElementPointerExitedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->add_MapElementPointerExited(get(value), &token));
+    check_hresult(WINRT_SHIM(IMapControl2)->add_MapElementPointerExited(get(value), &token));
     return token;
 }
 
@@ -7359,13 +7359,13 @@ template <typename D> event_revoker<IMapControl2> impl_IMapControl2<D>::MapEleme
 
 template <typename D> void impl_IMapControl2<D>::MapElementPointerExited(event_token token) const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->remove_MapElementPointerExited(token));
+    check_hresult(WINRT_SHIM(IMapControl2)->remove_MapElementPointerExited(token));
 }
 
 template <typename D> event_token impl_IMapControl2<D>::ActualCameraChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapActualCameraChangedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->add_ActualCameraChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMapControl2)->add_ActualCameraChanged(get(value), &token));
     return token;
 }
 
@@ -7376,13 +7376,13 @@ template <typename D> event_revoker<IMapControl2> impl_IMapControl2<D>::ActualCa
 
 template <typename D> void impl_IMapControl2<D>::ActualCameraChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->remove_ActualCameraChanged(token));
+    check_hresult(WINRT_SHIM(IMapControl2)->remove_ActualCameraChanged(token));
 }
 
 template <typename D> event_token impl_IMapControl2<D>::ActualCameraChanging(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapActualCameraChangingEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->add_ActualCameraChanging(get(value), &token));
+    check_hresult(WINRT_SHIM(IMapControl2)->add_ActualCameraChanging(get(value), &token));
     return token;
 }
 
@@ -7393,13 +7393,13 @@ template <typename D> event_revoker<IMapControl2> impl_IMapControl2<D>::ActualCa
 
 template <typename D> void impl_IMapControl2<D>::ActualCameraChanging(event_token token) const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->remove_ActualCameraChanging(token));
+    check_hresult(WINRT_SHIM(IMapControl2)->remove_ActualCameraChanging(token));
 }
 
 template <typename D> event_token impl_IMapControl2<D>::TargetCameraChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapTargetCameraChangedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->add_TargetCameraChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMapControl2)->add_TargetCameraChanged(get(value), &token));
     return token;
 }
 
@@ -7410,13 +7410,13 @@ template <typename D> event_revoker<IMapControl2> impl_IMapControl2<D>::TargetCa
 
 template <typename D> void impl_IMapControl2<D>::TargetCameraChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->remove_TargetCameraChanged(token));
+    check_hresult(WINRT_SHIM(IMapControl2)->remove_TargetCameraChanged(token));
 }
 
 template <typename D> event_token impl_IMapControl2<D>::CustomExperienceChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapCustomExperienceChangedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->add_CustomExperienceChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IMapControl2)->add_CustomExperienceChanged(get(value), &token));
     return token;
 }
 
@@ -7427,169 +7427,169 @@ template <typename D> event_revoker<IMapControl2> impl_IMapControl2<D>::CustomEx
 
 template <typename D> void impl_IMapControl2<D>::CustomExperienceChanged(event_token token) const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->remove_CustomExperienceChanged(token));
+    check_hresult(WINRT_SHIM(IMapControl2)->remove_CustomExperienceChanged(token));
 }
 
 template <typename D> void impl_IMapControl2<D>::StartContinuousRotate(double rateInDegreesPerSecond) const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->abi_StartContinuousRotate(rateInDegreesPerSecond));
+    check_hresult(WINRT_SHIM(IMapControl2)->abi_StartContinuousRotate(rateInDegreesPerSecond));
 }
 
 template <typename D> void impl_IMapControl2<D>::StopContinuousRotate() const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->abi_StopContinuousRotate());
+    check_hresult(WINRT_SHIM(IMapControl2)->abi_StopContinuousRotate());
 }
 
 template <typename D> void impl_IMapControl2<D>::StartContinuousTilt(double rateInDegreesPerSecond) const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->abi_StartContinuousTilt(rateInDegreesPerSecond));
+    check_hresult(WINRT_SHIM(IMapControl2)->abi_StartContinuousTilt(rateInDegreesPerSecond));
 }
 
 template <typename D> void impl_IMapControl2<D>::StopContinuousTilt() const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->abi_StopContinuousTilt());
+    check_hresult(WINRT_SHIM(IMapControl2)->abi_StopContinuousTilt());
 }
 
 template <typename D> void impl_IMapControl2<D>::StartContinuousZoom(double rateOfChangePerSecond) const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->abi_StartContinuousZoom(rateOfChangePerSecond));
+    check_hresult(WINRT_SHIM(IMapControl2)->abi_StartContinuousZoom(rateOfChangePerSecond));
 }
 
 template <typename D> void impl_IMapControl2<D>::StopContinuousZoom() const
 {
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->abi_StopContinuousZoom());
+    check_hresult(WINRT_SHIM(IMapControl2)->abi_StopContinuousZoom());
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl2<D>::TryRotateAsync(double degrees) const
 {
     Windows::Foundation::IAsyncOperation<bool> returnValue;
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->abi_TryRotateAsync(degrees, put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapControl2)->abi_TryRotateAsync(degrees, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl2<D>::TryRotateToAsync(double angleInDegrees) const
 {
     Windows::Foundation::IAsyncOperation<bool> returnValue;
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->abi_TryRotateToAsync(angleInDegrees, put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapControl2)->abi_TryRotateToAsync(angleInDegrees, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl2<D>::TryTiltAsync(double degrees) const
 {
     Windows::Foundation::IAsyncOperation<bool> returnValue;
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->abi_TryTiltAsync(degrees, put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapControl2)->abi_TryTiltAsync(degrees, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl2<D>::TryTiltToAsync(double angleInDegrees) const
 {
     Windows::Foundation::IAsyncOperation<bool> returnValue;
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->abi_TryTiltToAsync(angleInDegrees, put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapControl2)->abi_TryTiltToAsync(angleInDegrees, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl2<D>::TryZoomInAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> returnValue;
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->abi_TryZoomInAsync(put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapControl2)->abi_TryZoomInAsync(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl2<D>::TryZoomOutAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> returnValue;
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->abi_TryZoomOutAsync(put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapControl2)->abi_TryZoomOutAsync(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl2<D>::TryZoomToAsync(double zoomLevel) const
 {
     Windows::Foundation::IAsyncOperation<bool> returnValue;
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->abi_TryZoomToAsync(zoomLevel, put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapControl2)->abi_TryZoomToAsync(zoomLevel, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl2<D>::TrySetSceneAsync(const Windows::UI::Xaml::Controls::Maps::MapScene & scene) const
 {
     Windows::Foundation::IAsyncOperation<bool> returnValue;
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->abi_TrySetSceneAsync(get(scene), put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapControl2)->abi_TrySetSceneAsync(get(scene), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl2<D>::TrySetSceneAsync(const Windows::UI::Xaml::Controls::Maps::MapScene & scene, Windows::UI::Xaml::Controls::Maps::MapAnimationKind animationKind) const
 {
     Windows::Foundation::IAsyncOperation<bool> returnValue;
-    check_hresult(static_cast<const IMapControl2 &>(static_cast<const D &>(*this))->abi_TrySetSceneWithAnimationAsync(get(scene), animationKind, put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapControl2)->abi_TrySetSceneWithAnimationAsync(get(scene), animationKind, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics2<D>::BusinessLandmarksVisibleProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics2 &>(static_cast<const D &>(*this))->get_BusinessLandmarksVisibleProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics2)->get_BusinessLandmarksVisibleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics2<D>::TransitFeaturesVisibleProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics2 &>(static_cast<const D &>(*this))->get_TransitFeaturesVisibleProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics2)->get_TransitFeaturesVisibleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics2<D>::PanInteractionModeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics2 &>(static_cast<const D &>(*this))->get_PanInteractionModeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics2)->get_PanInteractionModeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics2<D>::RotateInteractionModeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics2 &>(static_cast<const D &>(*this))->get_RotateInteractionModeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics2)->get_RotateInteractionModeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics2<D>::TiltInteractionModeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics2 &>(static_cast<const D &>(*this))->get_TiltInteractionModeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics2)->get_TiltInteractionModeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics2<D>::ZoomInteractionModeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics2 &>(static_cast<const D &>(*this))->get_ZoomInteractionModeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics2)->get_ZoomInteractionModeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics2<D>::Is3DSupportedProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics2 &>(static_cast<const D &>(*this))->get_Is3DSupportedProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics2)->get_Is3DSupportedProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics2<D>::IsStreetsideSupportedProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics2 &>(static_cast<const D &>(*this))->get_IsStreetsideSupportedProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics2)->get_IsStreetsideSupportedProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics2<D>::SceneProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics2 &>(static_cast<const D &>(*this))->get_SceneProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics2)->get_SceneProperty(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IMapControl3<D>::MapRightTapped(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapRightTappedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMapControl3 &>(static_cast<const D &>(*this))->add_MapRightTapped(get(value), &token));
+    check_hresult(WINRT_SHIM(IMapControl3)->add_MapRightTapped(get(value), &token));
     return token;
 }
 
@@ -7600,51 +7600,51 @@ template <typename D> event_revoker<IMapControl3> impl_IMapControl3<D>::MapRight
 
 template <typename D> void impl_IMapControl3<D>::MapRightTapped(event_token token) const
 {
-    check_hresult(static_cast<const IMapControl3 &>(static_cast<const D &>(*this))->remove_MapRightTapped(token));
+    check_hresult(WINRT_SHIM(IMapControl3)->remove_MapRightTapped(token));
 }
 
 template <typename D> bool impl_IMapControl4<D>::BusinessLandmarksEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMapControl4 &>(static_cast<const D &>(*this))->get_BusinessLandmarksEnabled(&value));
+    check_hresult(WINRT_SHIM(IMapControl4)->get_BusinessLandmarksEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IMapControl4<D>::BusinessLandmarksEnabled(bool value) const
 {
-    check_hresult(static_cast<const IMapControl4 &>(static_cast<const D &>(*this))->put_BusinessLandmarksEnabled(value));
+    check_hresult(WINRT_SHIM(IMapControl4)->put_BusinessLandmarksEnabled(value));
 }
 
 template <typename D> bool impl_IMapControl4<D>::TransitFeaturesEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IMapControl4 &>(static_cast<const D &>(*this))->get_TransitFeaturesEnabled(&value));
+    check_hresult(WINRT_SHIM(IMapControl4)->get_TransitFeaturesEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IMapControl4<D>::TransitFeaturesEnabled(bool value) const
 {
-    check_hresult(static_cast<const IMapControl4 &>(static_cast<const D &>(*this))->put_TransitFeaturesEnabled(value));
+    check_hresult(WINRT_SHIM(IMapControl4)->put_TransitFeaturesEnabled(value));
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopath impl_IMapControl4<D>::GetVisibleRegion(Windows::UI::Xaml::Controls::Maps::MapVisibleRegionKind region) const
 {
     Windows::Devices::Geolocation::Geopath returnValue { nullptr };
-    check_hresult(static_cast<const IMapControl4 &>(static_cast<const D &>(*this))->abi_GetVisibleRegion(region, put(returnValue)));
+    check_hresult(WINRT_SHIM(IMapControl4)->abi_GetVisibleRegion(region, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics4<D>::BusinessLandmarksEnabledProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics4 &>(static_cast<const D &>(*this))->get_BusinessLandmarksEnabledProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics4)->get_BusinessLandmarksEnabledProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics4<D>::TransitFeaturesEnabledProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IMapControlStatics4 &>(static_cast<const D &>(*this))->get_TransitFeaturesEnabledProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMapControlStatics4)->get_TransitFeaturesEnabledProperty(put(value)));
     return value;
 }
 

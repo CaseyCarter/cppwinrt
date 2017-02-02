@@ -145,7 +145,6 @@ struct IRfcommDeviceService :
     impl::consume<IRfcommDeviceService>
 {
     IRfcommDeviceService(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRfcommDeviceService>(m_ptr); }
 };
 
 struct IRfcommDeviceService2 :
@@ -154,7 +153,6 @@ struct IRfcommDeviceService2 :
     impl::require<IRfcommDeviceService2, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService>
 {
     IRfcommDeviceService2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRfcommDeviceService2>(m_ptr); }
 };
 
 struct IRfcommDeviceService3 :
@@ -163,7 +161,6 @@ struct IRfcommDeviceService3 :
     impl::require<IRfcommDeviceService3, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService2>
 {
     IRfcommDeviceService3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRfcommDeviceService3>(m_ptr); }
 };
 
 struct IRfcommDeviceServiceStatics :
@@ -171,7 +168,6 @@ struct IRfcommDeviceServiceStatics :
     impl::consume<IRfcommDeviceServiceStatics>
 {
     IRfcommDeviceServiceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRfcommDeviceServiceStatics>(m_ptr); }
 };
 
 struct IRfcommDeviceServiceStatics2 :
@@ -180,7 +176,6 @@ struct IRfcommDeviceServiceStatics2 :
     impl::require<IRfcommDeviceServiceStatics2, Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServiceStatics>
 {
     IRfcommDeviceServiceStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRfcommDeviceServiceStatics2>(m_ptr); }
 };
 
 struct IRfcommDeviceServicesResult :
@@ -188,7 +183,6 @@ struct IRfcommDeviceServicesResult :
     impl::consume<IRfcommDeviceServicesResult>
 {
     IRfcommDeviceServicesResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRfcommDeviceServicesResult>(m_ptr); }
 };
 
 struct IRfcommServiceId :
@@ -196,7 +190,6 @@ struct IRfcommServiceId :
     impl::consume<IRfcommServiceId>
 {
     IRfcommServiceId(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRfcommServiceId>(m_ptr); }
 };
 
 struct IRfcommServiceIdStatics :
@@ -204,7 +197,6 @@ struct IRfcommServiceIdStatics :
     impl::consume<IRfcommServiceIdStatics>
 {
     IRfcommServiceIdStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRfcommServiceIdStatics>(m_ptr); }
 };
 
 struct IRfcommServiceProvider :
@@ -212,7 +204,6 @@ struct IRfcommServiceProvider :
     impl::consume<IRfcommServiceProvider>
 {
     IRfcommServiceProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRfcommServiceProvider>(m_ptr); }
 };
 
 struct IRfcommServiceProvider2 :
@@ -221,7 +212,6 @@ struct IRfcommServiceProvider2 :
     impl::require<IRfcommServiceProvider2, Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProvider>
 {
     IRfcommServiceProvider2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRfcommServiceProvider2>(m_ptr); }
     using impl_IRfcommServiceProvider::StartAdvertising;
     using impl_IRfcommServiceProvider2::StartAdvertising;
 };
@@ -231,7 +221,6 @@ struct IRfcommServiceProviderStatics :
     impl::consume<IRfcommServiceProviderStatics>
 {
     IRfcommServiceProviderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRfcommServiceProviderStatics>(m_ptr); }
 };
 
 }

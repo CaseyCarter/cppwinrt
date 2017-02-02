@@ -74,7 +74,6 @@ struct IHolographicCamera :
     impl::consume<IHolographicCamera>
 {
     IHolographicCamera(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHolographicCamera>(m_ptr); }
 };
 
 struct IHolographicCameraPose :
@@ -82,7 +81,6 @@ struct IHolographicCameraPose :
     impl::consume<IHolographicCameraPose>
 {
     IHolographicCameraPose(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHolographicCameraPose>(m_ptr); }
 };
 
 struct IHolographicCameraRenderingParameters :
@@ -90,7 +88,6 @@ struct IHolographicCameraRenderingParameters :
     impl::consume<IHolographicCameraRenderingParameters>
 {
     IHolographicCameraRenderingParameters(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHolographicCameraRenderingParameters>(m_ptr); }
 };
 
 struct IHolographicFrame :
@@ -98,7 +95,6 @@ struct IHolographicFrame :
     impl::consume<IHolographicFrame>
 {
     IHolographicFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHolographicFrame>(m_ptr); }
 };
 
 struct IHolographicFramePrediction :
@@ -106,7 +102,6 @@ struct IHolographicFramePrediction :
     impl::consume<IHolographicFramePrediction>
 {
     IHolographicFramePrediction(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHolographicFramePrediction>(m_ptr); }
 };
 
 struct IHolographicSpace :
@@ -114,7 +109,6 @@ struct IHolographicSpace :
     impl::consume<IHolographicSpace>
 {
     IHolographicSpace(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHolographicSpace>(m_ptr); }
 };
 
 struct IHolographicSpaceCameraAddedEventArgs :
@@ -122,7 +116,6 @@ struct IHolographicSpaceCameraAddedEventArgs :
     impl::consume<IHolographicSpaceCameraAddedEventArgs>
 {
     IHolographicSpaceCameraAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHolographicSpaceCameraAddedEventArgs>(m_ptr); }
 };
 
 struct IHolographicSpaceCameraRemovedEventArgs :
@@ -130,7 +123,6 @@ struct IHolographicSpaceCameraRemovedEventArgs :
     impl::consume<IHolographicSpaceCameraRemovedEventArgs>
 {
     IHolographicSpaceCameraRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHolographicSpaceCameraRemovedEventArgs>(m_ptr); }
 };
 
 struct IHolographicSpaceStatics :
@@ -138,7 +130,6 @@ struct IHolographicSpaceStatics :
     impl::consume<IHolographicSpaceStatics>
 {
     IHolographicSpaceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHolographicSpaceStatics>(m_ptr); }
 };
 
 }

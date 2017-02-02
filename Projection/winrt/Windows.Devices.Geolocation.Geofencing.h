@@ -388,140 +388,140 @@ namespace Windows::Devices::Geolocation::Geofencing {
 template <typename D> Windows::Devices::Geolocation::Geofencing::Geofence impl_IGeofenceFactory<D>::Create(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape) const
 {
     Windows::Devices::Geolocation::Geofencing::Geofence geofence { nullptr };
-    check_hresult(static_cast<const IGeofenceFactory &>(static_cast<const D &>(*this))->abi_Create(get(id), get(geoshape), put(geofence)));
+    check_hresult(WINRT_SHIM(IGeofenceFactory)->abi_Create(get(id), get(geoshape), put(geofence)));
     return geofence;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geofencing::Geofence impl_IGeofenceFactory<D>::CreateWithMonitorStates(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse) const
 {
     Windows::Devices::Geolocation::Geofencing::Geofence geofence { nullptr };
-    check_hresult(static_cast<const IGeofenceFactory &>(static_cast<const D &>(*this))->abi_CreateWithMonitorStates(get(id), get(geoshape), monitoredStates, singleUse, put(geofence)));
+    check_hresult(WINRT_SHIM(IGeofenceFactory)->abi_CreateWithMonitorStates(get(id), get(geoshape), monitoredStates, singleUse, put(geofence)));
     return geofence;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geofencing::Geofence impl_IGeofenceFactory<D>::CreateWithMonitorStatesAndDwellTime(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse, const Windows::Foundation::TimeSpan & dwellTime) const
 {
     Windows::Devices::Geolocation::Geofencing::Geofence geofence { nullptr };
-    check_hresult(static_cast<const IGeofenceFactory &>(static_cast<const D &>(*this))->abi_CreateWithMonitorStatesAndDwellTime(get(id), get(geoshape), monitoredStates, singleUse, get(dwellTime), put(geofence)));
+    check_hresult(WINRT_SHIM(IGeofenceFactory)->abi_CreateWithMonitorStatesAndDwellTime(get(id), get(geoshape), monitoredStates, singleUse, get(dwellTime), put(geofence)));
     return geofence;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geofencing::Geofence impl_IGeofenceFactory<D>::CreateWithMonitorStatesDwellTimeStartTimeAndDuration(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse, const Windows::Foundation::TimeSpan & dwellTime, const Windows::Foundation::DateTime & startTime, const Windows::Foundation::TimeSpan & duration) const
 {
     Windows::Devices::Geolocation::Geofencing::Geofence geofence { nullptr };
-    check_hresult(static_cast<const IGeofenceFactory &>(static_cast<const D &>(*this))->abi_CreateWithMonitorStatesDwellTimeStartTimeAndDuration(get(id), get(geoshape), monitoredStates, singleUse, get(dwellTime), get(startTime), get(duration), put(geofence)));
+    check_hresult(WINRT_SHIM(IGeofenceFactory)->abi_CreateWithMonitorStatesDwellTimeStartTimeAndDuration(get(id), get(geoshape), monitoredStates, singleUse, get(dwellTime), get(startTime), get(duration), put(geofence)));
     return geofence;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IGeofence<D>::StartTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IGeofence &>(static_cast<const D &>(*this))->get_StartTime(put(value)));
+    check_hresult(WINRT_SHIM(IGeofence)->get_StartTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IGeofence<D>::Duration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IGeofence &>(static_cast<const D &>(*this))->get_Duration(put(value)));
+    check_hresult(WINRT_SHIM(IGeofence)->get_Duration(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IGeofence<D>::DwellTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IGeofence &>(static_cast<const D &>(*this))->get_DwellTime(put(value)));
+    check_hresult(WINRT_SHIM(IGeofence)->get_DwellTime(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IGeofence<D>::Id() const
 {
     hstring value;
-    check_hresult(static_cast<const IGeofence &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IGeofence)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates impl_IGeofence<D>::MonitoredStates() const
 {
     Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates value {};
-    check_hresult(static_cast<const IGeofence &>(static_cast<const D &>(*this))->get_MonitoredStates(&value));
+    check_hresult(WINRT_SHIM(IGeofence)->get_MonitoredStates(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::IGeoshape impl_IGeofence<D>::Geoshape() const
 {
     Windows::Devices::Geolocation::IGeoshape value;
-    check_hresult(static_cast<const IGeofence &>(static_cast<const D &>(*this))->get_Geoshape(put(value)));
+    check_hresult(WINRT_SHIM(IGeofence)->get_Geoshape(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IGeofence<D>::SingleUse() const
 {
     bool value {};
-    check_hresult(static_cast<const IGeofence &>(static_cast<const D &>(*this))->get_SingleUse(&value));
+    check_hresult(WINRT_SHIM(IGeofence)->get_SingleUse(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geofencing::GeofenceState impl_IGeofenceStateChangeReport<D>::NewState() const
 {
     Windows::Devices::Geolocation::Geofencing::GeofenceState value {};
-    check_hresult(static_cast<const IGeofenceStateChangeReport &>(static_cast<const D &>(*this))->get_NewState(&value));
+    check_hresult(WINRT_SHIM(IGeofenceStateChangeReport)->get_NewState(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geofencing::Geofence impl_IGeofenceStateChangeReport<D>::Geofence() const
 {
     Windows::Devices::Geolocation::Geofencing::Geofence value { nullptr };
-    check_hresult(static_cast<const IGeofenceStateChangeReport &>(static_cast<const D &>(*this))->get_Geofence(put(value)));
+    check_hresult(WINRT_SHIM(IGeofenceStateChangeReport)->get_Geofence(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geoposition impl_IGeofenceStateChangeReport<D>::Geoposition() const
 {
     Windows::Devices::Geolocation::Geoposition value { nullptr };
-    check_hresult(static_cast<const IGeofenceStateChangeReport &>(static_cast<const D &>(*this))->get_Geoposition(put(value)));
+    check_hresult(WINRT_SHIM(IGeofenceStateChangeReport)->get_Geoposition(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geofencing::GeofenceRemovalReason impl_IGeofenceStateChangeReport<D>::RemovalReason() const
 {
     Windows::Devices::Geolocation::Geofencing::GeofenceRemovalReason value {};
-    check_hresult(static_cast<const IGeofenceStateChangeReport &>(static_cast<const D &>(*this))->get_RemovalReason(&value));
+    check_hresult(WINRT_SHIM(IGeofenceStateChangeReport)->get_RemovalReason(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geofencing::GeofenceMonitor impl_IGeofenceMonitorStatics<D>::Current() const
 {
     Windows::Devices::Geolocation::Geofencing::GeofenceMonitor value { nullptr };
-    check_hresult(static_cast<const IGeofenceMonitorStatics &>(static_cast<const D &>(*this))->get_Current(put(value)));
+    check_hresult(WINRT_SHIM(IGeofenceMonitorStatics)->get_Current(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geofencing::GeofenceMonitorStatus impl_IGeofenceMonitor<D>::Status() const
 {
     Windows::Devices::Geolocation::Geofencing::GeofenceMonitorStatus value {};
-    check_hresult(static_cast<const IGeofenceMonitor &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IGeofenceMonitor)->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Devices::Geolocation::Geofencing::Geofence> impl_IGeofenceMonitor<D>::Geofences() const
 {
     Windows::Foundation::Collections::IVector<Windows::Devices::Geolocation::Geofencing::Geofence> value;
-    check_hresult(static_cast<const IGeofenceMonitor &>(static_cast<const D &>(*this))->get_Geofences(put(value)));
+    check_hresult(WINRT_SHIM(IGeofenceMonitor)->get_Geofences(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geoposition impl_IGeofenceMonitor<D>::LastKnownGeoposition() const
 {
     Windows::Devices::Geolocation::Geoposition value { nullptr };
-    check_hresult(static_cast<const IGeofenceMonitor &>(static_cast<const D &>(*this))->get_LastKnownGeoposition(put(value)));
+    check_hresult(WINRT_SHIM(IGeofenceMonitor)->get_LastKnownGeoposition(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IGeofenceMonitor<D>::GeofenceStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::IInspectable> & eventHandler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IGeofenceMonitor &>(static_cast<const D &>(*this))->add_GeofenceStateChanged(get(eventHandler), &token));
+    check_hresult(WINRT_SHIM(IGeofenceMonitor)->add_GeofenceStateChanged(get(eventHandler), &token));
     return token;
 }
 
@@ -532,20 +532,20 @@ template <typename D> event_revoker<IGeofenceMonitor> impl_IGeofenceMonitor<D>::
 
 template <typename D> void impl_IGeofenceMonitor<D>::GeofenceStateChanged(event_token token) const
 {
-    check_hresult(static_cast<const IGeofenceMonitor &>(static_cast<const D &>(*this))->remove_GeofenceStateChanged(token));
+    check_hresult(WINRT_SHIM(IGeofenceMonitor)->remove_GeofenceStateChanged(token));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geofencing::GeofenceStateChangeReport> impl_IGeofenceMonitor<D>::ReadReports() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geofencing::GeofenceStateChangeReport> value;
-    check_hresult(static_cast<const IGeofenceMonitor &>(static_cast<const D &>(*this))->abi_ReadReports(put(value)));
+    check_hresult(WINRT_SHIM(IGeofenceMonitor)->abi_ReadReports(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IGeofenceMonitor<D>::StatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::IInspectable> & eventHandler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IGeofenceMonitor &>(static_cast<const D &>(*this))->add_StatusChanged(get(eventHandler), &token));
+    check_hresult(WINRT_SHIM(IGeofenceMonitor)->add_StatusChanged(get(eventHandler), &token));
     return token;
 }
 
@@ -556,7 +556,7 @@ template <typename D> event_revoker<IGeofenceMonitor> impl_IGeofenceMonitor<D>::
 
 template <typename D> void impl_IGeofenceMonitor<D>::StatusChanged(event_token token) const
 {
-    check_hresult(static_cast<const IGeofenceMonitor &>(static_cast<const D &>(*this))->remove_StatusChanged(token));
+    check_hresult(WINRT_SHIM(IGeofenceMonitor)->remove_StatusChanged(token));
 }
 
 inline Geofence::Geofence(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape) :

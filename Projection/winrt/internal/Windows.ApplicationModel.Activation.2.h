@@ -89,7 +89,6 @@ struct IActivatedEventArgs :
     impl::consume<IActivatedEventArgs>
 {
     IActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IActivatedEventArgs>(m_ptr); }
 };
 
 struct IActivatedEventArgsWithUser :
@@ -98,7 +97,6 @@ struct IActivatedEventArgsWithUser :
     impl::require<IActivatedEventArgsWithUser, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IActivatedEventArgsWithUser(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IActivatedEventArgsWithUser>(m_ptr); }
 };
 
 struct IApplicationViewActivatedEventArgs :
@@ -107,7 +105,6 @@ struct IApplicationViewActivatedEventArgs :
     impl::require<IApplicationViewActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IApplicationViewActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationViewActivatedEventArgs>(m_ptr); }
 };
 
 struct IAppointmentsProviderActivatedEventArgs :
@@ -116,7 +113,6 @@ struct IAppointmentsProviderActivatedEventArgs :
     impl::require<IAppointmentsProviderActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IAppointmentsProviderActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentsProviderActivatedEventArgs>(m_ptr); }
 };
 
 struct IAppointmentsProviderAddAppointmentActivatedEventArgs :
@@ -125,7 +121,6 @@ struct IAppointmentsProviderAddAppointmentActivatedEventArgs :
     impl::require<IAppointmentsProviderAddAppointmentActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IAppointmentsProviderActivatedEventArgs>
 {
     IAppointmentsProviderAddAppointmentActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentsProviderAddAppointmentActivatedEventArgs>(m_ptr); }
 };
 
 struct IAppointmentsProviderRemoveAppointmentActivatedEventArgs :
@@ -134,7 +129,6 @@ struct IAppointmentsProviderRemoveAppointmentActivatedEventArgs :
     impl::require<IAppointmentsProviderRemoveAppointmentActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IAppointmentsProviderActivatedEventArgs>
 {
     IAppointmentsProviderRemoveAppointmentActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentsProviderRemoveAppointmentActivatedEventArgs>(m_ptr); }
 };
 
 struct IAppointmentsProviderReplaceAppointmentActivatedEventArgs :
@@ -143,7 +137,6 @@ struct IAppointmentsProviderReplaceAppointmentActivatedEventArgs :
     impl::require<IAppointmentsProviderReplaceAppointmentActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IAppointmentsProviderActivatedEventArgs>
 {
     IAppointmentsProviderReplaceAppointmentActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentsProviderReplaceAppointmentActivatedEventArgs>(m_ptr); }
 };
 
 struct IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs :
@@ -152,7 +145,6 @@ struct IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs :
     impl::require<IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IAppointmentsProviderActivatedEventArgs>
 {
     IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs>(m_ptr); }
 };
 
 struct IAppointmentsProviderShowTimeFrameActivatedEventArgs :
@@ -161,7 +153,6 @@ struct IAppointmentsProviderShowTimeFrameActivatedEventArgs :
     impl::require<IAppointmentsProviderShowTimeFrameActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IAppointmentsProviderActivatedEventArgs>
 {
     IAppointmentsProviderShowTimeFrameActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppointmentsProviderShowTimeFrameActivatedEventArgs>(m_ptr); }
 };
 
 struct IBackgroundActivatedEventArgs :
@@ -169,7 +160,6 @@ struct IBackgroundActivatedEventArgs :
     impl::consume<IBackgroundActivatedEventArgs>
 {
     IBackgroundActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBackgroundActivatedEventArgs>(m_ptr); }
 };
 
 struct ICachedFileUpdaterActivatedEventArgs :
@@ -178,7 +168,6 @@ struct ICachedFileUpdaterActivatedEventArgs :
     impl::require<ICachedFileUpdaterActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     ICachedFileUpdaterActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICachedFileUpdaterActivatedEventArgs>(m_ptr); }
 };
 
 struct IContinuationActivatedEventArgs :
@@ -187,7 +176,6 @@ struct IContinuationActivatedEventArgs :
     impl::require<IContinuationActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IContinuationActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContinuationActivatedEventArgs>(m_ptr); }
 };
 
 struct IDeviceActivatedEventArgs :
@@ -196,7 +184,6 @@ struct IDeviceActivatedEventArgs :
     impl::require<IDeviceActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IDeviceActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceActivatedEventArgs>(m_ptr); }
 };
 
 struct IDevicePairingActivatedEventArgs :
@@ -205,7 +192,6 @@ struct IDevicePairingActivatedEventArgs :
     impl::require<IDevicePairingActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IDevicePairingActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDevicePairingActivatedEventArgs>(m_ptr); }
 };
 
 struct IDialReceiverActivatedEventArgs :
@@ -214,7 +200,6 @@ struct IDialReceiverActivatedEventArgs :
     impl::require<IDialReceiverActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs>
 {
     IDialReceiverActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDialReceiverActivatedEventArgs>(m_ptr); }
 };
 
 struct IFileActivatedEventArgs :
@@ -223,7 +208,6 @@ struct IFileActivatedEventArgs :
     impl::require<IFileActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IFileActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileActivatedEventArgs>(m_ptr); }
 };
 
 struct IFileActivatedEventArgsWithCallerPackageFamilyName :
@@ -232,7 +216,6 @@ struct IFileActivatedEventArgsWithCallerPackageFamilyName :
     impl::require<IFileActivatedEventArgsWithCallerPackageFamilyName, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IFileActivatedEventArgsWithCallerPackageFamilyName(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileActivatedEventArgsWithCallerPackageFamilyName>(m_ptr); }
 };
 
 struct IFileActivatedEventArgsWithNeighboringFiles :
@@ -241,7 +224,6 @@ struct IFileActivatedEventArgsWithNeighboringFiles :
     impl::require<IFileActivatedEventArgsWithNeighboringFiles, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IFileActivatedEventArgs>
 {
     IFileActivatedEventArgsWithNeighboringFiles(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileActivatedEventArgsWithNeighboringFiles>(m_ptr); }
 };
 
 struct IFileOpenPickerActivatedEventArgs :
@@ -250,7 +232,6 @@ struct IFileOpenPickerActivatedEventArgs :
     impl::require<IFileOpenPickerActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IFileOpenPickerActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileOpenPickerActivatedEventArgs>(m_ptr); }
 };
 
 struct IFileOpenPickerActivatedEventArgs2 :
@@ -258,7 +239,6 @@ struct IFileOpenPickerActivatedEventArgs2 :
     impl::consume<IFileOpenPickerActivatedEventArgs2>
 {
     IFileOpenPickerActivatedEventArgs2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileOpenPickerActivatedEventArgs2>(m_ptr); }
 };
 
 struct IFileOpenPickerContinuationEventArgs :
@@ -267,7 +247,6 @@ struct IFileOpenPickerContinuationEventArgs :
     impl::require<IFileOpenPickerContinuationEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IContinuationActivatedEventArgs>
 {
     IFileOpenPickerContinuationEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileOpenPickerContinuationEventArgs>(m_ptr); }
 };
 
 struct IFileSavePickerActivatedEventArgs :
@@ -276,7 +255,6 @@ struct IFileSavePickerActivatedEventArgs :
     impl::require<IFileSavePickerActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IFileSavePickerActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileSavePickerActivatedEventArgs>(m_ptr); }
 };
 
 struct IFileSavePickerActivatedEventArgs2 :
@@ -284,7 +262,6 @@ struct IFileSavePickerActivatedEventArgs2 :
     impl::consume<IFileSavePickerActivatedEventArgs2>
 {
     IFileSavePickerActivatedEventArgs2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileSavePickerActivatedEventArgs2>(m_ptr); }
 };
 
 struct IFileSavePickerContinuationEventArgs :
@@ -293,7 +270,6 @@ struct IFileSavePickerContinuationEventArgs :
     impl::require<IFileSavePickerContinuationEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IContinuationActivatedEventArgs>
 {
     IFileSavePickerContinuationEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileSavePickerContinuationEventArgs>(m_ptr); }
 };
 
 struct IFolderPickerContinuationEventArgs :
@@ -302,7 +278,6 @@ struct IFolderPickerContinuationEventArgs :
     impl::require<IFolderPickerContinuationEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IContinuationActivatedEventArgs>
 {
     IFolderPickerContinuationEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFolderPickerContinuationEventArgs>(m_ptr); }
 };
 
 struct ILaunchActivatedEventArgs :
@@ -311,7 +286,6 @@ struct ILaunchActivatedEventArgs :
     impl::require<ILaunchActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     ILaunchActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILaunchActivatedEventArgs>(m_ptr); }
 };
 
 struct ILaunchActivatedEventArgs2 :
@@ -320,7 +294,6 @@ struct ILaunchActivatedEventArgs2 :
     impl::require<ILaunchActivatedEventArgs2, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs>
 {
     ILaunchActivatedEventArgs2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILaunchActivatedEventArgs2>(m_ptr); }
 };
 
 struct ILockScreenActivatedEventArgs :
@@ -329,7 +302,6 @@ struct ILockScreenActivatedEventArgs :
     impl::require<ILockScreenActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     ILockScreenActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILockScreenActivatedEventArgs>(m_ptr); }
 };
 
 struct IPickerReturnedActivatedEventArgs :
@@ -338,7 +310,6 @@ struct IPickerReturnedActivatedEventArgs :
     impl::require<IPickerReturnedActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IPickerReturnedActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPickerReturnedActivatedEventArgs>(m_ptr); }
 };
 
 struct IPrelaunchActivatedEventArgs :
@@ -347,7 +318,6 @@ struct IPrelaunchActivatedEventArgs :
     impl::require<IPrelaunchActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IPrelaunchActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrelaunchActivatedEventArgs>(m_ptr); }
 };
 
 struct IProtocolActivatedEventArgs :
@@ -356,7 +326,6 @@ struct IProtocolActivatedEventArgs :
     impl::require<IProtocolActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IProtocolActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProtocolActivatedEventArgs>(m_ptr); }
 };
 
 struct IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData :
@@ -365,7 +334,6 @@ struct IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData :
     impl::require<IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData>(m_ptr); }
 };
 
 struct IProtocolForResultsActivatedEventArgs :
@@ -374,7 +342,6 @@ struct IProtocolForResultsActivatedEventArgs :
     impl::require<IProtocolForResultsActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IProtocolForResultsActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProtocolForResultsActivatedEventArgs>(m_ptr); }
 };
 
 struct IRestrictedLaunchActivatedEventArgs :
@@ -383,7 +350,6 @@ struct IRestrictedLaunchActivatedEventArgs :
     impl::require<IRestrictedLaunchActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IRestrictedLaunchActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRestrictedLaunchActivatedEventArgs>(m_ptr); }
 };
 
 struct ISearchActivatedEventArgs :
@@ -392,7 +358,6 @@ struct ISearchActivatedEventArgs :
     impl::require<ISearchActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     ISearchActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISearchActivatedEventArgs>(m_ptr); }
 };
 
 struct ISearchActivatedEventArgsWithLinguisticDetails :
@@ -400,7 +365,6 @@ struct ISearchActivatedEventArgsWithLinguisticDetails :
     impl::consume<ISearchActivatedEventArgsWithLinguisticDetails>
 {
     ISearchActivatedEventArgsWithLinguisticDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISearchActivatedEventArgsWithLinguisticDetails>(m_ptr); }
 };
 
 struct IShareTargetActivatedEventArgs :
@@ -409,7 +373,6 @@ struct IShareTargetActivatedEventArgs :
     impl::require<IShareTargetActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IShareTargetActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IShareTargetActivatedEventArgs>(m_ptr); }
 };
 
 struct ISplashScreen :
@@ -417,7 +380,6 @@ struct ISplashScreen :
     impl::consume<ISplashScreen>
 {
     ISplashScreen(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISplashScreen>(m_ptr); }
 };
 
 struct ITileActivatedInfo :
@@ -425,7 +387,6 @@ struct ITileActivatedInfo :
     impl::consume<ITileActivatedInfo>
 {
     ITileActivatedInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITileActivatedInfo>(m_ptr); }
 };
 
 struct IToastNotificationActivatedEventArgs :
@@ -434,7 +395,6 @@ struct IToastNotificationActivatedEventArgs :
     impl::require<IToastNotificationActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IToastNotificationActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IToastNotificationActivatedEventArgs>(m_ptr); }
 };
 
 struct IUserDataAccountProviderActivatedEventArgs :
@@ -443,7 +403,6 @@ struct IUserDataAccountProviderActivatedEventArgs :
     impl::require<IUserDataAccountProviderActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IUserDataAccountProviderActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDataAccountProviderActivatedEventArgs>(m_ptr); }
 };
 
 struct IViewSwitcherProvider :
@@ -452,7 +411,6 @@ struct IViewSwitcherProvider :
     impl::require<IViewSwitcherProvider, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IViewSwitcherProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IViewSwitcherProvider>(m_ptr); }
 };
 
 struct IVoiceCommandActivatedEventArgs :
@@ -461,7 +419,6 @@ struct IVoiceCommandActivatedEventArgs :
     impl::require<IVoiceCommandActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IVoiceCommandActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVoiceCommandActivatedEventArgs>(m_ptr); }
 };
 
 struct IWebAccountProviderActivatedEventArgs :
@@ -470,7 +427,6 @@ struct IWebAccountProviderActivatedEventArgs :
     impl::require<IWebAccountProviderActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
     IWebAccountProviderActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountProviderActivatedEventArgs>(m_ptr); }
 };
 
 struct IWebAuthenticationBrokerContinuationEventArgs :
@@ -479,7 +435,6 @@ struct IWebAuthenticationBrokerContinuationEventArgs :
     impl::require<IWebAuthenticationBrokerContinuationEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IContinuationActivatedEventArgs>
 {
     IWebAuthenticationBrokerContinuationEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAuthenticationBrokerContinuationEventArgs>(m_ptr); }
 };
 
 }

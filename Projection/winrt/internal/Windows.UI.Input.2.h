@@ -190,7 +190,6 @@ struct ICrossSlidingEventArgs :
     impl::consume<ICrossSlidingEventArgs>
 {
     ICrossSlidingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICrossSlidingEventArgs>(m_ptr); }
 };
 
 struct IDraggingEventArgs :
@@ -198,7 +197,6 @@ struct IDraggingEventArgs :
     impl::consume<IDraggingEventArgs>
 {
     IDraggingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDraggingEventArgs>(m_ptr); }
 };
 
 struct IEdgeGesture :
@@ -206,7 +204,6 @@ struct IEdgeGesture :
     impl::consume<IEdgeGesture>
 {
     IEdgeGesture(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEdgeGesture>(m_ptr); }
 };
 
 struct IEdgeGestureEventArgs :
@@ -214,7 +211,6 @@ struct IEdgeGestureEventArgs :
     impl::consume<IEdgeGestureEventArgs>
 {
     IEdgeGestureEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEdgeGestureEventArgs>(m_ptr); }
 };
 
 struct IEdgeGestureStatics :
@@ -222,7 +218,6 @@ struct IEdgeGestureStatics :
     impl::consume<IEdgeGestureStatics>
 {
     IEdgeGestureStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEdgeGestureStatics>(m_ptr); }
 };
 
 struct IGestureRecognizer :
@@ -230,7 +225,6 @@ struct IGestureRecognizer :
     impl::consume<IGestureRecognizer>
 {
     IGestureRecognizer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGestureRecognizer>(m_ptr); }
 };
 
 struct IHoldingEventArgs :
@@ -238,7 +232,6 @@ struct IHoldingEventArgs :
     impl::consume<IHoldingEventArgs>
 {
     IHoldingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHoldingEventArgs>(m_ptr); }
 };
 
 struct IKeyboardDeliveryInterceptor :
@@ -246,7 +239,6 @@ struct IKeyboardDeliveryInterceptor :
     impl::consume<IKeyboardDeliveryInterceptor>
 {
     IKeyboardDeliveryInterceptor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyboardDeliveryInterceptor>(m_ptr); }
 };
 
 struct IKeyboardDeliveryInterceptorStatics :
@@ -254,7 +246,6 @@ struct IKeyboardDeliveryInterceptorStatics :
     impl::consume<IKeyboardDeliveryInterceptorStatics>
 {
     IKeyboardDeliveryInterceptorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyboardDeliveryInterceptorStatics>(m_ptr); }
 };
 
 struct IManipulationCompletedEventArgs :
@@ -262,7 +253,6 @@ struct IManipulationCompletedEventArgs :
     impl::consume<IManipulationCompletedEventArgs>
 {
     IManipulationCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IManipulationCompletedEventArgs>(m_ptr); }
 };
 
 struct IManipulationInertiaStartingEventArgs :
@@ -270,7 +260,6 @@ struct IManipulationInertiaStartingEventArgs :
     impl::consume<IManipulationInertiaStartingEventArgs>
 {
     IManipulationInertiaStartingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IManipulationInertiaStartingEventArgs>(m_ptr); }
 };
 
 struct IManipulationStartedEventArgs :
@@ -278,7 +267,6 @@ struct IManipulationStartedEventArgs :
     impl::consume<IManipulationStartedEventArgs>
 {
     IManipulationStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IManipulationStartedEventArgs>(m_ptr); }
 };
 
 struct IManipulationUpdatedEventArgs :
@@ -286,7 +274,6 @@ struct IManipulationUpdatedEventArgs :
     impl::consume<IManipulationUpdatedEventArgs>
 {
     IManipulationUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IManipulationUpdatedEventArgs>(m_ptr); }
 };
 
 struct IMouseWheelParameters :
@@ -294,7 +281,6 @@ struct IMouseWheelParameters :
     impl::consume<IMouseWheelParameters>
 {
     IMouseWheelParameters(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMouseWheelParameters>(m_ptr); }
 };
 
 struct IPointerPoint :
@@ -302,7 +288,6 @@ struct IPointerPoint :
     impl::consume<IPointerPoint>
 {
     IPointerPoint(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointerPoint>(m_ptr); }
 };
 
 struct IPointerPointProperties :
@@ -310,7 +295,6 @@ struct IPointerPointProperties :
     impl::consume<IPointerPointProperties>
 {
     IPointerPointProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointerPointProperties>(m_ptr); }
 };
 
 struct IPointerPointProperties2 :
@@ -318,7 +302,6 @@ struct IPointerPointProperties2 :
     impl::consume<IPointerPointProperties2>
 {
     IPointerPointProperties2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointerPointProperties2>(m_ptr); }
 };
 
 struct IPointerPointStatics :
@@ -326,7 +309,6 @@ struct IPointerPointStatics :
     impl::consume<IPointerPointStatics>
 {
     IPointerPointStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointerPointStatics>(m_ptr); }
 };
 
 struct IPointerPointTransform :
@@ -334,7 +316,6 @@ struct IPointerPointTransform :
     impl::consume<IPointerPointTransform>
 {
     IPointerPointTransform(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointerPointTransform>(m_ptr); }
 };
 
 struct IPointerVisualizationSettings :
@@ -342,7 +323,6 @@ struct IPointerVisualizationSettings :
     impl::consume<IPointerVisualizationSettings>
 {
     IPointerVisualizationSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointerVisualizationSettings>(m_ptr); }
 };
 
 struct IPointerVisualizationSettingsStatics :
@@ -350,7 +330,6 @@ struct IPointerVisualizationSettingsStatics :
     impl::consume<IPointerVisualizationSettingsStatics>
 {
     IPointerVisualizationSettingsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointerVisualizationSettingsStatics>(m_ptr); }
 };
 
 struct IRadialController :
@@ -358,7 +337,6 @@ struct IRadialController :
     impl::consume<IRadialController>
 {
     IRadialController(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRadialController>(m_ptr); }
 };
 
 struct IRadialControllerButtonClickedEventArgs :
@@ -366,7 +344,6 @@ struct IRadialControllerButtonClickedEventArgs :
     impl::consume<IRadialControllerButtonClickedEventArgs>
 {
     IRadialControllerButtonClickedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRadialControllerButtonClickedEventArgs>(m_ptr); }
 };
 
 struct IRadialControllerConfiguration :
@@ -374,7 +351,6 @@ struct IRadialControllerConfiguration :
     impl::consume<IRadialControllerConfiguration>
 {
     IRadialControllerConfiguration(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRadialControllerConfiguration>(m_ptr); }
 };
 
 struct IRadialControllerConfigurationStatics :
@@ -382,7 +358,6 @@ struct IRadialControllerConfigurationStatics :
     impl::consume<IRadialControllerConfigurationStatics>
 {
     IRadialControllerConfigurationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRadialControllerConfigurationStatics>(m_ptr); }
 };
 
 struct IRadialControllerControlAcquiredEventArgs :
@@ -390,7 +365,6 @@ struct IRadialControllerControlAcquiredEventArgs :
     impl::consume<IRadialControllerControlAcquiredEventArgs>
 {
     IRadialControllerControlAcquiredEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRadialControllerControlAcquiredEventArgs>(m_ptr); }
 };
 
 struct IRadialControllerMenu :
@@ -398,7 +372,6 @@ struct IRadialControllerMenu :
     impl::consume<IRadialControllerMenu>
 {
     IRadialControllerMenu(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRadialControllerMenu>(m_ptr); }
 };
 
 struct IRadialControllerMenuItem :
@@ -406,7 +379,6 @@ struct IRadialControllerMenuItem :
     impl::consume<IRadialControllerMenuItem>
 {
     IRadialControllerMenuItem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRadialControllerMenuItem>(m_ptr); }
 };
 
 struct IRadialControllerMenuItemStatics :
@@ -414,7 +386,6 @@ struct IRadialControllerMenuItemStatics :
     impl::consume<IRadialControllerMenuItemStatics>
 {
     IRadialControllerMenuItemStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRadialControllerMenuItemStatics>(m_ptr); }
 };
 
 struct IRadialControllerRotationChangedEventArgs :
@@ -422,7 +393,6 @@ struct IRadialControllerRotationChangedEventArgs :
     impl::consume<IRadialControllerRotationChangedEventArgs>
 {
     IRadialControllerRotationChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRadialControllerRotationChangedEventArgs>(m_ptr); }
 };
 
 struct IRadialControllerScreenContact :
@@ -430,7 +400,6 @@ struct IRadialControllerScreenContact :
     impl::consume<IRadialControllerScreenContact>
 {
     IRadialControllerScreenContact(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRadialControllerScreenContact>(m_ptr); }
 };
 
 struct IRadialControllerScreenContactContinuedEventArgs :
@@ -438,7 +407,6 @@ struct IRadialControllerScreenContactContinuedEventArgs :
     impl::consume<IRadialControllerScreenContactContinuedEventArgs>
 {
     IRadialControllerScreenContactContinuedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRadialControllerScreenContactContinuedEventArgs>(m_ptr); }
 };
 
 struct IRadialControllerScreenContactStartedEventArgs :
@@ -446,7 +414,6 @@ struct IRadialControllerScreenContactStartedEventArgs :
     impl::consume<IRadialControllerScreenContactStartedEventArgs>
 {
     IRadialControllerScreenContactStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRadialControllerScreenContactStartedEventArgs>(m_ptr); }
 };
 
 struct IRadialControllerStatics :
@@ -454,7 +421,6 @@ struct IRadialControllerStatics :
     impl::consume<IRadialControllerStatics>
 {
     IRadialControllerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRadialControllerStatics>(m_ptr); }
 };
 
 struct IRightTappedEventArgs :
@@ -462,7 +428,6 @@ struct IRightTappedEventArgs :
     impl::consume<IRightTappedEventArgs>
 {
     IRightTappedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRightTappedEventArgs>(m_ptr); }
 };
 
 struct ITappedEventArgs :
@@ -470,7 +435,6 @@ struct ITappedEventArgs :
     impl::consume<ITappedEventArgs>
 {
     ITappedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITappedEventArgs>(m_ptr); }
 };
 
 }

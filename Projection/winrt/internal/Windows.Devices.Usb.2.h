@@ -240,7 +240,6 @@ struct IUsbBulkInEndpointDescriptor :
     impl::consume<IUsbBulkInEndpointDescriptor>
 {
     IUsbBulkInEndpointDescriptor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbBulkInEndpointDescriptor>(m_ptr); }
 };
 
 struct IUsbBulkInPipe :
@@ -248,7 +247,6 @@ struct IUsbBulkInPipe :
     impl::consume<IUsbBulkInPipe>
 {
     IUsbBulkInPipe(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbBulkInPipe>(m_ptr); }
 };
 
 struct IUsbBulkOutEndpointDescriptor :
@@ -256,7 +254,6 @@ struct IUsbBulkOutEndpointDescriptor :
     impl::consume<IUsbBulkOutEndpointDescriptor>
 {
     IUsbBulkOutEndpointDescriptor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbBulkOutEndpointDescriptor>(m_ptr); }
 };
 
 struct IUsbBulkOutPipe :
@@ -264,7 +261,6 @@ struct IUsbBulkOutPipe :
     impl::consume<IUsbBulkOutPipe>
 {
     IUsbBulkOutPipe(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbBulkOutPipe>(m_ptr); }
 };
 
 struct IUsbConfiguration :
@@ -272,7 +268,6 @@ struct IUsbConfiguration :
     impl::consume<IUsbConfiguration>
 {
     IUsbConfiguration(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbConfiguration>(m_ptr); }
 };
 
 struct IUsbConfigurationDescriptor :
@@ -280,7 +275,6 @@ struct IUsbConfigurationDescriptor :
     impl::consume<IUsbConfigurationDescriptor>
 {
     IUsbConfigurationDescriptor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbConfigurationDescriptor>(m_ptr); }
 };
 
 struct IUsbConfigurationDescriptorStatics :
@@ -288,7 +282,6 @@ struct IUsbConfigurationDescriptorStatics :
     impl::consume<IUsbConfigurationDescriptorStatics>
 {
     IUsbConfigurationDescriptorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbConfigurationDescriptorStatics>(m_ptr); }
 };
 
 struct IUsbControlRequestType :
@@ -296,7 +289,6 @@ struct IUsbControlRequestType :
     impl::consume<IUsbControlRequestType>
 {
     IUsbControlRequestType(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbControlRequestType>(m_ptr); }
 };
 
 struct IUsbDescriptor :
@@ -304,7 +296,6 @@ struct IUsbDescriptor :
     impl::consume<IUsbDescriptor>
 {
     IUsbDescriptor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbDescriptor>(m_ptr); }
 };
 
 struct IUsbDevice :
@@ -313,7 +304,6 @@ struct IUsbDevice :
     impl::require<IUsbDevice, Windows::Foundation::IClosable>
 {
     IUsbDevice(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbDevice>(m_ptr); }
 };
 
 struct IUsbDeviceClass :
@@ -321,7 +311,6 @@ struct IUsbDeviceClass :
     impl::consume<IUsbDeviceClass>
 {
     IUsbDeviceClass(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbDeviceClass>(m_ptr); }
 };
 
 struct IUsbDeviceClasses :
@@ -329,7 +318,6 @@ struct IUsbDeviceClasses :
     impl::consume<IUsbDeviceClasses>
 {
     IUsbDeviceClasses(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbDeviceClasses>(m_ptr); }
 };
 
 struct IUsbDeviceClassesStatics :
@@ -337,7 +325,6 @@ struct IUsbDeviceClassesStatics :
     impl::consume<IUsbDeviceClassesStatics>
 {
     IUsbDeviceClassesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbDeviceClassesStatics>(m_ptr); }
 };
 
 struct IUsbDeviceDescriptor :
@@ -345,7 +332,6 @@ struct IUsbDeviceDescriptor :
     impl::consume<IUsbDeviceDescriptor>
 {
     IUsbDeviceDescriptor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbDeviceDescriptor>(m_ptr); }
 };
 
 struct IUsbDeviceStatics :
@@ -353,7 +339,6 @@ struct IUsbDeviceStatics :
     impl::consume<IUsbDeviceStatics>
 {
     IUsbDeviceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbDeviceStatics>(m_ptr); }
 };
 
 struct IUsbEndpointDescriptor :
@@ -361,7 +346,6 @@ struct IUsbEndpointDescriptor :
     impl::consume<IUsbEndpointDescriptor>
 {
     IUsbEndpointDescriptor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbEndpointDescriptor>(m_ptr); }
 };
 
 struct IUsbEndpointDescriptorStatics :
@@ -369,7 +353,6 @@ struct IUsbEndpointDescriptorStatics :
     impl::consume<IUsbEndpointDescriptorStatics>
 {
     IUsbEndpointDescriptorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbEndpointDescriptorStatics>(m_ptr); }
 };
 
 struct IUsbInterface :
@@ -377,7 +360,6 @@ struct IUsbInterface :
     impl::consume<IUsbInterface>
 {
     IUsbInterface(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbInterface>(m_ptr); }
 };
 
 struct IUsbInterfaceDescriptor :
@@ -385,7 +367,6 @@ struct IUsbInterfaceDescriptor :
     impl::consume<IUsbInterfaceDescriptor>
 {
     IUsbInterfaceDescriptor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbInterfaceDescriptor>(m_ptr); }
 };
 
 struct IUsbInterfaceDescriptorStatics :
@@ -393,7 +374,6 @@ struct IUsbInterfaceDescriptorStatics :
     impl::consume<IUsbInterfaceDescriptorStatics>
 {
     IUsbInterfaceDescriptorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbInterfaceDescriptorStatics>(m_ptr); }
 };
 
 struct IUsbInterfaceSetting :
@@ -401,7 +381,6 @@ struct IUsbInterfaceSetting :
     impl::consume<IUsbInterfaceSetting>
 {
     IUsbInterfaceSetting(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbInterfaceSetting>(m_ptr); }
 };
 
 struct IUsbInterruptInEndpointDescriptor :
@@ -409,7 +388,6 @@ struct IUsbInterruptInEndpointDescriptor :
     impl::consume<IUsbInterruptInEndpointDescriptor>
 {
     IUsbInterruptInEndpointDescriptor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbInterruptInEndpointDescriptor>(m_ptr); }
 };
 
 struct IUsbInterruptInEventArgs :
@@ -417,7 +395,6 @@ struct IUsbInterruptInEventArgs :
     impl::consume<IUsbInterruptInEventArgs>
 {
     IUsbInterruptInEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbInterruptInEventArgs>(m_ptr); }
 };
 
 struct IUsbInterruptInPipe :
@@ -425,7 +402,6 @@ struct IUsbInterruptInPipe :
     impl::consume<IUsbInterruptInPipe>
 {
     IUsbInterruptInPipe(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbInterruptInPipe>(m_ptr); }
 };
 
 struct IUsbInterruptOutEndpointDescriptor :
@@ -433,7 +409,6 @@ struct IUsbInterruptOutEndpointDescriptor :
     impl::consume<IUsbInterruptOutEndpointDescriptor>
 {
     IUsbInterruptOutEndpointDescriptor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbInterruptOutEndpointDescriptor>(m_ptr); }
 };
 
 struct IUsbInterruptOutPipe :
@@ -441,7 +416,6 @@ struct IUsbInterruptOutPipe :
     impl::consume<IUsbInterruptOutPipe>
 {
     IUsbInterruptOutPipe(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbInterruptOutPipe>(m_ptr); }
 };
 
 struct IUsbSetupPacket :
@@ -449,7 +423,6 @@ struct IUsbSetupPacket :
     impl::consume<IUsbSetupPacket>
 {
     IUsbSetupPacket(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbSetupPacket>(m_ptr); }
 };
 
 struct IUsbSetupPacketFactory :
@@ -457,7 +430,6 @@ struct IUsbSetupPacketFactory :
     impl::consume<IUsbSetupPacketFactory>
 {
     IUsbSetupPacketFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUsbSetupPacketFactory>(m_ptr); }
 };
 
 }

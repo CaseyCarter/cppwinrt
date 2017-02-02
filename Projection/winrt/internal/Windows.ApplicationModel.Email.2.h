@@ -599,7 +599,6 @@ struct IEmailAttachment :
     impl::consume<IEmailAttachment>
 {
     IEmailAttachment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailAttachment>(m_ptr); }
 };
 
 struct IEmailAttachment2 :
@@ -607,7 +606,6 @@ struct IEmailAttachment2 :
     impl::consume<IEmailAttachment2>
 {
     IEmailAttachment2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailAttachment2>(m_ptr); }
 };
 
 struct IEmailAttachmentFactory :
@@ -615,7 +613,6 @@ struct IEmailAttachmentFactory :
     impl::consume<IEmailAttachmentFactory>
 {
     IEmailAttachmentFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailAttachmentFactory>(m_ptr); }
 };
 
 struct IEmailAttachmentFactory2 :
@@ -623,7 +620,6 @@ struct IEmailAttachmentFactory2 :
     impl::consume<IEmailAttachmentFactory2>
 {
     IEmailAttachmentFactory2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailAttachmentFactory2>(m_ptr); }
 };
 
 struct IEmailConversation :
@@ -631,7 +627,6 @@ struct IEmailConversation :
     impl::consume<IEmailConversation>
 {
     IEmailConversation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailConversation>(m_ptr); }
 };
 
 struct IEmailConversationBatch :
@@ -639,7 +634,6 @@ struct IEmailConversationBatch :
     impl::consume<IEmailConversationBatch>
 {
     IEmailConversationBatch(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailConversationBatch>(m_ptr); }
 };
 
 struct IEmailConversationReader :
@@ -647,7 +641,6 @@ struct IEmailConversationReader :
     impl::consume<IEmailConversationReader>
 {
     IEmailConversationReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailConversationReader>(m_ptr); }
 };
 
 struct IEmailFolder :
@@ -655,7 +648,6 @@ struct IEmailFolder :
     impl::consume<IEmailFolder>
 {
     IEmailFolder(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailFolder>(m_ptr); }
 };
 
 struct IEmailIrmInfo :
@@ -663,7 +655,6 @@ struct IEmailIrmInfo :
     impl::consume<IEmailIrmInfo>
 {
     IEmailIrmInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailIrmInfo>(m_ptr); }
 };
 
 struct IEmailIrmInfoFactory :
@@ -671,7 +662,6 @@ struct IEmailIrmInfoFactory :
     impl::consume<IEmailIrmInfoFactory>
 {
     IEmailIrmInfoFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailIrmInfoFactory>(m_ptr); }
 };
 
 struct IEmailIrmTemplate :
@@ -679,7 +669,6 @@ struct IEmailIrmTemplate :
     impl::consume<IEmailIrmTemplate>
 {
     IEmailIrmTemplate(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailIrmTemplate>(m_ptr); }
 };
 
 struct IEmailIrmTemplateFactory :
@@ -687,7 +676,6 @@ struct IEmailIrmTemplateFactory :
     impl::consume<IEmailIrmTemplateFactory>
 {
     IEmailIrmTemplateFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailIrmTemplateFactory>(m_ptr); }
 };
 
 struct IEmailItemCounts :
@@ -695,7 +683,6 @@ struct IEmailItemCounts :
     impl::consume<IEmailItemCounts>
 {
     IEmailItemCounts(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailItemCounts>(m_ptr); }
 };
 
 struct IEmailMailbox :
@@ -703,7 +690,6 @@ struct IEmailMailbox :
     impl::consume<IEmailMailbox>
 {
     IEmailMailbox(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailbox>(m_ptr); }
 };
 
 struct IEmailMailbox2 :
@@ -712,7 +698,6 @@ struct IEmailMailbox2 :
     impl::require<IEmailMailbox2, Windows::ApplicationModel::Email::IEmailMailbox>
 {
     IEmailMailbox2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailbox2>(m_ptr); }
 };
 
 struct IEmailMailbox3 :
@@ -721,7 +706,6 @@ struct IEmailMailbox3 :
     impl::require<IEmailMailbox3, Windows::ApplicationModel::Email::IEmailMailbox, Windows::ApplicationModel::Email::IEmailMailbox2>
 {
     IEmailMailbox3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailbox3>(m_ptr); }
 };
 
 struct IEmailMailbox4 :
@@ -729,7 +713,6 @@ struct IEmailMailbox4 :
     impl::consume<IEmailMailbox4>
 {
     IEmailMailbox4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailbox4>(m_ptr); }
 };
 
 struct IEmailMailboxAction :
@@ -737,7 +720,6 @@ struct IEmailMailboxAction :
     impl::consume<IEmailMailboxAction>
 {
     IEmailMailboxAction(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxAction>(m_ptr); }
 };
 
 struct IEmailMailboxAutoReply :
@@ -745,7 +727,6 @@ struct IEmailMailboxAutoReply :
     impl::consume<IEmailMailboxAutoReply>
 {
     IEmailMailboxAutoReply(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxAutoReply>(m_ptr); }
 };
 
 struct IEmailMailboxAutoReplySettings :
@@ -753,7 +734,6 @@ struct IEmailMailboxAutoReplySettings :
     impl::consume<IEmailMailboxAutoReplySettings>
 {
     IEmailMailboxAutoReplySettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxAutoReplySettings>(m_ptr); }
 };
 
 struct IEmailMailboxCapabilities :
@@ -761,7 +741,6 @@ struct IEmailMailboxCapabilities :
     impl::consume<IEmailMailboxCapabilities>
 {
     IEmailMailboxCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxCapabilities>(m_ptr); }
 };
 
 struct IEmailMailboxCapabilities2 :
@@ -769,7 +748,6 @@ struct IEmailMailboxCapabilities2 :
     impl::consume<IEmailMailboxCapabilities2>
 {
     IEmailMailboxCapabilities2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxCapabilities2>(m_ptr); }
 };
 
 struct IEmailMailboxCapabilities3 :
@@ -777,7 +755,6 @@ struct IEmailMailboxCapabilities3 :
     impl::consume<IEmailMailboxCapabilities3>
 {
     IEmailMailboxCapabilities3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxCapabilities3>(m_ptr); }
 };
 
 struct IEmailMailboxChange :
@@ -785,7 +762,6 @@ struct IEmailMailboxChange :
     impl::consume<IEmailMailboxChange>
 {
     IEmailMailboxChange(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxChange>(m_ptr); }
 };
 
 struct IEmailMailboxChangeReader :
@@ -793,7 +769,6 @@ struct IEmailMailboxChangeReader :
     impl::consume<IEmailMailboxChangeReader>
 {
     IEmailMailboxChangeReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxChangeReader>(m_ptr); }
 };
 
 struct IEmailMailboxChangeTracker :
@@ -801,7 +776,6 @@ struct IEmailMailboxChangeTracker :
     impl::consume<IEmailMailboxChangeTracker>
 {
     IEmailMailboxChangeTracker(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxChangeTracker>(m_ptr); }
 };
 
 struct IEmailMailboxChangedDeferral :
@@ -809,7 +783,6 @@ struct IEmailMailboxChangedDeferral :
     impl::consume<IEmailMailboxChangedDeferral>
 {
     IEmailMailboxChangedDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxChangedDeferral>(m_ptr); }
 };
 
 struct IEmailMailboxChangedEventArgs :
@@ -817,7 +790,6 @@ struct IEmailMailboxChangedEventArgs :
     impl::consume<IEmailMailboxChangedEventArgs>
 {
     IEmailMailboxChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxChangedEventArgs>(m_ptr); }
 };
 
 struct IEmailMailboxCreateFolderResult :
@@ -825,7 +797,6 @@ struct IEmailMailboxCreateFolderResult :
     impl::consume<IEmailMailboxCreateFolderResult>
 {
     IEmailMailboxCreateFolderResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxCreateFolderResult>(m_ptr); }
 };
 
 struct IEmailMailboxPolicies :
@@ -833,7 +804,6 @@ struct IEmailMailboxPolicies :
     impl::consume<IEmailMailboxPolicies>
 {
     IEmailMailboxPolicies(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxPolicies>(m_ptr); }
 };
 
 struct IEmailMailboxPolicies2 :
@@ -841,7 +811,6 @@ struct IEmailMailboxPolicies2 :
     impl::consume<IEmailMailboxPolicies2>
 {
     IEmailMailboxPolicies2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxPolicies2>(m_ptr); }
 };
 
 struct IEmailMailboxPolicies3 :
@@ -849,7 +818,6 @@ struct IEmailMailboxPolicies3 :
     impl::consume<IEmailMailboxPolicies3>
 {
     IEmailMailboxPolicies3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxPolicies3>(m_ptr); }
 };
 
 struct IEmailMailboxSyncManager :
@@ -857,7 +825,6 @@ struct IEmailMailboxSyncManager :
     impl::consume<IEmailMailboxSyncManager>
 {
     IEmailMailboxSyncManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxSyncManager>(m_ptr); }
 };
 
 struct IEmailMailboxSyncManager2 :
@@ -865,7 +832,6 @@ struct IEmailMailboxSyncManager2 :
     impl::consume<IEmailMailboxSyncManager2>
 {
     IEmailMailboxSyncManager2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxSyncManager2>(m_ptr); }
 };
 
 struct IEmailManagerForUser :
@@ -873,7 +839,6 @@ struct IEmailManagerForUser :
     impl::consume<IEmailManagerForUser>
 {
     IEmailManagerForUser(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailManagerForUser>(m_ptr); }
 };
 
 struct IEmailManagerStatics :
@@ -881,7 +846,6 @@ struct IEmailManagerStatics :
     impl::consume<IEmailManagerStatics>
 {
     IEmailManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailManagerStatics>(m_ptr); }
 };
 
 struct IEmailManagerStatics2 :
@@ -889,7 +853,6 @@ struct IEmailManagerStatics2 :
     impl::consume<IEmailManagerStatics2>
 {
     IEmailManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailManagerStatics2>(m_ptr); }
 };
 
 struct IEmailManagerStatics3 :
@@ -897,7 +860,6 @@ struct IEmailManagerStatics3 :
     impl::consume<IEmailManagerStatics3>
 {
     IEmailManagerStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailManagerStatics3>(m_ptr); }
 };
 
 struct IEmailMeetingInfo :
@@ -905,7 +867,6 @@ struct IEmailMeetingInfo :
     impl::consume<IEmailMeetingInfo>
 {
     IEmailMeetingInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMeetingInfo>(m_ptr); }
 };
 
 struct IEmailMeetingInfo2 :
@@ -913,7 +874,6 @@ struct IEmailMeetingInfo2 :
     impl::consume<IEmailMeetingInfo2>
 {
     IEmailMeetingInfo2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMeetingInfo2>(m_ptr); }
 };
 
 struct IEmailMessage :
@@ -921,7 +881,6 @@ struct IEmailMessage :
     impl::consume<IEmailMessage>
 {
     IEmailMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMessage>(m_ptr); }
 };
 
 struct IEmailMessage2 :
@@ -929,7 +888,6 @@ struct IEmailMessage2 :
     impl::consume<IEmailMessage2>
 {
     IEmailMessage2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMessage2>(m_ptr); }
 };
 
 struct IEmailMessage3 :
@@ -937,7 +895,6 @@ struct IEmailMessage3 :
     impl::consume<IEmailMessage3>
 {
     IEmailMessage3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMessage3>(m_ptr); }
 };
 
 struct IEmailMessageBatch :
@@ -945,7 +902,6 @@ struct IEmailMessageBatch :
     impl::consume<IEmailMessageBatch>
 {
     IEmailMessageBatch(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMessageBatch>(m_ptr); }
 };
 
 struct IEmailMessageReader :
@@ -953,7 +909,6 @@ struct IEmailMessageReader :
     impl::consume<IEmailMessageReader>
 {
     IEmailMessageReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMessageReader>(m_ptr); }
 };
 
 struct IEmailQueryOptions :
@@ -961,7 +916,6 @@ struct IEmailQueryOptions :
     impl::consume<IEmailQueryOptions>
 {
     IEmailQueryOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailQueryOptions>(m_ptr); }
 };
 
 struct IEmailQueryOptionsFactory :
@@ -969,7 +923,6 @@ struct IEmailQueryOptionsFactory :
     impl::consume<IEmailQueryOptionsFactory>
 {
     IEmailQueryOptionsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailQueryOptionsFactory>(m_ptr); }
 };
 
 struct IEmailQueryTextSearch :
@@ -977,7 +930,6 @@ struct IEmailQueryTextSearch :
     impl::consume<IEmailQueryTextSearch>
 {
     IEmailQueryTextSearch(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailQueryTextSearch>(m_ptr); }
 };
 
 struct IEmailRecipient :
@@ -985,7 +937,6 @@ struct IEmailRecipient :
     impl::consume<IEmailRecipient>
 {
     IEmailRecipient(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailRecipient>(m_ptr); }
 };
 
 struct IEmailRecipientFactory :
@@ -993,7 +944,6 @@ struct IEmailRecipientFactory :
     impl::consume<IEmailRecipientFactory>
 {
     IEmailRecipientFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailRecipientFactory>(m_ptr); }
 };
 
 struct IEmailRecipientResolutionResult :
@@ -1001,7 +951,6 @@ struct IEmailRecipientResolutionResult :
     impl::consume<IEmailRecipientResolutionResult>
 {
     IEmailRecipientResolutionResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailRecipientResolutionResult>(m_ptr); }
 };
 
 struct IEmailRecipientResolutionResult2 :
@@ -1009,7 +958,6 @@ struct IEmailRecipientResolutionResult2 :
     impl::consume<IEmailRecipientResolutionResult2>
 {
     IEmailRecipientResolutionResult2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailRecipientResolutionResult2>(m_ptr); }
 };
 
 struct IEmailStore :
@@ -1017,7 +965,6 @@ struct IEmailStore :
     impl::consume<IEmailStore>
 {
     IEmailStore(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailStore>(m_ptr); }
 };
 
 struct IEmailStoreNotificationTriggerDetails :
@@ -1025,7 +972,6 @@ struct IEmailStoreNotificationTriggerDetails :
     impl::consume<IEmailStoreNotificationTriggerDetails>
 {
     IEmailStoreNotificationTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailStoreNotificationTriggerDetails>(m_ptr); }
 };
 
 }

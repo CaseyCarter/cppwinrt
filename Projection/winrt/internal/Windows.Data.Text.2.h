@@ -157,7 +157,6 @@ namespace Windows::Data::Text {
 struct SelectableWordSegmentsTokenizingHandler : Windows::IUnknown
 {
     SelectableWordSegmentsTokenizingHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<SelectableWordSegmentsTokenizingHandler>(m_ptr); }
     template <typename L> SelectableWordSegmentsTokenizingHandler(L lambda);
     template <typename F> SelectableWordSegmentsTokenizingHandler (F * function);
     template <typename O, typename M> SelectableWordSegmentsTokenizingHandler(O * object, M method);
@@ -167,7 +166,6 @@ struct SelectableWordSegmentsTokenizingHandler : Windows::IUnknown
 struct WordSegmentsTokenizingHandler : Windows::IUnknown
 {
     WordSegmentsTokenizingHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<WordSegmentsTokenizingHandler>(m_ptr); }
     template <typename L> WordSegmentsTokenizingHandler(L lambda);
     template <typename F> WordSegmentsTokenizingHandler (F * function);
     template <typename O, typename M> WordSegmentsTokenizingHandler(O * object, M method);
@@ -179,7 +177,6 @@ struct IAlternateWordForm :
     impl::consume<IAlternateWordForm>
 {
     IAlternateWordForm(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAlternateWordForm>(m_ptr); }
 };
 
 struct ISelectableWordSegment :
@@ -187,7 +184,6 @@ struct ISelectableWordSegment :
     impl::consume<ISelectableWordSegment>
 {
     ISelectableWordSegment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectableWordSegment>(m_ptr); }
 };
 
 struct ISelectableWordsSegmenter :
@@ -195,7 +191,6 @@ struct ISelectableWordsSegmenter :
     impl::consume<ISelectableWordsSegmenter>
 {
     ISelectableWordsSegmenter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectableWordsSegmenter>(m_ptr); }
 };
 
 struct ISelectableWordsSegmenterFactory :
@@ -203,7 +198,6 @@ struct ISelectableWordsSegmenterFactory :
     impl::consume<ISelectableWordsSegmenterFactory>
 {
     ISelectableWordsSegmenterFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectableWordsSegmenterFactory>(m_ptr); }
 };
 
 struct ISemanticTextQuery :
@@ -211,7 +205,6 @@ struct ISemanticTextQuery :
     impl::consume<ISemanticTextQuery>
 {
     ISemanticTextQuery(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISemanticTextQuery>(m_ptr); }
 };
 
 struct ISemanticTextQueryFactory :
@@ -219,7 +212,6 @@ struct ISemanticTextQueryFactory :
     impl::consume<ISemanticTextQueryFactory>
 {
     ISemanticTextQueryFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISemanticTextQueryFactory>(m_ptr); }
 };
 
 struct ITextConversionGenerator :
@@ -227,7 +219,6 @@ struct ITextConversionGenerator :
     impl::consume<ITextConversionGenerator>
 {
     ITextConversionGenerator(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextConversionGenerator>(m_ptr); }
 };
 
 struct ITextConversionGeneratorFactory :
@@ -235,7 +226,6 @@ struct ITextConversionGeneratorFactory :
     impl::consume<ITextConversionGeneratorFactory>
 {
     ITextConversionGeneratorFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextConversionGeneratorFactory>(m_ptr); }
 };
 
 struct ITextPhoneme :
@@ -243,7 +233,6 @@ struct ITextPhoneme :
     impl::consume<ITextPhoneme>
 {
     ITextPhoneme(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextPhoneme>(m_ptr); }
 };
 
 struct ITextPredictionGenerator :
@@ -251,7 +240,6 @@ struct ITextPredictionGenerator :
     impl::consume<ITextPredictionGenerator>
 {
     ITextPredictionGenerator(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextPredictionGenerator>(m_ptr); }
 };
 
 struct ITextPredictionGeneratorFactory :
@@ -259,7 +247,6 @@ struct ITextPredictionGeneratorFactory :
     impl::consume<ITextPredictionGeneratorFactory>
 {
     ITextPredictionGeneratorFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextPredictionGeneratorFactory>(m_ptr); }
 };
 
 struct ITextReverseConversionGenerator :
@@ -267,7 +254,6 @@ struct ITextReverseConversionGenerator :
     impl::consume<ITextReverseConversionGenerator>
 {
     ITextReverseConversionGenerator(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextReverseConversionGenerator>(m_ptr); }
 };
 
 struct ITextReverseConversionGenerator2 :
@@ -275,7 +261,6 @@ struct ITextReverseConversionGenerator2 :
     impl::consume<ITextReverseConversionGenerator2>
 {
     ITextReverseConversionGenerator2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextReverseConversionGenerator2>(m_ptr); }
 };
 
 struct ITextReverseConversionGeneratorFactory :
@@ -283,7 +268,6 @@ struct ITextReverseConversionGeneratorFactory :
     impl::consume<ITextReverseConversionGeneratorFactory>
 {
     ITextReverseConversionGeneratorFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextReverseConversionGeneratorFactory>(m_ptr); }
 };
 
 struct IUnicodeCharactersStatics :
@@ -291,7 +275,6 @@ struct IUnicodeCharactersStatics :
     impl::consume<IUnicodeCharactersStatics>
 {
     IUnicodeCharactersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUnicodeCharactersStatics>(m_ptr); }
 };
 
 struct IWordSegment :
@@ -299,7 +282,6 @@ struct IWordSegment :
     impl::consume<IWordSegment>
 {
     IWordSegment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWordSegment>(m_ptr); }
 };
 
 struct IWordsSegmenter :
@@ -307,7 +289,6 @@ struct IWordsSegmenter :
     impl::consume<IWordsSegmenter>
 {
     IWordsSegmenter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWordsSegmenter>(m_ptr); }
 };
 
 struct IWordsSegmenterFactory :
@@ -315,7 +296,6 @@ struct IWordsSegmenterFactory :
     impl::consume<IWordsSegmenterFactory>
 {
     IWordsSegmenterFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWordsSegmenterFactory>(m_ptr); }
 };
 
 }

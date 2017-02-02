@@ -1406,581 +1406,581 @@ namespace Windows::Web::Http {
 template <typename D> Windows::Web::Http::HttpClient impl_IHttpClientFactory<D>::Create(const Windows::Web::Http::Filters::IHttpFilter & filter) const
 {
     Windows::Web::Http::HttpClient client { nullptr };
-    check_hresult(static_cast<const IHttpClientFactory &>(static_cast<const D &>(*this))->abi_Create(get(filter), put(client)));
+    check_hresult(WINRT_SHIM(IHttpClientFactory)->abi_Create(get(filter), put(client)));
     return client;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> impl_IHttpClient<D>::DeleteAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> operation;
-    check_hresult(static_cast<const IHttpClient &>(static_cast<const D &>(*this))->abi_DeleteAsync(get(uri), put(operation)));
+    check_hresult(WINRT_SHIM(IHttpClient)->abi_DeleteAsync(get(uri), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> impl_IHttpClient<D>::GetAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> operation;
-    check_hresult(static_cast<const IHttpClient &>(static_cast<const D &>(*this))->abi_GetAsync(get(uri), put(operation)));
+    check_hresult(WINRT_SHIM(IHttpClient)->abi_GetAsync(get(uri), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> impl_IHttpClient<D>::GetAsync(const Windows::Foundation::Uri & uri, Windows::Web::Http::HttpCompletionOption completionOption) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> operation;
-    check_hresult(static_cast<const IHttpClient &>(static_cast<const D &>(*this))->abi_GetWithOptionAsync(get(uri), completionOption, put(operation)));
+    check_hresult(WINRT_SHIM(IHttpClient)->abi_GetWithOptionAsync(get(uri), completionOption, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, Windows::Web::Http::HttpProgress> impl_IHttpClient<D>::GetBufferAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, Windows::Web::Http::HttpProgress> operation;
-    check_hresult(static_cast<const IHttpClient &>(static_cast<const D &>(*this))->abi_GetBufferAsync(get(uri), put(operation)));
+    check_hresult(WINRT_SHIM(IHttpClient)->abi_GetBufferAsync(get(uri), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, Windows::Web::Http::HttpProgress> impl_IHttpClient<D>::GetInputStreamAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, Windows::Web::Http::HttpProgress> operation;
-    check_hresult(static_cast<const IHttpClient &>(static_cast<const D &>(*this))->abi_GetInputStreamAsync(get(uri), put(operation)));
+    check_hresult(WINRT_SHIM(IHttpClient)->abi_GetInputStreamAsync(get(uri), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<hstring, Windows::Web::Http::HttpProgress> impl_IHttpClient<D>::GetStringAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<hstring, Windows::Web::Http::HttpProgress> operation;
-    check_hresult(static_cast<const IHttpClient &>(static_cast<const D &>(*this))->abi_GetStringAsync(get(uri), put(operation)));
+    check_hresult(WINRT_SHIM(IHttpClient)->abi_GetStringAsync(get(uri), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> impl_IHttpClient<D>::PostAsync(const Windows::Foundation::Uri & uri, const Windows::Web::Http::IHttpContent & content) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> operation;
-    check_hresult(static_cast<const IHttpClient &>(static_cast<const D &>(*this))->abi_PostAsync(get(uri), get(content), put(operation)));
+    check_hresult(WINRT_SHIM(IHttpClient)->abi_PostAsync(get(uri), get(content), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> impl_IHttpClient<D>::PutAsync(const Windows::Foundation::Uri & uri, const Windows::Web::Http::IHttpContent & content) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> operation;
-    check_hresult(static_cast<const IHttpClient &>(static_cast<const D &>(*this))->abi_PutAsync(get(uri), get(content), put(operation)));
+    check_hresult(WINRT_SHIM(IHttpClient)->abi_PutAsync(get(uri), get(content), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> impl_IHttpClient<D>::SendRequestAsync(const Windows::Web::Http::HttpRequestMessage & request) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> operation;
-    check_hresult(static_cast<const IHttpClient &>(static_cast<const D &>(*this))->abi_SendRequestAsync(get(request), put(operation)));
+    check_hresult(WINRT_SHIM(IHttpClient)->abi_SendRequestAsync(get(request), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> impl_IHttpClient<D>::SendRequestAsync(const Windows::Web::Http::HttpRequestMessage & request, Windows::Web::Http::HttpCompletionOption completionOption) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> operation;
-    check_hresult(static_cast<const IHttpClient &>(static_cast<const D &>(*this))->abi_SendRequestWithOptionAsync(get(request), completionOption, put(operation)));
+    check_hresult(WINRT_SHIM(IHttpClient)->abi_SendRequestWithOptionAsync(get(request), completionOption, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpRequestHeaderCollection impl_IHttpClient<D>::DefaultRequestHeaders() const
 {
     Windows::Web::Http::Headers::HttpRequestHeaderCollection value { nullptr };
-    check_hresult(static_cast<const IHttpClient &>(static_cast<const D &>(*this))->get_DefaultRequestHeaders(put(value)));
+    check_hresult(WINRT_SHIM(IHttpClient)->get_DefaultRequestHeaders(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpContentHeaderCollection impl_IHttpContent<D>::Headers() const
 {
     Windows::Web::Http::Headers::HttpContentHeaderCollection value { nullptr };
-    check_hresult(static_cast<const IHttpContent &>(static_cast<const D &>(*this))->get_Headers(put(value)));
+    check_hresult(WINRT_SHIM(IHttpContent)->get_Headers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> impl_IHttpContent<D>::BufferAllAsync() const
 {
     Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> operation;
-    check_hresult(static_cast<const IHttpContent &>(static_cast<const D &>(*this))->abi_BufferAllAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IHttpContent)->abi_BufferAllAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, uint64_t> impl_IHttpContent<D>::ReadAsBufferAsync() const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, uint64_t> operation;
-    check_hresult(static_cast<const IHttpContent &>(static_cast<const D &>(*this))->abi_ReadAsBufferAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IHttpContent)->abi_ReadAsBufferAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, uint64_t> impl_IHttpContent<D>::ReadAsInputStreamAsync() const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, uint64_t> operation;
-    check_hresult(static_cast<const IHttpContent &>(static_cast<const D &>(*this))->abi_ReadAsInputStreamAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IHttpContent)->abi_ReadAsInputStreamAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<hstring, uint64_t> impl_IHttpContent<D>::ReadAsStringAsync() const
 {
     Windows::Foundation::IAsyncOperationWithProgress<hstring, uint64_t> operation;
-    check_hresult(static_cast<const IHttpContent &>(static_cast<const D &>(*this))->abi_ReadAsStringAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IHttpContent)->abi_ReadAsStringAsync(put(operation)));
     return operation;
 }
 
 template <typename D> bool impl_IHttpContent<D>::TryComputeLength(uint64_t & length) const
 {
     bool succeeded {};
-    check_hresult(static_cast<const IHttpContent &>(static_cast<const D &>(*this))->abi_TryComputeLength(&length, &succeeded));
+    check_hresult(WINRT_SHIM(IHttpContent)->abi_TryComputeLength(&length, &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> impl_IHttpContent<D>::WriteToStreamAsync(const Windows::Storage::Streams::IOutputStream & outputStream) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> operation;
-    check_hresult(static_cast<const IHttpContent &>(static_cast<const D &>(*this))->abi_WriteToStreamAsync(get(outputStream), put(operation)));
+    check_hresult(WINRT_SHIM(IHttpContent)->abi_WriteToStreamAsync(get(outputStream), put(operation)));
     return operation;
 }
 
 template <typename D> bool impl_IHttpCookieManager<D>::SetCookie(const Windows::Web::Http::HttpCookie & cookie) const
 {
     bool replaced {};
-    check_hresult(static_cast<const IHttpCookieManager &>(static_cast<const D &>(*this))->abi_SetCookie(get(cookie), &replaced));
+    check_hresult(WINRT_SHIM(IHttpCookieManager)->abi_SetCookie(get(cookie), &replaced));
     return replaced;
 }
 
 template <typename D> bool impl_IHttpCookieManager<D>::SetCookie(const Windows::Web::Http::HttpCookie & cookie, bool thirdParty) const
 {
     bool replaced {};
-    check_hresult(static_cast<const IHttpCookieManager &>(static_cast<const D &>(*this))->abi_SetCookieWithThirdParty(get(cookie), thirdParty, &replaced));
+    check_hresult(WINRT_SHIM(IHttpCookieManager)->abi_SetCookieWithThirdParty(get(cookie), thirdParty, &replaced));
     return replaced;
 }
 
 template <typename D> void impl_IHttpCookieManager<D>::DeleteCookie(const Windows::Web::Http::HttpCookie & cookie) const
 {
-    check_hresult(static_cast<const IHttpCookieManager &>(static_cast<const D &>(*this))->abi_DeleteCookie(get(cookie)));
+    check_hresult(WINRT_SHIM(IHttpCookieManager)->abi_DeleteCookie(get(cookie)));
 }
 
 template <typename D> Windows::Web::Http::HttpCookieCollection impl_IHttpCookieManager<D>::GetCookies(const Windows::Foundation::Uri & uri) const
 {
     Windows::Web::Http::HttpCookieCollection value { nullptr };
-    check_hresult(static_cast<const IHttpCookieManager &>(static_cast<const D &>(*this))->abi_GetCookies(get(uri), put(value)));
+    check_hresult(WINRT_SHIM(IHttpCookieManager)->abi_GetCookies(get(uri), put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::HttpCookie impl_IHttpCookieFactory<D>::Create(hstring_ref name, hstring_ref domain, hstring_ref path) const
 {
     Windows::Web::Http::HttpCookie cookie { nullptr };
-    check_hresult(static_cast<const IHttpCookieFactory &>(static_cast<const D &>(*this))->abi_Create(get(name), get(domain), get(path), put(cookie)));
+    check_hresult(WINRT_SHIM(IHttpCookieFactory)->abi_Create(get(name), get(domain), get(path), put(cookie)));
     return cookie;
 }
 
 template <typename D> hstring impl_IHttpCookie<D>::Name() const
 {
     hstring value;
-    check_hresult(static_cast<const IHttpCookie &>(static_cast<const D &>(*this))->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(IHttpCookie)->get_Name(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHttpCookie<D>::Domain() const
 {
     hstring value;
-    check_hresult(static_cast<const IHttpCookie &>(static_cast<const D &>(*this))->get_Domain(put(value)));
+    check_hresult(WINRT_SHIM(IHttpCookie)->get_Domain(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHttpCookie<D>::Path() const
 {
     hstring value;
-    check_hresult(static_cast<const IHttpCookie &>(static_cast<const D &>(*this))->get_Path(put(value)));
+    check_hresult(WINRT_SHIM(IHttpCookie)->get_Path(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IHttpCookie<D>::Expires() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(static_cast<const IHttpCookie &>(static_cast<const D &>(*this))->get_Expires(put(value)));
+    check_hresult(WINRT_SHIM(IHttpCookie)->get_Expires(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpCookie<D>::Expires(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(static_cast<const IHttpCookie &>(static_cast<const D &>(*this))->put_Expires(get(value)));
+    check_hresult(WINRT_SHIM(IHttpCookie)->put_Expires(get(value)));
 }
 
 template <typename D> bool impl_IHttpCookie<D>::HttpOnly() const
 {
     bool value {};
-    check_hresult(static_cast<const IHttpCookie &>(static_cast<const D &>(*this))->get_HttpOnly(&value));
+    check_hresult(WINRT_SHIM(IHttpCookie)->get_HttpOnly(&value));
     return value;
 }
 
 template <typename D> void impl_IHttpCookie<D>::HttpOnly(bool value) const
 {
-    check_hresult(static_cast<const IHttpCookie &>(static_cast<const D &>(*this))->put_HttpOnly(value));
+    check_hresult(WINRT_SHIM(IHttpCookie)->put_HttpOnly(value));
 }
 
 template <typename D> bool impl_IHttpCookie<D>::Secure() const
 {
     bool value {};
-    check_hresult(static_cast<const IHttpCookie &>(static_cast<const D &>(*this))->get_Secure(&value));
+    check_hresult(WINRT_SHIM(IHttpCookie)->get_Secure(&value));
     return value;
 }
 
 template <typename D> void impl_IHttpCookie<D>::Secure(bool value) const
 {
-    check_hresult(static_cast<const IHttpCookie &>(static_cast<const D &>(*this))->put_Secure(value));
+    check_hresult(WINRT_SHIM(IHttpCookie)->put_Secure(value));
 }
 
 template <typename D> hstring impl_IHttpCookie<D>::Value() const
 {
     hstring value;
-    check_hresult(static_cast<const IHttpCookie &>(static_cast<const D &>(*this))->get_Value(put(value)));
+    check_hresult(WINRT_SHIM(IHttpCookie)->get_Value(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpCookie<D>::Value(hstring_ref value) const
 {
-    check_hresult(static_cast<const IHttpCookie &>(static_cast<const D &>(*this))->put_Value(get(value)));
+    check_hresult(WINRT_SHIM(IHttpCookie)->put_Value(get(value)));
 }
 
 template <typename D> Windows::Web::Http::HttpMethod impl_IHttpMethodStatics<D>::Delete() const
 {
     Windows::Web::Http::HttpMethod value { nullptr };
-    check_hresult(static_cast<const IHttpMethodStatics &>(static_cast<const D &>(*this))->get_Delete(put(value)));
+    check_hresult(WINRT_SHIM(IHttpMethodStatics)->get_Delete(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::HttpMethod impl_IHttpMethodStatics<D>::Get() const
 {
     Windows::Web::Http::HttpMethod value { nullptr };
-    check_hresult(static_cast<const IHttpMethodStatics &>(static_cast<const D &>(*this))->get_Get(put(value)));
+    check_hresult(WINRT_SHIM(IHttpMethodStatics)->get_Get(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::HttpMethod impl_IHttpMethodStatics<D>::Head() const
 {
     Windows::Web::Http::HttpMethod value { nullptr };
-    check_hresult(static_cast<const IHttpMethodStatics &>(static_cast<const D &>(*this))->get_Head(put(value)));
+    check_hresult(WINRT_SHIM(IHttpMethodStatics)->get_Head(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::HttpMethod impl_IHttpMethodStatics<D>::Options() const
 {
     Windows::Web::Http::HttpMethod value { nullptr };
-    check_hresult(static_cast<const IHttpMethodStatics &>(static_cast<const D &>(*this))->get_Options(put(value)));
+    check_hresult(WINRT_SHIM(IHttpMethodStatics)->get_Options(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::HttpMethod impl_IHttpMethodStatics<D>::Patch() const
 {
     Windows::Web::Http::HttpMethod value { nullptr };
-    check_hresult(static_cast<const IHttpMethodStatics &>(static_cast<const D &>(*this))->get_Patch(put(value)));
+    check_hresult(WINRT_SHIM(IHttpMethodStatics)->get_Patch(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::HttpMethod impl_IHttpMethodStatics<D>::Post() const
 {
     Windows::Web::Http::HttpMethod value { nullptr };
-    check_hresult(static_cast<const IHttpMethodStatics &>(static_cast<const D &>(*this))->get_Post(put(value)));
+    check_hresult(WINRT_SHIM(IHttpMethodStatics)->get_Post(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::HttpMethod impl_IHttpMethodStatics<D>::Put() const
 {
     Windows::Web::Http::HttpMethod value { nullptr };
-    check_hresult(static_cast<const IHttpMethodStatics &>(static_cast<const D &>(*this))->get_Put(put(value)));
+    check_hresult(WINRT_SHIM(IHttpMethodStatics)->get_Put(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::HttpMethod impl_IHttpMethodFactory<D>::Create(hstring_ref method) const
 {
     Windows::Web::Http::HttpMethod httpMethod { nullptr };
-    check_hresult(static_cast<const IHttpMethodFactory &>(static_cast<const D &>(*this))->abi_Create(get(method), put(httpMethod)));
+    check_hresult(WINRT_SHIM(IHttpMethodFactory)->abi_Create(get(method), put(httpMethod)));
     return httpMethod;
 }
 
 template <typename D> hstring impl_IHttpMethod<D>::Method() const
 {
     hstring value;
-    check_hresult(static_cast<const IHttpMethod &>(static_cast<const D &>(*this))->get_Method(put(value)));
+    check_hresult(WINRT_SHIM(IHttpMethod)->get_Method(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_IHttpTransportInformation<D>::ServerCertificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(static_cast<const IHttpTransportInformation &>(static_cast<const D &>(*this))->get_ServerCertificate(put(value)));
+    check_hresult(WINRT_SHIM(IHttpTransportInformation)->get_ServerCertificate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::SocketSslErrorSeverity impl_IHttpTransportInformation<D>::ServerCertificateErrorSeverity() const
 {
     Windows::Networking::Sockets::SocketSslErrorSeverity value {};
-    check_hresult(static_cast<const IHttpTransportInformation &>(static_cast<const D &>(*this))->get_ServerCertificateErrorSeverity(&value));
+    check_hresult(WINRT_SHIM(IHttpTransportInformation)->get_ServerCertificateErrorSeverity(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> impl_IHttpTransportInformation<D>::ServerCertificateErrors() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> value;
-    check_hresult(static_cast<const IHttpTransportInformation &>(static_cast<const D &>(*this))->get_ServerCertificateErrors(put(value)));
+    check_hresult(WINRT_SHIM(IHttpTransportInformation)->get_ServerCertificateErrors(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> impl_IHttpTransportInformation<D>::ServerIntermediateCertificates() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> value;
-    check_hresult(static_cast<const IHttpTransportInformation &>(static_cast<const D &>(*this))->get_ServerIntermediateCertificates(put(value)));
+    check_hresult(WINRT_SHIM(IHttpTransportInformation)->get_ServerIntermediateCertificates(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::HttpRequestMessage impl_IHttpRequestMessageFactory<D>::Create(const Windows::Web::Http::HttpMethod & method, const Windows::Foundation::Uri & uri) const
 {
     Windows::Web::Http::HttpRequestMessage httpRequestMessage { nullptr };
-    check_hresult(static_cast<const IHttpRequestMessageFactory &>(static_cast<const D &>(*this))->abi_Create(get(method), get(uri), put(httpRequestMessage)));
+    check_hresult(WINRT_SHIM(IHttpRequestMessageFactory)->abi_Create(get(method), get(uri), put(httpRequestMessage)));
     return httpRequestMessage;
 }
 
 template <typename D> Windows::Web::Http::IHttpContent impl_IHttpRequestMessage<D>::Content() const
 {
     Windows::Web::Http::IHttpContent value;
-    check_hresult(static_cast<const IHttpRequestMessage &>(static_cast<const D &>(*this))->get_Content(put(value)));
+    check_hresult(WINRT_SHIM(IHttpRequestMessage)->get_Content(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpRequestMessage<D>::Content(const Windows::Web::Http::IHttpContent & value) const
 {
-    check_hresult(static_cast<const IHttpRequestMessage &>(static_cast<const D &>(*this))->put_Content(get(value)));
+    check_hresult(WINRT_SHIM(IHttpRequestMessage)->put_Content(get(value)));
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpRequestHeaderCollection impl_IHttpRequestMessage<D>::Headers() const
 {
     Windows::Web::Http::Headers::HttpRequestHeaderCollection value { nullptr };
-    check_hresult(static_cast<const IHttpRequestMessage &>(static_cast<const D &>(*this))->get_Headers(put(value)));
+    check_hresult(WINRT_SHIM(IHttpRequestMessage)->get_Headers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::HttpMethod impl_IHttpRequestMessage<D>::Method() const
 {
     Windows::Web::Http::HttpMethod value { nullptr };
-    check_hresult(static_cast<const IHttpRequestMessage &>(static_cast<const D &>(*this))->get_Method(put(value)));
+    check_hresult(WINRT_SHIM(IHttpRequestMessage)->get_Method(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpRequestMessage<D>::Method(const Windows::Web::Http::HttpMethod & value) const
 {
-    check_hresult(static_cast<const IHttpRequestMessage &>(static_cast<const D &>(*this))->put_Method(get(value)));
+    check_hresult(WINRT_SHIM(IHttpRequestMessage)->put_Method(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable> impl_IHttpRequestMessage<D>::Properties() const
 {
     Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable> value;
-    check_hresult(static_cast<const IHttpRequestMessage &>(static_cast<const D &>(*this))->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(IHttpRequestMessage)->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IHttpRequestMessage<D>::RequestUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const IHttpRequestMessage &>(static_cast<const D &>(*this))->get_RequestUri(put(value)));
+    check_hresult(WINRT_SHIM(IHttpRequestMessage)->get_RequestUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpRequestMessage<D>::RequestUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const IHttpRequestMessage &>(static_cast<const D &>(*this))->put_RequestUri(get(value)));
+    check_hresult(WINRT_SHIM(IHttpRequestMessage)->put_RequestUri(get(value)));
 }
 
 template <typename D> Windows::Web::Http::HttpTransportInformation impl_IHttpRequestMessage<D>::TransportInformation() const
 {
     Windows::Web::Http::HttpTransportInformation value { nullptr };
-    check_hresult(static_cast<const IHttpRequestMessage &>(static_cast<const D &>(*this))->get_TransportInformation(put(value)));
+    check_hresult(WINRT_SHIM(IHttpRequestMessage)->get_TransportInformation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::HttpResponseMessage impl_IHttpResponseMessageFactory<D>::Create(Windows::Web::Http::HttpStatusCode statusCode) const
 {
     Windows::Web::Http::HttpResponseMessage httpResponseMessage { nullptr };
-    check_hresult(static_cast<const IHttpResponseMessageFactory &>(static_cast<const D &>(*this))->abi_Create(statusCode, put(httpResponseMessage)));
+    check_hresult(WINRT_SHIM(IHttpResponseMessageFactory)->abi_Create(statusCode, put(httpResponseMessage)));
     return httpResponseMessage;
 }
 
 template <typename D> Windows::Web::Http::IHttpContent impl_IHttpResponseMessage<D>::Content() const
 {
     Windows::Web::Http::IHttpContent value;
-    check_hresult(static_cast<const IHttpResponseMessage &>(static_cast<const D &>(*this))->get_Content(put(value)));
+    check_hresult(WINRT_SHIM(IHttpResponseMessage)->get_Content(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpResponseMessage<D>::Content(const Windows::Web::Http::IHttpContent & value) const
 {
-    check_hresult(static_cast<const IHttpResponseMessage &>(static_cast<const D &>(*this))->put_Content(get(value)));
+    check_hresult(WINRT_SHIM(IHttpResponseMessage)->put_Content(get(value)));
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpResponseHeaderCollection impl_IHttpResponseMessage<D>::Headers() const
 {
     Windows::Web::Http::Headers::HttpResponseHeaderCollection value { nullptr };
-    check_hresult(static_cast<const IHttpResponseMessage &>(static_cast<const D &>(*this))->get_Headers(put(value)));
+    check_hresult(WINRT_SHIM(IHttpResponseMessage)->get_Headers(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IHttpResponseMessage<D>::IsSuccessStatusCode() const
 {
     bool value {};
-    check_hresult(static_cast<const IHttpResponseMessage &>(static_cast<const D &>(*this))->get_IsSuccessStatusCode(&value));
+    check_hresult(WINRT_SHIM(IHttpResponseMessage)->get_IsSuccessStatusCode(&value));
     return value;
 }
 
 template <typename D> hstring impl_IHttpResponseMessage<D>::ReasonPhrase() const
 {
     hstring value;
-    check_hresult(static_cast<const IHttpResponseMessage &>(static_cast<const D &>(*this))->get_ReasonPhrase(put(value)));
+    check_hresult(WINRT_SHIM(IHttpResponseMessage)->get_ReasonPhrase(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpResponseMessage<D>::ReasonPhrase(hstring_ref value) const
 {
-    check_hresult(static_cast<const IHttpResponseMessage &>(static_cast<const D &>(*this))->put_ReasonPhrase(get(value)));
+    check_hresult(WINRT_SHIM(IHttpResponseMessage)->put_ReasonPhrase(get(value)));
 }
 
 template <typename D> Windows::Web::Http::HttpRequestMessage impl_IHttpResponseMessage<D>::RequestMessage() const
 {
     Windows::Web::Http::HttpRequestMessage value { nullptr };
-    check_hresult(static_cast<const IHttpResponseMessage &>(static_cast<const D &>(*this))->get_RequestMessage(put(value)));
+    check_hresult(WINRT_SHIM(IHttpResponseMessage)->get_RequestMessage(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpResponseMessage<D>::RequestMessage(const Windows::Web::Http::HttpRequestMessage & value) const
 {
-    check_hresult(static_cast<const IHttpResponseMessage &>(static_cast<const D &>(*this))->put_RequestMessage(get(value)));
+    check_hresult(WINRT_SHIM(IHttpResponseMessage)->put_RequestMessage(get(value)));
 }
 
 template <typename D> Windows::Web::Http::HttpResponseMessageSource impl_IHttpResponseMessage<D>::Source() const
 {
     Windows::Web::Http::HttpResponseMessageSource value {};
-    check_hresult(static_cast<const IHttpResponseMessage &>(static_cast<const D &>(*this))->get_Source(&value));
+    check_hresult(WINRT_SHIM(IHttpResponseMessage)->get_Source(&value));
     return value;
 }
 
 template <typename D> void impl_IHttpResponseMessage<D>::Source(Windows::Web::Http::HttpResponseMessageSource value) const
 {
-    check_hresult(static_cast<const IHttpResponseMessage &>(static_cast<const D &>(*this))->put_Source(value));
+    check_hresult(WINRT_SHIM(IHttpResponseMessage)->put_Source(value));
 }
 
 template <typename D> Windows::Web::Http::HttpStatusCode impl_IHttpResponseMessage<D>::StatusCode() const
 {
     Windows::Web::Http::HttpStatusCode value {};
-    check_hresult(static_cast<const IHttpResponseMessage &>(static_cast<const D &>(*this))->get_StatusCode(&value));
+    check_hresult(WINRT_SHIM(IHttpResponseMessage)->get_StatusCode(&value));
     return value;
 }
 
 template <typename D> void impl_IHttpResponseMessage<D>::StatusCode(Windows::Web::Http::HttpStatusCode value) const
 {
-    check_hresult(static_cast<const IHttpResponseMessage &>(static_cast<const D &>(*this))->put_StatusCode(value));
+    check_hresult(WINRT_SHIM(IHttpResponseMessage)->put_StatusCode(value));
 }
 
 template <typename D> Windows::Web::Http::HttpVersion impl_IHttpResponseMessage<D>::Version() const
 {
     Windows::Web::Http::HttpVersion value {};
-    check_hresult(static_cast<const IHttpResponseMessage &>(static_cast<const D &>(*this))->get_Version(&value));
+    check_hresult(WINRT_SHIM(IHttpResponseMessage)->get_Version(&value));
     return value;
 }
 
 template <typename D> void impl_IHttpResponseMessage<D>::Version(Windows::Web::Http::HttpVersion value) const
 {
-    check_hresult(static_cast<const IHttpResponseMessage &>(static_cast<const D &>(*this))->put_Version(value));
+    check_hresult(WINRT_SHIM(IHttpResponseMessage)->put_Version(value));
 }
 
 template <typename D> Windows::Web::Http::HttpResponseMessage impl_IHttpResponseMessage<D>::EnsureSuccessStatusCode() const
 {
     Windows::Web::Http::HttpResponseMessage httpResponseMessage { nullptr };
-    check_hresult(static_cast<const IHttpResponseMessage &>(static_cast<const D &>(*this))->abi_EnsureSuccessStatusCode(put(httpResponseMessage)));
+    check_hresult(WINRT_SHIM(IHttpResponseMessage)->abi_EnsureSuccessStatusCode(put(httpResponseMessage)));
     return httpResponseMessage;
 }
 
 template <typename D> Windows::Web::Http::HttpStringContent impl_IHttpStringContentFactory<D>::CreateFromString(hstring_ref content) const
 {
     Windows::Web::Http::HttpStringContent stringContent { nullptr };
-    check_hresult(static_cast<const IHttpStringContentFactory &>(static_cast<const D &>(*this))->abi_CreateFromString(get(content), put(stringContent)));
+    check_hresult(WINRT_SHIM(IHttpStringContentFactory)->abi_CreateFromString(get(content), put(stringContent)));
     return stringContent;
 }
 
 template <typename D> Windows::Web::Http::HttpStringContent impl_IHttpStringContentFactory<D>::CreateFromStringWithEncoding(hstring_ref content, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Web::Http::HttpStringContent stringContent { nullptr };
-    check_hresult(static_cast<const IHttpStringContentFactory &>(static_cast<const D &>(*this))->abi_CreateFromStringWithEncoding(get(content), encoding, put(stringContent)));
+    check_hresult(WINRT_SHIM(IHttpStringContentFactory)->abi_CreateFromStringWithEncoding(get(content), encoding, put(stringContent)));
     return stringContent;
 }
 
 template <typename D> Windows::Web::Http::HttpStringContent impl_IHttpStringContentFactory<D>::CreateFromStringWithEncodingAndMediaType(hstring_ref content, Windows::Storage::Streams::UnicodeEncoding encoding, hstring_ref mediaType) const
 {
     Windows::Web::Http::HttpStringContent stringContent { nullptr };
-    check_hresult(static_cast<const IHttpStringContentFactory &>(static_cast<const D &>(*this))->abi_CreateFromStringWithEncodingAndMediaType(get(content), encoding, get(mediaType), put(stringContent)));
+    check_hresult(WINRT_SHIM(IHttpStringContentFactory)->abi_CreateFromStringWithEncodingAndMediaType(get(content), encoding, get(mediaType), put(stringContent)));
     return stringContent;
 }
 
 template <typename D> Windows::Web::Http::HttpBufferContent impl_IHttpBufferContentFactory<D>::CreateFromBuffer(const Windows::Storage::Streams::IBuffer & content) const
 {
     Windows::Web::Http::HttpBufferContent bufferContent { nullptr };
-    check_hresult(static_cast<const IHttpBufferContentFactory &>(static_cast<const D &>(*this))->abi_CreateFromBuffer(get(content), put(bufferContent)));
+    check_hresult(WINRT_SHIM(IHttpBufferContentFactory)->abi_CreateFromBuffer(get(content), put(bufferContent)));
     return bufferContent;
 }
 
 template <typename D> Windows::Web::Http::HttpBufferContent impl_IHttpBufferContentFactory<D>::CreateFromBufferWithOffset(const Windows::Storage::Streams::IBuffer & content, uint32_t offset, uint32_t count) const
 {
     Windows::Web::Http::HttpBufferContent bufferContent { nullptr };
-    check_hresult(static_cast<const IHttpBufferContentFactory &>(static_cast<const D &>(*this))->abi_CreateFromBufferWithOffset(get(content), offset, count, put(bufferContent)));
+    check_hresult(WINRT_SHIM(IHttpBufferContentFactory)->abi_CreateFromBufferWithOffset(get(content), offset, count, put(bufferContent)));
     return bufferContent;
 }
 
 template <typename D> Windows::Web::Http::HttpStreamContent impl_IHttpStreamContentFactory<D>::CreateFromInputStream(const Windows::Storage::Streams::IInputStream & content) const
 {
     Windows::Web::Http::HttpStreamContent streamContent { nullptr };
-    check_hresult(static_cast<const IHttpStreamContentFactory &>(static_cast<const D &>(*this))->abi_CreateFromInputStream(get(content), put(streamContent)));
+    check_hresult(WINRT_SHIM(IHttpStreamContentFactory)->abi_CreateFromInputStream(get(content), put(streamContent)));
     return streamContent;
 }
 
 template <typename D> Windows::Web::Http::HttpFormUrlEncodedContent impl_IHttpFormUrlEncodedContentFactory<D>::Create(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & content) const
 {
     Windows::Web::Http::HttpFormUrlEncodedContent formUrlEncodedContent { nullptr };
-    check_hresult(static_cast<const IHttpFormUrlEncodedContentFactory &>(static_cast<const D &>(*this))->abi_Create(get(content), put(formUrlEncodedContent)));
+    check_hresult(WINRT_SHIM(IHttpFormUrlEncodedContentFactory)->abi_Create(get(content), put(formUrlEncodedContent)));
     return formUrlEncodedContent;
 }
 
 template <typename D> Windows::Web::Http::HttpMultipartContent impl_IHttpMultipartContentFactory<D>::CreateWithSubtype(hstring_ref subtype) const
 {
     Windows::Web::Http::HttpMultipartContent multipartContent { nullptr };
-    check_hresult(static_cast<const IHttpMultipartContentFactory &>(static_cast<const D &>(*this))->abi_CreateWithSubtype(get(subtype), put(multipartContent)));
+    check_hresult(WINRT_SHIM(IHttpMultipartContentFactory)->abi_CreateWithSubtype(get(subtype), put(multipartContent)));
     return multipartContent;
 }
 
 template <typename D> Windows::Web::Http::HttpMultipartContent impl_IHttpMultipartContentFactory<D>::CreateWithSubtypeAndBoundary(hstring_ref subtype, hstring_ref boundary) const
 {
     Windows::Web::Http::HttpMultipartContent multipartContent { nullptr };
-    check_hresult(static_cast<const IHttpMultipartContentFactory &>(static_cast<const D &>(*this))->abi_CreateWithSubtypeAndBoundary(get(subtype), get(boundary), put(multipartContent)));
+    check_hresult(WINRT_SHIM(IHttpMultipartContentFactory)->abi_CreateWithSubtypeAndBoundary(get(subtype), get(boundary), put(multipartContent)));
     return multipartContent;
 }
 
 template <typename D> void impl_IHttpMultipartContent<D>::Add(const Windows::Web::Http::IHttpContent & content) const
 {
-    check_hresult(static_cast<const IHttpMultipartContent &>(static_cast<const D &>(*this))->abi_Add(get(content)));
+    check_hresult(WINRT_SHIM(IHttpMultipartContent)->abi_Add(get(content)));
 }
 
 template <typename D> Windows::Web::Http::HttpMultipartFormDataContent impl_IHttpMultipartFormDataContentFactory<D>::CreateWithBoundary(hstring_ref boundary) const
 {
     Windows::Web::Http::HttpMultipartFormDataContent multipartFormDataContent { nullptr };
-    check_hresult(static_cast<const IHttpMultipartFormDataContentFactory &>(static_cast<const D &>(*this))->abi_CreateWithBoundary(get(boundary), put(multipartFormDataContent)));
+    check_hresult(WINRT_SHIM(IHttpMultipartFormDataContentFactory)->abi_CreateWithBoundary(get(boundary), put(multipartFormDataContent)));
     return multipartFormDataContent;
 }
 
 template <typename D> void impl_IHttpMultipartFormDataContent<D>::Add(const Windows::Web::Http::IHttpContent & content) const
 {
-    check_hresult(static_cast<const IHttpMultipartFormDataContent &>(static_cast<const D &>(*this))->abi_Add(get(content)));
+    check_hresult(WINRT_SHIM(IHttpMultipartFormDataContent)->abi_Add(get(content)));
 }
 
 template <typename D> void impl_IHttpMultipartFormDataContent<D>::Add(const Windows::Web::Http::IHttpContent & content, hstring_ref name) const
 {
-    check_hresult(static_cast<const IHttpMultipartFormDataContent &>(static_cast<const D &>(*this))->abi_AddWithName(get(content), get(name)));
+    check_hresult(WINRT_SHIM(IHttpMultipartFormDataContent)->abi_AddWithName(get(content), get(name)));
 }
 
 template <typename D> void impl_IHttpMultipartFormDataContent<D>::Add(const Windows::Web::Http::IHttpContent & content, hstring_ref name, hstring_ref fileName) const
 {
-    check_hresult(static_cast<const IHttpMultipartFormDataContent &>(static_cast<const D &>(*this))->abi_AddWithNameAndFileName(get(content), get(name), get(fileName)));
+    check_hresult(WINRT_SHIM(IHttpMultipartFormDataContent)->abi_AddWithNameAndFileName(get(content), get(name), get(fileName)));
 }
 
 inline HttpBufferContent::HttpBufferContent(const Windows::Storage::Streams::IBuffer & content) :

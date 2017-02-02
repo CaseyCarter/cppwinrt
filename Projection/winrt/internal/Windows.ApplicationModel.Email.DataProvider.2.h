@@ -169,7 +169,6 @@ struct IEmailDataProviderConnection :
     impl::consume<IEmailDataProviderConnection>
 {
     IEmailDataProviderConnection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailDataProviderConnection>(m_ptr); }
 };
 
 struct IEmailDataProviderTriggerDetails :
@@ -177,7 +176,6 @@ struct IEmailDataProviderTriggerDetails :
     impl::consume<IEmailDataProviderTriggerDetails>
 {
     IEmailDataProviderTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailDataProviderTriggerDetails>(m_ptr); }
 };
 
 struct IEmailMailboxCreateFolderRequest :
@@ -185,7 +183,6 @@ struct IEmailMailboxCreateFolderRequest :
     impl::consume<IEmailMailboxCreateFolderRequest>
 {
     IEmailMailboxCreateFolderRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxCreateFolderRequest>(m_ptr); }
 };
 
 struct IEmailMailboxCreateFolderRequestEventArgs :
@@ -193,7 +190,6 @@ struct IEmailMailboxCreateFolderRequestEventArgs :
     impl::consume<IEmailMailboxCreateFolderRequestEventArgs>
 {
     IEmailMailboxCreateFolderRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxCreateFolderRequestEventArgs>(m_ptr); }
 };
 
 struct IEmailMailboxDeleteFolderRequest :
@@ -201,7 +197,6 @@ struct IEmailMailboxDeleteFolderRequest :
     impl::consume<IEmailMailboxDeleteFolderRequest>
 {
     IEmailMailboxDeleteFolderRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxDeleteFolderRequest>(m_ptr); }
 };
 
 struct IEmailMailboxDeleteFolderRequestEventArgs :
@@ -209,7 +204,6 @@ struct IEmailMailboxDeleteFolderRequestEventArgs :
     impl::consume<IEmailMailboxDeleteFolderRequestEventArgs>
 {
     IEmailMailboxDeleteFolderRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxDeleteFolderRequestEventArgs>(m_ptr); }
 };
 
 struct IEmailMailboxDownloadAttachmentRequest :
@@ -217,7 +211,6 @@ struct IEmailMailboxDownloadAttachmentRequest :
     impl::consume<IEmailMailboxDownloadAttachmentRequest>
 {
     IEmailMailboxDownloadAttachmentRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxDownloadAttachmentRequest>(m_ptr); }
 };
 
 struct IEmailMailboxDownloadAttachmentRequestEventArgs :
@@ -225,7 +218,6 @@ struct IEmailMailboxDownloadAttachmentRequestEventArgs :
     impl::consume<IEmailMailboxDownloadAttachmentRequestEventArgs>
 {
     IEmailMailboxDownloadAttachmentRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxDownloadAttachmentRequestEventArgs>(m_ptr); }
 };
 
 struct IEmailMailboxDownloadMessageRequest :
@@ -233,7 +225,6 @@ struct IEmailMailboxDownloadMessageRequest :
     impl::consume<IEmailMailboxDownloadMessageRequest>
 {
     IEmailMailboxDownloadMessageRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxDownloadMessageRequest>(m_ptr); }
 };
 
 struct IEmailMailboxDownloadMessageRequestEventArgs :
@@ -241,7 +232,6 @@ struct IEmailMailboxDownloadMessageRequestEventArgs :
     impl::consume<IEmailMailboxDownloadMessageRequestEventArgs>
 {
     IEmailMailboxDownloadMessageRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxDownloadMessageRequestEventArgs>(m_ptr); }
 };
 
 struct IEmailMailboxEmptyFolderRequest :
@@ -249,7 +239,6 @@ struct IEmailMailboxEmptyFolderRequest :
     impl::consume<IEmailMailboxEmptyFolderRequest>
 {
     IEmailMailboxEmptyFolderRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxEmptyFolderRequest>(m_ptr); }
 };
 
 struct IEmailMailboxEmptyFolderRequestEventArgs :
@@ -257,7 +246,6 @@ struct IEmailMailboxEmptyFolderRequestEventArgs :
     impl::consume<IEmailMailboxEmptyFolderRequestEventArgs>
 {
     IEmailMailboxEmptyFolderRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxEmptyFolderRequestEventArgs>(m_ptr); }
 };
 
 struct IEmailMailboxForwardMeetingRequest :
@@ -265,7 +253,6 @@ struct IEmailMailboxForwardMeetingRequest :
     impl::consume<IEmailMailboxForwardMeetingRequest>
 {
     IEmailMailboxForwardMeetingRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxForwardMeetingRequest>(m_ptr); }
 };
 
 struct IEmailMailboxForwardMeetingRequestEventArgs :
@@ -273,7 +260,6 @@ struct IEmailMailboxForwardMeetingRequestEventArgs :
     impl::consume<IEmailMailboxForwardMeetingRequestEventArgs>
 {
     IEmailMailboxForwardMeetingRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxForwardMeetingRequestEventArgs>(m_ptr); }
 };
 
 struct IEmailMailboxGetAutoReplySettingsRequest :
@@ -281,7 +267,6 @@ struct IEmailMailboxGetAutoReplySettingsRequest :
     impl::consume<IEmailMailboxGetAutoReplySettingsRequest>
 {
     IEmailMailboxGetAutoReplySettingsRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxGetAutoReplySettingsRequest>(m_ptr); }
 };
 
 struct IEmailMailboxGetAutoReplySettingsRequestEventArgs :
@@ -289,7 +274,6 @@ struct IEmailMailboxGetAutoReplySettingsRequestEventArgs :
     impl::consume<IEmailMailboxGetAutoReplySettingsRequestEventArgs>
 {
     IEmailMailboxGetAutoReplySettingsRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxGetAutoReplySettingsRequestEventArgs>(m_ptr); }
 };
 
 struct IEmailMailboxMoveFolderRequest :
@@ -297,7 +281,6 @@ struct IEmailMailboxMoveFolderRequest :
     impl::consume<IEmailMailboxMoveFolderRequest>
 {
     IEmailMailboxMoveFolderRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxMoveFolderRequest>(m_ptr); }
 };
 
 struct IEmailMailboxMoveFolderRequestEventArgs :
@@ -305,7 +288,6 @@ struct IEmailMailboxMoveFolderRequestEventArgs :
     impl::consume<IEmailMailboxMoveFolderRequestEventArgs>
 {
     IEmailMailboxMoveFolderRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxMoveFolderRequestEventArgs>(m_ptr); }
 };
 
 struct IEmailMailboxProposeNewTimeForMeetingRequest :
@@ -313,7 +295,6 @@ struct IEmailMailboxProposeNewTimeForMeetingRequest :
     impl::consume<IEmailMailboxProposeNewTimeForMeetingRequest>
 {
     IEmailMailboxProposeNewTimeForMeetingRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxProposeNewTimeForMeetingRequest>(m_ptr); }
 };
 
 struct IEmailMailboxProposeNewTimeForMeetingRequestEventArgs :
@@ -321,7 +302,6 @@ struct IEmailMailboxProposeNewTimeForMeetingRequestEventArgs :
     impl::consume<IEmailMailboxProposeNewTimeForMeetingRequestEventArgs>
 {
     IEmailMailboxProposeNewTimeForMeetingRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxProposeNewTimeForMeetingRequestEventArgs>(m_ptr); }
 };
 
 struct IEmailMailboxResolveRecipientsRequest :
@@ -329,7 +309,6 @@ struct IEmailMailboxResolveRecipientsRequest :
     impl::consume<IEmailMailboxResolveRecipientsRequest>
 {
     IEmailMailboxResolveRecipientsRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxResolveRecipientsRequest>(m_ptr); }
 };
 
 struct IEmailMailboxResolveRecipientsRequestEventArgs :
@@ -337,7 +316,6 @@ struct IEmailMailboxResolveRecipientsRequestEventArgs :
     impl::consume<IEmailMailboxResolveRecipientsRequestEventArgs>
 {
     IEmailMailboxResolveRecipientsRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxResolveRecipientsRequestEventArgs>(m_ptr); }
 };
 
 struct IEmailMailboxServerSearchReadBatchRequest :
@@ -345,7 +323,6 @@ struct IEmailMailboxServerSearchReadBatchRequest :
     impl::consume<IEmailMailboxServerSearchReadBatchRequest>
 {
     IEmailMailboxServerSearchReadBatchRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxServerSearchReadBatchRequest>(m_ptr); }
 };
 
 struct IEmailMailboxServerSearchReadBatchRequestEventArgs :
@@ -353,7 +330,6 @@ struct IEmailMailboxServerSearchReadBatchRequestEventArgs :
     impl::consume<IEmailMailboxServerSearchReadBatchRequestEventArgs>
 {
     IEmailMailboxServerSearchReadBatchRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxServerSearchReadBatchRequestEventArgs>(m_ptr); }
 };
 
 struct IEmailMailboxSetAutoReplySettingsRequest :
@@ -361,7 +337,6 @@ struct IEmailMailboxSetAutoReplySettingsRequest :
     impl::consume<IEmailMailboxSetAutoReplySettingsRequest>
 {
     IEmailMailboxSetAutoReplySettingsRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxSetAutoReplySettingsRequest>(m_ptr); }
 };
 
 struct IEmailMailboxSetAutoReplySettingsRequestEventArgs :
@@ -369,7 +344,6 @@ struct IEmailMailboxSetAutoReplySettingsRequestEventArgs :
     impl::consume<IEmailMailboxSetAutoReplySettingsRequestEventArgs>
 {
     IEmailMailboxSetAutoReplySettingsRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxSetAutoReplySettingsRequestEventArgs>(m_ptr); }
 };
 
 struct IEmailMailboxSyncManagerSyncRequest :
@@ -377,7 +351,6 @@ struct IEmailMailboxSyncManagerSyncRequest :
     impl::consume<IEmailMailboxSyncManagerSyncRequest>
 {
     IEmailMailboxSyncManagerSyncRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxSyncManagerSyncRequest>(m_ptr); }
 };
 
 struct IEmailMailboxSyncManagerSyncRequestEventArgs :
@@ -385,7 +358,6 @@ struct IEmailMailboxSyncManagerSyncRequestEventArgs :
     impl::consume<IEmailMailboxSyncManagerSyncRequestEventArgs>
 {
     IEmailMailboxSyncManagerSyncRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxSyncManagerSyncRequestEventArgs>(m_ptr); }
 };
 
 struct IEmailMailboxUpdateMeetingResponseRequest :
@@ -393,7 +365,6 @@ struct IEmailMailboxUpdateMeetingResponseRequest :
     impl::consume<IEmailMailboxUpdateMeetingResponseRequest>
 {
     IEmailMailboxUpdateMeetingResponseRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxUpdateMeetingResponseRequest>(m_ptr); }
 };
 
 struct IEmailMailboxUpdateMeetingResponseRequestEventArgs :
@@ -401,7 +372,6 @@ struct IEmailMailboxUpdateMeetingResponseRequestEventArgs :
     impl::consume<IEmailMailboxUpdateMeetingResponseRequestEventArgs>
 {
     IEmailMailboxUpdateMeetingResponseRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxUpdateMeetingResponseRequestEventArgs>(m_ptr); }
 };
 
 struct IEmailMailboxValidateCertificatesRequest :
@@ -409,7 +379,6 @@ struct IEmailMailboxValidateCertificatesRequest :
     impl::consume<IEmailMailboxValidateCertificatesRequest>
 {
     IEmailMailboxValidateCertificatesRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxValidateCertificatesRequest>(m_ptr); }
 };
 
 struct IEmailMailboxValidateCertificatesRequestEventArgs :
@@ -417,7 +386,6 @@ struct IEmailMailboxValidateCertificatesRequestEventArgs :
     impl::consume<IEmailMailboxValidateCertificatesRequestEventArgs>
 {
     IEmailMailboxValidateCertificatesRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEmailMailboxValidateCertificatesRequestEventArgs>(m_ptr); }
 };
 
 }

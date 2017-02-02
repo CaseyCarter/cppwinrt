@@ -75,7 +75,6 @@ struct IAudioEncodingProperties :
     impl::require<IAudioEncodingProperties, Windows::Media::MediaProperties::IMediaEncodingProperties>
 {
     IAudioEncodingProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioEncodingProperties>(m_ptr); }
 };
 
 struct IAudioEncodingPropertiesStatics :
@@ -83,7 +82,6 @@ struct IAudioEncodingPropertiesStatics :
     impl::consume<IAudioEncodingPropertiesStatics>
 {
     IAudioEncodingPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioEncodingPropertiesStatics>(m_ptr); }
 };
 
 struct IAudioEncodingPropertiesWithFormatUserData :
@@ -91,7 +89,6 @@ struct IAudioEncodingPropertiesWithFormatUserData :
     impl::consume<IAudioEncodingPropertiesWithFormatUserData>
 {
     IAudioEncodingPropertiesWithFormatUserData(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioEncodingPropertiesWithFormatUserData>(m_ptr); }
 };
 
 struct IContainerEncodingProperties :
@@ -100,7 +97,6 @@ struct IContainerEncodingProperties :
     impl::require<IContainerEncodingProperties, Windows::Media::MediaProperties::IMediaEncodingProperties>
 {
     IContainerEncodingProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContainerEncodingProperties>(m_ptr); }
 };
 
 struct IH264ProfileIdsStatics :
@@ -108,7 +104,6 @@ struct IH264ProfileIdsStatics :
     impl::consume<IH264ProfileIdsStatics>
 {
     IH264ProfileIdsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IH264ProfileIdsStatics>(m_ptr); }
 };
 
 struct IImageEncodingProperties :
@@ -117,7 +112,6 @@ struct IImageEncodingProperties :
     impl::require<IImageEncodingProperties, Windows::Media::MediaProperties::IMediaEncodingProperties>
 {
     IImageEncodingProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IImageEncodingProperties>(m_ptr); }
 };
 
 struct IImageEncodingPropertiesStatics :
@@ -125,7 +119,6 @@ struct IImageEncodingPropertiesStatics :
     impl::consume<IImageEncodingPropertiesStatics>
 {
     IImageEncodingPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IImageEncodingPropertiesStatics>(m_ptr); }
 };
 
 struct IImageEncodingPropertiesStatics2 :
@@ -133,7 +126,6 @@ struct IImageEncodingPropertiesStatics2 :
     impl::consume<IImageEncodingPropertiesStatics2>
 {
     IImageEncodingPropertiesStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IImageEncodingPropertiesStatics2>(m_ptr); }
 };
 
 struct IMediaEncodingProfile :
@@ -141,7 +133,6 @@ struct IMediaEncodingProfile :
     impl::consume<IMediaEncodingProfile>
 {
     IMediaEncodingProfile(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaEncodingProfile>(m_ptr); }
 };
 
 struct IMediaEncodingProfileStatics :
@@ -149,7 +140,6 @@ struct IMediaEncodingProfileStatics :
     impl::consume<IMediaEncodingProfileStatics>
 {
     IMediaEncodingProfileStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaEncodingProfileStatics>(m_ptr); }
 };
 
 struct IMediaEncodingProfileStatics2 :
@@ -157,7 +147,6 @@ struct IMediaEncodingProfileStatics2 :
     impl::consume<IMediaEncodingProfileStatics2>
 {
     IMediaEncodingProfileStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaEncodingProfileStatics2>(m_ptr); }
 };
 
 struct IMediaEncodingProperties :
@@ -165,7 +154,6 @@ struct IMediaEncodingProperties :
     impl::consume<IMediaEncodingProperties>
 {
     IMediaEncodingProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaEncodingProperties>(m_ptr); }
 };
 
 struct IMediaEncodingSubtypesStatics :
@@ -173,7 +161,6 @@ struct IMediaEncodingSubtypesStatics :
     impl::consume<IMediaEncodingSubtypesStatics>
 {
     IMediaEncodingSubtypesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaEncodingSubtypesStatics>(m_ptr); }
 };
 
 struct IMediaRatio :
@@ -181,7 +168,6 @@ struct IMediaRatio :
     impl::consume<IMediaRatio>
 {
     IMediaRatio(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaRatio>(m_ptr); }
 };
 
 struct IMpeg2ProfileIdsStatics :
@@ -189,7 +175,6 @@ struct IMpeg2ProfileIdsStatics :
     impl::consume<IMpeg2ProfileIdsStatics>
 {
     IMpeg2ProfileIdsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMpeg2ProfileIdsStatics>(m_ptr); }
 };
 
 struct IVideoEncodingProperties :
@@ -198,7 +183,6 @@ struct IVideoEncodingProperties :
     impl::require<IVideoEncodingProperties, Windows::Media::MediaProperties::IMediaEncodingProperties>
 {
     IVideoEncodingProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoEncodingProperties>(m_ptr); }
 };
 
 struct IVideoEncodingProperties2 :
@@ -206,7 +190,6 @@ struct IVideoEncodingProperties2 :
     impl::consume<IVideoEncodingProperties2>
 {
     IVideoEncodingProperties2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoEncodingProperties2>(m_ptr); }
 };
 
 struct IVideoEncodingProperties3 :
@@ -214,7 +197,6 @@ struct IVideoEncodingProperties3 :
     impl::consume<IVideoEncodingProperties3>
 {
     IVideoEncodingProperties3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoEncodingProperties3>(m_ptr); }
 };
 
 struct IVideoEncodingPropertiesStatics :
@@ -222,7 +204,6 @@ struct IVideoEncodingPropertiesStatics :
     impl::consume<IVideoEncodingPropertiesStatics>
 {
     IVideoEncodingPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoEncodingPropertiesStatics>(m_ptr); }
 };
 
 }

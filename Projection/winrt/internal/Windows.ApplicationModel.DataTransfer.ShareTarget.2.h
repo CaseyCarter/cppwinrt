@@ -39,7 +39,6 @@ struct IQuickLink :
     impl::consume<IQuickLink>
 {
     IQuickLink(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IQuickLink>(m_ptr); }
 };
 
 struct IShareOperation :
@@ -47,7 +46,6 @@ struct IShareOperation :
     impl::consume<IShareOperation>
 {
     IShareOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IShareOperation>(m_ptr); }
 };
 
 struct IShareOperation2 :
@@ -55,7 +53,6 @@ struct IShareOperation2 :
     impl::consume<IShareOperation2>
 {
     IShareOperation2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IShareOperation2>(m_ptr); }
 };
 
 }

@@ -139,7 +139,6 @@ struct IMapAddress :
     impl::consume<IMapAddress>
 {
     IMapAddress(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapAddress>(m_ptr); }
 };
 
 struct IMapAddress2 :
@@ -147,7 +146,6 @@ struct IMapAddress2 :
     impl::consume<IMapAddress2>
 {
     IMapAddress2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapAddress2>(m_ptr); }
 };
 
 struct IMapLocation :
@@ -155,7 +153,6 @@ struct IMapLocation :
     impl::consume<IMapLocation>
 {
     IMapLocation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapLocation>(m_ptr); }
 };
 
 struct IMapLocationFinderResult :
@@ -163,7 +160,6 @@ struct IMapLocationFinderResult :
     impl::consume<IMapLocationFinderResult>
 {
     IMapLocationFinderResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapLocationFinderResult>(m_ptr); }
 };
 
 struct IMapLocationFinderStatics :
@@ -171,7 +167,6 @@ struct IMapLocationFinderStatics :
     impl::consume<IMapLocationFinderStatics>
 {
     IMapLocationFinderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapLocationFinderStatics>(m_ptr); }
 };
 
 struct IMapLocationFinderStatics2 :
@@ -179,7 +174,6 @@ struct IMapLocationFinderStatics2 :
     impl::consume<IMapLocationFinderStatics2>
 {
     IMapLocationFinderStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapLocationFinderStatics2>(m_ptr); }
 };
 
 struct IMapManagerStatics :
@@ -187,7 +181,6 @@ struct IMapManagerStatics :
     impl::consume<IMapManagerStatics>
 {
     IMapManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapManagerStatics>(m_ptr); }
 };
 
 struct IMapRoute :
@@ -195,7 +188,6 @@ struct IMapRoute :
     impl::consume<IMapRoute>
 {
     IMapRoute(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapRoute>(m_ptr); }
 };
 
 struct IMapRoute2 :
@@ -203,7 +195,6 @@ struct IMapRoute2 :
     impl::consume<IMapRoute2>
 {
     IMapRoute2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapRoute2>(m_ptr); }
 };
 
 struct IMapRouteDrivingOptions :
@@ -211,7 +202,6 @@ struct IMapRouteDrivingOptions :
     impl::consume<IMapRouteDrivingOptions>
 {
     IMapRouteDrivingOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapRouteDrivingOptions>(m_ptr); }
 };
 
 struct IMapRouteFinderResult :
@@ -219,7 +209,6 @@ struct IMapRouteFinderResult :
     impl::consume<IMapRouteFinderResult>
 {
     IMapRouteFinderResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapRouteFinderResult>(m_ptr); }
 };
 
 struct IMapRouteFinderResult2 :
@@ -227,7 +216,6 @@ struct IMapRouteFinderResult2 :
     impl::consume<IMapRouteFinderResult2>
 {
     IMapRouteFinderResult2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapRouteFinderResult2>(m_ptr); }
 };
 
 struct IMapRouteFinderStatics :
@@ -235,7 +223,6 @@ struct IMapRouteFinderStatics :
     impl::consume<IMapRouteFinderStatics>
 {
     IMapRouteFinderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapRouteFinderStatics>(m_ptr); }
 };
 
 struct IMapRouteFinderStatics2 :
@@ -243,7 +230,6 @@ struct IMapRouteFinderStatics2 :
     impl::consume<IMapRouteFinderStatics2>
 {
     IMapRouteFinderStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapRouteFinderStatics2>(m_ptr); }
 };
 
 struct IMapRouteLeg :
@@ -251,7 +237,6 @@ struct IMapRouteLeg :
     impl::consume<IMapRouteLeg>
 {
     IMapRouteLeg(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapRouteLeg>(m_ptr); }
 };
 
 struct IMapRouteManeuver :
@@ -259,7 +244,6 @@ struct IMapRouteManeuver :
     impl::consume<IMapRouteManeuver>
 {
     IMapRouteManeuver(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapRouteManeuver>(m_ptr); }
 };
 
 struct IMapRouteManeuver2 :
@@ -267,7 +251,6 @@ struct IMapRouteManeuver2 :
     impl::consume<IMapRouteManeuver2>
 {
     IMapRouteManeuver2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapRouteManeuver2>(m_ptr); }
 };
 
 struct IMapServiceStatics :
@@ -275,7 +258,6 @@ struct IMapServiceStatics :
     impl::consume<IMapServiceStatics>
 {
     IMapServiceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapServiceStatics>(m_ptr); }
 };
 
 struct IMapServiceStatics2 :
@@ -283,7 +265,6 @@ struct IMapServiceStatics2 :
     impl::consume<IMapServiceStatics2>
 {
     IMapServiceStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapServiceStatics2>(m_ptr); }
 };
 
 struct IMapServiceStatics3 :
@@ -291,7 +272,6 @@ struct IMapServiceStatics3 :
     impl::consume<IMapServiceStatics3>
 {
     IMapServiceStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMapServiceStatics3>(m_ptr); }
 };
 
 }

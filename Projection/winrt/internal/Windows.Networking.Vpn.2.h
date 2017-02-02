@@ -339,7 +339,6 @@ struct IVpnAppId :
     impl::consume<IVpnAppId>
 {
     IVpnAppId(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnAppId>(m_ptr); }
 };
 
 struct IVpnAppIdFactory :
@@ -347,7 +346,6 @@ struct IVpnAppIdFactory :
     impl::consume<IVpnAppIdFactory>
 {
     IVpnAppIdFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnAppIdFactory>(m_ptr); }
 };
 
 struct IVpnChannel :
@@ -355,7 +353,6 @@ struct IVpnChannel :
     impl::consume<IVpnChannel>
 {
     IVpnChannel(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnChannel>(m_ptr); }
 };
 
 struct IVpnChannel2 :
@@ -363,7 +360,6 @@ struct IVpnChannel2 :
     impl::consume<IVpnChannel2>
 {
     IVpnChannel2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnChannel2>(m_ptr); }
 };
 
 struct IVpnChannelActivityEventArgs :
@@ -371,7 +367,6 @@ struct IVpnChannelActivityEventArgs :
     impl::consume<IVpnChannelActivityEventArgs>
 {
     IVpnChannelActivityEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnChannelActivityEventArgs>(m_ptr); }
 };
 
 struct IVpnChannelActivityStateChangedArgs :
@@ -379,7 +374,6 @@ struct IVpnChannelActivityStateChangedArgs :
     impl::consume<IVpnChannelActivityStateChangedArgs>
 {
     IVpnChannelActivityStateChangedArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnChannelActivityStateChangedArgs>(m_ptr); }
 };
 
 struct IVpnChannelConfiguration :
@@ -387,7 +381,6 @@ struct IVpnChannelConfiguration :
     impl::consume<IVpnChannelConfiguration>
 {
     IVpnChannelConfiguration(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnChannelConfiguration>(m_ptr); }
 };
 
 struct IVpnChannelConfiguration2 :
@@ -395,7 +388,6 @@ struct IVpnChannelConfiguration2 :
     impl::consume<IVpnChannelConfiguration2>
 {
     IVpnChannelConfiguration2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnChannelConfiguration2>(m_ptr); }
 };
 
 struct IVpnChannelStatics :
@@ -403,7 +395,6 @@ struct IVpnChannelStatics :
     impl::consume<IVpnChannelStatics>
 {
     IVpnChannelStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnChannelStatics>(m_ptr); }
 };
 
 struct IVpnCredential :
@@ -411,7 +402,6 @@ struct IVpnCredential :
     impl::consume<IVpnCredential>
 {
     IVpnCredential(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnCredential>(m_ptr); }
 };
 
 struct IVpnCustomCheckBox :
@@ -420,7 +410,6 @@ struct IVpnCustomCheckBox :
     impl::require<IVpnCustomCheckBox, Windows::Networking::Vpn::IVpnCustomPrompt>
 {
     IVpnCustomCheckBox(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnCustomCheckBox>(m_ptr); }
 };
 
 struct IVpnCustomComboBox :
@@ -429,7 +418,6 @@ struct IVpnCustomComboBox :
     impl::require<IVpnCustomComboBox, Windows::Networking::Vpn::IVpnCustomPrompt>
 {
     IVpnCustomComboBox(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnCustomComboBox>(m_ptr); }
 };
 
 struct IVpnCustomEditBox :
@@ -438,7 +426,6 @@ struct IVpnCustomEditBox :
     impl::require<IVpnCustomEditBox, Windows::Networking::Vpn::IVpnCustomPrompt>
 {
     IVpnCustomEditBox(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnCustomEditBox>(m_ptr); }
 };
 
 struct IVpnCustomErrorBox :
@@ -447,7 +434,6 @@ struct IVpnCustomErrorBox :
     impl::require<IVpnCustomErrorBox, Windows::Networking::Vpn::IVpnCustomPrompt>
 {
     IVpnCustomErrorBox(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnCustomErrorBox>(m_ptr); }
 };
 
 struct IVpnCustomPrompt :
@@ -455,7 +441,6 @@ struct IVpnCustomPrompt :
     impl::consume<IVpnCustomPrompt>
 {
     IVpnCustomPrompt(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnCustomPrompt>(m_ptr); }
 };
 
 struct IVpnCustomPromptBooleanInput :
@@ -464,7 +449,6 @@ struct IVpnCustomPromptBooleanInput :
     impl::require<IVpnCustomPromptBooleanInput, Windows::Networking::Vpn::IVpnCustomPromptElement>
 {
     IVpnCustomPromptBooleanInput(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnCustomPromptBooleanInput>(m_ptr); }
 };
 
 struct IVpnCustomPromptElement :
@@ -472,7 +456,6 @@ struct IVpnCustomPromptElement :
     impl::consume<IVpnCustomPromptElement>
 {
     IVpnCustomPromptElement(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnCustomPromptElement>(m_ptr); }
 };
 
 struct IVpnCustomPromptOptionSelector :
@@ -481,7 +464,6 @@ struct IVpnCustomPromptOptionSelector :
     impl::require<IVpnCustomPromptOptionSelector, Windows::Networking::Vpn::IVpnCustomPromptElement>
 {
     IVpnCustomPromptOptionSelector(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnCustomPromptOptionSelector>(m_ptr); }
 };
 
 struct IVpnCustomPromptText :
@@ -490,7 +472,6 @@ struct IVpnCustomPromptText :
     impl::require<IVpnCustomPromptText, Windows::Networking::Vpn::IVpnCustomPromptElement>
 {
     IVpnCustomPromptText(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnCustomPromptText>(m_ptr); }
 };
 
 struct IVpnCustomPromptTextInput :
@@ -499,7 +480,6 @@ struct IVpnCustomPromptTextInput :
     impl::require<IVpnCustomPromptTextInput, Windows::Networking::Vpn::IVpnCustomPromptElement>
 {
     IVpnCustomPromptTextInput(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnCustomPromptTextInput>(m_ptr); }
 };
 
 struct IVpnCustomTextBox :
@@ -508,7 +488,6 @@ struct IVpnCustomTextBox :
     impl::require<IVpnCustomTextBox, Windows::Networking::Vpn::IVpnCustomPrompt>
 {
     IVpnCustomTextBox(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnCustomTextBox>(m_ptr); }
 };
 
 struct IVpnDomainNameAssignment :
@@ -516,7 +495,6 @@ struct IVpnDomainNameAssignment :
     impl::consume<IVpnDomainNameAssignment>
 {
     IVpnDomainNameAssignment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnDomainNameAssignment>(m_ptr); }
 };
 
 struct IVpnDomainNameInfo :
@@ -524,7 +502,6 @@ struct IVpnDomainNameInfo :
     impl::consume<IVpnDomainNameInfo>
 {
     IVpnDomainNameInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnDomainNameInfo>(m_ptr); }
 };
 
 struct IVpnDomainNameInfo2 :
@@ -532,7 +509,6 @@ struct IVpnDomainNameInfo2 :
     impl::consume<IVpnDomainNameInfo2>
 {
     IVpnDomainNameInfo2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnDomainNameInfo2>(m_ptr); }
 };
 
 struct IVpnDomainNameInfoFactory :
@@ -540,7 +516,6 @@ struct IVpnDomainNameInfoFactory :
     impl::consume<IVpnDomainNameInfoFactory>
 {
     IVpnDomainNameInfoFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnDomainNameInfoFactory>(m_ptr); }
 };
 
 struct IVpnInterfaceId :
@@ -548,7 +523,6 @@ struct IVpnInterfaceId :
     impl::consume<IVpnInterfaceId>
 {
     IVpnInterfaceId(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnInterfaceId>(m_ptr); }
 };
 
 struct IVpnInterfaceIdFactory :
@@ -556,7 +530,6 @@ struct IVpnInterfaceIdFactory :
     impl::consume<IVpnInterfaceIdFactory>
 {
     IVpnInterfaceIdFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnInterfaceIdFactory>(m_ptr); }
 };
 
 struct IVpnManagementAgent :
@@ -564,7 +537,6 @@ struct IVpnManagementAgent :
     impl::consume<IVpnManagementAgent>
 {
     IVpnManagementAgent(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnManagementAgent>(m_ptr); }
 };
 
 struct IVpnNamespaceAssignment :
@@ -572,7 +544,6 @@ struct IVpnNamespaceAssignment :
     impl::consume<IVpnNamespaceAssignment>
 {
     IVpnNamespaceAssignment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnNamespaceAssignment>(m_ptr); }
 };
 
 struct IVpnNamespaceInfo :
@@ -580,7 +551,6 @@ struct IVpnNamespaceInfo :
     impl::consume<IVpnNamespaceInfo>
 {
     IVpnNamespaceInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnNamespaceInfo>(m_ptr); }
 };
 
 struct IVpnNamespaceInfoFactory :
@@ -588,7 +558,6 @@ struct IVpnNamespaceInfoFactory :
     impl::consume<IVpnNamespaceInfoFactory>
 {
     IVpnNamespaceInfoFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnNamespaceInfoFactory>(m_ptr); }
 };
 
 struct IVpnNativeProfile :
@@ -597,7 +566,6 @@ struct IVpnNativeProfile :
     impl::require<IVpnNativeProfile, Windows::Networking::Vpn::IVpnProfile>
 {
     IVpnNativeProfile(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnNativeProfile>(m_ptr); }
 };
 
 struct IVpnNativeProfile2 :
@@ -605,7 +573,6 @@ struct IVpnNativeProfile2 :
     impl::consume<IVpnNativeProfile2>
 {
     IVpnNativeProfile2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnNativeProfile2>(m_ptr); }
 };
 
 struct IVpnPacketBuffer :
@@ -613,7 +580,6 @@ struct IVpnPacketBuffer :
     impl::consume<IVpnPacketBuffer>
 {
     IVpnPacketBuffer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnPacketBuffer>(m_ptr); }
 };
 
 struct IVpnPacketBuffer2 :
@@ -621,7 +587,6 @@ struct IVpnPacketBuffer2 :
     impl::consume<IVpnPacketBuffer2>
 {
     IVpnPacketBuffer2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnPacketBuffer2>(m_ptr); }
 };
 
 struct IVpnPacketBufferFactory :
@@ -629,7 +594,6 @@ struct IVpnPacketBufferFactory :
     impl::consume<IVpnPacketBufferFactory>
 {
     IVpnPacketBufferFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnPacketBufferFactory>(m_ptr); }
 };
 
 struct IVpnPacketBufferList :
@@ -638,7 +602,6 @@ struct IVpnPacketBufferList :
     impl::require<IVpnPacketBufferList, Windows::Foundation::Collections::IIterable<Windows::Networking::Vpn::VpnPacketBuffer>>
 {
     IVpnPacketBufferList(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnPacketBufferList>(m_ptr); }
 };
 
 struct IVpnPacketBufferList2 :
@@ -647,7 +610,6 @@ struct IVpnPacketBufferList2 :
     impl::require<IVpnPacketBufferList2, Windows::Foundation::Collections::IIterable<Windows::Networking::Vpn::VpnPacketBuffer>>
 {
     IVpnPacketBufferList2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnPacketBufferList2>(m_ptr); }
 };
 
 struct IVpnPickedCredential :
@@ -655,7 +617,6 @@ struct IVpnPickedCredential :
     impl::consume<IVpnPickedCredential>
 {
     IVpnPickedCredential(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnPickedCredential>(m_ptr); }
 };
 
 struct IVpnPlugIn :
@@ -663,7 +624,6 @@ struct IVpnPlugIn :
     impl::consume<IVpnPlugIn>
 {
     IVpnPlugIn(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnPlugIn>(m_ptr); }
 };
 
 struct IVpnPlugInProfile :
@@ -672,7 +632,6 @@ struct IVpnPlugInProfile :
     impl::require<IVpnPlugInProfile, Windows::Networking::Vpn::IVpnProfile>
 {
     IVpnPlugInProfile(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnPlugInProfile>(m_ptr); }
 };
 
 struct IVpnPlugInProfile2 :
@@ -681,7 +640,6 @@ struct IVpnPlugInProfile2 :
     impl::require<IVpnPlugInProfile2, Windows::Networking::Vpn::IVpnProfile>
 {
     IVpnPlugInProfile2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnPlugInProfile2>(m_ptr); }
 };
 
 struct IVpnProfile :
@@ -689,7 +647,6 @@ struct IVpnProfile :
     impl::consume<IVpnProfile>
 {
     IVpnProfile(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnProfile>(m_ptr); }
 };
 
 struct IVpnRoute :
@@ -697,7 +654,6 @@ struct IVpnRoute :
     impl::consume<IVpnRoute>
 {
     IVpnRoute(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnRoute>(m_ptr); }
 };
 
 struct IVpnRouteAssignment :
@@ -705,7 +661,6 @@ struct IVpnRouteAssignment :
     impl::consume<IVpnRouteAssignment>
 {
     IVpnRouteAssignment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnRouteAssignment>(m_ptr); }
 };
 
 struct IVpnRouteFactory :
@@ -713,7 +668,6 @@ struct IVpnRouteFactory :
     impl::consume<IVpnRouteFactory>
 {
     IVpnRouteFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnRouteFactory>(m_ptr); }
 };
 
 struct IVpnSystemHealth :
@@ -721,7 +675,6 @@ struct IVpnSystemHealth :
     impl::consume<IVpnSystemHealth>
 {
     IVpnSystemHealth(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnSystemHealth>(m_ptr); }
 };
 
 struct IVpnTrafficFilter :
@@ -729,7 +682,6 @@ struct IVpnTrafficFilter :
     impl::consume<IVpnTrafficFilter>
 {
     IVpnTrafficFilter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnTrafficFilter>(m_ptr); }
 };
 
 struct IVpnTrafficFilterAssignment :
@@ -737,7 +689,6 @@ struct IVpnTrafficFilterAssignment :
     impl::consume<IVpnTrafficFilterAssignment>
 {
     IVpnTrafficFilterAssignment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnTrafficFilterAssignment>(m_ptr); }
 };
 
 struct IVpnTrafficFilterFactory :
@@ -745,7 +696,6 @@ struct IVpnTrafficFilterFactory :
     impl::consume<IVpnTrafficFilterFactory>
 {
     IVpnTrafficFilterFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVpnTrafficFilterFactory>(m_ptr); }
 };
 
 }

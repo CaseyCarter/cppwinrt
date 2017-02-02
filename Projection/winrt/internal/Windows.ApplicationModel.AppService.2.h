@@ -105,7 +105,6 @@ struct IAppServiceCatalogStatics :
     impl::consume<IAppServiceCatalogStatics>
 {
     IAppServiceCatalogStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppServiceCatalogStatics>(m_ptr); }
 };
 
 struct IAppServiceClosedEventArgs :
@@ -113,7 +112,6 @@ struct IAppServiceClosedEventArgs :
     impl::consume<IAppServiceClosedEventArgs>
 {
     IAppServiceClosedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppServiceClosedEventArgs>(m_ptr); }
 };
 
 struct IAppServiceConnection :
@@ -122,7 +120,6 @@ struct IAppServiceConnection :
     impl::require<IAppServiceConnection, Windows::Foundation::IClosable>
 {
     IAppServiceConnection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppServiceConnection>(m_ptr); }
 };
 
 struct IAppServiceConnection2 :
@@ -130,7 +127,6 @@ struct IAppServiceConnection2 :
     impl::consume<IAppServiceConnection2>
 {
     IAppServiceConnection2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppServiceConnection2>(m_ptr); }
 };
 
 struct IAppServiceDeferral :
@@ -138,7 +134,6 @@ struct IAppServiceDeferral :
     impl::consume<IAppServiceDeferral>
 {
     IAppServiceDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppServiceDeferral>(m_ptr); }
 };
 
 struct IAppServiceRequest :
@@ -146,7 +141,6 @@ struct IAppServiceRequest :
     impl::consume<IAppServiceRequest>
 {
     IAppServiceRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppServiceRequest>(m_ptr); }
 };
 
 struct IAppServiceRequestReceivedEventArgs :
@@ -154,7 +148,6 @@ struct IAppServiceRequestReceivedEventArgs :
     impl::consume<IAppServiceRequestReceivedEventArgs>
 {
     IAppServiceRequestReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppServiceRequestReceivedEventArgs>(m_ptr); }
 };
 
 struct IAppServiceResponse :
@@ -162,7 +155,6 @@ struct IAppServiceResponse :
     impl::consume<IAppServiceResponse>
 {
     IAppServiceResponse(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppServiceResponse>(m_ptr); }
 };
 
 struct IAppServiceTriggerDetails :
@@ -170,7 +162,6 @@ struct IAppServiceTriggerDetails :
     impl::consume<IAppServiceTriggerDetails>
 {
     IAppServiceTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppServiceTriggerDetails>(m_ptr); }
 };
 
 struct IAppServiceTriggerDetails2 :
@@ -178,7 +169,6 @@ struct IAppServiceTriggerDetails2 :
     impl::consume<IAppServiceTriggerDetails2>
 {
     IAppServiceTriggerDetails2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAppServiceTriggerDetails2>(m_ptr); }
 };
 
 }

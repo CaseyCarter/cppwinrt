@@ -353,133 +353,133 @@ namespace Windows::Devices::Input {
 template <typename D> int32_t impl_IMouseCapabilities<D>::MousePresent() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMouseCapabilities &>(static_cast<const D &>(*this))->get_MousePresent(&value));
+    check_hresult(WINRT_SHIM(IMouseCapabilities)->get_MousePresent(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IMouseCapabilities<D>::VerticalWheelPresent() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMouseCapabilities &>(static_cast<const D &>(*this))->get_VerticalWheelPresent(&value));
+    check_hresult(WINRT_SHIM(IMouseCapabilities)->get_VerticalWheelPresent(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IMouseCapabilities<D>::HorizontalWheelPresent() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMouseCapabilities &>(static_cast<const D &>(*this))->get_HorizontalWheelPresent(&value));
+    check_hresult(WINRT_SHIM(IMouseCapabilities)->get_HorizontalWheelPresent(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IMouseCapabilities<D>::SwapButtons() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IMouseCapabilities &>(static_cast<const D &>(*this))->get_SwapButtons(&value));
+    check_hresult(WINRT_SHIM(IMouseCapabilities)->get_SwapButtons(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IMouseCapabilities<D>::NumberOfButtons() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMouseCapabilities &>(static_cast<const D &>(*this))->get_NumberOfButtons(&value));
+    check_hresult(WINRT_SHIM(IMouseCapabilities)->get_NumberOfButtons(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IKeyboardCapabilities<D>::KeyboardPresent() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IKeyboardCapabilities &>(static_cast<const D &>(*this))->get_KeyboardPresent(&value));
+    check_hresult(WINRT_SHIM(IKeyboardCapabilities)->get_KeyboardPresent(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ITouchCapabilities<D>::TouchPresent() const
 {
     int32_t value {};
-    check_hresult(static_cast<const ITouchCapabilities &>(static_cast<const D &>(*this))->get_TouchPresent(&value));
+    check_hresult(WINRT_SHIM(ITouchCapabilities)->get_TouchPresent(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_ITouchCapabilities<D>::Contacts() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ITouchCapabilities &>(static_cast<const D &>(*this))->get_Contacts(&value));
+    check_hresult(WINRT_SHIM(ITouchCapabilities)->get_Contacts(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Input::PointerDevice impl_IPointerDeviceStatics<D>::GetPointerDevice(uint32_t pointerId) const
 {
     Windows::Devices::Input::PointerDevice pointerDevice { nullptr };
-    check_hresult(static_cast<const IPointerDeviceStatics &>(static_cast<const D &>(*this))->abi_GetPointerDevice(pointerId, put(pointerDevice)));
+    check_hresult(WINRT_SHIM(IPointerDeviceStatics)->abi_GetPointerDevice(pointerId, put(pointerDevice)));
     return pointerDevice;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDevice> impl_IPointerDeviceStatics<D>::GetPointerDevices() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDevice> pointerDevices;
-    check_hresult(static_cast<const IPointerDeviceStatics &>(static_cast<const D &>(*this))->abi_GetPointerDevices(put(pointerDevices)));
+    check_hresult(WINRT_SHIM(IPointerDeviceStatics)->abi_GetPointerDevices(put(pointerDevices)));
     return pointerDevices;
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_IPointerDevice<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(static_cast<const IPointerDevice &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
+    check_hresult(WINRT_SHIM(IPointerDevice)->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> bool impl_IPointerDevice<D>::IsIntegrated() const
 {
     bool value {};
-    check_hresult(static_cast<const IPointerDevice &>(static_cast<const D &>(*this))->get_IsIntegrated(&value));
+    check_hresult(WINRT_SHIM(IPointerDevice)->get_IsIntegrated(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPointerDevice<D>::MaxContacts() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPointerDevice &>(static_cast<const D &>(*this))->get_MaxContacts(&value));
+    check_hresult(WINRT_SHIM(IPointerDevice)->get_MaxContacts(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IPointerDevice<D>::PhysicalDeviceRect() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(static_cast<const IPointerDevice &>(static_cast<const D &>(*this))->get_PhysicalDeviceRect(put(value)));
+    check_hresult(WINRT_SHIM(IPointerDevice)->get_PhysicalDeviceRect(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IPointerDevice<D>::ScreenRect() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(static_cast<const IPointerDevice &>(static_cast<const D &>(*this))->get_ScreenRect(put(value)));
+    check_hresult(WINRT_SHIM(IPointerDevice)->get_ScreenRect(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDeviceUsage> impl_IPointerDevice<D>::SupportedUsages() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDeviceUsage> value;
-    check_hresult(static_cast<const IPointerDevice &>(static_cast<const D &>(*this))->get_SupportedUsages(put(value)));
+    check_hresult(WINRT_SHIM(IPointerDevice)->get_SupportedUsages(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IPointerDevice2<D>::MaxPointersWithZDistance() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPointerDevice2 &>(static_cast<const D &>(*this))->get_MaxPointersWithZDistance(&value));
+    check_hresult(WINRT_SHIM(IPointerDevice2)->get_MaxPointersWithZDistance(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Input::MouseDelta impl_IMouseEventArgs<D>::MouseDelta() const
 {
     Windows::Devices::Input::MouseDelta value {};
-    check_hresult(static_cast<const IMouseEventArgs &>(static_cast<const D &>(*this))->get_MouseDelta(put(value)));
+    check_hresult(WINRT_SHIM(IMouseEventArgs)->get_MouseDelta(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IMouseDevice<D>::MouseMoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(static_cast<const IMouseDevice &>(static_cast<const D &>(*this))->add_MouseMoved(get(handler), &cookie));
+    check_hresult(WINRT_SHIM(IMouseDevice)->add_MouseMoved(get(handler), &cookie));
     return cookie;
 }
 
@@ -490,13 +490,13 @@ template <typename D> event_revoker<IMouseDevice> impl_IMouseDevice<D>::MouseMov
 
 template <typename D> void impl_IMouseDevice<D>::MouseMoved(event_token cookie) const
 {
-    check_hresult(static_cast<const IMouseDevice &>(static_cast<const D &>(*this))->remove_MouseMoved(cookie));
+    check_hresult(WINRT_SHIM(IMouseDevice)->remove_MouseMoved(cookie));
 }
 
 template <typename D> Windows::Devices::Input::MouseDevice impl_IMouseDeviceStatics<D>::GetForCurrentView() const
 {
     Windows::Devices::Input::MouseDevice mouseDevice { nullptr };
-    check_hresult(static_cast<const IMouseDeviceStatics &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(mouseDevice)));
+    check_hresult(WINRT_SHIM(IMouseDeviceStatics)->abi_GetForCurrentView(put(mouseDevice)));
     return mouseDevice;
 }
 

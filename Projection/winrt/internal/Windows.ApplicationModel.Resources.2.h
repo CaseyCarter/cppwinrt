@@ -14,7 +14,6 @@ struct IResourceLoader :
     impl::consume<IResourceLoader>
 {
     IResourceLoader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IResourceLoader>(m_ptr); }
 };
 
 struct IResourceLoader2 :
@@ -22,7 +21,6 @@ struct IResourceLoader2 :
     impl::consume<IResourceLoader2>
 {
     IResourceLoader2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IResourceLoader2>(m_ptr); }
 };
 
 struct IResourceLoaderFactory :
@@ -30,7 +28,6 @@ struct IResourceLoaderFactory :
     impl::consume<IResourceLoaderFactory>
 {
     IResourceLoaderFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IResourceLoaderFactory>(m_ptr); }
 };
 
 struct IResourceLoaderStatics :
@@ -38,7 +35,6 @@ struct IResourceLoaderStatics :
     impl::consume<IResourceLoaderStatics>
 {
     IResourceLoaderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IResourceLoaderStatics>(m_ptr); }
 };
 
 struct IResourceLoaderStatics2 :
@@ -46,7 +42,6 @@ struct IResourceLoaderStatics2 :
     impl::consume<IResourceLoaderStatics2>
 {
     IResourceLoaderStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IResourceLoaderStatics2>(m_ptr); }
 };
 
 }

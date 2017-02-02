@@ -124,7 +124,6 @@ struct IDialApp :
     impl::consume<IDialApp>
 {
     IDialApp(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDialApp>(m_ptr); }
 };
 
 struct IDialAppStateDetails :
@@ -132,7 +131,6 @@ struct IDialAppStateDetails :
     impl::consume<IDialAppStateDetails>
 {
     IDialAppStateDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDialAppStateDetails>(m_ptr); }
 };
 
 struct IDialDevice :
@@ -140,7 +138,6 @@ struct IDialDevice :
     impl::consume<IDialDevice>
 {
     IDialDevice(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDialDevice>(m_ptr); }
 };
 
 struct IDialDevice2 :
@@ -148,7 +145,6 @@ struct IDialDevice2 :
     impl::consume<IDialDevice2>
 {
     IDialDevice2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDialDevice2>(m_ptr); }
 };
 
 struct IDialDevicePicker :
@@ -156,7 +152,6 @@ struct IDialDevicePicker :
     impl::consume<IDialDevicePicker>
 {
     IDialDevicePicker(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDialDevicePicker>(m_ptr); }
 };
 
 struct IDialDevicePickerFilter :
@@ -164,7 +159,6 @@ struct IDialDevicePickerFilter :
     impl::consume<IDialDevicePickerFilter>
 {
     IDialDevicePickerFilter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDialDevicePickerFilter>(m_ptr); }
 };
 
 struct IDialDeviceSelectedEventArgs :
@@ -172,7 +166,6 @@ struct IDialDeviceSelectedEventArgs :
     impl::consume<IDialDeviceSelectedEventArgs>
 {
     IDialDeviceSelectedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDialDeviceSelectedEventArgs>(m_ptr); }
 };
 
 struct IDialDeviceStatics :
@@ -180,7 +173,6 @@ struct IDialDeviceStatics :
     impl::consume<IDialDeviceStatics>
 {
     IDialDeviceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDialDeviceStatics>(m_ptr); }
 };
 
 struct IDialDisconnectButtonClickedEventArgs :
@@ -188,7 +180,6 @@ struct IDialDisconnectButtonClickedEventArgs :
     impl::consume<IDialDisconnectButtonClickedEventArgs>
 {
     IDialDisconnectButtonClickedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDialDisconnectButtonClickedEventArgs>(m_ptr); }
 };
 
 }

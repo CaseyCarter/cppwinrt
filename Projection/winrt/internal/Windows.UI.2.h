@@ -14,7 +14,6 @@ struct IColorHelper :
     impl::consume<IColorHelper>
 {
     IColorHelper(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IColorHelper>(m_ptr); }
 };
 
 struct IColorHelperStatics :
@@ -22,7 +21,6 @@ struct IColorHelperStatics :
     impl::consume<IColorHelperStatics>
 {
     IColorHelperStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IColorHelperStatics>(m_ptr); }
 };
 
 struct IColors :
@@ -30,7 +28,6 @@ struct IColors :
     impl::consume<IColors>
 {
     IColors(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IColors>(m_ptr); }
 };
 
 struct IColorsStatics :
@@ -38,7 +35,6 @@ struct IColorsStatics :
     impl::consume<IColorsStatics>
 {
     IColorsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IColorsStatics>(m_ptr); }
 };
 
 }

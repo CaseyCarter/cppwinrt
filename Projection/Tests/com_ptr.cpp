@@ -48,7 +48,7 @@ TEST_CASE("com_ptr, ::IUnknown")
     com_ptr<::IUnknown> a; // default ctor
     com_ptr<::IUnknown> b = nullptr; // nullptr_t ctor
 
-    REQUIRE(S_OK == stringable->QueryInterface(put(b))); // attach
+    REQUIRE(S_OK == get(stringable)->QueryInterface(put(b))); // attach
 
     com_ptr<::IUnknown> c = b; // copy ctor, AddRef
     b = nullptr;
@@ -84,7 +84,7 @@ TEST_CASE("com_ptr, Windows::IUnknown")
     com_ptr<Windows::IUnknown> a; // default ctor
     com_ptr<Windows::IUnknown> b = nullptr; // nullptr_t ctor
 
-    REQUIRE(S_OK == stringable->QueryInterface(put(b))); // attach
+    REQUIRE(S_OK == get(stringable)->QueryInterface(put(b))); // attach
 
     com_ptr<Windows::IUnknown> c = b; // copy ctor, AddRef
     b = nullptr;
@@ -254,7 +254,7 @@ static com_ptr<IUnknown> test_make_unknown()
     IStringable s = make<Stringable>(L"Hello world!");
 
     com_ptr<IUnknown> result;
-    REQUIRE(S_OK == s->QueryInterface(put(result)));
+    REQUIRE(S_OK == get(s)->QueryInterface(put(result)));
     return result;
 }
 
@@ -296,7 +296,7 @@ static com_ptr<IInspectable> test_make_inspectable()
     IStringable s = make<Stringable>(L"Hello world!");
 
     com_ptr<IInspectable> result;
-    REQUIRE(S_OK == s->QueryInterface(put(result)));
+    REQUIRE(S_OK == get(s)->QueryInterface(put(result)));
     return result;
 }
 

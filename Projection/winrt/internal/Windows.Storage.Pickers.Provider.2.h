@@ -64,7 +64,6 @@ struct IFileOpenPickerUI :
     impl::consume<IFileOpenPickerUI>
 {
     IFileOpenPickerUI(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileOpenPickerUI>(m_ptr); }
 };
 
 struct IFileRemovedEventArgs :
@@ -72,7 +71,6 @@ struct IFileRemovedEventArgs :
     impl::consume<IFileRemovedEventArgs>
 {
     IFileRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileRemovedEventArgs>(m_ptr); }
 };
 
 struct IFileSavePickerUI :
@@ -80,7 +78,6 @@ struct IFileSavePickerUI :
     impl::consume<IFileSavePickerUI>
 {
     IFileSavePickerUI(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileSavePickerUI>(m_ptr); }
 };
 
 struct IPickerClosingDeferral :
@@ -88,7 +85,6 @@ struct IPickerClosingDeferral :
     impl::consume<IPickerClosingDeferral>
 {
     IPickerClosingDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPickerClosingDeferral>(m_ptr); }
 };
 
 struct IPickerClosingEventArgs :
@@ -96,7 +92,6 @@ struct IPickerClosingEventArgs :
     impl::consume<IPickerClosingEventArgs>
 {
     IPickerClosingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPickerClosingEventArgs>(m_ptr); }
 };
 
 struct IPickerClosingOperation :
@@ -104,7 +99,6 @@ struct IPickerClosingOperation :
     impl::consume<IPickerClosingOperation>
 {
     IPickerClosingOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPickerClosingOperation>(m_ptr); }
 };
 
 struct ITargetFileRequest :
@@ -112,7 +106,6 @@ struct ITargetFileRequest :
     impl::consume<ITargetFileRequest>
 {
     ITargetFileRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITargetFileRequest>(m_ptr); }
 };
 
 struct ITargetFileRequestDeferral :
@@ -120,7 +113,6 @@ struct ITargetFileRequestDeferral :
     impl::consume<ITargetFileRequestDeferral>
 {
     ITargetFileRequestDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITargetFileRequestDeferral>(m_ptr); }
 };
 
 struct ITargetFileRequestedEventArgs :
@@ -128,7 +120,6 @@ struct ITargetFileRequestedEventArgs :
     impl::consume<ITargetFileRequestedEventArgs>
 {
     ITargetFileRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITargetFileRequestedEventArgs>(m_ptr); }
 };
 
 }

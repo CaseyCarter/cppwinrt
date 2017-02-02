@@ -57,7 +57,6 @@ struct ICompositionInteractionSource :
     impl::consume<ICompositionInteractionSource>
 {
     ICompositionInteractionSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionInteractionSource>(m_ptr); }
 };
 
 struct ICompositionInteractionSourceCollection :
@@ -66,7 +65,6 @@ struct ICompositionInteractionSourceCollection :
     impl::require<ICompositionInteractionSourceCollection, Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::ICompositionInteractionSource>>
 {
     ICompositionInteractionSourceCollection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositionInteractionSourceCollection>(m_ptr); }
 };
 
 struct IInteractionTracker :
@@ -74,7 +72,6 @@ struct IInteractionTracker :
     impl::consume<IInteractionTracker>
 {
     IInteractionTracker(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInteractionTracker>(m_ptr); }
 };
 
 struct IInteractionTrackerCustomAnimationStateEnteredArgs :
@@ -82,7 +79,6 @@ struct IInteractionTrackerCustomAnimationStateEnteredArgs :
     impl::consume<IInteractionTrackerCustomAnimationStateEnteredArgs>
 {
     IInteractionTrackerCustomAnimationStateEnteredArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInteractionTrackerCustomAnimationStateEnteredArgs>(m_ptr); }
 };
 
 struct IInteractionTrackerIdleStateEnteredArgs :
@@ -90,7 +86,6 @@ struct IInteractionTrackerIdleStateEnteredArgs :
     impl::consume<IInteractionTrackerIdleStateEnteredArgs>
 {
     IInteractionTrackerIdleStateEnteredArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInteractionTrackerIdleStateEnteredArgs>(m_ptr); }
 };
 
 struct IInteractionTrackerInertiaModifier :
@@ -98,7 +93,6 @@ struct IInteractionTrackerInertiaModifier :
     impl::consume<IInteractionTrackerInertiaModifier>
 {
     IInteractionTrackerInertiaModifier(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInteractionTrackerInertiaModifier>(m_ptr); }
 };
 
 struct IInteractionTrackerInertiaModifierFactory :
@@ -106,7 +100,6 @@ struct IInteractionTrackerInertiaModifierFactory :
     impl::consume<IInteractionTrackerInertiaModifierFactory>
 {
     IInteractionTrackerInertiaModifierFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInteractionTrackerInertiaModifierFactory>(m_ptr); }
 };
 
 struct IInteractionTrackerInertiaMotion :
@@ -114,7 +107,6 @@ struct IInteractionTrackerInertiaMotion :
     impl::consume<IInteractionTrackerInertiaMotion>
 {
     IInteractionTrackerInertiaMotion(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInteractionTrackerInertiaMotion>(m_ptr); }
 };
 
 struct IInteractionTrackerInertiaMotionStatics :
@@ -122,7 +114,6 @@ struct IInteractionTrackerInertiaMotionStatics :
     impl::consume<IInteractionTrackerInertiaMotionStatics>
 {
     IInteractionTrackerInertiaMotionStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInteractionTrackerInertiaMotionStatics>(m_ptr); }
 };
 
 struct IInteractionTrackerInertiaRestingValue :
@@ -130,7 +121,6 @@ struct IInteractionTrackerInertiaRestingValue :
     impl::consume<IInteractionTrackerInertiaRestingValue>
 {
     IInteractionTrackerInertiaRestingValue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInteractionTrackerInertiaRestingValue>(m_ptr); }
 };
 
 struct IInteractionTrackerInertiaRestingValueStatics :
@@ -138,7 +128,6 @@ struct IInteractionTrackerInertiaRestingValueStatics :
     impl::consume<IInteractionTrackerInertiaRestingValueStatics>
 {
     IInteractionTrackerInertiaRestingValueStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInteractionTrackerInertiaRestingValueStatics>(m_ptr); }
 };
 
 struct IInteractionTrackerInertiaStateEnteredArgs :
@@ -146,7 +135,6 @@ struct IInteractionTrackerInertiaStateEnteredArgs :
     impl::consume<IInteractionTrackerInertiaStateEnteredArgs>
 {
     IInteractionTrackerInertiaStateEnteredArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInteractionTrackerInertiaStateEnteredArgs>(m_ptr); }
 };
 
 struct IInteractionTrackerInteractingStateEnteredArgs :
@@ -154,7 +142,6 @@ struct IInteractionTrackerInteractingStateEnteredArgs :
     impl::consume<IInteractionTrackerInteractingStateEnteredArgs>
 {
     IInteractionTrackerInteractingStateEnteredArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInteractionTrackerInteractingStateEnteredArgs>(m_ptr); }
 };
 
 struct IInteractionTrackerOwner :
@@ -162,7 +149,6 @@ struct IInteractionTrackerOwner :
     impl::consume<IInteractionTrackerOwner>
 {
     IInteractionTrackerOwner(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInteractionTrackerOwner>(m_ptr); }
 };
 
 struct IInteractionTrackerRequestIgnoredArgs :
@@ -170,7 +156,6 @@ struct IInteractionTrackerRequestIgnoredArgs :
     impl::consume<IInteractionTrackerRequestIgnoredArgs>
 {
     IInteractionTrackerRequestIgnoredArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInteractionTrackerRequestIgnoredArgs>(m_ptr); }
 };
 
 struct IInteractionTrackerStatics :
@@ -178,7 +163,6 @@ struct IInteractionTrackerStatics :
     impl::consume<IInteractionTrackerStatics>
 {
     IInteractionTrackerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInteractionTrackerStatics>(m_ptr); }
 };
 
 struct IInteractionTrackerValuesChangedArgs :
@@ -186,7 +170,6 @@ struct IInteractionTrackerValuesChangedArgs :
     impl::consume<IInteractionTrackerValuesChangedArgs>
 {
     IInteractionTrackerValuesChangedArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInteractionTrackerValuesChangedArgs>(m_ptr); }
 };
 
 struct IVisualInteractionSource :
@@ -194,7 +177,6 @@ struct IVisualInteractionSource :
     impl::consume<IVisualInteractionSource>
 {
     IVisualInteractionSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVisualInteractionSource>(m_ptr); }
 };
 
 struct IVisualInteractionSourceStatics :
@@ -202,7 +184,6 @@ struct IVisualInteractionSourceStatics :
     impl::consume<IVisualInteractionSourceStatics>
 {
     IVisualInteractionSourceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVisualInteractionSourceStatics>(m_ptr); }
 };
 
 }

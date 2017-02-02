@@ -64,7 +64,6 @@ struct ICoreInkIndependentInputSource :
     impl::consume<ICoreInkIndependentInputSource>
 {
     ICoreInkIndependentInputSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreInkIndependentInputSource>(m_ptr); }
 };
 
 struct ICoreInkIndependentInputSourceStatics :
@@ -72,7 +71,6 @@ struct ICoreInkIndependentInputSourceStatics :
     impl::consume<ICoreInkIndependentInputSourceStatics>
 {
     ICoreInkIndependentInputSourceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreInkIndependentInputSourceStatics>(m_ptr); }
 };
 
 struct ICoreWetStrokeUpdateEventArgs :
@@ -80,7 +78,6 @@ struct ICoreWetStrokeUpdateEventArgs :
     impl::consume<ICoreWetStrokeUpdateEventArgs>
 {
     ICoreWetStrokeUpdateEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreWetStrokeUpdateEventArgs>(m_ptr); }
 };
 
 struct ICoreWetStrokeUpdateSource :
@@ -88,7 +85,6 @@ struct ICoreWetStrokeUpdateSource :
     impl::consume<ICoreWetStrokeUpdateSource>
 {
     ICoreWetStrokeUpdateSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreWetStrokeUpdateSource>(m_ptr); }
 };
 
 struct ICoreWetStrokeUpdateSourceStatics :
@@ -96,7 +92,6 @@ struct ICoreWetStrokeUpdateSourceStatics :
     impl::consume<ICoreWetStrokeUpdateSourceStatics>
 {
     ICoreWetStrokeUpdateSourceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICoreWetStrokeUpdateSourceStatics>(m_ptr); }
 };
 
 }

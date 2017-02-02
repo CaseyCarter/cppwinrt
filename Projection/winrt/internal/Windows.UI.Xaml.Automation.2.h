@@ -81,7 +81,6 @@ struct IAnnotationPatternIdentifiers :
     impl::consume<IAnnotationPatternIdentifiers>
 {
     IAnnotationPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAnnotationPatternIdentifiers>(m_ptr); }
 };
 
 struct IAnnotationPatternIdentifiersStatics :
@@ -89,7 +88,6 @@ struct IAnnotationPatternIdentifiersStatics :
     impl::consume<IAnnotationPatternIdentifiersStatics>
 {
     IAnnotationPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAnnotationPatternIdentifiersStatics>(m_ptr); }
 };
 
 struct IAutomationAnnotation :
@@ -97,7 +95,6 @@ struct IAutomationAnnotation :
     impl::consume<IAutomationAnnotation>
 {
     IAutomationAnnotation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationAnnotation>(m_ptr); }
 };
 
 struct IAutomationAnnotationFactory :
@@ -105,7 +102,6 @@ struct IAutomationAnnotationFactory :
     impl::consume<IAutomationAnnotationFactory>
 {
     IAutomationAnnotationFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationAnnotationFactory>(m_ptr); }
 };
 
 struct IAutomationAnnotationStatics :
@@ -113,7 +109,6 @@ struct IAutomationAnnotationStatics :
     impl::consume<IAutomationAnnotationStatics>
 {
     IAutomationAnnotationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationAnnotationStatics>(m_ptr); }
 };
 
 struct IAutomationElementIdentifiers :
@@ -121,7 +116,6 @@ struct IAutomationElementIdentifiers :
     impl::consume<IAutomationElementIdentifiers>
 {
     IAutomationElementIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationElementIdentifiers>(m_ptr); }
 };
 
 struct IAutomationElementIdentifiersStatics :
@@ -129,7 +123,6 @@ struct IAutomationElementIdentifiersStatics :
     impl::consume<IAutomationElementIdentifiersStatics>
 {
     IAutomationElementIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationElementIdentifiersStatics>(m_ptr); }
 };
 
 struct IAutomationElementIdentifiersStatics2 :
@@ -137,7 +130,6 @@ struct IAutomationElementIdentifiersStatics2 :
     impl::consume<IAutomationElementIdentifiersStatics2>
 {
     IAutomationElementIdentifiersStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationElementIdentifiersStatics2>(m_ptr); }
 };
 
 struct IAutomationElementIdentifiersStatics3 :
@@ -145,7 +137,6 @@ struct IAutomationElementIdentifiersStatics3 :
     impl::consume<IAutomationElementIdentifiersStatics3>
 {
     IAutomationElementIdentifiersStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationElementIdentifiersStatics3>(m_ptr); }
 };
 
 struct IAutomationElementIdentifiersStatics4 :
@@ -153,7 +144,6 @@ struct IAutomationElementIdentifiersStatics4 :
     impl::consume<IAutomationElementIdentifiersStatics4>
 {
     IAutomationElementIdentifiersStatics4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationElementIdentifiersStatics4>(m_ptr); }
 };
 
 struct IAutomationElementIdentifiersStatics5 :
@@ -161,7 +151,6 @@ struct IAutomationElementIdentifiersStatics5 :
     impl::consume<IAutomationElementIdentifiersStatics5>
 {
     IAutomationElementIdentifiersStatics5(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationElementIdentifiersStatics5>(m_ptr); }
 };
 
 struct IAutomationProperties :
@@ -169,7 +158,6 @@ struct IAutomationProperties :
     impl::consume<IAutomationProperties>
 {
     IAutomationProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationProperties>(m_ptr); }
 };
 
 struct IAutomationPropertiesStatics :
@@ -177,7 +165,6 @@ struct IAutomationPropertiesStatics :
     impl::consume<IAutomationPropertiesStatics>
 {
     IAutomationPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPropertiesStatics>(m_ptr); }
 };
 
 struct IAutomationPropertiesStatics2 :
@@ -185,7 +172,6 @@ struct IAutomationPropertiesStatics2 :
     impl::consume<IAutomationPropertiesStatics2>
 {
     IAutomationPropertiesStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPropertiesStatics2>(m_ptr); }
 };
 
 struct IAutomationPropertiesStatics3 :
@@ -193,7 +179,6 @@ struct IAutomationPropertiesStatics3 :
     impl::consume<IAutomationPropertiesStatics3>
 {
     IAutomationPropertiesStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPropertiesStatics3>(m_ptr); }
 };
 
 struct IAutomationPropertiesStatics4 :
@@ -201,7 +186,6 @@ struct IAutomationPropertiesStatics4 :
     impl::consume<IAutomationPropertiesStatics4>
 {
     IAutomationPropertiesStatics4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPropertiesStatics4>(m_ptr); }
 };
 
 struct IAutomationPropertiesStatics5 :
@@ -209,7 +193,6 @@ struct IAutomationPropertiesStatics5 :
     impl::consume<IAutomationPropertiesStatics5>
 {
     IAutomationPropertiesStatics5(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationPropertiesStatics5>(m_ptr); }
 };
 
 struct IAutomationProperty :
@@ -217,7 +200,6 @@ struct IAutomationProperty :
     impl::consume<IAutomationProperty>
 {
     IAutomationProperty(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAutomationProperty>(m_ptr); }
 };
 
 struct IDockPatternIdentifiers :
@@ -225,7 +207,6 @@ struct IDockPatternIdentifiers :
     impl::consume<IDockPatternIdentifiers>
 {
     IDockPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDockPatternIdentifiers>(m_ptr); }
 };
 
 struct IDockPatternIdentifiersStatics :
@@ -233,7 +214,6 @@ struct IDockPatternIdentifiersStatics :
     impl::consume<IDockPatternIdentifiersStatics>
 {
     IDockPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDockPatternIdentifiersStatics>(m_ptr); }
 };
 
 struct IDragPatternIdentifiers :
@@ -241,7 +221,6 @@ struct IDragPatternIdentifiers :
     impl::consume<IDragPatternIdentifiers>
 {
     IDragPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDragPatternIdentifiers>(m_ptr); }
 };
 
 struct IDragPatternIdentifiersStatics :
@@ -249,7 +228,6 @@ struct IDragPatternIdentifiersStatics :
     impl::consume<IDragPatternIdentifiersStatics>
 {
     IDragPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDragPatternIdentifiersStatics>(m_ptr); }
 };
 
 struct IDropTargetPatternIdentifiers :
@@ -257,7 +235,6 @@ struct IDropTargetPatternIdentifiers :
     impl::consume<IDropTargetPatternIdentifiers>
 {
     IDropTargetPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDropTargetPatternIdentifiers>(m_ptr); }
 };
 
 struct IDropTargetPatternIdentifiersStatics :
@@ -265,7 +242,6 @@ struct IDropTargetPatternIdentifiersStatics :
     impl::consume<IDropTargetPatternIdentifiersStatics>
 {
     IDropTargetPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDropTargetPatternIdentifiersStatics>(m_ptr); }
 };
 
 struct IExpandCollapsePatternIdentifiers :
@@ -273,7 +249,6 @@ struct IExpandCollapsePatternIdentifiers :
     impl::consume<IExpandCollapsePatternIdentifiers>
 {
     IExpandCollapsePatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IExpandCollapsePatternIdentifiers>(m_ptr); }
 };
 
 struct IExpandCollapsePatternIdentifiersStatics :
@@ -281,7 +256,6 @@ struct IExpandCollapsePatternIdentifiersStatics :
     impl::consume<IExpandCollapsePatternIdentifiersStatics>
 {
     IExpandCollapsePatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IExpandCollapsePatternIdentifiersStatics>(m_ptr); }
 };
 
 struct IGridItemPatternIdentifiers :
@@ -289,7 +263,6 @@ struct IGridItemPatternIdentifiers :
     impl::consume<IGridItemPatternIdentifiers>
 {
     IGridItemPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGridItemPatternIdentifiers>(m_ptr); }
 };
 
 struct IGridItemPatternIdentifiersStatics :
@@ -297,7 +270,6 @@ struct IGridItemPatternIdentifiersStatics :
     impl::consume<IGridItemPatternIdentifiersStatics>
 {
     IGridItemPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGridItemPatternIdentifiersStatics>(m_ptr); }
 };
 
 struct IGridPatternIdentifiers :
@@ -305,7 +277,6 @@ struct IGridPatternIdentifiers :
     impl::consume<IGridPatternIdentifiers>
 {
     IGridPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGridPatternIdentifiers>(m_ptr); }
 };
 
 struct IGridPatternIdentifiersStatics :
@@ -313,7 +284,6 @@ struct IGridPatternIdentifiersStatics :
     impl::consume<IGridPatternIdentifiersStatics>
 {
     IGridPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGridPatternIdentifiersStatics>(m_ptr); }
 };
 
 struct IMultipleViewPatternIdentifiers :
@@ -321,7 +291,6 @@ struct IMultipleViewPatternIdentifiers :
     impl::consume<IMultipleViewPatternIdentifiers>
 {
     IMultipleViewPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMultipleViewPatternIdentifiers>(m_ptr); }
 };
 
 struct IMultipleViewPatternIdentifiersStatics :
@@ -329,7 +298,6 @@ struct IMultipleViewPatternIdentifiersStatics :
     impl::consume<IMultipleViewPatternIdentifiersStatics>
 {
     IMultipleViewPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMultipleViewPatternIdentifiersStatics>(m_ptr); }
 };
 
 struct IRangeValuePatternIdentifiers :
@@ -337,7 +305,6 @@ struct IRangeValuePatternIdentifiers :
     impl::consume<IRangeValuePatternIdentifiers>
 {
     IRangeValuePatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRangeValuePatternIdentifiers>(m_ptr); }
 };
 
 struct IRangeValuePatternIdentifiersStatics :
@@ -345,7 +312,6 @@ struct IRangeValuePatternIdentifiersStatics :
     impl::consume<IRangeValuePatternIdentifiersStatics>
 {
     IRangeValuePatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRangeValuePatternIdentifiersStatics>(m_ptr); }
 };
 
 struct IScrollPatternIdentifiers :
@@ -353,7 +319,6 @@ struct IScrollPatternIdentifiers :
     impl::consume<IScrollPatternIdentifiers>
 {
     IScrollPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScrollPatternIdentifiers>(m_ptr); }
 };
 
 struct IScrollPatternIdentifiersStatics :
@@ -361,7 +326,6 @@ struct IScrollPatternIdentifiersStatics :
     impl::consume<IScrollPatternIdentifiersStatics>
 {
     IScrollPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IScrollPatternIdentifiersStatics>(m_ptr); }
 };
 
 struct ISelectionItemPatternIdentifiers :
@@ -369,7 +333,6 @@ struct ISelectionItemPatternIdentifiers :
     impl::consume<ISelectionItemPatternIdentifiers>
 {
     ISelectionItemPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectionItemPatternIdentifiers>(m_ptr); }
 };
 
 struct ISelectionItemPatternIdentifiersStatics :
@@ -377,7 +340,6 @@ struct ISelectionItemPatternIdentifiersStatics :
     impl::consume<ISelectionItemPatternIdentifiersStatics>
 {
     ISelectionItemPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectionItemPatternIdentifiersStatics>(m_ptr); }
 };
 
 struct ISelectionPatternIdentifiers :
@@ -385,7 +347,6 @@ struct ISelectionPatternIdentifiers :
     impl::consume<ISelectionPatternIdentifiers>
 {
     ISelectionPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectionPatternIdentifiers>(m_ptr); }
 };
 
 struct ISelectionPatternIdentifiersStatics :
@@ -393,7 +354,6 @@ struct ISelectionPatternIdentifiersStatics :
     impl::consume<ISelectionPatternIdentifiersStatics>
 {
     ISelectionPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISelectionPatternIdentifiersStatics>(m_ptr); }
 };
 
 struct ISpreadsheetItemPatternIdentifiers :
@@ -401,7 +361,6 @@ struct ISpreadsheetItemPatternIdentifiers :
     impl::consume<ISpreadsheetItemPatternIdentifiers>
 {
     ISpreadsheetItemPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpreadsheetItemPatternIdentifiers>(m_ptr); }
 };
 
 struct ISpreadsheetItemPatternIdentifiersStatics :
@@ -409,7 +368,6 @@ struct ISpreadsheetItemPatternIdentifiersStatics :
     impl::consume<ISpreadsheetItemPatternIdentifiersStatics>
 {
     ISpreadsheetItemPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpreadsheetItemPatternIdentifiersStatics>(m_ptr); }
 };
 
 struct IStylesPatternIdentifiers :
@@ -417,7 +375,6 @@ struct IStylesPatternIdentifiers :
     impl::consume<IStylesPatternIdentifiers>
 {
     IStylesPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStylesPatternIdentifiers>(m_ptr); }
 };
 
 struct IStylesPatternIdentifiersStatics :
@@ -425,7 +382,6 @@ struct IStylesPatternIdentifiersStatics :
     impl::consume<IStylesPatternIdentifiersStatics>
 {
     IStylesPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStylesPatternIdentifiersStatics>(m_ptr); }
 };
 
 struct ITableItemPatternIdentifiers :
@@ -433,7 +389,6 @@ struct ITableItemPatternIdentifiers :
     impl::consume<ITableItemPatternIdentifiers>
 {
     ITableItemPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITableItemPatternIdentifiers>(m_ptr); }
 };
 
 struct ITableItemPatternIdentifiersStatics :
@@ -441,7 +396,6 @@ struct ITableItemPatternIdentifiersStatics :
     impl::consume<ITableItemPatternIdentifiersStatics>
 {
     ITableItemPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITableItemPatternIdentifiersStatics>(m_ptr); }
 };
 
 struct ITablePatternIdentifiers :
@@ -449,7 +403,6 @@ struct ITablePatternIdentifiers :
     impl::consume<ITablePatternIdentifiers>
 {
     ITablePatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITablePatternIdentifiers>(m_ptr); }
 };
 
 struct ITablePatternIdentifiersStatics :
@@ -457,7 +410,6 @@ struct ITablePatternIdentifiersStatics :
     impl::consume<ITablePatternIdentifiersStatics>
 {
     ITablePatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITablePatternIdentifiersStatics>(m_ptr); }
 };
 
 struct ITogglePatternIdentifiers :
@@ -465,7 +417,6 @@ struct ITogglePatternIdentifiers :
     impl::consume<ITogglePatternIdentifiers>
 {
     ITogglePatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITogglePatternIdentifiers>(m_ptr); }
 };
 
 struct ITogglePatternIdentifiersStatics :
@@ -473,7 +424,6 @@ struct ITogglePatternIdentifiersStatics :
     impl::consume<ITogglePatternIdentifiersStatics>
 {
     ITogglePatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITogglePatternIdentifiersStatics>(m_ptr); }
 };
 
 struct ITransformPattern2Identifiers :
@@ -481,7 +431,6 @@ struct ITransformPattern2Identifiers :
     impl::consume<ITransformPattern2Identifiers>
 {
     ITransformPattern2Identifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITransformPattern2Identifiers>(m_ptr); }
 };
 
 struct ITransformPattern2IdentifiersStatics :
@@ -489,7 +438,6 @@ struct ITransformPattern2IdentifiersStatics :
     impl::consume<ITransformPattern2IdentifiersStatics>
 {
     ITransformPattern2IdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITransformPattern2IdentifiersStatics>(m_ptr); }
 };
 
 struct ITransformPatternIdentifiers :
@@ -497,7 +445,6 @@ struct ITransformPatternIdentifiers :
     impl::consume<ITransformPatternIdentifiers>
 {
     ITransformPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITransformPatternIdentifiers>(m_ptr); }
 };
 
 struct ITransformPatternIdentifiersStatics :
@@ -505,7 +452,6 @@ struct ITransformPatternIdentifiersStatics :
     impl::consume<ITransformPatternIdentifiersStatics>
 {
     ITransformPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITransformPatternIdentifiersStatics>(m_ptr); }
 };
 
 struct IValuePatternIdentifiers :
@@ -513,7 +459,6 @@ struct IValuePatternIdentifiers :
     impl::consume<IValuePatternIdentifiers>
 {
     IValuePatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IValuePatternIdentifiers>(m_ptr); }
 };
 
 struct IValuePatternIdentifiersStatics :
@@ -521,7 +466,6 @@ struct IValuePatternIdentifiersStatics :
     impl::consume<IValuePatternIdentifiersStatics>
 {
     IValuePatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IValuePatternIdentifiersStatics>(m_ptr); }
 };
 
 struct IWindowPatternIdentifiers :
@@ -529,7 +473,6 @@ struct IWindowPatternIdentifiers :
     impl::consume<IWindowPatternIdentifiers>
 {
     IWindowPatternIdentifiers(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWindowPatternIdentifiers>(m_ptr); }
 };
 
 struct IWindowPatternIdentifiersStatics :
@@ -537,7 +480,6 @@ struct IWindowPatternIdentifiersStatics :
     impl::consume<IWindowPatternIdentifiersStatics>
 {
     IWindowPatternIdentifiersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWindowPatternIdentifiersStatics>(m_ptr); }
 };
 
 }

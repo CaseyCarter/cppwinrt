@@ -175,7 +175,6 @@ struct ISpeechContinuousRecognitionCompletedEventArgs :
     impl::consume<ISpeechContinuousRecognitionCompletedEventArgs>
 {
     ISpeechContinuousRecognitionCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechContinuousRecognitionCompletedEventArgs>(m_ptr); }
 };
 
 struct ISpeechContinuousRecognitionResultGeneratedEventArgs :
@@ -183,7 +182,6 @@ struct ISpeechContinuousRecognitionResultGeneratedEventArgs :
     impl::consume<ISpeechContinuousRecognitionResultGeneratedEventArgs>
 {
     ISpeechContinuousRecognitionResultGeneratedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechContinuousRecognitionResultGeneratedEventArgs>(m_ptr); }
 };
 
 struct ISpeechContinuousRecognitionSession :
@@ -191,7 +189,6 @@ struct ISpeechContinuousRecognitionSession :
     impl::consume<ISpeechContinuousRecognitionSession>
 {
     ISpeechContinuousRecognitionSession(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechContinuousRecognitionSession>(m_ptr); }
 };
 
 struct ISpeechRecognitionCompilationResult :
@@ -199,7 +196,6 @@ struct ISpeechRecognitionCompilationResult :
     impl::consume<ISpeechRecognitionCompilationResult>
 {
     ISpeechRecognitionCompilationResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognitionCompilationResult>(m_ptr); }
 };
 
 struct ISpeechRecognitionConstraint :
@@ -207,7 +203,6 @@ struct ISpeechRecognitionConstraint :
     impl::consume<ISpeechRecognitionConstraint>
 {
     ISpeechRecognitionConstraint(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognitionConstraint>(m_ptr); }
 };
 
 struct ISpeechRecognitionGrammarFileConstraint :
@@ -216,7 +211,6 @@ struct ISpeechRecognitionGrammarFileConstraint :
     impl::require<ISpeechRecognitionGrammarFileConstraint, Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint>
 {
     ISpeechRecognitionGrammarFileConstraint(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognitionGrammarFileConstraint>(m_ptr); }
 };
 
 struct ISpeechRecognitionGrammarFileConstraintFactory :
@@ -224,7 +218,6 @@ struct ISpeechRecognitionGrammarFileConstraintFactory :
     impl::consume<ISpeechRecognitionGrammarFileConstraintFactory>
 {
     ISpeechRecognitionGrammarFileConstraintFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognitionGrammarFileConstraintFactory>(m_ptr); }
 };
 
 struct ISpeechRecognitionHypothesis :
@@ -232,7 +225,6 @@ struct ISpeechRecognitionHypothesis :
     impl::consume<ISpeechRecognitionHypothesis>
 {
     ISpeechRecognitionHypothesis(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognitionHypothesis>(m_ptr); }
 };
 
 struct ISpeechRecognitionHypothesisGeneratedEventArgs :
@@ -240,7 +232,6 @@ struct ISpeechRecognitionHypothesisGeneratedEventArgs :
     impl::consume<ISpeechRecognitionHypothesisGeneratedEventArgs>
 {
     ISpeechRecognitionHypothesisGeneratedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognitionHypothesisGeneratedEventArgs>(m_ptr); }
 };
 
 struct ISpeechRecognitionListConstraint :
@@ -249,7 +240,6 @@ struct ISpeechRecognitionListConstraint :
     impl::require<ISpeechRecognitionListConstraint, Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint>
 {
     ISpeechRecognitionListConstraint(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognitionListConstraint>(m_ptr); }
 };
 
 struct ISpeechRecognitionListConstraintFactory :
@@ -257,7 +247,6 @@ struct ISpeechRecognitionListConstraintFactory :
     impl::consume<ISpeechRecognitionListConstraintFactory>
 {
     ISpeechRecognitionListConstraintFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognitionListConstraintFactory>(m_ptr); }
 };
 
 struct ISpeechRecognitionQualityDegradingEventArgs :
@@ -265,7 +254,6 @@ struct ISpeechRecognitionQualityDegradingEventArgs :
     impl::consume<ISpeechRecognitionQualityDegradingEventArgs>
 {
     ISpeechRecognitionQualityDegradingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognitionQualityDegradingEventArgs>(m_ptr); }
 };
 
 struct ISpeechRecognitionResult :
@@ -273,7 +261,6 @@ struct ISpeechRecognitionResult :
     impl::consume<ISpeechRecognitionResult>
 {
     ISpeechRecognitionResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognitionResult>(m_ptr); }
 };
 
 struct ISpeechRecognitionResult2 :
@@ -281,7 +268,6 @@ struct ISpeechRecognitionResult2 :
     impl::consume<ISpeechRecognitionResult2>
 {
     ISpeechRecognitionResult2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognitionResult2>(m_ptr); }
 };
 
 struct ISpeechRecognitionSemanticInterpretation :
@@ -289,7 +275,6 @@ struct ISpeechRecognitionSemanticInterpretation :
     impl::consume<ISpeechRecognitionSemanticInterpretation>
 {
     ISpeechRecognitionSemanticInterpretation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognitionSemanticInterpretation>(m_ptr); }
 };
 
 struct ISpeechRecognitionTopicConstraint :
@@ -298,7 +283,6 @@ struct ISpeechRecognitionTopicConstraint :
     impl::require<ISpeechRecognitionTopicConstraint, Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint>
 {
     ISpeechRecognitionTopicConstraint(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognitionTopicConstraint>(m_ptr); }
 };
 
 struct ISpeechRecognitionTopicConstraintFactory :
@@ -306,7 +290,6 @@ struct ISpeechRecognitionTopicConstraintFactory :
     impl::consume<ISpeechRecognitionTopicConstraintFactory>
 {
     ISpeechRecognitionTopicConstraintFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognitionTopicConstraintFactory>(m_ptr); }
 };
 
 struct ISpeechRecognitionVoiceCommandDefinitionConstraint :
@@ -315,7 +298,6 @@ struct ISpeechRecognitionVoiceCommandDefinitionConstraint :
     impl::require<ISpeechRecognitionVoiceCommandDefinitionConstraint, Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint>
 {
     ISpeechRecognitionVoiceCommandDefinitionConstraint(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognitionVoiceCommandDefinitionConstraint>(m_ptr); }
 };
 
 struct ISpeechRecognizer :
@@ -324,7 +306,6 @@ struct ISpeechRecognizer :
     impl::require<ISpeechRecognizer, Windows::Foundation::IClosable>
 {
     ISpeechRecognizer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognizer>(m_ptr); }
 };
 
 struct ISpeechRecognizer2 :
@@ -332,7 +313,6 @@ struct ISpeechRecognizer2 :
     impl::consume<ISpeechRecognizer2>
 {
     ISpeechRecognizer2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognizer2>(m_ptr); }
 };
 
 struct ISpeechRecognizerFactory :
@@ -340,7 +320,6 @@ struct ISpeechRecognizerFactory :
     impl::consume<ISpeechRecognizerFactory>
 {
     ISpeechRecognizerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognizerFactory>(m_ptr); }
 };
 
 struct ISpeechRecognizerStateChangedEventArgs :
@@ -348,7 +327,6 @@ struct ISpeechRecognizerStateChangedEventArgs :
     impl::consume<ISpeechRecognizerStateChangedEventArgs>
 {
     ISpeechRecognizerStateChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognizerStateChangedEventArgs>(m_ptr); }
 };
 
 struct ISpeechRecognizerStatics :
@@ -356,7 +334,6 @@ struct ISpeechRecognizerStatics :
     impl::consume<ISpeechRecognizerStatics>
 {
     ISpeechRecognizerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognizerStatics>(m_ptr); }
 };
 
 struct ISpeechRecognizerTimeouts :
@@ -364,7 +341,6 @@ struct ISpeechRecognizerTimeouts :
     impl::consume<ISpeechRecognizerTimeouts>
 {
     ISpeechRecognizerTimeouts(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognizerTimeouts>(m_ptr); }
 };
 
 struct ISpeechRecognizerUIOptions :
@@ -372,7 +348,6 @@ struct ISpeechRecognizerUIOptions :
     impl::consume<ISpeechRecognizerUIOptions>
 {
     ISpeechRecognizerUIOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpeechRecognizerUIOptions>(m_ptr); }
 };
 
 }

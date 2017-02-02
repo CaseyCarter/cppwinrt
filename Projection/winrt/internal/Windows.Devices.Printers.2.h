@@ -39,7 +39,6 @@ struct IPrint3DDevice :
     impl::consume<IPrint3DDevice>
 {
     IPrint3DDevice(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrint3DDevice>(m_ptr); }
 };
 
 struct IPrint3DDeviceStatics :
@@ -47,7 +46,6 @@ struct IPrint3DDeviceStatics :
     impl::consume<IPrint3DDeviceStatics>
 {
     IPrint3DDeviceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrint3DDeviceStatics>(m_ptr); }
 };
 
 struct IPrintSchema :
@@ -55,7 +53,6 @@ struct IPrintSchema :
     impl::consume<IPrintSchema>
 {
     IPrintSchema(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintSchema>(m_ptr); }
 };
 
 }

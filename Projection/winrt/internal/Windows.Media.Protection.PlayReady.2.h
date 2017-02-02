@@ -190,7 +190,6 @@ struct INDClient :
     impl::consume<INDClient>
 {
     INDClient(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDClient>(m_ptr); }
 };
 
 struct INDClientFactory :
@@ -198,7 +197,6 @@ struct INDClientFactory :
     impl::consume<INDClientFactory>
 {
     INDClientFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDClientFactory>(m_ptr); }
 };
 
 struct INDClosedCaptionDataReceivedEventArgs :
@@ -206,7 +204,6 @@ struct INDClosedCaptionDataReceivedEventArgs :
     impl::consume<INDClosedCaptionDataReceivedEventArgs>
 {
     INDClosedCaptionDataReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDClosedCaptionDataReceivedEventArgs>(m_ptr); }
 };
 
 struct INDCustomData :
@@ -214,7 +211,6 @@ struct INDCustomData :
     impl::consume<INDCustomData>
 {
     INDCustomData(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDCustomData>(m_ptr); }
 };
 
 struct INDCustomDataFactory :
@@ -222,7 +218,6 @@ struct INDCustomDataFactory :
     impl::consume<INDCustomDataFactory>
 {
     INDCustomDataFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDCustomDataFactory>(m_ptr); }
 };
 
 struct INDDownloadEngine :
@@ -230,7 +225,6 @@ struct INDDownloadEngine :
     impl::consume<INDDownloadEngine>
 {
     INDDownloadEngine(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDDownloadEngine>(m_ptr); }
 };
 
 struct INDDownloadEngineNotifier :
@@ -238,7 +232,6 @@ struct INDDownloadEngineNotifier :
     impl::consume<INDDownloadEngineNotifier>
 {
     INDDownloadEngineNotifier(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDDownloadEngineNotifier>(m_ptr); }
 };
 
 struct INDLicenseFetchCompletedEventArgs :
@@ -246,7 +239,6 @@ struct INDLicenseFetchCompletedEventArgs :
     impl::consume<INDLicenseFetchCompletedEventArgs>
 {
     INDLicenseFetchCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDLicenseFetchCompletedEventArgs>(m_ptr); }
 };
 
 struct INDLicenseFetchDescriptor :
@@ -254,7 +246,6 @@ struct INDLicenseFetchDescriptor :
     impl::consume<INDLicenseFetchDescriptor>
 {
     INDLicenseFetchDescriptor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDLicenseFetchDescriptor>(m_ptr); }
 };
 
 struct INDLicenseFetchDescriptorFactory :
@@ -262,7 +253,6 @@ struct INDLicenseFetchDescriptorFactory :
     impl::consume<INDLicenseFetchDescriptorFactory>
 {
     INDLicenseFetchDescriptorFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDLicenseFetchDescriptorFactory>(m_ptr); }
 };
 
 struct INDLicenseFetchResult :
@@ -270,7 +260,6 @@ struct INDLicenseFetchResult :
     impl::consume<INDLicenseFetchResult>
 {
     INDLicenseFetchResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDLicenseFetchResult>(m_ptr); }
 };
 
 struct INDMessenger :
@@ -278,7 +267,6 @@ struct INDMessenger :
     impl::consume<INDMessenger>
 {
     INDMessenger(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDMessenger>(m_ptr); }
 };
 
 struct INDProximityDetectionCompletedEventArgs :
@@ -286,7 +274,6 @@ struct INDProximityDetectionCompletedEventArgs :
     impl::consume<INDProximityDetectionCompletedEventArgs>
 {
     INDProximityDetectionCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDProximityDetectionCompletedEventArgs>(m_ptr); }
 };
 
 struct INDRegistrationCompletedEventArgs :
@@ -294,7 +281,6 @@ struct INDRegistrationCompletedEventArgs :
     impl::consume<INDRegistrationCompletedEventArgs>
 {
     INDRegistrationCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDRegistrationCompletedEventArgs>(m_ptr); }
 };
 
 struct INDSendResult :
@@ -302,7 +288,6 @@ struct INDSendResult :
     impl::consume<INDSendResult>
 {
     INDSendResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDSendResult>(m_ptr); }
 };
 
 struct INDStartResult :
@@ -310,7 +295,6 @@ struct INDStartResult :
     impl::consume<INDStartResult>
 {
     INDStartResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDStartResult>(m_ptr); }
 };
 
 struct INDStorageFileHelper :
@@ -318,7 +302,6 @@ struct INDStorageFileHelper :
     impl::consume<INDStorageFileHelper>
 {
     INDStorageFileHelper(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDStorageFileHelper>(m_ptr); }
 };
 
 struct INDStreamParser :
@@ -326,7 +309,6 @@ struct INDStreamParser :
     impl::consume<INDStreamParser>
 {
     INDStreamParser(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDStreamParser>(m_ptr); }
 };
 
 struct INDStreamParserNotifier :
@@ -334,7 +316,6 @@ struct INDStreamParserNotifier :
     impl::consume<INDStreamParserNotifier>
 {
     INDStreamParserNotifier(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDStreamParserNotifier>(m_ptr); }
 };
 
 struct INDTCPMessengerFactory :
@@ -342,7 +323,6 @@ struct INDTCPMessengerFactory :
     impl::consume<INDTCPMessengerFactory>
 {
     INDTCPMessengerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDTCPMessengerFactory>(m_ptr); }
 };
 
 struct INDTransmitterProperties :
@@ -350,7 +330,6 @@ struct INDTransmitterProperties :
     impl::consume<INDTransmitterProperties>
 {
     INDTransmitterProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<INDTransmitterProperties>(m_ptr); }
 };
 
 struct IPlayReadyContentHeader :
@@ -358,7 +337,6 @@ struct IPlayReadyContentHeader :
     impl::consume<IPlayReadyContentHeader>
 {
     IPlayReadyContentHeader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyContentHeader>(m_ptr); }
 };
 
 struct IPlayReadyContentHeader2 :
@@ -367,7 +345,6 @@ struct IPlayReadyContentHeader2 :
     impl::require<IPlayReadyContentHeader2, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader>
 {
     IPlayReadyContentHeader2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyContentHeader2>(m_ptr); }
 };
 
 struct IPlayReadyContentHeaderFactory :
@@ -375,7 +352,6 @@ struct IPlayReadyContentHeaderFactory :
     impl::consume<IPlayReadyContentHeaderFactory>
 {
     IPlayReadyContentHeaderFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyContentHeaderFactory>(m_ptr); }
 };
 
 struct IPlayReadyContentHeaderFactory2 :
@@ -383,7 +359,6 @@ struct IPlayReadyContentHeaderFactory2 :
     impl::consume<IPlayReadyContentHeaderFactory2>
 {
     IPlayReadyContentHeaderFactory2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyContentHeaderFactory2>(m_ptr); }
 };
 
 struct IPlayReadyContentResolver :
@@ -391,7 +366,6 @@ struct IPlayReadyContentResolver :
     impl::consume<IPlayReadyContentResolver>
 {
     IPlayReadyContentResolver(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyContentResolver>(m_ptr); }
 };
 
 struct IPlayReadyDomain :
@@ -399,7 +373,6 @@ struct IPlayReadyDomain :
     impl::consume<IPlayReadyDomain>
 {
     IPlayReadyDomain(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyDomain>(m_ptr); }
 };
 
 struct IPlayReadyDomainIterableFactory :
@@ -407,7 +380,6 @@ struct IPlayReadyDomainIterableFactory :
     impl::consume<IPlayReadyDomainIterableFactory>
 {
     IPlayReadyDomainIterableFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyDomainIterableFactory>(m_ptr); }
 };
 
 struct IPlayReadyDomainJoinServiceRequest :
@@ -416,7 +388,6 @@ struct IPlayReadyDomainJoinServiceRequest :
     impl::require<IPlayReadyDomainJoinServiceRequest, Windows::Media::Protection::IMediaProtectionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
 {
     IPlayReadyDomainJoinServiceRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyDomainJoinServiceRequest>(m_ptr); }
 };
 
 struct IPlayReadyDomainLeaveServiceRequest :
@@ -425,7 +396,6 @@ struct IPlayReadyDomainLeaveServiceRequest :
     impl::require<IPlayReadyDomainLeaveServiceRequest, Windows::Media::Protection::IMediaProtectionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
 {
     IPlayReadyDomainLeaveServiceRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyDomainLeaveServiceRequest>(m_ptr); }
 };
 
 struct IPlayReadyITADataGenerator :
@@ -433,7 +403,6 @@ struct IPlayReadyITADataGenerator :
     impl::consume<IPlayReadyITADataGenerator>
 {
     IPlayReadyITADataGenerator(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyITADataGenerator>(m_ptr); }
 };
 
 struct IPlayReadyIndividualizationServiceRequest :
@@ -442,7 +411,6 @@ struct IPlayReadyIndividualizationServiceRequest :
     impl::require<IPlayReadyIndividualizationServiceRequest, Windows::Media::Protection::IMediaProtectionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
 {
     IPlayReadyIndividualizationServiceRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyIndividualizationServiceRequest>(m_ptr); }
 };
 
 struct IPlayReadyLicense :
@@ -450,7 +418,6 @@ struct IPlayReadyLicense :
     impl::consume<IPlayReadyLicense>
 {
     IPlayReadyLicense(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyLicense>(m_ptr); }
 };
 
 struct IPlayReadyLicenseAcquisitionServiceRequest :
@@ -459,7 +426,6 @@ struct IPlayReadyLicenseAcquisitionServiceRequest :
     impl::require<IPlayReadyLicenseAcquisitionServiceRequest, Windows::Media::Protection::IMediaProtectionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
 {
     IPlayReadyLicenseAcquisitionServiceRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyLicenseAcquisitionServiceRequest>(m_ptr); }
 };
 
 struct IPlayReadyLicenseAcquisitionServiceRequest2 :
@@ -468,7 +434,6 @@ struct IPlayReadyLicenseAcquisitionServiceRequest2 :
     impl::require<IPlayReadyLicenseAcquisitionServiceRequest2, Windows::Media::Protection::IMediaProtectionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
 {
     IPlayReadyLicenseAcquisitionServiceRequest2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyLicenseAcquisitionServiceRequest2>(m_ptr); }
 };
 
 struct IPlayReadyLicenseIterableFactory :
@@ -476,7 +441,6 @@ struct IPlayReadyLicenseIterableFactory :
     impl::consume<IPlayReadyLicenseIterableFactory>
 {
     IPlayReadyLicenseIterableFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyLicenseIterableFactory>(m_ptr); }
 };
 
 struct IPlayReadyLicenseManagement :
@@ -484,7 +448,6 @@ struct IPlayReadyLicenseManagement :
     impl::consume<IPlayReadyLicenseManagement>
 {
     IPlayReadyLicenseManagement(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyLicenseManagement>(m_ptr); }
 };
 
 struct IPlayReadyLicenseSession :
@@ -492,7 +455,6 @@ struct IPlayReadyLicenseSession :
     impl::consume<IPlayReadyLicenseSession>
 {
     IPlayReadyLicenseSession(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyLicenseSession>(m_ptr); }
 };
 
 struct IPlayReadyLicenseSessionFactory :
@@ -500,7 +462,6 @@ struct IPlayReadyLicenseSessionFactory :
     impl::consume<IPlayReadyLicenseSessionFactory>
 {
     IPlayReadyLicenseSessionFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyLicenseSessionFactory>(m_ptr); }
 };
 
 struct IPlayReadyMeteringReportServiceRequest :
@@ -509,7 +470,6 @@ struct IPlayReadyMeteringReportServiceRequest :
     impl::require<IPlayReadyMeteringReportServiceRequest, Windows::Media::Protection::IMediaProtectionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
 {
     IPlayReadyMeteringReportServiceRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyMeteringReportServiceRequest>(m_ptr); }
 };
 
 struct IPlayReadyRevocationServiceRequest :
@@ -518,7 +478,6 @@ struct IPlayReadyRevocationServiceRequest :
     impl::require<IPlayReadyRevocationServiceRequest, Windows::Media::Protection::IMediaProtectionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
 {
     IPlayReadyRevocationServiceRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyRevocationServiceRequest>(m_ptr); }
 };
 
 struct IPlayReadySecureStopIterableFactory :
@@ -526,7 +485,6 @@ struct IPlayReadySecureStopIterableFactory :
     impl::consume<IPlayReadySecureStopIterableFactory>
 {
     IPlayReadySecureStopIterableFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadySecureStopIterableFactory>(m_ptr); }
 };
 
 struct IPlayReadySecureStopServiceRequest :
@@ -535,7 +493,6 @@ struct IPlayReadySecureStopServiceRequest :
     impl::require<IPlayReadySecureStopServiceRequest, Windows::Media::Protection::IMediaProtectionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
 {
     IPlayReadySecureStopServiceRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadySecureStopServiceRequest>(m_ptr); }
 };
 
 struct IPlayReadySecureStopServiceRequestFactory :
@@ -543,7 +500,6 @@ struct IPlayReadySecureStopServiceRequestFactory :
     impl::consume<IPlayReadySecureStopServiceRequestFactory>
 {
     IPlayReadySecureStopServiceRequestFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadySecureStopServiceRequestFactory>(m_ptr); }
 };
 
 struct IPlayReadyServiceRequest :
@@ -552,7 +508,6 @@ struct IPlayReadyServiceRequest :
     impl::require<IPlayReadyServiceRequest, Windows::Media::Protection::IMediaProtectionServiceRequest>
 {
     IPlayReadyServiceRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyServiceRequest>(m_ptr); }
 };
 
 struct IPlayReadySoapMessage :
@@ -560,7 +515,6 @@ struct IPlayReadySoapMessage :
     impl::consume<IPlayReadySoapMessage>
 {
     IPlayReadySoapMessage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadySoapMessage>(m_ptr); }
 };
 
 struct IPlayReadyStatics :
@@ -568,7 +522,6 @@ struct IPlayReadyStatics :
     impl::consume<IPlayReadyStatics>
 {
     IPlayReadyStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyStatics>(m_ptr); }
 };
 
 struct IPlayReadyStatics2 :
@@ -577,7 +530,6 @@ struct IPlayReadyStatics2 :
     impl::require<IPlayReadyStatics2, Windows::Media::Protection::PlayReady::IPlayReadyStatics>
 {
     IPlayReadyStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyStatics2>(m_ptr); }
 };
 
 struct IPlayReadyStatics3 :
@@ -586,7 +538,6 @@ struct IPlayReadyStatics3 :
     impl::require<IPlayReadyStatics3, Windows::Media::Protection::PlayReady::IPlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics2>
 {
     IPlayReadyStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyStatics3>(m_ptr); }
 };
 
 struct IPlayReadyStatics4 :
@@ -595,7 +546,6 @@ struct IPlayReadyStatics4 :
     impl::require<IPlayReadyStatics4, Windows::Media::Protection::PlayReady::IPlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics2, Windows::Media::Protection::PlayReady::IPlayReadyStatics3>
 {
     IPlayReadyStatics4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPlayReadyStatics4>(m_ptr); }
 };
 
 }

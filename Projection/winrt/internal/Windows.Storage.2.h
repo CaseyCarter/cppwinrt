@@ -513,7 +513,6 @@ namespace Windows::Storage {
 struct ApplicationDataSetVersionHandler : Windows::IUnknown
 {
     ApplicationDataSetVersionHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ApplicationDataSetVersionHandler>(m_ptr); }
     template <typename L> ApplicationDataSetVersionHandler(L lambda);
     template <typename F> ApplicationDataSetVersionHandler (F * function);
     template <typename O, typename M> ApplicationDataSetVersionHandler(O * object, M method);
@@ -523,7 +522,6 @@ struct ApplicationDataSetVersionHandler : Windows::IUnknown
 struct StreamedFileDataRequestedHandler : Windows::IUnknown
 {
     StreamedFileDataRequestedHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<StreamedFileDataRequestedHandler>(m_ptr); }
     template <typename L> StreamedFileDataRequestedHandler(L lambda);
     template <typename F> StreamedFileDataRequestedHandler (F * function);
     template <typename O, typename M> StreamedFileDataRequestedHandler(O * object, M method);
@@ -535,7 +533,6 @@ struct IApplicationData :
     impl::consume<IApplicationData>
 {
     IApplicationData(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationData>(m_ptr); }
 };
 
 struct IApplicationData2 :
@@ -543,7 +540,6 @@ struct IApplicationData2 :
     impl::consume<IApplicationData2>
 {
     IApplicationData2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationData2>(m_ptr); }
 };
 
 struct IApplicationData3 :
@@ -551,7 +547,6 @@ struct IApplicationData3 :
     impl::consume<IApplicationData3>
 {
     IApplicationData3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationData3>(m_ptr); }
 };
 
 struct IApplicationDataContainer :
@@ -559,7 +554,6 @@ struct IApplicationDataContainer :
     impl::consume<IApplicationDataContainer>
 {
     IApplicationDataContainer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationDataContainer>(m_ptr); }
 };
 
 struct IApplicationDataStatics :
@@ -567,7 +561,6 @@ struct IApplicationDataStatics :
     impl::consume<IApplicationDataStatics>
 {
     IApplicationDataStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationDataStatics>(m_ptr); }
 };
 
 struct IApplicationDataStatics2 :
@@ -575,7 +568,6 @@ struct IApplicationDataStatics2 :
     impl::consume<IApplicationDataStatics2>
 {
     IApplicationDataStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationDataStatics2>(m_ptr); }
 };
 
 struct ICachedFileManagerStatics :
@@ -583,7 +575,6 @@ struct ICachedFileManagerStatics :
     impl::consume<ICachedFileManagerStatics>
 {
     ICachedFileManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICachedFileManagerStatics>(m_ptr); }
 };
 
 struct IDownloadsFolderStatics :
@@ -591,7 +582,6 @@ struct IDownloadsFolderStatics :
     impl::consume<IDownloadsFolderStatics>
 {
     IDownloadsFolderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDownloadsFolderStatics>(m_ptr); }
 };
 
 struct IDownloadsFolderStatics2 :
@@ -599,7 +589,6 @@ struct IDownloadsFolderStatics2 :
     impl::consume<IDownloadsFolderStatics2>
 {
     IDownloadsFolderStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDownloadsFolderStatics2>(m_ptr); }
 };
 
 struct IFileIOStatics :
@@ -607,7 +596,6 @@ struct IFileIOStatics :
     impl::consume<IFileIOStatics>
 {
     IFileIOStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileIOStatics>(m_ptr); }
 };
 
 struct IKnownFoldersCameraRollStatics :
@@ -615,7 +603,6 @@ struct IKnownFoldersCameraRollStatics :
     impl::consume<IKnownFoldersCameraRollStatics>
 {
     IKnownFoldersCameraRollStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownFoldersCameraRollStatics>(m_ptr); }
 };
 
 struct IKnownFoldersPlaylistsStatics :
@@ -623,7 +610,6 @@ struct IKnownFoldersPlaylistsStatics :
     impl::consume<IKnownFoldersPlaylistsStatics>
 {
     IKnownFoldersPlaylistsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownFoldersPlaylistsStatics>(m_ptr); }
 };
 
 struct IKnownFoldersSavedPicturesStatics :
@@ -631,7 +617,6 @@ struct IKnownFoldersSavedPicturesStatics :
     impl::consume<IKnownFoldersSavedPicturesStatics>
 {
     IKnownFoldersSavedPicturesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownFoldersSavedPicturesStatics>(m_ptr); }
 };
 
 struct IKnownFoldersStatics :
@@ -639,7 +624,6 @@ struct IKnownFoldersStatics :
     impl::consume<IKnownFoldersStatics>
 {
     IKnownFoldersStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownFoldersStatics>(m_ptr); }
 };
 
 struct IKnownFoldersStatics2 :
@@ -647,7 +631,6 @@ struct IKnownFoldersStatics2 :
     impl::consume<IKnownFoldersStatics2>
 {
     IKnownFoldersStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownFoldersStatics2>(m_ptr); }
 };
 
 struct IKnownFoldersStatics3 :
@@ -655,7 +638,6 @@ struct IKnownFoldersStatics3 :
     impl::consume<IKnownFoldersStatics3>
 {
     IKnownFoldersStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownFoldersStatics3>(m_ptr); }
 };
 
 struct IPathIOStatics :
@@ -663,7 +645,6 @@ struct IPathIOStatics :
     impl::consume<IPathIOStatics>
 {
     IPathIOStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPathIOStatics>(m_ptr); }
 };
 
 struct ISetVersionDeferral :
@@ -671,7 +652,6 @@ struct ISetVersionDeferral :
     impl::consume<ISetVersionDeferral>
 {
     ISetVersionDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISetVersionDeferral>(m_ptr); }
 };
 
 struct ISetVersionRequest :
@@ -679,7 +659,6 @@ struct ISetVersionRequest :
     impl::consume<ISetVersionRequest>
 {
     ISetVersionRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISetVersionRequest>(m_ptr); }
 };
 
 struct IStorageFile :
@@ -688,7 +667,6 @@ struct IStorageFile :
     impl::require<IStorageFile, Windows::Storage::IStorageItem, Windows::Storage::Streams::IInputStreamReference, Windows::Storage::Streams::IRandomAccessStreamReference>
 {
     IStorageFile(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageFile>(m_ptr); }
 };
 
 struct IStorageFile2 :
@@ -696,7 +674,6 @@ struct IStorageFile2 :
     impl::consume<IStorageFile2>
 {
     IStorageFile2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageFile2>(m_ptr); }
 };
 
 struct IStorageFilePropertiesWithAvailability :
@@ -704,7 +681,6 @@ struct IStorageFilePropertiesWithAvailability :
     impl::consume<IStorageFilePropertiesWithAvailability>
 {
     IStorageFilePropertiesWithAvailability(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageFilePropertiesWithAvailability>(m_ptr); }
 };
 
 struct IStorageFileStatics :
@@ -712,7 +688,6 @@ struct IStorageFileStatics :
     impl::consume<IStorageFileStatics>
 {
     IStorageFileStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageFileStatics>(m_ptr); }
 };
 
 struct IStorageFolder :
@@ -721,7 +696,6 @@ struct IStorageFolder :
     impl::require<IStorageFolder, Windows::Storage::IStorageItem>
 {
     IStorageFolder(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageFolder>(m_ptr); }
 };
 
 struct IStorageFolder2 :
@@ -729,7 +703,6 @@ struct IStorageFolder2 :
     impl::consume<IStorageFolder2>
 {
     IStorageFolder2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageFolder2>(m_ptr); }
 };
 
 struct IStorageFolderStatics :
@@ -737,7 +710,6 @@ struct IStorageFolderStatics :
     impl::consume<IStorageFolderStatics>
 {
     IStorageFolderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageFolderStatics>(m_ptr); }
 };
 
 struct IStorageItem :
@@ -745,7 +717,6 @@ struct IStorageItem :
     impl::consume<IStorageItem>
 {
     IStorageItem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageItem>(m_ptr); }
 };
 
 struct IStorageItem2 :
@@ -754,7 +725,6 @@ struct IStorageItem2 :
     impl::require<IStorageItem2, Windows::Storage::IStorageItem>
 {
     IStorageItem2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageItem2>(m_ptr); }
 };
 
 struct IStorageItemProperties :
@@ -762,7 +732,6 @@ struct IStorageItemProperties :
     impl::consume<IStorageItemProperties>
 {
     IStorageItemProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageItemProperties>(m_ptr); }
 };
 
 struct IStorageItemProperties2 :
@@ -771,7 +740,6 @@ struct IStorageItemProperties2 :
     impl::require<IStorageItemProperties2, Windows::Storage::IStorageItemProperties>
 {
     IStorageItemProperties2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageItemProperties2>(m_ptr); }
 };
 
 struct IStorageItemPropertiesWithProvider :
@@ -780,7 +748,6 @@ struct IStorageItemPropertiesWithProvider :
     impl::require<IStorageItemPropertiesWithProvider, Windows::Storage::IStorageItemProperties>
 {
     IStorageItemPropertiesWithProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageItemPropertiesWithProvider>(m_ptr); }
 };
 
 struct IStorageLibrary :
@@ -788,7 +755,6 @@ struct IStorageLibrary :
     impl::consume<IStorageLibrary>
 {
     IStorageLibrary(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageLibrary>(m_ptr); }
 };
 
 struct IStorageLibrary2 :
@@ -796,7 +762,6 @@ struct IStorageLibrary2 :
     impl::consume<IStorageLibrary2>
 {
     IStorageLibrary2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageLibrary2>(m_ptr); }
 };
 
 struct IStorageLibraryChange :
@@ -804,7 +769,6 @@ struct IStorageLibraryChange :
     impl::consume<IStorageLibraryChange>
 {
     IStorageLibraryChange(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageLibraryChange>(m_ptr); }
 };
 
 struct IStorageLibraryChangeReader :
@@ -812,7 +776,6 @@ struct IStorageLibraryChangeReader :
     impl::consume<IStorageLibraryChangeReader>
 {
     IStorageLibraryChangeReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageLibraryChangeReader>(m_ptr); }
 };
 
 struct IStorageLibraryChangeTracker :
@@ -820,7 +783,6 @@ struct IStorageLibraryChangeTracker :
     impl::consume<IStorageLibraryChangeTracker>
 {
     IStorageLibraryChangeTracker(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageLibraryChangeTracker>(m_ptr); }
 };
 
 struct IStorageLibraryStatics :
@@ -828,7 +790,6 @@ struct IStorageLibraryStatics :
     impl::consume<IStorageLibraryStatics>
 {
     IStorageLibraryStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageLibraryStatics>(m_ptr); }
 };
 
 struct IStorageLibraryStatics2 :
@@ -836,7 +797,6 @@ struct IStorageLibraryStatics2 :
     impl::consume<IStorageLibraryStatics2>
 {
     IStorageLibraryStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageLibraryStatics2>(m_ptr); }
 };
 
 struct IStorageProvider :
@@ -844,7 +804,6 @@ struct IStorageProvider :
     impl::consume<IStorageProvider>
 {
     IStorageProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageProvider>(m_ptr); }
 };
 
 struct IStorageStreamTransaction :
@@ -853,7 +812,6 @@ struct IStorageStreamTransaction :
     impl::require<IStorageStreamTransaction, Windows::Foundation::IClosable>
 {
     IStorageStreamTransaction(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStorageStreamTransaction>(m_ptr); }
 };
 
 struct IStreamedFileDataRequest :
@@ -861,7 +819,6 @@ struct IStreamedFileDataRequest :
     impl::consume<IStreamedFileDataRequest>
 {
     IStreamedFileDataRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStreamedFileDataRequest>(m_ptr); }
 };
 
 struct ISystemAudioProperties :
@@ -869,7 +826,6 @@ struct ISystemAudioProperties :
     impl::consume<ISystemAudioProperties>
 {
     ISystemAudioProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemAudioProperties>(m_ptr); }
 };
 
 struct ISystemGPSProperties :
@@ -877,7 +833,6 @@ struct ISystemGPSProperties :
     impl::consume<ISystemGPSProperties>
 {
     ISystemGPSProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemGPSProperties>(m_ptr); }
 };
 
 struct ISystemImageProperties :
@@ -885,7 +840,6 @@ struct ISystemImageProperties :
     impl::consume<ISystemImageProperties>
 {
     ISystemImageProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemImageProperties>(m_ptr); }
 };
 
 struct ISystemMediaProperties :
@@ -893,7 +847,6 @@ struct ISystemMediaProperties :
     impl::consume<ISystemMediaProperties>
 {
     ISystemMediaProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemMediaProperties>(m_ptr); }
 };
 
 struct ISystemMusicProperties :
@@ -901,7 +854,6 @@ struct ISystemMusicProperties :
     impl::consume<ISystemMusicProperties>
 {
     ISystemMusicProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemMusicProperties>(m_ptr); }
 };
 
 struct ISystemPhotoProperties :
@@ -909,7 +861,6 @@ struct ISystemPhotoProperties :
     impl::consume<ISystemPhotoProperties>
 {
     ISystemPhotoProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemPhotoProperties>(m_ptr); }
 };
 
 struct ISystemProperties :
@@ -917,7 +868,6 @@ struct ISystemProperties :
     impl::consume<ISystemProperties>
 {
     ISystemProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemProperties>(m_ptr); }
 };
 
 struct ISystemVideoProperties :
@@ -925,7 +875,6 @@ struct ISystemVideoProperties :
     impl::consume<ISystemVideoProperties>
 {
     ISystemVideoProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISystemVideoProperties>(m_ptr); }
 };
 
 }

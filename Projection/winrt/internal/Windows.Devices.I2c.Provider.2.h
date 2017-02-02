@@ -50,7 +50,6 @@ struct II2cControllerProvider :
     impl::consume<II2cControllerProvider>
 {
     II2cControllerProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<II2cControllerProvider>(m_ptr); }
 };
 
 struct II2cDeviceProvider :
@@ -59,7 +58,6 @@ struct II2cDeviceProvider :
     impl::require<II2cDeviceProvider, Windows::Foundation::IClosable>
 {
     II2cDeviceProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<II2cDeviceProvider>(m_ptr); }
 };
 
 struct II2cProvider :
@@ -67,7 +65,6 @@ struct II2cProvider :
     impl::consume<II2cProvider>
 {
     II2cProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<II2cProvider>(m_ptr); }
 };
 
 struct IProviderI2cConnectionSettings :
@@ -75,7 +72,6 @@ struct IProviderI2cConnectionSettings :
     impl::consume<IProviderI2cConnectionSettings>
 {
     IProviderI2cConnectionSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProviderI2cConnectionSettings>(m_ptr); }
 };
 
 }

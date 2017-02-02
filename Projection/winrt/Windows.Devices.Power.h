@@ -208,21 +208,21 @@ namespace Windows::Devices::Power {
 template <typename D> hstring impl_IBattery<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IBattery &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IBattery)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Power::BatteryReport impl_IBattery<D>::GetReport() const
 {
     Windows::Devices::Power::BatteryReport result { nullptr };
-    check_hresult(static_cast<const IBattery &>(static_cast<const D &>(*this))->abi_GetReport(put(result)));
+    check_hresult(WINRT_SHIM(IBattery)->abi_GetReport(put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IBattery<D>::ReportUpdated(const Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IBattery &>(static_cast<const D &>(*this))->add_ReportUpdated(get(handler), &token));
+    check_hresult(WINRT_SHIM(IBattery)->add_ReportUpdated(get(handler), &token));
     return token;
 }
 
@@ -233,62 +233,62 @@ template <typename D> event_revoker<IBattery> impl_IBattery<D>::ReportUpdated(au
 
 template <typename D> void impl_IBattery<D>::ReportUpdated(event_token token) const
 {
-    check_hresult(static_cast<const IBattery &>(static_cast<const D &>(*this))->remove_ReportUpdated(token));
+    check_hresult(WINRT_SHIM(IBattery)->remove_ReportUpdated(token));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IBatteryReport<D>::ChargeRateInMilliwatts() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(static_cast<const IBatteryReport &>(static_cast<const D &>(*this))->get_ChargeRateInMilliwatts(put(value)));
+    check_hresult(WINRT_SHIM(IBatteryReport)->get_ChargeRateInMilliwatts(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IBatteryReport<D>::DesignCapacityInMilliwattHours() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(static_cast<const IBatteryReport &>(static_cast<const D &>(*this))->get_DesignCapacityInMilliwattHours(put(value)));
+    check_hresult(WINRT_SHIM(IBatteryReport)->get_DesignCapacityInMilliwattHours(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IBatteryReport<D>::FullChargeCapacityInMilliwattHours() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(static_cast<const IBatteryReport &>(static_cast<const D &>(*this))->get_FullChargeCapacityInMilliwattHours(put(value)));
+    check_hresult(WINRT_SHIM(IBatteryReport)->get_FullChargeCapacityInMilliwattHours(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IBatteryReport<D>::RemainingCapacityInMilliwattHours() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(static_cast<const IBatteryReport &>(static_cast<const D &>(*this))->get_RemainingCapacityInMilliwattHours(put(value)));
+    check_hresult(WINRT_SHIM(IBatteryReport)->get_RemainingCapacityInMilliwattHours(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::Power::BatteryStatus impl_IBatteryReport<D>::Status() const
 {
     Windows::System::Power::BatteryStatus value {};
-    check_hresult(static_cast<const IBatteryReport &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IBatteryReport)->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Power::Battery impl_IBatteryStatics<D>::AggregateBattery() const
 {
     Windows::Devices::Power::Battery result { nullptr };
-    check_hresult(static_cast<const IBatteryStatics &>(static_cast<const D &>(*this))->get_AggregateBattery(put(result)));
+    check_hresult(WINRT_SHIM(IBatteryStatics)->get_AggregateBattery(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Power::Battery> impl_IBatteryStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Power::Battery> result;
-    check_hresult(static_cast<const IBatteryStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(result)));
+    check_hresult(WINRT_SHIM(IBatteryStatics)->abi_FromIdAsync(get(deviceId), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IBatteryStatics<D>::GetDeviceSelector() const
 {
     hstring result;
-    check_hresult(static_cast<const IBatteryStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(result)));
+    check_hresult(WINRT_SHIM(IBatteryStatics)->abi_GetDeviceSelector(put(result)));
     return result;
 }
 

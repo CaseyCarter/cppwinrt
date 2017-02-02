@@ -106,7 +106,6 @@ struct IAdaptiveMediaSource :
     impl::require<IAdaptiveMediaSource, Windows::Media::Core::IMediaSource>
 {
     IAdaptiveMediaSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdaptiveMediaSource>(m_ptr); }
 };
 
 struct IAdaptiveMediaSource2 :
@@ -114,7 +113,6 @@ struct IAdaptiveMediaSource2 :
     impl::consume<IAdaptiveMediaSource2>
 {
     IAdaptiveMediaSource2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdaptiveMediaSource2>(m_ptr); }
 };
 
 struct IAdaptiveMediaSourceAdvancedSettings :
@@ -122,7 +120,6 @@ struct IAdaptiveMediaSourceAdvancedSettings :
     impl::consume<IAdaptiveMediaSourceAdvancedSettings>
 {
     IAdaptiveMediaSourceAdvancedSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdaptiveMediaSourceAdvancedSettings>(m_ptr); }
 };
 
 struct IAdaptiveMediaSourceCreationResult :
@@ -130,7 +127,6 @@ struct IAdaptiveMediaSourceCreationResult :
     impl::consume<IAdaptiveMediaSourceCreationResult>
 {
     IAdaptiveMediaSourceCreationResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdaptiveMediaSourceCreationResult>(m_ptr); }
 };
 
 struct IAdaptiveMediaSourceDownloadBitrateChangedEventArgs :
@@ -138,7 +134,6 @@ struct IAdaptiveMediaSourceDownloadBitrateChangedEventArgs :
     impl::consume<IAdaptiveMediaSourceDownloadBitrateChangedEventArgs>
 {
     IAdaptiveMediaSourceDownloadBitrateChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdaptiveMediaSourceDownloadBitrateChangedEventArgs>(m_ptr); }
 };
 
 struct IAdaptiveMediaSourceDownloadCompletedEventArgs :
@@ -146,7 +141,6 @@ struct IAdaptiveMediaSourceDownloadCompletedEventArgs :
     impl::consume<IAdaptiveMediaSourceDownloadCompletedEventArgs>
 {
     IAdaptiveMediaSourceDownloadCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdaptiveMediaSourceDownloadCompletedEventArgs>(m_ptr); }
 };
 
 struct IAdaptiveMediaSourceDownloadFailedEventArgs :
@@ -154,7 +148,6 @@ struct IAdaptiveMediaSourceDownloadFailedEventArgs :
     impl::consume<IAdaptiveMediaSourceDownloadFailedEventArgs>
 {
     IAdaptiveMediaSourceDownloadFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdaptiveMediaSourceDownloadFailedEventArgs>(m_ptr); }
 };
 
 struct IAdaptiveMediaSourceDownloadRequestedDeferral :
@@ -162,7 +155,6 @@ struct IAdaptiveMediaSourceDownloadRequestedDeferral :
     impl::consume<IAdaptiveMediaSourceDownloadRequestedDeferral>
 {
     IAdaptiveMediaSourceDownloadRequestedDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdaptiveMediaSourceDownloadRequestedDeferral>(m_ptr); }
 };
 
 struct IAdaptiveMediaSourceDownloadRequestedEventArgs :
@@ -170,7 +162,6 @@ struct IAdaptiveMediaSourceDownloadRequestedEventArgs :
     impl::consume<IAdaptiveMediaSourceDownloadRequestedEventArgs>
 {
     IAdaptiveMediaSourceDownloadRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdaptiveMediaSourceDownloadRequestedEventArgs>(m_ptr); }
 };
 
 struct IAdaptiveMediaSourceDownloadResult :
@@ -178,7 +169,6 @@ struct IAdaptiveMediaSourceDownloadResult :
     impl::consume<IAdaptiveMediaSourceDownloadResult>
 {
     IAdaptiveMediaSourceDownloadResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdaptiveMediaSourceDownloadResult>(m_ptr); }
 };
 
 struct IAdaptiveMediaSourceDownloadResult2 :
@@ -186,7 +176,6 @@ struct IAdaptiveMediaSourceDownloadResult2 :
     impl::consume<IAdaptiveMediaSourceDownloadResult2>
 {
     IAdaptiveMediaSourceDownloadResult2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdaptiveMediaSourceDownloadResult2>(m_ptr); }
 };
 
 struct IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs :
@@ -194,7 +183,6 @@ struct IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs :
     impl::consume<IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs>
 {
     IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs>(m_ptr); }
 };
 
 struct IAdaptiveMediaSourceStatics :
@@ -202,7 +190,6 @@ struct IAdaptiveMediaSourceStatics :
     impl::consume<IAdaptiveMediaSourceStatics>
 {
     IAdaptiveMediaSourceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdaptiveMediaSourceStatics>(m_ptr); }
 };
 
 }

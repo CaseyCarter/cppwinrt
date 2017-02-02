@@ -14,7 +14,6 @@ struct IElementCompositionPreview :
     impl::consume<IElementCompositionPreview>
 {
     IElementCompositionPreview(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IElementCompositionPreview>(m_ptr); }
 };
 
 struct IElementCompositionPreviewStatics :
@@ -22,7 +21,6 @@ struct IElementCompositionPreviewStatics :
     impl::consume<IElementCompositionPreviewStatics>
 {
     IElementCompositionPreviewStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IElementCompositionPreviewStatics>(m_ptr); }
 };
 
 }

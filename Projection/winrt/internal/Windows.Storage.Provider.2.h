@@ -29,7 +29,6 @@ struct ICachedFileUpdaterStatics :
     impl::consume<ICachedFileUpdaterStatics>
 {
     ICachedFileUpdaterStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICachedFileUpdaterStatics>(m_ptr); }
 };
 
 struct ICachedFileUpdaterUI :
@@ -37,7 +36,6 @@ struct ICachedFileUpdaterUI :
     impl::consume<ICachedFileUpdaterUI>
 {
     ICachedFileUpdaterUI(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICachedFileUpdaterUI>(m_ptr); }
 };
 
 struct ICachedFileUpdaterUI2 :
@@ -46,7 +44,6 @@ struct ICachedFileUpdaterUI2 :
     impl::require<ICachedFileUpdaterUI2, Windows::Storage::Provider::ICachedFileUpdaterUI>
 {
     ICachedFileUpdaterUI2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICachedFileUpdaterUI2>(m_ptr); }
 };
 
 struct IFileUpdateRequest :
@@ -54,7 +51,6 @@ struct IFileUpdateRequest :
     impl::consume<IFileUpdateRequest>
 {
     IFileUpdateRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileUpdateRequest>(m_ptr); }
 };
 
 struct IFileUpdateRequest2 :
@@ -63,7 +59,6 @@ struct IFileUpdateRequest2 :
     impl::require<IFileUpdateRequest2, Windows::Storage::Provider::IFileUpdateRequest>
 {
     IFileUpdateRequest2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileUpdateRequest2>(m_ptr); }
 };
 
 struct IFileUpdateRequestDeferral :
@@ -71,7 +66,6 @@ struct IFileUpdateRequestDeferral :
     impl::consume<IFileUpdateRequestDeferral>
 {
     IFileUpdateRequestDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileUpdateRequestDeferral>(m_ptr); }
 };
 
 struct IFileUpdateRequestedEventArgs :
@@ -79,7 +73,6 @@ struct IFileUpdateRequestedEventArgs :
     impl::consume<IFileUpdateRequestedEventArgs>
 {
     IFileUpdateRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFileUpdateRequestedEventArgs>(m_ptr); }
 };
 
 }

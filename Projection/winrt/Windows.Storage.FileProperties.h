@@ -1304,560 +1304,560 @@ namespace Windows::Storage::FileProperties {
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geopoint> impl_IGeotagHelperStatics<D>::GetGeotagAsync(const Windows::Storage::IStorageFile & file) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geopoint> operation;
-    check_hresult(static_cast<const IGeotagHelperStatics &>(static_cast<const D &>(*this))->abi_GetGeotagAsync(get(file), put(operation)));
+    check_hresult(WINRT_SHIM(IGeotagHelperStatics)->abi_GetGeotagAsync(get(file), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IGeotagHelperStatics<D>::SetGeotagFromGeolocatorAsync(const Windows::Storage::IStorageFile & file, const Windows::Devices::Geolocation::Geolocator & geolocator) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IGeotagHelperStatics &>(static_cast<const D &>(*this))->abi_SetGeotagFromGeolocatorAsync(get(file), get(geolocator), put(operation)));
+    check_hresult(WINRT_SHIM(IGeotagHelperStatics)->abi_SetGeotagFromGeolocatorAsync(get(file), get(geolocator), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IGeotagHelperStatics<D>::SetGeotagAsync(const Windows::Storage::IStorageFile & file, const Windows::Devices::Geolocation::Geopoint & geopoint) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IGeotagHelperStatics &>(static_cast<const D &>(*this))->abi_SetGeotagAsync(get(file), get(geopoint), put(operation)));
+    check_hresult(WINRT_SHIM(IGeotagHelperStatics)->abi_SetGeotagAsync(get(file), get(geopoint), put(operation)));
     return operation;
 }
 
 template <typename D> uint32_t impl_IThumbnailProperties<D>::OriginalWidth() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IThumbnailProperties &>(static_cast<const D &>(*this))->get_OriginalWidth(&value));
+    check_hresult(WINRT_SHIM(IThumbnailProperties)->get_OriginalWidth(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IThumbnailProperties<D>::OriginalHeight() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IThumbnailProperties &>(static_cast<const D &>(*this))->get_OriginalHeight(&value));
+    check_hresult(WINRT_SHIM(IThumbnailProperties)->get_OriginalHeight(&value));
     return value;
 }
 
 template <typename D> bool impl_IThumbnailProperties<D>::ReturnedSmallerCachedSize() const
 {
     bool value {};
-    check_hresult(static_cast<const IThumbnailProperties &>(static_cast<const D &>(*this))->get_ReturnedSmallerCachedSize(&value));
+    check_hresult(WINRT_SHIM(IThumbnailProperties)->get_ReturnedSmallerCachedSize(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::FileProperties::ThumbnailType impl_IThumbnailProperties<D>::Type() const
 {
     Windows::Storage::FileProperties::ThumbnailType value {};
-    check_hresult(static_cast<const IThumbnailProperties &>(static_cast<const D &>(*this))->get_Type(&value));
+    check_hresult(WINRT_SHIM(IThumbnailProperties)->get_Type(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>> impl_IStorageItemExtraProperties<D>::RetrievePropertiesAsync(const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>> operation;
-    check_hresult(static_cast<const IStorageItemExtraProperties &>(static_cast<const D &>(*this))->abi_RetrievePropertiesAsync(get(propertiesToRetrieve), put(operation)));
+    check_hresult(WINRT_SHIM(IStorageItemExtraProperties)->abi_RetrievePropertiesAsync(get(propertiesToRetrieve), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStorageItemExtraProperties<D>::SavePropertiesAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> & propertiesToSave) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IStorageItemExtraProperties &>(static_cast<const D &>(*this))->abi_SavePropertiesAsync(get(propertiesToSave), put(operation)));
+    check_hresult(WINRT_SHIM(IStorageItemExtraProperties)->abi_SavePropertiesAsync(get(propertiesToSave), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStorageItemExtraProperties<D>::SavePropertiesAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(static_cast<const IStorageItemExtraProperties &>(static_cast<const D &>(*this))->abi_SavePropertiesAsyncOverloadDefault(put(operation)));
+    check_hresult(WINRT_SHIM(IStorageItemExtraProperties)->abi_SavePropertiesAsyncOverloadDefault(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::MusicProperties> impl_IStorageItemContentProperties<D>::GetMusicPropertiesAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::MusicProperties> operation;
-    check_hresult(static_cast<const IStorageItemContentProperties &>(static_cast<const D &>(*this))->abi_GetMusicPropertiesAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IStorageItemContentProperties)->abi_GetMusicPropertiesAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::VideoProperties> impl_IStorageItemContentProperties<D>::GetVideoPropertiesAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::VideoProperties> operation;
-    check_hresult(static_cast<const IStorageItemContentProperties &>(static_cast<const D &>(*this))->abi_GetVideoPropertiesAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IStorageItemContentProperties)->abi_GetVideoPropertiesAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::ImageProperties> impl_IStorageItemContentProperties<D>::GetImagePropertiesAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::ImageProperties> operation;
-    check_hresult(static_cast<const IStorageItemContentProperties &>(static_cast<const D &>(*this))->abi_GetImagePropertiesAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IStorageItemContentProperties)->abi_GetImagePropertiesAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::DocumentProperties> impl_IStorageItemContentProperties<D>::GetDocumentPropertiesAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::DocumentProperties> operation;
-    check_hresult(static_cast<const IStorageItemContentProperties &>(static_cast<const D &>(*this))->abi_GetDocumentPropertiesAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IStorageItemContentProperties)->abi_GetDocumentPropertiesAsync(put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IMusicProperties<D>::Album() const
 {
     hstring value;
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->get_Album(put(value)));
+    check_hresult(WINRT_SHIM(IMusicProperties)->get_Album(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMusicProperties<D>::Album(hstring_ref value) const
 {
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->put_Album(get(value)));
+    check_hresult(WINRT_SHIM(IMusicProperties)->put_Album(get(value)));
 }
 
 template <typename D> hstring impl_IMusicProperties<D>::Artist() const
 {
     hstring value;
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->get_Artist(put(value)));
+    check_hresult(WINRT_SHIM(IMusicProperties)->get_Artist(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMusicProperties<D>::Artist(hstring_ref value) const
 {
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->put_Artist(get(value)));
+    check_hresult(WINRT_SHIM(IMusicProperties)->put_Artist(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IMusicProperties<D>::Genre() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->get_Genre(put(value)));
+    check_hresult(WINRT_SHIM(IMusicProperties)->get_Genre(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IMusicProperties<D>::TrackNumber() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->get_TrackNumber(&value));
+    check_hresult(WINRT_SHIM(IMusicProperties)->get_TrackNumber(&value));
     return value;
 }
 
 template <typename D> void impl_IMusicProperties<D>::TrackNumber(uint32_t value) const
 {
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->put_TrackNumber(value));
+    check_hresult(WINRT_SHIM(IMusicProperties)->put_TrackNumber(value));
 }
 
 template <typename D> hstring impl_IMusicProperties<D>::Title() const
 {
     hstring value;
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(IMusicProperties)->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMusicProperties<D>::Title(hstring_ref value) const
 {
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->put_Title(get(value)));
+    check_hresult(WINRT_SHIM(IMusicProperties)->put_Title(get(value)));
 }
 
 template <typename D> uint32_t impl_IMusicProperties<D>::Rating() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->get_Rating(&value));
+    check_hresult(WINRT_SHIM(IMusicProperties)->get_Rating(&value));
     return value;
 }
 
 template <typename D> void impl_IMusicProperties<D>::Rating(uint32_t value) const
 {
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->put_Rating(value));
+    check_hresult(WINRT_SHIM(IMusicProperties)->put_Rating(value));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMusicProperties<D>::Duration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->get_Duration(put(value)));
+    check_hresult(WINRT_SHIM(IMusicProperties)->get_Duration(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IMusicProperties<D>::Bitrate() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->get_Bitrate(&value));
+    check_hresult(WINRT_SHIM(IMusicProperties)->get_Bitrate(&value));
     return value;
 }
 
 template <typename D> hstring impl_IMusicProperties<D>::AlbumArtist() const
 {
     hstring value;
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->get_AlbumArtist(put(value)));
+    check_hresult(WINRT_SHIM(IMusicProperties)->get_AlbumArtist(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMusicProperties<D>::AlbumArtist(hstring_ref value) const
 {
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->put_AlbumArtist(get(value)));
+    check_hresult(WINRT_SHIM(IMusicProperties)->put_AlbumArtist(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IMusicProperties<D>::Composers() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->get_Composers(put(value)));
+    check_hresult(WINRT_SHIM(IMusicProperties)->get_Composers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IMusicProperties<D>::Conductors() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->get_Conductors(put(value)));
+    check_hresult(WINRT_SHIM(IMusicProperties)->get_Conductors(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMusicProperties<D>::Subtitle() const
 {
     hstring value;
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->get_Subtitle(put(value)));
+    check_hresult(WINRT_SHIM(IMusicProperties)->get_Subtitle(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMusicProperties<D>::Subtitle(hstring_ref value) const
 {
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->put_Subtitle(get(value)));
+    check_hresult(WINRT_SHIM(IMusicProperties)->put_Subtitle(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IMusicProperties<D>::Producers() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->get_Producers(put(value)));
+    check_hresult(WINRT_SHIM(IMusicProperties)->get_Producers(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMusicProperties<D>::Publisher() const
 {
     hstring value;
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->get_Publisher(put(value)));
+    check_hresult(WINRT_SHIM(IMusicProperties)->get_Publisher(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMusicProperties<D>::Publisher(hstring_ref value) const
 {
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->put_Publisher(get(value)));
+    check_hresult(WINRT_SHIM(IMusicProperties)->put_Publisher(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IMusicProperties<D>::Writers() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->get_Writers(put(value)));
+    check_hresult(WINRT_SHIM(IMusicProperties)->get_Writers(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IMusicProperties<D>::Year() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->get_Year(&value));
+    check_hresult(WINRT_SHIM(IMusicProperties)->get_Year(&value));
     return value;
 }
 
 template <typename D> void impl_IMusicProperties<D>::Year(uint32_t value) const
 {
-    check_hresult(static_cast<const IMusicProperties &>(static_cast<const D &>(*this))->put_Year(value));
+    check_hresult(WINRT_SHIM(IMusicProperties)->put_Year(value));
 }
 
 template <typename D> uint32_t impl_IImageProperties<D>::Rating() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IImageProperties &>(static_cast<const D &>(*this))->get_Rating(&value));
+    check_hresult(WINRT_SHIM(IImageProperties)->get_Rating(&value));
     return value;
 }
 
 template <typename D> void impl_IImageProperties<D>::Rating(uint32_t value) const
 {
-    check_hresult(static_cast<const IImageProperties &>(static_cast<const D &>(*this))->put_Rating(value));
+    check_hresult(WINRT_SHIM(IImageProperties)->put_Rating(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IImageProperties<D>::Keywords() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IImageProperties &>(static_cast<const D &>(*this))->get_Keywords(put(value)));
+    check_hresult(WINRT_SHIM(IImageProperties)->get_Keywords(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IImageProperties<D>::DateTaken() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IImageProperties &>(static_cast<const D &>(*this))->get_DateTaken(put(value)));
+    check_hresult(WINRT_SHIM(IImageProperties)->get_DateTaken(put(value)));
     return value;
 }
 
 template <typename D> void impl_IImageProperties<D>::DateTaken(const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(static_cast<const IImageProperties &>(static_cast<const D &>(*this))->put_DateTaken(get(value)));
+    check_hresult(WINRT_SHIM(IImageProperties)->put_DateTaken(get(value)));
 }
 
 template <typename D> uint32_t impl_IImageProperties<D>::Width() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IImageProperties &>(static_cast<const D &>(*this))->get_Width(&value));
+    check_hresult(WINRT_SHIM(IImageProperties)->get_Width(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IImageProperties<D>::Height() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IImageProperties &>(static_cast<const D &>(*this))->get_Height(&value));
+    check_hresult(WINRT_SHIM(IImageProperties)->get_Height(&value));
     return value;
 }
 
 template <typename D> hstring impl_IImageProperties<D>::Title() const
 {
     hstring value;
-    check_hresult(static_cast<const IImageProperties &>(static_cast<const D &>(*this))->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(IImageProperties)->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_IImageProperties<D>::Title(hstring_ref value) const
 {
-    check_hresult(static_cast<const IImageProperties &>(static_cast<const D &>(*this))->put_Title(get(value)));
+    check_hresult(WINRT_SHIM(IImageProperties)->put_Title(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IImageProperties<D>::Latitude() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(static_cast<const IImageProperties &>(static_cast<const D &>(*this))->get_Latitude(put(value)));
+    check_hresult(WINRT_SHIM(IImageProperties)->get_Latitude(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IImageProperties<D>::Longitude() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(static_cast<const IImageProperties &>(static_cast<const D &>(*this))->get_Longitude(put(value)));
+    check_hresult(WINRT_SHIM(IImageProperties)->get_Longitude(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IImageProperties<D>::CameraManufacturer() const
 {
     hstring value;
-    check_hresult(static_cast<const IImageProperties &>(static_cast<const D &>(*this))->get_CameraManufacturer(put(value)));
+    check_hresult(WINRT_SHIM(IImageProperties)->get_CameraManufacturer(put(value)));
     return value;
 }
 
 template <typename D> void impl_IImageProperties<D>::CameraManufacturer(hstring_ref value) const
 {
-    check_hresult(static_cast<const IImageProperties &>(static_cast<const D &>(*this))->put_CameraManufacturer(get(value)));
+    check_hresult(WINRT_SHIM(IImageProperties)->put_CameraManufacturer(get(value)));
 }
 
 template <typename D> hstring impl_IImageProperties<D>::CameraModel() const
 {
     hstring value;
-    check_hresult(static_cast<const IImageProperties &>(static_cast<const D &>(*this))->get_CameraModel(put(value)));
+    check_hresult(WINRT_SHIM(IImageProperties)->get_CameraModel(put(value)));
     return value;
 }
 
 template <typename D> void impl_IImageProperties<D>::CameraModel(hstring_ref value) const
 {
-    check_hresult(static_cast<const IImageProperties &>(static_cast<const D &>(*this))->put_CameraModel(get(value)));
+    check_hresult(WINRT_SHIM(IImageProperties)->put_CameraModel(get(value)));
 }
 
 template <typename D> Windows::Storage::FileProperties::PhotoOrientation impl_IImageProperties<D>::Orientation() const
 {
     Windows::Storage::FileProperties::PhotoOrientation value {};
-    check_hresult(static_cast<const IImageProperties &>(static_cast<const D &>(*this))->get_Orientation(&value));
+    check_hresult(WINRT_SHIM(IImageProperties)->get_Orientation(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IImageProperties<D>::PeopleNames() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IImageProperties &>(static_cast<const D &>(*this))->get_PeopleNames(put(value)));
+    check_hresult(WINRT_SHIM(IImageProperties)->get_PeopleNames(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IVideoProperties<D>::Rating() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->get_Rating(&value));
+    check_hresult(WINRT_SHIM(IVideoProperties)->get_Rating(&value));
     return value;
 }
 
 template <typename D> void impl_IVideoProperties<D>::Rating(uint32_t value) const
 {
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->put_Rating(value));
+    check_hresult(WINRT_SHIM(IVideoProperties)->put_Rating(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVideoProperties<D>::Keywords() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->get_Keywords(put(value)));
+    check_hresult(WINRT_SHIM(IVideoProperties)->get_Keywords(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IVideoProperties<D>::Width() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->get_Width(&value));
+    check_hresult(WINRT_SHIM(IVideoProperties)->get_Width(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IVideoProperties<D>::Height() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->get_Height(&value));
+    check_hresult(WINRT_SHIM(IVideoProperties)->get_Height(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IVideoProperties<D>::Duration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->get_Duration(put(value)));
+    check_hresult(WINRT_SHIM(IVideoProperties)->get_Duration(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IVideoProperties<D>::Latitude() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->get_Latitude(put(value)));
+    check_hresult(WINRT_SHIM(IVideoProperties)->get_Latitude(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IVideoProperties<D>::Longitude() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->get_Longitude(put(value)));
+    check_hresult(WINRT_SHIM(IVideoProperties)->get_Longitude(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVideoProperties<D>::Title() const
 {
     hstring value;
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(IVideoProperties)->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVideoProperties<D>::Title(hstring_ref value) const
 {
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->put_Title(get(value)));
+    check_hresult(WINRT_SHIM(IVideoProperties)->put_Title(get(value)));
 }
 
 template <typename D> hstring impl_IVideoProperties<D>::Subtitle() const
 {
     hstring value;
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->get_Subtitle(put(value)));
+    check_hresult(WINRT_SHIM(IVideoProperties)->get_Subtitle(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVideoProperties<D>::Subtitle(hstring_ref value) const
 {
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->put_Subtitle(get(value)));
+    check_hresult(WINRT_SHIM(IVideoProperties)->put_Subtitle(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVideoProperties<D>::Producers() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->get_Producers(put(value)));
+    check_hresult(WINRT_SHIM(IVideoProperties)->get_Producers(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVideoProperties<D>::Publisher() const
 {
     hstring value;
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->get_Publisher(put(value)));
+    check_hresult(WINRT_SHIM(IVideoProperties)->get_Publisher(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVideoProperties<D>::Publisher(hstring_ref value) const
 {
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->put_Publisher(get(value)));
+    check_hresult(WINRT_SHIM(IVideoProperties)->put_Publisher(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVideoProperties<D>::Writers() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->get_Writers(put(value)));
+    check_hresult(WINRT_SHIM(IVideoProperties)->get_Writers(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IVideoProperties<D>::Year() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->get_Year(&value));
+    check_hresult(WINRT_SHIM(IVideoProperties)->get_Year(&value));
     return value;
 }
 
 template <typename D> void impl_IVideoProperties<D>::Year(uint32_t value) const
 {
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->put_Year(value));
+    check_hresult(WINRT_SHIM(IVideoProperties)->put_Year(value));
 }
 
 template <typename D> uint32_t impl_IVideoProperties<D>::Bitrate() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->get_Bitrate(&value));
+    check_hresult(WINRT_SHIM(IVideoProperties)->get_Bitrate(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVideoProperties<D>::Directors() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->get_Directors(put(value)));
+    check_hresult(WINRT_SHIM(IVideoProperties)->get_Directors(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::FileProperties::VideoOrientation impl_IVideoProperties<D>::Orientation() const
 {
     Windows::Storage::FileProperties::VideoOrientation value {};
-    check_hresult(static_cast<const IVideoProperties &>(static_cast<const D &>(*this))->get_Orientation(&value));
+    check_hresult(WINRT_SHIM(IVideoProperties)->get_Orientation(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IDocumentProperties<D>::Author() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IDocumentProperties &>(static_cast<const D &>(*this))->get_Author(put(value)));
+    check_hresult(WINRT_SHIM(IDocumentProperties)->get_Author(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDocumentProperties<D>::Title() const
 {
     hstring value;
-    check_hresult(static_cast<const IDocumentProperties &>(static_cast<const D &>(*this))->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(IDocumentProperties)->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDocumentProperties<D>::Title(hstring_ref value) const
 {
-    check_hresult(static_cast<const IDocumentProperties &>(static_cast<const D &>(*this))->put_Title(get(value)));
+    check_hresult(WINRT_SHIM(IDocumentProperties)->put_Title(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IDocumentProperties<D>::Keywords() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IDocumentProperties &>(static_cast<const D &>(*this))->get_Keywords(put(value)));
+    check_hresult(WINRT_SHIM(IDocumentProperties)->get_Keywords(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDocumentProperties<D>::Comment() const
 {
     hstring value;
-    check_hresult(static_cast<const IDocumentProperties &>(static_cast<const D &>(*this))->get_Comment(put(value)));
+    check_hresult(WINRT_SHIM(IDocumentProperties)->get_Comment(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDocumentProperties<D>::Comment(hstring_ref value) const
 {
-    check_hresult(static_cast<const IDocumentProperties &>(static_cast<const D &>(*this))->put_Comment(get(value)));
+    check_hresult(WINRT_SHIM(IDocumentProperties)->put_Comment(get(value)));
 }
 
 template <typename D> uint64_t impl_IBasicProperties<D>::Size() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IBasicProperties &>(static_cast<const D &>(*this))->get_Size(&value));
+    check_hresult(WINRT_SHIM(IBasicProperties)->get_Size(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IBasicProperties<D>::DateModified() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IBasicProperties &>(static_cast<const D &>(*this))->get_DateModified(put(value)));
+    check_hresult(WINRT_SHIM(IBasicProperties)->get_DateModified(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IBasicProperties<D>::ItemDate() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IBasicProperties &>(static_cast<const D &>(*this))->get_ItemDate(put(value)));
+    check_hresult(WINRT_SHIM(IBasicProperties)->get_ItemDate(put(value)));
     return value;
 }
 

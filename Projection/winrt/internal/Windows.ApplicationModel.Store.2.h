@@ -177,7 +177,6 @@ namespace Windows::ApplicationModel::Store {
 struct LicenseChangedEventHandler : Windows::IUnknown
 {
     LicenseChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<LicenseChangedEventHandler>(m_ptr); }
     template <typename L> LicenseChangedEventHandler(L lambda);
     template <typename F> LicenseChangedEventHandler (F * function);
     template <typename O, typename M> LicenseChangedEventHandler(O * object, M method);
@@ -189,7 +188,6 @@ struct ICurrentApp :
     impl::consume<ICurrentApp>
 {
     ICurrentApp(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICurrentApp>(m_ptr); }
 };
 
 struct ICurrentApp2Statics :
@@ -197,7 +195,6 @@ struct ICurrentApp2Statics :
     impl::consume<ICurrentApp2Statics>
 {
     ICurrentApp2Statics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICurrentApp2Statics>(m_ptr); }
 };
 
 struct ICurrentAppSimulator :
@@ -205,7 +202,6 @@ struct ICurrentAppSimulator :
     impl::consume<ICurrentAppSimulator>
 {
     ICurrentAppSimulator(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICurrentAppSimulator>(m_ptr); }
 };
 
 struct ICurrentAppSimulatorStaticsWithFiltering :
@@ -213,7 +209,6 @@ struct ICurrentAppSimulatorStaticsWithFiltering :
     impl::consume<ICurrentAppSimulatorStaticsWithFiltering>
 {
     ICurrentAppSimulatorStaticsWithFiltering(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICurrentAppSimulatorStaticsWithFiltering>(m_ptr); }
 };
 
 struct ICurrentAppSimulatorWithCampaignId :
@@ -221,7 +216,6 @@ struct ICurrentAppSimulatorWithCampaignId :
     impl::consume<ICurrentAppSimulatorWithCampaignId>
 {
     ICurrentAppSimulatorWithCampaignId(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICurrentAppSimulatorWithCampaignId>(m_ptr); }
 };
 
 struct ICurrentAppSimulatorWithConsumables :
@@ -229,7 +223,6 @@ struct ICurrentAppSimulatorWithConsumables :
     impl::consume<ICurrentAppSimulatorWithConsumables>
 {
     ICurrentAppSimulatorWithConsumables(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICurrentAppSimulatorWithConsumables>(m_ptr); }
 };
 
 struct ICurrentAppStaticsWithFiltering :
@@ -237,7 +230,6 @@ struct ICurrentAppStaticsWithFiltering :
     impl::consume<ICurrentAppStaticsWithFiltering>
 {
     ICurrentAppStaticsWithFiltering(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICurrentAppStaticsWithFiltering>(m_ptr); }
 };
 
 struct ICurrentAppWithCampaignId :
@@ -245,7 +237,6 @@ struct ICurrentAppWithCampaignId :
     impl::consume<ICurrentAppWithCampaignId>
 {
     ICurrentAppWithCampaignId(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICurrentAppWithCampaignId>(m_ptr); }
 };
 
 struct ICurrentAppWithConsumables :
@@ -253,7 +244,6 @@ struct ICurrentAppWithConsumables :
     impl::consume<ICurrentAppWithConsumables>
 {
     ICurrentAppWithConsumables(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICurrentAppWithConsumables>(m_ptr); }
 };
 
 struct ILicenseInformation :
@@ -261,7 +251,6 @@ struct ILicenseInformation :
     impl::consume<ILicenseInformation>
 {
     ILicenseInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILicenseInformation>(m_ptr); }
 };
 
 struct IListingInformation :
@@ -269,7 +258,6 @@ struct IListingInformation :
     impl::consume<IListingInformation>
 {
     IListingInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListingInformation>(m_ptr); }
 };
 
 struct IListingInformation2 :
@@ -277,7 +265,6 @@ struct IListingInformation2 :
     impl::consume<IListingInformation2>
 {
     IListingInformation2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IListingInformation2>(m_ptr); }
 };
 
 struct IProductLicense :
@@ -285,7 +272,6 @@ struct IProductLicense :
     impl::consume<IProductLicense>
 {
     IProductLicense(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProductLicense>(m_ptr); }
 };
 
 struct IProductLicenseWithFulfillment :
@@ -294,7 +280,6 @@ struct IProductLicenseWithFulfillment :
     impl::require<IProductLicenseWithFulfillment, Windows::ApplicationModel::Store::IProductLicense>
 {
     IProductLicenseWithFulfillment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProductLicenseWithFulfillment>(m_ptr); }
 };
 
 struct IProductListing :
@@ -302,7 +287,6 @@ struct IProductListing :
     impl::consume<IProductListing>
 {
     IProductListing(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProductListing>(m_ptr); }
 };
 
 struct IProductListing2 :
@@ -310,7 +294,6 @@ struct IProductListing2 :
     impl::consume<IProductListing2>
 {
     IProductListing2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProductListing2>(m_ptr); }
 };
 
 struct IProductListingWithConsumables :
@@ -318,7 +301,6 @@ struct IProductListingWithConsumables :
     impl::consume<IProductListingWithConsumables>
 {
     IProductListingWithConsumables(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProductListingWithConsumables>(m_ptr); }
 };
 
 struct IProductListingWithMetadata :
@@ -327,7 +309,6 @@ struct IProductListingWithMetadata :
     impl::require<IProductListingWithMetadata, Windows::ApplicationModel::Store::IProductListing>
 {
     IProductListingWithMetadata(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProductListingWithMetadata>(m_ptr); }
 };
 
 struct IProductPurchaseDisplayProperties :
@@ -335,7 +316,6 @@ struct IProductPurchaseDisplayProperties :
     impl::consume<IProductPurchaseDisplayProperties>
 {
     IProductPurchaseDisplayProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProductPurchaseDisplayProperties>(m_ptr); }
 };
 
 struct IProductPurchaseDisplayPropertiesFactory :
@@ -343,7 +323,6 @@ struct IProductPurchaseDisplayPropertiesFactory :
     impl::consume<IProductPurchaseDisplayPropertiesFactory>
 {
     IProductPurchaseDisplayPropertiesFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProductPurchaseDisplayPropertiesFactory>(m_ptr); }
 };
 
 struct IPurchaseResults :
@@ -351,7 +330,6 @@ struct IPurchaseResults :
     impl::consume<IPurchaseResults>
 {
     IPurchaseResults(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPurchaseResults>(m_ptr); }
 };
 
 struct IUnfulfilledConsumable :
@@ -359,7 +337,6 @@ struct IUnfulfilledConsumable :
     impl::consume<IUnfulfilledConsumable>
 {
     IUnfulfilledConsumable(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUnfulfilledConsumable>(m_ptr); }
 };
 
 }

@@ -262,7 +262,6 @@ struct IDeviceAccessChangedEventArgs :
     impl::consume<IDeviceAccessChangedEventArgs>
 {
     IDeviceAccessChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceAccessChangedEventArgs>(m_ptr); }
 };
 
 struct IDeviceAccessChangedEventArgs2 :
@@ -271,7 +270,6 @@ struct IDeviceAccessChangedEventArgs2 :
     impl::require<IDeviceAccessChangedEventArgs2, Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs>
 {
     IDeviceAccessChangedEventArgs2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceAccessChangedEventArgs2>(m_ptr); }
 };
 
 struct IDeviceAccessInformation :
@@ -279,7 +277,6 @@ struct IDeviceAccessInformation :
     impl::consume<IDeviceAccessInformation>
 {
     IDeviceAccessInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceAccessInformation>(m_ptr); }
 };
 
 struct IDeviceAccessInformationStatics :
@@ -287,7 +284,6 @@ struct IDeviceAccessInformationStatics :
     impl::consume<IDeviceAccessInformationStatics>
 {
     IDeviceAccessInformationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceAccessInformationStatics>(m_ptr); }
 };
 
 struct IDeviceConnectionChangeTriggerDetails :
@@ -295,7 +291,6 @@ struct IDeviceConnectionChangeTriggerDetails :
     impl::consume<IDeviceConnectionChangeTriggerDetails>
 {
     IDeviceConnectionChangeTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceConnectionChangeTriggerDetails>(m_ptr); }
 };
 
 struct IDeviceDisconnectButtonClickedEventArgs :
@@ -303,7 +298,6 @@ struct IDeviceDisconnectButtonClickedEventArgs :
     impl::consume<IDeviceDisconnectButtonClickedEventArgs>
 {
     IDeviceDisconnectButtonClickedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceDisconnectButtonClickedEventArgs>(m_ptr); }
 };
 
 struct IDeviceInformation :
@@ -311,7 +305,6 @@ struct IDeviceInformation :
     impl::consume<IDeviceInformation>
 {
     IDeviceInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceInformation>(m_ptr); }
 };
 
 struct IDeviceInformation2 :
@@ -319,7 +312,6 @@ struct IDeviceInformation2 :
     impl::consume<IDeviceInformation2>
 {
     IDeviceInformation2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceInformation2>(m_ptr); }
 };
 
 struct IDeviceInformationCustomPairing :
@@ -327,7 +319,6 @@ struct IDeviceInformationCustomPairing :
     impl::consume<IDeviceInformationCustomPairing>
 {
     IDeviceInformationCustomPairing(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceInformationCustomPairing>(m_ptr); }
 };
 
 struct IDeviceInformationPairing :
@@ -335,7 +326,6 @@ struct IDeviceInformationPairing :
     impl::consume<IDeviceInformationPairing>
 {
     IDeviceInformationPairing(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceInformationPairing>(m_ptr); }
 };
 
 struct IDeviceInformationPairing2 :
@@ -343,7 +333,6 @@ struct IDeviceInformationPairing2 :
     impl::consume<IDeviceInformationPairing2>
 {
     IDeviceInformationPairing2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceInformationPairing2>(m_ptr); }
 };
 
 struct IDeviceInformationPairingStatics :
@@ -351,7 +340,6 @@ struct IDeviceInformationPairingStatics :
     impl::consume<IDeviceInformationPairingStatics>
 {
     IDeviceInformationPairingStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceInformationPairingStatics>(m_ptr); }
 };
 
 struct IDeviceInformationStatics :
@@ -359,7 +347,6 @@ struct IDeviceInformationStatics :
     impl::consume<IDeviceInformationStatics>
 {
     IDeviceInformationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceInformationStatics>(m_ptr); }
 };
 
 struct IDeviceInformationStatics2 :
@@ -367,7 +354,6 @@ struct IDeviceInformationStatics2 :
     impl::consume<IDeviceInformationStatics2>
 {
     IDeviceInformationStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceInformationStatics2>(m_ptr); }
 };
 
 struct IDeviceInformationUpdate :
@@ -375,7 +361,6 @@ struct IDeviceInformationUpdate :
     impl::consume<IDeviceInformationUpdate>
 {
     IDeviceInformationUpdate(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceInformationUpdate>(m_ptr); }
 };
 
 struct IDeviceInformationUpdate2 :
@@ -383,7 +368,6 @@ struct IDeviceInformationUpdate2 :
     impl::consume<IDeviceInformationUpdate2>
 {
     IDeviceInformationUpdate2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceInformationUpdate2>(m_ptr); }
 };
 
 struct IDevicePairingRequestedEventArgs :
@@ -391,7 +375,6 @@ struct IDevicePairingRequestedEventArgs :
     impl::consume<IDevicePairingRequestedEventArgs>
 {
     IDevicePairingRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDevicePairingRequestedEventArgs>(m_ptr); }
 };
 
 struct IDevicePairingResult :
@@ -399,7 +382,6 @@ struct IDevicePairingResult :
     impl::consume<IDevicePairingResult>
 {
     IDevicePairingResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDevicePairingResult>(m_ptr); }
 };
 
 struct IDevicePairingSettings :
@@ -407,7 +389,6 @@ struct IDevicePairingSettings :
     impl::consume<IDevicePairingSettings>
 {
     IDevicePairingSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDevicePairingSettings>(m_ptr); }
 };
 
 struct IDevicePicker :
@@ -415,7 +396,6 @@ struct IDevicePicker :
     impl::consume<IDevicePicker>
 {
     IDevicePicker(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDevicePicker>(m_ptr); }
 };
 
 struct IDevicePickerAppearance :
@@ -423,7 +403,6 @@ struct IDevicePickerAppearance :
     impl::consume<IDevicePickerAppearance>
 {
     IDevicePickerAppearance(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDevicePickerAppearance>(m_ptr); }
 };
 
 struct IDevicePickerFilter :
@@ -431,7 +410,6 @@ struct IDevicePickerFilter :
     impl::consume<IDevicePickerFilter>
 {
     IDevicePickerFilter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDevicePickerFilter>(m_ptr); }
 };
 
 struct IDeviceSelectedEventArgs :
@@ -439,7 +417,6 @@ struct IDeviceSelectedEventArgs :
     impl::consume<IDeviceSelectedEventArgs>
 {
     IDeviceSelectedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceSelectedEventArgs>(m_ptr); }
 };
 
 struct IDeviceUnpairingResult :
@@ -447,7 +424,6 @@ struct IDeviceUnpairingResult :
     impl::consume<IDeviceUnpairingResult>
 {
     IDeviceUnpairingResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceUnpairingResult>(m_ptr); }
 };
 
 struct IDeviceWatcher :
@@ -455,7 +431,6 @@ struct IDeviceWatcher :
     impl::consume<IDeviceWatcher>
 {
     IDeviceWatcher(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceWatcher>(m_ptr); }
 };
 
 struct IDeviceWatcher2 :
@@ -463,7 +438,6 @@ struct IDeviceWatcher2 :
     impl::consume<IDeviceWatcher2>
 {
     IDeviceWatcher2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceWatcher2>(m_ptr); }
 };
 
 struct IDeviceWatcherEvent :
@@ -471,7 +445,6 @@ struct IDeviceWatcherEvent :
     impl::consume<IDeviceWatcherEvent>
 {
     IDeviceWatcherEvent(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceWatcherEvent>(m_ptr); }
 };
 
 struct IDeviceWatcherTriggerDetails :
@@ -479,7 +452,6 @@ struct IDeviceWatcherTriggerDetails :
     impl::consume<IDeviceWatcherTriggerDetails>
 {
     IDeviceWatcherTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceWatcherTriggerDetails>(m_ptr); }
 };
 
 struct IEnclosureLocation :
@@ -487,7 +459,6 @@ struct IEnclosureLocation :
     impl::consume<IEnclosureLocation>
 {
     IEnclosureLocation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEnclosureLocation>(m_ptr); }
 };
 
 struct IEnclosureLocation2 :
@@ -496,7 +467,6 @@ struct IEnclosureLocation2 :
     impl::require<IEnclosureLocation2, Windows::Devices::Enumeration::IEnclosureLocation>
 {
     IEnclosureLocation2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEnclosureLocation2>(m_ptr); }
 };
 
 }

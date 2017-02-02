@@ -73,7 +73,6 @@ namespace Windows::Media::Protection {
 struct ComponentLoadFailedEventHandler : Windows::IUnknown
 {
     ComponentLoadFailedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ComponentLoadFailedEventHandler>(m_ptr); }
     template <typename L> ComponentLoadFailedEventHandler(L lambda);
     template <typename F> ComponentLoadFailedEventHandler (F * function);
     template <typename O, typename M> ComponentLoadFailedEventHandler(O * object, M method);
@@ -83,7 +82,6 @@ struct ComponentLoadFailedEventHandler : Windows::IUnknown
 struct RebootNeededEventHandler : Windows::IUnknown
 {
     RebootNeededEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<RebootNeededEventHandler>(m_ptr); }
     template <typename L> RebootNeededEventHandler(L lambda);
     template <typename F> RebootNeededEventHandler (F * function);
     template <typename O, typename M> RebootNeededEventHandler(O * object, M method);
@@ -93,7 +91,6 @@ struct RebootNeededEventHandler : Windows::IUnknown
 struct ServiceRequestedEventHandler : Windows::IUnknown
 {
     ServiceRequestedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ServiceRequestedEventHandler>(m_ptr); }
     template <typename L> ServiceRequestedEventHandler(L lambda);
     template <typename F> ServiceRequestedEventHandler (F * function);
     template <typename O, typename M> ServiceRequestedEventHandler(O * object, M method);
@@ -105,7 +102,6 @@ struct IComponentLoadFailedEventArgs :
     impl::consume<IComponentLoadFailedEventArgs>
 {
     IComponentLoadFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IComponentLoadFailedEventArgs>(m_ptr); }
 };
 
 struct IHdcpSession :
@@ -114,7 +110,6 @@ struct IHdcpSession :
     impl::require<IHdcpSession, Windows::Foundation::IClosable>
 {
     IHdcpSession(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHdcpSession>(m_ptr); }
 };
 
 struct IMediaProtectionManager :
@@ -122,7 +117,6 @@ struct IMediaProtectionManager :
     impl::consume<IMediaProtectionManager>
 {
     IMediaProtectionManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaProtectionManager>(m_ptr); }
 };
 
 struct IMediaProtectionPMPServer :
@@ -130,7 +124,6 @@ struct IMediaProtectionPMPServer :
     impl::consume<IMediaProtectionPMPServer>
 {
     IMediaProtectionPMPServer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaProtectionPMPServer>(m_ptr); }
 };
 
 struct IMediaProtectionPMPServerFactory :
@@ -138,7 +131,6 @@ struct IMediaProtectionPMPServerFactory :
     impl::consume<IMediaProtectionPMPServerFactory>
 {
     IMediaProtectionPMPServerFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaProtectionPMPServerFactory>(m_ptr); }
 };
 
 struct IMediaProtectionServiceCompletion :
@@ -146,7 +138,6 @@ struct IMediaProtectionServiceCompletion :
     impl::consume<IMediaProtectionServiceCompletion>
 {
     IMediaProtectionServiceCompletion(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaProtectionServiceCompletion>(m_ptr); }
 };
 
 struct IMediaProtectionServiceRequest :
@@ -154,7 +145,6 @@ struct IMediaProtectionServiceRequest :
     impl::consume<IMediaProtectionServiceRequest>
 {
     IMediaProtectionServiceRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaProtectionServiceRequest>(m_ptr); }
 };
 
 struct IProtectionCapabilities :
@@ -162,7 +152,6 @@ struct IProtectionCapabilities :
     impl::consume<IProtectionCapabilities>
 {
     IProtectionCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProtectionCapabilities>(m_ptr); }
 };
 
 struct IRevocationAndRenewalInformation :
@@ -170,7 +159,6 @@ struct IRevocationAndRenewalInformation :
     impl::consume<IRevocationAndRenewalInformation>
 {
     IRevocationAndRenewalInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRevocationAndRenewalInformation>(m_ptr); }
 };
 
 struct IRevocationAndRenewalItem :
@@ -178,7 +166,6 @@ struct IRevocationAndRenewalItem :
     impl::consume<IRevocationAndRenewalItem>
 {
     IRevocationAndRenewalItem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRevocationAndRenewalItem>(m_ptr); }
 };
 
 struct IServiceRequestedEventArgs :
@@ -186,7 +173,6 @@ struct IServiceRequestedEventArgs :
     impl::consume<IServiceRequestedEventArgs>
 {
     IServiceRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IServiceRequestedEventArgs>(m_ptr); }
 };
 
 struct IServiceRequestedEventArgs2 :
@@ -194,7 +180,6 @@ struct IServiceRequestedEventArgs2 :
     impl::consume<IServiceRequestedEventArgs2>
 {
     IServiceRequestedEventArgs2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IServiceRequestedEventArgs2>(m_ptr); }
 };
 
 }

@@ -14,7 +14,6 @@ struct IClosedCaptionPropertiesStatics :
     impl::consume<IClosedCaptionPropertiesStatics>
 {
     IClosedCaptionPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IClosedCaptionPropertiesStatics>(m_ptr); }
 };
 
 }

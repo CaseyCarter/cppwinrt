@@ -229,7 +229,6 @@ struct IAdvancedPhotoCaptureSettings :
     impl::consume<IAdvancedPhotoCaptureSettings>
 {
     IAdvancedPhotoCaptureSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdvancedPhotoCaptureSettings>(m_ptr); }
 };
 
 struct IAdvancedPhotoControl :
@@ -237,7 +236,6 @@ struct IAdvancedPhotoControl :
     impl::consume<IAdvancedPhotoControl>
 {
     IAdvancedPhotoControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdvancedPhotoControl>(m_ptr); }
 };
 
 struct IAdvancedVideoCaptureDeviceController :
@@ -245,7 +243,6 @@ struct IAdvancedVideoCaptureDeviceController :
     impl::consume<IAdvancedVideoCaptureDeviceController>
 {
     IAdvancedVideoCaptureDeviceController(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdvancedVideoCaptureDeviceController>(m_ptr); }
 };
 
 struct IAdvancedVideoCaptureDeviceController2 :
@@ -253,7 +250,6 @@ struct IAdvancedVideoCaptureDeviceController2 :
     impl::consume<IAdvancedVideoCaptureDeviceController2>
 {
     IAdvancedVideoCaptureDeviceController2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdvancedVideoCaptureDeviceController2>(m_ptr); }
 };
 
 struct IAdvancedVideoCaptureDeviceController3 :
@@ -261,7 +257,6 @@ struct IAdvancedVideoCaptureDeviceController3 :
     impl::consume<IAdvancedVideoCaptureDeviceController3>
 {
     IAdvancedVideoCaptureDeviceController3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdvancedVideoCaptureDeviceController3>(m_ptr); }
 };
 
 struct IAdvancedVideoCaptureDeviceController4 :
@@ -269,7 +264,6 @@ struct IAdvancedVideoCaptureDeviceController4 :
     impl::consume<IAdvancedVideoCaptureDeviceController4>
 {
     IAdvancedVideoCaptureDeviceController4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdvancedVideoCaptureDeviceController4>(m_ptr); }
 };
 
 struct IAudioDeviceController :
@@ -278,7 +272,6 @@ struct IAudioDeviceController :
     impl::require<IAudioDeviceController, Windows::Media::Devices::IMediaDeviceController>
 {
     IAudioDeviceController(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioDeviceController>(m_ptr); }
 };
 
 struct IDefaultAudioDeviceChangedEventArgs :
@@ -286,7 +279,6 @@ struct IDefaultAudioDeviceChangedEventArgs :
     impl::consume<IDefaultAudioDeviceChangedEventArgs>
 {
     IDefaultAudioDeviceChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDefaultAudioDeviceChangedEventArgs>(m_ptr); }
 };
 
 struct IExposureCompensationControl :
@@ -294,7 +286,6 @@ struct IExposureCompensationControl :
     impl::consume<IExposureCompensationControl>
 {
     IExposureCompensationControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IExposureCompensationControl>(m_ptr); }
 };
 
 struct IExposureControl :
@@ -302,7 +293,6 @@ struct IExposureControl :
     impl::consume<IExposureControl>
 {
     IExposureControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IExposureControl>(m_ptr); }
 };
 
 struct IExposurePriorityVideoControl :
@@ -310,7 +300,6 @@ struct IExposurePriorityVideoControl :
     impl::consume<IExposurePriorityVideoControl>
 {
     IExposurePriorityVideoControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IExposurePriorityVideoControl>(m_ptr); }
 };
 
 struct IFlashControl :
@@ -318,7 +307,6 @@ struct IFlashControl :
     impl::consume<IFlashControl>
 {
     IFlashControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFlashControl>(m_ptr); }
 };
 
 struct IFlashControl2 :
@@ -326,7 +314,6 @@ struct IFlashControl2 :
     impl::consume<IFlashControl2>
 {
     IFlashControl2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFlashControl2>(m_ptr); }
 };
 
 struct IFocusControl :
@@ -334,7 +321,6 @@ struct IFocusControl :
     impl::consume<IFocusControl>
 {
     IFocusControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFocusControl>(m_ptr); }
 };
 
 struct IFocusControl2 :
@@ -342,7 +328,6 @@ struct IFocusControl2 :
     impl::consume<IFocusControl2>
 {
     IFocusControl2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFocusControl2>(m_ptr); }
 };
 
 struct IFocusSettings :
@@ -350,7 +335,6 @@ struct IFocusSettings :
     impl::consume<IFocusSettings>
 {
     IFocusSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFocusSettings>(m_ptr); }
 };
 
 struct IHdrVideoControl :
@@ -358,7 +342,6 @@ struct IHdrVideoControl :
     impl::consume<IHdrVideoControl>
 {
     IHdrVideoControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHdrVideoControl>(m_ptr); }
 };
 
 struct IIsoSpeedControl :
@@ -366,7 +349,6 @@ struct IIsoSpeedControl :
     impl::consume<IIsoSpeedControl>
 {
     IIsoSpeedControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IIsoSpeedControl>(m_ptr); }
 };
 
 struct IIsoSpeedControl2 :
@@ -374,7 +356,6 @@ struct IIsoSpeedControl2 :
     impl::consume<IIsoSpeedControl2>
 {
     IIsoSpeedControl2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IIsoSpeedControl2>(m_ptr); }
 };
 
 struct ILowLagPhotoControl :
@@ -382,7 +363,6 @@ struct ILowLagPhotoControl :
     impl::consume<ILowLagPhotoControl>
 {
     ILowLagPhotoControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILowLagPhotoControl>(m_ptr); }
 };
 
 struct ILowLagPhotoSequenceControl :
@@ -390,7 +370,6 @@ struct ILowLagPhotoSequenceControl :
     impl::consume<ILowLagPhotoSequenceControl>
 {
     ILowLagPhotoSequenceControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILowLagPhotoSequenceControl>(m_ptr); }
 };
 
 struct IMediaDeviceControl :
@@ -398,7 +377,6 @@ struct IMediaDeviceControl :
     impl::consume<IMediaDeviceControl>
 {
     IMediaDeviceControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaDeviceControl>(m_ptr); }
 };
 
 struct IMediaDeviceControlCapabilities :
@@ -406,7 +384,6 @@ struct IMediaDeviceControlCapabilities :
     impl::consume<IMediaDeviceControlCapabilities>
 {
     IMediaDeviceControlCapabilities(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaDeviceControlCapabilities>(m_ptr); }
 };
 
 struct IMediaDeviceController :
@@ -414,7 +391,6 @@ struct IMediaDeviceController :
     impl::consume<IMediaDeviceController>
 {
     IMediaDeviceController(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaDeviceController>(m_ptr); }
 };
 
 struct IMediaDeviceStatics :
@@ -422,7 +398,6 @@ struct IMediaDeviceStatics :
     impl::consume<IMediaDeviceStatics>
 {
     IMediaDeviceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaDeviceStatics>(m_ptr); }
 };
 
 struct IOpticalImageStabilizationControl :
@@ -430,7 +405,6 @@ struct IOpticalImageStabilizationControl :
     impl::consume<IOpticalImageStabilizationControl>
 {
     IOpticalImageStabilizationControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOpticalImageStabilizationControl>(m_ptr); }
 };
 
 struct IPhotoConfirmationControl :
@@ -438,7 +412,6 @@ struct IPhotoConfirmationControl :
     impl::consume<IPhotoConfirmationControl>
 {
     IPhotoConfirmationControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPhotoConfirmationControl>(m_ptr); }
 };
 
 struct IRegionOfInterest :
@@ -446,7 +419,6 @@ struct IRegionOfInterest :
     impl::consume<IRegionOfInterest>
 {
     IRegionOfInterest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRegionOfInterest>(m_ptr); }
 };
 
 struct IRegionOfInterest2 :
@@ -454,7 +426,6 @@ struct IRegionOfInterest2 :
     impl::consume<IRegionOfInterest2>
 {
     IRegionOfInterest2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRegionOfInterest2>(m_ptr); }
 };
 
 struct IRegionsOfInterestControl :
@@ -462,7 +433,6 @@ struct IRegionsOfInterestControl :
     impl::consume<IRegionsOfInterestControl>
 {
     IRegionsOfInterestControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRegionsOfInterestControl>(m_ptr); }
 };
 
 struct ISceneModeControl :
@@ -470,7 +440,6 @@ struct ISceneModeControl :
     impl::consume<ISceneModeControl>
 {
     ISceneModeControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISceneModeControl>(m_ptr); }
 };
 
 struct ITorchControl :
@@ -478,7 +447,6 @@ struct ITorchControl :
     impl::consume<ITorchControl>
 {
     ITorchControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITorchControl>(m_ptr); }
 };
 
 struct IVideoDeviceController :
@@ -487,7 +455,6 @@ struct IVideoDeviceController :
     impl::require<IVideoDeviceController, Windows::Media::Devices::IMediaDeviceController>
 {
     IVideoDeviceController(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoDeviceController>(m_ptr); }
 };
 
 struct IWhiteBalanceControl :
@@ -495,7 +462,6 @@ struct IWhiteBalanceControl :
     impl::consume<IWhiteBalanceControl>
 {
     IWhiteBalanceControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWhiteBalanceControl>(m_ptr); }
 };
 
 struct IZoomControl :
@@ -503,7 +469,6 @@ struct IZoomControl :
     impl::consume<IZoomControl>
 {
     IZoomControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IZoomControl>(m_ptr); }
 };
 
 struct IZoomControl2 :
@@ -511,7 +476,6 @@ struct IZoomControl2 :
     impl::consume<IZoomControl2>
 {
     IZoomControl2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IZoomControl2>(m_ptr); }
 };
 
 struct IZoomSettings :
@@ -519,7 +483,6 @@ struct IZoomSettings :
     impl::consume<IZoomSettings>
 {
     IZoomSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IZoomSettings>(m_ptr); }
 };
 
 }

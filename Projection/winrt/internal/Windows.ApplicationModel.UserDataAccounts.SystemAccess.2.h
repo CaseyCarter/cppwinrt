@@ -94,7 +94,6 @@ struct IDeviceAccountConfiguration :
     impl::consume<IDeviceAccountConfiguration>
 {
     IDeviceAccountConfiguration(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceAccountConfiguration>(m_ptr); }
 };
 
 struct IDeviceAccountConfiguration2 :
@@ -102,7 +101,6 @@ struct IDeviceAccountConfiguration2 :
     impl::consume<IDeviceAccountConfiguration2>
 {
     IDeviceAccountConfiguration2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceAccountConfiguration2>(m_ptr); }
 };
 
 struct IUserDataAccountSystemAccessManagerStatics :
@@ -110,7 +108,6 @@ struct IUserDataAccountSystemAccessManagerStatics :
     impl::consume<IUserDataAccountSystemAccessManagerStatics>
 {
     IUserDataAccountSystemAccessManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDataAccountSystemAccessManagerStatics>(m_ptr); }
 };
 
 struct IUserDataAccountSystemAccessManagerStatics2 :
@@ -118,7 +115,6 @@ struct IUserDataAccountSystemAccessManagerStatics2 :
     impl::consume<IUserDataAccountSystemAccessManagerStatics2>
 {
     IUserDataAccountSystemAccessManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDataAccountSystemAccessManagerStatics2>(m_ptr); }
 };
 
 }

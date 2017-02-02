@@ -75,7 +75,6 @@ struct IPrintCustomItemDetails :
     impl::consume<IPrintCustomItemDetails>
 {
     IPrintCustomItemDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintCustomItemDetails>(m_ptr); }
 };
 
 struct IPrintCustomItemListOptionDetails :
@@ -84,7 +83,6 @@ struct IPrintCustomItemListOptionDetails :
     impl::require<IPrintCustomItemListOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintCustomOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintItemListOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails>
 {
     IPrintCustomItemListOptionDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintCustomItemListOptionDetails>(m_ptr); }
 };
 
 struct IPrintCustomOptionDetails :
@@ -93,7 +91,6 @@ struct IPrintCustomOptionDetails :
     impl::require<IPrintCustomOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails>
 {
     IPrintCustomOptionDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintCustomOptionDetails>(m_ptr); }
 };
 
 struct IPrintCustomTextOptionDetails :
@@ -102,7 +99,6 @@ struct IPrintCustomTextOptionDetails :
     impl::require<IPrintCustomTextOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintCustomOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails>
 {
     IPrintCustomTextOptionDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintCustomTextOptionDetails>(m_ptr); }
 };
 
 struct IPrintItemListOptionDetails :
@@ -111,7 +107,6 @@ struct IPrintItemListOptionDetails :
     impl::require<IPrintItemListOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails>
 {
     IPrintItemListOptionDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintItemListOptionDetails>(m_ptr); }
 };
 
 struct IPrintNumberOptionDetails :
@@ -120,7 +115,6 @@ struct IPrintNumberOptionDetails :
     impl::require<IPrintNumberOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails>
 {
     IPrintNumberOptionDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintNumberOptionDetails>(m_ptr); }
 };
 
 struct IPrintOptionDetails :
@@ -128,7 +122,6 @@ struct IPrintOptionDetails :
     impl::consume<IPrintOptionDetails>
 {
     IPrintOptionDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintOptionDetails>(m_ptr); }
 };
 
 struct IPrintTaskOptionChangedEventArgs :
@@ -136,7 +129,6 @@ struct IPrintTaskOptionChangedEventArgs :
     impl::consume<IPrintTaskOptionChangedEventArgs>
 {
     IPrintTaskOptionChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintTaskOptionChangedEventArgs>(m_ptr); }
 };
 
 struct IPrintTaskOptionDetails :
@@ -144,7 +136,6 @@ struct IPrintTaskOptionDetails :
     impl::consume<IPrintTaskOptionDetails>
 {
     IPrintTaskOptionDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintTaskOptionDetails>(m_ptr); }
 };
 
 struct IPrintTaskOptionDetailsStatic :
@@ -152,7 +143,6 @@ struct IPrintTaskOptionDetailsStatic :
     impl::consume<IPrintTaskOptionDetailsStatic>
 {
     IPrintTaskOptionDetailsStatic(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintTaskOptionDetailsStatic>(m_ptr); }
 };
 
 struct IPrintTextOptionDetails :
@@ -161,7 +151,6 @@ struct IPrintTextOptionDetails :
     impl::require<IPrintTextOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails>
 {
     IPrintTextOptionDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPrintTextOptionDetails>(m_ptr); }
 };
 
 }

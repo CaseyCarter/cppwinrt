@@ -173,7 +173,6 @@ namespace Windows::Devices::SmartCards {
 struct SmartCardPinResetHandler : Windows::IUnknown
 {
     SmartCardPinResetHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<SmartCardPinResetHandler>(m_ptr); }
     template <typename L> SmartCardPinResetHandler(L lambda);
     template <typename F> SmartCardPinResetHandler (F * function);
     template <typename O, typename M> SmartCardPinResetHandler(O * object, M method);
@@ -185,7 +184,6 @@ struct ICardAddedEventArgs :
     impl::consume<ICardAddedEventArgs>
 {
     ICardAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICardAddedEventArgs>(m_ptr); }
 };
 
 struct ICardRemovedEventArgs :
@@ -193,7 +191,6 @@ struct ICardRemovedEventArgs :
     impl::consume<ICardRemovedEventArgs>
 {
     ICardRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICardRemovedEventArgs>(m_ptr); }
 };
 
 struct ISmartCard :
@@ -201,7 +198,6 @@ struct ISmartCard :
     impl::consume<ISmartCard>
 {
     ISmartCard(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmartCard>(m_ptr); }
 };
 
 struct ISmartCardChallengeContext :
@@ -210,7 +206,6 @@ struct ISmartCardChallengeContext :
     impl::require<ISmartCardChallengeContext, Windows::Foundation::IClosable>
 {
     ISmartCardChallengeContext(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmartCardChallengeContext>(m_ptr); }
 };
 
 struct ISmartCardConnect :
@@ -218,7 +213,6 @@ struct ISmartCardConnect :
     impl::consume<ISmartCardConnect>
 {
     ISmartCardConnect(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmartCardConnect>(m_ptr); }
 };
 
 struct ISmartCardConnection :
@@ -227,7 +221,6 @@ struct ISmartCardConnection :
     impl::require<ISmartCardConnection, Windows::Foundation::IClosable>
 {
     ISmartCardConnection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmartCardConnection>(m_ptr); }
 };
 
 struct ISmartCardPinPolicy :
@@ -235,7 +228,6 @@ struct ISmartCardPinPolicy :
     impl::consume<ISmartCardPinPolicy>
 {
     ISmartCardPinPolicy(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmartCardPinPolicy>(m_ptr); }
 };
 
 struct ISmartCardPinResetDeferral :
@@ -243,7 +235,6 @@ struct ISmartCardPinResetDeferral :
     impl::consume<ISmartCardPinResetDeferral>
 {
     ISmartCardPinResetDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmartCardPinResetDeferral>(m_ptr); }
 };
 
 struct ISmartCardPinResetRequest :
@@ -251,7 +242,6 @@ struct ISmartCardPinResetRequest :
     impl::consume<ISmartCardPinResetRequest>
 {
     ISmartCardPinResetRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmartCardPinResetRequest>(m_ptr); }
 };
 
 struct ISmartCardProvisioning :
@@ -259,7 +249,6 @@ struct ISmartCardProvisioning :
     impl::consume<ISmartCardProvisioning>
 {
     ISmartCardProvisioning(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmartCardProvisioning>(m_ptr); }
 };
 
 struct ISmartCardProvisioning2 :
@@ -267,7 +256,6 @@ struct ISmartCardProvisioning2 :
     impl::consume<ISmartCardProvisioning2>
 {
     ISmartCardProvisioning2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmartCardProvisioning2>(m_ptr); }
 };
 
 struct ISmartCardProvisioningStatics :
@@ -275,7 +263,6 @@ struct ISmartCardProvisioningStatics :
     impl::consume<ISmartCardProvisioningStatics>
 {
     ISmartCardProvisioningStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmartCardProvisioningStatics>(m_ptr); }
 };
 
 struct ISmartCardProvisioningStatics2 :
@@ -283,7 +270,6 @@ struct ISmartCardProvisioningStatics2 :
     impl::consume<ISmartCardProvisioningStatics2>
 {
     ISmartCardProvisioningStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmartCardProvisioningStatics2>(m_ptr); }
 };
 
 struct ISmartCardReader :
@@ -291,7 +277,6 @@ struct ISmartCardReader :
     impl::consume<ISmartCardReader>
 {
     ISmartCardReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmartCardReader>(m_ptr); }
 };
 
 struct ISmartCardReaderStatics :
@@ -299,7 +284,6 @@ struct ISmartCardReaderStatics :
     impl::consume<ISmartCardReaderStatics>
 {
     ISmartCardReaderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISmartCardReaderStatics>(m_ptr); }
 };
 
 }

@@ -110,7 +110,6 @@ struct IAudioCaptureEffectsManager :
     impl::consume<IAudioCaptureEffectsManager>
 {
     IAudioCaptureEffectsManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioCaptureEffectsManager>(m_ptr); }
 };
 
 struct IAudioEffect :
@@ -118,7 +117,6 @@ struct IAudioEffect :
     impl::consume<IAudioEffect>
 {
     IAudioEffect(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioEffect>(m_ptr); }
 };
 
 struct IAudioEffectDefinition :
@@ -126,7 +124,6 @@ struct IAudioEffectDefinition :
     impl::consume<IAudioEffectDefinition>
 {
     IAudioEffectDefinition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioEffectDefinition>(m_ptr); }
 };
 
 struct IAudioEffectDefinitionFactory :
@@ -134,7 +131,6 @@ struct IAudioEffectDefinitionFactory :
     impl::consume<IAudioEffectDefinitionFactory>
 {
     IAudioEffectDefinitionFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioEffectDefinitionFactory>(m_ptr); }
 };
 
 struct IAudioEffectsManagerStatics :
@@ -142,7 +138,6 @@ struct IAudioEffectsManagerStatics :
     impl::consume<IAudioEffectsManagerStatics>
 {
     IAudioEffectsManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioEffectsManagerStatics>(m_ptr); }
 };
 
 struct IAudioRenderEffectsManager :
@@ -150,7 +145,6 @@ struct IAudioRenderEffectsManager :
     impl::consume<IAudioRenderEffectsManager>
 {
     IAudioRenderEffectsManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioRenderEffectsManager>(m_ptr); }
 };
 
 struct IAudioRenderEffectsManager2 :
@@ -158,7 +152,6 @@ struct IAudioRenderEffectsManager2 :
     impl::consume<IAudioRenderEffectsManager2>
 {
     IAudioRenderEffectsManager2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioRenderEffectsManager2>(m_ptr); }
 };
 
 struct IBasicAudioEffect :
@@ -167,7 +160,6 @@ struct IBasicAudioEffect :
     impl::require<IBasicAudioEffect, Windows::Media::IMediaExtension>
 {
     IBasicAudioEffect(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBasicAudioEffect>(m_ptr); }
 };
 
 struct IBasicVideoEffect :
@@ -176,7 +168,6 @@ struct IBasicVideoEffect :
     impl::require<IBasicVideoEffect, Windows::Media::IMediaExtension>
 {
     IBasicVideoEffect(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBasicVideoEffect>(m_ptr); }
 };
 
 struct ICompositeVideoFrameContext :
@@ -184,7 +175,6 @@ struct ICompositeVideoFrameContext :
     impl::consume<ICompositeVideoFrameContext>
 {
     ICompositeVideoFrameContext(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICompositeVideoFrameContext>(m_ptr); }
 };
 
 struct IProcessAudioFrameContext :
@@ -192,7 +182,6 @@ struct IProcessAudioFrameContext :
     impl::consume<IProcessAudioFrameContext>
 {
     IProcessAudioFrameContext(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProcessAudioFrameContext>(m_ptr); }
 };
 
 struct IProcessVideoFrameContext :
@@ -200,7 +189,6 @@ struct IProcessVideoFrameContext :
     impl::consume<IProcessVideoFrameContext>
 {
     IProcessVideoFrameContext(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProcessVideoFrameContext>(m_ptr); }
 };
 
 struct IVideoCompositor :
@@ -209,7 +197,6 @@ struct IVideoCompositor :
     impl::require<IVideoCompositor, Windows::Media::IMediaExtension>
 {
     IVideoCompositor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoCompositor>(m_ptr); }
 };
 
 struct IVideoCompositorDefinition :
@@ -217,7 +204,6 @@ struct IVideoCompositorDefinition :
     impl::consume<IVideoCompositorDefinition>
 {
     IVideoCompositorDefinition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoCompositorDefinition>(m_ptr); }
 };
 
 struct IVideoCompositorDefinitionFactory :
@@ -225,7 +211,6 @@ struct IVideoCompositorDefinitionFactory :
     impl::consume<IVideoCompositorDefinitionFactory>
 {
     IVideoCompositorDefinitionFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoCompositorDefinitionFactory>(m_ptr); }
 };
 
 struct IVideoEffectDefinition :
@@ -233,7 +218,6 @@ struct IVideoEffectDefinition :
     impl::consume<IVideoEffectDefinition>
 {
     IVideoEffectDefinition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoEffectDefinition>(m_ptr); }
 };
 
 struct IVideoEffectDefinitionFactory :
@@ -241,7 +225,6 @@ struct IVideoEffectDefinitionFactory :
     impl::consume<IVideoEffectDefinitionFactory>
 {
     IVideoEffectDefinitionFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoEffectDefinitionFactory>(m_ptr); }
 };
 
 struct IVideoTransformEffectDefinition :
@@ -250,7 +233,6 @@ struct IVideoTransformEffectDefinition :
     impl::require<IVideoTransformEffectDefinition, Windows::Media::Effects::IVideoEffectDefinition>
 {
     IVideoTransformEffectDefinition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoTransformEffectDefinition>(m_ptr); }
 };
 
 }

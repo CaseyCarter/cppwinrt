@@ -175,47 +175,47 @@ namespace Windows::ApplicationModel::Contacts::Provider {
 template <typename D> hstring impl_IContactRemovedEventArgs<D>::Id() const
 {
     hstring value;
-    check_hresult(static_cast<const IContactRemovedEventArgs &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IContactRemovedEventArgs)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::Provider::AddContactResult impl_IContactPickerUI<D>::AddContact(hstring_ref id, const Windows::ApplicationModel::Contacts::Contact & contact) const
 {
     Windows::ApplicationModel::Contacts::Provider::AddContactResult result {};
-    check_hresult(static_cast<const IContactPickerUI &>(static_cast<const D &>(*this))->abi_AddContact(get(id), get(contact), &result));
+    check_hresult(WINRT_SHIM(IContactPickerUI)->abi_AddContact(get(id), get(contact), &result));
     return result;
 }
 
 template <typename D> void impl_IContactPickerUI<D>::RemoveContact(hstring_ref id) const
 {
-    check_hresult(static_cast<const IContactPickerUI &>(static_cast<const D &>(*this))->abi_RemoveContact(get(id)));
+    check_hresult(WINRT_SHIM(IContactPickerUI)->abi_RemoveContact(get(id)));
 }
 
 template <typename D> bool impl_IContactPickerUI<D>::ContainsContact(hstring_ref id) const
 {
     bool isContained {};
-    check_hresult(static_cast<const IContactPickerUI &>(static_cast<const D &>(*this))->abi_ContainsContact(get(id), &isContained));
+    check_hresult(WINRT_SHIM(IContactPickerUI)->abi_ContainsContact(get(id), &isContained));
     return isContained;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IContactPickerUI<D>::DesiredFields() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IContactPickerUI &>(static_cast<const D &>(*this))->get_DesiredFields(put(value)));
+    check_hresult(WINRT_SHIM(IContactPickerUI)->get_DesiredFields(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactSelectionMode impl_IContactPickerUI<D>::SelectionMode() const
 {
     Windows::ApplicationModel::Contacts::ContactSelectionMode value {};
-    check_hresult(static_cast<const IContactPickerUI &>(static_cast<const D &>(*this))->get_SelectionMode(&value));
+    check_hresult(WINRT_SHIM(IContactPickerUI)->get_SelectionMode(&value));
     return value;
 }
 
 template <typename D> event_token impl_IContactPickerUI<D>::ContactRemoved(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::Provider::ContactPickerUI, Windows::ApplicationModel::Contacts::Provider::ContactRemovedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IContactPickerUI &>(static_cast<const D &>(*this))->add_ContactRemoved(get(handler), &token));
+    check_hresult(WINRT_SHIM(IContactPickerUI)->add_ContactRemoved(get(handler), &token));
     return token;
 }
 
@@ -226,20 +226,20 @@ template <typename D> event_revoker<IContactPickerUI> impl_IContactPickerUI<D>::
 
 template <typename D> void impl_IContactPickerUI<D>::ContactRemoved(event_token token) const
 {
-    check_hresult(static_cast<const IContactPickerUI &>(static_cast<const D &>(*this))->remove_ContactRemoved(token));
+    check_hresult(WINRT_SHIM(IContactPickerUI)->remove_ContactRemoved(token));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::Provider::AddContactResult impl_IContactPickerUI2<D>::AddContact(const Windows::ApplicationModel::Contacts::Contact & contact) const
 {
     Windows::ApplicationModel::Contacts::Provider::AddContactResult result {};
-    check_hresult(static_cast<const IContactPickerUI2 &>(static_cast<const D &>(*this))->abi_AddContact(get(contact), &result));
+    check_hresult(WINRT_SHIM(IContactPickerUI2)->abi_AddContact(get(contact), &result));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<winrt::Windows::ApplicationModel::Contacts::ContactFieldType> impl_IContactPickerUI2<D>::DesiredFieldsWithContactFieldType() const
 {
     Windows::Foundation::Collections::IVector<winrt::Windows::ApplicationModel::Contacts::ContactFieldType> value;
-    check_hresult(static_cast<const IContactPickerUI2 &>(static_cast<const D &>(*this))->get_DesiredFieldsWithContactFieldType(put(value)));
+    check_hresult(WINRT_SHIM(IContactPickerUI2)->get_DesiredFieldsWithContactFieldType(put(value)));
     return value;
 }
 

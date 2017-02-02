@@ -71,7 +71,6 @@ struct IAdcChannel :
     impl::require<IAdcChannel, Windows::Foundation::IClosable>
 {
     IAdcChannel(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdcChannel>(m_ptr); }
 };
 
 struct IAdcController :
@@ -79,7 +78,6 @@ struct IAdcController :
     impl::consume<IAdcController>
 {
     IAdcController(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdcController>(m_ptr); }
 };
 
 struct IAdcControllerStatics :
@@ -87,7 +85,6 @@ struct IAdcControllerStatics :
     impl::consume<IAdcControllerStatics>
 {
     IAdcControllerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdcControllerStatics>(m_ptr); }
 };
 
 struct IAdcControllerStatics2 :
@@ -95,7 +92,6 @@ struct IAdcControllerStatics2 :
     impl::consume<IAdcControllerStatics2>
 {
     IAdcControllerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAdcControllerStatics2>(m_ptr); }
 };
 
 }

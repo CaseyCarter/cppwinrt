@@ -292,7 +292,6 @@ namespace Windows::ApplicationModel::DataTransfer {
 struct DataProviderHandler : Windows::IUnknown
 {
     DataProviderHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<DataProviderHandler>(m_ptr); }
     template <typename L> DataProviderHandler(L lambda);
     template <typename F> DataProviderHandler (F * function);
     template <typename O, typename M> DataProviderHandler(O * object, M method);
@@ -304,7 +303,6 @@ struct IClipboardStatics :
     impl::consume<IClipboardStatics>
 {
     IClipboardStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IClipboardStatics>(m_ptr); }
 };
 
 struct IDataPackage :
@@ -312,7 +310,6 @@ struct IDataPackage :
     impl::consume<IDataPackage>
 {
     IDataPackage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataPackage>(m_ptr); }
 };
 
 struct IDataPackage2 :
@@ -320,7 +317,6 @@ struct IDataPackage2 :
     impl::consume<IDataPackage2>
 {
     IDataPackage2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataPackage2>(m_ptr); }
 };
 
 struct IDataPackagePropertySet :
@@ -329,7 +325,6 @@ struct IDataPackagePropertySet :
     impl::require<IDataPackagePropertySet, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>, Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>>
 {
     IDataPackagePropertySet(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataPackagePropertySet>(m_ptr); }
 };
 
 struct IDataPackagePropertySet2 :
@@ -337,7 +332,6 @@ struct IDataPackagePropertySet2 :
     impl::consume<IDataPackagePropertySet2>
 {
     IDataPackagePropertySet2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataPackagePropertySet2>(m_ptr); }
 };
 
 struct IDataPackagePropertySet3 :
@@ -345,7 +339,6 @@ struct IDataPackagePropertySet3 :
     impl::consume<IDataPackagePropertySet3>
 {
     IDataPackagePropertySet3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataPackagePropertySet3>(m_ptr); }
 };
 
 struct IDataPackagePropertySetView :
@@ -354,7 +347,6 @@ struct IDataPackagePropertySetView :
     impl::require<IDataPackagePropertySetView, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>, Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>>
 {
     IDataPackagePropertySetView(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataPackagePropertySetView>(m_ptr); }
 };
 
 struct IDataPackagePropertySetView2 :
@@ -362,7 +354,6 @@ struct IDataPackagePropertySetView2 :
     impl::consume<IDataPackagePropertySetView2>
 {
     IDataPackagePropertySetView2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataPackagePropertySetView2>(m_ptr); }
 };
 
 struct IDataPackagePropertySetView3 :
@@ -370,7 +361,6 @@ struct IDataPackagePropertySetView3 :
     impl::consume<IDataPackagePropertySetView3>
 {
     IDataPackagePropertySetView3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataPackagePropertySetView3>(m_ptr); }
 };
 
 struct IDataPackageView :
@@ -378,7 +368,6 @@ struct IDataPackageView :
     impl::consume<IDataPackageView>
 {
     IDataPackageView(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataPackageView>(m_ptr); }
 };
 
 struct IDataPackageView2 :
@@ -386,7 +375,6 @@ struct IDataPackageView2 :
     impl::consume<IDataPackageView2>
 {
     IDataPackageView2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataPackageView2>(m_ptr); }
 };
 
 struct IDataPackageView3 :
@@ -394,7 +382,6 @@ struct IDataPackageView3 :
     impl::consume<IDataPackageView3>
 {
     IDataPackageView3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataPackageView3>(m_ptr); }
 };
 
 struct IDataPackageView4 :
@@ -402,7 +389,6 @@ struct IDataPackageView4 :
     impl::consume<IDataPackageView4>
 {
     IDataPackageView4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataPackageView4>(m_ptr); }
 };
 
 struct IDataProviderDeferral :
@@ -410,7 +396,6 @@ struct IDataProviderDeferral :
     impl::consume<IDataProviderDeferral>
 {
     IDataProviderDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataProviderDeferral>(m_ptr); }
 };
 
 struct IDataProviderRequest :
@@ -418,7 +403,6 @@ struct IDataProviderRequest :
     impl::consume<IDataProviderRequest>
 {
     IDataProviderRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataProviderRequest>(m_ptr); }
 };
 
 struct IDataRequest :
@@ -426,7 +410,6 @@ struct IDataRequest :
     impl::consume<IDataRequest>
 {
     IDataRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataRequest>(m_ptr); }
 };
 
 struct IDataRequestDeferral :
@@ -434,7 +417,6 @@ struct IDataRequestDeferral :
     impl::consume<IDataRequestDeferral>
 {
     IDataRequestDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataRequestDeferral>(m_ptr); }
 };
 
 struct IDataRequestedEventArgs :
@@ -442,7 +424,6 @@ struct IDataRequestedEventArgs :
     impl::consume<IDataRequestedEventArgs>
 {
     IDataRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataRequestedEventArgs>(m_ptr); }
 };
 
 struct IDataTransferManager :
@@ -450,7 +431,6 @@ struct IDataTransferManager :
     impl::consume<IDataTransferManager>
 {
     IDataTransferManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataTransferManager>(m_ptr); }
 };
 
 struct IDataTransferManagerStatics :
@@ -458,7 +438,6 @@ struct IDataTransferManagerStatics :
     impl::consume<IDataTransferManagerStatics>
 {
     IDataTransferManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataTransferManagerStatics>(m_ptr); }
 };
 
 struct IDataTransferManagerStatics2 :
@@ -466,7 +445,6 @@ struct IDataTransferManagerStatics2 :
     impl::consume<IDataTransferManagerStatics2>
 {
     IDataTransferManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataTransferManagerStatics2>(m_ptr); }
 };
 
 struct IHtmlFormatHelperStatics :
@@ -474,7 +452,6 @@ struct IHtmlFormatHelperStatics :
     impl::consume<IHtmlFormatHelperStatics>
 {
     IHtmlFormatHelperStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHtmlFormatHelperStatics>(m_ptr); }
 };
 
 struct IOperationCompletedEventArgs :
@@ -482,7 +459,6 @@ struct IOperationCompletedEventArgs :
     impl::consume<IOperationCompletedEventArgs>
 {
     IOperationCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOperationCompletedEventArgs>(m_ptr); }
 };
 
 struct IOperationCompletedEventArgs2 :
@@ -490,7 +466,6 @@ struct IOperationCompletedEventArgs2 :
     impl::consume<IOperationCompletedEventArgs2>
 {
     IOperationCompletedEventArgs2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOperationCompletedEventArgs2>(m_ptr); }
 };
 
 struct ISharedStorageAccessManagerStatics :
@@ -498,7 +473,6 @@ struct ISharedStorageAccessManagerStatics :
     impl::consume<ISharedStorageAccessManagerStatics>
 {
     ISharedStorageAccessManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISharedStorageAccessManagerStatics>(m_ptr); }
 };
 
 struct IStandardDataFormatsStatics :
@@ -506,7 +480,6 @@ struct IStandardDataFormatsStatics :
     impl::consume<IStandardDataFormatsStatics>
 {
     IStandardDataFormatsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStandardDataFormatsStatics>(m_ptr); }
 };
 
 struct IStandardDataFormatsStatics2 :
@@ -514,7 +487,6 @@ struct IStandardDataFormatsStatics2 :
     impl::consume<IStandardDataFormatsStatics2>
 {
     IStandardDataFormatsStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStandardDataFormatsStatics2>(m_ptr); }
 };
 
 struct ITargetApplicationChosenEventArgs :
@@ -522,7 +494,6 @@ struct ITargetApplicationChosenEventArgs :
     impl::consume<ITargetApplicationChosenEventArgs>
 {
     ITargetApplicationChosenEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITargetApplicationChosenEventArgs>(m_ptr); }
 };
 
 }

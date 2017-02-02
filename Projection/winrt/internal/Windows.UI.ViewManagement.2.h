@@ -64,7 +64,6 @@ struct IAccessibilitySettings :
     impl::consume<IAccessibilitySettings>
 {
     IAccessibilitySettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccessibilitySettings>(m_ptr); }
 };
 
 struct IActivationViewSwitcher :
@@ -72,7 +71,6 @@ struct IActivationViewSwitcher :
     impl::consume<IActivationViewSwitcher>
 {
     IActivationViewSwitcher(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IActivationViewSwitcher>(m_ptr); }
 };
 
 struct IApplicationView :
@@ -80,7 +78,6 @@ struct IApplicationView :
     impl::consume<IApplicationView>
 {
     IApplicationView(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationView>(m_ptr); }
 };
 
 struct IApplicationView2 :
@@ -88,7 +85,6 @@ struct IApplicationView2 :
     impl::consume<IApplicationView2>
 {
     IApplicationView2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationView2>(m_ptr); }
 };
 
 struct IApplicationView3 :
@@ -96,7 +92,6 @@ struct IApplicationView3 :
     impl::consume<IApplicationView3>
 {
     IApplicationView3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationView3>(m_ptr); }
 };
 
 struct IApplicationViewConsolidatedEventArgs :
@@ -104,7 +99,6 @@ struct IApplicationViewConsolidatedEventArgs :
     impl::consume<IApplicationViewConsolidatedEventArgs>
 {
     IApplicationViewConsolidatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationViewConsolidatedEventArgs>(m_ptr); }
 };
 
 struct IApplicationViewFullscreenStatics :
@@ -112,7 +106,6 @@ struct IApplicationViewFullscreenStatics :
     impl::consume<IApplicationViewFullscreenStatics>
 {
     IApplicationViewFullscreenStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationViewFullscreenStatics>(m_ptr); }
 };
 
 struct IApplicationViewInteropStatics :
@@ -120,7 +113,6 @@ struct IApplicationViewInteropStatics :
     impl::consume<IApplicationViewInteropStatics>
 {
     IApplicationViewInteropStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationViewInteropStatics>(m_ptr); }
 };
 
 struct IApplicationViewScaling :
@@ -128,7 +120,6 @@ struct IApplicationViewScaling :
     impl::consume<IApplicationViewScaling>
 {
     IApplicationViewScaling(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationViewScaling>(m_ptr); }
 };
 
 struct IApplicationViewScalingStatics :
@@ -136,7 +127,6 @@ struct IApplicationViewScalingStatics :
     impl::consume<IApplicationViewScalingStatics>
 {
     IApplicationViewScalingStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationViewScalingStatics>(m_ptr); }
 };
 
 struct IApplicationViewStatics :
@@ -144,7 +134,6 @@ struct IApplicationViewStatics :
     impl::consume<IApplicationViewStatics>
 {
     IApplicationViewStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationViewStatics>(m_ptr); }
 };
 
 struct IApplicationViewStatics2 :
@@ -152,7 +141,6 @@ struct IApplicationViewStatics2 :
     impl::consume<IApplicationViewStatics2>
 {
     IApplicationViewStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationViewStatics2>(m_ptr); }
 };
 
 struct IApplicationViewStatics3 :
@@ -160,7 +148,6 @@ struct IApplicationViewStatics3 :
     impl::consume<IApplicationViewStatics3>
 {
     IApplicationViewStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationViewStatics3>(m_ptr); }
 };
 
 struct IApplicationViewSwitcherStatics :
@@ -168,7 +155,6 @@ struct IApplicationViewSwitcherStatics :
     impl::consume<IApplicationViewSwitcherStatics>
 {
     IApplicationViewSwitcherStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationViewSwitcherStatics>(m_ptr); }
 };
 
 struct IApplicationViewSwitcherStatics2 :
@@ -176,7 +162,6 @@ struct IApplicationViewSwitcherStatics2 :
     impl::consume<IApplicationViewSwitcherStatics2>
 {
     IApplicationViewSwitcherStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationViewSwitcherStatics2>(m_ptr); }
 };
 
 struct IApplicationViewTitleBar :
@@ -184,7 +169,6 @@ struct IApplicationViewTitleBar :
     impl::consume<IApplicationViewTitleBar>
 {
     IApplicationViewTitleBar(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationViewTitleBar>(m_ptr); }
 };
 
 struct IApplicationViewTransferContext :
@@ -192,7 +176,6 @@ struct IApplicationViewTransferContext :
     impl::consume<IApplicationViewTransferContext>
 {
     IApplicationViewTransferContext(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationViewTransferContext>(m_ptr); }
 };
 
 struct IApplicationViewTransferContextStatics :
@@ -200,7 +183,6 @@ struct IApplicationViewTransferContextStatics :
     impl::consume<IApplicationViewTransferContextStatics>
 {
     IApplicationViewTransferContextStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IApplicationViewTransferContextStatics>(m_ptr); }
 };
 
 struct IInputPane :
@@ -208,7 +190,6 @@ struct IInputPane :
     impl::consume<IInputPane>
 {
     IInputPane(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInputPane>(m_ptr); }
 };
 
 struct IInputPane2 :
@@ -216,7 +197,6 @@ struct IInputPane2 :
     impl::consume<IInputPane2>
 {
     IInputPane2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInputPane2>(m_ptr); }
 };
 
 struct IInputPaneControl :
@@ -224,7 +204,6 @@ struct IInputPaneControl :
     impl::consume<IInputPaneControl>
 {
     IInputPaneControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInputPaneControl>(m_ptr); }
 };
 
 struct IInputPaneStatics :
@@ -232,7 +211,6 @@ struct IInputPaneStatics :
     impl::consume<IInputPaneStatics>
 {
     IInputPaneStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInputPaneStatics>(m_ptr); }
 };
 
 struct IInputPaneVisibilityEventArgs :
@@ -240,7 +218,6 @@ struct IInputPaneVisibilityEventArgs :
     impl::consume<IInputPaneVisibilityEventArgs>
 {
     IInputPaneVisibilityEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInputPaneVisibilityEventArgs>(m_ptr); }
 };
 
 struct IProjectionManagerStatics :
@@ -248,7 +225,6 @@ struct IProjectionManagerStatics :
     impl::consume<IProjectionManagerStatics>
 {
     IProjectionManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProjectionManagerStatics>(m_ptr); }
 };
 
 struct IProjectionManagerStatics2 :
@@ -256,7 +232,6 @@ struct IProjectionManagerStatics2 :
     impl::consume<IProjectionManagerStatics2>
 {
     IProjectionManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProjectionManagerStatics2>(m_ptr); }
 };
 
 struct IUISettings :
@@ -264,7 +239,6 @@ struct IUISettings :
     impl::consume<IUISettings>
 {
     IUISettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUISettings>(m_ptr); }
 };
 
 struct IUISettings2 :
@@ -272,7 +246,6 @@ struct IUISettings2 :
     impl::consume<IUISettings2>
 {
     IUISettings2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUISettings2>(m_ptr); }
 };
 
 struct IUISettings3 :
@@ -280,7 +253,6 @@ struct IUISettings3 :
     impl::consume<IUISettings3>
 {
     IUISettings3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUISettings3>(m_ptr); }
 };
 
 struct IUIViewSettings :
@@ -288,7 +260,6 @@ struct IUIViewSettings :
     impl::consume<IUIViewSettings>
 {
     IUIViewSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUIViewSettings>(m_ptr); }
 };
 
 struct IUIViewSettingsStatics :
@@ -296,7 +267,6 @@ struct IUIViewSettingsStatics :
     impl::consume<IUIViewSettingsStatics>
 {
     IUIViewSettingsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUIViewSettingsStatics>(m_ptr); }
 };
 
 }

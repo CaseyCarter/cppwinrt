@@ -37,7 +37,6 @@ namespace Windows::Graphics::Display {
 struct DisplayPropertiesEventHandler : Windows::IUnknown
 {
     DisplayPropertiesEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<DisplayPropertiesEventHandler>(m_ptr); }
     template <typename L> DisplayPropertiesEventHandler(L lambda);
     template <typename F> DisplayPropertiesEventHandler (F * function);
     template <typename O, typename M> DisplayPropertiesEventHandler(O * object, M method);
@@ -49,7 +48,6 @@ struct IDisplayInformation :
     impl::consume<IDisplayInformation>
 {
     IDisplayInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDisplayInformation>(m_ptr); }
 };
 
 struct IDisplayInformation2 :
@@ -58,7 +56,6 @@ struct IDisplayInformation2 :
     impl::require<IDisplayInformation2, Windows::Graphics::Display::IDisplayInformation>
 {
     IDisplayInformation2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDisplayInformation2>(m_ptr); }
 };
 
 struct IDisplayInformation3 :
@@ -66,7 +63,6 @@ struct IDisplayInformation3 :
     impl::consume<IDisplayInformation3>
 {
     IDisplayInformation3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDisplayInformation3>(m_ptr); }
 };
 
 struct IDisplayInformation4 :
@@ -74,7 +70,6 @@ struct IDisplayInformation4 :
     impl::consume<IDisplayInformation4>
 {
     IDisplayInformation4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDisplayInformation4>(m_ptr); }
 };
 
 struct IDisplayInformationStatics :
@@ -82,7 +77,6 @@ struct IDisplayInformationStatics :
     impl::consume<IDisplayInformationStatics>
 {
     IDisplayInformationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDisplayInformationStatics>(m_ptr); }
 };
 
 struct IDisplayPropertiesStatics :
@@ -90,7 +84,6 @@ struct IDisplayPropertiesStatics :
     impl::consume<IDisplayPropertiesStatics>
 {
     IDisplayPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDisplayPropertiesStatics>(m_ptr); }
 };
 
 }

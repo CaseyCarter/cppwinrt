@@ -234,7 +234,6 @@ struct IWalletBarcode :
     impl::consume<IWalletBarcode>
 {
     IWalletBarcode(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWalletBarcode>(m_ptr); }
 };
 
 struct IWalletBarcodeFactory :
@@ -242,7 +241,6 @@ struct IWalletBarcodeFactory :
     impl::consume<IWalletBarcodeFactory>
 {
     IWalletBarcodeFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWalletBarcodeFactory>(m_ptr); }
 };
 
 struct IWalletItem :
@@ -250,7 +248,6 @@ struct IWalletItem :
     impl::consume<IWalletItem>
 {
     IWalletItem(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWalletItem>(m_ptr); }
 };
 
 struct IWalletItemCustomProperty :
@@ -258,7 +255,6 @@ struct IWalletItemCustomProperty :
     impl::consume<IWalletItemCustomProperty>
 {
     IWalletItemCustomProperty(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWalletItemCustomProperty>(m_ptr); }
 };
 
 struct IWalletItemCustomPropertyFactory :
@@ -266,7 +262,6 @@ struct IWalletItemCustomPropertyFactory :
     impl::consume<IWalletItemCustomPropertyFactory>
 {
     IWalletItemCustomPropertyFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWalletItemCustomPropertyFactory>(m_ptr); }
 };
 
 struct IWalletItemFactory :
@@ -274,7 +269,6 @@ struct IWalletItemFactory :
     impl::consume<IWalletItemFactory>
 {
     IWalletItemFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWalletItemFactory>(m_ptr); }
 };
 
 struct IWalletItemStore :
@@ -282,7 +276,6 @@ struct IWalletItemStore :
     impl::consume<IWalletItemStore>
 {
     IWalletItemStore(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWalletItemStore>(m_ptr); }
 };
 
 struct IWalletItemStore2 :
@@ -290,7 +283,6 @@ struct IWalletItemStore2 :
     impl::consume<IWalletItemStore2>
 {
     IWalletItemStore2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWalletItemStore2>(m_ptr); }
 };
 
 struct IWalletManagerStatics :
@@ -298,7 +290,6 @@ struct IWalletManagerStatics :
     impl::consume<IWalletManagerStatics>
 {
     IWalletManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWalletManagerStatics>(m_ptr); }
 };
 
 struct IWalletRelevantLocation :
@@ -306,7 +297,6 @@ struct IWalletRelevantLocation :
     impl::consume<IWalletRelevantLocation>
 {
     IWalletRelevantLocation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWalletRelevantLocation>(m_ptr); }
 };
 
 struct IWalletTransaction :
@@ -314,7 +304,6 @@ struct IWalletTransaction :
     impl::consume<IWalletTransaction>
 {
     IWalletTransaction(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWalletTransaction>(m_ptr); }
 };
 
 struct IWalletVerb :
@@ -322,7 +311,6 @@ struct IWalletVerb :
     impl::consume<IWalletVerb>
 {
     IWalletVerb(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWalletVerb>(m_ptr); }
 };
 
 struct IWalletVerbFactory :
@@ -330,7 +318,6 @@ struct IWalletVerbFactory :
     impl::consume<IWalletVerbFactory>
 {
     IWalletVerbFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWalletVerbFactory>(m_ptr); }
 };
 
 }

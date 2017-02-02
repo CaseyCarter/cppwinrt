@@ -2964,1237 +2964,1237 @@ namespace Windows::UI::Xaml::Automation {
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAnnotationPatternIdentifiersStatics<D>::AnnotationTypeIdProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAnnotationPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_AnnotationTypeIdProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAnnotationPatternIdentifiersStatics)->get_AnnotationTypeIdProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAnnotationPatternIdentifiersStatics<D>::AnnotationTypeNameProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAnnotationPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_AnnotationTypeNameProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAnnotationPatternIdentifiersStatics)->get_AnnotationTypeNameProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAnnotationPatternIdentifiersStatics<D>::AuthorProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAnnotationPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_AuthorProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAnnotationPatternIdentifiersStatics)->get_AuthorProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAnnotationPatternIdentifiersStatics<D>::DateTimeProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAnnotationPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_DateTimeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAnnotationPatternIdentifiersStatics)->get_DateTimeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAnnotationPatternIdentifiersStatics<D>::TargetProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAnnotationPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_TargetProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAnnotationPatternIdentifiersStatics)->get_TargetProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::AcceleratorKeyProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_AcceleratorKeyProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_AcceleratorKeyProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::AccessKeyProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_AccessKeyProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_AccessKeyProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::AutomationIdProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_AutomationIdProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_AutomationIdProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::BoundingRectangleProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_BoundingRectangleProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_BoundingRectangleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::ClassNameProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_ClassNameProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_ClassNameProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::ClickablePointProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_ClickablePointProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_ClickablePointProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::ControlTypeProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_ControlTypeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_ControlTypeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::HasKeyboardFocusProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_HasKeyboardFocusProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_HasKeyboardFocusProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::HelpTextProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_HelpTextProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_HelpTextProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::IsContentElementProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_IsContentElementProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_IsContentElementProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::IsControlElementProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_IsControlElementProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_IsControlElementProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::IsEnabledProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_IsEnabledProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_IsEnabledProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::IsKeyboardFocusableProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_IsKeyboardFocusableProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_IsKeyboardFocusableProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::IsOffscreenProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_IsOffscreenProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_IsOffscreenProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::IsPasswordProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_IsPasswordProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_IsPasswordProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::IsRequiredForFormProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_IsRequiredForFormProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_IsRequiredForFormProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::ItemStatusProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_ItemStatusProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_ItemStatusProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::ItemTypeProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_ItemTypeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_ItemTypeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::LabeledByProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_LabeledByProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_LabeledByProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::LocalizedControlTypeProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_LocalizedControlTypeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_LocalizedControlTypeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::NameProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_NameProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_NameProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::OrientationProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_OrientationProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_OrientationProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics<D>::LiveSettingProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics &>(static_cast<const D &>(*this))->get_LiveSettingProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics)->get_LiveSettingProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics2<D>::ControlledPeersProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics2 &>(static_cast<const D &>(*this))->get_ControlledPeersProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics2)->get_ControlledPeersProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics3<D>::PositionInSetProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics3 &>(static_cast<const D &>(*this))->get_PositionInSetProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics3)->get_PositionInSetProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics3<D>::SizeOfSetProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics3 &>(static_cast<const D &>(*this))->get_SizeOfSetProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics3)->get_SizeOfSetProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics3<D>::LevelProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics3 &>(static_cast<const D &>(*this))->get_LevelProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics3)->get_LevelProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics3<D>::AnnotationsProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics3 &>(static_cast<const D &>(*this))->get_AnnotationsProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics3)->get_AnnotationsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics4<D>::LandmarkTypeProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics4 &>(static_cast<const D &>(*this))->get_LandmarkTypeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics4)->get_LandmarkTypeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics4<D>::LocalizedLandmarkTypeProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics4 &>(static_cast<const D &>(*this))->get_LocalizedLandmarkTypeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics4)->get_LocalizedLandmarkTypeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics5<D>::IsPeripheralProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics5 &>(static_cast<const D &>(*this))->get_IsPeripheralProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics5)->get_IsPeripheralProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics5<D>::IsDataValidForFormProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics5 &>(static_cast<const D &>(*this))->get_IsDataValidForFormProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics5)->get_IsDataValidForFormProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics5<D>::FullDescriptionProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics5 &>(static_cast<const D &>(*this))->get_FullDescriptionProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics5)->get_FullDescriptionProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics5<D>::DescribedByProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics5 &>(static_cast<const D &>(*this))->get_DescribedByProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics5)->get_DescribedByProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics5<D>::FlowsToProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics5 &>(static_cast<const D &>(*this))->get_FlowsToProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics5)->get_FlowsToProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics5<D>::FlowsFromProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationElementIdentifiersStatics5 &>(static_cast<const D &>(*this))->get_FlowsFromProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics5)->get_FlowsFromProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics<D>::AcceleratorKeyProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->get_AcceleratorKeyProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->get_AcceleratorKeyProperty(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAutomationPropertiesStatics<D>::GetAcceleratorKey(const Windows::UI::Xaml::DependencyObject & element) const
 {
     hstring value;
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_GetAcceleratorKey(get(element), put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_GetAcceleratorKey(get(element), put(value)));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics<D>::SetAcceleratorKey(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_SetAcceleratorKey(get(element), get(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_SetAcceleratorKey(get(element), get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics<D>::AccessKeyProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->get_AccessKeyProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->get_AccessKeyProperty(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAutomationPropertiesStatics<D>::GetAccessKey(const Windows::UI::Xaml::DependencyObject & element) const
 {
     hstring value;
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_GetAccessKey(get(element), put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_GetAccessKey(get(element), put(value)));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics<D>::SetAccessKey(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_SetAccessKey(get(element), get(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_SetAccessKey(get(element), get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics<D>::AutomationIdProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->get_AutomationIdProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->get_AutomationIdProperty(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAutomationPropertiesStatics<D>::GetAutomationId(const Windows::UI::Xaml::DependencyObject & element) const
 {
     hstring value;
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_GetAutomationId(get(element), put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_GetAutomationId(get(element), put(value)));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics<D>::SetAutomationId(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_SetAutomationId(get(element), get(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_SetAutomationId(get(element), get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics<D>::HelpTextProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->get_HelpTextProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->get_HelpTextProperty(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAutomationPropertiesStatics<D>::GetHelpText(const Windows::UI::Xaml::DependencyObject & element) const
 {
     hstring value;
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_GetHelpText(get(element), put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_GetHelpText(get(element), put(value)));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics<D>::SetHelpText(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_SetHelpText(get(element), get(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_SetHelpText(get(element), get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics<D>::IsRequiredForFormProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->get_IsRequiredForFormProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->get_IsRequiredForFormProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IAutomationPropertiesStatics<D>::GetIsRequiredForForm(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_GetIsRequiredForForm(get(element), &value));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_GetIsRequiredForForm(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics<D>::SetIsRequiredForForm(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_SetIsRequiredForForm(get(element), value));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_SetIsRequiredForForm(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics<D>::ItemStatusProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->get_ItemStatusProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->get_ItemStatusProperty(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAutomationPropertiesStatics<D>::GetItemStatus(const Windows::UI::Xaml::DependencyObject & element) const
 {
     hstring value;
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_GetItemStatus(get(element), put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_GetItemStatus(get(element), put(value)));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics<D>::SetItemStatus(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_SetItemStatus(get(element), get(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_SetItemStatus(get(element), get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics<D>::ItemTypeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->get_ItemTypeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->get_ItemTypeProperty(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAutomationPropertiesStatics<D>::GetItemType(const Windows::UI::Xaml::DependencyObject & element) const
 {
     hstring value;
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_GetItemType(get(element), put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_GetItemType(get(element), put(value)));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics<D>::SetItemType(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_SetItemType(get(element), get(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_SetItemType(get(element), get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics<D>::LabeledByProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->get_LabeledByProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->get_LabeledByProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::UIElement impl_IAutomationPropertiesStatics<D>::GetLabeledBy(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::UI::Xaml::UIElement value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_GetLabeledBy(get(element), put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_GetLabeledBy(get(element), put(value)));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics<D>::SetLabeledBy(const Windows::UI::Xaml::DependencyObject & element, const Windows::UI::Xaml::UIElement & value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_SetLabeledBy(get(element), get(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_SetLabeledBy(get(element), get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics<D>::NameProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->get_NameProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->get_NameProperty(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAutomationPropertiesStatics<D>::GetName(const Windows::UI::Xaml::DependencyObject & element) const
 {
     hstring value;
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_GetName(get(element), put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_GetName(get(element), put(value)));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics<D>::SetName(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_SetName(get(element), get(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_SetName(get(element), get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics<D>::LiveSettingProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->get_LiveSettingProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->get_LiveSettingProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting impl_IAutomationPropertiesStatics<D>::GetLiveSetting(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting value {};
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_GetLiveSetting(get(element), &value));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_GetLiveSetting(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics<D>::SetLiveSetting(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics &>(static_cast<const D &>(*this))->abi_SetLiveSetting(get(element), value));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics)->abi_SetLiveSetting(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics2<D>::AccessibilityViewProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics2 &>(static_cast<const D &>(*this))->get_AccessibilityViewProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics2)->get_AccessibilityViewProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Peers::AccessibilityView impl_IAutomationPropertiesStatics2<D>::GetAccessibilityView(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::UI::Xaml::Automation::Peers::AccessibilityView value {};
-    check_hresult(static_cast<const IAutomationPropertiesStatics2 &>(static_cast<const D &>(*this))->abi_GetAccessibilityView(get(element), &value));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics2)->abi_GetAccessibilityView(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics2<D>::SetAccessibilityView(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Automation::Peers::AccessibilityView value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics2 &>(static_cast<const D &>(*this))->abi_SetAccessibilityView(get(element), value));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics2)->abi_SetAccessibilityView(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics2<D>::ControlledPeersProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics2 &>(static_cast<const D &>(*this))->get_ControlledPeersProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics2)->get_ControlledPeersProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::UIElement> impl_IAutomationPropertiesStatics2<D>::GetControlledPeers(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::UIElement> value;
-    check_hresult(static_cast<const IAutomationPropertiesStatics2 &>(static_cast<const D &>(*this))->abi_GetControlledPeers(get(element), put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics2)->abi_GetControlledPeers(get(element), put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics3<D>::PositionInSetProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics3 &>(static_cast<const D &>(*this))->get_PositionInSetProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics3)->get_PositionInSetProperty(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IAutomationPropertiesStatics3<D>::GetPositionInSet(const Windows::UI::Xaml::DependencyObject & element) const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAutomationPropertiesStatics3 &>(static_cast<const D &>(*this))->abi_GetPositionInSet(get(element), &value));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics3)->abi_GetPositionInSet(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics3<D>::SetPositionInSet(const Windows::UI::Xaml::DependencyObject & element, int32_t value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics3 &>(static_cast<const D &>(*this))->abi_SetPositionInSet(get(element), value));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics3)->abi_SetPositionInSet(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics3<D>::SizeOfSetProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics3 &>(static_cast<const D &>(*this))->get_SizeOfSetProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics3)->get_SizeOfSetProperty(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IAutomationPropertiesStatics3<D>::GetSizeOfSet(const Windows::UI::Xaml::DependencyObject & element) const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAutomationPropertiesStatics3 &>(static_cast<const D &>(*this))->abi_GetSizeOfSet(get(element), &value));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics3)->abi_GetSizeOfSet(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics3<D>::SetSizeOfSet(const Windows::UI::Xaml::DependencyObject & element, int32_t value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics3 &>(static_cast<const D &>(*this))->abi_SetSizeOfSet(get(element), value));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics3)->abi_SetSizeOfSet(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics3<D>::LevelProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics3 &>(static_cast<const D &>(*this))->get_LevelProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics3)->get_LevelProperty(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IAutomationPropertiesStatics3<D>::GetLevel(const Windows::UI::Xaml::DependencyObject & element) const
 {
     int32_t value {};
-    check_hresult(static_cast<const IAutomationPropertiesStatics3 &>(static_cast<const D &>(*this))->abi_GetLevel(get(element), &value));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics3)->abi_GetLevel(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics3<D>::SetLevel(const Windows::UI::Xaml::DependencyObject & element, int32_t value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics3 &>(static_cast<const D &>(*this))->abi_SetLevel(get(element), value));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics3)->abi_SetLevel(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics3<D>::AnnotationsProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics3 &>(static_cast<const D &>(*this))->get_AnnotationsProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics3)->get_AnnotationsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::AutomationAnnotation> impl_IAutomationPropertiesStatics3<D>::GetAnnotations(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::AutomationAnnotation> value;
-    check_hresult(static_cast<const IAutomationPropertiesStatics3 &>(static_cast<const D &>(*this))->abi_GetAnnotations(get(element), put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics3)->abi_GetAnnotations(get(element), put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics4<D>::LandmarkTypeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics4 &>(static_cast<const D &>(*this))->get_LandmarkTypeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics4)->get_LandmarkTypeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType impl_IAutomationPropertiesStatics4<D>::GetLandmarkType(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType value {};
-    check_hresult(static_cast<const IAutomationPropertiesStatics4 &>(static_cast<const D &>(*this))->abi_GetLandmarkType(get(element), &value));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics4)->abi_GetLandmarkType(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics4<D>::SetLandmarkType(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics4 &>(static_cast<const D &>(*this))->abi_SetLandmarkType(get(element), value));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics4)->abi_SetLandmarkType(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics4<D>::LocalizedLandmarkTypeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics4 &>(static_cast<const D &>(*this))->get_LocalizedLandmarkTypeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics4)->get_LocalizedLandmarkTypeProperty(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAutomationPropertiesStatics4<D>::GetLocalizedLandmarkType(const Windows::UI::Xaml::DependencyObject & element) const
 {
     hstring value;
-    check_hresult(static_cast<const IAutomationPropertiesStatics4 &>(static_cast<const D &>(*this))->abi_GetLocalizedLandmarkType(get(element), put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics4)->abi_GetLocalizedLandmarkType(get(element), put(value)));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics4<D>::SetLocalizedLandmarkType(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics4 &>(static_cast<const D &>(*this))->abi_SetLocalizedLandmarkType(get(element), get(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics4)->abi_SetLocalizedLandmarkType(get(element), get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics5<D>::IsPeripheralProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics5 &>(static_cast<const D &>(*this))->get_IsPeripheralProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->get_IsPeripheralProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IAutomationPropertiesStatics5<D>::GetIsPeripheral(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(static_cast<const IAutomationPropertiesStatics5 &>(static_cast<const D &>(*this))->abi_GetIsPeripheral(get(element), &value));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->abi_GetIsPeripheral(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics5<D>::SetIsPeripheral(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics5 &>(static_cast<const D &>(*this))->abi_SetIsPeripheral(get(element), value));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->abi_SetIsPeripheral(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics5<D>::IsDataValidForFormProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics5 &>(static_cast<const D &>(*this))->get_IsDataValidForFormProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->get_IsDataValidForFormProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IAutomationPropertiesStatics5<D>::GetIsDataValidForForm(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(static_cast<const IAutomationPropertiesStatics5 &>(static_cast<const D &>(*this))->abi_GetIsDataValidForForm(get(element), &value));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->abi_GetIsDataValidForForm(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics5<D>::SetIsDataValidForForm(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics5 &>(static_cast<const D &>(*this))->abi_SetIsDataValidForForm(get(element), value));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->abi_SetIsDataValidForForm(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics5<D>::FullDescriptionProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics5 &>(static_cast<const D &>(*this))->get_FullDescriptionProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->get_FullDescriptionProperty(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAutomationPropertiesStatics5<D>::GetFullDescription(const Windows::UI::Xaml::DependencyObject & element) const
 {
     hstring value;
-    check_hresult(static_cast<const IAutomationPropertiesStatics5 &>(static_cast<const D &>(*this))->abi_GetFullDescription(get(element), put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->abi_GetFullDescription(get(element), put(value)));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics5<D>::SetFullDescription(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics5 &>(static_cast<const D &>(*this))->abi_SetFullDescription(get(element), get(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->abi_SetFullDescription(get(element), get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics5<D>::LocalizedControlTypeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics5 &>(static_cast<const D &>(*this))->get_LocalizedControlTypeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->get_LocalizedControlTypeProperty(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAutomationPropertiesStatics5<D>::GetLocalizedControlType(const Windows::UI::Xaml::DependencyObject & element) const
 {
     hstring value;
-    check_hresult(static_cast<const IAutomationPropertiesStatics5 &>(static_cast<const D &>(*this))->abi_GetLocalizedControlType(get(element), put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->abi_GetLocalizedControlType(get(element), put(value)));
     return value;
 }
 
 template <typename D> void impl_IAutomationPropertiesStatics5<D>::SetLocalizedControlType(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const
 {
-    check_hresult(static_cast<const IAutomationPropertiesStatics5 &>(static_cast<const D &>(*this))->abi_SetLocalizedControlType(get(element), get(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->abi_SetLocalizedControlType(get(element), get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics5<D>::DescribedByProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics5 &>(static_cast<const D &>(*this))->get_DescribedByProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->get_DescribedByProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> impl_IAutomationPropertiesStatics5<D>::GetDescribedBy(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> value;
-    check_hresult(static_cast<const IAutomationPropertiesStatics5 &>(static_cast<const D &>(*this))->abi_GetDescribedBy(get(element), put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->abi_GetDescribedBy(get(element), put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics5<D>::FlowsToProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics5 &>(static_cast<const D &>(*this))->get_FlowsToProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->get_FlowsToProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> impl_IAutomationPropertiesStatics5<D>::GetFlowsTo(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> value;
-    check_hresult(static_cast<const IAutomationPropertiesStatics5 &>(static_cast<const D &>(*this))->abi_GetFlowsTo(get(element), put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->abi_GetFlowsTo(get(element), put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics5<D>::FlowsFromProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationPropertiesStatics5 &>(static_cast<const D &>(*this))->get_FlowsFromProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->get_FlowsFromProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> impl_IAutomationPropertiesStatics5<D>::GetFlowsFrom(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> value;
-    check_hresult(static_cast<const IAutomationPropertiesStatics5 &>(static_cast<const D &>(*this))->abi_GetFlowsFrom(get(element), put(value)));
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->abi_GetFlowsFrom(get(element), put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IDockPatternIdentifiersStatics<D>::DockPositionProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IDockPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_DockPositionProperty(put(value)));
+    check_hresult(WINRT_SHIM(IDockPatternIdentifiersStatics)->get_DockPositionProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IDragPatternIdentifiersStatics<D>::DropEffectProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IDragPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_DropEffectProperty(put(value)));
+    check_hresult(WINRT_SHIM(IDragPatternIdentifiersStatics)->get_DropEffectProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IDragPatternIdentifiersStatics<D>::DropEffectsProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IDragPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_DropEffectsProperty(put(value)));
+    check_hresult(WINRT_SHIM(IDragPatternIdentifiersStatics)->get_DropEffectsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IDragPatternIdentifiersStatics<D>::GrabbedItemsProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IDragPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_GrabbedItemsProperty(put(value)));
+    check_hresult(WINRT_SHIM(IDragPatternIdentifiersStatics)->get_GrabbedItemsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IDragPatternIdentifiersStatics<D>::IsGrabbedProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IDragPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_IsGrabbedProperty(put(value)));
+    check_hresult(WINRT_SHIM(IDragPatternIdentifiersStatics)->get_IsGrabbedProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IDropTargetPatternIdentifiersStatics<D>::DropTargetEffectProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IDropTargetPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_DropTargetEffectProperty(put(value)));
+    check_hresult(WINRT_SHIM(IDropTargetPatternIdentifiersStatics)->get_DropTargetEffectProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IDropTargetPatternIdentifiersStatics<D>::DropTargetEffectsProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IDropTargetPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_DropTargetEffectsProperty(put(value)));
+    check_hresult(WINRT_SHIM(IDropTargetPatternIdentifiersStatics)->get_DropTargetEffectsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IExpandCollapsePatternIdentifiersStatics<D>::ExpandCollapseStateProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IExpandCollapsePatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_ExpandCollapseStateProperty(put(value)));
+    check_hresult(WINRT_SHIM(IExpandCollapsePatternIdentifiersStatics)->get_ExpandCollapseStateProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IGridItemPatternIdentifiersStatics<D>::ColumnProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IGridItemPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_ColumnProperty(put(value)));
+    check_hresult(WINRT_SHIM(IGridItemPatternIdentifiersStatics)->get_ColumnProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IGridItemPatternIdentifiersStatics<D>::ColumnSpanProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IGridItemPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_ColumnSpanProperty(put(value)));
+    check_hresult(WINRT_SHIM(IGridItemPatternIdentifiersStatics)->get_ColumnSpanProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IGridItemPatternIdentifiersStatics<D>::ContainingGridProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IGridItemPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_ContainingGridProperty(put(value)));
+    check_hresult(WINRT_SHIM(IGridItemPatternIdentifiersStatics)->get_ContainingGridProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IGridItemPatternIdentifiersStatics<D>::RowProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IGridItemPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_RowProperty(put(value)));
+    check_hresult(WINRT_SHIM(IGridItemPatternIdentifiersStatics)->get_RowProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IGridItemPatternIdentifiersStatics<D>::RowSpanProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IGridItemPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_RowSpanProperty(put(value)));
+    check_hresult(WINRT_SHIM(IGridItemPatternIdentifiersStatics)->get_RowSpanProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IGridPatternIdentifiersStatics<D>::ColumnCountProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IGridPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_ColumnCountProperty(put(value)));
+    check_hresult(WINRT_SHIM(IGridPatternIdentifiersStatics)->get_ColumnCountProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IGridPatternIdentifiersStatics<D>::RowCountProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IGridPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_RowCountProperty(put(value)));
+    check_hresult(WINRT_SHIM(IGridPatternIdentifiersStatics)->get_RowCountProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IMultipleViewPatternIdentifiersStatics<D>::CurrentViewProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IMultipleViewPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_CurrentViewProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMultipleViewPatternIdentifiersStatics)->get_CurrentViewProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IMultipleViewPatternIdentifiersStatics<D>::SupportedViewsProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IMultipleViewPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_SupportedViewsProperty(put(value)));
+    check_hresult(WINRT_SHIM(IMultipleViewPatternIdentifiersStatics)->get_SupportedViewsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IRangeValuePatternIdentifiersStatics<D>::IsReadOnlyProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IRangeValuePatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_IsReadOnlyProperty(put(value)));
+    check_hresult(WINRT_SHIM(IRangeValuePatternIdentifiersStatics)->get_IsReadOnlyProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IRangeValuePatternIdentifiersStatics<D>::LargeChangeProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IRangeValuePatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_LargeChangeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IRangeValuePatternIdentifiersStatics)->get_LargeChangeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IRangeValuePatternIdentifiersStatics<D>::MaximumProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IRangeValuePatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_MaximumProperty(put(value)));
+    check_hresult(WINRT_SHIM(IRangeValuePatternIdentifiersStatics)->get_MaximumProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IRangeValuePatternIdentifiersStatics<D>::MinimumProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IRangeValuePatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_MinimumProperty(put(value)));
+    check_hresult(WINRT_SHIM(IRangeValuePatternIdentifiersStatics)->get_MinimumProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IRangeValuePatternIdentifiersStatics<D>::SmallChangeProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IRangeValuePatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_SmallChangeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IRangeValuePatternIdentifiersStatics)->get_SmallChangeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IRangeValuePatternIdentifiersStatics<D>::ValueProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IRangeValuePatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_ValueProperty(put(value)));
+    check_hresult(WINRT_SHIM(IRangeValuePatternIdentifiersStatics)->get_ValueProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IScrollPatternIdentifiersStatics<D>::HorizontallyScrollableProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IScrollPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_HorizontallyScrollableProperty(put(value)));
+    check_hresult(WINRT_SHIM(IScrollPatternIdentifiersStatics)->get_HorizontallyScrollableProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IScrollPatternIdentifiersStatics<D>::HorizontalScrollPercentProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IScrollPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_HorizontalScrollPercentProperty(put(value)));
+    check_hresult(WINRT_SHIM(IScrollPatternIdentifiersStatics)->get_HorizontalScrollPercentProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IScrollPatternIdentifiersStatics<D>::HorizontalViewSizeProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IScrollPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_HorizontalViewSizeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IScrollPatternIdentifiersStatics)->get_HorizontalViewSizeProperty(put(value)));
     return value;
 }
 
 template <typename D> double impl_IScrollPatternIdentifiersStatics<D>::NoScroll() const
 {
     double value {};
-    check_hresult(static_cast<const IScrollPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_NoScroll(&value));
+    check_hresult(WINRT_SHIM(IScrollPatternIdentifiersStatics)->get_NoScroll(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IScrollPatternIdentifiersStatics<D>::VerticallyScrollableProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IScrollPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_VerticallyScrollableProperty(put(value)));
+    check_hresult(WINRT_SHIM(IScrollPatternIdentifiersStatics)->get_VerticallyScrollableProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IScrollPatternIdentifiersStatics<D>::VerticalScrollPercentProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IScrollPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_VerticalScrollPercentProperty(put(value)));
+    check_hresult(WINRT_SHIM(IScrollPatternIdentifiersStatics)->get_VerticalScrollPercentProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IScrollPatternIdentifiersStatics<D>::VerticalViewSizeProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IScrollPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_VerticalViewSizeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IScrollPatternIdentifiersStatics)->get_VerticalViewSizeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ISelectionItemPatternIdentifiersStatics<D>::IsSelectedProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ISelectionItemPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_IsSelectedProperty(put(value)));
+    check_hresult(WINRT_SHIM(ISelectionItemPatternIdentifiersStatics)->get_IsSelectedProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ISelectionItemPatternIdentifiersStatics<D>::SelectionContainerProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ISelectionItemPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_SelectionContainerProperty(put(value)));
+    check_hresult(WINRT_SHIM(ISelectionItemPatternIdentifiersStatics)->get_SelectionContainerProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ISelectionPatternIdentifiersStatics<D>::CanSelectMultipleProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ISelectionPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_CanSelectMultipleProperty(put(value)));
+    check_hresult(WINRT_SHIM(ISelectionPatternIdentifiersStatics)->get_CanSelectMultipleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ISelectionPatternIdentifiersStatics<D>::IsSelectionRequiredProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ISelectionPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_IsSelectionRequiredProperty(put(value)));
+    check_hresult(WINRT_SHIM(ISelectionPatternIdentifiersStatics)->get_IsSelectionRequiredProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ISelectionPatternIdentifiersStatics<D>::SelectionProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ISelectionPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_SelectionProperty(put(value)));
+    check_hresult(WINRT_SHIM(ISelectionPatternIdentifiersStatics)->get_SelectionProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ISpreadsheetItemPatternIdentifiersStatics<D>::FormulaProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ISpreadsheetItemPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_FormulaProperty(put(value)));
+    check_hresult(WINRT_SHIM(ISpreadsheetItemPatternIdentifiersStatics)->get_FormulaProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IStylesPatternIdentifiersStatics<D>::ExtendedPropertiesProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IStylesPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_ExtendedPropertiesProperty(put(value)));
+    check_hresult(WINRT_SHIM(IStylesPatternIdentifiersStatics)->get_ExtendedPropertiesProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IStylesPatternIdentifiersStatics<D>::FillColorProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IStylesPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_FillColorProperty(put(value)));
+    check_hresult(WINRT_SHIM(IStylesPatternIdentifiersStatics)->get_FillColorProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IStylesPatternIdentifiersStatics<D>::FillPatternColorProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IStylesPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_FillPatternColorProperty(put(value)));
+    check_hresult(WINRT_SHIM(IStylesPatternIdentifiersStatics)->get_FillPatternColorProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IStylesPatternIdentifiersStatics<D>::FillPatternStyleProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IStylesPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_FillPatternStyleProperty(put(value)));
+    check_hresult(WINRT_SHIM(IStylesPatternIdentifiersStatics)->get_FillPatternStyleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IStylesPatternIdentifiersStatics<D>::ShapeProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IStylesPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_ShapeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IStylesPatternIdentifiersStatics)->get_ShapeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IStylesPatternIdentifiersStatics<D>::StyleIdProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IStylesPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_StyleIdProperty(put(value)));
+    check_hresult(WINRT_SHIM(IStylesPatternIdentifiersStatics)->get_StyleIdProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IStylesPatternIdentifiersStatics<D>::StyleNameProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IStylesPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_StyleNameProperty(put(value)));
+    check_hresult(WINRT_SHIM(IStylesPatternIdentifiersStatics)->get_StyleNameProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ITableItemPatternIdentifiersStatics<D>::ColumnHeaderItemsProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ITableItemPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_ColumnHeaderItemsProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITableItemPatternIdentifiersStatics)->get_ColumnHeaderItemsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ITableItemPatternIdentifiersStatics<D>::RowHeaderItemsProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ITableItemPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_RowHeaderItemsProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITableItemPatternIdentifiersStatics)->get_RowHeaderItemsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ITablePatternIdentifiersStatics<D>::ColumnHeadersProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ITablePatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_ColumnHeadersProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITablePatternIdentifiersStatics)->get_ColumnHeadersProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ITablePatternIdentifiersStatics<D>::RowHeadersProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ITablePatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_RowHeadersProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITablePatternIdentifiersStatics)->get_RowHeadersProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ITablePatternIdentifiersStatics<D>::RowOrColumnMajorProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ITablePatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_RowOrColumnMajorProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITablePatternIdentifiersStatics)->get_RowOrColumnMajorProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ITogglePatternIdentifiersStatics<D>::ToggleStateProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ITogglePatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_ToggleStateProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITogglePatternIdentifiersStatics)->get_ToggleStateProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ITransformPattern2IdentifiersStatics<D>::CanZoomProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ITransformPattern2IdentifiersStatics &>(static_cast<const D &>(*this))->get_CanZoomProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITransformPattern2IdentifiersStatics)->get_CanZoomProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ITransformPattern2IdentifiersStatics<D>::ZoomLevelProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ITransformPattern2IdentifiersStatics &>(static_cast<const D &>(*this))->get_ZoomLevelProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITransformPattern2IdentifiersStatics)->get_ZoomLevelProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ITransformPattern2IdentifiersStatics<D>::MaxZoomProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ITransformPattern2IdentifiersStatics &>(static_cast<const D &>(*this))->get_MaxZoomProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITransformPattern2IdentifiersStatics)->get_MaxZoomProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ITransformPattern2IdentifiersStatics<D>::MinZoomProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ITransformPattern2IdentifiersStatics &>(static_cast<const D &>(*this))->get_MinZoomProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITransformPattern2IdentifiersStatics)->get_MinZoomProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ITransformPatternIdentifiersStatics<D>::CanMoveProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ITransformPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_CanMoveProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITransformPatternIdentifiersStatics)->get_CanMoveProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ITransformPatternIdentifiersStatics<D>::CanResizeProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ITransformPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_CanResizeProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITransformPatternIdentifiersStatics)->get_CanResizeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_ITransformPatternIdentifiersStatics<D>::CanRotateProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const ITransformPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_CanRotateProperty(put(value)));
+    check_hresult(WINRT_SHIM(ITransformPatternIdentifiersStatics)->get_CanRotateProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IValuePatternIdentifiersStatics<D>::IsReadOnlyProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IValuePatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_IsReadOnlyProperty(put(value)));
+    check_hresult(WINRT_SHIM(IValuePatternIdentifiersStatics)->get_IsReadOnlyProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IValuePatternIdentifiersStatics<D>::ValueProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IValuePatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_ValueProperty(put(value)));
+    check_hresult(WINRT_SHIM(IValuePatternIdentifiersStatics)->get_ValueProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IWindowPatternIdentifiersStatics<D>::CanMaximizeProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IWindowPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_CanMaximizeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IWindowPatternIdentifiersStatics)->get_CanMaximizeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IWindowPatternIdentifiersStatics<D>::CanMinimizeProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IWindowPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_CanMinimizeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IWindowPatternIdentifiersStatics)->get_CanMinimizeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IWindowPatternIdentifiersStatics<D>::IsModalProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IWindowPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_IsModalProperty(put(value)));
+    check_hresult(WINRT_SHIM(IWindowPatternIdentifiersStatics)->get_IsModalProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IWindowPatternIdentifiersStatics<D>::IsTopmostProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IWindowPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_IsTopmostProperty(put(value)));
+    check_hresult(WINRT_SHIM(IWindowPatternIdentifiersStatics)->get_IsTopmostProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IWindowPatternIdentifiersStatics<D>::WindowInteractionStateProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IWindowPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_WindowInteractionStateProperty(put(value)));
+    check_hresult(WINRT_SHIM(IWindowPatternIdentifiersStatics)->get_WindowInteractionStateProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IWindowPatternIdentifiersStatics<D>::WindowVisualStateProperty() const
 {
     Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
-    check_hresult(static_cast<const IWindowPatternIdentifiersStatics &>(static_cast<const D &>(*this))->get_WindowVisualStateProperty(put(value)));
+    check_hresult(WINRT_SHIM(IWindowPatternIdentifiersStatics)->get_WindowVisualStateProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AnnotationType impl_IAutomationAnnotation<D>::Type() const
 {
     Windows::UI::Xaml::Automation::AnnotationType value {};
-    check_hresult(static_cast<const IAutomationAnnotation &>(static_cast<const D &>(*this))->get_Type(&value));
+    check_hresult(WINRT_SHIM(IAutomationAnnotation)->get_Type(&value));
     return value;
 }
 
 template <typename D> void impl_IAutomationAnnotation<D>::Type(Windows::UI::Xaml::Automation::AnnotationType value) const
 {
-    check_hresult(static_cast<const IAutomationAnnotation &>(static_cast<const D &>(*this))->put_Type(value));
+    check_hresult(WINRT_SHIM(IAutomationAnnotation)->put_Type(value));
 }
 
 template <typename D> Windows::UI::Xaml::UIElement impl_IAutomationAnnotation<D>::Element() const
 {
     Windows::UI::Xaml::UIElement value { nullptr };
-    check_hresult(static_cast<const IAutomationAnnotation &>(static_cast<const D &>(*this))->get_Element(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationAnnotation)->get_Element(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAutomationAnnotation<D>::Element(const Windows::UI::Xaml::UIElement & value) const
 {
-    check_hresult(static_cast<const IAutomationAnnotation &>(static_cast<const D &>(*this))->put_Element(get(value)));
+    check_hresult(WINRT_SHIM(IAutomationAnnotation)->put_Element(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationAnnotationStatics<D>::TypeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationAnnotationStatics &>(static_cast<const D &>(*this))->get_TypeProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationAnnotationStatics)->get_TypeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationAnnotationStatics<D>::ElementProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(static_cast<const IAutomationAnnotationStatics &>(static_cast<const D &>(*this))->get_ElementProperty(put(value)));
+    check_hresult(WINRT_SHIM(IAutomationAnnotationStatics)->get_ElementProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationAnnotation impl_IAutomationAnnotationFactory<D>::CreateInstance(Windows::UI::Xaml::Automation::AnnotationType type) const
 {
     Windows::UI::Xaml::Automation::AutomationAnnotation instance { nullptr };
-    check_hresult(static_cast<const IAutomationAnnotationFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(type, put(instance)));
+    check_hresult(WINRT_SHIM(IAutomationAnnotationFactory)->abi_CreateInstance(type, put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationAnnotation impl_IAutomationAnnotationFactory<D>::CreateWithElementParameter(Windows::UI::Xaml::Automation::AnnotationType type, const Windows::UI::Xaml::UIElement & element) const
 {
     Windows::UI::Xaml::Automation::AutomationAnnotation instance { nullptr };
-    check_hresult(static_cast<const IAutomationAnnotationFactory &>(static_cast<const D &>(*this))->abi_CreateWithElementParameter(type, get(element), put(instance)));
+    check_hresult(WINRT_SHIM(IAutomationAnnotationFactory)->abi_CreateWithElementParameter(type, get(element), put(instance)));
     return instance;
 }
 

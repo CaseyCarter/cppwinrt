@@ -34,7 +34,6 @@ struct IUserDataAccountPartnerAccountInfo :
     impl::consume<IUserDataAccountPartnerAccountInfo>
 {
     IUserDataAccountPartnerAccountInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDataAccountPartnerAccountInfo>(m_ptr); }
 };
 
 struct IUserDataAccountProviderAddAccountOperation :
@@ -43,7 +42,6 @@ struct IUserDataAccountProviderAddAccountOperation :
     impl::require<IUserDataAccountProviderAddAccountOperation, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderOperation>
 {
     IUserDataAccountProviderAddAccountOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDataAccountProviderAddAccountOperation>(m_ptr); }
 };
 
 struct IUserDataAccountProviderOperation :
@@ -51,7 +49,6 @@ struct IUserDataAccountProviderOperation :
     impl::consume<IUserDataAccountProviderOperation>
 {
     IUserDataAccountProviderOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDataAccountProviderOperation>(m_ptr); }
 };
 
 struct IUserDataAccountProviderResolveErrorsOperation :
@@ -60,7 +57,6 @@ struct IUserDataAccountProviderResolveErrorsOperation :
     impl::require<IUserDataAccountProviderResolveErrorsOperation, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderOperation>
 {
     IUserDataAccountProviderResolveErrorsOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDataAccountProviderResolveErrorsOperation>(m_ptr); }
 };
 
 struct IUserDataAccountProviderSettingsOperation :
@@ -69,7 +65,6 @@ struct IUserDataAccountProviderSettingsOperation :
     impl::require<IUserDataAccountProviderSettingsOperation, Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderOperation>
 {
     IUserDataAccountProviderSettingsOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUserDataAccountProviderSettingsOperation>(m_ptr); }
 };
 
 }

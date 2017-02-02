@@ -1325,592 +1325,592 @@ namespace Windows::Devices::HumanInterfaceDevice {
 template <typename D> hstring impl_IHidDeviceStatics<D>::GetDeviceSelector(uint16_t usagePage, uint16_t usageId) const
 {
     hstring selector;
-    check_hresult(static_cast<const IHidDeviceStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(usagePage, usageId, put(selector)));
+    check_hresult(WINRT_SHIM(IHidDeviceStatics)->abi_GetDeviceSelector(usagePage, usageId, put(selector)));
     return selector;
 }
 
 template <typename D> hstring impl_IHidDeviceStatics<D>::GetDeviceSelector(uint16_t usagePage, uint16_t usageId, uint16_t vendorId, uint16_t productId) const
 {
     hstring selector;
-    check_hresult(static_cast<const IHidDeviceStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorVidPid(usagePage, usageId, vendorId, productId, put(selector)));
+    check_hresult(WINRT_SHIM(IHidDeviceStatics)->abi_GetDeviceSelectorVidPid(usagePage, usageId, vendorId, productId, put(selector)));
     return selector;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice> impl_IHidDeviceStatics<D>::FromIdAsync(hstring_ref deviceId, Windows::Storage::FileAccessMode accessMode) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice> hidDevice;
-    check_hresult(static_cast<const IHidDeviceStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), accessMode, put(hidDevice)));
+    check_hresult(WINRT_SHIM(IHidDeviceStatics)->abi_FromIdAsync(get(deviceId), accessMode, put(hidDevice)));
     return hidDevice;
 }
 
 template <typename D> uint32_t impl_IHidBooleanControlDescription<D>::Id() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IHidBooleanControlDescription &>(static_cast<const D &>(*this))->get_Id(&value));
+    check_hresult(WINRT_SHIM(IHidBooleanControlDescription)->get_Id(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IHidBooleanControlDescription<D>::ReportId() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IHidBooleanControlDescription &>(static_cast<const D &>(*this))->get_ReportId(&value));
+    check_hresult(WINRT_SHIM(IHidBooleanControlDescription)->get_ReportId(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidReportType impl_IHidBooleanControlDescription<D>::ReportType() const
 {
     Windows::Devices::HumanInterfaceDevice::HidReportType value {};
-    check_hresult(static_cast<const IHidBooleanControlDescription &>(static_cast<const D &>(*this))->get_ReportType(&value));
+    check_hresult(WINRT_SHIM(IHidBooleanControlDescription)->get_ReportType(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IHidBooleanControlDescription<D>::UsagePage() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IHidBooleanControlDescription &>(static_cast<const D &>(*this))->get_UsagePage(&value));
+    check_hresult(WINRT_SHIM(IHidBooleanControlDescription)->get_UsagePage(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IHidBooleanControlDescription<D>::UsageId() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IHidBooleanControlDescription &>(static_cast<const D &>(*this))->get_UsageId(&value));
+    check_hresult(WINRT_SHIM(IHidBooleanControlDescription)->get_UsageId(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidCollection> impl_IHidBooleanControlDescription<D>::ParentCollections() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidCollection> value;
-    check_hresult(static_cast<const IHidBooleanControlDescription &>(static_cast<const D &>(*this))->get_ParentCollections(put(value)));
+    check_hresult(WINRT_SHIM(IHidBooleanControlDescription)->get_ParentCollections(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IHidBooleanControlDescription2<D>::IsAbsolute() const
 {
     bool value {};
-    check_hresult(static_cast<const IHidBooleanControlDescription2 &>(static_cast<const D &>(*this))->get_IsAbsolute(&value));
+    check_hresult(WINRT_SHIM(IHidBooleanControlDescription2)->get_IsAbsolute(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IHidNumericControlDescription<D>::Id() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IHidNumericControlDescription &>(static_cast<const D &>(*this))->get_Id(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControlDescription)->get_Id(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IHidNumericControlDescription<D>::ReportId() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IHidNumericControlDescription &>(static_cast<const D &>(*this))->get_ReportId(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControlDescription)->get_ReportId(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidReportType impl_IHidNumericControlDescription<D>::ReportType() const
 {
     Windows::Devices::HumanInterfaceDevice::HidReportType value {};
-    check_hresult(static_cast<const IHidNumericControlDescription &>(static_cast<const D &>(*this))->get_ReportType(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControlDescription)->get_ReportType(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IHidNumericControlDescription<D>::ReportSize() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IHidNumericControlDescription &>(static_cast<const D &>(*this))->get_ReportSize(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControlDescription)->get_ReportSize(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IHidNumericControlDescription<D>::ReportCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IHidNumericControlDescription &>(static_cast<const D &>(*this))->get_ReportCount(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControlDescription)->get_ReportCount(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IHidNumericControlDescription<D>::UsagePage() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IHidNumericControlDescription &>(static_cast<const D &>(*this))->get_UsagePage(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControlDescription)->get_UsagePage(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IHidNumericControlDescription<D>::UsageId() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IHidNumericControlDescription &>(static_cast<const D &>(*this))->get_UsageId(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControlDescription)->get_UsageId(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IHidNumericControlDescription<D>::LogicalMinimum() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IHidNumericControlDescription &>(static_cast<const D &>(*this))->get_LogicalMinimum(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControlDescription)->get_LogicalMinimum(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IHidNumericControlDescription<D>::LogicalMaximum() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IHidNumericControlDescription &>(static_cast<const D &>(*this))->get_LogicalMaximum(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControlDescription)->get_LogicalMaximum(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IHidNumericControlDescription<D>::PhysicalMinimum() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IHidNumericControlDescription &>(static_cast<const D &>(*this))->get_PhysicalMinimum(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControlDescription)->get_PhysicalMinimum(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IHidNumericControlDescription<D>::PhysicalMaximum() const
 {
     int32_t value {};
-    check_hresult(static_cast<const IHidNumericControlDescription &>(static_cast<const D &>(*this))->get_PhysicalMaximum(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControlDescription)->get_PhysicalMaximum(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IHidNumericControlDescription<D>::UnitExponent() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IHidNumericControlDescription &>(static_cast<const D &>(*this))->get_UnitExponent(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControlDescription)->get_UnitExponent(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IHidNumericControlDescription<D>::Unit() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IHidNumericControlDescription &>(static_cast<const D &>(*this))->get_Unit(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControlDescription)->get_Unit(&value));
     return value;
 }
 
 template <typename D> bool impl_IHidNumericControlDescription<D>::IsAbsolute() const
 {
     bool value {};
-    check_hresult(static_cast<const IHidNumericControlDescription &>(static_cast<const D &>(*this))->get_IsAbsolute(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControlDescription)->get_IsAbsolute(&value));
     return value;
 }
 
 template <typename D> bool impl_IHidNumericControlDescription<D>::HasNull() const
 {
     bool value {};
-    check_hresult(static_cast<const IHidNumericControlDescription &>(static_cast<const D &>(*this))->get_HasNull(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControlDescription)->get_HasNull(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidCollection> impl_IHidNumericControlDescription<D>::ParentCollections() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidCollection> value;
-    check_hresult(static_cast<const IHidNumericControlDescription &>(static_cast<const D &>(*this))->get_ParentCollections(put(value)));
+    check_hresult(WINRT_SHIM(IHidNumericControlDescription)->get_ParentCollections(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IHidCollection<D>::Id() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IHidCollection &>(static_cast<const D &>(*this))->get_Id(&value));
+    check_hresult(WINRT_SHIM(IHidCollection)->get_Id(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidCollectionType impl_IHidCollection<D>::Type() const
 {
     Windows::Devices::HumanInterfaceDevice::HidCollectionType value {};
-    check_hresult(static_cast<const IHidCollection &>(static_cast<const D &>(*this))->get_Type(&value));
+    check_hresult(WINRT_SHIM(IHidCollection)->get_Type(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IHidCollection<D>::UsagePage() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IHidCollection &>(static_cast<const D &>(*this))->get_UsagePage(&value));
+    check_hresult(WINRT_SHIM(IHidCollection)->get_UsagePage(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IHidCollection<D>::UsageId() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IHidCollection &>(static_cast<const D &>(*this))->get_UsageId(&value));
+    check_hresult(WINRT_SHIM(IHidCollection)->get_UsageId(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IHidInputReport<D>::Id() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IHidInputReport &>(static_cast<const D &>(*this))->get_Id(&value));
+    check_hresult(WINRT_SHIM(IHidInputReport)->get_Id(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IHidInputReport<D>::Data() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IHidInputReport &>(static_cast<const D &>(*this))->get_Data(put(value)));
+    check_hresult(WINRT_SHIM(IHidInputReport)->get_Data(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> impl_IHidInputReport<D>::ActivatedBooleanControls() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> value;
-    check_hresult(static_cast<const IHidInputReport &>(static_cast<const D &>(*this))->get_ActivatedBooleanControls(put(value)));
+    check_hresult(WINRT_SHIM(IHidInputReport)->get_ActivatedBooleanControls(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> impl_IHidInputReport<D>::TransitionedBooleanControls() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> value;
-    check_hresult(static_cast<const IHidInputReport &>(static_cast<const D &>(*this))->get_TransitionedBooleanControls(put(value)));
+    check_hresult(WINRT_SHIM(IHidInputReport)->get_TransitionedBooleanControls(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidBooleanControl impl_IHidInputReport<D>::GetBooleanControl(uint16_t usagePage, uint16_t usageId) const
 {
     Windows::Devices::HumanInterfaceDevice::HidBooleanControl value { nullptr };
-    check_hresult(static_cast<const IHidInputReport &>(static_cast<const D &>(*this))->abi_GetBooleanControl(usagePage, usageId, put(value)));
+    check_hresult(WINRT_SHIM(IHidInputReport)->abi_GetBooleanControl(usagePage, usageId, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidBooleanControl impl_IHidInputReport<D>::GetBooleanControlByDescription(const Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription & controlDescription) const
 {
     Windows::Devices::HumanInterfaceDevice::HidBooleanControl value { nullptr };
-    check_hresult(static_cast<const IHidInputReport &>(static_cast<const D &>(*this))->abi_GetBooleanControlByDescription(get(controlDescription), put(value)));
+    check_hresult(WINRT_SHIM(IHidInputReport)->abi_GetBooleanControlByDescription(get(controlDescription), put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidNumericControl impl_IHidInputReport<D>::GetNumericControl(uint16_t usagePage, uint16_t usageId) const
 {
     Windows::Devices::HumanInterfaceDevice::HidNumericControl value { nullptr };
-    check_hresult(static_cast<const IHidInputReport &>(static_cast<const D &>(*this))->abi_GetNumericControl(usagePage, usageId, put(value)));
+    check_hresult(WINRT_SHIM(IHidInputReport)->abi_GetNumericControl(usagePage, usageId, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidNumericControl impl_IHidInputReport<D>::GetNumericControlByDescription(const Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription & controlDescription) const
 {
     Windows::Devices::HumanInterfaceDevice::HidNumericControl value { nullptr };
-    check_hresult(static_cast<const IHidInputReport &>(static_cast<const D &>(*this))->abi_GetNumericControlByDescription(get(controlDescription), put(value)));
+    check_hresult(WINRT_SHIM(IHidInputReport)->abi_GetNumericControlByDescription(get(controlDescription), put(value)));
     return value;
 }
 
 template <typename D> uint16_t impl_IHidOutputReport<D>::Id() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IHidOutputReport &>(static_cast<const D &>(*this))->get_Id(&value));
+    check_hresult(WINRT_SHIM(IHidOutputReport)->get_Id(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IHidOutputReport<D>::Data() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IHidOutputReport &>(static_cast<const D &>(*this))->get_Data(put(value)));
+    check_hresult(WINRT_SHIM(IHidOutputReport)->get_Data(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHidOutputReport<D>::Data(const Windows::Storage::Streams::IBuffer & value) const
 {
-    check_hresult(static_cast<const IHidOutputReport &>(static_cast<const D &>(*this))->put_Data(get(value)));
+    check_hresult(WINRT_SHIM(IHidOutputReport)->put_Data(get(value)));
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidBooleanControl impl_IHidOutputReport<D>::GetBooleanControl(uint16_t usagePage, uint16_t usageId) const
 {
     Windows::Devices::HumanInterfaceDevice::HidBooleanControl value { nullptr };
-    check_hresult(static_cast<const IHidOutputReport &>(static_cast<const D &>(*this))->abi_GetBooleanControl(usagePage, usageId, put(value)));
+    check_hresult(WINRT_SHIM(IHidOutputReport)->abi_GetBooleanControl(usagePage, usageId, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidBooleanControl impl_IHidOutputReport<D>::GetBooleanControlByDescription(const Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription & controlDescription) const
 {
     Windows::Devices::HumanInterfaceDevice::HidBooleanControl value { nullptr };
-    check_hresult(static_cast<const IHidOutputReport &>(static_cast<const D &>(*this))->abi_GetBooleanControlByDescription(get(controlDescription), put(value)));
+    check_hresult(WINRT_SHIM(IHidOutputReport)->abi_GetBooleanControlByDescription(get(controlDescription), put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidNumericControl impl_IHidOutputReport<D>::GetNumericControl(uint16_t usagePage, uint16_t usageId) const
 {
     Windows::Devices::HumanInterfaceDevice::HidNumericControl value { nullptr };
-    check_hresult(static_cast<const IHidOutputReport &>(static_cast<const D &>(*this))->abi_GetNumericControl(usagePage, usageId, put(value)));
+    check_hresult(WINRT_SHIM(IHidOutputReport)->abi_GetNumericControl(usagePage, usageId, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidNumericControl impl_IHidOutputReport<D>::GetNumericControlByDescription(const Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription & controlDescription) const
 {
     Windows::Devices::HumanInterfaceDevice::HidNumericControl value { nullptr };
-    check_hresult(static_cast<const IHidOutputReport &>(static_cast<const D &>(*this))->abi_GetNumericControlByDescription(get(controlDescription), put(value)));
+    check_hresult(WINRT_SHIM(IHidOutputReport)->abi_GetNumericControlByDescription(get(controlDescription), put(value)));
     return value;
 }
 
 template <typename D> uint16_t impl_IHidFeatureReport<D>::Id() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IHidFeatureReport &>(static_cast<const D &>(*this))->get_Id(&value));
+    check_hresult(WINRT_SHIM(IHidFeatureReport)->get_Id(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IHidFeatureReport<D>::Data() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IHidFeatureReport &>(static_cast<const D &>(*this))->get_Data(put(value)));
+    check_hresult(WINRT_SHIM(IHidFeatureReport)->get_Data(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHidFeatureReport<D>::Data(const Windows::Storage::Streams::IBuffer & value) const
 {
-    check_hresult(static_cast<const IHidFeatureReport &>(static_cast<const D &>(*this))->put_Data(get(value)));
+    check_hresult(WINRT_SHIM(IHidFeatureReport)->put_Data(get(value)));
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidBooleanControl impl_IHidFeatureReport<D>::GetBooleanControl(uint16_t usagePage, uint16_t usageId) const
 {
     Windows::Devices::HumanInterfaceDevice::HidBooleanControl value { nullptr };
-    check_hresult(static_cast<const IHidFeatureReport &>(static_cast<const D &>(*this))->abi_GetBooleanControl(usagePage, usageId, put(value)));
+    check_hresult(WINRT_SHIM(IHidFeatureReport)->abi_GetBooleanControl(usagePage, usageId, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidBooleanControl impl_IHidFeatureReport<D>::GetBooleanControlByDescription(const Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription & controlDescription) const
 {
     Windows::Devices::HumanInterfaceDevice::HidBooleanControl value { nullptr };
-    check_hresult(static_cast<const IHidFeatureReport &>(static_cast<const D &>(*this))->abi_GetBooleanControlByDescription(get(controlDescription), put(value)));
+    check_hresult(WINRT_SHIM(IHidFeatureReport)->abi_GetBooleanControlByDescription(get(controlDescription), put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidNumericControl impl_IHidFeatureReport<D>::GetNumericControl(uint16_t usagePage, uint16_t usageId) const
 {
     Windows::Devices::HumanInterfaceDevice::HidNumericControl value { nullptr };
-    check_hresult(static_cast<const IHidFeatureReport &>(static_cast<const D &>(*this))->abi_GetNumericControl(usagePage, usageId, put(value)));
+    check_hresult(WINRT_SHIM(IHidFeatureReport)->abi_GetNumericControl(usagePage, usageId, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidNumericControl impl_IHidFeatureReport<D>::GetNumericControlByDescription(const Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription & controlDescription) const
 {
     Windows::Devices::HumanInterfaceDevice::HidNumericControl value { nullptr };
-    check_hresult(static_cast<const IHidFeatureReport &>(static_cast<const D &>(*this))->abi_GetNumericControlByDescription(get(controlDescription), put(value)));
+    check_hresult(WINRT_SHIM(IHidFeatureReport)->abi_GetNumericControlByDescription(get(controlDescription), put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidInputReport impl_IHidInputReportReceivedEventArgs<D>::Report() const
 {
     Windows::Devices::HumanInterfaceDevice::HidInputReport value { nullptr };
-    check_hresult(static_cast<const IHidInputReportReceivedEventArgs &>(static_cast<const D &>(*this))->get_Report(put(value)));
+    check_hresult(WINRT_SHIM(IHidInputReportReceivedEventArgs)->get_Report(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IHidBooleanControl<D>::Id() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IHidBooleanControl &>(static_cast<const D &>(*this))->get_Id(&value));
+    check_hresult(WINRT_SHIM(IHidBooleanControl)->get_Id(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IHidBooleanControl<D>::UsagePage() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IHidBooleanControl &>(static_cast<const D &>(*this))->get_UsagePage(&value));
+    check_hresult(WINRT_SHIM(IHidBooleanControl)->get_UsagePage(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IHidBooleanControl<D>::UsageId() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IHidBooleanControl &>(static_cast<const D &>(*this))->get_UsageId(&value));
+    check_hresult(WINRT_SHIM(IHidBooleanControl)->get_UsageId(&value));
     return value;
 }
 
 template <typename D> bool impl_IHidBooleanControl<D>::IsActive() const
 {
     bool value {};
-    check_hresult(static_cast<const IHidBooleanControl &>(static_cast<const D &>(*this))->get_IsActive(&value));
+    check_hresult(WINRT_SHIM(IHidBooleanControl)->get_IsActive(&value));
     return value;
 }
 
 template <typename D> void impl_IHidBooleanControl<D>::IsActive(bool value) const
 {
-    check_hresult(static_cast<const IHidBooleanControl &>(static_cast<const D &>(*this))->put_IsActive(value));
+    check_hresult(WINRT_SHIM(IHidBooleanControl)->put_IsActive(value));
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription impl_IHidBooleanControl<D>::ControlDescription() const
 {
     Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription value { nullptr };
-    check_hresult(static_cast<const IHidBooleanControl &>(static_cast<const D &>(*this))->get_ControlDescription(put(value)));
+    check_hresult(WINRT_SHIM(IHidBooleanControl)->get_ControlDescription(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IHidNumericControl<D>::Id() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IHidNumericControl &>(static_cast<const D &>(*this))->get_Id(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControl)->get_Id(&value));
     return value;
 }
 
 template <typename D> bool impl_IHidNumericControl<D>::IsGrouped() const
 {
     bool value {};
-    check_hresult(static_cast<const IHidNumericControl &>(static_cast<const D &>(*this))->get_IsGrouped(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControl)->get_IsGrouped(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IHidNumericControl<D>::UsagePage() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IHidNumericControl &>(static_cast<const D &>(*this))->get_UsagePage(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControl)->get_UsagePage(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IHidNumericControl<D>::UsageId() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IHidNumericControl &>(static_cast<const D &>(*this))->get_UsageId(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControl)->get_UsageId(&value));
     return value;
 }
 
 template <typename D> int64_t impl_IHidNumericControl<D>::Value() const
 {
     int64_t value {};
-    check_hresult(static_cast<const IHidNumericControl &>(static_cast<const D &>(*this))->get_Value(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControl)->get_Value(&value));
     return value;
 }
 
 template <typename D> void impl_IHidNumericControl<D>::Value(int64_t value) const
 {
-    check_hresult(static_cast<const IHidNumericControl &>(static_cast<const D &>(*this))->put_Value(value));
+    check_hresult(WINRT_SHIM(IHidNumericControl)->put_Value(value));
 }
 
 template <typename D> int64_t impl_IHidNumericControl<D>::ScaledValue() const
 {
     int64_t value {};
-    check_hresult(static_cast<const IHidNumericControl &>(static_cast<const D &>(*this))->get_ScaledValue(&value));
+    check_hresult(WINRT_SHIM(IHidNumericControl)->get_ScaledValue(&value));
     return value;
 }
 
 template <typename D> void impl_IHidNumericControl<D>::ScaledValue(int64_t value) const
 {
-    check_hresult(static_cast<const IHidNumericControl &>(static_cast<const D &>(*this))->put_ScaledValue(value));
+    check_hresult(WINRT_SHIM(IHidNumericControl)->put_ScaledValue(value));
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription impl_IHidNumericControl<D>::ControlDescription() const
 {
     Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription value { nullptr };
-    check_hresult(static_cast<const IHidNumericControl &>(static_cast<const D &>(*this))->get_ControlDescription(put(value)));
+    check_hresult(WINRT_SHIM(IHidNumericControl)->get_ControlDescription(put(value)));
     return value;
 }
 
 template <typename D> uint16_t impl_IHidDevice<D>::VendorId() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->get_VendorId(&value));
+    check_hresult(WINRT_SHIM(IHidDevice)->get_VendorId(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IHidDevice<D>::ProductId() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->get_ProductId(&value));
+    check_hresult(WINRT_SHIM(IHidDevice)->get_ProductId(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IHidDevice<D>::Version() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->get_Version(&value));
+    check_hresult(WINRT_SHIM(IHidDevice)->get_Version(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IHidDevice<D>::UsagePage() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->get_UsagePage(&value));
+    check_hresult(WINRT_SHIM(IHidDevice)->get_UsagePage(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IHidDevice<D>::UsageId() const
 {
     uint16_t value {};
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->get_UsageId(&value));
+    check_hresult(WINRT_SHIM(IHidDevice)->get_UsageId(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport> impl_IHidDevice<D>::GetInputReportAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport> value;
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->abi_GetInputReportAsync(put(value)));
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_GetInputReportAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport> impl_IHidDevice<D>::GetInputReportAsync(uint16_t reportId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport> value;
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->abi_GetInputReportByIdAsync(reportId, put(value)));
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_GetInputReportByIdAsync(reportId, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidFeatureReport> impl_IHidDevice<D>::GetFeatureReportAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidFeatureReport> value;
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->abi_GetFeatureReportAsync(put(value)));
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_GetFeatureReportAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidFeatureReport> impl_IHidDevice<D>::GetFeatureReportAsync(uint16_t reportId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidFeatureReport> value;
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->abi_GetFeatureReportByIdAsync(reportId, put(value)));
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_GetFeatureReportByIdAsync(reportId, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidOutputReport impl_IHidDevice<D>::CreateOutputReport() const
 {
     Windows::Devices::HumanInterfaceDevice::HidOutputReport outputReport { nullptr };
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->abi_CreateOutputReport(put(outputReport)));
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_CreateOutputReport(put(outputReport)));
     return outputReport;
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidOutputReport impl_IHidDevice<D>::CreateOutputReport(uint16_t reportId) const
 {
     Windows::Devices::HumanInterfaceDevice::HidOutputReport outputReport { nullptr };
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->abi_CreateOutputReportById(reportId, put(outputReport)));
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_CreateOutputReportById(reportId, put(outputReport)));
     return outputReport;
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidFeatureReport impl_IHidDevice<D>::CreateFeatureReport() const
 {
     Windows::Devices::HumanInterfaceDevice::HidFeatureReport featureReport { nullptr };
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->abi_CreateFeatureReport(put(featureReport)));
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_CreateFeatureReport(put(featureReport)));
     return featureReport;
 }
 
 template <typename D> Windows::Devices::HumanInterfaceDevice::HidFeatureReport impl_IHidDevice<D>::CreateFeatureReport(uint16_t reportId) const
 {
     Windows::Devices::HumanInterfaceDevice::HidFeatureReport featureReport { nullptr };
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->abi_CreateFeatureReportById(reportId, put(featureReport)));
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_CreateFeatureReportById(reportId, put(featureReport)));
     return featureReport;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<uint32_t> impl_IHidDevice<D>::SendOutputReportAsync(const Windows::Devices::HumanInterfaceDevice::HidOutputReport & outputReport) const
 {
     Windows::Foundation::IAsyncOperation<uint32_t> operation;
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->abi_SendOutputReportAsync(get(outputReport), put(operation)));
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_SendOutputReportAsync(get(outputReport), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<uint32_t> impl_IHidDevice<D>::SendFeatureReportAsync(const Windows::Devices::HumanInterfaceDevice::HidFeatureReport & featureReport) const
 {
     Windows::Foundation::IAsyncOperation<uint32_t> operation;
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->abi_SendFeatureReportAsync(get(featureReport), put(operation)));
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_SendFeatureReportAsync(get(featureReport), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription> impl_IHidDevice<D>::GetBooleanControlDescriptions(Windows::Devices::HumanInterfaceDevice::HidReportType reportType, uint16_t usagePage, uint16_t usageId) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription> value;
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->abi_GetBooleanControlDescriptions(reportType, usagePage, usageId, put(value)));
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_GetBooleanControlDescriptions(reportType, usagePage, usageId, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription> impl_IHidDevice<D>::GetNumericControlDescriptions(Windows::Devices::HumanInterfaceDevice::HidReportType reportType, uint16_t usagePage, uint16_t usageId) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription> value;
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->abi_GetNumericControlDescriptions(reportType, usagePage, usageId, put(value)));
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_GetNumericControlDescriptions(reportType, usagePage, usageId, put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IHidDevice<D>::InputReportReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> & reportHandler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->add_InputReportReceived(get(reportHandler), &token));
+    check_hresult(WINRT_SHIM(IHidDevice)->add_InputReportReceived(get(reportHandler), &token));
     return token;
 }
 
@@ -1921,7 +1921,7 @@ template <typename D> event_revoker<IHidDevice> impl_IHidDevice<D>::InputReportR
 
 template <typename D> void impl_IHidDevice<D>::InputReportReceived(event_token token) const
 {
-    check_hresult(static_cast<const IHidDevice &>(static_cast<const D &>(*this))->remove_InputReportReceived(token));
+    check_hresult(WINRT_SHIM(IHidDevice)->remove_InputReportReceived(token));
 }
 
 inline hstring HidDevice::GetDeviceSelector(uint16_t usagePage, uint16_t usageId)

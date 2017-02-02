@@ -84,7 +84,6 @@ namespace Windows::UI::Xaml::Input {
 struct DoubleTappedEventHandler : Windows::IUnknown
 {
     DoubleTappedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<DoubleTappedEventHandler>(m_ptr); }
     template <typename L> DoubleTappedEventHandler(L lambda);
     template <typename F> DoubleTappedEventHandler (F * function);
     template <typename O, typename M> DoubleTappedEventHandler(O * object, M method);
@@ -94,7 +93,6 @@ struct DoubleTappedEventHandler : Windows::IUnknown
 struct HoldingEventHandler : Windows::IUnknown
 {
     HoldingEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<HoldingEventHandler>(m_ptr); }
     template <typename L> HoldingEventHandler(L lambda);
     template <typename F> HoldingEventHandler (F * function);
     template <typename O, typename M> HoldingEventHandler(O * object, M method);
@@ -104,7 +102,6 @@ struct HoldingEventHandler : Windows::IUnknown
 struct KeyEventHandler : Windows::IUnknown
 {
     KeyEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<KeyEventHandler>(m_ptr); }
     template <typename L> KeyEventHandler(L lambda);
     template <typename F> KeyEventHandler (F * function);
     template <typename O, typename M> KeyEventHandler(O * object, M method);
@@ -114,7 +111,6 @@ struct KeyEventHandler : Windows::IUnknown
 struct ManipulationCompletedEventHandler : Windows::IUnknown
 {
     ManipulationCompletedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ManipulationCompletedEventHandler>(m_ptr); }
     template <typename L> ManipulationCompletedEventHandler(L lambda);
     template <typename F> ManipulationCompletedEventHandler (F * function);
     template <typename O, typename M> ManipulationCompletedEventHandler(O * object, M method);
@@ -124,7 +120,6 @@ struct ManipulationCompletedEventHandler : Windows::IUnknown
 struct ManipulationDeltaEventHandler : Windows::IUnknown
 {
     ManipulationDeltaEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ManipulationDeltaEventHandler>(m_ptr); }
     template <typename L> ManipulationDeltaEventHandler(L lambda);
     template <typename F> ManipulationDeltaEventHandler (F * function);
     template <typename O, typename M> ManipulationDeltaEventHandler(O * object, M method);
@@ -134,7 +129,6 @@ struct ManipulationDeltaEventHandler : Windows::IUnknown
 struct ManipulationInertiaStartingEventHandler : Windows::IUnknown
 {
     ManipulationInertiaStartingEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ManipulationInertiaStartingEventHandler>(m_ptr); }
     template <typename L> ManipulationInertiaStartingEventHandler(L lambda);
     template <typename F> ManipulationInertiaStartingEventHandler (F * function);
     template <typename O, typename M> ManipulationInertiaStartingEventHandler(O * object, M method);
@@ -144,7 +138,6 @@ struct ManipulationInertiaStartingEventHandler : Windows::IUnknown
 struct ManipulationStartedEventHandler : Windows::IUnknown
 {
     ManipulationStartedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ManipulationStartedEventHandler>(m_ptr); }
     template <typename L> ManipulationStartedEventHandler(L lambda);
     template <typename F> ManipulationStartedEventHandler (F * function);
     template <typename O, typename M> ManipulationStartedEventHandler(O * object, M method);
@@ -154,7 +147,6 @@ struct ManipulationStartedEventHandler : Windows::IUnknown
 struct ManipulationStartingEventHandler : Windows::IUnknown
 {
     ManipulationStartingEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ManipulationStartingEventHandler>(m_ptr); }
     template <typename L> ManipulationStartingEventHandler(L lambda);
     template <typename F> ManipulationStartingEventHandler (F * function);
     template <typename O, typename M> ManipulationStartingEventHandler(O * object, M method);
@@ -164,7 +156,6 @@ struct ManipulationStartingEventHandler : Windows::IUnknown
 struct PointerEventHandler : Windows::IUnknown
 {
     PointerEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<PointerEventHandler>(m_ptr); }
     template <typename L> PointerEventHandler(L lambda);
     template <typename F> PointerEventHandler (F * function);
     template <typename O, typename M> PointerEventHandler(O * object, M method);
@@ -174,7 +165,6 @@ struct PointerEventHandler : Windows::IUnknown
 struct RightTappedEventHandler : Windows::IUnknown
 {
     RightTappedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<RightTappedEventHandler>(m_ptr); }
     template <typename L> RightTappedEventHandler(L lambda);
     template <typename F> RightTappedEventHandler (F * function);
     template <typename O, typename M> RightTappedEventHandler(O * object, M method);
@@ -184,7 +174,6 @@ struct RightTappedEventHandler : Windows::IUnknown
 struct TappedEventHandler : Windows::IUnknown
 {
     TappedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<TappedEventHandler>(m_ptr); }
     template <typename L> TappedEventHandler(L lambda);
     template <typename F> TappedEventHandler (F * function);
     template <typename O, typename M> TappedEventHandler(O * object, M method);
@@ -196,7 +185,6 @@ struct IAccessKeyDisplayDismissedEventArgs :
     impl::consume<IAccessKeyDisplayDismissedEventArgs>
 {
     IAccessKeyDisplayDismissedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccessKeyDisplayDismissedEventArgs>(m_ptr); }
 };
 
 struct IAccessKeyDisplayRequestedEventArgs :
@@ -204,7 +192,6 @@ struct IAccessKeyDisplayRequestedEventArgs :
     impl::consume<IAccessKeyDisplayRequestedEventArgs>
 {
     IAccessKeyDisplayRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccessKeyDisplayRequestedEventArgs>(m_ptr); }
 };
 
 struct IAccessKeyInvokedEventArgs :
@@ -212,7 +199,6 @@ struct IAccessKeyInvokedEventArgs :
     impl::consume<IAccessKeyInvokedEventArgs>
 {
     IAccessKeyInvokedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccessKeyInvokedEventArgs>(m_ptr); }
 };
 
 struct IAccessKeyManager :
@@ -220,7 +206,6 @@ struct IAccessKeyManager :
     impl::consume<IAccessKeyManager>
 {
     IAccessKeyManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccessKeyManager>(m_ptr); }
 };
 
 struct IAccessKeyManagerStatics :
@@ -228,7 +213,6 @@ struct IAccessKeyManagerStatics :
     impl::consume<IAccessKeyManagerStatics>
 {
     IAccessKeyManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAccessKeyManagerStatics>(m_ptr); }
 };
 
 struct ICommand :
@@ -236,7 +220,6 @@ struct ICommand :
     impl::consume<ICommand>
 {
     ICommand(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICommand>(m_ptr); }
 };
 
 struct IContextRequestedEventArgs :
@@ -244,7 +227,6 @@ struct IContextRequestedEventArgs :
     impl::consume<IContextRequestedEventArgs>
 {
     IContextRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContextRequestedEventArgs>(m_ptr); }
 };
 
 struct IDoubleTappedRoutedEventArgs :
@@ -252,7 +234,6 @@ struct IDoubleTappedRoutedEventArgs :
     impl::consume<IDoubleTappedRoutedEventArgs>
 {
     IDoubleTappedRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDoubleTappedRoutedEventArgs>(m_ptr); }
 };
 
 struct IFocusManager :
@@ -260,7 +241,6 @@ struct IFocusManager :
     impl::consume<IFocusManager>
 {
     IFocusManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFocusManager>(m_ptr); }
 };
 
 struct IFocusManagerStatics :
@@ -268,7 +248,6 @@ struct IFocusManagerStatics :
     impl::consume<IFocusManagerStatics>
 {
     IFocusManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFocusManagerStatics>(m_ptr); }
 };
 
 struct IFocusManagerStatics2 :
@@ -276,7 +255,6 @@ struct IFocusManagerStatics2 :
     impl::consume<IFocusManagerStatics2>
 {
     IFocusManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFocusManagerStatics2>(m_ptr); }
 };
 
 struct IFocusManagerStatics3 :
@@ -284,7 +262,6 @@ struct IFocusManagerStatics3 :
     impl::consume<IFocusManagerStatics3>
 {
     IFocusManagerStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFocusManagerStatics3>(m_ptr); }
 };
 
 struct IHoldingRoutedEventArgs :
@@ -292,7 +269,6 @@ struct IHoldingRoutedEventArgs :
     impl::consume<IHoldingRoutedEventArgs>
 {
     IHoldingRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHoldingRoutedEventArgs>(m_ptr); }
 };
 
 struct IInertiaExpansionBehavior :
@@ -300,7 +276,6 @@ struct IInertiaExpansionBehavior :
     impl::consume<IInertiaExpansionBehavior>
 {
     IInertiaExpansionBehavior(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInertiaExpansionBehavior>(m_ptr); }
 };
 
 struct IInertiaRotationBehavior :
@@ -308,7 +283,6 @@ struct IInertiaRotationBehavior :
     impl::consume<IInertiaRotationBehavior>
 {
     IInertiaRotationBehavior(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInertiaRotationBehavior>(m_ptr); }
 };
 
 struct IInertiaTranslationBehavior :
@@ -316,7 +290,6 @@ struct IInertiaTranslationBehavior :
     impl::consume<IInertiaTranslationBehavior>
 {
     IInertiaTranslationBehavior(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInertiaTranslationBehavior>(m_ptr); }
 };
 
 struct IInputScope :
@@ -324,7 +297,6 @@ struct IInputScope :
     impl::consume<IInputScope>
 {
     IInputScope(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInputScope>(m_ptr); }
 };
 
 struct IInputScopeName :
@@ -332,7 +304,6 @@ struct IInputScopeName :
     impl::consume<IInputScopeName>
 {
     IInputScopeName(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInputScopeName>(m_ptr); }
 };
 
 struct IInputScopeNameFactory :
@@ -340,7 +311,6 @@ struct IInputScopeNameFactory :
     impl::consume<IInputScopeNameFactory>
 {
     IInputScopeNameFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInputScopeNameFactory>(m_ptr); }
 };
 
 struct IKeyRoutedEventArgs :
@@ -348,7 +318,6 @@ struct IKeyRoutedEventArgs :
     impl::consume<IKeyRoutedEventArgs>
 {
     IKeyRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyRoutedEventArgs>(m_ptr); }
 };
 
 struct IKeyRoutedEventArgs2 :
@@ -356,7 +325,6 @@ struct IKeyRoutedEventArgs2 :
     impl::consume<IKeyRoutedEventArgs2>
 {
     IKeyRoutedEventArgs2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyRoutedEventArgs2>(m_ptr); }
 };
 
 struct IKeyRoutedEventArgs3 :
@@ -364,7 +332,6 @@ struct IKeyRoutedEventArgs3 :
     impl::consume<IKeyRoutedEventArgs3>
 {
     IKeyRoutedEventArgs3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKeyRoutedEventArgs3>(m_ptr); }
 };
 
 struct IManipulationCompletedRoutedEventArgs :
@@ -372,7 +339,6 @@ struct IManipulationCompletedRoutedEventArgs :
     impl::consume<IManipulationCompletedRoutedEventArgs>
 {
     IManipulationCompletedRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IManipulationCompletedRoutedEventArgs>(m_ptr); }
 };
 
 struct IManipulationDeltaRoutedEventArgs :
@@ -380,7 +346,6 @@ struct IManipulationDeltaRoutedEventArgs :
     impl::consume<IManipulationDeltaRoutedEventArgs>
 {
     IManipulationDeltaRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IManipulationDeltaRoutedEventArgs>(m_ptr); }
 };
 
 struct IManipulationInertiaStartingRoutedEventArgs :
@@ -388,7 +353,6 @@ struct IManipulationInertiaStartingRoutedEventArgs :
     impl::consume<IManipulationInertiaStartingRoutedEventArgs>
 {
     IManipulationInertiaStartingRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IManipulationInertiaStartingRoutedEventArgs>(m_ptr); }
 };
 
 struct IManipulationPivot :
@@ -396,7 +360,6 @@ struct IManipulationPivot :
     impl::consume<IManipulationPivot>
 {
     IManipulationPivot(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IManipulationPivot>(m_ptr); }
 };
 
 struct IManipulationPivotFactory :
@@ -404,7 +367,6 @@ struct IManipulationPivotFactory :
     impl::consume<IManipulationPivotFactory>
 {
     IManipulationPivotFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IManipulationPivotFactory>(m_ptr); }
 };
 
 struct IManipulationStartedRoutedEventArgs :
@@ -412,7 +374,6 @@ struct IManipulationStartedRoutedEventArgs :
     impl::consume<IManipulationStartedRoutedEventArgs>
 {
     IManipulationStartedRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IManipulationStartedRoutedEventArgs>(m_ptr); }
 };
 
 struct IManipulationStartedRoutedEventArgsFactory :
@@ -420,7 +381,6 @@ struct IManipulationStartedRoutedEventArgsFactory :
     impl::consume<IManipulationStartedRoutedEventArgsFactory>
 {
     IManipulationStartedRoutedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IManipulationStartedRoutedEventArgsFactory>(m_ptr); }
 };
 
 struct IManipulationStartingRoutedEventArgs :
@@ -428,7 +388,6 @@ struct IManipulationStartingRoutedEventArgs :
     impl::consume<IManipulationStartingRoutedEventArgs>
 {
     IManipulationStartingRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IManipulationStartingRoutedEventArgs>(m_ptr); }
 };
 
 struct IPointer :
@@ -436,7 +395,6 @@ struct IPointer :
     impl::consume<IPointer>
 {
     IPointer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointer>(m_ptr); }
 };
 
 struct IPointerRoutedEventArgs :
@@ -444,7 +402,6 @@ struct IPointerRoutedEventArgs :
     impl::consume<IPointerRoutedEventArgs>
 {
     IPointerRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPointerRoutedEventArgs>(m_ptr); }
 };
 
 struct IRightTappedRoutedEventArgs :
@@ -452,7 +409,6 @@ struct IRightTappedRoutedEventArgs :
     impl::consume<IRightTappedRoutedEventArgs>
 {
     IRightTappedRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRightTappedRoutedEventArgs>(m_ptr); }
 };
 
 struct ITappedRoutedEventArgs :
@@ -460,7 +416,6 @@ struct ITappedRoutedEventArgs :
     impl::consume<ITappedRoutedEventArgs>
 {
     ITappedRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITappedRoutedEventArgs>(m_ptr); }
 };
 
 }

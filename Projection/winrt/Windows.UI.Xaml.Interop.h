@@ -25,7 +25,7 @@ template <typename O, typename M> BindableVectorChangedEventHandler::BindableVec
 
 inline void BindableVectorChangedEventHandler::operator()(const Windows::UI::Xaml::Interop::IBindableObservableVector & vector, const Windows::IInspectable & e) const
 {
-    check_hresult((*this)->abi_Invoke(get(vector), get(e)));
+    check_hresult((*(abi<BindableVectorChangedEventHandler> **)this)->abi_Invoke(get(vector), get(e)));
 }
 
 template <typename L> NotifyCollectionChangedEventHandler::NotifyCollectionChangedEventHandler(L lambda) :
@@ -42,7 +42,7 @@ template <typename O, typename M> NotifyCollectionChangedEventHandler::NotifyCol
 
 inline void NotifyCollectionChangedEventHandler::operator()(const Windows::IInspectable & sender, const Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs & e) const
 {
-    check_hresult((*this)->abi_Invoke(get(sender), get(e)));
+    check_hresult((*(abi<NotifyCollectionChangedEventHandler> **)this)->abi_Invoke(get(sender), get(e)));
 }
 
 }
@@ -475,72 +475,72 @@ namespace Windows::UI::Xaml::Interop {
 template <typename D> Windows::UI::Xaml::Interop::IBindableIterator impl_IBindableIterable<D>::First() const
 {
     Windows::UI::Xaml::Interop::IBindableIterator returnValue;
-    check_hresult(static_cast<const IBindableIterable &>(static_cast<const D &>(*this))->abi_First(put(returnValue)));
+    check_hresult(WINRT_SHIM(IBindableIterable)->abi_First(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::IInspectable impl_IBindableVector<D>::GetAt(uint32_t index) const
 {
     Windows::IInspectable returnValue;
-    check_hresult(static_cast<const IBindableVector &>(static_cast<const D &>(*this))->abi_GetAt(index, put(returnValue)));
+    check_hresult(WINRT_SHIM(IBindableVector)->abi_GetAt(index, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> uint32_t impl_IBindableVector<D>::Size() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBindableVector &>(static_cast<const D &>(*this))->get_Size(&value));
+    check_hresult(WINRT_SHIM(IBindableVector)->get_Size(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Interop::IBindableVectorView impl_IBindableVector<D>::GetView() const
 {
     Windows::UI::Xaml::Interop::IBindableVectorView returnValue;
-    check_hresult(static_cast<const IBindableVector &>(static_cast<const D &>(*this))->abi_GetView(put(returnValue)));
+    check_hresult(WINRT_SHIM(IBindableVector)->abi_GetView(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> bool impl_IBindableVector<D>::IndexOf(const Windows::IInspectable & value, uint32_t & index) const
 {
     bool returnValue {};
-    check_hresult(static_cast<const IBindableVector &>(static_cast<const D &>(*this))->abi_IndexOf(get(value), &index, &returnValue));
+    check_hresult(WINRT_SHIM(IBindableVector)->abi_IndexOf(get(value), &index, &returnValue));
     return returnValue;
 }
 
 template <typename D> void impl_IBindableVector<D>::SetAt(uint32_t index, const Windows::IInspectable & value) const
 {
-    check_hresult(static_cast<const IBindableVector &>(static_cast<const D &>(*this))->abi_SetAt(index, get(value)));
+    check_hresult(WINRT_SHIM(IBindableVector)->abi_SetAt(index, get(value)));
 }
 
 template <typename D> void impl_IBindableVector<D>::InsertAt(uint32_t index, const Windows::IInspectable & value) const
 {
-    check_hresult(static_cast<const IBindableVector &>(static_cast<const D &>(*this))->abi_InsertAt(index, get(value)));
+    check_hresult(WINRT_SHIM(IBindableVector)->abi_InsertAt(index, get(value)));
 }
 
 template <typename D> void impl_IBindableVector<D>::RemoveAt(uint32_t index) const
 {
-    check_hresult(static_cast<const IBindableVector &>(static_cast<const D &>(*this))->abi_RemoveAt(index));
+    check_hresult(WINRT_SHIM(IBindableVector)->abi_RemoveAt(index));
 }
 
 template <typename D> void impl_IBindableVector<D>::Append(const Windows::IInspectable & value) const
 {
-    check_hresult(static_cast<const IBindableVector &>(static_cast<const D &>(*this))->abi_Append(get(value)));
+    check_hresult(WINRT_SHIM(IBindableVector)->abi_Append(get(value)));
 }
 
 template <typename D> void impl_IBindableVector<D>::RemoveAtEnd() const
 {
-    check_hresult(static_cast<const IBindableVector &>(static_cast<const D &>(*this))->abi_RemoveAtEnd());
+    check_hresult(WINRT_SHIM(IBindableVector)->abi_RemoveAtEnd());
 }
 
 template <typename D> void impl_IBindableVector<D>::Clear() const
 {
-    check_hresult(static_cast<const IBindableVector &>(static_cast<const D &>(*this))->abi_Clear());
+    check_hresult(WINRT_SHIM(IBindableVector)->abi_Clear());
 }
 
 template <typename D> event_token impl_IBindableObservableVector<D>::VectorChanged(const Windows::UI::Xaml::Interop::BindableVectorChangedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IBindableObservableVector &>(static_cast<const D &>(*this))->add_VectorChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IBindableObservableVector)->add_VectorChanged(get(value), &token));
     return token;
 }
 
@@ -551,55 +551,55 @@ template <typename D> event_revoker<IBindableObservableVector> impl_IBindableObs
 
 template <typename D> void impl_IBindableObservableVector<D>::VectorChanged(event_token token) const
 {
-    check_hresult(static_cast<const IBindableObservableVector &>(static_cast<const D &>(*this))->remove_VectorChanged(token));
+    check_hresult(WINRT_SHIM(IBindableObservableVector)->remove_VectorChanged(token));
 }
 
 template <typename D> Windows::IInspectable impl_IBindableVectorView<D>::GetAt(uint32_t index) const
 {
     Windows::IInspectable returnValue;
-    check_hresult(static_cast<const IBindableVectorView &>(static_cast<const D &>(*this))->abi_GetAt(index, put(returnValue)));
+    check_hresult(WINRT_SHIM(IBindableVectorView)->abi_GetAt(index, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> uint32_t impl_IBindableVectorView<D>::Size() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBindableVectorView &>(static_cast<const D &>(*this))->get_Size(&value));
+    check_hresult(WINRT_SHIM(IBindableVectorView)->get_Size(&value));
     return value;
 }
 
 template <typename D> bool impl_IBindableVectorView<D>::IndexOf(const Windows::IInspectable & value, uint32_t & index) const
 {
     bool returnValue {};
-    check_hresult(static_cast<const IBindableVectorView &>(static_cast<const D &>(*this))->abi_IndexOf(get(value), &index, &returnValue));
+    check_hresult(WINRT_SHIM(IBindableVectorView)->abi_IndexOf(get(value), &index, &returnValue));
     return returnValue;
 }
 
 template <typename D> Windows::IInspectable impl_IBindableIterator<D>::Current() const
 {
     Windows::IInspectable value;
-    check_hresult(static_cast<const IBindableIterator &>(static_cast<const D &>(*this))->get_Current(put(value)));
+    check_hresult(WINRT_SHIM(IBindableIterator)->get_Current(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IBindableIterator<D>::HasCurrent() const
 {
     bool value {};
-    check_hresult(static_cast<const IBindableIterator &>(static_cast<const D &>(*this))->get_HasCurrent(&value));
+    check_hresult(WINRT_SHIM(IBindableIterator)->get_HasCurrent(&value));
     return value;
 }
 
 template <typename D> bool impl_IBindableIterator<D>::MoveNext() const
 {
     bool returnValue {};
-    check_hresult(static_cast<const IBindableIterator &>(static_cast<const D &>(*this))->abi_MoveNext(&returnValue));
+    check_hresult(WINRT_SHIM(IBindableIterator)->abi_MoveNext(&returnValue));
     return returnValue;
 }
 
 template <typename D> event_token impl_INotifyCollectionChanged<D>::CollectionChanged(const Windows::UI::Xaml::Interop::NotifyCollectionChangedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const INotifyCollectionChanged &>(static_cast<const D &>(*this))->add_CollectionChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(INotifyCollectionChanged)->add_CollectionChanged(get(value), &token));
     return token;
 }
 
@@ -610,48 +610,48 @@ template <typename D> event_revoker<INotifyCollectionChanged> impl_INotifyCollec
 
 template <typename D> void impl_INotifyCollectionChanged<D>::CollectionChanged(event_token token) const
 {
-    check_hresult(static_cast<const INotifyCollectionChanged &>(static_cast<const D &>(*this))->remove_CollectionChanged(token));
+    check_hresult(WINRT_SHIM(INotifyCollectionChanged)->remove_CollectionChanged(token));
 }
 
 template <typename D> Windows::UI::Xaml::Interop::NotifyCollectionChangedAction impl_INotifyCollectionChangedEventArgs<D>::Action() const
 {
     Windows::UI::Xaml::Interop::NotifyCollectionChangedAction value {};
-    check_hresult(static_cast<const INotifyCollectionChangedEventArgs &>(static_cast<const D &>(*this))->get_Action(&value));
+    check_hresult(WINRT_SHIM(INotifyCollectionChangedEventArgs)->get_Action(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Interop::IBindableVector impl_INotifyCollectionChangedEventArgs<D>::NewItems() const
 {
     Windows::UI::Xaml::Interop::IBindableVector value;
-    check_hresult(static_cast<const INotifyCollectionChangedEventArgs &>(static_cast<const D &>(*this))->get_NewItems(put(value)));
+    check_hresult(WINRT_SHIM(INotifyCollectionChangedEventArgs)->get_NewItems(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Interop::IBindableVector impl_INotifyCollectionChangedEventArgs<D>::OldItems() const
 {
     Windows::UI::Xaml::Interop::IBindableVector value;
-    check_hresult(static_cast<const INotifyCollectionChangedEventArgs &>(static_cast<const D &>(*this))->get_OldItems(put(value)));
+    check_hresult(WINRT_SHIM(INotifyCollectionChangedEventArgs)->get_OldItems(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_INotifyCollectionChangedEventArgs<D>::NewStartingIndex() const
 {
     int32_t value {};
-    check_hresult(static_cast<const INotifyCollectionChangedEventArgs &>(static_cast<const D &>(*this))->get_NewStartingIndex(&value));
+    check_hresult(WINRT_SHIM(INotifyCollectionChangedEventArgs)->get_NewStartingIndex(&value));
     return value;
 }
 
 template <typename D> int32_t impl_INotifyCollectionChangedEventArgs<D>::OldStartingIndex() const
 {
     int32_t value {};
-    check_hresult(static_cast<const INotifyCollectionChangedEventArgs &>(static_cast<const D &>(*this))->get_OldStartingIndex(&value));
+    check_hresult(WINRT_SHIM(INotifyCollectionChangedEventArgs)->get_OldStartingIndex(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs impl_INotifyCollectionChangedEventArgsFactory<D>::CreateInstanceWithAllParameters(Windows::UI::Xaml::Interop::NotifyCollectionChangedAction action, const Windows::UI::Xaml::Interop::IBindableVector & newItems, const Windows::UI::Xaml::Interop::IBindableVector & oldItems, int32_t newIndex, int32_t oldIndex, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs instance { nullptr };
-    check_hresult(static_cast<const INotifyCollectionChangedEventArgsFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithAllParameters(action, get(newItems), get(oldItems), newIndex, oldIndex, get(outer), put(inner), put(instance)));
+    check_hresult(WINRT_SHIM(INotifyCollectionChangedEventArgsFactory)->abi_CreateInstanceWithAllParameters(action, get(newItems), get(oldItems), newIndex, oldIndex, get(outer), put(inner), put(instance)));
     return instance;
 }
 

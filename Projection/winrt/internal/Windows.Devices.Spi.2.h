@@ -105,7 +105,6 @@ struct ISpiBusInfo :
     impl::consume<ISpiBusInfo>
 {
     ISpiBusInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpiBusInfo>(m_ptr); }
 };
 
 struct ISpiConnectionSettings :
@@ -113,7 +112,6 @@ struct ISpiConnectionSettings :
     impl::consume<ISpiConnectionSettings>
 {
     ISpiConnectionSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpiConnectionSettings>(m_ptr); }
 };
 
 struct ISpiConnectionSettingsFactory :
@@ -121,7 +119,6 @@ struct ISpiConnectionSettingsFactory :
     impl::consume<ISpiConnectionSettingsFactory>
 {
     ISpiConnectionSettingsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpiConnectionSettingsFactory>(m_ptr); }
 };
 
 struct ISpiController :
@@ -129,7 +126,6 @@ struct ISpiController :
     impl::consume<ISpiController>
 {
     ISpiController(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpiController>(m_ptr); }
 };
 
 struct ISpiControllerStatics :
@@ -137,7 +133,6 @@ struct ISpiControllerStatics :
     impl::consume<ISpiControllerStatics>
 {
     ISpiControllerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpiControllerStatics>(m_ptr); }
 };
 
 struct ISpiDevice :
@@ -146,7 +141,6 @@ struct ISpiDevice :
     impl::require<ISpiDevice, Windows::Foundation::IClosable>
 {
     ISpiDevice(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpiDevice>(m_ptr); }
 };
 
 struct ISpiDeviceStatics :
@@ -154,7 +148,6 @@ struct ISpiDeviceStatics :
     impl::consume<ISpiDeviceStatics>
 {
     ISpiDeviceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpiDeviceStatics>(m_ptr); }
 };
 
 }

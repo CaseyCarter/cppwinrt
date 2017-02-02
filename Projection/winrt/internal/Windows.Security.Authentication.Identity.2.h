@@ -49,7 +49,6 @@ struct IEnterpriseKeyCredentialRegistrationInfo :
     impl::consume<IEnterpriseKeyCredentialRegistrationInfo>
 {
     IEnterpriseKeyCredentialRegistrationInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEnterpriseKeyCredentialRegistrationInfo>(m_ptr); }
 };
 
 struct IEnterpriseKeyCredentialRegistrationManager :
@@ -57,7 +56,6 @@ struct IEnterpriseKeyCredentialRegistrationManager :
     impl::consume<IEnterpriseKeyCredentialRegistrationManager>
 {
     IEnterpriseKeyCredentialRegistrationManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEnterpriseKeyCredentialRegistrationManager>(m_ptr); }
 };
 
 struct IEnterpriseKeyCredentialRegistrationManagerStatics :
@@ -65,7 +63,6 @@ struct IEnterpriseKeyCredentialRegistrationManagerStatics :
     impl::consume<IEnterpriseKeyCredentialRegistrationManagerStatics>
 {
     IEnterpriseKeyCredentialRegistrationManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEnterpriseKeyCredentialRegistrationManagerStatics>(m_ptr); }
 };
 
 }

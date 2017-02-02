@@ -126,7 +126,6 @@ struct ICastingConnection :
     impl::require<ICastingConnection, Windows::Foundation::IClosable>
 {
     ICastingConnection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICastingConnection>(m_ptr); }
 };
 
 struct ICastingConnectionErrorOccurredEventArgs :
@@ -134,7 +133,6 @@ struct ICastingConnectionErrorOccurredEventArgs :
     impl::consume<ICastingConnectionErrorOccurredEventArgs>
 {
     ICastingConnectionErrorOccurredEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICastingConnectionErrorOccurredEventArgs>(m_ptr); }
 };
 
 struct ICastingDevice :
@@ -142,7 +140,6 @@ struct ICastingDevice :
     impl::consume<ICastingDevice>
 {
     ICastingDevice(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICastingDevice>(m_ptr); }
 };
 
 struct ICastingDevicePicker :
@@ -150,7 +147,6 @@ struct ICastingDevicePicker :
     impl::consume<ICastingDevicePicker>
 {
     ICastingDevicePicker(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICastingDevicePicker>(m_ptr); }
 };
 
 struct ICastingDevicePickerFilter :
@@ -158,7 +154,6 @@ struct ICastingDevicePickerFilter :
     impl::consume<ICastingDevicePickerFilter>
 {
     ICastingDevicePickerFilter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICastingDevicePickerFilter>(m_ptr); }
 };
 
 struct ICastingDeviceSelectedEventArgs :
@@ -166,7 +161,6 @@ struct ICastingDeviceSelectedEventArgs :
     impl::consume<ICastingDeviceSelectedEventArgs>
 {
     ICastingDeviceSelectedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICastingDeviceSelectedEventArgs>(m_ptr); }
 };
 
 struct ICastingDeviceStatics :
@@ -174,7 +168,6 @@ struct ICastingDeviceStatics :
     impl::consume<ICastingDeviceStatics>
 {
     ICastingDeviceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICastingDeviceStatics>(m_ptr); }
 };
 
 struct ICastingSource :
@@ -182,7 +175,6 @@ struct ICastingSource :
     impl::consume<ICastingSource>
 {
     ICastingSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICastingSource>(m_ptr); }
 };
 
 }

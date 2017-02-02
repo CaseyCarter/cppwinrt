@@ -15,7 +15,6 @@ struct ISceneLightingEffect :
     impl::consume<ISceneLightingEffect>
 {
     ISceneLightingEffect(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISceneLightingEffect>(m_ptr); }
 };
 
 }

@@ -105,7 +105,6 @@ struct IBuffer :
     impl::consume<IBuffer>
 {
     IBuffer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBuffer>(m_ptr); }
 };
 
 struct IBufferFactory :
@@ -113,7 +112,6 @@ struct IBufferFactory :
     impl::consume<IBufferFactory>
 {
     IBufferFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBufferFactory>(m_ptr); }
 };
 
 struct IBufferStatics :
@@ -121,7 +119,6 @@ struct IBufferStatics :
     impl::consume<IBufferStatics>
 {
     IBufferStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBufferStatics>(m_ptr); }
 };
 
 struct IContentTypeProvider :
@@ -129,7 +126,6 @@ struct IContentTypeProvider :
     impl::consume<IContentTypeProvider>
 {
     IContentTypeProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContentTypeProvider>(m_ptr); }
 };
 
 struct IDataReader :
@@ -137,7 +133,6 @@ struct IDataReader :
     impl::consume<IDataReader>
 {
     IDataReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataReader>(m_ptr); }
 };
 
 struct IDataReaderFactory :
@@ -145,7 +140,6 @@ struct IDataReaderFactory :
     impl::consume<IDataReaderFactory>
 {
     IDataReaderFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataReaderFactory>(m_ptr); }
 };
 
 struct IDataReaderStatics :
@@ -153,7 +147,6 @@ struct IDataReaderStatics :
     impl::consume<IDataReaderStatics>
 {
     IDataReaderStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataReaderStatics>(m_ptr); }
 };
 
 struct IDataWriter :
@@ -161,7 +154,6 @@ struct IDataWriter :
     impl::consume<IDataWriter>
 {
     IDataWriter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataWriter>(m_ptr); }
 };
 
 struct IDataWriterFactory :
@@ -169,7 +161,6 @@ struct IDataWriterFactory :
     impl::consume<IDataWriterFactory>
 {
     IDataWriterFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataWriterFactory>(m_ptr); }
 };
 
 struct IInputStream :
@@ -178,7 +169,6 @@ struct IInputStream :
     impl::require<IInputStream, Windows::Foundation::IClosable>
 {
     IInputStream(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInputStream>(m_ptr); }
 };
 
 struct IInputStreamReference :
@@ -186,7 +176,6 @@ struct IInputStreamReference :
     impl::consume<IInputStreamReference>
 {
     IInputStreamReference(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInputStreamReference>(m_ptr); }
 };
 
 struct IOutputStream :
@@ -195,7 +184,6 @@ struct IOutputStream :
     impl::require<IOutputStream, Windows::Foundation::IClosable>
 {
     IOutputStream(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IOutputStream>(m_ptr); }
 };
 
 struct IRandomAccessStream :
@@ -204,7 +192,6 @@ struct IRandomAccessStream :
     impl::require<IRandomAccessStream, Windows::Foundation::IClosable, Windows::Storage::Streams::IInputStream, Windows::Storage::Streams::IOutputStream>
 {
     IRandomAccessStream(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRandomAccessStream>(m_ptr); }
 };
 
 struct IRandomAccessStreamReference :
@@ -212,7 +199,6 @@ struct IRandomAccessStreamReference :
     impl::consume<IRandomAccessStreamReference>
 {
     IRandomAccessStreamReference(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRandomAccessStreamReference>(m_ptr); }
 };
 
 struct IRandomAccessStreamReferenceStatics :
@@ -220,7 +206,6 @@ struct IRandomAccessStreamReferenceStatics :
     impl::consume<IRandomAccessStreamReferenceStatics>
 {
     IRandomAccessStreamReferenceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRandomAccessStreamReferenceStatics>(m_ptr); }
 };
 
 struct IRandomAccessStreamStatics :
@@ -228,7 +213,6 @@ struct IRandomAccessStreamStatics :
     impl::consume<IRandomAccessStreamStatics>
 {
     IRandomAccessStreamStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRandomAccessStreamStatics>(m_ptr); }
 };
 
 struct IRandomAccessStreamWithContentType :
@@ -237,7 +221,6 @@ struct IRandomAccessStreamWithContentType :
     impl::require<IRandomAccessStreamWithContentType, Windows::Foundation::IClosable, Windows::Storage::Streams::IContentTypeProvider, Windows::Storage::Streams::IInputStream, Windows::Storage::Streams::IOutputStream, Windows::Storage::Streams::IRandomAccessStream>
 {
     IRandomAccessStreamWithContentType(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRandomAccessStreamWithContentType>(m_ptr); }
 };
 
 }

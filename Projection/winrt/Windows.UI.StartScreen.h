@@ -1486,368 +1486,368 @@ namespace Windows::UI::StartScreen {
 template <typename D> Windows::UI::StartScreen::JumpListItemKind impl_IJumpListItem<D>::Kind() const
 {
     Windows::UI::StartScreen::JumpListItemKind value {};
-    check_hresult(static_cast<const IJumpListItem &>(static_cast<const D &>(*this))->get_Kind(&value));
+    check_hresult(WINRT_SHIM(IJumpListItem)->get_Kind(&value));
     return value;
 }
 
 template <typename D> hstring impl_IJumpListItem<D>::Arguments() const
 {
     hstring value;
-    check_hresult(static_cast<const IJumpListItem &>(static_cast<const D &>(*this))->get_Arguments(put(value)));
+    check_hresult(WINRT_SHIM(IJumpListItem)->get_Arguments(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IJumpListItem<D>::RemovedByUser() const
 {
     bool value {};
-    check_hresult(static_cast<const IJumpListItem &>(static_cast<const D &>(*this))->get_RemovedByUser(&value));
+    check_hresult(WINRT_SHIM(IJumpListItem)->get_RemovedByUser(&value));
     return value;
 }
 
 template <typename D> hstring impl_IJumpListItem<D>::Description() const
 {
     hstring value;
-    check_hresult(static_cast<const IJumpListItem &>(static_cast<const D &>(*this))->get_Description(put(value)));
+    check_hresult(WINRT_SHIM(IJumpListItem)->get_Description(put(value)));
     return value;
 }
 
 template <typename D> void impl_IJumpListItem<D>::Description(hstring_ref value) const
 {
-    check_hresult(static_cast<const IJumpListItem &>(static_cast<const D &>(*this))->put_Description(get(value)));
+    check_hresult(WINRT_SHIM(IJumpListItem)->put_Description(get(value)));
 }
 
 template <typename D> hstring impl_IJumpListItem<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const IJumpListItem &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IJumpListItem)->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IJumpListItem<D>::DisplayName(hstring_ref value) const
 {
-    check_hresult(static_cast<const IJumpListItem &>(static_cast<const D &>(*this))->put_DisplayName(get(value)));
+    check_hresult(WINRT_SHIM(IJumpListItem)->put_DisplayName(get(value)));
 }
 
 template <typename D> hstring impl_IJumpListItem<D>::GroupName() const
 {
     hstring value;
-    check_hresult(static_cast<const IJumpListItem &>(static_cast<const D &>(*this))->get_GroupName(put(value)));
+    check_hresult(WINRT_SHIM(IJumpListItem)->get_GroupName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IJumpListItem<D>::GroupName(hstring_ref value) const
 {
-    check_hresult(static_cast<const IJumpListItem &>(static_cast<const D &>(*this))->put_GroupName(get(value)));
+    check_hresult(WINRT_SHIM(IJumpListItem)->put_GroupName(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IJumpListItem<D>::Logo() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const IJumpListItem &>(static_cast<const D &>(*this))->get_Logo(put(value)));
+    check_hresult(WINRT_SHIM(IJumpListItem)->get_Logo(put(value)));
     return value;
 }
 
 template <typename D> void impl_IJumpListItem<D>::Logo(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const IJumpListItem &>(static_cast<const D &>(*this))->put_Logo(get(value)));
+    check_hresult(WINRT_SHIM(IJumpListItem)->put_Logo(get(value)));
 }
 
 template <typename D> Windows::UI::StartScreen::JumpListItem impl_IJumpListItemStatics<D>::CreateWithArguments(hstring_ref arguments, hstring_ref displayName) const
 {
     Windows::UI::StartScreen::JumpListItem result { nullptr };
-    check_hresult(static_cast<const IJumpListItemStatics &>(static_cast<const D &>(*this))->abi_CreateWithArguments(get(arguments), get(displayName), put(result)));
+    check_hresult(WINRT_SHIM(IJumpListItemStatics)->abi_CreateWithArguments(get(arguments), get(displayName), put(result)));
     return result;
 }
 
 template <typename D> Windows::UI::StartScreen::JumpListItem impl_IJumpListItemStatics<D>::CreateSeparator() const
 {
     Windows::UI::StartScreen::JumpListItem result { nullptr };
-    check_hresult(static_cast<const IJumpListItemStatics &>(static_cast<const D &>(*this))->abi_CreateSeparator(put(result)));
+    check_hresult(WINRT_SHIM(IJumpListItemStatics)->abi_CreateSeparator(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::StartScreen::JumpListItem> impl_IJumpList<D>::Items() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::StartScreen::JumpListItem> value;
-    check_hresult(static_cast<const IJumpList &>(static_cast<const D &>(*this))->get_Items(put(value)));
+    check_hresult(WINRT_SHIM(IJumpList)->get_Items(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::StartScreen::JumpListSystemGroupKind impl_IJumpList<D>::SystemGroupKind() const
 {
     Windows::UI::StartScreen::JumpListSystemGroupKind value {};
-    check_hresult(static_cast<const IJumpList &>(static_cast<const D &>(*this))->get_SystemGroupKind(&value));
+    check_hresult(WINRT_SHIM(IJumpList)->get_SystemGroupKind(&value));
     return value;
 }
 
 template <typename D> void impl_IJumpList<D>::SystemGroupKind(Windows::UI::StartScreen::JumpListSystemGroupKind value) const
 {
-    check_hresult(static_cast<const IJumpList &>(static_cast<const D &>(*this))->put_SystemGroupKind(value));
+    check_hresult(WINRT_SHIM(IJumpList)->put_SystemGroupKind(value));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IJumpList<D>::SaveAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IJumpList &>(static_cast<const D &>(*this))->abi_SaveAsync(put(result)));
+    check_hresult(WINRT_SHIM(IJumpList)->abi_SaveAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::UI::StartScreen::JumpList> impl_IJumpListStatics<D>::LoadCurrentAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::UI::StartScreen::JumpList> result;
-    check_hresult(static_cast<const IJumpListStatics &>(static_cast<const D &>(*this))->abi_LoadCurrentAsync(put(result)));
+    check_hresult(WINRT_SHIM(IJumpListStatics)->abi_LoadCurrentAsync(put(result)));
     return result;
 }
 
 template <typename D> bool impl_IJumpListStatics<D>::IsSupported() const
 {
     bool result {};
-    check_hresult(static_cast<const IJumpListStatics &>(static_cast<const D &>(*this))->abi_IsSupported(&result));
+    check_hresult(WINRT_SHIM(IJumpListStatics)->abi_IsSupported(&result));
     return result;
 }
 
 template <typename D> void impl_ISecondaryTile<D>::TileId(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->put_TileId(get(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->put_TileId(get(value)));
 }
 
 template <typename D> hstring impl_ISecondaryTile<D>::TileId() const
 {
     hstring value;
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->get_TileId(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->get_TileId(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTile<D>::Arguments(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->put_Arguments(get(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->put_Arguments(get(value)));
 }
 
 template <typename D> hstring impl_ISecondaryTile<D>::Arguments() const
 {
     hstring value;
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->get_Arguments(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->get_Arguments(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTile<D>::ShortName(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->put_ShortName(get(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->put_ShortName(get(value)));
 }
 
 template <typename D> hstring impl_ISecondaryTile<D>::ShortName() const
 {
     hstring value;
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->get_ShortName(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->get_ShortName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTile<D>::DisplayName(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->put_DisplayName(get(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->put_DisplayName(get(value)));
 }
 
 template <typename D> hstring impl_ISecondaryTile<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTile<D>::Logo(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->put_Logo(get(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->put_Logo(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISecondaryTile<D>::Logo() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->get_Logo(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->get_Logo(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTile<D>::SmallLogo(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->put_SmallLogo(get(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->put_SmallLogo(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISecondaryTile<D>::SmallLogo() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->get_SmallLogo(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->get_SmallLogo(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTile<D>::WideLogo(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->put_WideLogo(get(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->put_WideLogo(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISecondaryTile<D>::WideLogo() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->get_WideLogo(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->get_WideLogo(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTile<D>::LockScreenBadgeLogo(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->put_LockScreenBadgeLogo(get(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->put_LockScreenBadgeLogo(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISecondaryTile<D>::LockScreenBadgeLogo() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->get_LockScreenBadgeLogo(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->get_LockScreenBadgeLogo(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTile<D>::LockScreenDisplayBadgeAndTileText(bool value) const
 {
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->put_LockScreenDisplayBadgeAndTileText(value));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->put_LockScreenDisplayBadgeAndTileText(value));
 }
 
 template <typename D> bool impl_ISecondaryTile<D>::LockScreenDisplayBadgeAndTileText() const
 {
     bool value {};
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->get_LockScreenDisplayBadgeAndTileText(&value));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->get_LockScreenDisplayBadgeAndTileText(&value));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTile<D>::TileOptions(Windows::UI::StartScreen::TileOptions value) const
 {
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->put_TileOptions(value));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->put_TileOptions(value));
 }
 
 template <typename D> Windows::UI::StartScreen::TileOptions impl_ISecondaryTile<D>::TileOptions() const
 {
     Windows::UI::StartScreen::TileOptions value {};
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->get_TileOptions(&value));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->get_TileOptions(&value));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTile<D>::ForegroundText(Windows::UI::StartScreen::ForegroundText value) const
 {
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->put_ForegroundText(value));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->put_ForegroundText(value));
 }
 
 template <typename D> Windows::UI::StartScreen::ForegroundText impl_ISecondaryTile<D>::ForegroundText() const
 {
     Windows::UI::StartScreen::ForegroundText value {};
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->get_ForegroundText(&value));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->get_ForegroundText(&value));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTile<D>::BackgroundColor(const Windows::UI::Color & value) const
 {
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->put_BackgroundColor(get(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->put_BackgroundColor(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_ISecondaryTile<D>::BackgroundColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->get_BackgroundColor(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->get_BackgroundColor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISecondaryTile<D>::RequestCreateAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->abi_RequestCreateAsync(put(operation)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->abi_RequestCreateAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISecondaryTile<D>::RequestCreateAsync(const Windows::Foundation::Point & invocationPoint) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->abi_RequestCreateAsyncWithPoint(get(invocationPoint), put(operation)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->abi_RequestCreateAsyncWithPoint(get(invocationPoint), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISecondaryTile<D>::RequestCreateForSelectionAsync(const Windows::Foundation::Rect & selection) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->abi_RequestCreateAsyncWithRect(get(selection), put(operation)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->abi_RequestCreateAsyncWithRect(get(selection), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISecondaryTile<D>::RequestCreateForSelectionAsync(const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->abi_RequestCreateAsyncWithRectAndPlacement(get(selection), preferredPlacement, put(operation)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->abi_RequestCreateAsyncWithRectAndPlacement(get(selection), preferredPlacement, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISecondaryTile<D>::RequestDeleteAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->abi_RequestDeleteAsync(put(operation)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->abi_RequestDeleteAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISecondaryTile<D>::RequestDeleteAsync(const Windows::Foundation::Point & invocationPoint) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->abi_RequestDeleteAsyncWithPoint(get(invocationPoint), put(operation)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->abi_RequestDeleteAsyncWithPoint(get(invocationPoint), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISecondaryTile<D>::RequestDeleteForSelectionAsync(const Windows::Foundation::Rect & selection) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->abi_RequestDeleteAsyncWithRect(get(selection), put(operation)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->abi_RequestDeleteAsyncWithRect(get(selection), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISecondaryTile<D>::RequestDeleteForSelectionAsync(const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->abi_RequestDeleteAsyncWithRectAndPlacement(get(selection), preferredPlacement, put(operation)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->abi_RequestDeleteAsyncWithRectAndPlacement(get(selection), preferredPlacement, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISecondaryTile<D>::UpdateAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const ISecondaryTile &>(static_cast<const D &>(*this))->abi_UpdateAsync(put(operation)));
+    check_hresult(WINRT_SHIM(ISecondaryTile)->abi_UpdateAsync(put(operation)));
     return operation;
 }
 
 template <typename D> void impl_ISecondaryTile2<D>::PhoneticName(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISecondaryTile2 &>(static_cast<const D &>(*this))->put_PhoneticName(get(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile2)->put_PhoneticName(get(value)));
 }
 
 template <typename D> hstring impl_ISecondaryTile2<D>::PhoneticName() const
 {
     hstring value;
-    check_hresult(static_cast<const ISecondaryTile2 &>(static_cast<const D &>(*this))->get_PhoneticName(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile2)->get_PhoneticName(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::StartScreen::SecondaryTileVisualElements impl_ISecondaryTile2<D>::VisualElements() const
 {
     Windows::UI::StartScreen::SecondaryTileVisualElements value { nullptr };
-    check_hresult(static_cast<const ISecondaryTile2 &>(static_cast<const D &>(*this))->get_VisualElements(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTile2)->get_VisualElements(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTile2<D>::RoamingEnabled(bool value) const
 {
-    check_hresult(static_cast<const ISecondaryTile2 &>(static_cast<const D &>(*this))->put_RoamingEnabled(value));
+    check_hresult(WINRT_SHIM(ISecondaryTile2)->put_RoamingEnabled(value));
 }
 
 template <typename D> bool impl_ISecondaryTile2<D>::RoamingEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const ISecondaryTile2 &>(static_cast<const D &>(*this))->get_RoamingEnabled(&value));
+    check_hresult(WINRT_SHIM(ISecondaryTile2)->get_RoamingEnabled(&value));
     return value;
 }
 
 template <typename D> event_token impl_ISecondaryTile2<D>::VisualElementsRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::StartScreen::SecondaryTile, Windows::UI::StartScreen::VisualElementsRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ISecondaryTile2 &>(static_cast<const D &>(*this))->add_VisualElementsRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(ISecondaryTile2)->add_VisualElementsRequested(get(handler), &token));
     return token;
 }
 
@@ -1858,247 +1858,247 @@ template <typename D> event_revoker<ISecondaryTile2> impl_ISecondaryTile2<D>::Vi
 
 template <typename D> void impl_ISecondaryTile2<D>::VisualElementsRequested(event_token token) const
 {
-    check_hresult(static_cast<const ISecondaryTile2 &>(static_cast<const D &>(*this))->remove_VisualElementsRequested(token));
+    check_hresult(WINRT_SHIM(ISecondaryTile2)->remove_VisualElementsRequested(token));
 }
 
 template <typename D> void impl_ISecondaryTileVisualElements<D>::Square30x30Logo(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->put_Square30x30Logo(get(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->put_Square30x30Logo(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISecondaryTileVisualElements<D>::Square30x30Logo() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->get_Square30x30Logo(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->get_Square30x30Logo(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTileVisualElements<D>::Square70x70Logo(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->put_Square70x70Logo(get(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->put_Square70x70Logo(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISecondaryTileVisualElements<D>::Square70x70Logo() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->get_Square70x70Logo(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->get_Square70x70Logo(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTileVisualElements<D>::Square150x150Logo(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->put_Square150x150Logo(get(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->put_Square150x150Logo(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISecondaryTileVisualElements<D>::Square150x150Logo() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->get_Square150x150Logo(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->get_Square150x150Logo(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTileVisualElements<D>::Wide310x150Logo(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->put_Wide310x150Logo(get(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->put_Wide310x150Logo(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISecondaryTileVisualElements<D>::Wide310x150Logo() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->get_Wide310x150Logo(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->get_Wide310x150Logo(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTileVisualElements<D>::Square310x310Logo(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->put_Square310x310Logo(get(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->put_Square310x310Logo(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISecondaryTileVisualElements<D>::Square310x310Logo() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->get_Square310x310Logo(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->get_Square310x310Logo(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTileVisualElements<D>::ForegroundText(Windows::UI::StartScreen::ForegroundText value) const
 {
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->put_ForegroundText(value));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->put_ForegroundText(value));
 }
 
 template <typename D> Windows::UI::StartScreen::ForegroundText impl_ISecondaryTileVisualElements<D>::ForegroundText() const
 {
     Windows::UI::StartScreen::ForegroundText value {};
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->get_ForegroundText(&value));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->get_ForegroundText(&value));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTileVisualElements<D>::BackgroundColor(const Windows::UI::Color & value) const
 {
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->put_BackgroundColor(get(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->put_BackgroundColor(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_ISecondaryTileVisualElements<D>::BackgroundColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->get_BackgroundColor(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->get_BackgroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTileVisualElements<D>::ShowNameOnSquare150x150Logo(bool value) const
 {
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->put_ShowNameOnSquare150x150Logo(value));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->put_ShowNameOnSquare150x150Logo(value));
 }
 
 template <typename D> bool impl_ISecondaryTileVisualElements<D>::ShowNameOnSquare150x150Logo() const
 {
     bool value {};
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->get_ShowNameOnSquare150x150Logo(&value));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->get_ShowNameOnSquare150x150Logo(&value));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTileVisualElements<D>::ShowNameOnWide310x150Logo(bool value) const
 {
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->put_ShowNameOnWide310x150Logo(value));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->put_ShowNameOnWide310x150Logo(value));
 }
 
 template <typename D> bool impl_ISecondaryTileVisualElements<D>::ShowNameOnWide310x150Logo() const
 {
     bool value {};
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->get_ShowNameOnWide310x150Logo(&value));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->get_ShowNameOnWide310x150Logo(&value));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTileVisualElements<D>::ShowNameOnSquare310x310Logo(bool value) const
 {
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->put_ShowNameOnSquare310x310Logo(value));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->put_ShowNameOnSquare310x310Logo(value));
 }
 
 template <typename D> bool impl_ISecondaryTileVisualElements<D>::ShowNameOnSquare310x310Logo() const
 {
     bool value {};
-    check_hresult(static_cast<const ISecondaryTileVisualElements &>(static_cast<const D &>(*this))->get_ShowNameOnSquare310x310Logo(&value));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements)->get_ShowNameOnSquare310x310Logo(&value));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTileVisualElements2<D>::Square71x71Logo(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISecondaryTileVisualElements2 &>(static_cast<const D &>(*this))->put_Square71x71Logo(get(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements2)->put_Square71x71Logo(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISecondaryTileVisualElements2<D>::Square71x71Logo() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISecondaryTileVisualElements2 &>(static_cast<const D &>(*this))->get_Square71x71Logo(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements2)->get_Square71x71Logo(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISecondaryTileVisualElements3<D>::Square44x44Logo(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const ISecondaryTileVisualElements3 &>(static_cast<const D &>(*this))->put_Square44x44Logo(get(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements3)->put_Square44x44Logo(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISecondaryTileVisualElements3<D>::Square44x44Logo() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const ISecondaryTileVisualElements3 &>(static_cast<const D &>(*this))->get_Square44x44Logo(put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileVisualElements3)->get_Square44x44Logo(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::StartScreen::SecondaryTile impl_ISecondaryTileFactory<D>::CreateTile(hstring_ref tileId, hstring_ref shortName, hstring_ref displayName, hstring_ref arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference) const
 {
     Windows::UI::StartScreen::SecondaryTile value { nullptr };
-    check_hresult(static_cast<const ISecondaryTileFactory &>(static_cast<const D &>(*this))->abi_CreateTile(get(tileId), get(shortName), get(displayName), get(arguments), tileOptions, get(logoReference), put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileFactory)->abi_CreateTile(get(tileId), get(shortName), get(displayName), get(arguments), tileOptions, get(logoReference), put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::StartScreen::SecondaryTile impl_ISecondaryTileFactory<D>::CreateWideTile(hstring_ref tileId, hstring_ref shortName, hstring_ref displayName, hstring_ref arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference, const Windows::Foundation::Uri & wideLogoReference) const
 {
     Windows::UI::StartScreen::SecondaryTile value { nullptr };
-    check_hresult(static_cast<const ISecondaryTileFactory &>(static_cast<const D &>(*this))->abi_CreateWideTile(get(tileId), get(shortName), get(displayName), get(arguments), tileOptions, get(logoReference), get(wideLogoReference), put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileFactory)->abi_CreateWideTile(get(tileId), get(shortName), get(displayName), get(arguments), tileOptions, get(logoReference), get(wideLogoReference), put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::StartScreen::SecondaryTile impl_ISecondaryTileFactory<D>::CreateWithId(hstring_ref tileId) const
 {
     Windows::UI::StartScreen::SecondaryTile value { nullptr };
-    check_hresult(static_cast<const ISecondaryTileFactory &>(static_cast<const D &>(*this))->abi_CreateWithId(get(tileId), put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileFactory)->abi_CreateWithId(get(tileId), put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::StartScreen::SecondaryTile impl_ISecondaryTileFactory2<D>::CreateMinimalTile(hstring_ref tileId, hstring_ref displayName, hstring_ref arguments, const Windows::Foundation::Uri & square150x150Logo, Windows::UI::StartScreen::TileSize desiredSize) const
 {
     Windows::UI::StartScreen::SecondaryTile value { nullptr };
-    check_hresult(static_cast<const ISecondaryTileFactory2 &>(static_cast<const D &>(*this))->abi_CreateMinimalTile(get(tileId), get(displayName), get(arguments), get(square150x150Logo), desiredSize, put(value)));
+    check_hresult(WINRT_SHIM(ISecondaryTileFactory2)->abi_CreateMinimalTile(get(tileId), get(displayName), get(arguments), get(square150x150Logo), desiredSize, put(value)));
     return value;
 }
 
 template <typename D> bool impl_ISecondaryTileStatics<D>::Exists(hstring_ref tileId) const
 {
     bool exists {};
-    check_hresult(static_cast<const ISecondaryTileStatics &>(static_cast<const D &>(*this))->abi_Exists(get(tileId), &exists));
+    check_hresult(WINRT_SHIM(ISecondaryTileStatics)->abi_Exists(get(tileId), &exists));
     return exists;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> impl_ISecondaryTileStatics<D>::FindAllAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> operation;
-    check_hresult(static_cast<const ISecondaryTileStatics &>(static_cast<const D &>(*this))->abi_FindAllAsync(put(operation)));
+    check_hresult(WINRT_SHIM(ISecondaryTileStatics)->abi_FindAllAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> impl_ISecondaryTileStatics<D>::FindAllAsync(hstring_ref applicationId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> operation;
-    check_hresult(static_cast<const ISecondaryTileStatics &>(static_cast<const D &>(*this))->abi_FindAllForApplicationAsync(get(applicationId), put(operation)));
+    check_hresult(WINRT_SHIM(ISecondaryTileStatics)->abi_FindAllForApplicationAsync(get(applicationId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> impl_ISecondaryTileStatics<D>::FindAllForPackageAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> operation;
-    check_hresult(static_cast<const ISecondaryTileStatics &>(static_cast<const D &>(*this))->abi_FindAllForPackageAsync(put(operation)));
+    check_hresult(WINRT_SHIM(ISecondaryTileStatics)->abi_FindAllForPackageAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::UI::StartScreen::VisualElementsRequest impl_IVisualElementsRequestedEventArgs<D>::Request() const
 {
     Windows::UI::StartScreen::VisualElementsRequest value { nullptr };
-    check_hresult(static_cast<const IVisualElementsRequestedEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IVisualElementsRequestedEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::StartScreen::SecondaryTileVisualElements impl_IVisualElementsRequest<D>::VisualElements() const
 {
     Windows::UI::StartScreen::SecondaryTileVisualElements value { nullptr };
-    check_hresult(static_cast<const IVisualElementsRequest &>(static_cast<const D &>(*this))->get_VisualElements(put(value)));
+    check_hresult(WINRT_SHIM(IVisualElementsRequest)->get_VisualElements(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTileVisualElements> impl_IVisualElementsRequest<D>::AlternateVisualElements() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTileVisualElements> value;
-    check_hresult(static_cast<const IVisualElementsRequest &>(static_cast<const D &>(*this))->get_AlternateVisualElements(put(value)));
+    check_hresult(WINRT_SHIM(IVisualElementsRequest)->get_AlternateVisualElements(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IVisualElementsRequest<D>::Deadline() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IVisualElementsRequest &>(static_cast<const D &>(*this))->get_Deadline(put(value)));
+    check_hresult(WINRT_SHIM(IVisualElementsRequest)->get_Deadline(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::StartScreen::VisualElementsRequestDeferral impl_IVisualElementsRequest<D>::GetDeferral() const
 {
     Windows::UI::StartScreen::VisualElementsRequestDeferral deferral { nullptr };
-    check_hresult(static_cast<const IVisualElementsRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(deferral)));
+    check_hresult(WINRT_SHIM(IVisualElementsRequest)->abi_GetDeferral(put(deferral)));
     return deferral;
 }
 
 template <typename D> void impl_IVisualElementsRequestDeferral<D>::Complete() const
 {
-    check_hresult(static_cast<const IVisualElementsRequestDeferral &>(static_cast<const D &>(*this))->abi_Complete());
+    check_hresult(WINRT_SHIM(IVisualElementsRequestDeferral)->abi_Complete());
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::UI::StartScreen::JumpList> JumpList::LoadCurrentAsync()

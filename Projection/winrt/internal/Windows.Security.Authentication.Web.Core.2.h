@@ -139,7 +139,6 @@ struct IWebAccountEventArgs :
     impl::consume<IWebAccountEventArgs>
 {
     IWebAccountEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountEventArgs>(m_ptr); }
 };
 
 struct IWebAccountMonitor :
@@ -147,7 +146,6 @@ struct IWebAccountMonitor :
     impl::consume<IWebAccountMonitor>
 {
     IWebAccountMonitor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAccountMonitor>(m_ptr); }
 };
 
 struct IWebAuthenticationCoreManagerStatics :
@@ -155,7 +153,6 @@ struct IWebAuthenticationCoreManagerStatics :
     impl::consume<IWebAuthenticationCoreManagerStatics>
 {
     IWebAuthenticationCoreManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAuthenticationCoreManagerStatics>(m_ptr); }
 };
 
 struct IWebAuthenticationCoreManagerStatics2 :
@@ -164,7 +161,6 @@ struct IWebAuthenticationCoreManagerStatics2 :
     impl::require<IWebAuthenticationCoreManagerStatics2, Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics>
 {
     IWebAuthenticationCoreManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAuthenticationCoreManagerStatics2>(m_ptr); }
     using impl_IWebAuthenticationCoreManagerStatics::FindAccountProviderAsync;
     using impl_IWebAuthenticationCoreManagerStatics2::FindAccountProviderAsync;
 };
@@ -175,7 +171,6 @@ struct IWebAuthenticationCoreManagerStatics3 :
     impl::require<IWebAuthenticationCoreManagerStatics3, Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics>
 {
     IWebAuthenticationCoreManagerStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebAuthenticationCoreManagerStatics3>(m_ptr); }
 };
 
 struct IWebProviderError :
@@ -183,7 +178,6 @@ struct IWebProviderError :
     impl::consume<IWebProviderError>
 {
     IWebProviderError(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebProviderError>(m_ptr); }
 };
 
 struct IWebProviderErrorFactory :
@@ -191,7 +185,6 @@ struct IWebProviderErrorFactory :
     impl::consume<IWebProviderErrorFactory>
 {
     IWebProviderErrorFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebProviderErrorFactory>(m_ptr); }
 };
 
 struct IWebTokenRequest :
@@ -199,7 +192,6 @@ struct IWebTokenRequest :
     impl::consume<IWebTokenRequest>
 {
     IWebTokenRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebTokenRequest>(m_ptr); }
 };
 
 struct IWebTokenRequest2 :
@@ -207,7 +199,6 @@ struct IWebTokenRequest2 :
     impl::consume<IWebTokenRequest2>
 {
     IWebTokenRequest2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebTokenRequest2>(m_ptr); }
 };
 
 struct IWebTokenRequestFactory :
@@ -215,7 +206,6 @@ struct IWebTokenRequestFactory :
     impl::consume<IWebTokenRequestFactory>
 {
     IWebTokenRequestFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebTokenRequestFactory>(m_ptr); }
 };
 
 struct IWebTokenRequestResult :
@@ -223,7 +213,6 @@ struct IWebTokenRequestResult :
     impl::consume<IWebTokenRequestResult>
 {
     IWebTokenRequestResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebTokenRequestResult>(m_ptr); }
 };
 
 struct IWebTokenResponse :
@@ -231,7 +220,6 @@ struct IWebTokenResponse :
     impl::consume<IWebTokenResponse>
 {
     IWebTokenResponse(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebTokenResponse>(m_ptr); }
 };
 
 struct IWebTokenResponseFactory :
@@ -239,7 +227,6 @@ struct IWebTokenResponseFactory :
     impl::consume<IWebTokenResponseFactory>
 {
     IWebTokenResponseFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebTokenResponseFactory>(m_ptr); }
 };
 
 }

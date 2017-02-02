@@ -15,7 +15,6 @@ struct IGraphicsEffect :
     impl::require<IGraphicsEffect, Windows::Graphics::Effects::IGraphicsEffectSource>
 {
     IGraphicsEffect(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGraphicsEffect>(m_ptr); }
 };
 
 struct IGraphicsEffectSource :
@@ -23,7 +22,6 @@ struct IGraphicsEffectSource :
     impl::consume<IGraphicsEffectSource>
 {
     IGraphicsEffectSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGraphicsEffectSource>(m_ptr); }
 };
 
 }

@@ -1233,7 +1233,6 @@ void WriteInterfaceDefinitions(Output & out)
               Settings::InterfaceName,
               Settings::InterfaceName,
               Settings::InterfaceName,
-              Settings::InterfaceName,
               Settings::ParameterInfo.ReturnType,
               Bind(WriteParameters));
     });
@@ -1247,7 +1246,6 @@ void WriteInterfaceDefinitions(Output & out)
               Settings::InterfaceName,
               Settings::InterfaceName,
               Bind(WriteRequiredInterfaces),
-              Settings::InterfaceName,
               Settings::InterfaceName,
               Bind(WriteUsingMethodsForInterface));
     });
@@ -1273,7 +1271,7 @@ void WriteInterfacesMethodDefinitions(Output & out)
     GetInterfaceMethodDefinitions([&]
     {
         out.WriteNamespace(Settings::Namespace);
-        Settings::MethodShim = "static_cast<const " + Settings::InterfaceName + " &>(static_cast<const D &>(*this))";
+        Settings::MethodShim = "WINRT_SHIM(" + Settings::InterfaceName + ")";
 
         Write(out,
               Strings::WriteInterfacesMethodDefinition,
@@ -1598,13 +1596,13 @@ void WriteRequiredOverrides(Output & out)
 
 void WriteDelegateShims(Output & out)
 {
-    Settings::MethodShim = "(*this)";
     Settings::MethodAbi = "abi_Invoke";
 
     GetDelegates([&]
     {
         out.WriteNamespace(Settings::Namespace);
 
+        Settings::MethodShim = "(*(abi<" + Settings::DelegateName + "> **)this)";
         char const * const hasReturn = Settings::ParameterInfo.HasReturnType ? "return " : "";
 
         Write(out,

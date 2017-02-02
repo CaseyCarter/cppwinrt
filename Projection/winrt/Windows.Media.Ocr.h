@@ -248,98 +248,98 @@ namespace Windows::Media::Ocr {
 template <typename D> Windows::Foundation::Rect impl_IOcrWord<D>::BoundingRect() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(static_cast<const IOcrWord &>(static_cast<const D &>(*this))->get_BoundingRect(put(value)));
+    check_hresult(WINRT_SHIM(IOcrWord)->get_BoundingRect(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IOcrWord<D>::Text() const
 {
     hstring value;
-    check_hresult(static_cast<const IOcrWord &>(static_cast<const D &>(*this))->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(IOcrWord)->get_Text(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Ocr::OcrWord> impl_IOcrLine<D>::Words() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Ocr::OcrWord> value;
-    check_hresult(static_cast<const IOcrLine &>(static_cast<const D &>(*this))->get_Words(put(value)));
+    check_hresult(WINRT_SHIM(IOcrLine)->get_Words(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IOcrLine<D>::Text() const
 {
     hstring value;
-    check_hresult(static_cast<const IOcrLine &>(static_cast<const D &>(*this))->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(IOcrLine)->get_Text(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Ocr::OcrLine> impl_IOcrResult<D>::Lines() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Ocr::OcrLine> value;
-    check_hresult(static_cast<const IOcrResult &>(static_cast<const D &>(*this))->get_Lines(put(value)));
+    check_hresult(WINRT_SHIM(IOcrResult)->get_Lines(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IOcrResult<D>::TextAngle() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(static_cast<const IOcrResult &>(static_cast<const D &>(*this))->get_TextAngle(put(value)));
+    check_hresult(WINRT_SHIM(IOcrResult)->get_TextAngle(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IOcrResult<D>::Text() const
 {
     hstring value;
-    check_hresult(static_cast<const IOcrResult &>(static_cast<const D &>(*this))->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(IOcrResult)->get_Text(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Ocr::OcrResult> impl_IOcrEngine<D>::RecognizeAsync(const Windows::Graphics::Imaging::SoftwareBitmap & bitmap) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Ocr::OcrResult> result;
-    check_hresult(static_cast<const IOcrEngine &>(static_cast<const D &>(*this))->abi_RecognizeAsync(get(bitmap), put(result)));
+    check_hresult(WINRT_SHIM(IOcrEngine)->abi_RecognizeAsync(get(bitmap), put(result)));
     return result;
 }
 
 template <typename D> Windows::Globalization::Language impl_IOcrEngine<D>::RecognizerLanguage() const
 {
     Windows::Globalization::Language value { nullptr };
-    check_hresult(static_cast<const IOcrEngine &>(static_cast<const D &>(*this))->get_RecognizerLanguage(put(value)));
+    check_hresult(WINRT_SHIM(IOcrEngine)->get_RecognizerLanguage(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IOcrEngineStatics<D>::MaxImageDimension() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IOcrEngineStatics &>(static_cast<const D &>(*this))->get_MaxImageDimension(&value));
+    check_hresult(WINRT_SHIM(IOcrEngineStatics)->get_MaxImageDimension(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> impl_IOcrEngineStatics<D>::AvailableRecognizerLanguages() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> value;
-    check_hresult(static_cast<const IOcrEngineStatics &>(static_cast<const D &>(*this))->get_AvailableRecognizerLanguages(put(value)));
+    check_hresult(WINRT_SHIM(IOcrEngineStatics)->get_AvailableRecognizerLanguages(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IOcrEngineStatics<D>::IsLanguageSupported(const Windows::Globalization::Language & language) const
 {
     bool result {};
-    check_hresult(static_cast<const IOcrEngineStatics &>(static_cast<const D &>(*this))->abi_IsLanguageSupported(get(language), &result));
+    check_hresult(WINRT_SHIM(IOcrEngineStatics)->abi_IsLanguageSupported(get(language), &result));
     return result;
 }
 
 template <typename D> Windows::Media::Ocr::OcrEngine impl_IOcrEngineStatics<D>::TryCreateFromLanguage(const Windows::Globalization::Language & language) const
 {
     Windows::Media::Ocr::OcrEngine result { nullptr };
-    check_hresult(static_cast<const IOcrEngineStatics &>(static_cast<const D &>(*this))->abi_TryCreateFromLanguage(get(language), put(result)));
+    check_hresult(WINRT_SHIM(IOcrEngineStatics)->abi_TryCreateFromLanguage(get(language), put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Ocr::OcrEngine impl_IOcrEngineStatics<D>::TryCreateFromUserProfileLanguages() const
 {
     Windows::Media::Ocr::OcrEngine result { nullptr };
-    check_hresult(static_cast<const IOcrEngineStatics &>(static_cast<const D &>(*this))->abi_TryCreateFromUserProfileLanguages(put(result)));
+    check_hresult(WINRT_SHIM(IOcrEngineStatics)->abi_TryCreateFromUserProfileLanguages(put(result)));
     return result;
 }
 

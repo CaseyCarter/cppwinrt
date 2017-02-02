@@ -328,132 +328,132 @@ namespace Windows::Media::FaceAnalysis {
 template <typename D> Windows::Graphics::Imaging::BitmapBounds impl_IDetectedFace<D>::FaceBox() const
 {
     Windows::Graphics::Imaging::BitmapBounds returnValue {};
-    check_hresult(static_cast<const IDetectedFace &>(static_cast<const D &>(*this))->get_FaceBox(put(returnValue)));
+    check_hresult(WINRT_SHIM(IDetectedFace)->get_FaceBox(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> impl_IFaceDetector<D>::DetectFacesAsync(const Windows::Graphics::Imaging::SoftwareBitmap & image) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> returnValue;
-    check_hresult(static_cast<const IFaceDetector &>(static_cast<const D &>(*this))->abi_DetectFacesAsync(get(image), put(returnValue)));
+    check_hresult(WINRT_SHIM(IFaceDetector)->abi_DetectFacesAsync(get(image), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> impl_IFaceDetector<D>::DetectFacesAsync(const Windows::Graphics::Imaging::SoftwareBitmap & image, const Windows::Graphics::Imaging::BitmapBounds & searchArea) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> returnValue;
-    check_hresult(static_cast<const IFaceDetector &>(static_cast<const D &>(*this))->abi_DetectFacesWithSearchAreaAsync(get(image), get(searchArea), put(returnValue)));
+    check_hresult(WINRT_SHIM(IFaceDetector)->abi_DetectFacesWithSearchAreaAsync(get(image), get(searchArea), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapSize impl_IFaceDetector<D>::MinDetectableFaceSize() const
 {
     Windows::Graphics::Imaging::BitmapSize returnValue {};
-    check_hresult(static_cast<const IFaceDetector &>(static_cast<const D &>(*this))->get_MinDetectableFaceSize(put(returnValue)));
+    check_hresult(WINRT_SHIM(IFaceDetector)->get_MinDetectableFaceSize(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IFaceDetector<D>::MinDetectableFaceSize(const Windows::Graphics::Imaging::BitmapSize & value) const
 {
-    check_hresult(static_cast<const IFaceDetector &>(static_cast<const D &>(*this))->put_MinDetectableFaceSize(get(value)));
+    check_hresult(WINRT_SHIM(IFaceDetector)->put_MinDetectableFaceSize(get(value)));
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapSize impl_IFaceDetector<D>::MaxDetectableFaceSize() const
 {
     Windows::Graphics::Imaging::BitmapSize returnValue {};
-    check_hresult(static_cast<const IFaceDetector &>(static_cast<const D &>(*this))->get_MaxDetectableFaceSize(put(returnValue)));
+    check_hresult(WINRT_SHIM(IFaceDetector)->get_MaxDetectableFaceSize(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IFaceDetector<D>::MaxDetectableFaceSize(const Windows::Graphics::Imaging::BitmapSize & value) const
 {
-    check_hresult(static_cast<const IFaceDetector &>(static_cast<const D &>(*this))->put_MaxDetectableFaceSize(get(value)));
+    check_hresult(WINRT_SHIM(IFaceDetector)->put_MaxDetectableFaceSize(get(value)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceDetector> impl_IFaceDetectorStatics<D>::CreateAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceDetector> returnValue;
-    check_hresult(static_cast<const IFaceDetectorStatics &>(static_cast<const D &>(*this))->abi_CreateAsync(put(returnValue)));
+    check_hresult(WINRT_SHIM(IFaceDetectorStatics)->abi_CreateAsync(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> impl_IFaceDetectorStatics<D>::GetSupportedBitmapPixelFormats() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> result;
-    check_hresult(static_cast<const IFaceDetectorStatics &>(static_cast<const D &>(*this))->abi_GetSupportedBitmapPixelFormats(put(result)));
+    check_hresult(WINRT_SHIM(IFaceDetectorStatics)->abi_GetSupportedBitmapPixelFormats(put(result)));
     return result;
 }
 
 template <typename D> bool impl_IFaceDetectorStatics<D>::IsBitmapPixelFormatSupported(Windows::Graphics::Imaging::BitmapPixelFormat bitmapPixelFormat) const
 {
     bool result {};
-    check_hresult(static_cast<const IFaceDetectorStatics &>(static_cast<const D &>(*this))->abi_IsBitmapPixelFormatSupported(bitmapPixelFormat, &result));
+    check_hresult(WINRT_SHIM(IFaceDetectorStatics)->abi_IsBitmapPixelFormatSupported(bitmapPixelFormat, &result));
     return result;
 }
 
 template <typename D> bool impl_IFaceDetectorStatics<D>::IsSupported() const
 {
     bool returnValue {};
-    check_hresult(static_cast<const IFaceDetectorStatics &>(static_cast<const D &>(*this))->get_IsSupported(&returnValue));
+    check_hresult(WINRT_SHIM(IFaceDetectorStatics)->get_IsSupported(&returnValue));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> impl_IFaceTracker<D>::ProcessNextFrameAsync(const Windows::Media::VideoFrame & videoFrame) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> returnValue;
-    check_hresult(static_cast<const IFaceTracker &>(static_cast<const D &>(*this))->abi_ProcessNextFrameAsync(get(videoFrame), put(returnValue)));
+    check_hresult(WINRT_SHIM(IFaceTracker)->abi_ProcessNextFrameAsync(get(videoFrame), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapSize impl_IFaceTracker<D>::MinDetectableFaceSize() const
 {
     Windows::Graphics::Imaging::BitmapSize returnValue {};
-    check_hresult(static_cast<const IFaceTracker &>(static_cast<const D &>(*this))->get_MinDetectableFaceSize(put(returnValue)));
+    check_hresult(WINRT_SHIM(IFaceTracker)->get_MinDetectableFaceSize(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IFaceTracker<D>::MinDetectableFaceSize(const Windows::Graphics::Imaging::BitmapSize & value) const
 {
-    check_hresult(static_cast<const IFaceTracker &>(static_cast<const D &>(*this))->put_MinDetectableFaceSize(get(value)));
+    check_hresult(WINRT_SHIM(IFaceTracker)->put_MinDetectableFaceSize(get(value)));
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapSize impl_IFaceTracker<D>::MaxDetectableFaceSize() const
 {
     Windows::Graphics::Imaging::BitmapSize returnValue {};
-    check_hresult(static_cast<const IFaceTracker &>(static_cast<const D &>(*this))->get_MaxDetectableFaceSize(put(returnValue)));
+    check_hresult(WINRT_SHIM(IFaceTracker)->get_MaxDetectableFaceSize(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IFaceTracker<D>::MaxDetectableFaceSize(const Windows::Graphics::Imaging::BitmapSize & value) const
 {
-    check_hresult(static_cast<const IFaceTracker &>(static_cast<const D &>(*this))->put_MaxDetectableFaceSize(get(value)));
+    check_hresult(WINRT_SHIM(IFaceTracker)->put_MaxDetectableFaceSize(get(value)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceTracker> impl_IFaceTrackerStatics<D>::CreateAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceTracker> returnValue;
-    check_hresult(static_cast<const IFaceTrackerStatics &>(static_cast<const D &>(*this))->abi_CreateAsync(put(returnValue)));
+    check_hresult(WINRT_SHIM(IFaceTrackerStatics)->abi_CreateAsync(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> impl_IFaceTrackerStatics<D>::GetSupportedBitmapPixelFormats() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> result;
-    check_hresult(static_cast<const IFaceTrackerStatics &>(static_cast<const D &>(*this))->abi_GetSupportedBitmapPixelFormats(put(result)));
+    check_hresult(WINRT_SHIM(IFaceTrackerStatics)->abi_GetSupportedBitmapPixelFormats(put(result)));
     return result;
 }
 
 template <typename D> bool impl_IFaceTrackerStatics<D>::IsBitmapPixelFormatSupported(Windows::Graphics::Imaging::BitmapPixelFormat bitmapPixelFormat) const
 {
     bool result {};
-    check_hresult(static_cast<const IFaceTrackerStatics &>(static_cast<const D &>(*this))->abi_IsBitmapPixelFormatSupported(bitmapPixelFormat, &result));
+    check_hresult(WINRT_SHIM(IFaceTrackerStatics)->abi_IsBitmapPixelFormatSupported(bitmapPixelFormat, &result));
     return result;
 }
 
 template <typename D> bool impl_IFaceTrackerStatics<D>::IsSupported() const
 {
     bool returnValue {};
-    check_hresult(static_cast<const IFaceTrackerStatics &>(static_cast<const D &>(*this))->get_IsSupported(&returnValue));
+    check_hresult(WINRT_SHIM(IFaceTrackerStatics)->get_IsSupported(&returnValue));
     return returnValue;
 }
 

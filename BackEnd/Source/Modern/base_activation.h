@@ -73,14 +73,13 @@ struct IActivationFactory :
     impl::consume<IActivationFactory>
 {
     IActivationFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IActivationFactory>(m_ptr); }
 };
 
 template <typename D>
 IInspectable impl_IActivationFactory<D>::ActivateInstance() const
 {
     IInspectable instance;
-    check_hresult(static_cast<const IActivationFactory &>(static_cast<const D &>(*this))->abi_ActivateInstance(put(instance)));
+    check_hresult(WINRT_SHIM(IActivationFactory)->abi_ActivateInstance(put(instance)));
     return instance;
 }
 

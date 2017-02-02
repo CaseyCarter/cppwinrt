@@ -2012,622 +2012,622 @@ namespace Windows::Media::Import {
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IPhotoImportManagerStatics<D>::IsSupportedAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const IPhotoImportManagerStatics &>(static_cast<const D &>(*this))->abi_IsSupportedAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPhotoImportManagerStatics)->abi_IsSupportedAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportSource>> impl_IPhotoImportManagerStatics<D>::FindAllSourcesAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportSource>> operation;
-    check_hresult(static_cast<const IPhotoImportManagerStatics &>(static_cast<const D &>(*this))->abi_FindAllSourcesAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPhotoImportManagerStatics)->abi_FindAllSourcesAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportOperation> impl_IPhotoImportManagerStatics<D>::GetPendingOperations() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportOperation> result;
-    check_hresult(static_cast<const IPhotoImportManagerStatics &>(static_cast<const D &>(*this))->abi_GetPendingOperations(put(result)));
+    check_hresult(WINRT_SHIM(IPhotoImportManagerStatics)->abi_GetPendingOperations(put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Import::PhotoImportStage impl_IPhotoImportOperation<D>::Stage() const
 {
     Windows::Media::Import::PhotoImportStage value {};
-    check_hresult(static_cast<const IPhotoImportOperation &>(static_cast<const D &>(*this))->get_Stage(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportOperation)->get_Stage(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Import::PhotoImportSession impl_IPhotoImportOperation<D>::Session() const
 {
     Windows::Media::Import::PhotoImportSession value { nullptr };
-    check_hresult(static_cast<const IPhotoImportOperation &>(static_cast<const D &>(*this))->get_Session(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportOperation)->get_Session(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportFindItemsResult, uint32_t> impl_IPhotoImportOperation<D>::ContinueFindingItemsAsync() const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportFindItemsResult, uint32_t> operation;
-    check_hresult(static_cast<const IPhotoImportOperation &>(static_cast<const D &>(*this))->get_ContinueFindingItemsAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPhotoImportOperation)->get_ContinueFindingItemsAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportImportItemsResult, Windows::Media::Import::PhotoImportProgress> impl_IPhotoImportOperation<D>::ContinueImportingItemsAsync() const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportImportItemsResult, Windows::Media::Import::PhotoImportProgress> operation;
-    check_hresult(static_cast<const IPhotoImportOperation &>(static_cast<const D &>(*this))->get_ContinueImportingItemsAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPhotoImportOperation)->get_ContinueImportingItemsAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportDeleteImportedItemsFromSourceResult, double> impl_IPhotoImportOperation<D>::ContinueDeletingImportedItemsFromSourceAsync() const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportDeleteImportedItemsFromSourceResult, double> operation;
-    check_hresult(static_cast<const IPhotoImportOperation &>(static_cast<const D &>(*this))->get_ContinueDeletingImportedItemsFromSourceAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPhotoImportOperation)->get_ContinueDeletingImportedItemsFromSourceAsync(put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IPhotoImportStorageMedium<D>::Name() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhotoImportStorageMedium &>(static_cast<const D &>(*this))->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportStorageMedium)->get_Name(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPhotoImportStorageMedium<D>::Description() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhotoImportStorageMedium &>(static_cast<const D &>(*this))->get_Description(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportStorageMedium)->get_Description(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPhotoImportStorageMedium<D>::SerialNumber() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhotoImportStorageMedium &>(static_cast<const D &>(*this))->get_SerialNumber(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportStorageMedium)->get_SerialNumber(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Import::PhotoImportStorageMediumType impl_IPhotoImportStorageMedium<D>::StorageMediumType() const
 {
     Windows::Media::Import::PhotoImportStorageMediumType value {};
-    check_hresult(static_cast<const IPhotoImportStorageMedium &>(static_cast<const D &>(*this))->get_StorageMediumType(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportStorageMedium)->get_StorageMediumType(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Import::PhotoImportAccessMode impl_IPhotoImportStorageMedium<D>::SupportedAccessMode() const
 {
     Windows::Media::Import::PhotoImportAccessMode value {};
-    check_hresult(static_cast<const IPhotoImportStorageMedium &>(static_cast<const D &>(*this))->get_SupportedAccessMode(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportStorageMedium)->get_SupportedAccessMode(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportStorageMedium<D>::CapacityInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportStorageMedium &>(static_cast<const D &>(*this))->get_CapacityInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportStorageMedium)->get_CapacityInBytes(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportStorageMedium<D>::AvailableSpaceInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportStorageMedium &>(static_cast<const D &>(*this))->get_AvailableSpaceInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportStorageMedium)->get_AvailableSpaceInBytes(&value));
     return value;
 }
 
 template <typename D> void impl_IPhotoImportStorageMedium<D>::Refresh() const
 {
-    check_hresult(static_cast<const IPhotoImportStorageMedium &>(static_cast<const D &>(*this))->abi_Refresh());
+    check_hresult(WINRT_SHIM(IPhotoImportStorageMedium)->abi_Refresh());
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> impl_IPhotoImportSourceStatics<D>::FromIdAsync(hstring_ref sourceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> operation;
-    check_hresult(static_cast<const IPhotoImportSourceStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(sourceId), put(operation)));
+    check_hresult(WINRT_SHIM(IPhotoImportSourceStatics)->abi_FromIdAsync(get(sourceId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> impl_IPhotoImportSourceStatics<D>::FromFolderAsync(const Windows::Storage::IStorageFolder & sourceRootFolder) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> operation;
-    check_hresult(static_cast<const IPhotoImportSourceStatics &>(static_cast<const D &>(*this))->abi_FromFolderAsync(get(sourceRootFolder), put(operation)));
+    check_hresult(WINRT_SHIM(IPhotoImportSourceStatics)->abi_FromFolderAsync(get(sourceRootFolder), put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IPhotoImportSource<D>::Id() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhotoImportSource &>(static_cast<const D &>(*this))->get_Id(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSource)->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPhotoImportSource<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhotoImportSource &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSource)->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPhotoImportSource<D>::Description() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhotoImportSource &>(static_cast<const D &>(*this))->get_Description(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSource)->get_Description(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPhotoImportSource<D>::Manufacturer() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhotoImportSource &>(static_cast<const D &>(*this))->get_Manufacturer(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSource)->get_Manufacturer(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPhotoImportSource<D>::Model() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhotoImportSource &>(static_cast<const D &>(*this))->get_Model(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSource)->get_Model(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPhotoImportSource<D>::SerialNumber() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhotoImportSource &>(static_cast<const D &>(*this))->get_SerialNumber(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSource)->get_SerialNumber(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPhotoImportSource<D>::ConnectionProtocol() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhotoImportSource &>(static_cast<const D &>(*this))->get_ConnectionProtocol(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSource)->get_ConnectionProtocol(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Import::PhotoImportConnectionTransport impl_IPhotoImportSource<D>::ConnectionTransport() const
 {
     Windows::Media::Import::PhotoImportConnectionTransport value {};
-    check_hresult(static_cast<const IPhotoImportSource &>(static_cast<const D &>(*this))->get_ConnectionTransport(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportSource)->get_ConnectionTransport(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Import::PhotoImportSourceType impl_IPhotoImportSource<D>::Type() const
 {
     Windows::Media::Import::PhotoImportSourceType value {};
-    check_hresult(static_cast<const IPhotoImportSource &>(static_cast<const D &>(*this))->get_Type(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportSource)->get_Type(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Import::PhotoImportPowerSource impl_IPhotoImportSource<D>::PowerSource() const
 {
     Windows::Media::Import::PhotoImportPowerSource value {};
-    check_hresult(static_cast<const IPhotoImportSource &>(static_cast<const D &>(*this))->get_PowerSource(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportSource)->get_PowerSource(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IPhotoImportSource<D>::BatteryLevelPercent() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(static_cast<const IPhotoImportSource &>(static_cast<const D &>(*this))->get_BatteryLevelPercent(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSource)->get_BatteryLevelPercent(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IPhotoImportSource<D>::DateTime() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(static_cast<const IPhotoImportSource &>(static_cast<const D &>(*this))->get_DateTime(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSource)->get_DateTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportStorageMedium> impl_IPhotoImportSource<D>::StorageMedia() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportStorageMedium> value;
-    check_hresult(static_cast<const IPhotoImportSource &>(static_cast<const D &>(*this))->get_StorageMedia(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSource)->get_StorageMedia(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<bool> impl_IPhotoImportSource<D>::IsLocked() const
 {
     Windows::Foundation::IReference<bool> value;
-    check_hresult(static_cast<const IPhotoImportSource &>(static_cast<const D &>(*this))->get_IsLocked(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSource)->get_IsLocked(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPhotoImportSource<D>::IsMassStorage() const
 {
     bool value {};
-    check_hresult(static_cast<const IPhotoImportSource &>(static_cast<const D &>(*this))->get_IsMassStorage(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportSource)->get_IsMassStorage(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IPhotoImportSource<D>::Thumbnail() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(static_cast<const IPhotoImportSource &>(static_cast<const D &>(*this))->get_Thumbnail(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSource)->get_Thumbnail(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Import::PhotoImportSession impl_IPhotoImportSource<D>::CreateImportSession() const
 {
     Windows::Media::Import::PhotoImportSession result { nullptr };
-    check_hresult(static_cast<const IPhotoImportSource &>(static_cast<const D &>(*this))->abi_CreateImportSession(put(result)));
+    check_hresult(WINRT_SHIM(IPhotoImportSource)->abi_CreateImportSession(put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Import::PhotoImportSource impl_IPhotoImportSession<D>::Source() const
 {
     Windows::Media::Import::PhotoImportSource value { nullptr };
-    check_hresult(static_cast<const IPhotoImportSession &>(static_cast<const D &>(*this))->get_Source(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSession)->get_Source(put(value)));
     return value;
 }
 
 template <typename D> GUID impl_IPhotoImportSession<D>::SessionId() const
 {
     GUID value {};
-    check_hresult(static_cast<const IPhotoImportSession &>(static_cast<const D &>(*this))->get_SessionId(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportSession)->get_SessionId(&value));
     return value;
 }
 
 template <typename D> void impl_IPhotoImportSession<D>::DestinationFolder(const Windows::Storage::IStorageFolder & value) const
 {
-    check_hresult(static_cast<const IPhotoImportSession &>(static_cast<const D &>(*this))->put_DestinationFolder(get(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSession)->put_DestinationFolder(get(value)));
 }
 
 template <typename D> Windows::Storage::IStorageFolder impl_IPhotoImportSession<D>::DestinationFolder() const
 {
     Windows::Storage::IStorageFolder value;
-    check_hresult(static_cast<const IPhotoImportSession &>(static_cast<const D &>(*this))->get_DestinationFolder(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSession)->get_DestinationFolder(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPhotoImportSession<D>::AppendSessionDateToDestinationFolder(bool value) const
 {
-    check_hresult(static_cast<const IPhotoImportSession &>(static_cast<const D &>(*this))->put_AppendSessionDateToDestinationFolder(value));
+    check_hresult(WINRT_SHIM(IPhotoImportSession)->put_AppendSessionDateToDestinationFolder(value));
 }
 
 template <typename D> bool impl_IPhotoImportSession<D>::AppendSessionDateToDestinationFolder() const
 {
     bool value {};
-    check_hresult(static_cast<const IPhotoImportSession &>(static_cast<const D &>(*this))->get_AppendSessionDateToDestinationFolder(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportSession)->get_AppendSessionDateToDestinationFolder(&value));
     return value;
 }
 
 template <typename D> void impl_IPhotoImportSession<D>::SubfolderCreationMode(Windows::Media::Import::PhotoImportSubfolderCreationMode value) const
 {
-    check_hresult(static_cast<const IPhotoImportSession &>(static_cast<const D &>(*this))->put_SubfolderCreationMode(value));
+    check_hresult(WINRT_SHIM(IPhotoImportSession)->put_SubfolderCreationMode(value));
 }
 
 template <typename D> Windows::Media::Import::PhotoImportSubfolderCreationMode impl_IPhotoImportSession<D>::SubfolderCreationMode() const
 {
     Windows::Media::Import::PhotoImportSubfolderCreationMode value {};
-    check_hresult(static_cast<const IPhotoImportSession &>(static_cast<const D &>(*this))->get_SubfolderCreationMode(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportSession)->get_SubfolderCreationMode(&value));
     return value;
 }
 
 template <typename D> void impl_IPhotoImportSession<D>::DestinationFileNamePrefix(hstring_ref value) const
 {
-    check_hresult(static_cast<const IPhotoImportSession &>(static_cast<const D &>(*this))->put_DestinationFileNamePrefix(get(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSession)->put_DestinationFileNamePrefix(get(value)));
 }
 
 template <typename D> hstring impl_IPhotoImportSession<D>::DestinationFileNamePrefix() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhotoImportSession &>(static_cast<const D &>(*this))->get_DestinationFileNamePrefix(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSession)->get_DestinationFileNamePrefix(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportFindItemsResult, uint32_t> impl_IPhotoImportSession<D>::FindItemsAsync(Windows::Media::Import::PhotoImportContentTypeFilter contentTypeFilter, Windows::Media::Import::PhotoImportItemSelectionMode itemSelectionMode) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportFindItemsResult, uint32_t> operation;
-    check_hresult(static_cast<const IPhotoImportSession &>(static_cast<const D &>(*this))->abi_FindItemsAsync(contentTypeFilter, itemSelectionMode, put(operation)));
+    check_hresult(WINRT_SHIM(IPhotoImportSession)->abi_FindItemsAsync(contentTypeFilter, itemSelectionMode, put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IPhotoImportSession2<D>::SubfolderDateFormat(Windows::Media::Import::PhotoImportSubfolderDateFormat value) const
 {
-    check_hresult(static_cast<const IPhotoImportSession2 &>(static_cast<const D &>(*this))->put_SubfolderDateFormat(value));
+    check_hresult(WINRT_SHIM(IPhotoImportSession2)->put_SubfolderDateFormat(value));
 }
 
 template <typename D> Windows::Media::Import::PhotoImportSubfolderDateFormat impl_IPhotoImportSession2<D>::SubfolderDateFormat() const
 {
     Windows::Media::Import::PhotoImportSubfolderDateFormat value {};
-    check_hresult(static_cast<const IPhotoImportSession2 &>(static_cast<const D &>(*this))->get_SubfolderDateFormat(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportSession2)->get_SubfolderDateFormat(&value));
     return value;
 }
 
 template <typename D> void impl_IPhotoImportSession2<D>::RememberDeselectedItems(bool value) const
 {
-    check_hresult(static_cast<const IPhotoImportSession2 &>(static_cast<const D &>(*this))->put_RememberDeselectedItems(value));
+    check_hresult(WINRT_SHIM(IPhotoImportSession2)->put_RememberDeselectedItems(value));
 }
 
 template <typename D> bool impl_IPhotoImportSession2<D>::RememberDeselectedItems() const
 {
     bool value {};
-    check_hresult(static_cast<const IPhotoImportSession2 &>(static_cast<const D &>(*this))->get_RememberDeselectedItems(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportSession2)->get_RememberDeselectedItems(&value));
     return value;
 }
 
 template <typename D> hstring impl_IPhotoImportItem<D>::Name() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhotoImportItem &>(static_cast<const D &>(*this))->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportItem)->get_Name(put(value)));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportItem<D>::ItemKey() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportItem &>(static_cast<const D &>(*this))->get_ItemKey(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportItem)->get_ItemKey(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Import::PhotoImportContentType impl_IPhotoImportItem<D>::ContentType() const
 {
     Windows::Media::Import::PhotoImportContentType value {};
-    check_hresult(static_cast<const IPhotoImportItem &>(static_cast<const D &>(*this))->get_ContentType(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportItem)->get_ContentType(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportItem<D>::SizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportItem &>(static_cast<const D &>(*this))->get_SizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportItem)->get_SizeInBytes(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IPhotoImportItem<D>::Date() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IPhotoImportItem &>(static_cast<const D &>(*this))->get_Date(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportItem)->get_Date(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Import::PhotoImportSidecar impl_IPhotoImportItem<D>::Sibling() const
 {
     Windows::Media::Import::PhotoImportSidecar value { nullptr };
-    check_hresult(static_cast<const IPhotoImportItem &>(static_cast<const D &>(*this))->get_Sibling(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportItem)->get_Sibling(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportSidecar> impl_IPhotoImportItem<D>::Sidecars() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportSidecar> value;
-    check_hresult(static_cast<const IPhotoImportItem &>(static_cast<const D &>(*this))->get_Sidecars(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportItem)->get_Sidecars(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportVideoSegment> impl_IPhotoImportItem<D>::VideoSegments() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportVideoSegment> value;
-    check_hresult(static_cast<const IPhotoImportItem &>(static_cast<const D &>(*this))->get_VideoSegments(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportItem)->get_VideoSegments(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPhotoImportItem<D>::IsSelected() const
 {
     bool value {};
-    check_hresult(static_cast<const IPhotoImportItem &>(static_cast<const D &>(*this))->get_IsSelected(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportItem)->get_IsSelected(&value));
     return value;
 }
 
 template <typename D> void impl_IPhotoImportItem<D>::IsSelected(bool value) const
 {
-    check_hresult(static_cast<const IPhotoImportItem &>(static_cast<const D &>(*this))->put_IsSelected(value));
+    check_hresult(WINRT_SHIM(IPhotoImportItem)->put_IsSelected(value));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IPhotoImportItem<D>::Thumbnail() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(static_cast<const IPhotoImportItem &>(static_cast<const D &>(*this))->get_Thumbnail(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportItem)->get_Thumbnail(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IPhotoImportItem<D>::ImportedFileNames() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IPhotoImportItem &>(static_cast<const D &>(*this))->get_ImportedFileNames(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportItem)->get_ImportedFileNames(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IPhotoImportItem<D>::DeletedFileNames() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IPhotoImportItem &>(static_cast<const D &>(*this))->get_DeletedFileNames(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportItem)->get_DeletedFileNames(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Import::PhotoImportSession impl_IPhotoImportFindItemsResult<D>::Session() const
 {
     Windows::Media::Import::PhotoImportSession value { nullptr };
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_Session(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_Session(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPhotoImportFindItemsResult<D>::HasSucceeded() const
 {
     bool value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_HasSucceeded(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_HasSucceeded(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportItem> impl_IPhotoImportFindItemsResult<D>::FoundItems() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportItem> value;
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_FoundItems(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_FoundItems(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportFindItemsResult<D>::PhotosCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_PhotosCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_PhotosCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportFindItemsResult<D>::PhotosSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_PhotosSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_PhotosSizeInBytes(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportFindItemsResult<D>::VideosCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_VideosCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_VideosCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportFindItemsResult<D>::VideosSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_VideosSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_VideosSizeInBytes(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportFindItemsResult<D>::SidecarsCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_SidecarsCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_SidecarsCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportFindItemsResult<D>::SidecarsSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_SidecarsSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_SidecarsSizeInBytes(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportFindItemsResult<D>::SiblingsCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_SiblingsCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_SiblingsCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportFindItemsResult<D>::SiblingsSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_SiblingsSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_SiblingsSizeInBytes(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportFindItemsResult<D>::TotalCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_TotalCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_TotalCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportFindItemsResult<D>::TotalSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_TotalSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_TotalSizeInBytes(&value));
     return value;
 }
 
 template <typename D> void impl_IPhotoImportFindItemsResult<D>::SelectAll() const
 {
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->abi_SelectAll());
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->abi_SelectAll());
 }
 
 template <typename D> void impl_IPhotoImportFindItemsResult<D>::SelectNone() const
 {
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->abi_SelectNone());
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->abi_SelectNone());
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPhotoImportFindItemsResult<D>::SelectNewAsync() const
 {
     Windows::Foundation::IAsyncAction action;
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->abi_SelectNewAsync(put(action)));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->abi_SelectNewAsync(put(action)));
     return action;
 }
 
 template <typename D> void impl_IPhotoImportFindItemsResult<D>::SetImportMode(Windows::Media::Import::PhotoImportImportMode value) const
 {
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->abi_SetImportMode(value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->abi_SetImportMode(value));
 }
 
 template <typename D> Windows::Media::Import::PhotoImportImportMode impl_IPhotoImportFindItemsResult<D>::ImportMode() const
 {
     Windows::Media::Import::PhotoImportImportMode value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_ImportMode(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_ImportMode(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportFindItemsResult<D>::SelectedPhotosCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_SelectedPhotosCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_SelectedPhotosCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportFindItemsResult<D>::SelectedPhotosSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_SelectedPhotosSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_SelectedPhotosSizeInBytes(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportFindItemsResult<D>::SelectedVideosCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_SelectedVideosCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_SelectedVideosCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportFindItemsResult<D>::SelectedVideosSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_SelectedVideosSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_SelectedVideosSizeInBytes(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportFindItemsResult<D>::SelectedSidecarsCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_SelectedSidecarsCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_SelectedSidecarsCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportFindItemsResult<D>::SelectedSidecarsSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_SelectedSidecarsSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_SelectedSidecarsSizeInBytes(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportFindItemsResult<D>::SelectedSiblingsCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_SelectedSiblingsCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_SelectedSiblingsCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportFindItemsResult<D>::SelectedSiblingsSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_SelectedSiblingsSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_SelectedSiblingsSizeInBytes(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportFindItemsResult<D>::SelectedTotalCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_SelectedTotalCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_SelectedTotalCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportFindItemsResult<D>::SelectedTotalSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->get_SelectedTotalSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->get_SelectedTotalSizeInBytes(&value));
     return value;
 }
 
 template <typename D> event_token impl_IPhotoImportFindItemsResult<D>::SelectionChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportSelectionChangedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->add_SelectionChanged(get(value), &token));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->add_SelectionChanged(get(value), &token));
     return token;
 }
 
@@ -2638,20 +2638,20 @@ template <typename D> event_revoker<IPhotoImportFindItemsResult> impl_IPhotoImpo
 
 template <typename D> void impl_IPhotoImportFindItemsResult<D>::SelectionChanged(event_token token) const
 {
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->remove_SelectionChanged(token));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->remove_SelectionChanged(token));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportImportItemsResult, Windows::Media::Import::PhotoImportProgress> impl_IPhotoImportFindItemsResult<D>::ImportItemsAsync() const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportImportItemsResult, Windows::Media::Import::PhotoImportProgress> operation;
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->abi_ImportItemsAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->abi_ImportItemsAsync(put(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IPhotoImportFindItemsResult<D>::ItemImported(const Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportItemImportedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->add_ItemImported(get(value), &token));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->add_ItemImported(get(value), &token));
     return token;
 }
 
@@ -2662,270 +2662,270 @@ template <typename D> event_revoker<IPhotoImportFindItemsResult> impl_IPhotoImpo
 
 template <typename D> void impl_IPhotoImportFindItemsResult<D>::ItemImported(event_token token) const
 {
-    check_hresult(static_cast<const IPhotoImportFindItemsResult &>(static_cast<const D &>(*this))->remove_ItemImported(token));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult)->remove_ItemImported(token));
 }
 
 template <typename D> void impl_IPhotoImportFindItemsResult2<D>::AddItemsInDateRangeToSelection(const Windows::Foundation::DateTime & rangeStart, const Windows::Foundation::TimeSpan & rangeLength) const
 {
-    check_hresult(static_cast<const IPhotoImportFindItemsResult2 &>(static_cast<const D &>(*this))->abi_AddItemsInDateRangeToSelection(get(rangeStart), get(rangeLength)));
+    check_hresult(WINRT_SHIM(IPhotoImportFindItemsResult2)->abi_AddItemsInDateRangeToSelection(get(rangeStart), get(rangeLength)));
 }
 
 template <typename D> Windows::Media::Import::PhotoImportSession impl_IPhotoImportImportItemsResult<D>::Session() const
 {
     Windows::Media::Import::PhotoImportSession value { nullptr };
-    check_hresult(static_cast<const IPhotoImportImportItemsResult &>(static_cast<const D &>(*this))->get_Session(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportImportItemsResult)->get_Session(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPhotoImportImportItemsResult<D>::HasSucceeded() const
 {
     bool value {};
-    check_hresult(static_cast<const IPhotoImportImportItemsResult &>(static_cast<const D &>(*this))->get_HasSucceeded(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportImportItemsResult)->get_HasSucceeded(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportItem> impl_IPhotoImportImportItemsResult<D>::ImportedItems() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportItem> value;
-    check_hresult(static_cast<const IPhotoImportImportItemsResult &>(static_cast<const D &>(*this))->get_ImportedItems(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportImportItemsResult)->get_ImportedItems(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportImportItemsResult<D>::PhotosCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportImportItemsResult &>(static_cast<const D &>(*this))->get_PhotosCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportImportItemsResult)->get_PhotosCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportImportItemsResult<D>::PhotosSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportImportItemsResult &>(static_cast<const D &>(*this))->get_PhotosSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportImportItemsResult)->get_PhotosSizeInBytes(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportImportItemsResult<D>::VideosCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportImportItemsResult &>(static_cast<const D &>(*this))->get_VideosCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportImportItemsResult)->get_VideosCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportImportItemsResult<D>::VideosSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportImportItemsResult &>(static_cast<const D &>(*this))->get_VideosSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportImportItemsResult)->get_VideosSizeInBytes(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportImportItemsResult<D>::SidecarsCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportImportItemsResult &>(static_cast<const D &>(*this))->get_SidecarsCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportImportItemsResult)->get_SidecarsCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportImportItemsResult<D>::SidecarsSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportImportItemsResult &>(static_cast<const D &>(*this))->get_SidecarsSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportImportItemsResult)->get_SidecarsSizeInBytes(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportImportItemsResult<D>::SiblingsCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportImportItemsResult &>(static_cast<const D &>(*this))->get_SiblingsCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportImportItemsResult)->get_SiblingsCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportImportItemsResult<D>::SiblingsSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportImportItemsResult &>(static_cast<const D &>(*this))->get_SiblingsSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportImportItemsResult)->get_SiblingsSizeInBytes(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportImportItemsResult<D>::TotalCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportImportItemsResult &>(static_cast<const D &>(*this))->get_TotalCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportImportItemsResult)->get_TotalCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportImportItemsResult<D>::TotalSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportImportItemsResult &>(static_cast<const D &>(*this))->get_TotalSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportImportItemsResult)->get_TotalSizeInBytes(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportDeleteImportedItemsFromSourceResult, double> impl_IPhotoImportImportItemsResult<D>::DeleteImportedItemsFromSourceAsync() const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportDeleteImportedItemsFromSourceResult, double> result;
-    check_hresult(static_cast<const IPhotoImportImportItemsResult &>(static_cast<const D &>(*this))->abi_DeleteImportedItemsFromSourceAsync(put(result)));
+    check_hresult(WINRT_SHIM(IPhotoImportImportItemsResult)->abi_DeleteImportedItemsFromSourceAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Import::PhotoImportSession impl_IPhotoImportDeleteImportedItemsFromSourceResult<D>::Session() const
 {
     Windows::Media::Import::PhotoImportSession value { nullptr };
-    check_hresult(static_cast<const IPhotoImportDeleteImportedItemsFromSourceResult &>(static_cast<const D &>(*this))->get_Session(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportDeleteImportedItemsFromSourceResult)->get_Session(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPhotoImportDeleteImportedItemsFromSourceResult<D>::HasSucceeded() const
 {
     bool value {};
-    check_hresult(static_cast<const IPhotoImportDeleteImportedItemsFromSourceResult &>(static_cast<const D &>(*this))->get_HasSucceeded(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportDeleteImportedItemsFromSourceResult)->get_HasSucceeded(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportItem> impl_IPhotoImportDeleteImportedItemsFromSourceResult<D>::DeletedItems() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportItem> value;
-    check_hresult(static_cast<const IPhotoImportDeleteImportedItemsFromSourceResult &>(static_cast<const D &>(*this))->get_DeletedItems(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportDeleteImportedItemsFromSourceResult)->get_DeletedItems(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportDeleteImportedItemsFromSourceResult<D>::PhotosCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportDeleteImportedItemsFromSourceResult &>(static_cast<const D &>(*this))->get_PhotosCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportDeleteImportedItemsFromSourceResult)->get_PhotosCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportDeleteImportedItemsFromSourceResult<D>::PhotosSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportDeleteImportedItemsFromSourceResult &>(static_cast<const D &>(*this))->get_PhotosSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportDeleteImportedItemsFromSourceResult)->get_PhotosSizeInBytes(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportDeleteImportedItemsFromSourceResult<D>::VideosCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportDeleteImportedItemsFromSourceResult &>(static_cast<const D &>(*this))->get_VideosCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportDeleteImportedItemsFromSourceResult)->get_VideosCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportDeleteImportedItemsFromSourceResult<D>::VideosSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportDeleteImportedItemsFromSourceResult &>(static_cast<const D &>(*this))->get_VideosSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportDeleteImportedItemsFromSourceResult)->get_VideosSizeInBytes(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportDeleteImportedItemsFromSourceResult<D>::SidecarsCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportDeleteImportedItemsFromSourceResult &>(static_cast<const D &>(*this))->get_SidecarsCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportDeleteImportedItemsFromSourceResult)->get_SidecarsCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportDeleteImportedItemsFromSourceResult<D>::SidecarsSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportDeleteImportedItemsFromSourceResult &>(static_cast<const D &>(*this))->get_SidecarsSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportDeleteImportedItemsFromSourceResult)->get_SidecarsSizeInBytes(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportDeleteImportedItemsFromSourceResult<D>::SiblingsCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportDeleteImportedItemsFromSourceResult &>(static_cast<const D &>(*this))->get_SiblingsCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportDeleteImportedItemsFromSourceResult)->get_SiblingsCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportDeleteImportedItemsFromSourceResult<D>::SiblingsSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportDeleteImportedItemsFromSourceResult &>(static_cast<const D &>(*this))->get_SiblingsSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportDeleteImportedItemsFromSourceResult)->get_SiblingsSizeInBytes(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPhotoImportDeleteImportedItemsFromSourceResult<D>::TotalCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPhotoImportDeleteImportedItemsFromSourceResult &>(static_cast<const D &>(*this))->get_TotalCount(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportDeleteImportedItemsFromSourceResult)->get_TotalCount(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportDeleteImportedItemsFromSourceResult<D>::TotalSizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportDeleteImportedItemsFromSourceResult &>(static_cast<const D &>(*this))->get_TotalSizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportDeleteImportedItemsFromSourceResult)->get_TotalSizeInBytes(&value));
     return value;
 }
 
 template <typename D> hstring impl_IPhotoImportSidecar<D>::Name() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhotoImportSidecar &>(static_cast<const D &>(*this))->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSidecar)->get_Name(put(value)));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportSidecar<D>::SizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportSidecar &>(static_cast<const D &>(*this))->get_SizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportSidecar)->get_SizeInBytes(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IPhotoImportSidecar<D>::Date() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IPhotoImportSidecar &>(static_cast<const D &>(*this))->get_Date(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportSidecar)->get_Date(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPhotoImportVideoSegment<D>::Name() const
 {
     hstring value;
-    check_hresult(static_cast<const IPhotoImportVideoSegment &>(static_cast<const D &>(*this))->get_Name(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportVideoSegment)->get_Name(put(value)));
     return value;
 }
 
 template <typename D> uint64_t impl_IPhotoImportVideoSegment<D>::SizeInBytes() const
 {
     uint64_t value {};
-    check_hresult(static_cast<const IPhotoImportVideoSegment &>(static_cast<const D &>(*this))->get_SizeInBytes(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportVideoSegment)->get_SizeInBytes(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IPhotoImportVideoSegment<D>::Date() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IPhotoImportVideoSegment &>(static_cast<const D &>(*this))->get_Date(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportVideoSegment)->get_Date(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Import::PhotoImportSidecar impl_IPhotoImportVideoSegment<D>::Sibling() const
 {
     Windows::Media::Import::PhotoImportSidecar value { nullptr };
-    check_hresult(static_cast<const IPhotoImportVideoSegment &>(static_cast<const D &>(*this))->get_Sibling(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportVideoSegment)->get_Sibling(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportSidecar> impl_IPhotoImportVideoSegment<D>::Sidecars() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportSidecar> value;
-    check_hresult(static_cast<const IPhotoImportVideoSegment &>(static_cast<const D &>(*this))->get_Sidecars(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportVideoSegment)->get_Sidecars(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Import::PhotoImportItem impl_IPhotoImportItemImportedEventArgs<D>::ImportedItem() const
 {
     Windows::Media::Import::PhotoImportItem value { nullptr };
-    check_hresult(static_cast<const IPhotoImportItemImportedEventArgs &>(static_cast<const D &>(*this))->get_ImportedItem(put(value)));
+    check_hresult(WINRT_SHIM(IPhotoImportItemImportedEventArgs)->get_ImportedItem(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPhotoImportSelectionChangedEventArgs<D>::IsSelectionEmpty() const
 {
     bool value {};
-    check_hresult(static_cast<const IPhotoImportSelectionChangedEventArgs &>(static_cast<const D &>(*this))->get_IsSelectionEmpty(&value));
+    check_hresult(WINRT_SHIM(IPhotoImportSelectionChangedEventArgs)->get_IsSelectionEmpty(&value));
     return value;
 }
 

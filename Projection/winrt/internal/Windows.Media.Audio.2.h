@@ -203,7 +203,6 @@ struct IAudioDeviceInputNode :
     impl::require<IAudioDeviceInputNode, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioInputNode, Windows::Media::Audio::IAudioNode>
 {
     IAudioDeviceInputNode(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioDeviceInputNode>(m_ptr); }
 };
 
 struct IAudioDeviceOutputNode :
@@ -212,7 +211,6 @@ struct IAudioDeviceOutputNode :
     impl::require<IAudioDeviceOutputNode, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioNode>
 {
     IAudioDeviceOutputNode(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioDeviceOutputNode>(m_ptr); }
 };
 
 struct IAudioFileInputNode :
@@ -221,7 +219,6 @@ struct IAudioFileInputNode :
     impl::require<IAudioFileInputNode, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioInputNode, Windows::Media::Audio::IAudioNode>
 {
     IAudioFileInputNode(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioFileInputNode>(m_ptr); }
 };
 
 struct IAudioFileOutputNode :
@@ -230,7 +227,6 @@ struct IAudioFileOutputNode :
     impl::require<IAudioFileOutputNode, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioNode>
 {
     IAudioFileOutputNode(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioFileOutputNode>(m_ptr); }
 };
 
 struct IAudioFrameCompletedEventArgs :
@@ -238,7 +234,6 @@ struct IAudioFrameCompletedEventArgs :
     impl::consume<IAudioFrameCompletedEventArgs>
 {
     IAudioFrameCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioFrameCompletedEventArgs>(m_ptr); }
 };
 
 struct IAudioFrameInputNode :
@@ -247,7 +242,6 @@ struct IAudioFrameInputNode :
     impl::require<IAudioFrameInputNode, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioInputNode, Windows::Media::Audio::IAudioNode>
 {
     IAudioFrameInputNode(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioFrameInputNode>(m_ptr); }
 };
 
 struct IAudioFrameOutputNode :
@@ -256,7 +250,6 @@ struct IAudioFrameOutputNode :
     impl::require<IAudioFrameOutputNode, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioNode>
 {
     IAudioFrameOutputNode(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioFrameOutputNode>(m_ptr); }
 };
 
 struct IAudioGraph :
@@ -265,7 +258,6 @@ struct IAudioGraph :
     impl::require<IAudioGraph, Windows::Foundation::IClosable>
 {
     IAudioGraph(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioGraph>(m_ptr); }
 };
 
 struct IAudioGraph2 :
@@ -274,7 +266,6 @@ struct IAudioGraph2 :
     impl::require<IAudioGraph2, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioGraph>
 {
     IAudioGraph2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioGraph2>(m_ptr); }
     using impl_IAudioGraph::CreateDeviceInputNodeAsync;
     using impl_IAudioGraph::CreateFileInputNodeAsync;
     using impl_IAudioGraph::CreateFrameInputNode;
@@ -290,7 +281,6 @@ struct IAudioGraphConnection :
     impl::consume<IAudioGraphConnection>
 {
     IAudioGraphConnection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioGraphConnection>(m_ptr); }
 };
 
 struct IAudioGraphSettings :
@@ -298,7 +288,6 @@ struct IAudioGraphSettings :
     impl::consume<IAudioGraphSettings>
 {
     IAudioGraphSettings(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioGraphSettings>(m_ptr); }
 };
 
 struct IAudioGraphSettingsFactory :
@@ -306,7 +295,6 @@ struct IAudioGraphSettingsFactory :
     impl::consume<IAudioGraphSettingsFactory>
 {
     IAudioGraphSettingsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioGraphSettingsFactory>(m_ptr); }
 };
 
 struct IAudioGraphStatics :
@@ -314,7 +302,6 @@ struct IAudioGraphStatics :
     impl::consume<IAudioGraphStatics>
 {
     IAudioGraphStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioGraphStatics>(m_ptr); }
 };
 
 struct IAudioGraphUnrecoverableErrorOccurredEventArgs :
@@ -322,7 +309,6 @@ struct IAudioGraphUnrecoverableErrorOccurredEventArgs :
     impl::consume<IAudioGraphUnrecoverableErrorOccurredEventArgs>
 {
     IAudioGraphUnrecoverableErrorOccurredEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioGraphUnrecoverableErrorOccurredEventArgs>(m_ptr); }
 };
 
 struct IAudioInputNode :
@@ -331,7 +317,6 @@ struct IAudioInputNode :
     impl::require<IAudioInputNode, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioNode>
 {
     IAudioInputNode(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioInputNode>(m_ptr); }
 };
 
 struct IAudioInputNode2 :
@@ -340,7 +325,6 @@ struct IAudioInputNode2 :
     impl::require<IAudioInputNode2, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioInputNode, Windows::Media::Audio::IAudioNode>
 {
     IAudioInputNode2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioInputNode2>(m_ptr); }
 };
 
 struct IAudioNode :
@@ -349,7 +333,6 @@ struct IAudioNode :
     impl::require<IAudioNode, Windows::Foundation::IClosable>
 {
     IAudioNode(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioNode>(m_ptr); }
 };
 
 struct IAudioNodeEmitter :
@@ -357,7 +340,6 @@ struct IAudioNodeEmitter :
     impl::consume<IAudioNodeEmitter>
 {
     IAudioNodeEmitter(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioNodeEmitter>(m_ptr); }
 };
 
 struct IAudioNodeEmitter2 :
@@ -365,7 +347,6 @@ struct IAudioNodeEmitter2 :
     impl::consume<IAudioNodeEmitter2>
 {
     IAudioNodeEmitter2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioNodeEmitter2>(m_ptr); }
 };
 
 struct IAudioNodeEmitterConeProperties :
@@ -373,7 +354,6 @@ struct IAudioNodeEmitterConeProperties :
     impl::consume<IAudioNodeEmitterConeProperties>
 {
     IAudioNodeEmitterConeProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioNodeEmitterConeProperties>(m_ptr); }
 };
 
 struct IAudioNodeEmitterDecayModel :
@@ -381,7 +361,6 @@ struct IAudioNodeEmitterDecayModel :
     impl::consume<IAudioNodeEmitterDecayModel>
 {
     IAudioNodeEmitterDecayModel(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioNodeEmitterDecayModel>(m_ptr); }
 };
 
 struct IAudioNodeEmitterDecayModelStatics :
@@ -389,7 +368,6 @@ struct IAudioNodeEmitterDecayModelStatics :
     impl::consume<IAudioNodeEmitterDecayModelStatics>
 {
     IAudioNodeEmitterDecayModelStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioNodeEmitterDecayModelStatics>(m_ptr); }
 };
 
 struct IAudioNodeEmitterFactory :
@@ -397,7 +375,6 @@ struct IAudioNodeEmitterFactory :
     impl::consume<IAudioNodeEmitterFactory>
 {
     IAudioNodeEmitterFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioNodeEmitterFactory>(m_ptr); }
 };
 
 struct IAudioNodeEmitterNaturalDecayModelProperties :
@@ -405,7 +382,6 @@ struct IAudioNodeEmitterNaturalDecayModelProperties :
     impl::consume<IAudioNodeEmitterNaturalDecayModelProperties>
 {
     IAudioNodeEmitterNaturalDecayModelProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioNodeEmitterNaturalDecayModelProperties>(m_ptr); }
 };
 
 struct IAudioNodeEmitterShape :
@@ -413,7 +389,6 @@ struct IAudioNodeEmitterShape :
     impl::consume<IAudioNodeEmitterShape>
 {
     IAudioNodeEmitterShape(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioNodeEmitterShape>(m_ptr); }
 };
 
 struct IAudioNodeEmitterShapeStatics :
@@ -421,7 +396,6 @@ struct IAudioNodeEmitterShapeStatics :
     impl::consume<IAudioNodeEmitterShapeStatics>
 {
     IAudioNodeEmitterShapeStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioNodeEmitterShapeStatics>(m_ptr); }
 };
 
 struct IAudioNodeListener :
@@ -429,7 +403,6 @@ struct IAudioNodeListener :
     impl::consume<IAudioNodeListener>
 {
     IAudioNodeListener(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioNodeListener>(m_ptr); }
 };
 
 struct IAudioNodeWithListener :
@@ -438,7 +411,6 @@ struct IAudioNodeWithListener :
     impl::require<IAudioNodeWithListener, Windows::Foundation::IClosable, Windows::Media::Audio::IAudioNode>
 {
     IAudioNodeWithListener(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioNodeWithListener>(m_ptr); }
 };
 
 struct ICreateAudioDeviceInputNodeResult :
@@ -446,7 +418,6 @@ struct ICreateAudioDeviceInputNodeResult :
     impl::consume<ICreateAudioDeviceInputNodeResult>
 {
     ICreateAudioDeviceInputNodeResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICreateAudioDeviceInputNodeResult>(m_ptr); }
 };
 
 struct ICreateAudioDeviceOutputNodeResult :
@@ -454,7 +425,6 @@ struct ICreateAudioDeviceOutputNodeResult :
     impl::consume<ICreateAudioDeviceOutputNodeResult>
 {
     ICreateAudioDeviceOutputNodeResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICreateAudioDeviceOutputNodeResult>(m_ptr); }
 };
 
 struct ICreateAudioFileInputNodeResult :
@@ -462,7 +432,6 @@ struct ICreateAudioFileInputNodeResult :
     impl::consume<ICreateAudioFileInputNodeResult>
 {
     ICreateAudioFileInputNodeResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICreateAudioFileInputNodeResult>(m_ptr); }
 };
 
 struct ICreateAudioFileOutputNodeResult :
@@ -470,7 +439,6 @@ struct ICreateAudioFileOutputNodeResult :
     impl::consume<ICreateAudioFileOutputNodeResult>
 {
     ICreateAudioFileOutputNodeResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICreateAudioFileOutputNodeResult>(m_ptr); }
 };
 
 struct ICreateAudioGraphResult :
@@ -478,7 +446,6 @@ struct ICreateAudioGraphResult :
     impl::consume<ICreateAudioGraphResult>
 {
     ICreateAudioGraphResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICreateAudioGraphResult>(m_ptr); }
 };
 
 struct IEchoEffectDefinition :
@@ -487,7 +454,6 @@ struct IEchoEffectDefinition :
     impl::require<IEchoEffectDefinition, Windows::Media::Effects::IAudioEffectDefinition>
 {
     IEchoEffectDefinition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEchoEffectDefinition>(m_ptr); }
 };
 
 struct IEchoEffectDefinitionFactory :
@@ -495,7 +461,6 @@ struct IEchoEffectDefinitionFactory :
     impl::consume<IEchoEffectDefinitionFactory>
 {
     IEchoEffectDefinitionFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEchoEffectDefinitionFactory>(m_ptr); }
 };
 
 struct IEqualizerBand :
@@ -503,7 +468,6 @@ struct IEqualizerBand :
     impl::consume<IEqualizerBand>
 {
     IEqualizerBand(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEqualizerBand>(m_ptr); }
 };
 
 struct IEqualizerEffectDefinition :
@@ -512,7 +476,6 @@ struct IEqualizerEffectDefinition :
     impl::require<IEqualizerEffectDefinition, Windows::Media::Effects::IAudioEffectDefinition>
 {
     IEqualizerEffectDefinition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEqualizerEffectDefinition>(m_ptr); }
 };
 
 struct IEqualizerEffectDefinitionFactory :
@@ -520,7 +483,6 @@ struct IEqualizerEffectDefinitionFactory :
     impl::consume<IEqualizerEffectDefinitionFactory>
 {
     IEqualizerEffectDefinitionFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEqualizerEffectDefinitionFactory>(m_ptr); }
 };
 
 struct IFrameInputNodeQuantumStartedEventArgs :
@@ -528,7 +490,6 @@ struct IFrameInputNodeQuantumStartedEventArgs :
     impl::consume<IFrameInputNodeQuantumStartedEventArgs>
 {
     IFrameInputNodeQuantumStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFrameInputNodeQuantumStartedEventArgs>(m_ptr); }
 };
 
 struct ILimiterEffectDefinition :
@@ -537,7 +498,6 @@ struct ILimiterEffectDefinition :
     impl::require<ILimiterEffectDefinition, Windows::Media::Effects::IAudioEffectDefinition>
 {
     ILimiterEffectDefinition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILimiterEffectDefinition>(m_ptr); }
 };
 
 struct ILimiterEffectDefinitionFactory :
@@ -545,7 +505,6 @@ struct ILimiterEffectDefinitionFactory :
     impl::consume<ILimiterEffectDefinitionFactory>
 {
     ILimiterEffectDefinitionFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILimiterEffectDefinitionFactory>(m_ptr); }
 };
 
 struct IReverbEffectDefinition :
@@ -554,7 +513,6 @@ struct IReverbEffectDefinition :
     impl::require<IReverbEffectDefinition, Windows::Media::Effects::IAudioEffectDefinition>
 {
     IReverbEffectDefinition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IReverbEffectDefinition>(m_ptr); }
 };
 
 struct IReverbEffectDefinitionFactory :
@@ -562,7 +520,6 @@ struct IReverbEffectDefinitionFactory :
     impl::consume<IReverbEffectDefinitionFactory>
 {
     IReverbEffectDefinitionFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IReverbEffectDefinitionFactory>(m_ptr); }
 };
 
 }

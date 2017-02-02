@@ -34,7 +34,6 @@ struct IProcessCpuUsage :
     impl::consume<IProcessCpuUsage>
 {
     IProcessCpuUsage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProcessCpuUsage>(m_ptr); }
 };
 
 struct IProcessCpuUsageReport :
@@ -42,7 +41,6 @@ struct IProcessCpuUsageReport :
     impl::consume<IProcessCpuUsageReport>
 {
     IProcessCpuUsageReport(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProcessCpuUsageReport>(m_ptr); }
 };
 
 struct IProcessDiagnosticInfo :
@@ -50,7 +48,6 @@ struct IProcessDiagnosticInfo :
     impl::consume<IProcessDiagnosticInfo>
 {
     IProcessDiagnosticInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProcessDiagnosticInfo>(m_ptr); }
 };
 
 struct IProcessDiagnosticInfoStatics :
@@ -58,7 +55,6 @@ struct IProcessDiagnosticInfoStatics :
     impl::consume<IProcessDiagnosticInfoStatics>
 {
     IProcessDiagnosticInfoStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProcessDiagnosticInfoStatics>(m_ptr); }
 };
 
 struct IProcessDiskUsage :
@@ -66,7 +62,6 @@ struct IProcessDiskUsage :
     impl::consume<IProcessDiskUsage>
 {
     IProcessDiskUsage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProcessDiskUsage>(m_ptr); }
 };
 
 struct IProcessDiskUsageReport :
@@ -74,7 +69,6 @@ struct IProcessDiskUsageReport :
     impl::consume<IProcessDiskUsageReport>
 {
     IProcessDiskUsageReport(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProcessDiskUsageReport>(m_ptr); }
 };
 
 struct IProcessMemoryUsage :
@@ -82,7 +76,6 @@ struct IProcessMemoryUsage :
     impl::consume<IProcessMemoryUsage>
 {
     IProcessMemoryUsage(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProcessMemoryUsage>(m_ptr); }
 };
 
 struct IProcessMemoryUsageReport :
@@ -90,7 +83,6 @@ struct IProcessMemoryUsageReport :
     impl::consume<IProcessMemoryUsageReport>
 {
     IProcessMemoryUsageReport(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IProcessMemoryUsageReport>(m_ptr); }
 };
 
 }

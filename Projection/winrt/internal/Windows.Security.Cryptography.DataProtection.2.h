@@ -29,7 +29,6 @@ struct IDataProtectionProvider :
     impl::consume<IDataProtectionProvider>
 {
     IDataProtectionProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataProtectionProvider>(m_ptr); }
 };
 
 struct IDataProtectionProviderFactory :
@@ -37,7 +36,6 @@ struct IDataProtectionProviderFactory :
     impl::consume<IDataProtectionProviderFactory>
 {
     IDataProtectionProviderFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataProtectionProviderFactory>(m_ptr); }
 };
 
 }

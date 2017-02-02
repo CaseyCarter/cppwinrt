@@ -14,7 +14,6 @@ struct IDeviceServicingDetails :
     impl::consume<IDeviceServicingDetails>
 {
     IDeviceServicingDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceServicingDetails>(m_ptr); }
 };
 
 struct IDeviceUseDetails :
@@ -22,7 +21,6 @@ struct IDeviceUseDetails :
     impl::consume<IDeviceUseDetails>
 {
     IDeviceUseDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDeviceUseDetails>(m_ptr); }
 };
 
 }

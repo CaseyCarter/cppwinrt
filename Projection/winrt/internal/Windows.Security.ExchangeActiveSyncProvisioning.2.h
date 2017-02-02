@@ -14,7 +14,6 @@ struct IEasClientDeviceInformation :
     impl::consume<IEasClientDeviceInformation>
 {
     IEasClientDeviceInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEasClientDeviceInformation>(m_ptr); }
 };
 
 struct IEasClientDeviceInformation2 :
@@ -23,7 +22,6 @@ struct IEasClientDeviceInformation2 :
     impl::require<IEasClientDeviceInformation2, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientDeviceInformation>
 {
     IEasClientDeviceInformation2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IEasClientDeviceInformation2>(m_ptr); }
 };
 
 }

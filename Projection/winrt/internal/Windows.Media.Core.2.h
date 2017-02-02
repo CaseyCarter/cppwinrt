@@ -445,7 +445,6 @@ struct IAudioStreamDescriptor :
     impl::require<IAudioStreamDescriptor, Windows::Media::Core::IMediaStreamDescriptor>
 {
     IAudioStreamDescriptor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioStreamDescriptor>(m_ptr); }
 };
 
 struct IAudioStreamDescriptor2 :
@@ -454,7 +453,6 @@ struct IAudioStreamDescriptor2 :
     impl::require<IAudioStreamDescriptor2, Windows::Media::Core::IMediaStreamDescriptor>
 {
     IAudioStreamDescriptor2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioStreamDescriptor2>(m_ptr); }
 };
 
 struct IAudioStreamDescriptorFactory :
@@ -462,7 +460,6 @@ struct IAudioStreamDescriptorFactory :
     impl::consume<IAudioStreamDescriptorFactory>
 {
     IAudioStreamDescriptorFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioStreamDescriptorFactory>(m_ptr); }
 };
 
 struct IAudioTrack :
@@ -470,7 +467,6 @@ struct IAudioTrack :
     impl::consume<IAudioTrack>
 {
     IAudioTrack(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioTrack>(m_ptr); }
 };
 
 struct IAudioTrackOpenFailedEventArgs :
@@ -478,7 +474,6 @@ struct IAudioTrackOpenFailedEventArgs :
     impl::consume<IAudioTrackOpenFailedEventArgs>
 {
     IAudioTrackOpenFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioTrackOpenFailedEventArgs>(m_ptr); }
 };
 
 struct IAudioTrackSupportInfo :
@@ -486,7 +481,6 @@ struct IAudioTrackSupportInfo :
     impl::consume<IAudioTrackSupportInfo>
 {
     IAudioTrackSupportInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAudioTrackSupportInfo>(m_ptr); }
 };
 
 struct IDataCue :
@@ -495,7 +489,6 @@ struct IDataCue :
     impl::require<IDataCue, Windows::Media::Core::IMediaCue>
 {
     IDataCue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IDataCue>(m_ptr); }
 };
 
 struct IFaceDetectedEventArgs :
@@ -503,7 +496,6 @@ struct IFaceDetectedEventArgs :
     impl::consume<IFaceDetectedEventArgs>
 {
     IFaceDetectedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFaceDetectedEventArgs>(m_ptr); }
 };
 
 struct IFaceDetectionEffect :
@@ -512,7 +504,6 @@ struct IFaceDetectionEffect :
     impl::require<IFaceDetectionEffect, Windows::Media::IMediaExtension>
 {
     IFaceDetectionEffect(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFaceDetectionEffect>(m_ptr); }
 };
 
 struct IFaceDetectionEffectDefinition :
@@ -521,7 +512,6 @@ struct IFaceDetectionEffectDefinition :
     impl::require<IFaceDetectionEffectDefinition, Windows::Media::Effects::IVideoEffectDefinition>
 {
     IFaceDetectionEffectDefinition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFaceDetectionEffectDefinition>(m_ptr); }
 };
 
 struct IFaceDetectionEffectFrame :
@@ -530,7 +520,6 @@ struct IFaceDetectionEffectFrame :
     impl::require<IFaceDetectionEffectFrame, Windows::Foundation::IClosable, Windows::Media::IMediaFrame>
 {
     IFaceDetectionEffectFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFaceDetectionEffectFrame>(m_ptr); }
 };
 
 struct IHighDynamicRangeControl :
@@ -538,7 +527,6 @@ struct IHighDynamicRangeControl :
     impl::consume<IHighDynamicRangeControl>
 {
     IHighDynamicRangeControl(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHighDynamicRangeControl>(m_ptr); }
 };
 
 struct IHighDynamicRangeOutput :
@@ -546,7 +534,6 @@ struct IHighDynamicRangeOutput :
     impl::consume<IHighDynamicRangeOutput>
 {
     IHighDynamicRangeOutput(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHighDynamicRangeOutput>(m_ptr); }
 };
 
 struct IMediaBinder :
@@ -554,7 +541,6 @@ struct IMediaBinder :
     impl::consume<IMediaBinder>
 {
     IMediaBinder(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaBinder>(m_ptr); }
 };
 
 struct IMediaBindingEventArgs :
@@ -562,7 +548,6 @@ struct IMediaBindingEventArgs :
     impl::consume<IMediaBindingEventArgs>
 {
     IMediaBindingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaBindingEventArgs>(m_ptr); }
 };
 
 struct IMediaCue :
@@ -570,7 +555,6 @@ struct IMediaCue :
     impl::consume<IMediaCue>
 {
     IMediaCue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCue>(m_ptr); }
 };
 
 struct IMediaCueEventArgs :
@@ -578,7 +562,6 @@ struct IMediaCueEventArgs :
     impl::consume<IMediaCueEventArgs>
 {
     IMediaCueEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaCueEventArgs>(m_ptr); }
 };
 
 struct IMediaSource :
@@ -586,7 +569,6 @@ struct IMediaSource :
     impl::consume<IMediaSource>
 {
     IMediaSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaSource>(m_ptr); }
 };
 
 struct IMediaSource2 :
@@ -595,7 +577,6 @@ struct IMediaSource2 :
     impl::require<IMediaSource2, Windows::Foundation::IClosable, Windows::Media::Playback::IMediaPlaybackSource>
 {
     IMediaSource2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaSource2>(m_ptr); }
 };
 
 struct IMediaSource3 :
@@ -604,7 +585,6 @@ struct IMediaSource3 :
     impl::require<IMediaSource3, Windows::Foundation::IClosable, Windows::Media::Core::IMediaSource2, Windows::Media::Playback::IMediaPlaybackSource>
 {
     IMediaSource3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaSource3>(m_ptr); }
 };
 
 struct IMediaSourceError :
@@ -612,7 +592,6 @@ struct IMediaSourceError :
     impl::consume<IMediaSourceError>
 {
     IMediaSourceError(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaSourceError>(m_ptr); }
 };
 
 struct IMediaSourceOpenOperationCompletedEventArgs :
@@ -620,7 +599,6 @@ struct IMediaSourceOpenOperationCompletedEventArgs :
     impl::consume<IMediaSourceOpenOperationCompletedEventArgs>
 {
     IMediaSourceOpenOperationCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaSourceOpenOperationCompletedEventArgs>(m_ptr); }
 };
 
 struct IMediaSourceStateChangedEventArgs :
@@ -628,7 +606,6 @@ struct IMediaSourceStateChangedEventArgs :
     impl::consume<IMediaSourceStateChangedEventArgs>
 {
     IMediaSourceStateChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaSourceStateChangedEventArgs>(m_ptr); }
 };
 
 struct IMediaSourceStatics :
@@ -636,7 +613,6 @@ struct IMediaSourceStatics :
     impl::consume<IMediaSourceStatics>
 {
     IMediaSourceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaSourceStatics>(m_ptr); }
 };
 
 struct IMediaSourceStatics2 :
@@ -644,7 +620,6 @@ struct IMediaSourceStatics2 :
     impl::consume<IMediaSourceStatics2>
 {
     IMediaSourceStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaSourceStatics2>(m_ptr); }
 };
 
 struct IMediaStreamDescriptor :
@@ -652,7 +627,6 @@ struct IMediaStreamDescriptor :
     impl::consume<IMediaStreamDescriptor>
 {
     IMediaStreamDescriptor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamDescriptor>(m_ptr); }
 };
 
 struct IMediaStreamSample :
@@ -660,7 +634,6 @@ struct IMediaStreamSample :
     impl::consume<IMediaStreamSample>
 {
     IMediaStreamSample(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamSample>(m_ptr); }
 };
 
 struct IMediaStreamSampleProtectionProperties :
@@ -668,7 +641,6 @@ struct IMediaStreamSampleProtectionProperties :
     impl::consume<IMediaStreamSampleProtectionProperties>
 {
     IMediaStreamSampleProtectionProperties(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamSampleProtectionProperties>(m_ptr); }
 };
 
 struct IMediaStreamSampleStatics :
@@ -676,7 +648,6 @@ struct IMediaStreamSampleStatics :
     impl::consume<IMediaStreamSampleStatics>
 {
     IMediaStreamSampleStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamSampleStatics>(m_ptr); }
 };
 
 struct IMediaStreamSource :
@@ -685,7 +656,6 @@ struct IMediaStreamSource :
     impl::require<IMediaStreamSource, Windows::Media::Core::IMediaSource>
 {
     IMediaStreamSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamSource>(m_ptr); }
 };
 
 struct IMediaStreamSource2 :
@@ -694,7 +664,6 @@ struct IMediaStreamSource2 :
     impl::require<IMediaStreamSource2, Windows::Media::Core::IMediaSource, Windows::Media::Core::IMediaStreamSource>
 {
     IMediaStreamSource2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamSource2>(m_ptr); }
 };
 
 struct IMediaStreamSourceClosedEventArgs :
@@ -702,7 +671,6 @@ struct IMediaStreamSourceClosedEventArgs :
     impl::consume<IMediaStreamSourceClosedEventArgs>
 {
     IMediaStreamSourceClosedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamSourceClosedEventArgs>(m_ptr); }
 };
 
 struct IMediaStreamSourceClosedRequest :
@@ -710,7 +678,6 @@ struct IMediaStreamSourceClosedRequest :
     impl::consume<IMediaStreamSourceClosedRequest>
 {
     IMediaStreamSourceClosedRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamSourceClosedRequest>(m_ptr); }
 };
 
 struct IMediaStreamSourceFactory :
@@ -718,7 +685,6 @@ struct IMediaStreamSourceFactory :
     impl::consume<IMediaStreamSourceFactory>
 {
     IMediaStreamSourceFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamSourceFactory>(m_ptr); }
 };
 
 struct IMediaStreamSourceSampleRenderedEventArgs :
@@ -726,7 +692,6 @@ struct IMediaStreamSourceSampleRenderedEventArgs :
     impl::consume<IMediaStreamSourceSampleRenderedEventArgs>
 {
     IMediaStreamSourceSampleRenderedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamSourceSampleRenderedEventArgs>(m_ptr); }
 };
 
 struct IMediaStreamSourceSampleRequest :
@@ -734,7 +699,6 @@ struct IMediaStreamSourceSampleRequest :
     impl::consume<IMediaStreamSourceSampleRequest>
 {
     IMediaStreamSourceSampleRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamSourceSampleRequest>(m_ptr); }
 };
 
 struct IMediaStreamSourceSampleRequestDeferral :
@@ -742,7 +706,6 @@ struct IMediaStreamSourceSampleRequestDeferral :
     impl::consume<IMediaStreamSourceSampleRequestDeferral>
 {
     IMediaStreamSourceSampleRequestDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamSourceSampleRequestDeferral>(m_ptr); }
 };
 
 struct IMediaStreamSourceSampleRequestedEventArgs :
@@ -750,7 +713,6 @@ struct IMediaStreamSourceSampleRequestedEventArgs :
     impl::consume<IMediaStreamSourceSampleRequestedEventArgs>
 {
     IMediaStreamSourceSampleRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamSourceSampleRequestedEventArgs>(m_ptr); }
 };
 
 struct IMediaStreamSourceStartingEventArgs :
@@ -758,7 +720,6 @@ struct IMediaStreamSourceStartingEventArgs :
     impl::consume<IMediaStreamSourceStartingEventArgs>
 {
     IMediaStreamSourceStartingEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamSourceStartingEventArgs>(m_ptr); }
 };
 
 struct IMediaStreamSourceStartingRequest :
@@ -766,7 +727,6 @@ struct IMediaStreamSourceStartingRequest :
     impl::consume<IMediaStreamSourceStartingRequest>
 {
     IMediaStreamSourceStartingRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamSourceStartingRequest>(m_ptr); }
 };
 
 struct IMediaStreamSourceStartingRequestDeferral :
@@ -774,7 +734,6 @@ struct IMediaStreamSourceStartingRequestDeferral :
     impl::consume<IMediaStreamSourceStartingRequestDeferral>
 {
     IMediaStreamSourceStartingRequestDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamSourceStartingRequestDeferral>(m_ptr); }
 };
 
 struct IMediaStreamSourceSwitchStreamsRequest :
@@ -782,7 +741,6 @@ struct IMediaStreamSourceSwitchStreamsRequest :
     impl::consume<IMediaStreamSourceSwitchStreamsRequest>
 {
     IMediaStreamSourceSwitchStreamsRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamSourceSwitchStreamsRequest>(m_ptr); }
 };
 
 struct IMediaStreamSourceSwitchStreamsRequestDeferral :
@@ -790,7 +748,6 @@ struct IMediaStreamSourceSwitchStreamsRequestDeferral :
     impl::consume<IMediaStreamSourceSwitchStreamsRequestDeferral>
 {
     IMediaStreamSourceSwitchStreamsRequestDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamSourceSwitchStreamsRequestDeferral>(m_ptr); }
 };
 
 struct IMediaStreamSourceSwitchStreamsRequestedEventArgs :
@@ -798,7 +755,6 @@ struct IMediaStreamSourceSwitchStreamsRequestedEventArgs :
     impl::consume<IMediaStreamSourceSwitchStreamsRequestedEventArgs>
 {
     IMediaStreamSourceSwitchStreamsRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaStreamSourceSwitchStreamsRequestedEventArgs>(m_ptr); }
 };
 
 struct IMediaTrack :
@@ -806,7 +762,6 @@ struct IMediaTrack :
     impl::consume<IMediaTrack>
 {
     IMediaTrack(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMediaTrack>(m_ptr); }
 };
 
 struct IMseSourceBuffer :
@@ -814,7 +769,6 @@ struct IMseSourceBuffer :
     impl::consume<IMseSourceBuffer>
 {
     IMseSourceBuffer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMseSourceBuffer>(m_ptr); }
 };
 
 struct IMseSourceBufferList :
@@ -822,7 +776,6 @@ struct IMseSourceBufferList :
     impl::consume<IMseSourceBufferList>
 {
     IMseSourceBufferList(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMseSourceBufferList>(m_ptr); }
 };
 
 struct IMseStreamSource :
@@ -831,7 +784,6 @@ struct IMseStreamSource :
     impl::require<IMseStreamSource, Windows::Media::Core::IMediaSource>
 {
     IMseStreamSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMseStreamSource>(m_ptr); }
 };
 
 struct IMseStreamSourceStatics :
@@ -839,7 +791,6 @@ struct IMseStreamSourceStatics :
     impl::consume<IMseStreamSourceStatics>
 {
     IMseStreamSourceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IMseStreamSourceStatics>(m_ptr); }
 };
 
 struct ISceneAnalysisEffect :
@@ -848,7 +799,6 @@ struct ISceneAnalysisEffect :
     impl::require<ISceneAnalysisEffect, Windows::Media::IMediaExtension>
 {
     ISceneAnalysisEffect(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISceneAnalysisEffect>(m_ptr); }
 };
 
 struct ISceneAnalysisEffectFrame :
@@ -857,7 +807,6 @@ struct ISceneAnalysisEffectFrame :
     impl::require<ISceneAnalysisEffectFrame, Windows::Foundation::IClosable, Windows::Media::IMediaFrame>
 {
     ISceneAnalysisEffectFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISceneAnalysisEffectFrame>(m_ptr); }
 };
 
 struct ISceneAnalyzedEventArgs :
@@ -865,7 +814,6 @@ struct ISceneAnalyzedEventArgs :
     impl::consume<ISceneAnalyzedEventArgs>
 {
     ISceneAnalyzedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISceneAnalyzedEventArgs>(m_ptr); }
 };
 
 struct ISingleSelectMediaTrackList :
@@ -873,7 +821,6 @@ struct ISingleSelectMediaTrackList :
     impl::consume<ISingleSelectMediaTrackList>
 {
     ISingleSelectMediaTrackList(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISingleSelectMediaTrackList>(m_ptr); }
 };
 
 struct ITimedMetadataTrack :
@@ -882,7 +829,6 @@ struct ITimedMetadataTrack :
     impl::require<ITimedMetadataTrack, Windows::Media::Core::IMediaTrack>
 {
     ITimedMetadataTrack(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimedMetadataTrack>(m_ptr); }
 };
 
 struct ITimedMetadataTrack2 :
@@ -891,7 +837,6 @@ struct ITimedMetadataTrack2 :
     impl::require<ITimedMetadataTrack2, Windows::Media::Core::IMediaTrack, Windows::Media::Core::ITimedMetadataTrack>
 {
     ITimedMetadataTrack2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimedMetadataTrack2>(m_ptr); }
 };
 
 struct ITimedMetadataTrackError :
@@ -899,7 +844,6 @@ struct ITimedMetadataTrackError :
     impl::consume<ITimedMetadataTrackError>
 {
     ITimedMetadataTrackError(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimedMetadataTrackError>(m_ptr); }
 };
 
 struct ITimedMetadataTrackFactory :
@@ -907,7 +851,6 @@ struct ITimedMetadataTrackFactory :
     impl::consume<ITimedMetadataTrackFactory>
 {
     ITimedMetadataTrackFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimedMetadataTrackFactory>(m_ptr); }
 };
 
 struct ITimedMetadataTrackFailedEventArgs :
@@ -915,7 +858,6 @@ struct ITimedMetadataTrackFailedEventArgs :
     impl::consume<ITimedMetadataTrackFailedEventArgs>
 {
     ITimedMetadataTrackFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimedMetadataTrackFailedEventArgs>(m_ptr); }
 };
 
 struct ITimedTextCue :
@@ -924,7 +866,6 @@ struct ITimedTextCue :
     impl::require<ITimedTextCue, Windows::Media::Core::IMediaCue>
 {
     ITimedTextCue(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimedTextCue>(m_ptr); }
 };
 
 struct ITimedTextLine :
@@ -932,7 +873,6 @@ struct ITimedTextLine :
     impl::consume<ITimedTextLine>
 {
     ITimedTextLine(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimedTextLine>(m_ptr); }
 };
 
 struct ITimedTextRegion :
@@ -940,7 +880,6 @@ struct ITimedTextRegion :
     impl::consume<ITimedTextRegion>
 {
     ITimedTextRegion(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimedTextRegion>(m_ptr); }
 };
 
 struct ITimedTextSource :
@@ -948,7 +887,6 @@ struct ITimedTextSource :
     impl::consume<ITimedTextSource>
 {
     ITimedTextSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimedTextSource>(m_ptr); }
 };
 
 struct ITimedTextSourceResolveResultEventArgs :
@@ -956,7 +894,6 @@ struct ITimedTextSourceResolveResultEventArgs :
     impl::consume<ITimedTextSourceResolveResultEventArgs>
 {
     ITimedTextSourceResolveResultEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimedTextSourceResolveResultEventArgs>(m_ptr); }
 };
 
 struct ITimedTextSourceStatics :
@@ -964,7 +901,6 @@ struct ITimedTextSourceStatics :
     impl::consume<ITimedTextSourceStatics>
 {
     ITimedTextSourceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimedTextSourceStatics>(m_ptr); }
 };
 
 struct ITimedTextStyle :
@@ -972,7 +908,6 @@ struct ITimedTextStyle :
     impl::consume<ITimedTextStyle>
 {
     ITimedTextStyle(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimedTextStyle>(m_ptr); }
 };
 
 struct ITimedTextSubformat :
@@ -980,7 +915,6 @@ struct ITimedTextSubformat :
     impl::consume<ITimedTextSubformat>
 {
     ITimedTextSubformat(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITimedTextSubformat>(m_ptr); }
 };
 
 struct IVideoStabilizationEffect :
@@ -989,7 +923,6 @@ struct IVideoStabilizationEffect :
     impl::require<IVideoStabilizationEffect, Windows::Media::IMediaExtension>
 {
     IVideoStabilizationEffect(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoStabilizationEffect>(m_ptr); }
 };
 
 struct IVideoStabilizationEffectEnabledChangedEventArgs :
@@ -997,7 +930,6 @@ struct IVideoStabilizationEffectEnabledChangedEventArgs :
     impl::consume<IVideoStabilizationEffectEnabledChangedEventArgs>
 {
     IVideoStabilizationEffectEnabledChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoStabilizationEffectEnabledChangedEventArgs>(m_ptr); }
 };
 
 struct IVideoStreamDescriptor :
@@ -1006,7 +938,6 @@ struct IVideoStreamDescriptor :
     impl::require<IVideoStreamDescriptor, Windows::Media::Core::IMediaStreamDescriptor>
 {
     IVideoStreamDescriptor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoStreamDescriptor>(m_ptr); }
 };
 
 struct IVideoStreamDescriptorFactory :
@@ -1014,7 +945,6 @@ struct IVideoStreamDescriptorFactory :
     impl::consume<IVideoStreamDescriptorFactory>
 {
     IVideoStreamDescriptorFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoStreamDescriptorFactory>(m_ptr); }
 };
 
 struct IVideoTrack :
@@ -1022,7 +952,6 @@ struct IVideoTrack :
     impl::consume<IVideoTrack>
 {
     IVideoTrack(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoTrack>(m_ptr); }
 };
 
 struct IVideoTrackOpenFailedEventArgs :
@@ -1030,7 +959,6 @@ struct IVideoTrackOpenFailedEventArgs :
     impl::consume<IVideoTrackOpenFailedEventArgs>
 {
     IVideoTrackOpenFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoTrackOpenFailedEventArgs>(m_ptr); }
 };
 
 struct IVideoTrackSupportInfo :
@@ -1038,7 +966,6 @@ struct IVideoTrackSupportInfo :
     impl::consume<IVideoTrackSupportInfo>
 {
     IVideoTrackSupportInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVideoTrackSupportInfo>(m_ptr); }
 };
 
 }

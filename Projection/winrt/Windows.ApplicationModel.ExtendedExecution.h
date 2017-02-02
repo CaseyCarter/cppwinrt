@@ -169,50 +169,50 @@ namespace Windows::ApplicationModel::ExtendedExecution {
 template <typename D> Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedReason impl_IExtendedExecutionRevokedEventArgs<D>::Reason() const
 {
     Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedReason value {};
-    check_hresult(static_cast<const IExtendedExecutionRevokedEventArgs &>(static_cast<const D &>(*this))->get_Reason(&value));
+    check_hresult(WINRT_SHIM(IExtendedExecutionRevokedEventArgs)->get_Reason(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionReason impl_IExtendedExecutionSession<D>::Reason() const
 {
     Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionReason value {};
-    check_hresult(static_cast<const IExtendedExecutionSession &>(static_cast<const D &>(*this))->get_Reason(&value));
+    check_hresult(WINRT_SHIM(IExtendedExecutionSession)->get_Reason(&value));
     return value;
 }
 
 template <typename D> void impl_IExtendedExecutionSession<D>::Reason(Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionReason value) const
 {
-    check_hresult(static_cast<const IExtendedExecutionSession &>(static_cast<const D &>(*this))->put_Reason(value));
+    check_hresult(WINRT_SHIM(IExtendedExecutionSession)->put_Reason(value));
 }
 
 template <typename D> hstring impl_IExtendedExecutionSession<D>::Description() const
 {
     hstring value;
-    check_hresult(static_cast<const IExtendedExecutionSession &>(static_cast<const D &>(*this))->get_Description(put(value)));
+    check_hresult(WINRT_SHIM(IExtendedExecutionSession)->get_Description(put(value)));
     return value;
 }
 
 template <typename D> void impl_IExtendedExecutionSession<D>::Description(hstring_ref value) const
 {
-    check_hresult(static_cast<const IExtendedExecutionSession &>(static_cast<const D &>(*this))->put_Description(get(value)));
+    check_hresult(WINRT_SHIM(IExtendedExecutionSession)->put_Description(get(value)));
 }
 
 template <typename D> uint32_t impl_IExtendedExecutionSession<D>::PercentProgress() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IExtendedExecutionSession &>(static_cast<const D &>(*this))->get_PercentProgress(&value));
+    check_hresult(WINRT_SHIM(IExtendedExecutionSession)->get_PercentProgress(&value));
     return value;
 }
 
 template <typename D> void impl_IExtendedExecutionSession<D>::PercentProgress(uint32_t value) const
 {
-    check_hresult(static_cast<const IExtendedExecutionSession &>(static_cast<const D &>(*this))->put_PercentProgress(value));
+    check_hresult(WINRT_SHIM(IExtendedExecutionSession)->put_PercentProgress(value));
 }
 
 template <typename D> event_token impl_IExtendedExecutionSession<D>::Revoked(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IExtendedExecutionSession &>(static_cast<const D &>(*this))->add_Revoked(get(handler), &token));
+    check_hresult(WINRT_SHIM(IExtendedExecutionSession)->add_Revoked(get(handler), &token));
     return token;
 }
 
@@ -223,13 +223,13 @@ template <typename D> event_revoker<IExtendedExecutionSession> impl_IExtendedExe
 
 template <typename D> void impl_IExtendedExecutionSession<D>::Revoked(event_token token) const
 {
-    check_hresult(static_cast<const IExtendedExecutionSession &>(static_cast<const D &>(*this))->remove_Revoked(token));
+    check_hresult(WINRT_SHIM(IExtendedExecutionSession)->remove_Revoked(token));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionResult> impl_IExtendedExecutionSession<D>::RequestExtensionAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionResult> operation;
-    check_hresult(static_cast<const IExtendedExecutionSession &>(static_cast<const D &>(*this))->abi_RequestExtensionAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IExtendedExecutionSession)->abi_RequestExtensionAsync(put(operation)));
     return operation;
 }
 

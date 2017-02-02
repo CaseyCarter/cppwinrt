@@ -76,7 +76,6 @@ struct IBlock :
     impl::consume<IBlock>
 {
     IBlock(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBlock>(m_ptr); }
 };
 
 struct IBlockFactory :
@@ -84,7 +83,6 @@ struct IBlockFactory :
     impl::consume<IBlockFactory>
 {
     IBlockFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBlockFactory>(m_ptr); }
 };
 
 struct IBlockStatics :
@@ -92,7 +90,6 @@ struct IBlockStatics :
     impl::consume<IBlockStatics>
 {
     IBlockStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBlockStatics>(m_ptr); }
 };
 
 struct IBold :
@@ -100,7 +97,6 @@ struct IBold :
     impl::consume<IBold>
 {
     IBold(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IBold>(m_ptr); }
 };
 
 struct IGlyphs :
@@ -108,7 +104,6 @@ struct IGlyphs :
     impl::consume<IGlyphs>
 {
     IGlyphs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGlyphs>(m_ptr); }
 };
 
 struct IGlyphs2 :
@@ -116,7 +111,6 @@ struct IGlyphs2 :
     impl::consume<IGlyphs2>
 {
     IGlyphs2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGlyphs2>(m_ptr); }
 };
 
 struct IGlyphsStatics :
@@ -124,7 +118,6 @@ struct IGlyphsStatics :
     impl::consume<IGlyphsStatics>
 {
     IGlyphsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGlyphsStatics>(m_ptr); }
 };
 
 struct IGlyphsStatics2 :
@@ -132,7 +125,6 @@ struct IGlyphsStatics2 :
     impl::consume<IGlyphsStatics2>
 {
     IGlyphsStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGlyphsStatics2>(m_ptr); }
 };
 
 struct IHyperlink :
@@ -140,7 +132,6 @@ struct IHyperlink :
     impl::consume<IHyperlink>
 {
     IHyperlink(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHyperlink>(m_ptr); }
 };
 
 struct IHyperlink2 :
@@ -148,7 +139,6 @@ struct IHyperlink2 :
     impl::consume<IHyperlink2>
 {
     IHyperlink2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHyperlink2>(m_ptr); }
 };
 
 struct IHyperlink3 :
@@ -156,7 +146,6 @@ struct IHyperlink3 :
     impl::consume<IHyperlink3>
 {
     IHyperlink3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHyperlink3>(m_ptr); }
 };
 
 struct IHyperlinkClickEventArgs :
@@ -164,7 +153,6 @@ struct IHyperlinkClickEventArgs :
     impl::consume<IHyperlinkClickEventArgs>
 {
     IHyperlinkClickEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHyperlinkClickEventArgs>(m_ptr); }
 };
 
 struct IHyperlinkStatics :
@@ -172,7 +160,6 @@ struct IHyperlinkStatics :
     impl::consume<IHyperlinkStatics>
 {
     IHyperlinkStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHyperlinkStatics>(m_ptr); }
 };
 
 struct IHyperlinkStatics2 :
@@ -180,7 +167,6 @@ struct IHyperlinkStatics2 :
     impl::consume<IHyperlinkStatics2>
 {
     IHyperlinkStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHyperlinkStatics2>(m_ptr); }
 };
 
 struct IHyperlinkStatics3 :
@@ -188,7 +174,6 @@ struct IHyperlinkStatics3 :
     impl::consume<IHyperlinkStatics3>
 {
     IHyperlinkStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHyperlinkStatics3>(m_ptr); }
 };
 
 struct IInline :
@@ -196,7 +181,6 @@ struct IInline :
     impl::consume<IInline>
 {
     IInline(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInline>(m_ptr); }
 };
 
 struct IInlineFactory :
@@ -204,7 +188,6 @@ struct IInlineFactory :
     impl::consume<IInlineFactory>
 {
     IInlineFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInlineFactory>(m_ptr); }
 };
 
 struct IInlineUIContainer :
@@ -212,7 +195,6 @@ struct IInlineUIContainer :
     impl::consume<IInlineUIContainer>
 {
     IInlineUIContainer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IInlineUIContainer>(m_ptr); }
 };
 
 struct IItalic :
@@ -220,7 +202,6 @@ struct IItalic :
     impl::consume<IItalic>
 {
     IItalic(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IItalic>(m_ptr); }
 };
 
 struct ILineBreak :
@@ -228,7 +209,6 @@ struct ILineBreak :
     impl::consume<ILineBreak>
 {
     ILineBreak(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ILineBreak>(m_ptr); }
 };
 
 struct IParagraph :
@@ -236,7 +216,6 @@ struct IParagraph :
     impl::consume<IParagraph>
 {
     IParagraph(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IParagraph>(m_ptr); }
 };
 
 struct IParagraphStatics :
@@ -244,7 +223,6 @@ struct IParagraphStatics :
     impl::consume<IParagraphStatics>
 {
     IParagraphStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IParagraphStatics>(m_ptr); }
 };
 
 struct IRun :
@@ -252,7 +230,6 @@ struct IRun :
     impl::consume<IRun>
 {
     IRun(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRun>(m_ptr); }
 };
 
 struct IRunStatics :
@@ -260,7 +237,6 @@ struct IRunStatics :
     impl::consume<IRunStatics>
 {
     IRunStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRunStatics>(m_ptr); }
 };
 
 struct ISpan :
@@ -268,7 +244,6 @@ struct ISpan :
     impl::consume<ISpan>
 {
     ISpan(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpan>(m_ptr); }
 };
 
 struct ISpanFactory :
@@ -276,7 +251,6 @@ struct ISpanFactory :
     impl::consume<ISpanFactory>
 {
     ISpanFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ISpanFactory>(m_ptr); }
 };
 
 struct ITextElement :
@@ -284,7 +258,6 @@ struct ITextElement :
     impl::consume<ITextElement>
 {
     ITextElement(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextElement>(m_ptr); }
 };
 
 struct ITextElement2 :
@@ -292,7 +265,6 @@ struct ITextElement2 :
     impl::consume<ITextElement2>
 {
     ITextElement2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextElement2>(m_ptr); }
 };
 
 struct ITextElement3 :
@@ -300,7 +272,6 @@ struct ITextElement3 :
     impl::consume<ITextElement3>
 {
     ITextElement3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextElement3>(m_ptr); }
 };
 
 struct ITextElementFactory :
@@ -308,7 +279,6 @@ struct ITextElementFactory :
     impl::consume<ITextElementFactory>
 {
     ITextElementFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextElementFactory>(m_ptr); }
 };
 
 struct ITextElementOverrides :
@@ -316,7 +286,6 @@ struct ITextElementOverrides :
     impl::consume<ITextElementOverrides>
 {
     ITextElementOverrides(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextElementOverrides>(m_ptr); }
 };
 
 struct ITextElementStatics :
@@ -324,7 +293,6 @@ struct ITextElementStatics :
     impl::consume<ITextElementStatics>
 {
     ITextElementStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextElementStatics>(m_ptr); }
 };
 
 struct ITextElementStatics2 :
@@ -332,7 +300,6 @@ struct ITextElementStatics2 :
     impl::consume<ITextElementStatics2>
 {
     ITextElementStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextElementStatics2>(m_ptr); }
 };
 
 struct ITextElementStatics3 :
@@ -340,7 +307,6 @@ struct ITextElementStatics3 :
     impl::consume<ITextElementStatics3>
 {
     ITextElementStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextElementStatics3>(m_ptr); }
 };
 
 struct ITextPointer :
@@ -348,7 +314,6 @@ struct ITextPointer :
     impl::consume<ITextPointer>
 {
     ITextPointer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITextPointer>(m_ptr); }
 };
 
 struct ITypography :
@@ -356,7 +321,6 @@ struct ITypography :
     impl::consume<ITypography>
 {
     ITypography(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITypography>(m_ptr); }
 };
 
 struct ITypographyStatics :
@@ -364,7 +328,6 @@ struct ITypographyStatics :
     impl::consume<ITypographyStatics>
 {
     ITypographyStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ITypographyStatics>(m_ptr); }
 };
 
 struct IUnderline :
@@ -372,7 +335,6 @@ struct IUnderline :
     impl::consume<IUnderline>
 {
     IUnderline(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUnderline>(m_ptr); }
 };
 
 }

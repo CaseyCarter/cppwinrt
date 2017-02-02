@@ -29,7 +29,6 @@ struct IContactDataProviderConnection :
     impl::consume<IContactDataProviderConnection>
 {
     IContactDataProviderConnection(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactDataProviderConnection>(m_ptr); }
 };
 
 struct IContactDataProviderTriggerDetails :
@@ -37,7 +36,6 @@ struct IContactDataProviderTriggerDetails :
     impl::consume<IContactDataProviderTriggerDetails>
 {
     IContactDataProviderTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactDataProviderTriggerDetails>(m_ptr); }
 };
 
 struct IContactListServerSearchReadBatchRequest :
@@ -45,7 +43,6 @@ struct IContactListServerSearchReadBatchRequest :
     impl::consume<IContactListServerSearchReadBatchRequest>
 {
     IContactListServerSearchReadBatchRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactListServerSearchReadBatchRequest>(m_ptr); }
 };
 
 struct IContactListServerSearchReadBatchRequestEventArgs :
@@ -53,7 +50,6 @@ struct IContactListServerSearchReadBatchRequestEventArgs :
     impl::consume<IContactListServerSearchReadBatchRequestEventArgs>
 {
     IContactListServerSearchReadBatchRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactListServerSearchReadBatchRequestEventArgs>(m_ptr); }
 };
 
 struct IContactListSyncManagerSyncRequest :
@@ -61,7 +57,6 @@ struct IContactListSyncManagerSyncRequest :
     impl::consume<IContactListSyncManagerSyncRequest>
 {
     IContactListSyncManagerSyncRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactListSyncManagerSyncRequest>(m_ptr); }
 };
 
 struct IContactListSyncManagerSyncRequestEventArgs :
@@ -69,7 +64,6 @@ struct IContactListSyncManagerSyncRequestEventArgs :
     impl::consume<IContactListSyncManagerSyncRequestEventArgs>
 {
     IContactListSyncManagerSyncRequestEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactListSyncManagerSyncRequestEventArgs>(m_ptr); }
 };
 
 }

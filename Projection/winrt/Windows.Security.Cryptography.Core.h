@@ -2755,1219 +2755,1219 @@ namespace Windows::Security::Cryptography::Core {
 template <typename D> Windows::Storage::Streams::IBuffer impl_IKeyDerivationParameters<D>::KdfGenericBinary() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IKeyDerivationParameters &>(static_cast<const D &>(*this))->get_KdfGenericBinary(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationParameters)->get_KdfGenericBinary(put(value)));
     return value;
 }
 
 template <typename D> void impl_IKeyDerivationParameters<D>::KdfGenericBinary(const Windows::Storage::Streams::IBuffer & value) const
 {
-    check_hresult(static_cast<const IKeyDerivationParameters &>(static_cast<const D &>(*this))->put_KdfGenericBinary(get(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationParameters)->put_KdfGenericBinary(get(value)));
 }
 
 template <typename D> uint32_t impl_IKeyDerivationParameters<D>::IterationCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IKeyDerivationParameters &>(static_cast<const D &>(*this))->get_IterationCount(&value));
+    check_hresult(WINRT_SHIM(IKeyDerivationParameters)->get_IterationCount(&value));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm impl_IKeyDerivationParameters2<D>::Capi1KdfTargetAlgorithm() const
 {
     Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm value {};
-    check_hresult(static_cast<const IKeyDerivationParameters2 &>(static_cast<const D &>(*this))->get_Capi1KdfTargetAlgorithm(&value));
+    check_hresult(WINRT_SHIM(IKeyDerivationParameters2)->get_Capi1KdfTargetAlgorithm(&value));
     return value;
 }
 
 template <typename D> void impl_IKeyDerivationParameters2<D>::Capi1KdfTargetAlgorithm(Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm value) const
 {
-    check_hresult(static_cast<const IKeyDerivationParameters2 &>(static_cast<const D &>(*this))->put_Capi1KdfTargetAlgorithm(value));
+    check_hresult(WINRT_SHIM(IKeyDerivationParameters2)->put_Capi1KdfTargetAlgorithm(value));
 }
 
 template <typename D> Windows::Security::Cryptography::Core::KeyDerivationParameters impl_IKeyDerivationParametersStatics<D>::BuildForPbkdf2(const Windows::Storage::Streams::IBuffer & pbkdf2Salt, uint32_t iterationCount) const
 {
     Windows::Security::Cryptography::Core::KeyDerivationParameters value { nullptr };
-    check_hresult(static_cast<const IKeyDerivationParametersStatics &>(static_cast<const D &>(*this))->abi_BuildForPbkdf2(get(pbkdf2Salt), iterationCount, put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationParametersStatics)->abi_BuildForPbkdf2(get(pbkdf2Salt), iterationCount, put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::KeyDerivationParameters impl_IKeyDerivationParametersStatics<D>::BuildForSP800108(const Windows::Storage::Streams::IBuffer & label, const Windows::Storage::Streams::IBuffer & context) const
 {
     Windows::Security::Cryptography::Core::KeyDerivationParameters value { nullptr };
-    check_hresult(static_cast<const IKeyDerivationParametersStatics &>(static_cast<const D &>(*this))->abi_BuildForSP800108(get(label), get(context), put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationParametersStatics)->abi_BuildForSP800108(get(label), get(context), put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::KeyDerivationParameters impl_IKeyDerivationParametersStatics<D>::BuildForSP80056a(const Windows::Storage::Streams::IBuffer & algorithmId, const Windows::Storage::Streams::IBuffer & partyUInfo, const Windows::Storage::Streams::IBuffer & partyVInfo, const Windows::Storage::Streams::IBuffer & suppPubInfo, const Windows::Storage::Streams::IBuffer & suppPrivInfo) const
 {
     Windows::Security::Cryptography::Core::KeyDerivationParameters value { nullptr };
-    check_hresult(static_cast<const IKeyDerivationParametersStatics &>(static_cast<const D &>(*this))->abi_BuildForSP80056a(get(algorithmId), get(partyUInfo), get(partyVInfo), get(suppPubInfo), get(suppPrivInfo), put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationParametersStatics)->abi_BuildForSP80056a(get(algorithmId), get(partyUInfo), get(partyVInfo), get(suppPubInfo), get(suppPrivInfo), put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::KeyDerivationParameters impl_IKeyDerivationParametersStatics2<D>::BuildForCapi1Kdf(Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm capi1KdfTargetAlgorithm) const
 {
     Windows::Security::Cryptography::Core::KeyDerivationParameters value { nullptr };
-    check_hresult(static_cast<const IKeyDerivationParametersStatics2 &>(static_cast<const D &>(*this))->abi_BuildForCapi1Kdf(capi1KdfTargetAlgorithm, put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationParametersStatics2)->abi_BuildForCapi1Kdf(capi1KdfTargetAlgorithm, put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_ICryptographicKey<D>::KeySize() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ICryptographicKey &>(static_cast<const D &>(*this))->get_KeySize(&value));
+    check_hresult(WINRT_SHIM(ICryptographicKey)->get_KeySize(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicKey<D>::Export() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const ICryptographicKey &>(static_cast<const D &>(*this))->abi_ExportDefaultPrivateKeyBlobType(put(value)));
+    check_hresult(WINRT_SHIM(ICryptographicKey)->abi_ExportDefaultPrivateKeyBlobType(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicKey<D>::Export(Windows::Security::Cryptography::Core::CryptographicPrivateKeyBlobType BlobType) const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const ICryptographicKey &>(static_cast<const D &>(*this))->abi_ExportPrivateKeyWithBlobType(BlobType, put(value)));
+    check_hresult(WINRT_SHIM(ICryptographicKey)->abi_ExportPrivateKeyWithBlobType(BlobType, put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicKey<D>::ExportPublicKey() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const ICryptographicKey &>(static_cast<const D &>(*this))->abi_ExportDefaultPublicKeyBlobType(put(value)));
+    check_hresult(WINRT_SHIM(ICryptographicKey)->abi_ExportDefaultPublicKeyBlobType(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicKey<D>::ExportPublicKey(Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType BlobType) const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const ICryptographicKey &>(static_cast<const D &>(*this))->abi_ExportPublicKeyWithBlobType(BlobType, put(value)));
+    check_hresult(WINRT_SHIM(ICryptographicKey)->abi_ExportPublicKeyWithBlobType(BlobType, put(value)));
     return value;
 }
 
 template <typename D> void impl_IHashComputation<D>::Append(const Windows::Storage::Streams::IBuffer & data) const
 {
-    check_hresult(static_cast<const IHashComputation &>(static_cast<const D &>(*this))->abi_Append(get(data)));
+    check_hresult(WINRT_SHIM(IHashComputation)->abi_Append(get(data)));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IHashComputation<D>::GetValueAndReset() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IHashComputation &>(static_cast<const D &>(*this))->abi_GetValueAndReset(put(value)));
+    check_hresult(WINRT_SHIM(IHashComputation)->abi_GetValueAndReset(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHashAlgorithmProvider<D>::AlgorithmName() const
 {
     hstring value;
-    check_hresult(static_cast<const IHashAlgorithmProvider &>(static_cast<const D &>(*this))->get_AlgorithmName(put(value)));
+    check_hresult(WINRT_SHIM(IHashAlgorithmProvider)->get_AlgorithmName(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IHashAlgorithmProvider<D>::HashLength() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IHashAlgorithmProvider &>(static_cast<const D &>(*this))->get_HashLength(&value));
+    check_hresult(WINRT_SHIM(IHashAlgorithmProvider)->get_HashLength(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IHashAlgorithmProvider<D>::HashData(const Windows::Storage::Streams::IBuffer & data) const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IHashAlgorithmProvider &>(static_cast<const D &>(*this))->abi_HashData(get(data), put(value)));
+    check_hresult(WINRT_SHIM(IHashAlgorithmProvider)->abi_HashData(get(data), put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::CryptographicHash impl_IHashAlgorithmProvider<D>::CreateHash() const
 {
     Windows::Security::Cryptography::Core::CryptographicHash Value { nullptr };
-    check_hresult(static_cast<const IHashAlgorithmProvider &>(static_cast<const D &>(*this))->abi_CreateHash(put(Value)));
+    check_hresult(WINRT_SHIM(IHashAlgorithmProvider)->abi_CreateHash(put(Value)));
     return Value;
 }
 
 template <typename D> hstring impl_IMacAlgorithmProvider<D>::AlgorithmName() const
 {
     hstring value;
-    check_hresult(static_cast<const IMacAlgorithmProvider &>(static_cast<const D &>(*this))->get_AlgorithmName(put(value)));
+    check_hresult(WINRT_SHIM(IMacAlgorithmProvider)->get_AlgorithmName(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IMacAlgorithmProvider<D>::MacLength() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMacAlgorithmProvider &>(static_cast<const D &>(*this))->get_MacLength(&value));
+    check_hresult(WINRT_SHIM(IMacAlgorithmProvider)->get_MacLength(&value));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::CryptographicKey impl_IMacAlgorithmProvider<D>::CreateKey(const Windows::Storage::Streams::IBuffer & keyMaterial) const
 {
     Windows::Security::Cryptography::Core::CryptographicKey macKey { nullptr };
-    check_hresult(static_cast<const IMacAlgorithmProvider &>(static_cast<const D &>(*this))->abi_CreateKey(get(keyMaterial), put(macKey)));
+    check_hresult(WINRT_SHIM(IMacAlgorithmProvider)->abi_CreateKey(get(keyMaterial), put(macKey)));
     return macKey;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::CryptographicHash impl_IMacAlgorithmProvider2<D>::CreateHash(const Windows::Storage::Streams::IBuffer & keyMaterial) const
 {
     Windows::Security::Cryptography::Core::CryptographicHash value { nullptr };
-    check_hresult(static_cast<const IMacAlgorithmProvider2 &>(static_cast<const D &>(*this))->abi_CreateHash(get(keyMaterial), put(value)));
+    check_hresult(WINRT_SHIM(IMacAlgorithmProvider2)->abi_CreateHash(get(keyMaterial), put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmProvider<D>::AlgorithmName() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmProvider &>(static_cast<const D &>(*this))->get_AlgorithmName(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmProvider)->get_AlgorithmName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::CryptographicKey impl_IKeyDerivationAlgorithmProvider<D>::CreateKey(const Windows::Storage::Streams::IBuffer & keyMaterial) const
 {
     Windows::Security::Cryptography::Core::CryptographicKey key { nullptr };
-    check_hresult(static_cast<const IKeyDerivationAlgorithmProvider &>(static_cast<const D &>(*this))->abi_CreateKey(get(keyMaterial), put(key)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmProvider)->abi_CreateKey(get(keyMaterial), put(key)));
     return key;
 }
 
 template <typename D> hstring impl_ISymmetricKeyAlgorithmProvider<D>::AlgorithmName() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricKeyAlgorithmProvider &>(static_cast<const D &>(*this))->get_AlgorithmName(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricKeyAlgorithmProvider)->get_AlgorithmName(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_ISymmetricKeyAlgorithmProvider<D>::BlockLength() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ISymmetricKeyAlgorithmProvider &>(static_cast<const D &>(*this))->get_BlockLength(&value));
+    check_hresult(WINRT_SHIM(ISymmetricKeyAlgorithmProvider)->get_BlockLength(&value));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::CryptographicKey impl_ISymmetricKeyAlgorithmProvider<D>::CreateSymmetricKey(const Windows::Storage::Streams::IBuffer & keyMaterial) const
 {
     Windows::Security::Cryptography::Core::CryptographicKey key { nullptr };
-    check_hresult(static_cast<const ISymmetricKeyAlgorithmProvider &>(static_cast<const D &>(*this))->abi_CreateSymmetricKey(get(keyMaterial), put(key)));
+    check_hresult(WINRT_SHIM(ISymmetricKeyAlgorithmProvider)->abi_CreateSymmetricKey(get(keyMaterial), put(key)));
     return key;
 }
 
 template <typename D> hstring impl_IAsymmetricKeyAlgorithmProvider<D>::AlgorithmName() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricKeyAlgorithmProvider &>(static_cast<const D &>(*this))->get_AlgorithmName(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricKeyAlgorithmProvider)->get_AlgorithmName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::CryptographicKey impl_IAsymmetricKeyAlgorithmProvider<D>::CreateKeyPair(uint32_t keySize) const
 {
     Windows::Security::Cryptography::Core::CryptographicKey key { nullptr };
-    check_hresult(static_cast<const IAsymmetricKeyAlgorithmProvider &>(static_cast<const D &>(*this))->abi_CreateKeyPair(keySize, put(key)));
+    check_hresult(WINRT_SHIM(IAsymmetricKeyAlgorithmProvider)->abi_CreateKeyPair(keySize, put(key)));
     return key;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::CryptographicKey impl_IAsymmetricKeyAlgorithmProvider<D>::ImportKeyPair(const Windows::Storage::Streams::IBuffer & keyBlob) const
 {
     Windows::Security::Cryptography::Core::CryptographicKey key { nullptr };
-    check_hresult(static_cast<const IAsymmetricKeyAlgorithmProvider &>(static_cast<const D &>(*this))->abi_ImportDefaultPrivateKeyBlob(get(keyBlob), put(key)));
+    check_hresult(WINRT_SHIM(IAsymmetricKeyAlgorithmProvider)->abi_ImportDefaultPrivateKeyBlob(get(keyBlob), put(key)));
     return key;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::CryptographicKey impl_IAsymmetricKeyAlgorithmProvider<D>::ImportKeyPair(const Windows::Storage::Streams::IBuffer & keyBlob, Windows::Security::Cryptography::Core::CryptographicPrivateKeyBlobType BlobType) const
 {
     Windows::Security::Cryptography::Core::CryptographicKey key { nullptr };
-    check_hresult(static_cast<const IAsymmetricKeyAlgorithmProvider &>(static_cast<const D &>(*this))->abi_ImportKeyPairWithBlobType(get(keyBlob), BlobType, put(key)));
+    check_hresult(WINRT_SHIM(IAsymmetricKeyAlgorithmProvider)->abi_ImportKeyPairWithBlobType(get(keyBlob), BlobType, put(key)));
     return key;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::CryptographicKey impl_IAsymmetricKeyAlgorithmProvider<D>::ImportPublicKey(const Windows::Storage::Streams::IBuffer & keyBlob) const
 {
     Windows::Security::Cryptography::Core::CryptographicKey key { nullptr };
-    check_hresult(static_cast<const IAsymmetricKeyAlgorithmProvider &>(static_cast<const D &>(*this))->abi_ImportDefaultPublicKeyBlob(get(keyBlob), put(key)));
+    check_hresult(WINRT_SHIM(IAsymmetricKeyAlgorithmProvider)->abi_ImportDefaultPublicKeyBlob(get(keyBlob), put(key)));
     return key;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::CryptographicKey impl_IAsymmetricKeyAlgorithmProvider<D>::ImportPublicKey(const Windows::Storage::Streams::IBuffer & keyBlob, Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType BlobType) const
 {
     Windows::Security::Cryptography::Core::CryptographicKey key { nullptr };
-    check_hresult(static_cast<const IAsymmetricKeyAlgorithmProvider &>(static_cast<const D &>(*this))->abi_ImportPublicKeyWithBlobType(get(keyBlob), BlobType, put(key)));
+    check_hresult(WINRT_SHIM(IAsymmetricKeyAlgorithmProvider)->abi_ImportPublicKeyWithBlobType(get(keyBlob), BlobType, put(key)));
     return key;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::CryptographicKey impl_IAsymmetricKeyAlgorithmProvider2<D>::CreateKeyPairWithCurveName(hstring_ref curveName) const
 {
     Windows::Security::Cryptography::Core::CryptographicKey key { nullptr };
-    check_hresult(static_cast<const IAsymmetricKeyAlgorithmProvider2 &>(static_cast<const D &>(*this))->abi_CreateKeyPairWithCurveName(get(curveName), put(key)));
+    check_hresult(WINRT_SHIM(IAsymmetricKeyAlgorithmProvider2)->abi_CreateKeyPairWithCurveName(get(curveName), put(key)));
     return key;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::CryptographicKey impl_IAsymmetricKeyAlgorithmProvider2<D>::CreateKeyPairWithCurveParameters(array_ref<const uint8_t> parameters) const
 {
     Windows::Security::Cryptography::Core::CryptographicKey key { nullptr };
-    check_hresult(static_cast<const IAsymmetricKeyAlgorithmProvider2 &>(static_cast<const D &>(*this))->abi_CreateKeyPairWithCurveParameters(parameters.size(), get(parameters), put(key)));
+    check_hresult(WINRT_SHIM(IAsymmetricKeyAlgorithmProvider2)->abi_CreateKeyPairWithCurveParameters(parameters.size(), get(parameters), put(key)));
     return key;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> impl_IPersistedKeyProviderStatics<D>::OpenKeyPairFromCertificateAsync(const Windows::Security::Cryptography::Certificates::Certificate & certificate, hstring_ref hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> operation;
-    check_hresult(static_cast<const IPersistedKeyProviderStatics &>(static_cast<const D &>(*this))->abi_OpenKeyPairFromCertificateAsync(get(certificate), get(hashAlgorithmName), padding, put(operation)));
+    check_hresult(WINRT_SHIM(IPersistedKeyProviderStatics)->abi_OpenKeyPairFromCertificateAsync(get(certificate), get(hashAlgorithmName), padding, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::CryptographicKey impl_IPersistedKeyProviderStatics<D>::OpenPublicKeyFromCertificate(const Windows::Security::Cryptography::Certificates::Certificate & certificate, hstring_ref hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding) const
 {
     Windows::Security::Cryptography::Core::CryptographicKey key { nullptr };
-    check_hresult(static_cast<const IPersistedKeyProviderStatics &>(static_cast<const D &>(*this))->abi_OpenPublicKeyFromCertificate(get(certificate), get(hashAlgorithmName), padding, put(key)));
+    check_hresult(WINRT_SHIM(IPersistedKeyProviderStatics)->abi_OpenPublicKeyFromCertificate(get(certificate), get(hashAlgorithmName), padding, put(key)));
     return key;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IEncryptedAndAuthenticatedData<D>::EncryptedData() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IEncryptedAndAuthenticatedData &>(static_cast<const D &>(*this))->get_EncryptedData(put(value)));
+    check_hresult(WINRT_SHIM(IEncryptedAndAuthenticatedData)->get_EncryptedData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IEncryptedAndAuthenticatedData<D>::AuthenticationTag() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IEncryptedAndAuthenticatedData &>(static_cast<const D &>(*this))->get_AuthenticationTag(put(value)));
+    check_hresult(WINRT_SHIM(IEncryptedAndAuthenticatedData)->get_AuthenticationTag(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicEngineStatics<D>::Encrypt(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & iv) const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const ICryptographicEngineStatics &>(static_cast<const D &>(*this))->abi_Encrypt(get(key), get(data), get(iv), put(value)));
+    check_hresult(WINRT_SHIM(ICryptographicEngineStatics)->abi_Encrypt(get(key), get(data), get(iv), put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicEngineStatics<D>::Decrypt(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & iv) const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const ICryptographicEngineStatics &>(static_cast<const D &>(*this))->abi_Decrypt(get(key), get(data), get(iv), put(value)));
+    check_hresult(WINRT_SHIM(ICryptographicEngineStatics)->abi_Decrypt(get(key), get(data), get(iv), put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::EncryptedAndAuthenticatedData impl_ICryptographicEngineStatics<D>::EncryptAndAuthenticate(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & nonce, const Windows::Storage::Streams::IBuffer & authenticatedData) const
 {
     Windows::Security::Cryptography::Core::EncryptedAndAuthenticatedData value { nullptr };
-    check_hresult(static_cast<const ICryptographicEngineStatics &>(static_cast<const D &>(*this))->abi_EncryptAndAuthenticate(get(key), get(data), get(nonce), get(authenticatedData), put(value)));
+    check_hresult(WINRT_SHIM(ICryptographicEngineStatics)->abi_EncryptAndAuthenticate(get(key), get(data), get(nonce), get(authenticatedData), put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicEngineStatics<D>::DecryptAndAuthenticate(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & nonce, const Windows::Storage::Streams::IBuffer & authenticationTag, const Windows::Storage::Streams::IBuffer & authenticatedData) const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const ICryptographicEngineStatics &>(static_cast<const D &>(*this))->abi_DecryptAndAuthenticate(get(key), get(data), get(nonce), get(authenticationTag), get(authenticatedData), put(value)));
+    check_hresult(WINRT_SHIM(ICryptographicEngineStatics)->abi_DecryptAndAuthenticate(get(key), get(data), get(nonce), get(authenticationTag), get(authenticatedData), put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicEngineStatics<D>::Sign(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data) const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const ICryptographicEngineStatics &>(static_cast<const D &>(*this))->abi_Sign(get(key), get(data), put(value)));
+    check_hresult(WINRT_SHIM(ICryptographicEngineStatics)->abi_Sign(get(key), get(data), put(value)));
     return value;
 }
 
 template <typename D> bool impl_ICryptographicEngineStatics<D>::VerifySignature(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & signature) const
 {
     bool isAuthenticated {};
-    check_hresult(static_cast<const ICryptographicEngineStatics &>(static_cast<const D &>(*this))->abi_VerifySignature(get(key), get(data), get(signature), &isAuthenticated));
+    check_hresult(WINRT_SHIM(ICryptographicEngineStatics)->abi_VerifySignature(get(key), get(data), get(signature), &isAuthenticated));
     return isAuthenticated;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicEngineStatics<D>::DeriveKeyMaterial(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Security::Cryptography::Core::KeyDerivationParameters & parameters, uint32_t desiredKeySize) const
 {
     Windows::Storage::Streams::IBuffer keyMaterial;
-    check_hresult(static_cast<const ICryptographicEngineStatics &>(static_cast<const D &>(*this))->abi_DeriveKeyMaterial(get(key), get(parameters), desiredKeySize, put(keyMaterial)));
+    check_hresult(WINRT_SHIM(ICryptographicEngineStatics)->abi_DeriveKeyMaterial(get(key), get(parameters), desiredKeySize, put(keyMaterial)));
     return keyMaterial;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicEngineStatics2<D>::SignHashedData(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data) const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const ICryptographicEngineStatics2 &>(static_cast<const D &>(*this))->abi_SignHashedData(get(key), get(data), put(value)));
+    check_hresult(WINRT_SHIM(ICryptographicEngineStatics2)->abi_SignHashedData(get(key), get(data), put(value)));
     return value;
 }
 
 template <typename D> bool impl_ICryptographicEngineStatics2<D>::VerifySignatureWithHashInput(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & signature) const
 {
     bool isAuthenticated {};
-    check_hresult(static_cast<const ICryptographicEngineStatics2 &>(static_cast<const D &>(*this))->abi_VerifySignatureWithHashInput(get(key), get(data), get(signature), &isAuthenticated));
+    check_hresult(WINRT_SHIM(ICryptographicEngineStatics2)->abi_VerifySignatureWithHashInput(get(key), get(data), get(signature), &isAuthenticated));
     return isAuthenticated;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_ICryptographicEngineStatics2<D>::DecryptAsync(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & iv) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> value;
-    check_hresult(static_cast<const ICryptographicEngineStatics2 &>(static_cast<const D &>(*this))->abi_DecryptAsync(get(key), get(data), get(iv), put(value)));
+    check_hresult(WINRT_SHIM(ICryptographicEngineStatics2)->abi_DecryptAsync(get(key), get(data), get(iv), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_ICryptographicEngineStatics2<D>::SignAsync(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> value;
-    check_hresult(static_cast<const ICryptographicEngineStatics2 &>(static_cast<const D &>(*this))->abi_SignAsync(get(key), get(data), put(value)));
+    check_hresult(WINRT_SHIM(ICryptographicEngineStatics2)->abi_SignAsync(get(key), get(data), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_ICryptographicEngineStatics2<D>::SignHashedDataAsync(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> value;
-    check_hresult(static_cast<const ICryptographicEngineStatics2 &>(static_cast<const D &>(*this))->abi_SignHashedDataAsync(get(key), get(data), put(value)));
+    check_hresult(WINRT_SHIM(ICryptographicEngineStatics2)->abi_SignHashedDataAsync(get(key), get(data), put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::HashAlgorithmProvider impl_IHashAlgorithmProviderStatics<D>::OpenAlgorithm(hstring_ref algorithm) const
 {
     Windows::Security::Cryptography::Core::HashAlgorithmProvider provider { nullptr };
-    check_hresult(static_cast<const IHashAlgorithmProviderStatics &>(static_cast<const D &>(*this))->abi_OpenAlgorithm(get(algorithm), put(provider)));
+    check_hresult(WINRT_SHIM(IHashAlgorithmProviderStatics)->abi_OpenAlgorithm(get(algorithm), put(provider)));
     return provider;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::MacAlgorithmProvider impl_IMacAlgorithmProviderStatics<D>::OpenAlgorithm(hstring_ref algorithm) const
 {
     Windows::Security::Cryptography::Core::MacAlgorithmProvider provider { nullptr };
-    check_hresult(static_cast<const IMacAlgorithmProviderStatics &>(static_cast<const D &>(*this))->abi_OpenAlgorithm(get(algorithm), put(provider)));
+    check_hresult(WINRT_SHIM(IMacAlgorithmProviderStatics)->abi_OpenAlgorithm(get(algorithm), put(provider)));
     return provider;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider impl_IKeyDerivationAlgorithmProviderStatics<D>::OpenAlgorithm(hstring_ref algorithm) const
 {
     Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider provider { nullptr };
-    check_hresult(static_cast<const IKeyDerivationAlgorithmProviderStatics &>(static_cast<const D &>(*this))->abi_OpenAlgorithm(get(algorithm), put(provider)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmProviderStatics)->abi_OpenAlgorithm(get(algorithm), put(provider)));
     return provider;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider impl_ISymmetricKeyAlgorithmProviderStatics<D>::OpenAlgorithm(hstring_ref algorithm) const
 {
     Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider provider { nullptr };
-    check_hresult(static_cast<const ISymmetricKeyAlgorithmProviderStatics &>(static_cast<const D &>(*this))->abi_OpenAlgorithm(get(algorithm), put(provider)));
+    check_hresult(WINRT_SHIM(ISymmetricKeyAlgorithmProviderStatics)->abi_OpenAlgorithm(get(algorithm), put(provider)));
     return provider;
 }
 
 template <typename D> Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider impl_IAsymmetricKeyAlgorithmProviderStatics<D>::OpenAlgorithm(hstring_ref algorithm) const
 {
     Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider provider { nullptr };
-    check_hresult(static_cast<const IAsymmetricKeyAlgorithmProviderStatics &>(static_cast<const D &>(*this))->abi_OpenAlgorithm(get(algorithm), put(provider)));
+    check_hresult(WINRT_SHIM(IAsymmetricKeyAlgorithmProviderStatics)->abi_OpenAlgorithm(get(algorithm), put(provider)));
     return provider;
 }
 
 template <typename D> hstring impl_IHashAlgorithmNamesStatics<D>::Md5() const
 {
     hstring value;
-    check_hresult(static_cast<const IHashAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Md5(put(value)));
+    check_hresult(WINRT_SHIM(IHashAlgorithmNamesStatics)->get_Md5(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHashAlgorithmNamesStatics<D>::Sha1() const
 {
     hstring value;
-    check_hresult(static_cast<const IHashAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Sha1(put(value)));
+    check_hresult(WINRT_SHIM(IHashAlgorithmNamesStatics)->get_Sha1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHashAlgorithmNamesStatics<D>::Sha256() const
 {
     hstring value;
-    check_hresult(static_cast<const IHashAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Sha256(put(value)));
+    check_hresult(WINRT_SHIM(IHashAlgorithmNamesStatics)->get_Sha256(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHashAlgorithmNamesStatics<D>::Sha384() const
 {
     hstring value;
-    check_hresult(static_cast<const IHashAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Sha384(put(value)));
+    check_hresult(WINRT_SHIM(IHashAlgorithmNamesStatics)->get_Sha384(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHashAlgorithmNamesStatics<D>::Sha512() const
 {
     hstring value;
-    check_hresult(static_cast<const IHashAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Sha512(put(value)));
+    check_hresult(WINRT_SHIM(IHashAlgorithmNamesStatics)->get_Sha512(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMacAlgorithmNamesStatics<D>::HmacMd5() const
 {
     hstring value;
-    check_hresult(static_cast<const IMacAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_HmacMd5(put(value)));
+    check_hresult(WINRT_SHIM(IMacAlgorithmNamesStatics)->get_HmacMd5(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMacAlgorithmNamesStatics<D>::HmacSha1() const
 {
     hstring value;
-    check_hresult(static_cast<const IMacAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_HmacSha1(put(value)));
+    check_hresult(WINRT_SHIM(IMacAlgorithmNamesStatics)->get_HmacSha1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMacAlgorithmNamesStatics<D>::HmacSha256() const
 {
     hstring value;
-    check_hresult(static_cast<const IMacAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_HmacSha256(put(value)));
+    check_hresult(WINRT_SHIM(IMacAlgorithmNamesStatics)->get_HmacSha256(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMacAlgorithmNamesStatics<D>::HmacSha384() const
 {
     hstring value;
-    check_hresult(static_cast<const IMacAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_HmacSha384(put(value)));
+    check_hresult(WINRT_SHIM(IMacAlgorithmNamesStatics)->get_HmacSha384(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMacAlgorithmNamesStatics<D>::HmacSha512() const
 {
     hstring value;
-    check_hresult(static_cast<const IMacAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_HmacSha512(put(value)));
+    check_hresult(WINRT_SHIM(IMacAlgorithmNamesStatics)->get_HmacSha512(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMacAlgorithmNamesStatics<D>::AesCmac() const
 {
     hstring value;
-    check_hresult(static_cast<const IMacAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_AesCmac(put(value)));
+    check_hresult(WINRT_SHIM(IMacAlgorithmNamesStatics)->get_AesCmac(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::DesCbc() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_DesCbc(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_DesCbc(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::DesEcb() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_DesEcb(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_DesEcb(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::TripleDesCbc() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_TripleDesCbc(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_TripleDesCbc(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::TripleDesEcb() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_TripleDesEcb(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_TripleDesEcb(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::Rc2Cbc() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Rc2Cbc(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_Rc2Cbc(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::Rc2Ecb() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Rc2Ecb(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_Rc2Ecb(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::AesCbc() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_AesCbc(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_AesCbc(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::AesEcb() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_AesEcb(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_AesEcb(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::AesGcm() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_AesGcm(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_AesGcm(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::AesCcm() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_AesCcm(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_AesCcm(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::AesCbcPkcs7() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_AesCbcPkcs7(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_AesCbcPkcs7(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::AesEcbPkcs7() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_AesEcbPkcs7(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_AesEcbPkcs7(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::DesCbcPkcs7() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_DesCbcPkcs7(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_DesCbcPkcs7(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::DesEcbPkcs7() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_DesEcbPkcs7(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_DesEcbPkcs7(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::TripleDesCbcPkcs7() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_TripleDesCbcPkcs7(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_TripleDesCbcPkcs7(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::TripleDesEcbPkcs7() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_TripleDesEcbPkcs7(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_TripleDesEcbPkcs7(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::Rc2CbcPkcs7() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Rc2CbcPkcs7(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_Rc2CbcPkcs7(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::Rc2EcbPkcs7() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Rc2EcbPkcs7(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_Rc2EcbPkcs7(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISymmetricAlgorithmNamesStatics<D>::Rc4() const
 {
     hstring value;
-    check_hresult(static_cast<const ISymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Rc4(put(value)));
+    check_hresult(WINRT_SHIM(ISymmetricAlgorithmNamesStatics)->get_Rc4(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics<D>::RsaPkcs1() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_RsaPkcs1(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics)->get_RsaPkcs1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics<D>::RsaOaepSha1() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_RsaOaepSha1(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics)->get_RsaOaepSha1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics<D>::RsaOaepSha256() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_RsaOaepSha256(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics)->get_RsaOaepSha256(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics<D>::RsaOaepSha384() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_RsaOaepSha384(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics)->get_RsaOaepSha384(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics<D>::RsaOaepSha512() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_RsaOaepSha512(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics)->get_RsaOaepSha512(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics<D>::EcdsaP256Sha256() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_EcdsaP256Sha256(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics)->get_EcdsaP256Sha256(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics<D>::EcdsaP384Sha384() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_EcdsaP384Sha384(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics)->get_EcdsaP384Sha384(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics<D>::EcdsaP521Sha512() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_EcdsaP521Sha512(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics)->get_EcdsaP521Sha512(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics<D>::DsaSha1() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_DsaSha1(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics)->get_DsaSha1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics<D>::DsaSha256() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_DsaSha256(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics)->get_DsaSha256(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics<D>::RsaSignPkcs1Sha1() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_RsaSignPkcs1Sha1(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics)->get_RsaSignPkcs1Sha1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics<D>::RsaSignPkcs1Sha256() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_RsaSignPkcs1Sha256(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics)->get_RsaSignPkcs1Sha256(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics<D>::RsaSignPkcs1Sha384() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_RsaSignPkcs1Sha384(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics)->get_RsaSignPkcs1Sha384(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics<D>::RsaSignPkcs1Sha512() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_RsaSignPkcs1Sha512(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics)->get_RsaSignPkcs1Sha512(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics<D>::RsaSignPssSha1() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_RsaSignPssSha1(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics)->get_RsaSignPssSha1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics<D>::RsaSignPssSha256() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_RsaSignPssSha256(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics)->get_RsaSignPssSha256(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics<D>::RsaSignPssSha384() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_RsaSignPssSha384(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics)->get_RsaSignPssSha384(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics<D>::RsaSignPssSha512() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_RsaSignPssSha512(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics)->get_RsaSignPssSha512(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics2<D>::EcdsaSha256() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics2 &>(static_cast<const D &>(*this))->get_EcdsaSha256(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics2)->get_EcdsaSha256(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics2<D>::EcdsaSha384() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics2 &>(static_cast<const D &>(*this))->get_EcdsaSha384(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics2)->get_EcdsaSha384(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAsymmetricAlgorithmNamesStatics2<D>::EcdsaSha512() const
 {
     hstring value;
-    check_hresult(static_cast<const IAsymmetricAlgorithmNamesStatics2 &>(static_cast<const D &>(*this))->get_EcdsaSha512(put(value)));
+    check_hresult(WINRT_SHIM(IAsymmetricAlgorithmNamesStatics2)->get_EcdsaSha512(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::BrainpoolP160r1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_BrainpoolP160r1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_BrainpoolP160r1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::BrainpoolP160t1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_BrainpoolP160t1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_BrainpoolP160t1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::BrainpoolP192r1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_BrainpoolP192r1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_BrainpoolP192r1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::BrainpoolP192t1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_BrainpoolP192t1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_BrainpoolP192t1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::BrainpoolP224r1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_BrainpoolP224r1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_BrainpoolP224r1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::BrainpoolP224t1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_BrainpoolP224t1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_BrainpoolP224t1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::BrainpoolP256r1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_BrainpoolP256r1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_BrainpoolP256r1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::BrainpoolP256t1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_BrainpoolP256t1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_BrainpoolP256t1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::BrainpoolP320r1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_BrainpoolP320r1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_BrainpoolP320r1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::BrainpoolP320t1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_BrainpoolP320t1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_BrainpoolP320t1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::BrainpoolP384r1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_BrainpoolP384r1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_BrainpoolP384r1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::BrainpoolP384t1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_BrainpoolP384t1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_BrainpoolP384t1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::BrainpoolP512r1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_BrainpoolP512r1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_BrainpoolP512r1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::BrainpoolP512t1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_BrainpoolP512t1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_BrainpoolP512t1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::Curve25519() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_Curve25519(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_Curve25519(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::Ec192wapi() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_Ec192wapi(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_Ec192wapi(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::NistP192() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_NistP192(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_NistP192(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::NistP224() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_NistP224(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_NistP224(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::NistP256() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_NistP256(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_NistP256(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::NistP384() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_NistP384(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_NistP384(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::NistP521() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_NistP521(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_NistP521(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::NumsP256t1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_NumsP256t1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_NumsP256t1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::NumsP384t1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_NumsP384t1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_NumsP384t1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::NumsP512t1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_NumsP512t1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_NumsP512t1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::SecP160k1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_SecP160k1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_SecP160k1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::SecP160r1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_SecP160r1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_SecP160r1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::SecP160r2() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_SecP160r2(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_SecP160r2(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::SecP192k1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_SecP192k1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_SecP192k1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::SecP192r1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_SecP192r1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_SecP192r1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::SecP224k1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_SecP224k1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_SecP224k1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::SecP224r1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_SecP224r1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_SecP224r1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::SecP256k1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_SecP256k1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_SecP256k1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::SecP256r1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_SecP256r1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_SecP256r1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::SecP384r1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_SecP384r1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_SecP384r1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::SecP521r1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_SecP521r1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_SecP521r1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::Wtls7() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_Wtls7(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_Wtls7(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::Wtls9() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_Wtls9(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_Wtls9(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::Wtls12() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_Wtls12(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_Wtls12(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::X962P192v1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_X962P192v1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_X962P192v1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::X962P192v2() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_X962P192v2(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_X962P192v2(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::X962P192v3() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_X962P192v3(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_X962P192v3(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::X962P239v1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_X962P239v1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_X962P239v1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::X962P239v2() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_X962P239v2(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_X962P239v2(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::X962P239v3() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_X962P239v3(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_X962P239v3(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEccCurveNamesStatics<D>::X962P256v1() const
 {
     hstring value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_X962P256v1(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_X962P256v1(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IEccCurveNamesStatics<D>::AllEccCurveNames() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IEccCurveNamesStatics &>(static_cast<const D &>(*this))->get_AllEccCurveNames(put(value)));
+    check_hresult(WINRT_SHIM(IEccCurveNamesStatics)->get_AllEccCurveNames(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics<D>::Pbkdf2Md5() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Pbkdf2Md5(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics)->get_Pbkdf2Md5(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics<D>::Pbkdf2Sha1() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Pbkdf2Sha1(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics)->get_Pbkdf2Sha1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics<D>::Pbkdf2Sha256() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Pbkdf2Sha256(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics)->get_Pbkdf2Sha256(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics<D>::Pbkdf2Sha384() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Pbkdf2Sha384(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics)->get_Pbkdf2Sha384(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics<D>::Pbkdf2Sha512() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Pbkdf2Sha512(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics)->get_Pbkdf2Sha512(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics<D>::Sp800108CtrHmacMd5() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Sp800108CtrHmacMd5(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics)->get_Sp800108CtrHmacMd5(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics<D>::Sp800108CtrHmacSha1() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Sp800108CtrHmacSha1(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics)->get_Sp800108CtrHmacSha1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics<D>::Sp800108CtrHmacSha256() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Sp800108CtrHmacSha256(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics)->get_Sp800108CtrHmacSha256(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics<D>::Sp800108CtrHmacSha384() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Sp800108CtrHmacSha384(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics)->get_Sp800108CtrHmacSha384(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics<D>::Sp800108CtrHmacSha512() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Sp800108CtrHmacSha512(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics)->get_Sp800108CtrHmacSha512(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics<D>::Sp80056aConcatMd5() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Sp80056aConcatMd5(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics)->get_Sp80056aConcatMd5(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics<D>::Sp80056aConcatSha1() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Sp80056aConcatSha1(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics)->get_Sp80056aConcatSha1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics<D>::Sp80056aConcatSha256() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Sp80056aConcatSha256(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics)->get_Sp80056aConcatSha256(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics<D>::Sp80056aConcatSha384() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Sp80056aConcatSha384(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics)->get_Sp80056aConcatSha384(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics<D>::Sp80056aConcatSha512() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Sp80056aConcatSha512(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics)->get_Sp80056aConcatSha512(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics2<D>::CapiKdfMd5() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics2 &>(static_cast<const D &>(*this))->get_CapiKdfMd5(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics2)->get_CapiKdfMd5(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics2<D>::CapiKdfSha1() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics2 &>(static_cast<const D &>(*this))->get_CapiKdfSha1(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics2)->get_CapiKdfSha1(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics2<D>::CapiKdfSha256() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics2 &>(static_cast<const D &>(*this))->get_CapiKdfSha256(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics2)->get_CapiKdfSha256(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics2<D>::CapiKdfSha384() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics2 &>(static_cast<const D &>(*this))->get_CapiKdfSha384(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics2)->get_CapiKdfSha384(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyDerivationAlgorithmNamesStatics2<D>::CapiKdfSha512() const
 {
     hstring value;
-    check_hresult(static_cast<const IKeyDerivationAlgorithmNamesStatics2 &>(static_cast<const D &>(*this))->get_CapiKdfSha512(put(value)));
+    check_hresult(WINRT_SHIM(IKeyDerivationAlgorithmNamesStatics2)->get_CapiKdfSha512(put(value)));
     return value;
 }
 

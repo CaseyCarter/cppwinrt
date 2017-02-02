@@ -149,7 +149,6 @@ struct ICivicAddress :
     impl::consume<ICivicAddress>
 {
     ICivicAddress(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICivicAddress>(m_ptr); }
 };
 
 struct IGeoboundingBox :
@@ -158,7 +157,6 @@ struct IGeoboundingBox :
     impl::require<IGeoboundingBox, Windows::Devices::Geolocation::IGeoshape>
 {
     IGeoboundingBox(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeoboundingBox>(m_ptr); }
 };
 
 struct IGeoboundingBoxFactory :
@@ -166,7 +164,6 @@ struct IGeoboundingBoxFactory :
     impl::consume<IGeoboundingBoxFactory>
 {
     IGeoboundingBoxFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeoboundingBoxFactory>(m_ptr); }
 };
 
 struct IGeoboundingBoxStatics :
@@ -174,7 +171,6 @@ struct IGeoboundingBoxStatics :
     impl::consume<IGeoboundingBoxStatics>
 {
     IGeoboundingBoxStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeoboundingBoxStatics>(m_ptr); }
 };
 
 struct IGeocircle :
@@ -183,7 +179,6 @@ struct IGeocircle :
     impl::require<IGeocircle, Windows::Devices::Geolocation::IGeoshape>
 {
     IGeocircle(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeocircle>(m_ptr); }
 };
 
 struct IGeocircleFactory :
@@ -191,7 +186,6 @@ struct IGeocircleFactory :
     impl::consume<IGeocircleFactory>
 {
     IGeocircleFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeocircleFactory>(m_ptr); }
 };
 
 struct IGeocoordinate :
@@ -199,7 +193,6 @@ struct IGeocoordinate :
     impl::consume<IGeocoordinate>
 {
     IGeocoordinate(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeocoordinate>(m_ptr); }
 };
 
 struct IGeocoordinateSatelliteData :
@@ -207,7 +200,6 @@ struct IGeocoordinateSatelliteData :
     impl::consume<IGeocoordinateSatelliteData>
 {
     IGeocoordinateSatelliteData(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeocoordinateSatelliteData>(m_ptr); }
 };
 
 struct IGeocoordinateWithPoint :
@@ -215,7 +207,6 @@ struct IGeocoordinateWithPoint :
     impl::consume<IGeocoordinateWithPoint>
 {
     IGeocoordinateWithPoint(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeocoordinateWithPoint>(m_ptr); }
 };
 
 struct IGeocoordinateWithPositionData :
@@ -224,7 +215,6 @@ struct IGeocoordinateWithPositionData :
     impl::require<IGeocoordinateWithPositionData, Windows::Devices::Geolocation::IGeocoordinate>
 {
     IGeocoordinateWithPositionData(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeocoordinateWithPositionData>(m_ptr); }
 };
 
 struct IGeocoordinateWithPositionSourceTimestamp :
@@ -232,7 +222,6 @@ struct IGeocoordinateWithPositionSourceTimestamp :
     impl::consume<IGeocoordinateWithPositionSourceTimestamp>
 {
     IGeocoordinateWithPositionSourceTimestamp(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeocoordinateWithPositionSourceTimestamp>(m_ptr); }
 };
 
 struct IGeolocator :
@@ -240,7 +229,6 @@ struct IGeolocator :
     impl::consume<IGeolocator>
 {
     IGeolocator(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeolocator>(m_ptr); }
 };
 
 struct IGeolocator2 :
@@ -248,7 +236,6 @@ struct IGeolocator2 :
     impl::consume<IGeolocator2>
 {
     IGeolocator2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeolocator2>(m_ptr); }
 };
 
 struct IGeolocatorStatics :
@@ -256,7 +243,6 @@ struct IGeolocatorStatics :
     impl::consume<IGeolocatorStatics>
 {
     IGeolocatorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeolocatorStatics>(m_ptr); }
 };
 
 struct IGeolocatorStatics2 :
@@ -264,7 +250,6 @@ struct IGeolocatorStatics2 :
     impl::consume<IGeolocatorStatics2>
 {
     IGeolocatorStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeolocatorStatics2>(m_ptr); }
 };
 
 struct IGeolocatorWithScalarAccuracy :
@@ -273,7 +258,6 @@ struct IGeolocatorWithScalarAccuracy :
     impl::require<IGeolocatorWithScalarAccuracy, Windows::Devices::Geolocation::IGeolocator>
 {
     IGeolocatorWithScalarAccuracy(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeolocatorWithScalarAccuracy>(m_ptr); }
 };
 
 struct IGeopath :
@@ -282,7 +266,6 @@ struct IGeopath :
     impl::require<IGeopath, Windows::Devices::Geolocation::IGeoshape>
 {
     IGeopath(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeopath>(m_ptr); }
 };
 
 struct IGeopathFactory :
@@ -290,7 +273,6 @@ struct IGeopathFactory :
     impl::consume<IGeopathFactory>
 {
     IGeopathFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeopathFactory>(m_ptr); }
 };
 
 struct IGeopoint :
@@ -299,7 +281,6 @@ struct IGeopoint :
     impl::require<IGeopoint, Windows::Devices::Geolocation::IGeoshape>
 {
     IGeopoint(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeopoint>(m_ptr); }
 };
 
 struct IGeopointFactory :
@@ -307,7 +288,6 @@ struct IGeopointFactory :
     impl::consume<IGeopointFactory>
 {
     IGeopointFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeopointFactory>(m_ptr); }
 };
 
 struct IGeoposition :
@@ -315,7 +295,6 @@ struct IGeoposition :
     impl::consume<IGeoposition>
 {
     IGeoposition(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeoposition>(m_ptr); }
 };
 
 struct IGeoposition2 :
@@ -324,7 +303,6 @@ struct IGeoposition2 :
     impl::require<IGeoposition2, Windows::Devices::Geolocation::IGeoposition>
 {
     IGeoposition2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeoposition2>(m_ptr); }
 };
 
 struct IGeoshape :
@@ -332,7 +310,6 @@ struct IGeoshape :
     impl::consume<IGeoshape>
 {
     IGeoshape(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGeoshape>(m_ptr); }
 };
 
 struct IPositionChangedEventArgs :
@@ -340,7 +317,6 @@ struct IPositionChangedEventArgs :
     impl::consume<IPositionChangedEventArgs>
 {
     IPositionChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPositionChangedEventArgs>(m_ptr); }
 };
 
 struct IStatusChangedEventArgs :
@@ -348,7 +324,6 @@ struct IStatusChangedEventArgs :
     impl::consume<IStatusChangedEventArgs>
 {
     IStatusChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStatusChangedEventArgs>(m_ptr); }
 };
 
 struct IVenueData :
@@ -356,7 +331,6 @@ struct IVenueData :
     impl::consume<IVenueData>
 {
     IVenueData(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVenueData>(m_ptr); }
 };
 
 }

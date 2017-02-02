@@ -1107,14 +1107,14 @@ namespace Windows::ApplicationModel::Appointments::DataProvider {
 template <typename D> Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection impl_IAppointmentDataProviderTriggerDetails<D>::Connection() const
 {
     Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection value { nullptr };
-    check_hresult(static_cast<const IAppointmentDataProviderTriggerDetails &>(static_cast<const D &>(*this))->get_Connection(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentDataProviderTriggerDetails)->get_Connection(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IAppointmentDataProviderConnection<D>::SyncRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarSyncManagerSyncRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAppointmentDataProviderConnection &>(static_cast<const D &>(*this))->add_SyncRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAppointmentDataProviderConnection)->add_SyncRequested(get(handler), &token));
     return token;
 }
 
@@ -1125,13 +1125,13 @@ template <typename D> event_revoker<IAppointmentDataProviderConnection> impl_IAp
 
 template <typename D> void impl_IAppointmentDataProviderConnection<D>::SyncRequested(event_token token) const
 {
-    check_hresult(static_cast<const IAppointmentDataProviderConnection &>(static_cast<const D &>(*this))->remove_SyncRequested(token));
+    check_hresult(WINRT_SHIM(IAppointmentDataProviderConnection)->remove_SyncRequested(token));
 }
 
 template <typename D> event_token impl_IAppointmentDataProviderConnection<D>::CreateOrUpdateAppointmentRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAppointmentDataProviderConnection &>(static_cast<const D &>(*this))->add_CreateOrUpdateAppointmentRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAppointmentDataProviderConnection)->add_CreateOrUpdateAppointmentRequested(get(handler), &token));
     return token;
 }
 
@@ -1142,13 +1142,13 @@ template <typename D> event_revoker<IAppointmentDataProviderConnection> impl_IAp
 
 template <typename D> void impl_IAppointmentDataProviderConnection<D>::CreateOrUpdateAppointmentRequested(event_token token) const
 {
-    check_hresult(static_cast<const IAppointmentDataProviderConnection &>(static_cast<const D &>(*this))->remove_CreateOrUpdateAppointmentRequested(token));
+    check_hresult(WINRT_SHIM(IAppointmentDataProviderConnection)->remove_CreateOrUpdateAppointmentRequested(token));
 }
 
 template <typename D> event_token impl_IAppointmentDataProviderConnection<D>::CancelMeetingRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCancelMeetingRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAppointmentDataProviderConnection &>(static_cast<const D &>(*this))->add_CancelMeetingRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAppointmentDataProviderConnection)->add_CancelMeetingRequested(get(handler), &token));
     return token;
 }
 
@@ -1159,13 +1159,13 @@ template <typename D> event_revoker<IAppointmentDataProviderConnection> impl_IAp
 
 template <typename D> void impl_IAppointmentDataProviderConnection<D>::CancelMeetingRequested(event_token token) const
 {
-    check_hresult(static_cast<const IAppointmentDataProviderConnection &>(static_cast<const D &>(*this))->remove_CancelMeetingRequested(token));
+    check_hresult(WINRT_SHIM(IAppointmentDataProviderConnection)->remove_CancelMeetingRequested(token));
 }
 
 template <typename D> event_token impl_IAppointmentDataProviderConnection<D>::ForwardMeetingRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarForwardMeetingRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAppointmentDataProviderConnection &>(static_cast<const D &>(*this))->add_ForwardMeetingRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAppointmentDataProviderConnection)->add_ForwardMeetingRequested(get(handler), &token));
     return token;
 }
 
@@ -1176,13 +1176,13 @@ template <typename D> event_revoker<IAppointmentDataProviderConnection> impl_IAp
 
 template <typename D> void impl_IAppointmentDataProviderConnection<D>::ForwardMeetingRequested(event_token token) const
 {
-    check_hresult(static_cast<const IAppointmentDataProviderConnection &>(static_cast<const D &>(*this))->remove_ForwardMeetingRequested(token));
+    check_hresult(WINRT_SHIM(IAppointmentDataProviderConnection)->remove_ForwardMeetingRequested(token));
 }
 
 template <typename D> event_token impl_IAppointmentDataProviderConnection<D>::ProposeNewTimeForMeetingRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAppointmentDataProviderConnection &>(static_cast<const D &>(*this))->add_ProposeNewTimeForMeetingRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAppointmentDataProviderConnection)->add_ProposeNewTimeForMeetingRequested(get(handler), &token));
     return token;
 }
 
@@ -1193,13 +1193,13 @@ template <typename D> event_revoker<IAppointmentDataProviderConnection> impl_IAp
 
 template <typename D> void impl_IAppointmentDataProviderConnection<D>::ProposeNewTimeForMeetingRequested(event_token token) const
 {
-    check_hresult(static_cast<const IAppointmentDataProviderConnection &>(static_cast<const D &>(*this))->remove_ProposeNewTimeForMeetingRequested(token));
+    check_hresult(WINRT_SHIM(IAppointmentDataProviderConnection)->remove_ProposeNewTimeForMeetingRequested(token));
 }
 
 template <typename D> event_token impl_IAppointmentDataProviderConnection<D>::UpdateMeetingResponseRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarUpdateMeetingResponseRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IAppointmentDataProviderConnection &>(static_cast<const D &>(*this))->add_UpdateMeetingResponseRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IAppointmentDataProviderConnection)->add_UpdateMeetingResponseRequested(get(handler), &token));
     return token;
 }
 
@@ -1210,403 +1210,403 @@ template <typename D> event_revoker<IAppointmentDataProviderConnection> impl_IAp
 
 template <typename D> void impl_IAppointmentDataProviderConnection<D>::UpdateMeetingResponseRequested(event_token token) const
 {
-    check_hresult(static_cast<const IAppointmentDataProviderConnection &>(static_cast<const D &>(*this))->remove_UpdateMeetingResponseRequested(token));
+    check_hresult(WINRT_SHIM(IAppointmentDataProviderConnection)->remove_UpdateMeetingResponseRequested(token));
 }
 
 template <typename D> void impl_IAppointmentDataProviderConnection<D>::Start() const
 {
-    check_hresult(static_cast<const IAppointmentDataProviderConnection &>(static_cast<const D &>(*this))->abi_Start());
+    check_hresult(WINRT_SHIM(IAppointmentDataProviderConnection)->abi_Start());
 }
 
 template <typename D> hstring impl_IAppointmentCalendarSyncManagerSyncRequest<D>::AppointmentCalendarLocalId() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarSyncManagerSyncRequest &>(static_cast<const D &>(*this))->get_AppointmentCalendarLocalId(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarSyncManagerSyncRequest)->get_AppointmentCalendarLocalId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentCalendarSyncManagerSyncRequest<D>::ReportCompletedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IAppointmentCalendarSyncManagerSyncRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarSyncManagerSyncRequest)->abi_ReportCompletedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentCalendarSyncManagerSyncRequest<D>::ReportFailedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IAppointmentCalendarSyncManagerSyncRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarSyncManagerSyncRequest)->abi_ReportFailedAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IAppointmentCalendarCreateOrUpdateAppointmentRequest<D>::AppointmentCalendarLocalId() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarCreateOrUpdateAppointmentRequest &>(static_cast<const D &>(*this))->get_AppointmentCalendarLocalId(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarCreateOrUpdateAppointmentRequest)->get_AppointmentCalendarLocalId(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Appointments::Appointment impl_IAppointmentCalendarCreateOrUpdateAppointmentRequest<D>::Appointment() const
 {
     Windows::ApplicationModel::Appointments::Appointment value { nullptr };
-    check_hresult(static_cast<const IAppointmentCalendarCreateOrUpdateAppointmentRequest &>(static_cast<const D &>(*this))->get_Appointment(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarCreateOrUpdateAppointmentRequest)->get_Appointment(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IAppointmentCalendarCreateOrUpdateAppointmentRequest<D>::NotifyInvitees() const
 {
     bool value {};
-    check_hresult(static_cast<const IAppointmentCalendarCreateOrUpdateAppointmentRequest &>(static_cast<const D &>(*this))->get_NotifyInvitees(&value));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarCreateOrUpdateAppointmentRequest)->get_NotifyInvitees(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IAppointmentCalendarCreateOrUpdateAppointmentRequest<D>::ChangedProperties() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IAppointmentCalendarCreateOrUpdateAppointmentRequest &>(static_cast<const D &>(*this))->get_ChangedProperties(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarCreateOrUpdateAppointmentRequest)->get_ChangedProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentCalendarCreateOrUpdateAppointmentRequest<D>::ReportCompletedAsync(const Windows::ApplicationModel::Appointments::Appointment & createdOrUpdatedAppointment) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IAppointmentCalendarCreateOrUpdateAppointmentRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(get(createdOrUpdatedAppointment), put(result)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarCreateOrUpdateAppointmentRequest)->abi_ReportCompletedAsync(get(createdOrUpdatedAppointment), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentCalendarCreateOrUpdateAppointmentRequest<D>::ReportFailedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IAppointmentCalendarCreateOrUpdateAppointmentRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarCreateOrUpdateAppointmentRequest)->abi_ReportFailedAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IAppointmentCalendarCancelMeetingRequest<D>::AppointmentCalendarLocalId() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarCancelMeetingRequest &>(static_cast<const D &>(*this))->get_AppointmentCalendarLocalId(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarCancelMeetingRequest)->get_AppointmentCalendarLocalId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppointmentCalendarCancelMeetingRequest<D>::AppointmentLocalId() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarCancelMeetingRequest &>(static_cast<const D &>(*this))->get_AppointmentLocalId(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarCancelMeetingRequest)->get_AppointmentLocalId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IAppointmentCalendarCancelMeetingRequest<D>::AppointmentOriginalStartTime() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(static_cast<const IAppointmentCalendarCancelMeetingRequest &>(static_cast<const D &>(*this))->get_AppointmentOriginalStartTime(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarCancelMeetingRequest)->get_AppointmentOriginalStartTime(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppointmentCalendarCancelMeetingRequest<D>::Subject() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarCancelMeetingRequest &>(static_cast<const D &>(*this))->get_Subject(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarCancelMeetingRequest)->get_Subject(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppointmentCalendarCancelMeetingRequest<D>::Comment() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarCancelMeetingRequest &>(static_cast<const D &>(*this))->get_Comment(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarCancelMeetingRequest)->get_Comment(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IAppointmentCalendarCancelMeetingRequest<D>::NotifyInvitees() const
 {
     bool value {};
-    check_hresult(static_cast<const IAppointmentCalendarCancelMeetingRequest &>(static_cast<const D &>(*this))->get_NotifyInvitees(&value));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarCancelMeetingRequest)->get_NotifyInvitees(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentCalendarCancelMeetingRequest<D>::ReportCompletedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IAppointmentCalendarCancelMeetingRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarCancelMeetingRequest)->abi_ReportCompletedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentCalendarCancelMeetingRequest<D>::ReportFailedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IAppointmentCalendarCancelMeetingRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarCancelMeetingRequest)->abi_ReportFailedAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IAppointmentCalendarForwardMeetingRequest<D>::AppointmentCalendarLocalId() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarForwardMeetingRequest &>(static_cast<const D &>(*this))->get_AppointmentCalendarLocalId(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarForwardMeetingRequest)->get_AppointmentCalendarLocalId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppointmentCalendarForwardMeetingRequest<D>::AppointmentLocalId() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarForwardMeetingRequest &>(static_cast<const D &>(*this))->get_AppointmentLocalId(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarForwardMeetingRequest)->get_AppointmentLocalId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IAppointmentCalendarForwardMeetingRequest<D>::AppointmentOriginalStartTime() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(static_cast<const IAppointmentCalendarForwardMeetingRequest &>(static_cast<const D &>(*this))->get_AppointmentOriginalStartTime(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarForwardMeetingRequest)->get_AppointmentOriginalStartTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::AppointmentInvitee> impl_IAppointmentCalendarForwardMeetingRequest<D>::Invitees() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::AppointmentInvitee> value;
-    check_hresult(static_cast<const IAppointmentCalendarForwardMeetingRequest &>(static_cast<const D &>(*this))->get_Invitees(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarForwardMeetingRequest)->get_Invitees(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppointmentCalendarForwardMeetingRequest<D>::Subject() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarForwardMeetingRequest &>(static_cast<const D &>(*this))->get_Subject(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarForwardMeetingRequest)->get_Subject(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppointmentCalendarForwardMeetingRequest<D>::ForwardHeader() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarForwardMeetingRequest &>(static_cast<const D &>(*this))->get_ForwardHeader(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarForwardMeetingRequest)->get_ForwardHeader(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppointmentCalendarForwardMeetingRequest<D>::Comment() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarForwardMeetingRequest &>(static_cast<const D &>(*this))->get_Comment(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarForwardMeetingRequest)->get_Comment(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentCalendarForwardMeetingRequest<D>::ReportCompletedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IAppointmentCalendarForwardMeetingRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarForwardMeetingRequest)->abi_ReportCompletedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentCalendarForwardMeetingRequest<D>::ReportFailedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IAppointmentCalendarForwardMeetingRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarForwardMeetingRequest)->abi_ReportFailedAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IAppointmentCalendarProposeNewTimeForMeetingRequest<D>::AppointmentCalendarLocalId() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarProposeNewTimeForMeetingRequest &>(static_cast<const D &>(*this))->get_AppointmentCalendarLocalId(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarProposeNewTimeForMeetingRequest)->get_AppointmentCalendarLocalId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppointmentCalendarProposeNewTimeForMeetingRequest<D>::AppointmentLocalId() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarProposeNewTimeForMeetingRequest &>(static_cast<const D &>(*this))->get_AppointmentLocalId(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarProposeNewTimeForMeetingRequest)->get_AppointmentLocalId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IAppointmentCalendarProposeNewTimeForMeetingRequest<D>::AppointmentOriginalStartTime() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(static_cast<const IAppointmentCalendarProposeNewTimeForMeetingRequest &>(static_cast<const D &>(*this))->get_AppointmentOriginalStartTime(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarProposeNewTimeForMeetingRequest)->get_AppointmentOriginalStartTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IAppointmentCalendarProposeNewTimeForMeetingRequest<D>::NewStartTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const IAppointmentCalendarProposeNewTimeForMeetingRequest &>(static_cast<const D &>(*this))->get_NewStartTime(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarProposeNewTimeForMeetingRequest)->get_NewStartTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IAppointmentCalendarProposeNewTimeForMeetingRequest<D>::NewDuration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IAppointmentCalendarProposeNewTimeForMeetingRequest &>(static_cast<const D &>(*this))->get_NewDuration(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarProposeNewTimeForMeetingRequest)->get_NewDuration(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppointmentCalendarProposeNewTimeForMeetingRequest<D>::Subject() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarProposeNewTimeForMeetingRequest &>(static_cast<const D &>(*this))->get_Subject(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarProposeNewTimeForMeetingRequest)->get_Subject(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppointmentCalendarProposeNewTimeForMeetingRequest<D>::Comment() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarProposeNewTimeForMeetingRequest &>(static_cast<const D &>(*this))->get_Comment(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarProposeNewTimeForMeetingRequest)->get_Comment(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentCalendarProposeNewTimeForMeetingRequest<D>::ReportCompletedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IAppointmentCalendarProposeNewTimeForMeetingRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarProposeNewTimeForMeetingRequest)->abi_ReportCompletedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentCalendarProposeNewTimeForMeetingRequest<D>::ReportFailedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IAppointmentCalendarProposeNewTimeForMeetingRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarProposeNewTimeForMeetingRequest)->abi_ReportFailedAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IAppointmentCalendarUpdateMeetingResponseRequest<D>::AppointmentCalendarLocalId() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarUpdateMeetingResponseRequest &>(static_cast<const D &>(*this))->get_AppointmentCalendarLocalId(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarUpdateMeetingResponseRequest)->get_AppointmentCalendarLocalId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppointmentCalendarUpdateMeetingResponseRequest<D>::AppointmentLocalId() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarUpdateMeetingResponseRequest &>(static_cast<const D &>(*this))->get_AppointmentLocalId(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarUpdateMeetingResponseRequest)->get_AppointmentLocalId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IAppointmentCalendarUpdateMeetingResponseRequest<D>::AppointmentOriginalStartTime() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(static_cast<const IAppointmentCalendarUpdateMeetingResponseRequest &>(static_cast<const D &>(*this))->get_AppointmentOriginalStartTime(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarUpdateMeetingResponseRequest)->get_AppointmentOriginalStartTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Appointments::AppointmentParticipantResponse impl_IAppointmentCalendarUpdateMeetingResponseRequest<D>::Response() const
 {
     Windows::ApplicationModel::Appointments::AppointmentParticipantResponse response {};
-    check_hresult(static_cast<const IAppointmentCalendarUpdateMeetingResponseRequest &>(static_cast<const D &>(*this))->get_Response(&response));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarUpdateMeetingResponseRequest)->get_Response(&response));
     return response;
 }
 
 template <typename D> hstring impl_IAppointmentCalendarUpdateMeetingResponseRequest<D>::Subject() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarUpdateMeetingResponseRequest &>(static_cast<const D &>(*this))->get_Subject(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarUpdateMeetingResponseRequest)->get_Subject(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppointmentCalendarUpdateMeetingResponseRequest<D>::Comment() const
 {
     hstring value;
-    check_hresult(static_cast<const IAppointmentCalendarUpdateMeetingResponseRequest &>(static_cast<const D &>(*this))->get_Comment(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarUpdateMeetingResponseRequest)->get_Comment(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IAppointmentCalendarUpdateMeetingResponseRequest<D>::SendUpdate() const
 {
     bool value {};
-    check_hresult(static_cast<const IAppointmentCalendarUpdateMeetingResponseRequest &>(static_cast<const D &>(*this))->get_SendUpdate(&value));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarUpdateMeetingResponseRequest)->get_SendUpdate(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentCalendarUpdateMeetingResponseRequest<D>::ReportCompletedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IAppointmentCalendarUpdateMeetingResponseRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarUpdateMeetingResponseRequest)->abi_ReportCompletedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IAppointmentCalendarUpdateMeetingResponseRequest<D>::ReportFailedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IAppointmentCalendarUpdateMeetingResponseRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(put(result)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarUpdateMeetingResponseRequest)->abi_ReportFailedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarSyncManagerSyncRequest impl_IAppointmentCalendarSyncManagerSyncRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarSyncManagerSyncRequest value { nullptr };
-    check_hresult(static_cast<const IAppointmentCalendarSyncManagerSyncRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarSyncManagerSyncRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IAppointmentCalendarSyncManagerSyncRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IAppointmentCalendarSyncManagerSyncRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarSyncManagerSyncRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCreateOrUpdateAppointmentRequest impl_IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCreateOrUpdateAppointmentRequest value { nullptr };
-    check_hresult(static_cast<const IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCancelMeetingRequest impl_IAppointmentCalendarCancelMeetingRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCancelMeetingRequest value { nullptr };
-    check_hresult(static_cast<const IAppointmentCalendarCancelMeetingRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarCancelMeetingRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IAppointmentCalendarCancelMeetingRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IAppointmentCalendarCancelMeetingRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarCancelMeetingRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarForwardMeetingRequest impl_IAppointmentCalendarForwardMeetingRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarForwardMeetingRequest value { nullptr };
-    check_hresult(static_cast<const IAppointmentCalendarForwardMeetingRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarForwardMeetingRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IAppointmentCalendarForwardMeetingRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IAppointmentCalendarForwardMeetingRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarForwardMeetingRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarProposeNewTimeForMeetingRequest impl_IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarProposeNewTimeForMeetingRequest value { nullptr };
-    check_hresult(static_cast<const IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarUpdateMeetingResponseRequest impl_IAppointmentCalendarUpdateMeetingResponseRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarUpdateMeetingResponseRequest value { nullptr };
-    check_hresult(static_cast<const IAppointmentCalendarUpdateMeetingResponseRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarUpdateMeetingResponseRequestEventArgs)->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IAppointmentCalendarUpdateMeetingResponseRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(static_cast<const IAppointmentCalendarUpdateMeetingResponseRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
+    check_hresult(WINRT_SHIM(IAppointmentCalendarUpdateMeetingResponseRequestEventArgs)->abi_GetDeferral(put(value)));
     return value;
 }
 

@@ -6746,882 +6746,882 @@ namespace Windows::Devices::PointOfService {
 template <typename D> hstring impl_IUnifiedPosErrorData<D>::Message() const
 {
     hstring value;
-    check_hresult(static_cast<const IUnifiedPosErrorData &>(static_cast<const D &>(*this))->get_Message(put(value)));
+    check_hresult(WINRT_SHIM(IUnifiedPosErrorData)->get_Message(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::UnifiedPosErrorSeverity impl_IUnifiedPosErrorData<D>::Severity() const
 {
     Windows::Devices::PointOfService::UnifiedPosErrorSeverity value {};
-    check_hresult(static_cast<const IUnifiedPosErrorData &>(static_cast<const D &>(*this))->get_Severity(&value));
+    check_hresult(WINRT_SHIM(IUnifiedPosErrorData)->get_Severity(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::UnifiedPosErrorReason impl_IUnifiedPosErrorData<D>::Reason() const
 {
     Windows::Devices::PointOfService::UnifiedPosErrorReason value {};
-    check_hresult(static_cast<const IUnifiedPosErrorData &>(static_cast<const D &>(*this))->get_Reason(&value));
+    check_hresult(WINRT_SHIM(IUnifiedPosErrorData)->get_Reason(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IUnifiedPosErrorData<D>::ExtendedReason() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IUnifiedPosErrorData &>(static_cast<const D &>(*this))->get_ExtendedReason(&value));
+    check_hresult(WINRT_SHIM(IUnifiedPosErrorData)->get_ExtendedReason(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::BarcodeScannerStatus impl_IBarcodeScannerStatusUpdatedEventArgs<D>::Status() const
 {
     Windows::Devices::PointOfService::BarcodeScannerStatus value {};
-    check_hresult(static_cast<const IBarcodeScannerStatusUpdatedEventArgs &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IBarcodeScannerStatusUpdatedEventArgs)->get_Status(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeScannerStatusUpdatedEventArgs<D>::ExtendedStatus() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeScannerStatusUpdatedEventArgs &>(static_cast<const D &>(*this))->get_ExtendedStatus(&value));
+    check_hresult(WINRT_SHIM(IBarcodeScannerStatusUpdatedEventArgs)->get_ExtendedStatus(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Unknown() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Unknown(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Unknown(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Ean8() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Ean8(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Ean8(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Ean8Add2() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Ean8Add2(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Ean8Add2(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Ean8Add5() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Ean8Add5(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Ean8Add5(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Eanv() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Eanv(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Eanv(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::EanvAdd2() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_EanvAdd2(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_EanvAdd2(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::EanvAdd5() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_EanvAdd5(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_EanvAdd5(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Ean13() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Ean13(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Ean13(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Ean13Add2() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Ean13Add2(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Ean13Add2(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Ean13Add5() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Ean13Add5(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Ean13Add5(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Isbn() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Isbn(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Isbn(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::IsbnAdd5() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_IsbnAdd5(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_IsbnAdd5(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Ismn() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Ismn(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Ismn(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::IsmnAdd2() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_IsmnAdd2(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_IsmnAdd2(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::IsmnAdd5() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_IsmnAdd5(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_IsmnAdd5(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Issn() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Issn(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Issn(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::IssnAdd2() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_IssnAdd2(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_IssnAdd2(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::IssnAdd5() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_IssnAdd5(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_IssnAdd5(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Ean99() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Ean99(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Ean99(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Ean99Add2() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Ean99Add2(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Ean99Add2(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Ean99Add5() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Ean99Add5(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Ean99Add5(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Upca() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Upca(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Upca(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::UpcaAdd2() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_UpcaAdd2(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_UpcaAdd2(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::UpcaAdd5() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_UpcaAdd5(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_UpcaAdd5(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Upce() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Upce(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Upce(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::UpceAdd2() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_UpceAdd2(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_UpceAdd2(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::UpceAdd5() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_UpceAdd5(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_UpceAdd5(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::UpcCoupon() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_UpcCoupon(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_UpcCoupon(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::TfStd() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_TfStd(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_TfStd(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::TfDis() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_TfDis(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_TfDis(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::TfInt() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_TfInt(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_TfInt(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::TfInd() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_TfInd(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_TfInd(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::TfMat() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_TfMat(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_TfMat(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::TfIata() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_TfIata(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_TfIata(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Gs1DatabarType1() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Gs1DatabarType1(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Gs1DatabarType1(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Gs1DatabarType2() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Gs1DatabarType2(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Gs1DatabarType2(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Gs1DatabarType3() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Gs1DatabarType3(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Gs1DatabarType3(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Code39() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Code39(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Code39(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Code39Ex() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Code39Ex(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Code39Ex(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Trioptic39() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Trioptic39(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Trioptic39(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Code32() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Code32(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Code32(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Pzn() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Pzn(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Pzn(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Code93() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Code93(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Code93(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Code93Ex() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Code93Ex(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Code93Ex(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Code128() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Code128(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Code128(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Gs1128() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Gs1128(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Gs1128(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Gs1128Coupon() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Gs1128Coupon(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Gs1128Coupon(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::UccEan128() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_UccEan128(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_UccEan128(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Sisac() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Sisac(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Sisac(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Isbt() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Isbt(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Isbt(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Codabar() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Codabar(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Codabar(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Code11() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Code11(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Code11(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Msi() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Msi(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Msi(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Plessey() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Plessey(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Plessey(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Telepen() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Telepen(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Telepen(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Code16k() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Code16k(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Code16k(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::CodablockA() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_CodablockA(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_CodablockA(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::CodablockF() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_CodablockF(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_CodablockF(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Codablock128() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Codablock128(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Codablock128(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Code49() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Code49(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Code49(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Aztec() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Aztec(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Aztec(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::DataCode() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_DataCode(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_DataCode(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::DataMatrix() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_DataMatrix(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_DataMatrix(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::HanXin() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_HanXin(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_HanXin(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Maxicode() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Maxicode(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Maxicode(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::MicroPdf417() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_MicroPdf417(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_MicroPdf417(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::MicroQr() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_MicroQr(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_MicroQr(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Pdf417() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Pdf417(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Pdf417(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Qr() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Qr(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Qr(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::MsTag() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_MsTag(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_MsTag(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Ccab() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Ccab(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Ccab(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Ccc() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Ccc(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Ccc(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Tlc39() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Tlc39(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Tlc39(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::AusPost() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_AusPost(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_AusPost(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::CanPost() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_CanPost(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_CanPost(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::ChinaPost() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_ChinaPost(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_ChinaPost(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::DutchKix() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_DutchKix(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_DutchKix(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::InfoMail() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_InfoMail(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_InfoMail(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::ItalianPost25() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_ItalianPost25(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_ItalianPost25(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::ItalianPost39() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_ItalianPost39(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_ItalianPost39(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::JapanPost() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_JapanPost(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_JapanPost(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::KoreanPost() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_KoreanPost(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_KoreanPost(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::SwedenPost() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_SwedenPost(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_SwedenPost(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::UkPost() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_UkPost(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_UkPost(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::UsIntelligent() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_UsIntelligent(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_UsIntelligent(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::UsIntelligentPkg() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_UsIntelligentPkg(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_UsIntelligentPkg(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::UsPlanet() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_UsPlanet(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_UsPlanet(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::UsPostNet() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_UsPostNet(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_UsPostNet(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Us4StateFics() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Us4StateFics(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Us4StateFics(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::OcrA() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_OcrA(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_OcrA(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::OcrB() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_OcrB(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_OcrB(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::Micr() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_Micr(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_Micr(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeSymbologiesStatics<D>::ExtendedBase() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->get_ExtendedBase(&value));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->get_ExtendedBase(&value));
     return value;
 }
 
 template <typename D> hstring impl_IBarcodeSymbologiesStatics<D>::GetName(uint32_t scanDataType) const
 {
     hstring value;
-    check_hresult(static_cast<const IBarcodeSymbologiesStatics &>(static_cast<const D &>(*this))->abi_GetName(scanDataType, put(value)));
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics)->abi_GetName(scanDataType, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::BarcodeScannerReport impl_IBarcodeScannerDataReceivedEventArgs<D>::Report() const
 {
     Windows::Devices::PointOfService::BarcodeScannerReport value { nullptr };
-    check_hresult(static_cast<const IBarcodeScannerDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_Report(put(value)));
+    check_hresult(WINRT_SHIM(IBarcodeScannerDataReceivedEventArgs)->get_Report(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IBarcodeScannerReport<D>::ScanDataType() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IBarcodeScannerReport &>(static_cast<const D &>(*this))->get_ScanDataType(&value));
+    check_hresult(WINRT_SHIM(IBarcodeScannerReport)->get_ScanDataType(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IBarcodeScannerReport<D>::ScanData() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IBarcodeScannerReport &>(static_cast<const D &>(*this))->get_ScanData(put(value)));
+    check_hresult(WINRT_SHIM(IBarcodeScannerReport)->get_ScanData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IBarcodeScannerReport<D>::ScanDataLabel() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IBarcodeScannerReport &>(static_cast<const D &>(*this))->get_ScanDataLabel(put(value)));
+    check_hresult(WINRT_SHIM(IBarcodeScannerReport)->get_ScanDataLabel(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::BarcodeScannerReport impl_IBarcodeScannerErrorOccurredEventArgs<D>::PartialInputData() const
 {
     Windows::Devices::PointOfService::BarcodeScannerReport value { nullptr };
-    check_hresult(static_cast<const IBarcodeScannerErrorOccurredEventArgs &>(static_cast<const D &>(*this))->get_PartialInputData(put(value)));
+    check_hresult(WINRT_SHIM(IBarcodeScannerErrorOccurredEventArgs)->get_PartialInputData(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IBarcodeScannerErrorOccurredEventArgs<D>::IsRetriable() const
 {
     bool value {};
-    check_hresult(static_cast<const IBarcodeScannerErrorOccurredEventArgs &>(static_cast<const D &>(*this))->get_IsRetriable(&value));
+    check_hresult(WINRT_SHIM(IBarcodeScannerErrorOccurredEventArgs)->get_IsRetriable(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::UnifiedPosErrorData impl_IBarcodeScannerErrorOccurredEventArgs<D>::ErrorData() const
 {
     Windows::Devices::PointOfService::UnifiedPosErrorData value { nullptr };
-    check_hresult(static_cast<const IBarcodeScannerErrorOccurredEventArgs &>(static_cast<const D &>(*this))->get_ErrorData(put(value)));
+    check_hresult(WINRT_SHIM(IBarcodeScannerErrorOccurredEventArgs)->get_ErrorData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamWithContentType impl_IBarcodeScannerImagePreviewReceivedEventArgs<D>::Preview() const
 {
     Windows::Storage::Streams::IRandomAccessStreamWithContentType preview;
-    check_hresult(static_cast<const IBarcodeScannerImagePreviewReceivedEventArgs &>(static_cast<const D &>(*this))->get_Preview(put(preview)));
+    check_hresult(WINRT_SHIM(IBarcodeScannerImagePreviewReceivedEventArgs)->get_Preview(put(preview)));
     return preview;
 }
 
 template <typename D> Windows::Devices::PointOfService::UnifiedPosPowerReportingType impl_IBarcodeScannerCapabilities<D>::PowerReportingType() const
 {
     Windows::Devices::PointOfService::UnifiedPosPowerReportingType value {};
-    check_hresult(static_cast<const IBarcodeScannerCapabilities &>(static_cast<const D &>(*this))->get_PowerReportingType(&value));
+    check_hresult(WINRT_SHIM(IBarcodeScannerCapabilities)->get_PowerReportingType(&value));
     return value;
 }
 
 template <typename D> bool impl_IBarcodeScannerCapabilities<D>::IsStatisticsReportingSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IBarcodeScannerCapabilities &>(static_cast<const D &>(*this))->get_IsStatisticsReportingSupported(&value));
+    check_hresult(WINRT_SHIM(IBarcodeScannerCapabilities)->get_IsStatisticsReportingSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IBarcodeScannerCapabilities<D>::IsStatisticsUpdatingSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IBarcodeScannerCapabilities &>(static_cast<const D &>(*this))->get_IsStatisticsUpdatingSupported(&value));
+    check_hresult(WINRT_SHIM(IBarcodeScannerCapabilities)->get_IsStatisticsUpdatingSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IBarcodeScannerCapabilities<D>::IsImagePreviewSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IBarcodeScannerCapabilities &>(static_cast<const D &>(*this))->get_IsImagePreviewSupported(&value));
+    check_hresult(WINRT_SHIM(IBarcodeScannerCapabilities)->get_IsImagePreviewSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IBarcodeScannerCapabilities1<D>::IsSoftwareTriggerSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IBarcodeScannerCapabilities1 &>(static_cast<const D &>(*this))->get_IsSoftwareTriggerSupported(&value));
+    check_hresult(WINRT_SHIM(IBarcodeScannerCapabilities1)->get_IsSoftwareTriggerSupported(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> impl_IBarcodeScannerStatics<D>::GetDefaultAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> result;
-    check_hresult(static_cast<const IBarcodeScannerStatics &>(static_cast<const D &>(*this))->abi_GetDefaultAsync(put(result)));
+    check_hresult(WINRT_SHIM(IBarcodeScannerStatics)->abi_GetDefaultAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> impl_IBarcodeScannerStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> result;
-    check_hresult(static_cast<const IBarcodeScannerStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(result)));
+    check_hresult(WINRT_SHIM(IBarcodeScannerStatics)->abi_FromIdAsync(get(deviceId), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IBarcodeScannerStatics<D>::GetDeviceSelector() const
 {
     hstring value;
-    check_hresult(static_cast<const IBarcodeScannerStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(value)));
+    check_hresult(WINRT_SHIM(IBarcodeScannerStatics)->abi_GetDeviceSelector(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IBarcodeScanner<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IBarcodeScanner &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IBarcodeScanner)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::BarcodeScannerCapabilities impl_IBarcodeScanner<D>::Capabilities() const
 {
     Windows::Devices::PointOfService::BarcodeScannerCapabilities value { nullptr };
-    check_hresult(static_cast<const IBarcodeScanner &>(static_cast<const D &>(*this))->get_Capabilities(put(value)));
+    check_hresult(WINRT_SHIM(IBarcodeScanner)->get_Capabilities(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedBarcodeScanner> impl_IBarcodeScanner<D>::ClaimScannerAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedBarcodeScanner> operation;
-    check_hresult(static_cast<const IBarcodeScanner &>(static_cast<const D &>(*this))->abi_ClaimScannerAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IBarcodeScanner)->abi_ClaimScannerAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IBarcodeScanner<D>::CheckHealthAsync(Windows::Devices::PointOfService::UnifiedPosHealthCheckLevel level) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
-    check_hresult(static_cast<const IBarcodeScanner &>(static_cast<const D &>(*this))->abi_CheckHealthAsync(level, put(operation)));
+    check_hresult(WINRT_SHIM(IBarcodeScanner)->abi_CheckHealthAsync(level, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<uint32_t>> impl_IBarcodeScanner<D>::GetSupportedSymbologiesAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<uint32_t>> operation;
-    check_hresult(static_cast<const IBarcodeScanner &>(static_cast<const D &>(*this))->abi_GetSupportedSymbologiesAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IBarcodeScanner)->abi_GetSupportedSymbologiesAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IBarcodeScanner<D>::IsSymbologySupportedAsync(uint32_t barcodeSymbology) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const IBarcodeScanner &>(static_cast<const D &>(*this))->abi_IsSymbologySupportedAsync(barcodeSymbology, put(operation)));
+    check_hresult(WINRT_SHIM(IBarcodeScanner)->abi_IsSymbologySupportedAsync(barcodeSymbology, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IBarcodeScanner<D>::RetrieveStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> operation;
-    check_hresult(static_cast<const IBarcodeScanner &>(static_cast<const D &>(*this))->abi_RetrieveStatisticsAsync(get(statisticsCategories), put(operation)));
+    check_hresult(WINRT_SHIM(IBarcodeScanner)->abi_RetrieveStatisticsAsync(get(statisticsCategories), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IBarcodeScanner<D>::GetSupportedProfiles() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IBarcodeScanner &>(static_cast<const D &>(*this))->abi_GetSupportedProfiles(put(value)));
+    check_hresult(WINRT_SHIM(IBarcodeScanner)->abi_GetSupportedProfiles(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IBarcodeScanner<D>::IsProfileSupported(hstring_ref profile) const
 {
     bool isSupported {};
-    check_hresult(static_cast<const IBarcodeScanner &>(static_cast<const D &>(*this))->abi_IsProfileSupported(get(profile), &isSupported));
+    check_hresult(WINRT_SHIM(IBarcodeScanner)->abi_IsProfileSupported(get(profile), &isSupported));
     return isSupported;
 }
 
 template <typename D> event_token impl_IBarcodeScanner<D>::StatusUpdated(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::BarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerStatusUpdatedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IBarcodeScanner &>(static_cast<const D &>(*this))->add_StatusUpdated(get(handler), &token));
+    check_hresult(WINRT_SHIM(IBarcodeScanner)->add_StatusUpdated(get(handler), &token));
     return token;
 }
 
@@ -7632,566 +7632,566 @@ template <typename D> event_revoker<IBarcodeScanner> impl_IBarcodeScanner<D>::St
 
 template <typename D> void impl_IBarcodeScanner<D>::StatusUpdated(event_token token) const
 {
-    check_hresult(static_cast<const IBarcodeScanner &>(static_cast<const D &>(*this))->remove_StatusUpdated(token));
+    check_hresult(WINRT_SHIM(IBarcodeScanner)->remove_StatusUpdated(token));
 }
 
 template <typename D> hstring impl_IBarcodeScanner2<D>::VideoDeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IBarcodeScanner2 &>(static_cast<const D &>(*this))->get_VideoDeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IBarcodeScanner2)->get_VideoDeviceId(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IMagneticStripeReaderEncryptionAlgorithmsStatics<D>::None() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMagneticStripeReaderEncryptionAlgorithmsStatics &>(static_cast<const D &>(*this))->get_None(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderEncryptionAlgorithmsStatics)->get_None(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IMagneticStripeReaderEncryptionAlgorithmsStatics<D>::TripleDesDukpt() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMagneticStripeReaderEncryptionAlgorithmsStatics &>(static_cast<const D &>(*this))->get_TripleDesDukpt(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderEncryptionAlgorithmsStatics)->get_TripleDesDukpt(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IMagneticStripeReaderEncryptionAlgorithmsStatics<D>::ExtendedBase() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMagneticStripeReaderEncryptionAlgorithmsStatics &>(static_cast<const D &>(*this))->get_ExtendedBase(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderEncryptionAlgorithmsStatics)->get_ExtendedBase(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IMagneticStripeReaderCardTypesStatics<D>::Unknown() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMagneticStripeReaderCardTypesStatics &>(static_cast<const D &>(*this))->get_Unknown(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderCardTypesStatics)->get_Unknown(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IMagneticStripeReaderCardTypesStatics<D>::Bank() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMagneticStripeReaderCardTypesStatics &>(static_cast<const D &>(*this))->get_Bank(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderCardTypesStatics)->get_Bank(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IMagneticStripeReaderCardTypesStatics<D>::Aamva() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMagneticStripeReaderCardTypesStatics &>(static_cast<const D &>(*this))->get_Aamva(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderCardTypesStatics)->get_Aamva(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IMagneticStripeReaderCardTypesStatics<D>::ExtendedBase() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMagneticStripeReaderCardTypesStatics &>(static_cast<const D &>(*this))->get_ExtendedBase(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderCardTypesStatics)->get_ExtendedBase(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IMagneticStripeReaderTrackData<D>::Data() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IMagneticStripeReaderTrackData &>(static_cast<const D &>(*this))->get_Data(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderTrackData)->get_Data(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IMagneticStripeReaderTrackData<D>::DiscretionaryData() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IMagneticStripeReaderTrackData &>(static_cast<const D &>(*this))->get_DiscretionaryData(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderTrackData)->get_DiscretionaryData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IMagneticStripeReaderTrackData<D>::EncryptedData() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IMagneticStripeReaderTrackData &>(static_cast<const D &>(*this))->get_EncryptedData(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderTrackData)->get_EncryptedData(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IMagneticStripeReaderReport<D>::CardType() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMagneticStripeReaderReport &>(static_cast<const D &>(*this))->get_CardType(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderReport)->get_CardType(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderTrackData impl_IMagneticStripeReaderReport<D>::Track1() const
 {
     Windows::Devices::PointOfService::MagneticStripeReaderTrackData value { nullptr };
-    check_hresult(static_cast<const IMagneticStripeReaderReport &>(static_cast<const D &>(*this))->get_Track1(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderReport)->get_Track1(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderTrackData impl_IMagneticStripeReaderReport<D>::Track2() const
 {
     Windows::Devices::PointOfService::MagneticStripeReaderTrackData value { nullptr };
-    check_hresult(static_cast<const IMagneticStripeReaderReport &>(static_cast<const D &>(*this))->get_Track2(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderReport)->get_Track2(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderTrackData impl_IMagneticStripeReaderReport<D>::Track3() const
 {
     Windows::Devices::PointOfService::MagneticStripeReaderTrackData value { nullptr };
-    check_hresult(static_cast<const IMagneticStripeReaderReport &>(static_cast<const D &>(*this))->get_Track3(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderReport)->get_Track3(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderTrackData impl_IMagneticStripeReaderReport<D>::Track4() const
 {
     Windows::Devices::PointOfService::MagneticStripeReaderTrackData value { nullptr };
-    check_hresult(static_cast<const IMagneticStripeReaderReport &>(static_cast<const D &>(*this))->get_Track4(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderReport)->get_Track4(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, hstring> impl_IMagneticStripeReaderReport<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<hstring, hstring> value;
-    check_hresult(static_cast<const IMagneticStripeReaderReport &>(static_cast<const D &>(*this))->get_Properties(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderReport)->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IMagneticStripeReaderReport<D>::CardAuthenticationData() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IMagneticStripeReaderReport &>(static_cast<const D &>(*this))->get_CardAuthenticationData(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderReport)->get_CardAuthenticationData(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IMagneticStripeReaderReport<D>::CardAuthenticationDataLength() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMagneticStripeReaderReport &>(static_cast<const D &>(*this))->get_CardAuthenticationDataLength(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderReport)->get_CardAuthenticationDataLength(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IMagneticStripeReaderReport<D>::AdditionalSecurityInformation() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(static_cast<const IMagneticStripeReaderReport &>(static_cast<const D &>(*this))->get_AdditionalSecurityInformation(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderReport)->get_AdditionalSecurityInformation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderReport impl_IMagneticStripeReaderBankCardDataReceivedEventArgs<D>::Report() const
 {
     Windows::Devices::PointOfService::MagneticStripeReaderReport value { nullptr };
-    check_hresult(static_cast<const IMagneticStripeReaderBankCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_Report(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderBankCardDataReceivedEventArgs)->get_Report(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderBankCardDataReceivedEventArgs<D>::AccountNumber() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderBankCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_AccountNumber(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderBankCardDataReceivedEventArgs)->get_AccountNumber(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderBankCardDataReceivedEventArgs<D>::ExpirationDate() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderBankCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_ExpirationDate(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderBankCardDataReceivedEventArgs)->get_ExpirationDate(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderBankCardDataReceivedEventArgs<D>::ServiceCode() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderBankCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_ServiceCode(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderBankCardDataReceivedEventArgs)->get_ServiceCode(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderBankCardDataReceivedEventArgs<D>::Title() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderBankCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderBankCardDataReceivedEventArgs)->get_Title(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderBankCardDataReceivedEventArgs<D>::FirstName() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderBankCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_FirstName(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderBankCardDataReceivedEventArgs)->get_FirstName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderBankCardDataReceivedEventArgs<D>::MiddleInitial() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderBankCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_MiddleInitial(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderBankCardDataReceivedEventArgs)->get_MiddleInitial(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderBankCardDataReceivedEventArgs<D>::Surname() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderBankCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_Surname(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderBankCardDataReceivedEventArgs)->get_Surname(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderBankCardDataReceivedEventArgs<D>::Suffix() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderBankCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_Suffix(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderBankCardDataReceivedEventArgs)->get_Suffix(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderReport impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::Report() const
 {
     Windows::Devices::PointOfService::MagneticStripeReaderReport value { nullptr };
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_Report(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_Report(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::LicenseNumber() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_LicenseNumber(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_LicenseNumber(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::ExpirationDate() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_ExpirationDate(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_ExpirationDate(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::Restrictions() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_Restrictions(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_Restrictions(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::Class() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_Class(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_Class(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::Endorsements() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_Endorsements(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_Endorsements(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::BirthDate() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_BirthDate(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_BirthDate(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::FirstName() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_FirstName(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_FirstName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::Surname() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_Surname(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_Surname(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::Suffix() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_Suffix(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_Suffix(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::Gender() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_Gender(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_Gender(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::HairColor() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_HairColor(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_HairColor(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::EyeColor() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_EyeColor(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_EyeColor(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::Height() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_Height(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_Height(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::Weight() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_Weight(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_Weight(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::Address() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_Address(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_Address(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::City() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_City(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_City(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::State() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_State(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_State(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs<D>::PostalCode() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderAamvaCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_PostalCode(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderAamvaCardDataReceivedEventArgs)->get_PostalCode(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderReport impl_IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs<D>::Report() const
 {
     Windows::Devices::PointOfService::MagneticStripeReaderReport value { nullptr };
-    check_hresult(static_cast<const IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs &>(static_cast<const D &>(*this))->get_Report(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs)->get_Report(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderTrackErrorType impl_IMagneticStripeReaderErrorOccurredEventArgs<D>::Track1Status() const
 {
     Windows::Devices::PointOfService::MagneticStripeReaderTrackErrorType value {};
-    check_hresult(static_cast<const IMagneticStripeReaderErrorOccurredEventArgs &>(static_cast<const D &>(*this))->get_Track1Status(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderErrorOccurredEventArgs)->get_Track1Status(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderTrackErrorType impl_IMagneticStripeReaderErrorOccurredEventArgs<D>::Track2Status() const
 {
     Windows::Devices::PointOfService::MagneticStripeReaderTrackErrorType value {};
-    check_hresult(static_cast<const IMagneticStripeReaderErrorOccurredEventArgs &>(static_cast<const D &>(*this))->get_Track2Status(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderErrorOccurredEventArgs)->get_Track2Status(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderTrackErrorType impl_IMagneticStripeReaderErrorOccurredEventArgs<D>::Track3Status() const
 {
     Windows::Devices::PointOfService::MagneticStripeReaderTrackErrorType value {};
-    check_hresult(static_cast<const IMagneticStripeReaderErrorOccurredEventArgs &>(static_cast<const D &>(*this))->get_Track3Status(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderErrorOccurredEventArgs)->get_Track3Status(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderTrackErrorType impl_IMagneticStripeReaderErrorOccurredEventArgs<D>::Track4Status() const
 {
     Windows::Devices::PointOfService::MagneticStripeReaderTrackErrorType value {};
-    check_hresult(static_cast<const IMagneticStripeReaderErrorOccurredEventArgs &>(static_cast<const D &>(*this))->get_Track4Status(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderErrorOccurredEventArgs)->get_Track4Status(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::UnifiedPosErrorData impl_IMagneticStripeReaderErrorOccurredEventArgs<D>::ErrorData() const
 {
     Windows::Devices::PointOfService::UnifiedPosErrorData value { nullptr };
-    check_hresult(static_cast<const IMagneticStripeReaderErrorOccurredEventArgs &>(static_cast<const D &>(*this))->get_ErrorData(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderErrorOccurredEventArgs)->get_ErrorData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderReport impl_IMagneticStripeReaderErrorOccurredEventArgs<D>::PartialInputData() const
 {
     Windows::Devices::PointOfService::MagneticStripeReaderReport value { nullptr };
-    check_hresult(static_cast<const IMagneticStripeReaderErrorOccurredEventArgs &>(static_cast<const D &>(*this))->get_PartialInputData(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderErrorOccurredEventArgs)->get_PartialInputData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderStatus impl_IMagneticStripeReaderStatusUpdatedEventArgs<D>::Status() const
 {
     Windows::Devices::PointOfService::MagneticStripeReaderStatus value {};
-    check_hresult(static_cast<const IMagneticStripeReaderStatusUpdatedEventArgs &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderStatusUpdatedEventArgs)->get_Status(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IMagneticStripeReaderStatusUpdatedEventArgs<D>::ExtendedStatus() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMagneticStripeReaderStatusUpdatedEventArgs &>(static_cast<const D &>(*this))->get_ExtendedStatus(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderStatusUpdatedEventArgs)->get_ExtendedStatus(&value));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderCapabilities<D>::CardAuthentication() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderCapabilities &>(static_cast<const D &>(*this))->get_CardAuthentication(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderCapabilities)->get_CardAuthentication(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IMagneticStripeReaderCapabilities<D>::SupportedEncryptionAlgorithms() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMagneticStripeReaderCapabilities &>(static_cast<const D &>(*this))->get_SupportedEncryptionAlgorithms(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderCapabilities)->get_SupportedEncryptionAlgorithms(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderAuthenticationLevel impl_IMagneticStripeReaderCapabilities<D>::AuthenticationLevel() const
 {
     Windows::Devices::PointOfService::MagneticStripeReaderAuthenticationLevel value {};
-    check_hresult(static_cast<const IMagneticStripeReaderCapabilities &>(static_cast<const D &>(*this))->get_AuthenticationLevel(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderCapabilities)->get_AuthenticationLevel(&value));
     return value;
 }
 
 template <typename D> bool impl_IMagneticStripeReaderCapabilities<D>::IsIsoSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IMagneticStripeReaderCapabilities &>(static_cast<const D &>(*this))->get_IsIsoSupported(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderCapabilities)->get_IsIsoSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IMagneticStripeReaderCapabilities<D>::IsJisOneSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IMagneticStripeReaderCapabilities &>(static_cast<const D &>(*this))->get_IsJisOneSupported(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderCapabilities)->get_IsJisOneSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IMagneticStripeReaderCapabilities<D>::IsJisTwoSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IMagneticStripeReaderCapabilities &>(static_cast<const D &>(*this))->get_IsJisTwoSupported(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderCapabilities)->get_IsJisTwoSupported(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::UnifiedPosPowerReportingType impl_IMagneticStripeReaderCapabilities<D>::PowerReportingType() const
 {
     Windows::Devices::PointOfService::UnifiedPosPowerReportingType value {};
-    check_hresult(static_cast<const IMagneticStripeReaderCapabilities &>(static_cast<const D &>(*this))->get_PowerReportingType(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderCapabilities)->get_PowerReportingType(&value));
     return value;
 }
 
 template <typename D> bool impl_IMagneticStripeReaderCapabilities<D>::IsStatisticsReportingSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IMagneticStripeReaderCapabilities &>(static_cast<const D &>(*this))->get_IsStatisticsReportingSupported(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderCapabilities)->get_IsStatisticsReportingSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IMagneticStripeReaderCapabilities<D>::IsStatisticsUpdatingSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IMagneticStripeReaderCapabilities &>(static_cast<const D &>(*this))->get_IsStatisticsUpdatingSupported(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderCapabilities)->get_IsStatisticsUpdatingSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IMagneticStripeReaderCapabilities<D>::IsTrackDataMaskingSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IMagneticStripeReaderCapabilities &>(static_cast<const D &>(*this))->get_IsTrackDataMaskingSupported(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderCapabilities)->get_IsTrackDataMaskingSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IMagneticStripeReaderCapabilities<D>::IsTransmitSentinelsSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IMagneticStripeReaderCapabilities &>(static_cast<const D &>(*this))->get_IsTransmitSentinelsSupported(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderCapabilities)->get_IsTransmitSentinelsSupported(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> impl_IMagneticStripeReaderStatics<D>::GetDefaultAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> result;
-    check_hresult(static_cast<const IMagneticStripeReaderStatics &>(static_cast<const D &>(*this))->abi_GetDefaultAsync(put(result)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderStatics)->abi_GetDefaultAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> impl_IMagneticStripeReaderStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> result;
-    check_hresult(static_cast<const IMagneticStripeReaderStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(result)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderStatics)->abi_FromIdAsync(get(deviceId), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IMagneticStripeReaderStatics<D>::GetDeviceSelector() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReaderStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderStatics)->abi_GetDeviceSelector(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMagneticStripeReader<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IMagneticStripeReader &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReader)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderCapabilities impl_IMagneticStripeReader<D>::Capabilities() const
 {
     Windows::Devices::PointOfService::MagneticStripeReaderCapabilities value { nullptr };
-    check_hresult(static_cast<const IMagneticStripeReader &>(static_cast<const D &>(*this))->get_Capabilities(put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReader)->get_Capabilities(put(value)));
     return value;
 }
 
 template <typename D> com_array<uint32_t> impl_IMagneticStripeReader<D>::SupportedCardTypes() const
 {
     com_array<uint32_t> value {};
-    check_hresult(static_cast<const IMagneticStripeReader &>(static_cast<const D &>(*this))->get_SupportedCardTypes(put_size(value), put(value)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReader)->get_SupportedCardTypes(put_size(value), put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderAuthenticationProtocol impl_IMagneticStripeReader<D>::DeviceAuthenticationProtocol() const
 {
     Windows::Devices::PointOfService::MagneticStripeReaderAuthenticationProtocol value {};
-    check_hresult(static_cast<const IMagneticStripeReader &>(static_cast<const D &>(*this))->get_DeviceAuthenticationProtocol(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReader)->get_DeviceAuthenticationProtocol(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IMagneticStripeReader<D>::CheckHealthAsync(Windows::Devices::PointOfService::UnifiedPosHealthCheckLevel level) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
-    check_hresult(static_cast<const IMagneticStripeReader &>(static_cast<const D &>(*this))->abi_CheckHealthAsync(level, put(operation)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReader)->abi_CheckHealthAsync(level, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedMagneticStripeReader> impl_IMagneticStripeReader<D>::ClaimReaderAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedMagneticStripeReader> operation;
-    check_hresult(static_cast<const IMagneticStripeReader &>(static_cast<const D &>(*this))->abi_ClaimReaderAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReader)->abi_ClaimReaderAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IMagneticStripeReader<D>::RetrieveStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> operation;
-    check_hresult(static_cast<const IMagneticStripeReader &>(static_cast<const D &>(*this))->abi_RetrieveStatisticsAsync(get(statisticsCategories), put(operation)));
+    check_hresult(WINRT_SHIM(IMagneticStripeReader)->abi_RetrieveStatisticsAsync(get(statisticsCategories), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderErrorReportingType impl_IMagneticStripeReader<D>::GetErrorReportingType() const
 {
     Windows::Devices::PointOfService::MagneticStripeReaderErrorReportingType value {};
-    check_hresult(static_cast<const IMagneticStripeReader &>(static_cast<const D &>(*this))->abi_GetErrorReportingType(&value));
+    check_hresult(WINRT_SHIM(IMagneticStripeReader)->abi_GetErrorReportingType(&value));
     return value;
 }
 
 template <typename D> event_token impl_IMagneticStripeReader<D>::StatusUpdated(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::MagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderStatusUpdatedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IMagneticStripeReader &>(static_cast<const D &>(*this))->add_StatusUpdated(get(handler), &token));
+    check_hresult(WINRT_SHIM(IMagneticStripeReader)->add_StatusUpdated(get(handler), &token));
     return token;
 }
 
@@ -8202,391 +8202,391 @@ template <typename D> event_revoker<IMagneticStripeReader> impl_IMagneticStripeR
 
 template <typename D> void impl_IMagneticStripeReader<D>::StatusUpdated(event_token token) const
 {
-    check_hresult(static_cast<const IMagneticStripeReader &>(static_cast<const D &>(*this))->remove_StatusUpdated(token));
+    check_hresult(WINRT_SHIM(IMagneticStripeReader)->remove_StatusUpdated(token));
 }
 
 template <typename D> uint32_t impl_IPosPrinterCharacterSetIdsStatics<D>::Utf16LE() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPosPrinterCharacterSetIdsStatics &>(static_cast<const D &>(*this))->get_Utf16LE(&value));
+    check_hresult(WINRT_SHIM(IPosPrinterCharacterSetIdsStatics)->get_Utf16LE(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPosPrinterCharacterSetIdsStatics<D>::Ascii() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPosPrinterCharacterSetIdsStatics &>(static_cast<const D &>(*this))->get_Ascii(&value));
+    check_hresult(WINRT_SHIM(IPosPrinterCharacterSetIdsStatics)->get_Ascii(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPosPrinterCharacterSetIdsStatics<D>::Ansi() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPosPrinterCharacterSetIdsStatics &>(static_cast<const D &>(*this))->get_Ansi(&value));
+    check_hresult(WINRT_SHIM(IPosPrinterCharacterSetIdsStatics)->get_Ansi(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonPosPrintStationCapabilities<D>::IsPrinterPresent() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonPosPrintStationCapabilities &>(static_cast<const D &>(*this))->get_IsPrinterPresent(&value));
+    check_hresult(WINRT_SHIM(ICommonPosPrintStationCapabilities)->get_IsPrinterPresent(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonPosPrintStationCapabilities<D>::IsDualColorSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonPosPrintStationCapabilities &>(static_cast<const D &>(*this))->get_IsDualColorSupported(&value));
+    check_hresult(WINRT_SHIM(ICommonPosPrintStationCapabilities)->get_IsDualColorSupported(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::PosPrinterColorCapabilities impl_ICommonPosPrintStationCapabilities<D>::ColorCartridgeCapabilities() const
 {
     Windows::Devices::PointOfService::PosPrinterColorCapabilities value {};
-    check_hresult(static_cast<const ICommonPosPrintStationCapabilities &>(static_cast<const D &>(*this))->get_ColorCartridgeCapabilities(&value));
+    check_hresult(WINRT_SHIM(ICommonPosPrintStationCapabilities)->get_ColorCartridgeCapabilities(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::PosPrinterCartridgeSensors impl_ICommonPosPrintStationCapabilities<D>::CartridgeSensors() const
 {
     Windows::Devices::PointOfService::PosPrinterCartridgeSensors value {};
-    check_hresult(static_cast<const ICommonPosPrintStationCapabilities &>(static_cast<const D &>(*this))->get_CartridgeSensors(&value));
+    check_hresult(WINRT_SHIM(ICommonPosPrintStationCapabilities)->get_CartridgeSensors(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonPosPrintStationCapabilities<D>::IsBoldSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonPosPrintStationCapabilities &>(static_cast<const D &>(*this))->get_IsBoldSupported(&value));
+    check_hresult(WINRT_SHIM(ICommonPosPrintStationCapabilities)->get_IsBoldSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonPosPrintStationCapabilities<D>::IsItalicSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonPosPrintStationCapabilities &>(static_cast<const D &>(*this))->get_IsItalicSupported(&value));
+    check_hresult(WINRT_SHIM(ICommonPosPrintStationCapabilities)->get_IsItalicSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonPosPrintStationCapabilities<D>::IsUnderlineSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonPosPrintStationCapabilities &>(static_cast<const D &>(*this))->get_IsUnderlineSupported(&value));
+    check_hresult(WINRT_SHIM(ICommonPosPrintStationCapabilities)->get_IsUnderlineSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonPosPrintStationCapabilities<D>::IsDoubleHighPrintSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonPosPrintStationCapabilities &>(static_cast<const D &>(*this))->get_IsDoubleHighPrintSupported(&value));
+    check_hresult(WINRT_SHIM(ICommonPosPrintStationCapabilities)->get_IsDoubleHighPrintSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonPosPrintStationCapabilities<D>::IsDoubleWidePrintSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonPosPrintStationCapabilities &>(static_cast<const D &>(*this))->get_IsDoubleWidePrintSupported(&value));
+    check_hresult(WINRT_SHIM(ICommonPosPrintStationCapabilities)->get_IsDoubleWidePrintSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonPosPrintStationCapabilities<D>::IsDoubleHighDoubleWidePrintSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonPosPrintStationCapabilities &>(static_cast<const D &>(*this))->get_IsDoubleHighDoubleWidePrintSupported(&value));
+    check_hresult(WINRT_SHIM(ICommonPosPrintStationCapabilities)->get_IsDoubleHighDoubleWidePrintSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonPosPrintStationCapabilities<D>::IsPaperEmptySensorSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonPosPrintStationCapabilities &>(static_cast<const D &>(*this))->get_IsPaperEmptySensorSupported(&value));
+    check_hresult(WINRT_SHIM(ICommonPosPrintStationCapabilities)->get_IsPaperEmptySensorSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonPosPrintStationCapabilities<D>::IsPaperNearEndSensorSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonPosPrintStationCapabilities &>(static_cast<const D &>(*this))->get_IsPaperNearEndSensorSupported(&value));
+    check_hresult(WINRT_SHIM(ICommonPosPrintStationCapabilities)->get_IsPaperNearEndSensorSupported(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_ICommonPosPrintStationCapabilities<D>::SupportedCharactersPerLine() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const ICommonPosPrintStationCapabilities &>(static_cast<const D &>(*this))->get_SupportedCharactersPerLine(put(value)));
+    check_hresult(WINRT_SHIM(ICommonPosPrintStationCapabilities)->get_SupportedCharactersPerLine(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ICommonReceiptSlipCapabilities<D>::IsBarcodeSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonReceiptSlipCapabilities &>(static_cast<const D &>(*this))->get_IsBarcodeSupported(&value));
+    check_hresult(WINRT_SHIM(ICommonReceiptSlipCapabilities)->get_IsBarcodeSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonReceiptSlipCapabilities<D>::IsBitmapSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonReceiptSlipCapabilities &>(static_cast<const D &>(*this))->get_IsBitmapSupported(&value));
+    check_hresult(WINRT_SHIM(ICommonReceiptSlipCapabilities)->get_IsBitmapSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonReceiptSlipCapabilities<D>::IsLeft90RotationSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonReceiptSlipCapabilities &>(static_cast<const D &>(*this))->get_IsLeft90RotationSupported(&value));
+    check_hresult(WINRT_SHIM(ICommonReceiptSlipCapabilities)->get_IsLeft90RotationSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonReceiptSlipCapabilities<D>::IsRight90RotationSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonReceiptSlipCapabilities &>(static_cast<const D &>(*this))->get_IsRight90RotationSupported(&value));
+    check_hresult(WINRT_SHIM(ICommonReceiptSlipCapabilities)->get_IsRight90RotationSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonReceiptSlipCapabilities<D>::Is180RotationSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonReceiptSlipCapabilities &>(static_cast<const D &>(*this))->get_Is180RotationSupported(&value));
+    check_hresult(WINRT_SHIM(ICommonReceiptSlipCapabilities)->get_Is180RotationSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonReceiptSlipCapabilities<D>::IsPrintAreaSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonReceiptSlipCapabilities &>(static_cast<const D &>(*this))->get_IsPrintAreaSupported(&value));
+    check_hresult(WINRT_SHIM(ICommonReceiptSlipCapabilities)->get_IsPrintAreaSupported(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::PosPrinterRuledLineCapabilities impl_ICommonReceiptSlipCapabilities<D>::RuledLineCapabilities() const
 {
     Windows::Devices::PointOfService::PosPrinterRuledLineCapabilities value {};
-    check_hresult(static_cast<const ICommonReceiptSlipCapabilities &>(static_cast<const D &>(*this))->get_RuledLineCapabilities(&value));
+    check_hresult(WINRT_SHIM(ICommonReceiptSlipCapabilities)->get_RuledLineCapabilities(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Devices::PointOfService::PosPrinterRotation> impl_ICommonReceiptSlipCapabilities<D>::SupportedBarcodeRotations() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Devices::PointOfService::PosPrinterRotation> value;
-    check_hresult(static_cast<const ICommonReceiptSlipCapabilities &>(static_cast<const D &>(*this))->get_SupportedBarcodeRotations(put(value)));
+    check_hresult(WINRT_SHIM(ICommonReceiptSlipCapabilities)->get_SupportedBarcodeRotations(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Devices::PointOfService::PosPrinterRotation> impl_ICommonReceiptSlipCapabilities<D>::SupportedBitmapRotations() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Devices::PointOfService::PosPrinterRotation> value;
-    check_hresult(static_cast<const ICommonReceiptSlipCapabilities &>(static_cast<const D &>(*this))->get_SupportedBitmapRotations(put(value)));
+    check_hresult(WINRT_SHIM(ICommonReceiptSlipCapabilities)->get_SupportedBitmapRotations(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IReceiptPrinterCapabilities<D>::CanCutPaper() const
 {
     bool value {};
-    check_hresult(static_cast<const IReceiptPrinterCapabilities &>(static_cast<const D &>(*this))->get_CanCutPaper(&value));
+    check_hresult(WINRT_SHIM(IReceiptPrinterCapabilities)->get_CanCutPaper(&value));
     return value;
 }
 
 template <typename D> bool impl_IReceiptPrinterCapabilities<D>::IsStampSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IReceiptPrinterCapabilities &>(static_cast<const D &>(*this))->get_IsStampSupported(&value));
+    check_hresult(WINRT_SHIM(IReceiptPrinterCapabilities)->get_IsStampSupported(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::PosPrinterMarkFeedCapabilities impl_IReceiptPrinterCapabilities<D>::MarkFeedCapabilities() const
 {
     Windows::Devices::PointOfService::PosPrinterMarkFeedCapabilities value {};
-    check_hresult(static_cast<const IReceiptPrinterCapabilities &>(static_cast<const D &>(*this))->get_MarkFeedCapabilities(&value));
+    check_hresult(WINRT_SHIM(IReceiptPrinterCapabilities)->get_MarkFeedCapabilities(&value));
     return value;
 }
 
 template <typename D> bool impl_ISlipPrinterCapabilities<D>::IsFullLengthSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ISlipPrinterCapabilities &>(static_cast<const D &>(*this))->get_IsFullLengthSupported(&value));
+    check_hresult(WINRT_SHIM(ISlipPrinterCapabilities)->get_IsFullLengthSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_ISlipPrinterCapabilities<D>::IsBothSidesPrintingSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ISlipPrinterCapabilities &>(static_cast<const D &>(*this))->get_IsBothSidesPrintingSupported(&value));
+    check_hresult(WINRT_SHIM(ISlipPrinterCapabilities)->get_IsBothSidesPrintingSupported(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::UnifiedPosPowerReportingType impl_IPosPrinterCapabilities<D>::PowerReportingType() const
 {
     Windows::Devices::PointOfService::UnifiedPosPowerReportingType value {};
-    check_hresult(static_cast<const IPosPrinterCapabilities &>(static_cast<const D &>(*this))->get_PowerReportingType(&value));
+    check_hresult(WINRT_SHIM(IPosPrinterCapabilities)->get_PowerReportingType(&value));
     return value;
 }
 
 template <typename D> bool impl_IPosPrinterCapabilities<D>::IsStatisticsReportingSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IPosPrinterCapabilities &>(static_cast<const D &>(*this))->get_IsStatisticsReportingSupported(&value));
+    check_hresult(WINRT_SHIM(IPosPrinterCapabilities)->get_IsStatisticsReportingSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IPosPrinterCapabilities<D>::IsStatisticsUpdatingSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IPosPrinterCapabilities &>(static_cast<const D &>(*this))->get_IsStatisticsUpdatingSupported(&value));
+    check_hresult(WINRT_SHIM(IPosPrinterCapabilities)->get_IsStatisticsUpdatingSupported(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPosPrinterCapabilities<D>::DefaultCharacterSet() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPosPrinterCapabilities &>(static_cast<const D &>(*this))->get_DefaultCharacterSet(&value));
+    check_hresult(WINRT_SHIM(IPosPrinterCapabilities)->get_DefaultCharacterSet(&value));
     return value;
 }
 
 template <typename D> bool impl_IPosPrinterCapabilities<D>::HasCoverSensor() const
 {
     bool value {};
-    check_hresult(static_cast<const IPosPrinterCapabilities &>(static_cast<const D &>(*this))->get_HasCoverSensor(&value));
+    check_hresult(WINRT_SHIM(IPosPrinterCapabilities)->get_HasCoverSensor(&value));
     return value;
 }
 
 template <typename D> bool impl_IPosPrinterCapabilities<D>::CanMapCharacterSet() const
 {
     bool value {};
-    check_hresult(static_cast<const IPosPrinterCapabilities &>(static_cast<const D &>(*this))->get_CanMapCharacterSet(&value));
+    check_hresult(WINRT_SHIM(IPosPrinterCapabilities)->get_CanMapCharacterSet(&value));
     return value;
 }
 
 template <typename D> bool impl_IPosPrinterCapabilities<D>::IsTransactionSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const IPosPrinterCapabilities &>(static_cast<const D &>(*this))->get_IsTransactionSupported(&value));
+    check_hresult(WINRT_SHIM(IPosPrinterCapabilities)->get_IsTransactionSupported(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::ReceiptPrinterCapabilities impl_IPosPrinterCapabilities<D>::Receipt() const
 {
     Windows::Devices::PointOfService::ReceiptPrinterCapabilities value { nullptr };
-    check_hresult(static_cast<const IPosPrinterCapabilities &>(static_cast<const D &>(*this))->get_Receipt(put(value)));
+    check_hresult(WINRT_SHIM(IPosPrinterCapabilities)->get_Receipt(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::SlipPrinterCapabilities impl_IPosPrinterCapabilities<D>::Slip() const
 {
     Windows::Devices::PointOfService::SlipPrinterCapabilities value { nullptr };
-    check_hresult(static_cast<const IPosPrinterCapabilities &>(static_cast<const D &>(*this))->get_Slip(put(value)));
+    check_hresult(WINRT_SHIM(IPosPrinterCapabilities)->get_Slip(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::JournalPrinterCapabilities impl_IPosPrinterCapabilities<D>::Journal() const
 {
     Windows::Devices::PointOfService::JournalPrinterCapabilities value { nullptr };
-    check_hresult(static_cast<const IPosPrinterCapabilities &>(static_cast<const D &>(*this))->get_Journal(put(value)));
+    check_hresult(WINRT_SHIM(IPosPrinterCapabilities)->get_Journal(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::PosPrinterStatusKind impl_IPosPrinterStatus<D>::StatusKind() const
 {
     Windows::Devices::PointOfService::PosPrinterStatusKind value {};
-    check_hresult(static_cast<const IPosPrinterStatus &>(static_cast<const D &>(*this))->get_StatusKind(&value));
+    check_hresult(WINRT_SHIM(IPosPrinterStatus)->get_StatusKind(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPosPrinterStatus<D>::ExtendedStatus() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IPosPrinterStatus &>(static_cast<const D &>(*this))->get_ExtendedStatus(&value));
+    check_hresult(WINRT_SHIM(IPosPrinterStatus)->get_ExtendedStatus(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::PosPrinterStatus impl_IPosPrinterStatusUpdatedEventArgs<D>::Status() const
 {
     Windows::Devices::PointOfService::PosPrinterStatus value { nullptr };
-    check_hresult(static_cast<const IPosPrinterStatusUpdatedEventArgs &>(static_cast<const D &>(*this))->get_Status(put(value)));
+    check_hresult(WINRT_SHIM(IPosPrinterStatusUpdatedEventArgs)->get_Status(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::PosPrinter> impl_IPosPrinterStatics<D>::GetDefaultAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::PosPrinter> result;
-    check_hresult(static_cast<const IPosPrinterStatics &>(static_cast<const D &>(*this))->abi_GetDefaultAsync(put(result)));
+    check_hresult(WINRT_SHIM(IPosPrinterStatics)->abi_GetDefaultAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::PosPrinter> impl_IPosPrinterStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::PosPrinter> result;
-    check_hresult(static_cast<const IPosPrinterStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(result)));
+    check_hresult(WINRT_SHIM(IPosPrinterStatics)->abi_FromIdAsync(get(deviceId), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IPosPrinterStatics<D>::GetDeviceSelector() const
 {
     hstring value;
-    check_hresult(static_cast<const IPosPrinterStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(value)));
+    check_hresult(WINRT_SHIM(IPosPrinterStatics)->abi_GetDeviceSelector(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPosPrinter<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IPosPrinter &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IPosPrinter)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::PosPrinterCapabilities impl_IPosPrinter<D>::Capabilities() const
 {
     Windows::Devices::PointOfService::PosPrinterCapabilities value { nullptr };
-    check_hresult(static_cast<const IPosPrinter &>(static_cast<const D &>(*this))->get_Capabilities(put(value)));
+    check_hresult(WINRT_SHIM(IPosPrinter)->get_Capabilities(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint32_t> impl_IPosPrinter<D>::SupportedCharacterSets() const
 {
     Windows::Foundation::Collections::IVectorView<uint32_t> value;
-    check_hresult(static_cast<const IPosPrinter &>(static_cast<const D &>(*this))->get_SupportedCharacterSets(put(value)));
+    check_hresult(WINRT_SHIM(IPosPrinter)->get_SupportedCharacterSets(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IPosPrinter<D>::SupportedTypeFaces() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IPosPrinter &>(static_cast<const D &>(*this))->get_SupportedTypeFaces(put(value)));
+    check_hresult(WINRT_SHIM(IPosPrinter)->get_SupportedTypeFaces(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::PosPrinterStatus impl_IPosPrinter<D>::Status() const
 {
     Windows::Devices::PointOfService::PosPrinterStatus value { nullptr };
-    check_hresult(static_cast<const IPosPrinter &>(static_cast<const D &>(*this))->get_Status(put(value)));
+    check_hresult(WINRT_SHIM(IPosPrinter)->get_Status(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedPosPrinter> impl_IPosPrinter<D>::ClaimPrinterAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedPosPrinter> operation;
-    check_hresult(static_cast<const IPosPrinter &>(static_cast<const D &>(*this))->abi_ClaimPrinterAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPosPrinter)->abi_ClaimPrinterAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IPosPrinter<D>::CheckHealthAsync(Windows::Devices::PointOfService::UnifiedPosHealthCheckLevel level) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
-    check_hresult(static_cast<const IPosPrinter &>(static_cast<const D &>(*this))->abi_CheckHealthAsync(level, put(operation)));
+    check_hresult(WINRT_SHIM(IPosPrinter)->abi_CheckHealthAsync(level, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IPosPrinter<D>::GetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
-    check_hresult(static_cast<const IPosPrinter &>(static_cast<const D &>(*this))->abi_GetStatisticsAsync(get(statisticsCategories), put(operation)));
+    check_hresult(WINRT_SHIM(IPosPrinter)->abi_GetStatisticsAsync(get(statisticsCategories), put(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IPosPrinter<D>::StatusUpdated(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::PosPrinter, Windows::Devices::PointOfService::PosPrinterStatusUpdatedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IPosPrinter &>(static_cast<const D &>(*this))->add_StatusUpdated(get(handler), &token));
+    check_hresult(WINRT_SHIM(IPosPrinter)->add_StatusUpdated(get(handler), &token));
     return token;
 }
 
@@ -8597,452 +8597,452 @@ template <typename D> event_revoker<IPosPrinter> impl_IPosPrinter<D>::StatusUpda
 
 template <typename D> void impl_IPosPrinter<D>::StatusUpdated(event_token token) const
 {
-    check_hresult(static_cast<const IPosPrinter &>(static_cast<const D &>(*this))->remove_StatusUpdated(token));
+    check_hresult(WINRT_SHIM(IPosPrinter)->remove_StatusUpdated(token));
 }
 
 template <typename D> void impl_IPosPrinterJob<D>::Print(hstring_ref data) const
 {
-    check_hresult(static_cast<const IPosPrinterJob &>(static_cast<const D &>(*this))->abi_Print(get(data)));
+    check_hresult(WINRT_SHIM(IPosPrinterJob)->abi_Print(get(data)));
 }
 
 template <typename D> void impl_IPosPrinterJob<D>::PrintLine(hstring_ref data) const
 {
-    check_hresult(static_cast<const IPosPrinterJob &>(static_cast<const D &>(*this))->abi_PrintLine(get(data)));
+    check_hresult(WINRT_SHIM(IPosPrinterJob)->abi_PrintLine(get(data)));
 }
 
 template <typename D> void impl_IPosPrinterJob<D>::PrintLine() const
 {
-    check_hresult(static_cast<const IPosPrinterJob &>(static_cast<const D &>(*this))->abi_PrintNewline());
+    check_hresult(WINRT_SHIM(IPosPrinterJob)->abi_PrintNewline());
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IPosPrinterJob<D>::ExecuteAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const IPosPrinterJob &>(static_cast<const D &>(*this))->abi_ExecuteAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IPosPrinterJob)->abi_ExecuteAsync(put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IReceiptOrSlipJob<D>::SetBarcodeRotation(Windows::Devices::PointOfService::PosPrinterRotation value) const
 {
-    check_hresult(static_cast<const IReceiptOrSlipJob &>(static_cast<const D &>(*this))->abi_SetBarcodeRotation(value));
+    check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_SetBarcodeRotation(value));
 }
 
 template <typename D> void impl_IReceiptOrSlipJob<D>::SetPrintRotation(Windows::Devices::PointOfService::PosPrinterRotation value, bool includeBitmaps) const
 {
-    check_hresult(static_cast<const IReceiptOrSlipJob &>(static_cast<const D &>(*this))->abi_SetPrintRotation(value, includeBitmaps));
+    check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_SetPrintRotation(value, includeBitmaps));
 }
 
 template <typename D> void impl_IReceiptOrSlipJob<D>::SetPrintArea(const Windows::Foundation::Rect & value) const
 {
-    check_hresult(static_cast<const IReceiptOrSlipJob &>(static_cast<const D &>(*this))->abi_SetPrintArea(get(value)));
+    check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_SetPrintArea(get(value)));
 }
 
 template <typename D> void impl_IReceiptOrSlipJob<D>::SetBitmap(uint32_t bitmapNumber, const Windows::Graphics::Imaging::BitmapFrame & bitmap, Windows::Devices::PointOfService::PosPrinterAlignment alignment) const
 {
-    check_hresult(static_cast<const IReceiptOrSlipJob &>(static_cast<const D &>(*this))->abi_SetBitmap(bitmapNumber, get(bitmap), alignment));
+    check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_SetBitmap(bitmapNumber, get(bitmap), alignment));
 }
 
 template <typename D> void impl_IReceiptOrSlipJob<D>::SetBitmap(uint32_t bitmapNumber, const Windows::Graphics::Imaging::BitmapFrame & bitmap, Windows::Devices::PointOfService::PosPrinterAlignment alignment, uint32_t width) const
 {
-    check_hresult(static_cast<const IReceiptOrSlipJob &>(static_cast<const D &>(*this))->abi_SetBitmapCustomWidthStandardAlign(bitmapNumber, get(bitmap), alignment, width));
+    check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_SetBitmapCustomWidthStandardAlign(bitmapNumber, get(bitmap), alignment, width));
 }
 
 template <typename D> void impl_IReceiptOrSlipJob<D>::SetCustomAlignedBitmap(uint32_t bitmapNumber, const Windows::Graphics::Imaging::BitmapFrame & bitmap, uint32_t alignmentDistance) const
 {
-    check_hresult(static_cast<const IReceiptOrSlipJob &>(static_cast<const D &>(*this))->abi_SetCustomAlignedBitmap(bitmapNumber, get(bitmap), alignmentDistance));
+    check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_SetCustomAlignedBitmap(bitmapNumber, get(bitmap), alignmentDistance));
 }
 
 template <typename D> void impl_IReceiptOrSlipJob<D>::SetCustomAlignedBitmap(uint32_t bitmapNumber, const Windows::Graphics::Imaging::BitmapFrame & bitmap, uint32_t alignmentDistance, uint32_t width) const
 {
-    check_hresult(static_cast<const IReceiptOrSlipJob &>(static_cast<const D &>(*this))->abi_SetBitmapCustomWidthCustomAlign(bitmapNumber, get(bitmap), alignmentDistance, width));
+    check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_SetBitmapCustomWidthCustomAlign(bitmapNumber, get(bitmap), alignmentDistance, width));
 }
 
 template <typename D> void impl_IReceiptOrSlipJob<D>::PrintSavedBitmap(uint32_t bitmapNumber) const
 {
-    check_hresult(static_cast<const IReceiptOrSlipJob &>(static_cast<const D &>(*this))->abi_PrintSavedBitmap(bitmapNumber));
+    check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_PrintSavedBitmap(bitmapNumber));
 }
 
 template <typename D> void impl_IReceiptOrSlipJob<D>::DrawRuledLine(hstring_ref positionList, Windows::Devices::PointOfService::PosPrinterLineDirection lineDirection, uint32_t lineWidth, Windows::Devices::PointOfService::PosPrinterLineStyle lineStyle, uint32_t lineColor) const
 {
-    check_hresult(static_cast<const IReceiptOrSlipJob &>(static_cast<const D &>(*this))->abi_DrawRuledLine(get(positionList), lineDirection, lineWidth, lineStyle, lineColor));
+    check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_DrawRuledLine(get(positionList), lineDirection, lineWidth, lineStyle, lineColor));
 }
 
 template <typename D> void impl_IReceiptOrSlipJob<D>::PrintBarcode(hstring_ref data, uint32_t symbology, uint32_t height, uint32_t width, Windows::Devices::PointOfService::PosPrinterBarcodeTextPosition textPosition, Windows::Devices::PointOfService::PosPrinterAlignment alignment) const
 {
-    check_hresult(static_cast<const IReceiptOrSlipJob &>(static_cast<const D &>(*this))->abi_PrintBarcode(get(data), symbology, height, width, textPosition, alignment));
+    check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_PrintBarcode(get(data), symbology, height, width, textPosition, alignment));
 }
 
 template <typename D> void impl_IReceiptOrSlipJob<D>::PrintBarcodeCustomAlign(hstring_ref data, uint32_t symbology, uint32_t height, uint32_t width, Windows::Devices::PointOfService::PosPrinterBarcodeTextPosition textPosition, uint32_t alignmentDistance) const
 {
-    check_hresult(static_cast<const IReceiptOrSlipJob &>(static_cast<const D &>(*this))->abi_PrintBarcodeCustomAlign(get(data), symbology, height, width, textPosition, alignmentDistance));
+    check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_PrintBarcodeCustomAlign(get(data), symbology, height, width, textPosition, alignmentDistance));
 }
 
 template <typename D> void impl_IReceiptOrSlipJob<D>::PrintBitmap(const Windows::Graphics::Imaging::BitmapFrame & bitmap, Windows::Devices::PointOfService::PosPrinterAlignment alignment) const
 {
-    check_hresult(static_cast<const IReceiptOrSlipJob &>(static_cast<const D &>(*this))->abi_PrintBitmap(get(bitmap), alignment));
+    check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_PrintBitmap(get(bitmap), alignment));
 }
 
 template <typename D> void impl_IReceiptOrSlipJob<D>::PrintBitmap(const Windows::Graphics::Imaging::BitmapFrame & bitmap, Windows::Devices::PointOfService::PosPrinterAlignment alignment, uint32_t width) const
 {
-    check_hresult(static_cast<const IReceiptOrSlipJob &>(static_cast<const D &>(*this))->abi_PrintBitmapCustomWidthStandardAlign(get(bitmap), alignment, width));
+    check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_PrintBitmapCustomWidthStandardAlign(get(bitmap), alignment, width));
 }
 
 template <typename D> void impl_IReceiptOrSlipJob<D>::PrintCustomAlignedBitmap(const Windows::Graphics::Imaging::BitmapFrame & bitmap, uint32_t alignmentDistance) const
 {
-    check_hresult(static_cast<const IReceiptOrSlipJob &>(static_cast<const D &>(*this))->abi_PrintCustomAlignedBitmap(get(bitmap), alignmentDistance));
+    check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_PrintCustomAlignedBitmap(get(bitmap), alignmentDistance));
 }
 
 template <typename D> void impl_IReceiptOrSlipJob<D>::PrintCustomAlignedBitmap(const Windows::Graphics::Imaging::BitmapFrame & bitmap, uint32_t alignmentDistance, uint32_t width) const
 {
-    check_hresult(static_cast<const IReceiptOrSlipJob &>(static_cast<const D &>(*this))->abi_PrintBitmapCustomWidthCustomAlign(get(bitmap), alignmentDistance, width));
+    check_hresult(WINRT_SHIM(IReceiptOrSlipJob)->abi_PrintBitmapCustomWidthCustomAlign(get(bitmap), alignmentDistance, width));
 }
 
 template <typename D> void impl_IReceiptPrintJob<D>::MarkFeed(Windows::Devices::PointOfService::PosPrinterMarkFeedKind kind) const
 {
-    check_hresult(static_cast<const IReceiptPrintJob &>(static_cast<const D &>(*this))->abi_MarkFeed(kind));
+    check_hresult(WINRT_SHIM(IReceiptPrintJob)->abi_MarkFeed(kind));
 }
 
 template <typename D> void impl_IReceiptPrintJob<D>::CutPaper(double percentage) const
 {
-    check_hresult(static_cast<const IReceiptPrintJob &>(static_cast<const D &>(*this))->abi_CutPaper(percentage));
+    check_hresult(WINRT_SHIM(IReceiptPrintJob)->abi_CutPaper(percentage));
 }
 
 template <typename D> void impl_IReceiptPrintJob<D>::CutPaper() const
 {
-    check_hresult(static_cast<const IReceiptPrintJob &>(static_cast<const D &>(*this))->abi_CutPaperDefault());
+    check_hresult(WINRT_SHIM(IReceiptPrintJob)->abi_CutPaperDefault());
 }
 
 template <typename D> void impl_ICommonClaimedPosPrinterStation<D>::CharactersPerLine(uint32_t value) const
 {
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->put_CharactersPerLine(value));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->put_CharactersPerLine(value));
 }
 
 template <typename D> uint32_t impl_ICommonClaimedPosPrinterStation<D>::CharactersPerLine() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->get_CharactersPerLine(&value));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->get_CharactersPerLine(&value));
     return value;
 }
 
 template <typename D> void impl_ICommonClaimedPosPrinterStation<D>::LineHeight(uint32_t value) const
 {
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->put_LineHeight(value));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->put_LineHeight(value));
 }
 
 template <typename D> uint32_t impl_ICommonClaimedPosPrinterStation<D>::LineHeight() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->get_LineHeight(&value));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->get_LineHeight(&value));
     return value;
 }
 
 template <typename D> void impl_ICommonClaimedPosPrinterStation<D>::LineSpacing(uint32_t value) const
 {
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->put_LineSpacing(value));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->put_LineSpacing(value));
 }
 
 template <typename D> uint32_t impl_ICommonClaimedPosPrinterStation<D>::LineSpacing() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->get_LineSpacing(&value));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->get_LineSpacing(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_ICommonClaimedPosPrinterStation<D>::LineWidth() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->get_LineWidth(&value));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->get_LineWidth(&value));
     return value;
 }
 
 template <typename D> void impl_ICommonClaimedPosPrinterStation<D>::IsLetterQuality(bool value) const
 {
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->put_IsLetterQuality(value));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->put_IsLetterQuality(value));
 }
 
 template <typename D> bool impl_ICommonClaimedPosPrinterStation<D>::IsLetterQuality() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->get_IsLetterQuality(&value));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->get_IsLetterQuality(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonClaimedPosPrinterStation<D>::IsPaperNearEnd() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->get_IsPaperNearEnd(&value));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->get_IsPaperNearEnd(&value));
     return value;
 }
 
 template <typename D> void impl_ICommonClaimedPosPrinterStation<D>::ColorCartridge(Windows::Devices::PointOfService::PosPrinterColorCartridge value) const
 {
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->put_ColorCartridge(value));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->put_ColorCartridge(value));
 }
 
 template <typename D> Windows::Devices::PointOfService::PosPrinterColorCartridge impl_ICommonClaimedPosPrinterStation<D>::ColorCartridge() const
 {
     Windows::Devices::PointOfService::PosPrinterColorCartridge value {};
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->get_ColorCartridge(&value));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->get_ColorCartridge(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonClaimedPosPrinterStation<D>::IsCoverOpen() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->get_IsCoverOpen(&value));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->get_IsCoverOpen(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonClaimedPosPrinterStation<D>::IsCartridgeRemoved() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->get_IsCartridgeRemoved(&value));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->get_IsCartridgeRemoved(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonClaimedPosPrinterStation<D>::IsCartridgeEmpty() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->get_IsCartridgeEmpty(&value));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->get_IsCartridgeEmpty(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonClaimedPosPrinterStation<D>::IsHeadCleaning() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->get_IsHeadCleaning(&value));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->get_IsHeadCleaning(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonClaimedPosPrinterStation<D>::IsPaperEmpty() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->get_IsPaperEmpty(&value));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->get_IsPaperEmpty(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonClaimedPosPrinterStation<D>::IsReadyToPrint() const
 {
     bool value {};
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->get_IsReadyToPrint(&value));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->get_IsReadyToPrint(&value));
     return value;
 }
 
 template <typename D> bool impl_ICommonClaimedPosPrinterStation<D>::ValidateData(hstring_ref data) const
 {
     bool result {};
-    check_hresult(static_cast<const ICommonClaimedPosPrinterStation &>(static_cast<const D &>(*this))->abi_ValidateData(get(data), &result));
+    check_hresult(WINRT_SHIM(ICommonClaimedPosPrinterStation)->abi_ValidateData(get(data), &result));
     return result;
 }
 
 template <typename D> uint32_t impl_IClaimedReceiptPrinter<D>::SidewaysMaxLines() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IClaimedReceiptPrinter &>(static_cast<const D &>(*this))->get_SidewaysMaxLines(&value));
+    check_hresult(WINRT_SHIM(IClaimedReceiptPrinter)->get_SidewaysMaxLines(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IClaimedReceiptPrinter<D>::SidewaysMaxChars() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IClaimedReceiptPrinter &>(static_cast<const D &>(*this))->get_SidewaysMaxChars(&value));
+    check_hresult(WINRT_SHIM(IClaimedReceiptPrinter)->get_SidewaysMaxChars(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IClaimedReceiptPrinter<D>::LinesToPaperCut() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IClaimedReceiptPrinter &>(static_cast<const D &>(*this))->get_LinesToPaperCut(&value));
+    check_hresult(WINRT_SHIM(IClaimedReceiptPrinter)->get_LinesToPaperCut(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Size impl_IClaimedReceiptPrinter<D>::PageSize() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(static_cast<const IClaimedReceiptPrinter &>(static_cast<const D &>(*this))->get_PageSize(put(value)));
+    check_hresult(WINRT_SHIM(IClaimedReceiptPrinter)->get_PageSize(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IClaimedReceiptPrinter<D>::PrintArea() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(static_cast<const IClaimedReceiptPrinter &>(static_cast<const D &>(*this))->get_PrintArea(put(value)));
+    check_hresult(WINRT_SHIM(IClaimedReceiptPrinter)->get_PrintArea(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::ReceiptPrintJob impl_IClaimedReceiptPrinter<D>::CreateJob() const
 {
     Windows::Devices::PointOfService::ReceiptPrintJob value { nullptr };
-    check_hresult(static_cast<const IClaimedReceiptPrinter &>(static_cast<const D &>(*this))->abi_CreateJob(put(value)));
+    check_hresult(WINRT_SHIM(IClaimedReceiptPrinter)->abi_CreateJob(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IClaimedSlipPrinter<D>::SidewaysMaxLines() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IClaimedSlipPrinter &>(static_cast<const D &>(*this))->get_SidewaysMaxLines(&value));
+    check_hresult(WINRT_SHIM(IClaimedSlipPrinter)->get_SidewaysMaxLines(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IClaimedSlipPrinter<D>::SidewaysMaxChars() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IClaimedSlipPrinter &>(static_cast<const D &>(*this))->get_SidewaysMaxChars(&value));
+    check_hresult(WINRT_SHIM(IClaimedSlipPrinter)->get_SidewaysMaxChars(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IClaimedSlipPrinter<D>::MaxLines() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IClaimedSlipPrinter &>(static_cast<const D &>(*this))->get_MaxLines(&value));
+    check_hresult(WINRT_SHIM(IClaimedSlipPrinter)->get_MaxLines(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IClaimedSlipPrinter<D>::LinesNearEndToEnd() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IClaimedSlipPrinter &>(static_cast<const D &>(*this))->get_LinesNearEndToEnd(&value));
+    check_hresult(WINRT_SHIM(IClaimedSlipPrinter)->get_LinesNearEndToEnd(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::PosPrinterPrintSide impl_IClaimedSlipPrinter<D>::PrintSide() const
 {
     Windows::Devices::PointOfService::PosPrinterPrintSide value {};
-    check_hresult(static_cast<const IClaimedSlipPrinter &>(static_cast<const D &>(*this))->get_PrintSide(&value));
+    check_hresult(WINRT_SHIM(IClaimedSlipPrinter)->get_PrintSide(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Size impl_IClaimedSlipPrinter<D>::PageSize() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(static_cast<const IClaimedSlipPrinter &>(static_cast<const D &>(*this))->get_PageSize(put(value)));
+    check_hresult(WINRT_SHIM(IClaimedSlipPrinter)->get_PageSize(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IClaimedSlipPrinter<D>::PrintArea() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(static_cast<const IClaimedSlipPrinter &>(static_cast<const D &>(*this))->get_PrintArea(put(value)));
+    check_hresult(WINRT_SHIM(IClaimedSlipPrinter)->get_PrintArea(put(value)));
     return value;
 }
 
 template <typename D> void impl_IClaimedSlipPrinter<D>::OpenJaws() const
 {
-    check_hresult(static_cast<const IClaimedSlipPrinter &>(static_cast<const D &>(*this))->abi_OpenJaws());
+    check_hresult(WINRT_SHIM(IClaimedSlipPrinter)->abi_OpenJaws());
 }
 
 template <typename D> void impl_IClaimedSlipPrinter<D>::CloseJaws() const
 {
-    check_hresult(static_cast<const IClaimedSlipPrinter &>(static_cast<const D &>(*this))->abi_CloseJaws());
+    check_hresult(WINRT_SHIM(IClaimedSlipPrinter)->abi_CloseJaws());
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedSlipPrinter<D>::InsertSlipAsync(const Windows::Foundation::TimeSpan & timeout) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const IClaimedSlipPrinter &>(static_cast<const D &>(*this))->abi_InsertSlipAsync(get(timeout), put(result)));
+    check_hresult(WINRT_SHIM(IClaimedSlipPrinter)->abi_InsertSlipAsync(get(timeout), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedSlipPrinter<D>::RemoveSlipAsync(const Windows::Foundation::TimeSpan & timeout) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const IClaimedSlipPrinter &>(static_cast<const D &>(*this))->abi_RemoveSlipAsync(get(timeout), put(result)));
+    check_hresult(WINRT_SHIM(IClaimedSlipPrinter)->abi_RemoveSlipAsync(get(timeout), put(result)));
     return result;
 }
 
 template <typename D> void impl_IClaimedSlipPrinter<D>::ChangePrintSide(Windows::Devices::PointOfService::PosPrinterPrintSide printSide) const
 {
-    check_hresult(static_cast<const IClaimedSlipPrinter &>(static_cast<const D &>(*this))->abi_ChangePrintSide(printSide));
+    check_hresult(WINRT_SHIM(IClaimedSlipPrinter)->abi_ChangePrintSide(printSide));
 }
 
 template <typename D> Windows::Devices::PointOfService::SlipPrintJob impl_IClaimedSlipPrinter<D>::CreateJob() const
 {
     Windows::Devices::PointOfService::SlipPrintJob value { nullptr };
-    check_hresult(static_cast<const IClaimedSlipPrinter &>(static_cast<const D &>(*this))->abi_CreateJob(put(value)));
+    check_hresult(WINRT_SHIM(IClaimedSlipPrinter)->abi_CreateJob(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::JournalPrintJob impl_IClaimedJournalPrinter<D>::CreateJob() const
 {
     Windows::Devices::PointOfService::JournalPrintJob value { nullptr };
-    check_hresult(static_cast<const IClaimedJournalPrinter &>(static_cast<const D &>(*this))->abi_CreateJob(put(value)));
+    check_hresult(WINRT_SHIM(IClaimedJournalPrinter)->abi_CreateJob(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::CashDrawerStatus impl_ICashDrawerStatusUpdatedEventArgs<D>::Status() const
 {
     Windows::Devices::PointOfService::CashDrawerStatus value { nullptr };
-    check_hresult(static_cast<const ICashDrawerStatusUpdatedEventArgs &>(static_cast<const D &>(*this))->get_Status(put(value)));
+    check_hresult(WINRT_SHIM(ICashDrawerStatusUpdatedEventArgs)->get_Status(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::CashDrawerStatusKind impl_ICashDrawerStatus<D>::StatusKind() const
 {
     Windows::Devices::PointOfService::CashDrawerStatusKind value {};
-    check_hresult(static_cast<const ICashDrawerStatus &>(static_cast<const D &>(*this))->get_StatusKind(&value));
+    check_hresult(WINRT_SHIM(ICashDrawerStatus)->get_StatusKind(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_ICashDrawerStatus<D>::ExtendedStatus() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ICashDrawerStatus &>(static_cast<const D &>(*this))->get_ExtendedStatus(&value));
+    check_hresult(WINRT_SHIM(ICashDrawerStatus)->get_ExtendedStatus(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::UnifiedPosPowerReportingType impl_ICashDrawerCapabilities<D>::PowerReportingType() const
 {
     Windows::Devices::PointOfService::UnifiedPosPowerReportingType value {};
-    check_hresult(static_cast<const ICashDrawerCapabilities &>(static_cast<const D &>(*this))->get_PowerReportingType(&value));
+    check_hresult(WINRT_SHIM(ICashDrawerCapabilities)->get_PowerReportingType(&value));
     return value;
 }
 
 template <typename D> bool impl_ICashDrawerCapabilities<D>::IsStatisticsReportingSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICashDrawerCapabilities &>(static_cast<const D &>(*this))->get_IsStatisticsReportingSupported(&value));
+    check_hresult(WINRT_SHIM(ICashDrawerCapabilities)->get_IsStatisticsReportingSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_ICashDrawerCapabilities<D>::IsStatisticsUpdatingSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICashDrawerCapabilities &>(static_cast<const D &>(*this))->get_IsStatisticsUpdatingSupported(&value));
+    check_hresult(WINRT_SHIM(ICashDrawerCapabilities)->get_IsStatisticsUpdatingSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_ICashDrawerCapabilities<D>::IsStatusReportingSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICashDrawerCapabilities &>(static_cast<const D &>(*this))->get_IsStatusReportingSupported(&value));
+    check_hresult(WINRT_SHIM(ICashDrawerCapabilities)->get_IsStatusReportingSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_ICashDrawerCapabilities<D>::IsStatusMultiDrawerDetectSupported() const
 {
     bool value {};
-    check_hresult(static_cast<const ICashDrawerCapabilities &>(static_cast<const D &>(*this))->get_IsStatusMultiDrawerDetectSupported(&value));
+    check_hresult(WINRT_SHIM(ICashDrawerCapabilities)->get_IsStatusMultiDrawerDetectSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_ICashDrawerCapabilities<D>::IsDrawerOpenSensorAvailable() const
 {
     bool value {};
-    check_hresult(static_cast<const ICashDrawerCapabilities &>(static_cast<const D &>(*this))->get_IsDrawerOpenSensorAvailable(&value));
+    check_hresult(WINRT_SHIM(ICashDrawerCapabilities)->get_IsDrawerOpenSensorAvailable(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::CashDrawer impl_ICashDrawerEventSourceEventArgs<D>::CashDrawer() const
 {
     Windows::Devices::PointOfService::CashDrawer drawer { nullptr };
-    check_hresult(static_cast<const ICashDrawerEventSourceEventArgs &>(static_cast<const D &>(*this))->get_CashDrawer(put(drawer)));
+    check_hresult(WINRT_SHIM(ICashDrawerEventSourceEventArgs)->get_CashDrawer(put(drawer)));
     return drawer;
 }
 
 template <typename D> event_token impl_ICashDrawerEventSource<D>::DrawerClosed(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawerEventSource, Windows::Devices::PointOfService::CashDrawerClosedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ICashDrawerEventSource &>(static_cast<const D &>(*this))->add_DrawerClosed(get(handler), &token));
+    check_hresult(WINRT_SHIM(ICashDrawerEventSource)->add_DrawerClosed(get(handler), &token));
     return token;
 }
 
@@ -9053,13 +9053,13 @@ template <typename D> event_revoker<ICashDrawerEventSource> impl_ICashDrawerEven
 
 template <typename D> void impl_ICashDrawerEventSource<D>::DrawerClosed(event_token token) const
 {
-    check_hresult(static_cast<const ICashDrawerEventSource &>(static_cast<const D &>(*this))->remove_DrawerClosed(token));
+    check_hresult(WINRT_SHIM(ICashDrawerEventSource)->remove_DrawerClosed(token));
 }
 
 template <typename D> event_token impl_ICashDrawerEventSource<D>::DrawerOpened(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawerEventSource, Windows::Devices::PointOfService::CashDrawerOpenedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ICashDrawerEventSource &>(static_cast<const D &>(*this))->add_DrawerOpened(get(handler), &token));
+    check_hresult(WINRT_SHIM(ICashDrawerEventSource)->add_DrawerOpened(get(handler), &token));
     return token;
 }
 
@@ -9070,90 +9070,90 @@ template <typename D> event_revoker<ICashDrawerEventSource> impl_ICashDrawerEven
 
 template <typename D> void impl_ICashDrawerEventSource<D>::DrawerOpened(event_token token) const
 {
-    check_hresult(static_cast<const ICashDrawerEventSource &>(static_cast<const D &>(*this))->remove_DrawerOpened(token));
+    check_hresult(WINRT_SHIM(ICashDrawerEventSource)->remove_DrawerOpened(token));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::CashDrawer> impl_ICashDrawerStatics<D>::GetDefaultAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::CashDrawer> result;
-    check_hresult(static_cast<const ICashDrawerStatics &>(static_cast<const D &>(*this))->abi_GetDefaultAsync(put(result)));
+    check_hresult(WINRT_SHIM(ICashDrawerStatics)->abi_GetDefaultAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::CashDrawer> impl_ICashDrawerStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::CashDrawer> result;
-    check_hresult(static_cast<const ICashDrawerStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(result)));
+    check_hresult(WINRT_SHIM(ICashDrawerStatics)->abi_FromIdAsync(get(deviceId), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ICashDrawerStatics<D>::GetDeviceSelector() const
 {
     hstring value;
-    check_hresult(static_cast<const ICashDrawerStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(value)));
+    check_hresult(WINRT_SHIM(ICashDrawerStatics)->abi_GetDeviceSelector(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICashDrawer<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const ICashDrawer &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(ICashDrawer)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::CashDrawerCapabilities impl_ICashDrawer<D>::Capabilities() const
 {
     Windows::Devices::PointOfService::CashDrawerCapabilities value { nullptr };
-    check_hresult(static_cast<const ICashDrawer &>(static_cast<const D &>(*this))->get_Capabilities(put(value)));
+    check_hresult(WINRT_SHIM(ICashDrawer)->get_Capabilities(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::CashDrawerStatus impl_ICashDrawer<D>::Status() const
 {
     Windows::Devices::PointOfService::CashDrawerStatus value { nullptr };
-    check_hresult(static_cast<const ICashDrawer &>(static_cast<const D &>(*this))->get_Status(put(value)));
+    check_hresult(WINRT_SHIM(ICashDrawer)->get_Status(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ICashDrawer<D>::IsDrawerOpen() const
 {
     bool value {};
-    check_hresult(static_cast<const ICashDrawer &>(static_cast<const D &>(*this))->get_IsDrawerOpen(&value));
+    check_hresult(WINRT_SHIM(ICashDrawer)->get_IsDrawerOpen(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::CashDrawerEventSource impl_ICashDrawer<D>::DrawerEventSource() const
 {
     Windows::Devices::PointOfService::CashDrawerEventSource value { nullptr };
-    check_hresult(static_cast<const ICashDrawer &>(static_cast<const D &>(*this))->get_DrawerEventSource(put(value)));
+    check_hresult(WINRT_SHIM(ICashDrawer)->get_DrawerEventSource(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedCashDrawer> impl_ICashDrawer<D>::ClaimDrawerAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedCashDrawer> operation;
-    check_hresult(static_cast<const ICashDrawer &>(static_cast<const D &>(*this))->abi_ClaimDrawerAsync(put(operation)));
+    check_hresult(WINRT_SHIM(ICashDrawer)->abi_ClaimDrawerAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICashDrawer<D>::CheckHealthAsync(Windows::Devices::PointOfService::UnifiedPosHealthCheckLevel level) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
-    check_hresult(static_cast<const ICashDrawer &>(static_cast<const D &>(*this))->abi_CheckHealthAsync(level, put(operation)));
+    check_hresult(WINRT_SHIM(ICashDrawer)->abi_CheckHealthAsync(level, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICashDrawer<D>::GetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
-    check_hresult(static_cast<const ICashDrawer &>(static_cast<const D &>(*this))->abi_GetStatisticsAsync(get(statisticsCategories), put(operation)));
+    check_hresult(WINRT_SHIM(ICashDrawer)->abi_GetStatisticsAsync(get(statisticsCategories), put(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_ICashDrawer<D>::StatusUpdated(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawer, Windows::Devices::PointOfService::CashDrawerStatusUpdatedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ICashDrawer &>(static_cast<const D &>(*this))->add_StatusUpdated(get(handler), &token));
+    check_hresult(WINRT_SHIM(ICashDrawer)->add_StatusUpdated(get(handler), &token));
     return token;
 }
 
@@ -9164,61 +9164,61 @@ template <typename D> event_revoker<ICashDrawer> impl_ICashDrawer<D>::StatusUpda
 
 template <typename D> void impl_ICashDrawer<D>::StatusUpdated(event_token token) const
 {
-    check_hresult(static_cast<const ICashDrawer &>(static_cast<const D &>(*this))->remove_StatusUpdated(token));
+    check_hresult(WINRT_SHIM(ICashDrawer)->remove_StatusUpdated(token));
 }
 
 template <typename D> void impl_ICashDrawerCloseAlarm<D>::AlarmTimeout(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const ICashDrawerCloseAlarm &>(static_cast<const D &>(*this))->put_AlarmTimeout(get(value)));
+    check_hresult(WINRT_SHIM(ICashDrawerCloseAlarm)->put_AlarmTimeout(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_ICashDrawerCloseAlarm<D>::AlarmTimeout() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const ICashDrawerCloseAlarm &>(static_cast<const D &>(*this))->get_AlarmTimeout(put(value)));
+    check_hresult(WINRT_SHIM(ICashDrawerCloseAlarm)->get_AlarmTimeout(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICashDrawerCloseAlarm<D>::BeepFrequency(uint32_t value) const
 {
-    check_hresult(static_cast<const ICashDrawerCloseAlarm &>(static_cast<const D &>(*this))->put_BeepFrequency(value));
+    check_hresult(WINRT_SHIM(ICashDrawerCloseAlarm)->put_BeepFrequency(value));
 }
 
 template <typename D> uint32_t impl_ICashDrawerCloseAlarm<D>::BeepFrequency() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const ICashDrawerCloseAlarm &>(static_cast<const D &>(*this))->get_BeepFrequency(&value));
+    check_hresult(WINRT_SHIM(ICashDrawerCloseAlarm)->get_BeepFrequency(&value));
     return value;
 }
 
 template <typename D> void impl_ICashDrawerCloseAlarm<D>::BeepDuration(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const ICashDrawerCloseAlarm &>(static_cast<const D &>(*this))->put_BeepDuration(get(value)));
+    check_hresult(WINRT_SHIM(ICashDrawerCloseAlarm)->put_BeepDuration(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_ICashDrawerCloseAlarm<D>::BeepDuration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const ICashDrawerCloseAlarm &>(static_cast<const D &>(*this))->get_BeepDuration(put(value)));
+    check_hresult(WINRT_SHIM(ICashDrawerCloseAlarm)->get_BeepDuration(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICashDrawerCloseAlarm<D>::BeepDelay(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const ICashDrawerCloseAlarm &>(static_cast<const D &>(*this))->put_BeepDelay(get(value)));
+    check_hresult(WINRT_SHIM(ICashDrawerCloseAlarm)->put_BeepDelay(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_ICashDrawerCloseAlarm<D>::BeepDelay() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const ICashDrawerCloseAlarm &>(static_cast<const D &>(*this))->get_BeepDelay(put(value)));
+    check_hresult(WINRT_SHIM(ICashDrawerCloseAlarm)->get_BeepDelay(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_ICashDrawerCloseAlarm<D>::AlarmTimeoutExpired(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawerCloseAlarm, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ICashDrawerCloseAlarm &>(static_cast<const D &>(*this))->add_AlarmTimeoutExpired(get(handler), &token));
+    check_hresult(WINRT_SHIM(ICashDrawerCloseAlarm)->add_AlarmTimeoutExpired(get(handler), &token));
     return token;
 }
 
@@ -9229,105 +9229,105 @@ template <typename D> event_revoker<ICashDrawerCloseAlarm> impl_ICashDrawerClose
 
 template <typename D> void impl_ICashDrawerCloseAlarm<D>::AlarmTimeoutExpired(event_token token) const
 {
-    check_hresult(static_cast<const ICashDrawerCloseAlarm &>(static_cast<const D &>(*this))->remove_AlarmTimeoutExpired(token));
+    check_hresult(WINRT_SHIM(ICashDrawerCloseAlarm)->remove_AlarmTimeoutExpired(token));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ICashDrawerCloseAlarm<D>::StartAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const ICashDrawerCloseAlarm &>(static_cast<const D &>(*this))->abi_StartAsync(put(result)));
+    check_hresult(WINRT_SHIM(ICashDrawerCloseAlarm)->abi_StartAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IClaimedBarcodeScanner<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IClaimedBarcodeScanner<D>::IsEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->get_IsEnabled(&value));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->get_IsEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IClaimedBarcodeScanner<D>::IsDisabledOnDataReceived(bool value) const
 {
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->put_IsDisabledOnDataReceived(value));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->put_IsDisabledOnDataReceived(value));
 }
 
 template <typename D> bool impl_IClaimedBarcodeScanner<D>::IsDisabledOnDataReceived() const
 {
     bool value {};
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->get_IsDisabledOnDataReceived(&value));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->get_IsDisabledOnDataReceived(&value));
     return value;
 }
 
 template <typename D> void impl_IClaimedBarcodeScanner<D>::IsDecodeDataEnabled(bool value) const
 {
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->put_IsDecodeDataEnabled(value));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->put_IsDecodeDataEnabled(value));
 }
 
 template <typename D> bool impl_IClaimedBarcodeScanner<D>::IsDecodeDataEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->get_IsDecodeDataEnabled(&value));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->get_IsDecodeDataEnabled(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::EnableAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->abi_EnableAsync(put(result)));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_EnableAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::DisableAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->abi_DisableAsync(put(result)));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_DisableAsync(put(result)));
     return result;
 }
 
 template <typename D> void impl_IClaimedBarcodeScanner<D>::RetainDevice() const
 {
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->abi_RetainDevice());
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_RetainDevice());
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::SetActiveSymbologiesAsync(const Windows::Foundation::Collections::IIterable<uint32_t> & symbologies) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->abi_SetActiveSymbologiesAsync(get(symbologies), put(result)));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_SetActiveSymbologiesAsync(get(symbologies), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::ResetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->abi_ResetStatisticsAsync(get(statisticsCategories), put(result)));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_ResetStatisticsAsync(get(statisticsCategories), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::UpdateStatisticsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & statistics) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->abi_UpdateStatisticsAsync(get(statistics), put(result)));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_UpdateStatisticsAsync(get(statistics), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::SetActiveProfileAsync(hstring_ref profile) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->abi_SetActiveProfileAsync(get(profile), put(result)));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_SetActiveProfileAsync(get(profile), put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IClaimedBarcodeScanner<D>::DataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerDataReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->add_DataReceived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->add_DataReceived(get(handler), &token));
     return token;
 }
 
@@ -9338,13 +9338,13 @@ template <typename D> event_revoker<IClaimedBarcodeScanner> impl_IClaimedBarcode
 
 template <typename D> void impl_IClaimedBarcodeScanner<D>::DataReceived(event_token token) const
 {
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->remove_DataReceived(token));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->remove_DataReceived(token));
 }
 
 template <typename D> event_token impl_IClaimedBarcodeScanner<D>::TriggerPressed(const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->add_TriggerPressed(get(handler), &token));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->add_TriggerPressed(get(handler), &token));
     return token;
 }
 
@@ -9355,13 +9355,13 @@ template <typename D> event_revoker<IClaimedBarcodeScanner> impl_IClaimedBarcode
 
 template <typename D> void impl_IClaimedBarcodeScanner<D>::TriggerPressed(event_token token) const
 {
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->remove_TriggerPressed(token));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->remove_TriggerPressed(token));
 }
 
 template <typename D> event_token impl_IClaimedBarcodeScanner<D>::TriggerReleased(const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->add_TriggerReleased(get(handler), &token));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->add_TriggerReleased(get(handler), &token));
     return token;
 }
 
@@ -9372,13 +9372,13 @@ template <typename D> event_revoker<IClaimedBarcodeScanner> impl_IClaimedBarcode
 
 template <typename D> void impl_IClaimedBarcodeScanner<D>::TriggerReleased(event_token token) const
 {
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->remove_TriggerReleased(token));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->remove_TriggerReleased(token));
 }
 
 template <typename D> event_token impl_IClaimedBarcodeScanner<D>::ReleaseDeviceRequested(const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->add_ReleaseDeviceRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->add_ReleaseDeviceRequested(get(handler), &token));
     return token;
 }
 
@@ -9389,13 +9389,13 @@ template <typename D> event_revoker<IClaimedBarcodeScanner> impl_IClaimedBarcode
 
 template <typename D> void impl_IClaimedBarcodeScanner<D>::ReleaseDeviceRequested(event_token token) const
 {
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->remove_ReleaseDeviceRequested(token));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->remove_ReleaseDeviceRequested(token));
 }
 
 template <typename D> event_token impl_IClaimedBarcodeScanner<D>::ImagePreviewReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerImagePreviewReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->add_ImagePreviewReceived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->add_ImagePreviewReceived(get(handler), &token));
     return token;
 }
 
@@ -9406,13 +9406,13 @@ template <typename D> event_revoker<IClaimedBarcodeScanner> impl_IClaimedBarcode
 
 template <typename D> void impl_IClaimedBarcodeScanner<D>::ImagePreviewReceived(event_token token) const
 {
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->remove_ImagePreviewReceived(token));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->remove_ImagePreviewReceived(token));
 }
 
 template <typename D> event_token impl_IClaimedBarcodeScanner<D>::ErrorOccurred(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerErrorOccurredEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->add_ErrorOccurred(get(handler), &token));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->add_ErrorOccurred(get(handler), &token));
     return token;
 }
 
@@ -9423,174 +9423,174 @@ template <typename D> event_revoker<IClaimedBarcodeScanner> impl_IClaimedBarcode
 
 template <typename D> void impl_IClaimedBarcodeScanner<D>::ErrorOccurred(event_token token) const
 {
-    check_hresult(static_cast<const IClaimedBarcodeScanner &>(static_cast<const D &>(*this))->remove_ErrorOccurred(token));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->remove_ErrorOccurred(token));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner1<D>::StartSoftwareTriggerAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IClaimedBarcodeScanner1 &>(static_cast<const D &>(*this))->abi_StartSoftwareTriggerAsync(put(result)));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner1)->abi_StartSoftwareTriggerAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner1<D>::StopSoftwareTriggerAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IClaimedBarcodeScanner1 &>(static_cast<const D &>(*this))->abi_StopSoftwareTriggerAsync(put(result)));
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner1)->abi_StopSoftwareTriggerAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IClaimedMagneticStripeReader<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IClaimedMagneticStripeReader<D>::IsEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->get_IsEnabled(&value));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_IsEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IClaimedMagneticStripeReader<D>::IsDisabledOnDataReceived(bool value) const
 {
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->put_IsDisabledOnDataReceived(value));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->put_IsDisabledOnDataReceived(value));
 }
 
 template <typename D> bool impl_IClaimedMagneticStripeReader<D>::IsDisabledOnDataReceived() const
 {
     bool value {};
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->get_IsDisabledOnDataReceived(&value));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_IsDisabledOnDataReceived(&value));
     return value;
 }
 
 template <typename D> void impl_IClaimedMagneticStripeReader<D>::IsDecodeDataEnabled(bool value) const
 {
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->put_IsDecodeDataEnabled(value));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->put_IsDecodeDataEnabled(value));
 }
 
 template <typename D> bool impl_IClaimedMagneticStripeReader<D>::IsDecodeDataEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->get_IsDecodeDataEnabled(&value));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_IsDecodeDataEnabled(&value));
     return value;
 }
 
 template <typename D> bool impl_IClaimedMagneticStripeReader<D>::IsDeviceAuthenticated() const
 {
     bool value {};
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->get_IsDeviceAuthenticated(&value));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_IsDeviceAuthenticated(&value));
     return value;
 }
 
 template <typename D> void impl_IClaimedMagneticStripeReader<D>::DataEncryptionAlgorithm(uint32_t value) const
 {
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->put_DataEncryptionAlgorithm(value));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->put_DataEncryptionAlgorithm(value));
 }
 
 template <typename D> uint32_t impl_IClaimedMagneticStripeReader<D>::DataEncryptionAlgorithm() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->get_DataEncryptionAlgorithm(&value));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_DataEncryptionAlgorithm(&value));
     return value;
 }
 
 template <typename D> void impl_IClaimedMagneticStripeReader<D>::TracksToRead(Windows::Devices::PointOfService::MagneticStripeReaderTrackIds value) const
 {
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->put_TracksToRead(value));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->put_TracksToRead(value));
 }
 
 template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderTrackIds impl_IClaimedMagneticStripeReader<D>::TracksToRead() const
 {
     Windows::Devices::PointOfService::MagneticStripeReaderTrackIds value {};
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->get_TracksToRead(&value));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_TracksToRead(&value));
     return value;
 }
 
 template <typename D> void impl_IClaimedMagneticStripeReader<D>::IsTransmitSentinelsEnabled(bool value) const
 {
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->put_IsTransmitSentinelsEnabled(value));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->put_IsTransmitSentinelsEnabled(value));
 }
 
 template <typename D> bool impl_IClaimedMagneticStripeReader<D>::IsTransmitSentinelsEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->get_IsTransmitSentinelsEnabled(&value));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_IsTransmitSentinelsEnabled(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::EnableAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->abi_EnableAsync(put(result)));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_EnableAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::DisableAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->abi_DisableAsync(put(result)));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_DisableAsync(put(result)));
     return result;
 }
 
 template <typename D> void impl_IClaimedMagneticStripeReader<D>::RetainDevice() const
 {
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->abi_RetainDevice());
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_RetainDevice());
 }
 
 template <typename D> void impl_IClaimedMagneticStripeReader<D>::SetErrorReportingType(Windows::Devices::PointOfService::MagneticStripeReaderErrorReportingType value) const
 {
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->abi_SetErrorReportingType(value));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_SetErrorReportingType(value));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IClaimedMagneticStripeReader<D>::RetrieveDeviceAuthenticationDataAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> operation;
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->abi_RetrieveDeviceAuthenticationDataAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_RetrieveDeviceAuthenticationDataAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::AuthenticateDeviceAsync(array_ref<const uint8_t> responseToken) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->abi_AuthenticateDeviceAsync(responseToken.size(), get(responseToken), put(result)));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_AuthenticateDeviceAsync(responseToken.size(), get(responseToken), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::DeAuthenticateDeviceAsync(array_ref<const uint8_t> responseToken) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->abi_DeAuthenticateDeviceAsync(responseToken.size(), get(responseToken), put(result)));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_DeAuthenticateDeviceAsync(responseToken.size(), get(responseToken), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::UpdateKeyAsync(hstring_ref key, hstring_ref keyName) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->abi_UpdateKeyAsync(get(key), get(keyName), put(result)));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_UpdateKeyAsync(get(key), get(keyName), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::ResetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->abi_ResetStatisticsAsync(get(statisticsCategories), put(result)));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_ResetStatisticsAsync(get(statisticsCategories), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::UpdateStatisticsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & statistics) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->abi_UpdateStatisticsAsync(get(statistics), put(result)));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_UpdateStatisticsAsync(get(statistics), put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IClaimedMagneticStripeReader<D>::BankCardDataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderBankCardDataReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->add_BankCardDataReceived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->add_BankCardDataReceived(get(handler), &token));
     return token;
 }
 
@@ -9601,13 +9601,13 @@ template <typename D> event_revoker<IClaimedMagneticStripeReader> impl_IClaimedM
 
 template <typename D> void impl_IClaimedMagneticStripeReader<D>::BankCardDataReceived(event_token token) const
 {
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->remove_BankCardDataReceived(token));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->remove_BankCardDataReceived(token));
 }
 
 template <typename D> event_token impl_IClaimedMagneticStripeReader<D>::AamvaCardDataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderAamvaCardDataReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->add_AamvaCardDataReceived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->add_AamvaCardDataReceived(get(handler), &token));
     return token;
 }
 
@@ -9618,13 +9618,13 @@ template <typename D> event_revoker<IClaimedMagneticStripeReader> impl_IClaimedM
 
 template <typename D> void impl_IClaimedMagneticStripeReader<D>::AamvaCardDataReceived(event_token token) const
 {
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->remove_AamvaCardDataReceived(token));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->remove_AamvaCardDataReceived(token));
 }
 
 template <typename D> event_token impl_IClaimedMagneticStripeReader<D>::VendorSpecificDataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->add_VendorSpecificDataReceived(get(handler), &token));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->add_VendorSpecificDataReceived(get(handler), &token));
     return token;
 }
 
@@ -9635,13 +9635,13 @@ template <typename D> event_revoker<IClaimedMagneticStripeReader> impl_IClaimedM
 
 template <typename D> void impl_IClaimedMagneticStripeReader<D>::VendorSpecificDataReceived(event_token token) const
 {
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->remove_VendorSpecificDataReceived(token));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->remove_VendorSpecificDataReceived(token));
 }
 
 template <typename D> event_token impl_IClaimedMagneticStripeReader<D>::ReleaseDeviceRequested(const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->add_ReleaseDeviceRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->add_ReleaseDeviceRequested(get(handler), &token));
     return token;
 }
 
@@ -9652,13 +9652,13 @@ template <typename D> event_revoker<IClaimedMagneticStripeReader> impl_IClaimedM
 
 template <typename D> void impl_IClaimedMagneticStripeReader<D>::ReleaseDeviceRequested(event_token token) const
 {
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->remove_ReleaseDeviceRequested(token));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->remove_ReleaseDeviceRequested(token));
 }
 
 template <typename D> event_token impl_IClaimedMagneticStripeReader<D>::ErrorOccurred(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderErrorOccurredEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->add_ErrorOccurred(get(handler), &token));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->add_ErrorOccurred(get(handler), &token));
     return token;
 }
 
@@ -9669,126 +9669,126 @@ template <typename D> event_revoker<IClaimedMagneticStripeReader> impl_IClaimedM
 
 template <typename D> void impl_IClaimedMagneticStripeReader<D>::ErrorOccurred(event_token token) const
 {
-    check_hresult(static_cast<const IClaimedMagneticStripeReader &>(static_cast<const D &>(*this))->remove_ErrorOccurred(token));
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->remove_ErrorOccurred(token));
 }
 
 template <typename D> hstring impl_IClaimedPosPrinter<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IClaimedPosPrinter<D>::IsEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->get_IsEnabled(&value));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_IsEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IClaimedPosPrinter<D>::CharacterSet(uint32_t value) const
 {
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->put_CharacterSet(value));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->put_CharacterSet(value));
 }
 
 template <typename D> uint32_t impl_IClaimedPosPrinter<D>::CharacterSet() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->get_CharacterSet(&value));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_CharacterSet(&value));
     return value;
 }
 
 template <typename D> bool impl_IClaimedPosPrinter<D>::IsCoverOpen() const
 {
     bool value {};
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->get_IsCoverOpen(&value));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_IsCoverOpen(&value));
     return value;
 }
 
 template <typename D> void impl_IClaimedPosPrinter<D>::IsCharacterSetMappingEnabled(bool value) const
 {
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->put_IsCharacterSetMappingEnabled(value));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->put_IsCharacterSetMappingEnabled(value));
 }
 
 template <typename D> bool impl_IClaimedPosPrinter<D>::IsCharacterSetMappingEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->get_IsCharacterSetMappingEnabled(&value));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_IsCharacterSetMappingEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IClaimedPosPrinter<D>::MapMode(Windows::Devices::PointOfService::PosPrinterMapMode value) const
 {
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->put_MapMode(value));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->put_MapMode(value));
 }
 
 template <typename D> Windows::Devices::PointOfService::PosPrinterMapMode impl_IClaimedPosPrinter<D>::MapMode() const
 {
     Windows::Devices::PointOfService::PosPrinterMapMode value {};
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->get_MapMode(&value));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_MapMode(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::ClaimedReceiptPrinter impl_IClaimedPosPrinter<D>::Receipt() const
 {
     Windows::Devices::PointOfService::ClaimedReceiptPrinter value { nullptr };
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->get_Receipt(put(value)));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_Receipt(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::ClaimedSlipPrinter impl_IClaimedPosPrinter<D>::Slip() const
 {
     Windows::Devices::PointOfService::ClaimedSlipPrinter value { nullptr };
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->get_Slip(put(value)));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_Slip(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::ClaimedJournalPrinter impl_IClaimedPosPrinter<D>::Journal() const
 {
     Windows::Devices::PointOfService::ClaimedJournalPrinter value { nullptr };
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->get_Journal(put(value)));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_Journal(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::EnableAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->abi_EnableAsync(put(result)));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->abi_EnableAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::DisableAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->abi_DisableAsync(put(result)));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->abi_DisableAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::RetainDeviceAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->abi_RetainDeviceAsync(put(result)));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->abi_RetainDeviceAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::ResetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->abi_ResetStatisticsAsync(get(statisticsCategories), put(result)));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->abi_ResetStatisticsAsync(get(statisticsCategories), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::UpdateStatisticsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & statistics) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->abi_UpdateStatisticsAsync(get(statistics), put(result)));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->abi_UpdateStatisticsAsync(get(statistics), put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IClaimedPosPrinter<D>::ReleaseDeviceRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedPosPrinter, Windows::Devices::PointOfService::PosPrinterReleaseDeviceRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->add_ReleaseDeviceRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->add_ReleaseDeviceRequested(get(handler), &token));
     return token;
 }
 
@@ -9799,83 +9799,83 @@ template <typename D> event_revoker<IClaimedPosPrinter> impl_IClaimedPosPrinter<
 
 template <typename D> void impl_IClaimedPosPrinter<D>::ReleaseDeviceRequested(event_token token) const
 {
-    check_hresult(static_cast<const IClaimedPosPrinter &>(static_cast<const D &>(*this))->remove_ReleaseDeviceRequested(token));
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->remove_ReleaseDeviceRequested(token));
 }
 
 template <typename D> hstring impl_IClaimedCashDrawer<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(static_cast<const IClaimedCashDrawer &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
+    check_hresult(WINRT_SHIM(IClaimedCashDrawer)->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IClaimedCashDrawer<D>::IsEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IClaimedCashDrawer &>(static_cast<const D &>(*this))->get_IsEnabled(&value));
+    check_hresult(WINRT_SHIM(IClaimedCashDrawer)->get_IsEnabled(&value));
     return value;
 }
 
 template <typename D> bool impl_IClaimedCashDrawer<D>::IsDrawerOpen() const
 {
     bool value {};
-    check_hresult(static_cast<const IClaimedCashDrawer &>(static_cast<const D &>(*this))->get_IsDrawerOpen(&value));
+    check_hresult(WINRT_SHIM(IClaimedCashDrawer)->get_IsDrawerOpen(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::PointOfService::CashDrawerCloseAlarm impl_IClaimedCashDrawer<D>::CloseAlarm() const
 {
     Windows::Devices::PointOfService::CashDrawerCloseAlarm value { nullptr };
-    check_hresult(static_cast<const IClaimedCashDrawer &>(static_cast<const D &>(*this))->get_CloseAlarm(put(value)));
+    check_hresult(WINRT_SHIM(IClaimedCashDrawer)->get_CloseAlarm(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedCashDrawer<D>::OpenDrawerAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const IClaimedCashDrawer &>(static_cast<const D &>(*this))->abi_OpenDrawerAsync(put(result)));
+    check_hresult(WINRT_SHIM(IClaimedCashDrawer)->abi_OpenDrawerAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedCashDrawer<D>::EnableAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const IClaimedCashDrawer &>(static_cast<const D &>(*this))->abi_EnableAsync(put(result)));
+    check_hresult(WINRT_SHIM(IClaimedCashDrawer)->abi_EnableAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedCashDrawer<D>::DisableAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const IClaimedCashDrawer &>(static_cast<const D &>(*this))->abi_DisableAsync(put(result)));
+    check_hresult(WINRT_SHIM(IClaimedCashDrawer)->abi_DisableAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedCashDrawer<D>::RetainDeviceAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const IClaimedCashDrawer &>(static_cast<const D &>(*this))->abi_RetainDeviceAsync(put(result)));
+    check_hresult(WINRT_SHIM(IClaimedCashDrawer)->abi_RetainDeviceAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedCashDrawer<D>::ResetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const IClaimedCashDrawer &>(static_cast<const D &>(*this))->abi_ResetStatisticsAsync(get(statisticsCategories), put(result)));
+    check_hresult(WINRT_SHIM(IClaimedCashDrawer)->abi_ResetStatisticsAsync(get(statisticsCategories), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedCashDrawer<D>::UpdateStatisticsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & statistics) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(static_cast<const IClaimedCashDrawer &>(static_cast<const D &>(*this))->abi_UpdateStatisticsAsync(get(statistics), put(result)));
+    check_hresult(WINRT_SHIM(IClaimedCashDrawer)->abi_UpdateStatisticsAsync(get(statistics), put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IClaimedCashDrawer<D>::ReleaseDeviceRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IClaimedCashDrawer &>(static_cast<const D &>(*this))->add_ReleaseDeviceRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(IClaimedCashDrawer)->add_ReleaseDeviceRequested(get(handler), &token));
     return token;
 }
 
@@ -9886,7 +9886,7 @@ template <typename D> event_revoker<IClaimedCashDrawer> impl_IClaimedCashDrawer<
 
 template <typename D> void impl_IClaimedCashDrawer<D>::ReleaseDeviceRequested(event_token token) const
 {
-    check_hresult(static_cast<const IClaimedCashDrawer &>(static_cast<const D &>(*this))->remove_ReleaseDeviceRequested(token));
+    check_hresult(WINRT_SHIM(IClaimedCashDrawer)->remove_ReleaseDeviceRequested(token));
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> BarcodeScanner::GetDefaultAsync()

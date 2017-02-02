@@ -314,7 +314,6 @@ struct IAllJoynAboutData :
     impl::consume<IAllJoynAboutData>
 {
     IAllJoynAboutData(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynAboutData>(m_ptr); }
 };
 
 struct IAllJoynAboutDataView :
@@ -322,7 +321,6 @@ struct IAllJoynAboutDataView :
     impl::consume<IAllJoynAboutDataView>
 {
     IAllJoynAboutDataView(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynAboutDataView>(m_ptr); }
 };
 
 struct IAllJoynAboutDataViewStatics :
@@ -330,7 +328,6 @@ struct IAllJoynAboutDataViewStatics :
     impl::consume<IAllJoynAboutDataViewStatics>
 {
     IAllJoynAboutDataViewStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynAboutDataViewStatics>(m_ptr); }
 };
 
 struct IAllJoynAcceptSessionJoiner :
@@ -338,7 +335,6 @@ struct IAllJoynAcceptSessionJoiner :
     impl::consume<IAllJoynAcceptSessionJoiner>
 {
     IAllJoynAcceptSessionJoiner(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynAcceptSessionJoiner>(m_ptr); }
 };
 
 struct IAllJoynAcceptSessionJoinerEventArgs :
@@ -346,7 +342,6 @@ struct IAllJoynAcceptSessionJoinerEventArgs :
     impl::consume<IAllJoynAcceptSessionJoinerEventArgs>
 {
     IAllJoynAcceptSessionJoinerEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynAcceptSessionJoinerEventArgs>(m_ptr); }
 };
 
 struct IAllJoynAcceptSessionJoinerEventArgsFactory :
@@ -354,7 +349,6 @@ struct IAllJoynAcceptSessionJoinerEventArgsFactory :
     impl::consume<IAllJoynAcceptSessionJoinerEventArgsFactory>
 {
     IAllJoynAcceptSessionJoinerEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynAcceptSessionJoinerEventArgsFactory>(m_ptr); }
 };
 
 struct IAllJoynAuthenticationCompleteEventArgs :
@@ -362,7 +356,6 @@ struct IAllJoynAuthenticationCompleteEventArgs :
     impl::consume<IAllJoynAuthenticationCompleteEventArgs>
 {
     IAllJoynAuthenticationCompleteEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynAuthenticationCompleteEventArgs>(m_ptr); }
 };
 
 struct IAllJoynBusAttachment :
@@ -370,7 +363,6 @@ struct IAllJoynBusAttachment :
     impl::consume<IAllJoynBusAttachment>
 {
     IAllJoynBusAttachment(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynBusAttachment>(m_ptr); }
 };
 
 struct IAllJoynBusAttachment2 :
@@ -378,7 +370,6 @@ struct IAllJoynBusAttachment2 :
     impl::consume<IAllJoynBusAttachment2>
 {
     IAllJoynBusAttachment2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynBusAttachment2>(m_ptr); }
 };
 
 struct IAllJoynBusAttachmentFactory :
@@ -386,7 +377,6 @@ struct IAllJoynBusAttachmentFactory :
     impl::consume<IAllJoynBusAttachmentFactory>
 {
     IAllJoynBusAttachmentFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynBusAttachmentFactory>(m_ptr); }
 };
 
 struct IAllJoynBusAttachmentStateChangedEventArgs :
@@ -394,7 +384,6 @@ struct IAllJoynBusAttachmentStateChangedEventArgs :
     impl::consume<IAllJoynBusAttachmentStateChangedEventArgs>
 {
     IAllJoynBusAttachmentStateChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynBusAttachmentStateChangedEventArgs>(m_ptr); }
 };
 
 struct IAllJoynBusAttachmentStatics :
@@ -402,7 +391,6 @@ struct IAllJoynBusAttachmentStatics :
     impl::consume<IAllJoynBusAttachmentStatics>
 {
     IAllJoynBusAttachmentStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynBusAttachmentStatics>(m_ptr); }
 };
 
 struct IAllJoynBusObject :
@@ -410,7 +398,6 @@ struct IAllJoynBusObject :
     impl::consume<IAllJoynBusObject>
 {
     IAllJoynBusObject(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynBusObject>(m_ptr); }
 };
 
 struct IAllJoynBusObjectFactory :
@@ -418,7 +405,6 @@ struct IAllJoynBusObjectFactory :
     impl::consume<IAllJoynBusObjectFactory>
 {
     IAllJoynBusObjectFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynBusObjectFactory>(m_ptr); }
 };
 
 struct IAllJoynBusObjectStoppedEventArgs :
@@ -426,7 +412,6 @@ struct IAllJoynBusObjectStoppedEventArgs :
     impl::consume<IAllJoynBusObjectStoppedEventArgs>
 {
     IAllJoynBusObjectStoppedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynBusObjectStoppedEventArgs>(m_ptr); }
 };
 
 struct IAllJoynBusObjectStoppedEventArgsFactory :
@@ -434,7 +419,6 @@ struct IAllJoynBusObjectStoppedEventArgsFactory :
     impl::consume<IAllJoynBusObjectStoppedEventArgsFactory>
 {
     IAllJoynBusObjectStoppedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynBusObjectStoppedEventArgsFactory>(m_ptr); }
 };
 
 struct IAllJoynCredentials :
@@ -442,7 +426,6 @@ struct IAllJoynCredentials :
     impl::consume<IAllJoynCredentials>
 {
     IAllJoynCredentials(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynCredentials>(m_ptr); }
 };
 
 struct IAllJoynCredentialsRequestedEventArgs :
@@ -450,7 +433,6 @@ struct IAllJoynCredentialsRequestedEventArgs :
     impl::consume<IAllJoynCredentialsRequestedEventArgs>
 {
     IAllJoynCredentialsRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynCredentialsRequestedEventArgs>(m_ptr); }
 };
 
 struct IAllJoynCredentialsVerificationRequestedEventArgs :
@@ -458,7 +440,6 @@ struct IAllJoynCredentialsVerificationRequestedEventArgs :
     impl::consume<IAllJoynCredentialsVerificationRequestedEventArgs>
 {
     IAllJoynCredentialsVerificationRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynCredentialsVerificationRequestedEventArgs>(m_ptr); }
 };
 
 struct IAllJoynMessageInfo :
@@ -466,7 +447,6 @@ struct IAllJoynMessageInfo :
     impl::consume<IAllJoynMessageInfo>
 {
     IAllJoynMessageInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynMessageInfo>(m_ptr); }
 };
 
 struct IAllJoynMessageInfoFactory :
@@ -474,7 +454,6 @@ struct IAllJoynMessageInfoFactory :
     impl::consume<IAllJoynMessageInfoFactory>
 {
     IAllJoynMessageInfoFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynMessageInfoFactory>(m_ptr); }
 };
 
 struct IAllJoynProducer :
@@ -482,7 +461,6 @@ struct IAllJoynProducer :
     impl::consume<IAllJoynProducer>
 {
     IAllJoynProducer(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynProducer>(m_ptr); }
 };
 
 struct IAllJoynProducerStoppedEventArgs :
@@ -490,7 +468,6 @@ struct IAllJoynProducerStoppedEventArgs :
     impl::consume<IAllJoynProducerStoppedEventArgs>
 {
     IAllJoynProducerStoppedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynProducerStoppedEventArgs>(m_ptr); }
 };
 
 struct IAllJoynProducerStoppedEventArgsFactory :
@@ -498,7 +475,6 @@ struct IAllJoynProducerStoppedEventArgsFactory :
     impl::consume<IAllJoynProducerStoppedEventArgsFactory>
 {
     IAllJoynProducerStoppedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynProducerStoppedEventArgsFactory>(m_ptr); }
 };
 
 struct IAllJoynServiceInfo :
@@ -506,7 +482,6 @@ struct IAllJoynServiceInfo :
     impl::consume<IAllJoynServiceInfo>
 {
     IAllJoynServiceInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynServiceInfo>(m_ptr); }
 };
 
 struct IAllJoynServiceInfoFactory :
@@ -514,7 +489,6 @@ struct IAllJoynServiceInfoFactory :
     impl::consume<IAllJoynServiceInfoFactory>
 {
     IAllJoynServiceInfoFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynServiceInfoFactory>(m_ptr); }
 };
 
 struct IAllJoynServiceInfoRemovedEventArgs :
@@ -522,7 +496,6 @@ struct IAllJoynServiceInfoRemovedEventArgs :
     impl::consume<IAllJoynServiceInfoRemovedEventArgs>
 {
     IAllJoynServiceInfoRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynServiceInfoRemovedEventArgs>(m_ptr); }
 };
 
 struct IAllJoynServiceInfoRemovedEventArgsFactory :
@@ -530,7 +503,6 @@ struct IAllJoynServiceInfoRemovedEventArgsFactory :
     impl::consume<IAllJoynServiceInfoRemovedEventArgsFactory>
 {
     IAllJoynServiceInfoRemovedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynServiceInfoRemovedEventArgsFactory>(m_ptr); }
 };
 
 struct IAllJoynServiceInfoStatics :
@@ -538,7 +510,6 @@ struct IAllJoynServiceInfoStatics :
     impl::consume<IAllJoynServiceInfoStatics>
 {
     IAllJoynServiceInfoStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynServiceInfoStatics>(m_ptr); }
 };
 
 struct IAllJoynSession :
@@ -546,7 +517,6 @@ struct IAllJoynSession :
     impl::consume<IAllJoynSession>
 {
     IAllJoynSession(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynSession>(m_ptr); }
 };
 
 struct IAllJoynSessionJoinedEventArgs :
@@ -554,7 +524,6 @@ struct IAllJoynSessionJoinedEventArgs :
     impl::consume<IAllJoynSessionJoinedEventArgs>
 {
     IAllJoynSessionJoinedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynSessionJoinedEventArgs>(m_ptr); }
 };
 
 struct IAllJoynSessionJoinedEventArgsFactory :
@@ -562,7 +531,6 @@ struct IAllJoynSessionJoinedEventArgsFactory :
     impl::consume<IAllJoynSessionJoinedEventArgsFactory>
 {
     IAllJoynSessionJoinedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynSessionJoinedEventArgsFactory>(m_ptr); }
 };
 
 struct IAllJoynSessionLostEventArgs :
@@ -570,7 +538,6 @@ struct IAllJoynSessionLostEventArgs :
     impl::consume<IAllJoynSessionLostEventArgs>
 {
     IAllJoynSessionLostEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynSessionLostEventArgs>(m_ptr); }
 };
 
 struct IAllJoynSessionLostEventArgsFactory :
@@ -578,7 +545,6 @@ struct IAllJoynSessionLostEventArgsFactory :
     impl::consume<IAllJoynSessionLostEventArgsFactory>
 {
     IAllJoynSessionLostEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynSessionLostEventArgsFactory>(m_ptr); }
 };
 
 struct IAllJoynSessionMemberAddedEventArgs :
@@ -586,7 +552,6 @@ struct IAllJoynSessionMemberAddedEventArgs :
     impl::consume<IAllJoynSessionMemberAddedEventArgs>
 {
     IAllJoynSessionMemberAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynSessionMemberAddedEventArgs>(m_ptr); }
 };
 
 struct IAllJoynSessionMemberAddedEventArgsFactory :
@@ -594,7 +559,6 @@ struct IAllJoynSessionMemberAddedEventArgsFactory :
     impl::consume<IAllJoynSessionMemberAddedEventArgsFactory>
 {
     IAllJoynSessionMemberAddedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynSessionMemberAddedEventArgsFactory>(m_ptr); }
 };
 
 struct IAllJoynSessionMemberRemovedEventArgs :
@@ -602,7 +566,6 @@ struct IAllJoynSessionMemberRemovedEventArgs :
     impl::consume<IAllJoynSessionMemberRemovedEventArgs>
 {
     IAllJoynSessionMemberRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynSessionMemberRemovedEventArgs>(m_ptr); }
 };
 
 struct IAllJoynSessionMemberRemovedEventArgsFactory :
@@ -610,7 +573,6 @@ struct IAllJoynSessionMemberRemovedEventArgsFactory :
     impl::consume<IAllJoynSessionMemberRemovedEventArgsFactory>
 {
     IAllJoynSessionMemberRemovedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynSessionMemberRemovedEventArgsFactory>(m_ptr); }
 };
 
 struct IAllJoynSessionStatics :
@@ -618,7 +580,6 @@ struct IAllJoynSessionStatics :
     impl::consume<IAllJoynSessionStatics>
 {
     IAllJoynSessionStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynSessionStatics>(m_ptr); }
 };
 
 struct IAllJoynStatusStatics :
@@ -626,7 +587,6 @@ struct IAllJoynStatusStatics :
     impl::consume<IAllJoynStatusStatics>
 {
     IAllJoynStatusStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynStatusStatics>(m_ptr); }
 };
 
 struct IAllJoynWatcherStoppedEventArgs :
@@ -634,7 +594,6 @@ struct IAllJoynWatcherStoppedEventArgs :
     impl::consume<IAllJoynWatcherStoppedEventArgs>
 {
     IAllJoynWatcherStoppedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynWatcherStoppedEventArgs>(m_ptr); }
 };
 
 struct IAllJoynWatcherStoppedEventArgsFactory :
@@ -642,7 +601,6 @@ struct IAllJoynWatcherStoppedEventArgsFactory :
     impl::consume<IAllJoynWatcherStoppedEventArgsFactory>
 {
     IAllJoynWatcherStoppedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAllJoynWatcherStoppedEventArgsFactory>(m_ptr); }
 };
 
 }

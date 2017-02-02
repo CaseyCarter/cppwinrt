@@ -390,40 +390,40 @@ namespace Windows::ApplicationModel::LockScreen {
 template <typename D> Windows::Storage::Streams::IRandomAccessStream impl_ILockScreenBadge<D>::Logo() const
 {
     Windows::Storage::Streams::IRandomAccessStream value;
-    check_hresult(static_cast<const ILockScreenBadge &>(static_cast<const D &>(*this))->get_Logo(put(value)));
+    check_hresult(WINRT_SHIM(ILockScreenBadge)->get_Logo(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStream impl_ILockScreenBadge<D>::Glyph() const
 {
     Windows::Storage::Streams::IRandomAccessStream value;
-    check_hresult(static_cast<const ILockScreenBadge &>(static_cast<const D &>(*this))->get_Glyph(put(value)));
+    check_hresult(WINRT_SHIM(ILockScreenBadge)->get_Glyph(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_ILockScreenBadge<D>::Number() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(static_cast<const ILockScreenBadge &>(static_cast<const D &>(*this))->get_Number(put(value)));
+    check_hresult(WINRT_SHIM(ILockScreenBadge)->get_Number(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ILockScreenBadge<D>::AutomationName() const
 {
     hstring value;
-    check_hresult(static_cast<const ILockScreenBadge &>(static_cast<const D &>(*this))->get_AutomationName(put(value)));
+    check_hresult(WINRT_SHIM(ILockScreenBadge)->get_AutomationName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILockScreenBadge<D>::LaunchApp() const
 {
-    check_hresult(static_cast<const ILockScreenBadge &>(static_cast<const D &>(*this))->abi_LaunchApp());
+    check_hresult(WINRT_SHIM(ILockScreenBadge)->abi_LaunchApp());
 }
 
 template <typename D> event_token impl_ILockScreenInfo<D>::LockScreenImageChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ILockScreenInfo &>(static_cast<const D &>(*this))->add_LockScreenImageChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(ILockScreenInfo)->add_LockScreenImageChanged(get(handler), &token));
     return token;
 }
 
@@ -434,20 +434,20 @@ template <typename D> event_revoker<ILockScreenInfo> impl_ILockScreenInfo<D>::Lo
 
 template <typename D> void impl_ILockScreenInfo<D>::LockScreenImageChanged(event_token token) const
 {
-    check_hresult(static_cast<const ILockScreenInfo &>(static_cast<const D &>(*this))->remove_LockScreenImageChanged(token));
+    check_hresult(WINRT_SHIM(ILockScreenInfo)->remove_LockScreenImageChanged(token));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStream impl_ILockScreenInfo<D>::LockScreenImage() const
 {
     Windows::Storage::Streams::IRandomAccessStream value;
-    check_hresult(static_cast<const ILockScreenInfo &>(static_cast<const D &>(*this))->get_LockScreenImage(put(value)));
+    check_hresult(WINRT_SHIM(ILockScreenInfo)->get_LockScreenImage(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_ILockScreenInfo<D>::BadgesChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ILockScreenInfo &>(static_cast<const D &>(*this))->add_BadgesChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(ILockScreenInfo)->add_BadgesChanged(get(handler), &token));
     return token;
 }
 
@@ -458,20 +458,20 @@ template <typename D> event_revoker<ILockScreenInfo> impl_ILockScreenInfo<D>::Ba
 
 template <typename D> void impl_ILockScreenInfo<D>::BadgesChanged(event_token token) const
 {
-    check_hresult(static_cast<const ILockScreenInfo &>(static_cast<const D &>(*this))->remove_BadgesChanged(token));
+    check_hresult(WINRT_SHIM(ILockScreenInfo)->remove_BadgesChanged(token));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::LockScreen::LockScreenBadge> impl_ILockScreenInfo<D>::Badges() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::LockScreen::LockScreenBadge> value;
-    check_hresult(static_cast<const ILockScreenInfo &>(static_cast<const D &>(*this))->get_Badges(put(value)));
+    check_hresult(WINRT_SHIM(ILockScreenInfo)->get_Badges(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_ILockScreenInfo<D>::DetailTextChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ILockScreenInfo &>(static_cast<const D &>(*this))->add_DetailTextChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(ILockScreenInfo)->add_DetailTextChanged(get(handler), &token));
     return token;
 }
 
@@ -482,20 +482,20 @@ template <typename D> event_revoker<ILockScreenInfo> impl_ILockScreenInfo<D>::De
 
 template <typename D> void impl_ILockScreenInfo<D>::DetailTextChanged(event_token token) const
 {
-    check_hresult(static_cast<const ILockScreenInfo &>(static_cast<const D &>(*this))->remove_DetailTextChanged(token));
+    check_hresult(WINRT_SHIM(ILockScreenInfo)->remove_DetailTextChanged(token));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ILockScreenInfo<D>::DetailText() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const ILockScreenInfo &>(static_cast<const D &>(*this))->get_DetailText(put(value)));
+    check_hresult(WINRT_SHIM(ILockScreenInfo)->get_DetailText(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_ILockScreenInfo<D>::AlarmIconChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ILockScreenInfo &>(static_cast<const D &>(*this))->add_AlarmIconChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(ILockScreenInfo)->add_AlarmIconChanged(get(handler), &token));
     return token;
 }
 
@@ -506,44 +506,44 @@ template <typename D> event_revoker<ILockScreenInfo> impl_ILockScreenInfo<D>::Al
 
 template <typename D> void impl_ILockScreenInfo<D>::AlarmIconChanged(event_token token) const
 {
-    check_hresult(static_cast<const ILockScreenInfo &>(static_cast<const D &>(*this))->remove_AlarmIconChanged(token));
+    check_hresult(WINRT_SHIM(ILockScreenInfo)->remove_AlarmIconChanged(token));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStream impl_ILockScreenInfo<D>::AlarmIcon() const
 {
     Windows::Storage::Streams::IRandomAccessStream value;
-    check_hresult(static_cast<const ILockScreenInfo &>(static_cast<const D &>(*this))->get_AlarmIcon(put(value)));
+    check_hresult(WINRT_SHIM(ILockScreenInfo)->get_AlarmIcon(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILockScreenUnlockingDeferral<D>::Complete() const
 {
-    check_hresult(static_cast<const ILockScreenUnlockingDeferral &>(static_cast<const D &>(*this))->abi_Complete());
+    check_hresult(WINRT_SHIM(ILockScreenUnlockingDeferral)->abi_Complete());
 }
 
 template <typename D> Windows::ApplicationModel::LockScreen::LockScreenUnlockingDeferral impl_ILockScreenUnlockingEventArgs<D>::GetDeferral() const
 {
     Windows::ApplicationModel::LockScreen::LockScreenUnlockingDeferral deferral { nullptr };
-    check_hresult(static_cast<const ILockScreenUnlockingEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(deferral)));
+    check_hresult(WINRT_SHIM(ILockScreenUnlockingEventArgs)->abi_GetDeferral(put(deferral)));
     return deferral;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ILockScreenUnlockingEventArgs<D>::Deadline() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(static_cast<const ILockScreenUnlockingEventArgs &>(static_cast<const D &>(*this))->get_Deadline(put(value)));
+    check_hresult(WINRT_SHIM(ILockScreenUnlockingEventArgs)->get_Deadline(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILockApplicationHost<D>::RequestUnlock() const
 {
-    check_hresult(static_cast<const ILockApplicationHost &>(static_cast<const D &>(*this))->abi_RequestUnlock());
+    check_hresult(WINRT_SHIM(ILockApplicationHost)->abi_RequestUnlock());
 }
 
 template <typename D> event_token impl_ILockApplicationHost<D>::Unlocking(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockApplicationHost, Windows::ApplicationModel::LockScreen::LockScreenUnlockingEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ILockApplicationHost &>(static_cast<const D &>(*this))->add_Unlocking(get(handler), &token));
+    check_hresult(WINRT_SHIM(ILockApplicationHost)->add_Unlocking(get(handler), &token));
     return token;
 }
 
@@ -554,13 +554,13 @@ template <typename D> event_revoker<ILockApplicationHost> impl_ILockApplicationH
 
 template <typename D> void impl_ILockApplicationHost<D>::Unlocking(event_token token) const
 {
-    check_hresult(static_cast<const ILockApplicationHost &>(static_cast<const D &>(*this))->remove_Unlocking(token));
+    check_hresult(WINRT_SHIM(ILockApplicationHost)->remove_Unlocking(token));
 }
 
 template <typename D> Windows::ApplicationModel::LockScreen::LockApplicationHost impl_ILockApplicationHostStatics<D>::GetForCurrentView() const
 {
     Windows::ApplicationModel::LockScreen::LockApplicationHost result { nullptr };
-    check_hresult(static_cast<const ILockApplicationHostStatics &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(result)));
+    check_hresult(WINRT_SHIM(ILockApplicationHostStatics)->abi_GetForCurrentView(put(result)));
     return result;
 }
 

@@ -165,7 +165,6 @@ struct IGattCharacteristic :
     impl::consume<IGattCharacteristic>
 {
     IGattCharacteristic(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattCharacteristic>(m_ptr); }
 };
 
 struct IGattCharacteristic2 :
@@ -174,7 +173,6 @@ struct IGattCharacteristic2 :
     impl::require<IGattCharacteristic2, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic>
 {
     IGattCharacteristic2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattCharacteristic2>(m_ptr); }
 };
 
 struct IGattCharacteristicStatics :
@@ -182,7 +180,6 @@ struct IGattCharacteristicStatics :
     impl::consume<IGattCharacteristicStatics>
 {
     IGattCharacteristicStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattCharacteristicStatics>(m_ptr); }
 };
 
 struct IGattCharacteristicUuidsStatics :
@@ -190,7 +187,6 @@ struct IGattCharacteristicUuidsStatics :
     impl::consume<IGattCharacteristicUuidsStatics>
 {
     IGattCharacteristicUuidsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattCharacteristicUuidsStatics>(m_ptr); }
 };
 
 struct IGattCharacteristicUuidsStatics2 :
@@ -198,7 +194,6 @@ struct IGattCharacteristicUuidsStatics2 :
     impl::consume<IGattCharacteristicUuidsStatics2>
 {
     IGattCharacteristicUuidsStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattCharacteristicUuidsStatics2>(m_ptr); }
 };
 
 struct IGattDescriptor :
@@ -206,7 +201,6 @@ struct IGattDescriptor :
     impl::consume<IGattDescriptor>
 {
     IGattDescriptor(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattDescriptor>(m_ptr); }
 };
 
 struct IGattDescriptorStatics :
@@ -214,7 +208,6 @@ struct IGattDescriptorStatics :
     impl::consume<IGattDescriptorStatics>
 {
     IGattDescriptorStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattDescriptorStatics>(m_ptr); }
 };
 
 struct IGattDescriptorUuidsStatics :
@@ -222,7 +215,6 @@ struct IGattDescriptorUuidsStatics :
     impl::consume<IGattDescriptorUuidsStatics>
 {
     IGattDescriptorUuidsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattDescriptorUuidsStatics>(m_ptr); }
 };
 
 struct IGattDeviceService :
@@ -231,7 +223,6 @@ struct IGattDeviceService :
     impl::require<IGattDeviceService, Windows::Foundation::IClosable>
 {
     IGattDeviceService(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattDeviceService>(m_ptr); }
 };
 
 struct IGattDeviceService2 :
@@ -240,7 +231,6 @@ struct IGattDeviceService2 :
     impl::require<IGattDeviceService2, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService, Windows::Foundation::IClosable>
 {
     IGattDeviceService2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattDeviceService2>(m_ptr); }
 };
 
 struct IGattDeviceServiceStatics :
@@ -248,7 +238,6 @@ struct IGattDeviceServiceStatics :
     impl::consume<IGattDeviceServiceStatics>
 {
     IGattDeviceServiceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattDeviceServiceStatics>(m_ptr); }
 };
 
 struct IGattPresentationFormat :
@@ -256,7 +245,6 @@ struct IGattPresentationFormat :
     impl::consume<IGattPresentationFormat>
 {
     IGattPresentationFormat(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattPresentationFormat>(m_ptr); }
 };
 
 struct IGattPresentationFormatStatics :
@@ -264,7 +252,6 @@ struct IGattPresentationFormatStatics :
     impl::consume<IGattPresentationFormatStatics>
 {
     IGattPresentationFormatStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattPresentationFormatStatics>(m_ptr); }
 };
 
 struct IGattPresentationFormatTypesStatics :
@@ -272,7 +259,6 @@ struct IGattPresentationFormatTypesStatics :
     impl::consume<IGattPresentationFormatTypesStatics>
 {
     IGattPresentationFormatTypesStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattPresentationFormatTypesStatics>(m_ptr); }
 };
 
 struct IGattReadClientCharacteristicConfigurationDescriptorResult :
@@ -280,7 +266,6 @@ struct IGattReadClientCharacteristicConfigurationDescriptorResult :
     impl::consume<IGattReadClientCharacteristicConfigurationDescriptorResult>
 {
     IGattReadClientCharacteristicConfigurationDescriptorResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattReadClientCharacteristicConfigurationDescriptorResult>(m_ptr); }
 };
 
 struct IGattReadResult :
@@ -288,7 +273,6 @@ struct IGattReadResult :
     impl::consume<IGattReadResult>
 {
     IGattReadResult(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattReadResult>(m_ptr); }
 };
 
 struct IGattReliableWriteTransaction :
@@ -296,7 +280,6 @@ struct IGattReliableWriteTransaction :
     impl::consume<IGattReliableWriteTransaction>
 {
     IGattReliableWriteTransaction(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattReliableWriteTransaction>(m_ptr); }
 };
 
 struct IGattServiceUuidsStatics :
@@ -304,7 +287,6 @@ struct IGattServiceUuidsStatics :
     impl::consume<IGattServiceUuidsStatics>
 {
     IGattServiceUuidsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattServiceUuidsStatics>(m_ptr); }
 };
 
 struct IGattServiceUuidsStatics2 :
@@ -312,7 +294,6 @@ struct IGattServiceUuidsStatics2 :
     impl::consume<IGattServiceUuidsStatics2>
 {
     IGattServiceUuidsStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattServiceUuidsStatics2>(m_ptr); }
 };
 
 struct IGattValueChangedEventArgs :
@@ -320,7 +301,6 @@ struct IGattValueChangedEventArgs :
     impl::consume<IGattValueChangedEventArgs>
 {
     IGattValueChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGattValueChangedEventArgs>(m_ptr); }
 };
 
 }

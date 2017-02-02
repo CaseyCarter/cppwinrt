@@ -14,7 +14,6 @@ struct ICryptographicBufferStatics :
     impl::consume<ICryptographicBufferStatics>
 {
     ICryptographicBufferStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ICryptographicBufferStatics>(m_ptr); }
 };
 
 }

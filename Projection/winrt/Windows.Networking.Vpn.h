@@ -3199,457 +3199,457 @@ namespace Windows::Networking::Vpn {
 
 template <typename D> void impl_IVpnPlugIn<D>::Connect(const Windows::Networking::Vpn::VpnChannel & channel) const
 {
-    check_hresult(static_cast<const IVpnPlugIn &>(static_cast<const D &>(*this))->abi_Connect(get(channel)));
+    check_hresult(WINRT_SHIM(IVpnPlugIn)->abi_Connect(get(channel)));
 }
 
 template <typename D> void impl_IVpnPlugIn<D>::Disconnect(const Windows::Networking::Vpn::VpnChannel & channel) const
 {
-    check_hresult(static_cast<const IVpnPlugIn &>(static_cast<const D &>(*this))->abi_Disconnect(get(channel)));
+    check_hresult(WINRT_SHIM(IVpnPlugIn)->abi_Disconnect(get(channel)));
 }
 
 template <typename D> void impl_IVpnPlugIn<D>::GetKeepAlivePayload(const Windows::Networking::Vpn::VpnChannel & channel, Windows::Networking::Vpn::VpnPacketBuffer & keepAlivePacket) const
 {
-    check_hresult(static_cast<const IVpnPlugIn &>(static_cast<const D &>(*this))->abi_GetKeepAlivePayload(get(channel), put(keepAlivePacket)));
+    check_hresult(WINRT_SHIM(IVpnPlugIn)->abi_GetKeepAlivePayload(get(channel), put(keepAlivePacket)));
 }
 
 template <typename D> void impl_IVpnPlugIn<D>::Encapsulate(const Windows::Networking::Vpn::VpnChannel & channel, const Windows::Networking::Vpn::VpnPacketBufferList & packets, const Windows::Networking::Vpn::VpnPacketBufferList & encapulatedPackets) const
 {
-    check_hresult(static_cast<const IVpnPlugIn &>(static_cast<const D &>(*this))->abi_Encapsulate(get(channel), get(packets), get(encapulatedPackets)));
+    check_hresult(WINRT_SHIM(IVpnPlugIn)->abi_Encapsulate(get(channel), get(packets), get(encapulatedPackets)));
 }
 
 template <typename D> void impl_IVpnPlugIn<D>::Decapsulate(const Windows::Networking::Vpn::VpnChannel & channel, const Windows::Networking::Vpn::VpnPacketBuffer & encapBuffer, const Windows::Networking::Vpn::VpnPacketBufferList & decapsulatedPackets, const Windows::Networking::Vpn::VpnPacketBufferList & controlPacketsToSend) const
 {
-    check_hresult(static_cast<const IVpnPlugIn &>(static_cast<const D &>(*this))->abi_Decapsulate(get(channel), get(encapBuffer), get(decapsulatedPackets), get(controlPacketsToSend)));
+    check_hresult(WINRT_SHIM(IVpnPlugIn)->abi_Decapsulate(get(channel), get(encapBuffer), get(decapsulatedPackets), get(controlPacketsToSend)));
 }
 
 template <typename D> void impl_IVpnCustomPrompt<D>::Label(hstring_ref value) const
 {
-    check_hresult(static_cast<const IVpnCustomPrompt &>(static_cast<const D &>(*this))->put_Label(get(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPrompt)->put_Label(get(value)));
 }
 
 template <typename D> hstring impl_IVpnCustomPrompt<D>::Label() const
 {
     hstring value;
-    check_hresult(static_cast<const IVpnCustomPrompt &>(static_cast<const D &>(*this))->get_Label(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPrompt)->get_Label(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnCustomPrompt<D>::Compulsory(bool value) const
 {
-    check_hresult(static_cast<const IVpnCustomPrompt &>(static_cast<const D &>(*this))->put_Compulsory(value));
+    check_hresult(WINRT_SHIM(IVpnCustomPrompt)->put_Compulsory(value));
 }
 
 template <typename D> bool impl_IVpnCustomPrompt<D>::Compulsory() const
 {
     bool value {};
-    check_hresult(static_cast<const IVpnCustomPrompt &>(static_cast<const D &>(*this))->get_Compulsory(&value));
+    check_hresult(WINRT_SHIM(IVpnCustomPrompt)->get_Compulsory(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnCustomPrompt<D>::Bordered(bool value) const
 {
-    check_hresult(static_cast<const IVpnCustomPrompt &>(static_cast<const D &>(*this))->put_Bordered(value));
+    check_hresult(WINRT_SHIM(IVpnCustomPrompt)->put_Bordered(value));
 }
 
 template <typename D> bool impl_IVpnCustomPrompt<D>::Bordered() const
 {
     bool value {};
-    check_hresult(static_cast<const IVpnCustomPrompt &>(static_cast<const D &>(*this))->get_Bordered(&value));
+    check_hresult(WINRT_SHIM(IVpnCustomPrompt)->get_Bordered(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnCustomEditBox<D>::DefaultText(hstring_ref value) const
 {
-    check_hresult(static_cast<const IVpnCustomEditBox &>(static_cast<const D &>(*this))->put_DefaultText(get(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomEditBox)->put_DefaultText(get(value)));
 }
 
 template <typename D> hstring impl_IVpnCustomEditBox<D>::DefaultText() const
 {
     hstring value;
-    check_hresult(static_cast<const IVpnCustomEditBox &>(static_cast<const D &>(*this))->get_DefaultText(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomEditBox)->get_DefaultText(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnCustomEditBox<D>::NoEcho(bool value) const
 {
-    check_hresult(static_cast<const IVpnCustomEditBox &>(static_cast<const D &>(*this))->put_NoEcho(value));
+    check_hresult(WINRT_SHIM(IVpnCustomEditBox)->put_NoEcho(value));
 }
 
 template <typename D> bool impl_IVpnCustomEditBox<D>::NoEcho() const
 {
     bool value {};
-    check_hresult(static_cast<const IVpnCustomEditBox &>(static_cast<const D &>(*this))->get_NoEcho(&value));
+    check_hresult(WINRT_SHIM(IVpnCustomEditBox)->get_NoEcho(&value));
     return value;
 }
 
 template <typename D> hstring impl_IVpnCustomEditBox<D>::Text() const
 {
     hstring value;
-    check_hresult(static_cast<const IVpnCustomEditBox &>(static_cast<const D &>(*this))->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomEditBox)->get_Text(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnCustomComboBox<D>::OptionsText(const Windows::Foundation::Collections::IVectorView<hstring> & value) const
 {
-    check_hresult(static_cast<const IVpnCustomComboBox &>(static_cast<const D &>(*this))->put_OptionsText(get(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomComboBox)->put_OptionsText(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IVpnCustomComboBox<D>::OptionsText() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(static_cast<const IVpnCustomComboBox &>(static_cast<const D &>(*this))->get_OptionsText(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomComboBox)->get_OptionsText(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IVpnCustomComboBox<D>::Selected() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IVpnCustomComboBox &>(static_cast<const D &>(*this))->get_Selected(&value));
+    check_hresult(WINRT_SHIM(IVpnCustomComboBox)->get_Selected(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnCustomTextBox<D>::DisplayText(hstring_ref value) const
 {
-    check_hresult(static_cast<const IVpnCustomTextBox &>(static_cast<const D &>(*this))->put_DisplayText(get(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomTextBox)->put_DisplayText(get(value)));
 }
 
 template <typename D> hstring impl_IVpnCustomTextBox<D>::DisplayText() const
 {
     hstring value;
-    check_hresult(static_cast<const IVpnCustomTextBox &>(static_cast<const D &>(*this))->get_DisplayText(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomTextBox)->get_DisplayText(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnCustomCheckBox<D>::InitialCheckState(bool value) const
 {
-    check_hresult(static_cast<const IVpnCustomCheckBox &>(static_cast<const D &>(*this))->put_InitialCheckState(value));
+    check_hresult(WINRT_SHIM(IVpnCustomCheckBox)->put_InitialCheckState(value));
 }
 
 template <typename D> bool impl_IVpnCustomCheckBox<D>::InitialCheckState() const
 {
     bool value {};
-    check_hresult(static_cast<const IVpnCustomCheckBox &>(static_cast<const D &>(*this))->get_InitialCheckState(&value));
+    check_hresult(WINRT_SHIM(IVpnCustomCheckBox)->get_InitialCheckState(&value));
     return value;
 }
 
 template <typename D> bool impl_IVpnCustomCheckBox<D>::Checked() const
 {
     bool value {};
-    check_hresult(static_cast<const IVpnCustomCheckBox &>(static_cast<const D &>(*this))->get_Checked(&value));
+    check_hresult(WINRT_SHIM(IVpnCustomCheckBox)->get_Checked(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnRoute impl_IVpnRouteFactory<D>::CreateVpnRoute(const Windows::Networking::HostName & address, uint8_t prefixSize) const
 {
     Windows::Networking::Vpn::VpnRoute route { nullptr };
-    check_hresult(static_cast<const IVpnRouteFactory &>(static_cast<const D &>(*this))->abi_CreateVpnRoute(get(address), prefixSize, put(route)));
+    check_hresult(WINRT_SHIM(IVpnRouteFactory)->abi_CreateVpnRoute(get(address), prefixSize, put(route)));
     return route;
 }
 
 template <typename D> void impl_IVpnRoute<D>::Address(const Windows::Networking::HostName & value) const
 {
-    check_hresult(static_cast<const IVpnRoute &>(static_cast<const D &>(*this))->put_Address(get(value)));
+    check_hresult(WINRT_SHIM(IVpnRoute)->put_Address(get(value)));
 }
 
 template <typename D> Windows::Networking::HostName impl_IVpnRoute<D>::Address() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(static_cast<const IVpnRoute &>(static_cast<const D &>(*this))->get_Address(put(value)));
+    check_hresult(WINRT_SHIM(IVpnRoute)->get_Address(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnRoute<D>::PrefixSize(uint8_t value) const
 {
-    check_hresult(static_cast<const IVpnRoute &>(static_cast<const D &>(*this))->put_PrefixSize(value));
+    check_hresult(WINRT_SHIM(IVpnRoute)->put_PrefixSize(value));
 }
 
 template <typename D> uint8_t impl_IVpnRoute<D>::PrefixSize() const
 {
     uint8_t value {};
-    check_hresult(static_cast<const IVpnRoute &>(static_cast<const D &>(*this))->get_PrefixSize(&value));
+    check_hresult(WINRT_SHIM(IVpnRoute)->get_PrefixSize(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnRouteAssignment<D>::Ipv4InclusionRoutes(const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> & value) const
 {
-    check_hresult(static_cast<const IVpnRouteAssignment &>(static_cast<const D &>(*this))->put_Ipv4InclusionRoutes(get(value)));
+    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->put_Ipv4InclusionRoutes(get(value)));
 }
 
 template <typename D> void impl_IVpnRouteAssignment<D>::Ipv6InclusionRoutes(const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> & value) const
 {
-    check_hresult(static_cast<const IVpnRouteAssignment &>(static_cast<const D &>(*this))->put_Ipv6InclusionRoutes(get(value)));
+    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->put_Ipv6InclusionRoutes(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> impl_IVpnRouteAssignment<D>::Ipv4InclusionRoutes() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> value;
-    check_hresult(static_cast<const IVpnRouteAssignment &>(static_cast<const D &>(*this))->get_Ipv4InclusionRoutes(put(value)));
+    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->get_Ipv4InclusionRoutes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> impl_IVpnRouteAssignment<D>::Ipv6InclusionRoutes() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> value;
-    check_hresult(static_cast<const IVpnRouteAssignment &>(static_cast<const D &>(*this))->get_Ipv6InclusionRoutes(put(value)));
+    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->get_Ipv6InclusionRoutes(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnRouteAssignment<D>::Ipv4ExclusionRoutes(const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> & value) const
 {
-    check_hresult(static_cast<const IVpnRouteAssignment &>(static_cast<const D &>(*this))->put_Ipv4ExclusionRoutes(get(value)));
+    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->put_Ipv4ExclusionRoutes(get(value)));
 }
 
 template <typename D> void impl_IVpnRouteAssignment<D>::Ipv6ExclusionRoutes(const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> & value) const
 {
-    check_hresult(static_cast<const IVpnRouteAssignment &>(static_cast<const D &>(*this))->put_Ipv6ExclusionRoutes(get(value)));
+    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->put_Ipv6ExclusionRoutes(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> impl_IVpnRouteAssignment<D>::Ipv4ExclusionRoutes() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> value;
-    check_hresult(static_cast<const IVpnRouteAssignment &>(static_cast<const D &>(*this))->get_Ipv4ExclusionRoutes(put(value)));
+    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->get_Ipv4ExclusionRoutes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> impl_IVpnRouteAssignment<D>::Ipv6ExclusionRoutes() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> value;
-    check_hresult(static_cast<const IVpnRouteAssignment &>(static_cast<const D &>(*this))->get_Ipv6ExclusionRoutes(put(value)));
+    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->get_Ipv6ExclusionRoutes(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnRouteAssignment<D>::ExcludeLocalSubnets(bool value) const
 {
-    check_hresult(static_cast<const IVpnRouteAssignment &>(static_cast<const D &>(*this))->put_ExcludeLocalSubnets(value));
+    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->put_ExcludeLocalSubnets(value));
 }
 
 template <typename D> bool impl_IVpnRouteAssignment<D>::ExcludeLocalSubnets() const
 {
     bool value {};
-    check_hresult(static_cast<const IVpnRouteAssignment &>(static_cast<const D &>(*this))->get_ExcludeLocalSubnets(&value));
+    check_hresult(WINRT_SHIM(IVpnRouteAssignment)->get_ExcludeLocalSubnets(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnNamespaceInfo impl_IVpnNamespaceInfoFactory<D>::CreateVpnNamespaceInfo(hstring_ref name, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & proxyServerList) const
 {
     Windows::Networking::Vpn::VpnNamespaceInfo namespaceInfo { nullptr };
-    check_hresult(static_cast<const IVpnNamespaceInfoFactory &>(static_cast<const D &>(*this))->abi_CreateVpnNamespaceInfo(get(name), get(dnsServerList), get(proxyServerList), put(namespaceInfo)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceInfoFactory)->abi_CreateVpnNamespaceInfo(get(name), get(dnsServerList), get(proxyServerList), put(namespaceInfo)));
     return namespaceInfo;
 }
 
 template <typename D> void impl_IVpnNamespaceInfo<D>::Namespace(hstring_ref value) const
 {
-    check_hresult(static_cast<const IVpnNamespaceInfo &>(static_cast<const D &>(*this))->put_Namespace(get(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->put_Namespace(get(value)));
 }
 
 template <typename D> hstring impl_IVpnNamespaceInfo<D>::Namespace() const
 {
     hstring value;
-    check_hresult(static_cast<const IVpnNamespaceInfo &>(static_cast<const D &>(*this))->get_Namespace(put(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->get_Namespace(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnNamespaceInfo<D>::DnsServers(const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & value) const
 {
-    check_hresult(static_cast<const IVpnNamespaceInfo &>(static_cast<const D &>(*this))->put_DnsServers(get(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->put_DnsServers(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::HostName> impl_IVpnNamespaceInfo<D>::DnsServers() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::HostName> value;
-    check_hresult(static_cast<const IVpnNamespaceInfo &>(static_cast<const D &>(*this))->get_DnsServers(put(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->get_DnsServers(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnNamespaceInfo<D>::WebProxyServers(const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & value) const
 {
-    check_hresult(static_cast<const IVpnNamespaceInfo &>(static_cast<const D &>(*this))->put_WebProxyServers(get(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->put_WebProxyServers(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::HostName> impl_IVpnNamespaceInfo<D>::WebProxyServers() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::HostName> value;
-    check_hresult(static_cast<const IVpnNamespaceInfo &>(static_cast<const D &>(*this))->get_WebProxyServers(put(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceInfo)->get_WebProxyServers(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnNamespaceAssignment<D>::NamespaceList(const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo> & value) const
 {
-    check_hresult(static_cast<const IVpnNamespaceAssignment &>(static_cast<const D &>(*this))->put_NamespaceList(get(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceAssignment)->put_NamespaceList(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo> impl_IVpnNamespaceAssignment<D>::NamespaceList() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo> value;
-    check_hresult(static_cast<const IVpnNamespaceAssignment &>(static_cast<const D &>(*this))->get_NamespaceList(put(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceAssignment)->get_NamespaceList(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnNamespaceAssignment<D>::ProxyAutoConfigUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const IVpnNamespaceAssignment &>(static_cast<const D &>(*this))->put_ProxyAutoConfigUri(get(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceAssignment)->put_ProxyAutoConfigUri(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IVpnNamespaceAssignment<D>::ProxyAutoConfigUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const IVpnNamespaceAssignment &>(static_cast<const D &>(*this))->get_ProxyAutoConfigUri(put(value)));
+    check_hresult(WINRT_SHIM(IVpnNamespaceAssignment)->get_ProxyAutoConfigUri(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnInterfaceId impl_IVpnInterfaceIdFactory<D>::CreateVpnInterfaceId(array_ref<const uint8_t> address) const
 {
     Windows::Networking::Vpn::VpnInterfaceId vpnInterfaceId { nullptr };
-    check_hresult(static_cast<const IVpnInterfaceIdFactory &>(static_cast<const D &>(*this))->abi_CreateVpnInterfaceId(address.size(), get(address), put(vpnInterfaceId)));
+    check_hresult(WINRT_SHIM(IVpnInterfaceIdFactory)->abi_CreateVpnInterfaceId(address.size(), get(address), put(vpnInterfaceId)));
     return vpnInterfaceId;
 }
 
 template <typename D> void impl_IVpnInterfaceId<D>::GetAddressInfo(com_array<uint8_t> & id) const
 {
-    check_hresult(static_cast<const IVpnInterfaceId &>(static_cast<const D &>(*this))->abi_GetAddressInfo(put_size(id), put(id)));
+    check_hresult(WINRT_SHIM(IVpnInterfaceId)->abi_GetAddressInfo(put_size(id), put(id)));
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IVpnPickedCredential<D>::PasskeyCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(static_cast<const IVpnPickedCredential &>(static_cast<const D &>(*this))->get_PasskeyCredential(put(value)));
+    check_hresult(WINRT_SHIM(IVpnPickedCredential)->get_PasskeyCredential(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVpnPickedCredential<D>::AdditionalPin() const
 {
     hstring value;
-    check_hresult(static_cast<const IVpnPickedCredential &>(static_cast<const D &>(*this))->get_AdditionalPin(put(value)));
+    check_hresult(WINRT_SHIM(IVpnPickedCredential)->get_AdditionalPin(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IVpnPickedCredential<D>::OldPasswordCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(static_cast<const IVpnPickedCredential &>(static_cast<const D &>(*this))->get_OldPasswordCredential(put(value)));
+    check_hresult(WINRT_SHIM(IVpnPickedCredential)->get_OldPasswordCredential(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IVpnCredential<D>::PasskeyCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(static_cast<const IVpnCredential &>(static_cast<const D &>(*this))->get_PasskeyCredential(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCredential)->get_PasskeyCredential(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_IVpnCredential<D>::CertificateCredential() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(static_cast<const IVpnCredential &>(static_cast<const D &>(*this))->get_CertificateCredential(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCredential)->get_CertificateCredential(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVpnCredential<D>::AdditionalPin() const
 {
     hstring value;
-    check_hresult(static_cast<const IVpnCredential &>(static_cast<const D &>(*this))->get_AdditionalPin(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCredential)->get_AdditionalPin(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IVpnCredential<D>::OldPasswordCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(static_cast<const IVpnCredential &>(static_cast<const D &>(*this))->get_OldPasswordCredential(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCredential)->get_OldPasswordCredential(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::Buffer impl_IVpnSystemHealth<D>::StatementOfHealth() const
 {
     Windows::Storage::Streams::Buffer value { nullptr };
-    check_hresult(static_cast<const IVpnSystemHealth &>(static_cast<const D &>(*this))->get_StatementOfHealth(put(value)));
+    check_hresult(WINRT_SHIM(IVpnSystemHealth)->get_StatementOfHealth(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVpnChannelConfiguration<D>::ServerServiceName() const
 {
     hstring value;
-    check_hresult(static_cast<const IVpnChannelConfiguration &>(static_cast<const D &>(*this))->get_ServerServiceName(put(value)));
+    check_hresult(WINRT_SHIM(IVpnChannelConfiguration)->get_ServerServiceName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> impl_IVpnChannelConfiguration<D>::ServerHostNameList() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> value;
-    check_hresult(static_cast<const IVpnChannelConfiguration &>(static_cast<const D &>(*this))->get_ServerHostNameList(put(value)));
+    check_hresult(WINRT_SHIM(IVpnChannelConfiguration)->get_ServerHostNameList(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVpnChannelConfiguration<D>::CustomField() const
 {
     hstring value;
-    check_hresult(static_cast<const IVpnChannelConfiguration &>(static_cast<const D &>(*this))->get_CustomField(put(value)));
+    check_hresult(WINRT_SHIM(IVpnChannelConfiguration)->get_CustomField(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Foundation::Uri> impl_IVpnChannelConfiguration2<D>::ServerUris() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Foundation::Uri> value;
-    check_hresult(static_cast<const IVpnChannelConfiguration2 &>(static_cast<const D &>(*this))->get_ServerUris(put(value)));
+    check_hresult(WINRT_SHIM(IVpnChannelConfiguration2)->get_ServerUris(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnChannelActivityEventType impl_IVpnChannelActivityEventArgs<D>::Type() const
 {
     Windows::Networking::Vpn::VpnChannelActivityEventType value {};
-    check_hresult(static_cast<const IVpnChannelActivityEventArgs &>(static_cast<const D &>(*this))->get_Type(&value));
+    check_hresult(WINRT_SHIM(IVpnChannelActivityEventArgs)->get_Type(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnChannel<D>::AssociateTransport(const Windows::IInspectable & mainOuterTunnelTransport, const Windows::IInspectable & optionalOuterTunnelTransport) const
 {
-    check_hresult(static_cast<const IVpnChannel &>(static_cast<const D &>(*this))->abi_AssociateTransport(get(mainOuterTunnelTransport), get(optionalOuterTunnelTransport)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->abi_AssociateTransport(get(mainOuterTunnelTransport), get(optionalOuterTunnelTransport)));
 }
 
 template <typename D> void impl_IVpnChannel<D>::Start(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & routeScope, const Windows::Networking::Vpn::VpnNamespaceAssignment & namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, const Windows::IInspectable & mainOuterTunnelTransport, const Windows::IInspectable & optionalOuterTunnelTransport) const
 {
-    check_hresult(static_cast<const IVpnChannel &>(static_cast<const D &>(*this))->abi_Start(get(assignedClientIPv4list), get(assignedClientIPv6list), get(vpnInterfaceId), get(routeScope), get(namespaceScope), mtuSize, maxFrameSize, optimizeForLowCostNetwork, get(mainOuterTunnelTransport), get(optionalOuterTunnelTransport)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->abi_Start(get(assignedClientIPv4list), get(assignedClientIPv6list), get(vpnInterfaceId), get(routeScope), get(namespaceScope), mtuSize, maxFrameSize, optimizeForLowCostNetwork, get(mainOuterTunnelTransport), get(optionalOuterTunnelTransport)));
 }
 
 template <typename D> void impl_IVpnChannel<D>::Stop() const
 {
-    check_hresult(static_cast<const IVpnChannel &>(static_cast<const D &>(*this))->abi_Stop());
+    check_hresult(WINRT_SHIM(IVpnChannel)->abi_Stop());
 }
 
 template <typename D> Windows::Networking::Vpn::VpnPickedCredential impl_IVpnChannel<D>::RequestCredentials(Windows::Networking::Vpn::VpnCredentialType credType, bool isRetry, bool isSingleSignOnCredential, const Windows::Security::Cryptography::Certificates::Certificate & certificate) const
 {
     Windows::Networking::Vpn::VpnPickedCredential credential { nullptr };
-    check_hresult(static_cast<const IVpnChannel &>(static_cast<const D &>(*this))->abi_RequestCredentials(credType, isRetry, isSingleSignOnCredential, get(certificate), put(credential)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->abi_RequestCredentials(credType, isRetry, isSingleSignOnCredential, get(certificate), put(credential)));
     return credential;
 }
 
 template <typename D> void impl_IVpnChannel<D>::RequestVpnPacketBuffer(Windows::Networking::Vpn::VpnDataPathType type, Windows::Networking::Vpn::VpnPacketBuffer & vpnPacketBuffer) const
 {
-    check_hresult(static_cast<const IVpnChannel &>(static_cast<const D &>(*this))->abi_RequestVpnPacketBuffer(type, put(vpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->abi_RequestVpnPacketBuffer(type, put(vpnPacketBuffer)));
 }
 
 template <typename D> void impl_IVpnChannel<D>::LogDiagnosticMessage(hstring_ref message) const
 {
-    check_hresult(static_cast<const IVpnChannel &>(static_cast<const D &>(*this))->abi_LogDiagnosticMessage(get(message)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->abi_LogDiagnosticMessage(get(message)));
 }
 
 template <typename D> uint32_t impl_IVpnChannel<D>::Id() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IVpnChannel &>(static_cast<const D &>(*this))->get_Id(&value));
+    check_hresult(WINRT_SHIM(IVpnChannel)->get_Id(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnChannelConfiguration impl_IVpnChannel<D>::Configuration() const
 {
     Windows::Networking::Vpn::VpnChannelConfiguration value { nullptr };
-    check_hresult(static_cast<const IVpnChannel &>(static_cast<const D &>(*this))->get_Configuration(put(value)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->get_Configuration(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IVpnChannel<D>::ActivityChange(const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IVpnChannel &>(static_cast<const D &>(*this))->add_ActivityChange(get(handler), &token));
+    check_hresult(WINRT_SHIM(IVpnChannel)->add_ActivityChange(get(handler), &token));
     return token;
 }
 
@@ -3660,57 +3660,57 @@ template <typename D> event_revoker<IVpnChannel> impl_IVpnChannel<D>::ActivityCh
 
 template <typename D> void impl_IVpnChannel<D>::ActivityChange(event_token token) const
 {
-    check_hresult(static_cast<const IVpnChannel &>(static_cast<const D &>(*this))->remove_ActivityChange(token));
+    check_hresult(WINRT_SHIM(IVpnChannel)->remove_ActivityChange(token));
 }
 
 template <typename D> void impl_IVpnChannel<D>::PlugInContext(const Windows::IInspectable & value) const
 {
-    check_hresult(static_cast<const IVpnChannel &>(static_cast<const D &>(*this))->put_PlugInContext(get(value)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->put_PlugInContext(get(value)));
 }
 
 template <typename D> Windows::IInspectable impl_IVpnChannel<D>::PlugInContext() const
 {
     Windows::IInspectable value;
-    check_hresult(static_cast<const IVpnChannel &>(static_cast<const D &>(*this))->get_PlugInContext(put(value)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->get_PlugInContext(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnSystemHealth impl_IVpnChannel<D>::SystemHealth() const
 {
     Windows::Networking::Vpn::VpnSystemHealth value { nullptr };
-    check_hresult(static_cast<const IVpnChannel &>(static_cast<const D &>(*this))->get_SystemHealth(put(value)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->get_SystemHealth(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnChannel<D>::RequestCustomPrompt(const Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPrompt> & customPrompt) const
 {
-    check_hresult(static_cast<const IVpnChannel &>(static_cast<const D &>(*this))->abi_RequestCustomPrompt(get(customPrompt)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->abi_RequestCustomPrompt(get(customPrompt)));
 }
 
 template <typename D> void impl_IVpnChannel<D>::SetErrorMessage(hstring_ref message) const
 {
-    check_hresult(static_cast<const IVpnChannel &>(static_cast<const D &>(*this))->abi_SetErrorMessage(get(message)));
+    check_hresult(WINRT_SHIM(IVpnChannel)->abi_SetErrorMessage(get(message)));
 }
 
 template <typename D> void impl_IVpnChannel<D>::SetAllowedSslTlsVersions(const Windows::IInspectable & tunnelTransport, bool useTls12) const
 {
-    check_hresult(static_cast<const IVpnChannel &>(static_cast<const D &>(*this))->abi_SetAllowedSslTlsVersions(get(tunnelTransport), useTls12));
+    check_hresult(WINRT_SHIM(IVpnChannel)->abi_SetAllowedSslTlsVersions(get(tunnelTransport), useTls12));
 }
 
 template <typename D> void impl_IVpnChannel2<D>::StartWithMainTransport(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, const Windows::IInspectable & mainOuterTunnelTransport) const
 {
-    check_hresult(static_cast<const IVpnChannel2 &>(static_cast<const D &>(*this))->abi_StartWithMainTransport(get(assignedClientIPv4list), get(assignedClientIPv6list), get(vpnInterfaceId), get(assignedRoutes), get(assignedDomainName), mtuSize, maxFrameSize, Reserved, get(mainOuterTunnelTransport)));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_StartWithMainTransport(get(assignedClientIPv4list), get(assignedClientIPv6list), get(vpnInterfaceId), get(assignedRoutes), get(assignedDomainName), mtuSize, maxFrameSize, Reserved, get(mainOuterTunnelTransport)));
 }
 
 template <typename D> void impl_IVpnChannel2<D>::StartExistingTransports(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved) const
 {
-    check_hresult(static_cast<const IVpnChannel2 &>(static_cast<const D &>(*this))->abi_StartExistingTransports(get(assignedClientIPv4list), get(assignedClientIPv6list), get(vpnInterfaceId), get(assignedRoutes), get(assignedDomainName), mtuSize, maxFrameSize, Reserved));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_StartExistingTransports(get(assignedClientIPv4list), get(assignedClientIPv6list), get(vpnInterfaceId), get(assignedRoutes), get(assignedDomainName), mtuSize, maxFrameSize, Reserved));
 }
 
 template <typename D> event_token impl_IVpnChannel2<D>::ActivityStateChange(const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const IVpnChannel2 &>(static_cast<const D &>(*this))->add_ActivityStateChange(get(handler), &token));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->add_ActivityStateChange(get(handler), &token));
     return token;
 }
 
@@ -3721,773 +3721,773 @@ template <typename D> event_revoker<IVpnChannel2> impl_IVpnChannel2<D>::Activity
 
 template <typename D> void impl_IVpnChannel2<D>::ActivityStateChange(event_token token) const
 {
-    check_hresult(static_cast<const IVpnChannel2 &>(static_cast<const D &>(*this))->remove_ActivityStateChange(token));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->remove_ActivityStateChange(token));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnPacketBuffer impl_IVpnChannel2<D>::GetVpnSendPacketBuffer() const
 {
     Windows::Networking::Vpn::VpnPacketBuffer vpnSendPacketBuffer { nullptr };
-    check_hresult(static_cast<const IVpnChannel2 &>(static_cast<const D &>(*this))->abi_GetVpnSendPacketBuffer(put(vpnSendPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_GetVpnSendPacketBuffer(put(vpnSendPacketBuffer)));
     return vpnSendPacketBuffer;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnPacketBuffer impl_IVpnChannel2<D>::GetVpnReceivePacketBuffer() const
 {
     Windows::Networking::Vpn::VpnPacketBuffer vpnReceivePacketBuffer { nullptr };
-    check_hresult(static_cast<const IVpnChannel2 &>(static_cast<const D &>(*this))->abi_GetVpnReceivePacketBuffer(put(vpnReceivePacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_GetVpnReceivePacketBuffer(put(vpnReceivePacketBuffer)));
     return vpnReceivePacketBuffer;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IVpnChannel2<D>::RequestCustomPromptAsync(const Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPromptElement> & customPromptElement) const
 {
     Windows::Foundation::IAsyncAction action;
-    check_hresult(static_cast<const IVpnChannel2 &>(static_cast<const D &>(*this))->abi_RequestCustomPromptAsync(get(customPromptElement), put(action)));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_RequestCustomPromptAsync(get(customPromptElement), put(action)));
     return action;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> impl_IVpnChannel2<D>::RequestCredentialsAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions, const Windows::Security::Cryptography::Certificates::Certificate & certificate) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> credential;
-    check_hresult(static_cast<const IVpnChannel2 &>(static_cast<const D &>(*this))->abi_RequestCredentialsWithCertificateAsync(credType, credOptions, get(certificate), put(credential)));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_RequestCredentialsWithCertificateAsync(credType, credOptions, get(certificate), put(credential)));
     return credential;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> impl_IVpnChannel2<D>::RequestCredentialsAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> credential;
-    check_hresult(static_cast<const IVpnChannel2 &>(static_cast<const D &>(*this))->abi_RequestCredentialsWithOptionsAsync(credType, credOptions, put(credential)));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_RequestCredentialsWithOptionsAsync(credType, credOptions, put(credential)));
     return credential;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> impl_IVpnChannel2<D>::RequestCredentialsAsync(Windows::Networking::Vpn::VpnCredentialType credType) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> credential;
-    check_hresult(static_cast<const IVpnChannel2 &>(static_cast<const D &>(*this))->abi_RequestCredentialsSimpleAsync(credType, put(credential)));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_RequestCredentialsSimpleAsync(credType, put(credential)));
     return credential;
 }
 
 template <typename D> void impl_IVpnChannel2<D>::TerminateConnection(hstring_ref message) const
 {
-    check_hresult(static_cast<const IVpnChannel2 &>(static_cast<const D &>(*this))->abi_TerminateConnection(get(message)));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_TerminateConnection(get(message)));
 }
 
 template <typename D> void impl_IVpnChannel2<D>::StartWithTrafficFilter(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIpv4List, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIpv6List, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, const Windows::IInspectable & mainOuterTunnelTransport, const Windows::IInspectable & optionalOuterTunnelTransport, const Windows::Networking::Vpn::VpnTrafficFilterAssignment & assignedTrafficFilters) const
 {
-    check_hresult(static_cast<const IVpnChannel2 &>(static_cast<const D &>(*this))->abi_StartWithTrafficFilter(get(assignedClientIpv4List), get(assignedClientIpv6List), get(vpnInterfaceId), get(assignedRoutes), get(assignedNamespace), mtuSize, maxFrameSize, reserved, get(mainOuterTunnelTransport), get(optionalOuterTunnelTransport), get(assignedTrafficFilters)));
+    check_hresult(WINRT_SHIM(IVpnChannel2)->abi_StartWithTrafficFilter(get(assignedClientIpv4List), get(assignedClientIpv6List), get(vpnInterfaceId), get(assignedRoutes), get(assignedNamespace), mtuSize, maxFrameSize, reserved, get(mainOuterTunnelTransport), get(optionalOuterTunnelTransport), get(assignedTrafficFilters)));
 }
 
 template <typename D> void impl_IVpnCustomPromptElement<D>::DisplayName(hstring_ref value) const
 {
-    check_hresult(static_cast<const IVpnCustomPromptElement &>(static_cast<const D &>(*this))->put_DisplayName(get(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptElement)->put_DisplayName(get(value)));
 }
 
 template <typename D> hstring impl_IVpnCustomPromptElement<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(static_cast<const IVpnCustomPromptElement &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptElement)->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnCustomPromptElement<D>::Compulsory(bool value) const
 {
-    check_hresult(static_cast<const IVpnCustomPromptElement &>(static_cast<const D &>(*this))->put_Compulsory(value));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptElement)->put_Compulsory(value));
 }
 
 template <typename D> bool impl_IVpnCustomPromptElement<D>::Compulsory() const
 {
     bool value {};
-    check_hresult(static_cast<const IVpnCustomPromptElement &>(static_cast<const D &>(*this))->get_Compulsory(&value));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptElement)->get_Compulsory(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnCustomPromptElement<D>::Emphasized(bool value) const
 {
-    check_hresult(static_cast<const IVpnCustomPromptElement &>(static_cast<const D &>(*this))->put_Emphasized(value));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptElement)->put_Emphasized(value));
 }
 
 template <typename D> bool impl_IVpnCustomPromptElement<D>::Emphasized() const
 {
     bool value {};
-    check_hresult(static_cast<const IVpnCustomPromptElement &>(static_cast<const D &>(*this))->get_Emphasized(&value));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptElement)->get_Emphasized(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnChannelStatics<D>::ProcessEventAsync(const Windows::IInspectable & thirdPartyPlugIn, const Windows::IInspectable & event) const
 {
-    check_hresult(static_cast<const IVpnChannelStatics &>(static_cast<const D &>(*this))->abi_ProcessEventAsync(get(thirdPartyPlugIn), get(event)));
+    check_hresult(WINRT_SHIM(IVpnChannelStatics)->abi_ProcessEventAsync(get(thirdPartyPlugIn), get(event)));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnPacketBuffer impl_IVpnPacketBufferFactory<D>::CreateVpnPacketBuffer(const Windows::Networking::Vpn::VpnPacketBuffer & parentBuffer, uint32_t offset, uint32_t length) const
 {
     Windows::Networking::Vpn::VpnPacketBuffer vpnPacketBuffer { nullptr };
-    check_hresult(static_cast<const IVpnPacketBufferFactory &>(static_cast<const D &>(*this))->abi_CreateVpnPacketBuffer(get(parentBuffer), offset, length, put(vpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferFactory)->abi_CreateVpnPacketBuffer(get(parentBuffer), offset, length, put(vpnPacketBuffer)));
     return vpnPacketBuffer;
 }
 
 template <typename D> Windows::Storage::Streams::Buffer impl_IVpnPacketBuffer<D>::Buffer() const
 {
     Windows::Storage::Streams::Buffer value { nullptr };
-    check_hresult(static_cast<const IVpnPacketBuffer &>(static_cast<const D &>(*this))->get_Buffer(put(value)));
+    check_hresult(WINRT_SHIM(IVpnPacketBuffer)->get_Buffer(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnPacketBuffer<D>::Status(Windows::Networking::Vpn::VpnPacketBufferStatus value) const
 {
-    check_hresult(static_cast<const IVpnPacketBuffer &>(static_cast<const D &>(*this))->put_Status(value));
+    check_hresult(WINRT_SHIM(IVpnPacketBuffer)->put_Status(value));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnPacketBufferStatus impl_IVpnPacketBuffer<D>::Status() const
 {
     Windows::Networking::Vpn::VpnPacketBufferStatus value {};
-    check_hresult(static_cast<const IVpnPacketBuffer &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IVpnPacketBuffer)->get_Status(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnPacketBuffer<D>::TransportAffinity(uint32_t value) const
 {
-    check_hresult(static_cast<const IVpnPacketBuffer &>(static_cast<const D &>(*this))->put_TransportAffinity(value));
+    check_hresult(WINRT_SHIM(IVpnPacketBuffer)->put_TransportAffinity(value));
 }
 
 template <typename D> uint32_t impl_IVpnPacketBuffer<D>::TransportAffinity() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IVpnPacketBuffer &>(static_cast<const D &>(*this))->get_TransportAffinity(&value));
+    check_hresult(WINRT_SHIM(IVpnPacketBuffer)->get_TransportAffinity(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnAppId impl_IVpnPacketBuffer2<D>::AppId() const
 {
     Windows::Networking::Vpn::VpnAppId value { nullptr };
-    check_hresult(static_cast<const IVpnPacketBuffer2 &>(static_cast<const D &>(*this))->get_AppId(put(value)));
+    check_hresult(WINRT_SHIM(IVpnPacketBuffer2)->get_AppId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnPacketBufferList<D>::Append(const Windows::Networking::Vpn::VpnPacketBuffer & nextVpnPacketBuffer) const
 {
-    check_hresult(static_cast<const IVpnPacketBufferList &>(static_cast<const D &>(*this))->abi_Append(get(nextVpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList)->abi_Append(get(nextVpnPacketBuffer)));
 }
 
 template <typename D> void impl_IVpnPacketBufferList<D>::AddAtBegin(const Windows::Networking::Vpn::VpnPacketBuffer & nextVpnPacketBuffer) const
 {
-    check_hresult(static_cast<const IVpnPacketBufferList &>(static_cast<const D &>(*this))->abi_AddAtBegin(get(nextVpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList)->abi_AddAtBegin(get(nextVpnPacketBuffer)));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnPacketBuffer impl_IVpnPacketBufferList<D>::RemoveAtEnd() const
 {
     Windows::Networking::Vpn::VpnPacketBuffer nextVpnPacketBuffer { nullptr };
-    check_hresult(static_cast<const IVpnPacketBufferList &>(static_cast<const D &>(*this))->abi_RemoveAtEnd(put(nextVpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList)->abi_RemoveAtEnd(put(nextVpnPacketBuffer)));
     return nextVpnPacketBuffer;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnPacketBuffer impl_IVpnPacketBufferList<D>::RemoveAtBegin() const
 {
     Windows::Networking::Vpn::VpnPacketBuffer nextVpnPacketBuffer { nullptr };
-    check_hresult(static_cast<const IVpnPacketBufferList &>(static_cast<const D &>(*this))->abi_RemoveAtBegin(put(nextVpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList)->abi_RemoveAtBegin(put(nextVpnPacketBuffer)));
     return nextVpnPacketBuffer;
 }
 
 template <typename D> void impl_IVpnPacketBufferList<D>::Clear() const
 {
-    check_hresult(static_cast<const IVpnPacketBufferList &>(static_cast<const D &>(*this))->abi_Clear());
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList)->abi_Clear());
 }
 
 template <typename D> void impl_IVpnPacketBufferList<D>::Status(Windows::Networking::Vpn::VpnPacketBufferStatus value) const
 {
-    check_hresult(static_cast<const IVpnPacketBufferList &>(static_cast<const D &>(*this))->put_Status(value));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList)->put_Status(value));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnPacketBufferStatus impl_IVpnPacketBufferList<D>::Status() const
 {
     Windows::Networking::Vpn::VpnPacketBufferStatus value {};
-    check_hresult(static_cast<const IVpnPacketBufferList &>(static_cast<const D &>(*this))->get_Status(&value));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList)->get_Status(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IVpnPacketBufferList<D>::Size() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IVpnPacketBufferList &>(static_cast<const D &>(*this))->get_Size(&value));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList)->get_Size(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnPacketBufferList2<D>::AddLeadingPacket(const Windows::Networking::Vpn::VpnPacketBuffer & nextVpnPacketBuffer) const
 {
-    check_hresult(static_cast<const IVpnPacketBufferList2 &>(static_cast<const D &>(*this))->abi_AddLeadingPacket(get(nextVpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList2)->abi_AddLeadingPacket(get(nextVpnPacketBuffer)));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnPacketBuffer impl_IVpnPacketBufferList2<D>::RemoveLeadingPacket() const
 {
     Windows::Networking::Vpn::VpnPacketBuffer nextVpnPacketBuffer { nullptr };
-    check_hresult(static_cast<const IVpnPacketBufferList2 &>(static_cast<const D &>(*this))->abi_RemoveLeadingPacket(put(nextVpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList2)->abi_RemoveLeadingPacket(put(nextVpnPacketBuffer)));
     return nextVpnPacketBuffer;
 }
 
 template <typename D> void impl_IVpnPacketBufferList2<D>::AddTrailingPacket(const Windows::Networking::Vpn::VpnPacketBuffer & nextVpnPacketBuffer) const
 {
-    check_hresult(static_cast<const IVpnPacketBufferList2 &>(static_cast<const D &>(*this))->abi_AddTrailingPacket(get(nextVpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList2)->abi_AddTrailingPacket(get(nextVpnPacketBuffer)));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnPacketBuffer impl_IVpnPacketBufferList2<D>::RemoveTrailingPacket() const
 {
     Windows::Networking::Vpn::VpnPacketBuffer nextVpnPacketBuffer { nullptr };
-    check_hresult(static_cast<const IVpnPacketBufferList2 &>(static_cast<const D &>(*this))->abi_RemoveTrailingPacket(put(nextVpnPacketBuffer)));
+    check_hresult(WINRT_SHIM(IVpnPacketBufferList2)->abi_RemoveTrailingPacket(put(nextVpnPacketBuffer)));
     return nextVpnPacketBuffer;
 }
 
 template <typename D> void impl_IVpnCustomPromptTextInput<D>::PlaceholderText(hstring_ref value) const
 {
-    check_hresult(static_cast<const IVpnCustomPromptTextInput &>(static_cast<const D &>(*this))->put_PlaceholderText(get(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptTextInput)->put_PlaceholderText(get(value)));
 }
 
 template <typename D> hstring impl_IVpnCustomPromptTextInput<D>::PlaceholderText() const
 {
     hstring value;
-    check_hresult(static_cast<const IVpnCustomPromptTextInput &>(static_cast<const D &>(*this))->get_PlaceholderText(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptTextInput)->get_PlaceholderText(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnCustomPromptTextInput<D>::IsTextHidden(bool value) const
 {
-    check_hresult(static_cast<const IVpnCustomPromptTextInput &>(static_cast<const D &>(*this))->put_IsTextHidden(value));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptTextInput)->put_IsTextHidden(value));
 }
 
 template <typename D> bool impl_IVpnCustomPromptTextInput<D>::IsTextHidden() const
 {
     bool value {};
-    check_hresult(static_cast<const IVpnCustomPromptTextInput &>(static_cast<const D &>(*this))->get_IsTextHidden(&value));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptTextInput)->get_IsTextHidden(&value));
     return value;
 }
 
 template <typename D> hstring impl_IVpnCustomPromptTextInput<D>::Text() const
 {
     hstring value;
-    check_hresult(static_cast<const IVpnCustomPromptTextInput &>(static_cast<const D &>(*this))->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptTextInput)->get_Text(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVpnCustomPromptOptionSelector<D>::Options() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IVpnCustomPromptOptionSelector &>(static_cast<const D &>(*this))->get_Options(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptOptionSelector)->get_Options(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IVpnCustomPromptOptionSelector<D>::SelectedIndex() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IVpnCustomPromptOptionSelector &>(static_cast<const D &>(*this))->get_SelectedIndex(&value));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptOptionSelector)->get_SelectedIndex(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnCustomPromptBooleanInput<D>::InitialValue(bool value) const
 {
-    check_hresult(static_cast<const IVpnCustomPromptBooleanInput &>(static_cast<const D &>(*this))->put_InitialValue(value));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptBooleanInput)->put_InitialValue(value));
 }
 
 template <typename D> bool impl_IVpnCustomPromptBooleanInput<D>::InitialValue() const
 {
     bool value {};
-    check_hresult(static_cast<const IVpnCustomPromptBooleanInput &>(static_cast<const D &>(*this))->get_InitialValue(&value));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptBooleanInput)->get_InitialValue(&value));
     return value;
 }
 
 template <typename D> bool impl_IVpnCustomPromptBooleanInput<D>::Value() const
 {
     bool value {};
-    check_hresult(static_cast<const IVpnCustomPromptBooleanInput &>(static_cast<const D &>(*this))->get_Value(&value));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptBooleanInput)->get_Value(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnCustomPromptText<D>::Text(hstring_ref value) const
 {
-    check_hresult(static_cast<const IVpnCustomPromptText &>(static_cast<const D &>(*this))->put_Text(get(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptText)->put_Text(get(value)));
 }
 
 template <typename D> hstring impl_IVpnCustomPromptText<D>::Text() const
 {
     hstring value;
-    check_hresult(static_cast<const IVpnCustomPromptText &>(static_cast<const D &>(*this))->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(IVpnCustomPromptText)->get_Text(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnChannelActivityEventType impl_IVpnChannelActivityStateChangedArgs<D>::ActivityState() const
 {
     Windows::Networking::Vpn::VpnChannelActivityEventType value {};
-    check_hresult(static_cast<const IVpnChannelActivityStateChangedArgs &>(static_cast<const D &>(*this))->get_ActivityState(&value));
+    check_hresult(WINRT_SHIM(IVpnChannelActivityStateChangedArgs)->get_ActivityState(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnDomainNameInfo impl_IVpnDomainNameInfoFactory<D>::CreateVpnDomainNameInfo(hstring_ref name, Windows::Networking::Vpn::VpnDomainNameType nameType, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & proxyServerList) const
 {
     Windows::Networking::Vpn::VpnDomainNameInfo domainNameInfo { nullptr };
-    check_hresult(static_cast<const IVpnDomainNameInfoFactory &>(static_cast<const D &>(*this))->abi_CreateVpnDomainNameInfo(get(name), nameType, get(dnsServerList), get(proxyServerList), put(domainNameInfo)));
+    check_hresult(WINRT_SHIM(IVpnDomainNameInfoFactory)->abi_CreateVpnDomainNameInfo(get(name), nameType, get(dnsServerList), get(proxyServerList), put(domainNameInfo)));
     return domainNameInfo;
 }
 
 template <typename D> void impl_IVpnDomainNameInfo<D>::DomainName(const Windows::Networking::HostName & value) const
 {
-    check_hresult(static_cast<const IVpnDomainNameInfo &>(static_cast<const D &>(*this))->put_DomainName(get(value)));
+    check_hresult(WINRT_SHIM(IVpnDomainNameInfo)->put_DomainName(get(value)));
 }
 
 template <typename D> Windows::Networking::HostName impl_IVpnDomainNameInfo<D>::DomainName() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(static_cast<const IVpnDomainNameInfo &>(static_cast<const D &>(*this))->get_DomainName(put(value)));
+    check_hresult(WINRT_SHIM(IVpnDomainNameInfo)->get_DomainName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnDomainNameInfo<D>::DomainNameType(Windows::Networking::Vpn::VpnDomainNameType value) const
 {
-    check_hresult(static_cast<const IVpnDomainNameInfo &>(static_cast<const D &>(*this))->put_DomainNameType(value));
+    check_hresult(WINRT_SHIM(IVpnDomainNameInfo)->put_DomainNameType(value));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnDomainNameType impl_IVpnDomainNameInfo<D>::DomainNameType() const
 {
     Windows::Networking::Vpn::VpnDomainNameType value {};
-    check_hresult(static_cast<const IVpnDomainNameInfo &>(static_cast<const D &>(*this))->get_DomainNameType(&value));
+    check_hresult(WINRT_SHIM(IVpnDomainNameInfo)->get_DomainNameType(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::HostName> impl_IVpnDomainNameInfo<D>::DnsServers() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::HostName> value;
-    check_hresult(static_cast<const IVpnDomainNameInfo &>(static_cast<const D &>(*this))->get_DnsServers(put(value)));
+    check_hresult(WINRT_SHIM(IVpnDomainNameInfo)->get_DnsServers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::HostName> impl_IVpnDomainNameInfo<D>::WebProxyServers() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::HostName> value;
-    check_hresult(static_cast<const IVpnDomainNameInfo &>(static_cast<const D &>(*this))->get_WebProxyServers(put(value)));
+    check_hresult(WINRT_SHIM(IVpnDomainNameInfo)->get_WebProxyServers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> impl_IVpnDomainNameInfo2<D>::WebProxyUris() const
 {
     Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> value;
-    check_hresult(static_cast<const IVpnDomainNameInfo2 &>(static_cast<const D &>(*this))->get_WebProxyUris(put(value)));
+    check_hresult(WINRT_SHIM(IVpnDomainNameInfo2)->get_WebProxyUris(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo> impl_IVpnDomainNameAssignment<D>::DomainNameList() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo> value;
-    check_hresult(static_cast<const IVpnDomainNameAssignment &>(static_cast<const D &>(*this))->get_DomainNameList(put(value)));
+    check_hresult(WINRT_SHIM(IVpnDomainNameAssignment)->get_DomainNameList(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnDomainNameAssignment<D>::ProxyAutoConfigurationUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(static_cast<const IVpnDomainNameAssignment &>(static_cast<const D &>(*this))->put_ProxyAutoConfigurationUri(get(value)));
+    check_hresult(WINRT_SHIM(IVpnDomainNameAssignment)->put_ProxyAutoConfigurationUri(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IVpnDomainNameAssignment<D>::ProxyAutoConfigurationUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(static_cast<const IVpnDomainNameAssignment &>(static_cast<const D &>(*this))->get_ProxyAutoConfigurationUri(put(value)));
+    check_hresult(WINRT_SHIM(IVpnDomainNameAssignment)->get_ProxyAutoConfigurationUri(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnAppId impl_IVpnAppIdFactory<D>::Create(Windows::Networking::Vpn::VpnAppIdType type, hstring_ref value) const
 {
     Windows::Networking::Vpn::VpnAppId result { nullptr };
-    check_hresult(static_cast<const IVpnAppIdFactory &>(static_cast<const D &>(*this))->abi_Create(type, get(value), put(result)));
+    check_hresult(WINRT_SHIM(IVpnAppIdFactory)->abi_Create(type, get(value), put(result)));
     return result;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnAppIdType impl_IVpnAppId<D>::Type() const
 {
     Windows::Networking::Vpn::VpnAppIdType value {};
-    check_hresult(static_cast<const IVpnAppId &>(static_cast<const D &>(*this))->get_Type(&value));
+    check_hresult(WINRT_SHIM(IVpnAppId)->get_Type(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnAppId<D>::Type(Windows::Networking::Vpn::VpnAppIdType value) const
 {
-    check_hresult(static_cast<const IVpnAppId &>(static_cast<const D &>(*this))->put_Type(value));
+    check_hresult(WINRT_SHIM(IVpnAppId)->put_Type(value));
 }
 
 template <typename D> hstring impl_IVpnAppId<D>::Value() const
 {
     hstring value;
-    check_hresult(static_cast<const IVpnAppId &>(static_cast<const D &>(*this))->get_Value(put(value)));
+    check_hresult(WINRT_SHIM(IVpnAppId)->get_Value(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnAppId<D>::Value(hstring_ref value) const
 {
-    check_hresult(static_cast<const IVpnAppId &>(static_cast<const D &>(*this))->put_Value(get(value)));
+    check_hresult(WINRT_SHIM(IVpnAppId)->put_Value(get(value)));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnTrafficFilter impl_IVpnTrafficFilterFactory<D>::Create(const Windows::Networking::Vpn::VpnAppId & appId) const
 {
     Windows::Networking::Vpn::VpnTrafficFilter result { nullptr };
-    check_hresult(static_cast<const IVpnTrafficFilterFactory &>(static_cast<const D &>(*this))->abi_Create(get(appId), put(result)));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilterFactory)->abi_Create(get(appId), put(result)));
     return result;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnAppId impl_IVpnTrafficFilter<D>::AppId() const
 {
     Windows::Networking::Vpn::VpnAppId value { nullptr };
-    check_hresult(static_cast<const IVpnTrafficFilter &>(static_cast<const D &>(*this))->get_AppId(put(value)));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_AppId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnTrafficFilter<D>::AppId(const Windows::Networking::Vpn::VpnAppId & value) const
 {
-    check_hresult(static_cast<const IVpnTrafficFilter &>(static_cast<const D &>(*this))->put_AppId(get(value)));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->put_AppId(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVpnTrafficFilter<D>::AppClaims() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IVpnTrafficFilter &>(static_cast<const D &>(*this))->get_AppClaims(put(value)));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_AppClaims(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnIPProtocol impl_IVpnTrafficFilter<D>::Protocol() const
 {
     Windows::Networking::Vpn::VpnIPProtocol value {};
-    check_hresult(static_cast<const IVpnTrafficFilter &>(static_cast<const D &>(*this))->get_Protocol(&value));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_Protocol(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnTrafficFilter<D>::Protocol(Windows::Networking::Vpn::VpnIPProtocol value) const
 {
-    check_hresult(static_cast<const IVpnTrafficFilter &>(static_cast<const D &>(*this))->put_Protocol(value));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->put_Protocol(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVpnTrafficFilter<D>::LocalPortRanges() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IVpnTrafficFilter &>(static_cast<const D &>(*this))->get_LocalPortRanges(put(value)));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_LocalPortRanges(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVpnTrafficFilter<D>::RemotePortRanges() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IVpnTrafficFilter &>(static_cast<const D &>(*this))->get_RemotePortRanges(put(value)));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_RemotePortRanges(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVpnTrafficFilter<D>::LocalAddressRanges() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IVpnTrafficFilter &>(static_cast<const D &>(*this))->get_LocalAddressRanges(put(value)));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_LocalAddressRanges(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVpnTrafficFilter<D>::RemoteAddressRanges() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IVpnTrafficFilter &>(static_cast<const D &>(*this))->get_RemoteAddressRanges(put(value)));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_RemoteAddressRanges(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnRoutingPolicyType impl_IVpnTrafficFilter<D>::RoutingPolicyType() const
 {
     Windows::Networking::Vpn::VpnRoutingPolicyType value {};
-    check_hresult(static_cast<const IVpnTrafficFilter &>(static_cast<const D &>(*this))->get_RoutingPolicyType(&value));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->get_RoutingPolicyType(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnTrafficFilter<D>::RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType value) const
 {
-    check_hresult(static_cast<const IVpnTrafficFilter &>(static_cast<const D &>(*this))->put_RoutingPolicyType(value));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilter)->put_RoutingPolicyType(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnTrafficFilter> impl_IVpnTrafficFilterAssignment<D>::TrafficFilterList() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnTrafficFilter> value;
-    check_hresult(static_cast<const IVpnTrafficFilterAssignment &>(static_cast<const D &>(*this))->get_TrafficFilterList(put(value)));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilterAssignment)->get_TrafficFilterList(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IVpnTrafficFilterAssignment<D>::AllowOutbound() const
 {
     bool value {};
-    check_hresult(static_cast<const IVpnTrafficFilterAssignment &>(static_cast<const D &>(*this))->get_AllowOutbound(&value));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilterAssignment)->get_AllowOutbound(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnTrafficFilterAssignment<D>::AllowOutbound(bool value) const
 {
-    check_hresult(static_cast<const IVpnTrafficFilterAssignment &>(static_cast<const D &>(*this))->put_AllowOutbound(value));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilterAssignment)->put_AllowOutbound(value));
 }
 
 template <typename D> bool impl_IVpnTrafficFilterAssignment<D>::AllowInbound() const
 {
     bool value {};
-    check_hresult(static_cast<const IVpnTrafficFilterAssignment &>(static_cast<const D &>(*this))->get_AllowInbound(&value));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilterAssignment)->get_AllowInbound(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnTrafficFilterAssignment<D>::AllowInbound(bool value) const
 {
-    check_hresult(static_cast<const IVpnTrafficFilterAssignment &>(static_cast<const D &>(*this))->put_AllowInbound(value));
+    check_hresult(WINRT_SHIM(IVpnTrafficFilterAssignment)->put_AllowInbound(value));
 }
 
 template <typename D> hstring impl_IVpnProfile<D>::ProfileName() const
 {
     hstring value;
-    check_hresult(static_cast<const IVpnProfile &>(static_cast<const D &>(*this))->get_ProfileName(put(value)));
+    check_hresult(WINRT_SHIM(IVpnProfile)->get_ProfileName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnProfile<D>::ProfileName(hstring_ref value) const
 {
-    check_hresult(static_cast<const IVpnProfile &>(static_cast<const D &>(*this))->put_ProfileName(get(value)));
+    check_hresult(WINRT_SHIM(IVpnProfile)->put_ProfileName(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnAppId> impl_IVpnProfile<D>::AppTriggers() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnAppId> value;
-    check_hresult(static_cast<const IVpnProfile &>(static_cast<const D &>(*this))->get_AppTriggers(put(value)));
+    check_hresult(WINRT_SHIM(IVpnProfile)->get_AppTriggers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> impl_IVpnProfile<D>::Routes() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> value;
-    check_hresult(static_cast<const IVpnProfile &>(static_cast<const D &>(*this))->get_Routes(put(value)));
+    check_hresult(WINRT_SHIM(IVpnProfile)->get_Routes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo> impl_IVpnProfile<D>::DomainNameInfoList() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo> value;
-    check_hresult(static_cast<const IVpnProfile &>(static_cast<const D &>(*this))->get_DomainNameInfoList(put(value)));
+    check_hresult(WINRT_SHIM(IVpnProfile)->get_DomainNameInfoList(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnTrafficFilter> impl_IVpnProfile<D>::TrafficFilters() const
 {
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnTrafficFilter> value;
-    check_hresult(static_cast<const IVpnProfile &>(static_cast<const D &>(*this))->get_TrafficFilters(put(value)));
+    check_hresult(WINRT_SHIM(IVpnProfile)->get_TrafficFilters(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IVpnProfile<D>::RememberCredentials() const
 {
     bool value {};
-    check_hresult(static_cast<const IVpnProfile &>(static_cast<const D &>(*this))->get_RememberCredentials(&value));
+    check_hresult(WINRT_SHIM(IVpnProfile)->get_RememberCredentials(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnProfile<D>::RememberCredentials(bool value) const
 {
-    check_hresult(static_cast<const IVpnProfile &>(static_cast<const D &>(*this))->put_RememberCredentials(value));
+    check_hresult(WINRT_SHIM(IVpnProfile)->put_RememberCredentials(value));
 }
 
 template <typename D> bool impl_IVpnProfile<D>::AlwaysOn() const
 {
     bool value {};
-    check_hresult(static_cast<const IVpnProfile &>(static_cast<const D &>(*this))->get_AlwaysOn(&value));
+    check_hresult(WINRT_SHIM(IVpnProfile)->get_AlwaysOn(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnProfile<D>::AlwaysOn(bool value) const
 {
-    check_hresult(static_cast<const IVpnProfile &>(static_cast<const D &>(*this))->put_AlwaysOn(value));
+    check_hresult(WINRT_SHIM(IVpnProfile)->put_AlwaysOn(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> impl_IVpnPlugInProfile<D>::ServerUris() const
 {
     Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> value;
-    check_hresult(static_cast<const IVpnPlugInProfile &>(static_cast<const D &>(*this))->get_ServerUris(put(value)));
+    check_hresult(WINRT_SHIM(IVpnPlugInProfile)->get_ServerUris(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVpnPlugInProfile<D>::CustomConfiguration() const
 {
     hstring value;
-    check_hresult(static_cast<const IVpnPlugInProfile &>(static_cast<const D &>(*this))->get_CustomConfiguration(put(value)));
+    check_hresult(WINRT_SHIM(IVpnPlugInProfile)->get_CustomConfiguration(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnPlugInProfile<D>::CustomConfiguration(hstring_ref value) const
 {
-    check_hresult(static_cast<const IVpnPlugInProfile &>(static_cast<const D &>(*this))->put_CustomConfiguration(get(value)));
+    check_hresult(WINRT_SHIM(IVpnPlugInProfile)->put_CustomConfiguration(get(value)));
 }
 
 template <typename D> hstring impl_IVpnPlugInProfile<D>::VpnPluginPackageFamilyName() const
 {
     hstring value;
-    check_hresult(static_cast<const IVpnPlugInProfile &>(static_cast<const D &>(*this))->get_VpnPluginPackageFamilyName(put(value)));
+    check_hresult(WINRT_SHIM(IVpnPlugInProfile)->get_VpnPluginPackageFamilyName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVpnPlugInProfile<D>::VpnPluginPackageFamilyName(hstring_ref value) const
 {
-    check_hresult(static_cast<const IVpnPlugInProfile &>(static_cast<const D &>(*this))->put_VpnPluginPackageFamilyName(get(value)));
+    check_hresult(WINRT_SHIM(IVpnPlugInProfile)->put_VpnPluginPackageFamilyName(get(value)));
 }
 
 template <typename D> bool impl_IVpnPlugInProfile2<D>::RequireVpnClientAppUI() const
 {
     bool value {};
-    check_hresult(static_cast<const IVpnPlugInProfile2 &>(static_cast<const D &>(*this))->get_RequireVpnClientAppUI(&value));
+    check_hresult(WINRT_SHIM(IVpnPlugInProfile2)->get_RequireVpnClientAppUI(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnPlugInProfile2<D>::RequireVpnClientAppUI(bool value) const
 {
-    check_hresult(static_cast<const IVpnPlugInProfile2 &>(static_cast<const D &>(*this))->put_RequireVpnClientAppUI(value));
+    check_hresult(WINRT_SHIM(IVpnPlugInProfile2)->put_RequireVpnClientAppUI(value));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnManagementConnectionStatus impl_IVpnPlugInProfile2<D>::ConnectionStatus() const
 {
     Windows::Networking::Vpn::VpnManagementConnectionStatus value {};
-    check_hresult(static_cast<const IVpnPlugInProfile2 &>(static_cast<const D &>(*this))->get_ConnectionStatus(&value));
+    check_hresult(WINRT_SHIM(IVpnPlugInProfile2)->get_ConnectionStatus(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVpnNativeProfile<D>::Servers() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IVpnNativeProfile &>(static_cast<const D &>(*this))->get_Servers(put(value)));
+    check_hresult(WINRT_SHIM(IVpnNativeProfile)->get_Servers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Vpn::VpnRoutingPolicyType impl_IVpnNativeProfile<D>::RoutingPolicyType() const
 {
     Windows::Networking::Vpn::VpnRoutingPolicyType value {};
-    check_hresult(static_cast<const IVpnNativeProfile &>(static_cast<const D &>(*this))->get_RoutingPolicyType(&value));
+    check_hresult(WINRT_SHIM(IVpnNativeProfile)->get_RoutingPolicyType(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnNativeProfile<D>::RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType value) const
 {
-    check_hresult(static_cast<const IVpnNativeProfile &>(static_cast<const D &>(*this))->put_RoutingPolicyType(value));
+    check_hresult(WINRT_SHIM(IVpnNativeProfile)->put_RoutingPolicyType(value));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnNativeProtocolType impl_IVpnNativeProfile<D>::NativeProtocolType() const
 {
     Windows::Networking::Vpn::VpnNativeProtocolType value {};
-    check_hresult(static_cast<const IVpnNativeProfile &>(static_cast<const D &>(*this))->get_NativeProtocolType(&value));
+    check_hresult(WINRT_SHIM(IVpnNativeProfile)->get_NativeProtocolType(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnNativeProfile<D>::NativeProtocolType(Windows::Networking::Vpn::VpnNativeProtocolType value) const
 {
-    check_hresult(static_cast<const IVpnNativeProfile &>(static_cast<const D &>(*this))->put_NativeProtocolType(value));
+    check_hresult(WINRT_SHIM(IVpnNativeProfile)->put_NativeProtocolType(value));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnAuthenticationMethod impl_IVpnNativeProfile<D>::UserAuthenticationMethod() const
 {
     Windows::Networking::Vpn::VpnAuthenticationMethod value {};
-    check_hresult(static_cast<const IVpnNativeProfile &>(static_cast<const D &>(*this))->get_UserAuthenticationMethod(&value));
+    check_hresult(WINRT_SHIM(IVpnNativeProfile)->get_UserAuthenticationMethod(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnNativeProfile<D>::UserAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod value) const
 {
-    check_hresult(static_cast<const IVpnNativeProfile &>(static_cast<const D &>(*this))->put_UserAuthenticationMethod(value));
+    check_hresult(WINRT_SHIM(IVpnNativeProfile)->put_UserAuthenticationMethod(value));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnAuthenticationMethod impl_IVpnNativeProfile<D>::TunnelAuthenticationMethod() const
 {
     Windows::Networking::Vpn::VpnAuthenticationMethod value {};
-    check_hresult(static_cast<const IVpnNativeProfile &>(static_cast<const D &>(*this))->get_TunnelAuthenticationMethod(&value));
+    check_hresult(WINRT_SHIM(IVpnNativeProfile)->get_TunnelAuthenticationMethod(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnNativeProfile<D>::TunnelAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod value) const
 {
-    check_hresult(static_cast<const IVpnNativeProfile &>(static_cast<const D &>(*this))->put_TunnelAuthenticationMethod(value));
+    check_hresult(WINRT_SHIM(IVpnNativeProfile)->put_TunnelAuthenticationMethod(value));
 }
 
 template <typename D> hstring impl_IVpnNativeProfile<D>::EapConfiguration() const
 {
     hstring Value;
-    check_hresult(static_cast<const IVpnNativeProfile &>(static_cast<const D &>(*this))->get_EapConfiguration(put(Value)));
+    check_hresult(WINRT_SHIM(IVpnNativeProfile)->get_EapConfiguration(put(Value)));
     return Value;
 }
 
 template <typename D> void impl_IVpnNativeProfile<D>::EapConfiguration(hstring_ref value) const
 {
-    check_hresult(static_cast<const IVpnNativeProfile &>(static_cast<const D &>(*this))->put_EapConfiguration(get(value)));
+    check_hresult(WINRT_SHIM(IVpnNativeProfile)->put_EapConfiguration(get(value)));
 }
 
 template <typename D> bool impl_IVpnNativeProfile2<D>::RequireVpnClientAppUI() const
 {
     bool value {};
-    check_hresult(static_cast<const IVpnNativeProfile2 &>(static_cast<const D &>(*this))->get_RequireVpnClientAppUI(&value));
+    check_hresult(WINRT_SHIM(IVpnNativeProfile2)->get_RequireVpnClientAppUI(&value));
     return value;
 }
 
 template <typename D> void impl_IVpnNativeProfile2<D>::RequireVpnClientAppUI(bool value) const
 {
-    check_hresult(static_cast<const IVpnNativeProfile2 &>(static_cast<const D &>(*this))->put_RequireVpnClientAppUI(value));
+    check_hresult(WINRT_SHIM(IVpnNativeProfile2)->put_RequireVpnClientAppUI(value));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnManagementConnectionStatus impl_IVpnNativeProfile2<D>::ConnectionStatus() const
 {
     Windows::Networking::Vpn::VpnManagementConnectionStatus value {};
-    check_hresult(static_cast<const IVpnNativeProfile2 &>(static_cast<const D &>(*this))->get_ConnectionStatus(&value));
+    check_hresult(WINRT_SHIM(IVpnNativeProfile2)->get_ConnectionStatus(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::AddProfileFromXmlAsync(hstring_ref xml) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> operation;
-    check_hresult(static_cast<const IVpnManagementAgent &>(static_cast<const D &>(*this))->abi_AddProfileFromXmlAsync(get(xml), put(operation)));
+    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_AddProfileFromXmlAsync(get(xml), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::AddProfileFromObjectAsync(const Windows::Networking::Vpn::IVpnProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> operation;
-    check_hresult(static_cast<const IVpnManagementAgent &>(static_cast<const D &>(*this))->abi_AddProfileFromObjectAsync(get(profile), put(operation)));
+    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_AddProfileFromObjectAsync(get(profile), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::UpdateProfileFromXmlAsync(hstring_ref xml) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> operation;
-    check_hresult(static_cast<const IVpnManagementAgent &>(static_cast<const D &>(*this))->abi_UpdateProfileFromXmlAsync(get(xml), put(operation)));
+    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_UpdateProfileFromXmlAsync(get(xml), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::UpdateProfileFromObjectAsync(const Windows::Networking::Vpn::IVpnProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> operation;
-    check_hresult(static_cast<const IVpnManagementAgent &>(static_cast<const D &>(*this))->abi_UpdateProfileFromObjectAsync(get(profile), put(operation)));
+    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_UpdateProfileFromObjectAsync(get(profile), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnProfile>> impl_IVpnManagementAgent<D>::GetProfilesAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnProfile>> operation;
-    check_hresult(static_cast<const IVpnManagementAgent &>(static_cast<const D &>(*this))->abi_GetProfilesAsync(put(operation)));
+    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_GetProfilesAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::DeleteProfileAsync(const Windows::Networking::Vpn::IVpnProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> operation;
-    check_hresult(static_cast<const IVpnManagementAgent &>(static_cast<const D &>(*this))->abi_DeleteProfileAsync(get(profile), put(operation)));
+    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_DeleteProfileAsync(get(profile), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::ConnectProfileAsync(const Windows::Networking::Vpn::IVpnProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> operation;
-    check_hresult(static_cast<const IVpnManagementAgent &>(static_cast<const D &>(*this))->abi_ConnectProfileAsync(get(profile), put(operation)));
+    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_ConnectProfileAsync(get(profile), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::ConnectProfileWithPasswordCredentialAsync(const Windows::Networking::Vpn::IVpnProfile & profile, const Windows::Security::Credentials::PasswordCredential & passwordCredential) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> operation;
-    check_hresult(static_cast<const IVpnManagementAgent &>(static_cast<const D &>(*this))->abi_ConnectProfileWithPasswordCredentialAsync(get(profile), get(passwordCredential), put(operation)));
+    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_ConnectProfileWithPasswordCredentialAsync(get(profile), get(passwordCredential), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> impl_IVpnManagementAgent<D>::DisconnectProfileAsync(const Windows::Networking::Vpn::IVpnProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> operation;
-    check_hresult(static_cast<const IVpnManagementAgent &>(static_cast<const D &>(*this))->abi_DisconnectProfileAsync(get(profile), put(operation)));
+    check_hresult(WINRT_SHIM(IVpnManagementAgent)->abi_DisconnectProfileAsync(get(profile), put(operation)));
     return operation;
 }
 

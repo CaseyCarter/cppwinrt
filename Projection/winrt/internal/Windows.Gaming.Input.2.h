@@ -145,7 +145,6 @@ struct IArcadeStick :
     impl::require<IArcadeStick, Windows::Gaming::Input::IGameController>
 {
     IArcadeStick(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IArcadeStick>(m_ptr); }
 };
 
 struct IArcadeStickStatics :
@@ -153,7 +152,6 @@ struct IArcadeStickStatics :
     impl::consume<IArcadeStickStatics>
 {
     IArcadeStickStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IArcadeStickStatics>(m_ptr); }
 };
 
 struct IGameController :
@@ -161,7 +159,6 @@ struct IGameController :
     impl::consume<IGameController>
 {
     IGameController(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGameController>(m_ptr); }
 };
 
 struct IGamepad :
@@ -170,7 +167,6 @@ struct IGamepad :
     impl::require<IGamepad, Windows::Gaming::Input::IGameController>
 {
     IGamepad(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGamepad>(m_ptr); }
 };
 
 struct IGamepad2 :
@@ -179,7 +175,6 @@ struct IGamepad2 :
     impl::require<IGamepad2, Windows::Gaming::Input::IGameController, Windows::Gaming::Input::IGamepad>
 {
     IGamepad2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGamepad2>(m_ptr); }
 };
 
 struct IGamepadStatics :
@@ -187,7 +182,6 @@ struct IGamepadStatics :
     impl::consume<IGamepadStatics>
 {
     IGamepadStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IGamepadStatics>(m_ptr); }
 };
 
 struct IHeadset :
@@ -195,7 +189,6 @@ struct IHeadset :
     impl::consume<IHeadset>
 {
     IHeadset(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHeadset>(m_ptr); }
 };
 
 struct IRacingWheel :
@@ -204,7 +197,6 @@ struct IRacingWheel :
     impl::require<IRacingWheel, Windows::Gaming::Input::IGameController>
 {
     IRacingWheel(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRacingWheel>(m_ptr); }
 };
 
 struct IRacingWheelStatics :
@@ -212,7 +204,6 @@ struct IRacingWheelStatics :
     impl::consume<IRacingWheelStatics>
 {
     IRacingWheelStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IRacingWheelStatics>(m_ptr); }
 };
 
 struct IUINavigationController :
@@ -221,7 +212,6 @@ struct IUINavigationController :
     impl::require<IUINavigationController, Windows::Gaming::Input::IGameController>
 {
     IUINavigationController(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUINavigationController>(m_ptr); }
 };
 
 struct IUINavigationControllerStatics :
@@ -229,7 +219,6 @@ struct IUINavigationControllerStatics :
     impl::consume<IUINavigationControllerStatics>
 {
     IUINavigationControllerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IUINavigationControllerStatics>(m_ptr); }
 };
 
 }

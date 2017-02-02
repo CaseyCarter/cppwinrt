@@ -86,3 +86,5 @@ using quaternion = winrt::Windows::Foundation::Numerics::quaternion;
 }
 
 #endif
+
+#define WINRT_SHIM(Type) (*(abi<Type> **)&static_cast<const Type &>(static_cast<const D &>(*this)))

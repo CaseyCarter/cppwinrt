@@ -48,7 +48,6 @@ namespace Windows::Devices::Perception::Provider {
 struct PerceptionStartFaceAuthenticationHandler : Windows::IUnknown
 {
     PerceptionStartFaceAuthenticationHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<PerceptionStartFaceAuthenticationHandler>(m_ptr); }
     template <typename L> PerceptionStartFaceAuthenticationHandler(L lambda);
     template <typename F> PerceptionStartFaceAuthenticationHandler (F * function);
     template <typename O, typename M> PerceptionStartFaceAuthenticationHandler(O * object, M method);
@@ -58,7 +57,6 @@ struct PerceptionStartFaceAuthenticationHandler : Windows::IUnknown
 struct PerceptionStopFaceAuthenticationHandler : Windows::IUnknown
 {
     PerceptionStopFaceAuthenticationHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<PerceptionStopFaceAuthenticationHandler>(m_ptr); }
     template <typename L> PerceptionStopFaceAuthenticationHandler(L lambda);
     template <typename F> PerceptionStopFaceAuthenticationHandler (F * function);
     template <typename O, typename M> PerceptionStopFaceAuthenticationHandler(O * object, M method);
@@ -70,7 +68,6 @@ struct IKnownPerceptionFrameKindStatics :
     impl::consume<IKnownPerceptionFrameKindStatics>
 {
     IKnownPerceptionFrameKindStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownPerceptionFrameKindStatics>(m_ptr); }
 };
 
 struct IPerceptionControlGroup :
@@ -78,7 +75,6 @@ struct IPerceptionControlGroup :
     impl::consume<IPerceptionControlGroup>
 {
     IPerceptionControlGroup(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionControlGroup>(m_ptr); }
 };
 
 struct IPerceptionControlGroupFactory :
@@ -86,7 +82,6 @@ struct IPerceptionControlGroupFactory :
     impl::consume<IPerceptionControlGroupFactory>
 {
     IPerceptionControlGroupFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionControlGroupFactory>(m_ptr); }
 };
 
 struct IPerceptionCorrelation :
@@ -94,7 +89,6 @@ struct IPerceptionCorrelation :
     impl::consume<IPerceptionCorrelation>
 {
     IPerceptionCorrelation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionCorrelation>(m_ptr); }
 };
 
 struct IPerceptionCorrelationFactory :
@@ -102,7 +96,6 @@ struct IPerceptionCorrelationFactory :
     impl::consume<IPerceptionCorrelationFactory>
 {
     IPerceptionCorrelationFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionCorrelationFactory>(m_ptr); }
 };
 
 struct IPerceptionCorrelationGroup :
@@ -110,7 +103,6 @@ struct IPerceptionCorrelationGroup :
     impl::consume<IPerceptionCorrelationGroup>
 {
     IPerceptionCorrelationGroup(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionCorrelationGroup>(m_ptr); }
 };
 
 struct IPerceptionCorrelationGroupFactory :
@@ -118,7 +110,6 @@ struct IPerceptionCorrelationGroupFactory :
     impl::consume<IPerceptionCorrelationGroupFactory>
 {
     IPerceptionCorrelationGroupFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionCorrelationGroupFactory>(m_ptr); }
 };
 
 struct IPerceptionFaceAuthenticationGroup :
@@ -126,7 +117,6 @@ struct IPerceptionFaceAuthenticationGroup :
     impl::consume<IPerceptionFaceAuthenticationGroup>
 {
     IPerceptionFaceAuthenticationGroup(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionFaceAuthenticationGroup>(m_ptr); }
 };
 
 struct IPerceptionFaceAuthenticationGroupFactory :
@@ -134,7 +124,6 @@ struct IPerceptionFaceAuthenticationGroupFactory :
     impl::consume<IPerceptionFaceAuthenticationGroupFactory>
 {
     IPerceptionFaceAuthenticationGroupFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionFaceAuthenticationGroupFactory>(m_ptr); }
 };
 
 struct IPerceptionFrame :
@@ -142,7 +131,6 @@ struct IPerceptionFrame :
     impl::consume<IPerceptionFrame>
 {
     IPerceptionFrame(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionFrame>(m_ptr); }
 };
 
 struct IPerceptionFrameProvider :
@@ -151,7 +139,6 @@ struct IPerceptionFrameProvider :
     impl::require<IPerceptionFrameProvider, Windows::Foundation::IClosable>
 {
     IPerceptionFrameProvider(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionFrameProvider>(m_ptr); }
 };
 
 struct IPerceptionFrameProviderInfo :
@@ -159,7 +146,6 @@ struct IPerceptionFrameProviderInfo :
     impl::consume<IPerceptionFrameProviderInfo>
 {
     IPerceptionFrameProviderInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionFrameProviderInfo>(m_ptr); }
 };
 
 struct IPerceptionFrameProviderManager :
@@ -168,7 +154,6 @@ struct IPerceptionFrameProviderManager :
     impl::require<IPerceptionFrameProviderManager, Windows::Foundation::IClosable>
 {
     IPerceptionFrameProviderManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionFrameProviderManager>(m_ptr); }
 };
 
 struct IPerceptionFrameProviderManagerServiceStatics :
@@ -176,7 +161,6 @@ struct IPerceptionFrameProviderManagerServiceStatics :
     impl::consume<IPerceptionFrameProviderManagerServiceStatics>
 {
     IPerceptionFrameProviderManagerServiceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionFrameProviderManagerServiceStatics>(m_ptr); }
 };
 
 struct IPerceptionPropertyChangeRequest :
@@ -184,7 +168,6 @@ struct IPerceptionPropertyChangeRequest :
     impl::consume<IPerceptionPropertyChangeRequest>
 {
     IPerceptionPropertyChangeRequest(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionPropertyChangeRequest>(m_ptr); }
 };
 
 struct IPerceptionVideoFrameAllocator :
@@ -193,7 +176,6 @@ struct IPerceptionVideoFrameAllocator :
     impl::require<IPerceptionVideoFrameAllocator, Windows::Foundation::IClosable>
 {
     IPerceptionVideoFrameAllocator(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionVideoFrameAllocator>(m_ptr); }
 };
 
 struct IPerceptionVideoFrameAllocatorFactory :
@@ -201,7 +183,6 @@ struct IPerceptionVideoFrameAllocatorFactory :
     impl::consume<IPerceptionVideoFrameAllocatorFactory>
 {
     IPerceptionVideoFrameAllocatorFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IPerceptionVideoFrameAllocatorFactory>(m_ptr); }
 };
 
 }

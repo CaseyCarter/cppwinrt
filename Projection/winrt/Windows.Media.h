@@ -2269,654 +2269,654 @@ namespace Windows::Media {
 template <typename D> Windows::Foundation::Collections::ValueSet impl_IMediaProcessingTriggerDetails<D>::Arguments() const
 {
     Windows::Foundation::Collections::ValueSet value { nullptr };
-    check_hresult(static_cast<const IMediaProcessingTriggerDetails &>(static_cast<const D &>(*this))->get_Arguments(put(value)));
+    check_hresult(WINRT_SHIM(IMediaProcessingTriggerDetails)->get_Arguments(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::VideoFrame impl_IVideoFrameFactory<D>::Create(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height) const
 {
     Windows::Media::VideoFrame value { nullptr };
-    check_hresult(static_cast<const IVideoFrameFactory &>(static_cast<const D &>(*this))->abi_Create(format, width, height, put(value)));
+    check_hresult(WINRT_SHIM(IVideoFrameFactory)->abi_Create(format, width, height, put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::VideoFrame impl_IVideoFrameFactory<D>::CreateWithAlpha(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const
 {
     Windows::Media::VideoFrame value { nullptr };
-    check_hresult(static_cast<const IVideoFrameFactory &>(static_cast<const D &>(*this))->abi_CreateWithAlpha(format, width, height, alpha, put(value)));
+    check_hresult(WINRT_SHIM(IVideoFrameFactory)->abi_CreateWithAlpha(format, width, height, alpha, put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::AudioFrame impl_IAudioFrameFactory<D>::Create(uint32_t capacity) const
 {
     Windows::Media::AudioFrame value { nullptr };
-    check_hresult(static_cast<const IAudioFrameFactory &>(static_cast<const D &>(*this))->abi_Create(capacity, put(value)));
+    check_hresult(WINRT_SHIM(IAudioFrameFactory)->abi_Create(capacity, put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaFrame<D>::Type() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaFrame &>(static_cast<const D &>(*this))->get_Type(put(value)));
+    check_hresult(WINRT_SHIM(IMediaFrame)->get_Type(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMediaFrame<D>::IsReadOnly() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaFrame &>(static_cast<const D &>(*this))->get_IsReadOnly(&value));
+    check_hresult(WINRT_SHIM(IMediaFrame)->get_IsReadOnly(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaFrame<D>::RelativeTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(static_cast<const IMediaFrame &>(static_cast<const D &>(*this))->put_RelativeTime(get(value)));
+    check_hresult(WINRT_SHIM(IMediaFrame)->put_RelativeTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IMediaFrame<D>::RelativeTime() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(static_cast<const IMediaFrame &>(static_cast<const D &>(*this))->get_RelativeTime(put(value)));
+    check_hresult(WINRT_SHIM(IMediaFrame)->get_RelativeTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaFrame<D>::SystemRelativeTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(static_cast<const IMediaFrame &>(static_cast<const D &>(*this))->put_SystemRelativeTime(get(value)));
+    check_hresult(WINRT_SHIM(IMediaFrame)->put_SystemRelativeTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IMediaFrame<D>::SystemRelativeTime() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(static_cast<const IMediaFrame &>(static_cast<const D &>(*this))->get_SystemRelativeTime(put(value)));
+    check_hresult(WINRT_SHIM(IMediaFrame)->get_SystemRelativeTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaFrame<D>::Duration(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(static_cast<const IMediaFrame &>(static_cast<const D &>(*this))->put_Duration(get(value)));
+    check_hresult(WINRT_SHIM(IMediaFrame)->put_Duration(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IMediaFrame<D>::Duration() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(static_cast<const IMediaFrame &>(static_cast<const D &>(*this))->get_Duration(put(value)));
+    check_hresult(WINRT_SHIM(IMediaFrame)->get_Duration(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaFrame<D>::IsDiscontinuous(bool value) const
 {
-    check_hresult(static_cast<const IMediaFrame &>(static_cast<const D &>(*this))->put_IsDiscontinuous(value));
+    check_hresult(WINRT_SHIM(IMediaFrame)->put_IsDiscontinuous(value));
 }
 
 template <typename D> bool impl_IMediaFrame<D>::IsDiscontinuous() const
 {
     bool value {};
-    check_hresult(static_cast<const IMediaFrame &>(static_cast<const D &>(*this))->get_IsDiscontinuous(&value));
+    check_hresult(WINRT_SHIM(IMediaFrame)->get_IsDiscontinuous(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IPropertySet impl_IMediaFrame<D>::ExtendedProperties() const
 {
     Windows::Foundation::Collections::IPropertySet value;
-    check_hresult(static_cast<const IMediaFrame &>(static_cast<const D &>(*this))->get_ExtendedProperties(put(value)));
+    check_hresult(WINRT_SHIM(IMediaFrame)->get_ExtendedProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_IVideoFrame<D>::SoftwareBitmap() const
 {
     Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
-    check_hresult(static_cast<const IVideoFrame &>(static_cast<const D &>(*this))->get_SoftwareBitmap(put(value)));
+    check_hresult(WINRT_SHIM(IVideoFrame)->get_SoftwareBitmap(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IVideoFrame<D>::CopyToAsync(const Windows::Media::VideoFrame & frame) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(static_cast<const IVideoFrame &>(static_cast<const D &>(*this))->abi_CopyToAsync(get(frame), put(value)));
+    check_hresult(WINRT_SHIM(IVideoFrame)->abi_CopyToAsync(get(frame), put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface impl_IVideoFrame<D>::Direct3DSurface() const
 {
     Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface value;
-    check_hresult(static_cast<const IVideoFrame &>(static_cast<const D &>(*this))->get_Direct3DSurface(put(value)));
+    check_hresult(WINRT_SHIM(IVideoFrame)->get_Direct3DSurface(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::AudioBuffer impl_IAudioFrame<D>::LockBuffer(Windows::Media::AudioBufferAccessMode mode) const
 {
     Windows::Media::AudioBuffer value { nullptr };
-    check_hresult(static_cast<const IAudioFrame &>(static_cast<const D &>(*this))->abi_LockBuffer(mode, put(value)));
+    check_hresult(WINRT_SHIM(IAudioFrame)->abi_LockBuffer(mode, put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IAudioBuffer<D>::Capacity() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IAudioBuffer &>(static_cast<const D &>(*this))->get_Capacity(&value));
+    check_hresult(WINRT_SHIM(IAudioBuffer)->get_Capacity(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IAudioBuffer<D>::Length() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IAudioBuffer &>(static_cast<const D &>(*this))->get_Length(&value));
+    check_hresult(WINRT_SHIM(IAudioBuffer)->get_Length(&value));
     return value;
 }
 
 template <typename D> void impl_IAudioBuffer<D>::Length(uint32_t value) const
 {
-    check_hresult(static_cast<const IAudioBuffer &>(static_cast<const D &>(*this))->put_Length(value));
+    check_hresult(WINRT_SHIM(IAudioBuffer)->put_Length(value));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaMarker<D>::Time() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaMarker &>(static_cast<const D &>(*this))->get_Time(put(value)));
+    check_hresult(WINRT_SHIM(IMediaMarker)->get_Time(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaMarker<D>::MediaMarkerType() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaMarker &>(static_cast<const D &>(*this))->get_MediaMarkerType(put(value)));
+    check_hresult(WINRT_SHIM(IMediaMarker)->get_MediaMarkerType(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaMarker<D>::Text() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaMarker &>(static_cast<const D &>(*this))->get_Text(put(value)));
+    check_hresult(WINRT_SHIM(IMediaMarker)->get_Text(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::IMediaMarker> impl_IMediaMarkers<D>::Markers() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::IMediaMarker> value;
-    check_hresult(static_cast<const IMediaMarkers &>(static_cast<const D &>(*this))->get_Markers(put(value)));
+    check_hresult(WINRT_SHIM(IMediaMarkers)->get_Markers(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaMarkerTypesStatics<D>::Bookmark() const
 {
     hstring value;
-    check_hresult(static_cast<const IMediaMarkerTypesStatics &>(static_cast<const D &>(*this))->get_Bookmark(put(value)));
+    check_hresult(WINRT_SHIM(IMediaMarkerTypesStatics)->get_Bookmark(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_ISystemMediaTransportControlsTimelineProperties<D>::StartTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const ISystemMediaTransportControlsTimelineProperties &>(static_cast<const D &>(*this))->get_StartTime(put(value)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsTimelineProperties)->get_StartTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControlsTimelineProperties<D>::StartTime(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControlsTimelineProperties &>(static_cast<const D &>(*this))->put_StartTime(get(value)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsTimelineProperties)->put_StartTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_ISystemMediaTransportControlsTimelineProperties<D>::EndTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const ISystemMediaTransportControlsTimelineProperties &>(static_cast<const D &>(*this))->get_EndTime(put(value)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsTimelineProperties)->get_EndTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControlsTimelineProperties<D>::EndTime(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControlsTimelineProperties &>(static_cast<const D &>(*this))->put_EndTime(get(value)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsTimelineProperties)->put_EndTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_ISystemMediaTransportControlsTimelineProperties<D>::MinSeekTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const ISystemMediaTransportControlsTimelineProperties &>(static_cast<const D &>(*this))->get_MinSeekTime(put(value)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsTimelineProperties)->get_MinSeekTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControlsTimelineProperties<D>::MinSeekTime(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControlsTimelineProperties &>(static_cast<const D &>(*this))->put_MinSeekTime(get(value)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsTimelineProperties)->put_MinSeekTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_ISystemMediaTransportControlsTimelineProperties<D>::MaxSeekTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const ISystemMediaTransportControlsTimelineProperties &>(static_cast<const D &>(*this))->get_MaxSeekTime(put(value)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsTimelineProperties)->get_MaxSeekTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControlsTimelineProperties<D>::MaxSeekTime(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControlsTimelineProperties &>(static_cast<const D &>(*this))->put_MaxSeekTime(get(value)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsTimelineProperties)->put_MaxSeekTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_ISystemMediaTransportControlsTimelineProperties<D>::Position() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const ISystemMediaTransportControlsTimelineProperties &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsTimelineProperties)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControlsTimelineProperties<D>::Position(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControlsTimelineProperties &>(static_cast<const D &>(*this))->put_Position(get(value)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsTimelineProperties)->put_Position(get(value)));
 }
 
 template <typename D> hstring impl_IMusicDisplayProperties<D>::Title() const
 {
     hstring value;
-    check_hresult(static_cast<const IMusicDisplayProperties &>(static_cast<const D &>(*this))->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(IMusicDisplayProperties)->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMusicDisplayProperties<D>::Title(hstring_ref value) const
 {
-    check_hresult(static_cast<const IMusicDisplayProperties &>(static_cast<const D &>(*this))->put_Title(get(value)));
+    check_hresult(WINRT_SHIM(IMusicDisplayProperties)->put_Title(get(value)));
 }
 
 template <typename D> hstring impl_IMusicDisplayProperties<D>::AlbumArtist() const
 {
     hstring value;
-    check_hresult(static_cast<const IMusicDisplayProperties &>(static_cast<const D &>(*this))->get_AlbumArtist(put(value)));
+    check_hresult(WINRT_SHIM(IMusicDisplayProperties)->get_AlbumArtist(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMusicDisplayProperties<D>::AlbumArtist(hstring_ref value) const
 {
-    check_hresult(static_cast<const IMusicDisplayProperties &>(static_cast<const D &>(*this))->put_AlbumArtist(get(value)));
+    check_hresult(WINRT_SHIM(IMusicDisplayProperties)->put_AlbumArtist(get(value)));
 }
 
 template <typename D> hstring impl_IMusicDisplayProperties<D>::Artist() const
 {
     hstring value;
-    check_hresult(static_cast<const IMusicDisplayProperties &>(static_cast<const D &>(*this))->get_Artist(put(value)));
+    check_hresult(WINRT_SHIM(IMusicDisplayProperties)->get_Artist(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMusicDisplayProperties<D>::Artist(hstring_ref value) const
 {
-    check_hresult(static_cast<const IMusicDisplayProperties &>(static_cast<const D &>(*this))->put_Artist(get(value)));
+    check_hresult(WINRT_SHIM(IMusicDisplayProperties)->put_Artist(get(value)));
 }
 
 template <typename D> hstring impl_IMusicDisplayProperties2<D>::AlbumTitle() const
 {
     hstring value;
-    check_hresult(static_cast<const IMusicDisplayProperties2 &>(static_cast<const D &>(*this))->get_AlbumTitle(put(value)));
+    check_hresult(WINRT_SHIM(IMusicDisplayProperties2)->get_AlbumTitle(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMusicDisplayProperties2<D>::AlbumTitle(hstring_ref value) const
 {
-    check_hresult(static_cast<const IMusicDisplayProperties2 &>(static_cast<const D &>(*this))->put_AlbumTitle(get(value)));
+    check_hresult(WINRT_SHIM(IMusicDisplayProperties2)->put_AlbumTitle(get(value)));
 }
 
 template <typename D> uint32_t impl_IMusicDisplayProperties2<D>::TrackNumber() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMusicDisplayProperties2 &>(static_cast<const D &>(*this))->get_TrackNumber(&value));
+    check_hresult(WINRT_SHIM(IMusicDisplayProperties2)->get_TrackNumber(&value));
     return value;
 }
 
 template <typename D> void impl_IMusicDisplayProperties2<D>::TrackNumber(uint32_t value) const
 {
-    check_hresult(static_cast<const IMusicDisplayProperties2 &>(static_cast<const D &>(*this))->put_TrackNumber(value));
+    check_hresult(WINRT_SHIM(IMusicDisplayProperties2)->put_TrackNumber(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IMusicDisplayProperties2<D>::Genres() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IMusicDisplayProperties2 &>(static_cast<const D &>(*this))->get_Genres(put(value)));
+    check_hresult(WINRT_SHIM(IMusicDisplayProperties2)->get_Genres(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IMusicDisplayProperties3<D>::AlbumTrackCount() const
 {
     uint32_t value {};
-    check_hresult(static_cast<const IMusicDisplayProperties3 &>(static_cast<const D &>(*this))->get_AlbumTrackCount(&value));
+    check_hresult(WINRT_SHIM(IMusicDisplayProperties3)->get_AlbumTrackCount(&value));
     return value;
 }
 
 template <typename D> void impl_IMusicDisplayProperties3<D>::AlbumTrackCount(uint32_t value) const
 {
-    check_hresult(static_cast<const IMusicDisplayProperties3 &>(static_cast<const D &>(*this))->put_AlbumTrackCount(value));
+    check_hresult(WINRT_SHIM(IMusicDisplayProperties3)->put_AlbumTrackCount(value));
 }
 
 template <typename D> hstring impl_IVideoDisplayProperties<D>::Title() const
 {
     hstring value;
-    check_hresult(static_cast<const IVideoDisplayProperties &>(static_cast<const D &>(*this))->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(IVideoDisplayProperties)->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVideoDisplayProperties<D>::Title(hstring_ref value) const
 {
-    check_hresult(static_cast<const IVideoDisplayProperties &>(static_cast<const D &>(*this))->put_Title(get(value)));
+    check_hresult(WINRT_SHIM(IVideoDisplayProperties)->put_Title(get(value)));
 }
 
 template <typename D> hstring impl_IVideoDisplayProperties<D>::Subtitle() const
 {
     hstring value;
-    check_hresult(static_cast<const IVideoDisplayProperties &>(static_cast<const D &>(*this))->get_Subtitle(put(value)));
+    check_hresult(WINRT_SHIM(IVideoDisplayProperties)->get_Subtitle(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVideoDisplayProperties<D>::Subtitle(hstring_ref value) const
 {
-    check_hresult(static_cast<const IVideoDisplayProperties &>(static_cast<const D &>(*this))->put_Subtitle(get(value)));
+    check_hresult(WINRT_SHIM(IVideoDisplayProperties)->put_Subtitle(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IVideoDisplayProperties2<D>::Genres() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(static_cast<const IVideoDisplayProperties2 &>(static_cast<const D &>(*this))->get_Genres(put(value)));
+    check_hresult(WINRT_SHIM(IVideoDisplayProperties2)->get_Genres(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IImageDisplayProperties<D>::Title() const
 {
     hstring value;
-    check_hresult(static_cast<const IImageDisplayProperties &>(static_cast<const D &>(*this))->get_Title(put(value)));
+    check_hresult(WINRT_SHIM(IImageDisplayProperties)->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_IImageDisplayProperties<D>::Title(hstring_ref value) const
 {
-    check_hresult(static_cast<const IImageDisplayProperties &>(static_cast<const D &>(*this))->put_Title(get(value)));
+    check_hresult(WINRT_SHIM(IImageDisplayProperties)->put_Title(get(value)));
 }
 
 template <typename D> hstring impl_IImageDisplayProperties<D>::Subtitle() const
 {
     hstring value;
-    check_hresult(static_cast<const IImageDisplayProperties &>(static_cast<const D &>(*this))->get_Subtitle(put(value)));
+    check_hresult(WINRT_SHIM(IImageDisplayProperties)->get_Subtitle(put(value)));
     return value;
 }
 
 template <typename D> void impl_IImageDisplayProperties<D>::Subtitle(hstring_ref value) const
 {
-    check_hresult(static_cast<const IImageDisplayProperties &>(static_cast<const D &>(*this))->put_Subtitle(get(value)));
+    check_hresult(WINRT_SHIM(IImageDisplayProperties)->put_Subtitle(get(value)));
 }
 
 template <typename D> Windows::Media::MediaPlaybackType impl_ISystemMediaTransportControlsDisplayUpdater<D>::Type() const
 {
     Windows::Media::MediaPlaybackType value {};
-    check_hresult(static_cast<const ISystemMediaTransportControlsDisplayUpdater &>(static_cast<const D &>(*this))->get_Type(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsDisplayUpdater)->get_Type(&value));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControlsDisplayUpdater<D>::Type(Windows::Media::MediaPlaybackType value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControlsDisplayUpdater &>(static_cast<const D &>(*this))->put_Type(value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsDisplayUpdater)->put_Type(value));
 }
 
 template <typename D> hstring impl_ISystemMediaTransportControlsDisplayUpdater<D>::AppMediaId() const
 {
     hstring value;
-    check_hresult(static_cast<const ISystemMediaTransportControlsDisplayUpdater &>(static_cast<const D &>(*this))->get_AppMediaId(put(value)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsDisplayUpdater)->get_AppMediaId(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControlsDisplayUpdater<D>::AppMediaId(hstring_ref value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControlsDisplayUpdater &>(static_cast<const D &>(*this))->put_AppMediaId(get(value)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsDisplayUpdater)->put_AppMediaId(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::RandomAccessStreamReference impl_ISystemMediaTransportControlsDisplayUpdater<D>::Thumbnail() const
 {
     Windows::Storage::Streams::RandomAccessStreamReference value { nullptr };
-    check_hresult(static_cast<const ISystemMediaTransportControlsDisplayUpdater &>(static_cast<const D &>(*this))->get_Thumbnail(put(value)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsDisplayUpdater)->get_Thumbnail(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControlsDisplayUpdater<D>::Thumbnail(const Windows::Storage::Streams::RandomAccessStreamReference & value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControlsDisplayUpdater &>(static_cast<const D &>(*this))->put_Thumbnail(get(value)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsDisplayUpdater)->put_Thumbnail(get(value)));
 }
 
 template <typename D> Windows::Media::MusicDisplayProperties impl_ISystemMediaTransportControlsDisplayUpdater<D>::MusicProperties() const
 {
     Windows::Media::MusicDisplayProperties value { nullptr };
-    check_hresult(static_cast<const ISystemMediaTransportControlsDisplayUpdater &>(static_cast<const D &>(*this))->get_MusicProperties(put(value)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsDisplayUpdater)->get_MusicProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::VideoDisplayProperties impl_ISystemMediaTransportControlsDisplayUpdater<D>::VideoProperties() const
 {
     Windows::Media::VideoDisplayProperties value { nullptr };
-    check_hresult(static_cast<const ISystemMediaTransportControlsDisplayUpdater &>(static_cast<const D &>(*this))->get_VideoProperties(put(value)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsDisplayUpdater)->get_VideoProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::ImageDisplayProperties impl_ISystemMediaTransportControlsDisplayUpdater<D>::ImageProperties() const
 {
     Windows::Media::ImageDisplayProperties value { nullptr };
-    check_hresult(static_cast<const ISystemMediaTransportControlsDisplayUpdater &>(static_cast<const D &>(*this))->get_ImageProperties(put(value)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsDisplayUpdater)->get_ImageProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISystemMediaTransportControlsDisplayUpdater<D>::CopyFromFileAsync(Windows::Media::MediaPlaybackType type, const Windows::Storage::StorageFile & source) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(static_cast<const ISystemMediaTransportControlsDisplayUpdater &>(static_cast<const D &>(*this))->abi_CopyFromFileAsync(type, get(source), put(operation)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsDisplayUpdater)->abi_CopyFromFileAsync(type, get(source), put(operation)));
     return operation;
 }
 
 template <typename D> void impl_ISystemMediaTransportControlsDisplayUpdater<D>::ClearAll() const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControlsDisplayUpdater &>(static_cast<const D &>(*this))->abi_ClearAll());
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsDisplayUpdater)->abi_ClearAll());
 }
 
 template <typename D> void impl_ISystemMediaTransportControlsDisplayUpdater<D>::Update() const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControlsDisplayUpdater &>(static_cast<const D &>(*this))->abi_Update());
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsDisplayUpdater)->abi_Update());
 }
 
 template <typename D> Windows::Media::SystemMediaTransportControlsButton impl_ISystemMediaTransportControlsButtonPressedEventArgs<D>::Button() const
 {
     Windows::Media::SystemMediaTransportControlsButton value {};
-    check_hresult(static_cast<const ISystemMediaTransportControlsButtonPressedEventArgs &>(static_cast<const D &>(*this))->get_Button(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsButtonPressedEventArgs)->get_Button(&value));
     return value;
 }
 
 template <typename D> Windows::Media::SystemMediaTransportControlsProperty impl_ISystemMediaTransportControlsPropertyChangedEventArgs<D>::Property() const
 {
     Windows::Media::SystemMediaTransportControlsProperty value {};
-    check_hresult(static_cast<const ISystemMediaTransportControlsPropertyChangedEventArgs &>(static_cast<const D &>(*this))->get_Property(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsPropertyChangedEventArgs)->get_Property(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IPlaybackPositionChangeRequestedEventArgs<D>::RequestedPlaybackPosition() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IPlaybackPositionChangeRequestedEventArgs &>(static_cast<const D &>(*this))->get_RequestedPlaybackPosition(put(value)));
+    check_hresult(WINRT_SHIM(IPlaybackPositionChangeRequestedEventArgs)->get_RequestedPlaybackPosition(put(value)));
     return value;
 }
 
 template <typename D> double impl_IPlaybackRateChangeRequestedEventArgs<D>::RequestedPlaybackRate() const
 {
     double value {};
-    check_hresult(static_cast<const IPlaybackRateChangeRequestedEventArgs &>(static_cast<const D &>(*this))->get_RequestedPlaybackRate(&value));
+    check_hresult(WINRT_SHIM(IPlaybackRateChangeRequestedEventArgs)->get_RequestedPlaybackRate(&value));
     return value;
 }
 
 template <typename D> bool impl_IShuffleEnabledChangeRequestedEventArgs<D>::RequestedShuffleEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const IShuffleEnabledChangeRequestedEventArgs &>(static_cast<const D &>(*this))->get_RequestedShuffleEnabled(&value));
+    check_hresult(WINRT_SHIM(IShuffleEnabledChangeRequestedEventArgs)->get_RequestedShuffleEnabled(&value));
     return value;
 }
 
 template <typename D> Windows::Media::MediaPlaybackAutoRepeatMode impl_IAutoRepeatModeChangeRequestedEventArgs<D>::RequestedAutoRepeatMode() const
 {
     Windows::Media::MediaPlaybackAutoRepeatMode value {};
-    check_hresult(static_cast<const IAutoRepeatModeChangeRequestedEventArgs &>(static_cast<const D &>(*this))->get_RequestedAutoRepeatMode(&value));
+    check_hresult(WINRT_SHIM(IAutoRepeatModeChangeRequestedEventArgs)->get_RequestedAutoRepeatMode(&value));
     return value;
 }
 
 template <typename D> Windows::Media::MediaPlaybackStatus impl_ISystemMediaTransportControls<D>::PlaybackStatus() const
 {
     Windows::Media::MediaPlaybackStatus value {};
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->get_PlaybackStatus(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->get_PlaybackStatus(&value));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControls<D>::PlaybackStatus(Windows::Media::MediaPlaybackStatus value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->put_PlaybackStatus(value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->put_PlaybackStatus(value));
 }
 
 template <typename D> Windows::Media::SystemMediaTransportControlsDisplayUpdater impl_ISystemMediaTransportControls<D>::DisplayUpdater() const
 {
     Windows::Media::SystemMediaTransportControlsDisplayUpdater value { nullptr };
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->get_DisplayUpdater(put(value)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->get_DisplayUpdater(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::SoundLevel impl_ISystemMediaTransportControls<D>::SoundLevel() const
 {
     Windows::Media::SoundLevel value {};
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->get_SoundLevel(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->get_SoundLevel(&value));
     return value;
 }
 
 template <typename D> bool impl_ISystemMediaTransportControls<D>::IsEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->get_IsEnabled(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->get_IsEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControls<D>::IsEnabled(bool value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->put_IsEnabled(value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->put_IsEnabled(value));
 }
 
 template <typename D> bool impl_ISystemMediaTransportControls<D>::IsPlayEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->get_IsPlayEnabled(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->get_IsPlayEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControls<D>::IsPlayEnabled(bool value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->put_IsPlayEnabled(value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->put_IsPlayEnabled(value));
 }
 
 template <typename D> bool impl_ISystemMediaTransportControls<D>::IsStopEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->get_IsStopEnabled(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->get_IsStopEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControls<D>::IsStopEnabled(bool value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->put_IsStopEnabled(value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->put_IsStopEnabled(value));
 }
 
 template <typename D> bool impl_ISystemMediaTransportControls<D>::IsPauseEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->get_IsPauseEnabled(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->get_IsPauseEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControls<D>::IsPauseEnabled(bool value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->put_IsPauseEnabled(value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->put_IsPauseEnabled(value));
 }
 
 template <typename D> bool impl_ISystemMediaTransportControls<D>::IsRecordEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->get_IsRecordEnabled(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->get_IsRecordEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControls<D>::IsRecordEnabled(bool value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->put_IsRecordEnabled(value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->put_IsRecordEnabled(value));
 }
 
 template <typename D> bool impl_ISystemMediaTransportControls<D>::IsFastForwardEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->get_IsFastForwardEnabled(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->get_IsFastForwardEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControls<D>::IsFastForwardEnabled(bool value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->put_IsFastForwardEnabled(value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->put_IsFastForwardEnabled(value));
 }
 
 template <typename D> bool impl_ISystemMediaTransportControls<D>::IsRewindEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->get_IsRewindEnabled(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->get_IsRewindEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControls<D>::IsRewindEnabled(bool value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->put_IsRewindEnabled(value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->put_IsRewindEnabled(value));
 }
 
 template <typename D> bool impl_ISystemMediaTransportControls<D>::IsPreviousEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->get_IsPreviousEnabled(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->get_IsPreviousEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControls<D>::IsPreviousEnabled(bool value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->put_IsPreviousEnabled(value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->put_IsPreviousEnabled(value));
 }
 
 template <typename D> bool impl_ISystemMediaTransportControls<D>::IsNextEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->get_IsNextEnabled(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->get_IsNextEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControls<D>::IsNextEnabled(bool value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->put_IsNextEnabled(value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->put_IsNextEnabled(value));
 }
 
 template <typename D> bool impl_ISystemMediaTransportControls<D>::IsChannelUpEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->get_IsChannelUpEnabled(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->get_IsChannelUpEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControls<D>::IsChannelUpEnabled(bool value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->put_IsChannelUpEnabled(value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->put_IsChannelUpEnabled(value));
 }
 
 template <typename D> bool impl_ISystemMediaTransportControls<D>::IsChannelDownEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->get_IsChannelDownEnabled(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->get_IsChannelDownEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControls<D>::IsChannelDownEnabled(bool value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->put_IsChannelDownEnabled(value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->put_IsChannelDownEnabled(value));
 }
 
 template <typename D> event_token impl_ISystemMediaTransportControls<D>::ButtonPressed(const Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::SystemMediaTransportControlsButtonPressedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->add_ButtonPressed(get(handler), &token));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->add_ButtonPressed(get(handler), &token));
     return token;
 }
 
@@ -2927,13 +2927,13 @@ template <typename D> event_revoker<ISystemMediaTransportControls> impl_ISystemM
 
 template <typename D> void impl_ISystemMediaTransportControls<D>::ButtonPressed(event_token token) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->remove_ButtonPressed(token));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->remove_ButtonPressed(token));
 }
 
 template <typename D> event_token impl_ISystemMediaTransportControls<D>::PropertyChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::SystemMediaTransportControlsPropertyChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->add_PropertyChanged(get(handler), &token));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->add_PropertyChanged(get(handler), &token));
     return token;
 }
 
@@ -2944,54 +2944,54 @@ template <typename D> event_revoker<ISystemMediaTransportControls> impl_ISystemM
 
 template <typename D> void impl_ISystemMediaTransportControls<D>::PropertyChanged(event_token token) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls &>(static_cast<const D &>(*this))->remove_PropertyChanged(token));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls)->remove_PropertyChanged(token));
 }
 
 template <typename D> Windows::Media::MediaPlaybackAutoRepeatMode impl_ISystemMediaTransportControls2<D>::AutoRepeatMode() const
 {
     Windows::Media::MediaPlaybackAutoRepeatMode value {};
-    check_hresult(static_cast<const ISystemMediaTransportControls2 &>(static_cast<const D &>(*this))->get_AutoRepeatMode(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls2)->get_AutoRepeatMode(&value));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControls2<D>::AutoRepeatMode(Windows::Media::MediaPlaybackAutoRepeatMode value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls2 &>(static_cast<const D &>(*this))->put_AutoRepeatMode(value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls2)->put_AutoRepeatMode(value));
 }
 
 template <typename D> bool impl_ISystemMediaTransportControls2<D>::ShuffleEnabled() const
 {
     bool value {};
-    check_hresult(static_cast<const ISystemMediaTransportControls2 &>(static_cast<const D &>(*this))->get_ShuffleEnabled(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls2)->get_ShuffleEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControls2<D>::ShuffleEnabled(bool value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls2 &>(static_cast<const D &>(*this))->put_ShuffleEnabled(value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls2)->put_ShuffleEnabled(value));
 }
 
 template <typename D> double impl_ISystemMediaTransportControls2<D>::PlaybackRate() const
 {
     double value {};
-    check_hresult(static_cast<const ISystemMediaTransportControls2 &>(static_cast<const D &>(*this))->get_PlaybackRate(&value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls2)->get_PlaybackRate(&value));
     return value;
 }
 
 template <typename D> void impl_ISystemMediaTransportControls2<D>::PlaybackRate(double value) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls2 &>(static_cast<const D &>(*this))->put_PlaybackRate(value));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls2)->put_PlaybackRate(value));
 }
 
 template <typename D> void impl_ISystemMediaTransportControls2<D>::UpdateTimelineProperties(const Windows::Media::SystemMediaTransportControlsTimelineProperties & timelineProperties) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls2 &>(static_cast<const D &>(*this))->abi_UpdateTimelineProperties(get(timelineProperties)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls2)->abi_UpdateTimelineProperties(get(timelineProperties)));
 }
 
 template <typename D> event_token impl_ISystemMediaTransportControls2<D>::PlaybackPositionChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::PlaybackPositionChangeRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ISystemMediaTransportControls2 &>(static_cast<const D &>(*this))->add_PlaybackPositionChangeRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls2)->add_PlaybackPositionChangeRequested(get(handler), &token));
     return token;
 }
 
@@ -3002,13 +3002,13 @@ template <typename D> event_revoker<ISystemMediaTransportControls2> impl_ISystem
 
 template <typename D> void impl_ISystemMediaTransportControls2<D>::PlaybackPositionChangeRequested(event_token token) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls2 &>(static_cast<const D &>(*this))->remove_PlaybackPositionChangeRequested(token));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls2)->remove_PlaybackPositionChangeRequested(token));
 }
 
 template <typename D> event_token impl_ISystemMediaTransportControls2<D>::PlaybackRateChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::PlaybackRateChangeRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ISystemMediaTransportControls2 &>(static_cast<const D &>(*this))->add_PlaybackRateChangeRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls2)->add_PlaybackRateChangeRequested(get(handler), &token));
     return token;
 }
 
@@ -3019,13 +3019,13 @@ template <typename D> event_revoker<ISystemMediaTransportControls2> impl_ISystem
 
 template <typename D> void impl_ISystemMediaTransportControls2<D>::PlaybackRateChangeRequested(event_token token) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls2 &>(static_cast<const D &>(*this))->remove_PlaybackRateChangeRequested(token));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls2)->remove_PlaybackRateChangeRequested(token));
 }
 
 template <typename D> event_token impl_ISystemMediaTransportControls2<D>::ShuffleEnabledChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::ShuffleEnabledChangeRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ISystemMediaTransportControls2 &>(static_cast<const D &>(*this))->add_ShuffleEnabledChangeRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls2)->add_ShuffleEnabledChangeRequested(get(handler), &token));
     return token;
 }
 
@@ -3036,13 +3036,13 @@ template <typename D> event_revoker<ISystemMediaTransportControls2> impl_ISystem
 
 template <typename D> void impl_ISystemMediaTransportControls2<D>::ShuffleEnabledChangeRequested(event_token token) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls2 &>(static_cast<const D &>(*this))->remove_ShuffleEnabledChangeRequested(token));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls2)->remove_ShuffleEnabledChangeRequested(token));
 }
 
 template <typename D> event_token impl_ISystemMediaTransportControls2<D>::AutoRepeatModeChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::AutoRepeatModeChangeRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(static_cast<const ISystemMediaTransportControls2 &>(static_cast<const D &>(*this))->add_AutoRepeatModeChangeRequested(get(handler), &token));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls2)->add_AutoRepeatModeChangeRequested(get(handler), &token));
     return token;
 }
 
@@ -3053,138 +3053,138 @@ template <typename D> event_revoker<ISystemMediaTransportControls2> impl_ISystem
 
 template <typename D> void impl_ISystemMediaTransportControls2<D>::AutoRepeatModeChangeRequested(event_token token) const
 {
-    check_hresult(static_cast<const ISystemMediaTransportControls2 &>(static_cast<const D &>(*this))->remove_AutoRepeatModeChangeRequested(token));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControls2)->remove_AutoRepeatModeChangeRequested(token));
 }
 
 template <typename D> Windows::Media::SystemMediaTransportControls impl_ISystemMediaTransportControlsStatics<D>::GetForCurrentView() const
 {
     Windows::Media::SystemMediaTransportControls mediaControl { nullptr };
-    check_hresult(static_cast<const ISystemMediaTransportControlsStatics &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(mediaControl)));
+    check_hresult(WINRT_SHIM(ISystemMediaTransportControlsStatics)->abi_GetForCurrentView(put(mediaControl)));
     return mediaControl;
 }
 
 template <typename D> void impl_IMediaExtension<D>::SetProperties(const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
-    check_hresult(static_cast<const IMediaExtension &>(static_cast<const D &>(*this))->abi_SetProperties(get(configuration)));
+    check_hresult(WINRT_SHIM(IMediaExtension)->abi_SetProperties(get(configuration)));
 }
 
 template <typename D> void impl_IMediaExtensionManager<D>::RegisterSchemeHandler(hstring_ref activatableClassId, hstring_ref scheme) const
 {
-    check_hresult(static_cast<const IMediaExtensionManager &>(static_cast<const D &>(*this))->abi_RegisterSchemeHandler(get(activatableClassId), get(scheme)));
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterSchemeHandler(get(activatableClassId), get(scheme)));
 }
 
 template <typename D> void impl_IMediaExtensionManager<D>::RegisterSchemeHandler(hstring_ref activatableClassId, hstring_ref scheme, const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
-    check_hresult(static_cast<const IMediaExtensionManager &>(static_cast<const D &>(*this))->abi_RegisterSchemeHandlerWithSettings(get(activatableClassId), get(scheme), get(configuration)));
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterSchemeHandlerWithSettings(get(activatableClassId), get(scheme), get(configuration)));
 }
 
 template <typename D> void impl_IMediaExtensionManager<D>::RegisterByteStreamHandler(hstring_ref activatableClassId, hstring_ref fileExtension, hstring_ref mimeType) const
 {
-    check_hresult(static_cast<const IMediaExtensionManager &>(static_cast<const D &>(*this))->abi_RegisterByteStreamHandler(get(activatableClassId), get(fileExtension), get(mimeType)));
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterByteStreamHandler(get(activatableClassId), get(fileExtension), get(mimeType)));
 }
 
 template <typename D> void impl_IMediaExtensionManager<D>::RegisterByteStreamHandler(hstring_ref activatableClassId, hstring_ref fileExtension, hstring_ref mimeType, const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
-    check_hresult(static_cast<const IMediaExtensionManager &>(static_cast<const D &>(*this))->abi_RegisterByteStreamHandlerWithSettings(get(activatableClassId), get(fileExtension), get(mimeType), get(configuration)));
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterByteStreamHandlerWithSettings(get(activatableClassId), get(fileExtension), get(mimeType), get(configuration)));
 }
 
 template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioDecoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype) const
 {
-    check_hresult(static_cast<const IMediaExtensionManager &>(static_cast<const D &>(*this))->abi_RegisterAudioDecoder(get(activatableClassId), inputSubtype, outputSubtype));
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterAudioDecoder(get(activatableClassId), inputSubtype, outputSubtype));
 }
 
 template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioDecoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
-    check_hresult(static_cast<const IMediaExtensionManager &>(static_cast<const D &>(*this))->abi_RegisterAudioDecoderWithSettings(get(activatableClassId), inputSubtype, outputSubtype, get(configuration)));
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterAudioDecoderWithSettings(get(activatableClassId), inputSubtype, outputSubtype, get(configuration)));
 }
 
 template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioEncoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype) const
 {
-    check_hresult(static_cast<const IMediaExtensionManager &>(static_cast<const D &>(*this))->abi_RegisterAudioEncoder(get(activatableClassId), inputSubtype, outputSubtype));
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterAudioEncoder(get(activatableClassId), inputSubtype, outputSubtype));
 }
 
 template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioEncoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
-    check_hresult(static_cast<const IMediaExtensionManager &>(static_cast<const D &>(*this))->abi_RegisterAudioEncoderWithSettings(get(activatableClassId), inputSubtype, outputSubtype, get(configuration)));
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterAudioEncoderWithSettings(get(activatableClassId), inputSubtype, outputSubtype, get(configuration)));
 }
 
 template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoDecoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype) const
 {
-    check_hresult(static_cast<const IMediaExtensionManager &>(static_cast<const D &>(*this))->abi_RegisterVideoDecoder(get(activatableClassId), inputSubtype, outputSubtype));
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterVideoDecoder(get(activatableClassId), inputSubtype, outputSubtype));
 }
 
 template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoDecoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
-    check_hresult(static_cast<const IMediaExtensionManager &>(static_cast<const D &>(*this))->abi_RegisterVideoDecoderWithSettings(get(activatableClassId), inputSubtype, outputSubtype, get(configuration)));
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterVideoDecoderWithSettings(get(activatableClassId), inputSubtype, outputSubtype, get(configuration)));
 }
 
 template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoEncoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype) const
 {
-    check_hresult(static_cast<const IMediaExtensionManager &>(static_cast<const D &>(*this))->abi_RegisterVideoEncoder(get(activatableClassId), inputSubtype, outputSubtype));
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterVideoEncoder(get(activatableClassId), inputSubtype, outputSubtype));
 }
 
 template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoEncoder(hstring_ref activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
-    check_hresult(static_cast<const IMediaExtensionManager &>(static_cast<const D &>(*this))->abi_RegisterVideoEncoderWithSettings(get(activatableClassId), inputSubtype, outputSubtype, get(configuration)));
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterVideoEncoderWithSettings(get(activatableClassId), inputSubtype, outputSubtype, get(configuration)));
 }
 
 template <typename D> hstring impl_IVideoEffectsStatics<D>::VideoStabilization() const
 {
     hstring value;
-    check_hresult(static_cast<const IVideoEffectsStatics &>(static_cast<const D &>(*this))->get_VideoStabilization(put(value)));
+    check_hresult(WINRT_SHIM(IVideoEffectsStatics)->get_VideoStabilization(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaTimelineController<D>::Start() const
 {
-    check_hresult(static_cast<const IMediaTimelineController &>(static_cast<const D &>(*this))->abi_Start());
+    check_hresult(WINRT_SHIM(IMediaTimelineController)->abi_Start());
 }
 
 template <typename D> void impl_IMediaTimelineController<D>::Resume() const
 {
-    check_hresult(static_cast<const IMediaTimelineController &>(static_cast<const D &>(*this))->abi_Resume());
+    check_hresult(WINRT_SHIM(IMediaTimelineController)->abi_Resume());
 }
 
 template <typename D> void impl_IMediaTimelineController<D>::Pause() const
 {
-    check_hresult(static_cast<const IMediaTimelineController &>(static_cast<const D &>(*this))->abi_Pause());
+    check_hresult(WINRT_SHIM(IMediaTimelineController)->abi_Pause());
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaTimelineController<D>::Position() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(static_cast<const IMediaTimelineController &>(static_cast<const D &>(*this))->get_Position(put(value)));
+    check_hresult(WINRT_SHIM(IMediaTimelineController)->get_Position(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaTimelineController<D>::Position(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(static_cast<const IMediaTimelineController &>(static_cast<const D &>(*this))->put_Position(get(value)));
+    check_hresult(WINRT_SHIM(IMediaTimelineController)->put_Position(get(value)));
 }
 
 template <typename D> double impl_IMediaTimelineController<D>::ClockRate() const
 {
     double value {};
-    check_hresult(static_cast<const IMediaTimelineController &>(static_cast<const D &>(*this))->get_ClockRate(&value));
+    check_hresult(WINRT_SHIM(IMediaTimelineController)->get_ClockRate(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaTimelineController<D>::ClockRate(double value) const
 {
-    check_hresult(static_cast<const IMediaTimelineController &>(static_cast<const D &>(*this))->put_ClockRate(value));
+    check_hresult(WINRT_SHIM(IMediaTimelineController)->put_ClockRate(value));
 }
 
 template <typename D> Windows::Media::MediaTimelineControllerState impl_IMediaTimelineController<D>::State() const
 {
     Windows::Media::MediaTimelineControllerState value {};
-    check_hresult(static_cast<const IMediaTimelineController &>(static_cast<const D &>(*this))->get_State(&value));
+    check_hresult(WINRT_SHIM(IMediaTimelineController)->get_State(&value));
     return value;
 }
 
 template <typename D> event_token impl_IMediaTimelineController<D>::PositionChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::IInspectable> & positionChangedEventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(static_cast<const IMediaTimelineController &>(static_cast<const D &>(*this))->add_PositionChanged(get(positionChangedEventHandler), &eventCookie));
+    check_hresult(WINRT_SHIM(IMediaTimelineController)->add_PositionChanged(get(positionChangedEventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -3195,13 +3195,13 @@ template <typename D> event_revoker<IMediaTimelineController> impl_IMediaTimelin
 
 template <typename D> void impl_IMediaTimelineController<D>::PositionChanged(event_token eventCookie) const
 {
-    check_hresult(static_cast<const IMediaTimelineController &>(static_cast<const D &>(*this))->remove_PositionChanged(eventCookie));
+    check_hresult(WINRT_SHIM(IMediaTimelineController)->remove_PositionChanged(eventCookie));
 }
 
 template <typename D> event_token impl_IMediaTimelineController<D>::StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::IInspectable> & stateChangedEventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(static_cast<const IMediaTimelineController &>(static_cast<const D &>(*this))->add_StateChanged(get(stateChangedEventHandler), &eventCookie));
+    check_hresult(WINRT_SHIM(IMediaTimelineController)->add_StateChanged(get(stateChangedEventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -3212,7 +3212,7 @@ template <typename D> event_revoker<IMediaTimelineController> impl_IMediaTimelin
 
 template <typename D> void impl_IMediaTimelineController<D>::StateChanged(event_token eventCookie) const
 {
-    check_hresult(static_cast<const IMediaTimelineController &>(static_cast<const D &>(*this))->remove_StateChanged(eventCookie));
+    check_hresult(WINRT_SHIM(IMediaTimelineController)->remove_StateChanged(eventCookie));
 }
 
 inline AudioFrame::AudioFrame(uint32_t capacity) :

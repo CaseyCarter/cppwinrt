@@ -19,7 +19,6 @@ namespace Windows::UI::WebUI {
 struct ActivatedEventHandler : Windows::IUnknown
 {
     ActivatedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ActivatedEventHandler>(m_ptr); }
     template <typename L> ActivatedEventHandler(L lambda);
     template <typename F> ActivatedEventHandler (F * function);
     template <typename O, typename M> ActivatedEventHandler(O * object, M method);
@@ -29,7 +28,6 @@ struct ActivatedEventHandler : Windows::IUnknown
 struct EnteredBackgroundEventHandler : Windows::IUnknown
 {
     EnteredBackgroundEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<EnteredBackgroundEventHandler>(m_ptr); }
     template <typename L> EnteredBackgroundEventHandler(L lambda);
     template <typename F> EnteredBackgroundEventHandler (F * function);
     template <typename O, typename M> EnteredBackgroundEventHandler(O * object, M method);
@@ -39,7 +37,6 @@ struct EnteredBackgroundEventHandler : Windows::IUnknown
 struct LeavingBackgroundEventHandler : Windows::IUnknown
 {
     LeavingBackgroundEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<LeavingBackgroundEventHandler>(m_ptr); }
     template <typename L> LeavingBackgroundEventHandler(L lambda);
     template <typename F> LeavingBackgroundEventHandler (F * function);
     template <typename O, typename M> LeavingBackgroundEventHandler(O * object, M method);
@@ -49,7 +46,6 @@ struct LeavingBackgroundEventHandler : Windows::IUnknown
 struct NavigatedEventHandler : Windows::IUnknown
 {
     NavigatedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<NavigatedEventHandler>(m_ptr); }
     template <typename L> NavigatedEventHandler(L lambda);
     template <typename F> NavigatedEventHandler (F * function);
     template <typename O, typename M> NavigatedEventHandler(O * object, M method);
@@ -59,7 +55,6 @@ struct NavigatedEventHandler : Windows::IUnknown
 struct ResumingEventHandler : Windows::IUnknown
 {
     ResumingEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<ResumingEventHandler>(m_ptr); }
     template <typename L> ResumingEventHandler(L lambda);
     template <typename F> ResumingEventHandler (F * function);
     template <typename O, typename M> ResumingEventHandler(O * object, M method);
@@ -69,7 +64,6 @@ struct ResumingEventHandler : Windows::IUnknown
 struct SuspendingEventHandler : Windows::IUnknown
 {
     SuspendingEventHandler(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<SuspendingEventHandler>(m_ptr); }
     template <typename L> SuspendingEventHandler(L lambda);
     template <typename F> SuspendingEventHandler (F * function);
     template <typename O, typename M> SuspendingEventHandler(O * object, M method);
@@ -81,7 +75,6 @@ struct IActivatedDeferral :
     impl::consume<IActivatedDeferral>
 {
     IActivatedDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IActivatedDeferral>(m_ptr); }
 };
 
 struct IActivatedEventArgsDeferral :
@@ -89,7 +82,6 @@ struct IActivatedEventArgsDeferral :
     impl::consume<IActivatedEventArgsDeferral>
 {
     IActivatedEventArgsDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IActivatedEventArgsDeferral>(m_ptr); }
 };
 
 struct IActivatedOperation :
@@ -97,7 +89,6 @@ struct IActivatedOperation :
     impl::consume<IActivatedOperation>
 {
     IActivatedOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IActivatedOperation>(m_ptr); }
 };
 
 struct IHtmlPrintDocumentSource :
@@ -106,7 +97,6 @@ struct IHtmlPrintDocumentSource :
     impl::require<IHtmlPrintDocumentSource, Windows::Graphics::Printing::IPrintDocumentSource>
 {
     IHtmlPrintDocumentSource(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IHtmlPrintDocumentSource>(m_ptr); }
 };
 
 struct IWebUIActivationStatics :
@@ -114,7 +104,6 @@ struct IWebUIActivationStatics :
     impl::consume<IWebUIActivationStatics>
 {
     IWebUIActivationStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebUIActivationStatics>(m_ptr); }
 };
 
 struct IWebUIActivationStatics2 :
@@ -122,7 +111,6 @@ struct IWebUIActivationStatics2 :
     impl::consume<IWebUIActivationStatics2>
 {
     IWebUIActivationStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebUIActivationStatics2>(m_ptr); }
 };
 
 struct IWebUIBackgroundTaskInstance :
@@ -130,7 +118,6 @@ struct IWebUIBackgroundTaskInstance :
     impl::consume<IWebUIBackgroundTaskInstance>
 {
     IWebUIBackgroundTaskInstance(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebUIBackgroundTaskInstance>(m_ptr); }
 };
 
 struct IWebUIBackgroundTaskInstanceStatics :
@@ -138,7 +125,6 @@ struct IWebUIBackgroundTaskInstanceStatics :
     impl::consume<IWebUIBackgroundTaskInstanceStatics>
 {
     IWebUIBackgroundTaskInstanceStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebUIBackgroundTaskInstanceStatics>(m_ptr); }
 };
 
 struct IWebUINavigatedDeferral :
@@ -146,7 +132,6 @@ struct IWebUINavigatedDeferral :
     impl::consume<IWebUINavigatedDeferral>
 {
     IWebUINavigatedDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebUINavigatedDeferral>(m_ptr); }
 };
 
 struct IWebUINavigatedEventArgs :
@@ -154,7 +139,6 @@ struct IWebUINavigatedEventArgs :
     impl::consume<IWebUINavigatedEventArgs>
 {
     IWebUINavigatedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebUINavigatedEventArgs>(m_ptr); }
 };
 
 struct IWebUINavigatedOperation :
@@ -162,7 +146,6 @@ struct IWebUINavigatedOperation :
     impl::consume<IWebUINavigatedOperation>
 {
     IWebUINavigatedOperation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IWebUINavigatedOperation>(m_ptr); }
 };
 
 }

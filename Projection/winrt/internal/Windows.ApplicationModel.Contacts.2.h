@@ -775,7 +775,6 @@ struct IAggregateContactManager :
     impl::consume<IAggregateContactManager>
 {
     IAggregateContactManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAggregateContactManager>(m_ptr); }
 };
 
 struct IAggregateContactManager2 :
@@ -783,7 +782,6 @@ struct IAggregateContactManager2 :
     impl::consume<IAggregateContactManager2>
 {
     IAggregateContactManager2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAggregateContactManager2>(m_ptr); }
 };
 
 struct IContact :
@@ -791,7 +789,6 @@ struct IContact :
     impl::consume<IContact>
 {
     IContact(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContact>(m_ptr); }
 };
 
 struct IContact2 :
@@ -800,7 +797,6 @@ struct IContact2 :
     impl::require<IContact2, Windows::ApplicationModel::Contacts::IContact>
 {
     IContact2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContact2>(m_ptr); }
 };
 
 struct IContact3 :
@@ -809,7 +805,6 @@ struct IContact3 :
     impl::require<IContact3, Windows::ApplicationModel::Contacts::IContact, Windows::ApplicationModel::Contacts::IContact2>
 {
     IContact3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContact3>(m_ptr); }
 };
 
 struct IContactAddress :
@@ -817,7 +812,6 @@ struct IContactAddress :
     impl::consume<IContactAddress>
 {
     IContactAddress(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactAddress>(m_ptr); }
 };
 
 struct IContactAnnotation :
@@ -825,7 +819,6 @@ struct IContactAnnotation :
     impl::consume<IContactAnnotation>
 {
     IContactAnnotation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactAnnotation>(m_ptr); }
 };
 
 struct IContactAnnotationList :
@@ -833,7 +826,6 @@ struct IContactAnnotationList :
     impl::consume<IContactAnnotationList>
 {
     IContactAnnotationList(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactAnnotationList>(m_ptr); }
 };
 
 struct IContactAnnotationStore :
@@ -841,7 +833,6 @@ struct IContactAnnotationStore :
     impl::consume<IContactAnnotationStore>
 {
     IContactAnnotationStore(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactAnnotationStore>(m_ptr); }
 };
 
 struct IContactBatch :
@@ -849,7 +840,6 @@ struct IContactBatch :
     impl::consume<IContactBatch>
 {
     IContactBatch(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactBatch>(m_ptr); }
 };
 
 struct IContactCardDelayedDataLoader :
@@ -858,7 +848,6 @@ struct IContactCardDelayedDataLoader :
     impl::require<IContactCardDelayedDataLoader, Windows::Foundation::IClosable>
 {
     IContactCardDelayedDataLoader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactCardDelayedDataLoader>(m_ptr); }
 };
 
 struct IContactCardOptions :
@@ -866,7 +855,6 @@ struct IContactCardOptions :
     impl::consume<IContactCardOptions>
 {
     IContactCardOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactCardOptions>(m_ptr); }
 };
 
 struct IContactCardOptions2 :
@@ -875,7 +863,6 @@ struct IContactCardOptions2 :
     impl::require<IContactCardOptions2, Windows::ApplicationModel::Contacts::IContactCardOptions>
 {
     IContactCardOptions2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactCardOptions2>(m_ptr); }
 };
 
 struct IContactChange :
@@ -883,7 +870,6 @@ struct IContactChange :
     impl::consume<IContactChange>
 {
     IContactChange(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactChange>(m_ptr); }
 };
 
 struct IContactChangeReader :
@@ -891,7 +877,6 @@ struct IContactChangeReader :
     impl::consume<IContactChangeReader>
 {
     IContactChangeReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactChangeReader>(m_ptr); }
 };
 
 struct IContactChangeTracker :
@@ -899,7 +884,6 @@ struct IContactChangeTracker :
     impl::consume<IContactChangeTracker>
 {
     IContactChangeTracker(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactChangeTracker>(m_ptr); }
 };
 
 struct IContactChangedDeferral :
@@ -907,7 +891,6 @@ struct IContactChangedDeferral :
     impl::consume<IContactChangedDeferral>
 {
     IContactChangedDeferral(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactChangedDeferral>(m_ptr); }
 };
 
 struct IContactChangedEventArgs :
@@ -915,7 +898,6 @@ struct IContactChangedEventArgs :
     impl::consume<IContactChangedEventArgs>
 {
     IContactChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactChangedEventArgs>(m_ptr); }
 };
 
 struct IContactConnectedServiceAccount :
@@ -923,7 +905,6 @@ struct IContactConnectedServiceAccount :
     impl::consume<IContactConnectedServiceAccount>
 {
     IContactConnectedServiceAccount(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactConnectedServiceAccount>(m_ptr); }
 };
 
 struct IContactDate :
@@ -931,7 +912,6 @@ struct IContactDate :
     impl::consume<IContactDate>
 {
     IContactDate(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactDate>(m_ptr); }
 };
 
 struct IContactEmail :
@@ -939,7 +919,6 @@ struct IContactEmail :
     impl::consume<IContactEmail>
 {
     IContactEmail(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactEmail>(m_ptr); }
 };
 
 struct IContactField :
@@ -947,7 +926,6 @@ struct IContactField :
     impl::consume<IContactField>
 {
     IContactField(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactField>(m_ptr); }
 };
 
 struct IContactFieldFactory :
@@ -955,7 +933,6 @@ struct IContactFieldFactory :
     impl::consume<IContactFieldFactory>
 {
     IContactFieldFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactFieldFactory>(m_ptr); }
 };
 
 struct IContactInformation :
@@ -963,7 +940,6 @@ struct IContactInformation :
     impl::consume<IContactInformation>
 {
     IContactInformation(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactInformation>(m_ptr); }
 };
 
 struct IContactInstantMessageField :
@@ -972,7 +948,6 @@ struct IContactInstantMessageField :
     impl::require<IContactInstantMessageField, Windows::ApplicationModel::Contacts::IContactField>
 {
     IContactInstantMessageField(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactInstantMessageField>(m_ptr); }
 };
 
 struct IContactInstantMessageFieldFactory :
@@ -980,7 +955,6 @@ struct IContactInstantMessageFieldFactory :
     impl::consume<IContactInstantMessageFieldFactory>
 {
     IContactInstantMessageFieldFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactInstantMessageFieldFactory>(m_ptr); }
 };
 
 struct IContactJobInfo :
@@ -988,7 +962,6 @@ struct IContactJobInfo :
     impl::consume<IContactJobInfo>
 {
     IContactJobInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactJobInfo>(m_ptr); }
 };
 
 struct IContactLaunchActionVerbsStatics :
@@ -996,7 +969,6 @@ struct IContactLaunchActionVerbsStatics :
     impl::consume<IContactLaunchActionVerbsStatics>
 {
     IContactLaunchActionVerbsStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactLaunchActionVerbsStatics>(m_ptr); }
 };
 
 struct IContactList :
@@ -1004,7 +976,6 @@ struct IContactList :
     impl::consume<IContactList>
 {
     IContactList(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactList>(m_ptr); }
 };
 
 struct IContactList2 :
@@ -1012,7 +983,6 @@ struct IContactList2 :
     impl::consume<IContactList2>
 {
     IContactList2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactList2>(m_ptr); }
 };
 
 struct IContactListSyncConstraints :
@@ -1020,7 +990,6 @@ struct IContactListSyncConstraints :
     impl::consume<IContactListSyncConstraints>
 {
     IContactListSyncConstraints(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactListSyncConstraints>(m_ptr); }
 };
 
 struct IContactListSyncManager :
@@ -1028,7 +997,6 @@ struct IContactListSyncManager :
     impl::consume<IContactListSyncManager>
 {
     IContactListSyncManager(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactListSyncManager>(m_ptr); }
 };
 
 struct IContactListSyncManager2 :
@@ -1036,7 +1004,6 @@ struct IContactListSyncManager2 :
     impl::consume<IContactListSyncManager2>
 {
     IContactListSyncManager2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactListSyncManager2>(m_ptr); }
 };
 
 struct IContactLocationField :
@@ -1045,7 +1012,6 @@ struct IContactLocationField :
     impl::require<IContactLocationField, Windows::ApplicationModel::Contacts::IContactField>
 {
     IContactLocationField(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactLocationField>(m_ptr); }
 };
 
 struct IContactLocationFieldFactory :
@@ -1053,7 +1019,6 @@ struct IContactLocationFieldFactory :
     impl::consume<IContactLocationFieldFactory>
 {
     IContactLocationFieldFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactLocationFieldFactory>(m_ptr); }
 };
 
 struct IContactManagerForUser :
@@ -1061,7 +1026,6 @@ struct IContactManagerForUser :
     impl::consume<IContactManagerForUser>
 {
     IContactManagerForUser(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactManagerForUser>(m_ptr); }
 };
 
 struct IContactManagerStatics :
@@ -1069,7 +1033,6 @@ struct IContactManagerStatics :
     impl::consume<IContactManagerStatics>
 {
     IContactManagerStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactManagerStatics>(m_ptr); }
 };
 
 struct IContactManagerStatics2 :
@@ -1078,7 +1041,6 @@ struct IContactManagerStatics2 :
     impl::require<IContactManagerStatics2, Windows::ApplicationModel::Contacts::IContactManagerStatics>
 {
     IContactManagerStatics2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactManagerStatics2>(m_ptr); }
 };
 
 struct IContactManagerStatics3 :
@@ -1087,7 +1049,6 @@ struct IContactManagerStatics3 :
     impl::require<IContactManagerStatics3, Windows::ApplicationModel::Contacts::IContactManagerStatics, Windows::ApplicationModel::Contacts::IContactManagerStatics2>
 {
     IContactManagerStatics3(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactManagerStatics3>(m_ptr); }
     using impl_IContactManagerStatics::ShowContactCard;
     using impl_IContactManagerStatics::ShowDelayLoadedContactCard;
     using impl_IContactManagerStatics2::RequestStoreAsync;
@@ -1101,7 +1062,6 @@ struct IContactManagerStatics4 :
     impl::consume<IContactManagerStatics4>
 {
     IContactManagerStatics4(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactManagerStatics4>(m_ptr); }
 };
 
 struct IContactMatchReason :
@@ -1109,7 +1069,6 @@ struct IContactMatchReason :
     impl::consume<IContactMatchReason>
 {
     IContactMatchReason(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactMatchReason>(m_ptr); }
 };
 
 struct IContactName :
@@ -1117,7 +1076,6 @@ struct IContactName :
     impl::consume<IContactName>
 {
     IContactName(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactName>(m_ptr); }
 };
 
 struct IContactPhone :
@@ -1125,7 +1083,6 @@ struct IContactPhone :
     impl::consume<IContactPhone>
 {
     IContactPhone(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactPhone>(m_ptr); }
 };
 
 struct IContactPicker :
@@ -1133,7 +1090,6 @@ struct IContactPicker :
     impl::consume<IContactPicker>
 {
     IContactPicker(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactPicker>(m_ptr); }
 };
 
 struct IContactPicker2 :
@@ -1141,7 +1097,6 @@ struct IContactPicker2 :
     impl::consume<IContactPicker2>
 {
     IContactPicker2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactPicker2>(m_ptr); }
 };
 
 struct IContactQueryOptions :
@@ -1149,7 +1104,6 @@ struct IContactQueryOptions :
     impl::consume<IContactQueryOptions>
 {
     IContactQueryOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactQueryOptions>(m_ptr); }
 };
 
 struct IContactQueryOptionsFactory :
@@ -1157,7 +1111,6 @@ struct IContactQueryOptionsFactory :
     impl::consume<IContactQueryOptionsFactory>
 {
     IContactQueryOptionsFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactQueryOptionsFactory>(m_ptr); }
 };
 
 struct IContactQueryTextSearch :
@@ -1165,7 +1118,6 @@ struct IContactQueryTextSearch :
     impl::consume<IContactQueryTextSearch>
 {
     IContactQueryTextSearch(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactQueryTextSearch>(m_ptr); }
 };
 
 struct IContactReader :
@@ -1173,7 +1125,6 @@ struct IContactReader :
     impl::consume<IContactReader>
 {
     IContactReader(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactReader>(m_ptr); }
 };
 
 struct IContactSignificantOther :
@@ -1181,7 +1132,6 @@ struct IContactSignificantOther :
     impl::consume<IContactSignificantOther>
 {
     IContactSignificantOther(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactSignificantOther>(m_ptr); }
 };
 
 struct IContactSignificantOther2 :
@@ -1190,7 +1140,6 @@ struct IContactSignificantOther2 :
     impl::require<IContactSignificantOther2, Windows::ApplicationModel::Contacts::IContactSignificantOther>
 {
     IContactSignificantOther2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactSignificantOther2>(m_ptr); }
 };
 
 struct IContactStore :
@@ -1198,7 +1147,6 @@ struct IContactStore :
     impl::consume<IContactStore>
 {
     IContactStore(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactStore>(m_ptr); }
 };
 
 struct IContactStore2 :
@@ -1207,7 +1155,6 @@ struct IContactStore2 :
     impl::require<IContactStore2, Windows::ApplicationModel::Contacts::IContactStore>
 {
     IContactStore2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactStore2>(m_ptr); }
 };
 
 struct IContactStoreNotificationTriggerDetails :
@@ -1215,7 +1162,6 @@ struct IContactStoreNotificationTriggerDetails :
     impl::consume<IContactStoreNotificationTriggerDetails>
 {
     IContactStoreNotificationTriggerDetails(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactStoreNotificationTriggerDetails>(m_ptr); }
 };
 
 struct IContactWebsite :
@@ -1223,7 +1169,6 @@ struct IContactWebsite :
     impl::consume<IContactWebsite>
 {
     IContactWebsite(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactWebsite>(m_ptr); }
 };
 
 struct IContactWebsite2 :
@@ -1232,7 +1177,6 @@ struct IContactWebsite2 :
     impl::require<IContactWebsite2, Windows::ApplicationModel::Contacts::IContactWebsite>
 {
     IContactWebsite2(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IContactWebsite2>(m_ptr); }
 };
 
 struct IFullContactCardOptions :
@@ -1240,7 +1184,6 @@ struct IFullContactCardOptions :
     impl::consume<IFullContactCardOptions>
 {
     IFullContactCardOptions(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IFullContactCardOptions>(m_ptr); }
 };
 
 struct IKnownContactFieldStatics :
@@ -1248,7 +1191,6 @@ struct IKnownContactFieldStatics :
     impl::consume<IKnownContactFieldStatics>
 {
     IKnownContactFieldStatics(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IKnownContactFieldStatics>(m_ptr); }
 };
 
 }
