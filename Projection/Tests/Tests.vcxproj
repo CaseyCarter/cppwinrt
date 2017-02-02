@@ -206,6 +206,7 @@
     <ClCompile Include="produce_vector.cpp" />
     <ClCompile Include="IUnknown_QueryInterface.cpp" />
     <ClCompile Include="range_for.cpp" />
+    <ClCompile Include="Reference.cpp" />
     <ClCompile Include="Release.cpp" />
     <ClCompile Include="struct.cpp" />
     <ClCompile Include="weak.cpp" />

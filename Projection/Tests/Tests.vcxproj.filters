@@ -38,6 +38,7 @@
     <ClCompile Include="event_produce.cpp" />
     <ClCompile Include="abi_guard.cpp" />
     <ClCompile Include="casts.cpp" />
+    <ClCompile Include="Reference.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

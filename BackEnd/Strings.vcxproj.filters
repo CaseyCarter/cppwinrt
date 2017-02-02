@@ -56,19 +56,10 @@
     <ClInclude Include="Source\Modern\base_foundation.h">
       <Filter>Assets</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Modern\base_generic_consume.h">
-      <Filter>Assets</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Modern\base_generic_produce.h">
-      <Filter>Assets</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Modern\base_handle.h">
       <Filter>Assets</Filter>
     </ClInclude>
     <ClInclude Include="Source\Modern\base_implements.h">
-      <Filter>Assets</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Modern\base_implements_old.h">
       <Filter>Assets</Filter>
     </ClInclude>
     <ClInclude Include="Source\Modern\base_lock.h">
@@ -84,9 +75,6 @@
       <Filter>Assets</Filter>
     </ClInclude>
     <ClInclude Include="Source\Modern\base_module.h">
-      <Filter>Assets</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Modern\base_std.h">
       <Filter>Assets</Filter>
     </ClInclude>
     <ClInclude Include="Source\Modern\base_string.h">
@@ -255,6 +243,9 @@
       <Filter>Assets</Filter>
     </ClInclude>
     <ClInclude Include="Source\Modern\WriteStaticEventMethodDefinition.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Modern\base_reference.h">
       <Filter>Assets</Filter>
     </ClInclude>
   </ItemGroup>

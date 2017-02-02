@@ -1,7 +1,7 @@
 
 namespace ABI::Windows::Foundation {
 
-template <typename T> struct IReference;
+template <typename T> struct IReference : impl::not_specialized<IReference<T>> {};
 
 template <typename T>
 struct __declspec(novtable) impl_IReference : IInspectable

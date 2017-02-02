@@ -121,7 +121,10 @@ struct not_specialized_type
 template <typename T>
 struct not_specialized
 {
-    static_assert(not_specialized_type<T>::value, "This generic interface has not been specialized.");
+    static_assert(not_specialized_type<T>::value,
+        "This generic interface has not been specialized. "
+        "Each distinct instantiation of this generic interface requires a corresponding UUID. "
+        "This UUID must be provided by a template specialization.");
 };
 
 }
